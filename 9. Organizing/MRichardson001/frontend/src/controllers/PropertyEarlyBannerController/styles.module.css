@@ -1,0 +1,39 @@
+.link {
+  cursor: pointer;
+  transition: all 125ms;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.container {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.subtitle {
+  /*margin-top: -20px;*/
+  font-family: "Monotype madera", sans-serif;
+  color: #4c698f;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.breadcrumbs {
+  padding-bottom: 10px !important;
+  top: 75px !important;
+}
+.crunchContainer {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  transition: all 150ms;
+  align-items: center;
+}
+.crunchContainer:hover {
+  opacity: 0.8;
+}

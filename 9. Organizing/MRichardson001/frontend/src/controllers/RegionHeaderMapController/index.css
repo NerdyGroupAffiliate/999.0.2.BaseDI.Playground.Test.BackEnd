@@ -1,0 +1,11 @@
+@media (-ms-high-contrast: none) {
+    .af-class-real-estate-column-container > span {
+        flex: 1 1 auto !important;
+    }
+    .af-class-content-image-offset-header
+    .af-class-cards-poi-detail-headers,
+    .af-class-cards-news-container
+    .af-class-dive-block-15 {
+        display: block !important;
+    }
+}

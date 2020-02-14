@@ -1,0 +1,74 @@
+.map {
+  background-image: none !important;
+}
+
+.mapContainer {
+  height: 330px;
+  width: 100% !important;
+  padding: 0 !important;
+  position: relative;
+  display: block !important;
+  padding: 0px !important;
+  justify-content: center;
+  background-image: url(http://localhost:3000/static/media/Sub_Region_Map_Google_Default.268046fe.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.mapElement {
+  height: 100% !important;
+  width: 100%;
+  position: relative !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+}
+.textboxWrapper {
+  position: absolute;
+  top: 50px;
+  left: 10%;
+}
+.viewLocation {
+  display: flex;
+}
+.viewLocation > img {
+  margin-left: 10px;
+  height: 20px;
+}
+.propertyPin {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+@media only screen and (max-width: 479px) {
+  .textboxWrapper {
+    width: 330px !important;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .textboxWrapper {
+    width: 250px !important;
+  }
+}
+
+/* unvisited link */
+.ViewLocationButton:link {
+  color: #7ba4da;
+}
+
+/* visited link */
+.ViewLocationButton:visited {
+  color: #7ba4da;
+}
+
+/* mouse over link */
+.viewLocation:hover > .ViewLocationButton {
+  color: #7ba4da;
+  text-decoration: underline;
+}
+
+/* selected link */
+.ViewLocationButton:active {
+  color: #7ba4da;
+}

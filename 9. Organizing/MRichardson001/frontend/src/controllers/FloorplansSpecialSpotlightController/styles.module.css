@@ -1,0 +1,24 @@
+.cta {
+    cursor: pointer;
+    background-image: none !important;
+}
+
+.cta:hover {
+    opacity: 0.88;
+}
+
+.cta,
+.text,
+.date {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+.date {
+    opacity: 1 !important;
+}
+@media (max-width: 479px) {
+    .cta {
+        padding-left: 0px !important;
+    }
+}

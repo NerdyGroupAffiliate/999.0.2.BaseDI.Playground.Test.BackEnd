@@ -1,0 +1,28 @@
+.af-class-yellow-highlight-half::after {
+    content: '';
+    background-color: #ecd925;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    bottom: 5px;
+    right: -5px;
+    z-index: -1;
+    height: 7px;
+}
+.af-view .af-class-list-item-5 {
+    border-bottom: 1px solid #BDD2ED;
+}
+@media (max-width: 479px) {
+    .af-view .af-class-div-block-262 {
+        align-items: flex-start;
+    }
+    .af-class-div-block-263 {
+        flex-direction: row !important;
+    }
+}
+@media (max-width: 479px) and (-ms-high-contrast:none) {
+    .af-view .af-class-text-block-81 {
+        max-width: 100%;
+    }
+}

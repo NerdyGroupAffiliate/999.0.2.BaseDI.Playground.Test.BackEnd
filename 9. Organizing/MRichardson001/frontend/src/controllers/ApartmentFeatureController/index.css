@@ -1,0 +1,5 @@
+.af-class-short-term-list > span {
+  flex: 0 1 45% !important;
+  width: auto !important;
+  height: auto !important;
+}

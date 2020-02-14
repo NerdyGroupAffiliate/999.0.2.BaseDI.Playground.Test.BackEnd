@@ -1,0 +1,29 @@
+.carousel .slide,
+.carousel-slider,
+.slider-wrapper,
+.slider {
+  height: 100% !important;
+}
+.af-class-property-card-slide-default .carousel .slider-wrapper.axis-horizontal .slider .slide.selected:hover {
+  cursor: pointer;
+}
+.control-dots {
+  padding: 0 !important;
+}
+.dot {
+  transform: scale(1.4);
+}
+
+.dot.selected {
+  transform: scale(1.7);
+  transition: all 200ms;
+}
+
+.dot:focus {
+  outline: none !important;
+}
+@media (-ms-high-contrast: none) {
+  .af-view .af-class-property-card-slide-default .carousel .slider-wrapper {
+    width: 100%;
+  }
+}

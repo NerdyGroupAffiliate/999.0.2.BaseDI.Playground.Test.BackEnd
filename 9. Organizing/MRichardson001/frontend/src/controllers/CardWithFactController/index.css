@@ -1,0 +1,21 @@
+.af-class-section-tagline.white {
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 0px;
+  font-size: 24px;
+  line-height: 46px;
+}
+.af-class-spotlight-bb-background-offset {
+  display: none;
+}
+.af-view .af-class-spotlight-bb-background-offset {
+  bottom: -20% !important;
+}
+.af-view .af-class-spotlight-billboard-descriptive-blur  {
+  max-width: 600px !important;
+}
+@media (max-width: 479px) {
+  .af-view .af-class-spotlight-billboard-descriptive-blur {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+}

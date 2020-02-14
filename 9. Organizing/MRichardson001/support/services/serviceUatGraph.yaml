@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: amlicom-uat-data
+  namespace: amlicom-uat
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8000
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: amlicom-uat-data 
+    stage: uat 
+    version: 1.0.1250

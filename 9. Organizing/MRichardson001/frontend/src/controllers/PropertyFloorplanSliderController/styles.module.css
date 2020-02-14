@@ -1,0 +1,121 @@
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image:focus {
+  outline: -webkit-focus-ring-color auto 15px;
+}
+.buttonWrapper {
+  position: relative;
+}
+.floorplanDisclaimer {
+  font-size: 12px;
+  color: white;
+  font-style: italic;
+  font-family: 'Monotype madera', sans-serif;
+  position: absolute;
+  bottom: 20px;
+  order: 3;
+}
+.active {
+  border: 2px solid rgba(255, 255, 255, 0.88) !important;
+}
+
+.thumbnail {
+  margin-right: 10px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  flex: 0 0 25%;
+  height: 100px;
+}
+
+.tour,
+.thumbnail,
+.arrowContainer {
+  cursor: pointer;
+  transition: all 150ms;
+}
+
+.arrowContainer {
+  fill: white !important;
+}
+.tour,
+.viewSitePlan  {
+  height: 40px;
+  width: 152px;
+  font-size: 15px;
+}
+.viewSitePlan > div {
+  font-size: 15px;
+}
+
+.tour:hover,
+.arrowContainer:hover,
+.thumbnail:hover {
+  opacity: 0.88;
+}
+.tour:hover {
+  color: white;
+}
+
+.thumbnailsList {
+  transition: all 150ms;
+  scrollbar-width: none;
+  overflow: hidden !important;
+}
+
+.sliderContainer {
+  height: 250px !important;
+  pointer-events: all !important
+}
+
+.sliderContainer > img {
+  object-fit: contain !important;
+}
+
+.thumbnails {
+  position: relative;
+}
+
+.leftArrow {
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 100px;
+  z-index: 10;
+  background-image: linear-gradient(90deg, #282828, transparent);
+  transition: all 150ms;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftArrow > svg {
+  margin-top: 8px;
+  width: 20px;
+}
+
+.leftArrow:hover {
+  background-image: linear-gradient(90deg, #353535, transparent);;
+}
+.floorplanName {
+  margin-left: -15px;
+}
+@media all and (-ms-high-contrast: none) {
+  .image {
+    max-width: 400px !important;
+    max-height: 250px !important;
+  }
+}
+@media (max-width: 991px) {
+  .buttonWrapper {
+    padding-bottom: 45px !important;
+    justify-content: center !important;
+  }
+}
+@media (max-width: 479px) {
+  .floorplanDisclaimer {
+    font-size: 10px;
+  }
+}

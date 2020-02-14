@@ -1,0 +1,24 @@
+.image {
+    height: 450px !important;
+    margin-bottom: 60px;
+}
+@media (min-width: 480px) {
+    .statement > p {
+        font-size: 19px !important;
+    }
+}
+@media (max-width: 492px) {
+    .image {
+        background-position: -135% center !important;
+    }
+}
+@media (max-width: 375px) {
+    .image {
+        background-position: -122% center !important;
+    }
+}
+@media (max-width: 320px) {
+    .image {
+        background-position: -110% center !important;
+    }
+}

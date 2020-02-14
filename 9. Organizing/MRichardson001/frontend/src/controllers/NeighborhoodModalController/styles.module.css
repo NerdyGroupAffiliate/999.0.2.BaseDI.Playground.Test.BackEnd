@@ -1,0 +1,36 @@
+.close {
+  transition: all 150ms;
+  cursor: pointer;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 25px;
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
+  cursor: pointer;
+}
+
+.close:hover {
+  opacity: 0.88;
+}
+
+.explore,
+.header,
+.wrapper {
+  pointer-events: all !important;
+}
+
+.listContainer {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.wrapper {
+  z-index: 100;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+@media (max-width: 721px) {
+  .wrapper {
+    display: none !important;
+  }
+} 

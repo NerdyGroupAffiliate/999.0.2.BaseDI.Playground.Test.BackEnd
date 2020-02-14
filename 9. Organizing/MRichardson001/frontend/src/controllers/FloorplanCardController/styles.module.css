@@ -1,0 +1,68 @@
+.button {
+  /* position: relative; */
+}
+.button:hover > .buttonText > .buttonArrow {
+  transform: translateX(5px);
+}
+.buttonText {
+  transition: transform 300ms ease-in-out;
+}
+.buttonArrow {
+  margin-left: 5px;
+  width: 8px;
+  height: 13px;
+  transition: transform 300ms ease-in-out;
+}
+.buttonText:hover {
+  cursor: pointer;
+}
+.cardHeader {
+  padding: 2px 5px 10px 15px !important;
+  min-height: 56px;
+}
+.infoIcon {
+  position: absolute;
+  top: 2px;
+  right: -2px;
+}
+.disclaimerContainer {
+  order: 3;
+  position: relative;
+  width: 20px;
+}
+@media (min-width: 768px) {
+  .infoIcon:hover + .priceDisclaimer {
+    display: block;
+  }
+  .infoIcon:hover ~ .toolTipArrow {
+    display: block !important;
+  }
+}
+.showDisclaimer {
+  display: block !important;
+}
+.priceDisclaimer {
+  display: none;
+  width: auto;
+  border: 1px solid #787878;
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+  background: white;
+  left: -185px;
+  top: 25px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+}
+.toolTipArrow {
+  display: none;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  z-index: 3;
+  border-right: 1px solid #787878;
+  border-top: 1px solid #787878;
+  transform: rotate(-45deg);
+  background: white;
+}

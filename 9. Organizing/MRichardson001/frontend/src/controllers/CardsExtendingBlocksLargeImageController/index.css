@@ -1,0 +1,30 @@
+.af-view .af-class-career-benefit-blocks-header.af-class-reversed.af-class-extend-large {
+  transform: none;
+}
+.af-view .af-class-div-block-451 {
+  transform: translate(-65%, 20px);
+}
+@media (max-width: 1600px) {
+  .af-view .af-class-div-block-451 {
+    transform: translate(-45%, 20px);
+  }
+}
+@media (max-width: 991px) {
+  .af-view .af-class-div-block-451 {
+    transform: translate(0%, 0px);
+    flex: 0 auto;
+  }
+}
+@media (max-width: 479px) {
+  .af-view .af-class-cards-extending-blocks-large-image {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+}
+@media (min-width: 1441px) {
+  .af-class-cards-extending-blocks-large-image > img {
+    max-height: 600px;
+    object-fit: cover;
+    object-position: bottom;
+  }
+}

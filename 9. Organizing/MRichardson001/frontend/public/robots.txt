@@ -1,0 +1,3 @@
+Allow Full Access 
+User-agent: * 
+Disallow:

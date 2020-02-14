@@ -1,0 +1,72 @@
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .about-page-header, 
+  .about-page-header.retail, 
+  .about-page-header.development, 
+  .about-page-header.corporate-gov {
+    max-height: 400px!important;
+  }
+}
+  .green-highlight, 
+  .blue-highlight, 
+  .yellow-highlight { 
+    position: relative; 
+  }
+  .green-highlight::after {
+    content: \'\';
+    background-color: #B1E37D;
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: -5px;
+    bottom: 0px;
+    right: -5px;
+    z-index: -1;
+  }
+  .blue-highlight::after {
+    content: \'\';
+    background-color: #CADBF0;
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: -5px;
+    bottom: 0px;
+    right: -5px;
+    z-index: -1;
+  }
+  .yellow-highlight::after {
+    content: \'\';
+    background-color: #ECD925;
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: -5px;
+    bottom: 0px;
+    right: -5px;
+    z-index: -1;
+  }
+  .blur {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .green-highlight-half::after {
+    content: \'\';
+    background-color: #B1E37D;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    bottom: 0px;
+    right: -5px;
+    z-index: -1;
+  }
+  .yellow-highlight-half::after {
+    content: \'\';
+    background-color: #ecd925;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    bottom: 5px;
+    right: -5px;
+    z-index: -1;
+  }

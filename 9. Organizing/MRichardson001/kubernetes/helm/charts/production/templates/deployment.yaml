@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name}}
+  namespace: {{ .Values.release.stageNamespace }}
+  labels:
+    app: amlicom-production
+    stage: {{ .Values.release.stage }}
+    version: {{ .Values.release.version }}  
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: amlicom-production
+        stage: {{ .Values.release.stage }}
+        version: {{ .Values.release.version }}
+    spec:
+      nodeSelector:
+        beta.kubernetes.io/os: "windows"
+      initContainers:
+      - name: {{ .Release.Name }}-init 
+        image: {{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}
+        command:
+        - cmd
+        - dir
+      containers:
+      - name: {{ .Release.Name }}
+        image: {{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: NODE_ENV
+          value: {{ quote .Values.environment.nodeEnv }} 
+        - name: REACT_APP_ENV
+          value: {{ quote .Values.environment.reactAppEnv }}
+        - name: DOMAIN_NAME
+          value: {{ quote .Values.environment.domain }}
+        - name: GOOGLE_MAPS_API_KEY
+          value: {{ quote .Values.environment.googleAPIKey }}
+        - name: BROWSER
+          value: {{ quote .Values.environment.browser }}
+        - name: PORT
+          value: {{ quote .Values.service.targetPort }}
+        ports: 
+        - containerPort: {{ .Values.service.targetPort }} 
+        imagePullSecrets:
+        - name: acr-auth        
+      dnsPolicy: None
+      dnsConfig: 
+        nameservers:
+          - 168.63.129.16
+  selector:
+    matchLabels:
+      app: amlicom-production
+      stage: {{ .Values.release.stage }}
+      version: {{ .Values.release.version }}   
+       

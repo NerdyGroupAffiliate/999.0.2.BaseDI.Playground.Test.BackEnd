@@ -1,0 +1,178 @@
+.container {
+  width: 325px;
+  position: absolute;
+  /* top: 157px; */
+  z-index: 10;
+  right: 0;
+  background-color: white;
+  -webkit-box-shadow: -5px 5px 10px 2px rgba(68, 68, 68, 0.26);
+  -moz-box-shadow: -5px 5px 10px 2px rgba(68, 68, 68, 0.26);
+  box-shadow: -5px 5px 10px 2px rgba(68, 68, 68, 0.26);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 35px;
+}
+
+.dateContainer,
+.sliderContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.datesLabel,
+.priceLabel {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+  color: gray;
+  text-transform: uppercase;
+  font-family: "Monotype madera", sans-serif;
+}
+
+.prices {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.prices > span {
+  padding-bottom: 5px;
+  font-family: "Monotype madera", sans-serif;
+  color: #3f3f3f;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.button,
+.datesLabel,
+.priceLabel,
+.prices > span {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.horizontalLine {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(120, 120, 120, 0.2);
+  margin: 30px 0;
+}
+
+.datesLabel {
+  margin-bottom: 10px;
+}
+
+.datePickers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.datepicker,
+.datepicker > div,
+.datepicker > div > div {
+  cursor: pointer !important;
+}
+
+.datepicker > div {
+  border: 1px solid rgba(120, 120, 120, 0.3) !important;
+  border-radius: 3px;
+}
+
+.datepicker,
+.datepicker > div,
+.datepicker > div > div,
+.datepicker > div > div > input:focus {
+  outline: none;
+}
+
+.datepicker > div:last-child {
+  margin-left: -300%;
+}
+
+.rightArrow {
+  width: 50px;
+  height: 12px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+.button {
+  align-self: center;
+  margin: auto;
+  margin-top: 25px;
+  transition: all 150ms;
+  width: 124px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #4c698f;
+  font-family: "Monotype madera", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.button:hover {
+  opacity: 0.88;
+}
+
+.petsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.petsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: row;
+  margin-right: 50px;
+}
+
+.checkboxInput {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid rgba(120, 120, 120, 0.2);
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.checkboxLabel {
+  font-family: "Monotype madera", sans-serif;
+  font-size: 15px;
+}
+
+.checkboxChecked {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTY0LjUsMTM5LjAzMzMzbC00MC44NSwtNDAuODVsMTAuMDMzMzMsLTEwLjAzMzMzbDMwLjgxNjY3LDMwLjgxNjY3bDgwLjk4MzMzLC04MC45ODMzM2wxMC4wMzMzMywxMC4wMzMzM3oiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg==");
+  background-position: center;
+  background-size: contain;
+}

@@ -1,0 +1,51 @@
+.homePageContainer {
+  position: fixed !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.homePageMobileButton > div {
+  color: white !important;
+
+}
+.homepageLabels,
+.homepageLabels > div {
+  color: white !important;
+}
+
+.homePageLinks > a {
+  /* color: white !important; */
+  display: none;
+}
+.homePageNav {
+  background: transparent !important;
+}
+.navwrapper {
+  background: white !important;
+  color: black !important;
+}
+
+.link {
+  cursor: pointer;
+}
+@media (max-width: 479px) {
+  .homepageLabels,
+  .homepageLabels > div {
+    color: #000 !important;
+  }
+  .homePageNav {
+    top: 77px !important;
+    background: white !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .navwrapper {
+    color: white !important;
+  }
+}
+
+.languageDropdown {
+  padding: 5px 20px 5px 5px !important;
+}

@@ -1,0 +1,44 @@
+.affordablePolicy {
+  text-align: center;
+  font-family: 'Monotype madera', sans-serif;
+  padding: 40px;
+  position: relative;
+  color: #707070;
+  font-style: italic;
+}
+.affordablePolicyUnits {
+  text-align: center;
+  font-family: 'Monotype madera', sans-serif;
+  padding: 90px 40px 10px;
+  position: relative;
+  color: #3f3f3f;
+  font-size: 14px;
+  font-weight: 700;
+}
+.policyLink {
+  margin-left: 2px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.policyLink:hover {
+  opacity: 0.88;
+}
+.policyModal {
+  position: absolute;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #787878;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  background: white;
+  left: 10%;
+  right: 10%;
+  top: 80px;
+  font-style: initial;
+}
+.policyModal > svg {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

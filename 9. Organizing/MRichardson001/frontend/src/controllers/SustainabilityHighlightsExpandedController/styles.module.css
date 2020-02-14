@@ -1,0 +1,35 @@
+.mainImage {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: cover;
+  object-position: center bottom;
+}
+@media (max-width: 767px) {
+  .mainImage {
+    max-height: 60vh;
+  }
+  .logo {
+    transform: translate(-20px, -60%) !important;
+  }
+}
+@media (max-width: 479px) {
+  .logo {
+    top: 0px !important;
+  }
+}
+
+@media (min-height: 1601px) and (-ms-high-contrast: none){
+  .mainImage {
+    max-height: 850px;
+  }
+}
+@media (max-height: 1600px) and (-ms-high-contrast: none){
+  .mainImage {
+    max-height: 650px;
+  }
+}
+@media (max-height: 991px) and (-ms-high-contrast: none){
+  .mainImage {
+    max-height: 500px;
+  }
+}

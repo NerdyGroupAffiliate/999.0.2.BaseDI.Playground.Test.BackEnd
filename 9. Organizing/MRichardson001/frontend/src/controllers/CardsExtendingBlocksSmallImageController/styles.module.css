@@ -1,0 +1,8 @@
+.image {
+  max-height: 800px;
+}
+@media (min-width: 480px) {
+  .goldStar {
+    padding: 20px !important
+  }
+}

@@ -1,0 +1,9 @@
+.af-view .af-class-spotlight-career-blur-box {
+  padding: 30px;
+}
+@media (max-width: 479px) {
+  .af-view .af-class-spotlight-career {
+    min-height: 480px;
+    background-position: 65% 100% !important;
+  }
+}

@@ -1,0 +1,17 @@
+@media only screen and (max-width: 425px){
+    .af-class-content_intro_billboard
+    .af-class-div-block-18 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .af-class-content_intro_billboard_blur_box {
+        top: 0 !important;
+    }
+    .af-view .af-class-content_intro_billboard_title {
+        font-size: 26px;
+    }
+    .af-class-content_collage_point_of_interest
+    .af-class-collage-poi-framed-image {
+        margin-left: 0px;
+    }
+}

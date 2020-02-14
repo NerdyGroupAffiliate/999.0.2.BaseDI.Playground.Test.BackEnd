@@ -1,0 +1,8 @@
+@media (max-width: 479px) and (-ms-high-contrast: none) {
+  .af-class-spotlight-current-specials .af-class-div-block-186 {
+    height: 50%;
+  }
+  .af-class-spotlight-current-specials .af-class-div-block-186 img {
+    height: 100%;
+  }
+}

@@ -1,0 +1,54 @@
+.button1 {
+  position: relative;
+  background-color: #ecd925;
+  font-weight: 800;
+  padding: 10px 20px !important;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  font-family: 'Monotype madera', sans-serif;
+  font-weight: 500 !important;
+}
+
+.button1 > .buttonText1 {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+  color: white;
+}
+
+.button1 > .buttonArrow1 {
+  display: none;
+}
+.button1:hover {
+  cursor: pointer;
+}
+
+.button1:hover > .buttonText1 {
+  opacity: .8;
+}
+.button1:hover > .buttonArrow1 {
+  position: absolute;
+  left: 85%;
+}
+
+.button2:hover {
+  cursor: pointer;
+}
+.buttonArrow2 {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+.button2:hover > .buttonArrow2 {
+  transform: translateX(10px);
+}
+.button1, .button2 {
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+.applyWrapper {
+  background-color: white;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+.button2 {
+  margin-left: 0px !important;
+}

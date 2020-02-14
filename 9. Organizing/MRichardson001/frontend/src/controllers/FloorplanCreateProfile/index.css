@@ -1,0 +1,31 @@
+.af-view .af-class-create-profile-image {
+  min-height: 810px;
+}
+.af-class-third-column {
+  display: flex;
+}
+@media (min-width: 992px) and (max-width: 1024px) {
+  .af-view .af-class-create-profile-image {
+    max-width: 200px;
+  }
+  .af-view .af-class-floorplan-card-profile-col-label {
+    font-size: 11px;
+  }
+  .af-view .af-class-floorplan-card-col-label {
+    font-size: 10px;
+  }
+  .af-view .af-class-floorplan-card-profile {
+    max-width: 330px;
+  }
+  .af-view .af-class-floorplan-card-image-col {
+    padding: 30px 20px;
+  }
+  .af-view .af-class-create-profile-home-container {
+    padding-right: 30px;
+  }
+}
+@media (max-width: 991px) {
+  .af-class-third-column {
+    justify-content: center;
+  }
+}

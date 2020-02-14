@@ -1,0 +1,101 @@
+.retailLogo {
+  filter: grayscale(1);
+}
+.retailLogo:hover {
+  filter: grayscale(0);
+}
+.activeLogo {
+  filter: grayscale(0);
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imageContainer::after {
+  position: absolute;
+  left: 50px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid white;
+  clear: both;
+  content: " ";
+  top: -35px;
+}
+
+.image {
+  flex: 0 1 auto;
+  object-fit: contain;
+  max-width: 140px;
+  height: 140px;
+  cursor: pointer;
+  transition: all 125ms;
+  position: relative;
+}
+
+.image:hover {
+  opacity: 0.88;
+}
+
+.listContainer {
+  padding-top: 15px !important;
+  position: relative;
+}
+
+.becomeAPartnerLinkWrapper {
+  display: block;
+  margin-top: 10px;
+}
+.becomeAPartnerLink {
+  color: #4c698f;
+  font-weight: 600;
+  cursor: pointer;
+}
+.becomeAPartnerArrow {
+  margin-left: 10px;
+  transition: all 300ms ease-in-out;
+}
+.becomeAPartnerLinkWrapper:hover .becomeAPartnerArrow {
+  transform: translate(5px)
+}
+
+@media (max-width: 479px) {
+  .listContainer > span > img {
+    max-width: 100%;
+    height: initial;
+  }
+  .listContainer {
+    max-width: 100vw;
+    padding: 0 !important;
+    padding: 0 5px !important;
+    overflow: inherit !important;
+  }
+  .imageContainer::after {
+    left: 30px;
+    top: -20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .imageContainer::after {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    top: -15px;
+  }
+}
+.logoContainer {
+  padding: 2px;
+}
+
+.logoContainer:focus > .retailLogo {
+  filter: grayscale(0);
+}
+
+.logoContainer:focus {
+  border: 2px solid rgb(77, 144, 254);
+  padding: 0px;
+  outline: none;
+}

@@ -1,0 +1,17 @@
+.af-class-div-block-82 {
+    padding-right: 50px !important;
+    padding-left: 50px !important;
+}
+.af-class-div-block-81 {
+    max-width: 850px !important;
+}
+.af-class-div-block-81 > span > h1 {
+    color: #3f3f3f
+}
+
+@media (max-width: 479px) {
+    .af-class-div-block-82 {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+}

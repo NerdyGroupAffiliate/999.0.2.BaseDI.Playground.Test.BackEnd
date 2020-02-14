@@ -1,0 +1,42 @@
+.backgroundImage {
+  background-image: url("/images/policyimage.jpg");
+  background-position: left center;
+  background-size: cover;
+  min-height: 470px;
+}
+
+.disclaimer {
+  margin-top: 20px;
+  color: #707070;
+  font-family: "Monotype madera", sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  padding: 0 10px;
+}
+@media (min-width: 1400px) {
+  .backgroundImage {
+    min-height: 600px;
+  }
+}
+@media (min-width: 1800px) {
+  .backgroundImage {
+    min-height: 700px;
+  }
+}
+@media (min-width: 2100px) {
+  .backgroundImage {
+    background-position: center 35%;
+  }
+}
+@media (max-width: 479px) {
+  .backgroundImage {
+    min-height: 300px !important;
+    height: 300px;
+  }
+}
+@media (max-width: 375px) {
+  .backgroundImage {
+    min-height: 250px !important;
+    height: 250px;
+  }
+}

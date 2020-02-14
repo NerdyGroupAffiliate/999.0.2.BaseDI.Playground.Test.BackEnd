@@ -1,0 +1,1 @@
+helm install --name amlicom-production-router-1 -f valuesProduction.yaml . --set release.version=1.0.1 

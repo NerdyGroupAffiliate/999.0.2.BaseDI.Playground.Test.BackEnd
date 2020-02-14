@@ -1,0 +1,89 @@
+.listWrapper {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background: white !important;
+}
+
+.wrapper {
+  width: 33.33%;
+}
+
+.listWrapper:focus {
+  box-shadow: inset 0px 0px 0px 3px rgb(77, 144, 254);
+  outline: none;
+}
+
+.wrapper > button > span > div {
+  padding: 10px 0;
+  border-radius: 5px;
+  width: 75% !important;
+  height: auto !important;
+  margin: auto;
+  transition: 150ms;
+}
+
+.wrapper:hover > a > span > div > .name {
+  background-color: #ecd925;
+}
+
+.name {
+  white-space: nowrap;
+  padding: 5px;
+  transition: all 125ms;
+}
+
+.role {
+  width: 200px;
+}
+
+.box {
+  font-family: "Monotype madera", sans-serif;
+  background: #ffffff;
+  border: 2px solid #ababab;
+  border-radius: 2px;
+  margin-bottom: 0;
+  margin-top: 50px;
+  padding: 35px;
+  position: relative;
+  text-align: center;
+  line-height: 1.9;
+  color: #666;
+}
+
+.after,
+.before {
+  bottom: 100%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #ffffff;
+  border-width: 30px;
+  margin: auto;
+  z-index: 1;
+}
+
+.before {
+  border-color: rgba(0, 0, 0, 0);
+  border-bottom-color: #ababab;
+  border-width: 33px;
+  margin-left: -3px;
+}
+@media (max-width: 767px) {
+  .role {
+    max-width: 95% !important;
+  }
+}
+@media (max-width: 479px) {
+  .wrapper {
+    width: 50%;
+  }
+}

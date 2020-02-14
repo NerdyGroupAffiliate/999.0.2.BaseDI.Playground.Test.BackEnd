@@ -1,0 +1,5 @@
+@media (-ms-high-contrast: none) {
+    .slider-wrapper.axis-horizontal {
+        width: initial;
+    }
+}

@@ -1,0 +1,9 @@
+@media (min-width: 479px) {
+  .textBlurb {
+    font-size: 17px !important;
+  }
+}
+.highlight::after {
+  right: -1%;
+  left: -1%;
+}

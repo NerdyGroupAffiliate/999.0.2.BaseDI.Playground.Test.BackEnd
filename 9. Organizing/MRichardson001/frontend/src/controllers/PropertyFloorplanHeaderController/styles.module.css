@@ -1,0 +1,87 @@
+.back {
+  margin-top: 20px;
+  transition: all 150ms;
+  cursor: pointer;
+}
+
+.movein,
+.back,
+.filter {
+  transition: all 150ms;
+  cursor: pointer;
+}
+
+.filter:hover,
+.back:hover {
+  opacity: 0.88;
+}
+
+.datepicker {
+  z-index: 99;
+}
+
+.datepicker > div:last-child {
+  margin-left: -200%;
+}
+
+.datepicker,
+.datepicker > div,
+.datepicker > div > div {
+  cursor: pointer !important;
+}
+
+.datepicker > div {
+  border: none !important;
+}
+
+.datepicker,
+.datepicker > div,
+.datepicker > div > div,
+.datepicker > div > div > input:focus {
+  outline: none;
+}
+
+.filter {
+  height: 40px;
+  width: 66px;
+}
+
+.iconHolder {
+  margin-top: 15px !important;
+  margin-left: 15px;
+}
+.filterLabel {
+  color: #808080 !important;
+}
+.title {
+
+}
+@media (max-width: 479px) {
+  .movein {
+    padding-bottom: 5px !important;
+    z-index: 10;
+  }
+  .movein > div {
+    transform: translate(0) !important;
+  }
+  .datepicker > div:last-child {
+    margin-left: -40%;
+  }
+  .datepicker {
+    z-index: 1;
+  }
+  .datepicker > div > div > input {
+    color: black !important;
+    font-size: 16px;
+    z-index: 1;
+  }
+}
+@media (max-width: 767px) and (-ms-high-contrast: none) {
+  .title {
+    width: 50%;
+  }
+  .movein {
+    padding: 6px 10px !important;
+    min-width: 120px;
+  }
+}

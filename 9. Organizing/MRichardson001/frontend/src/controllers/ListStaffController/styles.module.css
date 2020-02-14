@@ -1,0 +1,48 @@
+.tabClickable {
+    cursor: pointer !important;
+    transition: all 125ms;
+    font-weight: 500 !important;
+    align-items: center;
+    text-align: center;
+    color: #333;
+}
+
+.mobileSelect:focus,
+.tabClickable:focus {
+    box-shadow: inset 0px 0px 0px 3px rgb(77, 144, 254) !important;
+    outline: none;
+}
+.tabClickable > div {
+    max-width: 60%;
+}
+.tabs {
+    width: 80% !important;
+    max-width: none !important;
+    border-radius: 0px !important;
+    border: 1px solid #333 !important;
+    transition: all 125ms;
+}
+@media (max-width: 991px) {
+    .tabClickable {
+        font-size: 14px !important;
+    }
+    .tabClickable > div {
+        max-width: 100%;
+    }
+}
+@media (max-width: 700px) {
+    .tabs {
+        width: 90% !important;
+    }
+    .tabClickable {
+        font-size: 12px !important;
+    }
+}
+@media (max-width: 479px) {
+    .mobileSelect > div:first-child > div:first-child > div {
+        font-size: 14px !important;
+    }
+    .mobileSelect > div > div:first-child > div:first-child {
+        font-size: 14px !important;
+    }
+}

@@ -1,0 +1,38 @@
+.button > .buttonText {
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.button > .buttonArrow {
+  transform: translate(10px, -50%);
+  transition: transform 300ms ease-in-out;
+}
+
+.button:hover > .buttonText {
+  transform: translateX(-10px);
+}
+.button:hover > .buttonArrow {
+  transform: translate(145px, -50%);
+}
+
+.section_tagline
+{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Monotype madera', sans-serif;
+  color: #3f3f3f;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 700;
+}
+
+@media (max-width: 479px) {
+  .title {
+    font-size: 32px !important;
+  }
+  .section_tagline {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+

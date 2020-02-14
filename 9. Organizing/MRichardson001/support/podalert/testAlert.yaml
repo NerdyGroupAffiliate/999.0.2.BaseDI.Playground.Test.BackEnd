@@ -1,0 +1,17 @@
+apiVersion: monitoring.appscode.com/v1alpha1
+kind: PodAlert
+metadata:
+  name: pod-status-demo-0
+  namespace: amlicom-development
+spec:
+  selector:
+    matchLabels:
+      app: amlicom-development
+  check: pod_status
+  checkInterval: 30s
+  alertInterval: 2m
+  notifierSecretName: notifier-config
+  receivers:
+  - notifier: Mailgun
+    state: CRITICAL
+    to: ["ops@example.com"]

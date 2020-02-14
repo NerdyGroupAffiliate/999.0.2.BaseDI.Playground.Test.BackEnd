@@ -1,0 +1,11 @@
+@media (max-width: 991px) {
+  .af-view .af-class-sub-region-map-poi-bar-wrapper {
+    bottom: 60px
+  }
+}
+@media (max-width: 479px) {
+  .af-view .af-class-sub-region-map-poi-bar-wrapper {
+    top: calc(100vh - 274px);
+    bottom: initial !important;
+  }
+}

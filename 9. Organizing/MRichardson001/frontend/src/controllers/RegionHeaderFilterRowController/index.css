@@ -1,0 +1,42 @@
+.af-class-property-card-info-wrapper {
+    flex-basis: 35% !important;
+}
+.af-class-property-card-slide-default {
+    flex: 65% 1 !important;
+}
+.af-class-property-card-address,
+.af-class-property-card-phone,
+.af-class-property-card-bedroom   {
+    font-size: 16px !important;
+    margin-top: 5px !important;
+}
+.af-class-property-card-cta-label {
+    font-size: 18px !important;
+}
+.af-class-property-card-title-wrapper {
+    padding: 15px 15px 15px 10px !important;
+}
+.af-class-property-card-address {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+@media (max-width: 1024px) {
+    .af-class-property-card-address,
+    .af-class-property-card-phone,
+    .af-class-property-card-bedroom {
+        font-size: 14px !important;
+        margin-top: 0px !important;
+    }
+    .af-class-property-card-cta-label {
+        font-size: 16px !important;
+    }
+    .af-class-property-card-info-wrapper {
+        flex-basis: 40% !important;
+    }
+    .af-class-property-card-slide-default {
+        flex: 60% 1 !important;
+    }
+    .af-class-property-card-title-wrapper {
+        padding: 5px 9px 8px 0px;
+    }
+}

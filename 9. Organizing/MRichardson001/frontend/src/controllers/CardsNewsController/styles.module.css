@@ -1,0 +1,40 @@
+.wrapper {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 36%,
+    rgba(255, 255, 255, 1) 56%,
+    rgba(255, 255, 255, 1) 61%,
+    rgba(255, 255, 255, 1) 70%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 36%,
+    rgba(255, 255, 255, 1) 56%,
+    rgba(255, 255, 255, 1) 61%,
+    rgba(255, 255, 255, 1) 70%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 36%,
+    rgba(255, 255, 255, 1) 56%,
+    rgba(255, 255, 255, 1) 61%,
+    rgba(255, 255, 255, 1) 70%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .overlay {
+    z-index: 1;
+  }
+}

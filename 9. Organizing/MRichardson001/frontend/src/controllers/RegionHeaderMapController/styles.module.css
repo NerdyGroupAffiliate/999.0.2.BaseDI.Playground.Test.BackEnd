@@ -1,0 +1,55 @@
+@media screen and (max-width: 720px) {
+  .largeMap {
+    display: none;
+  }
+
+  .mobileMap {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 721px) {
+  .largeMap {
+    display: block;
+  }
+
+  .mobileMap {
+    display: none;
+  }
+}
+
+.grayBar {
+  width: 30px;
+  height: 3px;
+  margin: auto;
+  background-color: #d6d6d6;
+  border-radius: 10px;
+}
+.whiteTriangle {
+  width: 0px;
+  height: 0px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+  z-index: 1000000000;
+  position: relative;
+  margin: auto;
+}
+.whiteBar{
+  width: auto;
+  height: 15px;
+  position: relative;
+  margin: auto;
+  background-color: white;
+  display: flex;
+}
+.wrapper {
+  height: auto; 
+  transform: translateY(-200px); 
+  margin-bottom: -200px;
+}
+@media(min-width: 721px) {
+  .wrapper {
+    display: none;
+  }
+}

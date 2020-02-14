@@ -1,0 +1,191 @@
+.wrapper {
+  z-index: 100000 !important;
+  display: block !important;
+  transform: translate(-16px, 30px);
+}
+
+.link {
+  cursor: pointer !important;
+  pointer-events: all !important;
+  transition: all 150ms;
+}
+
+.link:hover {
+  opacity: 0.73;
+}
+
+.arrow {
+  position: relative;
+  bottom: -2px;
+  width: 11px;
+}
+
+.linktag {
+    text-decoration: none !important;
+}
+.whiteTriangleDesktop {
+  width: 0px;
+  height: 0px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+  z-index: 1000000000;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+}
+
+.image {
+  min-height: 150px;
+  max-height: 230px;
+  object-fit: cover;
+}
+.phone {
+  font-family: 'Monotype madera', sans-serif;
+  color: #4c698f;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+}
+.configurationWrapper {
+  font-style: italic;
+}
+.pricingWrapper {
+  position: relative;
+}
+.disclaimerContainer {
+  position: absolute;
+  top: -3px;
+  right: 10px;
+}
+.close {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 25px;
+  transition: all 150ms;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .infoIcon:hover ~ .toolTipArrow {
+    display: block !important;
+  }
+  .infoIcon:hover + .priceDisclaimer  {
+    display: block !important;
+  }
+}
+.showDisclaimer {
+  display: block !important;
+}
+.priceDisclaimer {
+  display: none;
+  width: 250px;
+  border: 1px solid #727272;
+  padding: 20px;
+  position: absolute;
+  z-index: 15;
+  background: white;
+  bottom: 30px;
+  left: -225px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  font-weight: 400;
+}
+.toolTipArrow {
+  display: none;
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 20px;
+  z-index: 15;
+  border-left: 1px solid #787878;
+  border-bottom: 1px solid #787878;
+  transform: rotate(-45deg);
+  background: white;
+}
+
+.sliderWrapper {
+  position: relative;
+  z-index: 15;
+}
+
+.sliderController {
+  position: absolute;
+  top: 50%;
+  width: 25px !important;
+  cursor: pointer;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  z-index: 15;
+  -webkit-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  transform: translate(0px, -50%);
+}
+
+.sliderController:hover {
+  transform: translate(0px, -50%) scale(1.15) !important;
+}
+.leftArrow {
+  left: 10px;
+  right: auto;
+}
+
+.rightArrow {
+  left: auto;
+  right: 10px;
+}
+
+@media (max-height: 800px) {
+  .image {
+    max-height: 150px;
+  }
+  .highlightList > li {
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 5px !important;
+  }
+}
+@media (max-height: 1079px) {
+  .image {
+    max-height: 150px;
+  }
+  .highlightList > li {
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 5px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .wrapper {
+    min-width: 100vw !important;
+    min-height: 396px;
+    max-height: 396px;
+    display: none !important;
+  }
+
+  .mobileImages {
+    display: flex;
+    overflow: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+  }
+
+  .arrowsContainer {
+    position: absolute;
+    transform: translateY(-90px);
+    width: 100%
+  }
+  .leftArrow,
+  .rightArrow {
+    height: 40px;
+  }
+  .rightArrow {
+    position: absolute;
+    right: 0px;
+  }
+}

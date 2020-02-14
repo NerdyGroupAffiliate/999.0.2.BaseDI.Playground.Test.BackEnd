@@ -1,0 +1,4 @@
+.region:focus {
+  box-shadow: inset 0px 0px 0px 3px rgb(77, 144, 254);
+  outline: none;
+}

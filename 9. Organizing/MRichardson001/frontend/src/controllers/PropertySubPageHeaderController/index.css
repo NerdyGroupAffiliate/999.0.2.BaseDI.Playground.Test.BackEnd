@@ -1,0 +1,75 @@
+.af-view .af-class-property-subpage-placard-brick.af-class-prop-name,
+.af-view .af-class-property-subpage-placard-brick.af-class-prop-address,
+.af-class-property-subpage-placard-brick.af-class-prop-details {
+    width: 50%;
+    height: 50%;
+    justify-content: space-around !important;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 15px 15px !important;
+}
+.af-class-property-sub-page-header.af-class-amenities {
+    min-height: 450px;
+}
+.af-view .af-class-property-subpage-placard {
+    min-width: 425px;
+}
+.af-class-property-info-card-wrapper.property-subpage-details-card-wrapper-mobile {
+    display: none;
+}
+@media (max-width: 991px) {
+    .af-view .af-class-property-subpage-placard-brick.af-class-prop-details {
+        width: 50% !important;
+    }
+}
+@media (max-width: 479px) {
+    .af-view .af-class-property-subpage-placard-brick.af-class-prop-name,
+    .af-view .af-class-property-subpage-placard-brick.af-class-prop-address,
+    .af-view .af-class-property-subpage-placard-brick.af-class-prop-details {
+        display: none;
+    }
+    .af-class-property-info-card-wrapper.property-subpage-details-card-wrapper-mobile {
+        display: flex;
+    }
+    .property-subpage-details-card-wrapper-mobile .mobile-property-card-top-row {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .property-subpage-details-card-wrapper-mobile .af-class-property-phase--property-name {
+        min-width: 50%;
+        max-width: 50%;
+        line-height: 24px;
+    }
+    .property-subpage-details-card-wrapper-mobile .af-class-property-phase--property-name.long-property-name {
+        font-size: 20px;
+    }
+    .af-class-div-block-157.mobile-subpage-specials-stamp {
+        position: absolute;
+        top: -15px;
+        left: 57%;
+        transform: none;
+        padding: 3px 12px 5px 6px !important;
+        margin: 0 !important;
+    }
+    .af-view .af-class-property-subpage-placard-brick.af-class-prop-details .af-class-div-block-158 {
+        padding-bottom: 5px;
+    }
+    .af-view .af-class-property-subpage-placard {
+        min-width: initial;
+    }
+    .af-class-property-subpage-placard {
+        height: auto !important;
+    }
+    .af-view .af-class-property-subpage-placard-brick.af-class-prop-name,
+    .af-view .af-class-property-subpage-placard-brick.af-class-prop-address {
+        padding: 15px 10px !important;
+    }
+    .af-class-property-subpage-placard-brick.af-class-prop-details {
+        padding: 10px !important;
+    }
+    .af-class-property-sub-page-header.af-class-amenities {
+        height: 425px !important;
+        max-height: 425px !important;
+        min-height: 425px !important;
+    }
+}

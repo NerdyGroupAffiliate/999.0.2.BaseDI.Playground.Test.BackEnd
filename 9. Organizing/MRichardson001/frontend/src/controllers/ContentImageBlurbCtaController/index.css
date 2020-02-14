@@ -1,0 +1,5 @@
+@media (min-width: 600px) and (max-width: 768px) {
+  .af-view .af-class-content_image_blurb_cta {
+    padding: 30px;
+  }
+}

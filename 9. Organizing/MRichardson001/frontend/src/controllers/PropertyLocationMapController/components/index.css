@@ -1,0 +1,38 @@
+.af-class-property-location-map-map .af-class-map-icon.af-class-perks {
+  display: none !important;
+}
+
+div.gm-svpc,
+div.gm-style-mtc {
+    display: none !important;
+}
+
+div.gmnoprint > div:first-child {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+div.gmnoprint > div:first-child > button:hover {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.35));
+}
+
+div.gmnoprint > div:first-child > button {
+    border-radius: 50% !important;
+    background-color:white !important;
+    margin-bottom: 10px !important;
+    top: -30px !important;
+    left: -30px !important;
+    width: 50px !important;
+    height: 50px !important;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+@media (max-width: 991px) {
+  .af-class-locations-map-poi-bar {
+      justify-content: center !important;
+  }
+}
+@media (max-width: 768px) {
+  .af-class-locations-map-poi-bar {
+      flex-wrap: wrap;
+  }
+}

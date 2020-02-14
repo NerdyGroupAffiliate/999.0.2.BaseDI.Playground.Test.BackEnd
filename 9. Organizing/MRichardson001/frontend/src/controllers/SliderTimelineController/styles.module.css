@@ -1,0 +1,48 @@
+.sliderWrapper {
+  flex: 1;
+  max-width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.sliderWrapper > div > div > div {
+  left: 0 !important;
+}
+
+.sliderWrapper > div,
+.sliderWrapper > div > div {
+  overflow: visible;
+}
+
+@media (max-width: 600px) and (min-width: 479px) {
+  .sliderWrapper {
+    width: 100%;
+  }
+  .title {
+    font-size: 26px !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .sliderWrapper {
+    max-width: 100vw;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .timelineTrack {
+    /* display: none; */
+  }
+}
+
+.sliderHandler {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}

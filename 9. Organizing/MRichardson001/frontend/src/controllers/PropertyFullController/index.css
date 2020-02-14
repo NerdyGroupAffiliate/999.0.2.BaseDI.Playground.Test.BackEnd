@@ -1,0 +1,38 @@
+.af-class-property-nav-link-container {
+  overflow: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.af-class-property-nav-link-container::-webkit-scrollbar {
+  display: none;
+}
+.af-class-property-navigation {
+  width: 100%;
+  position: fixed !important;
+  top: 0px;
+}
+.af-class-property-nav-container {
+  max-width: initial !important;
+}
+.thumbs-wrapper,
+.thumbs-wrapper > ul {
+  height: 100%;
+  max-height: inherit !important;
+}
+.af-view .af-class-property-menu-line {
+  background-color: #333333;
+}
+@media (max-width: 1075px) and (min-width: 991px) {
+  .af-class-div-block-462 {
+    justify-content: flex-end !important;
+    width: 100% !important;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  .af-class-property-nav-brand-wrapper {
+    width: 120px;
+  }
+}

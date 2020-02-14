@@ -1,0 +1,15 @@
+PROFIT FIRST
+-Profit
+-Tax
+-Owner Compt
+-Operating Expense
+
+TRACKING METRICS
+-Total Money of Week
+-How much money left the bank
+-How much profit
+-Total amount of money owed
+-How much money you owe someone else
+
+
+FROM GOOD TO GREAT

@@ -1,0 +1,14 @@
+.blogTag {
+  display: inline-block;
+  margin-right: 15px;
+}
+.tagsContainer {
+  all: unset !important;
+  width: 100% !important;
+}
+@media (max-width: 479px){
+  .summary {
+    height: 125px;
+    overflow: hidden;
+  }
+}

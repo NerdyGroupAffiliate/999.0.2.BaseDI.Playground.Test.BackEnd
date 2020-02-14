@@ -1,0 +1,522 @@
+.modalContainer {
+  width: 100%;
+  background: white;
+}
+
+.image {
+  width: 100%;
+  height: 45vw;
+  object-fit: cover;
+}
+.preLeaseDate {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 0px !important;
+}
+.preLeaseDate > p {
+  margin-bottom: 5px;
+}
+@media only screen and (max-width: 971px) {
+  .image {
+    max-height: 300px;
+  }
+}
+
+.sliderWrapper {
+  position: relative;
+  z-index: 15;
+}
+
+.sliderController {
+  position: absolute;
+  top: 50%;
+  width: 25px !important;
+  cursor: pointer;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  z-index: 15;
+  -webkit-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  transform: translate(0px, -50%);
+}
+
+.sliderController:hover {
+  transform: translate(0px, -50%) scale(1.15) !important;
+}
+
+.leftArrow {
+  left: 10px;
+  right: auto;
+}
+
+.rightArrow {
+  left: auto;
+  right: 10px;
+}
+
+.infoPanel {
+  width: 90%;
+  padding: 15px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  margin: auto;
+  margin-top: -20px;
+  z-index: 20;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoTitle {
+  margin: 0;
+  font-family: "Monotype madera", sans-serif;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #3f3f3f;
+  background-color: white;
+}
+
+.infoBodyRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoContactsCol {
+  flex: 0 1 35%;
+  display: flex;
+  flex-direction: column;
+}
+.infoDetailsCol {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+}
+.infoDetailsCol {
+  justify-content: flex-end;
+}
+
+.infoAddress {
+  margin: 0;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Monotype madera", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  color: #787878;
+}
+
+.infoAddressContainer {
+  margin-top: 10px;
+}
+
+.infoPhoneContainer {
+  margin-top: 10px;
+}
+
+.infoPhone {
+  margin: 0px;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Monotype madera", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  color: #666667;
+}
+
+.perksContainer {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+
+.perkIcon {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+.beds {
+  align-self: flex-end;
+  font-family: "Monotype madera", sans-serif;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.06;
+  letter-spacing: normal;
+  color: #3f3f3f;
+  text-align: right;
+  margin: 5px;
+}
+.pricingButton,
+.pricingContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: white;
+}
+
+.pricingButton:hover {
+  opacity: 0.88;
+  transition: all 150ms;
+}
+
+.pricingButton:focus {
+  outline: none;
+}
+
+.pricing {
+  font-family: "Monotype madera", sans-serif;
+  margin: 0;
+  margin-right: 5px;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4c698f;
+}
+
+.arrow {
+  width: 8px;
+  height: 13px;
+  margin-top: 3px;
+  object-fit: contain;
+  color: #4c698f;
+}
+
+.specialsBanner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 20px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #00c58a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specialsText {
+  font-family: "Monotype madera", sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.regionContainer {
+  padding: 25px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.regionImageContainer {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regionLabelContainer {
+  z-index: 15;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.regionLabel {
+  font-family: "Monotype madera", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.regionName {
+  font-family: "Monotype madera", sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.regionImage {
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.regionInfoButton {
+  margin: 5px 0;
+  height: 41px;
+  border-radius: 4px;
+  background-color: #7ba4da;
+}
+
+.regionInfoButton:hover {
+  opacity: 0.88;
+}
+
+.regionInfoButton:focus {
+  outline: none;
+}
+
+.regionInfoBody {
+  font-family: "Monotype madera", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.8;
+  letter-spacing: normal;
+  color: #3f3f3f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.regionInfoButtonLabel {
+  font-family: "Monotype madera", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.07;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.regionButtonArrow {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  margin-left: 5px;
+}
+.close {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 35px;
+  z-index: 30;
+}
+.disclaimerContainer {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .infoIcon:hover ~ .toolTipArrow {
+    display: block !important;
+  }
+  .infoIcon:hover + .priceDisclaimer  {
+    display: block !important;
+  }
+  .infoIcon:hover ~ .toolTipArrow {
+    display: block !important;
+  }
+}
+.showDisclaimer {
+  display: block !important;
+}
+.priceDisclaimer {
+  display: none;
+  width: 250px;
+  border: 1px solid #727272;
+  padding: 20px;
+  position: absolute;
+  z-index: 1;
+  background: white;
+  bottom: 30px;
+  left: -120px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  font-weight: 400;
+}
+.showDisclaimer {
+  display: block !important;
+}
+.toolTipArrow {
+  display: none;
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 20px;
+  z-index: 3;
+  border-left: 1px solid #787878;
+  border-bottom: 1px solid #787878;
+  transform: rotate(-45deg);
+  background: white;
+}
+@media (min-width: 721px) {
+  .modalContainer {
+    display: none;
+  }
+}
+
+.grayBar {
+  width: 30px;
+  height: 3px;
+  margin: auto;
+  background-color: #d6d6d6;
+  border-radius: 10px;
+}
+.whiteTriangle {
+  width: 0px;
+  height: 0px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+  z-index: 1000000000;
+  position: relative;
+  margin: auto;
+}
+.whiteBar{
+  width: auto;
+  height: 15px;
+  position: relative;
+  margin: auto;
+  background-color: white;
+  display: flex;
+}
+.viewProperty {
+  padding-right: 13px;
+  font-family: 'Monotype madera', sans-serif;
+  color: #4c698f;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+}
+.linkWrapper {
+  display: flex;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 14px;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ebebeb;
+  cursor: pointer !important;
+  pointer-events: all !important;
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
+}
+.wrapper {
+  height: auto;
+  transform: translateY(-200px);
+  margin-bottom: -200px;
+}
+
+@media (min-width: 721px) {
+.wrapper,
+.grayBar,
+.whiteBar,
+.whiteBar {
+  display: none;
+  }
+}
+@media(max-width: 375px) {
+  .infoContactsCol {
+    flex: 0 1 45%;
+  }
+  .perkIcon {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    margin-left: 10px;
+  }
+  .beds,
+  .pricing {
+    font-size: 15px;
+  }
+}
+@media (max-width: 550px) {
+  .preLeaseDate {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media (max-width: 479px){
+  .infoPanel {
+    width: 95%;
+    padding: 10px;
+  }
+  .infoTitle {
+    padding-left: 0px;
+  }
+  .infoContactsCol {
+    flex: 0 1 45%;
+  }
+  .beds {
+    font-size: 15px;
+    margin-top: 0px;
+  }
+  .pricing {
+    font-size: 14px;
+  }
+}

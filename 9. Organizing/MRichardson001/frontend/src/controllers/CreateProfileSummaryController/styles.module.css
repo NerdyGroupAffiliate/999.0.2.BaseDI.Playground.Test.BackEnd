@@ -1,0 +1,17 @@
+.beds {
+  white-space: nowrap;
+}
+.address:hover {
+  cursor: default;
+}
+.address > p {
+  margin-bottom: 0px;
+}
+.propertyImage {
+  min-width: 30%;
+}
+.propertyName:hover,
+.phone:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

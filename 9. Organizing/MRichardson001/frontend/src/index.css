@@ -1,0 +1,122 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import "./static/css/amli.css";
+@import "./static/css/components.css";
+@import "./static/css/normalize.css";
+
+.af-class-real-estate-column {
+  background-color: #eaeaea;
+}
+.af-class-property-floorplans-container {
+  margin: auto;
+}
+.af-class-slider-review-container {
+  margin: auto;
+}
+
+@media (max-width: 991px) {
+  .af-class-property-floorplans-container > span.af-view {
+    flex-basis: 50% !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .af-view .af-class-spotlight-cta {
+    padding: 25px 20px 30px;
+  }
+  .af-class-property-floorplans-container > span.af-view {
+    flex-basis: 100% !important;
+  }
+}
+
+button-yellow {
+  display: inline-block;
+  position: relative;
+  margin: 15px 0;
+  background-color: #ecd925;
+  font-weight: 800;
+  color: #383838;
+  text-decoration: none;
+  transition: all 125ms;
+}
+
+button-yellow:hover {
+  opacity: 0.8;
+}
+
+button-yellow > a {
+  color: #383838;
+  text-decoration: none;
+  display: block;
+  padding: 12px 30px;
+}
+
+.af-class-div-block-478 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding-left: 0px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.af-class-counter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  padding: 0px 15px 0px 20px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  border: 1px none #d2d2d2;
+  border-radius: 6px;
+}
+.af-view {
+  font-family: "Monotype madera", sans-serif;
+}
+@media (max-width: 991px) {
+  .counter {
+    padding: 7px 15px 5px;
+  }
+}
+
+body {
+  top: auto !important;
+  position: inherit !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+#goog-gt-tt {
+  display: none !important;
+}
+.goog-te-banner-frame {
+  display: none !important;
+}
+.goog-te-menu-value:hover {
+  text-decoration: none !important;
+}
+
+#google_translate_element2 {
+  display: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .af-class-amenities-slider-toolbar {
+    max-width: 100%;
+  }
+}

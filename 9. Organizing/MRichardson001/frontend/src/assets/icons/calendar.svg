@@ -1,0 +1,18 @@
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+  <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
+    <g>
+      <rect stroke="#727272" fill="#FAFAFA" x="0.5" y="2.5" width={21} height={19} rx={4} />
+      <path d="M-4.61852778e-14,7.5 L22,7.5" stroke="#727272" />
+      <path d="M5,0 L5,4.5" stroke="#727272" />
+      <path d="M17.5,-2.27373675e-13 L17.5,4.5" stroke="#727272" />
+      <circle fill="#727272" cx={5} cy={12} r={1} />
+      <circle fill="#727272" cx={5} cy={17} r={1} />
+      <circle fill="#727272" cx={9} cy={12} r={1} />
+      <circle fill="#727272" cx={9} cy={17} r={1} />
+      <circle fill="#727272" cx={13} cy={12} r={1} />
+      <circle fill="#727272" cx={13} cy={17} r={1} />
+      <circle fill="#727272" cx={17} cy={12} r={1} />
+      <circle fill="#727272" cx={17} cy={17} r={1} />
+    </g>
+  </g>
+</svg>

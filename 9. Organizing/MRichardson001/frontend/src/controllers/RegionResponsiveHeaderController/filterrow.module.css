@@ -1,0 +1,109 @@
+.container {
+  width: 100%;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fdfdfd;
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.results:focus {
+  outline: none;
+}
+
+.results:hover {
+  opacity: 0.88;
+}
+
+.results {
+  width: 124px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #4c698f;
+  margin: 15px;
+  font-family: "Monotype madera", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.rangesRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.rangeContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  flex: 1;
+  flex-basis: auto;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.rangeTitle {
+  font-family: "Monotype madera", sans-serif;
+  text-transform: uppercase;
+  align-self: flex-start;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+  color: #898989;
+}
+
+.valuesRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.valueLabel {
+  font-family: "Monotype madera", sans-serif;
+  font-size: 14px;
+  margin: 2px 0 5px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3f3f3f;
+}
+
+.leftRange {
+  border-right: 1px solid #d2d2d2;
+  clip-path: polygon(0 0, 80% 0%, 80% 15%, 100% 15%, 100% 100%, 0 100%);
+}
+
+.rangeWrapper {
+  flex: 1 1 auto;
+  width: 80%;
+  margin: 5px 5%;
+}

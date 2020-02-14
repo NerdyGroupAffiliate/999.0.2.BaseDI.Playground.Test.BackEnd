@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amlicom-development-check
+  namespace: amlicom-development
+  labels:
+    amliapp: amlicom-development
+    stage: development
+    version: 1.0.1229.1 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        amliapp: amlicom-development
+        stage: development
+        version: 1.0.1229.1
+    spec:
+      nodeSelector:
+        beta.kubernetes.io/os: "windows"
+      containers:
+      - name: amlicom-uat
+        image: amlicontainers.azurecr.io/amlicom-development:1.0.1229
+        imagePullPolicy: Always
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: REACT_APP_ENV
+          value: "staging"
+        - name: PORT
+          value: "3000"
+        - name: DOMAIN
+          value: "uat.amli.com"
+        - name: GOOGLE_MAPS_API_KEY
+          value: "AIzaSyBxlNfkUf6dfzCGX7gk42NSOAtj_9LCcp0"
+        ports:
+          - containerPort: 80         
+  selector:
+    matchLabels:
+      amliapp: amlicom-development
+      stage: development
+      version: 1.0.1229.1 

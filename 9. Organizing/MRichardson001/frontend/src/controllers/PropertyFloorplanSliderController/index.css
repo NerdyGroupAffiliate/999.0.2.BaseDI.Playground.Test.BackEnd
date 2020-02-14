@@ -1,0 +1,28 @@
+.af-class-cls-1 {
+    fill: white !important;
+}
+.tour-button-cube-cube {
+    margin-left: 10px;
+    overflow: hidden;
+}
+.af-class-button--3d-tour:hover #tour-cube {
+    fill: white !important;
+}
+.carousel .slide > div > img  {
+    pointer-events: all !important;
+}
+ 
+@media all and (-ms-high-contrast: none) {
+    .af-class-div-block-225 .carousel.carousel-slider {
+      /* width: 400px !important; */
+      height: 250px !important;
+      flex: 1 1 0;
+      /* overflow: hidden !important; */
+    }
+    .af-class-div-block-225 div:first-child {
+        flex: 1;
+    }
+    .af-class-div-block-225 .slider-wrapper.axis-horizontal {
+        width: 100%;
+    }
+  }

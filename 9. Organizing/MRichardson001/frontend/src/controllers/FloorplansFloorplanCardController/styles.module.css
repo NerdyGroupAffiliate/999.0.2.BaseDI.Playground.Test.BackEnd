@@ -1,0 +1,141 @@
+.wrapper {
+  width: 90% !important;
+  margin: auto !important;
+  margin-bottom: 20px !important;
+}
+.available {
+  padding: 5px 0 !important;
+  font-weight: 600 !important;
+}
+.available,
+.name {
+  max-width: 45%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.priceWrapper {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.price {
+  margin-left: 5px !important;
+  display: flex;
+  justify-content: center;
+  align-items: inherit;
+}
+.disclaimerContainer {
+  position: relative;
+}
+.asterisk {
+  font-size: 18px;
+  padding-left: 2px;
+}
+
+@media (min-width: 768px) {
+  .infoIcon:hover + .priceDisclaimer {
+    display: block;
+  }
+  .infoIcon:hover ~ .toolTipArrow {
+    display: block !important;
+  }
+}
+.showDisclaimer {
+  display: block !important;
+}
+.priceDisclaimer {
+  display: none;
+  width: auto;
+  border: 1px solid #787878;
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+  background: white;
+  left: -185px;
+  top: 33px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  font-family: 'Monotype madera', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #333;
+}
+.toolTipArrow {
+  display: none;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 28px;
+  z-index: 3;
+  border-right: 1px solid #787878;
+  border-top: 1px solid #787878;
+  transform: rotate(-45deg);
+  background: white;
+}
+.beds,
+.view,
+.baths {
+  white-space: nowrap;
+}
+
+.beds,
+.baths,
+.view,
+.name,
+.price {
+  white-space: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.sqftmin,
+.sqftmax,
+.link,
+.wrapper {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.view {
+  cursor: pointer;
+  padding-right: 10px !important;
+}
+
+.view:hover {
+  opacity: 0.8;
+}
+
+.plant {
+  width: 100% !important;
+  height: 18vw !important;
+  min-height: 175px;
+  max-height: 250px;
+  object-fit: contain;
+}
+.buttonArrow {
+  margin-left: 15px;
+}
+.rightArrow {
+  margin-right: 3px !important;
+}
+.bathLogo {
+  margin-bottom: 3px;
+  max-height: 20px;
+  min-height: 13px;
+}
+@media (max-width: 991px) {
+  .available {
+    max-width: initial;
+  }
+}
+@media (max-width: 767px) {
+  .availableLabel {
+    padding-bottom: 0px !important;
+  }
+}
+
+.cardHeader {
+  position: relative;
+}

@@ -1,0 +1,72 @@
+:global(.map-retail-marker) {
+    background-color: #9BAEC8;
+    border-radius: 50%;
+    border: 8px solid #C8D7EA;
+    cursor: pointer !important;
+    display: inline-block;
+    height: 32px;
+    opacity: 1 !important;
+    width: 32px;
+    transform: translate(-18px, -18px);
+    /* z-index: unset !important; */
+}
+.map-retail-marker:hover {
+    opacity: 0.8;
+}
+
+:global(div:has(.map-retail-marker)) {
+    z-index: 10000001;
+}
+
+:global(.map-retail-marker.selected) {
+    background-color: #E4ECF7;
+    border-color: #7CA1D7;
+    overflow: visible !important;
+    /* z-index: unset !important; */
+}
+
+:global(.gm-style-iw) {
+    transform: translate(0, -4px) !important;
+}
+
+:global(.gm-style-iw::before) {
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+    border-width: 18px;
+    content: ' ';
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(0.75, 1) translate(-40px, 0);
+    width: 0;
+}
+
+:global(.gm-style-iw-t::after),
+:global(.gm-style-iw-t::before) {
+    display: none !important;
+}
+
+:global(.gm-style-iw button) {
+    display: none !important;
+}
+
+:global(.gm-style-iw-c) {
+    border-radius: 3px !important;
+    box-shadow: 0 0px 7px 0px rgba(0, 0, 0, 0.3) !important;
+    height: 36px !important;
+    padding: 0px 5px !important;
+    left: 28px !important;
+    overflow: visible !important;
+    top: 14px !important;
+}
+
+:global(.gm-style-iw-d) {
+    overflow: hidden !important;
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+:global(.gm-style-iw-a) {
+    transform: translate(-18px, -18px);
+}

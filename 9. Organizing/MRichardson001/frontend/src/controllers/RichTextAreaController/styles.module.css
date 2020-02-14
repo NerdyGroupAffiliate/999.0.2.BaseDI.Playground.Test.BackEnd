@@ -1,0 +1,28 @@
+.bodyContainer > h5 > strong {
+  background: #ecd925;
+  padding: 1px 8px;
+}
+.bodyContainer > p {
+  font-family: "Monotype madera",sans-serif;
+  color: #3f3f3f;
+  font-size: 15px;
+  line-height: 27px;
+  font-weight: 400;
+  margin: 0;
+  padding-bottom: 15px;
+}
+.bodyContainer h1 {
+  font-size: 38px;
+  line-height: 44px;
+}
+.bodyContainer > p > a {
+  color: #4c698f;
+}
+.bodyContainer > ul > li {
+  font-family: "Monotype madera",sans-serif;
+  color: #3f3f3f;
+  font-size: 15px;
+  line-height: 27px;
+  font-weight: 400;
+  margin: 0;
+}

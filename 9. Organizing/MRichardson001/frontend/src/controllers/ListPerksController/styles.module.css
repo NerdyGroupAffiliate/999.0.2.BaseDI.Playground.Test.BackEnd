@@ -1,0 +1,93 @@
+.perkModal {
+  position: absolute;
+  width: 50%;
+  height: 160px;
+  display: flex;
+  left: 25%;
+  background: white;
+  z-index: 2;
+  box-shadow: 0 10px 70px 0 rgba(0, 0, 0, 0.4);
+  font-family: 'Monotype madera', sans-serif;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  height: auto;
+}
+
+.logoOverlay {
+  filter: grayscale(1.0);
+  width: 100px;
+}
+
+.logoOverlaySelected, .logoOverlay:hover {
+  filter: grayscale(0);
+  width: 100px;
+}
+.closeImage {
+
+}
+
+.closeModal {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.perkWrapper:hover,
+.perkWrapper:focus {
+  background-color: white;
+}
+.perkWrapper:focus > .logoOverlay,
+.perkWrapper:hover > .logoOverlay {
+  filter: grayscale(0);
+}
+@media (max-width: 767px) {
+  .perkModal {
+    width: 80%;
+    left: 10%;
+    right: 10%;
+  }
+}
+.amenityText {
+  font-size: 16px;
+}
+.seeMore {
+  display: none;
+  font-family: 'Monotype madera', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 30px;
+}
+@media (max-width: 479px) {
+  .mobileHide {
+    display: none !important;
+  }
+  .seeMore {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .viewAllPerks {
+    display: block;
+  }
+  .seeMore > p {
+    display: inline-block;
+  }
+  .arrow {
+    width: 15px;
+    display: inline-block;
+    margin-left: 15px;
+    transform: rotate(0deg);
+    transition: all 300ms ease-in-out;
+  }
+  .arrowUp {
+    transform: rotate(180deg);
+  }
+}
+@supports (-webkit-overflow-scrolling: touch) {
+  .arrow {
+    /* transform: rotate(-90deg); */
+  }
+  .arrowUp {
+    /* transform: rotate(90deg); */
+  }
+}

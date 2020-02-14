@@ -1,0 +1,13 @@
+kubectl create secret docker-registry acr-auth --docker-server amlicontainers.azurecr.io --docker-username ee9379db-48fa-41cf-8b12-e934e30699b2 --docker-password bdd6affc-eeef-4b6b-9270-414c2b992321 --docker-email m.richardson@amli.com
+
+
+
+
+  "appId": "3902fc96-f2fc-4c10-98e3-46a08d720cd9",
+  "displayName": "amliproductionsp",
+  "name": "http://amliproductionsp",
+  "password": "25a3894e-46e5-46e4-ae6f-5234d3d94a50",
+  "tenant": "9b3fb6cf-0e2e-4d30-8802-c1edaf063ea3"
+
+
+az ad sp create-for-rbac --scopes /subscriptions/b33144cc-4ae3-4194-9906-02702a411891/resourcegroups/AMLIContainersResource/providers/Microsoft.ContainerRegistry/registries/amlicontainers --role Azure Container Super Administrator --name amliproductionsp

@@ -1,0 +1,156 @@
+.calendar {
+  background-color: #fafafa;
+  width: 100%;
+  min-height: 40px;
+  max-height: 500px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.calendarRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.firstRow {
+  position: sticky;
+  top: 0;
+  background-color: #fafafa;
+}
+
+.calendarCell {
+  flex: 1;
+  height: 100% !important;
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.firstRow {
+  align-items: center;
+  align-self: flex-end;
+  justify-content: center;
+  display: flex;
+  min-height: 30px;
+}
+
+.firstRow > span {
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  align-self: center;
+  text-align: center;
+}
+
+.firstCol {
+  flex: 0.2 1 !important;
+  height: auto !important;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  writing-mode: vertical-lr;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 11px;
+  min-width: 30px;
+}
+@supports (-moz-appearance: none) {
+  .firstCol {
+    height: auto !important;
+  }
+}
+.centerRows {
+  background-color: white;
+  cursor: pointer;
+  border-top: 1px solid #eaeaea;
+  border-left: 1px solid #eaeaea;
+}
+
+.lastCol {
+  border-right: 1px solid #eaeaea;
+}
+
+.lastRow {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.strongHighlight {
+  background-color: #018094;
+  color: white !important;
+}
+
+.highlighted {
+  background-color: #f0f7f8;
+}
+
+.cheapest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cheapestTag,
+.selectedTag {
+  font-size: 10px;
+  color: #666;
+}
+@media (max-width: 479px) {
+  .cheapestTag,
+  .selectedTag {
+    text-align: center;
+  }
+  .calendar {
+    overflow: scroll;
+    max-width: 100vw;
+  }
+  .calendarCell,
+  .firstRow > span {
+    padding: 0px 30px;
+    width: 60px;
+  }
+}
+@media (max-width: 400px) {
+  .cheapestTag,
+  .selectedTag {
+    font-size: 8px;
+  }
+}
+.cheapestTag {
+  text-transform: uppercase;
+}
+
+.calendarCell,
+.cheapestTag,
+.selectedCell,
+.larger {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: all 75ms;
+}
+
+.cellHighlighted {
+  color: white;
+}
+
+.selectedCell {
+  /*box-shadow: 0px 0px 0px 2px #018094 inset;*/
+}
+
+.larger {
+  height: 55px !important;
+}
+
+.calendarCell:focus {
+  box-shadow: inset 0px 0px 0px 3px rgb(77, 144, 254) !important;
+  outline: none;
+}

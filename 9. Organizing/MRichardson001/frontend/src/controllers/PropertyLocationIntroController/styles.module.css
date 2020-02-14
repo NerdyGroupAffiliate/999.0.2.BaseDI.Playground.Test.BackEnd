@@ -1,0 +1,33 @@
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon {
+  padding-right: 20px;
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nearbyItem {
+    width: 65px;
+    white-space: nowrap;
+}
+
+.regionPanelContainer {
+  align-items: flex-start !important;
+  padding-top: 25px;
+}
+.scoreWrapper {
+  margin-right: 15px !important;
+  margin-left: 15px !important;
+}
+@media (max-width: 479px) {
+  .regionPanelContainer {
+    padding-top: 0px !important;
+  }
+}

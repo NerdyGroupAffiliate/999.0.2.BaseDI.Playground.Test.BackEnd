@@ -1,0 +1,23 @@
+====================================================================================================================================================================================================
+PRODUCTION FRONTEND CENTRAL
+====================================================================================================================================================================================================
+
+yarn run cross-env REACT_APP_ENV=production REACT_APP_BUILD_VERSION=100.0 REACT_APP_GRAPHQL_SERVER_URL=https://prod1backendcentral.centralus.cloudapp.azure.com/graphql react-scripts build
+yarn run cross-env NODE_ENV=production PORT=3000 SERVER_BUILD_VERSION=100.1 GRAPHQL_SERVER_URL=https://prod1backendcentral.centralus.cloudapp.azure.com/graphql BLOB_STORAGE_URL=https://amlistorage.blob.core.windows.net/ NODE_OPTIONS=--max_old_space_size=4096 webpack --config .config/webpack.server.js
+
+
+====================================================================================================================================================================================================
+PRODUCTION FRONTEND EAST
+====================================================================================================================================================================================================
+
+yarn run cross-env REACT_APP_ENV=production REACT_APP_BUILD_VERSION=100.0 REACT_APP_GRAPHQL_SERVER_URL=https://prod1backendeast.eastus.cloudapp.azure.com/graphql react-scripts build
+yarn run cross-env NODE_ENV=production PORT=3000 SERVER_BUILD_VERSION=100.1 GRAPHQL_SERVER_URL=https://prod1backendeast.eastus.cloudapp.azure.com/graphql BLOB_STORAGE_URL=https://amlistorage.blob.core.windows.net/ NODE_OPTIONS=--max_old_space_size=4096 webpack --config .config/webpack.server.js
+
+
+====================================================================================================================================================================================================
+LOCAL FRONTEND
+====================================================================================================================================================================================================
+
+yarn run cross-env REACT_APP_ENV=production REACT_APP_BUILD_VERSION=100.0 REACT_APP_GRAPHQL_SERVER_URL=http://localhost:8000/graphql react-scripts build
+yarn run cross-env NODE_ENV=production PORT=3000 SERVER_BUILD_VERSION=100.1 GRAPHQL_SERVER_URL=http://localhost:8000/graphql BLOB_STORAGE_URL=https://amlistorage.blob.core.windows.net/ NODE_OPTIONS=--max_old_space_size=4096 webpack --config .config/webpack.server.js
+

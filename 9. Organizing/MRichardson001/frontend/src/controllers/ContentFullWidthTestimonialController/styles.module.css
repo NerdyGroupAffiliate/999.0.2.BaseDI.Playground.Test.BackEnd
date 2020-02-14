@@ -1,0 +1,5 @@
+@media only screen and (max-width: 768px) {
+    .testimonial {
+        line-height: 34px!important;
+    }
+}

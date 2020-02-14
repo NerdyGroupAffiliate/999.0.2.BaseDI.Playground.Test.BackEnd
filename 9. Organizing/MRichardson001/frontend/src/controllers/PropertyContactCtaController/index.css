@@ -1,0 +1,13 @@
+@media (max-width: 479px) {
+    .af-class-div-block-155.af-class-blur.af-class-max-width {
+        margin: auto;
+        width: 90% !important;
+        transform: translate(0px, 70%);
+        background-color: #3f3f3f
+    }
+}
+@media (max-width: 375px) {
+    .af-class-div-block-155.af-class-blur.af-class-max-width {
+        transform: translate(0px, 70%);
+    }
+}

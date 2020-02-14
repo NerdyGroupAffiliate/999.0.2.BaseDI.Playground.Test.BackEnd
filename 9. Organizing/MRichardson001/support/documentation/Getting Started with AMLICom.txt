@@ -1,0 +1,47 @@
+//MAIN ROOT
+Step 1: Go into C:\Repo\AMLICom.Web\wwwroot
+Step 2: Delete yarn.lock, package.json.lock and node_modules folders
+
+//FRONT END
+Step 3: Got into C:\Repo\AMLICom.Web\wwwroot\packages\frontend
+Step 4: Delete yarn.lock, package.json.lock, build and node_modules folder
+
+//GRAPH
+Step 5: Got into C:\Repo\AMLICom.Web\wwwroot\packages\backend
+Step 6: Delete yarn.lock, package.json.lock, dist and node_modules folder
+
+//FRONT END
+Step 7: Open file C:\Repo\AMLICom.Web\wwwroot\packages\frontend\src\config.js
+Step 8: Verify the "getAPI" is pointing to 
+  - Development Kubernetes - https://dev1.amli.com/graphql
+  - UAT Kubernetes - https://uat.amli.com/graphql
+  - Local Machine - http://localhost:8000/graphql
+Step 9: Modify the "getAPI" to the correct URL if needed. Just change all environments to the same since you are working locally.
+
+//MAIN ROOT
+Step 10: Go into C:\Repo\AMLICom.Web\wwwroot
+Step 11: Type yarn install 
+Step 12: Press Enter
+
+--Wait a few minutes
+
+Step 13: Type yarn build
+Step 14: Press Enter
+
+--Wait a few minutes
+
+Step 15: Type yarn dev
+Step 16: Press Enter
+
+--Wait a few minutes
+
+FINAL STEPS
+
+Step 17: Open browser
+Step 18: navigate to http://localhost:3000
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+.af-class-spotlight-bb-list-benefit-list > span {
+  flex: 0 1 40% !important;
+  flex-wrap: wrap;
+  width: auto !important;
+  height: auto !important;
+}
+
+.af-class-spotlight-bb-list-item {
+  width: 100% !important;
+}
+
+.af-class-spotlight-bb-list-benefit-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.af-class-spotlight-bb-list-icon {
+  min-height: 15px;
+}
+@media (max-width: 767px) {
+  .af-class-spotlight-bb-list-benefit-list > span {
+    flex: 1 1 100% !important;
+  }
+}
+@media (max-width: 479px) {
+  .af-view .af-class-spotlight-billlboard-list-container {
+    padding-top: 20px;
+  }
+  .af-view .af-class-spotlight-bb-list-description {
+    text-align: center;
+  }
+}
+@media (-ms-high-contrast: none) {
+  .af-class-spotlight-bb-list-icon {
+    width: auto !important;
+  }
+}

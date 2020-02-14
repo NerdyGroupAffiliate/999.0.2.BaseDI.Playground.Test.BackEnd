@@ -1,0 +1,26 @@
+.react-calendar__month-view__days__day--weekend {
+    color: #333333 !important;
+}
+.af-view .af-class-content_image_blurb_cta {
+    padding: 0!important;
+}
+@media (max-width: 1005px) {
+    .moveInDate-picker .react-date-picker__calendar {
+        width: 300px !important;
+        left: -100% !important;
+    }
+    .preferredDate-picker .react-date-picker__calendar {
+        width: 300px !important;
+        left: -250% !important;
+    }
+}
+@media (max-width: 479px) {
+    .moveInDate-picker .react-date-picker__calendar {
+        left: -60px !important;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .af-view .af-class-container.af-class-image-background.af-class-full-width {
+        background-size: cover;
+    }
+}

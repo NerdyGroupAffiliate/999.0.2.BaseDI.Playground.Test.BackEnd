@@ -1,0 +1,54 @@
+.gridContainer {
+  flex-direction: row;
+  display: flex;
+  margin-top: 70px;
+}
+
+.image {
+  flex: 0 1 33%;
+}
+
+.gridContainer > span {
+  flex: 1 1 50% !important;
+}
+.loader {
+  margin: 50px;
+  font-size: 25px !important;
+  font-family: "Monotype madera", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.noQuoteContainer {
+  justify-content: space-between;
+}
+@media (min-width: 992px) {
+  .noQuoteForm {
+    width: 50%;
+  }
+}
+@media (max-width: 991px) {
+  .noQuoteContainer {
+    min-height: 250px;
+  }
+  .noQuoteForm {
+    width: 600px;
+  }
+}
+@media (min-width: 767px) and (max-width: 1077px) {
+  .gridContainer {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .noQuoteForm {
+    width: 100%;
+  }
+  .gridContainer {
+    flex-direction: column;
+    flex-basis: auto;
+  }
+  .gridContainer > span {
+    flex-basis: auto !important;
+  }
+}

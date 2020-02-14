@@ -1,0 +1,12 @@
+.childCost {
+  margin-top: 50px;
+}
+
+.getquote {
+  transition: all 150ms;
+  cursor: pointer;
+}
+
+.getquote:hover {
+  opacity: 0.88;
+}

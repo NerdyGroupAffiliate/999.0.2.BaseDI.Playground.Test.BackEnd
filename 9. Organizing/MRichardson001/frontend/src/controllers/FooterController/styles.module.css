@@ -1,0 +1,19 @@
+.amliLogo:hover {
+  cursor: pointer;
+}
+.socialLogo {
+  margin: 0 !important;
+  cursor: pointer;
+}
+.legalLinks {
+  color: #FFFFFF !important;
+}
+
+.socialContainer {
+  margin-left: 50px;
+}
+@media (max-width: 349px) {
+    .socialContainer {
+    margin-left: 40px;
+  }
+}

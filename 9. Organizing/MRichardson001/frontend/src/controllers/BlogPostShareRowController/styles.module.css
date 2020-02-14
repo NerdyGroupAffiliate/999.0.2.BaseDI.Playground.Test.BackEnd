@@ -1,0 +1,11 @@
+.shareIcon {
+  padding-left: 10px;
+  display: inline-block;
+}
+.iconWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.shareButton {
+  cursor: pointer;
+}

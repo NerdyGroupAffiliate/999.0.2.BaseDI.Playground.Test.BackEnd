@@ -1,0 +1,232 @@
+
+
+@media (min-width: 991px) {
+  .af-view .af-class-career-benefits-header-icon.af-class-offset-100 {
+    transform: translate(50%, -65%);
+  }
+}
+@media (max-width: 479px) {
+  .af-view .af-class-career-benefits-header-icon.af-class-offset-100 {
+    transform: translate(50%, -20%);
+    right: 92%;
+    top: 55%;
+  }
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(50%, -20%);
+    right: 80%;
+    top: 70%;
+  }
+  .af-class-career-benefits-header-icon.af-class-extend-large {
+    transform: translate(50%, 20%) !important;
+    right: 86% !important;
+    top: 70% !important;
+    height: 60px !important;
+    width: 60px !important;
+  }
+  .af-view .af-class-career-benefit-section-tag {
+    width: 70% !important;
+    left: 25% !important
+  }
+  .af-view .af-class-career-benefit-section-tag.af-class-extends-large {
+    width: 70% !important;
+    left: 17% !important
+  }
+}
+
+.af-view .af-class-career-benefit-cards-offset {
+  transform: none;
+}
+.af-view .af-class-career-benefit-card-column,
+.af-view .af-class-career-benefit-card-column-offset,
+.af-view .af-class-career-benefit-cards-offset.af-class-_401k-reversed {
+  flex-basis: auto;
+}
+
+@media (min-width: 768px) {
+/* top row header*/
+  .af-class-div-block-74
+  .af-class-career-benefits-section-label {
+    transform: translate(15%, 0)
+  } 
+  /* top row star*/
+  .af-view .af-class-career-benefits-header-icon.af-class-offset-100 {
+    transform: translate(90%, -20%);
+    right: 86%;
+    top: 55%;
+  }
+  /* top row text*/
+  .af-view .af-class-career-benefit-section-tag {
+    width: 70% !important;
+    left: 30% !important
+  }
+  /* middle row container */
+  .af-view .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end {
+    /* width: 600px; */
+  }
+  /* middle row header */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefits-section-label {
+    transform: translate(60%, -70%)
+  }
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(100%, -40%) !important;
+    right: 80% !important;
+    top: 70% !important;
+  }
+  /* middle row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+    width: 70% !important;
+    left: 32% !important
+  }
+
+
+  /* bottom row header */
+  .af-class-career-benefit-blocks-header.af-class-reversed
+  .af-class-career-benefits-section-label.af-class-no-margin {
+    transform: translate(0px, -15px)
+  }
+  /* bottom row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed
+  .af-class-career-benefit-section-tag {
+    width: 70% !important;
+    left: 2% !important
+  }
+}
+@media (min-width: 1441px) {
+  .af-class-career-benefits-header-icon.af-class-flex {
+    right: 90% !important
+  }
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+  left: 20% !important;
+}
+}
+@media (max-width: 1280px) and (min-width: 768px){
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(120%, -40%) !important;
+  }
+  /* middle row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+    transform: translate(10%, 0) !important;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 768px){
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(130%, -40%) !important;
+  }
+  /* middle row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+    transform: translate(20%, 0) !important;
+  }
+}
+@media (max-width: 1130px) and (min-width: 768px){
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(130%, -40%) !important;
+  }
+  /* middle row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+    transform: translate(30%, 0) !important;
+  }
+}
+@media (max-width: 1130px) and (min-width: 768px){
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(140%, -50%) !important;
+  }
+  /* middle row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+    transform: translate(30%, 0) !important;
+  }
+}
+@media (max-width: 1080px) and (min-width: 768px) {  
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(75%, -50%) !important;
+  }
+  /* middle row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+    transform: translate(10%, -20%) !important;
+  }
+}
+@media (max-width: 1068px) and (min-width: 768px) {  
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(75%, -70%) !important;
+  }
+  /* middle row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+    transform: translate(10%, -20%) !important;
+    /* left: 10px; */
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {  
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(-40%, -40px) !important;
+  }
+  /* middle row text */
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+    transform: translate(-40%, 0) !important;
+  }
+    /* middle row header */
+    .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+    .af-class-career-benefits-section-label {
+      transform: translate(10%, -70%)
+    }
+}
+@media (max-width: 768px) and (min-width: 479px) {  
+  /* middle row star */
+  .af-class-career-benefits-header-icon.af-class-flex {
+    transform: translate(0%, -40px) !important;
+  }
+}
+@media (max-width: 1280px) and (min-width: 479px) {
+  .af-view .af-class-career-benefits-header-icon.af-class-extend-large {
+  transform: translate(0, -21%);
+  }
+    /* bottom row header */
+    .af-class-career-benefit-blocks-header.af-class-reversed
+    .af-class-career-benefits-section-label.af-class-no-margin {
+      transform: translate(0px, -25px)
+    }
+}
+
+@media (min-width: 992px) {
+  .af-class-career-benefit-blocks-content-column.af-class-reversed {
+    left: -7%;
+  }
+}
+
+@media (max-width: 767px) {
+  .af-class-career-benefit-image-column {
+    order: -1;
+  }
+  /* bottom row header */
+  .af-class-career-benefit-blocks-header.af-class-reversed
+  .af-class-career-benefits-section-label.af-class-no-margin {
+    transform: translate(20px, 10px)
+  }
+}
+@media (min-width: 769px) {
+  .af-class-career-benefit-blocks-header.af-class-reversed.af-class-flex-end
+  .af-class-career-benefit-section-tag {
+  width: 600px !important;
+  }
+  .af-class-career-benefit-blocks-header.af-class-reversed
+  .af-class-career-benefit-section-tag {
+    width: 600px !important;
+  }
+}

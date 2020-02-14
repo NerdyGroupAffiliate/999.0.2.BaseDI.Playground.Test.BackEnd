@@ -1,0 +1,20 @@
+.af-view .af-class-contact--community-block {
+  width: 100% !important;
+}
+@media (max-width: 767px) {
+  .af-view .af-class-contact--community-block {
+    padding: 30px 30px 30px 40px !important;
+  }
+}
+@media (max-width: 767px) {
+  .af-view .af-class-contact--community-block {
+    padding-bottom: 15px !important;
+    padding-left: 30px !important;
+  }
+}
+.af-class-div-block-428 > span {
+  max-height: 181px;
+}
+.af-class-div-block-429 > span {
+  flex-basis: auto!important;
+}

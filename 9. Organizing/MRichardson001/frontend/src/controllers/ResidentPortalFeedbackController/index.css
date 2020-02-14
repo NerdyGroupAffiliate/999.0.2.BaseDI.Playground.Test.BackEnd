@@ -1,0 +1,27 @@
+.af-class-div-block-319 {
+    height: 80vh;
+}
+@media (max-width: 479px) {
+    .af-class-div-block-319 {
+        background-position-x: 80% !important;
+        }
+    .af-view .af-class-div-block-321.af-class-blur {
+        transform: translate(0px, 185px);
+    }
+    .af-view .af-class-div-block-319 {
+        height: 800px !important;
+    }
+
+}
+@media only screen and (max-width: 425px) {
+    .af-class-div-block-320 {
+        width: 100% !important;
+    }
+    .dropdown__control {
+        width: 100% !important;
+    }
+}
+
+.af-class-dropdown .w-dropdown {
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+.list-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 15px;
+    font-family: 'Monotype madera', sans-serif;
+    color: #fff;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+
+.image-11 {
+    width: 20px;
+    height: 20px;
+}
+.text-block-10 {
+    margin-left: 15px;
+}
+.af-class-white {
+    text-transform: initial;
+    letter-spacing: 0px;
+}
+@media (max-width: 479px) and (-ms-high-contrast:none) {
+    .af-view .af-class-list-tall-content-wrapper.af-class-blur {
+        flex-basis: auto !important;
+    }
+}
+.af-class-list-tall-content-wrapper.af-class-blur .list-item .text-block-10 {
+    font-weight: 600;
+}

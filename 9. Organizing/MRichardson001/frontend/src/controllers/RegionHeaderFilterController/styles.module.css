@@ -1,0 +1,78 @@
+.tabButton {
+  cursor: pointer;
+  transition: all 75ms;
+}
+
+.tabButton:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 991px) {
+  .active {
+    height: 48px !important;
+    padding: 5px 0px 0px 10px !important;
+  }
+}
+
+.active {
+  border: 2px solid #ecd925 !important;
+  background-color: white !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  height: 57px;
+  min-width: 185px;
+  opacity: 1 !important;
+}
+
+.active-left {
+    transform: translate(-5px, -5px) !important;
+}
+
+.active-right {
+    transform: translate(5px, -5px) !important;
+}
+.active > div {
+  margin-top: -10px !important;
+  margin-right: 15px !important;
+  padding-top: 0px !important;
+  font-family: "Monotype madera" !important;
+  font-weight: 700 !important;
+  color: inherit !important;
+}
+
+.active > img {
+  opacity: 1 !important;
+}
+
+.inactive {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.inactive > div {
+  color: hsla(0, 0%, 100%, 0.5) !important;
+  margin-right: 15px !important;
+  padding-top: 5px !important;
+  font-family: "Monotype madera" !important;
+  font-weight: 500 !important;
+}
+
+.subregionTab {
+  position: absolute;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+  align-content: center !important;
+  justify-content: space-between !important;
+}
+
+.subregionTab > div {
+  color: white !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 600 !important;
+}

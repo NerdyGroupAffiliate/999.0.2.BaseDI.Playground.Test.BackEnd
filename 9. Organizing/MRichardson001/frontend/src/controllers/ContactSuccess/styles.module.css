@@ -1,0 +1,16 @@
+.successTitle {
+  text-align: center;
+  font-family: 'Monotype madera', sans-serif;
+  margin: 100px 0 40px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  padding-top: 60px;
+}
+.successMessage {
+  text-align: center;
+  font-family: 'Monotype madera', sans-serif;
+  margin-bottom: 200px;
+  text-align: center;
+  font-size: 15px;
+}

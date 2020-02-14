@@ -1,0 +1,11 @@
+@media (-ms-high-contrast: none) {
+    .af-class-real-estate-column-container > span {
+        flex: 1 1 auto !important;
+    }
+ .af-class-neighborhood-card {
+        display: block !important;
+    }
+}
+.af-class-neighborhood-card {
+    display: block !important;
+}

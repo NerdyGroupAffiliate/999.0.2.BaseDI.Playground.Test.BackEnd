@@ -1,0 +1,26 @@
+.af-class-div-block-313,
+.af-class-div-block-314 {
+  width: 100% !important;
+  position: relative;
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+form .af-class-div-block-311 {
+  border-bottom: none;
+  padding-bottom: 20px;
+  padding-top: 20px !important;
+}
+form .af-class-div-block-311.updated {
+  border-bottom: 1px solid #cccccc;
+}
+@media all and (-ms-high-contrast: none) {
+  .af-view .af-class-input-field {
+    height: auto;
+  }
+}

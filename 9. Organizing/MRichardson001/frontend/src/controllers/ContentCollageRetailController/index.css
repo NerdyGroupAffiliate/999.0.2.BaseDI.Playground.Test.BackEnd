@@ -1,0 +1,75 @@
+.af-class-list-blocks-blurb-content,
+.af-class-content-retail-collage-column,
+.af-class-retail-collage-content-container {
+    position: relative !important;
+}
+.af-class-content-retail-collage-column {
+    flex-basis: auto!important;
+}
+.af-view .af-class-retail-collage-content-container {
+    margin-top: 0px !important;
+}
+
+.af-class-content-collage-retail-split-image.af-class-right {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .af-view .af-class-retail-collage-content-container {
+        padding-left: 10% !important;
+    }
+    .af-view .af-class-content-retail-collage-column {
+        margin-top: 0px !important;
+    }
+    .af-class-content-collage-retail .af-class-content-collage-retail-content-column {
+        padding-top: 0 !important;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .af-view .af-class-div-block-54 {
+        padding: 0;
+    }
+    .af-class-content-retail-collage-column{
+        order: 1;
+    }
+    .af-class-list-blocks-blurb-content,
+    .af-class-content-retail-collage-column {
+        flex-basis: auto!important;
+    }
+    .af-class-content-collage-split-images{
+        display: block!important;
+        flex: 1 0 auto!important;
+    }
+    .af-class-cert-collage-large-image {
+        display: none;
+    }
+    .af-class-content-collage-retail .af-class-content-collage-retail-content-column {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+    .af-class-retail-collage-content-container .af-class-paragraph > div,
+    .af-class-retail-collage-content-container .af-class-retail-collage-number-item {
+            padding-right: 30px !important;
+            padding-left: 30px !important;
+    }
+    .af-class-retail-collage-content-container {
+        max-width: initial !important;
+      }
+}
+
+@media (max-width: 479px) {
+    .af-class-content-collage-retail .af-class-content-collage-retail-content-column {
+        padding-top: 0px;
+    }
+}
+
+@media (max-width: 479px) {
+    .af-view .af-class-list-blocks-blurb-column.af-class-awards{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .af-view .af-class-certification-block-title {
+        font-size: 36px !important;
+        line-height: 46px !important;
+    }
+}

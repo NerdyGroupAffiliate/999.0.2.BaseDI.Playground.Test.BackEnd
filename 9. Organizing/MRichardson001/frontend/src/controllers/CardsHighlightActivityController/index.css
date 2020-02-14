@@ -1,0 +1,24 @@
+@media only screen and (max-width: 479px) {
+    .af-class-cards-highlight-activity-container .af-class-div-block-100 {
+        padding-bottom: 700px;
+    }
+    .af-view .af-class-cards-highlight-community--cards {
+        top: -600px;
+    }
+    .af-class-div-block-99 {
+        height: 1200px;
+    }
+}
+@media only screen and (max-width: 411px) {
+    .af-class-div-block-99 {
+        height: 1250px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .af-class-div-block-99 {
+        height: 1300px;
+    }
+    .af-view .af-class-cards-highlight-community--cards {
+        top: -630px;
+    }
+}

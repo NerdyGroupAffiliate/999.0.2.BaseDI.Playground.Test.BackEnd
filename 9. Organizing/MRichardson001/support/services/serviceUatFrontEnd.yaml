@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: amlicom-production-router
+  namespace: amlicom-production
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 3001
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 3001
+  selector:
+    app: amlicom-production-router
+    stage: production
+    version: 1.0.0

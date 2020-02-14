@@ -1,0 +1,10 @@
+name: amlicom-development
+description: AMLI.com Frontend Website Development
+version: 1.0.0
+kubeVersion: ">=1.5.0"
+keywords:
+  - reactjs
+  - windows
+  - www
+  - web
+  - development

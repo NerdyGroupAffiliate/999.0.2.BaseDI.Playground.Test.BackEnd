@@ -1,0 +1,20 @@
+@media (min-width: 1200px){
+  .af-view .af-class-html-embed-3 {
+    display: none !important;
+  }
+}
+@media (max-width: 991px) {
+  .af-view .af-class-card-content-offset-outer-wrap {
+    flex-basis: auto;
+  }
+}
+.af-view .af-class-div-block-94 {
+  max-width: none;
+}
+.af-class-card-content-offset-outer-wrap {
+  flex: 0 2 49% !important;
+}
+.af-view .af-class-image-66 {
+  object-fit: cover;
+  object-position: top;
+}

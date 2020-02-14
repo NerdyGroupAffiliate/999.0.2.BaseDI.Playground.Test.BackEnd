@@ -1,0 +1,30 @@
+@media (max-width: 991px) and (-ms-high-contrast:none) {
+  .af-view .af-class-div-block-73 {
+    flex: 0 auto !important;
+  }
+}
+@media (min-width: 992px) {
+  .af-class-career-benefit-card-column.af-class-reversed.af-class-extends-large {
+    justify-content: flex-start !important;
+    margin-top: 250px !important;
+  }
+  .af-class-career-benefit-card-column.af-class-reversed.left-column {
+    justify-content: flex-start !important;
+    margin-top: 200px;
+  }
+  .af-class-career-benefit-card-column-offset.af-class-reversed.right-column {
+    justify-content: flex-start !important;
+    margin-top: 150px !important;
+  }
+  .af-class-career-benefit-card-column-offset.af-class-reversed.af-class-extends-large {
+    justify-content: flex-start !important
+  }
+  .af-class-career-benefit-card-column.af-class-reversed.af-class-extends-large {
+    justify-content: flex-start !important;
+  }
+}
+@media (min-width: 1280px) {
+  .af-class-career-benefit-section-tag.af-class-extends-large  {
+    transform: translate(0%, 80%) !important;
+  }
+}

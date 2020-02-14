@@ -1,0 +1,64 @@
+.af-class-green-highlight-half::after {
+  content: '';
+  background-color: #B1E37D;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+.leed-more-info-rich-text-wrapper > p > span > a,
+.energy-star-more-info-rich-text-wrapper > p > span > a {
+  color: black;
+  border-bottom: 2px solid #B1E37D;
+  font-weight: 500;
+}
+.af-view .af-class-benchmark-row {
+  padding-top: 0;
+}
+.af-view .af-class-benchmark-row .af-class-div-block-119 {
+  padding-bottom: 0;
+}
+.af-view .af-class-benchmark-number-column {
+  padding-bottom: 0;
+}
+.af-view .af-class-benchmark-leed-numbers-wrapper {
+  align-items: stretch;
+}
+@media (max-width: 479px) {
+  .af-class-section-tagline.af-class-small {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 38px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .af-view .af-class-benchmark-leed-numbers-wrapper .af-class-benchmark-number-column {
+    border: none !important
+  }
+  .af-view .af-class-benchmark-leed-numbers-wrapper {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: stretch;
+    padding-left: 0;
+  }
+  .af-view .af-class-benchmark-number-column.af-class-first-child {
+    width: 50%;
+    padding-left: 30px;
+    flex: 1 1;
+  }
+  .af-view .af-class-benchmark-number-column {
+      width: 50%;
+      padding-left: 30px;
+      padding-bottom: 30px;
+      flex: 0 1 auto;
+  }
+}
+@media (max-width: 575px) and (-ms-high-contrast:none) {
+  .af-view .af-class-text-block-22.af-class-green-highlight-half::after {
+      max-width: 100%;
+  }
+}

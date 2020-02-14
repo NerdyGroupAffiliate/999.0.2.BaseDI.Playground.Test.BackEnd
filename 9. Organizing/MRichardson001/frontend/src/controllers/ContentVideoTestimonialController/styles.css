@@ -1,0 +1,22 @@
+.af-class-content-video-testy-column > span {
+    height: auto !important;
+    flex: auto !important;
+    width: auto !important;
+}
+.af-view .af-class-content-video-testimonial-container {
+    width: 100%;
+}
+.af-class-content-video-testimonial {
+    padding-bottom: 0px !important;
+}
+.af-view .af-class-div-block-473 {
+    width: 90%;
+    margin: auto;
+}
+
+@media (min-width: 767px) and (max-width: 991px) and (-ms-high-contrast:none) {
+    .af-view .af-class-content-video-testy-card {
+        max-width: 425px;
+        width: 90%;
+    }
+}

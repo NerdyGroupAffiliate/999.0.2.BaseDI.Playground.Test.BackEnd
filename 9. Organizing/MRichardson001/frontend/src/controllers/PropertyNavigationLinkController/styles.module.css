@@ -1,0 +1,29 @@
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  padding-bottom: 8px;
+}
+
+.link:hover {
+  opacity: 0.88;
+}
+
+.active {
+  align-self: center;
+  height: auto !important;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1135px) and (min-width: 1075px) {
+  .link {
+    font-size: 12px !important;
+  }
+}
