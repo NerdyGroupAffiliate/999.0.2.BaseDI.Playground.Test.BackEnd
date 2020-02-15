@@ -1,0 +1,1 @@
+﻿webpack -d Experience_The_Movement_ToFacebookPage_DataTransfer_7_1_1_0_Test.ts -o wwwroot/Experience_The_Movement_ToFacebookPage_DataTransfer_7_1_1_0_Test.js     

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "999.0.2.BaseDI.Playground.Test.BackEnd", "999.0.2.BaseDI.Playground.Test.BackEnd.csproj", "{5B084FF5-D527-4D8E-9A32-E67A4E51FBB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B084FF5-D527-4D8E-9A32-E67A4E51FBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B084FF5-D527-4D8E-9A32-E67A4E51FBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B084FF5-D527-4D8E-9A32-E67A4E51FBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B084FF5-D527-4D8E-9A32-E67A4E51FBB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {008BC69F-795D-42A9-8F16-31CF2F13BFF8}
+	EndGlobalSection
+EndGlobal
