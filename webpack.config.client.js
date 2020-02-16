@@ -38,13 +38,13 @@ const plugins = [
 ];
 
 module.exports = {
-    entry: './Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0_Test.ts',
+    entry: './Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0_Test.tsx',
     devtool: "source-map",
     output: {
         path: path.resolve(__dirname, "wwwroot", "Distribution", "Client", "JS"),
         libraryTarget: 'var',
         library: 'Client',
-        filename: "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0_Test.js"
+        filename: "Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0_Test.js"
     },
     target: "web",
     mode: "development",
