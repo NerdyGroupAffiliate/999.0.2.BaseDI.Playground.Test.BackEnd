@@ -5,6 +5,7 @@
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "jsx": "preserve",
     "lib": [
       "es5",
       "es6",
@@ -46,5 +47,6 @@
   // set if you'll like to divide .ts and others
   "include": [
     "**/*"
-  ]
+  ],
+  "exclude": [ "./9. Organizing" ]
 }

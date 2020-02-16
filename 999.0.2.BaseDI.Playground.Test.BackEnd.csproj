@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -13,6 +13,20 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
+    <None Include="9. Organizing\MRichardson001\App.razor" />
+    <None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
+    <None Include="9. Organizing\MRichardson001\Pages\Counter.razor" />
+    <None Include="9. Organizing\MRichardson001\Pages\Error.razor" />
+    <None Include="9. Organizing\MRichardson001\Pages\FetchData.razor" />
+    <None Include="9. Organizing\MRichardson001\Pages\Index.razor" />
+    <None Include="9. Organizing\MRichardson001\Pages\_Host.cshtml" />
+    <None Include="9. Organizing\MRichardson001\Shared\MainLayout.razor" />
+    <None Include="9. Organizing\MRichardson001\Shared\NavMenu.razor" />
+    <None Include="9. Organizing\MRichardson001\_Imports.razor" />
   </ItemGroup>
 
 </Project>

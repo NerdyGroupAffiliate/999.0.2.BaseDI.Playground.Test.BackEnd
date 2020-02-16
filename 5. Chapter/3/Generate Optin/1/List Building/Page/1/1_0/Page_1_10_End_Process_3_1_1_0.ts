@@ -39,7 +39,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.ListBuilding_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-
+            return this.StorylineDetails;
         }
 
         //#endregion
