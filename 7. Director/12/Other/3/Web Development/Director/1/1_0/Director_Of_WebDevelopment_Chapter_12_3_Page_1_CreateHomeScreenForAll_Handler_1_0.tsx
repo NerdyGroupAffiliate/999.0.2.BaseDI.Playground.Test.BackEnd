@@ -202,30 +202,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
             page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 
             //region 2. Action
-            const htmlSetting = await page.Action();
-
-            this._extraData.KeyValuePairs.setValue("htmlSetting", Object.assign(htmlSetting, Object));
-
-            //region 3. Observe
-            return this._storylineDetails;
-        }
-
-        //Page 1-6
-        public async Action_6_Process_StoryExperiences(): Promise<object>
-        {
-            //region 1. Assign 
-            var page = new ChapterPage_Page_1_6_Process_StoryExperiences_12_3_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1.Page_1_6_Process_StoryExperiences_12_3_1_0(this._storylineDetails, this._repository);
-                       
-            page.Client = this._client;
-
-            page.EntryPoint = this._entryPoint;
-            page.ExtraData = this._extraData;
-
-            page.MasterLeader = this._centralizedMaster;
-
-            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
-
-            //region 2. Action
+            this._storylineDetails = await page.Action();
 
             //region 3. Observe
             return this._storylineDetails;
@@ -256,6 +233,10 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
             return this._storylineDetails;
         }
 
+        //Page 1-6
+        public async Action_6_Process_StoryExperiences(): Promise<object> {
+            return this._storylineDetails;
+        }
 
         //Page 1-7
         public async Action_7_Process_StoryResources(): Promise<object> {

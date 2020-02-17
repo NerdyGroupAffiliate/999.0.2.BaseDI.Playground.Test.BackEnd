@@ -12,7 +12,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Extensions_1
 
         //#region CREATE
         public static Step_X_X_Create_A_MistakeJsonNode_1_0(metaDataCalledByEntryPointName: string, metaDataCalledByMethodName: string, metaDataCalledByMethodReason: string, mistakeDetailsTemplate: string): String {
-            let outputMistakeBody: string = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{ item }} }] }}]}";
+            let outputMistakeBody: string = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}} }] }}]}";
 
             let outputMistakeItem: string = "'details': [{details}]";
 
@@ -28,7 +28,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Extensions_1
         }
 
         public static Step_X_X_Create_An_ObservationJsonNode_1_0(metaDataCalledByEntryPointName: string, metaDataCalledByMethodName: string, metaDataCalledByMethodReason: string, presentationTemplate: string, businessTemplate: string, serviceTemplate: string, securityTemplate: string, dataTemplate: string): String {
-            let outputObservationBody: string = "{'baseDIObservations': [{ 'observation': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{ item }}  }]  } }]}";
+            let outputObservationBody: string = "{'baseDIObservations': [{ 'observation': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}}  }]  } }]}";
             let outputObservationItem: string = "'presentation': [{presentation}], 'business': [{ business }], 'service': [{ service }],  'security': [{ security }],'data': [{ data }]";
 
             outputObservationBody = outputObservationBody.replace("{item}", outputObservationItem);
