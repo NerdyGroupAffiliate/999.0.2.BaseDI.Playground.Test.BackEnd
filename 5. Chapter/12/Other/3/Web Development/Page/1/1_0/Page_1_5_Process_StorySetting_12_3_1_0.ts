@@ -32,28 +32,46 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
+            //#region DESCRIBE THE MEMORIES
             const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 
-            const presentationItemTemplate: string = "{ 'htmlResult': '{htmlResult}' }";
-            const businessItemTemplate: string = "{}";
-            const serviceItemTemplate: string = "{}";
-            const securityItemTemplate: string = "{}";
-            const dataItemTemplate: string = "{}";
-            const dataItem: string = "{}";
+            let observationItem: String = "";
 
-            const dataObservationTemplateBuilder: string = "";
+            const observationPresentationTemplateItem: string = "{ 'htmlResult': '{htmlResult}' }";
+            const observationBusinessTemplateItem: string = "{}";
+            const observationServiceTemplateItem: string = "{}";
+            const observationSecurityTemplateItem: string = "{}";
+            const observationDataTemplateItem: string = "{}";
+
+            const observationDataTemplateBuilder: string = "";
 
             const storylineDetails: any = this.StorylineDetails;
 
-            let dataObservationTemplate: String = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", presentationItemTemplate, businessItemTemplate, serviceItemTemplate, securityItemTemplate, dataItemTemplate);
+            let htmlResult: string = "";
 
-            let htmlResult: string = "<h3>Hello World<\/h3>";
+            //#endregion
 
-            const observation:any = JSON.stringify(dataObservationTemplate = dataObservationTemplate.replace('{htmlResult}', htmlResult));
+            //#region GENERATE THE MEMORIES
+
+            observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
+
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            htmlResult = "<h3>Hello World<\/h3>";
+
+            const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResult));
+
+            //#endregion
+
+            //#region REPORT THE FEEDBACK
 
             storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation));
 
             this.StorylineDetails = storylineDetails;
+
+            //#endregion
 
             return await this.StorylineDetails;
         }
