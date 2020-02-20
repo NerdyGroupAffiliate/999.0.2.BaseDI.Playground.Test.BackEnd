@@ -51,7 +51,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             //#endregion
 
-            //#region GENERATE THE MEMORIES
+            //#region RECALL THE MEMORIES
 
             observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
 
