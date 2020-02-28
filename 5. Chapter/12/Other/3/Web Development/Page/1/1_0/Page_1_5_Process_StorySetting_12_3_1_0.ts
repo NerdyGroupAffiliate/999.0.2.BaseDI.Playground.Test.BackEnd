@@ -1,6 +1,7 @@
 ﻿import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+import * as Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/1/1_0/Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 
 export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
     export class Page_1_5_Process_StorySetting_12_3_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
@@ -74,6 +75,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             htmlResult = this.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRows, htmlResult);
             htmlResult = this.Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumns, htmlResult);
             htmlResult = this.Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContent, htmlResult);
+            htmlResult = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Playground.Test.BackEnd.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", "", htmlResult);
 
             const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResult)); htmlResult
 
