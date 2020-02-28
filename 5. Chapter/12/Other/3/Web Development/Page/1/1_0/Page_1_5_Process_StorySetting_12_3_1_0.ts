@@ -52,7 +52,9 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             let htmlRows: any = "";
             let htmlColumns: any = "";
             let htmlContent: any = "";
+            let htmlStyles: any = "";
 
+            let htmlResultInlineStyles: string = "";
             let htmlResult: string = "";
 
             //#endregion
@@ -65,6 +67,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             htmlRows = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows", false); 
             htmlColumns = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns", false); 
             htmlContent = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent", false); 
+            htmlStyles = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS", false); 
 
             //#endregion
 
@@ -75,7 +78,9 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             htmlResult = this.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRows, htmlResult);
             htmlResult = this.Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumns, htmlResult);
             htmlResult = this.Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContent, htmlResult);
-            htmlResult = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Playground.Test.BackEnd.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", "", htmlResult);
+            htmlResultInlineStyles = this.Step_5_0_Create_HTMLInlineStyles_1_0(htmlStyles);
+
+            htmlResult = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Playground.Test.BackEnd.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", htmlResultInlineStyles, htmlResult);
 
             const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResult)); htmlResult
 
@@ -137,6 +142,20 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
         }
 
         public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string) {
+            //#region DESCRIBE THE MEMORIES
+            let htmlContent: string = "";
+
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+
+            //#endregion
+
+            return htmlContent;
+        }
+
+        public Step_5_0_Create_HTMLInlineStyles_1_0(htmlStyles: any) {
             //#region DESCRIBE THE MEMORIES
             let htmlContent: string = "";
 
