@@ -99,9 +99,9 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
         //#region THE VISION INSTRUCTIONS
 
-        public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any) {
+        public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
             //#region DESCRIBE THE MEMORIES
-            let htmlContainer: string = "";
+            let htmlContainerString: string = "";
 
             //#endregion
 
@@ -110,12 +110,12 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             //#endregion
 
-            return htmlContainer;
+            return htmlContainerString;
         }
 
-        public Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON: any, htmlContainerString: string) {
+        public Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON: any, htmlContainerString: string): string {
             //#region DESCRIBE THE MEMORIES
-            let htmlRows: string = "";
+            let htmlRowsString: string = "";
 
             //#endregion
 
@@ -124,12 +124,12 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             //#endregion
 
-            return htmlRows;
+            return htmlRowsString;
         }
 
-        public Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON: any, htmlRowsString: string) {
+        public Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON: any, htmlRowsString: string): string {
             //#region DESCRIBE THE MEMORIES
-            let htmlColumns: string = "";
+            let htmlColumnsString: string = "";
 
             //#endregion
 
@@ -138,12 +138,12 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             //#endregion
 
-            return htmlColumns;
+            return htmlColumnsString;
         }
 
-        public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string) {
+        public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
             //#region DESCRIBE THE MEMORIES
-            let htmlContent: string = "";
+            let htmlContentString: string = "";
 
             //#endregion
 
@@ -152,12 +152,12 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             //#endregion
 
-            return htmlContent;
+            return htmlContentString;
         }
 
-        public Step_5_0_Create_HTMLInlineStyles_1_0(htmlStylesJSON: any) {
+        public Step_5_0_Create_HTMLInlineStyles_1_0(htmlStylesJSON: any) : string {
             //#region DESCRIBE THE MEMORIES
-            let htmlContent: string = "";
+            let htmlInlineCSSString: string = "";
 
             //#endregion
 
@@ -166,7 +166,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             //#endregion
 
-            return htmlContent;
+            return htmlInlineCSSString;
         }
 
         //#endregion
