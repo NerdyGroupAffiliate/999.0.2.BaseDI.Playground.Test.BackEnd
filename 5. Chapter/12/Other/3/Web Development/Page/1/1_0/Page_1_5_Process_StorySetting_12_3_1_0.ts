@@ -48,11 +48,11 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             const storylineDetails: any = this.StorylineDetails;
 
-            let htmlContainerJSON: string = "";
-            let htmlRowsJSON: string = "";
-            let htmlColumnsJSON: string = "";
-            let htmlContentJSON: string = "";
-            let htmlStylesJSON: string = "";
+            let htmlContainerJSON: any = "";
+            let htmlRowsJSON: any = "";
+            let htmlColumnsJSON: any = "";
+            let htmlContentJSON: any = "";
+            let htmlStylesJSON: any = "";
 
             let htmlResultInlineStylesString: string = "";
             let htmlResultString: string = "";
