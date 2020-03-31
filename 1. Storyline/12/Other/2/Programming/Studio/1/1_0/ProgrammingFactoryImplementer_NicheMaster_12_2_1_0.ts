@@ -1,23 +1,28 @@
-﻿import * as aClass_Programming_ScriptNicheMaster_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptNicheMaster_12_2_1_0"
+﻿//0. SCRIPT - ABSTRACT, BASE & INTERFACE CLASSES
+import * as aClass_Programming_ScriptNicheMaster_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptNicheMaster_12_2_1_0"
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
-import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0";
-import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/2/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0";
-
-import * as LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0";
-
+//1. STORYLINE - CORE FEATURES
 import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
+//4. EXPERIENCES - SHARED FEATURES
+import * as Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 from "../../../../../../../../4. Experience/6/Hear/12/Other/2/Programming/Experience/1/1_0/Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0";
+
+//6. STATE - LOCAL REPOSITORIES
+import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0";
+import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/2/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0";
+import * as LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0";
+
+//6. STATE - REMOTE REPOSITORIES
 import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/RemoveService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0";
 import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/2/1_0/RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0";
-
 import * as RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0";
 
-import * as Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 from "../../../../../../../../4. Experience/6/Hear/12/Other/2/Programming/Experience/1/1_0/Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0";
+//7. DIRECTOR - PROPRIETARY FEATURES
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0";
 import * as Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/2/1_0/Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0";
 
@@ -78,15 +83,15 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
                 case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_HANDLER_1_0":
                     resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                    return resolvedRequest;
+                    break;
                 case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_MANAGER_1_0":
                     resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                    return resolvedRequest;
+                    break;
                 case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_2_1_0":
                     resolvedRequest = this.Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                    return resolvedRequest;
+                    break;
             }
             //#endregion
 
@@ -138,7 +143,8 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
         private Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_The_DataRespository_1_0(storylineDetails, false, true);
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
 
             //#endregion
 
@@ -181,7 +187,8 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
         private Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_The_DataRespository_1_0(storylineDetails, false, true);
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
 
             //#endregion
 

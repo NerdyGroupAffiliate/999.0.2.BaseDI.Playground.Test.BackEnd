@@ -1,5 +1,5 @@
 ﻿/////////////////////////////////////////////////////////////////////////////////////
-//0. System Dependencies
+//0. SYSTEM DEPENDENCIES
 /////////////////////////////////////////////////////////////////////////////////////
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
@@ -10,44 +10,44 @@ import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../.
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-//1. Generate Brand Awareness
+//1. GENERATE BRAND AWARENESS
 import * as AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 from "../../../../../../../../1. Storyline/1/Generate Brand Awareness/1/Advertising/Factory/1/1_0/AdvertisingFactoryImplementer_NicheMaster_1_1_1_0";
 
-//2. Generate Brand Trust
+//2. GENERATE BRAND TRUST
 import * as BloggingFactoryImplementer_NicheMaster_2_1_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/1/Blogging/Factory/1/1_0/BloggingFactoryImplementer_NicheMaster_2_1_1_0";
 import * as PodcastingFactoryImplementer_NicheMaster_2_2_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/2/Podcasting/Factory/1/1_0/PodcastingFactoryImplementer_NicheMaster_2_2_1_0";
 import * as SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/3/Social Media/Factory/1/1_0/SocialMediaFactoryImplementer_NicheMaster_2_3_1_0";
 
-//3. Generate Optin
+//3. GENERATE OPTIN
 import * as ListBuildingFactoryImplementer_NicheMaster_3_1_1_0 from "../../../../../../../../1. Storyline/3/Generate Optin/1/List Building/Factory/1/1_0/ListBuildingFactoryImplementer_NicheMaster_3_1_1_0";
 
-//4. Sell Low Ticket Offer
+//4. SELL LOW TICKET OFFER
 import * as SupplementsFactoryImplementer_NicheMaster_4_1_1_0 from "../../../../../../../../1. Storyline/4/Sell Low Ticket Offer/1/Supplements/Factory/1/1_0/SupplementsFactoryImplementer_NicheMaster_4_1_1_0";
 
-//5. Sell High Ticket Offer
+//5. SELL HIGH TICKET OFFER
 import * as CoachingFactoryImplementer_NicheMaster_5_1_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/1/Coaching/Factory/1/1_0/CoachingFactoryImplementer_NicheMaster_5_1_1_0";
 import * as ConsultingFactoryImplementer_NicheMaster_5_2_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/2/Consulting/Factory/1/1_0/ConsultingFactoryImplementer_NicheMaster_5_2_1_0";
 import * as PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/3/Personal Training/Factory/1/1_0/PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0";
 
-//6. Sell Subscription Offer
+//6. SELL SUBSCRIPTION OFFER
 import * as SoftwareFactoryImplementer_NicheMaster_6_1_1_0 from "../../../../../../../../1. Storyline/6/Sell Subscription Offer/1/Software/Factory/1/1_0/SoftwareFactoryImplementer_NicheMaster_6_1_1_0";
 
-//7. Sell Commission Offer
+//7. SELL COMMISSION OFFER
 import * as AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0 from "../../../../../../../../1. Storyline/7/Sell Commission Offer/1/Affiliate Revenue/Factory/1/1_0/AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0";
 
-//8. Account Gain or Loss
+//8. ACCOUNT LOSS OR GAIN
 import * as AccountingFactoryImplementer_NicheMaster_8_1_1_0 from "../../../../../../../../1. Storyline/8/Account Gain or Loss/1/Accounting/Factory/1/1_0/AccountingFactoryImplementer_NicheMaster_8_1_1_0";
 
-//9. Improve Customer Service
+//9. IMPROVE CUSTOMER SERVICE
 import * as CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0 from "../../../../../../../../1. Storyline/9/Improve Customer Service/1/Customer Service/Factory/1/1_0/CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0";
 
-//10. Perform Manual Task
+//10. PERFORM MANUAL SERVICE
 import * as ProductivityFactoryImplementer_NicheMaster_10_1_1_0 from "../../../../../../../../1. Storyline/10/Perform Manual Task/1/Productivity/Factory/1/1_0/ProductivityFactoryImplementer_NicheMaster_10_1_1_0";
 
-//11. Automate Manual Task
+//11. AUTOMATE MANUAL TASK
 import * as RiskManagementFactoryTester_NicheMaster_11_1_1_0 from "../../../../../../../../1. Storyline/11/Automate Manual Task/1/Risk Management/Factory/1/1_0/RiskManagementFactoryTester_NicheMaster_11_1_1_0";
 
-//12. Other
+//12. OTHER
 import * as CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0 from "../../../../../../../../1. Storyline/12/Other/1/Careers Employment/Factory/1/1_0/CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0";
 import * as ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingFactoryImplementer_NicheMaster_12_2_1_0";
 import * as WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 from "../../../../../../../../1. Storyline/12/Other/3/Web Development/Factory/1/1_0/WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0";

@@ -60,18 +60,26 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
             var requestType = requestToResolve.GetType();
 
-            if(requestType == null && !string.IsNullOrEmpty(requestName))
+            object resolvedRequest = null;
+
+            if (requestType == null && !string.IsNullOrEmpty(requestName))
             {
                 switch(requestName.ToUpper(CultureInfo.CurrentCulture))
                 {
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_HANDLER_1_0":
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+
+                        break;
+
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_MANAGER_1_0":
-                        var resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
-                        return resolvedRequest;
+                        break;
+
                     case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_2_1_0":
-                        var resolvedRequest2 = (object)Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
-                        return resolvedRequest2;
+                        break;
                 }
             }
             else
@@ -79,15 +87,20 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
                 switch (requestType)
                 {
                     case Type _ when requestType == typeof(Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0):
-                        var resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_RequestHandler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_RequestHandler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
-                        return resolvedRequest;
+                        break;
                 }
             }
 
             #endregion
 
-            return null;
+            return resolvedRequest;
+        }
+
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        {
+            throw new NotImplementedException();
         }
 
         #region Page 1

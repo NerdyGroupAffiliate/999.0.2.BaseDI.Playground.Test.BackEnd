@@ -8,7 +8,7 @@ using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
 
 namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
 {
-    public class Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
+    public class Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
         #region 1. Assign
 
@@ -22,7 +22,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0()
+        public Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0()
         {
             #region 1. Assign            
 

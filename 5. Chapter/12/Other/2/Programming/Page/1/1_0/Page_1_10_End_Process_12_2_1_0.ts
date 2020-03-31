@@ -23,7 +23,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1 {
 
             this.Action = this.Action.bind(this);
 
-            this.Step_1_0_Read_The_RequestName_1_0 = this.Step_1_0_Read_The_RequestName_1_0.bind(this);
+            this.Step_1_0_Read_The_RequestList_1_0 = this.Step_1_0_Read_The_RequestList_1_0.bind(this);
             this.Step_2_0_Route_The_Request_1_0 = this.Step_2_0_Route_The_Request_1_0.bind(this);
             this.Step_2_1_Execute_The_Request_1_0 = this.Step_2_1_Execute_The_Request_1_0.bind(this);
 
@@ -44,57 +44,80 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region READ REQUEST NAME
-            const requestNames = this.Step_1_0_Read_The_RequestName_1_0();
+            //#region READ REQUEST LIST
+            const requestList = this.Step_1_0_Read_The_RequestList_1_0();
             //#endregion
 
             //#region ROUTE THE REQUEST
-            return this.Step_2_0_Route_The_Request_1_0(requestNames);
+            return this.Step_2_0_Route_The_Request_1_0(requestList);
             //#endregion
         }
 
         //#region READ REQUEST NAME
-        private Step_1_0_Read_The_RequestName_1_0(): Array<string> {
+        private Step_1_0_Read_The_RequestList_1_0(): Array<string> {
             const requests: Array<string> = new Array<string>();
 
-            const mainRequestList: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_BaseDIMethods", false);
+            const businessLogicMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "key_1", "Functions", false);
 
-            mainRequestList.value.map(requestItem => {
-                const requestMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(requestItem, "Events", "", false);
+            const businessLogicList: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(businessLogicMetaData, "values_2_2", "", false);
 
-                requestMetaData.Events.map(event =>
+            for (var i = 0; i < businessLogicList.values_2_2.length; i++) {
+                const businessLogicItem = businessLogicList.values_2_2[i];
+
+                const businessLogicItemCallStackList = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(businessLogicItem, "EventCallStackItems", "", false);
+
+                if (businessLogicItemCallStackList.EventCallStackItems != null &&
+                    businessLogicItemCallStackList.EventCallStackItems.length > 0)
                 {
-                    if (event.functionName) {
-                        requests.push(event.functionName);
-                    }
-                })
-            });
+                    for (var i2 = 0; i2 < businessLogicItemCallStackList.EventCallStackItems.length; i2++) {
+                        const businessLogicItemCallStackItem = businessLogicItemCallStackList.EventCallStackItems[i2];
 
+                        if (businessLogicItemCallStackItem.Events != null &&
+                            businessLogicItemCallStackItem.Events.length > 0) {
+
+                            let functionsEnabled: boolean = false;
+
+                            for (var i3 = 0; i3 < businessLogicItemCallStackItem.Events.length; i3++) {
+                                const businessLogicItemCallStackItemEvent = businessLogicItemCallStackItem.Events[i3];
+
+                                if (businessLogicItemCallStackItemEvent.functionsEnabled != undefined) {
+                                    if (businessLogicItemCallStackItemEvent.functionsEnabled.toUpperCase() == "TRUE") {
+                                        functionsEnabled = true;
+                                    }
+                                }
+                                else
+                                {
+                                    if (functionsEnabled)
+                                        requests.push(businessLogicItemCallStackItemEvent); 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
             return requests;
         }
         //#endregion
 
         //#region ROUTE THE REQUEST
-        private async Step_2_0_Route_The_Request_1_0(requestNames: Array<string>): Promise<any> {
-            if (requestNames) {
+        private async Step_2_0_Route_The_Request_1_0(requestList: any): Promise<any> {
+            if (requestList != null) {
                 let armTemplateJSONOutput: any = this.StorylineDetails;
 
                 try
                 {
                     if (this.EntryPoint == null || this.EntryPoint.constructor.name == "Object")
                     {
-                        for (const requestIndex in requestNames)
-                        {
-                            const requestName = requestNames[requestIndex];
+                        requestList.forEach(request => {
+                            const requestName = request.functionName;
 
-                            const a = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(null);
-                            
                             if (this.EntryPoint == null || this.EntryPoint.constructor.name == "Object") {
                                 armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.BaseDI.Playground.Test.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(this.EntryPoint))
                                     .SetupStoryline(this.Client, this.StorylineDetails, this.StorylineDetails_Parameters, this.ExtraData, requestName)
                                     .Action();
                             }
-                        }
+                        });
                     }
                     else
                     {
