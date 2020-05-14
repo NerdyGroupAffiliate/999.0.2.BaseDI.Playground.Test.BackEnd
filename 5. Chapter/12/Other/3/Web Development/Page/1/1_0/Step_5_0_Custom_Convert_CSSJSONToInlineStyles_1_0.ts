@@ -2,6 +2,7 @@
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 import * as Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/1/1_0/Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
+import { json } from "express";
 
 export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
     export class Page_1_5_Process_StorySetting_12_3_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
@@ -38,7 +39,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             let observationItem: String = "";
 
-            const observationPresentationTemplateItem: string = "{ 'htmlResult': '{htmlResult}' }";
+            const observationPresentationTemplateItem: string = '{ "htmlResult": "{htmlResult}" }';
             const observationBusinessTemplateItem: string = "{}";
             const observationServiceTemplateItem: string = "{}";
             const observationSecurityTemplateItem: string = "{}";
@@ -81,13 +82,14 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             htmlResultInlineStylesString = this.Step_5_0_Create_HTMLInlineStyles_1_0(htmlStylesJSON);
 
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Playground.Test.BackEnd.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
-            const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResultString)); 
+           
+           
+            observationItem = observationItem.replace('{htmlResult}', escape(htmlResultString))
+            const observation = observationItem;
+            // const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResultString)); 
             //#endregion
-            console.log(htmlResultString)
             //#region REPORT THE FEEDBACK
-
-            storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation));
-
+            storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation.toString()));
             this.StorylineDetails = storylineDetails;
 
             //#endregion
@@ -143,7 +145,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             let htmlColumnsString: string = htmlRowsString;
             //#endregion
             htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
-                let colItem = `<${col.Tag} ${this.getAttributes(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>`;
+                let colItem = `<${col.Tag} ${this.getAttributes(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
                 htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
             });
             //#region RECALL THE MEMORIES
@@ -158,7 +160,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             //#region DESCRIBE THE MEMORIES
             let htmlContentString: string = htmlColumnsString;
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
-                let content = `<${con.Tag} ${this.getAttributes(con.Attributes)}></${con.Tag}>`;
+                let content = `<${con.Tag} ${this.getAttributes(con.Attributes)}></${con.Tag}>\n`;
                 htmlContentString = htmlContentString.replace(`{${con.ParentHTMLContentItemAttributeID}_Replace}`, content);
             });
 
@@ -175,7 +177,13 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
         public Step_5_0_Create_HTMLInlineStyles_1_0(htmlStylesJSON: any) : string {
             //#region DESCRIBE THE MEMORIES
             let htmlInlineCSSString: string = "";
-            // console.log(htmlStylesJSON)
+            let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
+            let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
+            let files = [];
+            filesArray.forEach(file => {
+                files.push(`<link rel="stylesheet" href="${styleFilePathLocal}/${file.StyleFileName}.css">\n`)
+            });
+            htmlInlineCSSString = files.join("\n");
             //#endregion
 
             //#region RECALL THE MEMORIES
