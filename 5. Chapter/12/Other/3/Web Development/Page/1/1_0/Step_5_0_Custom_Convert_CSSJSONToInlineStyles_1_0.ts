@@ -73,7 +73,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
             //#region EXECUTE THE VISION
 
-            htmlResultString = "<h3>Hello World<\/h3>";
+            // htmlResultString = "<h3>Hello World<\/h3>";
             htmlResultString = this.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);            
             htmlResultString = this.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);
             htmlResultString = this.Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON, htmlResultString);
@@ -81,11 +81,9 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             htmlResultInlineStylesString = this.Step_5_0_Create_HTMLInlineStyles_1_0(htmlStylesJSON);
 
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Playground.Test.BackEnd.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
-
             const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResultString)); 
-
             //#endregion
-
+            console.log(htmlResultString)
             //#region REPORT THE FEEDBACK
 
             storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation));
@@ -99,9 +97,19 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
         //#region THE VISION INSTRUCTIONS
 
+        private getAttributes(attributes) {
+            var attrs = [];
+            for(var attribute in attributes ) {
+                attrs.push(`${Object.keys(attributes[attribute])[0]}="${Object.values(attributes[attribute])[0]}"`)
+            }
+            return attrs.join(" ");
+        }
+
         public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
             //#region DESCRIBE THE MEMORIES
-            let htmlContainerString: string = "";
+            let htmlContainerString: string = "";    
+            htmlContainerString = `<${htmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.getAttributes(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${htmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
+
 
             //#endregion
 
@@ -116,9 +124,12 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
         public Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON: any, htmlContainerString: string): string {
             //#region DESCRIBE THE MEMORIES
             let htmlRowsString: string = "";
-
+            let rows = [];
+            htmlRowsJSON.value.HTMLContentItems.forEach(row => {
+                rows.push(`<${row.Tag} ${this.getAttributes(row.Attributes)}>{${row.Attributes[0].id}_Replace}</${row.Tag}>`)
+            });
+            htmlRowsString = htmlContainerString.replace("{HTMLRows_Replace}", rows.join("\n"))
             //#endregion
-
             //#region RECALL THE MEMORIES
 
 
@@ -129,10 +140,12 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
         public Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON: any, htmlRowsString: string): string {
             //#region DESCRIBE THE MEMORIES
-            let htmlColumnsString: string = "";
-
+            let htmlColumnsString: string = htmlRowsString;
             //#endregion
-
+            htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
+                let colItem = `<${col.Tag} ${this.getAttributes(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>`;
+                htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
+            });
             //#region RECALL THE MEMORIES
 
 
@@ -143,7 +156,11 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
 
         public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
             //#region DESCRIBE THE MEMORIES
-            let htmlContentString: string = "";
+            let htmlContentString: string = htmlColumnsString;
+            htmlContentJSON.value.HTMLContentItems.forEach(con => {
+                let content = `<${con.Tag} ${this.getAttributes(con.Attributes)}></${con.Tag}>`;
+                htmlContentString = htmlContentString.replace(`{${con.ParentHTMLContentItemAttributeID}_Replace}`, content);
+            });
 
             //#endregion
 
@@ -158,7 +175,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
         public Step_5_0_Create_HTMLInlineStyles_1_0(htmlStylesJSON: any) : string {
             //#region DESCRIBE THE MEMORIES
             let htmlInlineCSSString: string = "";
-
+            // console.log(htmlStylesJSON)
             //#endregion
 
             //#region RECALL THE MEMORIES

@@ -92,6 +92,7 @@ export namespace BaseDI.Playground.Test.BackEnd {
                     new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.BaseDI.Playground.Test.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(extraData))
                         .SetupStoryline(this._clientInfo, this._storylineDetails, this._storylineDetails_Parameters, extraData, "")
                         .Action().then(response => {
+                            // console.log(response) 
                             handleObservation(response);
                         })
                 }
@@ -110,7 +111,7 @@ export namespace BaseDI.Playground.Test.BackEnd {
 
             //#region 3. Observe
             const handleObservation = (response: any) => {
-                //console.log("output = " + JSON.stringify(response?.outputs[1]?.baseDIObservations));
+                console.log("output = " + JSON.stringify(response?.outputs[1]?.baseDIObservations));
             }
             //#endregion
         }
