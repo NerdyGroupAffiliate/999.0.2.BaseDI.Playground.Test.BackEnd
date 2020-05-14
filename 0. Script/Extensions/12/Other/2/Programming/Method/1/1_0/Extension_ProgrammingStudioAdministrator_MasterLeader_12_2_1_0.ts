@@ -29,10 +29,9 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Extensions_1
 
         public static Step_X_X_Create_An_ObservationJsonNode_1_0(metaDataCalledByEntryPointName: string, metaDataCalledByMethodName: string, metaDataCalledByMethodReason: string, presentationTemplate: string, businessTemplate: string, serviceTemplate: string, securityTemplate: string, dataTemplate: string): String {
             let outputObservationBody: string = "{'baseDIObservations': [{ 'observation': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}}  }]  } }]}";
-            let outputObservationItem: string = "'presentation': [{presentation}], 'business': [{ business }], 'service': [{ service }],  'security': [{ security }],'data': [{ data }]";
-
+            let outputObservationItem: string = "'presentation': [{presentation}], 'business': [{business}], 'service': [{service}],  'security': [{security}],'data': [{data}]";
             outputObservationBody = outputObservationBody.replace("{item}", outputObservationItem);
-
+           
             outputObservationBody = outputObservationBody.replace("{calledByEntryPointName}", metaDataCalledByEntryPointName);
             outputObservationBody = outputObservationBody.replace("{calledByMethodName}", metaDataCalledByMethodName);
             outputObservationBody = outputObservationBody.replace("{calledByMethodReason}", metaDataCalledByMethodReason);
@@ -42,7 +41,6 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Extensions_1
             outputObservationBody = outputObservationBody.replace("{service}", serviceTemplate);
             outputObservationBody = outputObservationBody.replace("{security}", securityTemplate);
             outputObservationBody = outputObservationBody.replace("{data}", dataTemplate);
-
             return outputObservationBody;
         }
         //#endregion
