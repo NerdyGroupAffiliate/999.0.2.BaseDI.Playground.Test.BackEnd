@@ -92,8 +92,7 @@ export namespace BaseDI.Playground.Test.BackEnd {
                     new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.BaseDI.Playground.Test.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(extraData))
                         .SetupStoryline(this._clientInfo, this._storylineDetails, this._storylineDetails_Parameters, extraData, "")
                         .Action().then(response => {
-                            // console.log(response)
-                            handleObservation(response);
+                            this.handleObservation(response);
                         })
                 }
                 //#endregion
@@ -108,13 +107,21 @@ export namespace BaseDI.Playground.Test.BackEnd {
             }
 
             //#endregion
-
-            //#region 3. Observe
-            const handleObservation = (response: any) => {
-                console.log('In handle')
-                console.log("output = " + JSON.stringify(response?.outputs[1]?.baseDIObservations));
-            }
             //#endregion
+        }
+
+        //#region 3. Observe
+        public handleObservation = (response: any) => {
+            // var iframe = document.createElement('iframe');
+            // iframe.style.width = "100%";
+            // iframe.style.height  = "100vh";
+
+            // document.getElementById("page").appendChild(iframe);
+            // iframe.contentWindow.document.open();
+            // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
+            // iframe.contentWindow.document.close();
+           
+            document.getElementById('page').innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
         }
         //#endregion
     }

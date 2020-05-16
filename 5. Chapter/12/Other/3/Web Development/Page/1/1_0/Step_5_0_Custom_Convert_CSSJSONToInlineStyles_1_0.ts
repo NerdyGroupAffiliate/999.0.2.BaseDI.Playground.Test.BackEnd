@@ -181,7 +181,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
             let files = [];
             filesArray.forEach(file => {
-                files.push(`<link rel="stylesheet" href="${styleFilePathLocal}/${file.StyleFileName}.css">\n`)
+                files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
             });
             htmlInlineCSSString = files.join("\n");
             //#endregion
