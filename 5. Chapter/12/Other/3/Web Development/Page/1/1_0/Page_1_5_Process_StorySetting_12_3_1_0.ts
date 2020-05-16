@@ -159,10 +159,25 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
         public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
             //#region DESCRIBE THE MEMORIES
             let htmlContentString: string = htmlColumnsString;
+            // console.log(htmlContentJSON)
+            let idsAndContant = {}
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
-                let content = `<${con.Tag} ${this.getAttributes(con.Attributes)}></${con.Tag}>\n`;
-                htmlContentString = htmlContentString.replace(`{${con.ParentHTMLContentItemAttributeID}_Replace}`, content);
+                if(idsAndContant[con.ParentHTMLContentItemAttributeID] == undefined) {
+                    idsAndContant[con.ParentHTMLContentItemAttributeID] = new Array();
+                    idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.getAttributes(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+                }
+                else {
+                    idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.getAttributes(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+                }
+                // content.push(`<${con.Tag} ${this.getAttributes(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
             });
+
+            Object.keys(idsAndContant).forEach(item => {
+                let content = idsAndContant[item].join('\n')
+                htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
+             });
+            // console.log(idsAndContant)
+            // htmlContentString = htmlContentString.replace(`{${con.ParentHTMLContentItemAttributeID}_Replace}`, content.join('\n'));
 
             //#endregion
 
