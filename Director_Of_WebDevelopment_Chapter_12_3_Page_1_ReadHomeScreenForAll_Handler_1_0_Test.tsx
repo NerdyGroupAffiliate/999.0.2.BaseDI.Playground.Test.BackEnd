@@ -76,11 +76,16 @@ export namespace BaseDI.Playground.Test.BackEnd {
             let outputObservationsPrintOut: string = "";
 
             let extraData = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+
+            let isProcessComplete: boolean = false;
+            let handleObservation: Promise<any>;
+
             //#endregion
 
             //#region 2. Action
 
-            try {
+            try
+            {
                 //#region TEST OUR LOGIC
 
                 //#region PROCESS LOGIC UPDATES
@@ -89,41 +94,42 @@ export namespace BaseDI.Playground.Test.BackEnd {
                 }
 
                 const Action = (output) => {
-                    new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.BaseDI.Playground.Test.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(extraData))
+                    handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.BaseDI.Playground.Test.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(extraData))
                         .SetupStoryline(this._clientInfo, this._storylineDetails, this._storylineDetails_Parameters, extraData, "")
-                        .Action().then(response => {
-                            this.handleObservation(response);
-                        })
+                        .Action();
                 }
                 //#endregion
 
-                return Action(armTemplateJSONOutput);
+                Action(armTemplateJSONOutput);
+
                 //#endregion
             }
-            catch (storyMistake) {
+            catch (storyMistake)
+            {
                 //#region PRINT OUT MISTAKES
                 console.log(storyMistake);
                 //#endregion
             }
 
             //#endregion
+
+            //#region 3. Observe
+            handleObservation.then(response => {
+                // var iframe = document.createElement('iframe');
+                // iframe.style.width = "100%";
+                // iframe.style.height  = "100vh";
+
+                // document.getElementById("page").appendChild(iframe);
+                // iframe.contentWindow.document.open();
+                // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
+                // iframe.contentWindow.document.close();
+
+                document.getElementById('page').innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+
+            })
+
             //#endregion
         }
-
-        //#region 3. Observe
-        public handleObservation = (response: any) => {
-            // var iframe = document.createElement('iframe');
-            // iframe.style.width = "100%";
-            // iframe.style.height  = "100vh";
-
-            // document.getElementById("page").appendChild(iframe);
-            // iframe.contentWindow.document.open();
-            // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
-            // iframe.contentWindow.document.close();
-           
-            document.getElementById('page').innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
-        }
-        //#endregion
     }
 }
 
