@@ -196,7 +196,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
                 page.EntryPoint = this._entryPoint;
                 page.ExtraData = this._extraData;
 
-                page.MasterLeader = this._centralizedStorer;
+                page.MasterStorer = this._centralizedStorer;
 
                 page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 
@@ -221,7 +221,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
             page.EntryPoint = this._entryPoint;
             page.ExtraData = this._extraData;
 
-            page.MasterLeader = this._centralizedStorer;
+            page.MasterStorer = this._centralizedStorer;
 
             page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
             //#endregion

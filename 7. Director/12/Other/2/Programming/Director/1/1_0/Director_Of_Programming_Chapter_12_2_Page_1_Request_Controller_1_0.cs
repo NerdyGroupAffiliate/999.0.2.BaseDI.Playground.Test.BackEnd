@@ -64,6 +64,11 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
             {
                 Client = EntryPoint.Client;
                 MasterLeader = EntryPoint.MasterLeader;
+                MasterController = EntryPoint.MasterController;
+                MasterConverter = EntryPoint.MasterConverter;
+                MasterDisturber = EntryPoint.MasterDisturber;
+                MasterSensor = EntryPoint.MasterSensor;
+                MasterTransporter = EntryPoint.MasterTransporter;
                 ExtraData = EntryPoint.ExtraData;
             }
 

@@ -18,6 +18,18 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Abstract_1
 
         public MasterLeader: any;
 
+        public MasterController: any;
+
+        public MasterTransporter: any;
+
+        public MasterConverter: any;
+
+        public MasterStorer: any;
+
+        public MasterDisturber: any;
+
+        public MasterSensor: any;
+
         public Client: any;
         //#endregion
 

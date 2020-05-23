@@ -50,6 +50,11 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
             if (this.EntryPoint != null && (this.EntryPoint.Client != undefined && this.EntryPoint.Client != null)) {
                 this.Client = this.EntryPoint.Client;
                 this.MasterLeader = this.EntryPoint.MasterLeader;
+                this.MasterController = this.EntryPoint.MasterController;
+                this.MasterConverter = this.EntryPoint.MasterConverter;
+                this.MasterDisturber = this.EntryPoint.MasterDisturber;
+                this.MasterSensor = this.EntryPoint.MasterSensor;
+                this.MasterTransporter = this.EntryPoint.MasterTransporter;
                 this.ExtraData = this.EntryPoint.ExtraData;
             }
 
@@ -205,7 +210,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
                 page.EntryPoint = this._entryPoint;
                 page.ExtraData = this._extraData;
 
-                page.MasterLeader = this._centralizedStorer;
+                page.MasterStorer = this._centralizedStorer;
 
                 page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 
@@ -227,7 +232,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
             page.EntryPoint = this._entryPoint;
             page.ExtraData = this._extraData;
 
-            page.MasterLeader = this._centralizedStorer;
+            page.MasterStorer = this._centralizedStorer;
 
             page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 

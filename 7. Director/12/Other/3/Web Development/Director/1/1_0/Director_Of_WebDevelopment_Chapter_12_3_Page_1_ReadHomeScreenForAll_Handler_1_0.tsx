@@ -195,7 +195,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
             page.EntryPoint = this._entryPoint;
             page.ExtraData = this._extraData;
 
-            page.MasterLeader = this._centralizedStorer;
+            page.MasterStorer = this._centralizedStorer;
 
             page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 
