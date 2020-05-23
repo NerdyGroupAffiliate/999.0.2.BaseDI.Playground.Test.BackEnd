@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_999._0._2.BaseDI.Playground.Test.BackEnd</RootNamespace>
+    <RootNamespace>_999._0._2.BaseDI.BackEnd</RootNamespace>
     <UserSecretsId>69357c9e-c71d-4207-b5ac-8941c0b55e0e</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
   </PropertyGroup>

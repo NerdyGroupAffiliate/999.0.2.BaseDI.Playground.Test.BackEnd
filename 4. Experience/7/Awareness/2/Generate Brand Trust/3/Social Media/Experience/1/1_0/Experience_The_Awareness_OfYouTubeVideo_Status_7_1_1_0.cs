@@ -6,9 +6,9 @@ using Google.Apis.Upload;
 using Google.Apis.YouTube.v3.Data;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
 
-namespace BaseDI.Playground.Test.Backend.Experience_
+namespace BaseDI.BackEnd.Experience_
 {
     public class Experience_The_Awareness_OfYouTubeVideo_Status_7_1_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
     {

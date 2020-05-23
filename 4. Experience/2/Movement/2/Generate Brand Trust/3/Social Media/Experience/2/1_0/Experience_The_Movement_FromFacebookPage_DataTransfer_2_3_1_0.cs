@@ -4,17 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using BaseDI.Playground.Test.Backend.Character_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Character_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using System.Text;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
 using System.Linq;
-using BaseDI.Playground.Test.Backend.State.Social_Media_;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
+using BaseDI.BackEnd.State.Social_Media_;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
 
-namespace BaseDI.Playground.Test.Backend.Experience.Movement.Social_Media_2
+namespace BaseDI.BackEnd.Experience.Movement.Social_Media_2
 {    
     public class Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
     {

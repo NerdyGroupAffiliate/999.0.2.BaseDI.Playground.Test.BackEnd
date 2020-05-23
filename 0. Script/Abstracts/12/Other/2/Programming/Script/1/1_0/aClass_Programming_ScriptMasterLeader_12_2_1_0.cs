@@ -1,13 +1,13 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Risk_Management_1;
-using BaseDI.Playground.Test.Backend.Director.Risk_Management_2;
-using BaseDI.Playground.Test.Backend.Script.Programming.Enumeration_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
+﻿using BaseDI.BackEnd.Director.Risk_Management_1;
+using BaseDI.BackEnd.Director.Risk_Management_2;
+using BaseDI.BackEnd.Script.Programming.Enumeration_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1
+namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptMasterLeader_12_2_1_0
     {

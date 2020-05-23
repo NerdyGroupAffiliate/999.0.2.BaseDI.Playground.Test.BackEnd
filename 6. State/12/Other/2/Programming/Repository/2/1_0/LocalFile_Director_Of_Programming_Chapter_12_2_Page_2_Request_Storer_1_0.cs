@@ -1,6 +1,6 @@
-﻿using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
+﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.State.Programming_2
+namespace BaseDI.BackEnd.State.Programming_2
 {
     public class LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
     {

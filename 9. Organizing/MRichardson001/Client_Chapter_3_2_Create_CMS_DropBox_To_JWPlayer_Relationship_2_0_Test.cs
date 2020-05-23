@@ -12,10 +12,10 @@ using System.Text;
 using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json.Linq;
 using Dropbox.Api;
-using BaseDI.Playground.Test.Backend.Experience_;
-using BaseDI.Playground.Test.Backend.Experience.Web_Development_;
+using BaseDI.BackEnd.Experience_;
+using BaseDI.BackEnd.Experience.Web_Development_;
 
-namespace BaseDI.Playground.Test.Backend
+namespace BaseDI.BackEnd
 {
     public class Client_Chapter_3_2_Create_CMS_DropBox_To_JWPlayer_Relationship_2_0_Test
     {

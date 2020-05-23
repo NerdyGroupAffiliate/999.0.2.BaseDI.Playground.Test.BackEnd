@@ -1,6 +1,6 @@
-﻿using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
+﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.State.Web_Development_1
+namespace BaseDI.BackEnd.State.Web_Development_1
 {
     public class LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
     {

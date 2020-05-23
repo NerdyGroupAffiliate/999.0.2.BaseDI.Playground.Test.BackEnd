@@ -1,15 +1,17 @@
-﻿import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
+﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1 {
-    export class Page_1_9_Verify_Process_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
+export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
+    export class Page_1_9_Verify_Process_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         private _baseDIPlaceHolderValue = "{BASEDICUSTOMOPTION}";
         private _optionsProfiles: Array<string> = new Array();  
+
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: IContract_Programming_Repository_12_2_1_0) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //region 1. Assign
@@ -33,17 +35,33 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //STORE META DATA
-            let metaData = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(this.StorylineDetails, "", this._baseDIPlaceHolderValue, true);
+            this.Repository.ExtraData = this.ExtraData;
+            this.Repository.MasterStorer = this.MasterStorer;
 
-            //STORE JSONSTRING PLACEHOLDER
-            this.Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(metaData); 
+            const processMetaData = async () =>
+            {
+                //RUN THE PROCESS
+                this.Repository.Action_9_Verify_Process().then(metaData =>
+                {
+                    //STORE META DATA
+                    this.StorylineDetails = metaData.StorylineDetails;
+                    this.StorylineDetails_Parameters = metaData.StorylineDetails_Parameters;
 
-            //CONVERT JSONSTRING PLACEHOLDER
-            this.Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
+                    //STORE JSONSTRING PLACEHOLDER
+                    this.Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(metaData.StorylineDetailsFiltered);
+
+                    //CONVERT JSONSTRING PLACEHOLDER
+                    this.Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
+
+                    return;
+                })
+            }
+
+            //START THE PROCESS
+            await processMetaData();
 
             //RETURN OUTPUTTED APPSETTINGS
-            return await this.StorylineDetails;
+            return this.StorylineDetails;
         }
 
         //#region STORE JSONSTRING PLACEHOLDER

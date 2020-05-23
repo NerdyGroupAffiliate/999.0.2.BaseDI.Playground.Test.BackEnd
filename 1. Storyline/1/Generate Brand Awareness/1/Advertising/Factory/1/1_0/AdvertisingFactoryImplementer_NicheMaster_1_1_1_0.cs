@@ -1,14 +1,14 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Advertising_1;
-using BaseDI.Playground.Test.Backend.Director.Advertising_2;
-using BaseDI.Playground.Test.Backend.Director.Advertising_3;
+﻿using BaseDI.BackEnd.Director.Advertising_1;
+using BaseDI.BackEnd.Director.Advertising_2;
+using BaseDI.BackEnd.Director.Advertising_3;
 
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Advertising_1;
-using BaseDI.Playground.Test.Backend.State.Advertising_2;
-using BaseDI.Playground.Test.Backend.State.Advertising_3;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.State.Advertising_1;
+using BaseDI.BackEnd.State.Advertising_2;
+using BaseDI.BackEnd.State.Advertising_3;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -17,7 +17,7 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Story.Advertising_1
+namespace BaseDI.BackEnd.Story.Advertising_1
 {
     #region 6. Action Implementation
 

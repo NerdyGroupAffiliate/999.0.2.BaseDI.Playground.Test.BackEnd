@@ -1,16 +1,36 @@
 ﻿import * as IContract_Programming_Repository_12_2_1_0 from "../../../../../../../../Interfaces/12/Other/2/Programming/Contract/1/1_0/IContract_Programming_Repository_12_2_1_0";
+import * as ExtraData_12_2_1_0 from "../../../../../../../../Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Programming.Abstract_1
+export namespace BaseDI.BackEnd.Programming.Abstract_1
 {
     export abstract class aClass_Programming_ScriptAction_12_2_1_0<ChapterAction> implements IContract_Programming_Repository_12_2_1_0
     {
         //#region 1. Assign
+        public ExtraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+
+        public MasterLeader: any;
+
+        public MasterController: any;
+
+        public MasterTransporter: any;
+
+        public MasterConverter: any;
+
+        public MasterStorer: any;
+
+        public MasterDisturber: any;
+
+        public MasterSensor: any;
+
+        public RequestName: String;
+
         //#endregion
 
         //#region 2. Ready
         constructor()
         {
             //#region 1. Assign
+
             //#endregion
 
             //#region 2. Action

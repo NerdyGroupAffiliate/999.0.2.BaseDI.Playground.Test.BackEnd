@@ -1,5 +1,5 @@
-﻿using BaseDI.Playground.Test.Backend.Experience.Web_Development_;
-using BaseDI.Playground.Test.Backend.Experience_;
+﻿using BaseDI.BackEnd.Experience.Web_Development_;
+using BaseDI.BackEnd.Experience_;
 using Dropbox.Api;
 using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json.Linq;
@@ -13,7 +13,7 @@ using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BaseDI.Playground.Test.Backend
+namespace BaseDI.BackEnd
 {
     public class Client_Chapter_3_6_Create_CMS_Box_To_Vimeo_Relationship_1_0_Test
     {

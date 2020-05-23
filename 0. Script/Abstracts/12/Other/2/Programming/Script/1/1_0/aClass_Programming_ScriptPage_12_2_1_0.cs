@@ -1,13 +1,13 @@
-﻿using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
+﻿using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Script.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1
+namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptPage_12_2_1_0
     {
@@ -15,7 +15,7 @@ namespace BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1
 
         //A. Variable Declaration       
 
-        public IContract_Programming_Repository_12_2_1_0 Repository { get; set; }
+        public aClass_Programming_ScriptAction_12_2_1_0<JObject> Repository { get; set; }
 
         public JObject StorylineDetails { get; set; }
 

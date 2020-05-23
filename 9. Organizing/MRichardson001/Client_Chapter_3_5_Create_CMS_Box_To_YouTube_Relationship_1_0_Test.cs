@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Threading;
-using BaseDI.Playground.Test.Backend;
+using BaseDI.BackEnd;
 using Dropbox.Api;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
@@ -13,7 +13,7 @@ using Google.Apis.Util.Store;
 using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
 
-namespace BaseDI.Playground.Test.Backend
+namespace BaseDI.BackEnd
 {
     public class Client_Chapter_3_5_Create_CMS_Box_To_YouTube_Relationship_1_0_Test
     {

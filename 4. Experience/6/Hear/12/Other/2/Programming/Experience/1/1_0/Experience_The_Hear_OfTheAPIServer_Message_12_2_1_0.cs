@@ -1,13 +1,13 @@
-﻿using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
+﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Experience.Hear.Programming_1
+namespace BaseDI.BackEnd.Experience.Hear.Programming_1
 {
     public class Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
     {

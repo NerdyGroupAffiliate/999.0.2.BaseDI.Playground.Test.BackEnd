@@ -1,6 +1,6 @@
-﻿using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
+﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_2
+namespace BaseDI.BackEnd.Chapter.Page.Programming_2
 {
     public class Page_1_2_Validate_Process_12_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
@@ -21,7 +21,7 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_2
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_2_Validate_Process_12_2_1_0(JObject storylineDetails, IContract_Programming_Repository_12_2_1_0 repository)
+        public Page_1_2_Validate_Process_12_2_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<JObject> repository)
         {
             #region 1. Assign
 

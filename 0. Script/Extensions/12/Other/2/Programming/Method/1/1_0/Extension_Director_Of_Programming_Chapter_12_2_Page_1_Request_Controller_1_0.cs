@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1
+namespace BaseDI.BackEnd.Script.Programming.Extensions_1
 {
     public static class Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0
     {

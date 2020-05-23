@@ -1,6 +1,6 @@
 ﻿import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Programming.Abstract_1
+export namespace BaseDI.BackEnd.Programming.Abstract_1
 {
     export abstract class aClass_Programming_ScriptNicheMaster_12_2_1_0<StoryRequest>
     {
@@ -29,7 +29,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Abstract_1
         //#endregion
 
         //#region 4. Action
-        public abstract Action(client: any, centralizedStorer: any, requestToResolve: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, storylineDetails: object, storylineDetails_Parameters: object, requestName: string): StoryRequest;
+        public abstract Action(client: any, centralizedStorer: any, requestToResolve: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, storylineDetails: object, storylineDetails_Parameters: object, requestName: string, requestToProcess: string): StoryRequest;
         //#endregion
     }
 }

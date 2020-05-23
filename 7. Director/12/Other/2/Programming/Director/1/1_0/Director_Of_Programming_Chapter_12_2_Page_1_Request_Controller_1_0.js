@@ -100,7 +100,7 @@ var BaseDI;
                             });
                         };
                         return Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0;
-                    }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
+                    }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
                     Programming_.Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0 = Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0;
                     //region 5. Action Script
                     var Use_DesignPattern_Builder_Chapter_12_1_Page_1 = /** @class */ (function () {
@@ -194,7 +194,7 @@ var BaseDI;
                                 return __generator(this, function (_a) {
                                     switch (_a.label) {
                                         case 0:
-                                            page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
+                                            page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_1.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
                                             page.ExtraData = this._extraData;
                                             page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
                                             //region 2. Action
@@ -215,7 +215,7 @@ var BaseDI;
                                 return __generator(this, function (_a) {
                                     switch (_a.label) {
                                         case 0:
-                                            page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
+                                            page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
                                             page.ExtraData = this._extraData;
                                             page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
                                             //region 2. Action
@@ -297,7 +297,7 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Builder_Chapter_12_1_Page_1_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Programming_.Implement_DesignPattern_Builder_Chapter_12_1_Page_1_1_0 = Implement_DesignPattern_Builder_Chapter_12_1_Page_1_1_0;
                 })(Programming_ = Director.Programming_ || (Director.Programming_ = {}));
             })(Director = UnitTest.Director || (UnitTest.Director = {}));

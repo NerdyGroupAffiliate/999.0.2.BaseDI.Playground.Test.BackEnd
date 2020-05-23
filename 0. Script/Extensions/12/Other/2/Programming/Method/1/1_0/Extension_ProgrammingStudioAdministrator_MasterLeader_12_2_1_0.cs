@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1
+namespace BaseDI.BackEnd.Script.Programming.Extensions_1
 {
     public static class Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
     {

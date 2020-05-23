@@ -1,7 +1,7 @@
-﻿using BaseDI.Playground.Test.BackEnd.Script.Social_Media.Extensions_1;
-using BaseDI.Playground.Test.Backend.Director.Programming_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Story.Programming_1;
+﻿using BaseDI.BackEnd.Script.Social_Media.Extensions_1;
+using BaseDI.BackEnd.Director.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Story.Programming_1;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 
@@ -12,7 +12,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace BaseDI.Playground.Test.BackEnd
+namespace BaseDI.BackEnd
 {
     public class Experience_The_Movement_ToFacebookPage_DataTransfer_7_1_1_0_Test
     {
@@ -20,9 +20,9 @@ namespace BaseDI.Playground.Test.BackEnd
 
         //A. Variable Declaration
         private string _baseDIArmTemplateSchema = "";
-        private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.Playground.Test.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.json";
+        private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.json";
         private string _baseDIArmTemplateSchemaParameters = "";
-        private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.Playground.Test.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0-P.json";
+        private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0-P.json";
 
         private Dictionary<string, object> _clientInfo = new Dictionary<string, object>();
 

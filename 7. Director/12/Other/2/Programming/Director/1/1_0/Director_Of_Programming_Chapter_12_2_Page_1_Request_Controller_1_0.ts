@@ -17,8 +17,8 @@ import * as ChapterPage_Page_1_8_Process_CRUD_12_2_1_0 from "../../../../../../.
 import * as ChapterPage_Page_1_9_Verify_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_9_Verify_Process_12_2_1_0";
 import * as ChapterPage_Page_1_10_End_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_10_End_Process_12_2_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
-    export class Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
+export namespace BaseDI.BackEnd.Director.Programming_1 {
+    export class Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
         private _extraData: any;
         //#endregion
@@ -54,6 +54,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
                 this.MasterConverter = this.EntryPoint.MasterConverter;
                 this.MasterDisturber = this.EntryPoint.MasterDisturber;
                 this.MasterSensor = this.EntryPoint.MasterSensor;
+                this.MasterStorer = this.EntryPoint.MasterStorer;
                 this.MasterTransporter = this.EntryPoint.MasterTransporter;
                 this.ExtraData = this.EntryPoint.ExtraData;
             }
@@ -61,7 +62,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
             //#region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_12_1_Page_1(this.Client, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
+            const designPattern = new Use_DesignPattern_Builder_Chapter_12_1_Page_1(this.Client, this.MasterStorer, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
 
             //#endregion
 
@@ -91,14 +92,14 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _repository: IContract_Programming_Repository_12_2_1_0;
+        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         private _extraData: any;
         private _entryPoint: Object;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedStorer:any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: any, entryPoint:Object) {
+        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: any, entryPoint:Object) {
             this._centralizedStorer = centralizedStorer;
             this._client = client;
 
@@ -143,7 +144,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
     //#endregion
 
     //#region 6. Action Implementation
-    export class Implement_DesignPattern_Builder_Chapter_12_1_Page_1_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Builder_Chapter_12_1_Page_1_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
         private _centralizedStorer: any;
@@ -152,14 +153,14 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _repository: IContract_Programming_Repository_12_2_1_0;
+        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         private _extraData: any;
         private _entryPoint: any;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedStorer:any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: any, entryPoint: Object) {
+        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: any, entryPoint: Object) {
             super();
 
             this._centralizedStorer = centralizedStorer;
@@ -203,7 +204,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
         public async Action_9_Verify_Process(): Promise<object> {
             //region 1. Assign 
             if (this._entryPoint == null || this._entryPoint.constructor.name == "Object") {
-                var page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
+                var page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_1.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
 
                 page.Client = this._client;
 
@@ -225,7 +226,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
         //Page 1-10
         public async Action_10_End_Process(): Promise<object> {
             //region 1. Assign 
-            var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
+            var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
 
             page.Client = this._client;
 

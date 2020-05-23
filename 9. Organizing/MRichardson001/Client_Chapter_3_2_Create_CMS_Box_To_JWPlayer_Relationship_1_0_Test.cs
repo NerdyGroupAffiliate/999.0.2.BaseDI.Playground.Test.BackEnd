@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json.Linq;
 using Dropbox.Api;
 
-namespace BaseDI.Playground.Test.Backend
+namespace BaseDI.BackEnd
 {
     public class Client_Chapter_3_2_Create_CMS_Box_To_JWPlayer_Relationship_1_0_Test
     {

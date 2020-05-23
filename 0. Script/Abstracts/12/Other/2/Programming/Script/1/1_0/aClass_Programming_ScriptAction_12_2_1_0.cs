@@ -1,19 +1,38 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using BaseDI.BackEnd.Script.Programming.Poco_1;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1
+namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptAction_12_2_1_0<ChapterAction>
     {
         #region 1. Assign
 
+        public ExtraData_12_2_1_0 ExtraData { get; set; }
+
         internal JObject ProgrammingAdministrator { get; set; }
 
+        public object MasterLeader { get; set; }
+
+        public object MasterController { get; set; }
+
+        public object MasterTransporter { get; set; }
+
+        public object MasterConverter { get; set; }
+
+        public object MasterStorer { get; set; }
+
+        public object MasterDisturber { get; set; }
+
+        public object MasterSensor { get; set; }
+
+        public string RequestName { get; set; }
+
         //A. Variable Declaration      
-  
+
         #endregion
 
         #region 2. Ready

@@ -54,20 +54,20 @@ import * as WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 from "../../..
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
+export namespace BaseDI.BackEnd.Story.Programming_1
 {
-    export class ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 extends aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0
+    export class ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 extends aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0
     {
         //#region 1. Assign
         Mistake: object = new Object();
 
-        _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
 
-        _requestInspector: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        _requestInspector: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(requestType: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0)
+        constructor(requestType: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0)
         {
             super();
 
@@ -85,13 +85,13 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
         //#region 3. Set
         private HandleStoryDefaults()
         {
-            this._extraData = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0();
+            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
             this._extraData.MasterLeader = this;
         }
         //#endregion
 
         //#region 4. Action
-        public SetupStoryline(client: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any, requestToResolveName: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
+        public SetupStoryline(client: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any, requestToResolveName: string, requestToProcess: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
         {
             //#region 1. Assign
             let director_Of_Programming_Chapter_12_2_Page_1_Request_Handler: any;
@@ -102,7 +102,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
             //#endregion
 
             //#region 2. Ready
-            let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, requestToResolveName);
+            let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, requestToResolveName, requestToProcess);
             //#endregion
 
             //#region 3. Set
@@ -118,7 +118,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
                 {
                     //#region REQUEST HANDLER FOUND
 
-                    const entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
+                    const entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
                     this._requestInspector.EntryPoint = entryPoint;
                     this._requestInspector.StorylineDetails = entryPoint.StorylineDetails;
@@ -153,18 +153,21 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
         private _storylineDetails: object;
         private _storylineDetails_Parameters: object;
 
-        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _requestToProcess: string;
+        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         private _requestToResolveString: string;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string) {
+        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess:string) {
             this._client = client;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
+
+            this._requestToProcess = requestToProcess;
 
             this._requestToResolveObject = requestToResolveObject;
             this._requestToResolveString = requestToResolveString;
@@ -172,9 +175,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
             this._extraData = extraData;
 
             this.Action = this.Action.bind(this);
-        }
-        
-
+        }       
        
         //#endregion
 
@@ -185,7 +186,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
         public Action(): object
         {
             //#region BEGIN HANDLER SEARCH
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString);
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess);
 
             builder.Action_1_Begin_Process();
             let resolvedRequest: object = builder.Action_10_End_Process();
@@ -198,7 +199,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
     //#endregion
 
     //#region 6. Action Implementation
-    export class Implement_DesignPattern_Builder_Chapter_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Builder_Chapter_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
         private _client: any = null;
@@ -206,22 +207,26 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _requestToProcess: string;
+        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         private _requestToResolveString: string = "";
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
 
         private _requestName: string = "";
+
         //#endregion
 
         //#region 2. Ready
-        constructor(client:any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string) {
+        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string) {
             super();
 
             this._client = client;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
+
+            this._requestToProcess = requestToProcess;
 
             this._requestToResolveObject = requestToResolveObject;
             this._requestToResolveString = requestToResolveString;
@@ -273,7 +278,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
             //#region DECIDE DIRECTOR REQUEST
             if (this._requestName.toUpperCase().includes("DIRECTOR_OF_"))
             {
-                const pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName);
+                const pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName, this._requestToProcess);
 
                 return pickDirector.Action_1_Begin_Process();
             }
@@ -284,7 +289,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
             //#region DECIDE EXPERIENCE REQUEST
             if (this._requestName.toUpperCase().includes("EXPERIENCE_THE_"))
             {
-                let pickExperience = new Implement_DesignPattern_Factory_Experience_12_2_1_0(this._client,this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName);
+                let pickExperience = new Implement_DesignPattern_Factory_Experience_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName, this._requestToProcess);
 
                 return pickExperience.Action_1_Begin_Process();
             }
@@ -342,7 +347,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
     }
 
     //#region RETURN DIRECTOR WORKER
-    export class Implement_DesignPattern_Factory_Director_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Factory_Director_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //region 1. Assign
         private _client: any = null;
@@ -350,17 +355,18 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         private _requestToResolveString: string = "";
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
 
+        private _requestToProcess: string = "";
         private _requestName: string = "";
 
         private _centralizedStorer: Implement_DesignPattern_Factory_Storer_12_2_1_0;
 
         //region 2. Ready
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string) {
+        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string) {
             super();
 
             this._client = client;
@@ -371,10 +377,11 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
             this._requestToResolveObject = requestToResolveObject;
             this._requestToResolveString = requestToResolveString;
             this._requestName = requestToResolveString;
+            this._requestToProcess = requestToProcess;
 
             this._extraData = extraData;
 
-            this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString);
+            this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -397,215 +404,215 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
             //region RETURN DIRECTOR WORKER
             if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_PROGRAMMING")) {
                 //region 12. Other
-                let createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Programming_1.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
+                let createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
 
                 createDirector.APILocationLocalNodeJS = "http://localhost:8912/api/basedi/io/programming"
                 createDirector.APILocationLocalDotNetCore = "http://localhost:9912/api/basedi/io/programming";
 
                 createDirector.APILocationRemote = "https://api.basedi.io/programming";
 
-                return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
             }
             else {
                 //This means our director of programming wanted us to play this storyline.
 
                 //region 1. Generate Brand Awareness Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_ADVERTISING")) {
-                    let createDirector = new AdvertisingFactoryImplementer_NicheMaster_1_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Advertising_1.AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(this._extraData);
+                    let createDirector = new AdvertisingFactoryImplementer_NicheMaster_1_1_1_0.BaseDI.BackEnd.Story.Advertising_1.AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8991/api/basedi/io/advertising"
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9991/api/basedi/io/advertising";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/advertising";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 2. Generate Brand Trust Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_BLOGGING")) {
-                    let createDirector = new BloggingFactoryImplementer_NicheMaster_2_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Blogging_1.BloggingFactoryImplementer_NicheMaster_2_1_1_0(this._extraData);
+                    let createDirector = new BloggingFactoryImplementer_NicheMaster_2_1_1_0.BaseDI.BackEnd.Story.Blogging_1.BloggingFactoryImplementer_NicheMaster_2_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8992/api/basedi/io/blogging";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9992/api/basedi/io/blogging";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/blogging";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_PODCASTING")) {
-                    let createDirector = new PodcastingFactoryImplementer_NicheMaster_2_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Podcasting_2.PodcastingFactoryImplementer_NicheMaster_2_2_1_0(this._extraData);
+                    let createDirector = new PodcastingFactoryImplementer_NicheMaster_2_2_1_0.BaseDI.BackEnd.Story.Podcasting_2.PodcastingFactoryImplementer_NicheMaster_2_2_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8992/api/basedi/io/blogging";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9992/api/basedi/io/blogging";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/podcasting";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_SOCIALMEDIA")) {
-                    let createDirector = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.Playground.Test.BackEnd.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._extraData);
+                    let createDirector = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.BackEnd.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8992/api/basedi/io/socialmedia";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9992/api/basedi/io/socialmedia";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/socialmedia";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 3. Generate Optin Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_LISTBUILDING")) {
-                    let createDirector = new ListBuildingFactoryImplementer_NicheMaster_3_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Listing_Building_1.ListBuildingFactoryImplementer_NicheMaster_3_1_1_0(this._extraData);
+                    let createDirector = new ListBuildingFactoryImplementer_NicheMaster_3_1_1_0.BaseDI.BackEnd.Story.Listing_Building_1.ListBuildingFactoryImplementer_NicheMaster_3_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8993/api/basedi/io/listbuilding";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9993/api/basedi/io/listbuilding";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/listbuilding";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 4. Sell Low Ticket Offer Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_SUPPLEMENTS")) {
-                    let createDirector = new SupplementsFactoryImplementer_NicheMaster_4_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Supplements_1.SupplementsFactoryImplementer_NicheMaster_4_1_1_0(this._extraData);
+                    let createDirector = new SupplementsFactoryImplementer_NicheMaster_4_1_1_0.BaseDI.BackEnd.Story.Supplements_1.SupplementsFactoryImplementer_NicheMaster_4_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8994/api/basedi/io/supplements";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9994/api/basedi/io/supplements";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/supplements";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 5. Sell High Ticket Offer Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_COACHING")) {
-                    let createDirector = new CoachingFactoryImplementer_NicheMaster_5_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Coaching_1.CoachingFactoryImplementer_NicheMaster_5_1_1_0(this._extraData);
+                    let createDirector = new CoachingFactoryImplementer_NicheMaster_5_1_1_0.BaseDI.BackEnd.Story.Coaching_1.CoachingFactoryImplementer_NicheMaster_5_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8995/api/basedi/io/coaching";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9995/api/basedi/io/coaching";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/coaching";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_CONSULTING")) {
-                    let createDirector = new CoachingFactoryImplementer_NicheMaster_5_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Coaching_1.CoachingFactoryImplementer_NicheMaster_5_1_1_0(this._extraData);
+                    let createDirector = new CoachingFactoryImplementer_NicheMaster_5_1_1_0.BaseDI.BackEnd.Story.Coaching_1.CoachingFactoryImplementer_NicheMaster_5_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8995/api/basedi/io/consulting";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8995/api/basedi/io/consulting";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/consulting";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_PERSONALTRAINING")) {
-                    let createDirector = new PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0.BaseDI.Playground.Test.BackEnd.Story.Personal_Training_3.PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0(this._extraData);
+                    let createDirector = new PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0.BaseDI.BackEnd.Story.Personal_Training_3.PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8995/api/basedi/io/personaltraining";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9995/api/basedi/io/personaltraining";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/personaltraining";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 6. Sell Subscription Offer Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_SOFTWARE")) {
-                    let createDirector = new SoftwareFactoryImplementer_NicheMaster_6_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Software_1.SoftwareFactoryImplementer_NicheMaster_6_1_1_0(this._extraData);
+                    let createDirector = new SoftwareFactoryImplementer_NicheMaster_6_1_1_0.BaseDI.BackEnd.Story.Software_1.SoftwareFactoryImplementer_NicheMaster_6_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8996/api/basedi/io/software";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9996/api/basedi/io/software";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/software";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 7. Sell Commission Offer Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_AFFILIATEREVENUE")) {
-                    let createDirector = new AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Affiliate_Revenue_1.AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0(this._extraData);
+                    let createDirector = new AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0.BaseDI.BackEnd.Story.Affiliate_Revenue_1.AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8997/api/basedi/io/affiliaterevenue";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9997/api/basedi/io/affiliaterevenue";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/affiliaterevenue";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 8. Account Loss or Gain Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_ACCOUNTING")) {
-                    let createDirector = new AccountingFactoryImplementer_NicheMaster_8_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Accounting_1.AccountingFactoryImplementer_NicheMaster_8_1_1_0(this._extraData);
+                    let createDirector = new AccountingFactoryImplementer_NicheMaster_8_1_1_0.BaseDI.BackEnd.Story.Accounting_1.AccountingFactoryImplementer_NicheMaster_8_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8998/api/basedi/io/accounting";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9998/api/basedi/io/accounting";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/accounting";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 9. Customer Service Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_CUSTOMERSERVICE")) {
-                    let createDirector = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Customer_Service_1.CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(this._extraData);
+                    let createDirector = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0.BaseDI.BackEnd.Story.Customer_Service_1.CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8999/api/basedi/io/customerservice";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9999/api/basedi/io/customerservice";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/customerservice";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 10. Perform Manual Task Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_PRODUCTIVITY")) {
-                    let createDirector = new ProductivityFactoryImplementer_NicheMaster_10_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Productivity_1.ProductivityFactoryImplementer_NicheMaster_10_1_1_0(this._extraData);
+                    let createDirector = new ProductivityFactoryImplementer_NicheMaster_10_1_1_0.BaseDI.BackEnd.Story.Productivity_1.ProductivityFactoryImplementer_NicheMaster_10_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8910/api/basedi/io/customerservice";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9910/api/basedi/io/customerservice";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/productivity";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 11. Automate Manual Task Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_RISKMANAGEMENT")) {
-                    let createDirector = new RiskManagementFactoryTester_NicheMaster_11_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Risk_Management_1.RiskManagementFactoryTester_NicheMaster_11_1_1_0(this._extraData);
+                    let createDirector = new RiskManagementFactoryTester_NicheMaster_11_1_1_0.BaseDI.BackEnd.Story.Risk_Management_1.RiskManagementFactoryTester_NicheMaster_11_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8911/api/basedi/io/riskmanagement";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9911/api/basedi/io/riskmanagement";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/riskmanagement";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 //region 12. Other Storylines
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_CAREERSEMPLOYMENT")) {
-                    let createDirector = new CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0.BaseDI.Playground.Test.BackEnd.Story.Careers_Employment_1.CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0(this._extraData);
+                    let createDirector = new CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0.BaseDI.BackEnd.Story.Careers_Employment_1.CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8912/api/basedi/io/careersemployment";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9912/api/basedi/io/careersemployment";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/careersemployment";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_WEBDEVELOPMENT")) {
-                    let createDirector = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.BaseDI.Playground.Test.BackEnd.Story.Web_Development_3.WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(this._extraData);
+                    let createDirector = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.BaseDI.BackEnd.Story.Web_Development_3.WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(this._extraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8912/api/basedi/io/webdevelopment";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9912/api/basedi/io/webdevelopment";
 
                     createDirector.APILocationRemote = "https://api.basedi.io/webdevelopment";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                    return createDirector.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
                 }
             }
 
@@ -664,7 +671,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
     //#endregion
 
     //#region RETURN EXPERIENCE WORKER
-    export class Implement_DesignPattern_Factory_Experience_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Factory_Experience_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //region 1. Assign
         private _client: any = null;
@@ -672,17 +679,18 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         private _requestToResolveString: string = "";
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
 
         private _requestName: string = "";
+        private _requestToProcess: string = "";
 
         private _centralizedStorer: Implement_DesignPattern_Factory_Storer_12_2_1_0;
 
         //region 2. Ready
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string) {
+        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string) {
             super();
 
             this._client = client;
@@ -693,10 +701,11 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
             this._requestToResolveObject = requestToResolveObject;
             this._requestToResolveString = requestToResolveString;
             this._requestName = requestToResolveString;
+            this._requestToProcess = requestToProcess;
 
             this._extraData = extraData;
 
-            this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString);
+            this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -724,14 +733,14 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
 
             //region 2. Generate Brand Trust Storylines
             if (this._requestToResolveString.toUpperCase().includes("EXPERIENCE_THE_MOVEMENT_TOFACEBOOKPAGE_DATATRANSFER")) {
-                let createExperience = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.Playground.Test.BackEnd.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._extraData);
+                let createExperience = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.BackEnd.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._extraData);
 
                 createExperience.APILocationLocalNodeJS = "http://localhost:8992/api/basedi/io/socialmedia";
                 createExperience.APILocationLocalDotNetCore = "http://localhost:9992/api/basedi/io/socialmedia";
 
                 createExperience.APILocationRemote = "https://api.basedi.io/socialmedia";
 
-                return createExperience.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                return createExperience.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
             }
 
             //region 3. Generate Optin Storylines           
@@ -754,14 +763,14 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
 
             //region 12. Other Storylines
             if (this._requestToResolveString.toUpperCase().includes("EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE")) {
-                let createExperience = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Programming_1.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
+                let createExperience = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
 
                 createExperience.APILocationLocalDotNetCore = "http://localhost:8912/api/basedi/io/programming";
                 createExperience.APILocationLocalNodeJS = "http://localhost:9912/api/basedi/io/programming"
 
                 createExperience.APILocationRemote = "https://api.basedi.io/programming";
 
-                return createExperience.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName);
+                return createExperience.Action(this._client, this._centralizedStorer, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess);
             }
 
             return new Object();
@@ -815,7 +824,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
     //#endregion
 
     //#region HANDLE REQUEST STORAGE
-    export class Implement_DesignPattern_Factory_Storer_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Factory_Storer_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
         private _client: any = null;
@@ -823,17 +832,19 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         private _requestToResolveString: string = "";
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
 
         private _requestName: string = "";
+        private _requestToProcess: string = "";
+
         //#endregion
 
         //#region 2. Ready
 
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string) {
+        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string) {
             super();
 
             this._client = client;
@@ -844,6 +855,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
             this._requestToResolveObject = requestToResolveObject;
             this._requestToResolveString = requestToResolveString;
             this._requestName = requestToResolveString;
+            this._requestToProcess = requestToProcess;
 
             this._extraData = extraData;
 
@@ -871,8 +883,8 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1
         public Action_1_Begin_Process(): object {
             let armTemplateJSONOutput: object = new Object();
 
-            return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Playground.Test.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0")
+            return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
+                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0")
                 .Action();
         }
 

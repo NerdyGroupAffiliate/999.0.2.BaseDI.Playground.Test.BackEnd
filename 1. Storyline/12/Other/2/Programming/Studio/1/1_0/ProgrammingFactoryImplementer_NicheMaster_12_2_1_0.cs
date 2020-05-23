@@ -1,15 +1,15 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Advertising_1;
-using BaseDI.Playground.Test.Backend.Director.Programming_1;
-using BaseDI.Playground.Test.Backend.Director.Programming_2;
-using BaseDI.Playground.Test.Backend.Director.Risk_Management_1;
-using BaseDI.Playground.Test.Backend.Experience.Hear.Programming_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Advertising_1;
-using BaseDI.Playground.Test.Backend.State.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Programming_2;
+﻿using BaseDI.BackEnd.Director.Advertising_1;
+using BaseDI.BackEnd.Director.Programming_1;
+using BaseDI.BackEnd.Director.Programming_2;
+using BaseDI.BackEnd.Director.Risk_Management_1;
+using BaseDI.BackEnd.Experience.Hear.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.State.Advertising_1;
+using BaseDI.BackEnd.State.Programming_1;
+using BaseDI.BackEnd.State.Programming_2;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Story.Programming_1
+namespace BaseDI.BackEnd.Story.Programming_1
 {
     #region 6. Action Implementation
 
@@ -28,6 +28,8 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
         private object _centralizedStorer;
 
         private ExtraData_12_2_1_0 _extraData = null;
+
+        private string _requestName = "";
 
         internal ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(ExtraData_12_2_1_0 extraData)
         {

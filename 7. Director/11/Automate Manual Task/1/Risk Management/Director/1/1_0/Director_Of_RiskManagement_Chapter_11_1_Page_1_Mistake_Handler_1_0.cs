@@ -1,18 +1,18 @@
-﻿using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
+﻿using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
 
-using ChapterPage = BaseDI.Playground.Test.Backend.Chapter.Page.Risk_Management_1;
+using ChapterPage = BaseDI.BackEnd.Chapter.Page.Risk_Management_1;
 
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BaseDI.Playground.Test.Backend.Character_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Character_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
 
-namespace BaseDI.Playground.Test.Backend.Director.Risk_Management_1
+namespace BaseDI.BackEnd.Director.Risk_Management_1
 {
     public class Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

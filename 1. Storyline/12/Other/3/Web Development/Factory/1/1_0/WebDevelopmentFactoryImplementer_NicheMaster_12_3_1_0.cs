@@ -1,16 +1,16 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Web_Development_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Web_Development_1;
+﻿using BaseDI.BackEnd.Director.Web_Development_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.State.Web_Development_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Story.Web_Development_3
+namespace BaseDI.BackEnd.Story.Web_Development_3
 {
     #region 6. Action Implementation
 

@@ -1,17 +1,17 @@
-﻿using BaseDI.Playground.Test.Backend.Experience.Movement.Social_Media_1;
-using BaseDI.Playground.Test.Backend.Experience.Movement.Social_Media_2;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Social_Media_;
+﻿using BaseDI.BackEnd.Experience.Movement.Social_Media_1;
+using BaseDI.BackEnd.Experience.Movement.Social_Media_2;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.State.Social_Media_;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Story.Social_Media_3
+namespace BaseDI.BackEnd.Story.Social_Media_3
 {
     #region 6. Action Implementation
 

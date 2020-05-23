@@ -1,19 +1,19 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Risk_Management_1;
-using BaseDI.Playground.Test.Backend.Director.Risk_Management_2;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Risk_Management_;
-using BaseDI.Playground.Test.Backend.State.Risk_Management_1;
-using BaseDI.Playground.Test.Backend.State.Risk_Management_2;
+﻿using BaseDI.BackEnd.Director.Risk_Management_1;
+using BaseDI.BackEnd.Director.Risk_Management_2;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.State.Risk_Management_;
+using BaseDI.BackEnd.State.Risk_Management_1;
+using BaseDI.BackEnd.State.Risk_Management_2;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Story.Risk_Management_1
+namespace BaseDI.BackEnd.Story.Risk_Management_1
 {
     #region 6. Action Implementation
 

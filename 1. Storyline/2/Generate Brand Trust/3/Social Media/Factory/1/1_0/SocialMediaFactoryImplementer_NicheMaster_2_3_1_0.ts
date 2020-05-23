@@ -10,14 +10,14 @@ import * as RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTrans
 
 //import * as Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0 from "../../../../../../../../4. Experience/2/Movement/2/Generate Brand Trust/3/Social Media/Experience/1/1_0/Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Story.Social_Media_3 {
-    export class SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+export namespace BaseDI.BackEnd.Story.Social_Media_3 {
+    export class SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
         private _centralizedStorer: any;
         private _client: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
@@ -45,7 +45,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Social_Media_3 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer:any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String): object
+        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
@@ -79,13 +79,13 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Social_Media_3 {
         {
             //#region CHECK FOR MISTAKES
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
             let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
 
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            //let experience = new Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Playground.Test.BackEnd.Experience.Movement.Social_Media_1.Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(extraData);
+            //let experience = new Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.BackEnd.Experience.Movement.Social_Media_1.Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(extraData);
 
             //experience.Client = this._client;
 
@@ -100,19 +100,19 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Social_Media_3 {
             //#region ASSIGN LOGIC REPOSITORY
             //switch (repositoryType.toUpperCase()) {
             //    case "LOCALFILE":
-            //        var localFile = new LocalFile_Experience_MovementToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Playground.Test.BackEnd.State.Social_Media_1.LocalFile_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
+            //        var localFile = new LocalFile_Experience_MovementToFacebookPage_DataTransfer_2_3_1_0.BaseDI.BackEnd.State.Social_Media_1.LocalFile_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
 
             //        experience.Repository = localFile;
 
             //        break;
             //    case "REMOTESERVICE":
-            //        var remoteService = new RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Playground.Test.BackEnd.State.Social_Media_1.RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
+            //        var remoteService = new RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.BackEnd.State.Social_Media_1.RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
 
             //        experience.Repository = remoteService;
 
             //        break;
             //    case "REMOTESERVICEVENDOR":
-            //        var REMOTESERVICEVENDOR = new RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Playground.Test.BackEnd.State.Social_Media_1.RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
+            //        var REMOTESERVICEVENDOR = new RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.BackEnd.State.Social_Media_1.RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
 
             //        experience.Repository = REMOTESERVICEVENDOR;
 

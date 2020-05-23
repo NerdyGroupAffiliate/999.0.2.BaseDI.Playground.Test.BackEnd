@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _0._1.BaseDI.Playground.Test.BackEnd.Data
+namespace _0._1.BaseDI.BackEnd.Data
 {
     public class WeatherForecastService
     {

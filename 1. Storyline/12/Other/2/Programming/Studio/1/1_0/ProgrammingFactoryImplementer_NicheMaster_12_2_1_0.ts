@@ -26,14 +26,18 @@ import * as RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 fr
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 import * as Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/2/1_0/Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
-    export class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+export namespace BaseDI.BackEnd.Story.Programming_1 {
+    export class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
         private _centralizedStorer: any;
         private _client: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+
+        private _requestName: String = "";
+        private _requestToProcess: String = "";
+
         //#endregion
 
         //#region 2. Ready
@@ -61,7 +65,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String): object
+        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
@@ -72,13 +76,18 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
 
             this._extraData.KeyValuePairs.setValue("APILocationRemote", Object.assign(this.APILocationRemote, Object));
 
+            this._extraData.KeyValuePairs.setValue("RequestToProcess", Object.assign(requestToProcess, Object))
+                  
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
             const requestType = requestToResolve;
             let resolvedRequest: object = new Object();
 
-            switch (requestName.toUpperCase())
+            this._requestName = requestName;
+            this._requestToProcess = requestToProcess;
+
+            switch (this._requestName.toUpperCase())
             {
                 case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
                     resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
@@ -102,13 +111,15 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
         private Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
             let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
-            
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Playground.Test.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(extraData);
+            let director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(extraData);
 
             director.Client = this._client;
 
@@ -118,20 +129,23 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
+
             //#endregion
 
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Playground.Test.BackEnd.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Playground.Test.BackEnd.State.Programming_1.RemoveService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.RemoveService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -143,13 +157,13 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
         private Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
             let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
 
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let experience = new Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.Playground.Test.BackEnd.Experience.Hear.Programming_1.Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(extraData);
+            let experience = new Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.BackEnd.Experience.Hear.Programming_1.Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(extraData);
 
             experience.Client = this._client;
 
@@ -164,15 +178,17 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.Playground.Test.BackEnd.State.Programming_1.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
+                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.BackEnd.State.Programming_1.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
 
                     experience.Repository = localFile;
+                    experience.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.Playground.Test.BackEnd.State.Programming_1.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
+                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.BackEnd.State.Programming_1.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
 
                     experience.Repository = remoteService;
+                    experience.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -187,13 +203,13 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
         private Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
             let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
 
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0.BaseDI.Playground.Test.BackEnd.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(extraData);
+            let director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0.BaseDI.BackEnd.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(extraData);
 
             director.Client = this._client;
 
@@ -208,15 +224,17 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Programming_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0.BaseDI.Playground.Test.BackEnd.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0.BaseDI.BackEnd.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
 
                     director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0.BaseDI.Playground.Test.BackEnd.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0.BaseDI.BackEnd.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
 
                     director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
 
                     break;
             }

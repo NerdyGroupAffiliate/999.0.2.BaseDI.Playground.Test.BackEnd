@@ -1,10 +1,10 @@
 ﻿/////////////////////////////////////////////////////////////////////////////////////
 //0. System Dependencies
 /////////////////////////////////////////////////////////////////////////////////////
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
 
 using Newtonsoft.Json.Linq;
 
@@ -16,49 +16,49 @@ using System.Threading.Tasks;
 /////////////////////////////////////////////////////////////////////////////////////
 
 //1. Generate Brand Awareness
-using BaseDI.Playground.Test.Backend.Story.Advertising_1;
+using BaseDI.BackEnd.Story.Advertising_1;
 
 //2. Generate Brand Trust
-using BaseDI.Playground.Test.Backend.Story.Blogging_1;
-using BaseDI.Playground.Test.Backend.Story.Podcasting_2;
-using BaseDI.Playground.Test.Backend.Story.Social_Media_3;
+using BaseDI.BackEnd.Story.Blogging_1;
+using BaseDI.BackEnd.Story.Podcasting_2;
+using BaseDI.BackEnd.Story.Social_Media_3;
 
 //3. Generate Optin
-using BaseDI.Playground.Test.Backend.Story.Listing_Building_1;
+using BaseDI.BackEnd.Story.Listing_Building_1;
 
 //4. Sell Low Ticket Offer
-using BaseDI.Playground.Test.Backend.Story.Supplements_1;
+using BaseDI.BackEnd.Story.Supplements_1;
 
 //5. Sell High Ticket Offer
-using BaseDI.Playground.Test.Backend.Story.Coaching_1;
-using BaseDI.Playground.Test.Backend.Story.Consulting_2;
-using BaseDI.Playground.Test.Backend.Story.Personal_Training_3;
+using BaseDI.BackEnd.Story.Coaching_1;
+using BaseDI.BackEnd.Story.Consulting_2;
+using BaseDI.BackEnd.Story.Personal_Training_3;
 
 //6. Sell Subscription Offer
-using BaseDI.Playground.Test.Backend.Story.Software_1;
+using BaseDI.BackEnd.Story.Software_1;
 
 //7. Sell Commission Offer
-using BaseDI.Playground.Test.Backend.Story.Affiliate_Revenue_1;
+using BaseDI.BackEnd.Story.Affiliate_Revenue_1;
 
 //8. Account Gain or Loss
-using BaseDI.Playground.Test.Backend.Story.Accounting_1;
+using BaseDI.BackEnd.Story.Accounting_1;
 
 //9. Improve Customer Service
-using BaseDI.Playground.Test.Backend.Story.Customer_Service_1;
+using BaseDI.BackEnd.Story.Customer_Service_1;
 
 //10. Perform Manual Task
-using BaseDI.Playground.Test.Backend.Story.Productivity_1;
+using BaseDI.BackEnd.Story.Productivity_1;
 
 //11. Automate Manual Task
-using BaseDI.Playground.Test.Backend.Story.Risk_Management_1;
+using BaseDI.BackEnd.Story.Risk_Management_1;
 
 //12. Other
-using BaseDI.Playground.Test.Backend.Story.Careers_Employment_1;
-using BaseDI.Playground.Test.Backend.Story.Web_Development_3;
-using BaseDI.Playground.Test.Backend.Director.Programming_2;
-using BaseDI.Playground.Test.Backend.Director.Programming_1;
+using BaseDI.BackEnd.Story.Careers_Employment_1;
+using BaseDI.BackEnd.Story.Web_Development_3;
+using BaseDI.BackEnd.Director.Programming_2;
+using BaseDI.BackEnd.Director.Programming_1;
 
-namespace BaseDI.Playground.Test.Backend.Story.Programming_1
+namespace BaseDI.BackEnd.Story.Programming_1
 {
     public class ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<StoryRequest> : aClass_Programming_ScriptMasterLeader_12_2_1_0, IContract_Programming_Storyline_12_2_1_0<aClass_Programming_ScriptRoutable_12_2_1_0> where StoryRequest : aClass_Programming_ScriptRoutable_12_2_1_0, new()
     {
