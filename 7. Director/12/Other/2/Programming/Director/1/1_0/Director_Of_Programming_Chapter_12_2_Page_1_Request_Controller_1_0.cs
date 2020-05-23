@@ -14,7 +14,7 @@ using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
 
 namespace BaseDI.Playground.Test.Backend.Director.Programming_1
 {
-    public class Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
+    public class Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
         #region 1. Assign
 
@@ -28,7 +28,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0()
+        public Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0()
         {
             #region 1. Assign            
 
@@ -103,7 +103,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
         #region 1. Assign
 
         internal Dictionary<string, object> _client;
-        internal object _centralizedMaster;
+        internal object _centralizedStorer;
 
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
@@ -117,10 +117,10 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_Page_1(Dictionary<string, object> client, object centralizedMaster, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_2_Page_1(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
 
             _extraData = extraData;
 
@@ -146,7 +146,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(_client, _centralizedMaster, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -185,7 +185,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
         private IContract_Programming_Repository_12_2_1_0 _repository;
 
         private Dictionary<string, object> _client;
-        private object _centralizedMaster;
+        private object _centralizedStorer;
 
         private JObject _storylineDetails = null;
         private JObject _storylineDetails_Parameters = null;
@@ -198,10 +198,10 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(Dictionary<string, object> client, object centralizedMaster, JObject storylineDetails, JObject storylineDetails_Parameters,  IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters,  IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -242,7 +242,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
             page.EntryPoint = _entryPoint;
             page.ExtraData = _extraData;
 
-            page.MasterLeader = _centralizedMaster;
+            page.MasterLeader = _centralizedStorer;
 
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -273,7 +273,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Programming_1
             page.EntryPoint = _entryPoint;
             page.ExtraData = _extraData;
 
-            page.MasterLeader = _centralizedMaster;
+            page.MasterLeader = _centralizedStorer;
 
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 

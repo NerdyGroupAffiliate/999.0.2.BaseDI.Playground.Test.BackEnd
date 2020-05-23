@@ -6,19 +6,19 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 
 import * as IContract_Programming_Repository_12_2_1_0 from "../../../../../../../../0. Script/Interfaces/12/Other/2/Programming/Contract/1/1_0/IContract_Programming_Repository_12_2_1_0";
 
-import * as ChapterPage_Page_1_1_Begin_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_1_Begin_Process_12_2_1_0";
-import * as ChapterPage_Page_1_2_Validate_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_2_Validate_Process_12_2_1_0";
-import * as ChapterPage_Page_1_3_Process_StoryAuthor_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_3_Process_StoryAuthor_12_2_1_0";
-import * as ChapterPage_Page_1_4_Process_StoryCharacters_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_4_Process_StoryCharacters_12_2_1_0";
-import * as ChapterPage_Page_1_5_Process_StorySetting_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_5_Process_StorySetting_12_2_1_0";
-import * as ChapterPage_Page_1_6_Process_StoryExperiences_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_6_Process_StoryExperiences_12_2_1_0";
-import * as ChapterPage_Page_1_7_Process_StoryResources_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_7_Process_StoryResources_12_2_1_0";
-import * as ChapterPage_Page_1_8_Process_CRUD_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_8_Process_CRUD_12_2_1_0";
-import * as ChapterPage_Page_1_9_Verify_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_9_Verify_Process_12_2_1_0";
-import * as ChapterPage_Page_1_10_End_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_10_End_Process_12_2_1_0";
+import * as ChapterPage_Page_1_1_Begin_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_1_Begin_Process_12_2_1_0";
+import * as ChapterPage_Page_1_2_Validate_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_2_Validate_Process_12_2_1_0";
+import * as ChapterPage_Page_1_3_Process_StoryAuthor_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_3_Process_StoryAuthor_12_2_1_0";
+import * as ChapterPage_Page_1_4_Process_StoryCharacters_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_4_Process_StoryCharacters_12_2_1_0";
+import * as ChapterPage_Page_1_5_Process_StorySetting_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_5_Process_StorySetting_12_2_1_0";
+import * as ChapterPage_Page_1_6_Process_StoryExperiences_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_6_Process_StoryExperiences_12_2_1_0";
+import * as ChapterPage_Page_1_7_Process_StoryResources_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_7_Process_StoryResources_12_2_1_0";
+import * as ChapterPage_Page_1_8_Process_CRUD_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_8_Process_CRUD_12_2_1_0";
+import * as ChapterPage_Page_1_9_Verify_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_9_Verify_Process_12_2_1_0";
+import * as ChapterPage_Page_1_10_End_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_10_End_Process_12_2_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
-    export class Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
+export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_1 {
+    export class Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
         private _extraData: any;
         //#endregion
@@ -29,7 +29,6 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
 
             //#region 1. Assign
             this._extraData = extraData;
-
             this.Action = this.Action.bind(this);
             //#endregion
 
@@ -48,8 +47,19 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
         public async Action(): Promise<object> {
             //#region 1. Assign
 
+            if (this.EntryPoint != null && (this.EntryPoint.Client != undefined && this.EntryPoint.Client != null)) {
+                this.Client = this.EntryPoint.Client;
+                this.MasterLeader = this.EntryPoint.MasterLeader;
+                this.ExtraData = this.EntryPoint.ExtraData;
+            }
+
+            //#region PICK DESIGN PATTERN
+
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_12_1_Page_2(this.Client, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
+            const designPattern = new Use_DesignPattern_Builder_Chapter_12_1_Page_1(this.Client, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
+
+            //#endregion
+
             //#endregion
 
             //#region 2. Action
@@ -68,9 +78,9 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
     }
 
     //#region 5. Action Script
-    export class Use_DesignPattern_Builder_Chapter_12_1_Page_2 {
+    export class Use_DesignPattern_Builder_Chapter_12_1_Page_1 {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
         private _client: any;
 
         private _storylineDetails: object = new Object();
@@ -83,8 +93,8 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedMaster:any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: any, entryPoint:Object) {
-            this._centralizedMaster = centralizedMaster;
+        constructor(client: any, centralizedStorer:any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: any, entryPoint:Object) {
+            this._centralizedStorer = centralizedStorer;
             this._client = client;
 
             this._storylineDetails = storylineDetails;
@@ -97,14 +107,14 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
 
             this.Action = this.Action.bind(this);
         }
-        //#endregion
-        
+        //#endregion        
+
         //#region 3. Set
         //#endregion
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_1_Page_2_1_0(this._client, this._centralizedMaster, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_1_Page_1_1_0(this._client, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
 
             this._storylineDetails = await builder.Action_1_Begin_Process();
 
@@ -128,10 +138,10 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
     //#endregion
 
     //#region 6. Action Implementation
-    export class Implement_DesignPattern_Builder_Chapter_12_1_Page_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Builder_Chapter_12_1_Page_1_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
         private _client: any;
 
         private _storylineDetails: object = new Object();
@@ -144,10 +154,10 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedMaster:any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: any, entryPoint: Object) {
+        constructor(client: any, centralizedStorer:any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: any, entryPoint: Object) {
             super();
 
-            this._centralizedMaster = centralizedMaster;
+            this._centralizedStorer = centralizedStorer;
             this._client = client;
 
             this._storylineDetails = storylineDetails;
@@ -184,60 +194,53 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
         //#region 4. Action
 
         //#region EXECUTE LOGIC INSTUCTIONS
-
         //Page 1-9
         public async Action_9_Verify_Process(): Promise<object> {
-            //#region 1. Assign 
+            //region 1. Assign 
             if (this._entryPoint == null || this._entryPoint.constructor.name == "Object") {
-                var page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_2.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
+                var page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
 
                 page.Client = this._client;
 
                 page.EntryPoint = this._entryPoint;
                 page.ExtraData = this._extraData;
 
-                page.MasterLeader = this._centralizedMaster;
+                page.MasterLeader = this._centralizedStorer;
 
                 page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 
-                //#region 2. Action
+                //region 2. Action
                 this._storylineDetails = await page.Action();
-                //#endregion
             }
-            //#endregion
 
-            //#region 3. Observe
+            //region 3. Observe
             return this._storylineDetails;
-            //#endregion
         }
 
         //Page 1-10
         public async Action_10_End_Process(): Promise<object> {
-            //#region 1. Assign 
-            var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_2.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
+            //region 1. Assign 
+            var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
 
             page.Client = this._client;
 
             page.EntryPoint = this._entryPoint;
             page.ExtraData = this._extraData;
 
-            page.MasterLeader = this._centralizedMaster;
+            page.MasterLeader = this._centralizedStorer;
 
             page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
-            //#endregion
 
-            //#region 2. Action
+            //region 2. Action
             this._storylineDetails = await page.Action();
-            //#endregion
 
-            //#region 3. Observe
+            //region 3. Observe
             return this._storylineDetails;
-            //#endregion
         }
-
-        //#endregion
+        //#endregion 
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object> {
             return this._storylineDetails;
@@ -280,7 +283,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Programming_2 {
 
         //#endregion
 
-        //#endregion
+        //#endregion 
     }
     //#endregion
 }

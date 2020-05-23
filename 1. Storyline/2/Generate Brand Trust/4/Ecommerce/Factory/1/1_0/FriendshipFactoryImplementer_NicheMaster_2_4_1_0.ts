@@ -14,7 +14,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Friendship_4 {
     export class FriendshipFactoryImplementer_NicheMaster_2_4_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
         private _client: any;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
@@ -25,7 +25,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Friendship_4 {
             super();
 
             //#region 1. Assign
-            this._centralizedMaster = null;
+            this._centralizedStorer = null;
             this._client = null;
 
             this._extraData = extraData;
@@ -45,10 +45,10 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Friendship_4 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedMaster:any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String): object
+        public Action(client: any, centralizedStorer:any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String): object
         {
             //#region ASSIGN MASTER LEADER
-            this._centralizedMaster = centralizedMaster;
+            this._centralizedStorer = centralizedStorer;
             this._client = client;  
 
             this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
@@ -91,7 +91,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Friendship_4 {
 
             experience.ExtraData = extraData;
 
-            experience.MasterLeader = this._centralizedMaster;
+            experience.MasterLeader = this._centralizedStorer;
 
             experience.StorylineDetails = storylineDetails;
             experience.StorylineDetails_Parameters = storylineDetails_Parameters;   

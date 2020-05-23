@@ -5,7 +5,7 @@ var _ = require('lodash');
 
 export namespace BaseDI.Playground.Test.BackEnd.Programming.Extensions_1
 {
-    export class Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0
+    export class Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0
     {      
         constructor() {
             
@@ -15,7 +15,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Extensions_1
         //#endregion
 
         //#region READ 
-        public static Step_1_0_Read_Custom_Options_1_0(data:object, keyName: string, keyValue: any, returnAsArray:boolean): any
+        public static Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(data:object, keyName: string, keyValue: any, returnAsArray:boolean): any
         {
             let returnValue: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(data, keyName, keyValue, returnAsArray);
 

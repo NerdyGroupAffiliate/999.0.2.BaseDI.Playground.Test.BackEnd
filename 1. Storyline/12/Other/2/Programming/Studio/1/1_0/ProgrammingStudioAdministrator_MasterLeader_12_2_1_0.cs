@@ -304,6 +304,8 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
         public override object Action_10_End_Process()
         {
+            #region SCHEDULE THE REQUEST
+
             #region DECIDE DIRECTOR REQUEST
 
             if (_requestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_"))
@@ -325,6 +327,8 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                 return pickExperience.Action_1_Begin_Process();
             }
+
+            #endregion
 
             #endregion
 
@@ -397,7 +401,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
         private string _requestName = "";
 
-        private Implement_DesignPattern_Factory_Master_12_2_1_0<StoryRequest> _centralizedMaster;
+        private Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest> _centralizedStorer;
 
         #endregion
 
@@ -405,7 +409,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Director_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, StoryRequest requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "")
         {
-            _centralizedMaster = new Implement_DesignPattern_Factory_Master_12_2_1_0<StoryRequest>(_client, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestToResolveString);
+            _centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest>(_client, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestToResolveString);
 
             _client = client;
 
@@ -443,7 +447,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                 createDirector.APILocationRemote = "https://api.basedi.io/programming";
 
-                return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestToResolveString);
+                return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestToResolveString);
 
                 #endregion
             }
@@ -461,7 +465,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/advertising";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -477,7 +481,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/blogging";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PODCASTING"))
@@ -489,7 +493,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/podcasting";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SOCIALMEDIA"))
@@ -501,7 +505,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/socialmedia";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -517,7 +521,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/listbuilding";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -533,7 +537,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/supplements";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -549,7 +553,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/coaching";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CONSULTING"))
@@ -561,7 +565,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/consulting";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PERSONALTRAINING"))
@@ -573,7 +577,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/personaltraining";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -589,7 +593,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/software";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -605,7 +609,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/affiliaterevenue";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -621,7 +625,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/accounting";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -637,7 +641,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/customerservice";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -653,7 +657,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/productivity";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -669,7 +673,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/riskmanagement";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -685,7 +689,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/careersemployment";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_WEBDEVELOPMENT"))
@@ -697,7 +701,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://api.basedi.io/webdevelopment";
 
-                    return createDirector.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                    return createDirector.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
                 }
 
                 #endregion
@@ -778,7 +782,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
         private ExtraData_12_2_1_0 _extraData;
 
-        private Implement_DesignPattern_Factory_Master_12_2_1_0<StoryRequest> _centralizedMaster;
+        private Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest> _centralizedStorer;
 
         private string _requestName = "";
 
@@ -788,7 +792,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Experience_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, StoryRequest requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "")
         {
-            _centralizedMaster = new Implement_DesignPattern_Factory_Master_12_2_1_0<StoryRequest>(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString);
+            _centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest>(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString);
 
             _extraData = extraData;
 
@@ -829,7 +833,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                 createExperience.APILocationRemote = "https://api.basedi.io/socialmedia";
 
-                return createExperience.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                return createExperience.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
             }
 
             #endregion
@@ -884,7 +888,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
                 createExperience.APILocationRemote = "https://api.basedi.io/programming";
 
-                return createExperience.Action(_client, _centralizedMaster, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
+                return createExperience.Action(_client, _centralizedStorer, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName);
 
                 #endregion
             }
@@ -950,9 +954,9 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
     #endregion
 
-    #region RETURN CENTRAILZED MASTER
+    #region HANDLE REQUEST STORAGE
 
-    internal class Implement_DesignPattern_Factory_Master_12_2_1_0<StoryRequest> : aClass_Programming_ScriptAction_12_2_1_0<object>
+    internal class Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest> : aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         #region 1. Assign
 
@@ -971,7 +975,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Master_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, StoryRequest requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "")
+        internal Implement_DesignPattern_Factory_Storer_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, StoryRequest requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "")
         {
             _client = client;
 
@@ -1000,7 +1004,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
         {
             JObject armTemplateJSONOutput = null;
 
-            armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0>()
+            armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0>()
               .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0")
               .Action().Result;
 

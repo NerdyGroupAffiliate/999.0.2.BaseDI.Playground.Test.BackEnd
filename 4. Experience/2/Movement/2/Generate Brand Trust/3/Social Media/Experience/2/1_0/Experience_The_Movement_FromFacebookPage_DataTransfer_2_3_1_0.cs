@@ -96,7 +96,7 @@ namespace BaseDI.Playground.Test.Backend.Experience.Movement.Social_Media_2
     {
         #region 1. Assign
 
-        internal object _centralizedMaster;
+        internal object _centralizedStorer;
         internal Dictionary<string, object> _client;
 
         internal JObject _storylineDetails;
@@ -110,9 +110,9 @@ namespace BaseDI.Playground.Test.Backend.Experience.Movement.Social_Media_2
         #endregion
 
         #region 2. Ready
-        internal Use_DesignPattern_Builder_Experience_2_3_1_0(Dictionary<string, object> client, object centralizedMaster, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Experience_2_3_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
             _client = client;
 
             _extraData = extraData;
@@ -139,7 +139,7 @@ namespace BaseDI.Playground.Test.Backend.Experience.Movement.Social_Media_2
         {            
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Experience_2_3_1_0(_client, _centralizedMaster, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Experience_2_3_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -180,7 +180,7 @@ namespace BaseDI.Playground.Test.Backend.Experience.Movement.Social_Media_2
 
         private IContract_Programming_Repository_12_2_1_0 _repository;
 
-        private object _centralizedMaster;
+        private object _centralizedStorer;
         private Dictionary<string, object> _client;
 
         private JObject _storylineDetails = null;
@@ -207,9 +207,9 @@ namespace BaseDI.Playground.Test.Backend.Experience.Movement.Social_Media_2
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Experience_2_3_1_0(object client, object centralizedMaster, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Experience_2_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
             _client = (Dictionary<string, object>)client;
 
             _storylineDetails = storylineDetails;

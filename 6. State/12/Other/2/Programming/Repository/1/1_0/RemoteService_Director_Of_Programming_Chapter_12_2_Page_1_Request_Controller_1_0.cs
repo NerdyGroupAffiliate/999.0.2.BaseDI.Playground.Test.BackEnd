@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.State.Programming_2
+namespace BaseDI.Playground.Test.Backend.State.Programming_1
 {
-    public class RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
+    public class RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
     {
         #region 1. Assign
 
@@ -22,7 +22,7 @@ namespace BaseDI.Playground.Test.Backend.State.Programming_2
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(JObject storylineDetails)
+        public RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(JObject storylineDetails)
         {
             #region 1. Assign            
 

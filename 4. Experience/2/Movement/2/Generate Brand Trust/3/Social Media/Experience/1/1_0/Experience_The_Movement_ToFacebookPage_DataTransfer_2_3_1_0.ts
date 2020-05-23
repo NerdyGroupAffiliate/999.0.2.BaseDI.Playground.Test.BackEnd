@@ -57,7 +57,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Experience.Movement.Social_Media
     //#region 5. Action Script
     export class Use_DesignPattern_Builder_Experience_2_3_1_0 {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
         private _client: any;
 
         private _storylineDetails: object = new Object();
@@ -70,8 +70,8 @@ export namespace BaseDI.Playground.Test.BackEnd.Experience.Movement.Social_Media
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedMaster: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
-            this._centralizedMaster = centralizedMaster;
+        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+            this._centralizedStorer = centralizedStorer;
             this._client = client;
 
             this._storylineDetails = storylineDetails;
@@ -91,7 +91,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Experience.Movement.Social_Media
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Experience_2_3_1_0(this._client, this._centralizedMaster, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Experience_2_3_1_0(this._client, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
 
             await builder.Action_1_Begin_Process();
 
@@ -116,7 +116,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Experience.Movement.Social_Media
     export class Implement_DesignPattern_Builder_Experience_2_3_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
         private _client: any;
 
         private _storylineDetails: object = new Object();
@@ -129,10 +129,10 @@ export namespace BaseDI.Playground.Test.BackEnd.Experience.Movement.Social_Media
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedMaster: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             super();
 
-            this._centralizedMaster = centralizedMaster;
+            this._centralizedStorer = centralizedStorer;
             this._client = client;
 
             this._storylineDetails = storylineDetails;

@@ -29,7 +29,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Abstract_1
         //#endregion
 
         //#region 4. Action
-        public abstract Action(client: any, centralizedMaster: any, requestToResolve: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, storylineDetails: object, storylineDetails_Parameters: object, requestName: string): StoryRequest;
+        public abstract Action(client: any, centralizedStorer: any, requestToResolve: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, storylineDetails: object, storylineDetails_Parameters: object, requestName: string): StoryRequest;
         //#endregion
     }
 }

@@ -18,7 +18,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Web_Development_3
     internal class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
-        private object _centralizedMaster;
+        private object _centralizedStorer;
 
         private ExtraData_12_2_1_0 _extraData = null;
 
@@ -26,7 +26,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Web_Development_3
         {
             //region 1. Assign
             _client = new Dictionary<string, object>();
-            _centralizedMaster = new object();
+            _centralizedStorer = new object();
 
             _extraData = extraData;
 
@@ -35,12 +35,12 @@ namespace BaseDI.Playground.Test.Backend.Story.Web_Development_3
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, object centralizedMaster, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "")
+        public override object Action(Dictionary<string, object> client, object centralizedStorer, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "")
         {
             #region ASSIGN MASTER LEADER
 
             _client = client;
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
 
             _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
@@ -55,7 +55,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Web_Development_3
 
             switch (requestType)
             {
-                case Type _ when requestType == typeof(Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0):
+                case Type _ when requestType == typeof(Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0):
                     var resolvedRequest = (StoryRequest)Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebDevelopmentForWebsite_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest;
@@ -82,13 +82,13 @@ namespace BaseDI.Playground.Test.Backend.Story.Web_Development_3
 
             #region ASSIGN REQUEST HANDLER
 
-            Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0();
+            Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0();
             
             director.Client = _client;
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = _centralizedMaster;
+            director.MasterStorer = _centralizedStorer;;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;

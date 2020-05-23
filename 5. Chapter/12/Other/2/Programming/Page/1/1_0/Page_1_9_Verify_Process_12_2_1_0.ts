@@ -1,5 +1,5 @@
 ﻿import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
-import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0";
+import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
 export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1 {
     export class Page_1_9_Verify_Process_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
@@ -18,8 +18,8 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1 {
 
             this.Action = this.Action.bind(this);
 
-            this.Step_2_0_Profile_Custom_Options_1_0 = this.Step_2_0_Profile_Custom_Options_1_0.bind(this);
-            this.Step_3_0_Memorize_Custom_Options_1_0 = this.Step_3_0_Memorize_Custom_Options_1_0.bind(this);
+            this.Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0 = this.Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0.bind(this);
+            this.Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0 = this.Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0.bind(this);
 
             //region 2. Action
 
@@ -33,23 +33,23 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //READ CUSTOM OPTIONS
-            let options = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.Step_1_0_Read_Custom_Options_1_0(this.StorylineDetails, "", this._baseDIPlaceHolderValue, true);
+            //STORE META DATA
+            let metaData = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(this.StorylineDetails, "", this._baseDIPlaceHolderValue, true);
 
-            //PROFILE CUSTOM OPTIONS
-            this.Step_2_0_Profile_Custom_Options_1_0(options);
+            //STORE JSONSTRING PLACEHOLDER
+            this.Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(metaData); 
 
-            //MEMORIZE CUSTOM OPTIONS
-            this.Step_3_0_Memorize_Custom_Options_1_0();
+            //CONVERT JSONSTRING PLACEHOLDER
+            this.Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
 
-            //RETURN UPDATED OBSERVATIONS
+            //RETURN OUTPUTTED APPSETTINGS
             return await this.StorylineDetails;
         }
 
-        //#region PROFILE CUSTOM OPTIONS
-        private Step_2_0_Profile_Custom_Options_1_0(optionList: any) {
-            if (optionList) {
-                const options = Object.values(optionList)
+        //#region STORE JSONSTRING PLACEHOLDER
+        private Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(settingsList: any) {
+            if (settingsList) {
+                const options = Object.values(settingsList)
 
                 for (const option of options) {
                     const optionItem: any = option;
@@ -63,8 +63,8 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_1 {
         }
         //#endregion
 
-        //#region MEMORIZE CUSTOM OPTIONS
-        private Step_3_0_Memorize_Custom_Options_1_0() {
+        //#region CONVERT JSONSTRING PLACEHOLDER
+        private Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0() {
             if (this._optionsProfiles) {
                 let columnsToUpdate: any = this._optionsProfiles;
                 let columnsToUpdateValues: any = new Array();

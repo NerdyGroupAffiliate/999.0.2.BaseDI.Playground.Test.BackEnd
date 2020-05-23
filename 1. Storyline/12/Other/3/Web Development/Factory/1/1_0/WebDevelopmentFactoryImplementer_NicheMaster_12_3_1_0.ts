@@ -22,7 +22,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Web_Development_3 {
     export class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
         private _client: any;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
@@ -33,7 +33,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Web_Development_3 {
             super();
 
             //#region 1. Assign
-            this._centralizedMaster = null;
+            this._centralizedStorer = null;
             this._client = null;
 
             this._extraData = extraData;
@@ -53,9 +53,9 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Web_Development_3 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedMaster: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String): object {
+        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String): object {
             //#region ASSIGN MASTER LEADER
-            this._centralizedMaster = centralizedMaster;
+            this._centralizedStorer = centralizedStorer;
             this._client = client;
 
             this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
@@ -101,7 +101,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Web_Development_3 {
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = this._centralizedMaster;
+            director.MasterStorer = this._centralizedStorer;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;    
@@ -142,7 +142,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Web_Development_3 {
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = this._centralizedMaster;
+            director.MasterStorer = this._centralizedStorer;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;

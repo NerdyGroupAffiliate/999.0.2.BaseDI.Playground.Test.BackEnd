@@ -151,7 +151,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
                 #endregion
 
-                armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0>()
+                armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0>()
                     .SetupStoryline(_clientInfo, _storylineDetails, _storylineDetails_Parameters)
                     .Action().Result;
 

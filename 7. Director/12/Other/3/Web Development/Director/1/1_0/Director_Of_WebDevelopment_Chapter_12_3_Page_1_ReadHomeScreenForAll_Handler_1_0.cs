@@ -90,7 +90,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
         #region 1. Assign
 
         private object _client;
-        private object _centralizedMaster;
+        private object _centralizedStorer;
 
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
@@ -104,10 +104,10 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_3_Page_1(object client, object centralizedMaster, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_3_Page_1(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
 
             _extraData = extraData;
 
@@ -133,7 +133,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0(_client, _centralizedMaster, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -172,7 +172,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
         private IContract_Programming_Repository_12_2_1_0 _repository;
 
         private object _client;
-        private object _centralizedMaster;
+        private object _centralizedStorer;
 
         private JObject _storylineDetails = null;
         private JObject _storylineDetails_Parameters = null;
@@ -185,10 +185,10 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0(object client, object centralizedMaster, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -229,7 +229,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -260,7 +260,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -296,7 +296,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -329,7 +329,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -360,7 +360,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -391,7 +391,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -422,7 +422,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -453,7 +453,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -484,7 +484,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -515,7 +515,7 @@ namespace BaseDI.Playground.Test.Backend.Director.Web_Development_1
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedMaster;
+            //page.MasterLeader = _centralizedStorer;
 
             //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
