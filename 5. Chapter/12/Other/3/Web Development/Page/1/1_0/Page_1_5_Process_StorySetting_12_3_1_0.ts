@@ -106,6 +106,13 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             }
             return attrs.join(" ");
         }
+        private getproperyValues(prop) {
+            let values = []
+            prop.properyValues.forEach(value => {
+                values.push(value)
+            });
+            return values.join('\n')
+        }
 
         public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
             //#region DESCRIBE THE MEMORIES
@@ -194,11 +201,74 @@ export namespace BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1 {
             let htmlInlineCSSString: string = "";
             let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
-            let files = [];
+            // let files = [];
+            // filesArray.forEach(file => {
+            //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
+            // });
+            // htmlInlineCSSString = files.join("\n");
+
+            let cssString = "";
+
             filesArray.forEach(file => {
-                files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
+                // console.log("file: " + file.StyleFileName)
+                file.StyleFileUseProperties.forEach(element => {
+                    // console.log(element)                    
+                    if(element.IsHtmlTag == "true" && element.properties.length > 0) {
+                        if(element.IsMediaQuery == "true") {
+                            console.log("Html tag medida query")
+                            console.log(element)
+                        } else {
+                            element.properties.forEach(prop => {
+                                if(prop.propertyName != "") {
+                                    cssString +=  `${prop.propertyName} { \n ${this.getproperyValues(prop)} \n}\n`;
+                                }
+                            });
+                        }
+                    } 
+                    else if(element.IsHtmlTag == "false" && element.properties.length > 0) {
+                        let properties = [];
+                        if(element.IsMediaQuery == "true") {
+                                
+                            let MediaQueryFeatures = [];
+
+                                if(element.MediaQuery.type != "") {    
+                                    MediaQueryFeatures.push(`only ${element.MediaQuery.type}`)
+                                }
+                                element.MediaQuery.features.forEach(feature => {
+                                        Object.keys(feature).forEach((featureA, index) => {
+                                            if(Object.keys(feature)[index] == "operator") {
+                                                MediaQueryFeatures.push(Object.values(feature)[index])
+                                            } else {
+                                                MediaQueryFeatures.push(`(${featureA}: ${Object.values(feature)[index]})`)
+                                            }
+                                        });
+                                });
+                                // console.log(`@media ${MediaQueryFeatures.join(" ")}`)
+                                element.properties.forEach(prop => {
+                                    if(prop.propertyName != "") {
+                                        properties.push(`\t ${prop.propertyName} :  ${this.getproperyValues(prop)}`);
+                                    }
+                                });
+                              cssString += `@media ${MediaQueryFeatures.join(" ")} { \n \t #${element.attributeID}  { \n  ${properties.join('\n')} \n \t}\n}\n`;
+                            
+                        } else {
+                            element.properties.forEach(prop => {
+                                if(prop.propertyName != "") {
+                                    properties.push(`${prop.propertyName} :  ${this.getproperyValues(prop)}`);
+                                }
+                            });
+                          cssString += `#${element.attributeID}  { \n  ${properties.join('\n')} \n}\n`;
+                        }  
+                    } 
+                    else {
+                        console.log("I will handle you soon!")
+                    }
+                   
+                });
             });
-            htmlInlineCSSString = files.join("\n");
+           console.log(cssString)
+           htmlInlineCSSString = `<style>${cssString}</style>`;
+           
             //#endregion
 
             //#region RECALL THE MEMORIES
