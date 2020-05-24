@@ -44,7 +44,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, object centralizedStorer, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "")
+        public override object Action(Dictionary<string, object> client, object centralizedStorer, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
@@ -55,6 +55,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
             _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
             _extraData.KeyValuePairs.Add("APILocationRemote", APILocationRemote);
+
+            _extraData.KeyValuePairs.Add("RequestToProcess", requestToProcess);
+            _extraData.KeyValuePairs.Add("RequestToProcessParameters", requestToProcessParameters);
 
             #endregion
 
@@ -111,6 +114,8 @@ namespace BaseDI.BackEnd.Story.Programming_1
             if (string.IsNullOrEmpty(repositoryType))
                 repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
 
+            if (repositoryType == "") repositoryType = "LOCALFILE";
+
             #endregion       
 
             #region ASSIGN REQUEST HANDLER
@@ -136,12 +141,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = localFile;
+                    director.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = remoteService;
+                    director.Repository.RequestName = _requestName;
 
                     break;
             }
@@ -159,6 +166,8 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             if (string.IsNullOrEmpty(repositoryType))
                 repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+
+            if (repositoryType == "") repositoryType = "LOCALFILE";
 
             #endregion       
 
@@ -185,12 +194,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
                     var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
 
                     experience.Repository = localFile;
+                    experience.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
 
                     experience.Repository = remoteService;
+                    experience.Repository.RequestName = _requestName;
 
                     break;
             }
@@ -212,6 +223,8 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             if (string.IsNullOrEmpty(repositoryType))
                 repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+
+            if (repositoryType == "") repositoryType = "LOCALFILE";
 
             #endregion       
 
@@ -238,12 +251,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
 
                     director.Repository = localFile;
+                    director.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
 
                     director.Repository = remoteService;
+                    director.Repository.RequestName = _requestName;
 
                     break;
             }

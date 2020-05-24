@@ -40,7 +40,8 @@ export namespace BaseDI.BackEnd.State.Programming_1 {
         public async Action_9_Verify_Process(): Promise<any> {
             //STORE META DATA
             let requestName: string = "";
-            
+            let requestNameParameters: string = "";
+
             let metaData: any = null;
 
             let storylineDetails: Object;
@@ -49,11 +50,17 @@ export namespace BaseDI.BackEnd.State.Programming_1 {
 
             if (this.ExtraData.KeyValuePairs.getValue("RequestToProcess")) {
                 requestName = this.ExtraData.KeyValuePairs.getValue("RequestToProcess").toString();
+                requestNameParameters = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters").toString();
 
                 switch (requestName.toUpperCase()) {
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_READHOMESCREENFORALL_HANDLER_1_0":
                         storylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0;
-                        storylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_P1_0;
+
+                        switch (requestNameParameters.toUpperCase()) {
+                            case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_READHOMESCREENFORALL_HANDLER_1_0-P1_0":
+                                storylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_P1_0;
+                                break;
+                        }                        
 
                         break;
                 }

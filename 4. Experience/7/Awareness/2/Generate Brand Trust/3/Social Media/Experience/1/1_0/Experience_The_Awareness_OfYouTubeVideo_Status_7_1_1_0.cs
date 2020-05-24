@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Google.Apis.Upload;
-using Google.Apis.YouTube.v3.Data;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using BaseDI.BackEnd.Script.Programming.Abstract_1;

@@ -31,7 +31,7 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
         //#endregion
 
         //#region 4. Action
-        public abstract SetupStoryline(client: any, storylineDetails: any, storylineDetails_Parameters: any, extraData: any, requestToResolveName: string, requestToProcess: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
+        public abstract SetupStoryline(client: any, storylineDetails: any, storylineDetails_Parameters: any, extraData: any, requestToResolveName: string, requestToProcess: string, requestToProcessParameters: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
         //#endregion
     }
 }

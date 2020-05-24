@@ -46,7 +46,7 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String): object
+        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;

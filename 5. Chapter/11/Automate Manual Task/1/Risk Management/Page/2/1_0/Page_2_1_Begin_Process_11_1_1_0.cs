@@ -21,7 +21,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Risk_Management_2
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_2_1_Begin_Process_11_1_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<JObject> repository)
+        public Page_2_1_Begin_Process_11_1_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
         {
             #region 1. Assign
 

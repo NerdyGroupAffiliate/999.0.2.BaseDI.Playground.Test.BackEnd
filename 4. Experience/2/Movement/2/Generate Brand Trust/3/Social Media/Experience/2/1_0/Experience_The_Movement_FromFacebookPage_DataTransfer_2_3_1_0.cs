@@ -64,7 +64,7 @@ namespace BaseDI.BackEnd.Experience.Movement.Social_Media_2
             #region 1. Assign
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns            
-            Use_DesignPattern_Builder_Experience_2_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_2_3_1_0(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (IContract_Programming_Repository_12_2_1_0)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Experience_2_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_2_3_1_0(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -102,7 +102,7 @@ namespace BaseDI.BackEnd.Experience.Movement.Social_Media_2
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
 
-        internal IContract_Programming_Repository_12_2_1_0 _repository;
+        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
         internal ExtraData_12_2_1_0 _extraData;
         internal aClass_Programming_ScriptRoutable_12_2_1_0 _entryPoint;
@@ -110,7 +110,7 @@ namespace BaseDI.BackEnd.Experience.Movement.Social_Media_2
         #endregion
 
         #region 2. Ready
-        internal Use_DesignPattern_Builder_Experience_2_3_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Experience_2_3_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _centralizedStorer = centralizedStorer;
             _client = client;
@@ -178,7 +178,7 @@ namespace BaseDI.BackEnd.Experience.Movement.Social_Media_2
         //Coding information
         private string _entryPointName = "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0";
 
-        private IContract_Programming_Repository_12_2_1_0 _repository;
+        private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
         private object _centralizedStorer;
         private Dictionary<string, object> _client;
@@ -207,7 +207,7 @@ namespace BaseDI.BackEnd.Experience.Movement.Social_Media_2
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Experience_2_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, IContract_Programming_Repository_12_2_1_0 repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Experience_2_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _centralizedStorer = centralizedStorer;
             _client = (Dictionary<string, object>)client;

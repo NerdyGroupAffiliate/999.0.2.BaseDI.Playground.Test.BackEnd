@@ -1,15 +1,6 @@
-﻿
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-
-using Bitlush.LinqToHtml;
+﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
 
 namespace BaseDI.BackEnd.Chapter.Page.Risk_Management_1
 {
@@ -24,7 +15,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Risk_Management_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_7_Process_StoryResources_11_1_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<JObject> repository)
+        public Page_1_7_Process_StoryResources_11_1_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
         {
             #region 1. Assign
 

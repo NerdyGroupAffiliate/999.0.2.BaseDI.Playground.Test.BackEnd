@@ -5,7 +5,17 @@
     <RootNamespace>_999._0._2.BaseDI.BackEnd</RootNamespace>
     <UserSecretsId>69357c9e-c71d-4207-b5ac-8941c0b55e0e</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="9. Organizing\MRichardson001\App.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\Counter.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\Error.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\FetchData.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\Index.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\_Host.cshtml" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
@@ -18,18 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="9. Organizing\MRichardson001\Pages\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
-    <None Include="9. Organizing\MRichardson001\App.razor" />
     <None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
-    <None Include="9. Organizing\MRichardson001\Pages\Counter.razor" />
-    <None Include="9. Organizing\MRichardson001\Pages\Error.razor" />
-    <None Include="9. Organizing\MRichardson001\Pages\FetchData.razor" />
-    <None Include="9. Organizing\MRichardson001\Pages\Index.razor" />
-    <None Include="9. Organizing\MRichardson001\Pages\_Host.cshtml" />
     <None Include="9. Organizing\MRichardson001\Shared\MainLayout.razor" />
     <None Include="9. Organizing\MRichardson001\Shared\NavMenu.razor" />
     <None Include="9. Organizing\MRichardson001\_Imports.razor" />

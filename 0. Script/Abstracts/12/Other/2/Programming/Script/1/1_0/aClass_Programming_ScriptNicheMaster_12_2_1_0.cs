@@ -15,6 +15,6 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public string APILocationRemote { get; set; }
 
-        public abstract StoryRequest Action(Dictionary<string, object> client, object centralizedStorer, StoryRequest requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "");
+        public abstract StoryRequest Action(Dictionary<string, object> client, object centralizedStorer, StoryRequest requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "");
     }
 }

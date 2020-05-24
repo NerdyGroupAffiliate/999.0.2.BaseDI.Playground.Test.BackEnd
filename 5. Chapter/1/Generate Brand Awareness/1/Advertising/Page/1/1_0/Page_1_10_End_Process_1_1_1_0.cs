@@ -21,7 +21,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Advertising_
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_10_End_Process_1_1_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<JObject> repository)
+        public Page_1_10_End_Process_1_1_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
         {
             #region 1. Assign
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BaseDI.BackEnd.State.Programming_1
 {
-    public class LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
+    public class LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
     {
         #region 1. Assign
 

@@ -15,7 +15,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         //A. Variable Declaration       
 
-        public aClass_Programming_ScriptAction_12_2_1_0<JObject> Repository { get; set; }
+        public aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> Repository { get; set; }
 
         public JObject StorylineDetails { get; set; }
 

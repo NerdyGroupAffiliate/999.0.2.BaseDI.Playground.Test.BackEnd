@@ -1,13 +1,5 @@
 ﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
-
-using Bitlush.LinqToHtml;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BaseDI.BackEnd.Chapter.Page.Web_Development_
@@ -23,7 +15,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Web_Development_
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_7_Process_StoryResources_12_3_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<JObject> repository)
+        public Page_1_7_Process_StoryResources_12_3_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
         {
             #region 1. Assign
 

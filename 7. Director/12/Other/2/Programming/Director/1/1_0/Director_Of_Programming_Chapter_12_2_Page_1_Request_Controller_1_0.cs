@@ -74,7 +74,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
             }
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_2_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(Client, MasterStorer, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<JObject>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_2_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(Client, MasterStorer, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -114,7 +114,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
 
-        internal aClass_Programming_ScriptAction_12_2_1_0<JObject> _repository;
+        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
         internal ExtraData_12_2_1_0 _extraData;
         internal aClass_Programming_ScriptRoutable_12_2_1_0 _entryPoint;
@@ -123,7 +123,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_Page_1(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<JObject> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_2_Page_1(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
             _centralizedStorer = centralizedStorer;
@@ -188,7 +188,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
     {
         #region 1. Assign
 
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _repository;
+        private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
         private Dictionary<string, object> _client;
         private object _centralizedStorer;
@@ -204,7 +204,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters,  aClass_Programming_ScriptAction_12_2_1_0<JObject> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters,  aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
             _centralizedStorer = centralizedStorer;

@@ -1,4 +1,5 @@
 ﻿using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 {
-    public abstract class aClass_Programming_ScriptAction_12_2_1_0<ChapterAction>
+    public abstract class aClass_Programming_ScriptAction_12_2_1_0<ChapterAction> : IContract_Programming_Repository_12_2_1_0
     {
         #region 1. Assign
 
@@ -66,7 +67,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         #region 4. Action
 
-        //A. Page in motion (DO SOMETHING)        
+        //A. Page in motion (DO SOMETHING)     
         public abstract ChapterAction Action_1_Begin_Process();
 
         public abstract ChapterAction Action_2_Validate_Process();
@@ -86,6 +87,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
         public abstract ChapterAction Action_9_Verify_Process();
 
         public abstract ChapterAction Action_10_End_Process();
+       
 
         #endregion 
     }

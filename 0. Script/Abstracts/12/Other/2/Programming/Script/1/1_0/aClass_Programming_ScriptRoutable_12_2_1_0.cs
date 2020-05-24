@@ -13,7 +13,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
     {
         public abstract Task<JObject> Action();
 
-        public IContract_Programming_Repository_12_2_1_0 Repository { get; set; }
+        public aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> Repository { get; set; }
 
         public JObject StorylineDetails { get; set; }
 

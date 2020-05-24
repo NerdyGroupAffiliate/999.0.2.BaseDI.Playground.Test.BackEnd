@@ -1,0 +1,20 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "creationTimestamp": "2019-08-30T17:00:23Z",
+        "deletionTimestamp": "2019-09-05T20:21:10Z",
+        "name": "ingress-router",
+        "resourceVersion": "9108725",
+        "selfLink": "/api/v1/namespaces/ingress-router",
+        "uid": "a7fe8fde-cb47-11e9-a1fe-ea5c4ac31534"
+    },
+    "spec": {
+        "finalizers": [
+
+        ]
+    },
+    "status": {
+        "phase": "Terminating"
+    }
+}

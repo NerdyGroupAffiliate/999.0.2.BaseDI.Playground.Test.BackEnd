@@ -63,7 +63,7 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 4. Action
-        public Did_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_Test_Work(requestNameToProcess:string = "") {
+        public Did_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_Test_Work(requestNameToProcess: string = "", requestNameToProcessParameters: string = "") {
             //#region 1. Assign
             let armTemplateJSONOutput: any;
 
@@ -92,7 +92,7 @@ export namespace BaseDI.BackEnd {
 
                 const Action = (output) => {
                     handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(extraData))
-                        .SetupStoryline(this._clientInfo, null, null, extraData, "", requestNameToProcess)
+                        .SetupStoryline(this._clientInfo, null, null, extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action();
                 }
                 //#endregion
