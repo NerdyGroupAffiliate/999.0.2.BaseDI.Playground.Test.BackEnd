@@ -11,7 +11,7 @@ using System.Text;
 using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json.Linq;
 
-namespace BaseDI.Playground.Test.Backend
+namespace BaseDI.BackEnd
 {
     public class Client_Chapter_2_4_Create_WebDevelopment_For_Item_1_0_Test
     {

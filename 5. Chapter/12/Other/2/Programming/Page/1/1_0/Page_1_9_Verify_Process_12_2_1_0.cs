@@ -1,7 +1,7 @@
-﻿using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
+﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
+namespace BaseDI.BackEnd.Chapter.Page.Programming_1
 {
     public class Page_1_9_Verify_Process_12_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
@@ -29,7 +29,7 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_9_Verify_Process_12_2_1_0(JObject storylineDetails, IContract_Programming_Repository_12_2_1_0 repository)
+        public Page_1_9_Verify_Process_12_2_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
         {
             #region 1. Assign
 
@@ -60,25 +60,23 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
 
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
-        {            
-            //READ CUSTOM OPTIONS
-            var options = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.Step_1_0_Read_Custom_Options(StorylineDetails, "", _baseDIPlaceHolderValue, true);
+        {
+            //STORE META DATA
+            var metaData = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(StorylineDetails, "", _baseDIPlaceHolderValue, true);
 
-            //PROFILE CUSTOM OPTIONS
-            Step_2_0_Profile_Custom_Options_1_0(options);
+            //STORE JSONSTRING PLACEHOLDER
+            Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(metaData);
 
-            //MEMORIZE CUSTOM OPTIONS
-            Step_3_0_Memorize_Custom_Options_1_0();
+            //CONVERT JSONSTRING PLACEHOLDER
+            Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
 
-            //RETURN UPDATED OBSERVATIONS
-            string a = StorylineDetails.ToString();
-
+            //RETURN OUTPUTTED APPSETTINGS
             return await Task.FromResult(StorylineDetails).ConfigureAwait(true);
         }
 
-        #region PROFILE CUSTOM OPTIONS
+        #region STORE JSONSTRING PLACEHOLDER
 
-        private void Step_2_0_Profile_Custom_Options_1_0(List<JToken> optionList)
+        private void Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(List<JToken> optionList)
         {
             if (optionList.Count > 0)
             {
@@ -103,9 +101,9 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
 
         #endregion
 
-        #region MEMORIZE CUSTOM OPTIONS
+        #region CONVERT JSONSTRING PLACEHOLDER
 
-        private void Step_3_0_Memorize_Custom_Options_1_0()
+        private void Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0()
         {
             //HAVE AVAILABLE OPTIONS?
             if (_optionsProfiles.Count > 0)

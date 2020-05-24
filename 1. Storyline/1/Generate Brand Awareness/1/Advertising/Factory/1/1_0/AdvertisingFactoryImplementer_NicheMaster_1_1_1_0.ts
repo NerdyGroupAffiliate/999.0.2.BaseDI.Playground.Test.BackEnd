@@ -9,15 +9,19 @@ import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../..
 import * as Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/1/1_0/Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0";
 //import * as Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/1/1_0/Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Story.Advertising_1
+export namespace BaseDI.BackEnd.Story.Advertising_1
 {
-    export class AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    export class AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
         private _client: any;
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
+        private _centralizedDisturber: any;
+        private _centralizedSensor: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+
+        private _requestName: String = "";
         //#endregion 
 
         //#region 2. Ready
@@ -26,7 +30,9 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Advertising_1
             super();
 
             //#region 1. Assign
-            this._centralizedMaster = null;
+            this._centralizedStorer = null;
+            this._centralizedDisturber = null;
+            this._centralizedSensor = null;
             this._client = null;
             this._extraData = extraData;
 
@@ -46,10 +52,12 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Advertising_1
         //#endregion 
 
         //#region 4. Action
-        public Action(client: any, centralizedMaster: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String): object
+        public Action(client: any, centralizedStorer: any, centralizedDisturber: any, centralizedSensor:any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
-            this._centralizedMaster = centralizedMaster;
+            this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
             this._client = client;
 
             this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
@@ -87,19 +95,21 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Advertising_1
         private Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
             let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
 
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Playground.Test.BackEnd.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
+            let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
 
             director.Client = this._client;
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = this._centralizedMaster;
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -108,13 +118,13 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Advertising_1
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Playground.Test.BackEnd.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Playground.Test.BackEnd.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 

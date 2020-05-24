@@ -1,14 +1,14 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Advertising_1;
-using BaseDI.Playground.Test.Backend.Director.Advertising_2;
-using BaseDI.Playground.Test.Backend.Director.Advertising_3;
+﻿using BaseDI.BackEnd.Director.Advertising_1;
+using BaseDI.BackEnd.Director.Advertising_2;
+using BaseDI.BackEnd.Director.Advertising_3;
 
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Advertising_1;
-using BaseDI.Playground.Test.Backend.State.Advertising_2;
-using BaseDI.Playground.Test.Backend.State.Advertising_3;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.State.Advertising_1;
+using BaseDI.BackEnd.State.Advertising_2;
+using BaseDI.BackEnd.State.Advertising_3;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -17,7 +17,7 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Story.Advertising_1
+namespace BaseDI.BackEnd.Story.Advertising_1
 {
     #region 6. Action Implementation
 
@@ -25,7 +25,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Advertising_1
     internal class AdvertisingFactoryImplementer_NicheMaster_1_1_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
-        private object _centralizedMaster;
+        private object _centralizedStorer;
 
         private ExtraData_12_2_1_0 _extraData = null;
 
@@ -33,7 +33,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Advertising_1
         {
             //region 1. Assign
             _client = new Dictionary<string, object>();
-            _centralizedMaster = new object();
+            _centralizedStorer = new object();
 
             _extraData = extraData;
 
@@ -42,12 +42,12 @@ namespace BaseDI.Playground.Test.Backend.Story.Advertising_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, object centralizedMaster, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "")
+        public override object Action(Dictionary<string, object> client, object centralizedStorer, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
             _client = client;
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
 
             _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
@@ -96,7 +96,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Advertising_1
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = _centralizedMaster;
+            director.MasterStorer = _centralizedStorer;;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -149,7 +149,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Advertising_1
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = _centralizedMaster;
+            director.MasterStorer = _centralizedStorer;;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -202,7 +202,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Advertising_1
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = _centralizedMaster;
+            director.MasterStorer = _centralizedStorer;;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;

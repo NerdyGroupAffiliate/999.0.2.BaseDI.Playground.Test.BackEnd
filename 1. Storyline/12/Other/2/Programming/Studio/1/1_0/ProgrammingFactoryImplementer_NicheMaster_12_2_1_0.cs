@@ -1,15 +1,15 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Advertising_1;
-using BaseDI.Playground.Test.Backend.Director.Programming_1;
-using BaseDI.Playground.Test.Backend.Director.Programming_2;
-using BaseDI.Playground.Test.Backend.Director.Risk_Management_1;
-using BaseDI.Playground.Test.Backend.Experience.Hear.Programming_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Advertising_1;
-using BaseDI.Playground.Test.Backend.State.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Programming_2;
+﻿using BaseDI.BackEnd.Director.Advertising_1;
+using BaseDI.BackEnd.Director.Programming_1;
+using BaseDI.BackEnd.Director.Programming_2;
+using BaseDI.BackEnd.Director.Risk_Management_1;
+using BaseDI.BackEnd.Experience.Hear.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.State.Advertising_1;
+using BaseDI.BackEnd.State.Programming_1;
+using BaseDI.BackEnd.State.Programming_2;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Story.Programming_1
+namespace BaseDI.BackEnd.Story.Programming_1
 {
     #region 6. Action Implementation
 
@@ -25,15 +25,17 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
     internal class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
-        private object _centralizedMaster;
+        private object _centralizedStorer;
 
         private ExtraData_12_2_1_0 _extraData = null;
+
+        private string _requestName = "";
 
         internal ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
             _client = new Dictionary<string, object>();
-            _centralizedMaster = new object();
+            _centralizedStorer = new object();
 
             _extraData = extraData;
 
@@ -42,17 +44,20 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, object centralizedMaster, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "")
+        public override object Action(Dictionary<string, object> client, object centralizedStorer, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
             _client = client;
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
 
             _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
             _extraData.KeyValuePairs.Add("APILocationRemote", APILocationRemote);
+
+            _extraData.KeyValuePairs.Add("RequestToProcess", requestToProcess);
+            _extraData.KeyValuePairs.Add("RequestToProcessParameters", requestToProcessParameters);
 
             #endregion
 
@@ -66,13 +71,13 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             {
                 switch(requestName.ToUpper(CultureInfo.CurrentCulture))
                 {
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_HANDLER_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_Request_Controller_1_0":
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                         break;
 
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_MANAGER_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_Request_Storer_1_0":
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                         break;
 
@@ -86,8 +91,8 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             {
                 switch (requestType)
                 {
-                    case Type _ when requestType == typeof(Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0):
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_RequestHandler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    case Type _ when requestType == typeof(Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0):
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                         break;
                 }
@@ -98,14 +103,9 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             return resolvedRequest;
         }
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
-        {
-            throw new NotImplementedException();
-        }
-
         #region Page 1
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_RequestHandler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
             #region CHECK FOR MISTAKES
 
@@ -114,17 +114,19 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             if (string.IsNullOrEmpty(repositoryType))
                 repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
 
+            if (repositoryType == "") repositoryType = "LOCALFILE";
+
             #endregion       
 
             #region ASSIGN REQUEST HANDLER
 
-            Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0();
+            Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0();
 
             director.Client = _client;
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = _centralizedMaster;
+            director.MasterStorer = _centralizedStorer;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -136,15 +138,17 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = localFile;
+                    director.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = remoteService;
+                    director.Repository.RequestName = _requestName;
 
                     break;
             }
@@ -163,6 +167,8 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             if (string.IsNullOrEmpty(repositoryType))
                 repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
 
+            if (repositoryType == "") repositoryType = "LOCALFILE";
+
             #endregion       
 
             #region ASSIGN REQUEST HANDLER
@@ -173,7 +179,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
             experience.ExtraData = extraData;
 
-            experience.MasterLeader = _centralizedMaster;
+            experience.MasterStorer = _centralizedStorer;
 
             experience.StorylineDetails = storylineDetails;
             experience.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -188,12 +194,14 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
                     var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
 
                     experience.Repository = localFile;
+                    experience.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
 
                     experience.Repository = remoteService;
+                    experience.Repository.RequestName = _requestName;
 
                     break;
             }
@@ -207,7 +215,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
 
         #region Page 2
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
             #region CHECK FOR MISTAKES
 
@@ -216,17 +224,19 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             if (string.IsNullOrEmpty(repositoryType))
                 repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
 
+            if (repositoryType == "") repositoryType = "LOCALFILE";
+
             #endregion       
 
             #region ASSIGN REQUEST HANDLER
 
-            Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0();
+            Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0();
 
             director.Client = _client;
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = _centralizedMaster;
+            director.MasterStorer = _centralizedStorer;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -238,15 +248,17 @@ namespace BaseDI.Playground.Test.Backend.Story.Programming_1
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
 
                     director.Repository = localFile;
+                    director.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
 
                     director.Repository = remoteService;
+                    director.Repository.RequestName = _requestName;
 
                     break;
             }

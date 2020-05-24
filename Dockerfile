@@ -10,16 +10,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1803 AS build
 WORKDIR /src
-COPY ["999.0.2.BaseDI.Playground.Test.BackEnd/999.0.2.BaseDI.Playground.Test.BackEnd.csproj", "999.0.2.BaseDI.Playground.Test.BackEnd/"]
-RUN dotnet restore "999.0.2.BaseDI.Playground.Test.BackEnd/999.0.2.BaseDI.Playground.Test.BackEnd.csproj"
+COPY ["999.0.2.BaseDI.BackEnd/999.0.2.BaseDI.BackEnd.csproj", "999.0.2.BaseDI.BackEnd/"]
+RUN dotnet restore "999.0.2.BaseDI.BackEnd/999.0.2.BaseDI.BackEnd.csproj"
 COPY . .
-WORKDIR "/src/999.0.2.BaseDI.Playground.Test.BackEnd"
-RUN dotnet build "999.0.2.BaseDI.Playground.Test.BackEnd.csproj" -c Release -o /app/build
+WORKDIR "/src/999.0.2.BaseDI.BackEnd"
+RUN dotnet build "999.0.2.BaseDI.BackEnd.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "999.0.2.BaseDI.Playground.Test.BackEnd.csproj" -c Release -o /app/publish
+RUN dotnet publish "999.0.2.BaseDI.BackEnd.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "999.0.2.BaseDI.Playground.Test.BackEnd.dll"]
+ENTRYPOINT ["dotnet", "999.0.2.BaseDI.BackEnd.dll"]

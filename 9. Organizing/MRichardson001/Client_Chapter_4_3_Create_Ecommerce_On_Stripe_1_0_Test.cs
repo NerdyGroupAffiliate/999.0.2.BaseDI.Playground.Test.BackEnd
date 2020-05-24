@@ -1,10 +1,4 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Stripe;
-
-namespace BaseDI.Playground.Test.Backend
+﻿namespace BaseDI.BackEnd
 {
     public class Client_Chapter_4_3_Create_Ecommerce_On_Stripe_1_0_Test
     {

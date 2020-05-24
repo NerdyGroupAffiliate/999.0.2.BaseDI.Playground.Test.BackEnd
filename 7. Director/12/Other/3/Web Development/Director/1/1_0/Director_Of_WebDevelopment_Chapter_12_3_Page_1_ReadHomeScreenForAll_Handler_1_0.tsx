@@ -17,14 +17,14 @@ import * as ChapterPage_Page_1_8_Process_CRUD_12_3_1_0 from "../../../../../../.
 import * as ChapterPage_Page_1_9_Verify_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_9_Verify_Process_12_3_1_0";
 import * as ChapterPage_Page_1_10_End_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_10_End_Process_12_3_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
-    export class Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
+export namespace BaseDI.BackEnd.Director.Web_Development_3 {
+    export class Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0) {
+        constructor(extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0) {
             super();
 
             //#region 1. Assign
@@ -71,21 +71,21 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
     //#region 5. Action Script
     export class Use_DesignPattern_Builder_Chapter_12_3_Page_1 {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
         private _client: any;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _repository: IContract_Programming_Repository_12_2_1_0;
+        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
-        private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedMaster: any,storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
-            this._centralizedMaster = centralizedMaster;
+        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+            this._centralizedStorer = centralizedStorer;
             this._client = client;
 
             this._storylineDetails = storylineDetails;
@@ -105,7 +105,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0(this._client, this._centralizedMaster, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0(this._client, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
 
             await builder.Action_1_Begin_Process();
 
@@ -128,26 +128,26 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
     //#endregion
 
     //#region 6. Action Implementation
-    export class Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
         private _client: any;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _repository: IContract_Programming_Repository_12_2_1_0;
+        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
-        private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedMaster: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             super();
 
-            this._centralizedMaster = centralizedMaster;
+            this._centralizedStorer = centralizedStorer;
             this._client = client;
 
             this._storylineDetails = storylineDetails;
@@ -188,14 +188,14 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
         //Page 1-5
         public async Action_5_Process_StorySetting(): Promise<object> {
             //region 1. Assign 
-            var page = new ChapterPage_Page_1_5_Process_StorySetting_12_3_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.WebDevelopment_1.Page_1_5_Process_StorySetting_12_3_1_0(this._storylineDetails, this._repository);
+            var page = new ChapterPage_Page_1_5_Process_StorySetting_12_3_1_0.BaseDI.BackEnd.Chapter.Page.WebDevelopment_1.Page_1_5_Process_StorySetting_12_3_1_0(this._storylineDetails, this._repository);
 
             page.Client = this._client;
 
             page.EntryPoint = this._entryPoint;
             page.ExtraData = this._extraData;
 
-            page.MasterLeader = this._centralizedMaster;
+            page.MasterStorer = this._centralizedStorer;
 
             page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 
@@ -249,7 +249,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
         //Page 1-9
         public async Action_9_Verify_Process(): Promise<object> {
             //#region 1. Assign 
-            //var page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_11.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
+            //var page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_11.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
 
             //page.ExtraData = this._extraData;
             //page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
@@ -267,7 +267,7 @@ export namespace BaseDI.Playground.Test.BackEnd.Director.Web_Development_3 {
         //Page 1-10
         public async Action_10_End_Process(): Promise<object> {
             //#region 1. Assign 
-            //var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Playground.Test.BackEnd.Chapter.Page.Programming_11.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
+            //var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_11.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
 
             //page.ExtraData = this._extraData;
             //page.StorylineDetails_Parameters = this._storylineDetails_Parameters;

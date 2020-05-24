@@ -13,14 +13,16 @@ import * as RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_
 import * as Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 from "../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/1/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0";
 import * as Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 from "../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/2/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Story.Risk_Management_1 {
-    export class RiskManagementFactoryTester_NicheMaster_11_1_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
+    export class RiskManagementFactoryTester_NicheMaster_11_1_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedMaster: any;
+        private _centralizedStorer: any;
+        private _centralizedDisturber: any;
+        private _centralizedSensor: any;
         private _client: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
@@ -28,8 +30,11 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Risk_Management_1 {
             super();
 
             //#region 1. Assign
+            this._centralizedStorer = null;
+            this._centralizedDisturber = null;
+            this._centralizedSensor = null;
+
             this._extraData = extraData;
-            this._centralizedMaster = null;
 
             this.Action = this.Action.bind(this);
             //#endregion
@@ -46,10 +51,12 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Risk_Management_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedMaster: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String): object
+        public Action(client: any, centralizedStorer: any, centralizedDisturber: any, centralizedSensor:any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
-            this._centralizedMaster = centralizedMaster;
+            this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
 
             const requestType = requestToResolve;
             let resolvedRequest: object = new Object();
@@ -81,30 +88,35 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Risk_Management_1 {
         private Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_ReadAndHandleMistakes_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
             let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
 
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.Playground.Test.BackEnd.Director.Risk_Management_1.Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(extraData);
+            let director = new Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.BackEnd.Director.Risk_Management_1.Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(extraData);
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
+
             director.ExtraData = extraData;
-            director.MasterLeader = this._centralizedMaster;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
             //#endregion
 
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.Playground.Test.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.Playground.Test.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 
@@ -120,29 +132,33 @@ export namespace BaseDI.Playground.Test.BackEnd.Story.Risk_Management_1 {
         private Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_The_DataRespository_1_0(storylineDetails, false, true);
+            let repositoryType: string = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_The_DataRespository_1_0(storylineDetails, false, true);
 
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.Playground.Test.BackEnd.Director.Risk_Management_2.Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(extraData);
+            let director = new Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.BackEnd.Director.Risk_Management_2.Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(extraData);
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
             director.ExtraData = extraData;
-            director.MasterLeader = this._centralizedMaster;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
             //#endregion
 
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.Playground.Test.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.Playground.Test.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 

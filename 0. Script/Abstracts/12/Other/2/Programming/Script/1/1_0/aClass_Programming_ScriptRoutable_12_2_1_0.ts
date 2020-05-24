@@ -1,13 +1,16 @@
-﻿import * as ExtraData_12_2_1_0 from "../../../../../../../../Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
+﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
+
+import * as ExtraData_12_2_1_0 from "../../../../../../../../Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
+
 import * as IContract_Programming_BaseDI_12_2_1_0 from "../../../../../../../../Interfaces/12/Other/2/Programming/Contract/1/1_0/IContract_Programming_BaseDI_12_2_1_0";
 
-export namespace BaseDI.Playground.Test.BackEnd.Programming.Abstract_1
+export namespace BaseDI.BackEnd.Programming.Abstract_1
 {
     export abstract class aClass_Programming_ScriptRoutable_12_2_1_0
     {
         //#region 1. Assign
-        public Repository: IContract_Programming_Repository_12_2_1_0 = new Object();
+        public Repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         public StorylineDetails: object = new Object();
 
@@ -18,6 +21,18 @@ export namespace BaseDI.Playground.Test.BackEnd.Programming.Abstract_1
         public EntryPoint: any = new Object();
 
         public MasterLeader: any;
+
+        public MasterController: any;
+
+        public MasterTransporter: any;
+
+        public MasterConverter: any;
+
+        public MasterStorer: any;
+
+        public MasterDisturber: any;
+
+        public MasterSensor: any;
 
         public Client: any;
         //#endregion

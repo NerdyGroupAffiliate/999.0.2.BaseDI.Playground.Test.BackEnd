@@ -1,19 +1,19 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Risk_Management_1;
-using BaseDI.Playground.Test.Backend.Director.Risk_Management_2;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Extensions_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Poco_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.State.Risk_Management_;
-using BaseDI.Playground.Test.Backend.State.Risk_Management_1;
-using BaseDI.Playground.Test.Backend.State.Risk_Management_2;
+﻿using BaseDI.BackEnd.Director.Risk_Management_1;
+using BaseDI.BackEnd.Director.Risk_Management_2;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.State.Risk_Management_;
+using BaseDI.BackEnd.State.Risk_Management_1;
+using BaseDI.BackEnd.State.Risk_Management_2;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Story.Risk_Management_1
+namespace BaseDI.BackEnd.Story.Risk_Management_1
 {
     #region 6. Action Implementation
 
@@ -21,7 +21,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Risk_Management_1
     internal class RiskManagementFactoryTester_NicheMaster_11_1_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
-        private object _centralizedMaster;
+        private object _centralizedStorer;
 
         private ExtraData_12_2_1_0 _extraData = null;
 
@@ -29,7 +29,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Risk_Management_1
         {
             //region 1. Assign
             _client = new Dictionary<string, object>();
-            _centralizedMaster = new object();
+            _centralizedStorer = new object();
 
             _extraData = extraData;
 
@@ -38,12 +38,12 @@ namespace BaseDI.Playground.Test.Backend.Story.Risk_Management_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, object centralizedMaster, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "")
+        public override object Action(Dictionary<string, object> client, object centralizedStorer, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
             _client = client;
-            _centralizedMaster = centralizedMaster;
+            _centralizedStorer = centralizedStorer;
 
             _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
@@ -94,7 +94,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Risk_Management_1
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = _centralizedMaster;
+            director.MasterStorer = _centralizedStorer;;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -150,7 +150,7 @@ namespace BaseDI.Playground.Test.Backend.Story.Risk_Management_1
 
             director.ExtraData = extraData;
 
-            director.MasterLeader = _centralizedMaster;
+            director.MasterStorer = _centralizedStorer;;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;

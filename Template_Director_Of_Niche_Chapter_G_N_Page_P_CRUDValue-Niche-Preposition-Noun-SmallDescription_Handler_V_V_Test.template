@@ -1,6 +1,6 @@
 ﻿
-using BaseDI.Playground.Test.Backend.Character_1;
-using BaseDI.Playground.Test.Backend.Experience_;
+using BaseDI.BackEnd.Character_1;
+using BaseDI.BackEnd.Experience_;
 
 using Microsoft.AspNetCore.WebUtilities;
 
@@ -16,7 +16,7 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BaseDI.Playground.Test.Backend
+namespace BaseDI.BackEnd
 {
     //public class Direct_Niche_Chapter_C_N_Page_P_CRUDValue-Niche-Preposition-Noun-SmallDescription_V_V_Test
     //{
@@ -27,9 +27,9 @@ namespace BaseDI.Playground.Test.Backend
     //    private JObject _storylineDetails_Parameters;
 
     //    private string _baseDIArmTemplateSchema = "";
-    //    private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.Playground.Test.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._1.Generate_Brand_Awareness._1.Advertising.Template._2._1_0.State_Direct_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0.json";
+    //    private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._1.Generate_Brand_Awareness._1.Advertising.Template._2._1_0.State_Direct_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0.json";
     //    private string _baseDIArmTemplateSchemaParameters = "";
-    //    private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.Playground.Test.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._1.Generate_Brand_Awareness._1.Advertising.Template._2._1_0.State_Direct_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0-P.json";
+    //    private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._1.Generate_Brand_Awareness._1.Advertising.Template._2._1_0.State_Direct_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0-P.json";
 
     //    public Func<JObject, JObject> Update_Client = null;
 

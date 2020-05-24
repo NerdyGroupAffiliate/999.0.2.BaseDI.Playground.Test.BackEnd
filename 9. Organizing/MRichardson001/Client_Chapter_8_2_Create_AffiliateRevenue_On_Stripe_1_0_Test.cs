@@ -1,10 +1,6 @@
 ﻿using NUnit.Framework;
-using Stripe;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BaseDI.Playground.Test.Backend
+namespace BaseDI.BackEnd
 {
     public class Client_Chapter_8_2_Create_AffiliateRevenue_On_Stripe_1_0_Test
     {

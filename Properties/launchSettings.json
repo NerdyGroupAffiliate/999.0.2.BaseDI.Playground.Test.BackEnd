@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "_999._0._2.BaseDI.Playground.Test.BackEnd": {
+    "_999._0._2.BaseDI.BackEnd": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

@@ -78,7 +78,7 @@ var BaseDI;
                         }
                         //region 3. Set
                         ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.prototype.HandleStoryDefaults = function () {
-                            this._extraData = new ExtraData_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming_.ExtraData_12_2_1_0();
+                            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_.ExtraData_12_2_1_0();
                             this._extraData.MasterLeader = this;
                         };
                         //region 4. Action
@@ -111,7 +111,7 @@ var BaseDI;
                             });
                         };
                         return ProgrammingStudioAdministrator_MasterLeader_12_2_1_0;
-                    }(aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0));
+                    }(aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0));
                     Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 = ProgrammingStudioAdministrator_MasterLeader_12_2_1_0;
                     //region 5. Action Script
                     var Use_DesignPattern_Builder_Chapter_12_2_1_0 = /** @class */ (function () {
@@ -274,7 +274,7 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Builder_Chapter_12_2_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Programming_1.Implement_DesignPattern_Builder_Chapter_12_2_1_0 = Implement_DesignPattern_Builder_Chapter_12_2_1_0;
                     //region RETURN DIRECTOR WORKER
                     var Implement_DesignPattern_Factory_Director_12_2_1_0 = /** @class */ (function (_super) {
@@ -309,7 +309,7 @@ var BaseDI;
                                     switch (_a.label) {
                                         case 0:
                                             if (!this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_PROGRAMMING")) return [3 /*break*/, 2];
-                                            createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.Playground.Test.BackEnd.Story.Risk_Management_.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
+                                            createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.BackEnd.Story.Risk_Management_.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
                                             createDirector.APILocationLocalDotNetCore = "http://localhost:9912/api/basedi/io/programming";
                                             createDirector.APILocationRemote = "https://api.basedi.io/programming";
                                             return [4 /*yield*/, createDirector.Action(this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName)];
@@ -393,7 +393,7 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Factory_Director_12_2_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Programming_1.Implement_DesignPattern_Factory_Director_12_2_1_0 = Implement_DesignPattern_Factory_Director_12_2_1_0;
                     //region RETURN EXPERIENCE WORKER
                     var Implement_DesignPattern_Factory_Experience_12_2_1_0 = /** @class */ (function (_super) {
@@ -501,7 +501,7 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Factory_Experience_12_2_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Playground.Test.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Programming_1.Implement_DesignPattern_Factory_Experience_12_2_1_0 = Implement_DesignPattern_Factory_Experience_12_2_1_0;
                 })(Programming_1 = Story.Programming_1 || (Story.Programming_1 = {}));
             })(Story = UnitTest.Story || (UnitTest.Story = {}));

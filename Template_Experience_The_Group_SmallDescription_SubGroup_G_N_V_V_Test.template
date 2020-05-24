@@ -1,10 +1,10 @@
-﻿//using BaseDI.Playground.Test.Backend.Character_;
-//using BaseDI.Playground.Test.Backend.Director.Advertising_;
-//using BaseDI.Playground.Test.Backend.Director.Programming_;
-//using BaseDI.Playground.Test.Backend.Experience_;
+﻿//using BaseDI.BackEnd.Character_;
+//using BaseDI.BackEnd.Director.Advertising_;
+//using BaseDI.BackEnd.Director.Programming_;
+//using BaseDI.BackEnd.Experience_;
 //
-//using BaseDI.Playground.Test.Backend.Story.Advertising_;
-//using BaseDI.Playground.Test.Backend.Story.Programming_;
+//using BaseDI.BackEnd.Story.Advertising_;
+//using BaseDI.BackEnd.Story.Programming_;
 //using Microsoft.AspNetCore.WebUtilities;
 
 //using Newtonsoft.Json.Linq;
@@ -20,7 +20,7 @@
 //using System.Security.Cryptography;
 //using System.Text;
 
-//namespace BaseDI.Playground.Test.BackEnd
+//namespace BaseDI.BackEnd
 //{
 //    public class Experience_The_Group_SmallDescription_SubGroup_G_N_V_V_Test
 //    {
@@ -28,9 +28,9 @@
 
 //        //A. Variable Declaration       
          //private string _baseDIArmTemplateSchema = "";
-         //private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.Playground.Test.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.json";
+         //private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.json";
          //private string _baseDIArmTemplateSchemaParameters = "";
-         //private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.Playground.Test.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0-P.json";
+         //private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0-P.json";
 
          //private object _clientInfo;
 

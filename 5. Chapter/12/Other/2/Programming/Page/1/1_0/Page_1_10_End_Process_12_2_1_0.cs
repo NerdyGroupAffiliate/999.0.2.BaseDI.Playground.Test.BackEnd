@@ -1,14 +1,14 @@
-﻿using BaseDI.Playground.Test.Backend.Director.Programming_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1;
-using BaseDI.Playground.Test.Backend.Script.Programming.Repository_1;
-using BaseDI.Playground.Test.Backend.Script.Programming_1;
-using BaseDI.Playground.Test.Backend.Story.Programming_1;
+﻿using BaseDI.BackEnd.Director.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.Story.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
+namespace BaseDI.BackEnd.Chapter.Page.Programming_1
 {
     public class Page_1_10_End_Process_12_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
@@ -21,7 +21,7 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_10_End_Process_12_2_1_0(JObject storylineDetails, IContract_Programming_Repository_12_2_1_0 repository)
+        public Page_1_10_End_Process_12_2_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
         {
             #region 1. Assign
 
@@ -59,16 +59,16 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            //READ REQUEST NAME
-            var requestName = Step_1_0_Read_The_RequestName_1_0();
+            //STORE REQUEST ROUTES
+            var requestName = Step_1_0_Custom_Store_RequestRoutes_1_0();
 
-            //ROUTE THE REQUEST
-            return await Step_2_0_Route_The_Request_1_0(requestName).ConfigureAwait(true);        
+            //TRANSPORT THE REQUEST
+            return await Step_2_0_Custom_Transport_RequestToHandler_1_0(requestName).ConfigureAwait(true);        
         }
 
-        #region READ REQUEST NAME
+        #region STORE REQUEST ROUTES
 
-        private string Step_1_0_Read_The_RequestName_1_0()
+        private string Step_1_0_Custom_Store_RequestRoutes_1_0()
         {
             JToken routeNameToken = StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]..baseDIInstructions.business[?(@.key == 'Method')].values[0].value[0].key.name");
 
@@ -82,9 +82,9 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
 
         #endregion
 
-        #region ROUTE THE REQUEST
+        #region TRANSPORT THE REQUEST
 
-        private async Task<JObject> Step_2_0_Route_The_Request_1_0(string requestName)
+        private async Task<JObject> Step_2_0_Custom_Transport_RequestToHandler_1_0(string requestName)
         {
             JObject armTemplateJSONOutput = StorylineDetails;
 
@@ -92,13 +92,13 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
             {
                 if (EntryPoint == null || !string.IsNullOrEmpty(requestName))
                 {
-                    armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0>()
+                    armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0>()
                       .SetupStoryline(Client, StorylineDetails, StorylineDetails_Parameters, ExtraData, requestName)
                       .Action().Result;
                 }
                 else
                 {
-                    armTemplateJSONOutput = await Step_2_1_Execute_The_Request_1_0(EntryPoint).ConfigureAwait(true);
+                    armTemplateJSONOutput = await Step_2_1_Custom_Control_RequestToProcess_1_0(EntryPoint).ConfigureAwait(true);
                 }
             }
             catch (Exception storyineMistake)
@@ -113,9 +113,9 @@ namespace BaseDI.Playground.Test.Backend.Chapter.Page.Programming_1
 
         #endregion
 
-        #region EXECUTE THE REQUEST
+        #region CONTROL THE REQUEST
 
-        private async Task<JObject> Step_2_1_Execute_The_Request_1_0(aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint)
+        private async Task<JObject> Step_2_1_Custom_Control_RequestToProcess_1_0(aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint)
         {
             JObject result = StorylineDetails;
 

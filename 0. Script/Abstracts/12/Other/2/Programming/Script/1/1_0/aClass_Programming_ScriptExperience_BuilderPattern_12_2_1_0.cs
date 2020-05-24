@@ -1,4 +1,4 @@
-﻿using BaseDI.Playground.Test.Backend.Script.Programming_1;
+﻿using BaseDI.BackEnd.Script.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BaseDI.Playground.Test.Backend.Script.Programming.Abstract_1
+namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 {
 
     public abstract class aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 : aClass_Programming_ScriptRoutable_12_2_1_0

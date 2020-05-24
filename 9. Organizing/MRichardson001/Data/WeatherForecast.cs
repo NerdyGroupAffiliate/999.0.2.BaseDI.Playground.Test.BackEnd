@@ -1,6 +1,6 @@
 using System;
 
-namespace _0._1.BaseDI.Playground.Test.BackEnd.Data
+namespace _0._1.BaseDI.BackEnd.Data
 {
     public class WeatherForecast
     {
