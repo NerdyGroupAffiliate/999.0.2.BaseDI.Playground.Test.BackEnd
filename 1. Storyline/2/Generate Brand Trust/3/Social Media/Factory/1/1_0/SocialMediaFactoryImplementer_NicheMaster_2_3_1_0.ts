@@ -13,8 +13,11 @@ import * as RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTrans
 export namespace BaseDI.BackEnd.Story.Social_Media_3 {
     export class SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        //#region 1. Assign
+        //#region 1. Assign        
         private _centralizedStorer: any;
+        private _centralizedDisturber: any;
+        private _centralizedSensor: any;
+
         private _client: any;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
@@ -26,6 +29,9 @@ export namespace BaseDI.BackEnd.Story.Social_Media_3 {
 
             //#region 1. Assign
             this._centralizedStorer = null;
+            this._centralizedDisturber = null;
+            this._centralizedSensor = null;
+
             this._client = null;
 
             this._extraData = extraData;
@@ -43,12 +49,16 @@ export namespace BaseDI.BackEnd.Story.Social_Media_3 {
 
         //#region 3. Set
         //#endregion
-
+    
         //#region 4. Action
-        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(client: any, centralizedStorer: any, centralizedDisturber: any, centralizedSensor: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
+            
             this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
+
             this._client = client;  
 
             this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
@@ -91,7 +101,9 @@ export namespace BaseDI.BackEnd.Story.Social_Media_3 {
 
             //experience.ExtraData = extraData;
 
-            //experience.MasterLeader = this._centralizedStorer;
+            //experience.MasterStorer = this._centralizedStorer;
+            //experience.MasterDisturber = this._centralizedDisturber;
+            //experience.MasterSensor = this._centralizedSensor;
 
             //experience.StorylineDetails = storylineDetails;
             //experience.StorylineDetails_Parameters = storylineDetails_Parameters;   

@@ -18,6 +18,8 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
     {
         //#region 1. Assign
         private _centralizedStorer: any;
+        private _centralizedDisturber: any;
+        private _centralizedSensor: any;
         private _client: any;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
@@ -28,8 +30,11 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
             super();
 
             //#region 1. Assign
-            this._extraData = extraData;
             this._centralizedStorer = null;
+            this._centralizedDisturber = null;
+            this._centralizedSensor = null;
+
+            this._extraData = extraData;
 
             this.Action = this.Action.bind(this);
             //#endregion
@@ -46,10 +51,12 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(client: any, centralizedStorer: any, centralizedDisturber: any, centralizedSensor:any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
 
             const requestType = requestToResolve;
             let resolvedRequest: object = new Object();
@@ -91,8 +98,13 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
+
             director.ExtraData = extraData;
+
             director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
             //#endregion
 
             //#region ASSIGN LOGIC REPOSITORY
@@ -130,7 +142,11 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
             director.ExtraData = extraData;
+
             director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
             //#endregion
 
             //#region ASSIGN LOGIC REPOSITORY

@@ -23,6 +23,9 @@ export namespace BaseDI.BackEnd.Story.Web_Development_3 {
     {
         //#region 1. Assign
         private _centralizedStorer: any;
+        private _centralizedDisturber: any;
+        private _centralizedSensor: any;
+
         private _client: any;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
@@ -36,6 +39,8 @@ export namespace BaseDI.BackEnd.Story.Web_Development_3 {
 
             //#region 1. Assign
             this._centralizedStorer = null;
+            this._centralizedDisturber = null;
+            this._centralizedSensor = null;
             this._client = null;
 
             this._extraData = extraData;
@@ -55,9 +60,11 @@ export namespace BaseDI.BackEnd.Story.Web_Development_3 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer: any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object {
+        public Action(client: any, centralizedStorer: any, centralizedDisturber: any, centralizedSensor:any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
             this._client = client;
 
             this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
@@ -109,6 +116,8 @@ export namespace BaseDI.BackEnd.Story.Web_Development_3 {
             director.ExtraData = extraData;
 
             director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;    
@@ -154,6 +163,8 @@ export namespace BaseDI.BackEnd.Story.Web_Development_3 {
             director.ExtraData = extraData;
 
             director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;

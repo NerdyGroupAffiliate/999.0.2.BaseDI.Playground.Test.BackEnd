@@ -394,7 +394,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
         private string _requestToProcess = "";
         private string _requestToProcessParameters = "";
 
+        private Implement_DesignPattern_Factory_Disturber_12_2_1_0<StoryRequest> _centralizedDisturber;
         private Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest> _centralizedStorer;
+        private Implement_DesignPattern_Factory_Sensor_12_2_1_0<StoryRequest> _centralizedSensor;
 
         #endregion
 
@@ -402,7 +404,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Director_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, StoryRequest requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
-            _centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest>(_client, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestToResolveString, _requestToProcess, _requestToProcessParameters);
+            _centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0<StoryRequest>(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            _centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest>(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            _centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0<StoryRequest>(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
 
             _client = client;
 
@@ -759,7 +763,6 @@ namespace BaseDI.BackEnd.Story.Programming_1
         #endregion
     }
 
-
     #endregion
 
     #region RETURN EXPERIENCE HANDLER
@@ -777,7 +780,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         private ExtraData_12_2_1_0 _extraData;
 
+        private Implement_DesignPattern_Factory_Disturber_12_2_1_0<StoryRequest> _centralizedDisturber;
         private Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest> _centralizedStorer;
+        private Implement_DesignPattern_Factory_Sensor_12_2_1_0<StoryRequest> _centralizedSensor;
 
         private string _requestName = "";
         private string _requestToProcess = "";
@@ -789,7 +794,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Experience_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, StoryRequest requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
+            _centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0<StoryRequest>(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
             _centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0<StoryRequest>(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            _centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0<StoryRequest>(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
 
             _extraData = extraData;
 
@@ -1009,6 +1016,240 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0>()
               .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Manager_1_0", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0-P1_0")
+              .Action().Result;
+
+            return armTemplateJSONOutput;
+        }
+
+        #endregion
+
+        #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        public override object Action_10_End_Process()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_2_Validate_Process()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_3_Process_StoryAuthor()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_4_Process_StoryCharacters()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_5_Process_StorySetting()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_6_Process_StoryExperiences()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_7_Process_StoryResources()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_8_Process_CRUD()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_9_Verify_Process()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #endregion
+    }
+
+    #endregion
+
+    #region HANDLE REQUEST DISTURBANCE
+
+    internal class Implement_DesignPattern_Factory_Disturber_12_2_1_0<StoryRequest> : aClass_Programming_ScriptAction_12_2_1_0<object>
+    {
+        #region 1. Assign
+
+        private Dictionary<string, object> _client;
+
+        private JObject _storylineDetails;
+        private JObject _storylineDetails_Parameters;
+
+        private StoryRequest _requestToResolveObject;
+
+        private ExtraData_12_2_1_0 _extraData;
+
+        private string _requestName = "";
+        private string _requestToProcess = "";
+        private string _requestToProcessParameters = "";
+
+        #endregion
+
+        #region 2. Ready
+
+        internal Implement_DesignPattern_Factory_Disturber_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, StoryRequest requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
+        {
+            _client = client;
+
+            _extraData = extraData;
+
+            _requestToResolveObject = requestToResolveObject;
+            _requestName = requestToResolveString;
+            _requestToProcess = requestToProcess;
+            _requestToProcessParameters = requestToProcessParameters;
+
+            _storylineDetails = storylineDetails;
+            _storylineDetails_Parameters = storylineDetails_Parameters;
+        }
+
+        #endregion
+
+        #region 3. Set
+
+        //A. Default state of this part of the storyline
+
+        #endregion
+
+        #region 4. Action
+
+        #region EXECUTE LOGIC INSTUCTIONS
+
+        public override object Action_1_Begin_Process()
+        {
+            JObject armTemplateJSONOutput = null;
+
+            armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0>()
+              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0-P1_0")
+              .Action().Result;
+
+            return armTemplateJSONOutput;
+        }
+
+        #endregion
+
+        #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        public override object Action_10_End_Process()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_2_Validate_Process()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_3_Process_StoryAuthor()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_4_Process_StoryCharacters()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_5_Process_StorySetting()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_6_Process_StoryExperiences()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_7_Process_StoryResources()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_8_Process_CRUD()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Action_9_Verify_Process()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #endregion
+    }
+
+    #endregion
+
+    #region HANDLE REQUEST SENSOR
+
+    internal class Implement_DesignPattern_Factory_Sensor_12_2_1_0<StoryRequest> : aClass_Programming_ScriptAction_12_2_1_0<object>
+    {
+        #region 1. Assign
+
+        private Dictionary<string, object> _client;
+
+        private JObject _storylineDetails;
+        private JObject _storylineDetails_Parameters;
+
+        private StoryRequest _requestToResolveObject;
+
+        private ExtraData_12_2_1_0 _extraData;
+
+        private string _requestName = "";
+        private string _requestToProcess = "";
+        private string _requestToProcessParameters = "";
+
+        #endregion
+
+        #region 2. Ready
+
+        internal Implement_DesignPattern_Factory_Sensor_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, StoryRequest requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
+        {
+            _client = client;
+
+            _extraData = extraData;
+
+            _requestToResolveObject = requestToResolveObject;
+            _requestName = requestToResolveString;
+            _requestToProcess = requestToProcess;
+            _requestToProcessParameters = requestToProcessParameters;
+
+            _storylineDetails = storylineDetails;
+            _storylineDetails_Parameters = storylineDetails_Parameters;
+        }
+
+        #endregion
+
+        #region 3. Set
+
+        //A. Default state of this part of the storyline
+
+        #endregion
+
+        #region 4. Action
+
+        #region EXECUTE LOGIC INSTUCTIONS
+
+        public override object Action_1_Begin_Process()
+        {
+            JObject armTemplateJSONOutput = null;
+
+            armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0>()
+              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_X_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_X_Request_Sensor_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;
