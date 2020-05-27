@@ -57,7 +57,7 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
     //#region 5. Action Script
     export class Use_DesignPattern_Builder_Experience_2_3_1_0 {
         //#region 1. Assign
-        private _centralizedStorer: any;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _client: any;
 
         private _storylineDetails: object = new Object();
@@ -116,7 +116,7 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
     export class Implement_DesignPattern_Builder_Experience_2_3_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedStorer: any;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _client: any;
 
         private _storylineDetails: object = new Object();

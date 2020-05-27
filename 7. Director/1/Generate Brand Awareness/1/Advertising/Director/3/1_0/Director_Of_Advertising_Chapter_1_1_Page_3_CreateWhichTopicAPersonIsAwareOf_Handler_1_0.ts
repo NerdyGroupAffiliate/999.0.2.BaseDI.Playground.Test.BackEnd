@@ -56,7 +56,7 @@ export namespace BaseDI.BackEnd.Director.Advertising_3
     //#region 5. Action Script
     export class Use_DesignPattern_Builder_Chapter_1_1_Page_3 {
         //#region 1. Assign
-        private _centralizedStorer: any;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _client: any;
 
         private _storylineDetails: object = new Object();
@@ -116,7 +116,7 @@ export namespace BaseDI.BackEnd.Director.Advertising_3
     export class Implement_DesignPattern_Builder_Chapter_1_1_Page_3_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedStorer: any;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _client: any;
 
         private _storylineDetails: object = new Object();
