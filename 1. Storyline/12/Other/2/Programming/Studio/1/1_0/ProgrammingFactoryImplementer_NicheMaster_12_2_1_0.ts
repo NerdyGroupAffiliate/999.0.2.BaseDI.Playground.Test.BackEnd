@@ -1,4 +1,5 @@
 ﻿//0. SCRIPT - ABSTRACT, BASE & INTERFACE CLASSES
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0"
 import * as aClass_Programming_ScriptNicheMaster_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptNicheMaster_12_2_1_0"
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
@@ -30,8 +31,9 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
     export class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedStorer: any;
-        private _centralizedDisturber: any;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         private _client: any;
 
@@ -47,9 +49,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             super();
 
             //#region 1. Assign
-            this._centralizedStorer = null;
-            this._centralizedDisturber = null;
-
             this._client = null;
 
             this._extraData = extraData;
@@ -69,12 +68,12 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer: any, centralizedDisturber: any, centralizedSensor:any, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
             this._centralizedDisturber = centralizedDisturber;
-
+            this._centralizedSensor = centralizedSensor;
             this._client = client; 
 
             this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
@@ -134,6 +133,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             director.MasterStorer = this._centralizedStorer;
             director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -179,6 +179,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             experience.MasterStorer = this._centralizedStorer;
             experience.MasterDisturber = this._centralizedDisturber;
+            experience.MasterSensor = this._centralizedSensor;
 
             experience.StorylineDetails = storylineDetails;
             experience.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -226,6 +227,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             director.MasterStorer = this._centralizedStorer;
             director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;

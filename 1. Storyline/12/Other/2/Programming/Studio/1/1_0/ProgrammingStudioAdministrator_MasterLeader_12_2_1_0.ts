@@ -340,6 +340,10 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
     export class Implement_DesignPattern_Factory_Director_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //region 1. Assign
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
         private _client: any = null;
 
         private _storylineDetails: object = new Object();
@@ -353,10 +357,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         private _requestToProcess: string = "";
         private _requestToProcessParameters: string = "";
         private _requestName: string = "";
-
-        private _centralizedDisturber: Implement_DesignPattern_Factory_Disturber_12_2_1_0;
-        private _centralizedStorer: Implement_DesignPattern_Factory_Storer_12_2_1_0;
-        private _centralizedSensor: Implement_DesignPattern_Factory_Sensor_12_2_1_0;
 
         //region 2. Ready
         constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
@@ -374,10 +374,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this._requestToProcessParameters = requestToProcessParameters;
 
             this._extraData = extraData;
-
-            this._centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess, this._requestToProcessParameters);
-            this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess, this._requestToProcessParameters);
-            this._centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess, this._requestToProcessParameters);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -670,6 +666,11 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
     export class Implement_DesignPattern_Factory_Experience_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //region 1. Assign
+
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
         private _client: any = null;
 
         private _storylineDetails: object = new Object();
@@ -683,10 +684,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         private _requestName: string = "";
         private _requestToProcess: string = "";
         private _requestToProcessParameters: string = "";
-
-        private _centralizedDisturber: Implement_DesignPattern_Factory_Disturber_12_2_1_0;
-        private _centralizedStorer: Implement_DesignPattern_Factory_Storer_12_2_1_0;
-        private _centralizedSensor: Implement_DesignPattern_Factory_Sensor_12_2_1_0;
 
         //region 2. Ready
         constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
@@ -704,10 +701,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this._requestToProcessParameters = requestToProcessParameters;
 
             this._extraData = extraData;
-
-            this._centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess, this._requestToProcessParameters);
-            this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess, this._requestToProcessParameters);
-            this._centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess, this._requestToProcessParameters);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);

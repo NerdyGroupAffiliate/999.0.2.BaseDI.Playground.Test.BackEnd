@@ -17,7 +17,9 @@ namespace BaseDI.BackEnd.Story.Supplements_1
     internal class SupplementsFactoryImplementer_NicheMaster_4_1_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
-        private object _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
         private ExtraData_12_2_1_0 _extraData = null;
 
@@ -25,7 +27,6 @@ namespace BaseDI.BackEnd.Story.Supplements_1
         {
             //region 1. Assign
             _client = new Dictionary<string, object>();
-            _centralizedStorer = new object();
 
             _extraData = extraData;
 
@@ -34,12 +35,14 @@ namespace BaseDI.BackEnd.Story.Supplements_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, object centralizedStorer, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
             _client = client;
             _centralizedStorer = centralizedStorer;
+            _centralizedDisturber = centralizedDisturber;
+            _centralizedSensor = centralizedSensor;
 
             #endregion
 
@@ -84,7 +87,9 @@ namespace BaseDI.BackEnd.Story.Supplements_1
 
             //director.ExtraData = extraData;
 
-            //director.MasterStorer = _centralizedStorer;;
+            //director.MasterStorer = _centralizedStorer;
+            //director.MasterDisturber = _centralizedDisturber;
+            //director.MasterSensor = _centralizedSensor;
 
             //director.StorylineDetails = storylineDetails;
             //director.StorylineDetails_Parameters = storylineDetails_Parameters;
