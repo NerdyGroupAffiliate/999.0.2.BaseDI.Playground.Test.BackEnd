@@ -1124,7 +1124,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0>()
-              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0-P1_0")
+              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BaseDI.BackEnd.State.Risk_Management_
 {
-    public class RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
+    public class RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
     {
         #region 1. Assign
 
@@ -22,7 +22,7 @@ namespace BaseDI.BackEnd.State.Risk_Management_
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(JObject storylineDetails)
+        public RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(JObject storylineDetails)
         {
             #region 1. Assign            
 

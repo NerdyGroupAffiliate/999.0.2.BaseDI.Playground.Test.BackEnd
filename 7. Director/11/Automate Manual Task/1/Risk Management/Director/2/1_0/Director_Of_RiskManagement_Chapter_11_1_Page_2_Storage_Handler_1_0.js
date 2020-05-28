@@ -61,10 +61,10 @@ var BaseDI;
             (function (Director) {
                 var Risk_Management_2;
                 (function (Risk_Management_2) {
-                    var Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 = /** @class */ (function (_super) {
-                        __extends(Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0, _super);
+                    var Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = /** @class */ (function (_super) {
+                        __extends(Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0, _super);
                         //region 2. Ready
-                        function Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(extraData) {
+                        function Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(extraData) {
                             var _this = _super.call(this) || this;
                             //region 1. Assign
                             _this._extraData = null;
@@ -77,7 +77,7 @@ var BaseDI;
                         }
                         //region 3. Set
                         //region 4. Action
-                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.prototype.Action = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 var designPattern;
                                 return __generator(this, function (_a) {
@@ -95,9 +95,9 @@ var BaseDI;
                                 });
                             });
                         };
-                        return Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0;
+                        return Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
                     }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
-                    Risk_Management_2.Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 = Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0;
+                    Risk_Management_2.Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
                     //region 5. Action Script
                     var Use_DesignPattern_Builder_Chapter_11_1_Page_2 = /** @class */ (function () {
                         function Use_DesignPattern_Builder_Chapter_11_1_Page_2(storylineDetails, _storylineDetails_Parameters, repository, extraData, entryPoint) {
@@ -270,4 +270,4 @@ var BaseDI;
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
     })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
-//# sourceMappingURL=Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.js.map
+//# sourceMappingURL=Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.js.map

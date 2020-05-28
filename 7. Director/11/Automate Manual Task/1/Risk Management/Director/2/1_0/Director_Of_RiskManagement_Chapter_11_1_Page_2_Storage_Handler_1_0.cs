@@ -15,7 +15,7 @@ using BaseDI.BackEnd.Script.Programming.Repository_1;
 
 namespace BaseDI.BackEnd.Director.Risk_Management_2
 {
-    public class Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
+    public class Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
         #region 1. Assign
 
@@ -29,7 +29,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_2
         #region 2. Ready
         
         //A. Constructor Instantiation
-        public Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0()
+        public Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0()
         {
             #region 1. Assign            
 
@@ -62,7 +62,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_2
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_11_1_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_2(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_11_1_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_2(Client, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -98,7 +98,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_2
         internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
         internal Dictionary<string, object> _client;
-        internal object _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
         internal ExtraData_12_2_1_0 _extraData;
         internal aClass_Programming_ScriptRoutable_12_2_1_0 _entryPoint;
@@ -107,12 +109,15 @@ namespace BaseDI.BackEnd.Director.Risk_Management_2
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_11_1_Page_2(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_11_1_Page_2(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _extraData = extraData;
 
-            _client = client;
             _centralizedStorer = centralizedStorer;
+            _centralizedDisturber = centralizedDisturber;
+            _centralizedSensor = centralizedSensor;
+
+            _client = client;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -136,7 +141,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_2
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -175,7 +180,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_2
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
         private Dictionary<string, object> _client;
-        private object _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
         private JObject _storylineDetails = null;
         private JObject _storylineDetails_Parameters = null;
@@ -188,10 +195,13 @@ namespace BaseDI.BackEnd.Director.Risk_Management_2
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
             _centralizedStorer = centralizedStorer;
+            _centralizedDisturber = centralizedDisturber;
+            _centralizedSensor = centralizedSensor;
+
+            _client = client;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;

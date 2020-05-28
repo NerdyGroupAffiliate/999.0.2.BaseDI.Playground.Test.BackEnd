@@ -8,7 +8,7 @@ import * as IContract_Programming_Repository_12_2_1_0 from "../../../../../../..
 
 export namespace BaseDI.BackEnd.Director.Risk_Management_2
 {
-    export class Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
+    export class Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         //#endregion
@@ -39,7 +39,7 @@ export namespace BaseDI.BackEnd.Director.Risk_Management_2
             //#region 1. Assign
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_2(this.Client, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
+            const designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_2(this.Client, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
             //#endregion
 
             //#region 2. Action
@@ -57,20 +57,26 @@ export namespace BaseDI.BackEnd.Director.Risk_Management_2
     export class Use_DesignPattern_Builder_Chapter_11_1_Page_2 {
         //#region 1. Assign
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
         private _client: any;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _repository: IContract_Programming_Repository_12_2_1_0;
+        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
+
             this._client = client;
 
             this._storylineDetails = storylineDetails;
@@ -92,7 +98,7 @@ export namespace BaseDI.BackEnd.Director.Risk_Management_2
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0(this._client, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
 
             await builder.Action_1_Begin_Process();
 
@@ -119,22 +125,28 @@ export namespace BaseDI.BackEnd.Director.Risk_Management_2
     {
         //#region 1. Assign
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
         private _client: any;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
-        private _repository: IContract_Programming_Repository_12_2_1_0;
+        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             super();
 
             this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
+
             this._client = client;
 
             this._storylineDetails = storylineDetails;

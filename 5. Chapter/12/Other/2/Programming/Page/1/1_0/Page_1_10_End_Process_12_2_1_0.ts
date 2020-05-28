@@ -45,20 +45,18 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region STORE REQUEST ROUTES
+            //STORE REQUEST ROUTES
             const requestList = this.Step_1_0_Custom_Store_RequestRoutes_1_0();
-            //#endregion
 
-            //#region TRANSPORT THE REQUEST
+            //TRANSPORT THE REQUEST
             return this.Step_2_0_Custom_Transport_RequestToHandler_1_0(requestList);
-            //#endregion
         }
 
         //#region STORE REQUEST ROUTES
         private Step_1_0_Custom_Store_RequestRoutes_1_0(): Array<string> {
             const requests: Array<string> = new Array<string>();
 
-            const businessLogicMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "key_1", "Functions", false);
+            const businessLogicMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "key_1", "Request", false);
 
             const businessLogicList: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(businessLogicMetaData, "values_2_2", "", false);
 
@@ -112,6 +110,11 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
                     {
                         requestList.forEach(request => {
                             const requestName = request.functionName;
+                            let requestParameterName = "";
+
+                            if (request.functionParameters != undefined && request.functionParameters.length > 0) {
+                                requestParameterName = request.functionParameters[0].parameterName;
+                            }
 
                             if (this.EntryPoint == null || this.EntryPoint.constructor.name == "Object") {
                                 armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this.EntryPoint))

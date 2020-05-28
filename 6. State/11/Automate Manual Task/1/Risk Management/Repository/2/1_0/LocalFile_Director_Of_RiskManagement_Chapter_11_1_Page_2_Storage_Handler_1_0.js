@@ -60,10 +60,10 @@ var BaseDI;
             (function (State) {
                 var Risk_Management_;
                 (function (Risk_Management_) {
-                    var RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 = /** @class */ (function (_super) {
-                        __extends(RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0, _super);
+                    var Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = /** @class */ (function (_super) {
+                        __extends(Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0, _super);
                         //region 2. Ready
-                        function RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails) {
+                        function Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails) {
                             var _this = _super.call(this) || this;
                             //region 1. Assign
                             _this._storylineDetails = storylineDetails;
@@ -73,82 +73,82 @@ var BaseDI;
                         }
                         //region 3. Set
                         //region 4. Action
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_10_End_Process = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_10_End_Process = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_1_Begin_Process = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_1_Begin_Process = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_2_Validate_Process = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_2_Validate_Process = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_3_Process_StoryAuthor = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_3_Process_StoryAuthor = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_4_Process_StoryCharacters = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_4_Process_StoryCharacters = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_5_Process_StorySetting = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_5_Process_StorySetting = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_6_Process_StoryExperiences = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_6_Process_StoryExperiences = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_7_Process_StoryResources = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_7_Process_StoryResources = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_8_Process_CRUD = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_8_Process_CRUD = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.prototype.Action_9_Verify_Process = function () {
+                        Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.prototype.Action_9_Verify_Process = function () {
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     return [2 /*return*/, this._storylineDetails];
                                 });
                             });
                         };
-                        return RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0;
+                        return Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
                     }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
-                    Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 = RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0;
+                    Risk_Management_.Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
                 })(Risk_Management_ = State.Risk_Management_ || (State.Risk_Management_ = {}));
             })(State = UnitTest.State || (UnitTest.State = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
     })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
-//# sourceMappingURL=RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.js.map
+//# sourceMappingURL=Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.js.map

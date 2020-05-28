@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.State.Risk_Management_1
+namespace BaseDI.BackEnd.State.Programming_2
 {
-    public class LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
+    public class LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
     {
         #region 1. Assign
 
@@ -22,7 +22,7 @@ namespace BaseDI.BackEnd.State.Risk_Management_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(JObject storylineDetails)
+        public LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(JObject storylineDetails)
         {
             #region 1. Assign            
 

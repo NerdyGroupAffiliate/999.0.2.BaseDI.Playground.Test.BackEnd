@@ -1,33 +1,34 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
 
-using ChapterPage = BaseDI.BackEnd.Chapter.Page.Programming_2;
+using ChapterPage = BaseDI.BackEnd.Chapter.Page.Risk_Management_1;
 
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using BaseDI.BackEnd.Character_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
+using BaseDI.BackEnd.Script.Programming.Repository_1;
 
-namespace BaseDI.BackEnd.Director.Programming_2
+namespace BaseDI.BackEnd.Director.Risk_Management_1
 {
-    public class Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
+    public class Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
         #region 1. Assign
 
         //A. Variable Declaration
 
         //Assign Characters involved in storyline
-        //private ProgrammingDotNet_Implementer_3_12_1_0 _dotNetDeveloper = null;
+        private ProgrammingDotNet_Implementer_3_12_1_0 _dotNetDeveloper = null;
 
         #endregion
 
         #region 2. Ready
-
+        
         //A. Constructor Instantiation
-        public Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0()
+        public Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0()
         {
             #region 1. Assign            
 
@@ -59,8 +60,8 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
             #region PICK DESIGN PATTERN
 
-            //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_2_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_2(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns            
+            Use_DesignPattern_Builder_Chapter_11_1_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_1(Client, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -68,11 +69,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
             #region 2. Action
 
-            #region START LOGIC EXECUTION
-
             StorylineDetails = await designPattern.Action().ConfigureAwait(true);
-
-            #endregion
 
             #endregion
 
@@ -90,12 +87,14 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
     //A. Prepare for Action (SETUP WHAT WILL HAPPEN)
 
-    internal class Use_DesignPattern_Builder_Chapter_12_2_Page_2
+    internal class Use_DesignPattern_Builder_Chapter_11_1_Page_1
     {
         #region 1. Assign
 
-        internal Dictionary<string, object> _client;
-        internal object _centralizedStorer;
+        private Dictionary<string, object> _client;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
@@ -109,10 +108,13 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_Page_2(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_11_1_Page_1(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
             _centralizedStorer = centralizedStorer;
+            _centralizedDisturber = centralizedDisturber;
+            _centralizedSensor = centralizedSensor;
+
+            _client = client;
 
             _extraData = extraData;
 
@@ -138,7 +140,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_1_1_0(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -170,14 +172,16 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
     //A. Commence Storyline (ACT WHAT HAS HAPPENED)
 
-    internal class Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
+    internal class Implement_DesignPattern_Builder_Chapter_11_1_Page_1_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
     {
         #region 1. Assign
 
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
         private Dictionary<string, object> _client;
-        private object _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
         private JObject _storylineDetails = null;
         private JObject _storylineDetails_Parameters = null;
@@ -190,10 +194,13 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_11_1_Page_1_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
             _centralizedStorer = centralizedStorer;
+            _centralizedDisturber = centralizedDisturber;
+            _centralizedSensor = centralizedSensor;
+
+            _client = client;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -222,50 +229,21 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-9
-        public override async Task<JObject> Action_9_Verify_Process()
-        {
-            #region 1. Assign          
-
-            var page = new ChapterPage.Page_1_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
-
-            page.Client = _client;
-
-            page.EntryPoint = _entryPoint;
-            page.ExtraData = _extraData;
-
-            page.MasterLeader = _centralizedStorer;
-
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
-
-            #endregion
-
-            #region 2. Action              
-
-            _storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return _storylineDetails;
-        }
-
         //Page 1-10
         public override async Task<JObject> Action_10_End_Process()
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
-
+            var page = new ChapterPage.Page_1_10_End_Process_11_1_1_0(_storylineDetails, _repository);
+            
             page.Client = _client;
 
             page.EntryPoint = _entryPoint;
             page.ExtraData = _extraData;
 
-            page.MasterLeader = _centralizedStorer;
+            page.MasterStorer = _centralizedStorer;
+            page.MasterDisturber = _centralizedDisturber;
+            page.MasterSensor = _centralizedSensor;
 
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
@@ -281,7 +259,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
             #endregion
 
-            return _storylineDetails;
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
         #endregion
@@ -294,16 +272,15 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_1_Begin_Process_11_1_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+            await page.Action();
 
             #endregion
 
@@ -321,16 +298,15 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_2_Validate_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_2_Validate_Process_11_1_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+            await page.Action();
 
             #endregion
 
@@ -346,16 +322,15 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_3_Process_StoryAuthor_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_3_Process_StoryAuthor_11_1_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+            await page.Action();
 
             #endregion
 
@@ -371,16 +346,15 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_4_Process_StoryCharacters_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_4_Process_StoryCharacters_11_1_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+            await page.Action();
 
             #endregion
 
@@ -396,16 +370,15 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_5_Process_StorySetting_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_5_Process_StorySetting_11_1_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+            await page.Action();
 
             #endregion
 
@@ -421,16 +394,15 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_6_Process_StoryExperiences_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_6_Process_StoryExperiences_11_1_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+            await page.Action();
 
             #endregion
 
@@ -446,16 +418,15 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_7_Process_StoryResources_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_7_Process_StoryResources_11_1_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+            await page.Action();
 
             #endregion
 
@@ -471,16 +442,15 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_8_Process_CRUD_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_8_Process_CRUD_11_1_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+            await page.Action();
 
             #endregion
 
@@ -491,7 +461,31 @@ namespace BaseDI.BackEnd.Director.Programming_2
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
-        #endregion
+        //Page 1-9
+        public override async Task<JObject> Action_9_Verify_Process()
+        {
+            #region 1. Assign          
+
+            var page = new ChapterPage.Page_1_9_Verify_Process_11_1_1_0(_storylineDetails, _repository);
+
+            page.ExtraData = _extraData;
+
+            #endregion
+
+            #region 2. Action              
+
+            await page.Action();
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
+        #endregion              
 
         #endregion
     }

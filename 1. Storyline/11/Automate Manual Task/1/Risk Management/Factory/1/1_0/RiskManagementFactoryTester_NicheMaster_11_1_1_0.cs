@@ -61,12 +61,12 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             switch (requestType)
             {
-                case Type _ when requestType == typeof(Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0):
-                    var resolvedRequest1 = (StoryRequest)Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_ReadAndHandleMistakes_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                case Type _ when requestType == typeof(Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0):
+                    var resolvedRequest1 = (StoryRequest)Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest1;
-                case Type _ when requestType == typeof(Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0):
-                    var resolvedRequest2 = (StoryRequest)Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                case Type _ when requestType == typeof(Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0):
+                    var resolvedRequest2 = (StoryRequest)Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest2;
                 default:
@@ -78,7 +78,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
         #region Page 1
 
-        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_ReadAndHandleMistakes_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
+        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
             #region CHECK FOR MISTAKES
 
@@ -91,7 +91,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             #region ASSIGN REQUEST HANDLER
 
-            Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 director = new Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0();
+            Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0 director = new Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0();
 
             director.Client = _client;
 
@@ -111,19 +111,19 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 
                     break;
                 case "REMOTESERVICEVENDOR":
-                    var remoteServiceVendor = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
+                    var remoteServiceVendor = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteServiceVendor;
 
@@ -139,7 +139,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
         #region Page 2
 
-        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
+        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
             #region CHECK FOR MISTAKES
 
@@ -149,7 +149,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             #region ASSIGN REQUEST HANDLER
 
-            Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 director = new Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0();
+            Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 director = new Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0();
             
             director.Client = _client;
 
@@ -169,13 +169,13 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 
