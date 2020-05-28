@@ -111,7 +111,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.WebDevelopment_1 {
         private getproperyValues(prop) {
             let values = []
             prop.properyValues.forEach(value => {
-                values.push(value)
+                values.push(value + ";")
             });
             return values.join('\n')
         }
