@@ -13,6 +13,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Update="BaseDI_1_0.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
     <TypeScriptCompile Update="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

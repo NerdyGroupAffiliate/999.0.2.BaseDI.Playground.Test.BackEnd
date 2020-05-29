@@ -200,7 +200,7 @@ export namespace BaseDI.BackEnd.Director.Web_Development_1 {
         //Page 1-5
         public async Action_5_Process_StorySetting(): Promise<object> {
             //region 1. Assign 
-            var page = new ChapterPage_Page_1_5_Process_StorySetting_12_3_1_0.BaseDI.BackEnd.Chapter.Page.WebDevelopment_1.Page_1_5_Process_StorySetting_12_3_1_0(this._storylineDetails, this._repository);
+            var page = new ChapterPage_Page_1_5_Process_StorySetting_12_3_1_0.BaseDI.BackEnd.Chapter.Page.Web_Development_1.Page_1_5_Process_StorySetting_12_3_1_0(this._storylineDetails, this._repository);
 
             page.Client = this._client;
 

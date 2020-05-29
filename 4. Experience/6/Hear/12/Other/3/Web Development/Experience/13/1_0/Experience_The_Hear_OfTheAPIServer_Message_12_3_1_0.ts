@@ -181,10 +181,11 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         {
             try
             {
+                console.log("Hello Mark 1");
                 //#region COMMUNICATION TO SERVER
                 if (process.env.APP_ENV == "SERVER")
                 {
-                    console.log("Hello Mark");
+                    console.log("Hello Mark 1");
 
                     ////#region MEMORIZE SERVER OPTIONS
                     //let apiLocationLocalNodeJS: string = "";

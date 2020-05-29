@@ -63,7 +63,12 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 4. Action
-        public Action(unitTestName: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "") {
+        public Action(unitTestName: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "")
+        {
+            console.log(unitTestName);
+            console.log(requestNameToProcess);
+            console.log(requestNameToProcessParameters);
+
             //#region 1. Assign
             let armTemplateJSONOutput: any;
 
