@@ -10,17 +10,11 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 //1. STORYLINE - CORE FEATURES
 import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
-//4. EXPERIENCES - SHARED FEATURES
-import * as Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 from "../../../../../../../../4. Experience/6/Hear/12/Other/2/Programming/Experience/1/1_0/Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0";
-
 //6. STATE - LOCAL REPOSITORIES
 import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
-import * as LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0";
-
 //6. STATE - REMOTE REPOSITORIES
 import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/RemoveService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
-import * as RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0";
 
 //7. DIRECTOR - PROPRIETARY FEATURES
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
@@ -100,10 +94,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                     break;
                 case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_SENSOR_1_0":
                     resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
-
-                    break;
-                case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_2_1_0":
-                    resolvedRequest = this.Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
                     break;
             }
@@ -210,55 +200,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             return director;
-        }
-
-        //#endregion
-
-        //#region Page X
-
-        private Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
-            //#region CHECK FOR MISTAKES
-
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
-            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
-
-            //#endregion
-
-            //#region ASSIGN REQUEST HANDLER
-            let experience = new Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.BackEnd.Experience.Hear.Programming_1.Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(extraData);
-
-            experience.Client = this._client;
-
-            experience.ExtraData = extraData;
-
-            experience.MasterStorer = this._centralizedStorer;
-            experience.MasterDisturber = this._centralizedDisturber;
-            experience.MasterSensor = this._centralizedSensor;
-
-            experience.StorylineDetails = storylineDetails;
-            experience.StorylineDetails_Parameters = storylineDetails_Parameters;
-            //#endregion
-
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.BackEnd.State.Programming_1.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
-
-                    experience.Repository = localFile;
-                    experience.Repository.RequestName = this._requestName;
-
-                    break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0.BaseDI.BackEnd.State.Programming_1.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
-
-                    experience.Repository = remoteService;
-                    experience.Repository.RequestName = this._requestName;
-
-                    break;
-            }
-            //#endregion
-
-            return experience;
         }
 
         //#endregion

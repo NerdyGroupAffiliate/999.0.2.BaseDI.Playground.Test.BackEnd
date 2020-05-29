@@ -1,16 +1,17 @@
 ﻿using BaseDI.BackEnd.Director.Web_Development_1;
+using BaseDI.BackEnd.Experience.Hear.Web_Development_13;
 using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Extensions_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.State.Web_Development_1;
+using BaseDI.BackEnd.State.Web_Development_13;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Story.Web_Development_3
+namespace BaseDI.BackEnd.Story.Web_Development_1
 {
     #region 6. Action Implementation
 
@@ -23,6 +24,8 @@ namespace BaseDI.BackEnd.Story.Web_Development_3
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
         private ExtraData_12_2_1_0 _extraData = null;
+
+        private string _requestName = "";
 
         internal WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(ExtraData_12_2_1_0 extraData)
         {
@@ -56,12 +59,20 @@ namespace BaseDI.BackEnd.Story.Web_Development_3
 
             var requestType = requestToResolve.GetType();
 
+            object resolvedRequest = null;
+
             switch (requestType)
             {
                 case Type _ when requestType == typeof(Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0):
-                    var resolvedRequest = (StoryRequest)Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebDevelopmentForWebsite_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    resolvedRequest = (StoryRequest)Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebDevelopmentForWebsite_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest;
+
+                case Type _ when requestType == typeof(Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0):
+                    resolvedRequest = (StoryRequest)Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+
+                    return resolvedRequest;
+
                 default:
                     return default(StoryRequest);
 
@@ -102,25 +113,84 @@ namespace BaseDI.BackEnd.Story.Web_Development_3
 
             #region ASSIGN LOGIC REPOSITORY
 
+            //switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+            //{
+            //    case "LOCALFILE":
+            //        var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0(storylineDetails);
+
+            //        director.Repository = localFile;
+
+            //        break;
+            //    case "REMOTESERVICE":
+            //        var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0(storylineDetails);
+
+            //        director.Repository = remoteService;
+
+            //        break;
+            //}
+
+            #endregion
+
+            return director;
+        }
+
+        #endregion
+
+        #region Page X
+
+        private object Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        {
+            #region CHECK FOR MISTAKES
+
+            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true, true);
+
+            if (string.IsNullOrEmpty(repositoryType))
+                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+
+            if (repositoryType == "") repositoryType = "LOCALFILE";
+
+            #endregion       
+
+            #region ASSIGN REQUEST HANDLER
+
+            Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0();
+
+            experience.Client = _client;
+
+            experience.ExtraData = extraData;
+
+            experience.MasterStorer = _centralizedStorer;
+            experience.MasterDisturber = _centralizedDisturber;
+            experience.MasterSensor = _centralizedSensor;
+
+            experience.StorylineDetails = storylineDetails;
+            experience.StorylineDetails_Parameters = storylineDetails_Parameters;
+
+            #endregion
+
+            #region ASSIGN LOGIC REPOSITORY
+
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
 
-                    director.Repository = localFile;
+                    experience.Repository = localFile;
+                    experience.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebsiteForAll_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
+                    experience.Repository = remoteService;
+                    experience.Repository.RequestName = _requestName;
 
                     break;
             }
 
             #endregion
 
-            return director;
+            return experience;
         }
 
         #endregion
