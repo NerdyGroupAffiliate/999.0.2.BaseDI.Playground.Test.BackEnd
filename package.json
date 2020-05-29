@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build:start": "npm run Step-1-1:Clean && npm run Step-1-2:BuildClient",
+    "build:start2": "npm run Step-1-1:Clean && npm run Step-1-4:BuildServer",
     "Step-1-1:Clean": "rimraf wwwroot",
     "Step-1-2:BuildClient": "webpack --config webpack.config.client.js",
     "Step-1-3:CopyServerStatic": "",

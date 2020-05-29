@@ -7,19 +7,35 @@ import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from 
 //1. STORYLINE - CORE FEATURES
 import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
+//4. EXPERIENCES - SHARED FEATURES
+import * as Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../4. Experience/6/Hear/12/Other/3/Web Development/Experience/13/1_0/Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+
 //6. STATE - LOCAL REPOSITORIES
 //import * as LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 import * as LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0";
+import * as LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/13/1_0/LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
 
 //6. STATE - REMOTE REPOSITORIES
 //import * as RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 import * as RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0";
+import * as RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/13/1_0/RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
 
 //7. DIRECTOR - PROPRIETARY FEATURES
 //import * as Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/1/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 import * as Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/1/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/2/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/3/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/4/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/5/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/6/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/7/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/8/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/9/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/10/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/11/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0";
+import * as Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/12/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
 
-export namespace BaseDI.BackEnd.Story.Web_Development_3 {
+export namespace BaseDI.BackEnd.Story.Web_Development_1 {
     export class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
@@ -89,6 +105,11 @@ export namespace BaseDI.BackEnd.Story.Web_Development_3 {
                     resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
                     break;
+
+                case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_3_1_0":
+                    resolvedRequest = this.Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
             }
             //#endregion
 
@@ -154,7 +175,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_3 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_1.Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(extraData);
 
             director.Client = this._client;
 
@@ -190,6 +211,54 @@ export namespace BaseDI.BackEnd.Story.Web_Development_3 {
             return director;
         }
 
+        //#endregion
+
+        //#region Page X
+
+        private Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Experience.Hear.Web_Development_13.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(extraData);
+
+            experience.Client = this._client;
+
+            experience.ExtraData = extraData;
+
+            experience.MasterStorer = this._centralizedStorer;
+            experience.MasterDisturber = this._centralizedDisturber;
+            experience.MasterSensor = this._centralizedSensor;
+
+            experience.StorylineDetails = storylineDetails;
+            experience.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.State.Web_Development_13.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
+
+                    experience.Repository = localFile;
+                    experience.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.State.Web_Development_13.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
+
+                    experience.Repository = remoteService;
+                    experience.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return experience;
+        }
 
         //#endregion
 

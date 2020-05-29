@@ -95,7 +95,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
             //        extraData.Mistake = exceptionData;
 
-            //        armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0>()
+            //        armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0>()
             //            .SetupStoryline(storylineDetails, storylineDetails_Parameters, extraData)
             //            .Action().Result;
 
@@ -104,7 +104,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
             //        break;
             //    // Instruction 2
             //    case eEnumerations_Programming_MasterLeader_12_2_1_0.RunAutoBackup:
-            //        armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0>()
+            //        armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0>()
             //            .SetupStoryline(storylineDetails, storylineDetails_Parameters)
             //            .Action().Result;
             //        break;

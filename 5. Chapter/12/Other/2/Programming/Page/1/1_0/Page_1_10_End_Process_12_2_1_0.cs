@@ -70,7 +70,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_1
 
         private string Step_1_0_Custom_Store_RequestRoutes_1_0()
         {
-            JToken routeNameToken = StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]..baseDIInstructions.business[?(@.key == 'Method')].values[0].value[0].key.name");
+            JToken routeNameToken = StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]..baseDIInstructions.business[?(@.key == 'Request')].values[0].value[0].key.name");
 
             string routeName = "";
 

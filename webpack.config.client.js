@@ -38,13 +38,13 @@ const plugins = [
 ];
 
 module.exports = {
-    entry: './Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_Test.tsx',
+    entry: './BaseDI_1_0.tsx',
     devtool: "source-map",
     output: {
         path: path.resolve(__dirname, "wwwroot", "Distribution", "Client", "JS"),
         libraryTarget: 'var',
         library: 'Client',
-        filename: "Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_Test.js"
+        filename: "BaseDI_1_0.js"
     },
     target: "web",
     mode: "development",

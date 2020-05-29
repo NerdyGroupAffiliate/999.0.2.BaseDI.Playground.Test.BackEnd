@@ -50,12 +50,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aClass_Programming_ScriptNicheMaster_12_2_1_0 = require("../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptNicheMaster_12_2_1_0");
-var LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 = require("../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/1/1_0/LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0");
-var LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 = require("../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/2/1_0/LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0");
-var RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 = require("../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/1/1_0/RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0");
-var RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 = require("../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/2/1_0/RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0");
-var Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0 = require("../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/1/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0");
-var Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 = require("../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/2/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0");
+var LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0 = require("../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/1/1_0/LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0");
+var LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = require("../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/2/1_0/LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0");
+var RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0 = require("../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/1/1_0/RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0");
+var RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = require("../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/2/1_0/RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0");
+var Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0 = require("../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/1/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0");
+var Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = require("../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/2/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0");
 var BaseDI;
 (function (BaseDI) {
     var ProtoType;
@@ -91,15 +91,15 @@ var BaseDI;
                                             requestType = requestToResolve;
                                             _a = requestName.toUpperCase();
                                             switch (_a) {
-                                                case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_1_MISTAKE_HANDLER_1_0": return [3 /*break*/, 1];
-                                                case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_2_BACKUP_HANDLER_1_0": return [3 /*break*/, 3];
+                                                case "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0": return [3 /*break*/, 1];
+                                                case "Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0": return [3 /*break*/, 3];
                                             }
                                             return [3 /*break*/, 5];
                                         case 1: return [4 /*yield*/, this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_ReadAndHandleMistakes_1_0(storylineDetails, storylineDetails_Parameters, this._extraData)];
                                         case 2:
                                             resolvedRequest = _b.sent();
                                             return [2 /*return*/, resolvedRequest];
-                                        case 3: return [4 /*yield*/, this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData)];
+                                        case 3: return [4 /*yield*/, this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData)];
                                         case 4:
                                             resolvedRequest = _b.sent();
                                             return [2 /*return*/, resolvedRequest];
@@ -114,18 +114,18 @@ var BaseDI;
                                 var repositoryType, director, localFile, remoteService;
                                 return __generator(this, function (_a) {
                                     repositoryType = storylineDetails.Extension_Try_Read_RepositoryType(false, true);
-                                    director = new Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.BackEnd.Director.Risk_Management_1.Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(extraData);
+                                    director = new Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0.BaseDI.BackEnd.Director.Risk_Management_1.Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(extraData);
                                     director.StorylineDetails = storylineDetails;
                                     director.StorylineDetails_Parameters = storylineDetails_Parameters;
                                     director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     switch (repositoryType.toUpperCase()) {
                                         case "LOCALFILE":
-                                            localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
+                                            localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
                                             director.Repository = localFile;
                                             break;
                                         case "REMOTESERVICE":
-                                            remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Mistake_Handler_1_0(storylineDetails);
+                                            remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
                                             director.Repository = remoteService;
                                             break;
                                     }
@@ -134,23 +134,23 @@ var BaseDI;
                             });
                         };
                         //region Page 2
-                        RiskManagementFactoryTester_NicheMaster_11_1_1_0.prototype.Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0 = function (storylineDetails, storylineDetails_Parameters, extraData) {
+                        RiskManagementFactoryTester_NicheMaster_11_1_1_0.prototype.Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = function (storylineDetails, storylineDetails_Parameters, extraData) {
                             return __awaiter(this, void 0, void 0, function () {
                                 var repositoryType, director, localFile, remoteService;
                                 return __generator(this, function (_a) {
                                     repositoryType = storylineDetails.Extension_Try_Read_RepositoryType(false, true);
-                                    director = new Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.BackEnd.Director.Risk_Management_2.Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(extraData);
+                                    director = new Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.BaseDI.BackEnd.Director.Risk_Management_2.Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(extraData);
                                     director.StorylineDetails = storylineDetails;
                                     director.StorylineDetails_Parameters = storylineDetails_Parameters;
                                     director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     switch (repositoryType.toUpperCase()) {
                                         case "LOCALFILE":
-                                            localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails);
+                                            localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails);
                                             director.Repository = localFile;
                                             break;
                                         case "REMOTESERVICE":
-                                            remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Backup_Handler_1_0(storylineDetails);
+                                            remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails);
                                             director.Repository = remoteService;
                                             break;
                                     }

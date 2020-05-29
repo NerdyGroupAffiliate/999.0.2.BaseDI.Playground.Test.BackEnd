@@ -25,9 +25,11 @@ const nodeWhiteList = {
     ]
 };
 
-let exclude = [path.resolve(__dirname, "Distribution")];
-console.log(exclude);
+let exclude = [path.resolve(__dirname, "wwwroot")];
+console.log("Hello Mark");
 
+console.log(path.resolve(__dirname, "tsconfig.server.json"));
+  
 const plugins = [
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
@@ -54,13 +56,13 @@ const plugins = [
 ];
 
 module.exports = {
-    entry: '.wwwroot/Controllers/APIServerControllerServer.ts',
+    entry: './Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.ts',
     devtool: "source-map",
     output: {
-        path: path.resolve(__dirname, "wwwroot", "Distribution", "Server", "JS"),
+        path: path.resolve(__dirname, "wwwroot", "Server", "JS"),
         //libraryTarget: 'var',
         library: 'Server',
-        filename: "APIServerControllerServer.js"
+        filename:"Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.js"
     },
     target: "node",
     resolve: {
@@ -76,9 +78,9 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                loader: "ts-loader",
+                loader: "ts-loader", 
                 options: {
-                    configFile: path.resolve(__dirname, "Options", "Server", "tsconfig.json")
+                    configFile: path.resolve(__dirname, "tsconfig.server.json")
                 }
             },
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader", exclude },
@@ -113,11 +115,11 @@ module.exports = {
                     limit: 10000,
                     name: "static/media/[name].[hash:8].[ext]"
                 }
-            }
+            }       
         ]
     },
     devServer: {
-        contentBase: "wwwroot/Distribution/Server/JS"
+        contentBase: "wwwroot/"
     },
     plugins,
     externals: [nodeExternals()]

@@ -2,7 +2,6 @@
 using BaseDI.BackEnd.Director.Programming_1;
 using BaseDI.BackEnd.Director.Programming_2;
 using BaseDI.BackEnd.Director.Risk_Management_1;
-using BaseDI.BackEnd.Experience.Hear.Programming_1;
 using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Extensions_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
@@ -73,18 +72,13 @@ namespace BaseDI.BackEnd.Story.Programming_1
             {
                 switch(requestName.ToUpper(CultureInfo.CurrentCulture))
                 {
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_Request_Controller_1_0":
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
                         resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                         break;
 
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_Request_Storer_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
-
-                        break;
-
-                    case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_2_1_0":
-                        resolvedRequest = (object)Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_SENSOR_1_0":
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                         break;
                 }
@@ -162,7 +156,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             return director;
         }
 
-        private object Create_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
             #region CHECK FOR MISTAKES
 
@@ -177,66 +171,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             #region ASSIGN REQUEST HANDLER
 
-            Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0 experience = new Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0();
-
-            experience.Client = _client;
-
-            experience.ExtraData = extraData;
-
-            experience.MasterStorer = _centralizedStorer;
-            experience.MasterDisturber = _centralizedDisturber;
-            experience.MasterSensor = _centralizedSensor;
-
-            experience.StorylineDetails = storylineDetails;
-            experience.StorylineDetails_Parameters = storylineDetails_Parameters;
-
-            #endregion
-
-            #region ASSIGN LOGIC REPOSITORY
-
-            switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
-            {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
-
-                    experience.Repository = localFile;
-                    experience.Repository.RequestName = _requestName;
-
-                    break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_2_1_0(storylineDetails);
-
-                    experience.Repository = remoteService;
-                    experience.Repository.RequestName = _requestName;
-
-                    break;
-            }
-
-            #endregion
-
-            return experience;
-        }
-
-        #endregion
-
-        #region Page 2
-
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
-        {
-            #region CHECK FOR MISTAKES
-
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true, true);
-
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
-
-            if (repositoryType == "") repositoryType = "LOCALFILE";
-
-            #endregion       
-
-            #region ASSIGN REQUEST HANDLER
-
-            Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0();
+            Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0();
 
             director.Client = _client;
 
@@ -256,14 +191,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = _requestName;
@@ -275,6 +210,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             return director;
         }
+
 
         #endregion
     }
