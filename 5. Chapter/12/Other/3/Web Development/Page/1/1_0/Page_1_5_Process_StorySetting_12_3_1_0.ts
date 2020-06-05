@@ -33,8 +33,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
         //#endregion
 
         //#region 4. Action
-        public async Action(): Promise<object>
-        {
+        public async Action(): Promise<object> {
             //#region DESCRIBE THE MEMORIES
             const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 
@@ -65,26 +64,26 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
 
             observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
 
-            htmlContainerJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer", false); 
-            htmlRowsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows", false); 
-            htmlColumnsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns", false); 
-            htmlContentJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent", false); 
-            htmlStylesJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS", false); 
+            htmlContainerJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer", false);
+            htmlRowsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows", false);
+            htmlColumnsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns", false);
+            htmlContentJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent", false);
+            htmlStylesJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS", false);
 
             //#endregion
 
             //#region EXECUTE THE VISION
 
             // htmlResultString = "<h3>Hello World<\/h3>";
-            htmlResultString = this.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);            
+            htmlResultString = this.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
             htmlResultString = this.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);
             htmlResultString = this.Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON, htmlResultString);
             htmlResultString = this.Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON, htmlResultString);
             htmlResultInlineStylesString = this.Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON);
 
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
-           
-           
+
+
             observationItem = observationItem.replace('{htmlResult}', escape(htmlResultString))
             const observation = observationItem;
             // const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResultString)); 
@@ -102,15 +101,22 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
 
         private getAttributes(attributes) {
             var attrs = [];
-            for(var attribute in attributes ) {
+            for (var attribute in attributes) {
                 attrs.push(`${Object.keys(attributes[attribute])[0]}="${Object.values(attributes[attribute])[0]}"`)
             }
             return attrs.join(" ");
         }
+        private getproperyValues(prop) {
+            let values = []
+            prop.properyValues.forEach(value => {
+                values.push(value + ";")
+            });
+            return values.join('\n')
+        }
 
         public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
             //#region DESCRIBE THE MEMORIES
-            let htmlContainerString: string = "";    
+            let htmlContainerString: string = "";
             htmlContainerString = `<${htmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.getAttributes(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${htmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
 
 
@@ -163,7 +169,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
             // console.log(htmlContentJSON)
             let idsAndContant = {}
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
-                if(idsAndContant[con.ParentHTMLContentItemAttributeID] == undefined) {
+                if (idsAndContant[con.ParentHTMLContentItemAttributeID] == undefined) {
                     idsAndContant[con.ParentHTMLContentItemAttributeID] = new Array();
                     idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.getAttributes(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
@@ -176,7 +182,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
             Object.keys(idsAndContant).forEach(item => {
                 let content = idsAndContant[item].join('\n')
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
-             });
+            });
             // console.log(idsAndContant)
             // htmlContentString = htmlContentString.replace(`{${con.ParentHTMLContentItemAttributeID}_Replace}`, content.join('\n'));
 
@@ -190,16 +196,102 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
             return htmlContentString;
         }
 
-        public Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any) : string {
+        public Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any): string {
             //#region DESCRIBE THE MEMORIES
             let htmlInlineCSSString: string = "";
             let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
-            let files = [];
+            // let files = [];
+            // filesArray.forEach(file => {
+            //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
+            // });
+            // htmlInlineCSSString = files.join("\n");
+
+            let cssString = "";
+            let attributeID = "";
             filesArray.forEach(file => {
-                files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
+                file.StyleFileUseProperties.forEach(element => {
+                    if (element.IsHtmlTag == "true" && element.properties.length > 0) {
+                        let properties = [];
+                        if (element.IsMediaQuery == "true") {
+                            let MediaQueryFeatures = [];
+                            if (element.MediaQuery.type != "") {
+                                MediaQueryFeatures.push(`only ${element.MediaQuery.type}`)
+                            }
+                            element.MediaQuery.features.forEach(feature => {
+                                Object.keys(feature).forEach((featureA, index) => {
+                                    if (Object.keys(feature)[index] == "operator") {
+                                        MediaQueryFeatures.push(Object.values(feature)[index])
+                                    } else {
+                                        MediaQueryFeatures.push(`(${featureA}: ${Object.values(feature)[index]})`)
+                                    }
+                                });
+                            });
+                            element.properties.forEach(prop => {
+                                if (prop.propertyName != "") {
+                                    cssString += `@media ${MediaQueryFeatures.join(" ")} { \n \t ${prop.propertyName}  { \n  ${this.getproperyValues(prop)} \n \t}\n}\n`;
+                                }
+                            });
+
+
+                        } else {
+                            element.properties.forEach(prop => {
+                                if (prop.propertyName != "") {
+                                    cssString += `${prop.propertyName} { \n ${this.getproperyValues(prop)} \n}\n`;
+                                }
+                            });
+                        }
+                    }
+                    else if (element.IsHtmlTag == "false" && element.properties.length > 0) {
+                        let properties = [];
+                        if (element.IsMediaQuery == "true") {
+
+                            let MediaQueryFeatures = [];
+
+                            if (element.MediaQuery.type != "") {
+                                MediaQueryFeatures.push(`only ${element.MediaQuery.type}`)
+                            }
+                            element.MediaQuery.features.forEach(feature => {
+                                Object.keys(feature).forEach((featureA, index) => {
+                                    if (Object.keys(feature)[index] == "operator") {
+                                        MediaQueryFeatures.push(Object.values(feature)[index])
+                                    } else {
+                                        MediaQueryFeatures.push(`(${featureA}: ${Object.values(feature)[index]})`)
+                                    }
+                                });
+                            });
+                          
+                            element.properties.forEach(prop => {
+                                if (prop.propertyName != "") {
+                                    properties.push(`\t ${prop.propertyName} :  ${this.getproperyValues(prop)}`);
+                                }
+                            });
+                            attributeID = element.attributeID;
+                            if (attributeID.includes("#")) {
+                                attributeID = `${element.attributeID}`
+                            } else {
+                                attributeID = `#${element.attributeID}`
+                            }
+                            cssString += `@media ${MediaQueryFeatures.join(" ")} { \n \t ${attributeID}  { \n  ${properties.join('\n')} \n \t}\n}\n`;
+
+                        } else {
+                            element.properties.forEach(prop => {
+                                if (prop.propertyName != "") {
+                                    properties.push(`${prop.propertyName} :  ${this.getproperyValues(prop)}`);
+                                }
+                            });
+                            cssString += `#${element.attributeID}  { \n  ${properties.join('\n')} \n}\n`;
+                        }
+                    }
+                    else {
+                        console.log("Something wrong in Json file!")
+                    }
+
+                });
             });
-            htmlInlineCSSString = files.join("\n");
+     
+            htmlInlineCSSString = `<style>${cssString}</style>`;
+
             //#endregion
 
             //#region RECALL THE MEMORIES

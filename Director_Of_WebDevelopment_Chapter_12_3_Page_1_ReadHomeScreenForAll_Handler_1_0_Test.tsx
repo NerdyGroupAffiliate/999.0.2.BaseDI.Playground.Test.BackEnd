@@ -112,6 +112,8 @@ export namespace BaseDI.BackEnd {
 
             //#region 3. Observe
             handleObservation.then(response => {
+                // If you want to see the output in Iframe please uncomment this code and comment out the code below.
+
                 // var iframe = document.createElement('iframe');
                 // iframe.style.width = "100%";
                 // iframe.style.height  = "100vh";
@@ -120,7 +122,7 @@ export namespace BaseDI.BackEnd {
                 // iframe.contentWindow.document.open();
                 // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
                 // iframe.contentWindow.document.close();
-
+                
                 document.getElementById('page').innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
 
             })
