@@ -3,9 +3,9 @@ using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Advertising_
+namespace BaseDI.BackEnd.Chapter.Page.Advertising_2
 {
-    public class Page_2_4_Process_StoryCharacters_1_1_1_0 : aClass_Programming_ScriptPage_12_2_1_0
+    public class Page_2_4_Process_StoryCharacters_1_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
         #region 1. Assign
 
@@ -16,7 +16,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Advertising_
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_2_4_Process_StoryCharacters_1_1_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
+        public Page_2_4_Process_StoryCharacters_1_2_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
         {
             #region 1. Assign
 

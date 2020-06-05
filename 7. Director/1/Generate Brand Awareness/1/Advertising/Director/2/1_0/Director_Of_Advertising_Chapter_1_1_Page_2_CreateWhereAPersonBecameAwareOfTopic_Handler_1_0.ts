@@ -6,20 +6,30 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 
 import * as IContract_Programming_Repository_12_2_1_0 from "../../../../../../../../0. Script/Interfaces/12/Other/2/Programming/Contract/1/1_0/IContract_Programming_Repository_12_2_1_0";
 
+import * as ChapterPage_Page_2_1_Begin_Process_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_1_Begin_Process_1_2_1_0";
+import * as ChapterPage_Page_2_2_Validate_Process_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_2_Validate_Process_1_2_1_0";
+import * as ChapterPage_Page_2_3_Process_StoryAuthor_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_3_Process_StoryAuthor_1_2_1_0";
+import * as ChapterPage_Page_2_4_Process_StoryCharacters_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_4_Process_StoryCharacters_1_2_1_0";
+import * as ChapterPage_Page_2_5_Process_StorySetting_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_5_Process_StorySetting_1_2_1_0";
+import * as ChapterPage_Page_2_6_Process_StoryExperiences_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_6_Process_StoryExperiences_1_2_1_0";
+import * as ChapterPage_Page_2_7_Process_StoryResources_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_7_Process_StoryResources_1_2_1_0";
+import * as ChapterPage_Page_2_8_Process_CRUD_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_8_Process_CRUD_1_2_1_0";
+import * as ChapterPage_Page_2_9_Verify_Process_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_9_Verify_Process_1_2_1_0";
+import * as ChapterPage_Page_2_10_End_Process_1_2_1_0 from "../../../../../../../../5. Chapter/1/Generate Brand Awareness/1/Advertising/Page/2/1_0/Page_2_10_End_Process_1_2_1_0";
+
 export namespace BaseDI.BackEnd.Director.Advertising_2
 {
     export class Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
-        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0) {
+        constructor(extraData: any) {
             super();
 
             //#region 1. Assign
             this._extraData = extraData;
-
             this.Action = this.Action.bind(this);
             //#endregion
 
@@ -38,12 +48,33 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
         public async Action(): Promise<object> {
             //#region 1. Assign
 
+            if (this.EntryPoint != null && (this.EntryPoint.Client != undefined && this.EntryPoint.Client != null)) {
+                this.Client = this.EntryPoint.Client;
+                this.MasterLeader = this.EntryPoint.MasterLeader;
+                this.MasterController = this.EntryPoint.MasterController;
+                this.MasterConverter = this.EntryPoint.MasterConverter;
+                this.MasterDisturber = this.EntryPoint.MasterDisturber;
+                this.MasterSensor = this.EntryPoint.MasterSensor;
+                this.MasterStorer = this.EntryPoint.MasterStorer;
+                this.MasterTransporter = this.EntryPoint.MasterTransporter;
+                this.ExtraData = this.EntryPoint.ExtraData;
+            }
+
+            //#region PICK DESIGN PATTERN
+
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_2(this.Client, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
+            const designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(this.Client, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
+
+            //#endregion
+
             //#endregion
 
             //#region 2. Action
-            await designPattern.Action();
+
+            //#region HANDLE LOGIC REQUEST
+            this.StorylineDetails = await designPattern.Action();
+            //#endregion
+
             //#endregion
 
             //#region 3. Observe
@@ -54,23 +85,28 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
     }
 
     //#region 5. Action Script
-    export class Use_DesignPattern_Builder_Chapter_1_1_Page_2 {
+    export class Use_DesignPattern_Builder_Chapter_12_2_Page_1 {
         //#region 1. Assign
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
         private _client: any;
 
-        private _storylineDetails: object;
-        private _storylineDetails_Parameters: object;
+        private _storylineDetails: object = new Object();
+        private _storylineDetails_Parameters: object = new Object();
 
-        private _repository: IContract_Programming_Repository_12_2_1_0;
+        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
             this._client = client;
 
             this._storylineDetails = storylineDetails;
@@ -83,30 +119,31 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
 
             this.Action = this.Action.bind(this);
         }
-        //#endregion       
+        //#endregion        
 
         //#region 3. Set
         //#endregion
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Chapter_1_1_Page_2_1_0(this._client, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Chapter_1_1_Page_2_1_0(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
 
-            await builder.Action_1_Begin_Process();
+            this._storylineDetails = await builder.Action_1_Begin_Process();
 
-            await builder.Action_2_Validate_Process();
+            this._storylineDetails = await builder.Action_2_Validate_Process();
 
-            await builder.Action_3_Process_StoryAuthor();
-            await builder.Action_4_Process_StoryCharacters();
-            await builder.Action_5_Process_StorySetting();
-            await builder.Action_6_Process_StoryExperiences();
-            await builder.Action_7_Process_StoryResources();
+            this._storylineDetails = await builder.Action_3_Process_StoryAuthor();
+            this._storylineDetails = await builder.Action_4_Process_StoryCharacters();
+            this._storylineDetails = await builder.Action_5_Process_StorySetting();
+            this._storylineDetails = await builder.Action_6_Process_StoryExperiences();
+            this._storylineDetails = await builder.Action_7_Process_StoryResources();
 
-            await builder.Action_8_Process_CRUD();
+            this._storylineDetails = await builder.Action_8_Process_CRUD();
 
-            await builder.Action_9_Verify_Process();
+            this._storylineDetails = await builder.Action_9_Verify_Process();
+            this._storylineDetails = await builder.Action_10_End_Process();
 
-            return await builder.Action_10_End_Process();
+            return this._storylineDetails;
         }
         //#endregion
     }
@@ -117,22 +154,28 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
     {
         //#region 1. Assign
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
         private _client: any;
 
-        private _storylineDetails: object;
-        private _storylineDetails_Parameters: object;
+        private _storylineDetails: object = new Object();
+        private _storylineDetails_Parameters: object = new Object();
 
-        private _repository: IContract_Programming_Repository_12_2_1_0;
+        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             super();
 
             this._centralizedStorer = centralizedStorer;
+            this._centralizedDisturber = centralizedDisturber;
+            this._centralizedSensor = centralizedSensor;
+
             this._client = client;
 
             this._storylineDetails = storylineDetails;
@@ -155,6 +198,8 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
             this.Action_8_Process_CRUD = this.Action_8_Process_CRUD.bind(this);
             this.Action_9_Verify_Process = this.Action_9_Verify_Process.bind(this);
             this.Action_10_End_Process = this.Action_10_End_Process.bind(this);
+
+            this.HandleChapterDefaults();
         }
         //#endregion
 
@@ -167,6 +212,46 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
         //#region 4. Action
 
         //#region EXECUTE LOGIC INSTUCTIONS
+
+        public async Action_6_Process_StoryExperiences(): Promise<object> {
+            var page = new ChapterPage_Page_2_6_Process_StoryExperiences_1_2_1_0.BaseDI.BackEnd.Chapter.Page.Advertising_2.Page_2_6_Process_StoryExperiences_1_2_1_0(this._storylineDetails, this._repository);
+
+            page.Client = this._client;
+
+            page.EntryPoint = this._entryPoint;
+            page.ExtraData = this._extraData;
+
+            page.MasterStorer = this._centralizedStorer;
+            page.MasterDisturber = this._centralizedDisturber;
+            page.MasterSensor = this._centralizedSensor;
+
+            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
+
+            //region 2. Action
+            this._storylineDetails = await page.Action();
+
+            return this._storylineDetails;
+        }
+
+        public async Action_9_Verify_Process(): Promise<object> {
+            var page = new ChapterPage_Page_2_9_Verify_Process_1_2_1_0.BaseDI.BackEnd.Chapter.Page.Advertising_2.Page_2_9_Verify_Process_1_2_1_0(this._storylineDetails, this._repository);
+
+            page.Client = this._client;
+
+            page.EntryPoint = this._entryPoint;
+            page.ExtraData = this._extraData;
+
+            page.MasterStorer = this._centralizedStorer;
+            page.MasterDisturber = this._centralizedDisturber;
+            page.MasterSensor = this._centralizedSensor;
+
+            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
+
+            //region 2. Action
+            this._storylineDetails = await page.Action();
+
+            return this._storylineDetails;
+        }
 
         //#endregion
 
@@ -196,19 +281,11 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
             return this._storylineDetails;
         }
 
-        public async Action_6_Process_StoryExperiences(): Promise<object> {
-            return this._storylineDetails;
-        }
-
         public async Action_7_Process_StoryResources(): Promise<object> {
             return this._storylineDetails;
         }
 
         public async Action_8_Process_CRUD(): Promise<object> {
-            return this._storylineDetails;
-        }
-
-        public async Action_9_Verify_Process(): Promise<object> {
             return this._storylineDetails;
         }
 

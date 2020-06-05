@@ -106,6 +106,61 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
 
                     break;
 
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_2_READPRESALESSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_READOPTINSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_4_READTHANKYOUSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_5_READSALESSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_6_READORDERFORMSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_7_READOTOSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_8_READWEBINARSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_9_READMEMBERSHIPSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_10_READAFFILIATESCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_11_READOTHERSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_12_READADVANCEDSCREENFORALL_HANDLER_1_0":
+                    resolvedRequest = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
                 case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_3_1_0":
                     resolvedRequest = this.Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
@@ -200,6 +255,567 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 2
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_2.Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 3
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 4
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_4.Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 5
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_5.Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 6
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_6.Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 7
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_7.Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 8
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_8.Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 9
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_9.Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 10
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_10.Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 11
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_11.Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 12
+
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_12.Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
