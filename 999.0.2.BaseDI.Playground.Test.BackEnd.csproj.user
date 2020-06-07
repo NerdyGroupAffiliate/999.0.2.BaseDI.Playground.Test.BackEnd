@@ -13,6 +13,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Update="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\1\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
     <TypeScriptCompile Update="BaseDI_1_0.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>

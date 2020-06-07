@@ -236,19 +236,19 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
         public async Action_9_Verify_Process(): Promise<object> {
             var page = new ChapterPage_Page_2_9_Verify_Process_1_2_1_0.BaseDI.BackEnd.Chapter.Page.Advertising_2.Page_2_9_Verify_Process_1_2_1_0(this._storylineDetails, this._repository);
 
-            page.Client = this._client;
+            //page.Client = this._client;
 
-            page.EntryPoint = this._entryPoint;
-            page.ExtraData = this._extraData;
+            //page.EntryPoint = this._entryPoint;
+            //page.ExtraData = this._extraData;
 
-            page.MasterStorer = this._centralizedStorer;
-            page.MasterDisturber = this._centralizedDisturber;
-            page.MasterSensor = this._centralizedSensor;
+            //page.MasterStorer = this._centralizedStorer;
+            //page.MasterDisturber = this._centralizedDisturber;
+            //page.MasterSensor = this._centralizedSensor;
 
-            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
+            //page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 
-            //region 2. Action
-            this._storylineDetails = await page.Action();
+            ////region 2. Action
+            //this._storylineDetails = await page.Action();
 
             return this._storylineDetails;
         }

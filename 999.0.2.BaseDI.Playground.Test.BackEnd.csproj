@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
     <None Remove="basedi_1_0.tsx" />
     <None Remove="Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.tsx" />
@@ -43,6 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\1\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
     <TypeScriptCompile Include="BaseDI_1_0.tsx" />
   </ItemGroup>
