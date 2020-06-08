@@ -1,6 +1,6 @@
-﻿const facebook = require('fb');
-const googleapis = require('googleapis');
-const instagram = require('instagram-web-api');
+﻿//const facebook = require('fb');
+//const googleapis = require('googleapis');
+//const instagram = require('instagram-web-api');
 
 export namespace BaseDI.BackEnd.Advertising.Extensions_1 {
     export class Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 {

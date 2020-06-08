@@ -54,20 +54,20 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
             //#endregion
 
             //#region EXECUTE THE VISION
-            this.Step_1_0_Custom_Control_AwarenessGeneratedForDay1_1_0();
-            this.Step_2_0_Custom_Control_AwarenessGeneratedForDay2_1_0();
-            this.Step_3_0_Custom_Control_AwarenessGeneratedForDay3_1_0();
-            this.Step_4_0_Custom_Control_AwarenessGeneratedForDay4_1_0();
-            this.Step_5_0_Custom_Control_AwarenessGeneratedForDay5_1_0();
-            this.Step_6_0_Custom_Control_AwarenessGeneratedForDay6_1_0();
-            this.Step_7_0_Custom_Control_AwarenessGeneratedForDay7_1_0();
-            this.Step_8_0_Custom_Control_AwarenessGeneratedForDay8_1_0();
-            this.Step_9_0_Custom_Control_AwarenessGeneratedForDay9_1_0();
-            this.Step_10_0_Custom_Control_AwarenessGeneratedForDay10_1_0();
-            this.Step_11_0_Custom_Control_AwarenessGeneratedForDay11_1_0();
-            this.Step_12_0_Custom_Control_AwarenessGeneratedForDay12_1_0();
-            this.Step_13_0_Custom_Control_AwarenessGeneratedForDay13_1_0();
-            this.Step_14_0_Custom_Control_AwarenessGeneratedForDay14_1_0();
+            this.Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0();
+            this.Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0();
+            this.Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0();
+            this.Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0();
+            this.Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0();
+            this.Step_6_0_Custom_Output_AwarenessGeneratedForDay6_1_0();
+            this.Step_7_0_Custom_Output_AwarenessGeneratedForDay7_1_0();
+            this.Step_8_0_Custom_Output_AwarenessGeneratedForDay8_1_0();
+            this.Step_9_0_Custom_Output_AwarenessGeneratedForDay9_1_0();
+            this.Step_10_0_Custom_Output_AwarenessGeneratedForDay10_1_0();
+            this.Step_11_0_Custom_Output_AwarenessGeneratedForDay11_1_0();
+            this.Step_12_0_Custom_Output_AwarenessGeneratedForDay12_1_0();
+            this.Step_13_0_Custom_Output_AwarenessGeneratedForDay13_1_0();
+            this.Step_14_0_Custom_Output_AwarenessGeneratedForDay14_1_0();
 
             //#endregion
 
@@ -84,27 +84,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 1
 
-        public Step_1_0_Custom_Control_AwarenessGeneratedForDay1_1_0(): any {
+        public Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0(): any {
             var controlContent = Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToFacebook_1_0(null);
         }
 
-        public Step_1_1_Custom_Control_AwarenessGeneratedForDay1_1_0_Instagram(): any {
+        public Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram(): any {
 
         }
 
-        public Step_1_2_Custom_Control_AwarenessGeneratedForDay1_1_0_Facebook(): any {
+        public Step_1_2_Custom_Output_AwarenessGeneratedForDay1_1_0_Facebook(): any {
 
         }
 
-        public Step_1_3_Custom_Control_AwarenessGeneratedForDay1_1_0_YouTube(): any {
+        public Step_1_3_Custom_Output_AwarenessGeneratedForDay1_1_0_YouTube(): any {
 
         }
 
-        public Step_1_4_Custom_Control_AwarenessGeneratedForDay1_1_0_LinkedIn(): any {
+        public Step_1_4_Custom_Output_AwarenessGeneratedForDay1_1_0_LinkedIn(): any {
 
         }
 
-        public Step_1_5_Custom_Control_AwarenessGeneratedForDay1_1_0_Amazon(): any {
+        public Step_1_5_Custom_Output_AwarenessGeneratedForDay1_1_0_Amazon(): any {
 
         }
 
@@ -112,27 +112,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 2
 
-        public Step_2_0_Custom_Control_AwarenessGeneratedForDay2_1_0(): any {
+        public Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0(): any {
 
         }
 
-        public Step_2_1_Custom_Control_AwarenessGeneratedForDay2_1_0_Instagram(): any {
+        public Step_2_1_Custom_Output_AwarenessGeneratedForDay2_1_0_Instagram(): any {
 
         }
 
-        public Step_2_2_Custom_Control_AwarenessGeneratedForDay2_1_0_Facebook(): any {
+        public Step_2_2_Custom_Output_AwarenessGeneratedForDay2_1_0_Facebook(): any {
 
         }
 
-        public Step_2_3_Custom_Control_AwarenessGeneratedForDay2_1_0_YouTube(): any {
+        public Step_2_3_Custom_Output_AwarenessGeneratedForDay2_1_0_YouTube(): any {
 
         }
 
-        public Step_2_4_Custom_Control_AwarenessGeneratedForDay2_1_0_LinkedIn(): any {
+        public Step_2_4_Custom_Output_AwarenessGeneratedForDay2_1_0_LinkedIn(): any {
 
         }
 
-        public Step_2_5_Custom_Control_AwarenessGeneratedForDay2_1_0_Amazon(): any {
+        public Step_2_5_Custom_Output_AwarenessGeneratedForDay2_1_0_Amazon(): any {
 
         }
 
@@ -140,27 +140,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 3
 
-        public Step_3_0_Custom_Control_AwarenessGeneratedForDay3_1_0(): any {
+        public Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0(): any {
 
         }
 
-        public Step_3_1_Custom_Control_AwarenessGeneratedForDay3_1_0_Instagram(): any {
+        public Step_3_1_Custom_Output_AwarenessGeneratedForDay3_1_0_Instagram(): any {
 
         }
 
-        public Step_3_2_Custom_Control_AwarenessGeneratedForDay3_1_0_Facebook(): any {
+        public Step_3_2_Custom_Output_AwarenessGeneratedForDay3_1_0_Facebook(): any {
 
         }
 
-        public Step_3_3_Custom_Control_AwarenessGeneratedForDay3_1_0_YouTube(): any {
+        public Step_3_3_Custom_Output_AwarenessGeneratedForDay3_1_0_YouTube(): any {
 
         }
 
-        public Step_3_4_Custom_Control_AwarenessGeneratedForDay3_1_0_LinkedIn(): any {
+        public Step_3_4_Custom_Output_AwarenessGeneratedForDay3_1_0_LinkedIn(): any {
 
         }
 
-        public Step_3_5_Custom_Control_AwarenessGeneratedForDay3_1_0_Amazon(): any {
+        public Step_3_5_Custom_Output_AwarenessGeneratedForDay3_1_0_Amazon(): any {
 
         }
 
@@ -168,27 +168,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 4
 
-        public Step_4_0_Custom_Control_AwarenessGeneratedForDay4_1_0(): any {
+        public Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0(): any {
 
         }
 
-        public Step_4_1_Custom_Control_AwarenessGeneratedForDay4_1_0_Instagram(): any {
+        public Step_4_1_Custom_Output_AwarenessGeneratedForDay4_1_0_Instagram(): any {
 
         }
 
-        public Step_4_2_Custom_Control_AwarenessGeneratedForDay4_1_0_Facebook(): any {
+        public Step_4_2_Custom_Output_AwarenessGeneratedForDay4_1_0_Facebook(): any {
 
         }
 
-        public Step_4_3_Custom_Control_AwarenessGeneratedForDay4_1_0_YouTube(): any {
+        public Step_4_3_Custom_Output_AwarenessGeneratedForDay4_1_0_YouTube(): any {
 
         }
 
-        public Step_4_4_Custom_Control_AwarenessGeneratedForDay4_1_0_LinkedIn(): any {
+        public Step_4_4_Custom_Output_AwarenessGeneratedForDay4_1_0_LinkedIn(): any {
 
         }
 
-        public Step_4_5_Custom_Control_AwarenessGeneratedForDay4_1_0_Amazon(): any {
+        public Step_4_5_Custom_Output_AwarenessGeneratedForDay4_1_0_Amazon(): any {
 
         }
 
@@ -196,27 +196,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 5
 
-        public Step_5_0_Custom_Control_AwarenessGeneratedForDay5_1_0(): any {
+        public Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0(): any {
 
         }
 
-        public Step_5_1_Custom_Control_AwarenessGeneratedForDay5_1_0_Instagram(): any {
+        public Step_5_1_Custom_Output_AwarenessGeneratedForDay5_1_0_Instagram(): any {
 
         }
 
-        public Step_5_2_Custom_Control_AwarenessGeneratedForDay5_1_0_Facebook(): any {
+        public Step_5_2_Custom_Output_AwarenessGeneratedForDay5_1_0_Facebook(): any {
 
         }
 
-        public Step_5_3_Custom_Control_AwarenessGeneratedForDay5_1_0_YouTube(): any {
+        public Step_5_3_Custom_Output_AwarenessGeneratedForDay5_1_0_YouTube(): any {
 
         }
 
-        public Step_5_4_Custom_Control_AwarenessGeneratedForDay5_1_0_LinkedIn(): any {
+        public Step_5_4_Custom_Output_AwarenessGeneratedForDay5_1_0_LinkedIn(): any {
 
         }
 
-        public Step_5_5_Custom_Control_AwarenessGeneratedForDay5_1_0_Amazon(): any {
+        public Step_5_5_Custom_Output_AwarenessGeneratedForDay5_1_0_Amazon(): any {
 
         }
 
@@ -224,27 +224,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 6
 
-        public Step_6_0_Custom_Control_AwarenessGeneratedForDay6_1_0(): any {
+        public Step_6_0_Custom_Output_AwarenessGeneratedForDay6_1_0(): any {
 
         }
 
-        public Step_6_1_Custom_Control_AwarenessGeneratedForDay6_1_0_Instagram(): any {
+        public Step_6_1_Custom_Output_AwarenessGeneratedForDay6_1_0_Instagram(): any {
 
         }
 
-        public Step_6_2_Custom_Control_AwarenessGeneratedForDay6_1_0_Facebook(): any {
+        public Step_6_2_Custom_Output_AwarenessGeneratedForDay6_1_0_Facebook(): any {
 
         }
 
-        public Step_6_3_Custom_Control_AwarenessGeneratedForDay6_1_0_YouTube(): any {
+        public Step_6_3_Custom_Output_AwarenessGeneratedForDay6_1_0_YouTube(): any {
 
         }
 
-        public Step_6_4_Custom_Control_AwarenessGeneratedForDay6_1_0_LinkedIn(): any {
+        public Step_6_4_Custom_Output_AwarenessGeneratedForDay6_1_0_LinkedIn(): any {
 
         }
 
-        public Step_6_5_Custom_Control_AwarenessGeneratedForDay6_1_0_Amazon(): any {
+        public Step_6_5_Custom_Output_AwarenessGeneratedForDay6_1_0_Amazon(): any {
 
         }
 
@@ -252,27 +252,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 7
 
-        public Step_7_0_Custom_Control_AwarenessGeneratedForDay7_1_0(): any {
+        public Step_7_0_Custom_Output_AwarenessGeneratedForDay7_1_0(): any {
 
         }
 
-        public Step_7_1_Custom_Control_AwarenessGeneratedForDay7_1_0_Instagram(): any {
+        public Step_7_1_Custom_Output_AwarenessGeneratedForDay7_1_0_Instagram(): any {
 
         }
 
-        public Step_7_2_Custom_Control_AwarenessGeneratedForDay7_1_0_Facebook(): any {
+        public Step_7_2_Custom_Output_AwarenessGeneratedForDay7_1_0_Facebook(): any {
 
         }
 
-        public Step_7_3_Custom_Control_AwarenessGeneratedForDay7_1_0_YouTube(): any {
+        public Step_7_3_Custom_Output_AwarenessGeneratedForDay7_1_0_YouTube(): any {
 
         }
 
-        public Step_7_4_Custom_Control_AwarenessGeneratedForDay7_1_0_LinkedIn(): any {
+        public Step_7_4_Custom_Output_AwarenessGeneratedForDay7_1_0_LinkedIn(): any {
 
         }
 
-        public Step_7_5_Custom_Control_AwarenessGeneratedForDay7_1_0_Amazon(): any {
+        public Step_7_5_Custom_Output_AwarenessGeneratedForDay7_1_0_Amazon(): any {
 
         }
 
@@ -280,27 +280,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 8
 
-        public Step_8_0_Custom_Control_AwarenessGeneratedForDay8_1_0(): any {
+        public Step_8_0_Custom_Output_AwarenessGeneratedForDay8_1_0(): any {
 
         }
 
-        public Step_8_1_Custom_Control_AwarenessGeneratedForDay8_1_0_Instagram(): any {
+        public Step_8_1_Custom_Output_AwarenessGeneratedForDay8_1_0_Instagram(): any {
 
         }
 
-        public Step_8_2_Custom_Control_AwarenessGeneratedForDay8_1_0_Facebook(): any {
+        public Step_8_2_Custom_Output_AwarenessGeneratedForDay8_1_0_Facebook(): any {
 
         }
 
-        public Step_8_3_Custom_Control_AwarenessGeneratedForDay8_1_0_YouTube(): any {
+        public Step_8_3_Custom_Output_AwarenessGeneratedForDay8_1_0_YouTube(): any {
 
         }
 
-        public Step_8_4_Custom_Control_AwarenessGeneratedForDay8_1_0_LinkedIn(): any {
+        public Step_8_4_Custom_Output_AwarenessGeneratedForDay8_1_0_LinkedIn(): any {
 
         }
 
-        public Step_8_5_Custom_Control_AwarenessGeneratedForDay8_1_0_Amazon(): any {
+        public Step_8_5_Custom_Output_AwarenessGeneratedForDay8_1_0_Amazon(): any {
 
         }
 
@@ -308,27 +308,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 9
 
-        public Step_9_0_Custom_Control_AwarenessGeneratedForDay9_1_0(): any {
+        public Step_9_0_Custom_Output_AwarenessGeneratedForDay9_1_0(): any {
 
         }
 
-        public Step_9_1_Custom_Control_AwarenessGeneratedForDay9_1_0_Instagram(): any {
+        public Step_9_1_Custom_Output_AwarenessGeneratedForDay9_1_0_Instagram(): any {
 
         }
 
-        public Step_9_2_Custom_Control_AwarenessGeneratedForDay9_1_0_Facebook(): any {
+        public Step_9_2_Custom_Output_AwarenessGeneratedForDay9_1_0_Facebook(): any {
 
         }
 
-        public Step_9_3_Custom_Control_AwarenessGeneratedForDay9_1_0_YouTube(): any {
+        public Step_9_3_Custom_Output_AwarenessGeneratedForDay9_1_0_YouTube(): any {
 
         }
 
-        public Step_9_4_Custom_Control_AwarenessGeneratedForDay9_1_0_LinkedIn(): any {
+        public Step_9_4_Custom_Output_AwarenessGeneratedForDay9_1_0_LinkedIn(): any {
 
         }
 
-        public Step_9_5_Custom_Control_AwarenessGeneratedForDay9_1_0_Amazon(): any {
+        public Step_9_5_Custom_Output_AwarenessGeneratedForDay9_1_0_Amazon(): any {
 
         }
 
@@ -336,27 +336,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 10
 
-        public Step_10_0_Custom_Control_AwarenessGeneratedForDay10_1_0(): any {
+        public Step_10_0_Custom_Output_AwarenessGeneratedForDay10_1_0(): any {
 
         }
 
-        public Step_10_1_Custom_Control_AwarenessGeneratedForDay10_1_0_Instagram(): any {
+        public Step_10_1_Custom_Output_AwarenessGeneratedForDay10_1_0_Instagram(): any {
 
         }
 
-        public Step_10_2_Custom_Control_AwarenessGeneratedForDay10_1_0_Facebook(): any {
+        public Step_10_2_Custom_Output_AwarenessGeneratedForDay10_1_0_Facebook(): any {
 
         }
 
-        public Step_10_3_Custom_Control_AwarenessGeneratedForDay10_1_0_YouTube(): any {
+        public Step_10_3_Custom_Output_AwarenessGeneratedForDay10_1_0_YouTube(): any {
 
         }
 
-        public Step_10_4_Custom_Control_AwarenessGeneratedForDay10_1_0_LinkedIn(): any {
+        public Step_10_4_Custom_Output_AwarenessGeneratedForDay10_1_0_LinkedIn(): any {
 
         }
 
-        public Step_10_5_Custom_Control_AwarenessGeneratedForDay10_1_0_Amazon(): any {
+        public Step_10_5_Custom_Output_AwarenessGeneratedForDay10_1_0_Amazon(): any {
 
         }
 
@@ -364,27 +364,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 11
 
-        public Step_11_0_Custom_Control_AwarenessGeneratedForDay11_1_0(): any {
+        public Step_11_0_Custom_Output_AwarenessGeneratedForDay11_1_0(): any {
 
         }
 
-        public Step_11_1_Custom_Control_AwarenessGeneratedForDay11_1_0_Instagram(): any {
+        public Step_11_1_Custom_Output_AwarenessGeneratedForDay11_1_0_Instagram(): any {
 
         }
 
-        public Step_11_2_Custom_Control_AwarenessGeneratedForDay11_1_0_Facebook(): any {
+        public Step_11_2_Custom_Output_AwarenessGeneratedForDay11_1_0_Facebook(): any {
 
         }
 
-        public Step_11_3_Custom_Control_AwarenessGeneratedForDay11_1_0_YouTube(): any {
+        public Step_11_3_Custom_Output_AwarenessGeneratedForDay11_1_0_YouTube(): any {
 
         }
 
-        public Step_11_4_Custom_Control_AwarenessGeneratedForDay11_1_0_LinkedIn(): any {
+        public Step_11_4_Custom_Output_AwarenessGeneratedForDay11_1_0_LinkedIn(): any {
 
         }
 
-        public Step_11_5_Custom_Control_AwarenessGeneratedForDay11_1_0_Amazon(): any {
+        public Step_11_5_Custom_Output_AwarenessGeneratedForDay11_1_0_Amazon(): any {
 
         }
 
@@ -392,27 +392,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 12
 
-        public Step_12_0_Custom_Control_AwarenessGeneratedForDay12_1_0(): any {
+        public Step_12_0_Custom_Output_AwarenessGeneratedForDay12_1_0(): any {
 
         }
 
-        public Step_12_1_Custom_Control_AwarenessGeneratedForDay12_1_0_Instagram(): any {
+        public Step_12_1_Custom_Output_AwarenessGeneratedForDay12_1_0_Instagram(): any {
 
         }
 
-        public Step_12_2_Custom_Control_AwarenessGeneratedForDay12_1_0_Facebook(): any {
+        public Step_12_2_Custom_Output_AwarenessGeneratedForDay12_1_0_Facebook(): any {
 
         }
 
-        public Step_12_3_Custom_Control_AwarenessGeneratedForDay12_1_0_YouTube(): any {
+        public Step_12_3_Custom_Output_AwarenessGeneratedForDay12_1_0_YouTube(): any {
 
         }
 
-        public Step_12_4_Custom_Control_AwarenessGeneratedForDay12_1_0_LinkedIn(): any {
+        public Step_12_4_Custom_Output_AwarenessGeneratedForDay12_1_0_LinkedIn(): any {
 
         }
 
-        public Step_12_5_Custom_Control_AwarenessGeneratedForDay12_1_0_Amazon(): any {
+        public Step_12_5_Custom_Output_AwarenessGeneratedForDay12_1_0_Amazon(): any {
 
         }
 
@@ -420,27 +420,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 13
 
-        public Step_13_0_Custom_Control_AwarenessGeneratedForDay13_1_0(): any {
+        public Step_13_0_Custom_Output_AwarenessGeneratedForDay13_1_0(): any {
 
         }
 
-        public Step_13_1_Custom_Control_AwarenessGeneratedForDay13_1_0_Instagram(): any {
+        public Step_13_1_Custom_Output_AwarenessGeneratedForDay13_1_0_Instagram(): any {
 
         }
 
-        public Step_13_2_Custom_Control_AwarenessGeneratedForDay13_1_0_Facebook(): any {
+        public Step_13_2_Custom_Output_AwarenessGeneratedForDay13_1_0_Facebook(): any {
 
         }
 
-        public Step_13_3_Custom_Control_AwarenessGeneratedForDay13_1_0_YouTube(): any {
+        public Step_13_3_Custom_Output_AwarenessGeneratedForDay13_1_0_YouTube(): any {
 
         }
 
-        public Step_13_4_Custom_Control_AwarenessGeneratedForDay13_1_0_LinkedIn(): any {
+        public Step_13_4_Custom_Output_AwarenessGeneratedForDay13_1_0_LinkedIn(): any {
 
         }
 
-        public Step_13_5_Custom_Control_AwarenessGeneratedForDay13_1_0_Amazon(): any {
+        public Step_13_5_Custom_Output_AwarenessGeneratedForDay13_1_0_Amazon(): any {
 
         }
 
@@ -448,27 +448,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 14
 
-        public Step_14_0_Custom_Control_AwarenessGeneratedForDay14_1_0(): any {
+        public Step_14_0_Custom_Output_AwarenessGeneratedForDay14_1_0(): any {
 
         }
 
-        public Step_14_1_Custom_Control_AwarenessGeneratedForDay14_1_0_Instagram(): any {
+        public Step_14_1_Custom_Output_AwarenessGeneratedForDay14_1_0_Instagram(): any {
 
         }
 
-        public Step_14_2_Custom_Control_AwarenessGeneratedForDay14_1_0_Facebook(): any {
+        public Step_14_2_Custom_Output_AwarenessGeneratedForDay14_1_0_Facebook(): any {
 
         }
 
-        public Step_14_3_Custom_Control_AwarenessGeneratedForDay14_1_0_YouTube(): any {
+        public Step_14_3_Custom_Output_AwarenessGeneratedForDay14_1_0_YouTube(): any {
 
         }
 
-        public Step_14_4_Custom_Control_AwarenessGeneratedForDay14_1_0_LinkedIn(): any {
+        public Step_14_4_Custom_Output_AwarenessGeneratedForDay14_1_0_LinkedIn(): any {
 
         }
 
-        public Step_14_5_Custom_Control_AwarenessGeneratedForDay14_1_0_Amazon(): any {
+        public Step_14_5_Custom_Output_AwarenessGeneratedForDay14_1_0_Amazon(): any {
 
         }
 

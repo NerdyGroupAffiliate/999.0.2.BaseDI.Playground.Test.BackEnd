@@ -213,6 +213,28 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
+        //Schedule Content
+        public async Action_1_Begin_Process(): Promise<object> {
+            var page = new ChapterPage_Page_2_1_Begin_Process_1_2_1_0.BaseDI.BackEnd.Chapter.Page.Advertising_2.Page_2_1_Begin_Process_1_2_1_0(this._storylineDetails, this._repository);
+
+            page.Client = this._client;
+
+            page.EntryPoint = this._entryPoint;
+            page.ExtraData = this._extraData;
+
+            page.MasterStorer = this._centralizedStorer;
+            page.MasterDisturber = this._centralizedDisturber;
+            page.MasterSensor = this._centralizedSensor;
+
+            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
+
+            //region 2. Action
+            this._storylineDetails = await page.Action();
+
+            return this._storylineDetails;
+        }
+
+        //Publish Content
         public async Action_6_Process_StoryExperiences(): Promise<object> {
             var page = new ChapterPage_Page_2_6_Process_StoryExperiences_1_2_1_0.BaseDI.BackEnd.Chapter.Page.Advertising_2.Page_2_6_Process_StoryExperiences_1_2_1_0(this._storylineDetails, this._repository);
 
@@ -233,6 +255,7 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
             return this._storylineDetails;
         }
 
+        //Track Content
         public async Action_9_Verify_Process(): Promise<object> {
             var page = new ChapterPage_Page_2_9_Verify_Process_1_2_1_0.BaseDI.BackEnd.Chapter.Page.Advertising_2.Page_2_9_Verify_Process_1_2_1_0(this._storylineDetails, this._repository);
 
@@ -258,10 +281,6 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
         public async Action_10_End_Process(): Promise<object> {
-            return this._storylineDetails;
-        }
-
-        public async Action_1_Begin_Process(): Promise<object> {
             return this._storylineDetails;
         }
 
