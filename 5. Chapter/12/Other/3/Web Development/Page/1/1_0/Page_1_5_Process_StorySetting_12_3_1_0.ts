@@ -106,13 +106,13 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
             }
             return attrs.join(" ");
         }
-        private getproperyValues(prop) {
-            let values = []
-            prop.properyValues.forEach(value => {
-                values.push(value + ";")
-            });
-            return values.join('\n')
-        }
+        // private getproperyValues(prop) {
+        //     let values = []
+        //     prop.properyValues.forEach(value => {
+        //         values.push(value + ";")
+        //     });
+        //     return values.join('\n')
+        // }
 
         public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
             //#region DESCRIBE THE MEMORIES
@@ -166,7 +166,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
         public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
             //#region DESCRIBE THE MEMORIES
             let htmlContentString: string = htmlColumnsString;
-            // console.log(htmlContentJSON)
             let idsAndContant = {}
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
                 if (idsAndContant[con.ParentHTMLContentItemAttributeID] == undefined) {
@@ -176,16 +175,13 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
                 else {
                     idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.getAttributes(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
-                // content.push(`<${con.Tag} ${this.getAttributes(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
             });
 
             Object.keys(idsAndContant).forEach(item => {
                 let content = idsAndContant[item].join('\n')
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
             });
-            // console.log(idsAndContant)
-            // htmlContentString = htmlContentString.replace(`{${con.ParentHTMLContentItemAttributeID}_Replace}`, content.join('\n'));
-
+          
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -208,11 +204,12 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
             // htmlInlineCSSString = files.join("\n");
 
             let cssString = "";
-            let attributeID = "";
+            let PropertyArray = [];
+            let MediaQueryArray = [];
+
             filesArray.forEach(file => {
                 file.StyleFileUseProperties.forEach(element => {
                     if (element.IsHtmlTag == "true" && element.properties.length > 0) {
-                        let properties = [];
                         if (element.IsMediaQuery == "true") {
                             let MediaQueryFeatures = [];
                             if (element.MediaQuery.type != "") {
@@ -229,21 +226,42 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
                             });
                             element.properties.forEach(prop => {
                                 if (prop.propertyName != "") {
-                                    cssString += `@media ${MediaQueryFeatures.join(" ")} { \n \t ${prop.propertyName}  { \n  ${this.getproperyValues(prop)} \n \t}\n}\n`;
+                                    let values = [];
+                                    if (MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`] === undefined) {
+                                        MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`] = []
+                                        prop.properyValues.forEach(value => {
+                                            values.push(`${value};`)
+                                        });
+                                        MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ propName: `${prop.propertyName}`, values: values })
+                                    } else {
+                                        prop.properyValues.forEach(value => {
+                                            values.push(`${value};`)
+                                        });
+                                        MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ propName: `${prop.propertyName}`, values: values })
+                                    }
                                 }
                             });
-
 
                         } else {
                             element.properties.forEach(prop => {
                                 if (prop.propertyName != "") {
-                                    cssString += `${prop.propertyName} { \n ${this.getproperyValues(prop)} \n}\n`;
+                                    if (PropertyArray[`${prop.propertyName}`] === undefined) {
+                                        PropertyArray[`${prop.propertyName}`] = [];
+                                        prop.properyValues.forEach(value => {
+                                            PropertyArray[`${prop.propertyName}`].push(value + ";")
+                                        });
+                                    } else {
+                                        prop.properyValues.forEach(value => {
+                                            PropertyArray[`${prop.propertyName}`].push(value + ";")
+                                        });
+                                    }
                                 }
                             });
+
                         }
                     }
                     else if (element.IsHtmlTag == "false" && element.properties.length > 0) {
-                        let properties = [];
+                        let values = [];
                         if (element.IsMediaQuery == "true") {
 
                             let MediaQueryFeatures = [];
@@ -260,27 +278,39 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
                                     }
                                 });
                             });
-                          
+
                             element.properties.forEach(prop => {
                                 if (prop.propertyName != "") {
-                                    properties.push(`\t ${prop.propertyName} :  ${this.getproperyValues(prop)}`);
+                                    values.push(`${prop.propertyName} : ${prop.properyValues[0]};`)
                                 }
                             });
-                            attributeID = element.attributeID;
-                            if (attributeID.includes("#")) {
-                                attributeID = `${element.attributeID}`
-                            } else {
-                                attributeID = `#${element.attributeID}`
-                            }
-                            cssString += `@media ${MediaQueryFeatures.join(" ")} { \n \t ${attributeID}  { \n  ${properties.join('\n')} \n \t}\n}\n`;
 
+                            if (MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`] === undefined) {
+                                MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`] = []
+                                MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ attributeID: element.attributeID, values: values })
+                            } else {
+                                let updatedItem = MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].find((item) => { return item.attributeID === element.attributeID })
+                                if(updatedItem != undefined) {
+                                    updatedItem.values.push(...values)
+                                } else {
+                                    MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ attributeID: element.attributeID, values: values })
+                                }
+                                                         
+                            }
                         } else {
                             element.properties.forEach(prop => {
                                 if (prop.propertyName != "") {
-                                    properties.push(`${prop.propertyName} :  ${this.getproperyValues(prop)}`);
+                                    values.push(`${prop.propertyName} : ${prop.properyValues[0]};`)
                                 }
                             });
-                            cssString += `#${element.attributeID}  { \n  ${properties.join('\n')} \n}\n`;
+
+                            if (PropertyArray[`${element.attributeID}`] === undefined) {
+                                PropertyArray[`${element.attributeID}`] = [];
+                                PropertyArray[`${element.attributeID}`].push({ attributeID: element.attributeID, values: values })
+                            } else {
+                                // PropertyArray[`${element.attributeID}`].push({ attributeID: element.attributeID, values: values })
+                                PropertyArray[`${element.attributeID}`][0].values.push(...values)
+                            }
                         }
                     }
                     else {
@@ -289,7 +319,43 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
 
                 });
             });
-     
+
+            Object.keys(PropertyArray).forEach((key, index) => {
+                let obj = Object.values(PropertyArray)[index];
+                if (obj[0].attributeID === undefined) {
+                    cssString += `${key} { \n ${obj.join("\n")} \n}\n`;
+                } else {
+
+                    if (obj[0].attributeID.includes("#")) {
+                        cssString += `${obj[0].attributeID} { \n ${obj[0].values.join("\n")} \n}\n`;
+                    } else {
+                        cssString += `#${obj[0].attributeID} { \n ${obj[0].values.join("\n")} \n}\n`;
+                    }
+                }
+            });
+
+            Object.keys(MediaQueryArray).forEach((key, index) => {
+                let obj = Object.values(MediaQueryArray)[index];
+                let innerCss = "";
+
+                obj.forEach(element => {
+                    if (element.attributeID === undefined) {
+                        innerCss += `${element.propName} \n { \n ${element.values.join("\n")} \n}\n`;
+                    } else {
+                        if (element.attributeID.includes("#")) {
+                            innerCss += `${element.attributeID} \n { \n ${element.values.join("\n")} \n}\n`;
+                        } else {
+                            innerCss += `#${element.attributeID} \n { \n ${element.values.join("\n")} \n}\n`;
+                        }
+                    }
+                });
+                cssString += `${key} {\n ${innerCss} \n}`;
+
+
+            });
+
+            // console.log(cssString)
+
             htmlInlineCSSString = `<style>${cssString}</style>`;
 
             //#endregion
