@@ -294,8 +294,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
                                     updatedItem.values.push(...values)
                                 } else {
                                     MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ attributeID: element.attributeID, values: values })
-                                }
-                                                         
+                                }                            
                             }
                         } else {
                             element.properties.forEach(prop => {
@@ -316,7 +315,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
                     else {
                         console.log("Something wrong in Json file!")
                     }
-
                 });
             });
 
@@ -350,8 +348,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
                     }
                 });
                 cssString += `${key} {\n ${innerCss} \n}`;
-
-
             });
 
             // console.log(cssString)
