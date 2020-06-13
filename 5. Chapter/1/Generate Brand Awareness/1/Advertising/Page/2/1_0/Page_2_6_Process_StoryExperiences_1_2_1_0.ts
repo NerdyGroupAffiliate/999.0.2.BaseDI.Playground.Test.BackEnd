@@ -40,7 +40,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-
             //#region DESCRIBE THE MEMORIES
 
 
