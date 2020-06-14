@@ -3,10 +3,14 @@
 import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
+import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+
 import * as ExtraData_12_2_1_0 from "../../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
 import * as Extension_Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0 from "../../../../../../../../../../0. Script/Extensions/2/Generate Brand Trust/3/Social Media/Method/1/1_0/Extension_Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0";
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+
+import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 import * as path from 'path';
 
@@ -127,6 +131,8 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _client: any;
 
+        private _server: any;
+
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
 
@@ -134,6 +140,11 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+
+        private _serverInfo: any;
+
+        public Update_Server;
+
         //#endregion
 
         //#region 2. Ready
@@ -168,7 +179,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
         //#region 3. Set
         private HandleChapterDefaults() {
-
+            this._serverInfo = { "server_director": this }
         }
         //#endregion
 
@@ -177,295 +188,204 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         //#region EXECUTE LOGIC INSTUCTIONS
 
         //Page 1-1
-        public async Action_1_Begin_Process(): Promise<object>
-        {
+        public async Action_1_Begin_Process(): Promise<object> {
             try
             {
                 console.log("Hello Mark 1");
+
                 //#region COMMUNICATION TO SERVER
                 if (process.env.APP_ENV == "SERVER")
                 {
-                    console.log("Hello Mark 1");
+                    console.log("Hello Mark 2");
 
-                    ////#region MEMORIZE SERVER OPTIONS
-                    //let apiLocationLocalNodeJS: string = "";
+                    //#region MEMORIZE SERVER OPTIONS
 
-                    //const businessOptions: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._storylineDetails, "", "Mode", false);
-                    //let businessEnvironment: string = "LOCAL";
-                    //let businessEnvironmentPort: number = 0;
-                    //let businessEnvironmentHost: string = "";
+                    const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
 
-                    //const settingOptions: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._storylineDetails, "", "Settings", false);
-                    //const experienceOptions: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._storylineDetails, "", "Experiences", false);
+                    const serverEnvironmentName: number = serverEnvironment?.value?.SetupItemEnvironmentName;
+                    const serverEnvironmentPort: number = serverEnvironment?.value?.SetupItemEnvironmentPort;
+                    const serverEnvironmentDomainName: number = serverEnvironment?.value?.SetupItemEnvironmentDomainName;
 
-                    //let createRoutes: Array<any> = new Array<any>();
-                    //let readRoutes: Array<any> = new Array<any>();
-                    //let updateRoutes: Array<any> = new Array<any>();
-                    //let deleteRoutes: Array<any> = new Array<any>();
+                    const serverEnvironmentBuildItemClientPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemBuildItemClientPath;
+                    const serverEnvironmentDataPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemDataPath;
+                    const serverEnvironmentDocumentPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemDocumentPath;
+                    const serverEnvironmentFontPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemFontPath;
+                    const serverEnvironmentImagePath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemImagePath;
+                    const serverEnvironmentScriptPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
 
-                    ////#region GRAB LOCAL PORT
-                    //businessEnvironment = businessOptions.values.map(item => {
-                    //    if (item.value) {
-                    //        return item.value.map(value => {
-                    //            if (value.key.environment) {
-                    //                return value.key.environment;
-                    //            };
-                    //        });
-                    //    }
-                    //});
+                    const serverEnvironmentServerRoutesGET: Array<any> = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
 
-                    //if (businessEnvironment.toString().toUpperCase() == "LOCAL") {
-                    //    const businessOptionSettings: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._storylineDetails, "", "Parameters", false);
+                    //#endregion
 
-                    //    businessOptionSettings.values.map(item => {
-                    //        if (item.value) {
-                    //            return item.value.map(value => {
-                    //                if (value.key.name == "NodeJS") {
-                    //                    if (value.value.host) {
-                    //                        businessEnvironmentHost = value.value.host;
-                    //                    }
+                    //#region HANDLE THE DEFAULTS
 
-                    //                    if (value.value.port) {
-                    //                        businessEnvironmentPort = value.value.port;
-                    //                    }
+                    this.HandleChapterDefaults();
 
-                    //                    if (value.value.routes) {
-                    //                        value.value.routes.map(route => {
-                    //                            if (route.path && route.verb) {
-                    //                                switch (route.verb) {
-                    //                                    case "POST": //CREATE
-                    //                                        if (route.method) {
-                    //                                            createRoutes.push({
-                    //                                                path: route.path + "/" + route.method,
-                    //                                                experienceHTMLRaw: route.experienceHTMLRaw,
-                    //                                                experienceHTMLView: route.experienceHTMLView,
-                    //                                                experienceJSONRaw: route.experienceHTMLRaw
-                    //                                            });
-                    //                                        }
-                    //                                        else {
-                    //                                            createRoutes.push({
-                    //                                                path: route.path,
-                    //                                                experienceHTMLRaw: route.experienceHTMLRaw,
-                    //                                                experienceHTMLView: route.experienceHTMLView,
-                    //                                                experienceJSONRaw: route.experienceHTMLRaw
-                    //                                            });
-                    //                                        }
+                    //#endregion
 
-                    //                                        break;
+                    //#region PICK THE SERVER
+                    this._server = express();
 
-                    //                                    case "GET": //READ
-                    //                                        if (route.method) {
-                    //                                            readRoutes.push({
-                    //                                                path: route.path + "/" + route.method,
-                    //                                                experienceHTMLRaw: route.experienceHTMLRaw,
-                    //                                                experienceHTMLView: route.experienceHTMLView,
-                    //                                                experienceJSONRaw: route.experienceHTMLRaw
-                    //                                            });
-                    //                                        }
-                    //                                        else {
-                    //                                            readRoutes.push({
-                    //                                                path: route.path,
-                    //                                                experienceHTMLRaw: route.experienceHTMLRaw,
-                    //                                                experienceHTMLView: route.experienceHTMLView,
-                    //                                                experienceJSONRaw: route.experienceHTMLRaw
-                    //                                            });
-                    //                                        }
+                    //#endregion
 
-                    //                                        break;
+                    //#region SET VIEW ENGINE
 
-                    //                                    case "PUT": //UPDATE
-                    //                                        if (route.method) {
-                    //                                            updateRoutes.push({
-                    //                                                path: route.path + "/" + route.method,
-                    //                                                experienceHTMLRaw: route.experienceHTMLRaw,
-                    //                                                experienceHTMLView: route.experienceHTMLView,
-                    //                                                experienceJSONRaw: route.experienceHTMLRaw
-                    //                                            });
-                    //                                        }
-                    //                                        else {
-                    //                                            updateRoutes.push({
-                    //                                                path: route.path,
-                    //                                                experienceHTMLRaw: route.experienceHTMLRaw,
-                    //                                                experienceHTMLView: route.experienceHTMLView,
-                    //                                                experienceJSONRaw: route.experienceHTMLRaw
-                    //                                            });
-                    //                                        }
+                    //SET PRESENTATION VIEWS
 
-                    //                                        break;
+                    //this._server.set('view engine', 'hbs');
+                    //this._server.set('views', viewPaths);
 
-                    //                                    case "DELETE": //DELETE
-                    //                                        if (route.method) {
-                    //                                            deleteRoutes.push({
-                    //                                                path: route.path + "/" + route.method,
-                    //                                                experienceHTMLRaw: route.experienceHTMLRaw,
-                    //                                                experienceHTMLView: route.experienceHTMLView,
-                    //                                                experienceJSONRaw: route.experienceHTMLRaw
-                    //                                            });
-                    //                                        }
-                    //                                        else {
-                    //                                            deleteRoutes.push({
-                    //                                                path: route.path,
-                    //                                                experienceHTMLRaw: route.experienceHTMLRaw,
-                    //                                                experienceHTMLView: route.experienceHTMLView,
-                    //                                                experienceJSONRaw: route.experienceHTMLRaw
-                    //                                            });
-                    //                                        }
+                    //#endregion
 
-                    //                                        break;
-                    //                                }
-                    //                            }
-                    //                        });
-                    //                    }
-                    //                };
-                    //            });
-                    //        }
-                    //    });
-                    //}
-
-                    ////#endregion
-
-                    ////#endregion
-
-                    ////#region PICK THE SERVER
-                    //const app = express();
-
-                    ////#endregion
-
-                    ////#region SET VIEW ENGINE
-
-                    ////SET PRESENTATION VIEWS
-                    //let viewPaths: Array<string> = new Array<string>();
-
-                    //settingOptions.values.map(item => {
-                    //    if (item.value) {
-                    //        return item.value.map(value => {
-                    //            if (value.key.name == "NodeJS") {
-                    //                value.value.paths.map(item2 => {
-                    //                    viewPaths.push(item2.path);
-                    //                });
-                    //            };
-                    //        });
-                    //    }
-                    //});
-
-                    //experienceOptions.values.map(item => {
-                    //    if (item.value) {
-                    //        return item.value.map(value => {
-                    //            if (value.key.name == "NodeJS") {
-                    //                value.value.paths.map(item2 => {
-                    //                    viewPaths.push(item2.path);
-                    //                });
-                    //            };
-                    //        });
-                    //    }
-                    //});
-
-                    //app.set('view engine', 'hbs');
-                    //app.set('views', viewPaths);
-
-                    ////#endregion
-
-                    ////#region SET SCRIPTS CSS
+                    //#region SET STATIC FOLDERS
 
                     //const viewsPath = path.join(__dirname, '../Templates');
 
-                    ////console.log("Client = " + path.join(__dirname, "Distribution", "Client"));
-                    ////console.log("__dirname = " + path.resolve(__dirname, "..", "..", "./build/static"));                    
-                    //app.use(
-                    //    "/scripts",
-                    //    express.static("wwwroot/Client/JS", {
+                    //_server.use(
+                    //    "/data",
+                    //    express.static(serverEnvironmentDataPath, {
                     //        maxAge: "15d",
                     //        fallthrough: false
                     //    })
                     //);
 
-                    ////#endregion
+                    //_server.use(
+                    //    "/documents",
+                    //    express.static(serverEnvironmentDocumentPath, {
+                    //        maxAge: "15d",
+                    //        fallthrough: false
+                    //    })
+                    //);
 
-                    ////#region SET HTML PAGES
+                    //_server.use(
+                    //    "/fonts",
+                    //    express.static(serverEnvironmentFontPath, {
+                    //        maxAge: "15d",
+                    //        fallthrough: false
+                    //    })
+                    //);
 
-                    //app.get('/favicon.ico', (req, res) => res.status(204));
+                    //_server.use(
+                    //    "/images",
+                    //    express.static(serverEnvironmentImagePath, {
+                    //        maxAge: "15d",
+                    //        fallthrough: false
+                    //    })
+                    //);
 
-                    //app.get("/", (req: any, res: any) => {
+                    //_server.use(
+                    //    "/scripts",
+                    //    express.static(serverEnvironmentScriptPath, {
+                    //        maxAge: "15d",
+                    //        fallthrough: false
+                    //    })
+                    //);
 
-                    //    res.render('SoftwareAPIServer_Tester_12_2_1_0');
-                    //});
+                    //#endregion
 
-                    //if (createRoutes) //CREATE
-                    //{
-                    //    createRoutes.map(route => {
-                    //        app.post("/" + route.path, (req: any, res: any) => {
-                    //            if (route.experienceHTMLRaw) {
-                    //                res.send(route.experienceHTMLRaw);
-                    //            }
+                    //#region SET SERVER RESPONSE
 
-                    //            if (route.experienceHTMLView) {
-                    //                res.render(route.experienceHTMLRaw);
-                    //            }
-                    //        });
-                    //    });
-                    //}
+                    //#region OUTPUT THE RESPONSE
+                    this._server.get('/favicon.ico', (req, res) => res.status(204));
 
-                    //if (readRoutes) //READ
-                    //{
-                    //    readRoutes.map(route => {
-                    //        app.get("/" + route.path, (req: any, res: any) => {
-                    //            if (route.experienceHTMLRaw) {
-                    //                res.send(route.experienceHTMLRaw);
-                    //            }
+                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) => {
 
-                    //            if (route.experienceHTMLView) {
-                    //                res.render(route.experienceHTMLRaw);
-                    //            }
-                    //        });
-                    //    });
-                    //}
+                        //#region 1. Assign
+                        let armTemplateJSONOutput: any;
 
-                    //if (updateRoutes) //PUT
-                    //{
-                    //    updateRoutes.map(route => {
-                    //        app.put("/" + route.path, (req: any, res: any) => {
-                    //            if (route.experienceHTMLRaw) {
-                    //                res.send(route.experienceHTMLRaw);
-                    //            }
+                        let outputs: any = new Object();
+                        let outputObservations: object = new Object();
 
-                    //            if (route.experienceHTMLView) {
-                    //                res.render(route.experienceHTMLRaw);
-                    //            }
-                    //        });
-                    //    });
-                    //}
+                        let outputObservationsPrintOut: string = "";
 
-                    //if (deleteRoutes) //DELETE
-                    //{
-                    //    deleteRoutes.map(route => {
-                    //        app.delete("/" + route.path, (req: any, res: any) => {
+                        let extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
 
-                    //        });
-                    //    });
-                    //}
+                        let isProcessComplete: boolean = false;
+                        let handleObservation: Promise<any>;
 
-                    ////#endregion
+                        //#endregion
 
-                    ////#region SET JSON MESSAGING
-                    ////this._client
+                        //#region 2. Action
 
-                    //app.post('/Action', function (req, res) {
-                    //    //const armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Master.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.BaseDI.Master.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0(this.ExtraData))
-                    //    //    .SetupStoryline(this._client, this.StorylineDetails, this.StorylineDetails_Parameters, this.ExtraData, "")
-                    //    //    .Action().then(response => {
-                    //    //        this.C
-                    //    //    });
+                        try
+                        {
+                            //#region EXECUTE OUR LOGIC
 
-                    //    console.log(req.body);
-                    //});
+                            //#region PROCESS LOGIC UPDATES
+                            this.Update_Server = (storylineDetails: object) => {
+                                this._storylineDetails = storylineDetails;
+                            }
 
-                    ////#endregion
+                            const Action = (output) => {
+                                handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(extraData))
+                                    .SetupStoryline(this._serverInfo, null, null, extraData, "", controllerName, controllerModelDataLocalParameter)
+                                    .Action();
+                            }
+                            //#endregion
 
-                    ////#region START THE SERVER
-                    //app.listen(businessEnvironmentPort, () => {
-                    //    console.log(`server started asdas at http://localhost:${businessEnvironmentPort}`);
-                    //});
-                    ////#endregion
+                            Action(armTemplateJSONOutput);
+
+                            //#endregion
+                        }
+                        catch (storyMistake)
+                        {
+                            //#region PRINT OUT MISTAKES
+                            console.log(storyMistake);
+                            //#endregion
+                        }
+
+                        //#endregion
+
+                        //#region 3. Observe
+                        handleObservation.then(response => {
+                            const result: string = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+
+                            res.send(result);                        
+
+                        });
+
+                        //#endregion
+                    }
+                    //#endregion
+
+                    //#region INPUT THE REQUEST
+                    const Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (serverEnvironmentServerRoutes: Array<any>) => {
+                        if (serverEnvironmentServerRoutes.length > 0)
+                        {
+                            serverEnvironmentServerRoutes.map(item =>
+                            {
+                                const controllerRoutes: Array<any> = item.SetupItemTransportItemRoute.ControllerRoutes;
+                                const controllerName: string = item.SetupItemTransportItemRoute.ControllerName;
+                                const controllerModelDataLocalObject: Object = item.SetupItemTransportItemRoute.ModelDataLocalObject;
+                                const controllerModelDataLocalParameter: string = item.SetupItemTransportItemRoute.ModelDataLocalParameter;
+                                const controllerModelDataRemote: Object = item.SetupItemTransportItemRoute.ModelDataRemote;
+
+                                if (controllerRoutes.length > 0) {
+                                    controllerRoutes.map(route => {
+                                        console.log("route =");
+                                        console.log(route);
+
+                                        this._server.get(route, (req: any, res: any) => {
+                                            Step_2_0_Custom_Output_ServerRequestToClient_1_0(route, controllerName, controllerModelDataLocalObject, controllerModelDataLocalParameter, controllerModelDataRemote, req, res);
+                                        });
+                                    });
+                                }
+                            })
+                        }
+                    }
+
+                    //READ GET ROUTES
+                    Step_1_0_Custom_Control_ClientRequestToServer_1_0(serverEnvironmentServerRoutesGET);
+
+                    //#endregion
+
+                    //#endregion
+
+                    //#region START THE SERVER
+                    this._server.listen(serverEnvironmentPort, () => {
+                        console.log(`server started at http://localhost:${serverEnvironmentPort}`);
+                    });
+                    //#endregion
                 }
                 //#endregion
             }
