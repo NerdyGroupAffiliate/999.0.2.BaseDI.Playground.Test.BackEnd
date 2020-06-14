@@ -106,13 +106,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
             }
             return attrs.join(" ");
         }
-        // private getproperyValues(prop) {
-        //     let values = []
-        //     prop.properyValues.forEach(value => {
-        //         values.push(value + ";")
-        //     });
-        //     return values.join('\n')
-        // }
+  
 
         public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
             //#region DESCRIBE THE MEMORIES
