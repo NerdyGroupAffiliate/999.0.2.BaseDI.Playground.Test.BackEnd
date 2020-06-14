@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Web_Development_
+namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1
 {
     public class Page_1_7_Process_StoryResources_12_3_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
