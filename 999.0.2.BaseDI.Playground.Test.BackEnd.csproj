@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="0. Script\Extensions\12\Other\2\Programming\Method\2\1_0\Extension_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
+    <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\0\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
     <None Remove="basedi_1_0.tsx" />
@@ -25,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Box.V2.Core" Version="3.23.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="NUnit" Version="3.12.0" />
@@ -44,6 +47,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\2\1_0\Extension_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
+    <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\0\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\1\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
     <TypeScriptCompile Include="BaseDI_1_0.tsx" />
