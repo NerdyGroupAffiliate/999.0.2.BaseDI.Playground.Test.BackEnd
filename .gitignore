@@ -7,4 +7,5 @@
 /obj
 /bin/Debug/netcoreapp3.0
 /wwwroot/Distribution
+/wwwroot/Server
 /wwwroot/Source
