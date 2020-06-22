@@ -725,7 +725,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //This means our director of programming wanted us to play this storyline.
 
             //region 1. Generate Brand Awareness Storylines
-
+ 
             //region 2. Generate Brand Trust Storylines
             if (this._requestToResolveString.toUpperCase().includes("EXPERIENCE_THE_MOVEMENT_TOFACEBOOKPAGE_DATATRANSFER")) {
                 let createExperience = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.BackEnd.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._extraData);
@@ -757,6 +757,17 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //region 11. Automate Manual Task Storylines
 
             //region 12. Other Storylines
+            if (this._requestToResolveString.toUpperCase().includes("EXPERIENCE_THE_MOVEMENT_OFTHEASSETS_CONTENT_12_2_1_0")) {
+                let createExperience = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
+
+                createExperience.APILocationLocalNodeJS = "http://localhost:8912/api/basedi/io/programming"
+                createExperience.APILocationLocalDotNetCore = "http://localhost:9912/api/basedi/io/programming";
+
+                createExperience.APILocationRemote = "https://api.basedi.io/programming";
+
+                return createExperience.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+            }
+
             if (this._requestToResolveString.toUpperCase().includes("EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE")) {
                 let createExperience = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.BaseDI.BackEnd.Story.Web_Development_1.WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(this._extraData);
 

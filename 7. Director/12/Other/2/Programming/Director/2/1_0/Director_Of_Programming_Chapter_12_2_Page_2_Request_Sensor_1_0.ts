@@ -237,6 +237,24 @@ export namespace BaseDI.BackEnd.Director.Programming_2 {
 
         //Page 1-7
         public async Action_7_Process_StoryResources(): Promise<object> {
+            //region 1. Assign 
+            var page = new ChapterPage_Page_1_7_Process_StoryResources_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_2.Page_1_7_Process_StoryResources_12_2_1_0(this._storylineDetails, this._repository);
+
+            page.Client = this._client;
+
+            page.EntryPoint = this._entryPoint;
+            page.ExtraData = this._extraData;
+
+            page.MasterStorer = this._centralizedStorer;
+            page.MasterDisturber = this._centralizedDisturber;
+            page.MasterSensor = this._centralizedSensor;
+
+            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
+
+            //region 2. Action
+            this._storylineDetails = await page.Action();
+
+            //region 3. Observe
             return this._storylineDetails;
         }
 

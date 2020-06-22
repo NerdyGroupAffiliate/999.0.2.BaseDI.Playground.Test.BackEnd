@@ -14,7 +14,7 @@ import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../
 
 import * as path from 'path';
 
-export namespace BaseDI.BackEnd.Experience.Movement.Programming_2 {
+export namespace BaseDI.BackEnd.Experience.Movement.Programming_3 {
     export class Experience_The_Movement_OfTheAssets_Content_12_2_1_0 extends aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
@@ -188,6 +188,7 @@ export namespace BaseDI.BackEnd.Experience.Movement.Programming_2 {
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object> {
+            console.log("hsahsahashasha");
             return this._storylineDetails;
         }
 

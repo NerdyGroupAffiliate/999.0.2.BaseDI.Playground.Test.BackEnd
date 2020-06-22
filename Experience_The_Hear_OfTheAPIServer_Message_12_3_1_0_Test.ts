@@ -1,5 +1,7 @@
 ﻿import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "./1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "./7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+
 import * as ExtraData_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
 export namespace BaseDI.BackEnd {
@@ -136,8 +138,9 @@ export namespace BaseDI.BackEnd {
     }
 }
 
-let tester = new BaseDI.BackEnd.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test(this);
+let server = new BaseDI.BackEnd.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test(this);
 
-tester.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0");
+server.Action("Step_1_0_CopyLocalFiles", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0-P1_0");
+server.Action("Step_2_0_StartServer", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0");
 
 
