@@ -73,7 +73,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_2 {
             //#region RECALL THE MEMORIES
 
             businessMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_BusinessFuction", false);
-
             //#endregion
 
             //#region EXECUTE THE VISION
