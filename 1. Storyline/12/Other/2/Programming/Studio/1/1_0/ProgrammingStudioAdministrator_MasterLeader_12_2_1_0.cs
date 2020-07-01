@@ -117,6 +117,8 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
+                    entryPoint.RequestID = requestToResolveName;
+
                     requestInspector.Client = client;
 
                     requestInspector.EntryPoint = entryPoint;

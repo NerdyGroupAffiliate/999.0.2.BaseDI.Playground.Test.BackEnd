@@ -24,7 +24,8 @@
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
     <None Remove="6. State\12\Other\2\Programming\Repository\2\1_0\LocalFile_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
-    <None Remove="6. State\12\Other\2\Programming\Repository\3\1_0\RemoteService_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
+    <None Remove="6. State\12\Other\2\Programming\Repository\5\1_0\RemoteService_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
+    <None Remove="7. Director\12\Other\2\Programming\Director\4\1_0\Director_Of_Programming_Chapter_12_2_Page_4_Request_Storage_1_0.ts" />
     <None Remove="basedi_1_0.tsx" />
     <None Remove="Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.tsx" />
   </ItemGroup>
@@ -57,8 +58,8 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\1\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
-    <TypeScriptCompile Include="6. State\12\Other\2\Programming\Repository\3\1_0\LocalFile_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
-    <TypeScriptCompile Include="6. State\12\Other\2\Programming\Repository\3\1_0\RemoteService_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
+    <TypeScriptCompile Include="7. Director\12\Other\2\Programming\Director\2\1_0\Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts" />
+    <TypeScriptCompile Include="7. Director\12\Other\2\Programming\Director\3\1_0\Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts" />
     <TypeScriptCompile Include="BaseDI_1_0.tsx" />
   </ItemGroup>
 

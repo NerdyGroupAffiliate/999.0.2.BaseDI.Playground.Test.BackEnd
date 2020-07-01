@@ -63,7 +63,8 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 4. Action
-        public Action(unitTestName:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "") {
+        public Action(unitTestName: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "")
+        {
             //#region 1. Assign
             let armTemplateJSONOutput: any;
 
@@ -122,8 +123,9 @@ export namespace BaseDI.BackEnd {
                 // iframe.contentWindow.document.open();
                 // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
                 // iframe.contentWindow.document.close();
-                
-                document.getElementById('page').innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+
+                if (response)
+                    document.getElementById('page').innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
 
             })
 
