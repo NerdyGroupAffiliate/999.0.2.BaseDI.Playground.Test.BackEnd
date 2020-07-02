@@ -24,8 +24,8 @@ export namespace BaseDI.BackEnd.Programming.Extensions_2
             //#endregion
 
             //#region EXECUTE THE VISION
-
-            var a = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+            if (process.env.APP_ENV == "SERVER") {
+                var a = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
             
             var SetupItemEnvironmentServerMetaDataPaths = a.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
 
@@ -69,6 +69,8 @@ export namespace BaseDI.BackEnd.Programming.Extensions_2
                 //     console.log(contentItem)
                 // });
             });
+            }
+            
 
             //#endregion
 
