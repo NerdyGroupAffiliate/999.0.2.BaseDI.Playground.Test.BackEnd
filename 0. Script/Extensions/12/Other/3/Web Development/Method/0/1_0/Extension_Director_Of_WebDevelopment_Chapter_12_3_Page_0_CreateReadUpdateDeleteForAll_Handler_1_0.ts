@@ -174,10 +174,10 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             
             if (process.env.APP_ENV == "SERVER")
             {
+                // console.log(htmlContentString)
                 htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
                 // console.log(htmlContentString)
             }
-            // console.log(htmlContentString.replace("../999.0.3.BaseDI.QuickStart.Templates" , ""))
             return htmlContentString;
 
             //#endregion                        
