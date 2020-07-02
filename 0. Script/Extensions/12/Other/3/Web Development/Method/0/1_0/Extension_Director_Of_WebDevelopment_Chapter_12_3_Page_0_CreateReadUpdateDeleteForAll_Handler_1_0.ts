@@ -1,7 +1,4 @@
-﻿import e from "express";
-import { env } from "process";
-
-export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
+﻿export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
     export class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 {
         constructor() {
 
@@ -186,21 +183,15 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
         public static Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any): string {
             //#region DESCRIBE THE MEMORIES
             let htmlInlineCSSString: string = "";
+            let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
+            // let files = [];
+            // filesArray.forEach(file => {
+            //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
+            // });
+            // htmlInlineCSSString = files.join("\n");
 
             let cssString = "";
-
-            if (process.env.APP_ENV == "SERVER")
-            {    
-                let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
-                let files = [];
-                filesArray.forEach(file => {
-                    files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
-                });
-                htmlInlineCSSString = files.join("\n");
-            }
-            else {
-               
             let PropertyArray = [];
             let MediaQueryArray = [];
 
@@ -351,8 +342,6 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
                 cssString += `${key} {\n ${innerCss} \n}`;
             });
 
-            }
-            
             // console.log(cssString)
 
             htmlInlineCSSString = `<style>${cssString}</style>`;

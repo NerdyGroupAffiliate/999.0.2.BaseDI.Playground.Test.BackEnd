@@ -265,13 +265,13 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                     //    })
                     //);
 
-                    this._server.use(
-                       "/images",
-                       express.static(serverEnvironmentImagePath, {
-                           maxAge: "15d",
-                           fallthrough: false
-                       })
-                    );
+                    //_server.use(
+                    //    "/images",
+                    //    express.static(serverEnvironmentImagePath, {
+                    //        maxAge: "15d",
+                    //        fallthrough: false
+                    //    })
+                    //);
 
                     //_server.use(
                     //    "/scripts",
