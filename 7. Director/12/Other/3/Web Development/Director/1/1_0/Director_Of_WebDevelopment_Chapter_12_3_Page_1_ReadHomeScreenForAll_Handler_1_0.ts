@@ -225,8 +225,7 @@ export namespace BaseDI.BackEnd.Director.Web_Development_1 {
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
         //Page 1-1
-        public async Action_1_Begin_Process(): Promise<object>
-        {
+        public async Action_1_Begin_Process(): Promise<object> {
             return this._storylineDetails;
         }
 

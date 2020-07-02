@@ -35,6 +35,8 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
         public MasterSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         public Client: any;
+
+        public RequestID: string;
         //#endregion
 
         //#region 2. Ready
