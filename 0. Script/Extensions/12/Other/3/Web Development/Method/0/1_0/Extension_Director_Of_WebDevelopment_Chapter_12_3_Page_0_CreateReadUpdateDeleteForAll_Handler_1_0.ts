@@ -175,6 +175,7 @@
                 htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
                 // console.log(htmlContentString)
             }
+
             return htmlContentString;
 
             //#endregion                        
