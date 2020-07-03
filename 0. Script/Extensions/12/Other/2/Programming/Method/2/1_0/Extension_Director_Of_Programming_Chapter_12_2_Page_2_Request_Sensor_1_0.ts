@@ -20,6 +20,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_2
 
             //#region RECALL THE MEMORIES
 
+            console.dir(storylineDetails)
 
             //#endregion
 
@@ -47,7 +48,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_2
                                if (fs.existsSync(filepath)) {
                                     var fileDirName = path.dirname(filepath)
                                     var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\`, '')
-                                    let dest = `wwwroot/Server/Images/${shortDirName}`
+                                    let dest = `wwwroot/Client/Images/${shortDirName}`
 
                                     fs.mkdir(dest, { recursive: true }, (err) => {
                                         if (err) throw err;
