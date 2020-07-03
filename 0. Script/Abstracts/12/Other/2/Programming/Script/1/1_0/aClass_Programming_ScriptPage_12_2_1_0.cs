@@ -41,14 +41,12 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public Dictionary<string, object> Client  { get; set; }
 
-        public string RequestID { get; set; }
+        #endregion
 
-    #endregion
+        #region 2. Ready
 
-    #region 2. Ready
-
-    //A. Constructor Instantiation
-    public aClass_Programming_ScriptPage_12_2_1_0()
+        //A. Constructor Instantiation
+        public aClass_Programming_ScriptPage_12_2_1_0()
         {
             #region 1. Assign
 

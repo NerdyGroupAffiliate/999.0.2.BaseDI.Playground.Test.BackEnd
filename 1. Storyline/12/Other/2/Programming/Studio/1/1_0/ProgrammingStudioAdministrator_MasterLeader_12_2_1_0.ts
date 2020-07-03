@@ -104,8 +104,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             //#region 4. Action 
-            try
-            {
+            try {
                 //#region FIND REQUEST HANDLER
                 director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = directorOrExperienceResolveBuilder.Action();
 
@@ -114,10 +113,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     const entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
-                    entryPoint.RequestID = requestToResolveName;
-
                     this._requestInspector.EntryPoint = entryPoint;
-
                     this._requestInspector.StorylineDetails = entryPoint.StorylineDetails;
                     this._requestInspector.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
 
@@ -127,8 +123,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 }
                 //#endregion
             }
-            catch (e)
-            {
+            catch (e) {
                 //#region CHECK FOR MISTAKES
                 //#endregion
             }

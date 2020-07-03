@@ -48,6 +48,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_2 {
 
             //#region EXECUTE THE VISION
 
+            this.Step_1_0_Custom_Sense_SystemDisturbances_1_0();
 
             //#endregion
 
@@ -59,7 +60,57 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_2 {
         }
 
         //region THE VISION STEPS
+        private Step_1_0_Custom_Sense_SystemDisturbances_1_0(): void
+        {
+            //#region DESCRIBE THE MEMORIES
 
+            let businessMetaData: string = "";
+            let businessFunctionParameterName: string = "Step_1_0_Custom_Transport_LocalAssetToServer_1_0";
+
+            console.log(businessFunctionParameterName);
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+            businessMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_BusinessFuction", false);
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            switch (businessFunctionParameterName.toLocaleUpperCase()) {
+                case "STEP_1_0_CUSTOM_TRANSPORT_LOCALASSETTOSERVER_1_0":
+                    this.Step_1_0_Custom_Transport_LocalAssetToServer_1_0();
+
+                    break;
+            }
+
+            //#endregion
+
+            //#region REPORT THE FEEDBACK
+
+            //#endregion
+        }
+
+        private Step_1_0_Custom_Transport_LocalAssetToServer_1_0(): void {
+            //#region DESCRIBE THE MEMORIES
+   
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+     
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            Extension_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0.BaseDI.BackEnd.Programming.Extensions_2.Extension_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(this.StorylineDetails);
+
+            //#endregion
+
+            //#region REPORT THE FEEDBACK
+
+            //#endregion
+        }
         //#endregion
 
         //#endregion
