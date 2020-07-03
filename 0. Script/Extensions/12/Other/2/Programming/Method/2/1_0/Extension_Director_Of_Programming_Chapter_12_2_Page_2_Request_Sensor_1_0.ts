@@ -1,5 +1,4 @@
-﻿const objectScan = require('copyfiles');
-const fs = require('fs');
+﻿const fs = require('fs');
 var path = require('path');
 
 
@@ -20,13 +19,11 @@ export namespace BaseDI.BackEnd.Programming.Extensions_2
 
             //#region RECALL THE MEMORIES
 
-            console.dir(storylineDetails)
-
+            
             //#endregion
 
             //#region EXECUTE THE VISION
-            if (process.env.APP_ENV == "SERVER") {
-                var a = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+            var a = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
             
             var SetupItemEnvironmentServerMetaDataPaths = a.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
 
@@ -70,7 +67,6 @@ export namespace BaseDI.BackEnd.Programming.Extensions_2
                 //     console.log(contentItem)
                 // });
             });
-            }
             
 
             //#endregion

@@ -46,6 +46,7 @@
                 attrs.push(`${Object.keys(attributes[attribute])[0]}="${Object.values(attributes[attribute])[0]}"`)
             }
 
+
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -171,11 +172,8 @@
             
             if (process.env.APP_ENV == "SERVER")
             {
-                // console.log(htmlContentString)
                 htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
-                // console.log(htmlContentString)
             }
-
             return htmlContentString;
 
             //#endregion                        
@@ -184,15 +182,17 @@
         public static Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any): string {
             //#region DESCRIBE THE MEMORIES
             let htmlInlineCSSString: string = "";
-            let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
+
+            let cssString = "";
+
+            // let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             // let files = [];
             // filesArray.forEach(file => {
             //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
             // });
             // htmlInlineCSSString = files.join("\n");
-
-            let cssString = "";
+            
             let PropertyArray = [];
             let MediaQueryArray = [];
 
@@ -342,11 +342,8 @@
                 });
                 cssString += `${key} {\n ${innerCss} \n}`;
             });
-
-            // console.log(cssString)
-
             htmlInlineCSSString = `<style>${cssString}</style>`;
-
+            
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -354,6 +351,13 @@
             //#endregion
 
             //#region REPORT THE FEEDBACK
+
+            if (process.env.APP_ENV == "SERVER")
+            {
+                // console.log(htmlContentString)
+                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
+                // console.log(htmlContentString)
+            }
 
             return htmlInlineCSSString;
 
