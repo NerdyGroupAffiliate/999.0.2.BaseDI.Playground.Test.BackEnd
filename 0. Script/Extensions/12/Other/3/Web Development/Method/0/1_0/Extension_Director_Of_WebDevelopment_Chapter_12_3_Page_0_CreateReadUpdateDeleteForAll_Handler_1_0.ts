@@ -183,14 +183,15 @@
             //#region DESCRIBE THE MEMORIES
             let htmlInlineCSSString: string = "";
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
-
             let cssString = "";
 
             // let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             // let files = [];
             // filesArray.forEach(file => {
+            //     // console.log(`${styleFilePathLocal}${file.StyleFileName}`)
             //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
             // });
+            
             // htmlInlineCSSString = files.join("\n");
             
             let PropertyArray = [];
@@ -306,7 +307,7 @@
                         }
                     }
                     else {
-                        console.log("Something wrong in Json file!")
+                        // console.log("Something wrong in Json file!")
                     }
                 });
             });
@@ -354,9 +355,7 @@
 
             if (process.env.APP_ENV == "SERVER")
             {
-                // console.log(htmlContentString)
                 htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
-                // console.log(htmlContentString)
             }
 
             return htmlInlineCSSString;
