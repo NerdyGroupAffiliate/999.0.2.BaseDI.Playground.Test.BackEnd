@@ -10,8 +10,7 @@ import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
 export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
-    export class Page_1_10_End_Process_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0
-    {
+    export class Page_1_10_End_Process_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         //#endregion
 
@@ -25,8 +24,11 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
 
             this.Action = this.Action.bind(this);
 
-            this.Step_1_0_Custom_Transport_ConvertedDataToController_1_0 = this.Step_1_0_Custom_Transport_ConvertedDataToController_1_0.bind(this);
+            this.Step_1_0_Custom_Store_RequestRoutes_1_0 = this.Step_1_0_Custom_Store_RequestRoutes_1_0.bind(this);
+            this.Step_2_0_Custom_Transport_RequestToHandler_1_0 = this.Step_2_0_Custom_Transport_RequestToHandler_1_0.bind(this);
+            this.Step_2_1_Custom_Control_RequestToProcess_1_0 = this.Step_2_1_Custom_Control_RequestToProcess_1_0.bind(this);
 
+            
             //#endregion
 
             //#region 2. Action
@@ -43,78 +45,109 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region 1. Assign
+            //STORE REQUEST ROUTES
+            const requestList = this.Step_1_0_Custom_Store_RequestRoutes_1_0();
 
-            //#endregion
-
-            //#region 2. Action
-
-            this.StorylineDetails = await this.Step_1_0_Custom_Transport_ConvertedDataToController_1_0();
-
-            //#endregion
-
-            //#region 3. Observe
-
-            return this.StorylineDetails;
-
-            //#endregion
+            //TRANSPORT THE REQUEST
+            return this.Step_2_0_Custom_Transport_RequestToHandler_1_0(requestList);
         }
 
-        //#region TRANSPORT THE REQUEST
+        //#region STORE REQUEST ROUTES
+        private Step_1_0_Custom_Store_RequestRoutes_1_0(): Array<string> {
+            const requests: Array<string> = new Array<string>();
 
-        private async Step_1_0_Custom_Transport_ConvertedDataToController_1_0()
-        {
-            //#region 1. Assign
+            const businessLogicMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "key_1", "Request", false);
 
-            let entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+            const businessLogicList: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(businessLogicMetaData, "values_2_2", "", false);
 
-            const requestNameToProcess: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess").toString();
-            const requestNameToProcessParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters").toString();
+            for (var i = 0; i < businessLogicList.values_2_2.length; i++) {
+                const businessLogicItem = businessLogicList.values_2_2[i];
 
-            let handleObservation: any;
-            
-            //#endregion
+                const businessLogicItemCallStackList = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(businessLogicItem, "EventCallStackItems", "", false);
 
-            //#region 2. Action
-
-            //#region Transport
-
-            //CREATE THE PROCESS
-            const Transport = async () =>
-            {
-                //EXECUTE THE PROCESS
-                entryPoint = this.EntryPoint;
-
-                if (entryPoint != null && entryPoint.RequestID != undefined && !entryPoint.RequestID.toUpperCase().includes("REQUEST_CONTROLLER_1_0"))
+                if (businessLogicItemCallStackList.EventCallStackItems != null &&
+                    businessLogicItemCallStackList.EventCallStackItems.length > 0)
                 {
-                    return this.EntryPoint.Action().then(response => {
-                        return response;
-                    });
-                }
-                else
-                {
-                    return handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this.ExtraData))
-                        .SetupStoryline(this.Client, this.StorylineDetails, this.StorylineDetails_Parameters, this.ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
-                        .Action().then(response => {
-                            return response;
-                        });
+                    for (var i2 = 0; i2 < businessLogicItemCallStackList.EventCallStackItems.length; i2++) {
+                        const businessLogicItemCallStackItem = businessLogicItemCallStackList.EventCallStackItems[i2];
+
+                        if (businessLogicItemCallStackItem.Events != null &&
+                            businessLogicItemCallStackItem.Events.length > 0) {
+
+                            let functionsEnabled: boolean = false;
+
+                            for (var i3 = 0; i3 < businessLogicItemCallStackItem.Events.length; i3++) {
+                                const businessLogicItemCallStackItemEvent = businessLogicItemCallStackItem.Events[i3];
+
+                                if (businessLogicItemCallStackItemEvent.functionsEnabled != undefined) {
+                                    if (businessLogicItemCallStackItemEvent.functionsEnabled.toUpperCase() == "TRUE") {
+                                        functionsEnabled = true;
+                                    }
+                                }
+                                else
+                                {
+                                    if (functionsEnabled)
+                                        requests.push(businessLogicItemCallStackItemEvent); 
+                                }
+                            }
+                        }
+                    }
                 }
             }
-
-            //START THE PROCESS
-            handleObservation = await Transport();
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. Observe
-
-            return handleObservation;
-
-            //#endregion
+            
+            return requests;
         }
+        //#endregion
 
+        //#region TRANSPORT THE REQUEST
+        private async Step_2_0_Custom_Transport_RequestToHandler_1_0(requestList: any): Promise<any> {
+            if (requestList != null) {
+                let armTemplateJSONOutput: any = this.StorylineDetails;
+
+                try
+                {
+                    if (this.EntryPoint == null || this.EntryPoint.constructor.name == "Object")
+                    {
+                        requestList.forEach(request => {
+                            const requestName = request.functionName;
+                            let requestParameterName = "";
+
+                            if (request.functionParameters != undefined && request.functionParameters.length > 0) {
+                                requestParameterName = request.functionParameters[0].parameterName;
+                            }
+
+                            if (this.EntryPoint == null || this.EntryPoint.constructor.name == "Object") {
+                                armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this.EntryPoint))
+                                    .SetupStoryline(this.Client, this.StorylineDetails, this.StorylineDetails_Parameters, this.ExtraData, requestName, "", "")
+                                    .Action();
+                            }
+                        });
+                    }
+                    else
+                    {
+                        armTemplateJSONOutput = await this.Step_2_1_Custom_Control_RequestToProcess_1_0(this.EntryPoint);
+                    }
+                }
+                catch (e)
+                {
+                    console.log(e);
+                }
+
+                return armTemplateJSONOutput;
+            }
+        }
+        //#endregion
+
+        //#region CONTROL THE REQUEST
+        private async Step_2_1_Custom_Control_RequestToProcess_1_0(entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0): Promise<any> {
+            let result: object = this.StorylineDetails;
+
+            if (this.EntryPoint != null) {
+                result = await this.EntryPoint.Action();
+            }
+
+            return result;
+        }
         //#endregion
 
         //#endregion

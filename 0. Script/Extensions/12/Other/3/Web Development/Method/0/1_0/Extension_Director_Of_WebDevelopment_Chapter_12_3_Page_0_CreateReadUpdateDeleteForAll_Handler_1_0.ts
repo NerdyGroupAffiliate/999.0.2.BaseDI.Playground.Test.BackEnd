@@ -1,7 +1,4 @@
-﻿import e from "express";
-import { env } from "process";
-
-export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
+﻿export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
     export class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 {
         constructor() {
 
@@ -48,6 +45,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             for (var attribute in attributes) {
                 attrs.push(`${Object.keys(attributes[attribute])[0]}="${Object.values(attributes[attribute])[0]}"`)
             }
+
 
             //#endregion
 
@@ -174,9 +172,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             
             if (process.env.APP_ENV == "SERVER")
             {
-                // console.log(htmlContentString)
                 htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
-                // console.log(htmlContentString)
             }
             return htmlContentString;
 
@@ -187,20 +183,17 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             //#region DESCRIBE THE MEMORIES
             let htmlInlineCSSString: string = "";
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
-
             let cssString = "";
 
-            if (process.env.APP_ENV == "SERVER")
-            {    
-                let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
-                let files = [];
-                filesArray.forEach(file => {
-                    files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
-                });
-                htmlInlineCSSString = files.join("\n");
-            }
-            else {
-               
+            // let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
+            // let files = [];
+            // filesArray.forEach(file => {
+            //     // console.log(`${styleFilePathLocal}${file.StyleFileName}`)
+            //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
+            // });
+            
+            // htmlInlineCSSString = files.join("\n");
+            
             let PropertyArray = [];
             let MediaQueryArray = [];
 
@@ -314,7 +307,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
                         }
                     }
                     else {
-                        console.log("Something wrong in Json file!")
+                        // console.log("Something wrong in Json file!")
                     }
                 });
             });
@@ -350,13 +343,8 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
                 });
                 cssString += `${key} {\n ${innerCss} \n}`;
             });
-
-            }
-            
-            // console.log(cssString)
-
             htmlInlineCSSString = `<style>${cssString}</style>`;
-
+            
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -364,6 +352,11 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             //#endregion
 
             //#region REPORT THE FEEDBACK
+
+            if (process.env.APP_ENV == "SERVER")
+            {
+                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
+            }
 
             return htmlInlineCSSString;
 
