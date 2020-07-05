@@ -1,6 +1,7 @@
 ﻿using BaseDI.BackEnd.Director.Advertising_1;
 using BaseDI.BackEnd.Director.Programming_1;
 using BaseDI.BackEnd.Director.Programming_2;
+using BaseDI.BackEnd.Director.Programming_5;
 using BaseDI.BackEnd.Director.Risk_Management_1;
 using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Extensions_1;
@@ -9,6 +10,7 @@ using BaseDI.BackEnd.Script.Programming_1;
 using BaseDI.BackEnd.State.Advertising_1;
 using BaseDI.BackEnd.State.Programming_1;
 using BaseDI.BackEnd.State.Programming_2;
+using BaseDI.BackEnd.State.Programming_5;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -77,8 +79,8 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                         break;
 
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_SENSOR_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                         break;
                 }
@@ -156,7 +158,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             return director;
         }
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
             #region CHECK FOR MISTAKES
 
@@ -171,7 +173,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             #region ASSIGN REQUEST HANDLER
 
-            Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0();
+            Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0();
 
             director.Client = _client;
 
@@ -191,14 +193,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = _requestName;

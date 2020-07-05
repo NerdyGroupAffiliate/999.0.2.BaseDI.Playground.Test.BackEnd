@@ -41,7 +41,7 @@ module.exports = {
     entry: './BaseDI_1_0.tsx',
     devtool: "source-map",
     output: {
-        path: path.resolve(__dirname, "wwwroot", "Distribution", "Client", "JS"),
+        path: path.resolve(__dirname, "wwwroot", "Client", "JS"),
         libraryTarget: 'var',
         library: 'Client',
         filename: "BaseDI_1_0.js"

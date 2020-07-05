@@ -265,13 +265,13 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                     //    })
                     //);
 
-                    //_server.use(
-                    //    "/images",
-                    //    express.static(serverEnvironmentImagePath, {
-                    //        maxAge: "15d",
-                    //        fallthrough: false
-                    //    })
-                    //);
+                    this._server.use(
+                       "/images",
+                       express.static(serverEnvironmentImagePath, {
+                           maxAge: "15d",
+                           fallthrough: false
+                       })
+                    );
 
                     //_server.use(
                     //    "/scripts",
@@ -288,7 +288,10 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                     //#region OUTPUT THE RESPONSE
                     this._server.get('/favicon.ico', (req, res) => res.status(204));
 
-                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) => {
+                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) =>
+                    {
+                        console.log(controllerName);
+                        console.log(controllerModelDataLocalParameter);
 
                         //#region 1. Assign
                         let armTemplateJSONOutput: any;

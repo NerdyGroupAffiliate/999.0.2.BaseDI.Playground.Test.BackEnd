@@ -10,15 +10,33 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 //1. STORYLINE - CORE FEATURES
 import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
+//4. EXPERIENCES - SHARED FEATURES
+import * as Experience_The_Movement_OfTheAssets_Content_12_2_1_0 from "../../../../../../../../4. Experience/2/Movement/12/Other/2/Programming/Experience/3/1_0/Experience_The_Movement_OfTheAssets_Content_12_2_1_0";
+
 //6. STATE - LOCAL REPOSITORIES
 import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/2/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0";
+import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/3/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
+import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/4/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0";
+import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/5/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0";
+
+import * as LocalFile_Experience_The_Movement_OfTheAssets_Content_12_2_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/6/1_0/LocalFile_Experience_The_Movement_OfTheAssets_Content_12_2_1_0";
 
 //6. STATE - REMOTE REPOSITORIES
-import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/RemoveService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/2/1_0/RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0";
+import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/3/1_0/RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
+import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/4/1_0/RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0";
+import * as RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/5/1_0/RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0";
+
+import * as RemoteService_Experience_The_Movement_OfTheAssets_Content_12_2_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/6/1_0/RemoteService_Experience_The_Movement_OfTheAssets_Content_12_2_1_0";
 
 //7. DIRECTOR - PROPRIETARY FEATURES
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
-import * as Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/2/1_0/Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0";
+import * as Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/2/1_0/Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0";
+import * as Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/3/1_0/Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
+import * as Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/4/1_0/Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0";
+import * as Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/5/1_0/Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0";
 
 export namespace BaseDI.BackEnd.Story.Programming_1 {
     export class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
@@ -88,12 +106,39 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             switch (this._requestName.toUpperCase())
             {
+                //CONTROLLER
                 case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
                     resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
                     break;
-                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_SENSOR_1_0":
-                    resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                //CONVERSION
+                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
+                    resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                //STORAGE
+                case "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0  ":
+                    resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 (storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                //DISTURBANCES
+                case "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 ":
+                    resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                //SENSOR
+                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
+                    resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                    break;
+
+                //TRANSPORT
+                case "EXPERIENCE_THE_MOVEMENT_OFTHEASSETS_CONTENT_12_2_1_0":
+                    resolvedRequest = this.Create_Experience_The_Movement_OfTheAssets_Content_12_2_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
                     break;
             }
@@ -103,6 +148,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         }
 
         //#region Page 1
+
         private Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
@@ -123,7 +169,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             director.MasterStorer = this._centralizedStorer;
             director.MasterDisturber = this._centralizedDisturber;
             director.MasterSensor = this._centralizedSensor;
-
+      
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
 
@@ -139,7 +185,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.RemoveService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -150,11 +196,13 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             return director;
         }
+
         //#endregion
 
         //#region Page 2
 
-        private Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+        private Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object
+        {
             //#region CHECK FOR MISTAKES
 
             const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
@@ -165,7 +213,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0.BaseDI.BackEnd.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0(extraData);
+            let director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.BackEnd.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(extraData);
 
             director.Client = this._client;
 
@@ -183,14 +231,14 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.BackEnd.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.RemoveService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.BackEnd.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -200,6 +248,215 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             return director;
+        }
+
+        //#endregion
+
+        //#region Page 3
+
+        private Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Director.Programming_3.Director_Of_Programming_Chapter_12_2_Page_3_Request_Conversion_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.State.Programming_3.LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.State.Programming_3.RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 4
+
+        private Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.BackEnd.Director.Programming_4.Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.BackEnd.State.Programming_4.LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.BackEnd.State.Programming_4.RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 5
+
+        private Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object
+        {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.BackEnd.Director.Programming_5.Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(extraData);
+
+            director.Client = this._client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = this._centralizedStorer;
+            director.MasterDisturber = this._centralizedDisturber;
+            director.MasterSensor = this._centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.BackEnd.State.Programming_5.LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.BackEnd.State.Programming_5.RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+                    director.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return director;
+        }
+
+        //#endregion
+
+        //#region Page 6
+
+        private Create_Experience_The_Movement_OfTheAssets_Content_12_2_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
+            //#region CHECK FOR MISTAKES
+
+            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+
+            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+
+            //#endregion
+
+            //#region ASSIGN REQUEST HANDLER
+            let experience = new Experience_The_Movement_OfTheAssets_Content_12_2_1_0.BaseDI.BackEnd.Experience.Movement.Programming_3.Experience_The_Movement_OfTheAssets_Content_12_2_1_0(extraData);
+
+            experience.Client = this._client;
+
+            experience.ExtraData = extraData;
+
+            experience.MasterStorer = this._centralizedStorer;
+            experience.MasterDisturber = this._centralizedDisturber;
+            experience.MasterSensor = this._centralizedSensor;
+
+            experience.StorylineDetails = storylineDetails;
+            experience.StorylineDetails_Parameters = storylineDetails_Parameters;
+
+            //#endregion
+
+            //#region ASSIGN LOGIC REPOSITORY
+            switch (repositoryType.toUpperCase()) {
+                case "LOCALFILE":
+                    var localFile = new LocalFile_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.BaseDI.BackEnd.State.Programming_6.LocalFile_Experience_The_Movement_OfTheAssets_Content_12_2_1_0(storylineDetails);
+
+                    experience.Repository = localFile;
+                    experience.Repository.RequestName = this._requestName;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = new RemoteService_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.BaseDI.BackEnd.State.Programming_6.RemoteService_Experience_The_Movement_OfTheAssets_Content_12_2_1_0(storylineDetails);
+
+                    experience.Repository = remoteService;
+                    experience.Repository.RequestName = this._requestName;
+
+                    break;
+            }
+            //#endregion
+
+            return experience;
         }
 
         //#endregion

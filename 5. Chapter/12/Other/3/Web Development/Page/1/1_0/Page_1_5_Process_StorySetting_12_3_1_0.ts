@@ -3,7 +3,7 @@ import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../..
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
-import * as Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/1/1_0/Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
+import * as Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/0/1_0/Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
 
 export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
     export class Page_1_5_Process_StorySetting_12_3_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
@@ -33,9 +33,10 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
         //#endregion
 
         //#region 4. Action
-        public async Action(): Promise<object> {
+        public async Action(): Promise<object>
+        {
             //#region DESCRIBE THE MEMORIES
-            const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
+            const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
 
             let observationItem: String = "";
 
@@ -74,297 +75,29 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
 
             //#region EXECUTE THE VISION
 
-            // htmlResultString = "<h3>Hello World<\/h3>";
-            htmlResultString = this.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
-            htmlResultString = this.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);
-            htmlResultString = this.Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON, htmlResultString);
-            htmlResultString = this.Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON, htmlResultString);
-            htmlResultInlineStylesString = this.Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON);
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON, htmlResultString);
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON, htmlResultString);
 
-            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
+            htmlResultInlineStylesString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON);
 
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Store_HTMLStructureToString_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
 
             observationItem = observationItem.replace('{htmlResult}', escape(htmlResultString))
             const observation = observationItem;
-            // const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResultString)); 
-            //#endregion
-            //#region REPORT THE FEEDBACK
+
             storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation.toString()));
             this.StorylineDetails = storylineDetails;
 
             //#endregion
 
+            //#region REPORT THE FEEDBACK
+
             return await this.StorylineDetails;
+
+            //#endregion
         }
-
-        //#region THE VISION INSTRUCTIONS
-
-        private getAttributes(attributes) {
-            var attrs = [];
-            for (var attribute in attributes) {
-                attrs.push(`${Object.keys(attributes[attribute])[0]}="${Object.values(attributes[attribute])[0]}"`)
-            }
-            return attrs.join(" ");
-        }
-        // private getproperyValues(prop) {
-        //     let values = []
-        //     prop.properyValues.forEach(value => {
-        //         values.push(value + ";")
-        //     });
-        //     return values.join('\n')
-        // }
-
-        public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
-            //#region DESCRIBE THE MEMORIES
-            let htmlContainerString: string = "";
-            htmlContainerString = `<${htmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.getAttributes(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${htmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
-
-
-            //#endregion
-
-            //#region RECALL THE MEMORIES
-
-
-            //#endregion
-
-            return htmlContainerString;
-        }
-
-        public Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON: any, htmlContainerString: string): string {
-            //#region DESCRIBE THE MEMORIES
-            let htmlRowsString: string = "";
-            let rows = [];
-            htmlRowsJSON.value.HTMLContentItems.forEach(row => {
-                rows.push(`<${row.Tag} ${this.getAttributes(row.Attributes)}>{${row.Attributes[0].id}_Replace}</${row.Tag}>`)
-            });
-            htmlRowsString = htmlContainerString.replace("{HTMLRows_Replace}", rows.join("\n"))
-            //#endregion
-            //#region RECALL THE MEMORIES
-
-
-            //#endregion
-
-            return htmlRowsString;
-        }
-
-        public Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON: any, htmlRowsString: string): string {
-            //#region DESCRIBE THE MEMORIES
-            let htmlColumnsString: string = htmlRowsString;
-            //#endregion
-            htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
-                let colItem = `<${col.Tag} ${this.getAttributes(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
-                htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
-            });
-            //#region RECALL THE MEMORIES
-
-
-            //#endregion
-
-            return htmlColumnsString;
-        }
-
-        public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
-            //#region DESCRIBE THE MEMORIES
-            let htmlContentString: string = htmlColumnsString;
-            let idsAndContant = {}
-            htmlContentJSON.value.HTMLContentItems.forEach(con => {
-                if (idsAndContant[con.ParentHTMLContentItemAttributeID] == undefined) {
-                    idsAndContant[con.ParentHTMLContentItemAttributeID] = new Array();
-                    idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.getAttributes(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
-                }
-                else {
-                    idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.getAttributes(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
-                }
-            });
-
-            Object.keys(idsAndContant).forEach(item => {
-                let content = idsAndContant[item].join('\n')
-                htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
-            });
-          
-            //#endregion
-
-            //#region RECALL THE MEMORIES
-
-
-            //#endregion
-
-            return htmlContentString;
-        }
-
-        public Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any): string {
-            //#region DESCRIBE THE MEMORIES
-            let htmlInlineCSSString: string = "";
-            let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
-            let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
-            // let files = [];
-            // filesArray.forEach(file => {
-            //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
-            // });
-            // htmlInlineCSSString = files.join("\n");
-
-            let cssString = "";
-            let PropertyArray = [];
-            let MediaQueryArray = [];
-
-            filesArray.forEach(file => {
-                file.StyleFileUseProperties.forEach(element => {
-                    if (element.IsHtmlTag == "true" && element.properties.length > 0) {
-                        if (element.IsMediaQuery == "true") {
-                            let MediaQueryFeatures = [];
-                            if (element.MediaQuery.type != "") {
-                                MediaQueryFeatures.push(`only ${element.MediaQuery.type}`)
-                            }
-                            element.MediaQuery.features.forEach(feature => {
-                                Object.keys(feature).forEach((featureA, index) => {
-                                    if (Object.keys(feature)[index] == "operator") {
-                                        MediaQueryFeatures.push(Object.values(feature)[index])
-                                    } else {
-                                        MediaQueryFeatures.push(`(${featureA}: ${Object.values(feature)[index]})`)
-                                    }
-                                });
-                            });
-                            element.properties.forEach(prop => {
-                                if (prop.propertyName != "") {
-                                    let values = [];
-                                    if (MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`] === undefined) {
-                                        MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`] = []
-                                        prop.properyValues.forEach(value => {
-                                            values.push(`${value};`)
-                                        });
-                                        MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ propName: `${prop.propertyName}`, values: values })
-                                    } else {
-                                        prop.properyValues.forEach(value => {
-                                            values.push(`${value};`)
-                                        });
-                                        MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ propName: `${prop.propertyName}`, values: values })
-                                    }
-                                }
-                            });
-
-                        } else {
-                            element.properties.forEach(prop => {
-                                if (prop.propertyName != "") {
-                                    if (PropertyArray[`${prop.propertyName}`] === undefined) {
-                                        PropertyArray[`${prop.propertyName}`] = [];
-                                        prop.properyValues.forEach(value => {
-                                            PropertyArray[`${prop.propertyName}`].push(value + ";")
-                                        });
-                                    } else {
-                                        prop.properyValues.forEach(value => {
-                                            PropertyArray[`${prop.propertyName}`].push(value + ";")
-                                        });
-                                    }
-                                }
-                            });
-
-                        }
-                    }
-                    else if (element.IsHtmlTag == "false" && element.properties.length > 0) {
-                        let values = [];
-                        if (element.IsMediaQuery == "true") {
-
-                            let MediaQueryFeatures = [];
-
-                            if (element.MediaQuery.type != "") {
-                                MediaQueryFeatures.push(`only ${element.MediaQuery.type}`)
-                            }
-                            element.MediaQuery.features.forEach(feature => {
-                                Object.keys(feature).forEach((featureA, index) => {
-                                    if (Object.keys(feature)[index] == "operator") {
-                                        MediaQueryFeatures.push(Object.values(feature)[index])
-                                    } else {
-                                        MediaQueryFeatures.push(`(${featureA}: ${Object.values(feature)[index]})`)
-                                    }
-                                });
-                            });
-
-                            element.properties.forEach(prop => {
-                                if (prop.propertyName != "") {
-                                    values.push(`${prop.propertyName} : ${prop.properyValues[0]};`)
-                                }
-                            });
-
-                            if (MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`] === undefined) {
-                                MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`] = []
-                                MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ attributeID: element.attributeID, values: values })
-                            } else {
-                                let updatedItem = MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].find((item) => { return item.attributeID === element.attributeID })
-                                if(updatedItem != undefined) {
-                                    updatedItem.values.push(...values)
-                                } else {
-                                    MediaQueryArray[`@media ${MediaQueryFeatures.join(" ")}`].push({ attributeID: element.attributeID, values: values })
-                                }                            
-                            }
-                        } else {
-                            element.properties.forEach(prop => {
-                                if (prop.propertyName != "") {
-                                    values.push(`${prop.propertyName} : ${prop.properyValues[0]};`)
-                                }
-                            });
-
-                            if (PropertyArray[`${element.attributeID}`] === undefined) {
-                                PropertyArray[`${element.attributeID}`] = [];
-                                PropertyArray[`${element.attributeID}`].push({ attributeID: element.attributeID, values: values })
-                            } else {
-                                // PropertyArray[`${element.attributeID}`].push({ attributeID: element.attributeID, values: values })
-                                PropertyArray[`${element.attributeID}`][0].values.push(...values)
-                            }
-                        }
-                    }
-                    else {
-                        console.log("Something wrong in Json file!")
-                    }
-                });
-            });
-
-            Object.keys(PropertyArray).forEach((key, index) => {
-                let obj = Object.values(PropertyArray)[index];
-                if (obj[0].attributeID === undefined) {
-                    cssString += `${key} { \n ${obj.join("\n")} \n}\n`;
-                } else {
-
-                    if (obj[0].attributeID.includes("#")) {
-                        cssString += `${obj[0].attributeID} { \n ${obj[0].values.join("\n")} \n}\n`;
-                    } else {
-                        cssString += `#${obj[0].attributeID} { \n ${obj[0].values.join("\n")} \n}\n`;
-                    }
-                }
-            });
-
-            Object.keys(MediaQueryArray).forEach((key, index) => {
-                let obj = Object.values(MediaQueryArray)[index];
-                let innerCss = "";
-
-                obj.forEach(element => {
-                    if (element.attributeID === undefined) {
-                        innerCss += `${element.propName} \n { \n ${element.values.join("\n")} \n}\n`;
-                    } else {
-                        if (element.attributeID.includes("#")) {
-                            innerCss += `${element.attributeID} \n { \n ${element.values.join("\n")} \n}\n`;
-                        } else {
-                            innerCss += `#${element.attributeID} \n { \n ${element.values.join("\n")} \n}\n`;
-                        }
-                    }
-                });
-                cssString += `${key} {\n ${innerCss} \n}`;
-            });
-
-            // console.log(cssString)
-
-            htmlInlineCSSString = `<style>${cssString}</style>`;
-
-            //#endregion
-
-            //#region RECALL THE MEMORIES
-
-
-            //#endregion
-
-            return htmlInlineCSSString;
-        }
-
-        //#endregion
 
         //#endregion
     }
