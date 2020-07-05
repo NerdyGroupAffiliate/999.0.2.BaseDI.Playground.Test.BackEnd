@@ -161,7 +161,11 @@
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
             });
 
-            htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
+            if (process.env.APP_ENV == "SERVER") {
+                htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
+
+            }
+
         
             //#endregion
 
