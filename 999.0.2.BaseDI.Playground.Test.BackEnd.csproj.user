@@ -13,22 +13,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="0. Script\Extensions\12\Other\2\Programming\Method\2\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0.ts">
+    <TypeScriptCompile Update="0. Script\Extensions\12\Other\2\Programming\Method\5\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="6. State\12\Other\2\Programming\Repository\3\1_0\RemoteService_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Update="6. State\12\Other\2\Programming\Repository\3\1_0\LocalFile_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Update="0. Script\Extensions\12\Other\2\Programming\Method\3\1_0\Extension_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts">
+    <TypeScriptCompile Update="0. Script\Extensions\12\Other\2\Programming\Method\6\1_0\Extension_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

@@ -46,7 +46,6 @@
                 attrs.push(`${Object.keys(attributes[attribute])[0]}="${Object.values(attributes[attribute])[0]}"`)
             }
 
-
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -169,11 +168,7 @@
             //#endregion
 
             //#region REPORT THE FEEDBACK
-            
-            if (process.env.APP_ENV == "SERVER")
-            {
-                htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
-            }
+
             return htmlContentString;
 
             //#endregion                        
@@ -182,18 +177,15 @@
         public static Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any): string {
             //#region DESCRIBE THE MEMORIES
             let htmlInlineCSSString: string = "";
+            let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
-            let cssString = "";
-
-            // let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             // let files = [];
             // filesArray.forEach(file => {
-            //     // console.log(`${styleFilePathLocal}${file.StyleFileName}`)
             //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
             // });
-            
             // htmlInlineCSSString = files.join("\n");
-            
+
+            let cssString = "";
             let PropertyArray = [];
             let MediaQueryArray = [];
 
@@ -307,7 +299,7 @@
                         }
                     }
                     else {
-                        // console.log("Something wrong in Json file!")
+                        console.log("Something wrong in Json file!")
                     }
                 });
             });
@@ -343,8 +335,11 @@
                 });
                 cssString += `${key} {\n ${innerCss} \n}`;
             });
+
+            // console.log(cssString)
+
             htmlInlineCSSString = `<style>${cssString}</style>`;
-            
+
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -352,11 +347,6 @@
             //#endregion
 
             //#region REPORT THE FEEDBACK
-
-            if (process.env.APP_ENV == "SERVER")
-            {
-                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
-            }
 
             return htmlInlineCSSString;
 

@@ -211,11 +211,15 @@ export namespace BaseDI.BackEnd.Director.Programming_1 {
         //#region 4. Action
 
         //#region EXECUTE LOGIC INSTUCTIONS
-        //Page 1-9
-        public async Action_9_Verify_Process(): Promise<object> {
+        //Page 1-1
+        public async Action_1_Begin_Process(): Promise<object>
+        {
             //region 1. Assign 
-            if (this._entryPoint == null || this._entryPoint.constructor.name == "Object") {
-                var page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_1.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
+            let entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = this._entryPoint;
+
+            if (entryPoint.RequestID == undefined)
+            {
+                var page = new ChapterPage_Page_1_1_Begin_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_1.Page_1_1_Begin_Process_12_2_1_0(this._storylineDetails, this._repository);
 
                 page.Client = this._client;
 
@@ -230,14 +234,15 @@ export namespace BaseDI.BackEnd.Director.Programming_1 {
 
                 //region 2. Action
                 this._storylineDetails = await page.Action();
-            }
 
-            //region 3. Observe
-            return this._storylineDetails;
+                //region 3. Observe
+                return this._storylineDetails;
+            }
         }
 
         //Page 1-10
-        public async Action_10_End_Process(): Promise<object> {
+        public async Action_10_End_Process(): Promise<object>
+        {
             //region 1. Assign 
             var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
 
@@ -256,16 +261,12 @@ export namespace BaseDI.BackEnd.Director.Programming_1 {
             this._storylineDetails = await page.Action();
 
             //region 3. Observe
-            return this._storylineDetails;
+            return this._storylineDetails;       
         }
+
         //#endregion 
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
-
-        //Page 1-1
-        public async Action_1_Begin_Process(): Promise<object> {
-            return this._storylineDetails;
-        }
 
         //Page 1-2
         public async Action_2_Validate_Process(): Promise<object> {
@@ -299,6 +300,11 @@ export namespace BaseDI.BackEnd.Director.Programming_1 {
 
         //Page 1-8
         public async Action_8_Process_CRUD(): Promise<object> {
+            return this._storylineDetails;
+        }
+
+        //Page 1-9
+        public async Action_9_Verify_Process(): Promise<object> {
             return this._storylineDetails;
         }
 
