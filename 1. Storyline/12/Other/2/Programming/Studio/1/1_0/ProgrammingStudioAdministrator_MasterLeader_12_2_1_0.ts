@@ -897,7 +897,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0-P1_0")
+                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0-P1_0")
                 .Action();
         }
 
@@ -1019,7 +1019,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0-P1_0")
+                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturbances_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturbances_Handler_1_0-P1_0")
                 .Action();
         }
 
