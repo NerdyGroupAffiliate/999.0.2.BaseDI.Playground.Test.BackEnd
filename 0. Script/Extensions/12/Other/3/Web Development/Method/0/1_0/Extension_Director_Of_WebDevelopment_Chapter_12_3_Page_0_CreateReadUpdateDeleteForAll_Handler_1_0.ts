@@ -342,8 +342,6 @@
                 cssString += `${key} {\n ${innerCss} \n}`;
             });
 
-            // console.log(cssString)
-
             htmlInlineCSSString = `<style>${cssString}</style>`;
 
             if (process.env.APP_ENV == "SERVER")
