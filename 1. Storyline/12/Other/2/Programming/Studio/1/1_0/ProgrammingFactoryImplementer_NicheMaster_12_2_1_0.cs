@@ -77,7 +77,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             object resolvedRequest = null;
 
-            if (requestType == null && !string.IsNullOrEmpty(requestName))
+            if (!string.IsNullOrEmpty(requestName))
             {
                 switch(requestName.ToUpper(CultureInfo.CurrentCulture))
                 {
