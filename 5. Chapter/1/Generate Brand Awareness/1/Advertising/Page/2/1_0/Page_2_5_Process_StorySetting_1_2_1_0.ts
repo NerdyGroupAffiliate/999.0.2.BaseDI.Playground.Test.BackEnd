@@ -160,7 +160,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
             //#region DESCRIBE THE MEMORIES
             let htmlContentString: string = htmlColumnsString;
-            // console.log(htmlContentJSON)
             let idsAndContant = {}
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
                 if(idsAndContant[con.ParentHTMLContentItemAttributeID] == undefined) {

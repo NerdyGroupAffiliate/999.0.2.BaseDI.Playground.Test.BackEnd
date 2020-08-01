@@ -47,7 +47,6 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
         //#region 4. Action
         public async Action(): Promise<object> {
             //#region 1. Assign
-
             if (this.EntryPoint != null && (this.EntryPoint.Client != undefined && this.EntryPoint.Client != null)) {
                 this.Client = this.EntryPoint.Client;
                 this.MasterLeader = this.EntryPoint.MasterLeader;

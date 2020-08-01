@@ -43,6 +43,10 @@ import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedSc
 import * as state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/13/1_0/State_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.json";
 import * as state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/13/1_0/State_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0.json";
 
+import * as state_director_of_advertising_chapter_1_1_page_2_createwhereapersonbecameawareoftopic_handler_1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/1/Generate Brand Awareness/1/Advertising/Template/2/1_0/State_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.json"
+
+import * as state_director_of_advertising_chapter_1_1_page_2_createwhereapersonbecameawareoftopic_handler_1_0_p1_4_1_1 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/1/Generate Brand Awareness/1/Advertising/Template/2/1_0/State_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0-P1_4_1_1.json"
+
 export namespace BaseDI.BackEnd.State.Programming_2 {
     export class LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>
     {
@@ -90,7 +94,6 @@ export namespace BaseDI.BackEnd.State.Programming_2 {
             if (this.ExtraData.KeyValuePairs.getValue("RequestToProcess")) {
                 requestName = this.ExtraData.KeyValuePairs.getValue("RequestToProcess").toString();
                 requestNameParameters = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters").toString();
-
                 switch (requestName.toUpperCase()) {
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
                         storylineDetails = state_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0;
@@ -127,7 +130,7 @@ export namespace BaseDI.BackEnd.State.Programming_2 {
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_READOPTINSCREENFORALL_HANDLER_1_0":
                         storylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0;
-
+                        
                         switch (requestNameParameters.toUpperCase()) {
                             case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_READOPTINSCREENFORALL_HANDLER_1_0-P1_0":
                                 storylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0_P1_0;
@@ -245,6 +248,18 @@ export namespace BaseDI.BackEnd.State.Programming_2 {
                         }
 
                         break;
+
+                    case "STATE_DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0":
+                        storylineDetails = state_director_of_advertising_chapter_1_1_page_2_createwhereapersonbecameawareoftopic_handler_1_0;
+                        switch (requestNameParameters.toUpperCase()) {
+                            case "State_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0-P1_4_1_1":
+                                    storylineDetails_Parameters = state_director_of_advertising_chapter_1_1_page_2_createwhereapersonbecameawareoftopic_handler_1_0_p1_4_1_1;
+                                break;
+                        }
+                        break;
+                        default:
+                            console.log("Request Name Parameter Not found!") 
+                        break
                 }
             }
 
