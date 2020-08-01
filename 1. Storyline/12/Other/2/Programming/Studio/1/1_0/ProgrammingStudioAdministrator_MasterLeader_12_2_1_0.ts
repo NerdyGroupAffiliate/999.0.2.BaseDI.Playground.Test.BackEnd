@@ -74,6 +74,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this.HandleStoryDefaults = this.HandleStoryDefaults.bind(this);
 
             //region 2. Action
+            this.HandleStoryDefaults();
 
             //region 3. Observe
         }
@@ -116,7 +117,11 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     entryPoint.RequestID = requestToResolveName;
 
+                    this._requestInspector.Client = client;
+
                     this._requestInspector.EntryPoint = entryPoint;
+
+                    this._requestInspector.MasterLeader = entryPoint.MasterLeader;
 
                     this._requestInspector.StorylineDetails = entryPoint.StorylineDetails;
                     this._requestInspector.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
@@ -615,7 +620,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             return new Object();
         }
-
 
         //region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 

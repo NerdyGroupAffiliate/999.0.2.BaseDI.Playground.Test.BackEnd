@@ -92,7 +92,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_1
             {
                 if (EntryPoint == null || !string.IsNullOrEmpty(requestName))
                 {
-                    armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0>()
+                    armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
                       .SetupStoryline(Client, StorylineDetails, StorylineDetails_Parameters, ExtraData, requestName)
                       .Action().Result;
                 }
