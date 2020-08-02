@@ -248,18 +248,6 @@ export namespace BaseDI.BackEnd.State.Programming_2 {
                         }
 
                         break;
-
-                    case "STATE_DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0":
-                        storylineDetails = state_director_of_advertising_chapter_1_1_page_2_createwhereapersonbecameawareoftopic_handler_1_0;
-                        switch (requestNameParameters.toUpperCase()) {
-                            case "State_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0-P1_4_1_1":
-                                    storylineDetails_Parameters = state_director_of_advertising_chapter_1_1_page_2_createwhereapersonbecameawareoftopic_handler_1_0_p1_4_1_1;
-                                break;
-                        }
-                        break;
-                        default:
-                            console.log("Request Name Parameter Not found!") 
-                        break
                 }
             }
 
