@@ -52,6 +52,9 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
             //#endregion
 
+            this.MasterStorer.StorylineDetails = this.StorylineDetails;
+            this.MasterStorer.Action_1_Begin_Process();
+
             //#region EXECUTE THE VISION
             this.Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0();
             this.Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0();

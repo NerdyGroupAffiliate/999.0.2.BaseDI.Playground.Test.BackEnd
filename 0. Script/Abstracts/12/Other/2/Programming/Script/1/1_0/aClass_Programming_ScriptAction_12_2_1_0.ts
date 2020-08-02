@@ -26,6 +26,10 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
 
         public RequestName: String;
 
+        public StorylineDetails: Object;
+
+        public StorylineDetails_Parameters: Object;
+
         //#endregion
 
         //#region 2. Ready
