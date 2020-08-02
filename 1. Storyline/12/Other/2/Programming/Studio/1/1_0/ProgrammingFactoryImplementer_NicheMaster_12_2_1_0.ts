@@ -119,13 +119,13 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                     break;
 
                 //STORAGE
-                case "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0  ":
+                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0  ":
                     resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 (storylineDetails, storylineDetails_Parameters, this._extraData);
 
                     break;
 
                 //DISTURBANCES
-                case "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 ":
+                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0 ":
                     resolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (storylineDetails, storylineDetails_Parameters, this._extraData);
 
                     break;

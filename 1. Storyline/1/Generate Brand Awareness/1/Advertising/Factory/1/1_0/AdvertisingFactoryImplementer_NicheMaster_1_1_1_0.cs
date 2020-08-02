@@ -22,7 +22,7 @@ namespace BaseDI.BackEnd.Story.Advertising_1
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
-    internal class AdvertisingFactoryImplementer_NicheMaster_1_1_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    internal class AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
@@ -47,35 +47,39 @@ namespace BaseDI.BackEnd.Story.Advertising_1
         {
             #region ASSIGN MASTER LEADER
 
-            _client = client;
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
+            _client = client;
 
             _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
             _extraData.KeyValuePairs.Add("APILocationRemote", APILocationRemote);
 
+            _extraData.KeyValuePairs.Add("RequestToProcess", requestToProcess);
+            _extraData.KeyValuePairs.Add("RequestToProcessParameters", requestToProcessParameters);
+
             #endregion
 
             #region ASSIGN REQUEST HANDLER
 
             var requestType = requestToResolve.GetType();
+            object resolvedRequest;
 
             switch (requestType)
             {
                 case Type _ when requestType == typeof(Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0):
-                    StoryRequest resolvedRequest = (StoryRequest)Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    resolvedRequest = Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest;
 
                 case Type _ when requestType == typeof(Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0):
-                    StoryRequest resolvedRequest2 = (StoryRequest)Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    resolvedRequest = Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
-                    return resolvedRequest2;
+                    return resolvedRequest;
                 default:
-                    return default(StoryRequest);
+                    return default(object);
             }
 
             #endregion
@@ -87,7 +91,11 @@ namespace BaseDI.BackEnd.Story.Advertising_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);             
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";        
 
             #endregion
 

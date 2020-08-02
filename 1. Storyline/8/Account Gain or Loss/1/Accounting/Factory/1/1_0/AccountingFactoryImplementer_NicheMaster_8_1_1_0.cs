@@ -11,7 +11,7 @@ namespace BaseDI.BackEnd.Story.Accounting_1
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
-    internal class AccountingFactoryImplementer_NicheMaster_8_1_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    internal class AccountingFactoryImplementer_NicheMaster_8_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
         private object _centralizedStorer;
@@ -72,10 +72,11 @@ namespace BaseDI.BackEnd.Story.Accounting_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion
 
@@ -114,7 +115,7 @@ namespace BaseDI.BackEnd.Story.Accounting_1
 
             #endregion
 
-            return default(StoryRequest);
+            return null;
         }
 
         #endregion

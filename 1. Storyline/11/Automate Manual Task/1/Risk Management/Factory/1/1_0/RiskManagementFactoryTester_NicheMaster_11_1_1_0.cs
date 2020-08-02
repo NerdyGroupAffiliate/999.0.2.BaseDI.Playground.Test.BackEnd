@@ -20,7 +20,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
-    internal class RiskManagementFactoryTester_NicheMaster_11_1_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    internal class RiskManagementFactoryTester_NicheMaster_11_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
@@ -64,15 +64,15 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
             switch (requestType)
             {
                 case Type _ when requestType == typeof(Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0):
-                    var resolvedRequest3 = (StoryRequest)Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    var resolvedRequest3 = Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest3;
                 case Type _ when requestType == typeof(Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0):
-                    var resolvedRequest4 = (StoryRequest)Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    var resolvedRequest4 = Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest4;
                 default:
-                    return default(StoryRequest);
+                    return default;
             }
 
             #endregion
@@ -84,7 +84,11 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion
 
@@ -136,10 +140,11 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion
 

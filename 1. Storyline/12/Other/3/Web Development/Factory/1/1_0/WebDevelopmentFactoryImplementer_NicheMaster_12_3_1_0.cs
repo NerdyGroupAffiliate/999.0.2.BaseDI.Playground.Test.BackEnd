@@ -16,7 +16,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
-    internal class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    internal class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
@@ -64,17 +64,17 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
             switch (requestType)
             {
                 case Type _ when requestType == typeof(Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0):
-                    resolvedRequest = (StoryRequest)Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebDevelopmentForWebsite_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    resolvedRequest = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateWebDevelopmentForWebsite_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest;
 
                 case Type _ when requestType == typeof(Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0):
-                    resolvedRequest = (StoryRequest)Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    resolvedRequest = Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                     return resolvedRequest;
 
                 default:
-                    return default(StoryRequest);
+                    return default(Object);
 
             }
 
@@ -87,10 +87,11 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion
 
@@ -142,12 +143,11 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true, true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = ""; // repositoryMetaData.
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion       
 

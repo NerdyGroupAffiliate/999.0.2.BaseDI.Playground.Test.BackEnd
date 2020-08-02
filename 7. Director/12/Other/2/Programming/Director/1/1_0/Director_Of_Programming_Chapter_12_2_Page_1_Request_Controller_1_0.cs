@@ -22,15 +22,18 @@ namespace BaseDI.BackEnd.Director.Programming_1
 
         //Assign Characters involved in storyline
         private ProgrammingDotNet_Implementer_3_12_1_0 _dotNetDeveloper = null;
+        private ExtraData_12_2_1_0 _extraData;
 
         #endregion
 
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0()
+        public Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData_12_2_1_0 extraData = null)
         {
-            #region 1. Assign            
+            #region 1. Assign    
+            
+            _extraData = extraData;
 
             #endregion
 

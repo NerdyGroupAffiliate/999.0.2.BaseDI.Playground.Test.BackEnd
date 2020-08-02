@@ -72,10 +72,11 @@ namespace BaseDI.BackEnd.Story.Nutrition_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion
 

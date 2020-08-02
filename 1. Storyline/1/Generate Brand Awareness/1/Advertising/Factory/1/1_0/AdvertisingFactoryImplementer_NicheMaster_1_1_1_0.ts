@@ -68,6 +68,9 @@ export namespace BaseDI.BackEnd.Story.Advertising_1
 
             this._extraData.KeyValuePairs.setValue("APILocationRemote", Object.assign(this.APILocationRemote, Object));
 
+            this._extraData.KeyValuePairs.setValue("RequestToProcess", Object.assign(requestToProcess, Object))
+            this._extraData.KeyValuePairs.setValue("RequestToProcessParameters", Object.assign(requestToProcessParameters, Object))
+
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
@@ -161,6 +164,7 @@ export namespace BaseDI.BackEnd.Story.Advertising_1
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
+
             //#endregion 
 
             //#region ASSIGN LOGIC REPOSITORY
