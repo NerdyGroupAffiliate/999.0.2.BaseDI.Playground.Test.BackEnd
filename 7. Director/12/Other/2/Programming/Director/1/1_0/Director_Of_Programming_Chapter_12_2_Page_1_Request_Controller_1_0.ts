@@ -211,6 +211,7 @@ export namespace BaseDI.BackEnd.Director.Programming_1 {
         //#region 4. Action
 
         //#region EXECUTE LOGIC INSTUCTIONS
+
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object>
         {

@@ -8,6 +8,9 @@ export namespace BaseDI.BackEnd {
     export class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test {
         //#region 1. Assign
         private _clientInfo: Object = new Object();
+
+        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+
         private _presentation: any;
 
         private _storylineDetails: object;
@@ -21,8 +24,11 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 2. Ready
-        constructor(presentation: any) {
+        constructor(presentation: any)
+        {
             //#region 1. Assign
+            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
+
             this._presentation = presentation;
 
             this._storylineDetails = new Object();
@@ -79,8 +85,6 @@ export namespace BaseDI.BackEnd {
 
             let outputObservationsPrintOut: string = "";
 
-            let extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
-
             let isProcessComplete: boolean = false;
             let handleObservation: Promise<any>;
 
@@ -88,17 +92,21 @@ export namespace BaseDI.BackEnd {
 
             //#region 2. Action
 
-            try {
+            try
+            {
                 //#region TEST OUR LOGIC
 
                 //#region PROCESS LOGIC UPDATES
-                this.Update_Client = (storylineDetails: object) => {
+                this.Update_Client = (storylineDetails: object, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0) => {
+                    this._extraData = extraData;
                     this._storylineDetails = storylineDetails;
+
+                    return this._storylineDetails;
                 }
 
                 const Action = (output) => {
-                    handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(extraData))
-                        .SetupStoryline(this._clientInfo, null, null, extraData, "", requestNameToProcess, requestNameToProcessParameters)
+                    handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
+                        .SetupStoryline(this._clientInfo, this._storylineDetails, null, this._extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action();
                 }
                 //#endregion

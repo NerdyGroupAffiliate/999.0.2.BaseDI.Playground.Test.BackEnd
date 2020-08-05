@@ -1,37 +1,27 @@
-﻿using BaseDI.BackEnd.Script.Social_Media.Extensions_1;
-using BaseDI.BackEnd.Director.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
+﻿using BaseDI.BackEnd.Director.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Story.Programming_1;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-
 using Newtonsoft.Json.Linq;
-using NUnit.Framework;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-
-using System.Globalization;
-using System.IO;
-using System.Reflection;
 using System.Text;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
+using System.Threading.Tasks;
 
 namespace BaseDI.Playground.Test.BackEnd
 {
-    public static class BaseDI_MiddleWare_Extensions_1_0
+    public static class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test
     {
         public static IApplicationBuilder UseBaseDI(
             this IApplicationBuilder builder)
         {
-            return builder.UseMiddleware<BaseDI_MiddleWare_1_0>();
+            return builder.UseMiddleware<Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test>();
         }
     }
 
-    public class BaseDI_MiddleWare_1_0
+    public class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test
     {
         #region 1. Assign
 
@@ -43,6 +33,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
         private Dictionary<string, object> _clientInfo = new Dictionary<string, object>();
 
+        private ExtraData_12_2_1_0 _extraData;
+
         private readonly RequestDelegate _next;
 
         private object _presentation;
@@ -50,17 +42,19 @@ namespace BaseDI.Playground.Test.BackEnd
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
 
-        public Func<JObject, JObject> Update_Client = null;
+        public Func<JObject, ExtraData_12_2_1_0, JObject> Update_Client = null;
 
         #endregion
 
         #region 2. Ready
 
-        public BaseDI_MiddleWare_1_0(RequestDelegate next)
+        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test(RequestDelegate next)
         {
             #region 1. Assign
 
             //SET WHAT is needed to create the storyline.
+            _extraData = new ExtraData_12_2_1_0();
+
             _presentation = null;
 
             _storylineDetails = new JObject();
@@ -86,7 +80,6 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 3. Set
 
         //A. Default state of story
-        [SetUp]
         public void Setup()
         {
             #region 1. Assign
@@ -120,6 +113,9 @@ namespace BaseDI.Playground.Test.BackEnd
             //    }
             //}
 
+            _storylineDetails = null;
+            _storylineDetails_Parameters = null;
+
             #endregion
 
             #region 3. Observe
@@ -151,7 +147,14 @@ namespace BaseDI.Playground.Test.BackEnd
             List<JToken> outputObservations = null;
             StringBuilder outputObservationsPrintOut = new StringBuilder();
 
-            ExtraData_12_2_1_0 extraData = null;
+            if(!_extraData.KeyValuePairs.ContainsKey("HttpContext"))
+            {
+                _extraData.KeyValuePairs.TryAdd("HttpContext", context);
+            }
+            else
+            {
+                _extraData.KeyValuePairs["HttpContext"] = context;
+            }
 
             #endregion
 
@@ -163,30 +166,21 @@ namespace BaseDI.Playground.Test.BackEnd
 
                 #region PROCESS LOGIC UPDATES
 
-                Update_Client = (JObject storylineDetails) =>
+                Update_Client = (JObject storylineDetails, ExtraData_12_2_1_0 extraData) =>
                 {
-                    armTemplateJSONOutput = storylineDetails;
+                    _extraData = extraData;
+                    _storylineDetails = storylineDetails;
 
-                    return armTemplateJSONOutput;
+                    return _storylineDetails;
                 };
 
                 #endregion
 
                 armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                    .SetupStoryline(_clientInfo, null, null, extraData, "", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
+                    .SetupStoryline(_clientInfo, _storylineDetails, null, _extraData, "", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
                     .Action().Result;
 
                 outputs = armTemplateJSONOutput["outputs"];
-
-                Assert.Pass(outputs.ToString());
-
-                #endregion
-            }
-            catch (SuccessException storySuccess)
-            {
-                #region PRINT OUT SUCCESS
-
-                Console.Write(storySuccess.Message.ToString(CultureInfo.CurrentCulture));
 
                 #endregion
             }
@@ -213,7 +207,7 @@ namespace BaseDI.Playground.Test.BackEnd
             #endregion
 
             #region 3. Observe
-         
+
             await _next(context);
 
             #endregion
