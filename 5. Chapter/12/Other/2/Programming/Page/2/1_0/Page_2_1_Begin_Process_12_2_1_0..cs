@@ -1,10 +1,11 @@
 ﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
 using BaseDI.BackEnd.Script.Programming_1;
-
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_2
     public class Page_2_1_Begin_Process_12_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
         #region 1. Assign
+        public List<JToken> _optionsProfiles = new List<JToken>();
+
 
         //A. Variable Declaration   
 
@@ -28,6 +31,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_2
             //SET WHAT is needed to make this page of the story happen.
             StorylineDetails = storylineDetails;
             Repository = repository;
+
 
             #endregion
 
@@ -49,7 +53,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_2
         #endregion
 
         #region 4. Action
-       
+
 
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
@@ -90,121 +94,133 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_2
         }
 
         //#region STORE JSONSTRING PLACEHOLDER
-        private void Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(Object settingsList)
+        private void Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(JObject settingsList)
         {
-            //if (settingsList)
-            //{
-            //    const options = Object.values(settingsList)
+            if (settingsList != null)
+            {
+                //const options = Object.values(settingsList)
 
-            //    for (const option of options) {
-            //        const optionItem: any = option;
-            //        const optionItemKey: string = optionItem[0];
+                List<JToken> options = new List<JToken>();
 
-            //        if (optionItemKey.toUpperCase().includes("_MAINPROFILE"))
-            //        {
-            //            this._optionsProfiles.push(optionItemKey);
-            //        }
-            //    }
-            //}
+                foreach (var settng in settingsList)
+                {
+                    options.Add(settng.Value);
+                };
+
+                foreach (var option in options)
+                {
+                    var optionItem = option;
+                    var optionItemKey = optionItem[0];
+
+                    if (optionItemKey.ToString().ToUpper().Contains("_MAINPROFILE"))
+                    {
+                        this._optionsProfiles.Add(optionItemKey);
+                    }
+                }
+            }
         }
         //#endregion
 
         //#region CONVERT JSONSTRING PLACEHOLDER
         private void Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0()
         {
-            //if (this._optionsProfiles)
-            //{
-            //    let columnsToUpdate: any = this._optionsProfiles;
-            //    let columnsToUpdateValues: any = new Array();
+            if (this._optionsProfiles.Any())
+            {
+                var columnsToUpdate = this._optionsProfiles;
+                var columnsToUpdateValues = new JObject();
 
-            //    let storylineDetails: any = this.StorylineDetails;
-            //    let storylineDetails_Parameters: any = this.StorylineDetails_Parameters;
+                var storylineDetails = this.StorylineDetails;
+                var storylineDetails_Parameters = this.StorylineDetails_Parameters;
 
-            //    //CREATE OPTIONS SEARCHER
-            //    const Step_3_1_Find_User_Options_1_0 = (columnToUpdate, jsonDataSet, jsonDataSetFilter, commitUpdate, updateValue): any => {
-            //        let result: any;
+                //CREATE OPTIONS SEARCHER
+                JObject Step_3_1_Find_User_Options_1_0(string columnToUpdate, JObject jsonDataSet, string jsonDataSetFilter, bool commitUpdate, UpdateValue updateValue)
+                {
+                    JToken result;
 
-            //        //GET TABLE COLUMNS
-            //        let keyColumns = Object.keys(jsonDataSet).reverse();
-            //        if (jsonDataSetFilter)
-            //            keyColumns = Object.keys(jsonDataSet).filter(key => jsonDataSetFilter.includes(key)).reverse();
+                    //GET TABLE COLUMNS
+                    List<string> keyColumns = new List<string>();
+                    foreach (var dataset in jsonDataSet)
+                    {
+                        keyColumns.Add(dataset.Key);
+                    }
 
-            //        //READ COLUMN INFORMATION
-            //        keyColumns.forEach(function(columnKey) {
-            //            //UPDATE THIS COLUMN
-            //            if (columnKey.toLowerCase() === columnToUpdate.toLowerCase())
-            //            {
-            //                if (commitUpdate)
-            //                {
-            //                    //COMMIT THE UPDATE
-            //                    if (updateValue.value)
-            //                        jsonDataSet[columnKey] = { "value": updateValue.value };
+                    if (jsonDataSetFilter != null)
+                    {
+                        keyColumns = null;
 
-            //                    if (updateValue.defaultValue)
-            //                        jsonDataSet[columnKey] = { "value": updateValue.defaultValue };
-            //                }
-            //                else
-            //                {
-            //                    //YES..UPDATE COLUMN
-            //                    result = jsonDataSet[columnKey];
+                        foreach (var dataSet in jsonDataSet)
+                        {
+                            if (jsonDataSetFilter.Contains(dataSet.Key))
+                            {
+                                keyColumns.Add(dataSet.Key);
+                            }
 
-            //                    //MARK FOR UPDATE
-            //                    columnsToUpdateValues[columnKey] = result;
-            //                }
-            //            }
-            //            else
-            //            {
-            //                //DO CHILDEN EXIST
-            //                if (columnKey != "default")
-            //                {
-            //                    //MAYBE CHILDEN EXIST
-            //                    var columnType = jsonDataSet[columnKey];
+                        }
+                    }
 
-            //                    if (typeof columnType === 'object')
-            //                    {
-            //                        if (!columnKey.toUpperCase().includes("_DOCUMENTATIONPROFILE"))
-            //                        {
-            //                            //CHILDEN DO EXIST
-            //                            Step_3_1_Find_User_Options_1_0(columnToUpdate, jsonDataSet[columnKey], null, commitUpdate, updateValue);
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        });
+                    //READ COLUMN INFORMATION
+                    keyColumns.ForEach(columnKey =>
+                    {
+                        //UPDATE THIS COLUMN
+                        if (columnKey.ToLower() == columnToUpdate.ToLower())
+                        {
+                            if (commitUpdate)
+                            {
+                                //COMMIT THE UPDATE
+                                if (updateValue.value != null)
+                                {
+                                    jsonDataSet[columnKey] = updateValue.value;
+                                }
+                                if (updateValue.defaultValue != null)
+                                {
+                                    jsonDataSet[columnKey] = updateValue.defaultValue;
+                                }
+                            }
+                            else
+                            {
+                                //YES..UPDATE COLUMN
+                                result = jsonDataSet[columnKey];
 
-            //        return columnsToUpdateValues;
-            //    }
+                                //MARK FOR UPDATE
+                                columnsToUpdateValues[columnKey] = result;
 
-            //    //SET SEARCH FILTER
-            //    let filterJSONDataSetBy: any = ['parameters'];
+                            }
+                        }
+                        else
+                        {
+                            //DO CHILDEN EXIST
+                            if (columnKey != "default")
+                            {
+                                //MAYBE CHILDEN EXIST
+                                var columnType = jsonDataSet[columnKey];
 
-            //    //SET SEARCH DATASET                 
-            //    let jsonDataSet: any = storylineDetails; //storylineDetails = C:\Programming\0.3.BaseDI.QuickStart.Templates\2. Data Movement\ARM Templates\12\Other\2\Programming\Template\2\1_0\State_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.json
-            //    if (storylineDetails_Parameters)
-            //    {
-            //        jsonDataSet = storylineDetails_Parameters;
+                                if (columnType.Equals(typeof(JObject)))
+                                {
+                                    if (!columnKey.ToUpper().Contains("_DOCUMENTATIONPROFILE"))
+                                    {
+                                        //CHILDEN DO EXIST
+                                        Step_3_1_Find_User_Options_1_0(columnToUpdate, jsonDataSet, null, commitUpdate, updateValue);
+                                    }
+                                }
+                            }
+                        }
+                    });
 
-            //        filterJSONDataSetBy = null;
-            //    } //storylineDetails_Parameters = C:\Programming\0.3.BaseDI.QuickStart.Templates\2. Data Movement\ARM Templates\12\Other\2\Programming\Template\2\1_0\State_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0-P1_0.json
+                    return columnsToUpdateValues;
+                }
+            }
+            //#endregion
 
-            //    //MEMORIZE CUSTOM OPTIONS
-            //    for (const columnToUpdate of columnsToUpdate) {
-            //        //FIND CUSTOM OPTIONS
-            //        const nodeToUpdateValue: any = Step_3_1_Find_User_Options_1_0(columnToUpdate, jsonDataSet, filterJSONDataSetBy, false, null);
-
-            //        //CHANGE SEARCH FILTER
-            //        filterJSONDataSetBy = ['resources'];
-
-            //        //UPDATE OPTIONS DATASET
-            //        Step_3_1_Find_User_Options_1_0(columnToUpdate, storylineDetails, filterJSONDataSetBy, true, nodeToUpdateValue[columnToUpdate]);
-
-            //        //MEMORIZE CUSTOM OPTIONS
-            //        this.StorylineDetails = storylineDetails; //storylineDetails = CUSTOM OPTIONS
-            //    }
-            //}
+            #endregion
         }
-        //#endregion
 
-        #endregion
+       
+    }
+     public class UpdateValue
+    {
+        public JToken value;
+        internal JToken defaultValue;
     }
 }
+
+   
