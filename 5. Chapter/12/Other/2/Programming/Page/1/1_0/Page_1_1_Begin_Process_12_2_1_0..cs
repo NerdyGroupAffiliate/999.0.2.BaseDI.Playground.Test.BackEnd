@@ -109,7 +109,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_1
 
             #region 3. Observe
 
-            return await handleObservation.StorylineDetails;
+            return handleObservation;
 
             #endregion
         }
