@@ -39,9 +39,11 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_1 {
                     file: imageBuffer, 
                     caption: 'Really nice photo from the internet! 💖', 
                   });
+                  return publishResult;
             })
                 .catch(async err => {
                     console.log("Login Error: ", ig.state.checkpoint); 
+                    return ig.state.checkpoint;
             });
         
             //#endregion
