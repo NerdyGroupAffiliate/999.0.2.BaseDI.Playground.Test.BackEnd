@@ -306,6 +306,10 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                         let isProcessComplete: boolean = false;
                         let handleObservation: Promise<any>;
 
+                        extraData.KeyValuePairs.setValue("Request", Object.assign(req, Object));
+                        extraData.KeyValuePairs.setValue("Response", Object.assign(res, Object));
+                        extraData.KeyValuePairs.setValue("Server", Object.assign(this._server, Object));
+
                         //#endregion
 
                         //#region 2. Action
