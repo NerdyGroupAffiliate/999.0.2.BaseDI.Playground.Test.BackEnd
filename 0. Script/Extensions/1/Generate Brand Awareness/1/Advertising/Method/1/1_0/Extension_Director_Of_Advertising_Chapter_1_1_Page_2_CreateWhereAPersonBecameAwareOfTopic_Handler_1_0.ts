@@ -41,10 +41,6 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_1 {
                         url: "https://picsum.photos/800/800",
                         encoding: null,
                     });
-                    ig.state.checkpoint = JSON.parse(
-                        fs.readFileSync(`./${accout.username}.json`)
-                    );
-
                     ig.account
                         .login(accout.username, accout.password)
                         .then(async (auth) => {
