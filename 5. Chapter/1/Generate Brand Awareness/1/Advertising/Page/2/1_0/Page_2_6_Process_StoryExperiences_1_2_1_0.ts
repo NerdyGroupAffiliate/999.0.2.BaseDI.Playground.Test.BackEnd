@@ -88,10 +88,10 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         public Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0(): any {
             var controlContent = Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToFacebook_1_0(null);
+            return controlContent;
         }
 
         public Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram(): any {
-
         }
 
         public Step_1_2_Custom_Output_AwarenessGeneratedForDay1_1_0_Facebook(): any {
@@ -115,7 +115,9 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#region Day 2
 
         public Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0(): any {
-
+            var controlContent = Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToInstagram_1_0(null);
+            
+            console.log(controlContent)
         }
 
         public Step_2_1_Custom_Output_AwarenessGeneratedForDay2_1_0_Instagram(): any {
