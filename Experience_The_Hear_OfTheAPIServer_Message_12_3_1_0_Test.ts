@@ -67,9 +67,9 @@ export namespace BaseDI.BackEnd {
         //#region 4. Action
         public Action(unitTestName: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "")
         {
-            console.log(unitTestName);
-            console.log(requestNameToProcess);
-            console.log(requestNameToProcessParameters);
+            // console.log(unitTestName);
+            // console.log(requestNameToProcess);
+            // console.log(requestNameToProcessParameters);
 
             //#region 1. Assign
             let armTemplateJSONOutput: any;
@@ -109,7 +109,7 @@ export namespace BaseDI.BackEnd {
             }
             catch (storyMistake) {
                 //#region PRINT OUT MISTAKES
-                console.log(storyMistake);
+                // console.log(storyMistake);
                 //#endregion
             }
 
@@ -128,7 +128,7 @@ export namespace BaseDI.BackEnd {
 
                 const result: string = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
 
-                console.log(result);
+                // console.log(result);
 
             })
 
