@@ -35,15 +35,13 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_1 {
 
             ig.state.generateDevice(accout.username);
             ig.state.proxyUrl = "";
+
             (async () => {
                 try {
                     const imageBuffer = await get({
                         url: "https://picsum.photos/800/800",
                         encoding: null,
                     });
-                    ig.state.checkpoint = JSON.parse(
-                        fs.readFileSync(`./${accout.username}.json`)
-                    );
 
                     ig.account
                         .login(accout.username, accout.password)

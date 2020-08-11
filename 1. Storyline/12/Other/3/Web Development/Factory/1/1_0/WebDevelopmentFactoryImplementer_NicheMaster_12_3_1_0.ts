@@ -247,14 +247,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_1.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_1.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
