@@ -4,6 +4,8 @@ import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../..
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 import * as Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../0. Script/Extensions/1/Generate Brand Awareness/1/Advertising/Method/1/1_0/Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0";
 
+import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
+
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
@@ -16,13 +18,13 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign
             this.StorylineDetails = storylineDetails;
             this.Repository = repository;
-
+            this.ExtraData = extraData;
             this.Action = this.Action.bind(this);
             //#endregion
 
@@ -56,20 +58,20 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
             this.MasterStorer.Action_1_Begin_Process();
             
             //#region EXECUTE THE VISION
-            this.Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0();
-            this.Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0();
-            this.Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0();
-            this.Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0();
-            this.Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0();
-            this.Step_6_0_Custom_Output_AwarenessGeneratedForDay6_1_0();
-            this.Step_7_0_Custom_Output_AwarenessGeneratedForDay7_1_0();
-            this.Step_8_0_Custom_Output_AwarenessGeneratedForDay8_1_0();
-            this.Step_9_0_Custom_Output_AwarenessGeneratedForDay9_1_0();
-            this.Step_10_0_Custom_Output_AwarenessGeneratedForDay10_1_0();
-            this.Step_11_0_Custom_Output_AwarenessGeneratedForDay11_1_0();
-            this.Step_12_0_Custom_Output_AwarenessGeneratedForDay12_1_0();
-            this.Step_13_0_Custom_Output_AwarenessGeneratedForDay13_1_0();
-            this.Step_14_0_Custom_Output_AwarenessGeneratedForDay14_1_0();
+            this.Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_6_0_Custom_Output_AwarenessGeneratedForDay6_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_7_0_Custom_Output_AwarenessGeneratedForDay7_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_8_0_Custom_Output_AwarenessGeneratedForDay8_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_9_0_Custom_Output_AwarenessGeneratedForDay9_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_10_0_Custom_Output_AwarenessGeneratedForDay10_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_11_0_Custom_Output_AwarenessGeneratedForDay11_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_12_0_Custom_Output_AwarenessGeneratedForDay12_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_13_0_Custom_Output_AwarenessGeneratedForDay13_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_14_0_Custom_Output_AwarenessGeneratedForDay14_1_0(this.StorylineDetails, this.ExtraData);
 
             //#endregion
 
@@ -86,10 +88,8 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 1
 
-        public Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0(): any {
-            var controlContent = Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToFacebook_1_0(null);
-            return controlContent;
-        }
+        public Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0(storylineDetails, extraData): any {
+            var controlContent = Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToFacebook_1_0(storylineDetails);        }
 
         public Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram(): any {
         }
@@ -114,10 +114,16 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 2
 
-        public Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0(): any {
-            var controlContent = Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToInstagram_1_0(null);
-            
-            console.log(controlContent)
+        public async Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0(storylineDetails, extraData) {
+            const response: any = extraData.KeyValuePairs.getValue("Response");
+
+            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0
+            .Step_1_0_Custom_Transport_ContentToInstagram_1_0(storylineDetails).then((data) => {
+                // console.log(data)
+                response.json({message: "Instagram Publish Done!" });
+            }).catch((err) => {
+                response.json({"error": err})
+            });
         }
 
         public Step_2_1_Custom_Output_AwarenessGeneratedForDay2_1_0_Instagram(): any {
@@ -144,7 +150,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 3
 
-        public Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0(): any {
+        public Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -172,7 +178,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 4
 
-        public Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0(): any {
+        public Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -200,7 +206,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 5
 
-        public Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0(): any {
+        public Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -228,7 +234,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 6
 
-        public Step_6_0_Custom_Output_AwarenessGeneratedForDay6_1_0(): any {
+        public Step_6_0_Custom_Output_AwarenessGeneratedForDay6_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -256,7 +262,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 7
 
-        public Step_7_0_Custom_Output_AwarenessGeneratedForDay7_1_0(): any {
+        public Step_7_0_Custom_Output_AwarenessGeneratedForDay7_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -284,7 +290,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 8
 
-        public Step_8_0_Custom_Output_AwarenessGeneratedForDay8_1_0(): any {
+        public Step_8_0_Custom_Output_AwarenessGeneratedForDay8_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -312,7 +318,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 9
 
-        public Step_9_0_Custom_Output_AwarenessGeneratedForDay9_1_0(): any {
+        public Step_9_0_Custom_Output_AwarenessGeneratedForDay9_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -340,7 +346,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 10
 
-        public Step_10_0_Custom_Output_AwarenessGeneratedForDay10_1_0(): any {
+        public Step_10_0_Custom_Output_AwarenessGeneratedForDay10_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -368,7 +374,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 11
 
-        public Step_11_0_Custom_Output_AwarenessGeneratedForDay11_1_0(): any {
+        public Step_11_0_Custom_Output_AwarenessGeneratedForDay11_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -396,7 +402,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 12
 
-        public Step_12_0_Custom_Output_AwarenessGeneratedForDay12_1_0(): any {
+        public Step_12_0_Custom_Output_AwarenessGeneratedForDay12_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -424,7 +430,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 13
 
-        public Step_13_0_Custom_Output_AwarenessGeneratedForDay13_1_0(): any {
+        public Step_13_0_Custom_Output_AwarenessGeneratedForDay13_1_0(storylineDetails, extraData): any {
 
         }
 
@@ -452,7 +458,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 14
 
-        public Step_14_0_Custom_Output_AwarenessGeneratedForDay14_1_0(): any {
+        public Step_14_0_Custom_Output_AwarenessGeneratedForDay14_1_0(storylineDetails, extraData): any {
 
         }
 
