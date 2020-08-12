@@ -10,7 +10,7 @@ import inquirer = require("inquirer");
 
 const fs = require("fs");
 
-export namespace BaseDI.BackEnd.Advertising.Extensions_1 {
+export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
     export class Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 {
         constructor() { }
 

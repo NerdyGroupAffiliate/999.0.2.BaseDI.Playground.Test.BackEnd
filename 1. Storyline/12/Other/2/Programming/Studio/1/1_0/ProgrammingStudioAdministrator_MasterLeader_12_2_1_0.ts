@@ -82,8 +82,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
         //#region 3. Set
         private HandleStoryDefaults() {
-            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
-            this._extraData.MasterLeader = this;
+
         }
         //#endregion
 
@@ -92,8 +91,8 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#region 1. Assign
             let director_Of_Programming_Chapter_12_2_Page_1_Request_Handler: any;
 
-            if (extraData != null)
-                this._extraData = extraData;
+            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
+            this._extraData.MasterLeader = this;
 
             //#endregion
 
@@ -279,7 +278,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             //#region DECIDE DIRECTOR REQUEST
             if (this._requestName.toUpperCase().includes("DIRECTOR_OF_")) {
-                console.log(this._storylineDetails)
                 const pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName, this._requestToProcess, this._requestToProcessParameters);
 
                 return pickDirector.Action_1_Begin_Process();

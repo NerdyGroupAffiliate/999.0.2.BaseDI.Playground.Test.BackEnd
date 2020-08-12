@@ -2,7 +2,7 @@
 import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
-import * as Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../0. Script/Extensions/1/Generate Brand Awareness/1/Advertising/Method/1/1_0/Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0";
+import * as Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../0. Script/Extensions/1/Generate Brand Awareness/1/Advertising/Method/2/1_0/Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0";
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
@@ -15,17 +15,21 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         private _jsonAccountInformation: any = null;
         private _jsonSearchInformation: any = null;
 
+        private _request: any = null;
+        private _response: any = null;
+
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign
             this.StorylineDetails = storylineDetails;
             this.Repository = repository;
-            this.ExtraData = extraData;
+
             this.Action = this.Action.bind(this);
+
             //#endregion
 
             //#region 2. Action
@@ -37,6 +41,10 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#endregion
 
         //#region 3. Set
+        private HandleDefaults(): void {
+            this._request = this.Client.Request;
+            this._response = this.Client.Response;
+        }
         //#endregion
 
         //#region 4. Action
@@ -49,6 +57,8 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
             //#region RECALL THE MEMORIES
 
+            this.HandleDefaults();
+
             this._jsonAccountInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "AccountItem_SetSeller_Business_Management_AccountLookUp", false);
             this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
 
@@ -58,8 +68,8 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
             this.MasterStorer.Action_1_Begin_Process();
             
             //#region EXECUTE THE VISION
-            this.Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0(this.StorylineDetails, this.ExtraData);
-            this.Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0(this.StorylineDetails, this.ExtraData);
+            this.Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0();
+            this.Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0();
             this.Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0(this.StorylineDetails, this.ExtraData);
             this.Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0(this.StorylineDetails, this.ExtraData);
             this.Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0(this.StorylineDetails, this.ExtraData);
@@ -88,10 +98,20 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 1
 
-        public Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0(storylineDetails, extraData): any {
-            var controlContent = Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToFacebook_1_0(storylineDetails);        }
+        public async Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0() {
+            await this.Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram();
+        }
 
-        public Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram(): any {
+        public async Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram()
+        {
+            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToInstagram_1_0(this.StorylineDetails).then((data) =>
+            {
+                console.log(this._response);
+
+                this._response.json({ message: "Instagram Publish Done!" });
+            }).catch((err) => {
+                this._response.json({ "error": err })
+            });
         }
 
         public Step_1_2_Custom_Output_AwarenessGeneratedForDay1_1_0_Facebook(): any {
@@ -114,16 +134,8 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 2
 
-        public async Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0(storylineDetails, extraData) {
-            const response: any = extraData.KeyValuePairs.getValue("Response");
+        public async Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0() {
 
-            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0
-            .Step_1_0_Custom_Transport_ContentToInstagram_1_0(storylineDetails).then((data) => {
-                // console.log(data)
-                response.json({message: "Instagram Publish Done!" });
-            }).catch((err) => {
-                response.json({"error": err})
-            });
         }
 
         public Step_2_1_Custom_Output_AwarenessGeneratedForDay2_1_0_Instagram(): any {

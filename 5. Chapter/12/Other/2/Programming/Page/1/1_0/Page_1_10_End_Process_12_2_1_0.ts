@@ -72,7 +72,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
             const requestNameToProcessParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters").toString();
 
             let handleObservation: any;
-            
+
             //#endregion
 
             //#region 2. Action

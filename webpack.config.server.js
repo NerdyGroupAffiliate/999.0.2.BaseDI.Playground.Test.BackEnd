@@ -26,9 +26,6 @@ const nodeWhiteList = {
 };
 
 let exclude = [path.resolve(__dirname, "wwwroot")];
-console.log("Hello Mark");
-
-console.log(path.resolve(__dirname, "tsconfig.server.json"));
   
 const plugins = [
     new webpack.NamedModulesPlugin(),
