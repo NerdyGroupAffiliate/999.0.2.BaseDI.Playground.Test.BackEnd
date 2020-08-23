@@ -22,6 +22,11 @@ namespace BaseDI.Playground.Test.BackEnd
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseBaseDI();
+
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
         }
     }
 }

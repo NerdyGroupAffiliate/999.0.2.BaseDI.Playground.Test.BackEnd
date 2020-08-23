@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace BaseDI.Playground.Test.BackEnd
         private string _baseDIArmTemplateSchemaParameters = "";
         private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0-P.json";
 
-        private Dictionary<string, object> _clientInfo = new Dictionary<string, object>();
+        private Dictionary<string, object> _clientInfo;
 
         private ExtraData_12_2_1_0 _extraData;
 
@@ -83,11 +84,6 @@ namespace BaseDI.Playground.Test.BackEnd
         public void Setup()
         {
             #region 1. Assign
-
-            //SETUP CLIENT INFO
-            _clientInfo.Add("presentation_experience", _presentation);
-            _clientInfo.Add("presentation_director", this);
-            _clientInfo.Add("httpContext", _next);
 
             #endregion
 
@@ -147,14 +143,15 @@ namespace BaseDI.Playground.Test.BackEnd
             List<JToken> outputObservations = null;
             StringBuilder outputObservationsPrintOut = new StringBuilder();
 
-            if(!_extraData.KeyValuePairs.ContainsKey("HttpContext"))
-            {
-                _extraData.KeyValuePairs.TryAdd("HttpContext", context);
-            }
-            else
-            {
-                _extraData.KeyValuePairs["HttpContext"] = context;
-            }
+            _clientInfo = new Dictionary<string, object>();
+
+            //SETUP CLIENT INFO
+            _clientInfo.Add("content", context);
+
+            _clientInfo.Add("presentation_experience", _presentation);
+            _clientInfo.Add("presentation_director", this);
+
+            var originBody = context.Response.Body;
 
             #endregion
 
@@ -180,11 +177,14 @@ namespace BaseDI.Playground.Test.BackEnd
                     .SetupStoryline(_clientInfo, _storylineDetails, null, _extraData, "", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
                     .Action().Result;
 
-                outputs = armTemplateJSONOutput["outputs"];
+                if(armTemplateJSONOutput != null)
+                {
+                    outputs = armTemplateJSONOutput["outputs"];                  
+                }
 
                 #endregion
             }
-            catch
+            catch(Exception ex)
             {
                 #region PRINT OUT MISTAKES
 

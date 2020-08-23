@@ -88,7 +88,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         //A. Story in motion (DO SOMETHING)
 
-        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string requestToResolveName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string controlHandlerName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region 1. Assign  
 
@@ -101,7 +101,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             #region 2. Ready
 
-            Use_DesignPattern_Builder_Chapter_12_2_1_0 directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, _requestInspector, _extraData, requestToResolveName, requestToProcess, requestToProcessParameters);
+            Use_DesignPattern_Builder_Chapter_12_2_1_0 directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, _requestInspector, _extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
 
             #endregion
 
@@ -117,24 +117,20 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                 director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = directorOrExperienceResolveBuilder.Action();
 
-                if (_requestInspector.GetType() != director_Of_Programming_Chapter_12_2_Page_1_Request_Handler.GetType())
+                if (controlHandlerName != "")
                 {
                     #region REQUEST HANDLER FOUND
 
-                    var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
+                    var controller = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
-                    entryPoint.RequestID = requestToResolveName;
+                    controller.RequestID = controlHandlerName;
+                    controller.Client = client;
 
-                    _requestInspector.Client = client;
+                    controller.ExtraData = _extraData;
 
-                    _requestInspector.EntryPoint = entryPoint;
+                    controller.EntryPoint = _requestInspector;
 
-                    _requestInspector.MasterLeader = entryPoint.MasterLeader;
-
-                    _requestInspector.StorylineDetails = entryPoint.StorylineDetails;
-                    _requestInspector.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
-
-                    director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = _requestInspector;
+                    director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = controller;
 
                     #endregion
                 }
@@ -461,7 +457,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PROGRAMMING"))
             {
                 #region 12. Other
-
+                
                 ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(_extraData);
 
                 createDirector.APILocationLocalDotNetCore = "http://localhost:8912/api/basedi/io/programming";

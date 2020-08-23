@@ -75,7 +75,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
                 MasterTransporter = EntryPoint.MasterTransporter;
                 ExtraData = EntryPoint.ExtraData;
             }
-
+        
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
             Use_DesignPattern_Builder_Chapter_12_2_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(Client, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
@@ -253,37 +253,32 @@ namespace BaseDI.BackEnd.Director.Programming_1
 
         public override async Task<JObject> Action_1_Begin_Process()
         {
-            aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = _entryPoint;
+            #region 1. Assign          
 
-            if(entryPoint == null || string.IsNullOrEmpty(entryPoint.RequestID))
-            {
-                #region 1. Assign          
+            var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
 
-                var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
+            page.Client = _client;
 
-                page.Client = _client;
+            page.EntryPoint = _entryPoint;
+            page.ExtraData = _extraData;
 
-                page.EntryPoint = _entryPoint;
-                page.ExtraData = _extraData;
+            page.MasterStorer = _centralizedStorer;
+            page.MasterDisturber = _centralizedDisturber;
+            page.MasterSensor = _centralizedSensor;
 
-                page.MasterStorer = _centralizedStorer;
-                page.MasterDisturber = _centralizedDisturber;
-                page.MasterSensor = _centralizedSensor;
+            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
-                page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+            #endregion
 
-                #endregion
+            #region 2. Action              
 
-                #region 2. Action              
+            _storylineDetails = await page.Action().ConfigureAwait(true);
 
-                _storylineDetails = await page.Action().ConfigureAwait(true);
+            #endregion
 
-                #endregion
+            #region 3. Observe                      
 
-                #region 3. Observe                      
-
-                #endregion
-            }
+            #endregion
 
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }

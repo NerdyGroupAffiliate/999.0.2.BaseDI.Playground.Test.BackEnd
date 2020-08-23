@@ -25,11 +25,16 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
             return new Promise(async (resolve, reject) => {
                 console.log("instagram task started!");
 
+                //const account = {
+                //    username: "basedi.instagram.generatebrandawareness.1@basedi.io",
+                //    password: "TestTech99!@",
+                //};
+
                 const account = {
-                    username: "basedi.instagram.generatebrandawareness.1@basedi.io",
-                    password: "TestTech99!@",
+                    username: "thephantom1979@gmail.com",
+                    password: "RichTech99!@",
                 };
-    
+
                 // const account ={ username: "kishorgujar95@gmail.com", password: "iCAuP7RXeyUPV9p" }
                 const ig = new IgApiClient();
     

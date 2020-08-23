@@ -99,17 +99,21 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#region Day 1
 
         public async Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0() {
-            await this.Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram();
+            this.Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram();
         }
 
         public async Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram()
         {
             Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToInstagram_1_0(this.StorylineDetails).then((data) =>
             {
-                console.log(this._response);
-
                 this._response.json({ message: "Instagram Publish Done!" });
+
+                console.log(data);
             }).catch((err) => {
+
+                console.log("Error");
+                console.log(err);
+
                 this._response.json({ "error": err })
             });
         }
