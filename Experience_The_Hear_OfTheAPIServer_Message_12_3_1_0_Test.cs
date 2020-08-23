@@ -3,26 +3,19 @@ using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Story.Programming_1;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BaseDI.Playground.Test.BackEnd
 {
-    public static class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test
-    {
-        public static IApplicationBuilder UseBaseDI(
-            this IApplicationBuilder builder)
-        {
-            return builder.UseMiddleware<Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test>();
-        }
-    }
-
-    public class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test
+    public class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_TestController : ControllerBase
     {
         #region 1. Assign
 
@@ -36,8 +29,6 @@ namespace BaseDI.Playground.Test.BackEnd
 
         private ExtraData_12_2_1_0 _extraData;
 
-        private readonly RequestDelegate _next;
-
         private object _presentation;
 
         private JObject _storylineDetails;
@@ -49,7 +40,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 2. Ready
 
-        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test(RequestDelegate next)
+        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_TestController()
         {
             #region 1. Assign
 
@@ -60,8 +51,6 @@ namespace BaseDI.Playground.Test.BackEnd
 
             _storylineDetails = new JObject();
             _storylineDetails_Parameters = new JObject();
-
-            _next = next;
 
             #endregion
 
@@ -133,7 +122,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 4. Action
 
-        public async Task InvokeAsync(HttpContext context)
+        [Route("")]
+        public async Task<IActionResult> Action()
         {
             #region 1. Assign        
 
@@ -146,12 +136,8 @@ namespace BaseDI.Playground.Test.BackEnd
             _clientInfo = new Dictionary<string, object>();
 
             //SETUP CLIENT INFO
-            _clientInfo.Add("content", context);
-
             _clientInfo.Add("presentation_experience", _presentation);
             _clientInfo.Add("presentation_director", this);
-
-            var originBody = context.Response.Body;
 
             #endregion
 
@@ -179,7 +165,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
                 if(armTemplateJSONOutput != null)
                 {
-                    outputs = armTemplateJSONOutput["outputs"];                  
+                    outputs = armTemplateJSONOutput["outputs"];
                 }
 
                 #endregion
@@ -208,7 +194,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. Observe
 
-            await _next(context);
+            return Ok(armTemplateJSONOutput.ToString());
 
             #endregion
         }
