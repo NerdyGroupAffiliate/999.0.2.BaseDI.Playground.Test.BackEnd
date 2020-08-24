@@ -1,16 +1,14 @@
 ﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
-
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.State.Web_Development_2
+namespace BaseDI.BackEnd.State.Web_Development_1
 {
-    public class LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>, IContract_Programming_Repository_12_2_1_0
+    public class RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>, IContract_Programming_Repository_12_2_1_0
     {
         #region 1. Assign
 
@@ -22,7 +20,7 @@ namespace BaseDI.BackEnd.State.Web_Development_2
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(JObject storylineDetails)
+        public RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(JObject storylineDetails)
         {
             #region 1. Assign            
 

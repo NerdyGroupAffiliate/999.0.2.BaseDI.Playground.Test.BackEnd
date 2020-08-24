@@ -45,10 +45,10 @@ namespace BaseDI.BackEnd.Story.Personal_Training_3
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _extraData.KeyValuePairs.Add("APILocationRemote", APILocationRemote);
+            _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
             #endregion
 

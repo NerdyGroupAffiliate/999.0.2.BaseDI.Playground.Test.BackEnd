@@ -61,13 +61,13 @@ namespace BaseDI.BackEnd.Story.Programming_1
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _extraData.KeyValuePairs.Add("APILocationRemote", APILocationRemote);
+            _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
-            _extraData.KeyValuePairs.Add("RequestToProcess", requestToProcess);
-            _extraData.KeyValuePairs.Add("RequestToProcessParameters", requestToProcessParameters);
+            _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
+            _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
             #endregion
 
@@ -89,7 +89,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     //CONVERSION
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
                         break;
 
@@ -143,7 +143,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
             string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (string.IsNullOrEmpty(repositoryType)) repositoryType = "LOCALFILE";
 
             #endregion         
 

@@ -179,7 +179,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
         //#region 3. Set
         private HandleChapterDefaults() {
-            this._serverInfo = { "server_director": this }
+            
         }
         //#endregion
 
@@ -191,13 +191,9 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         public async Action_1_Begin_Process(): Promise<object> {
             try
             {
-                console.log("Hello Mark 1");
-
                 //#region COMMUNICATION TO SERVER
                 if (process.env.APP_ENV == "SERVER")
                 {
-                    console.log("Hello Mark 2");
-
                     //#region MEMORIZE SERVER OPTIONS
 
                     const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
@@ -214,12 +210,6 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                     const serverEnvironmentScriptPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
 
                     const serverEnvironmentServerRoutesGET: Array<any> = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
-
-                    //#endregion
-
-                    //#region HANDLE THE DEFAULTS
-
-                    this.HandleChapterDefaults();
 
                     //#endregion
 
@@ -290,9 +280,6 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                     const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) =>
                     {
-                        console.log(controllerName);
-                        console.log(controllerModelDataLocalParameter);
-
                         //#region 1. Assign
                         let armTemplateJSONOutput: any;
 
@@ -306,9 +293,12 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                         let isProcessComplete: boolean = false;
                         let handleObservation: Promise<any>;
 
-                        extraData.KeyValuePairs.setValue("Request", Object.assign(req, Object));
-                        extraData.KeyValuePairs.setValue("Response", Object.assign(res, Object));
-                        extraData.KeyValuePairs.setValue("Server", Object.assign(this._server, Object));
+                        this._serverInfo = {
+                            "server_director": this,
+                            "Request": Object.assign(req, Object),
+                            "Response": Object.assign(res, Object),
+                            "Server": Object.assign(this._server, Object)
+                        }
 
                         //#endregion
 
@@ -369,8 +359,8 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                                 if (controllerRoutes.length > 0) {
                                     controllerRoutes.map(route => {
-                                        console.log("route =");
-                                        console.log(route);
+                                        //console.log("route =");
+                                        //console.log(route);
 
                                         this._server.get(route, (req: any, res: any) => {
                                             Step_2_0_Custom_Output_ServerRequestToClient_1_0(route, controllerName, controllerModelDataLocalObject, controllerModelDataLocalParameter, controllerModelDataRemote, req, res);

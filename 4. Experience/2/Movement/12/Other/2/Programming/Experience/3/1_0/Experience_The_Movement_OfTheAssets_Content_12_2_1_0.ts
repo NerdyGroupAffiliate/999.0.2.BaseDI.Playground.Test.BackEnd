@@ -188,7 +188,6 @@ export namespace BaseDI.BackEnd.Experience.Movement.Programming_3 {
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object> {
-            console.log("hsahsahashasha");
             return this._storylineDetails;
         }
 

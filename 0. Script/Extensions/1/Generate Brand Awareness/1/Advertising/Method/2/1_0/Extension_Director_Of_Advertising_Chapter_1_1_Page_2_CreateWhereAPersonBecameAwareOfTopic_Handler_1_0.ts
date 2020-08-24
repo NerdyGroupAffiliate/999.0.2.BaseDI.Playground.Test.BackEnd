@@ -10,7 +10,7 @@ import inquirer = require("inquirer");
 
 const fs = require("fs");
 
-export namespace BaseDI.BackEnd.Advertising.Extensions_1 {
+export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
     export class Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 {
         constructor() { }
 
@@ -25,11 +25,16 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_1 {
             return new Promise(async (resolve, reject) => {
                 console.log("instagram task started!");
 
+                //const account = {
+                //    username: "basedi.instagram.generatebrandawareness.1@basedi.io",
+                //    password: "TestTech99!@",
+                //};
+
                 const account = {
-                    username: "basedi.instagram.generatebrandawareness.1@basedi.io",
-                    password: "TestTech99!@",
+                    username: "thephantom1979@gmail.com",
+                    password: "RichTech99!@",
                 };
-    
+
                 // const account ={ username: "kishorgujar95@gmail.com", password: "iCAuP7RXeyUPV9p" }
                 const ig = new IgApiClient();
     

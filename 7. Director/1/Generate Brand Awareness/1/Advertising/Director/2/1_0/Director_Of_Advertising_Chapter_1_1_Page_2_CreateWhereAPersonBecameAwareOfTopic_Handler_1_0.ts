@@ -235,7 +235,7 @@ export namespace BaseDI.BackEnd.Director.Advertising_2
 
         //Publish Content
         public async Action_6_Process_StoryExperiences(): Promise<object> {
-            var page = new ChapterPage_Page_2_6_Process_StoryExperiences_1_2_1_0.BaseDI.BackEnd.Chapter.Page.Advertising_2.Page_2_6_Process_StoryExperiences_1_2_1_0(this._storylineDetails, this._extraData, this._repository);
+            var page = new ChapterPage_Page_2_6_Process_StoryExperiences_1_2_1_0.BaseDI.BackEnd.Chapter.Page.Advertising_2.Page_2_6_Process_StoryExperiences_1_2_1_0(this._storylineDetails, this._repository);
 
             page.Client = this._client;
 

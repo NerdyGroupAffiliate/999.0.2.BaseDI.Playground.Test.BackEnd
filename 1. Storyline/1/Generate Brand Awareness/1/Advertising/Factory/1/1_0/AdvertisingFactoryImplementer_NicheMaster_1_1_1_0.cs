@@ -52,13 +52,13 @@ namespace BaseDI.BackEnd.Story.Advertising_1
             _centralizedSensor = centralizedSensor;
             _client = client;
 
-            _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _extraData.KeyValuePairs.Add("APILocationRemote", APILocationRemote);
+            _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
-            _extraData.KeyValuePairs.Add("RequestToProcess", requestToProcess);
-            _extraData.KeyValuePairs.Add("RequestToProcessParameters", requestToProcessParameters);
+            _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
+            _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
             #endregion
 

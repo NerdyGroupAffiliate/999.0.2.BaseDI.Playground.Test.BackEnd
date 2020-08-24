@@ -51,7 +51,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_1
 
             //#region 2. Action
 
-
             if (!this.StorylineDetails)
                 this.StorylineDetails = await this.Step_1_0_Custom_Transport_InputToConverter_1_0();
 

@@ -82,23 +82,22 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
         //#region 3. Set
         private HandleStoryDefaults() {
-            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
-            this._extraData.MasterLeader = this;
+
         }
         //#endregion
 
         //#region 4. Action
-        public SetupStoryline(client: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any, requestToResolveName: string, requestToProcess: string, requestToProcessParameters: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 {
+        public SetupStoryline(client: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any, controlHandlerName: string, requestToProcess: string, requestToProcessParameters: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 {
             //#region 1. Assign
             let director_Of_Programming_Chapter_12_2_Page_1_Request_Handler: any;
 
-            if (extraData != null)
-                this._extraData = extraData;
+            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
+            this._extraData.MasterLeader = this;
 
             //#endregion
 
             //#region 2. Ready
-            let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, requestToResolveName, requestToProcess, requestToProcessParameters);
+            let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
             //#endregion
 
             //#region 3. Set
@@ -110,16 +109,17 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 //#region FIND REQUEST HANDLER
                 director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = directorOrExperienceResolveBuilder.Action();
 
-                if (requestToResolveName != "" && requestToResolveName.toUpperCase() != this._requestInspector.constructor.name.toUpperCase()) {
+                if (controlHandlerName != "" && controlHandlerName.toUpperCase() != this._requestInspector.constructor.name.toUpperCase()) {
                     //#region REQUEST HANDLER FOUND
 
                     const entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
-                    entryPoint.RequestID = requestToResolveName;
+                    entryPoint.RequestID = controlHandlerName;
 
-                    this._requestInspector.Client = client;
+                    this._requestInspector.Client = entryPoint.Client;
 
                     this._requestInspector.EntryPoint = entryPoint;
+                    this._requestInspector.ExtraData = this._extraData;
 
                     this._requestInspector.MasterLeader = entryPoint.MasterLeader;
 
@@ -279,7 +279,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             //#region DECIDE DIRECTOR REQUEST
             if (this._requestName.toUpperCase().includes("DIRECTOR_OF_")) {
-                console.log(this._storylineDetails)
                 const pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName, this._requestToProcess, this._requestToProcessParameters);
 
                 return pickDirector.Action_1_Begin_Process();

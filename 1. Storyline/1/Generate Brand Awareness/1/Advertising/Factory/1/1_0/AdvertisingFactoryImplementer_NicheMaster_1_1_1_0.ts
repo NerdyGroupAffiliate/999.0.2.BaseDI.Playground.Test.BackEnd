@@ -77,8 +77,6 @@ export namespace BaseDI.BackEnd.Story.Advertising_1
             const requestType = requestToResolve;
             let resolvedRequest: object = new Object();
 
-            console.log("requestName = ", requestName.toUpperCase())
-
             switch (requestName.toUpperCase())
             {
                 case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_1_CREATEADVERTISEMENTFORALL_HANDLER_1_0":

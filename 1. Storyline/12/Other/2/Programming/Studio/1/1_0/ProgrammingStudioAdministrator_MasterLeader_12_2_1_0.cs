@@ -88,7 +88,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         //A. Story in motion (DO SOMETHING)
 
-        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string requestToResolveName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string controlHandlerName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region 1. Assign  
 
@@ -101,7 +101,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             #region 2. Ready
 
-            Use_DesignPattern_Builder_Chapter_12_2_1_0 directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, _requestInspector, _extraData, requestToResolveName, requestToProcess, requestToProcessParameters);
+            Use_DesignPattern_Builder_Chapter_12_2_1_0 directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, _requestInspector, _extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
 
             #endregion
 
@@ -117,24 +117,20 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                 director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = directorOrExperienceResolveBuilder.Action();
 
-                if (_requestInspector.GetType() != director_Of_Programming_Chapter_12_2_Page_1_Request_Handler.GetType())
+                if (controlHandlerName != "")
                 {
                     #region REQUEST HANDLER FOUND
 
-                    var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
+                    var controller = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
-                    entryPoint.RequestID = requestToResolveName;
+                    controller.RequestID = controlHandlerName;
+                    controller.Client = client;
 
-                    _requestInspector.Client = client;
+                    controller.ExtraData = _extraData;
 
-                    _requestInspector.EntryPoint = entryPoint;
+                    controller.EntryPoint = _requestInspector;
 
-                    _requestInspector.MasterLeader = entryPoint.MasterLeader;
-
-                    _requestInspector.StorylineDetails = entryPoint.StorylineDetails;
-                    _requestInspector.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
-
-                    director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = _requestInspector;
+                    director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = controller;
 
                     #endregion
                 }
@@ -417,6 +413,21 @@ namespace BaseDI.BackEnd.Story.Programming_1
         {
             _client = client;
 
+            if (_centralizedDisturber == null)
+            {
+                _centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
+
+            if (_centralizedStorer == null)
+            {
+                _centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
+
+            if (_centralizedSensor == null)
+            {
+                _centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
+
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
 
@@ -446,7 +457,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PROGRAMMING"))
             {
                 #region 12. Other
-
+                
                 ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(_extraData);
 
                 createDirector.APILocationLocalDotNetCore = "http://localhost:8912/api/basedi/io/programming";
@@ -802,6 +813,21 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Experience_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
+            if (_centralizedDisturber == null)
+            {
+                _centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
+
+            if (_centralizedStorer == null)
+            {
+                _centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
+
+            if (_centralizedSensor == null)
+            {
+                _centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
+
             _extraData = extraData;
 
             _requestToResolveObject = requestToResolveObject;
@@ -966,7 +992,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
     #region HANDLE REQUEST STORAGE
 
-    internal class Implement_DesignPattern_Factory_Storer_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<object>
+    internal class Implement_DesignPattern_Factory_Storer_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<JObject>
     {
         #region 1. Assign
 
@@ -1014,7 +1040,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        public override object Action_1_Begin_Process()
+        public override JObject Action_1_Begin_Process()
         {
             JObject armTemplateJSONOutput = null;
 
@@ -1029,47 +1055,47 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        public override object Action_10_End_Process()
+        public override JObject Action_10_End_Process()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_2_Validate_Process()
+        public override JObject Action_2_Validate_Process()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_3_Process_StoryAuthor()
+        public override JObject Action_3_Process_StoryAuthor()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_4_Process_StoryCharacters()
+        public override JObject Action_4_Process_StoryCharacters()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_5_Process_StorySetting()
+        public override JObject Action_5_Process_StorySetting()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_6_Process_StoryExperiences()
+        public override JObject Action_6_Process_StoryExperiences()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_7_Process_StoryResources()
+        public override JObject Action_7_Process_StoryResources()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_8_Process_CRUD()
+        public override JObject Action_8_Process_CRUD()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_9_Verify_Process()
+        public override JObject Action_9_Verify_Process()
         {
             throw new NotImplementedException();
         }
@@ -1083,7 +1109,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
     #region HANDLE REQUEST DISTURBANCE
 
-    internal class Implement_DesignPattern_Factory_Disturber_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<object>
+    internal class Implement_DesignPattern_Factory_Disturber_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<JObject>
     {
         #region 1. Assign
 
@@ -1131,7 +1157,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        public override object Action_1_Begin_Process()
+        public override JObject Action_1_Begin_Process()
         {
             JObject armTemplateJSONOutput = null;
 
@@ -1146,47 +1172,47 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        public override object Action_10_End_Process()
+        public override JObject Action_10_End_Process()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_2_Validate_Process()
+        public override JObject Action_2_Validate_Process()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_3_Process_StoryAuthor()
+        public override JObject Action_3_Process_StoryAuthor()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_4_Process_StoryCharacters()
+        public override JObject Action_4_Process_StoryCharacters()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_5_Process_StorySetting()
+        public override JObject Action_5_Process_StorySetting()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_6_Process_StoryExperiences()
+        public override JObject Action_6_Process_StoryExperiences()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_7_Process_StoryResources()
+        public override JObject Action_7_Process_StoryResources()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_8_Process_CRUD()
+        public override JObject Action_8_Process_CRUD()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_9_Verify_Process()
+        public override JObject Action_9_Verify_Process()
         {
             throw new NotImplementedException();
         }
@@ -1200,7 +1226,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
     #region HANDLE REQUEST SENSOR
 
-    internal class Implement_DesignPattern_Factory_Sensor_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<object>
+    internal class Implement_DesignPattern_Factory_Sensor_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<JObject>
     {
         #region 1. Assign
 
@@ -1248,7 +1274,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        public override object Action_1_Begin_Process()
+        public override JObject Action_1_Begin_Process()
         {
             JObject armTemplateJSONOutput = null;
 
@@ -1263,47 +1289,47 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        public override object Action_10_End_Process()
+        public override JObject Action_10_End_Process()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_2_Validate_Process()
+        public override JObject Action_2_Validate_Process()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_3_Process_StoryAuthor()
+        public override JObject Action_3_Process_StoryAuthor()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_4_Process_StoryCharacters()
+        public override JObject Action_4_Process_StoryCharacters()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_5_Process_StorySetting()
+        public override JObject Action_5_Process_StorySetting()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_6_Process_StoryExperiences()
+        public override JObject Action_6_Process_StoryExperiences()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_7_Process_StoryResources()
+        public override JObject Action_7_Process_StoryResources()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_8_Process_CRUD()
+        public override JObject Action_8_Process_CRUD()
         {
             throw new NotImplementedException();
         }
 
-        public override object Action_9_Verify_Process()
+        public override JObject Action_9_Verify_Process()
         {
             throw new NotImplementedException();
         }

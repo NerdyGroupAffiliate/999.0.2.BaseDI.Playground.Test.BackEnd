@@ -1,6 +1,7 @@
 ﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -59,7 +60,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns            
-            Use_DesignPattern_Builder_Experience_12_2_1_0 designPattern = new Use_DesignPattern_Builder_Experience_12_2_1_0(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Experience_12_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_12_3_1_0(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -89,7 +90,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
     //A. Prepare for Action (SETUP WHAT WILL HAPPEN)
 
-    internal class Use_DesignPattern_Builder_Experience_12_2_1_0
+    internal class Use_DesignPattern_Builder_Experience_12_3_1_0
     {
         #region 1. Assign
 
@@ -107,7 +108,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         #endregion
 
         #region 2. Ready
-        internal Use_DesignPattern_Builder_Experience_12_2_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Experience_12_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _centralizedStorer = centralizedStorer;
             _client = client;
@@ -136,7 +137,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Experience_12_2_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Experience_12_3_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -168,7 +169,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
     //A. Commence Storyline (ACT WHAT HAS HAPPENED)
 
-    internal class Implement_DesignPattern_Builder_Experience_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
+    internal class Implement_DesignPattern_Builder_Experience_12_3_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
     {
         #region 1. Assign
 
@@ -204,7 +205,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Experience_12_2_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Experience_12_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _centralizedStorer = centralizedStorer;
             _client = (Dictionary<string, object>)client;
@@ -244,7 +245,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             #endregion
 
-            #region 2. Action     
+            #region 2. Action 
 
             #endregion
 
@@ -255,43 +256,6 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
-        //Page 1-7
-        public override async Task<JObject> Action_7_Process_StoryResources()
-        {
-            #region 1. Assign          
-
-            #endregion
-
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
-        //Page 1-8
-        public override async Task<JObject> Action_8_Process_CRUD()
-        {
-            #region 1. Assign          
-
-            #endregion
-
-            #region 2. Action              
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
 
         #endregion
 
@@ -398,6 +362,44 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             #region 2. Action              
 
             //_storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
+        //Page 1-7
+        public override async Task<JObject> Action_7_Process_StoryResources()
+        {
+            #region 1. Assign          
+
+            #endregion
+
+            #region 2. Action              
+
+            //_storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
+        //Page 1-8
+        public override async Task<JObject> Action_8_Process_CRUD()
+        {
+            #region 1. Assign          
+
+            #endregion
+
+            #region 2. Action              
 
             #endregion
 

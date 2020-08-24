@@ -73,7 +73,7 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_1
         {
             List<JToken> matches = new List<JToken>();
 
-            if (data == null) throw new ArgumentNullException(nameof(data));
+            if (data == null) return null;
 
             Func<JToken, Dictionary<string, string>, string, bool> Step_X_X_Read_And_FindJSONNode_1_1 = null;
 

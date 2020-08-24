@@ -9,8 +9,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_1
     {      
         constructor() {
             
-        }
-        
+        }        
 
         //#region STORE 
         public static Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(data:object, keyName: string, keyValue: any, returnAsArray:boolean): any

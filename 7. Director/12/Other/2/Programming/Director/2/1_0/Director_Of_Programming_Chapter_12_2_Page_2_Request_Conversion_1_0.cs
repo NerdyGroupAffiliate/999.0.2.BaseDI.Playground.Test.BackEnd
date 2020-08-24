@@ -31,6 +31,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region 1. Assign            
 
+
             #endregion
 
             #region 2. Action
@@ -245,12 +246,13 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-9
-        public override async Task<JObject> Action_9_Verify_Process()
+        //Page 1-1
+
+        public override async Task<JObject> Action_1_Begin_Process()
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_2_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_2_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
 
             page.Client = _client;
 
@@ -275,75 +277,17 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
             #endregion
 
-            return _storylineDetails;
-        }
-
-        //Page 1-10
-        public override async Task<JObject> Action_10_End_Process()
-        {
-            #region 1. Assign          
-
-            var page = new ChapterPage.Page_2_10_End_Process_12_2_1_0(_storylineDetails, _repository);
-
-            page.Client = _client;
-
-            page.EntryPoint = _entryPoint;
-            page.ExtraData = _extraData;
-
-            page.MasterStorer = _centralizedStorer;
-
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
-
-            #endregion
-
-            #region 2. Action              
-
-            _storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return _storylineDetails;
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
         #endregion
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        //Page 1-1
-
-        public override async Task<JObject> Action_1_Begin_Process()
-        {
-            #region 1. Assign          
-
-            var page = new ChapterPage.Page_2_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
-
-            page.ExtraData = _extraData;
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
-
-            #endregion
-
-            #region 2. Action              
-
-            _storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
         //Page 1-2
 
         public override async Task<JObject> Action_2_Validate_Process()
         {
-
             #region 1. Assign          
 
             var page = new ChapterPage.Page_2_2_Validate_Process_12_2_1_0(_storylineDetails, _repository);
@@ -514,6 +458,56 @@ namespace BaseDI.BackEnd.Director.Programming_2
             #endregion
 
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
+        //Page 1-9
+        public override async Task<JObject> Action_9_Verify_Process()
+        {
+            #region 1. Assign          
+
+            var page = new ChapterPage.Page_2_2_Validate_Process_12_2_1_0(_storylineDetails, _repository);
+
+            page.ExtraData = _extraData;
+            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+
+            #endregion
+
+            #region 2. Action              
+
+            _storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return _storylineDetails;
+        }
+
+        //Page 1-10
+        public override async Task<JObject> Action_10_End_Process()
+        {
+            #region 1. Assign          
+
+            var page = new ChapterPage.Page_2_2_Validate_Process_12_2_1_0(_storylineDetails, _repository);
+
+            page.ExtraData = _extraData;
+            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+
+            #endregion
+
+            #region 2. Action              
+
+            _storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return _storylineDetails;
         }
 
         #endregion
