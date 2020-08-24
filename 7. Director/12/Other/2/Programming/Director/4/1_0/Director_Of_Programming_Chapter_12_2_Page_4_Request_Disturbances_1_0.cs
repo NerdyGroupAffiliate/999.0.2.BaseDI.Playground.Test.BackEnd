@@ -5,7 +5,7 @@ using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
 
-using ChapterPage = BaseDI.BackEnd.Chapter.Page.Programming_1;
+using ChapterPage = BaseDI.BackEnd.Chapter.Page.Programming_4;
 
 using Newtonsoft.Json.Linq;
 
@@ -238,7 +238,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
 
             page.Client = _client;
 
@@ -269,7 +269,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_10_End_Process_12_2_1_0(_storylineDetails, _repository);
 
             page.Client = _client;
 
@@ -305,7 +305,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
@@ -332,7 +332,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
 
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_2_Validate_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_2_Validate_Process_12_2_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
@@ -357,7 +357,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_3_Process_StoryAuthor_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_3_Process_StoryAuthor_12_2_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
@@ -382,7 +382,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_4_Process_StoryCharacters_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_4_Process_StoryCharacters_12_2_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
@@ -407,7 +407,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_5_Process_StorySetting_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_5_Process_StorySetting_12_2_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
@@ -432,7 +432,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_6_Process_StoryExperiences_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_6_Process_StoryExperiences_12_2_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
@@ -457,7 +457,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_7_Process_StoryResources_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_7_Process_StoryResources_12_2_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;
@@ -482,7 +482,7 @@ namespace BaseDI.BackEnd.Director.Programming_4
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_8_Process_CRUD_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_4_8_Process_CRUD_12_2_1_0(_storylineDetails, _repository);
 
             page.ExtraData = _extraData;
             page.StorylineDetails_Parameters = _storylineDetails_Parameters;

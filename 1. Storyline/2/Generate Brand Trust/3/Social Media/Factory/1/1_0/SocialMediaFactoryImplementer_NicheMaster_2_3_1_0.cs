@@ -15,7 +15,7 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
 {
     #region 6. Action Implementation
 
-    internal class SocialMediaFactoryImplementer_NicheMaster_2_3_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    internal class SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
@@ -62,7 +62,7 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
 
             #endregion
 
-            return default(StoryRequest);
+            return null;
         }
 
         #region Page 1
@@ -71,10 +71,11 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion
 

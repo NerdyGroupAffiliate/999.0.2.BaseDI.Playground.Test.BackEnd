@@ -2,7 +2,9 @@
 import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
-import * as Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../0. Script/Extensions/1/Generate Brand Awareness/1/Advertising/Method/1/1_0/Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0";
+import * as Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../0. Script/Extensions/1/Generate Brand Awareness/1/Advertising/Method/2/1_0/Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0";
+
+import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
@@ -12,6 +14,9 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         private _jsonAccountInformation: any = null;
         private _jsonSearchInformation: any = null;
+
+        private _request: any = null;
+        private _response: any = null;
 
         //#endregion
 
@@ -24,6 +29,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
             this.Repository = repository;
 
             this.Action = this.Action.bind(this);
+
             //#endregion
 
             //#region 2. Action
@@ -35,6 +41,10 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#endregion
 
         //#region 3. Set
+        private HandleDefaults(): void {
+            this._request = this.Client.Request;
+            this._response = this.Client.Response;
+        }
         //#endregion
 
         //#region 4. Action
@@ -51,23 +61,13 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
             this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
 
             //#endregion
-
+            
             //#region EXECUTE THE VISION
-            this.Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0();
-            this.Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0();
-            this.Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0();
-            this.Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0();
-            this.Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0();
-            this.Step_6_0_Custom_Output_AwarenessGeneratedForDay6_1_0();
-            this.Step_7_0_Custom_Output_AwarenessGeneratedForDay7_1_0();
-            this.Step_8_0_Custom_Output_AwarenessGeneratedForDay8_1_0();
-            this.Step_9_0_Custom_Output_AwarenessGeneratedForDay9_1_0();
-            this.Step_10_0_Custom_Output_AwarenessGeneratedForDay10_1_0();
-            this.Step_11_0_Custom_Output_AwarenessGeneratedForDay11_1_0();
-            this.Step_12_0_Custom_Output_AwarenessGeneratedForDay12_1_0();
-            this.Step_13_0_Custom_Output_AwarenessGeneratedForDay13_1_0();
-            this.Step_14_0_Custom_Output_AwarenessGeneratedForDay14_1_0();
 
+            this.HandleDefaults();
+
+            this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0();
+   
             //#endregion
 
             //#region REPORT THE FEEDBACK
@@ -83,391 +83,64 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region Day 1
 
-        public Step_1_0_Custom_Output_AwarenessGeneratedForDay1_1_0(): any {
-            var controlContent = Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_1.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToFacebook_1_0(null);
-        }
-
-        public Step_1_1_Custom_Output_AwarenessGeneratedForDay1_1_0_Instagram(): any {
-
-        }
-
-        public Step_1_2_Custom_Output_AwarenessGeneratedForDay1_1_0_Facebook(): any {
-
-        }
-
-        public Step_1_3_Custom_Output_AwarenessGeneratedForDay1_1_0_YouTube(): any {
-
-        }
-
-        public Step_1_4_Custom_Output_AwarenessGeneratedForDay1_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_1_5_Custom_Output_AwarenessGeneratedForDay1_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 2
-
-        public Step_2_0_Custom_Output_AwarenessGeneratedForDay2_1_0(): any {
-
-        }
-
-        public Step_2_1_Custom_Output_AwarenessGeneratedForDay2_1_0_Instagram(): any {
-
-        }
-
-        public Step_2_2_Custom_Output_AwarenessGeneratedForDay2_1_0_Facebook(): any {
-
-        }
-
-        public Step_2_3_Custom_Output_AwarenessGeneratedForDay2_1_0_YouTube(): any {
-
-        }
-
-        public Step_2_4_Custom_Output_AwarenessGeneratedForDay2_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_2_5_Custom_Output_AwarenessGeneratedForDay2_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 3
-
-        public Step_3_0_Custom_Output_AwarenessGeneratedForDay3_1_0(): any {
-
-        }
-
-        public Step_3_1_Custom_Output_AwarenessGeneratedForDay3_1_0_Instagram(): any {
-
-        }
-
-        public Step_3_2_Custom_Output_AwarenessGeneratedForDay3_1_0_Facebook(): any {
-
-        }
-
-        public Step_3_3_Custom_Output_AwarenessGeneratedForDay3_1_0_YouTube(): any {
-
-        }
-
-        public Step_3_4_Custom_Output_AwarenessGeneratedForDay3_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_3_5_Custom_Output_AwarenessGeneratedForDay3_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 4
-
-        public Step_4_0_Custom_Output_AwarenessGeneratedForDay4_1_0(): any {
-
-        }
-
-        public Step_4_1_Custom_Output_AwarenessGeneratedForDay4_1_0_Instagram(): any {
-
-        }
-
-        public Step_4_2_Custom_Output_AwarenessGeneratedForDay4_1_0_Facebook(): any {
-
-        }
-
-        public Step_4_3_Custom_Output_AwarenessGeneratedForDay4_1_0_YouTube(): any {
-
-        }
-
-        public Step_4_4_Custom_Output_AwarenessGeneratedForDay4_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_4_5_Custom_Output_AwarenessGeneratedForDay4_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 5
-
-        public Step_5_0_Custom_Output_AwarenessGeneratedForDay5_1_0(): any {
-
-        }
-
-        public Step_5_1_Custom_Output_AwarenessGeneratedForDay5_1_0_Instagram(): any {
-
-        }
-
-        public Step_5_2_Custom_Output_AwarenessGeneratedForDay5_1_0_Facebook(): any {
-
-        }
-
-        public Step_5_3_Custom_Output_AwarenessGeneratedForDay5_1_0_YouTube(): any {
-
-        }
-
-        public Step_5_4_Custom_Output_AwarenessGeneratedForDay5_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_5_5_Custom_Output_AwarenessGeneratedForDay5_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 6
-
-        public Step_6_0_Custom_Output_AwarenessGeneratedForDay6_1_0(): any {
-
-        }
-
-        public Step_6_1_Custom_Output_AwarenessGeneratedForDay6_1_0_Instagram(): any {
-
-        }
-
-        public Step_6_2_Custom_Output_AwarenessGeneratedForDay6_1_0_Facebook(): any {
-
-        }
-
-        public Step_6_3_Custom_Output_AwarenessGeneratedForDay6_1_0_YouTube(): any {
-
-        }
-
-        public Step_6_4_Custom_Output_AwarenessGeneratedForDay6_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_6_5_Custom_Output_AwarenessGeneratedForDay6_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 7
-
-        public Step_7_0_Custom_Output_AwarenessGeneratedForDay7_1_0(): any {
-
-        }
-
-        public Step_7_1_Custom_Output_AwarenessGeneratedForDay7_1_0_Instagram(): any {
-
-        }
-
-        public Step_7_2_Custom_Output_AwarenessGeneratedForDay7_1_0_Facebook(): any {
+        public async Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0()
+        {
+            const socialMediaChannelName: string = this._jsonAccountInformation?.value?.AccountItemSocialMediaDetails[0].AccountName;
 
-        }
-
-        public Step_7_3_Custom_Output_AwarenessGeneratedForDay7_1_0_YouTube(): any {
-
-        }
-
-        public Step_7_4_Custom_Output_AwarenessGeneratedForDay7_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_7_5_Custom_Output_AwarenessGeneratedForDay7_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 8
-
-        public Step_8_0_Custom_Output_AwarenessGeneratedForDay8_1_0(): any {
-
-        }
-
-        public Step_8_1_Custom_Output_AwarenessGeneratedForDay8_1_0_Instagram(): any {
-
-        }
-
-        public Step_8_2_Custom_Output_AwarenessGeneratedForDay8_1_0_Facebook(): any {
-
-        }
-
-        public Step_8_3_Custom_Output_AwarenessGeneratedForDay8_1_0_YouTube(): any {
-
-        }
-
-        public Step_8_4_Custom_Output_AwarenessGeneratedForDay8_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_8_5_Custom_Output_AwarenessGeneratedForDay8_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 9
-
-        public Step_9_0_Custom_Output_AwarenessGeneratedForDay9_1_0(): any {
-
-        }
-
-        public Step_9_1_Custom_Output_AwarenessGeneratedForDay9_1_0_Instagram(): any {
-
-        }
-
-        public Step_9_2_Custom_Output_AwarenessGeneratedForDay9_1_0_Facebook(): any {
-
-        }
-
-        public Step_9_3_Custom_Output_AwarenessGeneratedForDay9_1_0_YouTube(): any {
-
-        }
-
-        public Step_9_4_Custom_Output_AwarenessGeneratedForDay9_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_9_5_Custom_Output_AwarenessGeneratedForDay9_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 10
-
-        public Step_10_0_Custom_Output_AwarenessGeneratedForDay10_1_0(): any {
-
-        }
-
-        public Step_10_1_Custom_Output_AwarenessGeneratedForDay10_1_0_Instagram(): any {
-
-        }
-
-        public Step_10_2_Custom_Output_AwarenessGeneratedForDay10_1_0_Facebook(): any {
-
-        }
-
-        public Step_10_3_Custom_Output_AwarenessGeneratedForDay10_1_0_YouTube(): any {
+            switch (socialMediaChannelName.toUpperCase()) {
+                case "INSTAGRAM": //PAGE: 4-1-1
+                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Instagram();
 
-        }
-
-        public Step_10_4_Custom_Output_AwarenessGeneratedForDay10_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_10_5_Custom_Output_AwarenessGeneratedForDay10_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 11
-
-        public Step_11_0_Custom_Output_AwarenessGeneratedForDay11_1_0(): any {
-
-        }
-
-        public Step_11_1_Custom_Output_AwarenessGeneratedForDay11_1_0_Instagram(): any {
-
-        }
-
-        public Step_11_2_Custom_Output_AwarenessGeneratedForDay11_1_0_Facebook(): any {
-
-        }
-
-        public Step_11_3_Custom_Output_AwarenessGeneratedForDay11_1_0_YouTube(): any {
-
-        }
-
-        public Step_11_4_Custom_Output_AwarenessGeneratedForDay11_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_11_5_Custom_Output_AwarenessGeneratedForDay11_1_0_Amazon(): any {
-
-        }
-
-        //#endregion
-
-        //#region Day 12
-
-        public Step_12_0_Custom_Output_AwarenessGeneratedForDay12_1_0(): any {
-
-        }
-
-        public Step_12_1_Custom_Output_AwarenessGeneratedForDay12_1_0_Instagram(): any {
-
-        }
-
-        public Step_12_2_Custom_Output_AwarenessGeneratedForDay12_1_0_Facebook(): any {
-
-        }
-
-        public Step_12_3_Custom_Output_AwarenessGeneratedForDay12_1_0_YouTube(): any {
-
-        }
-
-        public Step_12_4_Custom_Output_AwarenessGeneratedForDay12_1_0_LinkedIn(): any {
-
-        }
-
-        public Step_12_5_Custom_Output_AwarenessGeneratedForDay12_1_0_Amazon(): any {
-
-        }
+                    break;
+                case "FACEBOOK": //PAGE: 4-1-2
+                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Facebook();
 
-        //#endregion
+                    break;
+                case "YOUTUBE": //PAGE: 4-1-3
+                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_YouTube();
 
-        //#region Day 13
+                    break;
 
-        public Step_13_0_Custom_Output_AwarenessGeneratedForDay13_1_0(): any {
+                case "LINKEDIN": //PAGE: 4-1-4
+                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_LinkedIn();
 
-        }
-
-        public Step_13_1_Custom_Output_AwarenessGeneratedForDay13_1_0_Instagram(): any {
-
-        }
-
-        public Step_13_2_Custom_Output_AwarenessGeneratedForDay13_1_0_Facebook(): any {
-
-        }
-
-        public Step_13_3_Custom_Output_AwarenessGeneratedForDay13_1_0_YouTube(): any {
+                    break;
 
-        }
-
-        public Step_13_4_Custom_Output_AwarenessGeneratedForDay13_1_0_LinkedIn(): any {
-
-        }
+                case "AMAZON":  //PAGE: 4-1-5
+                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Amazon();
 
-        public Step_13_5_Custom_Output_AwarenessGeneratedForDay13_1_0_Amazon(): any {
-
+                    break;
+            }
         }
-
-        //#endregion
 
-        //#region Day 14
+        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Instagram(): any
+        {
+            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToInstagram_1_0(this.StorylineDetails).then((data) => {
+                this._response.json({ message: "Instagram Publish Done!" });
 
-        public Step_14_0_Custom_Output_AwarenessGeneratedForDay14_1_0(): any {
-
-        }
+                console.log(data);
+            }).catch((err) => {
 
-        public Step_14_1_Custom_Output_AwarenessGeneratedForDay14_1_0_Instagram(): any {
+                console.log("Error");
+                console.log(err);
 
+                this._response.json({ "error": err })
+            });
         }
 
-        public Step_14_2_Custom_Output_AwarenessGeneratedForDay14_1_0_Facebook(): any {
+        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Facebook(): any {
 
         }
 
-        public Step_14_3_Custom_Output_AwarenessGeneratedForDay14_1_0_YouTube(): any {
+        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_YouTube(): any {
 
         }
 
-        public Step_14_4_Custom_Output_AwarenessGeneratedForDay14_1_0_LinkedIn(): any {
+        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_LinkedIn(): any {
 
         }
 
-        public Step_14_5_Custom_Output_AwarenessGeneratedForDay14_1_0_Amazon(): any {
+        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Amazon(): any {
 
         }
 

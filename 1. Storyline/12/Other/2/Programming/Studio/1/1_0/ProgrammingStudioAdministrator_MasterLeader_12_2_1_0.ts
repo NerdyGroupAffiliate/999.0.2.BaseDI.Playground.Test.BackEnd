@@ -74,6 +74,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this.HandleStoryDefaults = this.HandleStoryDefaults.bind(this);
 
             //region 2. Action
+            this.HandleStoryDefaults();
 
             //region 3. Observe
         }
@@ -81,23 +82,22 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
         //#region 3. Set
         private HandleStoryDefaults() {
-            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
-            this._extraData.MasterLeader = this;
+
         }
         //#endregion
 
         //#region 4. Action
-        public SetupStoryline(client: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any, requestToResolveName: string, requestToProcess: string, requestToProcessParameters: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 {
+        public SetupStoryline(client: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any, controlHandlerName: string, requestToProcess: string, requestToProcessParameters: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 {
             //#region 1. Assign
             let director_Of_Programming_Chapter_12_2_Page_1_Request_Handler: any;
 
-            if (extraData != null)
-                this._extraData = extraData;
+            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
+            this._extraData.MasterLeader = this;
 
             //#endregion
 
             //#region 2. Ready
-            let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, requestToResolveName, requestToProcess, requestToProcessParameters);
+            let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
             //#endregion
 
             //#region 3. Set
@@ -109,14 +109,19 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 //#region FIND REQUEST HANDLER
                 director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = directorOrExperienceResolveBuilder.Action();
 
-                if (requestToResolveName != "" && requestToResolveName.toUpperCase() != this._requestInspector.constructor.name.toUpperCase()) {
+                if (controlHandlerName != "" && controlHandlerName.toUpperCase() != this._requestInspector.constructor.name.toUpperCase()) {
                     //#region REQUEST HANDLER FOUND
 
                     const entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
-                    entryPoint.RequestID = requestToResolveName;
+                    entryPoint.RequestID = controlHandlerName;
+
+                    this._requestInspector.Client = entryPoint.Client;
 
                     this._requestInspector.EntryPoint = entryPoint;
+                    this._requestInspector.ExtraData = this._extraData;
+
+                    this._requestInspector.MasterLeader = entryPoint.MasterLeader;
 
                     this._requestInspector.StorylineDetails = entryPoint.StorylineDetails;
                     this._requestInspector.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
@@ -380,6 +385,18 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             this._extraData = extraData;
 
+            if (this._centralizedDisturber == undefined || this._centralizedDisturber == null) {
+                this._centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }          
+
+            if (this._centralizedStorer == undefined || this._centralizedStorer == null) {
+                this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }           
+
+            if (this._centralizedSensor == undefined || this._centralizedSensor == null) {
+                this._centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }  
+
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
             this.Action_3_Process_StoryAuthor = this.Action_3_Process_StoryAuthor.bind(this);
@@ -616,7 +633,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             return new Object();
         }
 
-
         //region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
         //Page 1-2
@@ -706,6 +722,18 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this._requestToProcessParameters = requestToProcessParameters;
 
             this._extraData = extraData;
+
+            if (this._centralizedDisturber == undefined || this._centralizedDisturber == null) {
+                this._centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
+
+            if (this._centralizedStorer == undefined || this._centralizedStorer == null) {
+                this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
+
+            if (this._centralizedSensor == undefined || this._centralizedSensor == null) {
+                this._centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+            }
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -897,7 +925,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0-P1_0")
+                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
                 .Action();
         }
 
@@ -1019,7 +1047,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0-P1_0")
+                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0")
                 .Action();
         }
 
@@ -1141,7 +1169,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Sensor_1_0-P1_0")
+                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0")
                 .Action();
         }
 

@@ -161,6 +161,12 @@
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
             });
 
+            if (process.env.APP_ENV == "SERVER") {
+                htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
+
+            }
+
+        
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -168,7 +174,7 @@
             //#endregion
 
             //#region REPORT THE FEEDBACK
-
+                     
             return htmlContentString;
 
             //#endregion                        
@@ -336,10 +342,12 @@
                 cssString += `${key} {\n ${innerCss} \n}`;
             });
 
-            // console.log(cssString)
-
             htmlInlineCSSString = `<style>${cssString}</style>`;
 
+            if (process.env.APP_ENV == "SERVER")
+            {	            
+                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');	                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
+            }	
             //#endregion
 
             //#region RECALL THE MEMORIES

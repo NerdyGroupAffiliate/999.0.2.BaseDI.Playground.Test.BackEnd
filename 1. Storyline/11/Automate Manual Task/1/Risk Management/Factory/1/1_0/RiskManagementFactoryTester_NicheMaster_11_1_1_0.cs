@@ -1,12 +1,14 @@
-﻿using BaseDI.BackEnd.Director.Risk_Management_1;
-using BaseDI.BackEnd.Director.Risk_Management_2;
+﻿using BaseDI.BackEnd.Director.Programming_5;
+using BaseDI.BackEnd.Director.Risk_Management_3;
+using BaseDI.BackEnd.Director.Risk_Management_4;
 using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Extensions_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.State.Risk_Management_;
-using BaseDI.BackEnd.State.Risk_Management_1;
-using BaseDI.BackEnd.State.Risk_Management_2;
+
+using BaseDI.BackEnd.State.Risk_Management_3;
+using BaseDI.BackEnd.State.Risk_Management_4;
+
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -18,7 +20,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
-    internal class RiskManagementFactoryTester_NicheMaster_11_1_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    internal class RiskManagementFactoryTester_NicheMaster_11_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
@@ -48,10 +50,10 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _extraData.KeyValuePairs.Add("APILocationRemote", APILocationRemote);
+            _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
             #endregion
 
@@ -61,95 +63,38 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             switch (requestType)
             {
-                case Type _ when requestType == typeof(Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0):
-                    var resolvedRequest1 = (StoryRequest)Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                case Type _ when requestType == typeof(Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0):
+                    var resolvedRequest3 = Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
-                    return resolvedRequest1;
-                case Type _ when requestType == typeof(Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0):
-                    var resolvedRequest2 = (StoryRequest)Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    return resolvedRequest3;
+                case Type _ when requestType == typeof(Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0):
+                    var resolvedRequest4 = Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
 
-                    return resolvedRequest2;
+                    return resolvedRequest4;
                 default:
-                    return default(StoryRequest);
+                    return default;
             }
 
             #endregion
         }
 
-        #region Page 1
+        #region Page 3
 
-        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
+        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion
 
             #region ASSIGN REQUEST HANDLER
 
-            Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0 director = new Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0();
-
-            director.Client = _client;
-
-            director.ExtraData = extraData;
-
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
-
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
-
-            #endregion
-
-            #region ASSIGN LOGIC REPOSITORY
-
-            switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
-            {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
-
-                    director.Repository = localFile;
-
-                    break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
-
-                    director.Repository = remoteService;
-
-                    break;
-                case "REMOTESERVICEVENDOR":
-                    var remoteServiceVendor = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
-
-                    director.Repository = remoteServiceVendor;
-
-                    break;
-            }
-
-            #endregion
-
-            return director;
-        }
-
-        #endregion
-
-        #region Page 2
-
-        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
-        {
-            #region CHECK FOR MISTAKES
-
-            string repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
-
-            #endregion
-
-            #region ASSIGN REQUEST HANDLER
-
-            Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 director = new Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0();
+            Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0 director = new Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0();
             
             director.Client = _client;
 
@@ -169,15 +114,77 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
                 case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
                 case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
+
+                    break;
+            }
+
+            #endregion
+
+            return director;
+        }
+
+        #endregion
+
+        #region Page 4
+
+        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
+        {
+            #region CHECK FOR MISTAKES
+
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
+
+            #endregion
+
+            #region ASSIGN REQUEST HANDLER
+
+            Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0();
+
+            director.Client = _client;
+
+            director.ExtraData = extraData;
+
+            director.MasterStorer = _centralizedStorer;
+            director.MasterDisturber = _centralizedDisturber;
+            director.MasterSensor = _centralizedSensor;
+
+            director.StorylineDetails = storylineDetails;
+            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+
+            #endregion
+
+            #region ASSIGN LOGIC REPOSITORY
+
+            switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+            {
+                case "LOCALFILE":
+                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
+
+                    director.Repository = localFile;
+
+                    break;
+                case "REMOTESERVICE":
+                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteService;
+
+                    break;
+                case "REMOTESERVICEVENDOR":
+                    var remoteServiceVendor = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
+
+                    director.Repository = remoteServiceVendor;
 
                     break;
             }

@@ -15,7 +15,7 @@ namespace BaseDI.BackEnd.Story.Personal_Training_3
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
-    internal class PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0<StoryRequest> : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    internal class PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
@@ -45,10 +45,10 @@ namespace BaseDI.BackEnd.Story.Personal_Training_3
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _extraData.KeyValuePairs.Add("APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _extraData.KeyValuePairs.Add("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _extraData.KeyValuePairs.Add("APILocationRemote", APILocationRemote);
+            _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
             #endregion
 
@@ -77,11 +77,12 @@ namespace BaseDI.BackEnd.Story.Personal_Training_3
         private object Create_Director_Of_Programming_Chapter_12_2_Page_1_ReadApiRoute_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
             #region CHECK FOR MISTAKES
-            
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+
+            string repositoryType = ""; // repositoryMetaData.
+
+            if (repositoryType == null) repositoryType = "LOCALFILE";
 
             #endregion
 
@@ -122,7 +123,7 @@ namespace BaseDI.BackEnd.Story.Personal_Training_3
 
             #endregion
 
-            return default(StoryRequest);
+            return null;
         }
 
         #endregion

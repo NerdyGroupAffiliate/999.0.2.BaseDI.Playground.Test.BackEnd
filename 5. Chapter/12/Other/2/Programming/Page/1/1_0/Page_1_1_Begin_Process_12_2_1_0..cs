@@ -1,7 +1,9 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.BackEnd.Director.Programming_1;
+using BaseDI.BackEnd.Director.Programming_2;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
 using BaseDI.BackEnd.Script.Programming_1;
-
+using BaseDI.BackEnd.Story.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -48,15 +50,72 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_1
 
         #endregion
 
-        #region 4. Action
-       
+        #region 4. Action       
 
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            //Reference the MasterLeader.
+            #region 1. Assign
+
+            #endregion
+
+            #region 2. Action
+
+            if (StorylineDetails == null)
+                StorylineDetails = await Step_1_0_Custom_Transport_InputToConverter_1_0();
+
+            #endregion
+
+            #region 3. Observe
+
             return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+
+            #endregion
         }
+
+        #region TRANSPORT THE REQUEST
+
+        private async Task<JObject> Step_1_0_Custom_Transport_InputToConverter_1_0()
+        {
+            #region 1. Assign
+
+            string requestNameToProcess = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+            string requestNameToProcessParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+
+            dynamic handleObservation;
+
+            #endregion
+
+            #region 2. Action
+
+            //#region Conversion
+
+            //CREATE THE PROCESS
+            Func<JObject> Convert = null;
+
+            Convert = () =>
+            {
+                //EXECUTE THE PROCESS
+                return handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0())
+                    .SetupStoryline(this.Client, null, null, this.ExtraData, "", requestNameToProcess, requestNameToProcessParameters)
+                    .Action().Result;
+            };
+
+            //START THE PROCESS
+            handleObservation = Convert();
+
+            //#endregion
+
+            #endregion
+
+            #region 3. Observe
+
+            return handleObservation;
+
+            #endregion
+        }
+
+        #endregion
 
         #endregion
     }

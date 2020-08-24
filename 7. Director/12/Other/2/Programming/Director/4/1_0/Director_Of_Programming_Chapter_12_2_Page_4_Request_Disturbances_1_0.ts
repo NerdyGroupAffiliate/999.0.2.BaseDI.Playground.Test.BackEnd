@@ -6,16 +6,16 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 
 import * as IContract_Programming_Repository_12_2_1_0 from "../../../../../../../../0. Script/Interfaces/12/Other/2/Programming/Contract/1/1_0/IContract_Programming_Repository_12_2_1_0";
 
-import * as ChapterPage_Page_1_1_Begin_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_1_Begin_Process_12_2_1_0";
-import * as ChapterPage_Page_1_2_Validate_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_2_Validate_Process_12_2_1_0";
-import * as ChapterPage_Page_1_3_Process_StoryAuthor_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_3_Process_StoryAuthor_12_2_1_0";
-import * as ChapterPage_Page_1_4_Process_StoryCharacters_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_4_Process_StoryCharacters_12_2_1_0";
-import * as ChapterPage_Page_1_5_Process_StorySetting_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_5_Process_StorySetting_12_2_1_0";
-import * as ChapterPage_Page_1_6_Process_StoryExperiences_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_6_Process_StoryExperiences_12_2_1_0";
-import * as ChapterPage_Page_1_7_Process_StoryResources_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_7_Process_StoryResources_12_2_1_0";
-import * as ChapterPage_Page_1_8_Process_CRUD_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_8_Process_CRUD_12_2_1_0";
-import * as ChapterPage_Page_1_9_Verify_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_9_Verify_Process_12_2_1_0";
-import * as ChapterPage_Page_1_10_End_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/2/1_0/Page_1_10_End_Process_12_2_1_0";
+import * as ChapterPage_Page_4_1_Begin_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_1_Begin_Process_12_2_1_0";
+import * as ChapterPage_Page_4_2_Validate_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_2_Validate_Process_12_2_1_0";
+import * as ChapterPage_Page_4_3_Process_StoryAuthor_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_3_Process_StoryAuthor_12_2_1_0";
+import * as ChapterPage_Page_4_4_Process_StoryCharacters_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_4_Process_StoryCharacters_12_2_1_0";
+import * as ChapterPage_Page_4_5_Process_StorySetting_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_5_Process_StorySetting_12_2_1_0";
+import * as ChapterPage_Page_4_6_Process_StoryExperiences_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_6_Process_StoryExperiences_12_2_1_0";
+import * as ChapterPage_Page_4_7_Process_StoryResources_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_7_Process_StoryResources_12_2_1_0";
+import * as ChapterPage_Page_4_8_Process_CRUD_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_8_Process_CRUD_12_2_1_0";
+import * as ChapterPage_Page_4_9_Verify_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_9_Verify_Process_12_2_1_0";
+import * as ChapterPage_Page_4_10_End_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_10_End_Process_12_2_1_0";
 
 export namespace BaseDI.BackEnd.Director.Programming_4 {
     export class Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
@@ -238,7 +238,7 @@ export namespace BaseDI.BackEnd.Director.Programming_4 {
         //Page 1-7
         public async Action_7_Process_StoryResources(): Promise<object> {
             //region 1. Assign 
-            var page = new ChapterPage_Page_1_7_Process_StoryResources_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_2.Page_1_7_Process_StoryResources_12_2_1_0(this._storylineDetails, this._repository);
+            var page = new ChapterPage_Page_4_7_Process_StoryResources_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_4.Page_4_7_Process_StoryResources_12_2_1_0(this._storylineDetails, this._repository);
 
             page.Client = this._client;
 
