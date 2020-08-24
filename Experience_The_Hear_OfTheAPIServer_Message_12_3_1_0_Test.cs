@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace BaseDI.Playground.Test.BackEnd
 {
-    public class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_TestController : ControllerBase
+    public class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test : ControllerBase
     {
         #region 1. Assign
 
@@ -40,7 +40,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 2. Ready
 
-        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_TestController()
+        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test()
         {
             #region 1. Assign
 
