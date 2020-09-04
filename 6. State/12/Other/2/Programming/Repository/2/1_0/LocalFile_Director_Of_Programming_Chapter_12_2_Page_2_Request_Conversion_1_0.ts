@@ -43,6 +43,9 @@ import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScree
 import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/12/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0.json";
 import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/12/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0-P1_0.json";
 
+import * as state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/5/Security/Template/1/1_0/State_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.json";
+import * as state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/5/Security/Template/1/1_0/State_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0-P1_0.json";
+
 import * as state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/13/1_0/State_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.json";
 import * as state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/13/1_0/State_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0.json";
 
@@ -246,6 +249,17 @@ export namespace BaseDI.BackEnd.State.Programming_2 {
                         switch (requestNameParameters.toUpperCase()) {
                             case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_12_READADVANCEDSCREENFORALL_HANDLER_1_0-P1_0":
                                 storylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0_P1_0;
+                                break;
+                        }
+
+                        break;
+
+                    case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
+                        storylineDetails = state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0;
+
+                        switch (requestNameParameters.toUpperCase()) {
+                            case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0-P1_0":
+                                storylineDetails_Parameters = state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0_P1_0;
                                 break;
                         }
 
