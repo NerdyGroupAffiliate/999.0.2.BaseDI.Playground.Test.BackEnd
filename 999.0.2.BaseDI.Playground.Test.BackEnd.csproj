@@ -30,8 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="1. Storyline\12\Other\4\CMS\Factory\1\1_0\" />
+    <Folder Include="5. Chapter\12\Other\4\CMS\Page\1\1_0\" />
     <Folder Include="6. State\12\Other\2\Programming\Repository\" />
+    <Folder Include="6. State\12\Other\4\CMS\Repository\1\1_0\" />
     <Folder Include="7. Director\12\Other\2\Programming\Director\" />
+    <Folder Include="7. Director\12\Other\4\CMS\Director\1\1_0\" />
     <Folder Include="9. Organizing\MRichardson001\Pages\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
