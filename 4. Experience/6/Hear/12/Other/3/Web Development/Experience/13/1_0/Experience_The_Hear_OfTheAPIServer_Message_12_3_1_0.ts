@@ -7,18 +7,10 @@ import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 f
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
-import * as Extension_Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0 from "../../../../../../../../../../0. Script/Extensions/2/Generate Brand Trust/3/Social Media/Method/1/1_0/Extension_Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0";
+import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/13/1_0/Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
-
-import * as path from 'path';
-
-var express = null;
-
-if (process.env.APP_ENV == "SERVER") {
-    express = require("express");
-}
 
 export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
     export class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 extends aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 {
@@ -196,87 +188,13 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                 {
                     //#region MEMORIZE SERVER OPTIONS
 
-                    const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
-
-                    const serverEnvironmentName: number = serverEnvironment?.value?.SetupItemEnvironmentName;
-                    const serverEnvironmentPort: number = serverEnvironment?.value?.SetupItemEnvironmentPort;
-                    const serverEnvironmentDomainName: number = serverEnvironment?.value?.SetupItemEnvironmentDomainName;
-
-                    const serverEnvironmentBuildItemClientPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemBuildItemClientPath;
-                    const serverEnvironmentDataPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemDataPath;
-                    const serverEnvironmentDocumentPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemDocumentPath;
-                    const serverEnvironmentFontPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemFontPath;
-                    const serverEnvironmentImagePath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemImagePath;
-                    const serverEnvironmentScriptPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
-
-                    const serverEnvironmentServerRoutesGET: Array<any> = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
-
-                    //#endregion
-
-                    //#region PICK THE SERVER
-                    this._server = express();
-
-                    //#endregion
-
-                    //#region SET VIEW ENGINE
-
-                    //SET PRESENTATION VIEWS
-
-                    //this._server.set('view engine', 'hbs');
-                    //this._server.set('views', viewPaths);
-
-                    //#endregion
-
-                    //#region SET STATIC FOLDERS
-
-                    //const viewsPath = path.join(__dirname, '../Templates');
-
-                    //_server.use(
-                    //    "/data",
-                    //    express.static(serverEnvironmentDataPath, {
-                    //        maxAge: "15d",
-                    //        fallthrough: false
-                    //    })
-                    //);
-
-                    //_server.use(
-                    //    "/documents",
-                    //    express.static(serverEnvironmentDocumentPath, {
-                    //        maxAge: "15d",
-                    //        fallthrough: false
-                    //    })
-                    //);
-
-                    //_server.use(
-                    //    "/fonts",
-                    //    express.static(serverEnvironmentFontPath, {
-                    //        maxAge: "15d",
-                    //        fallthrough: false
-                    //    })
-                    //);
-
-                    this._server.use(
-                       "/images",
-                       express.static(serverEnvironmentImagePath, {
-                           maxAge: "15d",
-                           fallthrough: false
-                       })
-                    );
-
-                    //_server.use(
-                    //    "/scripts",
-                    //    express.static(serverEnvironmentScriptPath, {
-                    //        maxAge: "15d",
-                    //        fallthrough: false
-                    //    })
-                    //);
+                    this._server = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storylineDetails);
 
                     //#endregion
 
                     //#region SET SERVER RESPONSE
 
                     //#region OUTPUT THE RESPONSE
-                    this._server.get('/favicon.ico', (req, res) => res.status(204));
 
                     const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) =>
                     {
@@ -297,7 +215,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                             "server_director": this,
                             "Request": Object.assign(req, Object),
                             "Response": Object.assign(res, Object),
-                            "Server": Object.assign(this._server, Object)
+                            "Server": Object.assign(this._server.Server.Instance, Object)
                         }
 
                         //#endregion
@@ -362,7 +280,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                                         //console.log("route =");
                                         //console.log(route);
 
-                                        this._server.get(route, (req: any, res: any) => {
+                                        this._server.Server.Instance.get(route, (req: any, res: any) => {
                                             Step_2_0_Custom_Output_ServerRequestToClient_1_0(route, controllerName, controllerModelDataLocalObject, controllerModelDataLocalParameter, controllerModelDataRemote, req, res);
                                         });
                                     });
@@ -372,15 +290,15 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                     }
 
                     //READ GET ROUTES
-                    Step_1_0_Custom_Control_ClientRequestToServer_1_0(serverEnvironmentServerRoutesGET);
+                    Step_1_0_Custom_Control_ClientRequestToServer_1_0(this._server.Server.Verbs.Get);
 
                     //#endregion
 
                     //#endregion
 
                     //#region START THE SERVER
-                    this._server.listen(serverEnvironmentPort, () => {
-                        console.log(`server started at http://localhost:${serverEnvironmentPort}`);
+                    this._server.Server.Instance.listen(this._server.Server.Port, () => {
+                        console.log(`server started at http://localhost:${this._server.Server.Port}`);
                     });
                     //#endregion
                 }

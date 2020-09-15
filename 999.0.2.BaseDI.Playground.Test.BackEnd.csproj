@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts" />
+    <None Remove="0. Script\Extensions\12\Other\5\Security\Method\1\1_0\Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.ts" />
     <None Remove="basedi_1_0.tsx" />
     <None Remove="Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.tsx" />
   </ItemGroup>
@@ -30,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\" />
     <Folder Include="1. Storyline\12\Other\4\CMS\Factory\1\1_0\" />
     <Folder Include="5. Chapter\12\Other\4\CMS\Page\1\1_0\" />
     <Folder Include="6. State\12\Other\2\Programming\Repository\" />
@@ -51,6 +54,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\5\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\6\1_0\Extension_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
+    <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="0. Script\Extensions\12\Other\5\Security\Method\1\1_0\Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\0\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
