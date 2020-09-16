@@ -156,7 +156,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             _storylineDetails = await builder.Action_10_End_Process().ConfigureAwait(true);
 
             #endregion
-
+            Console.WriteLine(_storylineDetails);
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
