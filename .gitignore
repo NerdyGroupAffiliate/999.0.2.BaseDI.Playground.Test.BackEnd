@@ -5,7 +5,7 @@
 /.vs
 /node_modules
 /obj
-/bin/Debug/netcoreapp3.0
+bin/
 /wwwroot/Distribution
 /wwwroot/Server
 /wwwroot/Source
