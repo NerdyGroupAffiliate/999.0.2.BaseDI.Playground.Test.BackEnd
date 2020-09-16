@@ -156,7 +156,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             _storylineDetails = await builder.Action_10_End_Process().ConfigureAwait(true);
 
             #endregion
-            Console.WriteLine(_storylineDetails);
+            
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
@@ -172,7 +172,6 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
     internal class Implement_DesignPattern_Builder_Experience_12_3_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
     {
         #region 1. Assign
-
         //Coding information
         private string _entryPointName = "Experience_The_Movement_ToFacebookPage_DataTransfer_12_2_1_0";
 
