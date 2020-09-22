@@ -15,6 +15,11 @@ export namespace BaseDI.BackEnd.Security.Extensions_1 {
 
         }
 
+        //#region CLIENT SIDE CODE
+
+
+        //#endregion
+
         //#region SERVER SIDE CODE
 
         public static Step_X_X_Custom_Store_ServerSecuritySettingsToMemory_1_0(server: any, storylineDetails: Object): void {

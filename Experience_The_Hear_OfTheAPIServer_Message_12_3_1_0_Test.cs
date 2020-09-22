@@ -136,8 +136,8 @@ namespace BaseDI.Playground.Test.BackEnd
             _clientInfo = new Dictionary<string, object>();
 
             //SETUP CLIENT INFO
-            _clientInfo.Add("presentation_experience", _presentation);
-            _clientInfo.Add("presentation_director", this);
+            _clientInfo.Add("Request", this.Request);
+            _clientInfo.Add("Server", this);
 
             #endregion
 

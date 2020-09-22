@@ -1,35 +1,34 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.BackEnd.Character_1;
+using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
-using Microsoft.AspNetCore.Http;
+
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
+using ChapterPage = BaseDI.BackEnd.Chapter.Page.CMS_1;
+
+namespace BaseDI.BackEnd.Director.CMS_1
 {
-    public class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
+    public class Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
         #region 1. Assign
 
         //A. Variable Declaration
 
         //Assign Characters involved in storyline
-        //private ProgrammingDotNet_Implementer_3_12_1_0 _dotNetDeveloper = null;
-
-        private ExtraData_12_2_1_0 _extraData = null;
+        private ProgrammingDotNet_Implementer_3_12_1_0 _dotNetDeveloper = null;
 
         #endregion
 
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0()
+        public Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0()
         {
             #region 1. Assign            
-
 
             #endregion
 
@@ -59,8 +58,8 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             #region PICK DESIGN PATTERN
 
-            //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns            
-            Use_DesignPattern_Builder_Experience_12_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_12_3_1_0(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
+            Use_DesignPattern_Builder_Chapter_12_4_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_4_Page_1(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -90,12 +89,12 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
     //A. Prepare for Action (SETUP WHAT WILL HAPPEN)
 
-    internal class Use_DesignPattern_Builder_Experience_12_3_1_0
+    internal class Use_DesignPattern_Builder_Chapter_12_4_Page_1
     {
         #region 1. Assign
 
-        internal object _centralizedStorer;
-        internal object _client;
+        private object _client;
+        private object _centralizedStorer;
 
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
@@ -108,10 +107,11 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         #endregion
 
         #region 2. Ready
-        internal Use_DesignPattern_Builder_Experience_12_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+
+        internal Use_DesignPattern_Builder_Chapter_12_4_Page_1(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _centralizedStorer = centralizedStorer;
             _client = client;
+            _centralizedStorer = centralizedStorer;
 
             _extraData = extraData;
 
@@ -137,7 +137,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Experience_12_3_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_4_Page_1_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -169,17 +169,14 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
     //A. Commence Storyline (ACT WHAT HAS HAPPENED)
 
-    internal class Implement_DesignPattern_Builder_Experience_12_3_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
+    internal class Implement_DesignPattern_Builder_Chapter_12_4_Page_1_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
     {
         #region 1. Assign
 
-        //Coding information
-        private string _entryPointName = "Experience_The_Movement_ToFacebookPage_DataTransfer_12_2_1_0";
-
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
-        internal object _centralizedStorer;
-        internal Dictionary<string, object> _client;
+        private object _client;
+        private object _centralizedStorer;
 
         private JObject _storylineDetails = null;
         private JObject _storylineDetails_Parameters = null;
@@ -188,27 +185,14 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _entryPoint;
 
-        //Available Repositories
-        //private RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_12_2_1_0 _experienceRepository_12_2_1_0;
-
-        //Response Observation template
-        private string _dataObservationTemplate = "";
-
-        //API Information
-        private List<JToken> _parameterTokens = null;
-
-        private string _securityAppId = "";
-        private string _securityAppSecret = "";
-        private string _securityToken = "";
-
         #endregion
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Experience_12_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_4_Page_1_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
+            _client = client;
             _centralizedStorer = centralizedStorer;
-            _client = (Dictionary<string, object>)client;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -237,19 +221,27 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-1
-
-        public override async Task<JObject> Action_1_Begin_Process()
+        //Page 1-7
+        public override async Task<JObject> Action_7_Process_StoryResources()
         {
-            #region 1. Assign             
+            #region 1. Assign          
+
+            //var page = new ChapterPage.Page_1_7_Process_StoryResources_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
-            #region 2. Action 
+            #region 2. Action              
 
-            var r = _client["Request"];
-            var s = _client["Server"];
-
+            //_storylineDetails = await page.Action().ConfigureAwait(true);
 
             #endregion
 
@@ -260,18 +252,59 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
-
         #endregion
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        //Page 1-1
+
+        public override async Task<JObject> Action_1_Begin_Process()
+        {
+            #region 1. Assign          
+
+            //var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+
+            #endregion
+
+            #region 2. Action              
+
+            //_storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
 
         //Page 1-2
 
         public override async Task<JObject> Action_2_Validate_Process()
         {
+
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_7_Process_CRUD_1_1_0(_storylineDetails, _repository);
+            //var page = new ChapterPage.Page_1_2_Validate_Process_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
@@ -293,7 +326,16 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_3_Process_HTMLLayoutContainer_1_1_0(_storylineDetails, _repository);
+            //var page = new ChapterPage.Page_1_3_Process_StoryAuthor_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
@@ -315,7 +357,16 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_4_Process_HTMLLayoutRows_1_1_0(_storylineDetails, _repository);
+            //var page = new ChapterPage.Page_1_4_Process_StoryCharacters_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
@@ -337,7 +388,16 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_5_Process_HTMLLayoutZones_1_1_0(_storylineDetails, _repository);
+            //var page = new ChapterPage.Page_1_5_Process_StorySetting_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
@@ -359,27 +419,16 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_6_Process_HTMLLayoutZoneColumns_1_1_0(_storylineDetails, _repository);
+            //var page = new ChapterPage.Page_1_6_Process_StoryExperiences_12_2_1_0(_storylineDetails, _repository);
 
-            #endregion
+            //page.Client = _client;
 
-            #region 2. Action              
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
 
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            //page.MasterLeader = _centralizedStorer;
 
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
-        //Page 1-7
-        public override async Task<JObject> Action_7_Process_StoryResources()
-        {
-            #region 1. Assign          
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
@@ -401,9 +450,22 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
+            //var page = new ChapterPage.Page_1_8_Process_CRUD_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+
             #endregion
 
             #region 2. Action              
+
+            //_storylineDetails = await page.Action().ConfigureAwait(true);
 
             #endregion
 
@@ -419,7 +481,16 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_8_Verify_Process_1_1_0(_storylineDetails, _repository);
+            //var page = new ChapterPage.Page_1_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
@@ -441,7 +512,16 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_9_End_Process_1_1_0(_storylineDetails, _repository);
+            //var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 

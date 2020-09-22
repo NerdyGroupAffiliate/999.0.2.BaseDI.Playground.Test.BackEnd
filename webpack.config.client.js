@@ -16,6 +16,13 @@ const plugins = [
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.IgnorePlugin(/express/),
+    new webpack.IgnorePlugin(/external-editor/),
+    new webpack.IgnorePlugin(/inquirer/),
+    new webpack.IgnorePlugin(/forever-agent/),
+    new webpack.IgnorePlugin(/tunnel-agent/),
+    new webpack.IgnorePlugin(/instagram-private-api/),
+    new webpack.IgnorePlugin(/request-promise/),
+    new webpack.IgnorePlugin(/fs/),
     new webpack.ProvidePlugin({
         Promise: 'es6-promise-promise',
         $: 'jquery',

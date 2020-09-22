@@ -6,19 +6,19 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 
 import * as IContract_Programming_Repository_12_2_1_0 from "../../../../../../../../0. Script/Interfaces/12/Other/2/Programming/Contract/1/1_0/IContract_Programming_Repository_12_2_1_0";
 
-import * as ChapterPage_Page_1_1_Begin_Process_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_1_Begin_Process_12_5_1_0";
-import * as ChapterPage_Page_1_2_Validate_Process_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_2_Validate_Process_12_5_1_0";
-import * as ChapterPage_Page_1_3_Process_StoryAuthor_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_3_Process_StoryAuthor_12_5_1_0";
-import * as ChapterPage_Page_1_4_Process_StoryCharacters_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_4_Process_StoryCharacters_12_5_1_0";
-import * as ChapterPage_Page_1_5_Process_StorySetting_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_5_Process_StorySetting_12_5_1_0";
-import * as ChapterPage_Page_1_6_Process_StoryExperiences_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_6_Process_StoryExperiences_12_5_1_0";
-import * as ChapterPage_Page_1_7_Process_StoryResources_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_7_Process_StoryResources_12_5_1_0";
-import * as ChapterPage_Page_1_8_Process_CRUD_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_8_Process_CRUD_12_5_1_0";
-import * as ChapterPage_Page_1_9_Verify_Process_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_9_Verify_Process_12_5_1_0";
-import * as ChapterPage_Page_1_10_End_Process_12_5_1_0 from "../../../../../../../../5. Chapter/12/Other/5/Security/Page/1/1_0/Page_1_10_End_Process_12_5_1_0";
+import * as ChapterPage_Page_1_1_Begin_Process_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_1_Begin_Process_12_4_1_0";
+import * as ChapterPage_Page_1_2_Validate_Process_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_2_Validate_Process_12_4_1_0";
+import * as ChapterPage_Page_1_3_Process_StoryAuthor_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_3_Process_StoryAuthor_12_4_1_0";
+import * as ChapterPage_Page_1_4_Process_StoryCharacters_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_4_Process_StoryCharacters_12_4_1_0";
+import * as ChapterPage_Page_1_5_Process_StorySetting_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_5_Process_StorySetting_12_4_1_0";
+import * as ChapterPage_Page_1_6_Process_StoryExperiences_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_6_Process_StoryExperiences_12_4_1_0";
+import * as ChapterPage_Page_1_7_Process_StoryResources_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_7_Process_StoryResources_12_4_1_0";
+import * as ChapterPage_Page_1_8_Process_CRUD_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_8_Process_CRUD_12_4_1_0";
+import * as ChapterPage_Page_1_9_Verify_Process_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_9_Verify_Process_12_4_1_0";
+import * as ChapterPage_Page_1_10_End_Process_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_10_End_Process_12_4_1_0";
 
-export namespace BaseDI.BackEnd.Director.Security_1 {
-    export class Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
+export namespace BaseDI.BackEnd.Director.CMS_1 {
+    export class Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         //#endregion
@@ -197,10 +197,10 @@ export namespace BaseDI.BackEnd.Director.Security_1 {
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-9
-        public async Action_9_Verify_Process(): Promise<object> {
+        //Page 1-7
+        public async Action_7_Process_StoryResources(): Promise<object> {
             //region 1. Assign 
-            var page = new ChapterPage_Page_1_5_Process_StorySetting_12_5_1_0.BaseDI.BackEnd.Chapter.Page.Security_1.Page_1_5_Process_StorySetting_12_5_1_0(this._storylineDetails, this._repository);
+            var page = new ChapterPage_Page_1_7_Process_StoryResources_12_4_1_0.BaseDI.BackEnd.Chapter.Page.CMS_1.Page_1_7_Process_StoryResources_12_4_1_0(this._storylineDetails, this._repository);
 
             page.Client = this._client;
 
@@ -216,7 +216,6 @@ export namespace BaseDI.BackEnd.Director.Security_1 {
             //region 2. Action
             this._storylineDetails = await page.Action();
 
-            //region 3. Observe
             return this._storylineDetails;
         }
 
@@ -255,13 +254,13 @@ export namespace BaseDI.BackEnd.Director.Security_1 {
             return this._storylineDetails;
         }
 
-        //Page 1-7
-        public async Action_7_Process_StoryResources(): Promise<object> {
+        //Page 1-8
+        public async Action_8_Process_CRUD(): Promise<object> {
             return this._storylineDetails;
         }
 
-        //Page 1-8
-        public async Action_8_Process_CRUD(): Promise<object> {
+        //Page 1-9
+        public async Action_9_Verify_Process(): Promise<object> {
             return this._storylineDetails;
         }
 

@@ -51,6 +51,7 @@ import * as RiskManagementFactoryTester_NicheMaster_11_1_1_0 from "../../../../.
 import * as CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0 from "../../../../../../../../1. Storyline/12/Other/1/Careers Employment/Factory/1/1_0/CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0";
 import * as ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingFactoryImplementer_NicheMaster_12_2_1_0";
 import * as WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 from "../../../../../../../../1. Storyline/12/Other/3/Web Development/Factory/1/1_0/WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0";
+import * as CMSFactoryImplementer_NicheMaster_12_4_1_0 from "../../../../../../../../1. Storyline/12/Other/4/CMS/Factory/1/1_0/CMSFactoryImplementer_NicheMaster_12_4_1_0";
 import * as SecurityFactoryImplementer_NicheMaster_12_5_1_0 from "../../../../../../../../1. Storyline/12/Other/5/Security/Factory/1/1_0/SecurityFactoryImplementer_NicheMaster_12_5_1_0";
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
@@ -626,6 +627,17 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/webdevelopment";
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
+
+                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                }
+
+                if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_CMS")) {
+                    let createDirector = new CMSFactoryImplementer_NicheMaster_12_4_1_0.BaseDI.BackEnd.Story.CMS_1.CMSFactoryImplementer_NicheMaster_12_4_1_0(this._extraData);
+
+                    createDirector.APILocationLocalNodeJS = "http://localhost:8912/storyline/basedi/io/cms";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/cms";
+
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/cms";
 
                     return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
