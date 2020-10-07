@@ -92,8 +92,8 @@ namespace BaseDI.BackEnd.Director.Web_Development_1
     {
         #region 1. Assign
 
-        private object _client;
-        private object _centralizedStorer;
+        private Dictionary<string, object> _client;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;        
 
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
@@ -107,7 +107,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_3_Page_1(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_3_Page_1(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
             _centralizedStorer = centralizedStorer;
@@ -190,7 +190,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_3_Page_1_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
             _centralizedStorer = centralizedStorer;

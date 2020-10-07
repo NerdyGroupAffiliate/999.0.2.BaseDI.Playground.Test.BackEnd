@@ -1,10 +1,13 @@
 ﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Script.Web_Development.Extensions_13;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,9 +31,9 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         //A. Constructor Instantiation
         public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0()
         {
-            #region 1. Assign            
+            #region 1. Assign           
 
-
+     
             #endregion
 
             #region 2. Action
@@ -243,13 +246,23 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign             
 
+            var request = _client.ContainsKey("Request") ? _client["Request"] : null;
+
+            var server = _client.ContainsKey("Server") ? _client["Server"] : null;
+            var serverDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(_storylineDetails);
+            
             #endregion
 
             #region 2. Action 
 
-            var r = _client["Request"];
-            var s = _client["Server"];
+            #region COMMUNICATION TO SERVER
 
+            if (request != null && request is HttpRequest)
+            {
+
+            }
+
+            #endregion
 
             #endregion
 

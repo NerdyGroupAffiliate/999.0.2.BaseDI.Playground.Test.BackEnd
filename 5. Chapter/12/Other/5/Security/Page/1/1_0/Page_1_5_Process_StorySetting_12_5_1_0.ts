@@ -9,13 +9,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
     export class Page_1_5_Process_StorySetting_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
 
-        private _apiMetaData: any = null;
-
-        private _request: any = null;
-        private _requestRoute: string = null;
-
-        private _server: any = null;
-
         //#endregion
 
         //#region 2. Ready
@@ -53,9 +46,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#region EXECUTE THE VISION
 
-            if (process.env.APP_ENV == "SERVER") {
-                this.Step_1_0_Custom_Control_ServerAuthenticationRequestToAPI_1_0();
-            }
 
             //#endregion
 
@@ -80,32 +70,11 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#region RECALL THE MEMORIES
 
-            const storylineDetails: any = this.StorylineDetails;
-
-            const entryPointName: string = "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
-
-            this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "key_1", "APIS", false);
-
-            this._request = this.Client?.Request;
-            this._requestRoute = this._request?.route?.path;
-
-            this._server = this.Client?.Server;
 
             //#endregion
 
             //#region EXECUTE THE VISION
 
-            if (this._server != undefined && this._server != null) {
-                Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.BackEnd.Security.Extensions_1.Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.Step_X_X_Custom_Store_ServerSecuritySettingsToMemory_1_0(this._server, storylineDetails);
-            }
-
-            if (this._requestRoute.toUpperCase() == "/AUTHREQUEST") {
-                this.Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0();
-            }
-
-            if (this._requestRoute.toUpperCase() == "/AUTHRESPONSE") {
-                this.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0();
-            }
 
             //#endregion
 
@@ -125,22 +94,6 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#endregion
 
             //#region EXECUTE THE VISION
-
-            if (this._request != undefined && this._request != null) {
-                const api: string = this._request?.query?.API;
-
-                if (this._requestRoute != undefined && this._requestRoute != null) {
-                    if (api != undefined && api != null) {
-                        switch (api.toUpperCase()) {
-                            case "MICROSOFT":
-                            case "MICROSOFTGRAPH":
-                                this.Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft();
-
-                                break;
-                        }
-                    }
-                }
-            }
 
             //#endregion
 

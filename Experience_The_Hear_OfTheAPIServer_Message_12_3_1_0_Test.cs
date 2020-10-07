@@ -2,8 +2,10 @@
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Story.Programming_1;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -40,7 +42,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 2. Ready
 
-        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test()
+        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test(IServiceCollection services = null, IApplicationBuilder app = null, IWebHostEnvironment env = null)
         {
             #region 1. Assign
 
@@ -51,6 +53,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
             _storylineDetails = new JObject();
             _storylineDetails_Parameters = new JObject();
+
+            var a = app;
 
             #endregion
 

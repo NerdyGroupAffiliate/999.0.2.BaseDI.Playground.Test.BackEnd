@@ -200,7 +200,7 @@ export namespace BaseDI.BackEnd.Director.Security_1 {
         //Page 1-9
         public async Action_9_Verify_Process(): Promise<object> {
             //region 1. Assign 
-            var page = new ChapterPage_Page_1_5_Process_StorySetting_12_5_1_0.BaseDI.BackEnd.Chapter.Page.Security_1.Page_1_5_Process_StorySetting_12_5_1_0(this._storylineDetails, this._repository);
+            var page = new ChapterPage_Page_1_9_Verify_Process_12_5_1_0.BaseDI.BackEnd.Chapter.Page.Security_1.Page_1_9_Verify_Process_12_5_1_0(this._storylineDetails, this._repository);
 
             page.Client = this._client;
 

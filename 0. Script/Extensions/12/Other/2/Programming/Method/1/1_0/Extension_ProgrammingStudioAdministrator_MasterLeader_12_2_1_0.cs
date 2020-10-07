@@ -106,7 +106,8 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_1
                     // leaf of the tree
                     if(token.ToString().ToUpper(CultureInfo.CurrentCulture) == keyValue.ToUpper(CultureInfo.CurrentCulture))
                     {
-                        matches.Add(token);
+                        if(!matches.Contains(token))
+                            matches.Add(token);
                     }
                     //if (nodes.ContainsKey(parentLocation))
                     //{
