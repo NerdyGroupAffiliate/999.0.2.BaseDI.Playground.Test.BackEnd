@@ -47,6 +47,33 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
             return results;
         }
 
+        public static JObject Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(JObject storylineDetails)
+        {
+            if (storylineDetails == null) return null;
+
+            #region DESCRIBE THE MEMORIES
+
+            var serverEnvironmentMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
+            var serverEnvironment = serverEnvironmentMetaData != null ? serverEnvironmentMetaData.Parent : null;
+
+            Dictionary<string, JToken> results = new Dictionary<string, JToken>();
+
+            #endregion
+
+            #region RECALL THE MEMORIES
+
+            #endregion
+
+            #region EXECUTE THE VISION
+
+            #endregion
+
+            #region REPORT THE FEEDBACK
+
+            return storylineDetails;
+
+            #endregion            
+        }
         #endregion
     }
 }

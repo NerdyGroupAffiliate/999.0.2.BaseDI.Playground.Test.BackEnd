@@ -261,6 +261,9 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             if(extraData != null && extraData.ToString().ToUpper().Contains("READSTATICFILES"))
             {
+                var staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
+
+                //TODO: Add SetupItemEnvironmentClient JSON Object from staticSettingDetails to "Output" of _storylineDetails'
                 return _storylineDetails;
             }
 
