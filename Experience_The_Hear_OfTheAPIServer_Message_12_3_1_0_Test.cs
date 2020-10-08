@@ -22,6 +22,8 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 1. Assign
 
         //A. Variable Declaration
+        private object _additionalClientInfo = null;
+
         private string _baseDIArmTemplateSchema = "";
         private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.json";
         private string _baseDIArmTemplateSchemaParameters = "";
@@ -33,6 +35,9 @@ namespace BaseDI.Playground.Test.BackEnd
 
         private object _presentation;
 
+        private string _requestToProcess = "";
+        private string _requestToProcessParameters = "";
+
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
 
@@ -42,7 +47,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 2. Ready
 
-        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test(IServiceCollection services = null, IApplicationBuilder app = null, IWebHostEnvironment env = null)
+        public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test()
         {
             #region 1. Assign
 
@@ -53,8 +58,6 @@ namespace BaseDI.Playground.Test.BackEnd
 
             _storylineDetails = new JObject();
             _storylineDetails_Parameters = new JObject();
-
-            var a = app;
 
             #endregion
 
@@ -127,7 +130,7 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [Route("")]
-        public async Task<IActionResult> Action()
+        public async Task<IActionResult> Action(string unitTestName = "", string requestToProcess = "", string requestToProcessParameters = "", object extraData = null)
         {
             #region 1. Assign        
 
@@ -142,6 +145,9 @@ namespace BaseDI.Playground.Test.BackEnd
             //SETUP CLIENT INFO
             _clientInfo.Add("Request", this.Request);
             _clientInfo.Add("Server", this);
+
+            if (extraData != null)
+                _clientInfo.Add("ExtraData", extraData);
 
             #endregion
 

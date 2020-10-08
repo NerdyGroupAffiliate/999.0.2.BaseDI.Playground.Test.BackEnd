@@ -246,14 +246,25 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign             
 
+            var extraData = _client.ContainsKey("ExtraData") ? _client["ExtraData"] : null;
+
             var request = _client.ContainsKey("Request") ? _client["Request"] : null;
 
             var server = _client.ContainsKey("Server") ? _client["Server"] : null;
             var serverDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(_storylineDetails);
-            
+
             #endregion
 
             #region 2. Action 
+
+            #region STORE STATIC SETTINGS
+
+            if(extraData != null && extraData.ToString().ToUpper().Contains("READSTATICFILES"))
+            {
+                return _storylineDetails;
+            }
+
+            #endregion
 
             #region COMMUNICATION TO SERVER
 
