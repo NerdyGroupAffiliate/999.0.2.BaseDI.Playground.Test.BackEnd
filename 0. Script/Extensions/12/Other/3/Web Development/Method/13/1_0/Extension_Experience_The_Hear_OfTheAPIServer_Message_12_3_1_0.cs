@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,14 +19,17 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
             #region DESCRIBE THE MEMORIES
 
             var serverEnvironmentMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
+
             var serverEnvironment = serverEnvironmentMetaData != null ? serverEnvironmentMetaData.Parent : null;
 
+
+            //Console.WriteLine(serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesGET"));
             //var serverEnvironmentServerRoutesGET = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
 
-            JToken serverEnvironmentServerRoutesGET = null; // serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
-            JToken serverEnvironmentServerRoutesPOST = null;
-            JToken serverEnvironmentServerRoutesPUT = null;
-            JToken serverEnvironmentServerRoutesDELETE = null;
+            JToken serverEnvironmentServerRoutesGET = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesGET"); // serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
+            JToken serverEnvironmentServerRoutesPOST = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesPOST"); 
+            JToken serverEnvironmentServerRoutesPUT = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesPUT"); 
+            JToken serverEnvironmentServerRoutesDELETE = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesDELETE"); 
 
             Dictionary<string, JToken> results = new Dictionary<string, JToken>();
 
@@ -34,9 +38,9 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
             #region RECALL THE MEMORIES
 
             results.Add("GET", serverEnvironmentServerRoutesGET);
-            results.Add("POST", serverEnvironmentServerRoutesGET);
-            results.Add("PUT", serverEnvironmentServerRoutesGET);
-            results.Add("DELETE", serverEnvironmentServerRoutesGET);
+            results.Add("POST", serverEnvironmentServerRoutesPOST);
+            results.Add("PUT", serverEnvironmentServerRoutesPUT);
+            results.Add("DELETE", serverEnvironmentServerRoutesDELETE);
 
             #endregion
 
