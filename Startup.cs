@@ -26,7 +26,7 @@ namespace BaseDI.Playground.Test.BackEnd
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var fileMetaDataResult = Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Step_1_0_ReadStaticFiles").Result;
+            var fileMetaDataResult = Action("Step_1_0_ReadStaticFiles", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0").Result;
 
             if(fileMetaDataResult is OkObjectResult)
             {
@@ -56,11 +56,11 @@ namespace BaseDI.Playground.Test.BackEnd
 
     public partial class Startup
     {
-        public static async Task<IActionResult> Action(string unitTestName = "", string requestToProcess = "", string requestToProcessParameters = "", object extraData = null)
+        public static async Task<IActionResult> Action(string processGoalName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             var process = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test();
 
-            IActionResult result = await process.Action(unitTestName, requestToProcess, requestToProcessParameters, extraData);
+            IActionResult result = await process.Action(processGoalName, requestToProcess, requestToProcessParameters);
 
             return result;
         }

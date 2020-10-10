@@ -183,21 +183,23 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         public async Action_1_Begin_Process(): Promise<object> {
             try
             {
-                //#region COMMUNICATION TO SERVER
                 if (process.env.APP_ENV == "SERVER")
                 {
+                    //#region 1. Assign
+
                     //#region MEMORIZE SERVER OPTIONS
 
                     this._server = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storylineDetails);
 
                     //#endregion
 
-                    //#region SET SERVER RESPONSE
+                    //#endregion
+
+                    //#region 2. Action
 
                     //#region OUTPUT THE RESPONSE
 
-                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) =>
-                    {
+                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) => {
                         //#region 1. Assign
                         let armTemplateJSONOutput: any;
 
@@ -222,8 +224,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                         //#region 2. Action
 
-                        try
-                        {
+                        try {
                             //#region EXECUTE OUR LOGIC
 
                             //#region PROCESS LOGIC UPDATES
@@ -242,8 +243,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                             //#endregion
                         }
-                        catch (storyMistake)
-                        {
+                        catch (storyMistake) {
                             //#region PRINT OUT MISTAKES
                             console.log(storyMistake);
                             //#endregion
@@ -255,7 +255,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                         handleObservation.then(response => {
                             const result: string = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
 
-                            res.send(result);                        
+                            res.send(result);
 
                         });
 
@@ -265,10 +265,8 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                     //#region INPUT THE REQUEST
                     const Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (serverEnvironmentServerRoutes: Array<any>) => {
-                        if (serverEnvironmentServerRoutes.length > 0)
-                        {
-                            serverEnvironmentServerRoutes.map(item =>
-                            {
+                        if (serverEnvironmentServerRoutes.length > 0) {
+                            serverEnvironmentServerRoutes.map(item => {
                                 const controllerRoutes: Array<any> = item.SetupItemTransportItemRoute.ControllerRoutes;
                                 const controllerName: string = item.SetupItemTransportItemRoute.ControllerName;
                                 const controllerModelDataLocalObject: Object = item.SetupItemTransportItemRoute.ModelDataLocalObject;
@@ -289,20 +287,23 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                         }
                     }
 
-                    //READ GET ROUTES
-                    Step_1_0_Custom_Control_ClientRequestToServer_1_0(this._server.Server.Verbs.Get);
+                    //READ ROUTES
+                    Step_1_0_Custom_Control_ClientRequestToServer_1_0(this._server.Server.Verbs.Get); //GET ROUTES
 
                     //#endregion
 
                     //#endregion
+
+                    //#region 3. Observe
 
                     //#region START THE SERVER
                     this._server.Server.Instance.listen(this._server.Server.Port, () => {
                         console.log(`server started at http://localhost:${this._server.Server.Port}`);
                     });
                     //#endregion
+
+                    //#endregion
                 }
-                //#endregion
             }
             catch (e)
             {

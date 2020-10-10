@@ -71,7 +71,7 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 4. Action
-        public Action(unitTestName: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", extraData: Object)
+        public Action(processGoalName: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "")
         {
             // console.log(unitTestName);
             // console.log(requestNameToProcess);
@@ -88,8 +88,8 @@ export namespace BaseDI.BackEnd {
             let isProcessComplete: boolean = false;
             let handleObservation: Promise<any>;
 
-            if (extraData != null)
-                this._clientInfo["ExtraData"] = extraData;
+            if (processGoalName != null)
+                this._clientInfo["Process"] = processGoalName;
 
             //#endregion
 

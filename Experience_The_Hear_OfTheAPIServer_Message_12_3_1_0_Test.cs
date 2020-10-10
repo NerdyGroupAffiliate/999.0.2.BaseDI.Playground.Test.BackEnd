@@ -130,14 +130,14 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [Route("")]
-        public async Task<IActionResult> Action(string unitTestName = "", string requestToProcess = "", string requestToProcessParameters = "", object extraData = null)
+        public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region 1. Assign        
 
             JObject armTemplateJSONOutput = null;
 
             JToken outputs = null;
-            List<JToken> outputObservations = null;
+    
             StringBuilder outputObservationsPrintOut = new StringBuilder();
 
             _clientInfo = new Dictionary<string, object>();
@@ -146,8 +146,8 @@ namespace BaseDI.Playground.Test.BackEnd
             _clientInfo.Add("Request", this.Request);
             _clientInfo.Add("Server", this);
 
-            if (extraData != null)
-                _clientInfo.Add("ExtraData", extraData);
+            if (processGoalName != null)
+                _clientInfo.Add("Process", processGoalName);
 
             #endregion
 
