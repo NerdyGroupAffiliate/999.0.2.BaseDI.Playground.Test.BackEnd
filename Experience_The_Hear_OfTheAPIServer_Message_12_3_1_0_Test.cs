@@ -185,18 +185,17 @@ namespace BaseDI.Playground.Test.BackEnd
                 #region PRINT OUT MISTAKES
 
                 armTemplateJSONOutput = _storylineDetails;
-
-                outputs = armTemplateJSONOutput.SelectToken("outputs..baseDIMistakes");
-
-                foreach (var programmingMistake in outputs.Children())
+                if (armTemplateJSONOutput != null)
                 {
-                    var mistake = programmingMistake.Value<string>("mistake");
+                    outputs = armTemplateJSONOutput.SelectToken("outputs..baseDIMistakes");
+                    foreach (var programmingMistake in outputs.Children())
+                    {
+                        var mistake = programmingMistake.Value<string>("mistake");
 
-                    outputObservationsPrintOut.Append(mistake + System.Environment.NewLine);
+                        outputObservationsPrintOut.Append(mistake + System.Environment.NewLine);
+                    }
+                    Console.Write(outputObservationsPrintOut.ToString());
                 }
-
-                Console.Write(outputObservationsPrintOut.ToString());
-
                 #endregion
             }
 
@@ -204,7 +203,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. Observe
 
-            return Ok(armTemplateJSONOutput.ToString());
+            return Ok(armTemplateJSONOutput != null ? armTemplateJSONOutput.ToString() : "armTemplateJSONOutput : Null");
 
             #endregion
         }
