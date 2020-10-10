@@ -2,8 +2,10 @@
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Story.Programming_1;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -20,6 +22,8 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 1. Assign
 
         //A. Variable Declaration
+        private object _additionalClientInfo = null;
+
         private string _baseDIArmTemplateSchema = "";
         private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.json";
         private string _baseDIArmTemplateSchemaParameters = "";
@@ -30,6 +34,9 @@ namespace BaseDI.Playground.Test.BackEnd
         private ExtraData_12_2_1_0 _extraData;
 
         private object _presentation;
+
+        private string _requestToProcess = "";
+        private string _requestToProcessParameters = "";
 
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
@@ -123,7 +130,7 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [Route("")]
-        public async Task<IActionResult> Action()
+        public async Task<IActionResult> Action(string unitTestName = "", string requestToProcess = "", string requestToProcessParameters = "", object extraData = null)
         {
             #region 1. Assign        
 
@@ -136,8 +143,11 @@ namespace BaseDI.Playground.Test.BackEnd
             _clientInfo = new Dictionary<string, object>();
 
             //SETUP CLIENT INFO
-            _clientInfo.Add("presentation_experience", _presentation);
-            _clientInfo.Add("presentation_director", this);
+            _clientInfo.Add("Request", this.Request);
+            _clientInfo.Add("Server", this);
+
+            if (extraData != null)
+                _clientInfo.Add("ExtraData", extraData);
 
             #endregion
 
@@ -163,14 +173,14 @@ namespace BaseDI.Playground.Test.BackEnd
                     .SetupStoryline(_clientInfo, _storylineDetails, null, _extraData, "", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
                     .Action().Result;
 
-                if(armTemplateJSONOutput != null)
+                if (armTemplateJSONOutput != null)
                 {
                     outputs = armTemplateJSONOutput["outputs"];
                 }
 
                 #endregion
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 #region PRINT OUT MISTAKES
 
