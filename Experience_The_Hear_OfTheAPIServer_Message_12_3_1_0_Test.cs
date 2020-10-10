@@ -173,30 +173,29 @@ namespace BaseDI.Playground.Test.BackEnd
                     .SetupStoryline(_clientInfo, _storylineDetails, null, _extraData, "", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
                     .Action().Result;
 
-                if(armTemplateJSONOutput != null)
+                if (armTemplateJSONOutput != null)
                 {
                     outputs = armTemplateJSONOutput["outputs"];
                 }
 
                 #endregion
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 #region PRINT OUT MISTAKES
 
                 armTemplateJSONOutput = _storylineDetails;
-
-                outputs = armTemplateJSONOutput.SelectToken("outputs..baseDIMistakes");
-
-                foreach (var programmingMistake in outputs.Children())
+                if (armTemplateJSONOutput != null)
                 {
-                    var mistake = programmingMistake.Value<string>("mistake");
+                    outputs = armTemplateJSONOutput.SelectToken("outputs..baseDIMistakes");
+                    foreach (var programmingMistake in outputs.Children())
+                    {
+                        var mistake = programmingMistake.Value<string>("mistake");
 
-                    outputObservationsPrintOut.Append(mistake + System.Environment.NewLine);
+                        outputObservationsPrintOut.Append(mistake + System.Environment.NewLine);
+                    }
+                    Console.Write(outputObservationsPrintOut.ToString());
                 }
-
-                Console.Write(outputObservationsPrintOut.ToString());
-
                 #endregion
             }
 
@@ -204,7 +203,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. Observe
 
-            return Ok(armTemplateJSONOutput.ToString());
+            return Ok(armTemplateJSONOutput != null ? armTemplateJSONOutput.ToString() : "armTemplateJSONOutput : Null");
 
             #endregion
         }

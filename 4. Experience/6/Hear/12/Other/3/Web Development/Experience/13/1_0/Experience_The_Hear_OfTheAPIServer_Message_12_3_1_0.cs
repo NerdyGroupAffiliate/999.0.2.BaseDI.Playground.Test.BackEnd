@@ -1,13 +1,13 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.BackEnd.Director.Programming_1;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
 using BaseDI.BackEnd.Script.Web_Development.Extensions_13;
+using BaseDI.BackEnd.Story.Programming_1;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,9 +31,9 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         //A. Constructor Instantiation
         public Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0()
         {
-            #region 1. Assign           
+            #region 1. Assign            
 
-     
+
             #endregion
 
             #region 2. Action
@@ -244,15 +244,16 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
         public override async Task<JObject> Action_1_Begin_Process()
         {
-            #region 1. Assign             
+           #region 1. Assign             
 
             var extraData = _client.ContainsKey("ExtraData") ? _client["ExtraData"] : null;
 
-            var request = _client.ContainsKey("Request") ? _client["Request"] : null;
+            var request =  _client.ContainsKey("Request") ? _client["Request"] : null;
 
             var server = _client.ContainsKey("Server") ? _client["Server"] : null;
             var serverDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(_storylineDetails);
-
+            // var serverD = (Dictionary<string, JObject>) serverDetails
+            
             #endregion
 
             #region 2. Action 
@@ -273,6 +274,58 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             if (request != null && request is HttpRequest)
             {
+                dynamic requestDynamic = request;
+
+                var verb = requestDynamic.Method;
+                var path = requestDynamic.Path;
+
+                var serverCopy = (object) serverDetails[verb];
+                var ServerD = new Dictionary<string, object>();
+                
+                ServerD.Add(verb, serverCopy);
+
+                //Console.WriteLine($"Method: {verb}, Path: {path}");
+
+                var serverEnvironmentServerRoutes = serverDetails[verb];
+                if(serverEnvironmentServerRoutes != null)
+                {
+                    var found = false;
+                    foreach (var item in serverEnvironmentServerRoutes)
+                    {
+                        var setupItemTransportItemRoute = item.SetupItemTransportItemRoute;
+                        var controllerRoutes = setupItemTransportItemRoute.ControllerRoutes;
+                        string controllerName = setupItemTransportItemRoute.ControllerName;
+
+                        JObject controllerModelDataLocalObject = setupItemTransportItemRoute.ModelDataLocalObject;
+
+                        string controllerModelDataLocalParameter = item.SetupItemTransportItemRoute.ModelDataLocalParameter;
+                        JObject controllerModelDataRemote = setupItemTransportItemRoute.ModelDataRemote;
+
+                        foreach (var route in controllerRoutes)
+                        {                          
+                            if (route == path)
+                            {
+                                //Console.WriteLine(setupItemTransportItemRoute);
+
+                                var armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                                    .SetupStoryline(ServerD, StorylineDetails, StorylineDetails_Parameters, ExtraData, controllerName, path, controllerModelDataLocalParameter)
+                                    .Action().Result;
+
+                                found = true;
+                                break;                                
+                            }
+                        }
+                        if (found)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+
+
+
+               
 
             }
 

@@ -192,8 +192,8 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
 
         internal Implement_DesignPattern_Builder_Chapter_12_3_Page_12_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
-            _centralizedStorer = centralizedStorer;
+            _client = (Dictionary<string, object>)client;
+            _centralizedStorer = (aClass_Programming_ScriptAction_12_2_1_0<JObject>)centralizedStorer;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
