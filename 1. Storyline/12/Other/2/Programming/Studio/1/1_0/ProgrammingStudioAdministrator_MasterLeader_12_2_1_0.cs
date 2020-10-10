@@ -27,7 +27,6 @@ using BaseDI.BackEnd.Story.Podcasting_2;
 
 //4. Sell Low Ticket Offer
 using BaseDI.BackEnd.Story.Supplements_1;
-using BaseDI.BackEnd.Story.Web_Development_1;
 
 //5. Sell High Ticket Offer
 using BaseDI.BackEnd.Story.Coaching_1;
@@ -54,6 +53,8 @@ using BaseDI.BackEnd.Story.Social_Media_3;
 
 //12. Other
 using BaseDI.BackEnd.Story.Careers_Employment_1;
+using BaseDI.BackEnd.Story.Web_Development_1;
+using BaseDI.BackEnd.Story.Programming_1;
 using BaseDI.BackEnd.Story.Security_1;
 
 namespace BaseDI.BackEnd.Story.Programming_1
@@ -737,6 +738,21 @@ namespace BaseDI.BackEnd.Story.Programming_1
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
+                if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CMS"))
+                {
+
+                    //TODO: Add Code from Play Ground
+                    
+                    // CMSFactoryImplementer_NicheMaster_12_4_1_0 createDirector = new CMSFactoryImplementer_NicheMaster_12_4_1_0(_extraData);
+
+                    //createDirector.APILocationLocalNodeJS = "http://localhost:8912/storyline/basedi/io/cms";
+                    //createDirector.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/cms";
+
+                    //createDirector.APILocationRemote = "https://storyline.basedi.io/cms";
+
+                    //return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                }
+
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SECURITY"))
                 {
                     SecurityFactoryImplementer_NicheMaster_12_5_1_0 createDirector = new SecurityFactoryImplementer_NicheMaster_12_5_1_0(_extraData);
@@ -1370,4 +1386,3 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
     #endregion
 }
-
