@@ -10,4 +10,4 @@
 /wwwroot/Server
 /wwwroot/Source
 /wwwroot/Client
-/bin/Debug
+/bin/*
