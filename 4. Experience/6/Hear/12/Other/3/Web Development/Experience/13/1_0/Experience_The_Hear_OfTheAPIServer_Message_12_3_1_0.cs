@@ -1,6 +1,7 @@
 ﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.BackEnd.Script.Web_Development.Extensions_13;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using System;
@@ -241,11 +242,39 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
         public override async Task<JObject> Action_1_Begin_Process()
         {
-            #region 1. Assign             
+           #region 1. Assign             
+
+            var extraData = _client.ContainsKey("ExtraData") ? _client["ExtraData"] : null;
+
+            var request = _client.ContainsKey("Request") ? _client["Request"] : null;
+
+            var server = _client.ContainsKey("Server") ? _client["Server"] : null;
+            var serverDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(_storylineDetails);
 
             #endregion
 
             #region 2. Action 
+
+            #region STORE STATIC SETTINGS
+
+            if(extraData != null && extraData.ToString().ToUpper().Contains("READSTATICFILES"))
+            {
+                var staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
+
+                //TODO: Add SetupItemEnvironmentClient JSON Object from staticSettingDetails to "Output" of _storylineDetails'
+                return _storylineDetails;
+            }
+
+            #endregion
+
+            #region COMMUNICATION TO SERVER
+
+            if (request != null && request is HttpRequest)
+            {
+
+            }
+
+            #endregion
 
             #endregion
 
