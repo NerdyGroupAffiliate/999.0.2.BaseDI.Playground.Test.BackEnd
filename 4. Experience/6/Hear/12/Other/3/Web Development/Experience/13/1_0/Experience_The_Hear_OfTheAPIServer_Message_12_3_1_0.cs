@@ -388,6 +388,8 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
                                 }
                             }
                         }
+
+                        return _storylineDetails;
                     };
 
                     //READ ROUTES
@@ -399,8 +401,6 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
                     #region 3. Observe
 
-                    return _storylineDetails;
-
                     #endregion
                 }
             }
@@ -411,7 +411,6 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
-
 
         #endregion
 
