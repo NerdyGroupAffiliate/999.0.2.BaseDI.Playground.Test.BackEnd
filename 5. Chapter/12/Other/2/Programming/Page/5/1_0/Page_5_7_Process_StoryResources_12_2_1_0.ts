@@ -59,7 +59,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_5 {
             //#endregion
         }
 
-        //region THE VISION STEPS
+        //#region THE VISION STEPS
         private Step_1_0_Custom_Sense_SystemDisturbances_1_0(): void {
             //#region DESCRIBE THE MEMORIES
 

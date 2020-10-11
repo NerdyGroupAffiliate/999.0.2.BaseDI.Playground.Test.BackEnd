@@ -26,16 +26,25 @@ namespace BaseDI.Playground.Test.BackEnd
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var fileMetaDataResult = Action("Step_1_0_ReadStaticFiles", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0").Result;
+            #region COPY STATIC FILES
 
-            if(fileMetaDataResult is OkObjectResult)
+            var copyFilesResult = Action("Step_1_0_CopyLocalFiles", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0").Result;
+
+            #endregion
+
+            #region MAP STATIC FILES
+
+            var mapStaticFilesResult = Action("Step_1_0_ReadStaticFiles", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0").Result;
+
+            if (mapStaticFilesResult is OkObjectResult)
             {
-                var fileMetaData = ((OkObjectResult)fileMetaDataResult).Value;
+                var mapStaticFiles = ((OkObjectResult)mapStaticFilesResult).Value;
 
-                if(fileMetaData != null)
+                if (mapStaticFiles != null)
                 {
-                    JObject fileMetaDataFormatted = JObject.Parse(fileMetaData.ToString());
+                    JObject fileMetaDataFormatted = JObject.Parse(mapStaticFiles.ToString());
                 }
+
                 //app.UseStaticFiles(new StaticFileOptions
                 //{
 
@@ -44,6 +53,8 @@ namespace BaseDI.Playground.Test.BackEnd
                 //    RequestPath = "/StaticFiles"
                 //});
             }
+
+            #endregion
 
             app.UseRouting();            
             
