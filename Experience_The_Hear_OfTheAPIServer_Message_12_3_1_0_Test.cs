@@ -11,9 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace BaseDI.Playground.Test.BackEnd
 {
@@ -129,7 +132,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 4. Action
 
-        [Route("")]
+        [HttpGet("{*url}", Order = int.MaxValue)]
         public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region 1. Assign        
@@ -202,8 +205,13 @@ namespace BaseDI.Playground.Test.BackEnd
             #endregion
 
             #region 3. Observe
-
-            return Ok(armTemplateJSONOutput != null ? armTemplateJSONOutput.ToString() : "armTemplateJSONOutput : Null");
+            return new ContentResult
+            {
+                ContentType = "text/html",
+                StatusCode = (int)HttpStatusCode.OK,
+                Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult")
+            };
+            // return Ok(armTemplateJSONOutput != null ? armTemplateJSONOutput.ToString() : "armTemplateJSONOutput : Null");
 
             #endregion
         }

@@ -1,6 +1,11 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
+using BaseDI.BackEnd.Script.Web_Development.Extensions_0;
 
 namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1
 {
@@ -48,13 +53,70 @@ namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1
         public override async Task<JObject> Action()
         {
             //Set a reference to our the details of our storyline.
-            var storylineDetails = StorylineDetails;
+            dynamic storylineDetails = StorylineDetails;
 
             //Get container detail.
             //var detail = storylineDetails.StoryScenery.Location.Stage.Details.Where(d => d.Key.ToUpper() == "PAGE_3_1_PROCESS_LAYOUTZONES").SingleOrDefault();
 
             //Parse HTML into Linq to HTML object.
             //var HTMLdocument = HDocument.Parse(detail.Value);
+            //#region DESCRIBE THE MEMORIES
+            string entryPointName = "Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
+
+            string observationItem = "";
+
+            string observationPresentationTemplateItem = @"{ 'htmlResult': '{htmlResult}' }";
+            string observationBusinessTemplateItem = "{}";
+            string observationServiceTemplateItem = "{}";
+            string observationSecurityTemplateItem = "{}";
+            string observationDataTemplateItem = "{}";
+
+            string observationDataTemplateBuilder = "";
+
+
+            dynamic htmlContainerJSON = "";
+            dynamic htmlRowsJSON = "";
+            dynamic htmlColumnsJSON = "";
+            dynamic htmlContentJSON = "";
+            dynamic htmlStylesJSON = "";
+
+            string htmlResultInlineStylesString = "";
+            string htmlResultString = "";
+
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+            observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
+            
+            htmlContainerJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer", false).SingleOrDefault().Parent.Parent;
+
+            htmlRowsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows", false).SingleOrDefault().Parent.Parent;
+            htmlColumnsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns", false).SingleOrDefault().Parent.Parent;
+            htmlContentJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent", false).SingleOrDefault().Parent.Parent;
+            htmlStylesJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS", false).SingleOrDefault().Parent.Parent;
+
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON, htmlResultString);
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON, htmlResultString);
+
+            htmlResultInlineStylesString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON);
+
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Store_HTMLStructureToString_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
+
+            observationItem = observationItem.Replace("'","\"");
+            
+            observationItem = observationItem.Replace("{htmlResult}", Regex.Unescape(htmlResultString));
+            var observation = JObject.Parse(observationItem);
+
+            storylineDetails.outputs[1].baseDIObservations.Add(observation);
+            this.StorylineDetails = storylineDetails;
+
 
             return await Task.FromResult<JObject>(storylineDetails).ConfigureAwait(true);
         }

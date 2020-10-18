@@ -22,6 +22,8 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
             var serverEnvironment = serverEnvironmentMetaData != null ? serverEnvironmentMetaData.Parent : null;
 
+           // Console.WriteLine(serverEnvironmentMetaData.Parent.Parent);
+
             //Console.WriteLine(serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesGET"));
             //var serverEnvironmentServerRoutesGET = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
 

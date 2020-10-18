@@ -140,24 +140,24 @@
             //#region DESCRIBE THE MEMORIES
 
             let htmlContentString: string = htmlColumnsString;
-            let idsAndContant = {}
+            let idsAndConstant = {}
 
             //#endregion
 
             //#region EXECUTE THE VISION
 
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
-                if (idsAndContant[con.ParentHTMLContentItemAttributeID] == undefined) {
-                    idsAndContant[con.ParentHTMLContentItemAttributeID] = new Array();
-                    idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+                if (idsAndConstant[con.ParentHTMLContentItemAttributeID] == undefined) {
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID] = new Array();
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
                 else {
-                    idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
             });
 
-            Object.keys(idsAndContant).forEach(item => {
-                let content = idsAndContant[item].join('\n')
+            Object.keys(idsAndConstant).forEach(item => {
+                let content = idsAndConstant[item].join('\n')
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
             });
 

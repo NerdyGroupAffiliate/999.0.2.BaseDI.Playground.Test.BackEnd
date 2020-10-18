@@ -71,10 +71,11 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_1
 
         public static List<JToken> Step_X_X_Read_And_FindJSONNode_1_0(JObject data, string keyName, string keyValue, bool returnAsArray)
         {
-            List<JToken> matches = new List<JToken>();
+
+           List<JToken> matches = new List<JToken>();
 
             if (data == null) return null;
-
+            
             Func<JToken, Dictionary<string, string>, string, bool> Step_X_X_Read_And_FindJSONNode_1_1 = null;
 
             Step_X_X_Read_And_FindJSONNode_1_1 = (JToken token, Dictionary<string, string> nodes, string parentLocation) =>
@@ -125,7 +126,6 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_1
             };
 
             Step_X_X_Read_And_FindJSONNode_1_1(data, null, "");
-
             return matches;
         }  
 
