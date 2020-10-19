@@ -1,6 +1,10 @@
 ﻿
 using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_5;
 using Newtonsoft.Json.Linq;
+using NUnit.Framework;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BaseDI.BackEnd.Chapter.Page.Programming_5
@@ -48,17 +52,87 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_5
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            //Set a reference to our the details of our storyline.
-            var storylineDetails = StorylineDetails;
+            #region DESCRIBE THE MEMORIES
 
-            //Get container detail.
-            //var detail = storylineDetails.StoryScenery.Location.Stage.Details.Where(d => d.Key.ToUpper() == "PAGE_6_1_PROCESS_STORYLINEENDING").SingleOrDefault();
 
-            //Parse HTML into Linq to HTML object.
-            //var HTMLdocument = HDocument.Parse(detail.Value);
+            #endregion
 
-            return await Task.FromResult<JObject>(storylineDetails).ConfigureAwait(true);
+            #region RECALL THE MEMORIES
+
+
+            #endregion
+
+            #region EXECUTE THE VISION
+
+            Step_1_0_Custom_Sense_SystemDisturbances_1_0();
+
+            #endregion
+
+            #region REPORT THE FEEDBACK
+
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+
+            #endregion
         }
+
+        #region THE VISION STEPS
+
+        private void Step_1_0_Custom_Sense_SystemDisturbances_1_0() 
+        {
+            #region DESCRIBE THE MEMORIES
+
+            List<JToken> businessMetaData = null;
+            var businessFunctionParameterName = "Step_1_0_Custom_Transport_LocalAssetToServer_1_0";
+
+            #endregion
+
+            #region RECALL THE MEMORIES
+                                                                                              
+            businessMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(StorylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_BusinessFuction", false);
+            
+            #endregion
+
+            #region EXECUTE THE VISION
+
+            switch (businessFunctionParameterName.ToUpper()) 
+            {
+                case "STEP_1_0_CUSTOM_TRANSPORT_LOCALASSETTOSERVER_1_0":
+                    Step_1_0_Custom_Transport_LocalAssetToServer_1_0();
+
+                    break;
+            }
+
+            #endregion
+
+            #region REPORT THE FEEDBACK
+
+            #endregion
+        }
+
+        private void Step_1_0_Custom_Transport_LocalAssetToServer_1_0()
+        {
+            #region DESCRIBE THE MEMORIES
+
+            #endregion
+
+            #region RECALL THE MEMORIES
+
+
+            #endregion
+
+            #region EXECUTE THE VISION
+
+            Extension_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(this.StorylineDetails);
+
+            #endregion
+
+            #region REPORT THE FEEDBACK
+
+            #endregion
+        }
+        //#endregion
+
+        #endregion
 
         #endregion
     }

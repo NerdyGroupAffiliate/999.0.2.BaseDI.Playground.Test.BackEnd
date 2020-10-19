@@ -11,12 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace BaseDI.Playground.Test.BackEnd
 {
@@ -132,8 +129,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 4. Action
 
-        [HttpGet("{*url}", Order = int.MaxValue)]
-        public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "", string requestToProcessParameters = "")
+        [Route("")]
+        public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
         {
             #region 1. Assign        
 
@@ -144,9 +141,9 @@ namespace BaseDI.Playground.Test.BackEnd
             StringBuilder outputObservationsPrintOut = new StringBuilder();
 
             _clientInfo = new Dictionary<string, object>();
-
+  
             //SETUP CLIENT INFO
-            _clientInfo.Add("Request", this.Request);
+            _clientInfo.Add("Request", Request);
             _clientInfo.Add("Server", this);
 
             if (processGoalName != null)
@@ -173,7 +170,7 @@ namespace BaseDI.Playground.Test.BackEnd
                 #endregion
 
                 armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                    .SetupStoryline(_clientInfo, _storylineDetails, null, _extraData, "", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
+                    .SetupStoryline(_clientInfo, _storylineDetails, null, _extraData, "", requestToProcess, requestToProcessParameters)
                     .Action().Result;
 
                 if (armTemplateJSONOutput != null)
@@ -205,13 +202,8 @@ namespace BaseDI.Playground.Test.BackEnd
             #endregion
 
             #region 3. Observe
-            return new ContentResult
-            {
-                ContentType = "text/html",
-                StatusCode = (int)HttpStatusCode.OK,
-                Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult")
-            };
-            // return Ok(armTemplateJSONOutput != null ? armTemplateJSONOutput.ToString() : "armTemplateJSONOutput : Null");
+
+            return Ok(armTemplateJSONOutput != null ? armTemplateJSONOutput.ToString() : "armTemplateJSONOutput : Null");
 
             #endregion
         }

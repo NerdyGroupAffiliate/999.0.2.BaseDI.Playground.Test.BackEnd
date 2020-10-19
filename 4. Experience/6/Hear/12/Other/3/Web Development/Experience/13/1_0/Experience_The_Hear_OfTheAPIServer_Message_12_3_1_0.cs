@@ -249,7 +249,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             _request = _serverInfo.ContainsKey("Request") ? (HttpRequest)_serverInfo["Request"] : null;
 
-            if(_request != null)
+            if (_request != null)
             {
                 _route = _request.Path;
                 _verb = _request.Method;
@@ -282,7 +282,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
                 #endregion
 
-                if(_request != null && _request is HttpRequest)
+                if (_request != null && _request is HttpRequest)
                 {
                     #region 1. Assign
 
@@ -367,7 +367,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
                     Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (JToken serverEnvironmentServerRoutes) =>
                     {
-                        if(serverEnvironmentServerRoutes != null)
+                        if (serverEnvironmentServerRoutes != null)
                         {
                             foreach (var item in serverEnvironmentServerRoutes)
                             {
@@ -377,14 +377,14 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
                                 var controllerModelDataLocalParameter = item.SelectToken("SetupItemTransportItemRoute.ModelDataLocalParameter").ToString();
                                 var controllerModelDataRemote = (JObject)item.SelectToken("SetupItemTransportItemRoute.ModelDataRemote");
 
-                                if(controllerRoutes != null && controllerRoutes.Count() > 0)
+                                if (controllerRoutes != null && controllerRoutes.Count() > 0)
                                 {
                                     var route = controllerRoutes.Where(r => r.ToString().ToUpper() == _route.ToUpper()).SingleOrDefault();
 
-                                    if(route != null)
+                                    if (route != null)
                                     {
                                         return Step_2_0_Custom_Output_ServerRequestToClient_1_0(route.ToString(), controllerName, controllerModelDataLocalObject, controllerModelDataLocalParameter, controllerModelDataRemote, _request, null);
-                                    }                                    
+                                    }
                                 }
                             }
                         }
