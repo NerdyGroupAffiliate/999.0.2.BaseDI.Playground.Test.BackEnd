@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -42,7 +43,20 @@ namespace BaseDI.Playground.Test.BackEnd
 
                 if (mapStaticFiles != null)
                 {
-                    JObject fileMetaDataFormatted = JObject.Parse(mapStaticFiles.ToString());
+                    dynamic fileMetaDataFormatted = JObject.Parse(mapStaticFiles.ToString());
+                    JObject setupItemEnvironmentClient = fileMetaDataFormatted.outputs[1].baseDIObservations[0];
+                    foreach (var item in setupItemEnvironmentClient)
+                    {
+                        // Console.WriteLine(item.Value.ToString());
+                        if (item.Value != null && Directory.Exists(Path.Combine(item.Value.ToString())))
+                            app.UseStaticFiles(new StaticFileOptions
+                            {
+                                FileProvider = new PhysicalFileProvider(
+                                    Path.GetFullPath(Path.Combine(item.Value.ToString()))),
+                                RequestPath = "/StaticFiles"
+                            });
+                    }
+
                 }
 
                 //app.UseStaticFiles(new StaticFileOptions

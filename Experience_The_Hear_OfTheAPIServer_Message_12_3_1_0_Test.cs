@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -200,10 +201,16 @@ namespace BaseDI.Playground.Test.BackEnd
             }
 
             #endregion
+           
 
             #region 3. Observe
-
-            return Ok(armTemplateJSONOutput != null ? armTemplateJSONOutput.ToString() : "armTemplateJSONOutput : Null");
+            //return new ContentResult
+            //{
+            //    ContentType = "text/html",
+            //    StatusCode = (int)HttpStatusCode.OK,
+            //    Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult")
+            //};
+            return Ok(armTemplateJSONOutput?.ToString());
 
             #endregion
         }

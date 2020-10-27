@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
@@ -205,7 +209,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
                 htmlContentString = htmlContentString.Replace($"{{{item}_Replace}}", content);
             }
 
-            htmlContentString = htmlContentString.Replace("..999.0.3.BaseDI.QuickStart.Templates", "/Images");
+            htmlContentString = htmlContentString.Replace("../999.0.3.BaseDI.QuickStart.Templates", "/StaticFiles");
 
 
             //#endregion
@@ -234,20 +238,21 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
             //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
             // });
             // htmlInlineCSSString = files.join("\n");
+            
 
             string cssString = "";
-            var PropertyArray = new Dictionary<string, string>();
-            var MediaQueryArray = new Dictionary<string, List<object>>();
+            var PropertyArray = new Dictionary<string, List<dynamic>>();
+            var MediaQueryArray = new Dictionary<string, List<dynamic>>();
 
             //#endregion
-
+           
             //#region EXECUTE THE VISION
             foreach (var file in filesArray)
             {
-                foreach (var element in file.StyleFileUseProperties)
-                {
-                    if (element.IsHtmlTag == "true" && element.properties.length > 0)
-                    {
+              foreach (var element in file.StyleFileUseProperties)
+              {
+                  if ((string) element.IsHtmlTag == "true" && element.properties.Count > 0)
+                  {
                         if (element.IsMediaQuery == "true")
                         {
                             var MediaQueryFeatures = new List<string>();
@@ -260,39 +265,32 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
 
                             foreach (var feature in element.MediaQuery.features)
                             {
-                                var index = 0;
-                                foreach (var featureA in feature)
+                                foreach (var kv in JsonConvert.DeserializeObject<Dictionary<string, string>>(feature.ToString()))
                                 {
-                                    //TODO keys and values
-                                    if (feature[index] == "operator")
-                                    {
-                                        MediaQueryFeatures.Add(feature[index]);
-                                    }
-                                    else
-                                    {
-                                        MediaQueryFeatures.Add($"({featureA}: {feature[index]})");
-                                    }
-
-                                    index++;
+                                    MediaQueryFeatures.Add(kv.Key == "operator"
+                                        ? (string) kv.Value
+                                        : $"({kv.Key}: {kv.Value})");
                                 }
                             }
-
+                            
                             foreach (var prop in element.properties)
                             {
                                 if (prop.propertyName != "")
                                 {
-                                    var values = new List<string>();
-                                    if (MediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"] == null)
+                                    var values = new JArray();
+                                    if (!MediaQueryArray.ContainsKey($"@media {string.Join(" ", MediaQueryFeatures)}"))
                                     {
-
-                                        MediaQueryArray.Add($"@media {string.Join(" ", MediaQueryFeatures)}", null);
+                                        MediaQueryArray.Add($"@media {string.Join(" ", MediaQueryFeatures)}", new List<dynamic>());
                                         foreach (var value in prop.properyValues)
                                         {
                                             values.Add($"{value};");
                                         }
-
-                                        MediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"]
-                                            .Add(new JObject {"propName", $"{prop.propertyName}", "values", values});
+                                       
+                                        MediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"].Add(new JObject
+                                        {
+                                            {"propName", $"{prop.propertyName}"},
+                                            {"values", values}
+                                        });
                                     }
                                     else
                                     {
@@ -302,11 +300,14 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
                                         }
 
                                         MediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"]
-                                            .Add(new JObject {"propName", $"{prop.propertyName}", "values", values});
+                                            .Add(new JObject
+                                            {
+                                                {"propName", prop.propertyName},
+                                                {"values", values}
+                                            });
                                     }
                                 }
                             }
-
                         }
                         else
                         {
@@ -314,30 +315,29 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
                             {
                                 if (prop.propertyName != "")
                                 {
-                                    if (PropertyArray[$"{prop.propertyName}"] == null)
+                                    if (!PropertyArray.ContainsKey($"{prop.propertyName}"))
                                     {
-                                        PropertyArray.Add($"{prop.propertyName}", null);
+                                        PropertyArray.Add($"{prop.propertyName}", new List<dynamic>());
                                         foreach (var value in prop.properyValues)
                                         {
-                                            PropertyArray.Add($"{prop.propertyName}", ";");
+                                            PropertyArray[$"{prop.propertyName}"].Add($"{value};");
                                         }
-
                                     }
                                     else
                                     {
                                         foreach (var value in prop.properyValues)
                                         {
-                                            PropertyArray.Add($"{prop.propertyName}", ";");
+                                            PropertyArray[$"{prop.propertyName}"].Add($"{value};");
                                         }
                                     }
                                 }
                             }
 
                         }
-                    }
-                    else if (element.IsMediaQuery == "false")
-                    {
-                        var values = new List<string>();
+                  }
+                  else if (element.IsHtmlTag == "false" && element.properties.Count > 0)
+                  {
+                        var values = new JArray();
                         if (element.IsMediaQuery == "true")
                         {
                             var MediaQueryFeatures = new List<string>();
@@ -349,14 +349,149 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
 
                             foreach (var feature in element.MediaQuery.features)
                             {
-                                var index = 0;
+                               
+                                foreach (var kv in JsonConvert.DeserializeObject<Dictionary<string, string>>(feature.ToString()))
+                                {
+                                    MediaQueryFeatures.Add(kv.Key == "operator"
+                                        ? (string)kv.Value
+                                        : $"({kv.Key}: {kv.Value})");
+
+                                }
                             }
 
+                            foreach (var prop in element.properties)
+                            {
+                                if (prop.propertyName != "")
+                                {
+                                    values.Add($"{prop.propertyName} : {prop.properyValues[0]};");
+                                }
+                            }
+
+                            if (!MediaQueryArray.ContainsKey($"@media {string.Join(" ", MediaQueryFeatures)}"))
+                            {
+                                MediaQueryArray.Add($"@media {string.Join(" ", MediaQueryFeatures)}",
+                                    new List<dynamic>());
+
+                                MediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"]
+                                    .Add(new JObject
+                                    {
+                                        {"attributeID", element.attributeID},
+                                        {"values", values}
+                                    });
+                            }
+                            else
+                            {
+                                MediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"].Add(new JObject
+                                    {
+                                        {"attributeID", element.attributeID },
+                                        {"values", values}
+                                    });
+
+
+                            }
                         }
-                    }
-                }
+                        else
+                        {
+                            foreach (var prop in element.properties)
+                            {
+                                if (prop.propertyName != "")
+                                {
+                                    values.Add($"{prop.propertyName} : {prop.properyValues[0]};");
+                                }
+                            }
+                           
+                            if (!PropertyArray.ContainsKey($"{element.attributeID}")) {
+                                PropertyArray.Add($"{element.attributeID}", new List<dynamic>());
+                                PropertyArray[$"{element.attributeID}"].Add(new JObject
+                                {
+                                    {"attributeID", element.attributeID },
+                                    {"values", values}
+                                });
+                            } else
+                            {
+                                foreach (var value in values)
+                                {
+                                    PropertyArray[$"{element.attributeID}"].FirstOrDefault().values.Add(value);
+                                } 
+                            }
+                        }
+                  }
+                  else
+                  {
+                        Console.WriteLine("element.IsHtmlTag Missing!");
+                  }
+              }
             }
 
+            foreach (var key in PropertyArray.Keys)
+            {
+                var obj = PropertyArray[key];
+
+                if (obj.FirstOrDefault() is string)
+                {
+                    cssString += $@"{ key }
+                    {{ \n { string.Join(" ", obj.ToArray())} \n}}\n";
+                }
+                else
+                {
+
+                    if (obj.Any())
+                    {
+                        string attributeID = obj.FirstOrDefault().attributeID;
+
+
+                        if (attributeID.Contains("#"))
+                        {
+                            cssString += @$"{ obj[0].attributeID}
+                                {{ \n { string.Join("", obj.FirstOrDefault().values)} \n}}\n";
+                        }
+                        else
+                        {
+                            cssString += $"#{obj.FirstOrDefault().attributeID} {{ \n {string.Join("", obj.FirstOrDefault().values)} \n}}\n";
+                        }
+                    }
+                    
+                }
+            }
+          
+            foreach (var key in MediaQueryArray.Keys)
+            {
+                var obj = MediaQueryArray[key];
+                var innerCss = "";
+
+                if (obj != null)
+                {
+                    foreach (var element in obj)
+                    {
+                        string attributeID = element.attributeID;
+                        if (attributeID == null)
+                        {
+                            innerCss += $"{element.propName} \n {{ \n {string.Join(" ", element.values)} \n}}\n";
+                        }
+                        else
+                        {
+                            if (attributeID.Contains("#"))
+                            {
+                                innerCss += $"{ element.attributeID} \n {{ \n {string.Join(" ", element.values)} \n}}\n";
+                            }
+                            else
+                            {
+                                innerCss += $"#{element.attributeID} \n {{ \n {string.Join(" ", element.values)} \n}}\n";
+                            }
+                        }
+                        //Console.WriteLine(element.values);
+                    }
+                }
+                
+                cssString += $@"{ key}
+                {{\n { innerCss} \n}}";
+            }
+
+           
+            htmlInlineCSSString = $"<style>{ cssString }</style>";
+
+             htmlInlineCSSString = htmlInlineCSSString.Replace("../999.0.3.BaseDI.QuickStart.Templates", "/StaticFiles");
+            htmlInlineCSSString = Regex.Unescape(htmlInlineCSSString);
             return htmlInlineCSSString;
         }
     }

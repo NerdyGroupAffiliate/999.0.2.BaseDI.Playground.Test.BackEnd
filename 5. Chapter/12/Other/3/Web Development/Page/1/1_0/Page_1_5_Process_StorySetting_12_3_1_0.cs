@@ -112,9 +112,12 @@ namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1
             observationItem = observationItem.Replace("'","\"");
             
             observationItem = observationItem.Replace("{htmlResult}", Regex.Unescape(htmlResultString));
-            var observation = JObject.Parse(observationItem);
 
-            storylineDetails.outputs[1].baseDIObservations.Add(observation);
+            dynamic observation = JObject.Parse(observationItem);
+
+           // Console.WriteLine(observation.baseDIObservations[0].observation);
+
+            storylineDetails.outputs[1].baseDIObservations.Add(observation.baseDIObservations[0].observation);
             this.StorylineDetails = storylineDetails;
 
 
