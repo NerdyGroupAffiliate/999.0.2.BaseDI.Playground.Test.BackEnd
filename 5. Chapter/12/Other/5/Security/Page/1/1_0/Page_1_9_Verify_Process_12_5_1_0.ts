@@ -93,14 +93,14 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             if (this._server != undefined && this._server != null) {
                 Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.BackEnd.Security.Extensions_1.Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.Step_X_X_Custom_Store_ServerSecuritySettingsToMemory_1_0(this._server, storylineDetails);
-            }
 
-            if (this._requestRoute.toUpperCase() == "/AUTHREQUEST") {
-                this.Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0();
-            }
+                if (this._requestRoute.toUpperCase() == "/AUTHREQUEST") {
+                    this.Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0();
+                }
 
-            if (this._requestRoute.toUpperCase() == "/AUTHRESPONSE") {
-                this.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0();
+                if (this._requestRoute.toUpperCase() == "/AUTHRESPONSE") {
+                    this.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0();
+                }
             }
 
             //#endregion
