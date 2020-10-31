@@ -96,6 +96,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1
             htmlContentJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent", false).SingleOrDefault().Parent.Parent;
             htmlStylesJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS", false).SingleOrDefault().Parent.Parent;
 
+            //Console.WriteLine(Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS", false).FirstOrDefault().Parent.Parent);
             //#endregion
 
             //#region EXECUTE THE VISION
