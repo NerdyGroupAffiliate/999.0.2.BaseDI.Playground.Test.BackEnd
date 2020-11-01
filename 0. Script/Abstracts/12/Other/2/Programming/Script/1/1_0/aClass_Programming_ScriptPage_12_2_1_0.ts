@@ -10,7 +10,7 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
         //#region 1. Assign
         public Repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
-        public StorylineDetails: object = new Object();
+        public StorylineDetails: any = new Object();
 
         public StorylineDetails_Parameters: object = new Object();
 

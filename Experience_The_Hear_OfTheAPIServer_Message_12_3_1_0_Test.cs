@@ -130,8 +130,12 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 4. Action
 
-        [Route("")]
-        public IActionResult Action1(string processGoalName = null, string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
+        [HttpDelete("{*url}", Order = int.MaxValue)]
+        [HttpGet("{*url}", Order = int.MaxValue)]
+        [HttpPatch("{*url}", Order = int.MaxValue)]
+        [HttpPost("{*url}", Order = int.MaxValue)]
+        [HttpPut("{*url}", Order = int.MaxValue)]
+        public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
         {
 
             JObject armTemplateJSONOutput = null;
@@ -148,6 +152,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
             if (processGoalName != null)
                 _clientInfo.Add("Process", processGoalName);
+
+            ContentResult result = null;
 
             #endregion
 
@@ -203,96 +209,15 @@ namespace BaseDI.Playground.Test.BackEnd
 
 
             #region 3. Observe
-            return new ContentResult
+
+            result = new ContentResult
             {
                 ContentType = "text/html",
                 StatusCode = (int)HttpStatusCode.OK,
                 Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
             };
-        }
 
-        public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
-        {
-            #region 1. Assign        
-
-            JObject armTemplateJSONOutput = null;
-
-            JToken outputs = null;
-    
-            StringBuilder outputObservationsPrintOut = new StringBuilder();
-
-            _clientInfo = new Dictionary<string, object>();
-  
-            //SETUP CLIENT INFO
-            _clientInfo.Add("Request", Request);
-            _clientInfo.Add("Server", this);
-
-            if (processGoalName != null)
-                _clientInfo.Add("Process", processGoalName);
-
-            #endregion
-
-            #region 2. Action
-
-            try
-            {
-                #region TEST OUR LOGIC
-
-                #region PROCESS LOGIC UPDATES
-
-                Update_Client = (JObject storylineDetails, ExtraData_12_2_1_0 extraData) =>
-                {
-                    _extraData = extraData;
-                    _storylineDetails = storylineDetails;
-
-                    return _storylineDetails;
-                };
-
-                #endregion
-
-                armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                    .SetupStoryline(_clientInfo, _storylineDetails, null, _extraData, "", requestToProcess, requestToProcessParameters)
-                    .Action().Result;
-
-                if (armTemplateJSONOutput != null)
-                {
-                    outputs = armTemplateJSONOutput["outputs"];
-                }
-
-                #endregion
-            }
-            catch (Exception ex)
-            {
-                #region PRINT OUT MISTAKES
-
-                armTemplateJSONOutput = _storylineDetails;
-                if (armTemplateJSONOutput != null)
-                {
-                    outputs = armTemplateJSONOutput.SelectToken("outputs..baseDIMistakes");
-                    foreach (var programmingMistake in outputs.Children())
-                    {
-                        var mistake = programmingMistake.Value<string>("mistake");
-
-                        outputObservationsPrintOut.Append(mistake + System.Environment.NewLine);
-                    }
-                    Console.Write(outputObservationsPrintOut.ToString());
-                }
-                #endregion
-            }
-
-            #endregion
-
-
-            #region 3. Observe
-            //return new ContentResult
-            //{
-            //    ContentType = "text/html",
-            //    StatusCode = (int)HttpStatusCode.OK,
-            //    Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
-            //};
-            return Ok(armTemplateJSONOutput?.ToString());
-
-            #endregion
+            return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
         }
 
         #endregion

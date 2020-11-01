@@ -59,10 +59,9 @@ namespace BaseDI.Playground.Test.BackEnd
                             {
                                 FileProvider = new PhysicalFileProvider(
                                     Path.GetFullPath(Path.Combine(item.Value.ToString()))),
-                                RequestPath = "/StaticFiles"
+                                RequestPath = "/wwwroot"
                             });
                         }
-
                     }
 
                 }
