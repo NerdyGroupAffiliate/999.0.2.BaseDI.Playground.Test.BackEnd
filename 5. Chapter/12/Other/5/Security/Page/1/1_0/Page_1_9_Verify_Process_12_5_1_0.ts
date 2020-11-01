@@ -177,6 +177,8 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             let microsoftProfileDetailsAPIEndPointsAndRoutes: any = null;
             let microsoftProfileDetailsSecurityAPISecurityDetails: any = null;
 
+            let microsoftTokenEndpoint: string = "";
+
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -197,11 +199,13 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
                 ]
             }
 
+            microsoftTokenEndpoint = microsoftProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIBaseEndpoint + microsoftProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityCustomerID + microsoftProfileDetailsAPIEndPointsAndRoutes.SetupItemAPITokenRoute;
+
             const Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft = (response) => {
                 this.Step_3_2_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response);
             }
 
-            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, "https://login.microsoftonline.com/843958ec-e9bd-4700-82a9-15f083e9ae1f/oauth2/v2.0/token", "POST", curlClientOptions, function callback(response) {
+            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, microsoftTokenEndpoint, "POST", curlClientOptions, function callback(response) {
                 Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response);
             });
 
