@@ -4,6 +4,8 @@ import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../..
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 import * as Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/5/Security/Method/1/1_0/Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
 
+import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/13/1_0/Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
@@ -27,7 +29,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             this.Repository = repository;
 
             this.Action = this.Action.bind(this);
-  
+       
             //region 2. Action
 
             //region 3. Observe
@@ -131,7 +133,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
                             case "MICROSOFT":
                             case "MICROSOFTGRAPH":
                                 this.Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft();
-
+                         
                                 break;
                         }
                     }
@@ -165,14 +167,18 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
         //#region MICROSOFT
 
-        private async Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft() {
+        public async Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft() {
             //#region DESCRIBE THE MEMORIES
+
+            let curlClientOptions: Object;
 
             let microsoftProfile: any = null;
             let microsoftProfileDetails: any = null;
             let microsoftProfileDetailsAPIEndPointsAndRoutes: any = null;
             let microsoftProfileDetailsSecurityAPISecurityDetails: any = null;
-           
+
+            let microsoftTokenEndpoint: string = "";
+
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -181,6 +187,27 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             microsoftProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(microsoftProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
             microsoftProfileDetailsAPIEndPointsAndRoutes = microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
             microsoftProfileDetailsSecurityAPISecurityDetails = microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPISecurityDetails;
+
+            curlClientOptions = {
+                header: [
+                    "Content-Type: application/x-www-form-urlencoded"],
+                data: [
+                    "grant_type=client_credentials",
+                    "client_id=" + microsoftProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityAppID,
+                    "client_secret=" + microsoftProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityPassword,
+                    "scope=" + microsoftProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIScope
+                ]
+            }
+
+            microsoftTokenEndpoint = microsoftProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIBaseEndpoint + microsoftProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityCustomerID + microsoftProfileDetailsAPIEndPointsAndRoutes.SetupItemAPITokenRoute;
+
+            const Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft = (response) => {
+                this.Step_3_2_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response);
+            }
+
+            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, microsoftTokenEndpoint, "POST", curlClientOptions, function callback(response) {
+                Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response);
+            });
 
             this._response.send(microsoftProfileDetailsSecurityAPISecurityDetails);
 
@@ -195,16 +222,39 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#endregion
         }
 
-        private async Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft() {
+        private async Step_3_2_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response: any)
+        {
             //#region DESCRIBE THE MEMORIES
+
+            const entryPointName: string = "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
+
+            let observationItem: String = "";
+
+            const observationPresentationTemplateItem: string = "";
+            const observationBusinessTemplateItem: string = "{}";
+            const observationServiceTemplateItem: string = "{}";
+            const observationSecurityTemplateItem: string = "{}";
+            const observationDataTemplateItem: string = '{ "dataResult": "{dataResult}" }';
 
             //#endregion
 
             //#region RECALL THE MEMORIES
 
+            observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_9_Verify_Process_12_5_1_0", "STORING access token", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
+
             //#endregion
 
             //#region EXECUTE THE VISION
+
+            observationItem = observationItem.replace('{dataResult}', escape(JSON.stringify(response)));
+            const observation = observationItem;
+            
+            this.StorylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation.toString()));
+
+            const payload: string =  unescape(this.StorylineDetails?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.data[0].dataResult);
+
+            //TEST ACCESS TOKEN OUTPUT
+            console.log(JSON.parse(JSON.parse(payload).payload).access_token);
 
             //#endregion
 

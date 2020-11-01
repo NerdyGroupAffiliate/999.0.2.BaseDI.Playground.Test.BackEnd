@@ -3,10 +3,19 @@
 const objectScan = require('object-scan');
 
 var express = null;
+var curl = null;
+var oauth2 = null;
+var OIDCStragety = null;
 
 if (process.env.APP_ENV == "SERVER") {
     express = require("express");
+
+    oauth2 = require("simple-oauth2");
+    OIDCStragety = require("passport-azure-ad");
+
+    curl = require("curling");
 }
+
 
 export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
     export class Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 {
@@ -15,6 +24,96 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
         }
 
         //#region SERVER SIDE CODE
+
+        public static Step_X_X_Custom_Output_ServerResponseToCaller_1_0(server: any, url: string, verbName: string, options: Object, callback: Function): any {
+            if (server == undefined || server == null) return null;
+            if (verbName == undefined || verbName == null || verbName == "") return null;
+
+            console.log("AAA");
+
+            switch (verbName.toUpperCase()) {
+                case "DELETE":
+                    return this.Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server, url, options, callback);
+                case "GET":
+                    return this.Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server, url, options, callback);
+                case "HEAD":
+                    return this.Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(server, url, options, callback);
+                case "POST":
+                    return this.Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server, url, options, callback);
+                case "PUT":
+                    return this.Step_X_X_Custom_Output_ServerResponseToCaller_1_1_PUT(server, url, options, callback);
+            }
+        }
+
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server: any, url: string, options: Object, callback: Function): any {
+
+        }
+
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server: any, url: string, options: Object, callback: Function): any {
+            //#region DESCRIBE THE MEMORIES
+
+            let curlClient: any;
+
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+            curlClient = curl.connect();
+
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            curlClient.get("https://www.google.com/logos/2020/halloween20/rc1/messages.en.nocache.json", null, function (error, response) {
+                console.log(response);
+            });
+
+            //get.get("http://www.microsoft.com", options, function (err, response, body) { });
+
+            //#endregion
+
+            //#region REPORT THE FEEDBACK
+
+            //#endregion
+        }
+
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(server: any, url: string, options: Object, callback: Function): any {
+
+        }
+
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server: any, url: string, options: Object, callback: Function): any {
+            //#region DESCRIBE THE MEMORIES
+
+            let curlClient: any;
+
+
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+            curlClient = curl.connect();
+
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            console.log(url);
+            console.log(options);
+
+            curlClient.post(url, options, function (error, response) {
+                callback(response);
+            });
+
+            //#endregion
+
+            //#region REPORT THE FEEDBACK
+
+            //#endregion
+        }
+
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_PUT(server: any, url: string, options: Object, callback: Function): any {
+
+        }
 
         public static Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storylineDetails: Object): any
         {
@@ -131,6 +230,10 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             };
 
             //#endregion
+        }
+
+        public static Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(storylineDetails: Object): any {
+
         }
 
         //#endregion

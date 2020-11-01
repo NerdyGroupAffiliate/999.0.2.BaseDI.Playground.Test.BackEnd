@@ -277,9 +277,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
                 {
                     dynamic staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
 
-                    //TODO: Add SetupItemEnvironmentClient JSON Object from staticSettingDetails to "Output" of _storylineDetails'
-
-                    dynamic obJContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_NodeJS_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault().Parent.Parent;
+                    dynamic obJContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault().Parent.Parent;
 
                     var setupItemEnvironmentClient = obJContainer.value[0]._2_2_2_1_1_serverInformationSetupItem.value
                         .SetupItemEnvironmentClient;
