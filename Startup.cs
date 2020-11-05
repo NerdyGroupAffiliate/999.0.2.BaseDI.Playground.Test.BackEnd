@@ -48,7 +48,6 @@ namespace BaseDI.Playground.Test.BackEnd
                     JObject setupItemEnvironmentClient = fileMetaDataFormatted.outputs[1].baseDIObservations[0];
                     foreach (var item in setupItemEnvironmentClient)
                     {
-                        // Console.WriteLine(item.Value.ToString());
                         if (item.Value != null)
                         {
                             if (!Directory.Exists(Path.Combine(item.Value.ToString())))
@@ -59,7 +58,7 @@ namespace BaseDI.Playground.Test.BackEnd
                             {
                                 FileProvider = new PhysicalFileProvider(
                                     Path.GetFullPath(Path.Combine(item.Value.ToString()))),
-                                RequestPath = "/wwwroot"
+                                RequestPath = "/StaticFiles"
                             });
                         }
                     }
