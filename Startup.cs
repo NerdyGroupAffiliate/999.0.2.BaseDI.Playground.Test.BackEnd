@@ -45,6 +45,7 @@ namespace BaseDI.Playground.Test.BackEnd
                 if (mapStaticFiles != null)
                 {
                     dynamic fileMetaDataFormatted = JObject.Parse(mapStaticFiles.ToString());
+                    Console.WriteLine(fileMetaDataFormatted);
                     JObject setupItemEnvironmentClient = fileMetaDataFormatted.outputs[1].baseDIObservations[0];
                     foreach (var item in setupItemEnvironmentClient)
                     {

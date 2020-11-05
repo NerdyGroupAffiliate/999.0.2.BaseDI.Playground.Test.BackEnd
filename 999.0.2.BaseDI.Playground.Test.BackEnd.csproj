@@ -39,7 +39,7 @@
     <Folder Include="6. State\12\Other\2\Programming\Repository\" />
     <Folder Include="7. Director\12\Other\2\Programming\Director\" />
     <Folder Include="9. Organizing\MRichardson001\Pages\" />
-    <Folder Include="wwwroot\Client\Images\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>

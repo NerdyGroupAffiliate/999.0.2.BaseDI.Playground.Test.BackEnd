@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
@@ -105,10 +106,12 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_5
                                 {
                                     try
                                     {
-                                        var filepath =
-                                            Path.GetFullPath(Path.Combine(currentDir, att.src));
+                                        var src = Regex.Replace(HttpUtility.UrlDecode(att.src.Value), @"(^.*\(|\).*$)", "");
 
-                                        if (File.Exists(att.src))
+                                        var filepath =
+                                            Path.GetFullPath(Path.Combine(currentDir, src));
+
+                                        if (File.Exists(filepath))
                                         {
                                             var fileDirName = Path.GetDirectoryName(filepath);
                                             var shortDirName =
