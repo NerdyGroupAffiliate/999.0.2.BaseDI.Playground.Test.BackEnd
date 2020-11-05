@@ -61,6 +61,7 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_5
                         {
                             foreach (string element in prop.properyValues)
                             {
+                                Console.WriteLine(element);
                                 if (element.Contains("url"))
                                 {
                                     var url = Regex.Replace(element, @"(^.*\(|\).*$)", "");
