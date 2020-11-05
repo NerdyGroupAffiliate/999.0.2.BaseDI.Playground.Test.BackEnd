@@ -45,23 +45,35 @@ namespace BaseDI.Playground.Test.BackEnd
                 if (mapStaticFiles != null)
                 {
                     dynamic fileMetaDataFormatted = JObject.Parse(mapStaticFiles.ToString());
-                    Console.WriteLine(fileMetaDataFormatted);
-                    JObject setupItemEnvironmentClient = fileMetaDataFormatted.outputs[1].baseDIObservations[0];
-                    foreach (var item in setupItemEnvironmentClient)
+                   
+                    JArray setupItemEnvironmentClient = fileMetaDataFormatted.outputs[1].baseDIObservations;
+                    if (setupItemEnvironmentClient.Any())
                     {
-                        if (item.Value != null)
+                        foreach (dynamic item in setupItemEnvironmentClient[1])
                         {
-                            if (!Directory.Exists(Path.Combine(item.Value.ToString())))
+                            if (item.Value != null)
                             {
-                                Directory.CreateDirectory(Path.Combine(item.Value.ToString()));
+                                if (!Directory.Exists(Path.Combine(item.Value.ToString())))
+                                {
+                                    Directory.CreateDirectory(Path.Combine(item.Value.ToString()));
+                                }
+                                app.UseStaticFiles(new StaticFileOptions
+                                {
+                                    FileProvider = new PhysicalFileProvider(
+                                        Path.GetFullPath(Path.Combine(item.Value.ToString()))),
+                                    RequestPath = "/StaticFiles"
+                                });
                             }
-                            app.UseStaticFiles(new StaticFileOptions
-                            {
-                                FileProvider = new PhysicalFileProvider(
-                                    Path.GetFullPath(Path.Combine(item.Value.ToString()))),
-                                RequestPath = "/StaticFiles"
-                            });
                         }
+                    }
+                    else
+                    {
+                        app.UseStaticFiles(new StaticFileOptions
+                        {
+                            FileProvider = new PhysicalFileProvider(
+                                Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))),
+                            RequestPath = "/StaticFiles"
+                        });
                     }
 
                 }
