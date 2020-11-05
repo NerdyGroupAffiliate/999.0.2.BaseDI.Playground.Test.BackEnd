@@ -212,7 +212,7 @@ namespace BaseDI.Playground.Test.BackEnd
                 StatusCode = (int)HttpStatusCode.OK,
                 Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
             };
-
+            // return Content(armTemplateJSONOutput.ToString());
             return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
         }
 

@@ -44,7 +44,6 @@ export namespace BaseDI.BackEnd.Programming.Extensions_5
                                         if(element.includes('url')) {
                                             var url = element.replace( /(^.*\(|\).*$)/g, '' );
                                             let filepath = path.resolve(decodeURI(url))
-                                            // console.log(filepath)
                                             if (fs.existsSync(filepath)) {
                                                 var fileDirName = path.dirname(filepath)
                                                 var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\`, '')
@@ -76,6 +75,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_5
                         attributes.forEach(att => {
                             if(att.src != undefined) {
                                 let filepath = path.resolve(decodeURI(att.src))
+                                // console.log(att.src)
                                if (fs.existsSync(filepath)) {
                                     var fileDirName = path.dirname(filepath)
                                     var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\`, '')

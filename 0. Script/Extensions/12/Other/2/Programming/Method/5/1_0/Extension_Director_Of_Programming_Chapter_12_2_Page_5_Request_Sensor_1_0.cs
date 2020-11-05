@@ -27,19 +27,18 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_5
 
             //#region EXECUTE THE VISION
 
-            dynamic parent = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
-                .Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey",
-                    "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false).FirstOrDefault().Parent
-                .Parent;
+             List<JToken> list = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
+                .Step_X_X_Read_And_FindJSONNode_2_0(storylineDetails, "searchkey",
+                    "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
-            JArray SetupItemEnvironmentServerMetaDataPaths = 
-                parent.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
+            var parent = list.Count > 0 ? list[1].Parent.Parent : list[0].Parent.Parent;
+            
 
-            // Console.WriteLine(SetupItemEnvironmentServerMetaDataPaths);
+            JArray SetupItemEnvironmentServerMetaDataPaths =
+                (JArray)parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths");
 
             foreach (var metaDataPath in SetupItemEnvironmentServerMetaDataPaths)
             {
-                //Console.WriteLine(metaDataPath.SelectToken("MetaDataLocalPath"));
 
                 dynamic obj =
                      JObject.Parse(await File.ReadAllTextAsync(metaDataPath.SelectToken("MetaDataLocalPath")?.ToString()));
@@ -52,6 +51,7 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_5
                     ._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]
                     ._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
                 var currentDir = Environment.CurrentDirectory;
+
                 foreach (var file in stylingItemFiles)
                 {
                     foreach (var property in file.StyleFileUseProperties)
@@ -60,13 +60,11 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_5
                         {
                             foreach (string element in prop.properyValues)
                             {
-                                // Console.WriteLine(element);
                                 if (element.Contains("url"))
                                 {
                                     var url = Regex.Replace(element, @"(^.*\(|\).*$)", "");
                                     var filepath =
                                         Path.GetFullPath(Path.Combine(currentDir, HttpUtility.UrlDecode(url)));
-                                    // Console.WriteLine(filepath);
                                     if (File.Exists(filepath))
                                     {
                                         var fileDirName = Path.GetDirectoryName(filepath);
@@ -103,30 +101,38 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_5
 
                             foreach (var att in attributes)
                             {
-                                //TODO:: Fixing this
-                                //if (att.src != null)
-                                //{
-                                //    //Console.WriteLine(att.src);
-                                //    var filepath =
-                                //        Path.GetFullPath(Path.Combine(currentDir, att.src));
-                                   
-                                //    if (File.Exists(att.src))
-                                //    {
-                                //        var fileDirName = Path.GetDirectoryName(filepath);
-                                //        var shortDirName =
-                                //            fileDirName.Replace(
-                                //                "C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\", "");
-                                //        var dest = $"wwwroot/Client/Images/{shortDirName}";
+                                if (att.src != null)
+                                {
+                                    try
+                                    {
+                                        var filepath =
+                                            Path.GetFullPath(Path.Combine(currentDir, att.src));
 
-                                //        if (!Directory.Exists(dest))
-                                //            Directory.CreateDirectory(dest);
-                                //        File.Copy(filepath, $"{dest}/{Path.GetFileName(filepath)}", true);
-                                //    }
-                                //    else
-                                //    {
-                                //        Console.WriteLine($"File Not Found:  {filepath}");
-                                //    }
-                                //}
+                                        if (File.Exists(att.src))
+                                        {
+                                            var fileDirName = Path.GetDirectoryName(filepath);
+                                            var shortDirName =
+                                                fileDirName.Replace(
+                                                    "C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\", "");
+                                            var dest = $"wwwroot/Client/Images/{shortDirName}";
+
+                                            if (!Directory.Exists(dest))
+                                                Directory.CreateDirectory(dest);
+                                            File.Copy(filepath, $"{dest}/{Path.GetFileName(filepath)}", true);
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine($"File Not Found:  {filepath}");
+                                        }
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Console.WriteLine(e);
+                                        // throw;
+                                    }
+                                    
+                                    
+                                }
                             }
                         }
 
