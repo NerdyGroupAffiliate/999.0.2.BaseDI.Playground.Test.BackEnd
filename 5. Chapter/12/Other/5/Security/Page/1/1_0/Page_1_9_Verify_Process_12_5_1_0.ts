@@ -236,6 +236,9 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             const observationSecurityTemplateItem: string = "{}";
             const observationDataTemplateItem: string = '{ "dataResult": "{dataResult}" }';
 
+
+            let storylineDetails: Object = null;
+
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -251,10 +254,14 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             
             this.StorylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation.toString()));
 
-            const payload: string =  unescape(this.StorylineDetails?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.data[0].dataResult);
+            const payload: string = unescape(this.StorylineDetails?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.data[0].dataResult);
+
+            console.log(JSON.parse(JSON.parse(payload).payload).access_token);
 
             //TEST ACCESS TOKEN OUTPUT
-            console.log(JSON.parse(JSON.parse(payload).payload).access_token);
+            storylineDetails = this.MasterStorer.Action_1_Begin_Process();
+
+            console.log(storylineDetails);
 
             //#endregion
 

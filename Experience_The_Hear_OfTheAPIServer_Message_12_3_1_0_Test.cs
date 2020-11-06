@@ -138,6 +138,8 @@ namespace BaseDI.Playground.Test.BackEnd
         public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
         {
 
+            #region 1. Assign
+
             JObject armTemplateJSONOutput = null;
 
             JToken outputs = null;
@@ -207,7 +209,6 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #endregion
 
-
             #region 3. Observe
 
             result = new ContentResult
@@ -218,6 +219,8 @@ namespace BaseDI.Playground.Test.BackEnd
             };
 
             return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
+
+            #endregion
         }
 
         #endregion
