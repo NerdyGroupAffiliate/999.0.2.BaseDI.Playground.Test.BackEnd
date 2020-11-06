@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BaseDI.BackEnd.Script.Programming.Extensions_1
 {
@@ -127,7 +128,51 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_1
 
             Step_X_X_Read_And_FindJSONNode_1_1(data, null, "");
             return matches;
-        }  
+        }
+
+        public static List<JToken> Step_X_X_Read_And_FindJSONNode_2_0(JObject data, string keyName, string keyValue, bool returnAsArray)
+        {
+
+            List<JToken> matches = new List<JToken>();
+
+            if (data == null) return null;
+
+            StepXxReadAndFindJsonNode21(data, n =>
+            {
+                JToken token = n[keyName];
+              
+                if (token != null && token.Type == JTokenType.String)
+                {
+                    if (keyValue == token.Value<string>())
+                    {
+                        matches.Add(token);
+                    }
+                }
+            });
+
+            return matches;
+        }
+
+        public static void StepXxReadAndFindJsonNode21(JToken node, Action<JObject> action)
+        {
+
+            if (node.Type == JTokenType.Object)
+            {
+                action((JObject)node);
+
+                foreach (JProperty child in node.Children<JProperty>())
+                {
+                    StepXxReadAndFindJsonNode21(child.Value, action);
+                }
+            }
+            else if (node.Type == JTokenType.Array)
+            {
+                foreach (JToken child in node.Children())
+                {
+                    StepXxReadAndFindJsonNode21(child, action);
+                }
+            }
+        }
 
         public static string Step_X_X_Read_The_DataRepository_1_0(this JObject jsonObject, bool parseExceptionRepository = false, bool isParameterJSON = false)
         {
