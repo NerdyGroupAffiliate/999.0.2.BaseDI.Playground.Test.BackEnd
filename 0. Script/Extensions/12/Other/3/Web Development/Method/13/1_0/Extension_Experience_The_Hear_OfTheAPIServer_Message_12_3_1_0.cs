@@ -15,6 +15,8 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
     {
         #region SERVER SIDE CODE
 
+        #region SERVER API REQUEST
+
         public static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_0(object server, string url, string verbName, Object options, Func<Object> callback)
         {
             if (server == null) return null;
@@ -62,6 +64,10 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
             return null;
         }
 
+        #endregion
+
+        #region SERVER CONFIGURATION
+
         public static Dictionary<string, JToken> Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(JObject storylineDetails)
         {
             if (storylineDetails == null) return null;
@@ -72,15 +78,15 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
             var serverEnvironment = serverEnvironmentMetaData != null ? serverEnvironmentMetaData.Parent : null;
 
-           // Console.WriteLine(serverEnvironmentMetaData.Parent.Parent);
+            // Console.WriteLine(serverEnvironmentMetaData.Parent.Parent);
 
             //Console.WriteLine(serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesGET"));
             //var serverEnvironmentServerRoutesGET = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
 
             JToken serverEnvironmentServerRoutesGET = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesGET"); // serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
-            JToken serverEnvironmentServerRoutesPOST = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesPOST"); 
-            JToken serverEnvironmentServerRoutesPUT = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesPUT"); 
-            JToken serverEnvironmentServerRoutesDELETE = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesDELETE"); 
+            JToken serverEnvironmentServerRoutesPOST = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesPOST");
+            JToken serverEnvironmentServerRoutesPUT = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesPUT");
+            JToken serverEnvironmentServerRoutesDELETE = serverEnvironment.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesDELETE");
 
             Dictionary<string, JToken> results = new Dictionary<string, JToken>();
 
@@ -129,6 +135,32 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
             #endregion            
         }
+
+        #endregion
+
+        #region SERVER LOCAL STORAGE
+
+        public static void Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(string storageAction, string storageKey, object storageValue)
+        {
+            #region DESCRIBE THE MEMORIES
+
+            #endregion
+
+            #region RECALL THE MEMORIES
+
+            #endregion
+
+            #region EXECUTE THE VISION
+
+            #endregion
+
+            #region REPORT THE FEEDBACK
+
+            #endregion
+        }
+        
+        #endregion
+
         #endregion
     }
 }

@@ -1,11 +1,14 @@
 ﻿import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
+const localFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 = "../../../../../../../../6. State/12/Other/2/Programming/Repository/3/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.json";
+
 const objectScan = require('object-scan');
 
 var express = null;
 var curl = null;
 var oauth2 = null;
 var OIDCStragety = null;
+var localStorage = null;
 
 if (process.env.APP_ENV == "SERVER") {
     express = require("express");
@@ -14,8 +17,10 @@ if (process.env.APP_ENV == "SERVER") {
     OIDCStragety = require("passport-azure-ad");
 
     curl = require("curling");
-}
 
+    var LocalStorage = require('node-localstorage').LocalStorage;
+    localStorage = new LocalStorage('./scratch');
+}
 
 export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
     export class Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 {
@@ -24,6 +29,8 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
         }
 
         //#region SERVER SIDE CODE
+
+        //#region SERVER API REQUEST
 
         public static Step_X_X_Custom_Output_ServerResponseToCaller_1_0(server: any, url: string, verbName: string, options: Object, callback: Function): any {
             if (server == undefined || server == null) return null;
@@ -44,6 +51,8 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
                     return this.Step_X_X_Custom_Output_ServerResponseToCaller_1_1_PUT(server, url, options, callback);
             }
         }
+
+        //#region REST ACTION VERBS
 
         private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server: any, url: string, options: Object, callback: Function): any {
 
@@ -115,8 +124,13 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
         }
 
-        public static Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storylineDetails: Object): any
-        {
+        //#endregion
+
+        //#endregion
+
+        //#region SERVER CONFIGURATION
+
+        public static Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storylineDetails: Object): any {
             if (storylineDetails == undefined || storylineDetails == null) return;
             if (process.env.APP_ENV != "SERVER") return;
 
@@ -198,6 +212,14 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
                 })
             );
 
+            server.use(
+                "/localstorage",
+                express.static(localFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0, {
+                    maxAge: "15d",
+                    fallthrough: false
+                })
+            );
+
             //server.use(
             //    "/scripts",
             //    express.static(serverEnvironmentScriptPath, {
@@ -226,7 +248,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
                         Delete: "",
                     }
                 },
-            
+
             };
 
             //#endregion
@@ -235,6 +257,90 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
         public static Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(storylineDetails: Object): any {
 
         }
+
+        //#endregion
+
+        //#region SERVER LOCAL STORAGE
+
+        public static Step_X_X_Custom_Outout_ServerLocalDataFromMemory_1_0(storageKey: String, storageValue: any): any
+        {
+            //#region DESCRIBE THE MEMORIES
+
+            let storedValue: any;
+
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+
+
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            if (localStorage) {
+                storedValue = localStorage.getItem(storageKey);
+            }
+
+            //#endregion
+
+            //#region REPORT THE FEEDBACK
+
+            return storedValue;
+
+            //#endregion
+        }
+
+        public static Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storageAction: string, storageKey: String, storageValue: any) : any
+        {
+            //#region DESCRIBE THE MEMORIES
+
+            let storageResult:any = null;
+
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            //#region STORAGE
+
+            console.log("storageKey = " + storageKey);
+            console.log("storageValue = " + storageValue);
+
+            if(localStorage)
+            {
+                switch(storageAction.toUpperCase())
+                {
+                    case "CREATE":
+                    case "UPDATE":
+                        localStorage.setItem(storageKey, storageValue);
+                        break; 
+                    case "DELETE":
+                        localStorage.removeItem(storageKey);
+                        break;
+                    case "READ":
+                        storageResult = localStorage.getItem(storageKey);
+                        break;                        
+    
+                }
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region REPORT THE FEEDBACK
+
+            return storageResult;
+
+            //#endregion
+        }
+
+        //#endregion
 
         //#endregion
     }

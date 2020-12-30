@@ -151,7 +151,11 @@ export namespace BaseDI.BackEnd {
 
 let server = new BaseDI.BackEnd.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test(this);
 
-server.Action("Step_1_0_CopyLocalFiles", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0");
-server.Action("Step_2_0_StartServer", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0");
+const Step_1_0_CopyLocalFiles =  async () => {
+    server.Action("Step_1_0_CopyLocalFiles", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0");
+}
 
+Step_1_0_CopyLocalFiles().then(response => {
+    server.Action("Step_2_0_StartServer", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0");
+});
 

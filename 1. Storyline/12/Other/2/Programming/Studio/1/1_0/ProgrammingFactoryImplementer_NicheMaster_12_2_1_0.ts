@@ -173,12 +173,16 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 case "LOCALFILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
+                    localFile.Client = this._client;
+
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+
+                    remoteService.Client = this._client;
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -226,12 +230,16 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 case "LOCALFILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.BackEnd.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
+                    localFile.Client = this._client;
+
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.BackEnd.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
+
+                    remoteService.Client = this._client;
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -278,12 +286,16 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 case "LOCALFILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.State.Programming_3.LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
 
+                    localFile.Client = this._client;
+
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.State.Programming_3.RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+
+                    remoteService.Client = this._client;
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -330,12 +342,16 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 case "LOCALFILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.BackEnd.State.Programming_4.LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (storylineDetails);
 
+                    localFile.Client = this._client;
+
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.BackEnd.State.Programming_4.RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
+
+                    remoteService.Client = this._client;
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -383,12 +399,16 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 case "LOCALFILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.BackEnd.State.Programming_5.LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
+                    localFile.Client = this._client;
+
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTESERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.BackEnd.State.Programming_5.RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+
+                    remoteService.Client = this._client;
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;

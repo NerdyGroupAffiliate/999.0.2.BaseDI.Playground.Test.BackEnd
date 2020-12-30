@@ -11,4 +11,14 @@ namespace BaseDI.BackEnd.Script.Programming_1
     {
         T SetupStoryline(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData, string requestToResolveName, string requestToProcess, string requestToProcessParameters);
     }
+
+    //public interface IStorylineDetails
+    //{
+    //    $schema: string;
+    //    contentVersion: string;
+    //    parameters: Parms;
+    //    variables: Variable[];
+    //    resources: Resource[];
+    //    outputs: Output[];
+    //}
 }
