@@ -6,7 +6,8 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
     {
         //#region 1. Assign
 
-        //A. Variable Declaration       
+        //A. Variable Declaration     
+        public CallBack: (...args: any[]) => any = null;
 
         public ID: string = "";
 

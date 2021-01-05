@@ -13,6 +13,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
         #region 1. Assign
 
         //A. Variable Declaration       
+        public Func<Object, Object> CallBack { get; set; }
 
         public string ID { get; set; }
 

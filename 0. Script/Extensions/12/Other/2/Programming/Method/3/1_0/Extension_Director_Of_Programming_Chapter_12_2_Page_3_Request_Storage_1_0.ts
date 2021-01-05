@@ -4,6 +4,7 @@
     var path = require('path');
 }
 
+import { resolve } from "dns";
 import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0"
 
@@ -14,7 +15,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
         }
 
         //#region STORE 
-        public static Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(chapter: aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any): any {
+        public static Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(chapter: aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any): Promise<any> {
             //#region DESCRIBE THE MEMORIES
 
             let observationItem: String = "";
@@ -25,9 +26,12 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
             const observationSecurityTemplateItem: string = "{}";
             const observationDataTemplateItem: string = '{ "dataResult": "{dataResult}" }';
 
+            let outputResult: any = null;
+
             let storageDictionary: Object = {};
 
             let storageKey: any = "StorageKey_" + entryPointName + "-" + CRUDVerb;
+            let storedPromise: Promise<object> = null;
             let storageVariables: any = null;
 
             //#endregion
@@ -55,9 +59,11 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
             //console.log(JSON.parse(JSON.parse(payload).payload).access_token);
 
             //TEST ACCESS TOKEN OUTPUT
+
             storylineDetails = chapter.MasterStorer.Action_1_Begin_Process();
 
-            //console.log(JSON.stringify(storylineDetails));
+            if (chapter.MasterStorer.CallBack)
+                chapter.MasterStorer.CallBack();
 
             //#endregion
 

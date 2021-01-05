@@ -12,6 +12,7 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
 
         //public TriggerAutoBackUpHandler TriggerAutoBackUp;
         //public TriggerMistakeHandler TriggerMistake;
+        public CallBack: (...args: any[]) => any = null;
         //#endregion
 
         //#region 2. Ready

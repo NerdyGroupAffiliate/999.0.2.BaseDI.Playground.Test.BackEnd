@@ -88,6 +88,7 @@ export namespace BaseDI.BackEnd.State.Programming_3 {
             let storedObservationCount: number;
             let storedObservationIndex: number;
             let storedObservations: Array<Object>;
+            let storedObservationKey: string;
             let storedObservationKeys: Array<Object>;
 
             let storedResult:any = null;
@@ -121,6 +122,8 @@ export namespace BaseDI.BackEnd.State.Programming_3 {
                     //FIND STORAGE RELATED OBJECTS
                     storedObservationKeys.map(observationKey =>
                     {
+                        storedObservationKey = observationKey.toString();
+
                         //DETERMINE IF OBJECT IS STORAGE KEY
                         if (observationKey.toString().toUpperCase().includes("STORAGEKEY"))
                         {
@@ -130,17 +133,17 @@ export namespace BaseDI.BackEnd.State.Programming_3 {
 
                             console.log("storedCRUDValue = " + storedCRUDValue);
 
-                            observationKey = observationKey.toString().replace("-Create", "");
-                            observationKey = observationKey.toString().replace("-Read", "");
-                            observationKey = observationKey.toString().replace("-Update", "");
-                            observationKey = observationKey.toString().replace("-Delete", "");
+                            storedObservationKey = storedObservationKey.toString().replace("-Create", "");
+                            storedObservationKey = storedObservationKey.toString().replace("-Read", "");
+                            storedObservationKey = storedObservationKey.toString().replace("-Update", "");
+                            storedObservationKey = storedObservationKey.toString().replace("-Delete", "");
 
                             //CREATE THE PROCESS
                             const handleObservation = async (observation) => {
                                 // tslint:disable-next-line:max-line-length
-                                storedResult = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storedCRUDValue, observationKey.toString(), observation);
+                                storedResult = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storedCRUDValue, storedObservationKey, observation);
 
-                                delete this._storylineDetails.outputs[1].baseDIObservations[storedObservationIndex][observationKey.toString()];
+                                this._storylineDetails.outputs[1].baseDIObservations.splice(storedObservationIndex, 1);
 
                                 if(storedResult != null)
                                 {
@@ -148,8 +151,6 @@ export namespace BaseDI.BackEnd.State.Programming_3 {
                                     
                                     this._storylineDetails.outputs[1].baseDIObservations.push(storedDictionary);
                                 }
-
-                                this.StorylineDetails = this._storylineDetails;
                             }
 
                             //START THE PROCESS
@@ -163,21 +164,11 @@ export namespace BaseDI.BackEnd.State.Programming_3 {
 
             //#endregion
 
-            //#region READ STORAGE ENTRY
-
-            if (storedAction.toUpperCase() == "READ")
-            {
-
-            }
-
-            //#endregion        
-
-
             //#endregion
 
             //#region REPORT THE FEEDBACK
 
-            return await this.StorylineDetails;
+            return this._storylineDetails;
 
             //#endregion
         }

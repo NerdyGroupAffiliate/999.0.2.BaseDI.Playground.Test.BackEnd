@@ -945,20 +945,8 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#region EXECUTE LOGIC INSTUCTIONS
 
         //Page 1-1 
-        public Action_1_Begin_Process(): object {
+        public async Action_1_Begin_Process(): Promise<object> {
             let armTemplateJSONOutput: object = new Object();
-
-            return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
-                .Action();
-        }
-
-
-        //Page 1-10
-        public Action_10_End_Process(): object {
-            let armTemplateJSONOutput: object = new Object();
-
-            this._extraData.KeyValuePairs.setValue("StorageRequest", Object.assign("Read", Object));
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
                 .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
@@ -970,44 +958,49 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
         //Page 1-2
-        public Action_2_Validate_Process(): object {
+        public async Action_2_Validate_Process(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-3
-        public Action_3_Process_StoryAuthor(): object {
+        public async Action_3_Process_StoryAuthor(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-4
-        public Action_4_Process_StoryCharacters(): object {
+        public async Action_4_Process_StoryCharacters(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-5
-        public Action_5_Process_StorySetting(): object {
+        public async Action_5_Process_StorySetting(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-6
-        public Action_6_Process_StoryExperiences(): object {
+        public async Action_6_Process_StoryExperiences(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-7
-        public Action_7_Process_StoryResources(): object {
+        public async Action_7_Process_StoryResources(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-8
-        public Action_8_Process_CRUD(): object {
+        public async Action_8_Process_CRUD(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-9
-        public Action_9_Verify_Process(): object {
+        public async Action_9_Verify_Process(): Promise<object> {
             return this._storylineDetails;
         }
+
+        //Page 1-10
+        public async Action_10_End_Process(): Promise<object> {
+            return this._storylineDetails;
+        }        
 
         //#endregion 
 
@@ -1074,7 +1067,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#region EXECUTE LOGIC INSTUCTIONS
 
         //Page 1-1
-        public Action_1_Begin_Process(): object {
+        public async Action_1_Begin_Process(): Promise<object> {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
@@ -1087,47 +1080,47 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
         //Page 1-2
-        public Action_2_Validate_Process(): object {
+        public async Action_2_Validate_Process(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-3
-        public Action_3_Process_StoryAuthor(): object {
+        public async Action_3_Process_StoryAuthor(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-4
-        public Action_4_Process_StoryCharacters(): object {
+        public async Action_4_Process_StoryCharacters(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-5
-        public Action_5_Process_StorySetting(): object {
+        public async Action_5_Process_StorySetting(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-6
-        public Action_6_Process_StoryExperiences(): object {
+        public async Action_6_Process_StoryExperiences(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-7
-        public Action_7_Process_StoryResources(): object {
+        public async Action_7_Process_StoryResources(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-8
-        public Action_8_Process_CRUD(): object {
+        public async Action_8_Process_CRUD(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-9
-        public Action_9_Verify_Process(): object {
+        public async Action_9_Verify_Process(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-10
-        public Action_10_End_Process(): object {
+        public async Action_10_End_Process(): Promise<object> {
             return this._storylineDetails;
         }
 
@@ -1196,7 +1189,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#region EXECUTE LOGIC INSTUCTIONS
 
         //Page 1-1
-        public Action_1_Begin_Process(): object {
+        public async Action_1_Begin_Process(): Promise<object> {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
@@ -1209,47 +1202,47 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
         //Page 1-2
-        public Action_2_Validate_Process(): object {
+        public async Action_2_Validate_Process(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-3
-        public Action_3_Process_StoryAuthor(): object {
+        public async Action_3_Process_StoryAuthor(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-4
-        public Action_4_Process_StoryCharacters(): object {
+        public async Action_4_Process_StoryCharacters(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-5
-        public Action_5_Process_StorySetting(): object {
+        public async Action_5_Process_StorySetting(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-6
-        public Action_6_Process_StoryExperiences(): object {
+        public async Action_6_Process_StoryExperiences(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-7
-        public Action_7_Process_StoryResources(): object {
+        public async Action_7_Process_StoryResources(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-8
-        public Action_8_Process_CRUD(): object {
+        public async Action_8_Process_CRUD(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-9
-        public Action_9_Verify_Process(): object {
+        public async Action_9_Verify_Process(): Promise<object> {
             return this._storylineDetails;
         }
 
         //Page 1-10
-        public Action_10_End_Process(): object {
+        public async Action_10_End_Process(): Promise<object> {
             return this._storylineDetails;
         }
 

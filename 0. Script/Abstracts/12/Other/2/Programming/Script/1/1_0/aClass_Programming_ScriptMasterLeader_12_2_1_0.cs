@@ -20,6 +20,8 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
         public TriggerAutoBackUpHandler TriggerAutoBackUp;
         public TriggerMistakeHandler TriggerMistake;
 
+        public Func<Object, Object> CallBack { get; set; }
+
         #endregion
 
         #region 2. Ready

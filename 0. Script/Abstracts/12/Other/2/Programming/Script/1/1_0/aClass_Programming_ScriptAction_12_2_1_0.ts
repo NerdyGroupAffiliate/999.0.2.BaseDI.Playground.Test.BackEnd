@@ -8,6 +8,8 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
     export abstract class aClass_Programming_ScriptAction_12_2_1_0<ChapterAction> implements IContract_Programming_Repository_12_2_1_0
     {
         //#region 1. Assign
+        public CallBack: (...args: any[]) => any = null;
+
         public Client: any;
 
         public ExtraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;

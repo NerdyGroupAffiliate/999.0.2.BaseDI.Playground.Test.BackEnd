@@ -62,7 +62,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#region CONTROL
 
             if (process.env.APP_ENV == "SERVER") {
-                this.Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0();
+                await this.Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0();
             }
 
             //#endregion
@@ -71,7 +71,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#region REPORT THE FEEDBACK
 
-            return await this.StorylineDetails;
+            return this.StorylineDetails;
 
             //#endregion
         }
@@ -209,15 +209,9 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#region TRANSPORT
 
-            const Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft = (response) => {
-                this.Step_3_2_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response);
-            }
-
             Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, microsoftTokenEndpoint, "POST", curlClientOptions, function callback(response) {
-                Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response);
+                this.Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response, microsoftProfileDetailsSecurityAPISecurityDetails);
             });
-
-            this._response.send(microsoftProfileDetailsSecurityAPISecurityDetails);
 
             //#endregion
 
@@ -254,7 +248,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
         //#region MICROSOFT
 
-        private async Step_3_2_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response: any) {
+        private async Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response: any, extraData: any = null) {
             //#region DESCRIBE THE MEMORIES
 
             //#endregion
@@ -266,7 +260,13 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#region EXECUTE THE VISION
 
-            this.StorylineDetails = Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
+            this.MasterStorer.CallBack = () => {
+                let a = Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
+
+                this._response.send(extraData);
+            }
+
+            Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
 
             //#endregion
 
