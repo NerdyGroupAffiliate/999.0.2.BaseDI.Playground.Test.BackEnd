@@ -130,8 +130,8 @@ export namespace BaseDI.BackEnd.State.Programming_3 {
                             //DETERMINE CRUD ACTION NAME
                             storedDelimeterValue = observationKey.toString().split("-");
                             storedCRUDValue = storedDelimeterValue[1];
-
-                            console.log("storedCRUDValue = " + storedCRUDValue);
+                            
+                            // console.log("storedCRUDValue = " + storedCRUDValue);
 
                             storedObservationKey = storedObservationKey.toString().replace("-Create", "");
                             storedObservationKey = storedObservationKey.toString().replace("-Read", "");
