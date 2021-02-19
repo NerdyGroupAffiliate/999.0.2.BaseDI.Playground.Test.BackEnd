@@ -208,9 +208,11 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#region EXECUTE THE VISION
 
             //#region TRANSPORT
+            var self = this;
 
-            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, microsoftTokenEndpoint, "POST", curlClientOptions, function callback(response) {
-                this.Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response, microsoftProfileDetailsSecurityAPISecurityDetails);
+            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, microsoftTokenEndpoint, "POST", curlClientOptions, 
+            function callback(response) {
+                 self.Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response, microsoftProfileDetailsSecurityAPISecurityDetails);
             });
 
             //#endregion
@@ -259,14 +261,25 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#endregion
 
             //#region EXECUTE THE VISION
+            // this.MasterStorer.CallBack = () => {
+            //     Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
+            //     this._response.send(extraData);
+            // }
+                        
+            var created = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
+            console.log("Created : ", created);
 
-            this.MasterStorer.CallBack = () => {
-                let a = Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
+            var read1 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, response);
+            console.log("Read1 : ", read1);
 
-                this._response.send(extraData);
-            }
+            var update = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Update", this._entryPointName, this._pageName, "UPDATING access token", this.StorylineDetails, response);
+            console.log("Update : ", update);
 
-            Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
+            var read2 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, response);
+            console.log("Read2 : ", read2);
+
+            var deleted = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Delete", this._entryPointName, this._pageName, "DELETING access token", this.StorylineDetails, response);
+            console.log("Delete : ", deleted);
 
             //#endregion
 

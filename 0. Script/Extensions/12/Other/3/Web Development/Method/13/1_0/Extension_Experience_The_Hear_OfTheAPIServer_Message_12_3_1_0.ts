@@ -307,9 +307,10 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             //#region EXECUTE THE VISION
 
             //#region STORAGE
-
+            
             console.log("storageKey = " + storageKey);
             console.log("storageValue = " + storageValue);
+         
 
             if(localStorage)
             {
@@ -317,7 +318,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
                 {
                     case "CREATE":
                     case "UPDATE":
-                        localStorage.setItem(storageKey, storageValue);
+                        localStorage.setItem(storageKey, JSON.stringify(storageValue));
                         break; 
                     case "DELETE":
                         localStorage.removeItem(storageKey);

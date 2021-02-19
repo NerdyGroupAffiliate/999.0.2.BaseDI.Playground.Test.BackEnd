@@ -61,9 +61,9 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
             //TEST ACCESS TOKEN OUTPUT
 
             storylineDetails = chapter.MasterStorer.Action_1_Begin_Process();
-
-            if (chapter.MasterStorer.CallBack)
-                chapter.MasterStorer.CallBack();
+            
+            // if (chapter.MasterStorer.CallBack)
+            //     chapter.MasterStorer.CallBack();
 
             //#endregion
 
