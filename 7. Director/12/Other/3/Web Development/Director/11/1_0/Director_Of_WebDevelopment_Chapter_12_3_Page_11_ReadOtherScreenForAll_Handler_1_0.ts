@@ -6,16 +6,16 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 
 import * as IContract_Programming_Repository_12_2_1_0 from "../../../../../../../../0. Script/Interfaces/12/Other/2/Programming/Contract/1/1_0/IContract_Programming_Repository_12_2_1_0";
 
-import * as ChapterPage_Page_1_1_Begin_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_1_Begin_Process_12_3_1_0";
-import * as ChapterPage_Page_1_2_Validate_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_2_Validate_Process_12_3_1_0";
-import * as ChapterPage_Page_1_3_Process_StoryAuthor_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_3_Process_StoryAuthor_12_3_1_0";
-import * as ChapterPage_Page_1_4_Process_StoryCharacters_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_4_Process_StoryCharacters_12_3_1_0";
-import * as ChapterPage_Page_1_5_Process_StorySetting_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_5_Process_StorySetting_12_3_1_0";
-import * as ChapterPage_Page_1_6_Process_StoryExperiences_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_6_Process_StoryExperiences_12_3_1_0";
-import * as ChapterPage_Page_1_7_Process_StoryResources_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_7_Process_StoryResources_12_3_1_0";
-import * as ChapterPage_Page_1_8_Process_CRUD_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_8_Process_CRUD_12_3_1_0";
-import * as ChapterPage_Page_1_9_Verify_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_9_Verify_Process_12_3_1_0";
-import * as ChapterPage_Page_1_10_End_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/1/1_0/Page_1_10_End_Process_12_3_1_0";
+import * as ChapterPage_Page_11_1_Begin_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_1_Begin_Process_12_3_1_0";
+import * as ChapterPage_Page_11_2_Validate_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_2_Validate_Process_12_3_1_0";
+import * as ChapterPage_Page_11_3_Process_StoryAuthor_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_3_Process_StoryAuthor_12_3_1_0";
+import * as ChapterPage_Page_11_4_Process_StoryCharacters_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_4_Process_StoryCharacters_12_3_1_0";
+import * as ChapterPage_Page_11_5_Process_StorySetting_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_5_Process_StorySetting_12_3_1_0";
+import * as ChapterPage_Page_11_6_Process_StoryExperiences_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_6_Process_StoryExperiences_12_3_1_0";
+import * as ChapterPage_Page_11_7_Process_StoryResources_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_7_Process_StoryResources_12_3_1_0";
+import * as ChapterPage_Page_11_8_Process_CRUD_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_8_Process_CRUD_12_3_1_0";
+import * as ChapterPage_Page_11_9_Verify_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_9_Verify_Process_12_3_1_0";
+import * as ChapterPage_Page_11_10_End_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/11/1_0/Page_11_10_End_Process_12_3_1_0";
 
 export namespace BaseDI.BackEnd.Director.Web_Development_11 {
     export class Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
@@ -49,7 +49,7 @@ export namespace BaseDI.BackEnd.Director.Web_Development_11 {
             //#region 1. Assign
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_11(this.Client, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
+            const designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_111(this.Client, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
             //#endregion
 
             //#region 2. Action
@@ -69,7 +69,7 @@ export namespace BaseDI.BackEnd.Director.Web_Development_11 {
     }
 
     //#region 5. Action Script
-    export class Use_DesignPattern_Builder_Chapter_12_3_Page_11 {
+    export class Use_DesignPattern_Builder_Chapter_12_3_Page_111 {
         //#region 1. Assign
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -111,7 +111,7 @@ export namespace BaseDI.BackEnd.Director.Web_Development_11 {
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_3_Page_11_1_0(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_3_Page_111_1_0(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
 
             await builder.Action_1_Begin_Process();
 
@@ -134,7 +134,7 @@ export namespace BaseDI.BackEnd.Director.Web_Development_11 {
     //#endregion
 
     //#region 6. Action Implementation
-    export class Implement_DesignPattern_Builder_Chapter_12_3_Page_11_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Builder_Chapter_12_3_Page_111_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -197,6 +197,29 @@ export namespace BaseDI.BackEnd.Director.Web_Development_11 {
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
+        //Page 1-5
+        public async Action_5_Process_StorySetting(): Promise<object> {
+            //region 1. Assign 
+            var page = new ChapterPage_Page_11_5_Process_StorySetting_12_3_1_0.BaseDI.BackEnd.Chapter.Page.Web_Development_11.Page_11_5_Process_StorySetting_12_3_1_0(this._storylineDetails, this._repository);
+
+            page.Client = this._client;
+
+            page.EntryPoint = this._entryPoint;
+            page.ExtraData = this._extraData;
+
+            page.MasterStorer = this._centralizedStorer;
+            page.MasterDisturber = this._centralizedDisturber;
+            page.MasterSensor = this._centralizedSensor;
+
+            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
+
+            //region 2. Action
+            this._storylineDetails = await page.Action();
+
+            //region 3. Observe
+            return this._storylineDetails;
+        }
+
         //#endregion
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
@@ -221,11 +244,6 @@ export namespace BaseDI.BackEnd.Director.Web_Development_11 {
             return this._storylineDetails;
         }
 
-        //Page 1-5
-        public async Action_5_Process_StorySetting(): Promise<object> {
-            return this._storylineDetails;
-        }
-
         //Page 1-6
         public async Action_6_Process_StoryExperiences(): Promise<object> {
             return this._storylineDetails;
@@ -244,7 +262,7 @@ export namespace BaseDI.BackEnd.Director.Web_Development_11 {
         //Page 1-9
         public async Action_9_Verify_Process(): Promise<object> {
             //#region 1. Assign 
-            //var page = new ChapterPage_Page_1_9_Verify_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_11.Page_1_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
+            //var page = new ChapterPage_Page_11_9_Verify_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_11.Page_11_9_Verify_Process_12_2_1_0(this._storylineDetails, this._repository);
 
             //page.ExtraData = this._extraData;
             //page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
@@ -262,7 +280,7 @@ export namespace BaseDI.BackEnd.Director.Web_Development_11 {
         //Page 1-10
         public async Action_10_End_Process(): Promise<object> {
             //#region 1. Assign 
-            //var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_11.Page_1_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
+            //var page = new ChapterPage_Page_11_10_End_Process_12_2_1_0.BaseDI.BackEnd.Chapter.Page.Programming_11.Page_11_10_End_Process_12_2_1_0(this._storylineDetails, this._repository);
 
             //page.ExtraData = this._extraData;
             //page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
