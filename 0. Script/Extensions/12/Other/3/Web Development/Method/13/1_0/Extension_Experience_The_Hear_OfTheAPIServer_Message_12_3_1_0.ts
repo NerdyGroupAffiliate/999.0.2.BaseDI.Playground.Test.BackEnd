@@ -154,6 +154,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             const serverEnvironmentFontPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemFontPath;
             const serverEnvironmentImagePath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemImagePath;
             const serverEnvironmentScriptPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
+            const serverEnvironmentScriptName: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptName;
 
             const serverEnvironmentServerRoutesGET: Array<any> = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
 
@@ -212,21 +213,21 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
                 })
             );
 
-            server.use(
-                "/localstorage",
-                express.static(localFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0, {
-                    maxAge: "15d",
-                    fallthrough: false
-                })
-            );
-
             //server.use(
-            //    "/scripts",
-            //    express.static(serverEnvironmentScriptPath, {
+            //    "/localstorage",
+            //    express.static(localFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0, {
             //        maxAge: "15d",
             //        fallthrough: false
             //    })
             //);
+
+            server.use(
+                "/scripts",
+                express.static(serverEnvironmentScriptPath, {
+                    maxAge: "15d",
+                    fallthrough: false
+                })
+            );
 
             //#endregion
 

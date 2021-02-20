@@ -20,6 +20,10 @@
                     </body>
                 </html>`
 
+            if (scripts == "") {
+                scripts = "<script src=\"/scripts/js/BaseDI_1_0.js\" type=\"text/javascript\"></script>";
+            }
+
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{metaDataReplace}", metaData);
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{titleReplace}", title);
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{scriptsReplace}", scripts);
