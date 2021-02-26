@@ -309,8 +309,8 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#region STORAGE
             
-            console.log("storageKey = " + storageKey);
-            console.log("storageValue = " + storageValue);
+            // console.log("storageKey = " + storageKey);
+            // console.log("storageValue = " + storageValue);
          
 
             if(localStorage)

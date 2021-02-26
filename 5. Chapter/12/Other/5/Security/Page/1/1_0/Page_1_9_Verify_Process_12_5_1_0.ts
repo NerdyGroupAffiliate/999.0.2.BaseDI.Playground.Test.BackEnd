@@ -265,21 +265,31 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //     Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
             //     this._response.send(extraData);
             // }
-                        
-            var created = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
-            console.log("Created : ", created);
 
+            // Setting the baseDIObservations Array
+            this.StorylineDetails.outputs[0].baseDIObservations = [];
+            
+            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
+            // Remove form StorylineDetails after add 
+            this.StorylineDetails.outputs[0].baseDIObservations = [];
+            
             var read1 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, response);
-            console.log("Read1 : ", read1);
-
-            var update = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Update", this._entryPointName, this._pageName, "UPDATING access token", this.StorylineDetails, response);
-            console.log("Update : ", update);
-
+            this.StorylineDetails.outputs[0].baseDIObservations = [];
+            // Add to StorylineDetails after read
+            this.StorylineDetails.outputs[0].baseDIObservations.push(read1);
+            
+            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Update", this._entryPointName, this._pageName, "UPDATING access token", this.StorylineDetails, response);
+            this.StorylineDetails.outputs[0].baseDIObservations = [];
+            
             var read2 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, response);
-            console.log("Read2 : ", read2);
-
-            var deleted = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Delete", this._entryPointName, this._pageName, "DELETING access token", this.StorylineDetails, response);
-            console.log("Delete : ", deleted);
+            // Add to StorylineDetails after read
+            this.StorylineDetails.outputs[0].baseDIObservations = [];
+            this.StorylineDetails.outputs[0].baseDIObservations.push(read2);
+            
+            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Delete", this._entryPointName, this._pageName, "DELETING access token", this.StorylineDetails, response);
+            // Remove form StorylineDetails after removed from storage
+            this.StorylineDetails.outputs[0].baseDIObservations = [];
+            
 
             //#endregion
 
