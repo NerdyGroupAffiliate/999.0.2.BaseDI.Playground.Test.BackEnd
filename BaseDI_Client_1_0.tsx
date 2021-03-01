@@ -63,7 +63,7 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 4. Action
-        public Action(targetResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "") {
+        public Action(targetResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "") {
             //#region 1. Assign
             let armTemplateJSONOutput: any;
 
@@ -76,6 +76,9 @@ export namespace BaseDI.BackEnd {
 
             let isProcessComplete: boolean = false;
             let handleObservation: Promise<any>;
+
+            this._clientInfo["targetResponseTagID"] = targetResponseTagID;
+            this._clientInfo["requestActionName"] = requestActionName;
 
             //#endregion
 
