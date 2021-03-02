@@ -31,6 +31,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
             let storageDictionary: Object = {};
 
             let storageKey: any = "StorageKey_" + entryPointName + "-" + CRUDVerb;
+            let storageKeyFiltered: any = "";
             let storedPromise: Promise<object> = null;
             let storageVariables: any = null;
 
@@ -52,16 +53,30 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
             //#region OUTPUT
 
+            //#region REMOVE OLD STORAGE
+
+            storageKeyFiltered = storageKey.toString().replace("-Create", "");
+            storageKeyFiltered = storageKeyFiltered.toString().replace("-Read", "");
+            storageKeyFiltered = storageKeyFiltered.toString().replace("-Update", "");
+            storageKeyFiltered = storageKeyFiltered.toString().replace("-Delete", "");
+
+            storylineDetails.outputs[1].baseDIObservations.forEach(element => {
+                delete element[storageKeyFiltered]
+            });
+
+            storylineDetails.outputs[1].baseDIObservations.forEach(element => {
+                delete element[storageKey]
+            });
+
+            //#endregion
+
+            //#region ADD STORAGE REQUEST
             storylineDetails.outputs[1].baseDIObservations.push(storageDictionary);
+            //#endregion
 
-            //const payload: string = unescape(this.StorylineDetails?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.data[0].dataResult);
+            //#region EXECUTE STORAGE OPERATION
 
-            //console.log(JSON.parse(JSON.parse(payload).payload).access_token);
-
-            //TEST ACCESS TOKEN OUTPUT
-
-            storylineDetails = await chapter.MasterStorer.Action_1_Begin_Process();
-            
+            storylineDetails = await chapter.MasterStorer.Action_1_Begin_Process();            
 
             storylineDetails.outputs[1].baseDIObservations.forEach(element => {
                 delete element[storageKey]
@@ -71,8 +86,12 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
             console.log(storylineDetails.outputs[1].baseDIObservations)
 
+            //#endregion
+
+            //#region FUTURE CODE EXAMPLE
+
             // In case If we need to remove based on verb
-            
+
             // if(CRUDVerb.toUpperCase() == "CREATE") {
             //     console.log(CRUDVerb)
             //     console.log(storylineDetails.outputs[1].baseDIObservations)
@@ -88,9 +107,10 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
             //     console.log(CRUDVerb)
             // }
 
-
             // if (chapter.MasterStorer.CallBack)
             //     chapter.MasterStorer.CallBack();
+
+            //#endregion
 
             //#endregion
 

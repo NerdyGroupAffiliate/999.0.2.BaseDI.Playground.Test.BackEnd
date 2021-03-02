@@ -1,9 +1,0 @@
-@media (min-width: 992px) and (max-width: 1150px) {
-  .af-view .af-class-sticky-quote-content {
-    width: 95%;
-  }
-  .af-view .af-class-sticky-bar-detail-col {
-    padding: 0 20px !important;
-    width: 33% !important;
-  }
-}

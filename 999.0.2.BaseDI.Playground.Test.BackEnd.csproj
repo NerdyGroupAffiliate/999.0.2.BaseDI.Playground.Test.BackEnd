@@ -9,15 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="9. Organizing\MRichardson001\App.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\Counter.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\Error.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\FetchData.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\Index.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\_Host.cshtml" />
+    <Content Remove="organizing\MRichardson001\App.razor" />
+    <Content Remove="organizing\MRichardson001\Pages\Counter.razor" />
+    <Content Remove="organizing\MRichardson001\Pages\Error.razor" />
+    <Content Remove="organizing\MRichardson001\Pages\FetchData.razor" />
+    <Content Remove="organizing\MRichardson001\Pages\Index.razor" />
+    <Content Remove="organizing\MRichardson001\Pages\_Host.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="0. Script\Enumerations\12\Other\2\Programming\Enumeration\3\1_0\Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.tsx" />
     <None Remove="0. Script\Extensions\12\Other\2\Programming\Method\3\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0.ts" />
@@ -38,19 +39,21 @@
   <ItemGroup>
     <Folder Include="4. Experience\2\Movement\12\Other\2\Programming\Experience\3\1_0\" />
     <Folder Include="7. Director\12\Other\2\Programming\Director\" />
-    <Folder Include="9. Organizing\MRichardson001\Pages\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="organizing\MRichardson001\Pages\" />
+    <Folder Include="9. Addons\" />
+    <Folder Include="wwwroot\Server\State\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
-    <None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
-    <None Include="9. Organizing\MRichardson001\Shared\MainLayout.razor" />
-    <None Include="9. Organizing\MRichardson001\Shared\NavMenu.razor" />
-    <None Include="9. Organizing\MRichardson001\_Imports.razor" />
+    <None Include="organizing\MRichardson001\.config\webpack.server.js" />
+    <None Include="organizing\MRichardson001\frontend\.config\webpack.server.js" />
+    <None Include="organizing\MRichardson001\Shared\MainLayout.razor" />
+    <None Include="organizing\MRichardson001\Shared\NavMenu.razor" />
+    <None Include="organizing\MRichardson001\_Imports.razor" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="0. Script\Enumerations\12\Other\2\Programming\Enumeration\3\1_0\Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.tsx" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\3\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\5\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\6\1_0\Extension_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />

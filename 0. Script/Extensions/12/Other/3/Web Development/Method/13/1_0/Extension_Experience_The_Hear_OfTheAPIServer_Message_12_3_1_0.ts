@@ -19,7 +19,7 @@ if (process.env.APP_ENV == "SERVER") {
     curl = require("curling");
 
     var LocalStorage = require('node-localstorage').LocalStorage;
-    localStorage = new LocalStorage('./scratch');
+    localStorage = new LocalStorage('./wwwroot/Server/State');
 }
 
 export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
@@ -296,44 +296,60 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
         {
             //#region DESCRIBE THE MEMORIES
 
-            let storageResult:any = null;
+            let storedCRUDActionRead: boolean = false
+            let storageResult: any = null;
+            let storedObservation: any = null;
+            let storedObservationFiltered: Object = {};
+            let storedObservationKey: string = null;           
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
-
-
-            //#endregion
-
-            //#region EXECUTE THE VISION
-
-            //#region STORAGE
-            
-            // console.log("storageKey = " + storageKey);
-            // console.log("storageValue = " + storageValue);
-         
-
-            if(localStorage)
+            try
             {
-                switch(storageAction.toUpperCase())
-                {
-                    case "CREATE":
-                    case "UPDATE":
-                        localStorage.setItem(storageKey, JSON.stringify(storageValue));
-                        break; 
-                    case "DELETE":
-                        localStorage.removeItem(storageKey);
-                        break;
-                    case "READ":
-                        storageResult = localStorage.getItem(storageKey);
-                        break;                        
-    
+                //#region RECALL THE MEMORIES
+                storedObservationKey = (Object.keys(storageValue)[0]);
+
+                if (storedObservationKey.toString().toUpperCase().includes("-READ")) {
+                    storedCRUDActionRead = true;
                 }
+
+                storedObservationKey = storedObservationKey.toString().replace("-Create", "");
+                storedObservationKey = storedObservationKey.toString().replace("-Read", "");
+                storedObservationKey = storedObservationKey.toString().replace("-Update", "");
+                storedObservationKey = storedObservationKey.toString().replace("-Delete", "");
+
+                if (!storedCRUDActionRead) {
+                    storedObservation = JSON.parse(storageValue[(Object.keys(storageValue)[0])]);
+
+                    storedObservationFiltered[storedObservationKey] = storedObservation?.baseDIObservations[0];
+                }
+
+                //#endregion
+
+                //#region EXECUTE THE VISION
+
+                if (localStorage) {
+                    switch (storageAction.toUpperCase()) {
+                        case "CREATE":
+                        case "UPDATE":
+                            localStorage.setItem(storageKey, JSON.stringify(storedObservationFiltered));
+                            break;
+                        case "DELETE":
+                            localStorage.removeItem(storageKey);
+                            break;
+                        case "READ":
+                            storageResult = localStorage.getItem(storageKey);
+                            break;
+
+                    }
+                }
+
+                //#endregion
             }
-
-            //#endregion
-
-            //#endregion
+            catch (e)
+            {
+                throw e;
+            }
 
             //#region REPORT THE FEEDBACK
 

@@ -1,9 +1,0 @@
-@media (max-width: 767px){
-  .backgroundImage {
-    background-size: contain !important;
-    background-position: 50% 0% !important;
-  }
-}
-.backgroundImage {
-  margin-top: 50px;
-}

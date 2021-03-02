@@ -1,5 +1,0 @@
-docker build --no-cache -t amlicontainers.azurecr.io/amlicom-router:1.0.1 -f Dockerfile.Windows .
-
-docker build --no-cache -t amlicom-router:1.0.0 -f Dockerfile.Windows .
-
-docker run -p 3005:3001 amlicom-router:1.0.1
