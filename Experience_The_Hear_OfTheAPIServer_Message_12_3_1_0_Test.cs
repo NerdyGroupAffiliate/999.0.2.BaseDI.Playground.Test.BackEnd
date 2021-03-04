@@ -131,7 +131,7 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [Route("")]
-        public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "")
+        public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_RenderWebPage_1_0")
         {
 
             #region 1. Assign
@@ -207,13 +207,17 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. Observe
 
-            result = new ContentResult
+            if(armTemplateJSONOutput != null)
             {
-                ContentType = "text/html",
-                StatusCode = (int)HttpStatusCode.OK,
-                Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
-            };
-            // return Content(armTemplateJSONOutput.ToString());
+                result = new ContentResult
+                {
+                    ContentType = "text/html",
+                    StatusCode = (int)HttpStatusCode.OK,
+                    Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
+                };
+                // return Content(armTemplateJSONOutput.ToString());
+            }
+
             return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
 
             #endregion

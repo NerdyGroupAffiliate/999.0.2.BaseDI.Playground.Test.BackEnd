@@ -265,55 +265,13 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-7
-
-        public override async Task<JObject> Action_7_Process_StoryResources()
+        //Page 1-5
+        public override async Task<JObject> Action_5_Process_StorySetting()
         {
             try
             {
-                if (_actionName != null && _actionName.ToString().ToUpper().Contains("COPYSTATICFILES_1_0"))
+                if (_actionName != null && _actionName.ToString().ToUpper().Contains("PROCESSREQUEST_1_0"))
                 {
-                    #region DESCRIBE THE MEMORIES
-
-                    #endregion
-
-                    #region RECALL THE MEMORIES
-
-                    #endregion
-
-                    #region EXECUTE THE VISION
-
-                    Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(StorylineDetails);
-
-                    #endregion
-
-                    #region REPORT THE FEEDBACK
-
-                    #endregion
-                }
-
-                if (_actionName != null && _actionName.ToString().ToUpper().Contains("MAPSTATICFILES_1_0"))
-                {
-                    #region OUTPUT STATIC SETTINGS
-
-                    dynamic staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
-
-                    var jContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault()?.Parent;
-                    if (jContainer != null)
-                    {
-                        dynamic obJContainer = jContainer?.Parent;
-
-                        var setupItemEnvironmentClient = obJContainer.value[0]._2_2_2_1_1_serverInformationSetupItem.value
-                            .SetupItemEnvironmentClient;
-                        dynamic storylineDetails = _storylineDetails;
-
-                        storylineDetails.outputs[1].baseDIObservations.Add(setupItemEnvironmentClient);
-
-                        return storylineDetails;
-                    }
-
-                    #endregion
-
                     if (_request != null && _request is HttpRequest)
                     {
                         #region 1. Assign
@@ -443,7 +401,80 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             }
 
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+
         }
+
+        //Page 1-7
+
+        public override async Task<JObject> Action_7_Process_StoryResources()
+        {
+            try
+            {
+                if (_actionName != null && _actionName.ToString().ToUpper().Contains("COPYSTATICFILES_1_0"))
+                {
+                    #region DESCRIBE THE MEMORIES
+
+                    #endregion
+
+                    #region RECALL THE MEMORIES
+
+                    #endregion
+
+                    #region EXECUTE THE VISION
+
+                    Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(_storylineDetails);
+
+                    #endregion
+
+                    #region REPORT THE FEEDBACK
+
+                    #endregion
+                }
+
+                if (_actionName != null && _actionName.ToString().ToUpper().Contains("MAPSTATICFILES_1_0"))
+                {
+                    #region DESCRIBE THE MEMORIES
+
+                    dynamic staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
+                    var jContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_2_0_ServerWeb_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault()?.Parent;
+
+                    #endregion
+
+                    #region RECALL THE MEMORIES
+
+                    #endregion
+
+                    #region EXECUTE THE VISION
+
+                    if (jContainer != null)
+                    {
+                        dynamic obJContainer = jContainer?.Parent;
+
+                        var setupItemEnvironmentClient = obJContainer.value[0]._2_2_2_1_1_serverInformationSetupItem.value
+                            .SetupItemEnvironmentClient;
+                        dynamic storylineDetails = _storylineDetails;
+
+                        storylineDetails.outputs[1].baseDIObservations.Add(setupItemEnvironmentClient);
+
+                        return storylineDetails;
+                    }
+
+                    #endregion
+
+                    #region REPORT THE FEEDBACK
+
+                    #endregion
+                }
+              
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.ToString());
+            }
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
         #endregion
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
@@ -535,28 +566,6 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
-        //Page 1-5
-        public override async Task<JObject> Action_5_Process_StorySetting()
-        {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_5_Process_HTMLLayoutZones_1_1_0(_storylineDetails, _repository);
-
-            #endregion
-
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
         //Page 1-6
         public override async Task<JObject> Action_6_Process_StoryExperiences()
         {
@@ -624,8 +633,6 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_8_Verify_Process_1_1_0(_storylineDetails, _repository);
-
             #endregion
 
             #region 2. Action              
@@ -640,7 +647,6 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
-
 
         #endregion
 
