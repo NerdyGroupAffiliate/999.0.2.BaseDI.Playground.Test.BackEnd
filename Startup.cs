@@ -30,13 +30,13 @@ namespace BaseDI.Playground.Test.BackEnd
         {
             #region COPY STATIC FILES
 
-            var copyFilesResult = Action("Step_1_0_CopyLocalFiles", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0").Result;
+            var copyFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0").Result;
 
             #endregion
 
             #region MAP STATIC FILES
 
-            var mapStaticFilesResult = Action("Step_1_0_ReadStaticFiles", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0").Result;
+            var mapStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_MapStaticFiles_1_0").Result;
 
             if (mapStaticFilesResult is OkObjectResult)
             {
@@ -94,11 +94,11 @@ namespace BaseDI.Playground.Test.BackEnd
 
     public partial class Startup
     {
-        public static async Task<IActionResult> Action(string processGoalName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public static async Task<IActionResult> Action(string requestToProcess = "", string requestToProcessParameters = "", string requestActionName = "")
         {
             var process = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test();
 
-            IActionResult result = await process.Action(processGoalName, requestToProcess, requestToProcessParameters);
+            IActionResult result = await process.Action(requestToProcess, requestToProcessParameters, requestActionName);
 
             return result;
         }

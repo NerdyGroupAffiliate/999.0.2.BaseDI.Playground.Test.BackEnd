@@ -231,37 +231,6 @@ namespace BaseDI.BackEnd.Director.Programming_5
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-7
-        public override async Task<JObject> Action_7_Process_StoryResources()
-        {
-            #region 1. Assign          
-
-            var page = new ChapterPage.Page_5_7_Process_StoryResources_12_2_1_0(_storylineDetails, _repository);
-
-            page.Client = _client;
-
-            page.EntryPoint = _entryPoint;
-            page.ExtraData = _extraData;
-
-            page.MasterStorer = _centralizedStorer;
-
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
-
-            #endregion
-
-            #region 2. Action              
-
-            _storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
         #endregion
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
@@ -430,6 +399,37 @@ namespace BaseDI.BackEnd.Director.Programming_5
             #region 1. Assign          
 
             var page = new ChapterPage.Page_5_6_Process_StoryExperiences_12_2_1_0(_storylineDetails, _repository);
+
+            page.Client = _client;
+
+            page.EntryPoint = _entryPoint;
+            page.ExtraData = _extraData;
+
+            page.MasterStorer = _centralizedStorer;
+
+            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+
+            #endregion
+
+            #region 2. Action              
+
+            _storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
+        //Page 1-7
+        public override async Task<JObject> Action_7_Process_StoryResources()
+        {
+            #region 1. Assign          
+
+            var page = new ChapterPage.Page_5_7_Process_StoryResources_12_2_1_0(_storylineDetails, _repository);
 
             page.Client = _client;
 

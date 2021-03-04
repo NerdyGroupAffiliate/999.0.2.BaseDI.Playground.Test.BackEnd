@@ -189,7 +189,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         private ExtraData_12_2_1_0 _extraData = null;
 
         private string _route = "";
-        private string _process = null;
+        private string _actionName = "";
         private HttpRequest _request = null;
         private string _verb = "";
 
@@ -246,7 +246,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
         private void HandleChapterDefaults()
         {
-            _process = _serverInfo.ContainsKey("Process") ? (string)_serverInfo["Process"] : null;
+            _actionName = _serverInfo.ContainsKey("actionName") ? (string)_serverInfo["actionName"] : null;
 
             _request = _serverInfo.ContainsKey("Request") ? (HttpRequest)_serverInfo["Request"] : null;
 
@@ -265,16 +265,37 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-1
+        //Page 1-7
 
-        public override async Task<JObject> Action_1_Begin_Process()
+        public override async Task<JObject> Action_7_Process_StoryResources()
         {
             try
             {
-                #region OUTPUT STATIC SETTINGS
-
-                if (_process != null && _process.ToString().ToUpper().Contains("READSTATICFILES"))
+                if (_actionName != null && _actionName.ToString().ToUpper().Contains("COPYSTATICFILES_1_0"))
                 {
+                    #region DESCRIBE THE MEMORIES
+
+                    #endregion
+
+                    #region RECALL THE MEMORIES
+
+                    #endregion
+
+                    #region EXECUTE THE VISION
+
+                    Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(StorylineDetails);
+
+                    #endregion
+
+                    #region REPORT THE FEEDBACK
+
+                    #endregion
+                }
+
+                if (_actionName != null && _actionName.ToString().ToUpper().Contains("MAPSTATICFILES_1_0"))
+                {
+                    #region OUTPUT STATIC SETTINGS
+
                     dynamic staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
 
                     var jContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault()?.Parent;
@@ -290,130 +311,130 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
                         return storylineDetails;
                     }
-                }
-
-                #endregion
-
-                if (_request != null && _request is HttpRequest)
-                {
-                    #region 1. Assign
-
-                    #region MEMORIZE SERVER OPTIONS
-
-                    _server = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(_storylineDetails);
 
                     #endregion
 
-                    #endregion
-
-                    #region 2. Action
-
-                    #region OUTPUT THE RESPONSE
-
-                    Func<object, string, object, string, object, HttpRequest, HttpResponse, JObject> Step_2_0_Custom_Output_ServerRequestToClient_1_0;
-
-                    Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (object controllerRoute, string controllerName, object controllerModelDataLocalObject, string controllerModelDataLocalParameter, object controllerModelDataRemote, HttpRequest req, HttpResponse res) =>
+                    if (_request != null && _request is HttpRequest)
                     {
                         #region 1. Assign
 
-                        JObject armTemplateJSONOutput = null;
+                        #region MEMORIZE SERVER OPTIONS
 
-                        JToken outputs = null;
+                        _server = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(_storylineDetails);
+
+                        #endregion
 
                         #endregion
 
                         #region 2. Action
 
-                        try
+                        #region OUTPUT THE RESPONSE
+
+                        Func<object, string, object, string, object, HttpRequest, HttpResponse, JObject> Step_2_0_Custom_Output_ServerRequestToClient_1_0;
+
+                        Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (object controllerRoute, string controllerName, object controllerModelDataLocalObject, string controllerModelDataLocalParameter, object controllerModelDataRemote, HttpRequest req, HttpResponse res) =>
                         {
-                            #region EXECUTE OUR LOGIC
+                            #region 1. Assign
 
-                            #region PROCESS LOGIC UPDATES
+                            JObject armTemplateJSONOutput = null;
 
-                            Update_Server = (JObject storylineDetails, ExtraData_12_2_1_0 extraData) =>
-                            {
-                                _extraData = extraData;
-                                _storylineDetails = storylineDetails;
-
-                                return _storylineDetails;
-                            };
+                            JToken outputs = null;
 
                             #endregion
 
-                            armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                                .SetupStoryline(_serverInfo, null, null, _extraData, "", controllerName, controllerModelDataLocalParameter)
-                                .Action().Result;
+                            #region 2. Action
+
+                            try
+                            {
+                                #region EXECUTE OUR LOGIC
+
+                                #region PROCESS LOGIC UPDATES
+
+                                Update_Server = (JObject storylineDetails, ExtraData_12_2_1_0 extraData) =>
+                                {
+                                    _extraData = extraData;
+                                    _storylineDetails = storylineDetails;
+
+                                    return _storylineDetails;
+                                };
+
+                                #endregion
+
+                                armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                                    .SetupStoryline(_serverInfo, null, null, _extraData, "", controllerName, controllerModelDataLocalParameter)
+                                    .Action().Result;
+
+                                return armTemplateJSONOutput;
+
+                                //if (armTemplateJSONOutput != null)
+                                //{
+                                //    outputs = armTemplateJSONOutput["outputs"];
+                                //}
+
+                                #endregion
+                            }
+                            catch (Exception storyMistake)
+                            {
+                                #region PRINT OUT MISTAKES
+
+                                Console.Write(storyMistake.ToString());
+
+                                #endregion
+                            }
+
+                            #endregion
+
+                            #region 3. Observe
 
                             return armTemplateJSONOutput;
 
-                            //if (armTemplateJSONOutput != null)
-                            //{
-                            //    outputs = armTemplateJSONOutput["outputs"];
-                            //}
-
                             #endregion
-                        }
-                        catch (Exception storyMistake)
+                        };
+
+                        #endregion
+
+                        #region INPUT THE REQUEST
+
+                        Func<JToken, JObject> Step_1_0_Custom_Control_ClientRequestToServer_1_0 = null;
+
+                        Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (JToken serverEnvironmentServerRoutes) =>
                         {
-                            #region PRINT OUT MISTAKES
+                            if (serverEnvironmentServerRoutes != null)
+                            {
+                                foreach (var item in serverEnvironmentServerRoutes)
+                                {
+                                    var controllerRoutes = item.SelectToken("SetupItemTransportItemRoute.ControllerRoutes").Children().ToList(); //item.SetupItemTransportItemRoute.ControllerRoutes;
+                                    var controllerName = item.SelectToken("SetupItemTransportItemRoute.ControllerName").ToString();
+                                    var controllerModelDataLocalObject = (JObject)item.SelectToken("SetupItemTransportItemRoute.ModelDataLocalObject");
+                                    var controllerModelDataLocalParameter = item.SelectToken("SetupItemTransportItemRoute.ModelDataLocalParameter").ToString();
+                                    var controllerModelDataRemote = (JObject)item.SelectToken("SetupItemTransportItemRoute.ModelDataRemote");
 
-                            Console.Write(storyMistake.ToString());
+                                    if (controllerRoutes != null && controllerRoutes.Count() > 0)
+                                    {
+                                        var route = controllerRoutes.Where(r => r.ToString().ToUpper() == _route.ToUpper()).SingleOrDefault();
 
-                            #endregion
-                        }
+                                        if (route != null)
+                                        {
+                                            return Step_2_0_Custom_Output_ServerRequestToClient_1_0(route.ToString(), controllerName, controllerModelDataLocalObject, controllerModelDataLocalParameter, controllerModelDataRemote, _request, null);
+                                        }
+                                    }
+                                }
+                            }
+
+                            return _storylineDetails;
+                        };
+
+                        //READ ROUTES
+                        _storylineDetails = Step_1_0_Custom_Control_ClientRequestToServer_1_0(_server[_verb.ToUpper()]);
+
+                        #endregion
 
                         #endregion
 
                         #region 3. Observe
 
-                        return armTemplateJSONOutput;
-
                         #endregion
-                    };
-
-                    #endregion
-
-                    #region INPUT THE REQUEST
-
-                    Func<JToken, JObject> Step_1_0_Custom_Control_ClientRequestToServer_1_0 = null;
-
-                    Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (JToken serverEnvironmentServerRoutes) =>
-                    {
-                        if (serverEnvironmentServerRoutes != null)
-                        {
-                            foreach (var item in serverEnvironmentServerRoutes)
-                            {
-                                var controllerRoutes = item.SelectToken("SetupItemTransportItemRoute.ControllerRoutes").Children().ToList(); //item.SetupItemTransportItemRoute.ControllerRoutes;
-                                var controllerName = item.SelectToken("SetupItemTransportItemRoute.ControllerName").ToString();
-                                var controllerModelDataLocalObject = (JObject)item.SelectToken("SetupItemTransportItemRoute.ModelDataLocalObject");
-                                var controllerModelDataLocalParameter = item.SelectToken("SetupItemTransportItemRoute.ModelDataLocalParameter").ToString();
-                                var controllerModelDataRemote = (JObject)item.SelectToken("SetupItemTransportItemRoute.ModelDataRemote");
-
-                                if (controllerRoutes != null && controllerRoutes.Count() > 0)
-                                {
-                                    var route = controllerRoutes.Where(r => r.ToString().ToUpper() == _route.ToUpper()).SingleOrDefault();
-
-                                    if (route != null)
-                                    {
-                                        return Step_2_0_Custom_Output_ServerRequestToClient_1_0(route.ToString(), controllerName, controllerModelDataLocalObject, controllerModelDataLocalParameter, controllerModelDataRemote, _request, null);
-                                    }
-                                }
-                            }
-                        }
-
-                        return _storylineDetails;
-                    };
-
-                    //READ ROUTES
-                    _storylineDetails = Step_1_0_Custom_Control_ClientRequestToServer_1_0(_server[_verb.ToUpper()]);
-
-                    #endregion
-
-                    #endregion
-
-                    #region 3. Observe
-
-                    #endregion
+                    }
                 }
             }
             catch (Exception ex)
@@ -423,10 +444,29 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
-
         #endregion
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        //Page 1-1
+        public override async Task<JObject> Action_1_Begin_Process()
+        {
+            #region 1. Assign          
+
+            #endregion
+
+            #region 2. Action              
+
+            //_storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
 
         //Page 1-2
 
@@ -539,26 +579,6 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
-        //Page 1-7
-        public override async Task<JObject> Action_7_Process_StoryResources()
-        {
-            #region 1. Assign          
-
-            #endregion
-
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
         //Page 1-8
         public override async Task<JObject> Action_8_Process_CRUD()
         {
@@ -604,7 +624,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_9_End_Process_1_1_0(_storylineDetails, _repository);
+            //var page = new ChapterPage.Page_1_8_Verify_Process_1_1_0(_storylineDetails, _repository);
 
             #endregion
 
@@ -620,6 +640,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
+
 
         #endregion
 

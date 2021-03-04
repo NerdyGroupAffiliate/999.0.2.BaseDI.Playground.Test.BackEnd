@@ -63,7 +63,7 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 4. Action
-        public Action(targetResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "") {
+        public Action(targetedResponseTagID: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "", requestCallBack: any = null) {
             //#region 1. Assign
             let armTemplateJSONOutput: any;
 
@@ -77,8 +77,11 @@ export namespace BaseDI.BackEnd {
             let isProcessComplete: boolean = false;
             let handleObservation: Promise<any>;
 
-            this._clientInfo["targetResponseTagID"] = targetResponseTagID;
-            this._clientInfo["requestActionName"] = requestActionName;
+            if (targetedResponseTagID != "")
+                this._clientInfo["targetedResponseTagID"] = targetedResponseTagID;
+
+            if (requestActionName != "")
+                this._clientInfo["actionName"] = requestActionName;
 
             //#endregion
 
@@ -115,8 +118,11 @@ export namespace BaseDI.BackEnd {
 
             //#region 3. Observe
             handleObservation.then(response => {
-                if (targetResponseTagID)
-                    document.getElementById(targetResponseTagID).innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                if (targetedResponseTagID != "")
+                    document.getElementById(targetedResponseTagID).innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+
+                if (requestCallBack)
+                    requestCallBack(response);
             })
 
             //#endregion

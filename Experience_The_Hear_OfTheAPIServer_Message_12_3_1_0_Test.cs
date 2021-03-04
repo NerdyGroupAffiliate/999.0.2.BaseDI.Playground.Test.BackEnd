@@ -131,7 +131,7 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [Route("")]
-        public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
+        public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "")
         {
 
             #region 1. Assign
@@ -148,8 +148,8 @@ namespace BaseDI.Playground.Test.BackEnd
             _clientInfo.Add("Request", Request);
             _clientInfo.Add("Server", this);
 
-            if (processGoalName != null)
-                _clientInfo.Add("Process", processGoalName);
+            if (requestActionName != "")
+                _clientInfo.Add("actionName", requestActionName);
 
             ContentResult result = null;
 

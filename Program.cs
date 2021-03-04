@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace _999._0._2.BaseDI.BackEnd
+namespace BaseDI.Playground.Test.BackEnd
 {
     public class Program
     {

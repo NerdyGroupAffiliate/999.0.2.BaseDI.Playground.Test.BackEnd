@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="organizing\MRichardson001\App.razor" />
-    <Content Remove="organizing\MRichardson001\Pages\Counter.razor" />
-    <Content Remove="organizing\MRichardson001\Pages\Error.razor" />
-    <Content Remove="organizing\MRichardson001\Pages\FetchData.razor" />
-    <Content Remove="organizing\MRichardson001\Pages\Index.razor" />
-    <Content Remove="organizing\MRichardson001\Pages\_Host.cshtml" />
+    <Content Remove="9. Organizing\MRichardson001\App.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\Counter.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\Error.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\FetchData.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\Index.razor" />
+    <Content Remove="9. Organizing\MRichardson001\Pages\_Host.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,17 +39,16 @@
   <ItemGroup>
     <Folder Include="4. Experience\2\Movement\12\Other\2\Programming\Experience\3\1_0\" />
     <Folder Include="7. Director\12\Other\2\Programming\Director\" />
-    <Folder Include="organizing\MRichardson001\Pages\" />
-    <Folder Include="9. Addons\" />
-    <Folder Include="wwwroot\Server\State\" />
+    <Folder Include="9. Organizing\MRichardson001\Pages\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="organizing\MRichardson001\.config\webpack.server.js" />
-    <None Include="organizing\MRichardson001\frontend\.config\webpack.server.js" />
-    <None Include="organizing\MRichardson001\Shared\MainLayout.razor" />
-    <None Include="organizing\MRichardson001\Shared\NavMenu.razor" />
-    <None Include="organizing\MRichardson001\_Imports.razor" />
+    <None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
+    <None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
+    <None Include="9. Organizing\MRichardson001\Shared\MainLayout.razor" />
+    <None Include="9. Organizing\MRichardson001\Shared\NavMenu.razor" />
+    <None Include="9. Organizing\MRichardson001\_Imports.razor" />
   </ItemGroup>
 
   <ItemGroup>
