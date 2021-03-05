@@ -1,7 +1,0 @@
-.text {
-  position: relative;
-  z-index: 1;
-}
-.circle {
-  z-index: unset !important;
-}

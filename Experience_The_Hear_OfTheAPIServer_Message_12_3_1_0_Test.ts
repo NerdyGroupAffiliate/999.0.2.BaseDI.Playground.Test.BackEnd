@@ -71,7 +71,7 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 4. Action
-        public Action(processGoalName: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "")
+        public Action(requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "", requestCallBack: any = null)
         {
             // console.log(unitTestName);
             // console.log(requestNameToProcess);
@@ -88,8 +88,8 @@ export namespace BaseDI.BackEnd {
             let isProcessComplete: boolean = false;
             let handleObservation: Promise<any>;
 
-            if (processGoalName != null)
-                this._clientInfo["Process"] = processGoalName;
+            if (requestActionName != "")
+                this._clientInfo["actionName"] = requestActionName;
 
             //#endregion
 
@@ -137,9 +137,10 @@ export namespace BaseDI.BackEnd {
                 // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
                 // iframe.contentWindow.document.close();
 
-                const result: string = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                ///const result: string = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
 
-                // console.log(result);
+                if (requestCallBack)
+                    requestCallBack(response);
 
             })
 
@@ -151,11 +152,12 @@ export namespace BaseDI.BackEnd {
 
 let server = new BaseDI.BackEnd.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test(this);
 
-const Step_1_0_CopyLocalFiles =  async () => {
-    server.Action("Step_1_0_CopyLocalFiles", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0");
+const Step_1_0_CopyLocalFilesAndStartServer = async () => {
+    server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0", function callBack(response: any)
+    {
+        server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_ProcessRequest_1_0")
+    });
 }
 
-Step_1_0_CopyLocalFiles().then(response => {
-    server.Action("Step_2_0_StartServer", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0");
-});
+Step_1_0_CopyLocalFilesAndStartServer();
 

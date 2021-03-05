@@ -44,6 +44,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
         public Func<JObject, ExtraData_12_2_1_0, JObject> Update_Client = null;
 
+        public Func<JObject, JObject> RequestCallBack = null;
+
         #endregion
 
         #region 2. Ready
@@ -131,9 +133,8 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [Route("")]
-        public async Task<IActionResult> Action(string processGoalName = null, string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0")
+        public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessRequest_1_0")
         {
-
             #region 1. Assign
 
             JObject armTemplateJSONOutput = null;
@@ -148,8 +149,8 @@ namespace BaseDI.Playground.Test.BackEnd
             _clientInfo.Add("Request", Request);
             _clientInfo.Add("Server", this);
 
-            if (processGoalName != null)
-                _clientInfo.Add("Process", processGoalName);
+            if (requestActionName != "")
+                _clientInfo.Add("actionName", requestActionName);
 
             ContentResult result = null;
 
@@ -207,13 +208,24 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. Observe
 
-            result = new ContentResult
+            if (RequestCallBack != null)
             {
-                ContentType = "text/html",
-                StatusCode = (int)HttpStatusCode.OK,
-                Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
-            };
-            // return Content(armTemplateJSONOutput.ToString());
+                RequestCallBack(armTemplateJSONOutput);
+
+                return null;
+            }
+
+            if (armTemplateJSONOutput != null)
+            {
+                result = new ContentResult
+                {
+                    ContentType = "text/html",
+                    StatusCode = (int)HttpStatusCode.OK,
+                    Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
+                };
+                // return Content(armTemplateJSONOutput.ToString());
+            }
+
             return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
 
             #endregion

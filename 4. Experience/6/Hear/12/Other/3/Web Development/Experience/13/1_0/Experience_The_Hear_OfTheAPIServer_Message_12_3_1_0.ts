@@ -120,6 +120,8 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
     export class Implement_DesignPattern_Builder_Experience_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
+        private _actionName: string = "";
+
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _client: any;
 
@@ -179,12 +181,14 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-1
-        public async Action_1_Begin_Process(): Promise<object> {
+        //Page 1-5
+        public async Action_5_Process_StorySetting(): Promise<object> {
             try
             {
-                if (process.env.APP_ENV == "SERVER")
-                {
+                this._actionName = this?._client["actionName"];
+
+                if (process.env.APP_ENV == "SERVER" && this._actionName.toUpperCase().includes("PROCESSREQUEST_1_0")) {
+
                     //#region 1. Assign
 
                     //#region MEMORIZE SERVER OPTIONS
@@ -317,9 +321,43 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
             return this._storylineDetails;
         }
 
+        //Page 1-7
+        public async Action_7_Process_StoryResources(): Promise<object> {
+            this._actionName = this?._client["actionName"];
+
+            if (process.env.APP_ENV == "SERVER" && this._actionName.toUpperCase().includes("COPYSTATICFILES_1_0")) {
+                {
+                    //#region DESCRIBE THE MEMORIES
+
+                    //#endregion
+
+                    //#region RECALL THE MEMORIES
+
+                    //#endregion
+
+                    //#region EXECUTE THE VISION
+
+                    await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(this._storylineDetails);
+
+                    //#endregion
+
+                    //#region REPORT THE FEEDBACK
+
+                    //#endregion
+                }
+
+                return this._storylineDetails;
+            }
+        }
+
         //#endregion
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        //Page 1-1
+        public async Action_1_Begin_Process(): Promise<object> {
+            return this._storylineDetails;
+        }
 
         //Page 1-2
         public async Action_2_Validate_Process(): Promise<object> {
@@ -336,18 +374,8 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
             return this._storylineDetails;
         }
 
-        //Page 1-5
-        public async Action_5_Process_StorySetting(): Promise<object> {
-            return this._storylineDetails;
-        }
-
         //Page 1-6
         public async Action_6_Process_StoryExperiences(): Promise<object> {
-            return this._storylineDetails;
-        }
-
-        //Page 1-7
-        public async Action_7_Process_StoryResources(): Promise<object> {
             return this._storylineDetails;
         }
 

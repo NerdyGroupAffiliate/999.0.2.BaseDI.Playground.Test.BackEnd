@@ -15,7 +15,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
         }
 
         //#region STORE 
-        public static Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(chapter: aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any): Promise<any> {
+        public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(chapter: aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any): Promise<any> {
             //#region DESCRIBE THE MEMORIES
 
             let observationItem: String = "";
@@ -31,6 +31,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
             let storageDictionary: Object = {};
 
             let storageKey: any = "StorageKey_" + entryPointName + "-" + CRUDVerb;
+            let storageKeyFiltered: any = "";
             let storedPromise: Promise<object> = null;
             let storageVariables: any = null;
 
@@ -52,18 +53,64 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
             //#region OUTPUT
 
+            //#region REMOVE OLD STORAGE
+
+            storageKeyFiltered = storageKey.toString().replace("-Create", "");
+            storageKeyFiltered = storageKeyFiltered.toString().replace("-Read", "");
+            storageKeyFiltered = storageKeyFiltered.toString().replace("-Update", "");
+            storageKeyFiltered = storageKeyFiltered.toString().replace("-Delete", "");
+
+            storylineDetails.outputs[1].baseDIObservations.forEach(element => {
+                delete element[storageKeyFiltered]
+            });
+
+            storylineDetails.outputs[1].baseDIObservations.forEach(element => {
+                delete element[storageKey]
+            });
+
+            //#endregion
+
+            //#region ADD STORAGE REQUEST
             storylineDetails.outputs[1].baseDIObservations.push(storageDictionary);
+            //#endregion
 
-            //const payload: string = unescape(this.StorylineDetails?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.data[0].dataResult);
+            //#region EXECUTE STORAGE OPERATION
 
-            //console.log(JSON.parse(JSON.parse(payload).payload).access_token);
+            storylineDetails = await chapter.MasterStorer.Action_1_Begin_Process();            
 
-            //TEST ACCESS TOKEN OUTPUT
+            storylineDetails.outputs[1].baseDIObservations.forEach(element => {
+                delete element[storageKey]
+            });
 
-            storylineDetails = chapter.MasterStorer.Action_1_Begin_Process();
-            
+            storylineDetails.outputs[1].baseDIObservations = storylineDetails.outputs[1].baseDIObservations.filter((value: {}) => Object.keys(value).length !== 0);
+
+            console.log(storylineDetails.outputs[1].baseDIObservations)
+
+            //#endregion
+
+            //#region FUTURE CODE EXAMPLE
+
+            // In case If we need to remove based on verb
+
+            // if(CRUDVerb.toUpperCase() == "CREATE") {
+            //     console.log(CRUDVerb)
+            //     console.log(storylineDetails.outputs[1].baseDIObservations)
+
+            // } else if(CRUDVerb.toUpperCase() == "READ") {
+            //     console.log(CRUDVerb)
+            //     console.log(storylineDetails.outputs[1].baseDIObservations)
+            // }
+            // else if(CRUDVerb.toUpperCase() == "UPDATE") {
+            //     console.log(CRUDVerb)
+            // }
+            // else if(CRUDVerb.toUpperCase() == "DELETE") {
+            //     console.log(CRUDVerb)
+            // }
+
             // if (chapter.MasterStorer.CallBack)
             //     chapter.MasterStorer.CallBack();
+
+            //#endregion
 
             //#endregion
 

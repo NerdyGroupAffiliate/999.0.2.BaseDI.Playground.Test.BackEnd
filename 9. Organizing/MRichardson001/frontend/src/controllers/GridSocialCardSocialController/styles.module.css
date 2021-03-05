@@ -1,8 +1,0 @@
-.wrapper {
-  cursor: pointer;
-  transition: all 125ms;
-}
-
-.wrapper:hover {
-  opacity: 0.8;
-}

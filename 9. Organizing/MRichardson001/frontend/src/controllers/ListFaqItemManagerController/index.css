@@ -1,7 +1,0 @@
-.af-class-list-faq-items > li {
-  display: none !important;
-}
-
-.af-class-list-faq-items:last-child {
-  border-bottom: none !important;
-}

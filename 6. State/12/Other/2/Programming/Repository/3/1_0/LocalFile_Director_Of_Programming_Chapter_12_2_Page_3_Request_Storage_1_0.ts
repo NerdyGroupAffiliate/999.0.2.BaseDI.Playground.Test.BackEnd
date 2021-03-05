@@ -143,13 +143,9 @@ export namespace BaseDI.BackEnd.State.Programming_3 {
                                 // tslint:disable-next-line:max-line-length
                                 storedResult = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storedCRUDValue, storedObservationKey, observation);
 
-                                this._storylineDetails.outputs[1].baseDIObservations.splice(storedObservationIndex, 1);
-
                                 if(storedResult != null)
-                                {
-                                    storedDictionary[observationKey.toString()] = storedResult;
-                                    
-                                    this._storylineDetails.outputs[1].baseDIObservations.push(storedDictionary);
+                                {                                  
+                                    this._storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(storedResult));
                                 }
                             }
 
