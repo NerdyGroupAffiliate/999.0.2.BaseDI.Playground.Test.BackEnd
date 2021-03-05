@@ -11,6 +11,8 @@ import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from 
 export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
     export class Page_2_6_Process_StoryExperiences_1_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
+        private _actionName: string = "";
+        private _client: any = null;
 
         private _jsonAccountInformation: any = null;
         private _jsonSearchInformation: any = null;
@@ -50,29 +52,33 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region DESCRIBE THE MEMORIES
+            this._actionName = this?._client["actionName"];
 
+            if (this._actionName.toUpperCase().includes("PROCESSREQUEST_1_0")) {
+                //#region DESCRIBE THE MEMORIES
+
+
+                //#endregion
+
+                //#region RECALL THE MEMORIES
+
+                this._jsonAccountInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "AccountItem_SetSeller_Business_Management_AccountLookUp", false);
+                this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
+
+                //#endregion
+
+                //#region EXECUTE THE VISION
+
+                this.HandleDefaults();
+
+                this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0();
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
-
-            this._jsonAccountInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "AccountItem_SetSeller_Business_Management_AccountLookUp", false);
-            this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
+                //#region REPORT THE FEEDBACK
 
             //#endregion
-            
-            //#region EXECUTE THE VISION
-
-            this.HandleDefaults();
-
-            this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0();
-   
-            //#endregion
-
-            //#region REPORT THE FEEDBACK
-
-            //#endregion
+            }
 
             //Reference the MasterLeader.
             return await this.StorylineDetails;
