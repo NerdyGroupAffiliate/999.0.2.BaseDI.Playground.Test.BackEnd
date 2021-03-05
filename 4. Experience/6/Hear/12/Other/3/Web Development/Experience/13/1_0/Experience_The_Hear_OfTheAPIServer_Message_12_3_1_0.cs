@@ -436,7 +436,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
                     #region DESCRIBE THE MEMORIES
 
                     dynamic staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
-                    var jContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_2_0_ServerWeb_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault()?.Parent;
+                    var jContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault()?.Parent;
 
                     #endregion
 
@@ -456,7 +456,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
                         storylineDetails.outputs[1].baseDIObservations.Add(setupItemEnvironmentClient);
 
-                        return storylineDetails;
+                        return await Task.FromResult<JObject>(storylineDetails).ConfigureAwait(true);
                     }
 
                     #endregion

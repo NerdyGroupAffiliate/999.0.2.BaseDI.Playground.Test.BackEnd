@@ -44,6 +44,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
         public Func<JObject, ExtraData_12_2_1_0, JObject> Update_Client = null;
 
+        public Func<JObject, JObject> RequestCallBack = null;
+
         #endregion
 
         #region 2. Ready
@@ -131,9 +133,8 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [Route("")]
-        public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_RenderWebPage_1_0")
+        public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessRequest_1_0")
         {
-
             #region 1. Assign
 
             JObject armTemplateJSONOutput = null;
@@ -207,7 +208,14 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. Observe
 
-            if(armTemplateJSONOutput != null)
+            if (RequestCallBack != null)
+            {
+                RequestCallBack(armTemplateJSONOutput);
+
+                return null;
+            }
+
+            if (armTemplateJSONOutput != null)
             {
                 result = new ContentResult
                 {
