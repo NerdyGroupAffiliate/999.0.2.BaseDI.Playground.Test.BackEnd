@@ -21,6 +21,7 @@
                 </html>`
 
             if (scripts == "") {
+                console.log("scripts", scripts)
                 scripts = "<script src=\"/scripts/js/BaseDI_1_0.js\" type=\"text/javascript\"></script>";
             }
 
@@ -309,10 +310,11 @@
                         }
                     }
                     else {
-                        console.log("Something wrong in Json file!")
+                        console.log("Something wrong in Json file||||!")
                     }
                 });
             });
+          
 
             Object.keys(PropertyArray).forEach((key, index) => {
                 let obj = Object.values(PropertyArray)[index];

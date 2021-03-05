@@ -36,8 +36,6 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             if (server == undefined || server == null) return null;
             if (verbName == undefined || verbName == null || verbName == "") return null;
 
-            console.log("AAA");
-
             switch (verbName.toUpperCase()) {
                 case "DELETE":
                     return this.Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server, url, options, callback);
@@ -156,6 +154,9 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             const serverEnvironmentScriptPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
             const serverEnvironmentScriptName: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptName;
 
+            localStorage.setItem("serverEnvironmentScriptName", serverEnvironmentScriptName);
+            this.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0()
+
             const serverEnvironmentServerRoutesGET: Array<any> = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
 
             //#endregion
@@ -266,6 +267,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
         public static Step_X_X_Custom_Outout_ServerLocalDataFromMemory_1_0(storageKey: String, storageValue: any): any
         {
             //#region DESCRIBE THE MEMORIES
+
 
             let storedValue: any;
 
