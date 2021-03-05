@@ -271,18 +271,18 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             // Setting the baseDIObservations Array
            
             
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
+            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
            
-            var read1 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
-           
-            
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Update", this._entryPointName, this._pageName, "UPDATING access token", this.StorylineDetails, {test:"Hello"});
+            var read1 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
            
             
-            var read2 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
+            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Update", this._entryPointName, this._pageName, "UPDATING access token", this.StorylineDetails, {test:"Hello"});
+           
+            
+            var read2 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
       
             
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Delete", this._entryPointName, this._pageName, "DELETING access token", this.StorylineDetails, response);
+            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Delete", this._entryPointName, this._pageName, "DELETING access token", this.StorylineDetails, response);
            
             
             this._response.send(response);

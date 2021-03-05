@@ -1,4 +1,8 @@
-﻿import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+
+import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
+
+import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 const localFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 = "../../../../../../../../6. State/12/Other/2/Programming/Repository/3/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.json";
 
@@ -229,9 +233,10 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
         //#region SERVER CONFIGURATION
 
-        public static Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storylineDetails: Object): any {
-            if (storylineDetails == undefined || storylineDetails == null) return;
-            if (process.env.APP_ENV != "SERVER") return;
+        public static async Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storylineDetails: Object, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, entryPointName: string, pageName: string = ""): Promise<any> {
+            if (storylineDetails == undefined || storylineDetails == null) return; //REQUIRED VALUE
+            if (process.env.APP_ENV != "SERVER") return; //REQUIRED VALUE
+            if (entryPointName == undefined || entryPointName == null || entryPointName == "") return; //REQUIRED DIRECTOR or EXPREINCE FILE NAME without extension.
 
             //#region DESCRIBE THE MEMORIES
 
@@ -254,15 +259,15 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             const serverEnvironmentImagePath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemImagePath;
             const serverEnvironmentScriptPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
             const serverEnvironmentScriptName: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptName;
-
-            localStorage.setItem("serverEnvironmentScriptName", serverEnvironmentScriptName);
-            this.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0()
-
             const serverEnvironmentServerRoutesGET: Array<any> = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
 
             //#endregion
 
             //#region EXECUTE THE VISION
+
+            if (masterLeader_masterStorerReference != null)
+                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING access token", storylineDetails, serverEnvironmentScriptName);
+
 
             //#region PICK THE SERVER
 
