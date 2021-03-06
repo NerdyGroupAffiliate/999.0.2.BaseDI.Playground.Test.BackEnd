@@ -18,9 +18,12 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
         }
 
         //#region STORE 
-        public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStoreReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any): Promise<any> {
+        public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStoreReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any,  uniqueReferenceKey: string = ""): Promise<any> {
             if (masterLeader_masterStoreReference == undefined || masterLeader_masterStoreReference == null) return; //REQUIRED
-            
+
+            //console.log("AA");
+            //console.log(JSON.stringify(storylineDetails.outputs[1].baseDIObservations));
+
             //#region DESCRIBE THE MEMORIES
 
             let observationItem: String = "";
@@ -43,7 +46,14 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
             //#endregion
 
             //#region RECALL THE MEMORIES
-            storageDictionary[storageKey] = {};
+
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+
+            if (uniqueReferenceKey)
+                storageKey += "-" + uniqueReferenceKey;
 
             if (data) {
                 observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, pageName, description, observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
@@ -51,10 +61,6 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
                 storageDictionary[storageKey] = observationItem.toString();
             }
-
-            //#endregion
-
-            //#region EXECUTE THE VISION
 
             //#region OUTPUT
 
