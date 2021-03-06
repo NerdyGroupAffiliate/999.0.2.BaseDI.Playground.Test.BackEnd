@@ -125,6 +125,8 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _client: any;
 
+        private _entryPointName: string = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+
         private _server: any;
 
         private _storylineDetails: object = new Object();
@@ -173,7 +175,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
         //#region 3. Set
         private HandleChapterDefaults() {
-            
+
         }
         //#endregion
 
@@ -191,9 +193,10 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                     //#region 1. Assign
 
+
                     //#region MEMORIZE SERVER OPTIONS
 
-                    this._server = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storylineDetails);
+                    this._server = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storylineDetails, this.MasterStorer, this._entryPointName, "Action_5_Process_StorySetting");
 
                     //#endregion
 

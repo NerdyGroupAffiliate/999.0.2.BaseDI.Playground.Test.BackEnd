@@ -5,7 +5,10 @@
 }
 
 import { resolve } from "dns";
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+
 import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
+
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0"
 
 export namespace BaseDI.BackEnd.Programming.Extensions_3 {
@@ -15,7 +18,9 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
         }
 
         //#region STORE 
-        public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(chapter: aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any): Promise<any> {
+        public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStoreReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any): Promise<any> {
+            if (masterLeader_masterStoreReference == undefined || masterLeader_masterStoreReference == null) return; //REQUIRED
+            
             //#region DESCRIBE THE MEMORIES
 
             let observationItem: String = "";
@@ -76,7 +81,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
             //#region EXECUTE STORAGE OPERATION
 
-            storylineDetails = await chapter.MasterStorer.Action_1_Begin_Process();            
+            storylineDetails = await masterLeader_masterStoreReference.Action_1_Begin_Process();            
 
             storylineDetails.outputs[1].baseDIObservations.forEach(element => {
                 delete element[storageKey]
@@ -84,7 +89,7 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
             storylineDetails.outputs[1].baseDIObservations = storylineDetails.outputs[1].baseDIObservations.filter((value: {}) => Object.keys(value).length !== 0);
 
-            console.log(storylineDetails.outputs[1].baseDIObservations)
+            //console.log(storylineDetails.outputs[1].baseDIObservations)
 
             //#endregion
 
