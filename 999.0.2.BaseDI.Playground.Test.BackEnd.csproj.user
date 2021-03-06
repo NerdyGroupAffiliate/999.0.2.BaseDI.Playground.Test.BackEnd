@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ActiveDebugProfile>_999._0._2.BaseDI.Playground.Test.BackEnd</ActiveDebugProfile>
+    <ActiveDebugProfile>_999._0._2.BaseDI.BackEnd</ActiveDebugProfile>
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -11,6 +11,16 @@
     <Compile Update="4. Experience\2\Movement\12\Other\3\Web Development\Experience\1\1_0\Experience_The_Movement_FromWebClient_DataTransfer_2_1_1_0.cs">
       <SubType>Component</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="0. Script\Enumerations\12\Other\2\Programming\Enumeration\3\1_0\Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="0. Script\Extensions\12\Other\2\Programming\Method\3\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Update="0. Script\Extensions\12\Other\2\Programming\Method\5\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.ts">

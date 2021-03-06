@@ -1,6 +1,11 @@
 ﻿
+using System;
 using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.BackEnd.Script.Programming.Extensions_5;
 using Newtonsoft.Json.Linq;
+using NUnit.Framework;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BaseDI.BackEnd.Chapter.Page.Programming_5
@@ -48,16 +53,25 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_5
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            //Set a reference to our the details of our storyline.
-            var storylineDetails = StorylineDetails;
+            #region DESCRIBE THE MEMORIES
 
-            //Get container detail.
-            //var detail = storylineDetails.StoryScenery.Location.Stage.Details.Where(d => d.Key.ToUpper() == "PAGE_6_1_PROCESS_STORYLINEENDING").SingleOrDefault();
 
-            //Parse HTML into Linq to HTML object.
-            //var HTMLdocument = HDocument.Parse(detail.Value);
+            #endregion
 
-            return await Task.FromResult<JObject>(storylineDetails).ConfigureAwait(true);
+            #region RECALL THE MEMORIES
+
+
+            #endregion
+
+            #region EXECUTE THE VISION
+
+            #endregion
+
+            #region REPORT THE FEEDBACK
+
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+
+            #endregion
         }
 
         #endregion

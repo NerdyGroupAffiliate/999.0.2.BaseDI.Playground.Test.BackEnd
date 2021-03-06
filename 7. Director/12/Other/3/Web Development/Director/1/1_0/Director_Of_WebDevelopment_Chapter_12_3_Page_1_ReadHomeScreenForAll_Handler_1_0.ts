@@ -220,6 +220,30 @@ export namespace BaseDI.BackEnd.Director.Web_Development_1 {
             return this._storylineDetails;
         }
 
+        //Page 1-6
+        public async Action_6_Process_StoryExperiences(): Promise<object> {
+            //region 1. Assign 
+            var page = new ChapterPage_Page_1_6_Process_StoryExperiences_12_3_1_0.BaseDI.BackEnd.Chapter.Page.Web_Development_1.Page_1_6_Process_StoryExperiences_12_3_1_0(this._storylineDetails, this._repository);
+
+            page.Client = this._client;
+
+            page.EntryPoint = this._entryPoint;
+            page.ExtraData = this._extraData;
+
+            page.MasterStorer = this._centralizedStorer;
+            page.MasterDisturber = this._centralizedDisturber;
+            page.MasterSensor = this._centralizedSensor;
+
+            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
+
+            //region 2. Action
+            this._storylineDetails = await page.Action();
+
+            //region 3. Observe
+            return this._storylineDetails;
+        }
+
+
         //#endregion
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
@@ -242,11 +266,6 @@ export namespace BaseDI.BackEnd.Director.Web_Development_1 {
 
         //Page 1-4
         public async Action_4_Process_StoryCharacters(): Promise<object> {
-            return this._storylineDetails;
-        }
-
-        //Page 1-6
-        public async Action_6_Process_StoryExperiences(): Promise<object> {
             return this._storylineDetails;
         }
 

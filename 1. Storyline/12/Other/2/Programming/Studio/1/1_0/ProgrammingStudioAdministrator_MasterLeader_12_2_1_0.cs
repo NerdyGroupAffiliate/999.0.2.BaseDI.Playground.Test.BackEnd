@@ -1,45 +1,62 @@
-﻿/////////////////////////////////////////////////////////////////////////////////////
-//0. System Dependencies
+﻿//3rd Party
+using Newtonsoft.Json.Linq;
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+
+/////////////////////////////////////////////////////////////////////////////////////
+//0. BaseDI Global Dependencies
 /////////////////////////////////////////////////////////////////////////////////////
 using BaseDI.BackEnd.Director.Programming_1;
 using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming_1;
-//8. Account Gain or Loss
-using BaseDI.BackEnd.Story.Accounting_1;
 /////////////////////////////////////////////////////////////////////////////////////
 
 //1. Generate Brand Awareness
 using BaseDI.BackEnd.Story.Advertising_1;
-//7. Sell Commission Offer
-using BaseDI.BackEnd.Story.Affiliate_Revenue_1;
+
 //2. Generate Brand Trust
 using BaseDI.BackEnd.Story.Blogging_1;
-//12. Other
-using BaseDI.BackEnd.Story.Careers_Employment_1;
-//5. Sell High Ticket Offer
-using BaseDI.BackEnd.Story.Coaching_1;
-using BaseDI.BackEnd.Story.Consulting_2;
-//9. Improve Customer Service
-using BaseDI.BackEnd.Story.Customer_Service_1;
+
 //3. Generate Optin
 using BaseDI.BackEnd.Story.Listing_Building_1;
 using BaseDI.BackEnd.Story.Personal_Training_3;
 using BaseDI.BackEnd.Story.Podcasting_2;
+
+//4. Sell Low Ticket Offer
+using BaseDI.BackEnd.Story.Supplements_1;
+
+//5. Sell High Ticket Offer
+using BaseDI.BackEnd.Story.Coaching_1;
+using BaseDI.BackEnd.Story.Consulting_2;
+
+//6. Sell Subscription Offer
+using BaseDI.BackEnd.Story.Software_1;
+
+//7. Sell Commission Offer
+using BaseDI.BackEnd.Story.Affiliate_Revenue_1;
+
+//8. Account Gain or Loss
+using BaseDI.BackEnd.Story.Accounting_1;
+
+//9. Improve Customer Service
+using BaseDI.BackEnd.Story.Customer_Service_1;
+
 //10. Perform Manual Task
 using BaseDI.BackEnd.Story.Productivity_1;
+
 //11. Automate Manual Task
 using BaseDI.BackEnd.Story.Risk_Management_1;
 using BaseDI.BackEnd.Story.Social_Media_3;
-//6. Sell Subscription Offer
-using BaseDI.BackEnd.Story.Software_1;
-//4. Sell Low Ticket Offer
-using BaseDI.BackEnd.Story.Supplements_1;
+
+//12. Other
+using BaseDI.BackEnd.Story.Careers_Employment_1;
 using BaseDI.BackEnd.Story.Web_Development_1;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
+using BaseDI.BackEnd.Story.Programming_1;
+using BaseDI.BackEnd.Story.CMS_1;
+using BaseDI.BackEnd.Story.Security_1;
 
 namespace BaseDI.BackEnd.Story.Programming_1
 {
@@ -460,10 +477,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 
                 ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(_extraData);
 
-                createDirector.APILocationLocalDotNetCore = "http://localhost:8912/api/basedi/io/programming";
-                createDirector.APILocationLocalNodeJS = "http://localhost:9912/api/basedi/io/programming";
+                createDirector.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/programming";
+                createDirector.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/programming";
 
-                createDirector.APILocationRemote = "https://api.basedi.io/programming";
+                createDirector.APILocationRemote = "https://storyline.basedi.io/programming";
 
                 return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
 
@@ -478,10 +495,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 createDirector = new AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8991/api/basedi/io/advertising";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9991/api/basedi/io/advertising";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8991/storyline/basedi/io/advertising";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9991/storyline/basedi/io/advertising";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/advertising";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/advertising";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -494,10 +511,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     BloggingFactoryImplementer_NicheMaster_2_1_1_0 createDirector = new BloggingFactoryImplementer_NicheMaster_2_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8992/api/basedi/io/blogging";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9992/api/basedi/io/blogging";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/blogging";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/blogging";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/blogging";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/blogging";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -506,10 +523,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     PodcastingFactoryImplementer_NicheMaster_2_2_1_0 createDirector = new PodcastingFactoryImplementer_NicheMaster_2_2_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8992/api/basedi/io/podcasting";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9992/api/basedi/io/podcasting";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/podcasting";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/podcasting";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/podcasting";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/podcasting";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -518,10 +535,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 createDirector = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8992/api/basedi/io/socialmedia";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9992/api/basedi/io/socialmedia";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/socialmedia";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/socialmedia";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/socialmedia";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/socialmedia";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -534,10 +551,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     ListBuildingFactoryImplementer_NicheMaster_3_1_1_0 createDirector = new ListBuildingFactoryImplementer_NicheMaster_3_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8993/api/basedi/io/listbuilding";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9993/api/basedi/io/listbuilding";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8993/storyline/basedi/io/listbuilding";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9993/storyline/basedi/io/listbuilding";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/listbuilding";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/listbuilding";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -550,10 +567,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     SupplementsFactoryImplementer_NicheMaster_4_1_1_0 createDirector = new SupplementsFactoryImplementer_NicheMaster_4_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8994/api/basedi/io/supplements";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9994/api/basedi/io/supplements";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8994/storyline/basedi/io/supplements";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9994/storyline/basedi/io/supplements";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/supplements";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/supplements";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -566,10 +583,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     CoachingFactoryImplementer_NicheMaster_5_1_1_0 createDirector = new CoachingFactoryImplementer_NicheMaster_5_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8995/api/basedi/io/coaching";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9995/api/basedi/io/coaching";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/coaching";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/coaching";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/coaching";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/coaching";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -578,10 +595,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     ConsultingFactoryImplementer_NicheMaster_5_2_1_0 createDirector = new ConsultingFactoryImplementer_NicheMaster_5_2_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8995/api/basedi/io/consulting";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9995/api/basedi/io/consulting";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/consulting";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/consulting";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/consulting";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/consulting";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -590,10 +607,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0 createDirector = new PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8995/api/basedi/io/personaltraining";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9995/api/basedi/io/personaltraining";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/personaltraining";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/personaltraining";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/personaltraining";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/personaltraining";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -606,10 +623,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     SoftwareFactoryImplementer_NicheMaster_6_1_1_0 createDirector = new SoftwareFactoryImplementer_NicheMaster_6_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8996/api/basedi/io/software";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9996/api/basedi/io/software";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8996/storyline/basedi/io/software";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9996/storyline/basedi/io/software";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/software";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/software";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -622,10 +639,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0 createDirector = new AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8997/api/basedi/io/affiliaterevenue";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9997/api/basedi/io/affiliaterevenue";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8997/storyline/basedi/io/affiliaterevenue";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9997/storyline/basedi/io/affiliaterevenue";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/affiliaterevenue";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/affiliaterevenue";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -638,10 +655,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     AccountingFactoryImplementer_NicheMaster_8_1_1_0 createDirector = new AccountingFactoryImplementer_NicheMaster_8_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8998/api/basedi/io/accounting";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9998/api/basedi/io/accounting";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8998/storyline/basedi/io/accounting";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9998/storyline/basedi/io/accounting";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/accounting";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/accounting";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -654,10 +671,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0 createDirector = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8999/api/basedi/io/customerservice";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9999/api/basedi/io/customerservice";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8999/storyline/basedi/io/customerservice";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9999/storyline/basedi/io/customerservice";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/customerservice";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/customerservice";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -670,10 +687,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     ProductivityFactoryImplementer_NicheMaster_10_1_1_0 createDirector = new ProductivityFactoryImplementer_NicheMaster_10_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8910/api/basedi/io/productivity";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9910/api/basedi/io/productivity";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8910/storyline/basedi/io/productivity";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9910/storyline/basedi/io/productivity";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/productivity";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/productivity";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -686,10 +703,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     RiskManagementFactoryTester_NicheMaster_11_1_1_0 createDirector = new RiskManagementFactoryTester_NicheMaster_11_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8911/api/basedi/io/riskmanagement";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9911/api/basedi/io/riskmanagement";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8911/storyline/basedi/io/riskmanagement";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9911/storyline/basedi/io/riskmanagement";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/riskmanagement";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/riskmanagement";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -702,10 +719,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0 createDirector = new CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8912/api/basedi/io/careersemployment";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9912/api/basedi/io/careersemployment";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/careersemployment";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/careersemployment";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/careersemployment";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/careersemployment";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -714,10 +731,34 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 createDirector = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(_extraData);
 
-                    createDirector.APILocationLocalDotNetCore = "http://localhost:8912/api/basedi/io/webdevelopment";
-                    createDirector.APILocationLocalNodeJS = "http://localhost:9912/api/basedi/io/webdevelopment";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/webdevelopment";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/webdevelopment";
 
-                    createDirector.APILocationRemote = "https://api.basedi.io/webdevelopment";
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
+
+                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                }
+
+                if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CMS"))
+                {
+                    CMSFactoryImplementer_NicheMaster_12_4_1_0 createDirector = new CMSFactoryImplementer_NicheMaster_12_4_1_0(_extraData);
+
+                    createDirector.APILocationLocalNodeJS = "http://localhost:8912/storyline/basedi/io/cms";
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/cms";
+
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/cms";
+
+                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                }
+
+                if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SECURITY"))
+                {
+                    SecurityFactoryImplementer_NicheMaster_12_5_1_0 createDirector = new SecurityFactoryImplementer_NicheMaster_12_5_1_0(_extraData);
+
+                    createDirector.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/security";
+                    createDirector.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/security";
+
+                    createDirector.APILocationRemote = "https://storyline.basedi.io/security";
 
                     return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
@@ -864,10 +905,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
             {
                 SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 createExperience = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(_extraData);
 
-                createExperience.APILocationLocalDotNetCore = "http://localhost:8992/api/basedi/io/socialmedia";
-                createExperience.APILocationLocalNodeJS = "http://localhost:9992/api/basedi/io/socialmedia";
+                createExperience.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/socialmedia";
+                createExperience.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/socialmedia";
 
-                createExperience.APILocationRemote = "https://api.basedi.io/socialmedia";
+                createExperience.APILocationRemote = "https://storyline.basedi.io/socialmedia";
 
                 return createExperience.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
             }
@@ -919,10 +960,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                 WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 createExperience = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(_extraData);
 
-                createExperience.APILocationLocalNodeJS = "http://localhost:8912/api/basedi/io/webdevelopment";
-                createExperience.APILocationLocalDotNetCore = "http://localhost:9912/api/basedi/io/webdevelopment";
+                createExperience.APILocationLocalNodeJS = "http://localhost:8912/storyline/basedi/io/webdevelopment";
+                createExperience.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/webdevelopment";
 
-                createExperience.APILocationRemote = "https://api.basedi.io/webdevelopment";
+                createExperience.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
 
                 return createExperience.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
 

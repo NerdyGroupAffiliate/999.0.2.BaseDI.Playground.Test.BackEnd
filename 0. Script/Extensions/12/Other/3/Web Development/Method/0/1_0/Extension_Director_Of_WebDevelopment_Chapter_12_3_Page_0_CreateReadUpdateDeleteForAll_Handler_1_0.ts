@@ -1,4 +1,8 @@
-﻿export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
+﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+
+import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0"
+
+export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
     export class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 {
         constructor() {
 
@@ -6,7 +10,7 @@
 
         //#region GENERATE HTML STRUCTURE
 
-        public static Step_X_X_Custom_Store_HTMLStructureToString_1_0(metaData: string, title: string, scripts: string, styles: string, body: string): string {
+        public static async Step_X_X_Custom_Store_HTMLStructureToString_1_0(metaData: string, title: string, scripts: string, styles: string, body: string, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null, storyLineDetails: any = null): Promise<string> {
             let htmlHomePageTemplate = `<!DOCTYPE html>
                 <html lang="en">
                     <head>
@@ -19,6 +23,13 @@
                         {bodyReplace}
                     </body>
                 </html>`
+
+            if (scripts == "") {
+                console.log("scripts", scripts)
+                scripts = "<script src=\"/scripts/js/BaseDI_1_0.js\" type=\"text/javascript\"></script>";
+
+                scripts = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_ClientScript_Location");
+            }
 
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{metaDataReplace}", metaData);
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{titleReplace}", title);
@@ -140,24 +151,24 @@
             //#region DESCRIBE THE MEMORIES
 
             let htmlContentString: string = htmlColumnsString;
-            let idsAndContant = {}
+            let idsAndConstant = {}
 
             //#endregion
 
             //#region EXECUTE THE VISION
 
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
-                if (idsAndContant[con.ParentHTMLContentItemAttributeID] == undefined) {
-                    idsAndContant[con.ParentHTMLContentItemAttributeID] = new Array();
-                    idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+                if (idsAndConstant[con.ParentHTMLContentItemAttributeID] == undefined) {
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID] = new Array();
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
                 else {
-                    idsAndContant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
             });
 
-            Object.keys(idsAndContant).forEach(item => {
-                let content = idsAndContant[item].join('\n')
+            Object.keys(idsAndConstant).forEach(item => {
+                let content = idsAndConstant[item].join('\n')
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
             });
 
@@ -305,10 +316,11 @@
                         }
                     }
                     else {
-                        console.log("Something wrong in Json file!")
+                        console.log("Something wrong in Json file||||!")
                     }
                 });
             });
+          
 
             Object.keys(PropertyArray).forEach((key, index) => {
                 let obj = Object.values(PropertyArray)[index];

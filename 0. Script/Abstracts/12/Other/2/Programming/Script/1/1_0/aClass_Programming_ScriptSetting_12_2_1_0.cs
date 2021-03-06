@@ -15,6 +15,8 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         //A. Variable Declaration       
 
+        public Func<Object, Object> CallBack { get; set; }
+
         public string ID { get; set; }
 
         public int TypeID { get; set; }

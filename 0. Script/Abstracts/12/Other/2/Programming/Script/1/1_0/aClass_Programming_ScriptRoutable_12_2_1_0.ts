@@ -10,6 +10,8 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
     export abstract class aClass_Programming_ScriptRoutable_12_2_1_0
     {
         //#region 1. Assign
+        public CallBack: (...args: any[]) => any = null;
+
         public Repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         public StorylineDetails: object = new Object();

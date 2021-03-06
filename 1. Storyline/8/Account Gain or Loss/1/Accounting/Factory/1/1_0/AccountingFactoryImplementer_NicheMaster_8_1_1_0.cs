@@ -14,7 +14,9 @@ namespace BaseDI.BackEnd.Story.Accounting_1
     internal class AccountingFactoryImplementer_NicheMaster_8_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         private Dictionary<string, object> _client;
-        private object _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
         private ExtraData_12_2_1_0 _extraData = null;
 
@@ -22,7 +24,6 @@ namespace BaseDI.BackEnd.Story.Accounting_1
         {
             //region 1. Assign
             _client = new Dictionary<string, object>();
-            _centralizedStorer = new object();
 
             _extraData = extraData;
 
@@ -37,11 +38,18 @@ namespace BaseDI.BackEnd.Story.Accounting_1
 
             _client = client;
             _centralizedStorer = centralizedStorer;
+            //_centralizedDisturber = centralizedDisturber;
+            //_centralizedSensor = centralizedSensor;
+
+            _extraData.KeyValuePairs = new Dictionary<string, object>();
 
             _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
             _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
+
+            _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
+            _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
             #endregion
 

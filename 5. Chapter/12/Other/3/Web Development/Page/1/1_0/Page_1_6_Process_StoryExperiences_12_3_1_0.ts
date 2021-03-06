@@ -32,6 +32,10 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
         //#region 4. Action
         public async Action(): Promise<object> {
 
+            if (this.Client["requestActionName"] == "Action_ControlOptinButtonRolloverState") {
+
+            }
+
             //Reference the MasterLeader.
             return await this.StorylineDetails;
         }

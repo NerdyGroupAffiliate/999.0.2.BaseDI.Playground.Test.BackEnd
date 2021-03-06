@@ -31,10 +31,43 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_3 {
         //#endregion
 
         //#region 4. Action
-        public async Action(): Promise<object> {
+        public async Action(): Promise<object>
+        {
+            //#region DESCRIBE THE MEMORIES 
 
-            //Reference the MasterLeader.
+            //#endregion
+
+            //#region RECALL THE MEMORIES
+
+            //#endregion
+
+            //#region EXECUTE THE VISION
+
+            //CREATE THE PROCESS
+            const processData = async () =>
+            {
+                //EXECUTE THE PROCESS
+                this.Repository.ExtraData = this.ExtraData;
+
+                this.Repository.Action_8_Process_CRUD().then(storedData =>
+                {
+                    //STORE DATA
+                    this.StorylineDetails = storedData;
+
+                    return;
+                })
+            }
+
+            //START THE PROCESS
+            await processData();
+
+            //#endregion
+
+            //#region REPORT THE FEEDBACK
+
             return await this.StorylineDetails;
+
+            //#endregion
         }
         //#endregion
     }

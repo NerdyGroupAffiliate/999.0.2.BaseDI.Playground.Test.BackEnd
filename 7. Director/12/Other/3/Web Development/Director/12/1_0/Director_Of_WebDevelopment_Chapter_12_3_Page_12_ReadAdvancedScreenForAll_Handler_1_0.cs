@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
 
+using ChapterPage = BaseDI.BackEnd.Chapter.Page.Web_Development_12;
+using System.Collections.Generic;
+
 namespace BaseDI.BackEnd.Director.Web_Development_12
 {
     public class Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
@@ -89,8 +92,8 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
     {
         #region 1. Assign
 
-        private object _client;
-        private object _centralizedStorer;
+        private Dictionary<string, object> _client;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;        
 
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
@@ -104,7 +107,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_3_Page_12(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_3_Page_12(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
             _centralizedStorer = centralizedStorer;
@@ -171,8 +174,10 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
 
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
-        private object _client;
-        private object _centralizedStorer;
+        private Dictionary<string, object> _client;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
         private JObject _storylineDetails = null;
         private JObject _storylineDetails_Parameters = null;
@@ -185,10 +190,10 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_3_Page_12_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_3_Page_12_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
-            _centralizedStorer = centralizedStorer;
+            _client = (Dictionary<string, object>)client;
+            _centralizedStorer = (aClass_Programming_ScriptAction_12_2_1_0<JObject>)centralizedStorer;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -217,58 +222,29 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-9
-        public override async Task<JObject> Action_9_Verify_Process()
+        //Page 1-5
+        public override async Task<JObject> Action_5_Process_StorySetting()
         {
-            #region 1. Assign          
+            #region 1. Assign     
 
-            //var page = new ChapterPage.Page_1_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_12_5_Process_StorySetting_12_3_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            page.Client = _client;
 
-            //page.EntryPoint = _entryPoint;
-            //page.ExtraData = _extraData;
+            page.EntryPoint = this._entryPoint;
+            page.ExtraData = this._extraData;
 
-            //page.MasterLeader = _centralizedStorer;
+            page.MasterStorer = this._centralizedStorer;
+            page.MasterDisturber = this._centralizedDisturber;
+            page.MasterSensor = this._centralizedSensor;
 
-            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
-        //Page 1-10
-        public override async Task<JObject> Action_10_End_Process()
-        {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
-
-            //page.Client = _client;
-
-            //page.EntryPoint = _entryPoint;
-            //page.ExtraData = _extraData;
-
-            //page.MasterLeader = _centralizedStorer;
-
-            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
-
-            #endregion
-
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            _storylineDetails = await page.Action().ConfigureAwait(true);
 
             #endregion
 
@@ -410,37 +386,6 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
-        //Page 1-5
-        public override async Task<JObject> Action_5_Process_StorySetting()
-        {
-            #region 1. Assign     
-
-            //var page = new ChapterPage.Page_1_5_Process_StorySetting_12_2_1_0(_storylineDetails, _repository);
-
-            //page.Client = _client;
-
-            //page.EntryPoint = _entryPoint;
-            //page.ExtraData = _extraData;
-
-            //page.MasterLeader = _centralizedStorer;
-
-            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
-
-            #endregion
-
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
         //Page 1-6
         public override async Task<JObject> Action_6_Process_StoryExperiences()
         {
@@ -509,6 +454,68 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
             #region 1. Assign          
 
             //var page = new ChapterPage.Page_1_8_Process_CRUD_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+
+            #endregion
+
+            #region 2. Action              
+
+            //_storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
+        //Page 1-9
+        public override async Task<JObject> Action_9_Verify_Process()
+        {
+            #region 1. Assign          
+
+            //var page = new ChapterPage.Page_1_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+
+            #endregion
+
+            #region 2. Action              
+
+            //_storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
+        //Page 1-10
+        public override async Task<JObject> Action_10_End_Process()
+        {
+            #region 1. Assign          
+
+            //var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
 
             //page.Client = _client;
 

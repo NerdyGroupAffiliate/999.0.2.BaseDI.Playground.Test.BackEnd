@@ -63,7 +63,7 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 4. Action
-        public Action(unitTestName:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "") {
+        public Action(targetedResponseTagID: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "") {
             //#region 1. Assign
             let armTemplateJSONOutput: any;
 
@@ -84,6 +84,11 @@ export namespace BaseDI.BackEnd {
             try
             {
                 //#region TEST OUR LOGIC
+                if (targetedResponseTagID != "")
+                    this._clientInfo["targetedResponseTagID"] = targetedResponseTagID;
+
+                if (requestActionName != "")
+                    this._clientInfo["actionName"] = requestActionName;
 
                 //#region PROCESS LOGIC UPDATES
                 this.Update_Client = (storylineDetails: object) => {
@@ -123,7 +128,8 @@ export namespace BaseDI.BackEnd {
                 // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
                 // iframe.contentWindow.document.close();
                 
-                document.getElementById('page').innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                if (targetedResponseTagID != "")
+                    document.getElementById(targetedResponseTagID).innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
 
             })
 

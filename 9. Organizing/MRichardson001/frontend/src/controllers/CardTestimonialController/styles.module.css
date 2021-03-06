@@ -1,8 +1,0 @@
-.text {
-  font-size: 17px !important;
-}
-@media (min-width: 991px) {
-  .text {
-    height: 100%;
-  }
-}

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BaseDI.BackEnd.Script.Programming.Extensions_1
 {
@@ -71,10 +72,11 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_1
 
         public static List<JToken> Step_X_X_Read_And_FindJSONNode_1_0(JObject data, string keyName, string keyValue, bool returnAsArray)
         {
-            List<JToken> matches = new List<JToken>();
+
+           List<JToken> matches = new List<JToken>();
 
             if (data == null) return null;
-
+            
             Func<JToken, Dictionary<string, string>, string, bool> Step_X_X_Read_And_FindJSONNode_1_1 = null;
 
             Step_X_X_Read_And_FindJSONNode_1_1 = (JToken token, Dictionary<string, string> nodes, string parentLocation) =>
@@ -106,7 +108,8 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_1
                     // leaf of the tree
                     if(token.ToString().ToUpper(CultureInfo.CurrentCulture) == keyValue.ToUpper(CultureInfo.CurrentCulture))
                     {
-                        matches.Add(token);
+                        if(!matches.Contains(token))
+                            matches.Add(token);
                     }
                     //if (nodes.ContainsKey(parentLocation))
                     //{
@@ -124,9 +127,52 @@ namespace BaseDI.BackEnd.Script.Programming.Extensions_1
             };
 
             Step_X_X_Read_And_FindJSONNode_1_1(data, null, "");
+            return matches;
+        }
+
+        public static List<JToken> Step_X_X_Read_And_FindJSONNode_2_0(JObject data, string keyName, string keyValue, bool returnAsArray)
+        {
+
+            List<JToken> matches = new List<JToken>();
+
+            if (data == null) return null;
+
+            Step_X_X_Read_And_FindJSONNode_2_1(data, n =>
+            {
+                JToken token = n[keyName];
+              
+                if (token != null && token.Type == JTokenType.String)
+                {
+                    if (keyValue == token.Value<string>())
+                    {
+                        matches.Add(token);
+                    }
+                }
+            });
 
             return matches;
-        }  
+        }
+
+        public static void Step_X_X_Read_And_FindJSONNode_2_1(JToken node, Action<JObject> action)
+        {
+
+            if (node.Type == JTokenType.Object)
+            {
+                action((JObject)node);
+
+                foreach (JProperty child in node.Children<JProperty>())
+                {
+                    Step_X_X_Read_And_FindJSONNode_2_1(child.Value, action);
+                }
+            }
+            else if (node.Type == JTokenType.Array)
+            {
+                foreach (JToken child in node.Children())
+                {
+                    Step_X_X_Read_And_FindJSONNode_2_1(child, action);
+                }
+            }
+        }
 
         public static string Step_X_X_Read_The_DataRepository_1_0(this JObject jsonObject, bool parseExceptionRepository = false, bool isParameterJSON = false)
         {

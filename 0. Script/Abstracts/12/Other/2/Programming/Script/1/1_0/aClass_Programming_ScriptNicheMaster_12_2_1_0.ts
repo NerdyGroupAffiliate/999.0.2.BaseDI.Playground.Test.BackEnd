@@ -10,6 +10,8 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
         public APILocationLocalDotNetCore: string = "";
 
         public APILocationRemote: string = "";
+
+        public CallBack: (...args: any[]) => any = null;
         //#endregion
 
         //#region 2. Ready

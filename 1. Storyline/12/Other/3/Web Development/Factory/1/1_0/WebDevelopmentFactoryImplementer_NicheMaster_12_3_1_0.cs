@@ -70,6 +70,8 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
+            _extraData.KeyValuePairs = new Dictionary<string, object>();
+
             _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 

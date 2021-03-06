@@ -1,8 +1,0 @@
-.next {
-  cursor: pointer;
-  transition: all 150ms;
-}
-
-.next:hover {
-  opacity: 0.8;
-}
