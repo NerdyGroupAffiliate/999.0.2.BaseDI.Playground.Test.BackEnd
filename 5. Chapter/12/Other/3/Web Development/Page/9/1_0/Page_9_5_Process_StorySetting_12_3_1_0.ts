@@ -82,7 +82,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_9 {
 
             htmlResultInlineStylesString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON);
 
-            htmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Store_HTMLStructureToString_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
+            htmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Store_HTMLStructureToString_1_0("", "", "", htmlResultInlineStylesString, htmlResultString, this.MasterStorer, this.StorylineDetails);
 
             observationItem = observationItem.replace('{htmlResult}', escape(htmlResultString))
             const observation = observationItem;

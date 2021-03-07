@@ -40,7 +40,7 @@
     <Folder Include="4. Experience\2\Movement\12\Other\2\Programming\Experience\3\1_0\" />
     <Folder Include="7. Director\12\Other\2\Programming\Director\" />
     <Folder Include="9. Organizing\MRichardson001\Pages\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\Server\State\" />
   </ItemGroup>
 
   <ItemGroup>
