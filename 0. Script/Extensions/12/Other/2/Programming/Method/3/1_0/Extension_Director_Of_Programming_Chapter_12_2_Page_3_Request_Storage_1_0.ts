@@ -57,6 +57,10 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
             if (data) {
                 observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, pageName, description, observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
+               
+                if(typeof(data) == "string") {
+                    observationItem = observationItem.replace('{dataResult}', escape(data.trim()));
+                }
                 observationItem = observationItem.replace('{dataResult}', escape(JSON.stringify(data)));
 
                 storageDictionary[storageKey] = observationItem.toString();
@@ -70,7 +74,6 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
             storageKeyFiltered = storageKeyFiltered.toString().replace("-Read", "");
             storageKeyFiltered = storageKeyFiltered.toString().replace("-Update", "");
             storageKeyFiltered = storageKeyFiltered.toString().replace("-Delete", "");
-
             storylineDetails.outputs[1].baseDIObservations.forEach(element => {
                 delete element[storageKeyFiltered]
             });
@@ -89,9 +92,9 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
             storylineDetails = await masterLeader_masterStoreReference.Action_1_Begin_Process();            
 
-            storylineDetails.outputs[1].baseDIObservations.forEach(element => {
-                delete element[storageKey]
-            });
+            // storylineDetails.outputs[1].baseDIObservations.forEach(element => {
+            //     delete element[storageKey]
+            // });
 
             storylineDetails.outputs[1].baseDIObservations = storylineDetails.outputs[1].baseDIObservations.filter((value: {}) => Object.keys(value).length !== 0);
 
