@@ -260,11 +260,13 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             const serverEnvironmentScriptPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
             const serverEnvironmentScriptName: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptName;
             const serverEnvironmentServerRoutesGET: Array<any> = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
-
+ 
             //#endregion
 
             //#region EXECUTE THE VISION
-
+            // Why it's undefined
+            console.log(masterLeader_masterStorerReference)
+            
             if (masterLeader_masterStorerReference != null)
                 await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING client side BaseDI script SOURCE PATH", storylineDetails, serverEnvironmentScriptName);
 

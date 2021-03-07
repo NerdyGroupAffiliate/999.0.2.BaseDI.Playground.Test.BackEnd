@@ -83,13 +83,14 @@ export namespace BaseDI.BackEnd.Programming.Extensions_3 {
 
             storylineDetails = await masterLeader_masterStoreReference.Action_1_Begin_Process();            
 
-            storylineDetails.outputs[1].baseDIObservations.forEach(element => {
-                delete element[storageKey]
-            });
+            // console.log(storylineDetails.outputs[1].baseDIObservations)
+
+            // storylineDetails.outputs[1].baseDIObservations.forEach(element => {
+            //     delete element[storageKey]
+            // });
 
             storylineDetails.outputs[1].baseDIObservations = storylineDetails.outputs[1].baseDIObservations.filter((value: {}) => Object.keys(value).length !== 0);
 
-            //console.log(storylineDetails.outputs[1].baseDIObservations)
 
             //#endregion
 

@@ -196,7 +196,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                     //#region MEMORIZE SERVER OPTIONS
 
-                    this._server = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storylineDetails, this.MasterStorer, this._entryPointName, "Action_5_Process_StorySetting");
+                    this._server = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storylineDetails, this.MasterStorer, this._entryPointName, "Action_5_Process_StorySetting");
 
                     //#endregion
 
@@ -293,7 +293,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                             })
                         }
                     }
-
+                    
                     //READ ROUTES
                     Step_1_0_Custom_Control_ClientRequestToServer_1_0(this._server.Server.Verbs.Get); //GET ROUTES
 
