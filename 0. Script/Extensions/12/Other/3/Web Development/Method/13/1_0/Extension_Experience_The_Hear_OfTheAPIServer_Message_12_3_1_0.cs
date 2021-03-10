@@ -20,7 +20,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
         #region SERVER API REQUEST
 
-        public static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_0(object server, string url, string verbName, Object options, Func<Object> callback)
+        public static Object Step_X_X_Custom_Output_ServerResponseToCaller_1_0(object server, string url, string verbName, Object options, Func<Object, Object> callback)
         {
             if (server == null) return null;
             if (verbName == null || verbName == "") return null;
@@ -42,27 +42,27 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
             }
         }
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(object server, string url, Object options, Func<Object> callback)
+        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(object server, string url, Object options, Func<Object, Object> callback)
         {
             return null;
         }
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(object server, string url, Object options, Func<Object> callback)
+        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(object server, string url, Object options, Func<Object, Object> callback)
         {
             return null;
         }
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(object server, string url, Object options, Func<Object> callback)
+        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(object server, string url, Object options, Func<Object, Object> callback)
         {
             return null;
         }
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(object server, string url, Object options, Func<Object> callback)
+        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(object server, string url, Object options, Func<Object, Object> callback)
         {
             return null;
         }
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_PUT(object server, string url, Object options, Func<Object> callback)
+        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_PUT(object server, string url, Object options, Func<Object, Object> callback)
         {
             return null;
         }

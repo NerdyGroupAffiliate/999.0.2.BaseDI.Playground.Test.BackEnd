@@ -16,6 +16,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
     export class Page_1_9_Verify_Process_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         private _apiMetaData: any = null;
+        private _actionName: string = "";
 
         private _entryPointName: string = "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
 
@@ -95,6 +96,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             const storylineDetails: any = this.StorylineDetails;
 
+            this._actionName = this?.Client["actionName"];
             this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "key_1", "APIS", false);
 
             this._request = this.Client?.Request;
@@ -109,14 +111,13 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#region CONTROL
 
-            if (this._server != undefined && this._server != null) {
-                Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.BackEnd.Security.Extensions_1.Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.Step_X_X_Custom_Store_ServerSecuritySettingsToMemory_1_0(this._server, storylineDetails);
-
-                if (this._requestRoute.toUpperCase() == "/AUTHREQUEST") {
+            if (this._server != undefined && this._server != null)
+            {
+                if (this._requestRoute.toUpperCase().includes("AUTHREQUEST") || this._actionName.toUpperCase().includes("AUTHREQUEST")) {
                     this.Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0();
                 }
 
-                if (this._requestRoute.toUpperCase() == "/AUTHRESPONSE") {
+                if (this._requestRoute.toUpperCase().includes("AUTHRESPONSE") || this._actionName.toUpperCase().includes("AUTHRESPONSE")) {
                     this.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0();
                 }
             }
@@ -152,6 +153,11 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
                 if (this._requestRoute != undefined && this._requestRoute != null) {
                     if (api != undefined && api != null) {
                         switch (api.toUpperCase()) {
+                            case "FACEBOOK":
+                            case "FACEBOOKGRAPH":
+                                this.Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Facebook();
+
+                                break;
                             case "MICROSOFT":
                             case "MICROSOFTGRAPH":
                                 this.Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft();
@@ -168,6 +174,12 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#endregion
         }
+
+        //#region FACEBOOK
+        public async Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Facebook() {
+
+        }
+        //#endregion
 
         //#region MICROSOFT
 
@@ -262,29 +274,10 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
-            // this.MasterStorer.CallBack = () => {
-            //     Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
-            //     this._response.send(extraData);
-            // }
-
-            // Setting the baseDIObservations Array
-           
+            //#region EXECUTE THE VISION         
             
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
+            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response, "BaseDI_DataToken_MicrosoftGraph");
            
-            var read1 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
-           
-            
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Update", this._entryPointName, this._pageName, "UPDATING access token", this.StorylineDetails, {test:"Hello"});
-           
-            
-            var read2 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
-      
-            
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Delete", this._entryPointName, this._pageName, "DELETING access token", this.StorylineDetails, response);
-           
-            
             this._response.send(response);
 
             //#endregion  

@@ -41,7 +41,9 @@ const plugins = [
         "process.env": {
             NODE_ENV: JSON.stringify(process.env.NODE_ENV),
             PORT: JSON.stringify(process.env.PORT),
-            APP_ENV: JSON.stringify("SERVER")
+            APP_ENV: JSON.stringify("SERVER"),
+            FACEBOOK_CLIENT_ID: "943493412710623",
+            FACEBOOK_CLIENT_SECRET: "4fdf79e1adf8ac88eed58ddd2eb07e65"
         }
     })
     //new CopyWebpackPlugin([

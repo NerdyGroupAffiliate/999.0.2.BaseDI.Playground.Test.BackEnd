@@ -24,7 +24,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         //Assign Characters involved in storyline
         //private ProgrammingDotNet_Implementer_3_12_1_0 _dotNetDeveloper = null;
 
-        private ExtraData_12_2_1_0 _extraData = null;
+        private SingleParmPoco_12_2_1_0 _extraData = null;
 
         #endregion
 
@@ -253,6 +253,8 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             if (_request != null)
             {
                 _route = _request.Path;
+                _route = _route.Replace("/", "");
+
                 _verb = _request.Method;
             }
 
