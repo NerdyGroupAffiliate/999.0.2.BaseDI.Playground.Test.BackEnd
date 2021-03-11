@@ -127,22 +127,24 @@ export namespace BaseDI.BackEnd {
             //#endregion
 
             //#region 3. Observe
-            handleObservation.then(response => {
-                // var iframe = document.createElement('iframe');
-                // iframe.style.width = "100%";
-                // iframe.style.height  = "100vh";
+            if (handleObservation) {
+                handleObservation.then(response => {
+                    // var iframe = document.createElement('iframe');
+                    // iframe.style.width = "100%";
+                    // iframe.style.height  = "100vh";
 
-                // document.getElementById("page").appendChild(iframe);
-                // iframe.contentWindow.document.open();
-                // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
-                // iframe.contentWindow.document.close();
+                    // document.getElementById("page").appendChild(iframe);
+                    // iframe.contentWindow.document.open();
+                    // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
+                    // iframe.contentWindow.document.close();
 
-                ///const result: string = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                    ///const result: string = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
 
-                if (requestCallBack)
-                    requestCallBack(response);
+                    if (requestCallBack)
+                        requestCallBack(response);
 
-            })
+                });
+            }
 
             //#endregion
         }
@@ -152,12 +154,13 @@ export namespace BaseDI.BackEnd {
 
 let server = new BaseDI.BackEnd.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test(this);
 
-const Step_1_0_CopyLocalFilesAndStartServer = async () => {
-    server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0", function callBack(response: any)
-    {
-        server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_ProcessRequest_1_0")
-    });
-}
+server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_ProcessRequest_1_0");
+//const Step_1_0_CopyLocalFilesAndStartServer = async () => {
+//    server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0", function callBack(response: any)
+//    {
+//        server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_ProcessRequest_1_0")
+//    });
+//}
 
-Step_1_0_CopyLocalFilesAndStartServer();
+//Step_1_0_CopyLocalFilesAndStartServer();
 

@@ -34,7 +34,7 @@ if (process.env.APP_ENV == "SERVER") {
     var path = require('path');
 
     passport = require("passport");
-    PassportFacebookStrategy = require('passport-facebook').Strategy;
+   // PassportFacebookStrategy = require('passport-facebook').Strategy;
 }
 
 export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
@@ -74,42 +74,42 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#region RECALL THE MEMORIES
 
-            let storedCallbackURL: string = input.Parameters.getValue("callbackURL");
-            let storedClientID: string = input.Parameters.getValue("clientID");
-            let storedClientSecret: string = input.Parameters.getValue("clientSecret");
+            //let storedCallbackURL: string = input.Parameters.getValue("callbackURL");
+            //let storedClientID: string = input.Parameters.getValue("clientID");
+            //let storedClientSecret: string = input.Parameters.getValue("clientSecret");
 
-            let storedStorylineDetails: Object = input.StorylineDetails;
+            //let storedStorylineDetails: Object = input.StorylineDetails;
 
-            let storedEntryPointName: string = input.EntryPointName;
+            //let storedEntryPointName: string = input.EntryPointName;
 
-            let storedMasterLeader_MasterStorerReference: any = input.Parameters.getValue("masterStorerReference")
+            //let storedMasterLeader_MasterStorerReference: any = input.Parameters.getValue("masterStorerReference")
 
-            let storedPageName: string = input.PageName;
+            //let storedPageName: string = input.PageName;
 
-            let storedStrategy: string = input.Parameters.getValue("strategy");
-            let storedStrategyInstance: any = null;
+            //let storedStrategy: string = input.Parameters.getValue("strategy");
+            //let storedStrategyInstance: any = null;
 
             //#endregion
 
             //#region EXECUTE THE VISION
-            const storedStrategyCallBack: any = (accessToken, refreshToken, profile, cb) => {
+            //const storedStrategyCallBack: any = (accessToken, refreshToken, profile, cb) => {
                 // In this example, the user's Facebook profile is supplied as the user
                 // record.  In a production-quality application, the Facebook profile should
                 // be associated with a user record in the application's database, which
                 // allows for account linking and authentication with other identity
                 // providers.
-                Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedMasterLeader_MasterStorerReference, "Create", storedEntryPointName, storedPageName, "STORING server side FACEBOOK TOKENS", storedStorylineDetails, { accessToken: accessToken, refreshToken: refreshToken, profile: profile }, "BaseDI_ConfigurationTokens_" + storedStrategy);
+            //    Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedMasterLeader_MasterStorerReference, "Create", storedEntryPointName, storedPageName, "STORING server side FACEBOOK TOKENS", storedStorylineDetails, { accessToken: accessToken, refreshToken: refreshToken, profile: profile }, "BaseDI_ConfigurationTokens_" + storedStrategy);
 
-                return cb(null, profile);
-            };
+            //    return cb(null, profile);
+            //};
 
-            switch (storedStrategy.toUpperCase()) {
-                case "FACEBOOK":
-                    storedStrategyInstance = new PassportFacebookStrategy({ clientID: storedClientID, clientSecret: storedClientSecret, callbackURL: storedCallbackURL }, storedStrategyCallBack);
-                    break;
-            }
+            //switch (storedStrategy.toUpperCase()) {
+            //    case "FACEBOOK":
+            //        storedStrategyInstance = new PassportFacebookStrategy({ clientID: storedClientID, clientSecret: storedClientSecret, callbackURL: storedCallbackURL }, storedStrategyCallBack);
+            //        break;
+            //}
 
-            passport.use(storedStrategyInstance);
+            //passport.use(storedStrategyInstance);
             //#endregion
 
             //#region REPORT THE FEEDBACK
@@ -319,6 +319,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#region RECALL THE MEMORIES
 
+            console.log("A");
             const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
             const serverEnvironmentData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_DataConverter", false);
 
@@ -337,6 +338,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             const serverEnvironmentDataConversion: string = serverEnvironmentData?.value?.DataItemLocation;
 
+            console.log("serverEnvironmentPort = " + serverEnvironmentPort);
             //#endregion
 
             //#region EXECUTE THE VISION
@@ -349,28 +351,28 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#region Facebook
 
-            storedInput.EntryPointName = "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
-            storedInput.Parameters.setValue("callbackURL", "AuthResponse");
-            storedInput.Parameters.setValue("clientID", process.env['FACEBOOK_CLIENT_ID']);
-            storedInput.Parameters.setValue("clientSecret", process.env['FACEBOOK_CLIENT_SECRET']);
+            //storedInput.EntryPointName = "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+            //storedInput.Parameters.setValue("callbackURL", "AuthResponse");
+            //storedInput.Parameters.setValue("clientID", process.env['FACEBOOK_CLIENT_ID']);
+            //storedInput.Parameters.setValue("clientSecret", process.env['FACEBOOK_CLIENT_SECRET']);
 
-            storedInput.Parameters.setValue("masterStorerReference", masterLeader_masterStorerReference);
+            //storedInput.Parameters.setValue("masterStorerReference", masterLeader_masterStorerReference);
 
-            storedInput.Parameters.setValue("strategy", "Facebook");
+            //storedInput.Parameters.setValue("strategy", "Facebook");
 
-            storedInput.StorylineDetails = storylineDetails;
+            //storedInput.StorylineDetails = storylineDetails;
 
-            this.Step_X_X_Custom_Output_ServerResponseToCaller_2_0(storedInput);
+            //this.Step_X_X_Custom_Output_ServerResponseToCaller_2_0(storedInput);
 
             //#endregion
 
-            passport.serializeUser(function (user, cb) {
-                cb(null, user);
-            });
+            //passport.serializeUser(function (user, cb) {
+            //    cb(null, user);
+            //});
 
-            passport.deserializeUser(function (obj, cb) {
-                cb(null, obj);
-            });
+            //passport.deserializeUser(function (obj, cb) {
+            //    cb(null, obj);
+            //});
 
             //#endregion
 

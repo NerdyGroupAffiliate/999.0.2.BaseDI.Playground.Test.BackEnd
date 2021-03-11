@@ -1,4 +1,6 @@
-﻿import * as Collections from 'typescript-collections';
+﻿//import * as Collections from 'typescript-collections';
+
+import Collections = require('typescript-collections')
 
 export namespace BaseDI.BackEnd.Programming_1
 {
