@@ -219,6 +219,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                     //#region MEMORIZE SERVER OPTIONS
 
+                    console.log("Z");
                     this._server = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storylineDetails, this._centralizedStorer, this._entryPointName, "Action_5_Process_StorySetting");
 
                     //#endregion

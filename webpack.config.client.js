@@ -22,6 +22,8 @@ const plugins = [
     new webpack.IgnorePlugin(/tunnel-agent/),
     new webpack.IgnorePlugin(/instagram-private-api/),
     new webpack.IgnorePlugin(/request-promise/),
+    new webpack.IgnorePlugin(/passport/),
+    new webpack.IgnorePlugin(/passport-facebook/),
     new webpack.IgnorePlugin(/fs/),
     new webpack.ProvidePlugin({
         Promise: 'es6-promise-promise',

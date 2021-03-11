@@ -254,8 +254,6 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
             #region RECALL THE MEMORIES
 
-            string a = storylineDetails.ToString();
-
             results.Add("GET", serverEnvironmentServerRoutesGET);
             results.Add("POST", serverEnvironmentServerRoutesPOST);
             results.Add("PUT", serverEnvironmentServerRoutesPUT);
