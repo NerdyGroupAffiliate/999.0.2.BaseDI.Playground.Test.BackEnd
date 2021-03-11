@@ -18,7 +18,6 @@ using System.Threading.Tasks;
 
 namespace BaseDI.Playground.Test.BackEnd
 {
-    [Route("")]
     public class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_1_Test : ControllerBase
     {
         #region 1. Assign
@@ -135,7 +134,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 4. Action
 
-        [HttpGet("")]
+        [HttpGet("AuthRequest")]
         public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessRequest_1_0")
         {
             #region 1. Assign

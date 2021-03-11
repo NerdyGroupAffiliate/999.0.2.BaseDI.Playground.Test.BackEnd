@@ -117,6 +117,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                     const entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
                     entryPoint.RequestID = controlHandlerName;
+                    entryPoint.Client = client;
 
                     this._requestInspector.Client = entryPoint.Client;
 

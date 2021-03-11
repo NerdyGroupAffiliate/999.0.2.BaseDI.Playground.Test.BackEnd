@@ -84,12 +84,25 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
             //#region EXECUTE THE VISION
 
-            List<JToken> list = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
+            List<JToken> list = null;
+            dynamic parent = null;
+
+            try
+            {
+                list = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
                .Step_X_X_Read_And_FindJSONNode_2_0(storylineDetails, "searchkey",
                    "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
-            var parent = list.Count > 0 ? list[1].Parent.Parent : list[0].Parent.Parent;
+                parent = list.Count > 0 ? list[0].Parent.Parent : null;
+            }
+            catch (Exception)
+            {
+                list = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
+               .Step_X_X_Read_And_FindJSONNode_2_0(storylineDetails, "searchkey",
+                   "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
+                parent = list.Count > 0 ? list[1].Parent.Parent : list[0].Parent.Parent;
+            }
 
             JArray SetupItemEnvironmentServerMetaDataPaths =
                 (JArray)parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths");
@@ -240,6 +253,8 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
             #endregion
 
             #region RECALL THE MEMORIES
+
+            string a = storylineDetails.ToString();
 
             results.Add("GET", serverEnvironmentServerRoutesGET);
             results.Add("POST", serverEnvironmentServerRoutesPOST);

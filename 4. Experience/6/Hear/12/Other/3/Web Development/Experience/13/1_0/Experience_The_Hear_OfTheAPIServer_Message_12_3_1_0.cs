@@ -65,6 +65,8 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns            
+            string a = StorylineDetails.ToString();
+
             Use_DesignPattern_Builder_Experience_12_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_12_3_1_0(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
@@ -371,7 +373,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
 
                                     if (controllerRoutes != null && controllerRoutes.Count() > 0)
                                     {
-                                        var route = controllerRoutes.Where(r => r.ToString().ToUpper() == _route.ToUpper()).SingleOrDefault();
+                                        var route = controllerRoutes.Where(r => r.ToString().ToUpper().Contains(_route.ToUpper())).SingleOrDefault();
 
                                         if (route != null)
                                         {

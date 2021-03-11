@@ -99,6 +99,9 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #region RECALL THE MEMORIES
 
+            _serverInfo = (Dictionary<string, object>)Client;
+            _server = _serverInfo.ContainsKey("Server") ? _serverInfo["Server"] : null;
+
             #endregion
 
             #region EXECUTE THE VISION
@@ -205,7 +208,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             if (_request != null)
             {
-                string api = _request.QueryString.Value;
+                string api = _request.Query.ContainsKey("API") ? _request.Query["API"][0].ToString() : null;
 
                 if (_requestRoute != null)
                 {
