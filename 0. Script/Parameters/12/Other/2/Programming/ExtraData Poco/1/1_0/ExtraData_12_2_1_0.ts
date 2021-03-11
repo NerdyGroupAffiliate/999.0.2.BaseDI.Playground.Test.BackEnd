@@ -1,13 +1,12 @@
-﻿//import * as Collections from 'typescript-collections';
+﻿import * as Collections from 'typescript-collections';
 
-import Collections = require('typescript-collections')
 
 export namespace BaseDI.BackEnd.Programming_1
 {
     export class ExtraData_12_2_1_0
     {
         constructor() {
-
+            this.KeyValuePairs = new Collections.Dictionary<string, object>();
         }
 
         Mistake: object = new Object();

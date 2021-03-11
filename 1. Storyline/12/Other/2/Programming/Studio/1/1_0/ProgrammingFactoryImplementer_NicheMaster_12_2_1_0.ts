@@ -86,23 +86,13 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this._centralizedSensor = centralizedSensor;
             this._client = client; 
 
-            console.log("Action A1 = " + this._extraData);
+            this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
+            this._extraData.KeyValuePairs.setValue("APILocationLocalDotNetCore", Object.assign(this.APILocationLocalDotNetCore, Object));
 
-            try {
-                this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
-                this._extraData.KeyValuePairs.setValue("APILocationLocalDotNetCore", Object.assign(this.APILocationLocalDotNetCore, Object));
+            this._extraData.KeyValuePairs.setValue("APILocationRemote", Object.assign(this.APILocationRemote, Object));
 
-                this._extraData.KeyValuePairs.setValue("APILocationRemote", Object.assign(this.APILocationRemote, Object));
-
-                this._extraData.KeyValuePairs.setValue("RequestToProcess", Object.assign(requestToProcess, Object))
-                this._extraData.KeyValuePairs.setValue("RequestToProcessParameters", Object.assign(requestToProcessParameters, Object))
-
-            }
-            catch (e) {
-                console.log(e);
-            }
-
-            console.log("Action B = " + "");
+            this._extraData.KeyValuePairs.setValue("RequestToProcess", Object.assign(requestToProcess, Object))
+            this._extraData.KeyValuePairs.setValue("RequestToProcessParameters", Object.assign(requestToProcessParameters, Object))
 
             //#endregion
 
