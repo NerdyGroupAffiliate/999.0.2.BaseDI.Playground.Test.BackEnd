@@ -138,16 +138,22 @@ namespace BaseDI.BackEnd.Story.Programming_1
                 {
                     #region REQUEST HANDLER FOUND
 
-                    var controller = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
+                    var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
-                    controller.RequestID = controlHandlerName;
-                    controller.Client = client;
+                    entryPoint.RequestID = controlHandlerName;
+                    entryPoint.Client = client;
 
-                    controller.ExtraData = _extraData;
+                    _requestInspector.Client = client;
 
-                    controller.EntryPoint = _requestInspector;
+                    _requestInspector.EntryPoint = entryPoint;
+                    _requestInspector.ExtraData = _extraData;
 
-                    director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = controller;
+                    _requestInspector.MasterLeader = entryPoint.MasterLeader;
+
+                    _requestInspector.StorylineDetails = entryPoint.StorylineDetails;
+                    _requestInspector.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
+
+                    director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = _requestInspector;
 
                     #endregion
                 }
@@ -1086,7 +1092,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Storer_1_0-P1_0")
+              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;
@@ -1203,7 +1209,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0", "Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0-P1_0")
+              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;
@@ -1320,7 +1326,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_X_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_X_Request_Sensor_1_0-P1_0")
+              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;

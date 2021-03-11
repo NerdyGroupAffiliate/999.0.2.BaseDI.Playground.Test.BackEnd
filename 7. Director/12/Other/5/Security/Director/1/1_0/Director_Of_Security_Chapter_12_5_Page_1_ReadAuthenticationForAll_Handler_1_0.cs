@@ -7,6 +7,7 @@ using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
 
 using ChapterPage = BaseDI.BackEnd.Chapter.Page.Security_1;
+using System.Collections.Generic;
 
 namespace BaseDI.BackEnd.Director.Security_1
 {
@@ -91,8 +92,8 @@ namespace BaseDI.BackEnd.Director.Security_1
     {
         #region 1. Assign
 
-        private object _client;
-        private object _centralizedStorer;
+        private Dictionary<string, object> _client;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
 
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
@@ -106,7 +107,7 @@ namespace BaseDI.BackEnd.Director.Security_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_4_Page_1(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_4_Page_1(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
             _centralizedStorer = centralizedStorer;
@@ -173,8 +174,8 @@ namespace BaseDI.BackEnd.Director.Security_1
 
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
-        private object _client;
-        private object _centralizedStorer;
+        private Dictionary<string, object> _client;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
 
         private JObject _storylineDetails = null;
         private JObject _storylineDetails_Parameters = null;
@@ -187,7 +188,7 @@ namespace BaseDI.BackEnd.Director.Security_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_4_Page_1_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_4_Page_1_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _client = client;
             _centralizedStorer = centralizedStorer;
@@ -224,53 +225,22 @@ namespace BaseDI.BackEnd.Director.Security_1
         {
             #region 1. Assign          
 
-            //var page = new ChapterPage.Page_1_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
+            var page = new ChapterPage.Page_1_9_Verify_Process_12_5_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            page.Client = _client;
 
-            //page.EntryPoint = _entryPoint;
-            //page.ExtraData = _extraData;
+            page.EntryPoint = _entryPoint;
+            page.ExtraData = _extraData;
 
-            //page.MasterLeader = _centralizedStorer;
+            page.MasterStorer = _centralizedStorer;
 
-            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
-
-            #endregion
-
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
-        //Page 1-10
-        public override async Task<JObject> Action_10_End_Process()
-        {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
-
-            //page.Client = _client;
-
-            //page.EntryPoint = _entryPoint;
-            //page.ExtraData = _extraData;
-
-            //page.MasterLeader = _centralizedStorer;
-
-            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
             #endregion
 
             #region 2. Action              
 
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            _storylineDetails = await page.Action().ConfigureAwait(true);
 
             #endregion
 
@@ -511,6 +481,37 @@ namespace BaseDI.BackEnd.Director.Security_1
             #region 1. Assign          
 
             //var page = new ChapterPage.Page_1_8_Process_CRUD_12_2_1_0(_storylineDetails, _repository);
+
+            //page.Client = _client;
+
+            //page.EntryPoint = _entryPoint;
+            //page.ExtraData = _extraData;
+
+            //page.MasterLeader = _centralizedStorer;
+
+            //page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+
+            #endregion
+
+            #region 2. Action              
+
+            //_storylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #region 3. Observe                      
+
+            #endregion
+
+            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+        }
+
+        //Page 1-10
+        public override async Task<JObject> Action_10_End_Process()
+        {
+            #region 1. Assign          
+
+            //var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
 
             //page.Client = _client;
 

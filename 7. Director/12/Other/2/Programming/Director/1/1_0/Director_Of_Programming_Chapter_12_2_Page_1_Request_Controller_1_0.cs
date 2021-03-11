@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
+using Newtonsoft.Json;
 
 namespace BaseDI.BackEnd.Director.Programming_1
 {
@@ -253,32 +254,37 @@ namespace BaseDI.BackEnd.Director.Programming_1
 
         public override async Task<JObject> Action_1_Begin_Process()
         {
-            #region 1. Assign          
+            aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = _entryPoint;
 
-            var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
+            if (entryPoint == null)
+            {
+                #region 1. Assign      
 
-            page.Client = _client;
+                var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
 
-            page.EntryPoint = _entryPoint;
-            page.ExtraData = _extraData;
+                page.Client = _client;
 
-            page.MasterStorer = _centralizedStorer;
-            page.MasterDisturber = _centralizedDisturber;
-            page.MasterSensor = _centralizedSensor;
+                page.EntryPoint = _entryPoint;
+                page.ExtraData = _extraData;
 
-            page.StorylineDetails_Parameters = _storylineDetails_Parameters;
+                page.MasterStorer = _centralizedStorer;
+                page.MasterDisturber = _centralizedDisturber;
+                page.MasterSensor = _centralizedSensor;
 
-            #endregion
+                page.StorylineDetails_Parameters = _storylineDetails_Parameters;
 
-            #region 2. Action              
+                #endregion
 
-            _storylineDetails = await page.Action().ConfigureAwait(true);
+                #region 2. Action              
 
-            #endregion
+                _storylineDetails = await page.Action().ConfigureAwait(true);
 
-            #region 3. Observe                      
+                #endregion
 
-            #endregion
+                #region 3. Observe                      
+
+                #endregion                
+            }
 
             return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
@@ -286,7 +292,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
         //Page 1-10
         public override async Task<JObject> Action_10_End_Process()
         {
-            #region 1. Assign          
+            #region 1. Assign       
 
             var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
 

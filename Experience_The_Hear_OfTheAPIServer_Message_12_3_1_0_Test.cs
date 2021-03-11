@@ -46,6 +46,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
         public Func<JObject, JObject> RequestCallBack = null;
 
+        public List<RouteAttribute> routes = new List<RouteAttribute>();
+
         #endregion
 
         #region 2. Ready
@@ -132,7 +134,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 4. Action
 
-        [Route("")]
+        [HttpGet("AuthRequest")]
         public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessRequest_1_0")
         {
             #region 1. Assign

@@ -85,7 +85,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
                 //EXECUTE THE PROCESS
                 entryPoint = this.EntryPoint;
 
-                if (entryPoint != null && entryPoint.RequestID != undefined && !entryPoint.RequestID.toUpperCase().includes("REQUEST_CONTROLLER_1_0"))
+                if (entryPoint != null && entryPoint.RequestID != undefined && !entryPoint.RequestID.toUpperCase().includes("REQUEST_CONTROLLER_"))
                 {
                     return this.EntryPoint.Action().then(response => {
                         return response;
