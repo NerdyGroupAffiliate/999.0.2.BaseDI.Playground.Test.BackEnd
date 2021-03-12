@@ -319,7 +319,6 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#region RECALL THE MEMORIES
 
-            console.log("A");
             const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
             const serverEnvironmentData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_DataConverter", false);
 
@@ -338,7 +337,6 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             const serverEnvironmentDataConversion: string = serverEnvironmentData?.value?.DataItemLocation;
 
-            console.log("serverEnvironmentPort = " + serverEnvironmentPort);
             //#endregion
 
             //#region EXECUTE THE VISION
