@@ -97,7 +97,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this._extraData.MasterLeader = this;
 
             //#endregion
-            console.log("SetupStoryline = " + "");
 
             //#region 2. Ready
             let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
@@ -112,7 +111,6 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                 //#region FIND REQUEST HANDLER
                 director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = directorOrExperienceResolveBuilder.Action();
 
-                console.log("requestToProcess");
                 if (controlHandlerName != "" && controlHandlerName.toUpperCase() != this._requestInspector.constructor.name.toUpperCase()) {
                     //#region REQUEST HANDLER FOUND
 
