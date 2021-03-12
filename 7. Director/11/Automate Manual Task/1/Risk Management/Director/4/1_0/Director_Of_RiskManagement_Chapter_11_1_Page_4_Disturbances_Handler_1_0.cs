@@ -61,7 +61,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_4
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns            
-            Use_DesignPattern_Builder_Chapter_11_1_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_1(Client, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_11_1_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_1(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -91,7 +91,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_4
     {
         #region 1. Assign
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -108,13 +108,13 @@ namespace BaseDI.BackEnd.Director.Risk_Management_4
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_11_1_Page_1(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_11_1_Page_1(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _extraData = extraData;
 
@@ -140,7 +140,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_4
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_1_1_0(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_1_1_0(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -178,7 +178,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_4
 
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -194,13 +194,13 @@ namespace BaseDI.BackEnd.Director.Risk_Management_4
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_11_1_Page_1_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_11_1_Page_1_1_0(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -236,7 +236,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_4
 
             var page = new ChapterPage.Page_4_10_End_Process_11_1_1_0(_storylineDetails, _repository);
             
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
             page.EntryPoint = _entryPoint;
             page.ExtraData = _extraData;

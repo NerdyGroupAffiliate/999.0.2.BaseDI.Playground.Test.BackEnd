@@ -96,14 +96,14 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             const storylineDetails: any = this.StorylineDetails;
 
-            this._actionName = this?.Client["actionName"];
+            this._actionName = this?.ClientOrServerInstance["actionName"];
             this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "key_1", "APIS", false);
 
-            this._request = this.Client?.Request;
+            this._request = this.ClientOrServerInstance?.Request;
             this._requestRoute = this._request?.route?.path;
-            this._response = this.Client?.Response;
+            this._response = this.ClientOrServerInstance?.Response;
 
-            this._server = this.Client?.Server;
+            this._server = this.ClientOrServerInstance?.Server;
 
             //#endregion
 

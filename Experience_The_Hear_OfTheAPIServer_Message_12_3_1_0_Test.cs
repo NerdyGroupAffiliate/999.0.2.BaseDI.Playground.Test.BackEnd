@@ -30,7 +30,7 @@ namespace BaseDI.Playground.Test.BackEnd
         private string _baseDIArmTemplateSchemaParameters = "";
         private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0-P.json";
 
-        private Dictionary<string, object> _clientInfo;
+        private Dictionary<string, object> _serverInfo;
 
         private ExtraData_12_2_1_0 _extraData;
 
@@ -63,6 +63,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
             _storylineDetails = new JObject();
             _storylineDetails_Parameters = new JObject();
+
+            _serverInfo = new Dictionary<string, object>();
 
             #endregion
 
@@ -143,16 +145,14 @@ namespace BaseDI.Playground.Test.BackEnd
 
             JToken outputs = null;
 
-            StringBuilder outputObservationsPrintOut = new StringBuilder();
+            StringBuilder outputObservationsPrintOut = new StringBuilder();                       
 
-            _clientInfo = new Dictionary<string, object>();
-
-            //SETUP CLIENT INFO
-            _clientInfo.Add("Request", Request);
-            _clientInfo.Add("Server", this);
+            //SETUP SERVR INFO
+            _serverInfo.Add("request", Request);
+            _serverInfo.Add("server", this);
 
             if (requestActionName != "")
-                _clientInfo.Add("actionName", requestActionName);
+                _serverInfo.Add("actionName", requestActionName);
 
             ContentResult result = null;
 
@@ -177,7 +177,7 @@ namespace BaseDI.Playground.Test.BackEnd
                 #endregion
 
                 armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                    .SetupStoryline(_clientInfo, _storylineDetails, null, _extraData, "", requestToProcess, requestToProcessParameters)
+                    .SetupStoryline(_serverInfo, _storylineDetails, null, _extraData, "", requestToProcess, requestToProcessParameters)
                     .Action().Result;
 
                 if (armTemplateJSONOutput != null)

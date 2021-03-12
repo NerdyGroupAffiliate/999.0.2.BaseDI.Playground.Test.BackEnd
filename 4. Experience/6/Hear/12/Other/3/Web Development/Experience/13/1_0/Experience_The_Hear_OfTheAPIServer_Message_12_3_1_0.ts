@@ -45,7 +45,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Experience_12_2_1_0(this.Client, this.MasterLeader, this.MasterStorer, this.MasterSensor, this.MasterDisturber, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
+            const designPattern = new Use_DesignPattern_Builder_Experience_12_2_1_0(this.ClientOrServerInstance, this.MasterLeader, this.MasterStorer, this.MasterSensor, this.MasterDisturber, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
             //#endregion
 
             //#region 2. Action
@@ -66,7 +66,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _client: any;
+        private _clientORserverInstance: any;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
@@ -81,13 +81,13 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, masterLeader: any, centralizedStorer: any, centralizedSensor: any, centralizedDisturber: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(clientORserverInstance: any, masterLeader: any, centralizedStorer: any, centralizedSensor: any, centralizedDisturber: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             
             this._centralizedStorer = centralizedStorer;
             this._centralizedSensor = centralizedSensor;
             this._centralizedDisturber = centralizedDisturber;
 
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._masterLeader = masterLeader;
 
@@ -108,7 +108,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Experience_12_2_1_0(this._client, this._masterLeader, this._centralizedStorer, this._centralizedSensor, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Experience_12_2_1_0(this._clientORserverInstance, this._masterLeader, this._centralizedStorer, this._centralizedSensor, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
 
             await builder.Action_1_Begin_Process();
 
@@ -139,7 +139,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _client: any;
+        private _clientORserverInstance: any;
 
         private _entryPointName: string = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
 
@@ -162,14 +162,14 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, masterLeader: any, centralizedStorer: any, centralizedSensor: any, centralizedDisturber: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(clientORserverInstance: any, masterLeader: any, centralizedStorer: any, centralizedSensor: any, centralizedDisturber: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             super();
 
             this._centralizedStorer = centralizedStorer;
             this._centralizedSensor = centralizedSensor;
             this._centralizedDisturber = centralizedDisturber;
 
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._masterLeader = masterLeader;
 
@@ -210,7 +210,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
         public async Action_5_Process_StorySetting(): Promise<object> {
             try
             {
-                this._actionName = this?._client["actionName"];
+                this._actionName = this?._clientORserverInstance["actionName"];
 
                 if (process.env.APP_ENV == "SERVER" && this._actionName.toUpperCase().includes("PROCESSREQUEST_1_0")) {
 
@@ -227,7 +227,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                     //#region OUTPUT THE RESPONSE
 
-                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) => {
+                    const Step_2_0_Custom_Output_ServerRequestToclientORserverInstance_1_0 = (controllerRoute: Object, controllerName: string, controllerModelDataLocalObject: Object, controllerModelDataLocalParameter: string, controllerModelDataRemote: Object, req: any, res: any) => {
                         //#region 1. Assign
                         let armTemplateJSONOutput: any;
 
@@ -291,7 +291,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                     //#endregion
 
                     //#region INPUT THE REQUEST
-                    const Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (serverEnvironmentServerRoutes: Array<any>) => {
+                    const Step_1_0_Custom_Control_clientORserverInstanceRequestToServer_1_0 = (serverEnvironmentServerRoutes: Array<any>) => {
                         if (serverEnvironmentServerRoutes.length > 0) {
                             serverEnvironmentServerRoutes.map(item => {
                                 const controllerRoutes: Array<any> = item.SetupItemTransportItemRoute.ControllerRoutes;
@@ -306,7 +306,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
                                         //console.log(route);
 
                                         this._server.Server.Instance.get(route, (req: any, res: any) => {
-                                            Step_2_0_Custom_Output_ServerRequestToClient_1_0(route, controllerName, controllerModelDataLocalObject, controllerModelDataLocalParameter, controllerModelDataRemote, req, res);
+                                            Step_2_0_Custom_Output_ServerRequestToclientORserverInstance_1_0(route, controllerName, controllerModelDataLocalObject, controllerModelDataLocalParameter, controllerModelDataRemote, req, res);
                                         });
                                     });
                                 }
@@ -316,7 +316,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
                     //READ ROUTES
 
-                    Step_1_0_Custom_Control_ClientRequestToServer_1_0(this._server.Server.Verbs.Get); //GET ROUTES
+                    Step_1_0_Custom_Control_clientORserverInstanceRequestToServer_1_0(this._server.Server.Verbs.Get); //GET ROUTES
 
                     //#endregion
 
@@ -347,7 +347,7 @@ export namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13 {
 
         //Page 1-7
         public async Action_7_Process_StoryResources(): Promise<object> {
-            this._actionName = this?._client["actionName"];
+            this._actionName = this?._clientORserverInstance["actionName"];
 
             if (process.env.APP_ENV == "SERVER" && this._actionName.toUpperCase().includes("COPYSTATICFILES_1_0")) {
                 {

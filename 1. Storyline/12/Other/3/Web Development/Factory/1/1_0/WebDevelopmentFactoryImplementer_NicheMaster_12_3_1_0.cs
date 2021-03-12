@@ -40,7 +40,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
     //A. Story in motion (DO SOMETHING) ACTING
     internal class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -52,7 +52,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         internal WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
 
             _extraData = extraData;
 
@@ -61,11 +61,11 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
@@ -184,7 +184,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0();
             
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -237,7 +237,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -294,7 +294,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -351,7 +351,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -408,7 +408,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -465,7 +465,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -522,7 +522,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -579,7 +579,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -636,7 +636,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -693,7 +693,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -750,7 +750,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -807,7 +807,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -864,7 +864,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -921,7 +921,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0();
 
-            experience.Client = _client;
+            experience.ClientOrServerInstance = _clientORserverInstance;
 
             experience.ExtraData = extraData;
 

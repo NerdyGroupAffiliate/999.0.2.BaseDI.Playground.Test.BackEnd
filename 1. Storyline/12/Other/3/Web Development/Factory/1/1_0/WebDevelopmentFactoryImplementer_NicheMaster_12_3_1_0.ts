@@ -43,7 +43,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
         private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
         private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _client: any;
+        private _clientORserverInstance: any;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
 
@@ -55,7 +55,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             super();
 
             //#region 1. Assign
-            this._client = null;
+            this._clientORserverInstance = null;
 
             this._extraData = extraData;
 
@@ -74,13 +74,13 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
             this._centralizedDisturber = centralizedDisturber;
             this._centralizedSensor = centralizedSensor;
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
             this._extraData.KeyValuePairs.setValue("APILocationLocalDotNetCore", Object.assign(this.APILocationLocalDotNetCore, Object));
@@ -190,7 +190,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = null; //new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -237,7 +237,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_1.Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -288,7 +288,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_2.Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -339,7 +339,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -390,7 +390,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_4.Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -441,7 +441,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_5.Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -492,7 +492,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_6.Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -543,7 +543,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_7.Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -594,7 +594,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_8.Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -645,7 +645,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_9.Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -696,7 +696,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_10.Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -747,7 +747,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_11.Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -798,7 +798,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_12.Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(extraData);
 
-            director.Client = this._client;
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -847,7 +847,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN REQUEST HANDLER
             let experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Experience.Hear.Web_Development_13.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(extraData);
 
-            experience.Client = this._client;
+            experience.ClientOrServerInstance = this._clientORserverInstance;
 
             experience.ExtraData = extraData;
 

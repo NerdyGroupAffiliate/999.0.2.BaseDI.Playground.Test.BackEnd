@@ -98,7 +98,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_1
                 {
                     //EXECUTE THE PROCESS
                     return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
-                           .SetupStoryline(Client, StorylineDetails, StorylineDetails_Parameters, ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
+                           .SetupStoryline(ClientOrServerInstance, StorylineDetails, StorylineDetails_Parameters, ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
                            .Action().Result;
                 }
             };

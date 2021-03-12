@@ -94,7 +94,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_1 {
                 else
                 {
                     return handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this.ExtraData))
-                        .SetupStoryline(this.Client, this.StorylineDetails, this.StorylineDetails_Parameters, this.ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
+                        .SetupStoryline(this.ClientOrServerInstance, this.StorylineDetails, this.StorylineDetails_Parameters, this.ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
                         .Action().then(response => {
                             return response;
                         });

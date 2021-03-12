@@ -7,11 +7,11 @@ import * as ExtraData_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programmi
 export namespace BaseDI.BackEnd {
     export class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test {
         //#region 1. Assign
-        private _clientInfo: Object = new Object();
+        private _serverInfo: Object = new Object();
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
 
-        private _presentation: any;
+        private _entryPoint: any;
 
         private _storylineDetails: object;
         private _storylineDetails_Parameters: object;
@@ -24,12 +24,12 @@ export namespace BaseDI.BackEnd {
         //#endregion
 
         //#region 2. Ready
-        constructor(presentation: any)
+        constructor(entryPoint: any)
         {
             //#region 1. Assign
             this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
 
-            this._presentation = presentation;
+            this._entryPoint = entryPoint;
 
             this._storylineDetails = new Object();
             this._storylineDetails_Parameters = new Object();
@@ -50,9 +50,9 @@ export namespace BaseDI.BackEnd {
             //#region 1. Assign
 
             //SETUP CLIENT INFO
-            this._clientInfo = {
-                "presentation_experience": this._presentation,
-                "presentation_director": this
+            this._serverInfo = {
+                "server_entrypoint": this._entryPoint,
+                "server_main": this
             }
             //#endregion
 
@@ -88,8 +88,9 @@ export namespace BaseDI.BackEnd {
             let isProcessComplete: boolean = false;
             let handleObservation: Promise<any>;
 
+             //SETUP SERVR INFO
             if (requestActionName != "")
-                this._clientInfo["actionName"] = requestActionName;
+                this._serverInfo["actionName"] = requestActionName;
 
             //#endregion
 
@@ -109,7 +110,7 @@ export namespace BaseDI.BackEnd {
 
                 const Action = (output) => {
                     handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                        .SetupStoryline(this._clientInfo, this._storylineDetails, null, this._extraData, "", requestNameToProcess, requestNameToProcessParameters)
+                        .SetupStoryline(this._serverInfo, this._storylineDetails, null, this._extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action();
                 }
                 //#endregion
@@ -154,13 +155,12 @@ export namespace BaseDI.BackEnd {
 
 let server = new BaseDI.BackEnd.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test(this);
 
-server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_ProcessRequest_1_0");
-//const Step_1_0_CopyLocalFilesAndStartServer = async () => {
-//    server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0", function callBack(response: any)
-//    {
-//        server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_ProcessRequest_1_0")
-//    });
-//}
+const Step_1_0_CopyLocalFilesAndStartServer = async () => {
+    server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0", function callBack(response: any)
+    {
+        server.Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_ProcessRequest_1_0")
+    });
+}
 
-//Step_1_0_CopyLocalFilesAndStartServer();
+Step_1_0_CopyLocalFilesAndStartServer();
 

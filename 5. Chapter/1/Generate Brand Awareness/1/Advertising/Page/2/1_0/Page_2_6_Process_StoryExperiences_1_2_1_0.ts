@@ -12,7 +12,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
     export class Page_2_6_Process_StoryExperiences_1_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         private _actionName: string = "";
-        private _client: any = null;
+        private _clientORserverInstance: any = null;
 
         private _jsonAccountInformation: any = null;
         private _jsonSearchInformation: any = null;
@@ -44,15 +44,15 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         //#region 3. Set
         private HandleDefaults(): void {
-            this._request = this.Client.Request;
-            this._response = this.Client.Response;
+            this._request = this.ClientOrServerInstance.Request;
+            this._response = this.ClientOrServerInstance.Response;
         }
         //#endregion
 
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            this._actionName = this?._client["actionName"];
+            this._actionName = this?._clientORserverInstance["actionName"];
 
             if (this._actionName.toUpperCase().includes("PROCESSREQUEST_1_0")) {
                 //#region DESCRIBE THE MEMORIES

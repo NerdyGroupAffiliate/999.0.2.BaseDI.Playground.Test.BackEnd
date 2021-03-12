@@ -59,7 +59,7 @@ namespace BaseDI.BackEnd.Director.Advertising_1
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_1_1_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_1(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_1_1_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_1(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -93,7 +93,7 @@ namespace BaseDI.BackEnd.Director.Advertising_1
     {
         #region 1. Assign
 
-        private object _client;
+        private object _clientOrServerInstance;
         private object _centralizedStorer;
 
         internal JObject _storylineDetails;
@@ -108,9 +108,9 @@ namespace BaseDI.BackEnd.Director.Advertising_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_1_1_Page_1(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_1_1_Page_1(object clientOrServerInstance, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
+            _clientOrServerInstance = clientOrServerInstance;
             _centralizedStorer = centralizedStorer;
 
             _extraData = extraData;
@@ -137,7 +137,7 @@ namespace BaseDI.BackEnd.Director.Advertising_1
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0(_clientOrServerInstance, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 

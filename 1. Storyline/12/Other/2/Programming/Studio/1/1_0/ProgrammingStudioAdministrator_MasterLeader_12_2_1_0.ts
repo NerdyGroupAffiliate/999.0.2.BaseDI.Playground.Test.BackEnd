@@ -89,7 +89,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#endregion
 
         //#region 4. Action
-        public SetupStoryline(client: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any, controlHandlerName: string, requestToProcess: string, requestToProcessParameters: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 {
+        public SetupStoryline(clientORserverInstance: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any, controlHandlerName: string, requestToProcess: string, requestToProcessParameters: string): aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 {
             //#region 1. Assign
             let director_Of_Programming_Chapter_12_2_Page_1_Request_Handler: any;
 
@@ -99,7 +99,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             //#region 2. Ready
-            let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
+            let directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, this._requestInspector, this._extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
             //#endregion
 
             //#region 3. Set
@@ -117,9 +117,9 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
                     const entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
                     entryPoint.RequestID = controlHandlerName;
-                    entryPoint.Client = client;
+                    entryPoint.ClientOrServerInstance = clientORserverInstance;
 
-                    this._requestInspector.Client = entryPoint.Client;
+                    this._requestInspector.ClientOrServerInstance = entryPoint.ClientOrServerInstance;
 
                     this._requestInspector.EntryPoint = entryPoint;
                     this._requestInspector.ExtraData = this._extraData;
@@ -153,7 +153,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
     //#region 5. Action Script
     export class Use_DesignPattern_Builder_Chapter_12_2_1_0 {
         //#region 1. Assign
-        private _client: any;
+        private _clientORserverInstance: any;
 
         private _storylineDetails: object;
         private _storylineDetails_Parameters: object;
@@ -168,8 +168,8 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
-            this._client = client;
+        constructor(clientORserverInstance: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -193,7 +193,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#region 4. Action
         public Action(): object {
             //#region BEGIN HANDLER SEARCH
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess, this._requestToProcessParameters);
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(this._clientORserverInstance, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestToResolveString, this._requestToProcess, this._requestToProcessParameters);
 
             builder.Action_1_Begin_Process();
             let resolvedRequest: object = builder.Action_10_End_Process();
@@ -209,7 +209,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
     export class Implement_DesignPattern_Builder_Chapter_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _client: any = null;
+        private _clientORserverInstance: any = null;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
@@ -226,10 +226,10 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
+        constructor(clientORserverInstance: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
             super();
 
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -282,7 +282,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             //#region DECIDE DIRECTOR REQUEST
             if (this._requestName.toUpperCase().includes("DIRECTOR_OF_")) {
-                const pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                const pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._clientORserverInstance, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName, this._requestToProcess, this._requestToProcessParameters);
 
                 return pickDirector.Action_1_Begin_Process();
             }
@@ -292,7 +292,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
             //#region DECIDE EXPERIENCE REQUEST
             if (this._requestName.toUpperCase().includes("EXPERIENCE_THE_")) {
-                let pickExperience = new Implement_DesignPattern_Factory_Experience_12_2_1_0(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                let pickExperience = new Implement_DesignPattern_Factory_Experience_12_2_1_0(this._clientORserverInstance, this._storylineDetails, this._storylineDetails_Parameters, this._requestToResolveObject, this._extraData, this._requestName, this._requestToProcess, this._requestToProcessParameters);
 
                 return pickExperience.Action_1_Begin_Process();
             }
@@ -357,7 +357,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _client: any = null;
+        private _clientORserverInstance: any = null;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
@@ -372,10 +372,10 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         private _requestName: string = "";
 
         //region 2. Ready
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
+        constructor(clientORserverInstance: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
             super();
 
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -389,15 +389,15 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this._extraData = extraData;
 
             if (this._centralizedDisturber == undefined || this._centralizedDisturber == null) {
-                this._centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+                this._centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
             }          
 
             if (this._centralizedStorer == undefined || this._centralizedStorer == null) {
-                this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+                this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
             }           
 
             if (this._centralizedSensor == undefined || this._centralizedSensor == null) {
-                this._centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+                this._centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
             }  
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
@@ -428,7 +428,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                 createDirector.APILocationRemote = "https://storyline.basedi.io/programming";
 
-                return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
             }
             else {
                 //This means our director of programming wanted us to play this storyline.
@@ -442,7 +442,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/advertising";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 2. Generate Brand Trust Storylines
@@ -454,7 +454,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/blogging";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_PODCASTING")) {
@@ -465,7 +465,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/podcasting";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_SOCIALMEDIA")) {
@@ -476,7 +476,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/socialmedia";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 3. Generate Optin Storylines
@@ -488,7 +488,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/listbuilding";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 4. Sell Low Ticket Offer Storylines
@@ -500,7 +500,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/supplements";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 5. Sell High Ticket Offer Storylines
@@ -512,7 +512,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/coaching";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_CONSULTING")) {
@@ -523,7 +523,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/consulting";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_PERSONALTRAINING")) {
@@ -534,7 +534,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/personaltraining";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 6. Sell Subscription Offer Storylines
@@ -546,7 +546,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/software";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 7. Sell Commission Offer Storylines
@@ -558,7 +558,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/affiliaterevenue";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 8. Account Loss or Gain Storylines
@@ -570,7 +570,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/accounting";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 9. Customer Service Storylines
@@ -582,7 +582,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/customerservice";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 10. Perform Manual Task Storylines
@@ -594,7 +594,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/productivity";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 11. Automate Manual Task Storylines
@@ -606,7 +606,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/riskmanagement";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 //region 12. Other Storylines
@@ -618,7 +618,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/careersemployment";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_WEBDEVELOPMENT")) {
@@ -629,7 +629,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_CMS")) {
@@ -640,7 +640,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/cms";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
 
                 if (this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_SECURITY")) {
@@ -651,7 +651,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/security";
 
-                    return createDirector.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                    return createDirector.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
                 }
             }
 
@@ -717,7 +717,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _client: any = null;
+        private _clientORserverInstance: any = null;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
@@ -732,10 +732,10 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         private _requestToProcessParameters: string = "";
 
         //region 2. Ready
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
+        constructor(clientORserverInstance: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
             super();
 
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -749,15 +749,15 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             this._extraData = extraData;
 
             if (this._centralizedDisturber == undefined || this._centralizedDisturber == null) {
-                this._centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+                this._centralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
             }
 
             if (this._centralizedStorer == undefined || this._centralizedStorer == null) {
-                this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+                this._centralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
             }
 
             if (this._centralizedSensor == undefined || this._centralizedSensor == null) {
-                this._centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
+                this._centralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, requestToResolveObject, extraData, requestToResolveString, requestToProcess, requestToProcessParameters);
             }
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
@@ -793,7 +793,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                 createExperience.APILocationRemote = "https://storyline.basedi.io/socialmedia";
 
-                return createExperience.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                return createExperience.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
             }
 
             //region 3. Generate Optin Storylines           
@@ -823,7 +823,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                 createExperience.APILocationRemote = "https://storyline.basedi.io/programming";
 
-                return createExperience.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                return createExperience.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
             }
 
             if (this._requestToResolveString.toUpperCase().includes("EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE")) {
@@ -834,7 +834,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                 createExperience.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
 
-                return createExperience.Action(this._client, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
+                return createExperience.Action(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName, this._requestToProcess, this._requestToProcessParameters);
             }
 
             return new Object();
@@ -891,7 +891,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
     export class Implement_DesignPattern_Factory_Storer_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _client: any = null;
+        private _clientORserverInstance: any = null;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
@@ -909,10 +909,10 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
         //#region 2. Ready
 
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
+        constructor(clientORserverInstance: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
             super();
 
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -950,7 +950,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
+                .SetupStoryline(this._clientORserverInstance, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
                 .Action();
         }
 
@@ -1013,7 +1013,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
     export class Implement_DesignPattern_Factory_Disturber_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _client: any = null;
+        private _clientORserverInstance: any = null;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
@@ -1031,10 +1031,10 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
         //#region 2. Ready
 
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
+        constructor(clientORserverInstance: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
             super();
 
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -1072,7 +1072,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0")
+                .SetupStoryline(this._clientORserverInstance, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0")
                 .Action();
         }
 
@@ -1135,7 +1135,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
     export class Implement_DesignPattern_Factory_Sensor_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _client: any = null;
+        private _clientORserverInstance: any = null;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
@@ -1153,10 +1153,10 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
         //#region 2. Ready
 
-        constructor(client: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
+        constructor(clientORserverInstance: any, storylineDetails: object, storylineDetails_Parameters: object, requestToResolveObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, requestToResolveString: string, requestToProcess: string = "", requestToProcessParameters: string = "") {
             super();
 
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -1194,7 +1194,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             let armTemplateJSONOutput: object = new Object();
 
             return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                .SetupStoryline(this._client, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0")
+                .SetupStoryline(this._clientORserverInstance, this._storylineDetails, this._storylineDetails_Parameters, this._extraData, "", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0")
                 .Action();
         }
 

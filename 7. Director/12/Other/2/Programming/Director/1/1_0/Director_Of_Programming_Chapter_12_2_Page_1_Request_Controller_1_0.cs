@@ -64,9 +64,9 @@ namespace BaseDI.BackEnd.Director.Programming_1
 
             #region PICK DESIGN PATTERN
 
-            if (EntryPoint != null && EntryPoint.Client != null)
+            if (EntryPoint != null && EntryPoint.ClientOrServerInstance != null)
             {
-                Client = EntryPoint.Client;
+                ClientOrServerInstance = EntryPoint.ClientOrServerInstance;
                 MasterLeader = EntryPoint.MasterLeader;
                 MasterController = EntryPoint.MasterController;
                 MasterConverter = EntryPoint.MasterConverter;
@@ -78,7 +78,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
             }
         
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_2_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(Client, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_2_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -262,7 +262,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
 
                 var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
 
-                page.Client = _client;
+                page.ClientOrServerInstance = _client;
 
                 page.EntryPoint = _entryPoint;
                 page.ExtraData = _extraData;
@@ -296,7 +296,7 @@ namespace BaseDI.BackEnd.Director.Programming_1
 
             var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _client;
 
             page.EntryPoint = _entryPoint;
             page.ExtraData = _extraData;

@@ -99,7 +99,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #region RECALL THE MEMORIES
 
-            _serverInfo = (Dictionary<string, object>)Client;
+            _serverInfo = (Dictionary<string, object>)ClientOrServerInstance;
             _server = _serverInfo.ContainsKey("Server") ? _serverInfo["Server"] : null;
 
             #endregion

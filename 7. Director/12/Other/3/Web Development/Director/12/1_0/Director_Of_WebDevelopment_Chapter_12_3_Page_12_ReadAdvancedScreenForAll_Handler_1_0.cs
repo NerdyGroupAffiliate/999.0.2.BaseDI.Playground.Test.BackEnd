@@ -58,7 +58,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_3_Page_12 designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_12(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_3_Page_12 designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_12(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -229,7 +229,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
 
             var page = new ChapterPage.Page_12_5_Process_StorySetting_12_3_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _client;
 
             page.EntryPoint = this._entryPoint;
             page.ExtraData = this._extraData;

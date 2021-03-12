@@ -55,7 +55,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_3_Page_3 designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_3(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_3_Page_3 designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_3(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -89,7 +89,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
     {
         #region 1. Assign
 
-        private object _client;
+        private object _clientORserverInstance;
         private object _centralizedStorer;
 
         internal JObject _storylineDetails;
@@ -104,9 +104,9 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_3_Page_3(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_3_Page_3(object clientORserverInstance, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
             _centralizedStorer = centralizedStorer;
 
             _extraData = extraData;
@@ -133,7 +133,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_3_Page_3_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_3_Page_3_1_0(_clientORserverInstance, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -171,7 +171,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
-        private object _client;
+        private object _clientORserverInstance;
         private object _centralizedStorer;
 
         private JObject _storylineDetails = null;
@@ -185,9 +185,9 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_3_Page_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_3_Page_3_1_0(object clientORserverInstance, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
             _centralizedStorer = centralizedStorer;
 
             _storylineDetails = storylineDetails;
@@ -224,7 +224,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_9_Verify_Process_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -255,7 +255,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -291,7 +291,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -324,7 +324,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_2_Validate_Process_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -355,7 +355,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_3_Process_StoryAuthor_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -386,7 +386,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_4_Process_StoryCharacters_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -417,7 +417,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_5_Process_StorySetting_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -448,7 +448,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_6_Process_StoryExperiences_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -479,7 +479,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_7_Process_StoryResources_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;
@@ -510,7 +510,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_3
 
             //var page = new ChapterPage.Page_1_8_Process_CRUD_12_2_1_0(_storylineDetails, _repository);
 
-            //page.Client = _client;
+            //page.clientORserverInstance = _clientORserverInstance;
 
             //page.EntryPoint = _entryPoint;
             //page.ExtraData = _extraData;

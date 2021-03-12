@@ -105,7 +105,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         //A. Story in motion (DO SOMETHING)
 
-        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string controlHandlerName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> clientORserverInstance, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string controlHandlerName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region 1. Assign  
 
@@ -118,7 +118,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             #region 2. Ready
 
-            Use_DesignPattern_Builder_Chapter_12_2_1_0 directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(client, storylineDetails, storylineDetails_Parameters, _requestInspector, _extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
+            Use_DesignPattern_Builder_Chapter_12_2_1_0 directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, _requestInspector, _extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
 
             #endregion
 
@@ -141,9 +141,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
                     var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
                     entryPoint.RequestID = controlHandlerName;
-                    entryPoint.Client = client;
+                    entryPoint.ClientOrServerInstance = clientORserverInstance;
 
-                    _requestInspector.Client = client;
+                    _requestInspector.ClientOrServerInstance = clientORserverInstance;
 
                     _requestInspector.EntryPoint = entryPoint;
                     _requestInspector.ExtraData = _extraData;
@@ -191,7 +191,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
     {
         #region 1. Assign
 
-        internal Dictionary<string, object> _client;
+        internal Dictionary<string, object> _clientORserverInstance;
 
         internal JObject _storylineDetails;
         internal JObject _storylineDetails_Parameters;
@@ -210,7 +210,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         internal Use_DesignPattern_Builder_Chapter_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
-            _client = client;
+            _clientORserverInstance = client;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -238,7 +238,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
         {
             #region BEGIN HANDLER SEARCH
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(_client, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestToResolveString, _requestToProcess, _requestToProcessParameters);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestToResolveString, _requestToProcess, _requestToProcessParameters);
 
             builder.Action_1_Begin_Process();
             object resolvedRequest = builder.Action_10_End_Process();
@@ -261,7 +261,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
     {
         #region 1. Assign
 
-        internal Dictionary<string, object> _client;
+        internal Dictionary<string, object> _clientORserverInstance;
 
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
@@ -281,7 +281,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         internal Implement_DesignPattern_Builder_Chapter_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
-            _client = client;
+            _clientORserverInstance = client;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -331,7 +331,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             if (_requestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_"))
             {
-                Implement_DesignPattern_Factory_Director_12_2_1_0 pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(_client, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestName, _requestToProcess, _requestToProcessParameters);
+                Implement_DesignPattern_Factory_Director_12_2_1_0 pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestName, _requestToProcess, _requestToProcessParameters);
 
                 return pickDirector.Action_1_Begin_Process();
             }
@@ -344,7 +344,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             if (_requestName.ToUpper(CultureInfo.CurrentCulture).Contains("EXPERIENCE_THE_"))
             {
-                Implement_DesignPattern_Factory_Experience_12_2_1_0 pickExperience = new Implement_DesignPattern_Factory_Experience_12_2_1_0(_client, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestName, _requestToProcess, _requestToProcessParameters);
+                Implement_DesignPattern_Factory_Experience_12_2_1_0 pickExperience = new Implement_DesignPattern_Factory_Experience_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestName, _requestToProcess, _requestToProcessParameters);
 
                 return pickExperience.Action_1_Begin_Process();
             }
@@ -414,7 +414,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
 
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
@@ -434,7 +434,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Director_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
-            _client = client;
+            _clientORserverInstance = client;
 
             if (_centralizedDisturber == null)
             {
@@ -488,7 +488,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                 createDirector.APILocationRemote = "https://storyline.basedi.io/programming";
 
-                return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
 
                 #endregion
             }
@@ -506,7 +506,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/advertising";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -522,7 +522,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/blogging";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PODCASTING"))
@@ -534,7 +534,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/podcasting";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SOCIALMEDIA"))
@@ -546,7 +546,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/socialmedia";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -562,7 +562,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/listbuilding";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -578,7 +578,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/supplements";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -594,7 +594,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/coaching";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CONSULTING"))
@@ -606,7 +606,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/consulting";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PERSONALTRAINING"))
@@ -618,7 +618,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/personaltraining";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -634,7 +634,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/software";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -650,7 +650,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/affiliaterevenue";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -666,7 +666,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/accounting";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -682,7 +682,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/customerservice";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -698,7 +698,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/productivity";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -714,7 +714,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/riskmanagement";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -730,7 +730,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/careersemployment";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_WEBDEVELOPMENT"))
@@ -742,7 +742,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CMS"))
@@ -754,7 +754,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/cms";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SECURITY"))
@@ -766,7 +766,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                     createDirector.APILocationRemote = "https://storyline.basedi.io/security";
 
-                    return createDirector.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                    return createDirector.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
                 }
 
                 #endregion
@@ -837,7 +837,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
     {
         #region 1. Assign
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
 
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
@@ -916,7 +916,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                 createExperience.APILocationRemote = "https://storyline.basedi.io/socialmedia";
 
-                return createExperience.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                return createExperience.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
             }
 
             #endregion
@@ -971,7 +971,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
                 createExperience.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
 
-                return createExperience.Action(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
+                return createExperience.Action(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _requestToResolveObject, _storylineDetails, _storylineDetails_Parameters, _requestName, _requestToProcess, _requestToProcessParameters);
 
                 #endregion
             }
@@ -1043,7 +1043,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
     {
         #region 1. Assign
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
 
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
@@ -1060,9 +1060,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Storer_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
+        internal Implement_DesignPattern_Factory_Storer_12_2_1_0(Dictionary<string, object> clientORserverInstance, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _extraData = extraData;
 
@@ -1092,7 +1092,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
+              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;
@@ -1160,7 +1160,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
     {
         #region 1. Assign
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
 
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
@@ -1177,9 +1177,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Disturber_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
+        internal Implement_DesignPattern_Factory_Disturber_12_2_1_0(Dictionary<string, object> clientORserverInstance, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _extraData = extraData;
 
@@ -1209,7 +1209,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0")
+              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;
@@ -1277,7 +1277,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
     {
         #region 1. Assign
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
 
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
@@ -1294,9 +1294,9 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Sensor_12_2_1_0(Dictionary<string, object> client, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
+        internal Implement_DesignPattern_Factory_Sensor_12_2_1_0(Dictionary<string, object> clientORserverInstance, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 requestToResolveObject, ExtraData_12_2_1_0 extraData = null, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _extraData = extraData;
 
@@ -1326,7 +1326,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_client, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0")
+              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;

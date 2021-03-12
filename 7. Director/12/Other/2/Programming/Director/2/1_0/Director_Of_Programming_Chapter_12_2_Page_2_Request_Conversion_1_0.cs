@@ -60,9 +60,9 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
             #region PICK DESIGN PATTERN
 
-            if (EntryPoint != null && EntryPoint.Client != null)
+            if (EntryPoint != null && EntryPoint.ClientOrServerInstance != null)
             {
-                Client = EntryPoint.Client;
+                ClientOrServerInstance = EntryPoint.ClientOrServerInstance;
                 MasterLeader = EntryPoint.MasterLeader;
                 MasterController = EntryPoint.MasterController;
                 MasterConverter = EntryPoint.MasterConverter;
@@ -74,7 +74,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
             }
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_2_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_2(Client, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_2_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_2(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
 
             #endregion
 
@@ -108,7 +108,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
     {
         #region 1. Assign
 
-        internal Dictionary<string, object> _client;
+        internal Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -125,13 +125,13 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_Page_2(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_2_Page_2(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _extraData = extraData;
 
@@ -157,7 +157,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -195,7 +195,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -211,9 +211,9 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
@@ -254,7 +254,7 @@ namespace BaseDI.BackEnd.Director.Programming_2
 
             var page = new ChapterPage.Page_2_1_Begin_Process_12_2_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
             page.EntryPoint = _entryPoint;
             page.ExtraData = _extraData;
