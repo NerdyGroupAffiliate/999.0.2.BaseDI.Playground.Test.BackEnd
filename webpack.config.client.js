@@ -25,6 +25,8 @@ const plugins = [
     new webpack.IgnorePlugin(/passport/),
     new webpack.IgnorePlugin(/passport-facebook/),
     new webpack.IgnorePlugin(/fs/),
+    new webpack.IgnorePlugin(/curling/),
+    new webpack.IgnorePlugin(/simple-oauth2/),
     new webpack.ProvidePlugin({
         Promise: 'es6-promise-promise',
         $: 'jquery',
@@ -47,7 +49,7 @@ const plugins = [
 ];
 
 module.exports = {
-    entry: './Startup_Client_1_0.tsx',
+    entry: './Startup.ts',
     devtool: "source-map",
     output: {
         path: path.resolve(__dirname, "wwwroot", "Client", "JS"),

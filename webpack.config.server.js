@@ -42,8 +42,7 @@ const plugins = [
             NODE_ENV: JSON.stringify(process.env.NODE_ENV),
             PORT: JSON.stringify(process.env.PORT),
             APP_ENV: JSON.stringify("SERVER"),
-            BASEDI_ASSETS_PATH: "../000.BaseDI.Assets"
-           
+            BASEDI_ASSETS_PATH: "../000.BaseDI.Assets"           
         }
     })
     //new CopyWebpackPlugin([

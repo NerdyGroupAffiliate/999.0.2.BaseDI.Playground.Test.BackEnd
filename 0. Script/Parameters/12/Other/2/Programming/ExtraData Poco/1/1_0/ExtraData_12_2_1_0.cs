@@ -8,7 +8,7 @@ namespace BaseDI.BackEnd.Script.Programming.Poco_1
     {
         public ExtraData_12_2_1_0()
         {
-            KeyValuePairs = new Dictionary<string, object>();
+            KeyValuePairs = new Dictionary<string, dynamic>();
 
             Mistake = new Exception();
         }

@@ -96,7 +96,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
     public partial class Startup
     {
-        public static async Task<IActionResult> Action(string requestToProcess = "", string requestToProcessParameters = "", string requestActionName = "", Func<JObject, JObject> requestCallBack = null)
+        public static async Task<IActionResult> Action(string requestToProcess = "", string requestToProcessParameters = "", string requestActionName = "", Func<JObject, IActionResult> requestCallBack = null)
         {
             var process = new Startup_Controller();
 
@@ -120,7 +120,7 @@ namespace BaseDI.Playground.Test.BackEnd
         private string _baseDIArmTemplateSchemaParameters = "";
         private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0-P.json";
 
-        private Dictionary<string, object> _serverInfo;
+        private Dictionary<string, object> _clientORserverInfo;
 
         private ExtraData_12_2_1_0 _extraData;
 
@@ -129,12 +129,14 @@ namespace BaseDI.Playground.Test.BackEnd
         private string _requestToProcess = "";
         private string _requestToProcessParameters = "";
 
+        public Func<SingleParmPoco_12_2_1_0, JObject> StartUpCallBack = null;
+
         private JObject _storylineDetails;
         private JObject _storylineDetails_Parameters;
 
         public Func<JObject, ExtraData_12_2_1_0, JObject> Update_Client = null;
 
-        public Func<JObject, JObject> RequestCallBack = null;
+        public Func<JObject, IActionResult> RequestCallBack = null;
 
         public List<RouteAttribute> routes = new List<RouteAttribute>();
 
@@ -154,7 +156,7 @@ namespace BaseDI.Playground.Test.BackEnd
             _storylineDetails = new JObject();
             _storylineDetails_Parameters = new JObject();
 
-            _serverInfo = new Dictionary<string, object>();
+            _clientORserverInfo = new Dictionary<string, object>();
 
             #endregion
 
@@ -182,25 +184,9 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 2. Action
 
-            //READ OPTIONS TEMPLATE
-            //using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(_baseDIArmTemplateSchemaEmbeddedResource))
-            //{
-            //    using (StreamReader reader = new StreamReader(resourceStream))
-            //    {
-            //        //NOTE: YOU CAN OVERRIDE THIS IN REGION "4. ACTION" BELOW
-            //        _baseDIArmTemplateSchema = reader.ReadToEnd();
-            //    }
-            //}
 
-            //READ USER OPTIONS
-            //using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(_baseDIArmTemplateSchemaParametersEmbeddedResource))
-            //{
-            //    using (StreamReader reader = new StreamReader(resourceStream))
-            //    {
-            //        //NOTE: YOU CAN OVERRIDE THIS IN REGION "4. ACTION" BELOW
-            //        _baseDIArmTemplateSchemaParameters = reader.ReadToEnd();
-            //    }
-            //}
+            _clientORserverInfo.Add("request", Request);
+            _clientORserverInfo.Add("serverInstance", this);
 
             _storylineDetails = null;
             _storylineDetails_Parameters = null;
@@ -209,15 +195,6 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. Observe
 
-            if (!string.IsNullOrEmpty(_baseDIArmTemplateSchema))
-            {
-                _storylineDetails = JObject.Parse(_baseDIArmTemplateSchema);
-            }
-
-            if (!string.IsNullOrEmpty(_baseDIArmTemplateSchemaParameters))
-            {
-                _storylineDetails_Parameters = JObject.Parse(_baseDIArmTemplateSchemaParameters);
-            }
 
             #endregion
         }
@@ -227,22 +204,21 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [HttpGet("")]
-        public async Task<IActionResult> Action(string requestToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessRequest_1_0")
+        public async Task<IActionResult> Action(string requestNameToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestNameToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessRequest_1_0")
         {
             #region 1. Assign
 
-            JObject armTemplateJSONOutput = null;
+            Func<string?, string?, ExtraData_12_2_1_0?, JObject> Action = null;
+
+            JObject handleObservation = null;
 
             JToken outputs = null;
 
             StringBuilder outputObservationsPrintOut = new StringBuilder();
 
-            //SETUP SERVR INFO
-            _serverInfo.Add("request", Request);
-            _serverInfo.Add("server", this);
-
+            //SETUP CLIENT/SERVER INFO
             if (requestActionName != "")
-                _serverInfo.Add("actionName", requestActionName);
+                _clientORserverInfo.Add("actionName", requestActionName);
 
             ContentResult result = null;
 
@@ -252,39 +228,41 @@ namespace BaseDI.Playground.Test.BackEnd
 
             try
             {
-                #region TEST OUR LOGIC
+                #region TRY OUR LOGIC
 
                 #region PROCESS LOGIC UPDATES
 
-                Update_Client = (JObject storylineDetails, ExtraData_12_2_1_0 extraData) =>
+                StartUpCallBack = (SingleParmPoco_12_2_1_0 response) =>
                 {
-                    _extraData = extraData;
-                    _storylineDetails = storylineDetails;
-
+                    Action("", "", null);
                     return _storylineDetails;
                 };
 
                 #endregion
 
-                armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                    .SetupStoryline(_serverInfo, _storylineDetails, null, _extraData, "", requestToProcess, requestToProcessParameters)
-                    .Action().Result;
-
-                if (armTemplateJSONOutput != null)
+                Action = (string requestNameToProcess, string requestNameToProcessParameters, ExtraData_12_2_1_0 extraData) =>
                 {
-                    outputs = armTemplateJSONOutput["outputs"];
-                }
+                    return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                        .SetupStoryline(_clientORserverInfo, _storylineDetails, null, extraData, "", requestNameToProcess, requestNameToProcessParameters)
+                        .Action().Result;
+                };
 
+                handleObservation = Action(requestNameToProcess, requestNameToProcessParameters, _extraData);
+
+                if (handleObservation != null)
+                {
+                    outputs = handleObservation["outputs"];
+                }
                 #endregion
             }
             catch (Exception ex)
             {
                 #region PRINT OUT MISTAKES
 
-                armTemplateJSONOutput = _storylineDetails;
-                if (armTemplateJSONOutput != null)
+                handleObservation = _storylineDetails;
+                if (handleObservation != null)
                 {
-                    outputs = armTemplateJSONOutput.SelectToken("outputs..baseDIMistakes");
+                    outputs = handleObservation.SelectToken("outputs..baseDIMistakes");
                     foreach (var programmingMistake in outputs.Children())
                     {
                         var mistake = programmingMistake.Value<string>("mistake");
@@ -302,20 +280,22 @@ namespace BaseDI.Playground.Test.BackEnd
 
             if (RequestCallBack != null)
             {
-                RequestCallBack(armTemplateJSONOutput);
+                RequestCallBack(handleObservation);
 
-                return null;
+                return new OkResult();
             }
-
-            if (armTemplateJSONOutput != null)
+            else
             {
-                result = new ContentResult
+                if (handleObservation != null)
                 {
-                    ContentType = "text/html",
-                    StatusCode = (int)HttpStatusCode.OK,
-                    Content = (string)armTemplateJSONOutput.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
-                };
-                // return Content(armTemplateJSONOutput.ToString());
+                    result = new ContentResult
+                    {
+                        ContentType = "text/html",
+                        StatusCode = (int)HttpStatusCode.OK,
+                        Content = (string)handleObservation.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
+                    };
+                    // return Content(armTemplateJSONOutput.ToString());
+                }
             }
 
             return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
