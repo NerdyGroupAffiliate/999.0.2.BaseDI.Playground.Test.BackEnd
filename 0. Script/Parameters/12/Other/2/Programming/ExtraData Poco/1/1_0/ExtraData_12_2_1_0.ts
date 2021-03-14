@@ -13,6 +13,6 @@ export namespace BaseDI.BackEnd.Programming_1
 
         MasterLeader: object = new Object();
 
-        KeyValuePairs: Collections.Dictionary<string, object>;
+        KeyValuePairs: Collections.Dictionary<string, any>;
     }
 }

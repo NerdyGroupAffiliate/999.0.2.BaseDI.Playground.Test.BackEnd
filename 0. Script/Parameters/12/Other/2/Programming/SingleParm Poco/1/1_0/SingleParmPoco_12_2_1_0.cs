@@ -10,6 +10,7 @@ namespace BaseDI.BackEnd.Script.Programming.Poco_1
         {
 
         }
+        public string GenericID { get; set; }
 
         public string ChapterName { get; set; }
 
@@ -18,6 +19,10 @@ namespace BaseDI.BackEnd.Script.Programming.Poco_1
         public string PageName { get; set; }
 
         public Dictionary<string, dynamic> Parameters { get; set; }
+
+        public string RequestNameToProcess { get; set; }
+
+        public string RequestNameToProcessParameters { get; set; }
 
         public dynamic StorylineDetails { get; set; }
     }

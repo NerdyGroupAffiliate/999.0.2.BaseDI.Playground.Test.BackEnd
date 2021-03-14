@@ -3,8 +3,6 @@ import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Contro
 
 import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/13/1_0/Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
 
-var fs = require('fs');
-
 export namespace BaseDI.BackEnd.State.Programming_3 {
     export class LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>
     {
