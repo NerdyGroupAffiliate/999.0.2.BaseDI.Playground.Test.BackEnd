@@ -16,7 +16,7 @@ namespace BaseDI.BackEnd.Story.Coaching_1
     //A. Story in motion (DO SOMETHING) ACTING
     internal class CoachingFactoryImplementer_NicheMaster_5_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private object _centralizedStorer;
 
         private ExtraData_12_2_1_0 _extraData = null;
@@ -24,7 +24,7 @@ namespace BaseDI.BackEnd.Story.Coaching_1
         internal CoachingFactoryImplementer_NicheMaster_5_1_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
             _centralizedStorer = new object();
 
             _extraData = extraData;
@@ -34,11 +34,11 @@ namespace BaseDI.BackEnd.Story.Coaching_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
             _centralizedStorer = centralizedStorer;
             //_centralizedDisturber = centralizedDisturber;
             //_centralizedSensor = centralizedSensor;
@@ -91,7 +91,7 @@ namespace BaseDI.BackEnd.Story.Coaching_1
 
             #region ASSIGN REQUEST HANDLER
 
-            //director.Client = _client;
+            //director.ClientOrServerInstance = _clientORserverInstance;
 
             //director.ExtraData = extraData;
 

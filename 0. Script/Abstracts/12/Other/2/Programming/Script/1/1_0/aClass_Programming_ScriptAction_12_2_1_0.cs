@@ -14,7 +14,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public Func<Object, Object> CallBack { get; set; }
 
-        public Object Client { get; set; }
+        public Object ClientOrServerInstance { get; set; }
 
         public ExtraData_12_2_1_0 ExtraData { get; set; }
 

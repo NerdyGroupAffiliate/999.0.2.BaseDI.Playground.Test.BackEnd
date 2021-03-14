@@ -40,7 +40,7 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
             //#region 1. Assign
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Experience_2_3_1_0(this.Client, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
+            const designPattern = new Use_DesignPattern_Builder_Experience_2_3_1_0(this.ClientOrServerInstance, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
             //#endregion
 
             //#region 2. Action
@@ -58,7 +58,7 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
     export class Use_DesignPattern_Builder_Experience_2_3_1_0 {
         //#region 1. Assign
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _client: any;
+        private _clientORserverInstance: any;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
@@ -70,9 +70,9 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(clientORserverInstance: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             this._centralizedStorer = centralizedStorer;
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -91,7 +91,7 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Experience_2_3_1_0(this._client, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Experience_2_3_1_0(this._clientORserverInstance, this._centralizedStorer, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
 
             await builder.Action_1_Begin_Process();
 
@@ -117,7 +117,7 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
     {
         //#region 1. Assign
         private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _client: any;
+        private _clientORserverInstance: any;
 
         private _storylineDetails: object = new Object();
         private _storylineDetails_Parameters: object = new Object();
@@ -129,11 +129,11 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
         //#endregion
 
         //#region 2. Ready
-        constructor(client: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(clientORserverInstance: any, centralizedStorer: any, storylineDetails: object, storylineDetails_Parameters: object, repository: IContract_Programming_Repository_12_2_1_0, extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             super();
 
             this._centralizedStorer = centralizedStorer;
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._storylineDetails = storylineDetails;
             this._storylineDetails_Parameters = storylineDetails_Parameters;
@@ -181,7 +181,7 @@ export namespace BaseDI.BackEnd.Experience.Movement.Social_Media_1 {
 
             const dataObservationTemplateBuilder: string = "";
 
-            let dataObservationTemplate: String = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Extension_Read_Facebook_ClientAccess_1_0", "PARSING out Facebook API data from JSON", presentationItemTemplate, businessItemTemplate, serviceItemTemplate, securityItemTemplate, dataItemTemplate);
+            let dataObservationTemplate: String = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Extension_Read_Facebook_clientORserverInstanceAccess_1_0", "PARSING out Facebook API data from JSON", presentationItemTemplate, businessItemTemplate, serviceItemTemplate, securityItemTemplate, dataItemTemplate);
 
             //RETRIEVE ACCESS TOKEN
             const access: Promise<Object> = Extension_Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.BaseDI.BackEnd.Social_Media.Extensions_1.Extension_Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.Step_2_0_LogInto_The_Experience_1_0();

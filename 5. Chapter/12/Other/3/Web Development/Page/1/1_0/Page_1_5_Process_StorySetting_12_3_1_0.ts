@@ -35,7 +35,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Web_Development_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            if (this.Client["requestActionName"] == undefined || this.Client["requestActionName"] == null || this.Client["requestActionName"] == "" || this.Client["requestActionName"] == "Action_ControlHomeLoadState") {
+            if (this.ClientOrServerInstance["requestActionName"] == undefined || this.ClientOrServerInstance["requestActionName"] == null || this.ClientOrServerInstance["requestActionName"] == "" || this.ClientOrServerInstance["requestActionName"] == "Action_ControlHomeLoadState") {
                 //#region DESCRIBE THE MEMORIES
                 const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
 

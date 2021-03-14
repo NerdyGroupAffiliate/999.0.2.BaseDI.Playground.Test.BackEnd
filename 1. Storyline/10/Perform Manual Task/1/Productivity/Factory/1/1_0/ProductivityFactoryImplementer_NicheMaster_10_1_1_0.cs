@@ -16,7 +16,7 @@ namespace BaseDI.BackEnd.Story.Productivity_1
     //A. Story in motion (DO SOMETHING) ACTING
     internal class ProductivityFactoryImplementer_NicheMaster_10_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -26,7 +26,7 @@ namespace BaseDI.BackEnd.Story.Productivity_1
         internal ProductivityFactoryImplementer_NicheMaster_10_1_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
 
             _extraData = extraData;
 
@@ -35,14 +35,14 @@ namespace BaseDI.BackEnd.Story.Productivity_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
@@ -92,7 +92,7 @@ namespace BaseDI.BackEnd.Story.Productivity_1
 
             //Direct_Programming_Chapter_12_2_Page_1_ReadAndHandleRequest_1_0 director = new Direct_Programming_Chapter_12_2_Page_1_ReadAndHandleRequest_1_0();
 
-            //director.Client = _client;
+            //director.ClientORServerInstance = _clientORserverInstance;
 
             //director.ExtraData = extraData;
 

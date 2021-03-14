@@ -88,10 +88,19 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_1
 
             Transport = () =>
             {
-                //EXECUTE THE PROCESS
-                return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
-                       .SetupStoryline(Client, StorylineDetails, StorylineDetails_Parameters, ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
-                       .Action().Result;
+                entryPoint = EntryPoint;
+
+                if (entryPoint != null && !entryPoint.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
+                {
+                    return EntryPoint.Action().Result;
+                }
+                else
+                {
+                    //EXECUTE THE PROCESS
+                    return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
+                           .SetupStoryline(ClientOrServerInstance, StorylineDetails, StorylineDetails_Parameters, ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
+                           .Action().Result;
+                }
             };
 
             //START THE PROCESS

@@ -18,7 +18,7 @@ export namespace BaseDI.BackEnd.Story.Listing_Building_1 {
         private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
         private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _client: any;
+        private _clientORserverInstance: any;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
         //#endregion
@@ -28,7 +28,7 @@ export namespace BaseDI.BackEnd.Story.Listing_Building_1 {
             super();
 
             //#region 1. Assign
-            this._client = null;
+            this._clientORserverInstance = null;
 
             this._extraData = extraData;
 
@@ -47,12 +47,12 @@ export namespace BaseDI.BackEnd.Story.Listing_Building_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object {
+        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
             this._centralizedDisturber = centralizedDisturber;
             this._centralizedSensor = centralizedSensor;
-            this._client = client;
+            this._clientORserverInstance = clientORserverInstance;
 
             this._extraData.KeyValuePairs.setValue("APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
             this._extraData.KeyValuePairs.setValue("APILocationLocalDotNetCore", Object.assign(this.APILocationLocalDotNetCore, Object));
@@ -90,7 +90,7 @@ export namespace BaseDI.BackEnd.Story.Listing_Building_1 {
             //#region ASSIGN REQUEST HANDLER
             //#let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.Director.Advertising_.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
 
-            //#director.Client = this._client;
+            //#director.ClientOrServerInstance = this._clientORserverInstance;
 
             //#director.ExtraData = extraData;
 

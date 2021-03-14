@@ -41,7 +41,9 @@ const plugins = [
         "process.env": {
             NODE_ENV: JSON.stringify(process.env.NODE_ENV),
             PORT: JSON.stringify(process.env.PORT),
-            APP_ENV: JSON.stringify("SERVER")
+            APP_ENV: JSON.stringify("SERVER"),
+            BASEDI_ASSETS_PATH: "../000.BaseDI.Assets"
+           
         }
     })
     //new CopyWebpackPlugin([
@@ -53,13 +55,13 @@ const plugins = [
 ];
 
 module.exports = {
-    entry: './Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.ts',
+    entry: './Startup.ts',
     devtool: "source-map",
     output: {
         path: path.resolve(__dirname, "wwwroot", "Server", "JS"),
         //libraryTarget: 'var',
         library: 'Server',
-        filename:"Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.js"
+        filename:"Startup.js"
     },
     target: "node",
     resolve: {

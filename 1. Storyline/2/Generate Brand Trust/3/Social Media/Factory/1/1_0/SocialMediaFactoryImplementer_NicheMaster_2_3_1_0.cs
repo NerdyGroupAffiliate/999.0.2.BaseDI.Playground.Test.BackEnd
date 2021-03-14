@@ -17,7 +17,7 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
 
     internal class SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -27,7 +27,7 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
         internal SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
 
             _extraData = extraData;
 
@@ -36,11 +36,11 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
@@ -93,7 +93,7 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
 
             Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0 experience = new Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0();
 
-            experience.Client = _client;
+            experience.ClientOrServerInstance = _clientORserverInstance;
 
             experience.ExtraData = extraData;
 

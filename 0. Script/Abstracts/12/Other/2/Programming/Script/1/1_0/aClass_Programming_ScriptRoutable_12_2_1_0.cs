@@ -39,7 +39,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public aClass_Programming_ScriptAction_12_2_1_0<JObject> MasterSensor { get; set; }
 
-        public Dictionary<string, object> Client { get; set; }
+        public Dictionary<string, object> ClientOrServerInstance { get; set; }
 
         public string RequestID { get; set; }
 }

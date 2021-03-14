@@ -36,7 +36,9 @@
       "facebook-js-sdk",
       "express",
       "es6-promise",
-      "express-serve-static-core"
+      "express-serve-static-core",
+      "passport",
+      "passport-facebook"
     ],
     "paths": {
       "*": [

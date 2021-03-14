@@ -102,7 +102,7 @@ export namespace BaseDI.BackEnd.State.Programming_3 {
             storedObservationIndex = 0;
             storedObservations = this._storylineDetails.outputs[1].baseDIObservations;
             storedObservationCount = this._storylineDetails.outputs[1].baseDIObservations.length == 0 ? 0 : this._storylineDetails.outputs[1].baseDIObservations.length;
-            storedServer = this?.Client?.Server;
+            storedServer = this?.ClientOrServerInstance?.Server;
 
             //#endregion
 

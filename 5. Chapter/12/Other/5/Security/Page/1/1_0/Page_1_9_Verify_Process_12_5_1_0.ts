@@ -11,11 +11,13 @@ import * as Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticatio
 import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/13/1_0/Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+import { strict } from "assert";
 
 export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
     export class Page_1_9_Verify_Process_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         private _apiMetaData: any = null;
+        private _actionName: string = "";
 
         private _entryPointName: string = "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
 
@@ -95,13 +97,14 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             const storylineDetails: any = this.StorylineDetails;
 
+            this._actionName = this?.ClientOrServerInstance["actionName"];
             this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "key_1", "APIS", false);
 
-            this._request = this.Client?.Request;
+            this._request = this.ClientOrServerInstance?.Request;
             this._requestRoute = this._request?.route?.path;
-            this._response = this.Client?.Response;
+            this._response = this.ClientOrServerInstance?.Response;
 
-            this._server = this.Client?.Server;
+            this._server = this.ClientOrServerInstance?.Server;
 
             //#endregion
 
@@ -109,15 +112,14 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#region CONTROL
 
-            if (this._server != undefined && this._server != null) {
-                Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.BackEnd.Security.Extensions_1.Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.Step_X_X_Custom_Store_ServerSecuritySettingsToMemory_1_0(this._server, storylineDetails);
-
-                if (this._requestRoute.toUpperCase() == "/AUTHREQUEST") {
+            if (this._server != undefined && this._server != null)
+            {
+                if (this._requestRoute.toUpperCase().includes("AUTHREQUEST") || this._actionName.toUpperCase().includes("AUTHREQUEST")) {
                     this.Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0();
                 }
 
-                if (this._requestRoute.toUpperCase() == "/AUTHRESPONSE") {
-                    this.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0();
+                if (this._requestRoute.toUpperCase().includes("AUTHRESPONSE") || this._actionName.toUpperCase().includes("AUTHRESPONSE")) {
+                    this.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(null);
                 }
             }
 
@@ -137,6 +139,18 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
         public async Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0() {
 
             //#region DESCRIBE THE MEMORIES
+            let storedAPIPlatform: string = "";
+            let storedAPIVerb: string = "POST";
+
+            let storedCurlOptions: Object = new Object();
+
+            let storedProfile: any = null;
+            let storedProfileDetails: any = null;
+            let storedProfileDetailsAPIEndPointsAndRoutes: any = null;
+            let storedProfileDetailsSecurityAPISecurityDetails: any = null;
+
+            let storedTokenEndpoint: string = "";
+            let storedQueryStingKeyValues: any = null;
 
             //#endregion
 
@@ -147,17 +161,49 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#region EXECUTE THE VISION
 
             if (this._request != undefined && this._request != null) {
-                const api: string = this._request?.query?.API;
+                //#region STORE api querystring value
+                storedQueryStingKeyValues = Object.keys(this._request?.query);
+                storedQueryStingKeyValues.map(storedQueryString => {
+                    if (storedQueryString.toUpperCase() == "API") {
+                        storedAPIPlatform = this._request?.query[storedQueryString]
+                    }
+                })
+                //#endregion
 
                 if (this._requestRoute != undefined && this._requestRoute != null) {
-                    if (api != undefined && api != null) {
-                        switch (api.toUpperCase()) {
+                    if (storedAPIPlatform != undefined && storedAPIPlatform != null) {
+                        //#region SET api platform general values
+                        storedProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._apiMetaData, "searchkey", "SetupDetails_APIS_API_1_0_" + storedAPIPlatform + "_2_2_2_1_serverInformationSetupDetails", false);
+                        storedProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storedProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
+                        storedProfileDetailsAPIEndPointsAndRoutes = storedProfileDetails.value.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
+                        storedProfileDetailsSecurityAPISecurityDetails = storedProfileDetails.value.SetupItemAPIProfile.SetupItemAPISecurityDetails;
+                        //#endregion
+
+                        //#region SET api platform specific values
+                        switch (storedAPIPlatform.toUpperCase()) {
+                            case "FACEBOOK":
+                            case "FACEBOOKGRAPH":
+                                storedTokenEndpoint = storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIBaseEndpoint +  "/" + storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPITokenRoute;
+
+                                break;
                             case "MICROSOFT":
                             case "MICROSOFTGRAPH":
-                                this.Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft();
+                                storedCurlOptions["header"] = "Content-Type: application/x-www-form-urlencoded";
+                                storedTokenEndpoint = storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIBaseEndpoint + "/" + storedProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityCustomerID + "/" + storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPITokenRoute;
 
                                 break;
                         }
+                        //#endregion
+
+                        //#region BUILD curl request object
+                        storedCurlOptions["data"] = [
+                            "grant_type=client_credentials",
+                            "client_id=" + storedProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityAppID,
+                            "client_secret=" + storedProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityPassword,
+                            storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIScope.length > 0 ? "scope=" + storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIScope : ""
+                        ];  
+
+                        //#endregion
                     }
                 }
             }
@@ -166,93 +212,24 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#region REPORT THE FEEDBACK
 
-            //#endregion
-        }
-
-        //#region MICROSOFT
-
-        public async Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft() {
-            //#region DESCRIBE THE MEMORIES
-
-            let curlClientOptions: Object;
-
-            let microsoftProfile: any = null;
-            let microsoftProfileDetails: any = null;
-            let microsoftProfileDetailsAPIEndPointsAndRoutes: any = null;
-            let microsoftProfileDetailsSecurityAPISecurityDetails: any = null;
-
-            let microsoftTokenEndpoint: string = "";
-
-            //#endregion
-
-            //#region RECALL THE MEMORIES
-
-            microsoftProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._apiMetaData, "searchkey", "SetupDetails_APIS_API_1_0_MicrosoftGraph_2_2_2_1_serverInformationSetupDetails", false);
-            microsoftProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(microsoftProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
-            microsoftProfileDetailsAPIEndPointsAndRoutes = microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
-            microsoftProfileDetailsSecurityAPISecurityDetails = microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPISecurityDetails;
-
-            curlClientOptions = {
-                header: [
-                    "Content-Type: application/x-www-form-urlencoded"],
-                data: [
-                    "grant_type=client_credentials",
-                    "client_id=" + microsoftProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityAppID,
-                    "client_secret=" + microsoftProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityPassword,
-                    "scope=" + microsoftProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIScope
-                ]
-            }
-
-            microsoftTokenEndpoint = microsoftProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIBaseEndpoint + microsoftProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityCustomerID + microsoftProfileDetailsAPIEndPointsAndRoutes.SetupItemAPITokenRoute;
-
-            //#endregion
-
-            //#region EXECUTE THE VISION
-
-            //#region TRANSPORT
+            //#region TRANSPORT curl request & handle response
             var self = this;
 
-            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, microsoftTokenEndpoint, "POST", curlClientOptions, 
-            function callback(response) {
-                 self.Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response, microsoftProfileDetailsSecurityAPISecurityDetails);
-            });
+            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, storedTokenEndpoint, storedAPIVerb, storedCurlOptions,
+                function callback(response) {
+                    self.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response, storedAPIPlatform);
+                });
 
             //#endregion
-
-            //#endregion
-
-            //#region REPORT THE FEEDBACK
 
             //#endregion
         }
-
-        //#endregion
 
         //#endregion
 
         //#region OUTPUT
 
-        private async Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0() {
-            //#region DESCRIBE THE MEMORIES
-
-            //#endregion
-
-            //#region RECALL THE MEMORIES
-
-            //#endregion
-
-            //#region EXECUTE THE VISION
-
-            //#endregion
-
-            //#region REPORT THE FEEDBACK
-
-            //#endregion
-        }
-
-        //#region MICROSOFT
-
-        private async Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response: any, extraData: any = null) {
+        public async Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response: any, uniqueStorageKeyValue: any = null) {
             //#region DESCRIBE THE MEMORIES
 
             //#endregion
@@ -262,29 +239,11 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
-            // this.MasterStorer.CallBack = () => {
-            //     Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
-            //     this._response.send(extraData);
-            // }
+            //#region EXECUTE THE VISION         
 
-            // Setting the baseDIObservations Array
-           
-            
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response);
-           
-            var read1 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
-           
-            
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Update", this._entryPointName, this._pageName, "UPDATING access token", this.StorylineDetails, {test:"Hello"});
-           
-            
-            var read2 = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Read", this._entryPointName, this._pageName, "READING access token", this.StorylineDetails, null);
-      
-            
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Delete", this._entryPointName, this._pageName, "DELETING access token", this.StorylineDetails, response);
-           
-            
+            if (uniqueStorageKeyValue)
+                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response, "BaseDI_DataToken_" + uniqueStorageKeyValue);
+
             this._response.send(response);
 
             //#endregion  
@@ -294,7 +253,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#endregion
         }
 
-        //#endregion
+
 
         //#endregion
 

@@ -32,7 +32,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
     //A. Story in motion (DO SOMETHING) ACTING
     internal class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -44,7 +44,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
         internal ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
             _extraData = extraData;
 
             //region 2. Action
@@ -52,11 +52,11 @@ namespace BaseDI.BackEnd.Story.Programming_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
@@ -147,7 +147,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -204,7 +204,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -261,7 +261,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -318,7 +318,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -375,7 +375,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
