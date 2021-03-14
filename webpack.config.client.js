@@ -47,7 +47,7 @@ const plugins = [
 ];
 
 module.exports = {
-    entry: './BaseDI_1_0.tsx',
+    entry: './Startup_Client_1_0.tsx',
     devtool: "source-map",
     output: {
         path: path.resolve(__dirname, "wwwroot", "Client", "JS"),
