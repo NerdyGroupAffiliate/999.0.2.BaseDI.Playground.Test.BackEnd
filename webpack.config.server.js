@@ -42,7 +42,9 @@ const plugins = [
             NODE_ENV: JSON.stringify(process.env.NODE_ENV),
             PORT: JSON.stringify(process.env.PORT),
             APP_ENV: JSON.stringify("SERVER"),
-            BASEDI_ASSETS_PATH: "../000.BaseDI.Assets"           
+            APP_SETTING_ASSETS_PATH: "../000.BaseDI.Assets",
+            APP_SETTING_CONVERSION_MODE: JSON.stringify("LOCAL_FILE"), //OPTIONS = LOCAL_FILE, LOCAL_DATABASE, LOCAL_SERVICE, REMOTE_FILE, REMOTE_DATABASE, REMOTE_SERVICE, REMOTE_SERVICE_VENDOR 
+            APP_SETTING_DEVELOPER_MODE: JSON.stringify(true)            
         }
     })
     //new CopyWebpackPlugin([

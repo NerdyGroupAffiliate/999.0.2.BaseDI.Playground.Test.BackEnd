@@ -14,7 +14,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public Func<Object, Object> CallBack { get; set; }
 
-        public Object ClientOrServerInstance { get; set; }
+        public Dictionary<string, object> ClientOrServerInstance { get; set; }
 
         public ExtraData_12_2_1_0 ExtraData { get; set; }
 
@@ -52,7 +52,9 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
             #region 1. Assign
 
             //SET WHAT is needed to make this page of the story happen.
-            ProgrammingAdministrator = new JObject();
+            ClientOrServerInstance = new Dictionary<string, object>();
+
+            ProgrammingAdministrator = new JObject();            
 
             #endregion
 

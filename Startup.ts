@@ -89,7 +89,6 @@ export namespace BaseDI.BackEnd {
 
             let outputObservationsPrintOut: string = "";
 
-             //SETUP CLIENT/SERVER INFO
             if (requestActionName != "")
                 this._clientORserverInfo["actionName"] = requestActionName;
 
@@ -109,6 +108,8 @@ export namespace BaseDI.BackEnd {
                 //#endregion
 
                 const Action = (requestNameToProcess: string = "", requestNameToProcessParameters: string = "", extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = null) => {
+                    if (requestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
+                    
                     handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
                         .SetupStoryline(this._clientORserverInfo, this._storylineDetails, null, this._extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action();

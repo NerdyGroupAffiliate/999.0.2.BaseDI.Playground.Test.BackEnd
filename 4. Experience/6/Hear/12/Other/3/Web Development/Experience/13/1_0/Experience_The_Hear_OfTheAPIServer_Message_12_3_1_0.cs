@@ -248,7 +248,7 @@ namespace BaseDI.BackEnd.Experience.Hear.Web_Development_13
         {
             _actionName = _serverInfo.ContainsKey("actionName") ? (string)_serverInfo["actionName"] : null;
 
-            _request = _serverInfo.ContainsKey("Request") ? (HttpRequest)_serverInfo["Request"] : null;
+            _request = _serverInfo.ContainsKey("request") ? (HttpRequest)_serverInfo["request"] : null;
 
             if (_request != null)
             {

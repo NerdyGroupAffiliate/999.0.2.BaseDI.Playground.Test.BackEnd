@@ -2,7 +2,7 @@
 using BaseDI.BackEnd.Script.Programming.Extensions_1;
 using BaseDI.BackEnd.Script.Programming.Repository_1;
 using BaseDI.BackEnd.Script.Programming_1;
-
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -181,6 +181,8 @@ namespace BaseDI.BackEnd.State.Programming_2
             JObject storylineDetails = new JObject();
             List<JToken> storylineDetailsFiltered;
             JObject storylineDetails_Parameters = new JObject();
+
+            string developerMode = ((IConfiguration)ClientOrServerInstance["appSettings"]).GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             if (ExtraData.KeyValuePairs.GetValueOrDefault("RequestToProcess") != null)
             {
@@ -381,7 +383,15 @@ namespace BaseDI.BackEnd.State.Programming_2
                         break;
 
                     default:
-                        Console.WriteLine("Request Name Parameter Not found!");
+                        if (storylineDetails == null)
+                            storylineDetails = new JObject("{}");
+
+                        if (storylineDetails_Parameters == null)
+                            storylineDetails_Parameters = new JObject("{}");
+
+                        if(developerMode == "true")
+                            Console.WriteLine("[DISTURBANCE ISSUE] - Bug - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.cs - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank or null!");
+                        
                         break;
                 }
             }

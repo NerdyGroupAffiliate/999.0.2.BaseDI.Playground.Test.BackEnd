@@ -80,6 +80,8 @@ export namespace BaseDI.BackEnd.Story.Consulting_2 {
 
             //let repositoryType: string = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Core.Code.Script.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_The_DataRespository_1_0(storylineDetails, false, true);
 
+            //if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
@@ -99,13 +101,13 @@ export namespace BaseDI.BackEnd.Story.Consulting_2 {
 
             //#region ASSIGN LOGIC REPOSITORY
             //#switch (repositoryType.toUpperCase()) {
-            //#    case "LOCALFILE":
+            //#    case "LOCAL_FILE":
             //#        var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
             //#        director.Repository = localFile;
 
             //#        break;
-            //#    case "REMOTESERVICE":
+            //#    case "REMOTE_SERVICE":
             //#        var remoteService = new RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
             //#        director.Repository = remoteService;

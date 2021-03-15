@@ -5,6 +5,7 @@ using BaseDI.BackEnd.Script.Programming.Extensions_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming_1;
 using BaseDI.BackEnd.State.Social_Media_;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,8 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+
             #endregion
 
             #region ASSIGN REQUEST HANDLER
@@ -81,11 +84,11 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
         {
             #region CHECK FOR MISTAKES
 
-            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            
 
-            string repositoryType = ""; // repositoryMetaData.
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            if (repositoryType == null) repositoryType = "LOCALFILE";
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -110,13 +113,13 @@ namespace BaseDI.BackEnd.Story.Social_Media_3
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
 
                     experience.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
 
                     experience.Repository = remoteService;

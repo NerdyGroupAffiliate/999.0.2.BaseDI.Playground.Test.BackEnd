@@ -97,11 +97,10 @@ export namespace BaseDI.BackEnd.Story.Security_1 {
         //#region Page 1
         private Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails: object, storylineDetails_Parameters: object, extraData: any): object {
             //#region CHECK FOR MISTAKES
+            
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
-            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
-
-            if (repositoryType == undefined) repositoryType = "LOCALFILE";
+            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
             //#endregion
 
@@ -122,14 +121,14 @@ export namespace BaseDI.BackEnd.Story.Security_1 {
 
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.BackEnd.State.Security_1.LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.BackEnd.State.Security_1.RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;

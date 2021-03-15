@@ -8,7 +8,7 @@ using BaseDI.BackEnd.Script.Programming_1;
 
 using BaseDI.BackEnd.State.Risk_Management_3;
 using BaseDI.BackEnd.State.Risk_Management_4;
-
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -56,6 +56,8 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+
             #endregion
 
             #region ASSIGN REQUEST HANDLER
@@ -83,13 +85,11 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
         private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
-            #region CHECK FOR MISTAKES
+            #region CHECK FOR MISTAKES            
 
-            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            string repositoryType = ""; // repositoryMetaData.
-
-            if (repositoryType == null) repositoryType = "LOCALFILE";
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -114,13 +114,13 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -141,11 +141,11 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
         {
             #region CHECK FOR MISTAKES
 
-            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            
 
-            string repositoryType = ""; // repositoryMetaData.
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            if (repositoryType == null) repositoryType = "LOCALFILE";
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -170,13 +170,13 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;

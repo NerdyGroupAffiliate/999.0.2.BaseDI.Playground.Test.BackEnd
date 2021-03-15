@@ -123,11 +123,11 @@ var BaseDI;
                                     director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     switch (repositoryType.toUpperCase()) {
-                                        case "LOCALFILE":
+                                        case "LOCAL_FILE":
                                             localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
                                             director.Repository = localFile;
                                             break;
-                                        case "REMOTESERVICE":
+                                        case "REMOTE_SERVICE":
                                             remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
                                             director.Repository = remoteService;
                                             break;

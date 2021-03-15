@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +26,13 @@ namespace BaseDI.Playground.Test.BackEnd
 {
     public partial class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -37,7 +45,7 @@ namespace BaseDI.Playground.Test.BackEnd
         {
             #region COPY STATIC FILES
 
-            var copyFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0").Result;
+            var copyFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0", null, Configuration).Result;
 
             #endregion
 
@@ -81,7 +89,7 @@ namespace BaseDI.Playground.Test.BackEnd
                 }
 
                 return null; 
-            }).Result;
+            }, Configuration).Result;
 
             #endregion
 
@@ -96,15 +104,16 @@ namespace BaseDI.Playground.Test.BackEnd
 
     public partial class Startup
     {
-        public static async Task<IActionResult> Action(string requestToProcess = "", string requestToProcessParameters = "", string requestActionName = "", Func<JObject, IActionResult> requestCallBack = null)
+        public static async Task<IActionResult> Action(string requestToProcess = "", string requestToProcessParameters = "", string requestActionName = "", Func<JObject, IActionResult> requestCallBack = null, IConfiguration appSettings = null)
         {
             var process = new Startup_Controller();
 
+            process.AppSettings = appSettings;
             process.RequestCallBack = requestCallBack;
 
             IActionResult result = await process.Action(requestToProcess, requestToProcessParameters, requestActionName);
 
-            return result;
+            return new OkResult();
         }
     }
 
@@ -113,21 +122,11 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 1. Assign
 
         //A. Variable Declaration
-        private object _additionalClientInfo = null;
-
-        private string _baseDIArmTemplateSchema = "";
-        private string _baseDIArmTemplateSchemaEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.json";
-        private string _baseDIArmTemplateSchemaParameters = "";
-        private string _baseDIArmTemplateSchemaParametersEmbeddedResource = "BaseDI.BackEnd._8._Templates._2._Data_Movement.ARM_Templates._2.Generate_Brand_Trust._3.Social_Media.Template._1._1_0.State_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0-P.json";
+        public IConfiguration AppSettings { get; set; }
 
         private Dictionary<string, object> _clientORserverInfo;
 
         private ExtraData_12_2_1_0 _extraData;
-
-        private object _presentation;
-
-        private string _requestToProcess = "";
-        private string _requestToProcessParameters = "";
 
         public Func<SingleParmPoco_12_2_1_0, JObject> StartUpCallBack = null;
 
@@ -144,19 +143,20 @@ namespace BaseDI.Playground.Test.BackEnd
 
         #region 2. Ready
 
-        public Startup_Controller()
+        public Startup_Controller(IConfiguration configuration = null)
         {
             #region 1. Assign
 
             //SET WHAT is needed to create the storyline.
             _extraData = new ExtraData_12_2_1_0();
 
-            _presentation = null;
-
             _storylineDetails = new JObject();
             _storylineDetails_Parameters = new JObject();
 
             _clientORserverInfo = new Dictionary<string, object>();
+
+            if (configuration != null)
+                AppSettings = configuration;
 
             #endregion
 
@@ -184,10 +184,6 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 2. Action
 
-
-            _clientORserverInfo.Add("request", Request);
-            _clientORserverInfo.Add("serverInstance", this);
-
             _storylineDetails = null;
             _storylineDetails_Parameters = null;
 
@@ -208,6 +204,8 @@ namespace BaseDI.Playground.Test.BackEnd
         {
             #region 1. Assign
 
+            ContentResult result = null;
+
             Func<string?, string?, ExtraData_12_2_1_0?, JObject> Action = null;
 
             JObject handleObservation = null;
@@ -216,11 +214,14 @@ namespace BaseDI.Playground.Test.BackEnd
 
             StringBuilder outputObservationsPrintOut = new StringBuilder();
 
-            //SETUP CLIENT/SERVER INFO
+            if(AppSettings != null)
+                _clientORserverInfo.Add("appSettings", AppSettings);
+
+            _clientORserverInfo.Add("request", Request);
+            _clientORserverInfo.Add("serverInstance", this);
+
             if (requestActionName != "")
                 _clientORserverInfo.Add("actionName", requestActionName);
-
-            ContentResult result = null;
 
             #endregion
 
@@ -242,6 +243,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
                 Action = (string requestNameToProcess, string requestNameToProcessParameters, ExtraData_12_2_1_0 extraData) =>
                 {
+                    if (requestNameToProcess == "") throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank or null!");
+
                     return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                         .SetupStoryline(_clientORserverInfo, _storylineDetails, null, extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action().Result;
@@ -298,7 +301,14 @@ namespace BaseDI.Playground.Test.BackEnd
                 }
             }
 
-            return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
+            if (result != null)
+            {
+                return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
+            }
+            else
+            {
+                return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
+            }
 
             #endregion
         }

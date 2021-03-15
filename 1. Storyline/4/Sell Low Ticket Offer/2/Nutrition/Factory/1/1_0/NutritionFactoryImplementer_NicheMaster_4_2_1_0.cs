@@ -3,6 +3,7 @@ using BaseDI.BackEnd.Script.Programming.Abstract_1;
 using BaseDI.BackEnd.Script.Programming.Extensions_1;
 using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming_1;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,8 @@ namespace BaseDI.BackEnd.Story.Nutrition_1
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+
             #endregion
 
             #region ASSIGN REQUEST HANDLER
@@ -82,11 +85,11 @@ namespace BaseDI.BackEnd.Story.Nutrition_1
         {
             #region CHECK FOR MISTAKES
 
-            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            
 
-            string repositoryType = ""; // repositoryMetaData.
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            if (repositoryType == null) repositoryType = "LOCALFILE";
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -111,13 +114,13 @@ namespace BaseDI.BackEnd.Story.Nutrition_1
 
             //switch (repositoryType.ToUpper())
             //{
-            //    case "LOCALFILE":
+            //    case "LOCAL_FILE":
             //        var localFile = new LocalFile_Direct_Programming_Chapter_12_2_Page_1_ReadApiRoute_1_0(storylineDetails);
 
             //        director.Repository = localFile;
 
             //        break;
-            //    case "REMOTESERVICE":
+            //    case "REMOTE_SERVICE":
             //        var remoteService = new RemoteService_Direct_Programming_Chapter_12_2_Page_1_ReadApiRoute_1_0(storylineDetails);
 
             //        director.Repository = remoteService;

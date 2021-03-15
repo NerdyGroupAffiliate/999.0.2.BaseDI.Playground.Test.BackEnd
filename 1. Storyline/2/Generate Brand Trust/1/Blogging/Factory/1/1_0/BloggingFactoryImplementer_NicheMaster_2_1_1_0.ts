@@ -81,8 +81,9 @@ export namespace BaseDI.BackEnd.Story.Blogging_1 {
         private Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(storylineDetails: object, storylineDetails_Parameters: object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            //const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
-            //let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+            //let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+
+            //if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
             //#endregion
 
@@ -103,13 +104,13 @@ export namespace BaseDI.BackEnd.Story.Blogging_1 {
 
             //#region ASSIGN LOGIC REPOSITORY
             //#switch (repositoryType.toUpperCase()) {
-            //#    case "LOCALFILE":
+            //#    case "LOCAL_FILE":
             //#        var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
             //#        director.Repository = localFile;
 
             //#        break;
-            //#    case "REMOTESERVICE":
+            //#    case "REMOTE_SERVICE":
             //#        var remoteService = new RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
             //#        director.Repository = remoteService;

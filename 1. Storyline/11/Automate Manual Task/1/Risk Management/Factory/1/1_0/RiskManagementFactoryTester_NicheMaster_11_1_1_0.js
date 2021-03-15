@@ -120,11 +120,11 @@ var BaseDI;
                                     director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     switch (repositoryType.toUpperCase()) {
-                                        case "LOCALFILE":
+                                        case "LOCAL_FILE":
                                             localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
                                             director.Repository = localFile;
                                             break;
-                                        case "REMOTESERVICE":
+                                        case "REMOTE_SERVICE":
                                             remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(storylineDetails);
                                             director.Repository = remoteService;
                                             break;
@@ -145,11 +145,11 @@ var BaseDI;
                                     director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     switch (repositoryType.toUpperCase()) {
-                                        case "LOCALFILE":
+                                        case "LOCAL_FILE":
                                             localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails);
                                             director.Repository = localFile;
                                             break;
-                                        case "REMOTESERVICE":
+                                        case "REMOTE_SERVICE":
                                             remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(storylineDetails);
                                             director.Repository = remoteService;
                                             break;

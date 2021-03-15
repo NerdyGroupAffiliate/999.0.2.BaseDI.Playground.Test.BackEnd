@@ -7,7 +7,7 @@ using BaseDI.BackEnd.Script.Programming.Poco_1;
 using BaseDI.BackEnd.Script.Programming_1;
 
 using BaseDI.BackEnd.State.Security_1;
-
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -61,6 +61,8 @@ namespace BaseDI.BackEnd.Story.Security_1
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+
             #endregion
 
             #region PICK LOGIC ENTRYPOINT
@@ -90,10 +92,10 @@ namespace BaseDI.BackEnd.Story.Security_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -118,14 +120,14 @@ namespace BaseDI.BackEnd.Story.Security_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;

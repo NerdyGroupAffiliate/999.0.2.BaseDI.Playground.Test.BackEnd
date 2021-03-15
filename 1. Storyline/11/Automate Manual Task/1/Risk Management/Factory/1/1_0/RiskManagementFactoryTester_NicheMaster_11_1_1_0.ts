@@ -89,7 +89,9 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
         private Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_The_DataRespository_1_0(storylineDetails, false, true);
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+
+            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
             //#endregion
 
@@ -110,13 +112,13 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
 
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_3.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_3.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -133,8 +135,7 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
         private Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
-            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
 
             //#endregion
 
@@ -156,13 +157,13 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
 
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_4.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_4.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;

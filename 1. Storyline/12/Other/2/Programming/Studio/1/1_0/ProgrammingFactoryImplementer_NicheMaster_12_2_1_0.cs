@@ -18,6 +18,7 @@ using BaseDI.BackEnd.State.Programming_3;
 using BaseDI.BackEnd.State.Programming_4;
 using BaseDI.BackEnd.State.Programming_5;
 using BaseDI.BackEnd.State.Programming_6;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
             #region ASSIGN MASTER LEADER
 
             _clientORserverInstance = clientORserverInstance;
+
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
@@ -70,6 +72,8 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
+
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
 
             #endregion
 
@@ -136,8 +140,7 @@ namespace BaseDI.BackEnd.Story.Programming_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
             if (string.IsNullOrEmpty(repositoryType)) repositoryType = "LOCALFILE";
 
@@ -164,14 +167,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -192,11 +195,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
         private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
             #region CHECK FOR MISTAKES
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
-
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion       
 
@@ -221,14 +223,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -250,10 +252,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion       
 
@@ -278,14 +280,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -307,10 +309,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion       
 
@@ -335,14 +337,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -364,10 +366,10 @@ namespace BaseDI.BackEnd.Story.Programming_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion       
 
@@ -392,14 +394,14 @@ namespace BaseDI.BackEnd.Story.Programming_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
                     director.Repository = remoteService;

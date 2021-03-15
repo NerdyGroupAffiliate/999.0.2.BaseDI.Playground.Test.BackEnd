@@ -1,4 +1,5 @@
 ﻿using BaseDI.BackEnd.Script.Programming_1;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptNicheMaster_12_2_1_0<StoryRequest>
     {
+        public IConfiguration AppSettings { get; set; }
+
         public string APILocationLocalDotNetCore { get; set; }
 
         public string APILocationLocalNodeJS { get; set; }

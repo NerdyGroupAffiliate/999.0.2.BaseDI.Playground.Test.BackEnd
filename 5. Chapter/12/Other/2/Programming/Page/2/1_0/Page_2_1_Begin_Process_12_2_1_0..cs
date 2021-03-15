@@ -58,6 +58,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_2
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
+            Repository.ClientOrServerInstance = ClientOrServerInstance;
             Repository.ExtraData = ExtraData;
             Repository.MasterStorer = MasterStorer;
 

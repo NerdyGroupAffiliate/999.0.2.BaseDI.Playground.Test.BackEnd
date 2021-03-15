@@ -6,6 +6,7 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
     export abstract class aClass_Programming_ScriptNicheMaster_12_2_1_0<StoryRequest>
     {
         //#region 1. Assign
+        public AppSettings: string = "";
         public APILocationLocalNodeJS: string = "";
         public APILocationLocalDotNetCore: string = "";
 

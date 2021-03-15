@@ -36,6 +36,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Programming_2
         //#region 4. Action
         public async Action(): Promise<object>
         {
+            this.Repository.ClientOrServerInstance = this.ClientOrServerInstance;
             this.Repository.ExtraData = this.ExtraData;
             this.Repository.MasterStorer = this.MasterStorer;
 

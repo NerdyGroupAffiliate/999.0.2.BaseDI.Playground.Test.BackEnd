@@ -277,7 +277,15 @@ export namespace BaseDI.BackEnd.State.Programming_2 {
                         break;
 
                     default:
-                        console.log("Request Name Parameter Not found!")
+                        if (storylineDetails == null || storylineDetails == undefined) 
+                            storylineDetails = {};
+
+                        if (storylineDetails_Parameters == null || storylineDetails_Parameters == undefined)
+                            storylineDetails_Parameters = {};
+
+                        if (process.env.APP_SETTING_DEVELOPER_MODE == "true")
+                            console.log("[DISTURBANCE ISSUE] - Bug - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!")
+
                         break
                 }
             }
