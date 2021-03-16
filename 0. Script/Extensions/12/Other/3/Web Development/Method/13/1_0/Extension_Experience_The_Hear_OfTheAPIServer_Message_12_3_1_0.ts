@@ -126,30 +126,32 @@ export namespace BaseDI.Web_Development.Extensions_13 {
         }
         //#region REST ACTION VERBS
 
-        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server: any, url: string, options: Object, callback: Function): any {
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server: any, url: string, options: any, callback: Function): any {
 
         }
 
-        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server: any, url: string, options: Object, callback: Function): any {
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server: any, url: string, options: any, callback: Function): any {
             //#region DESCRIBE THE MEMORIES
 
-            let curlClient: any;
+            let storedCurlClient: any;
+            let storedQueryString: string;
 
             //#endregion
 
             //#region RECALL THE MEMORIES
 
-            curlClient = curl.connect();
+            storedCurlClient = curl.connect();
 
             //#endregion
 
             //#region EXECUTE THE VISION
 
-            curlClient.get("https://www.google.com/logos/2020/halloween20/rc1/messages.en.nocache.json", null, function (error, response) {
-                console.log(response);
-            });
+            //console.log(url);
+            //console.log(options);
 
-            //get.get("http://www.microsoft.com", options, function (err, response, body) { });
+            storedCurlClient.get(url, options, function (error, response) {
+                callback(response);
+            });
 
             //#endregion
 
@@ -158,30 +160,30 @@ export namespace BaseDI.Web_Development.Extensions_13 {
             //#endregion
         }
 
-        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(server: any, url: string, options: Object, callback: Function): any {
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(server: any, url: string, options: any, callback: Function): any {
 
         }
 
-        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server: any, url: string, options: Object, callback: Function): any {
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server: any, url: string, options: any, callback: Function): any {
             //#region DESCRIBE THE MEMORIES
 
-            let curlClient: any;
+            let storedCurlClient: any;
 
 
             //#endregion
 
             //#region RECALL THE MEMORIES
 
-            curlClient = curl.connect();
+            storedCurlClient = curl.connect();
 
             //#endregion
 
             //#region EXECUTE THE VISION
 
-            console.log(url);
-            console.log(options);
+            //console.log(url);
+            //console.log(options);
 
-            curlClient.post(url, options, function (error, response) {
+            storedCurlClient.post(url, options, function (error, response) {
                 callback(response);
             });
 

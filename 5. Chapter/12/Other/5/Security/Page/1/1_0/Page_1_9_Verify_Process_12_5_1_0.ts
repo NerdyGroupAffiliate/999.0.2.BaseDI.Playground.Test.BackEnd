@@ -30,6 +30,8 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
         private _server: any = null;
 
+        private _storedAPIRequestType: string = "";
+
         //#endregion
 
         //#region 2. Ready
@@ -140,6 +142,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
             //#region DESCRIBE THE MEMORIES
             let storedAPIPlatform: string = "";
+            let storedAPIRequestType: string = "";
             let storedAPIVerb: string = "POST";
 
             let storedCurlOptions: Object = new Object();
@@ -149,6 +152,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
             let storedProfileDetailsAPIEndPointsAndRoutes: any = null;
             let storedProfileDetailsSecurityAPISecurityDetails: any = null;
 
+            let storedExtraInformation: string = "";
             let storedTokenEndpoint: string = "";
             let storedQueryStingKeyValues: any = null;
 
@@ -167,7 +171,14 @@ export namespace BaseDI.Chapter.Page.Security_1 {
                     if (storedQueryString.toUpperCase() == "API") {
                         storedAPIPlatform = this._request?.query[storedQueryString]
                     }
-                })
+
+                    if (storedQueryString.toUpperCase() == "REQUESTTYPE") {
+                        storedAPIRequestType = this._request?.query[storedQueryString]
+                    }
+
+                    if (this._storedAPIRequestType == "")
+                        this._storedAPIRequestType = "ApplicationTokenRequest";
+                });
                 //#endregion
 
                 if (this._requestRoute != undefined && this._requestRoute != null) {
@@ -175,8 +186,18 @@ export namespace BaseDI.Chapter.Page.Security_1 {
                         //#region SET api platform general values
                         storedProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._apiMetaData, "searchkey", "SetupDetails_APIS_API_1_0_" + storedAPIPlatform + "_2_2_2_1_serverInformationSetupDetails", false);
                         storedProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storedProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
-                        storedProfileDetailsAPIEndPointsAndRoutes = storedProfileDetails.value.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
-                        storedProfileDetailsSecurityAPISecurityDetails = storedProfileDetails.value.SetupItemAPIProfile.SetupItemAPISecurityDetails;
+
+                        storedProfileDetails.value.map(apiProfile => {
+                            if (apiProfile.SetupItemAPIRequestType.toUpperCase() == storedAPIRequestType.toUpperCase()) {
+                                storedProfileDetailsAPIEndPointsAndRoutes = apiProfile.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
+                                storedProfileDetailsSecurityAPISecurityDetails = apiProfile.SetupItemAPIProfile.SetupItemAPISecurityDetails;
+
+                                storedAPIVerb = storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIVerb;
+
+                                return;
+                            }
+                        })
+
                         //#endregion
 
                         //#region SET api platform specific values
@@ -217,7 +238,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
             Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, storedTokenEndpoint, storedAPIVerb, storedCurlOptions,
                 function callback(response) {
-                    self.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response, storedAPIPlatform);
+                    self.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response, storedAPIPlatform + "_" + self._storedAPIRequestType);
                 });
 
             //#endregion
