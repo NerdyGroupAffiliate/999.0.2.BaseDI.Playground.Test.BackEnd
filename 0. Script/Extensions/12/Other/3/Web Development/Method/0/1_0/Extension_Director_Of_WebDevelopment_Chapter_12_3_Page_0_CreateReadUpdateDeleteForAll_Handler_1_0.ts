@@ -2,7 +2,7 @@
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0"
 
-export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
+export namespace BaseDI.Web_Development.Extensions_0 {
     export class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 {
         constructor() {
 
@@ -10,7 +10,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
         //#region GENERATE HTML STRUCTURE
 
-        public static async Step_X_X_Custom_Store_HTMLStructureToString_1_0(metaData: string, title: string, scripts: string, styles: string, body: string, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null, storyLineDetails: any = null): Promise<string> {
+        public static async Step_X_X_Custom_Store_HTMLStructureToString_1_0(metaData: string, title: string, scripts: string, styles: string, body: string, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null, storyLineDetails: any = null): Promise<string> {
             let htmlHomePageTemplate = `<!DOCTYPE html>
                 <html lang="en">
                     <head>
@@ -27,7 +27,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             if (scripts == "") {
                 scripts = "<script src=\"/scripts/js/BaseDI_1_0.js\" type=\"text/javascript\"></script>";
 
-                scripts = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
+                scripts = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
             }
 
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{metaDataReplace}", metaData);

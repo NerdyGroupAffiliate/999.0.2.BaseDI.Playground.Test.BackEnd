@@ -1,11 +1,11 @@
-﻿using BaseDI.BackEnd.Script.Programming.Poco_1;
+﻿using BaseDI.Script.Programming.Poco_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Script.Programming_1
+namespace BaseDI.Script.Programming_1
 {
     public interface IContract_Programming_Storyline_12_2_1_0<T>
     {

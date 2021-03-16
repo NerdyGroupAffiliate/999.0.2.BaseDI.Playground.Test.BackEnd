@@ -1,23 +1,23 @@
-﻿using BaseDI.BackEnd.Director.Advertising_1;
-using BaseDI.BackEnd.Director.Programming_1;
-using BaseDI.BackEnd.Director.Programming_2;
-using BaseDI.BackEnd.Director.Programming_3;
-using BaseDI.BackEnd.Director.Programming_4;
-using BaseDI.BackEnd.Director.Programming_5;
-using BaseDI.BackEnd.Director.Risk_Management_3;
-using BaseDI.BackEnd.Director.Risk_Management_4;
+﻿using BaseDI.Director.Advertising_1;
+using BaseDI.Director.Programming_1;
+using BaseDI.Director.Programming_2;
+using BaseDI.Director.Programming_3;
+using BaseDI.Director.Programming_4;
+using BaseDI.Director.Programming_5;
+using BaseDI.Director.Risk_Management_3;
+using BaseDI.Director.Risk_Management_4;
 
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.State.Advertising_1;
-using BaseDI.BackEnd.State.Programming_1;
-using BaseDI.BackEnd.State.Programming_2;
-using BaseDI.BackEnd.State.Programming_3;
-using BaseDI.BackEnd.State.Programming_4;
-using BaseDI.BackEnd.State.Programming_5;
-using BaseDI.BackEnd.State.Programming_6;
+using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Extensions_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming_1;
+using BaseDI.State.Advertising_1;
+using BaseDI.State.Programming_1;
+using BaseDI.State.Programming_2;
+using BaseDI.State.Programming_3;
+using BaseDI.State.Programming_4;
+using BaseDI.State.Programming_5;
+using BaseDI.State.Programming_6;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
@@ -26,7 +26,7 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Story.Programming_1
+namespace BaseDI.Story.Programming_1
 {
     #region 6. Action Implementation
 

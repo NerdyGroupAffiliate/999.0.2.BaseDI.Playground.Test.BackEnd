@@ -1,6 +1,6 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Risk_Management_5
+namespace BaseDI.Chapter.Page.Risk_Management_5
 {
     public class Page_5_1_Begin_Process_11_1_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Html;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
+namespace BaseDI.Script.Web_Development.Extensions_0
 {
     public class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0
     {

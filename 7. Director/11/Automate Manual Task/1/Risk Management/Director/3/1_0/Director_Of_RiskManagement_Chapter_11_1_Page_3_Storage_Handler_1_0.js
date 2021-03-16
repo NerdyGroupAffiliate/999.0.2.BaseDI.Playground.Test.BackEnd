@@ -96,7 +96,7 @@ var BaseDI;
                             });
                         };
                         return Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
-                    }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
+                    }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
                     Risk_Management_2.Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
                     //region 5. Action Script
                     var Use_DesignPattern_Builder_Chapter_11_1_Page_2 = /** @class */ (function () {
@@ -263,7 +263,7 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Risk_Management_2.Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0 = Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0;
                 })(Risk_Management_2 = Director.Risk_Management_2 || (Director.Risk_Management_2 = {}));
             })(Director = UnitTest.Director || (UnitTest.Director = {}));

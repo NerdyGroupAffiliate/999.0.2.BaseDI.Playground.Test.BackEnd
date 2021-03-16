@@ -9,7 +9,7 @@ if (process.env.APP_ENV == "SERVER") {
     var fs = require("fs");
 }
 
-export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
+export namespace BaseDI.Advertising.Extensions_2 {
     export class Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 {
         constructor() { }
 

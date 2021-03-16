@@ -117,18 +117,18 @@ var BaseDI;
                                 var repositoryType, director, localFile, remoteService;
                                 return __generator(this, function (_a) {
                                     repositoryType = storylineDetails.Extension_Try_Read_RepositoryType(false, true);
-                                    director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
+                                    director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
                                     director.StorylineDetails = storylineDetails;
                                     director.StorylineDetails_Parameters = storylineDetails_Parameters;
                                     director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     switch (repositoryType.toUpperCase()) {
                                         case "LOCAL_FILE":
-                                            localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                                            localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
                                             director.Repository = localFile;
                                             break;
                                         case "REMOTE_SERVICE":
-                                            remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                                            remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.State.Advertising_.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
                                             director.Repository = remoteService;
                                             break;
                                     }
@@ -153,7 +153,7 @@ var BaseDI;
                             });
                         };
                         return AdvertisingFactoryImplementer_NicheMaster_1_1_1_0;
-                    }(aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0));
+                    }(aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0));
                     Advertising_.AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 = AdvertisingFactoryImplementer_NicheMaster_1_1_1_0;
                 })(Advertising_ = Story.Advertising_ || (Story.Advertising_ = {}));
             })(Story = UnitTest.Story || (UnitTest.Story = {}));

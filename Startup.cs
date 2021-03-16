@@ -1,6 +1,6 @@
-using BaseDI.BackEnd.Director.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Story.Programming_1;
+using BaseDI.Director.Programming_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Story.Programming_1;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,13 +45,13 @@ namespace BaseDI.Playground.Test.BackEnd
         {
             #region COPY STATIC FILES
 
-            var copyFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0", null, Configuration).Result;
+            var copyFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, null, Configuration).Result;
 
             #endregion
 
             #region MAP STATIC FILES
 
-            var mapStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_MapStaticFiles_1_0", (JObject mapStaticFiles) => 
+            var mapStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, (JObject mapStaticFiles) => 
             {
                 if (mapStaticFiles != null)
                 {
@@ -200,7 +200,7 @@ namespace BaseDI.Playground.Test.BackEnd
         #region 4. Action
 
         [HttpGet("")]
-        public async Task<IActionResult> Action(string requestNameToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestNameToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessRequest_1_0")
+        public async Task<IActionResult> Action(string requestNameToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestNameToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessHttpRequest_1_0")
         {
             #region 1. Assign
 
@@ -229,9 +229,9 @@ namespace BaseDI.Playground.Test.BackEnd
 
             try
             {
-                #region TRY OUR LOGIC
+                #region TRY our logic
 
-                #region PROCESS LOGIC UPDATES
+                #region PROCESS application updates
 
                 StartUpCallBack = (SingleParmPoco_12_2_1_0 response) =>
                 {
@@ -243,13 +243,19 @@ namespace BaseDI.Playground.Test.BackEnd
 
                 Action = (string requestNameToProcess, string requestNameToProcessParameters, ExtraData_12_2_1_0 extraData) =>
                 {
+                    #region VALIDATE required values
                     if (requestNameToProcess == "") throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank or null!");
+                    if(AppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI C# version will not work without an appSettings object. Please make sure that appSettings have a REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value.");
+                    #endregion
 
+                    #region MAKE system request
                     return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                         .SetupStoryline(_clientORserverInfo, _storylineDetails, null, extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action().Result;
+                    #endregion
                 };
 
+                #region GET system response
                 handleObservation = Action(requestNameToProcess, requestNameToProcessParameters, _extraData);
 
                 if (handleObservation != null)
@@ -257,10 +263,12 @@ namespace BaseDI.Playground.Test.BackEnd
                     outputs = handleObservation["outputs"];
                 }
                 #endregion
+
+                #endregion
             }
             catch (Exception ex)
             {
-                #region PRINT OUT MISTAKES
+                #region PRINT out mistakes
 
                 handleObservation = _storylineDetails;
                 if (handleObservation != null)

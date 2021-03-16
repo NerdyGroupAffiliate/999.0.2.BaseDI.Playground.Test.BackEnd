@@ -35,17 +35,17 @@ import * as Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenF
 import * as Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/11/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0";
 import * as Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/12/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
 
-export namespace BaseDI.BackEnd.Story.Web_Development_1 {
-    export class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+export namespace BaseDI.Story.Web_Development_1 {
+    export class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
-        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         private _clientORserverInstance: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         private _requestName: String = "";
         //#endregion
@@ -74,7 +74,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
@@ -187,7 +187,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = null; //new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(extraData);
+            let director = null; //new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -204,14 +204,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null;//new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoveService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null;//new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoveService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -233,7 +233,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_1.Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_1.Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -250,14 +250,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_1.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_1.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_1.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_1.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -283,7 +283,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_2.Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_2.Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -300,14 +300,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -333,7 +333,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -350,14 +350,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -383,7 +383,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_4.Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_4.Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -400,14 +400,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -433,7 +433,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_5.Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_5.Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -450,14 +450,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -483,7 +483,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_6.Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_6.Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -500,14 +500,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -533,7 +533,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_7.Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_7.Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -550,14 +550,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -583,7 +583,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_8.Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_8.Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -600,14 +600,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -633,7 +633,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_9.Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_9.Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -650,14 +650,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -683,7 +683,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_10.Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_10.Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -700,14 +700,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -733,7 +733,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_11.Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_11.Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -750,14 +750,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -783,7 +783,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0.BaseDI.BackEnd.Director.Web_Development_12.Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(extraData);
+            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0.BaseDI.Director.Web_Development_12.Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -800,14 +800,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
+                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
+                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;
@@ -833,7 +833,7 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Experience.Hear.Web_Development_13.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(extraData);
+            let experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Experience.Hear.Web_Development_13.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(extraData);
 
             experience.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -850,14 +850,14 @@ export namespace BaseDI.BackEnd.Story.Web_Development_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.State.Web_Development_13.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
+                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.State.Web_Development_13.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
 
                     experience.Repository = localFile;
                     experience.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.State.Web_Development_13.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
+                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.State.Web_Development_13.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
 
                     experience.Repository = remoteService;
                     experience.Repository.RequestName = this._requestName;

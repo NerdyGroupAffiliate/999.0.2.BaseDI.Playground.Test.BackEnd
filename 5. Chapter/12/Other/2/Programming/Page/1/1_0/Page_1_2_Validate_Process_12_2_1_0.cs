@@ -1,6 +1,6 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Programming_1
+namespace BaseDI.Chapter.Page.Programming_1
 {
     public class Page_1_2_Validate_Process_12_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

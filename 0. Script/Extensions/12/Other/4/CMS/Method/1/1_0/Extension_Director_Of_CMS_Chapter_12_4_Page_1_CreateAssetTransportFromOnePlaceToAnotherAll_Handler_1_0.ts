@@ -7,7 +7,7 @@ if (process.env.APP_ENV == "SERVER") {
 
 }
 
-export namespace BaseDI.BackEnd.CMS.Extensions_1 {
+export namespace BaseDI.CMS.Extensions_1 {
     export class Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0
     {
         constructor() {

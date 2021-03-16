@@ -37,17 +37,17 @@ import * as Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from
 import * as Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/4/1_0/Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0";
 import * as Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/5/1_0/Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0";
 
-export namespace BaseDI.BackEnd.Story.Programming_1 {
-    export class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+export namespace BaseDI.Story.Programming_1 {
+    export class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
-        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         private _clientORserverInstance: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         private _requestName: String = "";
         private _requestToProcess: String = "";
@@ -78,7 +78,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
@@ -153,7 +153,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(extraData);
+            let director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -171,7 +171,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     localFile.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -180,7 +180,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.State.Programming_1.RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.State.Programming_1.RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     remoteService.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -209,7 +209,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.BackEnd.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(extraData);
+            let director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -227,7 +227,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.BackEnd.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
                     localFile.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -236,7 +236,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.BackEnd.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
                     remoteService.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -264,7 +264,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Director.Programming_3.Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(extraData);
+            let director = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Director.Programming_3.Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -282,7 +282,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.State.Programming_3.LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.State.Programming_3.LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
 
                     localFile.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -291,7 +291,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.State.Programming_3.RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.State.Programming_3.RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
 
                     remoteService.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -319,7 +319,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.BackEnd.Director.Programming_4.Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (extraData);
+            let director = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.Director.Programming_4.Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -337,7 +337,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.BackEnd.State.Programming_4.LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.State.Programming_4.LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (storylineDetails);
 
                     localFile.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -346,7 +346,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.BackEnd.State.Programming_4.RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.State.Programming_4.RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
 
                     remoteService.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -375,7 +375,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.BackEnd.Director.Programming_5.Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(extraData);
+            let director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.Director.Programming_5.Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -393,7 +393,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.BackEnd.State.Programming_5.LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.State.Programming_5.LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
                     localFile.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -402,7 +402,7 @@ export namespace BaseDI.BackEnd.Story.Programming_1 {
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.BackEnd.State.Programming_5.RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.State.Programming_5.RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
                     remoteService.ClientOrServerInstance = this._clientORserverInstance;
 

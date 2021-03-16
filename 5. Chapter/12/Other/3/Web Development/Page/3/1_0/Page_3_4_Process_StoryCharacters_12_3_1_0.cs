@@ -1,9 +1,9 @@
 ﻿
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Web_Development_3
+namespace BaseDI.Chapter.Page.Web_Development_3
 {
     public class Page_3_4_Process_StoryCharacters_12_3_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

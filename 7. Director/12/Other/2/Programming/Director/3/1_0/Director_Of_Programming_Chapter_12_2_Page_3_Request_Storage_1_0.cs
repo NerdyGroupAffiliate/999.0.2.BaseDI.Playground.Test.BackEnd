@@ -1,8 +1,8 @@
-﻿using BaseDI.BackEnd.Character_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
+﻿using BaseDI.Character_1;
+using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Poco_1;
 
-using ChapterPage = BaseDI.BackEnd.Chapter.Page.Programming_3;
+using ChapterPage = BaseDI.Chapter.Page.Programming_3;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Director.Programming_3
+namespace BaseDI.Director.Programming_3
 {
     public class Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

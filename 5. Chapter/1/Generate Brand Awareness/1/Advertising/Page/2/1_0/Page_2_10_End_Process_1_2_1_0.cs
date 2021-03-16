@@ -1,14 +1,14 @@
 ﻿
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Script.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Advertising_2
+namespace BaseDI.Chapter.Page.Advertising_2
 {
     public class Page_2_10_End_Process_1_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

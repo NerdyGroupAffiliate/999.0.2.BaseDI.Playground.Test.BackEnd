@@ -1,14 +1,14 @@
 ﻿
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Script.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.State.Advertising_3
+namespace BaseDI.State.Advertising_3
 {
     public class RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
     {

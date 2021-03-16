@@ -1,14 +1,14 @@
-﻿using BaseDI.BackEnd.Director.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.Director.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Programming_6
+namespace BaseDI.Chapter.Page.Programming_6
 {
     public class Page_6_10_End_Process_12_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

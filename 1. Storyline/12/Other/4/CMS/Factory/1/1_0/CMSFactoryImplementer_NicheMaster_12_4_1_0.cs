@@ -1,11 +1,11 @@
-﻿using BaseDI.BackEnd.Director.CMS_1;
+﻿using BaseDI.Director.CMS_1;
 
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Extensions_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming_1;
 
-using BaseDI.BackEnd.State.Security_1;
+using BaseDI.State.Security_1;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Story.CMS_1
+namespace BaseDI.Story.CMS_1
 {
     #region 6. Action Implementation
 

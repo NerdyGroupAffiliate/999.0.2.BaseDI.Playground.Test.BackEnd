@@ -1,4 +1,6 @@
-﻿import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "./1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+﻿import * as Action_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/Action Poco/1/1_0/Action_12_2_1_0";
+
+import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "./1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "./7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
@@ -6,12 +8,12 @@ import * as ExtraData_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programmi
 
 import * as SingleParmPoco_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
-export namespace BaseDI.BackEnd {
+export namespace BaseDI {
     export class Startup {
         //#region 1. Assign
         private _clientORserverInfo: Object = new Object();
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         private _entryPoint: any;
 
@@ -22,6 +24,8 @@ export namespace BaseDI.BackEnd {
         private _baseDIArmTemplateSchemaParameters: string = "";
         private _baseDIArmTemplateSchemaParametersEmbeddedResource: string = "";
 
+        public _extraData2: Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0;
+
         public Update_Client;
         //#endregion
 
@@ -29,7 +33,7 @@ export namespace BaseDI.BackEnd {
         constructor(entryPoint: any)
         {
             //#region 1. Assign
-            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0();
+            this._extraData = new ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
             this._entryPoint = entryPoint;
 
@@ -40,6 +44,7 @@ export namespace BaseDI.BackEnd {
             //#region 2. Action
             this.Setup = this.Setup.bind(this);
             this.Setup();
+
             //#endregion
 
             //#region 3. Observe
@@ -49,7 +54,7 @@ export namespace BaseDI.BackEnd {
 
         //#region 3. Set
         public Setup() {
-            //#region 1. Assign
+            //#region 1. Assign            
 
             //SETUP CLIENT/SERVER INFO
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
@@ -89,6 +94,9 @@ export namespace BaseDI.BackEnd {
 
             let outputObservationsPrintOut: string = "";
 
+            if (targetedResponseTagID != "")
+                this._clientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
+
             if (requestActionName != "")
                 this._clientORserverInfo["actionName"] = requestActionName;
 
@@ -98,29 +106,37 @@ export namespace BaseDI.BackEnd {
 
             try
             {
-                //#region TRY OUR LOGIC
+                //#region TRY our logic
 
-                //#region PROCESS LOGIC UPDATES
+                //#region PROCESS application updates
 
-                this._clientORserverInfo["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.BackEnd.Programming_1.SingleParmPoco_12_2_1_0): any => {
+                this._clientORserverInfo["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
                     return this._storylineDetails;
                 }
                 //#endregion
 
-                const Action = (requestNameToProcess: string = "", requestNameToProcessParameters: string = "", extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0 = null) => {
+                const Action = (requestNameToProcess: string = "", requestNameToProcessParameters: string = "", extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
+                {
+                    //#region VALIDATE required values
                     if (requestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
-                    
-                    handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
+                    //#endregion
+
+                    //#region MAKE system request
+                    handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
                         .SetupStoryline(this._clientORserverInfo, this._storylineDetails, null, this._extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action();
+                    //#endregion
                 }
 
+                //#region GET system response
                 Action(requestNameToProcess, requestNameToProcessParameters, this._extraData);
+                //#endregion
 
                 //#endregion
             }
-            catch (storyMistake) {
-                //#region PRINT OUT MISTAKES
+            catch (storyMistake)
+            {
+                //#region PRINT out mistakes
                 // console.log(storyMistake);
                 //#endregion
             }
@@ -155,14 +171,17 @@ export namespace BaseDI.BackEnd {
         //#endregion
     }
 }
+//#region CLIENT
+export { Action_12_2_1_0 as ActionList }
+//#endregion
 
 //#region SERVER
 if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
-    let server = new BaseDI.BackEnd.Startup(this);
+    let server = new BaseDI.Startup(this);
 
     const Step_1_0_CopyLocalFilesAndStartServer = async () => {
-        server.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_CopyStaticFiles_1_0", function callBack(response: any) {
-            server.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_ProcessRequest_1_0")
+        server.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, function callBack(response: any) {
+            server.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0)
         });
     }
 
@@ -170,5 +189,7 @@ if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.e
 }
 //#endregion
 
-//export {  }
+
+
+
 

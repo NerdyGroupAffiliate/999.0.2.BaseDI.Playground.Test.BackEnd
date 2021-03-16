@@ -49,8 +49,8 @@ import * as state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationFor
 import * as state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/13/1_0/State_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.json";
 import * as state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/13/1_0/State_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0.json";
 
-export namespace BaseDI.BackEnd.State.Programming_2 {
-    export class LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>
+export namespace BaseDI.State.Programming_2 {
+    export class LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>
     {
         //#region 1. Assign
 
@@ -290,7 +290,7 @@ export namespace BaseDI.BackEnd.State.Programming_2 {
                 }
             }
 
-            storylineDetailsFiltered = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(storylineDetails, "", this._baseDIPlaceHolderValue, true);
+            storylineDetailsFiltered = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(storylineDetails, "", this._baseDIPlaceHolderValue, true);
 
             metaData = {
                 StorylineDetails: storylineDetails,

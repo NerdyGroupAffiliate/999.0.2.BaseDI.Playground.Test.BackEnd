@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace BaseDI.BackEnd.Experience.Web_Development_
+namespace BaseDI.Experience.Web_Development_
 {
     public class Experience_The_Movement_FromWebClient_DataTransfer_2_1_1_0 : WebClient
     {

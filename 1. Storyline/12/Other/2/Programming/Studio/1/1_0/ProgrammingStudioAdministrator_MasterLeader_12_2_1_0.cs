@@ -8,57 +8,57 @@ using System.Globalization;
 /////////////////////////////////////////////////////////////////////////////////////
 //0. BaseDI Global Dependencies
 /////////////////////////////////////////////////////////////////////////////////////
-using BaseDI.BackEnd.Director.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.Director.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming_1;
 /////////////////////////////////////////////////////////////////////////////////////
 
 //1. Generate Brand Awareness
-using BaseDI.BackEnd.Story.Advertising_1;
+using BaseDI.Story.Advertising_1;
 
 //2. Generate Brand Trust
-using BaseDI.BackEnd.Story.Blogging_1;
+using BaseDI.Story.Blogging_1;
 
 //3. Generate Optin
-using BaseDI.BackEnd.Story.Listing_Building_1;
-using BaseDI.BackEnd.Story.Personal_Training_3;
-using BaseDI.BackEnd.Story.Podcasting_2;
+using BaseDI.Story.Listing_Building_1;
+using BaseDI.Story.Personal_Training_3;
+using BaseDI.Story.Podcasting_2;
 
 //4. Sell Low Ticket Offer
-using BaseDI.BackEnd.Story.Supplements_1;
+using BaseDI.Story.Supplements_1;
 
 //5. Sell High Ticket Offer
-using BaseDI.BackEnd.Story.Coaching_1;
-using BaseDI.BackEnd.Story.Consulting_2;
+using BaseDI.Story.Coaching_1;
+using BaseDI.Story.Consulting_2;
 
 //6. Sell Subscription Offer
-using BaseDI.BackEnd.Story.Software_1;
+using BaseDI.Story.Software_1;
 
 //7. Sell Commission Offer
-using BaseDI.BackEnd.Story.Affiliate_Revenue_1;
+using BaseDI.Story.Affiliate_Revenue_1;
 
 //8. Account Gain or Loss
-using BaseDI.BackEnd.Story.Accounting_1;
+using BaseDI.Story.Accounting_1;
 
 //9. Improve Customer Service
-using BaseDI.BackEnd.Story.Customer_Service_1;
+using BaseDI.Story.Customer_Service_1;
 
 //10. Perform Manual Task
-using BaseDI.BackEnd.Story.Productivity_1;
+using BaseDI.Story.Productivity_1;
 
 //11. Automate Manual Task
-using BaseDI.BackEnd.Story.Risk_Management_1;
-using BaseDI.BackEnd.Story.Social_Media_3;
+using BaseDI.Story.Risk_Management_1;
+using BaseDI.Story.Social_Media_3;
 
 //12. Other
-using BaseDI.BackEnd.Story.Careers_Employment_1;
-using BaseDI.BackEnd.Story.Web_Development_1;
-using BaseDI.BackEnd.Story.Programming_1;
-using BaseDI.BackEnd.Story.CMS_1;
-using BaseDI.BackEnd.Story.Security_1;
+using BaseDI.Story.Careers_Employment_1;
+using BaseDI.Story.Web_Development_1;
+using BaseDI.Story.Programming_1;
+using BaseDI.Story.CMS_1;
+using BaseDI.Story.Security_1;
 
-namespace BaseDI.BackEnd.Story.Programming_1
+namespace BaseDI.Story.Programming_1
 {
     public class ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 : aClass_Programming_ScriptMasterLeader_12_2_1_0
     {

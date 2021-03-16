@@ -37,7 +37,7 @@ if (process.env.APP_ENV == "SERVER") {
    // PassportFacebookStrategy = require('passport-facebook').Strategy;
 }
 
-export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
+export namespace BaseDI.Web_Development.Extensions_13 {
     export class Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 {
         constructor() {
 
@@ -65,7 +65,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             }
         }
 
-        public static Step_X_X_Custom_Output_ServerResponseToCaller_2_0(input: SingleParmPoco_12_2_1_0.BaseDI.BackEnd.Programming_1.SingleParmPoco_12_2_1_0)
+        public static Step_X_X_Custom_Output_ServerResponseToCaller_2_0(input: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
             //#region DESCRIBE THE MEMORIES
 
@@ -98,7 +98,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
                 // be associated with a user record in the application's database, which
                 // allows for account linking and authentication with other identity
                 // providers.
-            //    Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedMasterLeader_MasterStorerReference, "Create", storedEntryPointName, storedPageName, "STORING server side FACEBOOK TOKENS", storedStorylineDetails, { accessToken: accessToken, refreshToken: refreshToken, profile: profile }, "BaseDI_ConfigurationTokens_" + storedStrategy);
+            //    Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedMasterLeader_MasterStorerReference, "Create", storedEntryPointName, storedPageName, "STORING server side FACEBOOK TOKENS", storedStorylineDetails, { accessToken: accessToken, refreshToken: refreshToken, profile: profile }, "BaseDI_ConfigurationTokens_" + storedStrategy);
 
             //    return cb(null, profile);
             //};
@@ -117,7 +117,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             //#endregion
         }
 
-        public static Step_X_X_Custom_Output_ServerResponseToCaller_2_1(input: SingleParmPoco_12_2_1_0.BaseDI.BackEnd.Programming_1.SingleParmPoco_12_2_1_0) {
+        public static Step_X_X_Custom_Output_ServerResponseToCaller_2_1(input: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
             let storedServer: any = input.Parameters.getValue("server");
             let storedStrategy: string = input.Parameters.getValue("strategy");
             let url: string = input.Parameters.getValue("url");
@@ -214,10 +214,10 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#region EXECUTE THE VISION
 
-            var fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+            var fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
             if (fileMetaData == undefined || fileMetaData == null)
-                fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+                fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
             var SetupItemEnvironmentServerMetaDataPaths = fileMetaData.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
 
@@ -304,7 +304,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
         //#region SERVER CONFIGURATION
 
-        public static async Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storylineDetails: Object, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, entryPointName: string, pageName: string = ""): Promise<any> {
+        public static async Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storylineDetails: Object, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, entryPointName: string, pageName: string = ""): Promise<any> {
             if (storylineDetails == undefined || storylineDetails == null) return; //REQUIRED VALUE
             if (process.env.APP_ENV != "SERVER") return; //REQUIRED VALUE
             if (entryPointName == undefined || entryPointName == null || entryPointName == "") return; //REQUIRED DIRECTOR or EXPREINCE FILE NAME without extension.
@@ -313,14 +313,14 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             let server: any = null;
 
-            let storedInput: SingleParmPoco_12_2_1_0.BaseDI.BackEnd.Programming_1.SingleParmPoco_12_2_1_0;
+            let storedInput: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //#endregion
 
             //#region RECALL THE MEMORIES
 
-            const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
-            const serverEnvironmentData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_DataConverter", false);
+            const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
+            const serverEnvironmentData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_DataConverter", false);
 
             const serverEnvironmentName: number = serverEnvironment?.value?.SetupItemEnvironmentName;
             const serverEnvironmentPort: number = serverEnvironment?.value?.SetupItemEnvironmentPort;
@@ -341,8 +341,8 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#region EXECUTE THE VISION
             if (masterLeader_masterStorerReference != null) {
-                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING client side BaseDI script SOURCE PATH", storylineDetails, serverEnvironmentScriptName, "BaseDI_PresentationScript_SrcLocation");
-                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING server side data CONVERSION REPOSITORY mode", storylineDetails, serverEnvironmentDataConversion, "BaseDI_DataConverter_Mode");
+                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING client side BaseDI script SOURCE PATH", storylineDetails, serverEnvironmentScriptName, "BaseDI_PresentationScript_SrcLocation");
+                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING server side data CONVERSION REPOSITORY mode", storylineDetails, serverEnvironmentDataConversion, "BaseDI_DataConverter_Mode");
             }
 
             //#region SET API STRATEGIES

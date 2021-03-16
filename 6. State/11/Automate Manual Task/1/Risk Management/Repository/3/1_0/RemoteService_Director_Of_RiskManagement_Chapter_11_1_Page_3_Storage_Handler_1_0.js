@@ -144,7 +144,7 @@ var BaseDI;
                             });
                         };
                         return RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Risk_Management_.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
                 })(Risk_Management_ = State.Risk_Management_ || (State.Risk_Management_ = {}));
             })(State = UnitTest.State || (UnitTest.State = {}));

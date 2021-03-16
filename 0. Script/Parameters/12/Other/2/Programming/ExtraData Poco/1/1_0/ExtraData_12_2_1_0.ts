@@ -1,7 +1,7 @@
 ﻿import * as Collections from 'typescript-collections';
 
 
-export namespace BaseDI.BackEnd.Programming_1
+export namespace BaseDI.Script.Programming.Poco_1
 {
     export class ExtraData_12_2_1_0
     {

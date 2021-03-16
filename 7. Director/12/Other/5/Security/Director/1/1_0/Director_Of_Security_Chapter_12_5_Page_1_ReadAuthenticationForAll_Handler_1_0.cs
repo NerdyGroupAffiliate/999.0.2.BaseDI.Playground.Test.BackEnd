@@ -1,15 +1,15 @@
-﻿using BaseDI.BackEnd.Character_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Character_1;
+using BaseDI.Script.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming.Repository_1;
 
-using ChapterPage = BaseDI.BackEnd.Chapter.Page.Security_1;
+using ChapterPage = BaseDI.Chapter.Page.Security_1;
 using System.Collections.Generic;
 
-namespace BaseDI.BackEnd.Director.Security_1
+namespace BaseDI.Director.Security_1
 {
     public class Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

@@ -1,18 +1,18 @@
-﻿using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Script.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
 
-using ChapterPage = BaseDI.BackEnd.Chapter.Page.Risk_Management_5;
+using ChapterPage = BaseDI.Chapter.Page.Risk_Management_5;
 
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Character_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.Character_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming.Repository_1;
 
-namespace BaseDI.BackEnd.Director.Risk_Management_5
+namespace BaseDI.Director.Risk_Management_5
 {
     public class Director_Of_RiskManagement_Chapter_11_1_Page_5_Request_Sensor_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

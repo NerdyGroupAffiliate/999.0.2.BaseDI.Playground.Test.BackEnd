@@ -1,6 +1,6 @@
 ﻿import * as Collections from 'typescript-collections';
 
-export namespace BaseDI.BackEnd.Programming.Interfaces_1
+export namespace BaseDI.Programming.Interfaces_1
 {
 
 }

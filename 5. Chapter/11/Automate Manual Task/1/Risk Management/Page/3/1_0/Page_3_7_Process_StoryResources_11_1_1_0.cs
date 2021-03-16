@@ -1,8 +1,8 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Risk_Management_3
+namespace BaseDI.Chapter.Page.Risk_Management_3
 {
     public class Page_3_7_Process_StoryResources_11_1_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Extensions_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Web_Development.Extensions_0;
+using BaseDI.Script.Web_Development.Extensions_0;
 
-namespace BaseDI.BackEnd.Chapter.Page.Web_Development_9
+namespace BaseDI.Chapter.Page.Web_Development_9
 {
     public class Page_9_5_Process_StorySetting_12_3_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

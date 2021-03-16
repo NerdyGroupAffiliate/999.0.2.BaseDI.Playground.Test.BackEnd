@@ -7,24 +7,30 @@
 </head>
 
 <body>
+    <button type="button" onclick="(function () { const actionID = Client.ActionList.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0; Action('page', 'Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0', 'Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0-P1_0', actionID); })();" value="Debug It">Test Homepage Rendering Featuring</button>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./wwwroot/Client/JS/BaseDI_1_0.js"></script>
-
-    <script type="text/javascript">
-        let tester = new Client.BaseDI.BackEnd.Startup(this);
-    </script>
-
-    <script type="text/javascript">
-        function Action(targetedResponseTagID = "", requestNameToProcess = "", requestNameToProcessParameters = "", requestActionName = "") {
-            tester.Action(targetedResponseTagID, requestNameToProcess, requestNameToProcessParameters, requestActionName);
-        }
-    </script>
-
-    <button type="button" onclick="Action('page', 'Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0', 'Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0-P1_0','Action_RenderWebPage_1_0');" value="Debug It">Test Homepage Rendering Featuring</button>
+    <button type="button" onblur="(function () { const actionID = Client.ActionList.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Form_OnBlur_1_0; Action('page', 'Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0', 'Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0-P1_0', actionID); })();" value="Debug It">Test Homepage Rendering Featuring</button>
 
     <div id="page"></div>
 
+
+
+
+
+
+
+    <!--------------------------------------------------------------------------------->
+    <!---------------------------------BASEDI CLIENT SCRIPTS--------------------------->
+    <!--------------------------------------------------------------------------------->
+    <script type="text/javascript" src="./wwwroot/Client/JS/BaseDI_1_0.js"></script>
+    <script type="text/javascript">
+        let controller = new Client.BaseDI.Startup(this);
+
+        function Action(targetedResponseTagID = "", requestNameToProcess = "", requestNameToProcessParameters = "", requestActionName = "") {
+            controller.Action(targetedResponseTagID, requestNameToProcess, requestNameToProcessParameters, requestActionName);
+        }
+    </script>
+    <!--------------------------------------------------------------------------------->
 </body>
 
 </html>

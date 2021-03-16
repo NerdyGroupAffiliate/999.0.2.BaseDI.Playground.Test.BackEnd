@@ -15,17 +15,17 @@ import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../..
 import * as Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/1/1_0/Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0";
 import * as Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/2/1_0/Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0";
 
-export namespace BaseDI.BackEnd.Story.Advertising_1
+export namespace BaseDI.Story.Advertising_1
 {
-    export class AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    export class AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
         private _clientORserverInstance: any;
-        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         private _requestName: String = "";
         //#endregion 
@@ -55,7 +55,7 @@ export namespace BaseDI.BackEnd.Story.Advertising_1
         //#endregion 
 
         //#region 4. Action
-        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
@@ -109,7 +109,7 @@ export namespace BaseDI.BackEnd.Story.Advertising_1
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
+            let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -126,13 +126,13 @@ export namespace BaseDI.BackEnd.Story.Advertising_1
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 
@@ -155,7 +155,7 @@ export namespace BaseDI.BackEnd.Story.Advertising_1
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Director.Advertising_2.Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0(extraData);
+            let director = new Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Director.Advertising_2.Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -173,13 +173,13 @@ export namespace BaseDI.BackEnd.Story.Advertising_1
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.State.Advertising_2.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.State.Advertising_2.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.State.Advertising_2.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.State.Advertising_2.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 

@@ -1,8 +1,8 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Extensions_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Risk_Management_3
+namespace BaseDI.Chapter.Page.Risk_Management_3
 {
     public class Page_3_10_End_Process_11_1_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

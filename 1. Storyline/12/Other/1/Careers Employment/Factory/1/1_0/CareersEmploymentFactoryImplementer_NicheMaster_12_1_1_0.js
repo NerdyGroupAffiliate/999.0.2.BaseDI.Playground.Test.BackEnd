@@ -100,18 +100,18 @@ var BaseDI;
                                     //region CHECK FOR MISTAKES
                                     //let repositoryType: string = storylineDetails.Extension_Try_Read_RepositoryType(false, true);
                                     //region ASSIGN REQUEST HANDLER
-                                    //let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.Director.Advertising_.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
+                                    //let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Director.Advertising_.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
                                     //director.StorylineDetails = storylineDetails;
                                     //director.StorylineDetails_Parameters = storylineDetails_Parameters;
                                     //director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     //switch (repositoryType.toUpperCase()) {
                                     //    case "LOCAL_FILE":
-                                    //        var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                                    //        var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
                                     //        director.Repository = localFile;
                                     //        break;
                                     //    case "REMOTE_SERVICE":
-                                    //        var remoteService = new RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                                    //        var remoteService = new RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.State.Advertising_.RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
                                     //        director.Repository = remoteService;
                                     //        break;
                                     //}
@@ -120,7 +120,7 @@ var BaseDI;
                             });
                         };
                         return CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0;
-                    }(aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0));
+                    }(aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0));
                     Productivity_.CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0 = CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0;
                 })(Productivity_ = Story.Productivity_ || (Story.Productivity_ = {}));
             })(Story = UnitTest.Story || (UnitTest.Story = {}));

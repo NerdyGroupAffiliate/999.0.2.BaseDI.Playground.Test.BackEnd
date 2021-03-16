@@ -91,7 +91,7 @@ var BaseDI;
                                 });
                             };
                             return Page_1_4_Process_StoryCharacters_12_2_1_0;
-                        }(aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0));
+                        }(aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0));
                         Programming_.Page_1_4_Process_StoryCharacters_12_2_1_0 = Page_1_4_Process_StoryCharacters_12_2_1_0;
                     })(Programming_ = Page.Programming_ || (Page.Programming_ = {}));
                 })(Page = Chapter.Page || (Chapter.Page = {}));

@@ -144,7 +144,7 @@ var BaseDI;
                             });
                         };
                         return LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Risk_Management_.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0 = LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0;
                 })(Risk_Management_ = State.Risk_Management_ || (State.Risk_Management_ = {}));
             })(State = UnitTest.State || (UnitTest.State = {}));

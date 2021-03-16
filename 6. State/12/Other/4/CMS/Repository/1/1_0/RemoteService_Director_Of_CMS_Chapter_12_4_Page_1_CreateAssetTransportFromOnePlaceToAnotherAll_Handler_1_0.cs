@@ -1,12 +1,12 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+﻿using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Repository_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.State.CMS_1
+namespace BaseDI.State.CMS_1
 {
     public class RemoteService_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>, IContract_Programming_Repository_12_2_1_0
     {

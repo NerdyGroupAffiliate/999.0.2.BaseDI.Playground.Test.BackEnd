@@ -1,7 +1,7 @@
 ﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 
-export namespace BaseDI.BackEnd.State.Risk_Management_4 {
-    export class RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+export namespace BaseDI.State.Risk_Management_4 {
+    export class RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
         private _storylineDetails: object;

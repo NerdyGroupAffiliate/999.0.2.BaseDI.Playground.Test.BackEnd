@@ -1,8 +1,8 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Script.Programming.Abstract_1;
 using System;
 using System.Collections.Generic;
 
-namespace BaseDI.BackEnd.Script.Programming.Poco_1
+namespace BaseDI.Script.Programming.Poco_1
 {
     public class SingleParmPoco_12_2_1_0
     {

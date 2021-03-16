@@ -13,8 +13,8 @@ import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 import { strict } from "assert";
 
-export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
-    export class Page_1_9_Verify_Process_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
+export namespace BaseDI.Chapter.Page.Security_1 {
+    export class Page_1_9_Verify_Process_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         private _apiMetaData: any = null;
         private _actionName: string = "";
@@ -33,7 +33,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //region 1. Assign
@@ -98,7 +98,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             const storylineDetails: any = this.StorylineDetails;
 
             this._actionName = this?.ClientOrServerInstance["actionName"];
-            this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "key_1", "APIS", false);
+            this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "key_1", "APIS", false);
 
             this._request = this.ClientOrServerInstance?.Request;
             this._requestRoute = this._request?.route?.path;
@@ -173,8 +173,8 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
                 if (this._requestRoute != undefined && this._requestRoute != null) {
                     if (storedAPIPlatform != undefined && storedAPIPlatform != null) {
                         //#region SET api platform general values
-                        storedProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._apiMetaData, "searchkey", "SetupDetails_APIS_API_1_0_" + storedAPIPlatform + "_2_2_2_1_serverInformationSetupDetails", false);
-                        storedProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storedProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
+                        storedProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this._apiMetaData, "searchkey", "SetupDetails_APIS_API_1_0_" + storedAPIPlatform + "_2_2_2_1_serverInformationSetupDetails", false);
+                        storedProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storedProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
                         storedProfileDetailsAPIEndPointsAndRoutes = storedProfileDetails.value.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
                         storedProfileDetailsSecurityAPISecurityDetails = storedProfileDetails.value.SetupItemAPIProfile.SetupItemAPISecurityDetails;
                         //#endregion
@@ -215,7 +215,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#region TRANSPORT curl request & handle response
             var self = this;
 
-            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.BackEnd.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, storedTokenEndpoint, storedAPIVerb, storedCurlOptions,
+            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, storedTokenEndpoint, storedAPIVerb, storedCurlOptions,
                 function callback(response) {
                     self.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response, storedAPIPlatform);
                 });
@@ -242,7 +242,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
             //#region EXECUTE THE VISION         
 
             if (uniqueStorageKeyValue)
-                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response, "BaseDI_DataToken_" + uniqueStorageKeyValue);
+                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response, "BaseDI_DataToken_" + uniqueStorageKeyValue);
 
             this._response.send(response);
 

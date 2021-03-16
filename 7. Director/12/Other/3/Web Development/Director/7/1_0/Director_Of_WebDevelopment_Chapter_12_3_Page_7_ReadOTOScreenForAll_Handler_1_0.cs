@@ -1,12 +1,12 @@
-﻿using BaseDI.BackEnd.Character_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Character_1;
+using BaseDI.Script.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming.Repository_1;
 
-namespace BaseDI.BackEnd.Director.Web_Development_7
+namespace BaseDI.Director.Web_Development_7
 {
     public class Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

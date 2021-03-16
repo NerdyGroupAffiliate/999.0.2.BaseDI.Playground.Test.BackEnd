@@ -1,6 +1,6 @@
-﻿using BaseDI.BackEnd.Character_1;
-using BaseDI.BackEnd.Experience_;
-using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.Character_1;
+using BaseDI.Experience_;
+using BaseDI.Script.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BaseDI.BackEnd.Script.Programming.Abstract_1
+namespace BaseDI.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 : aClass_Programming_ScriptRoutable_12_2_1_0
     {

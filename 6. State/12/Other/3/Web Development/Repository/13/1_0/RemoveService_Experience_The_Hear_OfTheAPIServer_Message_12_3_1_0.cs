@@ -1,12 +1,12 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+﻿using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Repository_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.State.Web_Development_13
+namespace BaseDI.State.Web_Development_13
 {
     public class RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>, IContract_Programming_Repository_12_2_1_0
     {

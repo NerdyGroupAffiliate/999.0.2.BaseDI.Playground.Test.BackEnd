@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "_999._0._2.BaseDI.BackEnd": {
+    "_999._0._2.BaseDI": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

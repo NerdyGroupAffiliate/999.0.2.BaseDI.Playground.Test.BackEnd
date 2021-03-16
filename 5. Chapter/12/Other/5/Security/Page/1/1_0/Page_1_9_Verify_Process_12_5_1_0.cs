@@ -1,11 +1,11 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_3;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Security.Extensions_1;
-using BaseDI.BackEnd.Script.Web_Development.Extensions_13;
+﻿using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Extensions_1;
+using BaseDI.Script.Programming.Extensions_3;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Script.Programming_1;
+using BaseDI.Script.Security.Extensions_1;
+using BaseDI.Script.Web_Development.Extensions_13;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using System;
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Security_1
+namespace BaseDI.Chapter.Page.Security_1
 {
     public class Page_1_9_Verify_Process_12_5_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

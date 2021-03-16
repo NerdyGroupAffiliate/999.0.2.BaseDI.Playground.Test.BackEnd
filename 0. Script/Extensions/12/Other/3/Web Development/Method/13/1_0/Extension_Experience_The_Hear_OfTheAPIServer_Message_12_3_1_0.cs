@@ -1,4 +1,4 @@
-﻿using BaseDI.BackEnd.Script.Programming.Extensions_1;
+﻿using BaseDI.Script.Programming.Extensions_1;
 
 using CurlThin;
 
@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
+namespace BaseDI.Script.Web_Development.Extensions_13
 {
     public class Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0
     {

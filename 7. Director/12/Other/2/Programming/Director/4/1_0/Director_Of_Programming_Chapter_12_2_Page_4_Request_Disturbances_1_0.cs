@@ -1,11 +1,11 @@
-﻿using BaseDI.BackEnd.Character_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Character_1;
+using BaseDI.Script.Programming_1;
+using BaseDI.Script.Programming.Abstract_1;
 
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.Script.Programming.Poco_1;
+using BaseDI.Script.Programming.Repository_1;
 
-using ChapterPage = BaseDI.BackEnd.Chapter.Page.Programming_4;
+using ChapterPage = BaseDI.Chapter.Page.Programming_4;
 
 using Newtonsoft.Json.Linq;
 
@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Director.Programming_4
+namespace BaseDI.Director.Programming_4
 {
     public class Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

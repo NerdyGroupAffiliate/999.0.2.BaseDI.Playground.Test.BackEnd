@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BaseDI.BackEnd.Script.Programming.Enumeration_1
+namespace BaseDI.Script.Programming.Enumeration_1
 {
     public enum Enumeration_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
     {

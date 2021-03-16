@@ -8,7 +8,7 @@ if (process.env.APP_ENV == "SERVER") {
     OIDCStragety = require("passport-azure-ad");
 }
 
-export namespace BaseDI.BackEnd.Security.Extensions_1 {
+export namespace BaseDI.Security.Extensions_1 {
     export class Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0
     {
         constructor() {

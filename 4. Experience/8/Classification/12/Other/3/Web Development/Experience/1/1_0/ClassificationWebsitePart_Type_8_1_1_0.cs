@@ -1,11 +1,11 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Experience_
+namespace BaseDI.Experience_
 {
     public class ClassificationWebsitePart_Type_8_1_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
     {

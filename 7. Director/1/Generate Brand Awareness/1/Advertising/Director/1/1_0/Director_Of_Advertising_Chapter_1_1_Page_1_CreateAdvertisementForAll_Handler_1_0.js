@@ -96,7 +96,7 @@ var BaseDI;
                             });
                         };
                         return Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0;
-                    }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
+                    }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
                     Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 = Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0;
                     //region 5. Action Script
                     var Use_DesignPattern_Builder_Chapter_1_1_Page_1 = /** @class */ (function () {
@@ -263,7 +263,7 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Advertising_1.Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0 = Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0;
                 })(Advertising_1 = Director.Advertising_1 || (Director.Advertising_1 = {}));
             })(Director = UnitTest.Director || (UnitTest.Director = {}));
