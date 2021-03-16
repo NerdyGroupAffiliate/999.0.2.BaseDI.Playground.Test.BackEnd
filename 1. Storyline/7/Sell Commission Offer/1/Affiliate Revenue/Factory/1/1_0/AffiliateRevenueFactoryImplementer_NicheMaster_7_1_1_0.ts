@@ -79,9 +79,9 @@ export namespace BaseDI.Story.Affiliate_Revenue_1 {
         private Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(storylineDetails: object, storylineDetails_Parameters: object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            //let repositoryType: string = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Core.Code.Script.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_The_DataRespository_1_0(storylineDetails, false, true);
+            //string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_7_1_PRODUCT_AFFILIATEREVENUE_NICHE_MASTER");
 
-            //if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             //#endregion
 

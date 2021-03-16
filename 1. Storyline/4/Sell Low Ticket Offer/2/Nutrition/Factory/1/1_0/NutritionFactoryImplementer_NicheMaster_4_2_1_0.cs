@@ -87,7 +87,7 @@ namespace BaseDI.Story.Nutrition_1
 
             
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_4_2_PRODUCT_NUTRITION_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";
 

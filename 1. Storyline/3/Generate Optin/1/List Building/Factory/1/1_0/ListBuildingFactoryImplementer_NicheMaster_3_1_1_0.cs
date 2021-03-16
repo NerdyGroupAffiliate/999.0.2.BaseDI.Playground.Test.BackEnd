@@ -87,7 +87,7 @@ namespace BaseDI.Story.Listing_Building_1
 
             
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_3_1_LISTBUILDING_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";
 

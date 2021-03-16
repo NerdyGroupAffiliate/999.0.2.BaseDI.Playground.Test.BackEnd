@@ -93,7 +93,7 @@ namespace BaseDI.Story.Security_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 

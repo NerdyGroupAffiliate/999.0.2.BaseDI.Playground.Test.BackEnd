@@ -89,7 +89,7 @@ export namespace BaseDI.Story.Risk_Management_1 {
         private Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -135,7 +135,9 @@ export namespace BaseDI.Story.Risk_Management_1 {
         private Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER;
+
+            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
             //#endregion
 

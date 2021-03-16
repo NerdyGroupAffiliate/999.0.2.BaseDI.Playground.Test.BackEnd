@@ -86,7 +86,7 @@ namespace BaseDI.Story.Coaching_1
 
             
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_5_1_PRODUCT_COACHING_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";
 

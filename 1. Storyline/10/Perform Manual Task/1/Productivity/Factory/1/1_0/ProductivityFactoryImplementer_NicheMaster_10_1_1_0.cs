@@ -83,7 +83,7 @@ namespace BaseDI.Story.Productivity_1
         {
             #region CHECK FOR MISTAKES            
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_10_1_PRODUCTIVITY_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";
 

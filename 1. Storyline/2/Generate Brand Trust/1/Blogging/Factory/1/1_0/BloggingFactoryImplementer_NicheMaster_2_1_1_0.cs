@@ -87,7 +87,7 @@ namespace BaseDI.Story.Blogging_1
 
             
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_1_BLOGGING_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";
 

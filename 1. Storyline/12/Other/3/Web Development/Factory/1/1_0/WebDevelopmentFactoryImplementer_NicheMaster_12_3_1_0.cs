@@ -176,7 +176,7 @@ namespace BaseDI.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -229,7 +229,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -286,7 +286,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -343,7 +343,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -400,7 +400,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -457,7 +457,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -514,7 +514,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -571,7 +571,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -628,7 +628,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -685,7 +685,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -742,7 +742,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -799,7 +799,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -856,7 +856,7 @@ namespace BaseDI.Story.Web_Development_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -911,9 +911,8 @@ namespace BaseDI.Story.Web_Development_1
         private object Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
             #region CHECK FOR MISTAKES
-
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 

@@ -94,7 +94,7 @@ namespace BaseDI.Story.Advertising_1
         {
             #region CHECK FOR MISTAKES            
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";        
 
@@ -148,10 +148,9 @@ namespace BaseDI.Story.Advertising_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER");
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -203,10 +202,9 @@ namespace BaseDI.Story.Advertising_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER");
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 

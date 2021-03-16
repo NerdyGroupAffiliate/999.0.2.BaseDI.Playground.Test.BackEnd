@@ -86,7 +86,7 @@ export namespace BaseDI.Story.Social_Media_3 {
         {
             //#region CHECK FOR MISTAKES
             
-            //let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            //let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_2_3_SOCIALMEDIA_NICHE_MASTER;
 
             //if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 

@@ -80,7 +80,7 @@ export namespace BaseDI.Story.Careers_Employment_1 {
         private Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(storylineDetails: object, storylineDetails_Parameters: object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            //let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            //let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_1_CAREERSEMPLOYMENT_NICHE_MASTER;
 
             //if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 

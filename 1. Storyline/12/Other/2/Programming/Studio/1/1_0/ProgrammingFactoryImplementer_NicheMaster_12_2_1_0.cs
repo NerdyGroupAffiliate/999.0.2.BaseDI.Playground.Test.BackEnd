@@ -140,7 +140,7 @@ namespace BaseDI.Story.Programming_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER"); 
 
             if (string.IsNullOrEmpty(repositoryType)) repositoryType = "LOCALFILE";
 
@@ -196,7 +196,7 @@ namespace BaseDI.Story.Programming_1
         {
             #region CHECK FOR MISTAKES
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -253,7 +253,7 @@ namespace BaseDI.Story.Programming_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -310,7 +310,7 @@ namespace BaseDI.Story.Programming_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
@@ -367,7 +367,7 @@ namespace BaseDI.Story.Programming_1
             #region CHECK FOR MISTAKES
 
             
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER"); 
 
             if (repositoryType == "") repositoryType = "LOCAL_FILE";
 

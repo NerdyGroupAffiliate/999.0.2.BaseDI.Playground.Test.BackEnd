@@ -146,7 +146,7 @@ export namespace BaseDI.Story.Programming_1 {
         private Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -202,7 +202,7 @@ export namespace BaseDI.Story.Programming_1 {
         {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -257,7 +257,7 @@ export namespace BaseDI.Story.Programming_1 {
         private Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -312,7 +312,7 @@ export namespace BaseDI.Story.Programming_1 {
         private Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 (storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -368,7 +368,7 @@ export namespace BaseDI.Story.Programming_1 {
         {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 

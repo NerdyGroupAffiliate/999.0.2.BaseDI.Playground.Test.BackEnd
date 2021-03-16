@@ -98,7 +98,7 @@ export namespace BaseDI.Story.CMS_1 {
         private Create_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0(storylineDetails: object, storylineDetails_Parameters: object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_4_CMS_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 

@@ -98,7 +98,7 @@ export namespace BaseDI.Story.Security_1 {
         private Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails: object, storylineDetails_Parameters: object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 

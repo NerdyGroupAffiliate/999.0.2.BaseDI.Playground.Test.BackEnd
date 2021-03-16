@@ -84,7 +84,7 @@ export namespace BaseDI.Story.Friendship_4 {
         {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_2_4_ECOMMERCE_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 

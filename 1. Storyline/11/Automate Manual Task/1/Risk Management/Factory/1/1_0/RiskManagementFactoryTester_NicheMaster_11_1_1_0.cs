@@ -87,7 +87,7 @@ namespace BaseDI.Story.Risk_Management_1
         {
             #region CHECK FOR MISTAKES            
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
@@ -139,11 +139,9 @@ namespace BaseDI.Story.Risk_Management_1
 
         private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
-            #region CHECK FOR MISTAKES
+            #region CHECK FOR MISTAKES            
 
-            
-
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";
 

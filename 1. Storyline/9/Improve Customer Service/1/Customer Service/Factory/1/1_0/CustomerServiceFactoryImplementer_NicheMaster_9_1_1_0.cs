@@ -85,7 +85,7 @@ namespace BaseDI.Story.Customer_Service_1
         {
             #region CHECK FOR MISTAKES            
 
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE"); 
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_9_1_CUSTOMERSERVICE_NICHE_MASTER"); 
 
             if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
