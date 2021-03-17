@@ -147,12 +147,13 @@ export namespace BaseDI {
 
             //#region 4. TELL the story
 
-            //#region HANDLE startup callback
+            //#region HANDLE callback response
             if (requestCallBack) {
                 requestCallBack(handleObservation);
             }
             //#endregion
             else
+            //#region HANDLE interface response
             {
                 //#region DISPLAY some response
                 if (handleObservation) {
@@ -173,6 +174,7 @@ export namespace BaseDI {
 
             //#endregion
             }
+            //#endregion
 
             //#endregion
         }

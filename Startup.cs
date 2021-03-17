@@ -63,6 +63,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
             var mapStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, (JObject mapStaticFiles) =>
             {
+                #region HANDLE mapping process
+
                 if (mapStaticFiles != null)
                 {
                     #region 1. DESCRIBE the memories
@@ -134,6 +136,8 @@ namespace BaseDI.Playground.Test.BackEnd
 
                     #endregion
                 }
+
+                #endregion
 
                 return null;
             }, Configuration).Result;
@@ -382,15 +386,22 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 4. TELL the story
 
-            #region HANDLE startup callback
+            #region HANDLE callback response
             if (RequestCallBack != null)
             {
+                #region EDGE case
+
+                #region HANDLE startup callback
                 RequestCallBack(handleObservation);
 
                 return new OkResult();
+                #endregion
+
+                #endregion
             }
             #endregion
             else
+            #region HANDLE interface response
             {
                 #region IDEAL case
 
@@ -416,6 +427,7 @@ namespace BaseDI.Playground.Test.BackEnd
                 return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
                 #endregion
             }
+            #endregion
 
             #endregion
         }
