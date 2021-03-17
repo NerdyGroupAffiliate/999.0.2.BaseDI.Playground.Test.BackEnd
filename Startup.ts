@@ -144,26 +144,32 @@ export namespace BaseDI {
             //#endregion
 
             //#region 3. Observe
-            if (handleObservation) {
-                handleObservation.then(response => {
-                    // var iframe = document.createElement('iframe');
-                    // iframe.style.width = "100%";
-                    // iframe.style.height  = "100vh";
 
-                    // document.getElementById("page").appendChild(iframe);
-                    // iframe.contentWindow.document.open();
-                    // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
-                    // iframe.contentWindow.document.close();
-                    
-                    if (requestCallBack) {
-                        requestCallBack(response);
-                    }
-                    else
-                    {
+            //#region HANDLE startup callback
+            if (requestCallBack) {
+                requestCallBack(handleObservation);
+            }
+            //#endregion
+            else
+            {
+                //#region DISPLAY some response
+                if (handleObservation) {
+                    handleObservation.then(response => {
+                        // var iframe = document.createElement('iframe');
+                        // iframe.style.width = "100%";
+                        // iframe.style.height  = "100vh";
+
+                        // document.getElementById("page").appendChild(iframe);
+                        // iframe.contentWindow.document.open();
+                        // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
+                        // iframe.contentWindow.document.close();
+
                         if (targetedResponseTagID != "")
                             document.getElementById(targetedResponseTagID).innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
-                    }                      
-                });
+                    });
+                }
+
+            //#endregion
             }
 
             //#endregion

@@ -289,14 +289,17 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. Observe
 
+            #region HANDLE startup callback
             if (RequestCallBack != null)
             {
                 RequestCallBack(handleObservation);
 
                 return new OkResult();
             }
+            #endregion
             else
             {
+                #region DISPLAY some response
                 if (handleObservation != null)
                 {
                     result = new ContentResult
@@ -307,15 +310,16 @@ namespace BaseDI.Playground.Test.BackEnd
                     };
                     // return Content(armTemplateJSONOutput.ToString());
                 }
-            }
 
-            if (result != null)
-            {
-                return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
-            }
-            else
-            {
-                return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
+                if (result != null)
+                {
+                    return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
+                }
+                else
+                {
+                    return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
+                }
+                #endregion
             }
 
             #endregion
