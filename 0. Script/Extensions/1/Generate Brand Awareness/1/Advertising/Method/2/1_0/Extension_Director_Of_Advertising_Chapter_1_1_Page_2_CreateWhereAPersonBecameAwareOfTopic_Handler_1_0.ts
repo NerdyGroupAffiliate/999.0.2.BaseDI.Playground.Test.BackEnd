@@ -82,20 +82,20 @@ export namespace BaseDI.Advertising.Extensions_2 {
                 }) 
             }
 
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
            
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             //#endregion
         }
@@ -107,13 +107,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToFacebook_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
             //#endregion
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
             //#endregion
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
             //#endregion
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
             //#endregion
         }
 
@@ -124,13 +124,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToYouTube_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
             //#endregion
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
             //#endregion
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
             //#endregion
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
             //#endregion
         }
 
@@ -141,13 +141,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToLinkedIn_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
             //#endregion
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
             //#endregion
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
             //#endregion
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
             //#endregion
         }
 

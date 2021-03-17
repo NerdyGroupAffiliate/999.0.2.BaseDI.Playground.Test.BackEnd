@@ -60,7 +60,7 @@ namespace BaseDI.Chapter.Page.Web_Development_7
 
             //Parse HTML into Linq to HTML object.
             //var HTMLdocument = HDocument.Parse(detail.Value);
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
             string entryPointName = "Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
 
             string observationItem = "";
@@ -85,7 +85,7 @@ namespace BaseDI.Chapter.Page.Web_Development_7
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
 
             observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
             
@@ -99,7 +99,7 @@ namespace BaseDI.Chapter.Page.Web_Development_7
 
             htmlStylesJSON = styles.Count > 0 ? styles[1].Parent.Parent : styles[0].Parent.Parent;
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);

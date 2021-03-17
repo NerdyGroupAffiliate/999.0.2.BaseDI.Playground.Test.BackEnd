@@ -43,78 +43,167 @@ namespace BaseDI.Playground.Test.BackEnd
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            #region COPY STATIC FILES
+            #region 1. DESCRIBE the memories
+
+            #endregion
+
+            #region 2. RECALL the memories
+
+            #endregion
+
+            #region 3. PROCESS the memories
+
+            #region COPY static files
 
             var copyFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, null, Configuration).Result;
 
             #endregion
 
-            #region MAP STATIC FILES
+            #region MAP static files
 
-            var mapStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, (JObject mapStaticFiles) => 
+            var mapStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, (JObject mapStaticFiles) =>
             {
                 if (mapStaticFiles != null)
                 {
+                    #region 1. DESCRIBE the memories
+
+                    #endregion
+
+                    #region 2. RECALL the memories
+
+                    #region MEMORIZE file directories
+
                     dynamic fileMetaDataFormatted = JObject.Parse(mapStaticFiles.ToString());
                     JArray setupItemEnvironmentClient = fileMetaDataFormatted.outputs[1].baseDIObservations;
-                    Console.WriteLine(setupItemEnvironmentClient.Count);
+
+                    #endregion
+
+                    #endregion
+
+                    #region 3. PROCESS the memories
+
                     if (setupItemEnvironmentClient.Any())
                     {
+                        #region IDEAL case
+
+                        #region PERFORM a search
                         foreach (dynamic item in setupItemEnvironmentClient.FirstOrDefault())
                         {
                             if (item.Value != null)
                             {
+                                #region IF NEEDED: CREATE a directory 
                                 if (!Directory.Exists(Path.Combine(item.Value.ToString())))
                                 {
                                     Directory.CreateDirectory(Path.Combine(item.Value.ToString()));
                                 }
+                                #endregion
+
+                                #region MAP server folder
                                 app.UseStaticFiles(new StaticFileOptions
                                 {
-                                    FileProvider = new PhysicalFileProvider(
-                                        Path.GetFullPath(Path.Combine(item.Value.ToString()))),
+                                    FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine(item.Value.ToString()))),
                                     RequestPath = "/StaticFiles"
                                 });
+                                #endregion
                             }
                         }
+                        #endregion
+
+                        #endregion
                     }
                     else
                     {
+                        #region EDGE case
+
+                        #region MAP server folder
+
                         app.UseStaticFiles(new StaticFileOptions
                         {
-                            FileProvider = new PhysicalFileProvider(
-                                Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))),
+                            FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))), 
                             RequestPath = "/StaticFiles"
                         });
+
+                        #endregion
+
+                        #endregion
                     }
+
+                    #endregion
+
+                    #region 4. TELL the story
+
+                    #endregion
                 }
 
-                return null; 
+                return null;
             }, Configuration).Result;
 
             #endregion
 
-            app.UseRouting();            
-            
+            #region SET server configurations
+
+            app.UseRouting();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            #endregion
+
+            #endregion
+
+            #region 4. TELL the story
+
+            #endregion
         }
     }
 
     public partial class Startup
     {
+        #region 1. Assign   
+
+        #endregion
+
+        #region 2. Ready   
+
+        #endregion
+
+        #region 3. Set   
+
+        #endregion
+
+        #region 4. Action   
+
         public static async Task<IActionResult> Action(string requestToProcess = "", string requestToProcessParameters = "", string requestActionName = "", Func<JObject, IActionResult> requestCallBack = null, IConfiguration appSettings = null)
         {
+            #region 1. DESCRIBE the memories
+
             var process = new Startup_Controller();
+
+            #endregion
+
+            #region 2. RECALL the memories
 
             process.AppSettings = appSettings;
             process.RequestCallBack = requestCallBack;
 
+            #endregion
+
+            #region 3. PROCESS the memories
+
             IActionResult result = await process.Action(requestToProcess, requestToProcessParameters, requestActionName);
 
+            #endregion
+
+            #region 4. TELL the story
+
             return new OkResult();
+
+            #endregion
         }
+
+        #endregion
     }
 
     public class Startup_Controller : ControllerBase
@@ -202,7 +291,7 @@ namespace BaseDI.Playground.Test.BackEnd
         [HttpGet("")]
         public async Task<IActionResult> Action(string requestNameToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestNameToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessHttpRequest_1_0")
         {
-            #region 1. Assign
+            #region 1. DESCRIBE the memories
 
             ContentResult result = null;
 
@@ -214,7 +303,11 @@ namespace BaseDI.Playground.Test.BackEnd
 
             StringBuilder outputObservationsPrintOut = new StringBuilder();
 
-            if(AppSettings != null)
+            #endregion
+
+            #region 2. RECALL the memories
+
+            if (AppSettings != null)
                 _clientORserverInfo.Add("appSettings", AppSettings);
 
             _clientORserverInfo.Add("request", Request);
@@ -225,7 +318,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #endregion
 
-            #region 2. Action
+            #region 3. PROCESS the memories
 
             try
             {
@@ -287,7 +380,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #endregion
 
-            #region 3. Observe
+            #region 4. TELL the story
 
             #region HANDLE startup callback
             if (RequestCallBack != null)
@@ -299,7 +392,10 @@ namespace BaseDI.Playground.Test.BackEnd
             #endregion
             else
             {
+                #region IDEAL case
+
                 #region DISPLAY some response
+
                 if (handleObservation != null)
                 {
                     result = new ContentResult
@@ -308,17 +404,16 @@ namespace BaseDI.Playground.Test.BackEnd
                         StatusCode = (int)HttpStatusCode.OK,
                         Content = (string)handleObservation.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
                     };
-                    // return Content(armTemplateJSONOutput.ToString());
-                }
 
-                if (result != null)
-                {
                     return await Task.FromResult<ContentResult>(result).ConfigureAwait(true);
                 }
-                else
-                {
-                    return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
-                }
+
+                #endregion
+
+                #endregion
+
+                #region EDGE case
+                return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
                 #endregion
             }
 

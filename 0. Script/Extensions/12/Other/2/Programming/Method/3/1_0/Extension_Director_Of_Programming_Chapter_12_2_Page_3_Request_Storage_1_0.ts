@@ -1,7 +1,15 @@
-﻿if (process.env.APP_ENV == "SERVER") {
-    var objectScan = require('copyfiles');
-    var fs = require('fs');
-    var path = require('path');
+﻿let fs = null;
+let localStorage = null;
+let objectScan = null;
+let path = null;
+
+if (process.env.APP_ENV == "SERVER") {
+    objectScan = require('copyfiles');
+    fs = require('fs');
+    path = require('path');
+
+    var LocalStorage = require('node-localstorage').LocalStorage;
+    localStorage = new LocalStorage('./wwwroot/Server/State');
 }
 
 import { resolve } from "dns";
@@ -24,7 +32,7 @@ export namespace BaseDI.Programming.Extensions_3 {
             //console.log("AA");
             //console.log(JSON.stringify(storylineDetails.outputs[1].baseDIObservations));
 
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             let observationItem: String = "";
 
@@ -49,7 +57,7 @@ export namespace BaseDI.Programming.Extensions_3 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
 
             if (uniqueReferenceKey)
@@ -130,9 +138,72 @@ export namespace BaseDI.Programming.Extensions_3 {
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             return storylineDetails;
+
+            //#endregion
+        }
+
+        public static async Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storageAction: string, storageKey: String, storageValue: any): Promise<any> {
+            //#region DESCRIBE the memories
+
+            let storedCRUDActionRead: boolean = false
+            let storageResult: any = null;
+            let storedObservation: any = null;
+            let storedObservationFiltered: Object = {};
+            let storedObservationKey: string = null;
+
+            //#endregion
+
+            try {
+                //#region RECALL THE MEMORIES
+                storedObservationKey = (Object.keys(storageValue)[0]);
+
+                if (storedObservationKey.toString().toUpperCase().includes("-READ")) {
+                    storedCRUDActionRead = true;
+                }
+
+                storedObservationKey = storedObservationKey.toString().replace("-Create", "");
+                storedObservationKey = storedObservationKey.toString().replace("-Read", "");
+                storedObservationKey = storedObservationKey.toString().replace("-Update", "");
+                storedObservationKey = storedObservationKey.toString().replace("-Delete", "");
+
+                if (!storedCRUDActionRead) {
+                    storedObservation = JSON.parse(storageValue[(Object.keys(storageValue)[0])]);
+
+                    storedObservationFiltered[storedObservationKey] = storedObservation?.baseDIObservations[0];
+                }
+
+                //#endregion
+
+                //#region PROCESS the memories
+
+                if (localStorage) {
+                    switch (storageAction.toUpperCase()) {
+                        case "CREATE":
+                        case "UPDATE":
+                            localStorage.setItem(storageKey, JSON.stringify(storedObservationFiltered));
+                            break;
+                        case "DELETE":
+                            localStorage.removeItem(storageKey);
+                            break;
+                        case "READ":
+                            storageResult = localStorage.getItem(storageKey);
+                            break;
+
+                    }
+                }
+
+                //#endregion
+            }
+            catch (e) {
+                throw e;
+            }
+
+            //#region TELL the story
+
+            return storageResult;
 
             //#endregion
         }

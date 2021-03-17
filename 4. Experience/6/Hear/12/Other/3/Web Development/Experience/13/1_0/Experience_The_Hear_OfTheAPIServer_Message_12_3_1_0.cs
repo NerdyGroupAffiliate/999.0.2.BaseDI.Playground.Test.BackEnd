@@ -414,39 +414,39 @@ namespace BaseDI.Experience.Hear.Web_Development_13
             {
                 if (_actionName != null && _actionName.ToString().ToUpper().Contains("COPYSTATICFILES_1_0"))
                 {
-                    #region DESCRIBE THE MEMORIES
+                    #region DESCRIBE the memories
 
                     #endregion
 
-                    #region RECALL THE MEMORIES
+                    #region DESCRIBE the memories
 
                     #endregion
 
-                    #region EXECUTE THE VISION
+                    #region PROCESS the memories
 
                     Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(_storylineDetails);
 
                     #endregion
 
-                    #region REPORT THE FEEDBACK
+                    #region TELL the story
 
                     #endregion
                 }
 
                 if (_actionName != null && _actionName.ToString().ToUpper().Contains("MAPSTATICFILES_1_0"))
                 {
-                    #region DESCRIBE THE MEMORIES
+                    #region DESCRIBE the memories
 
                     dynamic staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
                     var jContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault()?.Parent;
 
                     #endregion
 
-                    #region RECALL THE MEMORIES
+                    #region DESCRIBE the memories
 
                     #endregion
 
-                    #region EXECUTE THE VISION
+                    #region PROCESS the memories
 
                     if (jContainer != null)
                     {
@@ -463,7 +463,7 @@ namespace BaseDI.Experience.Hear.Web_Development_13
 
                     #endregion
 
-                    #region REPORT THE FEEDBACK
+                    #region TELL the story
 
                     #endregion
                 }

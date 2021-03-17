@@ -1,4 +1,6 @@
 ﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+
+import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
 import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/13/1_0/Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
@@ -70,7 +72,7 @@ export namespace BaseDI.State.Programming_3 {
 
         public async Action_8_Process_CRUD(): Promise<any>
         {
-            //#region DESCRIBE THE MEMORIES 
+            //#region DESCRIBE the memories 
 
             let storedAction: string;
 
@@ -104,7 +106,7 @@ export namespace BaseDI.State.Programming_3 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             //EXECUTE THE PROCESS
 
@@ -139,7 +141,7 @@ export namespace BaseDI.State.Programming_3 {
                             //CREATE THE PROCESS
                             const handleObservation = async (observation) => {
                                 // tslint:disable-next-line:max-line-length
-                                storedResult = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storedCRUDValue, storedObservationKey, observation);
+                                storedResult = Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storedCRUDValue, storedObservationKey, observation);
 
                                 if(storedResult != null)
                                 {                                  
@@ -160,7 +162,7 @@ export namespace BaseDI.State.Programming_3 {
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             return this._storylineDetails;
 

@@ -43,19 +43,19 @@ export namespace BaseDI.Chapter.Page.CMS_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             return await this.StorylineDetails;
 

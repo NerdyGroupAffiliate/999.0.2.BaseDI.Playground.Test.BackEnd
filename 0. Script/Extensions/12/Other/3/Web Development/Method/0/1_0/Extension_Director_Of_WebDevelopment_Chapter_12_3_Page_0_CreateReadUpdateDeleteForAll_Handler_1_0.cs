@@ -45,13 +45,13 @@ namespace BaseDI.Script.Web_Development.Extensions_0
 
         private static dynamic Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(dynamic attributes)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             var attrs = new List<string>();
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             foreach (var attribute in attributes)
             {
@@ -69,11 +69,11 @@ namespace BaseDI.Script.Web_Development.Extensions_0
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             return string.Join(" ", attrs);
 
@@ -82,22 +82,22 @@ namespace BaseDI.Script.Web_Development.Extensions_0
 
         public static string Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(dynamic htmlContainerJSON)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
             
             string htmlContainerString = $@"<{htmlContainerJSON.value.HTMLContentItems[0].Tag
                 } {Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{{HTMLRows_Replace}}</{htmlContainerJSON.value.HTMLContentItems[0].Tag}>";
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
             return htmlContainerString;
 
             //#endregion            
@@ -106,14 +106,14 @@ namespace BaseDI.Script.Web_Development.Extensions_0
         public static string Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(dynamic htmlRowsJSON,
             string htmlContainerString)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             string htmlRowsString = "";
             var rows = new List<string>();
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
             foreach (var row in htmlRowsJSON.value.HTMLContentItems)
             {
                 rows.Add($@"<{
@@ -127,11 +127,11 @@ namespace BaseDI.Script.Web_Development.Extensions_0
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
             return htmlRowsString;
 
             //#endregion            
@@ -141,13 +141,13 @@ namespace BaseDI.Script.Web_Development.Extensions_0
             string htmlRowsString)
         {
 
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             string htmlColumnsString = htmlRowsString;
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
             foreach (var col in htmlColumnsJSON.value.HTMLContentItems)
             {
                 var colItem = $@"<{
@@ -158,11 +158,11 @@ namespace BaseDI.Script.Web_Development.Extensions_0
             }
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
             return htmlColumnsString;
 
             //#endregion          
@@ -171,14 +171,14 @@ namespace BaseDI.Script.Web_Development.Extensions_0
         public static string Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(dynamic htmlContentJSON,
             string htmlColumnsString)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             string htmlContentString = htmlColumnsString;
             var idsAndConstant = new Dictionary<string, dynamic>();
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             foreach (var con in htmlContentJSON.value.HTMLContentItems)
             {
@@ -214,11 +214,11 @@ namespace BaseDI.Script.Web_Development.Extensions_0
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             return htmlContentString;
 
@@ -227,7 +227,7 @@ namespace BaseDI.Script.Web_Development.Extensions_0
 
         public static string Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(dynamic htmlStylesJSON)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
             string htmlInlineCSSString = "";
             string styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value
                 .HTMLContentStylingItemFiles[0].StyleFilePathLocal;
@@ -246,7 +246,7 @@ namespace BaseDI.Script.Web_Development.Extensions_0
 
             //#endregion
            
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
             foreach (var file in filesArray)
             {
               foreach (var element in file.StyleFileUseProperties)

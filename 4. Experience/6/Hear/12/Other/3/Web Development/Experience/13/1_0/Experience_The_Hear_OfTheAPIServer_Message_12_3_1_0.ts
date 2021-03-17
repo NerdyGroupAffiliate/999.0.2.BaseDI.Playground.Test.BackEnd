@@ -351,7 +351,7 @@ export namespace BaseDI.Experience.Hear.Web_Development_13 {
 
             if (process.env.APP_ENV == "SERVER" && this._actionName.toUpperCase().includes("COPYSTATICFILES_1_0")) {
                 {
-                    //#region DESCRIBE THE MEMORIES
+                    //#region DESCRIBE the memories
 
                     //#endregion
 
@@ -359,13 +359,13 @@ export namespace BaseDI.Experience.Hear.Web_Development_13 {
 
                     //#endregion
 
-                    //#region EXECUTE THE VISION
+                    //#region PROCESS the memories
 
                     await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(this._storylineDetails);
 
                     //#endregion
 
-                    //#region REPORT THE FEEDBACK
+                    //#region TELL the story
 
                     //#endregion
                 }

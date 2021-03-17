@@ -89,20 +89,22 @@ export namespace BaseDI {
         //#region 4. Action
         public Action(targetedResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "", requestCallBack: any = null)
         {
-            //#region 1. Assign
+            //#region 1. DESCRIBE the memories
             let handleObservation: Promise<any>;
 
             let outputObservationsPrintOut: string = "";
 
+            //#endregion
+
+            //#region 2. RECALL the memories
             if (targetedResponseTagID != "")
                 this._clientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
 
             if (requestActionName != "")
                 this._clientORserverInfo["actionName"] = requestActionName;
-
             //#endregion
 
-            //#region 2. Action
+            //#region 3. PROCESS the memories
 
             try
             {
@@ -143,7 +145,7 @@ export namespace BaseDI {
 
             //#endregion
 
-            //#region 3. Observe
+            //#region 4. TELL the story
 
             //#region HANDLE startup callback
             if (requestCallBack) {

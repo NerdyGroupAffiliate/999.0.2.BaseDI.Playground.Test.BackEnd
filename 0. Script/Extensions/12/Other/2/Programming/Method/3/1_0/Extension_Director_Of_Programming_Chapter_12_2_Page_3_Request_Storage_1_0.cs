@@ -9,9 +9,23 @@ namespace BaseDI.Script.Programming.Extensions_3
 {
     public class Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0
     {
-        internal static Task Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(aClass_Programming_ScriptAction_12_2_1_0<JObject> masterStorer, string v1, string entryPointName, string pageName, string v2, JObject storylineDetails, object response, string v3)
+        public static void Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(string storageAction, string storageKey, object storageValue)
         {
-            throw new NotImplementedException();
+            #region DESCRIBE the memories
+
+            #endregion
+
+            #region RECALL THE MEMORIES
+
+            #endregion
+
+            #region PROCESS the memories
+
+            #endregion
+
+            #region TELL the story
+
+            #endregion
         }
     }
 }

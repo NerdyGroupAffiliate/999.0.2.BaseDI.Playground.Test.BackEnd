@@ -67,7 +67,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
         public static Step_X_X_Custom_Output_ServerResponseToCaller_2_0(input: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
 
             //#endregion
@@ -91,7 +91,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
             //const storedStrategyCallBack: any = (accessToken, refreshToken, profile, cb) => {
                 // In this example, the user's Facebook profile is supplied as the user
                 // record.  In a production-quality application, the Facebook profile should
@@ -112,7 +112,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
             //passport.use(storedStrategyInstance);
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             //#endregion
         }
@@ -131,7 +131,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
         }
 
         private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server: any, url: string, options: any, callback: Function): any {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             let storedCurlClient: any;
             let storedQueryString: string;
@@ -144,7 +144,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             //console.log(url);
             //console.log(options);
@@ -155,7 +155,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             //#endregion
         }
@@ -165,7 +165,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
         }
 
         private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server: any, url: string, options: any, callback: Function): any {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             let storedCurlClient: any;
 
@@ -178,7 +178,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             //console.log(url);
             //console.log(options);
@@ -189,7 +189,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             //#endregion
         }
@@ -205,7 +205,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
         //#region SERVER ASSET MANAGEMENT
 
         public static async Step_X_X_Custom_Store_LocalFilesToServer_1_0(storylineDetails: object): Promise<any> {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             //#endregion
 
@@ -214,7 +214,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             var fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
@@ -297,7 +297,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             //#endregion
         }
@@ -311,7 +311,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
             if (process.env.APP_ENV != "SERVER") return; //REQUIRED VALUE
             if (entryPointName == undefined || entryPointName == null || entryPointName == "") return; //REQUIRED DIRECTOR or EXPREINCE FILE NAME without extension.
 
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
             let server: any = null;
 
@@ -341,7 +341,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
             if (masterLeader_masterStorerReference != null) {
                 await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING client side BaseDI script SOURCE PATH", storylineDetails, serverEnvironmentScriptName, "BaseDI_PresentationScript_SrcLocation");
                 await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING server side data CONVERSION REPOSITORY mode", storylineDetails, serverEnvironmentDataConversion, "BaseDI_DataConverter_Mode");
@@ -447,7 +447,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             server.get('/favicon.ico', (req, res) => res.status(204));
 
@@ -479,7 +479,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
         public static Step_X_X_Custom_Outout_ServerLocalDataFromMemory_1_0(storageKey: String, storageValue: any): any
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region DESCRIBE the memories
 
 
             let storedValue: any;
@@ -492,7 +492,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region PROCESS the memories
 
             if (localStorage) {
                 storedValue = localStorage.getItem(storageKey);
@@ -500,75 +500,9 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region TELL the story
 
             return storedValue;
-
-            //#endregion
-        }
-
-        public static Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storageAction: string, storageKey: String, storageValue: any) : any
-        {
-            //#region DESCRIBE THE MEMORIES
-
-            let storedCRUDActionRead: boolean = false
-            let storageResult: any = null;
-            let storedObservation: any = null;
-            let storedObservationFiltered: Object = {};
-            let storedObservationKey: string = null;           
-
-            //#endregion
-
-            try
-            {
-                //#region RECALL THE MEMORIES
-                storedObservationKey = (Object.keys(storageValue)[0]);
-
-                if (storedObservationKey.toString().toUpperCase().includes("-READ")) {
-                    storedCRUDActionRead = true;
-                }
-
-                storedObservationKey = storedObservationKey.toString().replace("-Create", "");
-                storedObservationKey = storedObservationKey.toString().replace("-Read", "");
-                storedObservationKey = storedObservationKey.toString().replace("-Update", "");
-                storedObservationKey = storedObservationKey.toString().replace("-Delete", "");
-
-                if (!storedCRUDActionRead) {
-                    storedObservation = JSON.parse(storageValue[(Object.keys(storageValue)[0])]);
-
-                    storedObservationFiltered[storedObservationKey] = storedObservation?.baseDIObservations[0];
-                }
-
-                //#endregion
-
-                //#region EXECUTE THE VISION
-
-                if (localStorage) {
-                    switch (storageAction.toUpperCase()) {
-                        case "CREATE":
-                        case "UPDATE":
-                            localStorage.setItem(storageKey, JSON.stringify(storedObservationFiltered));
-                            break;
-                        case "DELETE":
-                            localStorage.removeItem(storageKey);
-                            break;
-                        case "READ":
-                            storageResult = localStorage.getItem(storageKey);
-                            break;
-
-                    }
-                }
-
-                //#endregion
-            }
-            catch (e)
-            {
-                throw e;
-            }
-
-            //#region REPORT THE FEEDBACK
-
-            return storageResult;
 
             //#endregion
         }
