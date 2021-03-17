@@ -24,6 +24,7 @@
     <None Remove="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\5\Security\Method\1\1_0\Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.ts" />
     <None Remove="Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.tsx" />
+    <None Remove="Snippet_TypeScript_Regions.tsx" />
     <None Remove="Startup_Client_ImportExports_1_0.tsx" />
   </ItemGroup>
 
@@ -45,6 +46,7 @@
 
   <ItemGroup>
     <None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
+    <None Include="Snippet_CSharp_Regions.cs" />
     <None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
     <None Include="9. Organizing\MRichardson001\Shared\MainLayout.razor" />
     <None Include="9. Organizing\MRichardson001\Shared\NavMenu.razor" />
@@ -70,6 +72,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\2\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
+    <TypeScriptCompile Include="Snippet_TypeScript_Regions.tsx" />
   </ItemGroup>
 
 </Project>

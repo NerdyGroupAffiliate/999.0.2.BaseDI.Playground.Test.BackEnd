@@ -13,6 +13,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Update="Snippet_TypeScript_Regions.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
     <TypeScriptCompile Update="0. Script\Enumerations\12\Other\2\Programming\Enumeration\3\1_0\Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>

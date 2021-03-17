@@ -53,18 +53,21 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 3. PROCESS the memories
 
-            #region COPY static files
+            #region HANDLE file copying
+
+            #region IDEAL case
 
             var copyFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, null, Configuration).Result;
 
             #endregion
 
-            #region MAP static files
+            #endregion
 
+            #region HANDLE file mapping
+
+            #region USE cases
             var mapStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, (JObject mapStaticFiles) =>
             {
-                #region HANDLE mapping process
-
                 if (mapStaticFiles != null)
                 {
                     #region 1. DESCRIBE the memories
@@ -83,6 +86,8 @@ namespace BaseDI.Playground.Test.BackEnd
                     #endregion
 
                     #region 3. PROCESS the memories
+
+                    #region HANDLE mapping process
 
                     if (setupItemEnvironmentClient.Any())
                     {
@@ -121,7 +126,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
                         app.UseStaticFiles(new StaticFileOptions
                         {
-                            FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))), 
+                            FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))),
                             RequestPath = "/StaticFiles"
                         });
 
@@ -129,6 +134,7 @@ namespace BaseDI.Playground.Test.BackEnd
 
                         #endregion
                     }
+                    #endregion
 
                     #endregion
 
@@ -137,21 +143,33 @@ namespace BaseDI.Playground.Test.BackEnd
                     #endregion
                 }
 
-                #endregion
-
                 return null;
             }, Configuration).Result;
 
             #endregion
 
-            #region SET server configurations
+            #endregion
+
+            #region HANDLE server configurations
+
+            #region IDEAL case
+
+            #region SETUP application routing
 
             app.UseRouting();
+
+            #endregion
+
+            #region SETUP application endpoints
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            #endregion
+
+            #endregion
 
             #endregion
 
@@ -189,14 +207,29 @@ namespace BaseDI.Playground.Test.BackEnd
 
             #region 2. RECALL the memories
 
+            #region MEMORIZE application settings
             process.AppSettings = appSettings;
+            #endregion
+
+            #region MEMORIZE process callback
             process.RequestCallBack = requestCallBack;
+            #endregion
 
             #endregion
 
             #region 3. PROCESS the memories
 
+            #region HANDLE our logic
+
+            #region IDEAL case
+
+            #region PROCESS our request
             IActionResult result = await process.Action(requestToProcess, requestToProcessParameters, requestActionName);
+            #endregion
+
+            #endregion
+
+            #endregion
 
             #endregion
 
@@ -326,7 +359,9 @@ namespace BaseDI.Playground.Test.BackEnd
 
             try
             {
-                #region TRY our logic
+                #region HANDLE our logic
+
+                #region IDEAL case
 
                 #region PROCESS application updates
 
@@ -362,23 +397,59 @@ namespace BaseDI.Playground.Test.BackEnd
                 #endregion
 
                 #endregion
+
+                #endregion
             }
             catch (Exception ex)
             {
-                #region PRINT out mistakes
+                #region HANDLE our mistakes
+
+                #region USE cases
+
+                #region 1. DESCRIBE the memories
+
+                #endregion
+
+                #region 2. RECALL the memories
 
                 handleObservation = _storylineDetails;
+
+                #endregion
+
+                #region 3. PROCESS the memories
+
+                #region HANDLE mistake response
+
+                #region EDGE case
                 if (handleObservation != null)
                 {
+                    #region PERFORM a search
+
                     outputs = handleObservation.SelectToken("outputs..baseDIMistakes");
                     foreach (var programmingMistake in outputs.Children())
                     {
+                        #region BUILD response message
                         var mistake = programmingMistake.Value<string>("mistake");
 
                         outputObservationsPrintOut.Append(mistake + System.Environment.NewLine);
+                        #endregion
                     }
+                    #endregion
+
                     Console.Write(outputObservationsPrintOut.ToString());
                 }
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 4. TELL the story
+
+                #endregion
+
+                #endregion
+
                 #endregion
             }
 
@@ -387,11 +458,12 @@ namespace BaseDI.Playground.Test.BackEnd
             #region 4. TELL the story
 
             #region HANDLE callback response
+
             if (RequestCallBack != null)
             {
                 #region EDGE case
 
-                #region HANDLE startup callback
+                #region PROCESS startup callback
                 RequestCallBack(handleObservation);
 
                 return new OkResult();
@@ -424,7 +496,11 @@ namespace BaseDI.Playground.Test.BackEnd
                 #endregion
 
                 #region EDGE case
+
+                #region DISPLAY blank response
                 return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
+                #endregion
+
                 #endregion
             }
             #endregion
