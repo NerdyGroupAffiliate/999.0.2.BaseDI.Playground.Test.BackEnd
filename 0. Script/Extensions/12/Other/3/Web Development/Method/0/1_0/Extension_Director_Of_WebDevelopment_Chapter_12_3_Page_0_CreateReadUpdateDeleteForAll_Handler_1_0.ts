@@ -25,9 +25,13 @@ export namespace BaseDI.Web_Development.Extensions_0 {
                 </html>`
 
             if (scripts == "") {
-                scripts = "<script src=\"/scripts/js/BaseDI_1_0.js\" type=\"text/javascript\"></script>";
+               
+                let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
+                var baseDIObservations = results.outputs[1].baseDIObservations[results.outputs[1].baseDIObservations.length - 1];
 
-                scripts = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
+                var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]].observation.metadata[3].item.data[0].dataResult
+
+                scripts = `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
             }
 
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{metaDataReplace}", metaData);
@@ -315,7 +319,7 @@ export namespace BaseDI.Web_Development.Extensions_0 {
                         }
                     }
                     else {
-                        console.log("Something wrong in Json file||||!")
+                        console.log("Something wrong in Json file!")
                     }
                 });
             });
