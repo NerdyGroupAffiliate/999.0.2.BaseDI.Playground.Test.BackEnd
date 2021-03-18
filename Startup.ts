@@ -1,4 +1,7 @@
-﻿import * as Action_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/Action Poco/1/1_0/Action_12_2_1_0";
+﻿//#region Imports
+
+//#region BaseDI
+import * as Action_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/Action Poco/1/1_0/Action_12_2_1_0";
 
 import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "./1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
@@ -7,81 +10,111 @@ import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 f
 import * as ExtraData_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
 import * as SingleParmPoco_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+//#endregion
 
-export namespace BaseDI {
+//#region Modules
+
+//#endregion
+
+//#endregion
+
+export namespace BaseDI
+{
     export class Startup {
         //#region 1. Assign
-        private _clientORserverInfo: Object = new Object();
+        private _storedClientORserverInfo: Object = new Object();
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
-        private _entryPoint: any;
+        private _storedEntryPoint: any;
 
-        private _storylineDetails: object;
-        private _storylineDetails_Parameters: object;
+        private _storedStorylineDetails: object;
+        private _storedStorylineDetails_Parameters: object;
 
-        private _baseDIArmTemplateSchema: string = "";
-        private _baseDIArmTemplateSchemaParameters: string = "";
-        private _baseDIArmTemplateSchemaParametersEmbeddedResource: string = "";
-
-        public _extraData2: Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0;
-
-        public Update_Client;
         //#endregion
 
         //#region 2. Ready
         constructor(entryPoint: any)
         {
-            //#region 1. Assign
-            this._extraData = new ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0();
+            //#region 1. VARIABLES: DESCRIBE the memories
+            this._storedExtraData = new ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
-            this._entryPoint = entryPoint;
+            this._storedEntryPoint = entryPoint;
 
-            this._storylineDetails = new Object();
-            this._storylineDetails_Parameters = new Object();
+            this._storedStorylineDetails = new Object();
+            this._storedStorylineDetails_Parameters = new Object();
             //#endregion
 
-            //#region 2. Action
+            //#region 2. VALUES: RECALL the memories
+
+            //#endregion
+
+            //#region 3. **INPUT: PROCESS the memories*
+
+            //#region HANDLE initialization logic
+
+            //#region *IDEAL case*
+
+            //#region PROCESS initialization logic
             this.Setup = this.Setup.bind(this);
             this.Setup();
+            //#endregion
 
             //#endregion
 
-            //#region 3. Observe
+            //#endregion
+
+            //#endregion
+
+            //#region 4. **OUTPUT: TELL the story*
+
+
             //#endregion
         }
         //#endregion
 
         //#region 3. Set
-        public Setup() {
-            //#region 1. Assign            
+        public Setup()
+        {
+            //#region 1. VARIABLES: DESCRIBE the memories
 
-            //SETUP CLIENT/SERVER INFO
+            //#endregion
+
+            //#region 2. VALUES: RECALL the memories
+            this._storedStorylineDetails = null;
+            this._storedStorylineDetails_Parameters = null;
+            //#endregion
+
+            //#region 3. **INPUT: PROCESS the memories*
+
+            //#region HANDLE application defaults
+
+            //#region *IDEAL case*
+
+            //#region PROCESS application defaults
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
-                this._clientORserverInfo = {
-                    "serverInstance": this._entryPoint,
+                this._storedClientORserverInfo = {
+                    "serverInstance": this._storedEntryPoint,
                     "serverStartUp": this
                 }
             }
             else {
-                this._clientORserverInfo = {
-                    "clientInstance": this._entryPoint,
+                this._storedClientORserverInfo = {
+                    "clientInstance": this._storedEntryPoint,
                     "clientStartUp": this
                 }
             }
+            //#endregion
 
             //#endregion
 
-            //#region 2. Action
-
-            //READ OPTIONS TEMPLATE
-            this._storylineDetails = null;
-
-            //READ USER OPTIONS
-            this._storylineDetails_Parameters = null;
             //#endregion
 
-            //#region 3. Observe
+            //#endregion
+
+            //#region 4. **OUTPUT: TELL the story*
+
+
             //#endregion
         }
         //#endregion
@@ -89,75 +122,111 @@ export namespace BaseDI {
         //#region 4. Action
         public Action(targetedResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "", requestCallBack: any = null)
         {
-            //#region 1. DESCRIBE the memories
-            let handleObservation: Promise<any>;
+            //#region 1. VARIABLES: DESCRIBE the memories
+            let storedObservation: Promise<any>;
 
-            let outputObservationsPrintOut: string = "";
-
+            let storedOutput: string = "";
             //#endregion
 
-            //#region 2. RECALL the memories
+            //#region 2. VALUES: RECALL the memories
             if (targetedResponseTagID != "")
-                this._clientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
+                this._storedClientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
 
             if (requestActionName != "")
-                this._clientORserverInfo["actionName"] = requestActionName;
+                this._storedClientORserverInfo["actionName"] = requestActionName;
             //#endregion
 
-            //#region 3. PROCESS the memories
+            //#region 3. **INPUT: PROCESS the memories*
 
             try
             {
-                //#region TRY our logic
+                //#region HANDLE our logic
+
+                //#region EDGE case
+
+                //#region VALIDATE required values
+                if (requestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
+                //#endregion
+
+                //#endregion
+
+                //#region EDGE case
 
                 //#region PROCESS application updates
 
-                this._clientORserverInfo["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
-                    return this._storylineDetails;
+                this._storedClientORserverInfo["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
+                    return this._storedStorylineDetails;
                 }
                 //#endregion
 
+                //#endregion
+
+                //#region *IDEAL case*
+
+                //#region HANDLE system request
                 const Action = (requestNameToProcess: string = "", requestNameToProcessParameters: string = "", extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
                 {
-                    //#region VALIDATE required values
-                    if (requestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
-                    //#endregion
+                    //#region STORE system response
 
-                    //#region MAKE system request
-                    handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._extraData))
-                        .SetupStoryline(this._clientORserverInfo, this._storylineDetails, null, this._extraData, "", requestNameToProcess, requestNameToProcessParameters)
+                    storedObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
+                        .SetupStoryline(this._storedClientORserverInfo, this._storedStorylineDetails, null, this._storedExtraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action();
+
                     //#endregion
                 }
 
-                //#region GET system response
-                Action(requestNameToProcess, requestNameToProcessParameters, this._extraData);
+                //#region START system request
+
+                Action(requestNameToProcess, requestNameToProcessParameters, this._storedExtraData);
+
+                //#endregion
+
+                //#endregion
+
                 //#endregion
 
                 //#endregion
             }
-            catch (storyMistake)
+            catch (storedMistake)
             {
+                //#region HANDLE our mistakes
+
+                //#region EDGE case
+
                 //#region PRINT out mistakes
-                // console.log(storyMistake);
+                console.log(storedMistake);
+                //#endregion
+
+                //#endregion
+
                 //#endregion
             }
 
             //#endregion
 
-            //#region 4. TELL the story
+            //#region 4. **OUTPUT: TELL the story*
 
             //#region HANDLE callback response
+
+            //#region EDGE case
+
+            //#region PROCESS startup callback
             if (requestCallBack) {
-                requestCallBack(handleObservation);
+                requestCallBack(storedObservation);
             }
+            //#endregion
+
+            //#endregion
+
             //#endregion
             else
             //#region HANDLE interface response
             {
+                //#region *IDEAL case*
+
                 //#region DISPLAY some response
-                if (handleObservation) {
-                    handleObservation.then(response => {
+                if (storedObservation) {
+                    storedObservation.then(response => {
                         // var iframe = document.createElement('iframe');
                         // iframe.style.width = "100%";
                         // iframe.style.height  = "100vh";
@@ -173,6 +242,8 @@ export namespace BaseDI {
                 }
 
             //#endregion
+
+                //#endregion
             }
             //#endregion
 
@@ -181,22 +252,54 @@ export namespace BaseDI {
         //#endregion
     }
 }
-//#region CLIENT
+
+//#region Client
 export { Action_12_2_1_0 as ActionList }
 //#endregion
 
-//#region SERVER
-if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
-    let server = new BaseDI.Startup(this);
+//#region Server
 
+//#region 1. VARIABLES: DESCRIBE the memories
+
+let storedServerInstance = new BaseDI.Startup(this);
+
+//#endregion
+
+//#region 2. VALUES: RECALL the memories
+
+
+//#endregion
+
+//#region 3. **INPUT: PROCESS the memories*
+
+//#region HANDLE file copying & server start
+
+//#region *IDEAL case*
+
+//#region COPY local files & start server
+if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
     const Step_1_0_CopyLocalFilesAndStartServer = async () => {
-        server.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, function callBack(response: any) {
-            server.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0)
+        storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, function callBack(response: any) {
+            storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0)
         });
     }
 
     Step_1_0_CopyLocalFilesAndStartServer();
 }
+//#endregion
+
+//#endregion
+
+
+//#endregion
+
+//#endregion
+
+//#region 4. **OUTPUT: TELL the story*
+
+
+//#endregion
+
 //#endregion
 
 

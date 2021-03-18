@@ -73,16 +73,16 @@ namespace BaseDI.Script.Web_Development.Extensions_13
 
         public static async void Step_X_X_Custom_Store_LocalFilesToServer_1_0(JObject storylineDetails)
         {
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES: RECALL the memories
 
 
             //#endregion
 
-            //#region PROCESS the memories
+            //#region **INPUT: PROCESS the memories*
 
             List<JToken> list = null;
             dynamic parent = null;
@@ -214,7 +214,7 @@ namespace BaseDI.Script.Web_Development.Extensions_13
 
                 //#endregion
 
-                //#region TELL the story
+                //#region **OUTPUT: TELL the story*
 
                 //#endregion
             }
@@ -231,7 +231,7 @@ namespace BaseDI.Script.Web_Development.Extensions_13
         {
             if (storylineDetails == null) return null;
 
-            #region DESCRIBE the memories
+            #region VARIABLES: DESCRIBE the memories
 
             var serverEnvironmentMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
             var serverEnvironmentData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_DataConverter", false).SingleOrDefault();
@@ -252,7 +252,7 @@ namespace BaseDI.Script.Web_Development.Extensions_13
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VALUES: RECALL the memories
 
             results.Add("GET", serverEnvironmentServerRoutesGET);
             results.Add("POST", serverEnvironmentServerRoutesPOST);
@@ -261,7 +261,7 @@ namespace BaseDI.Script.Web_Development.Extensions_13
 
             #endregion
 
-            #region PROCESS the memories
+            #region **INPUT: PROCESS the memories*
 
             #endregion
 
@@ -272,7 +272,7 @@ namespace BaseDI.Script.Web_Development.Extensions_13
         {
             if (storylineDetails == null) return null;
 
-            #region DESCRIBE the memories
+            #region VARIABLES: DESCRIBE the memories
 
             var serverEnvironmentMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
             var serverEnvironment = serverEnvironmentMetaData != null ? serverEnvironmentMetaData.Parent : null;
@@ -281,15 +281,15 @@ namespace BaseDI.Script.Web_Development.Extensions_13
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VALUES: RECALL the memories
 
             #endregion
 
-            #region PROCESS the memories
+            #region **INPUT: PROCESS the memories*
 
             #endregion
 
-            #region TELL the story
+            #region **OUTPUT: TELL the story*
 
             return storylineDetails;
 

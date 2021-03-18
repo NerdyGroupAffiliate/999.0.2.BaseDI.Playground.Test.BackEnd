@@ -414,39 +414,39 @@ namespace BaseDI.Experience.Hear.Web_Development_13
             {
                 if (_actionName != null && _actionName.ToString().ToUpper().Contains("COPYSTATICFILES_1_0"))
                 {
-                    #region DESCRIBE the memories
+                    #region VARIABLES: DESCRIBE the memories
 
                     #endregion
 
-                    #region DESCRIBE the memories
+                    #region VARIABLES: DESCRIBE the memories
 
                     #endregion
 
-                    #region PROCESS the memories
+                    #region **INPUT: PROCESS the memories*
 
                     Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(_storylineDetails);
 
                     #endregion
 
-                    #region TELL the story
+                    #region **OUTPUT: TELL the story*
 
                     #endregion
                 }
 
                 if (_actionName != null && _actionName.ToString().ToUpper().Contains("MAPSTATICFILES_1_0"))
                 {
-                    #region DESCRIBE the memories
+                    #region VARIABLES: DESCRIBE the memories
 
                     dynamic staticSettingDetails = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(_storylineDetails);
                     var jContainer = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault()?.Parent;
 
                     #endregion
 
-                    #region DESCRIBE the memories
+                    #region VARIABLES: DESCRIBE the memories
 
                     #endregion
 
-                    #region PROCESS the memories
+                    #region **INPUT: PROCESS the memories*
 
                     if (jContainer != null)
                     {
@@ -463,7 +463,7 @@ namespace BaseDI.Experience.Hear.Web_Development_13
 
                     #endregion
 
-                    #region TELL the story
+                    #region **OUTPUT: TELL the story*
 
                     #endregion
                 }

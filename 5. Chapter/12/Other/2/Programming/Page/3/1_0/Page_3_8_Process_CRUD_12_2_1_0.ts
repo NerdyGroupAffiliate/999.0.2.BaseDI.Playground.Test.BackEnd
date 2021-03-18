@@ -33,15 +33,15 @@ export namespace BaseDI.Chapter.Page.Programming_3 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region DESCRIBE the memories 
+            //#region VARIABLES: DESCRIBE the memories 
 
             //#endregion
 
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
 
             //#endregion
 
-            //#region PROCESS the memories
+            //#region **INPUT: PROCESS the memories*
 
             //CREATE THE PROCESS
             const processData = async () =>
@@ -63,7 +63,7 @@ export namespace BaseDI.Chapter.Page.Programming_3 {
 
             //#endregion
 
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
 
             return await this.StorylineDetails;
 

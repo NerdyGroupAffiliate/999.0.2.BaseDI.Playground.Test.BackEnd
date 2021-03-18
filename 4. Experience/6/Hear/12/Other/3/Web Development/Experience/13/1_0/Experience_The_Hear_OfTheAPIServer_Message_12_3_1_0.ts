@@ -351,21 +351,21 @@ export namespace BaseDI.Experience.Hear.Web_Development_13 {
 
             if (process.env.APP_ENV == "SERVER" && this._actionName.toUpperCase().includes("COPYSTATICFILES_1_0")) {
                 {
-                    //#region DESCRIBE the memories
+                    //#region VARIABLES: DESCRIBE the memories
 
                     //#endregion
 
-                    //#region RECALL THE MEMORIES
+                    //#region VALUES: RECALL the memories
 
                     //#endregion
 
-                    //#region PROCESS the memories
+                    //#region **INPUT: PROCESS the memories*
 
                     await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(this._storylineDetails);
 
                     //#endregion
 
-                    //#region TELL the story
+                    //#region **OUTPUT: TELL the story*
 
                     //#endregion
                 }

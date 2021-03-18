@@ -11,19 +11,19 @@ namespace BaseDI.Script.Programming.Extensions_3
     {
         public static void Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(string storageAction, string storageKey, object storageValue)
         {
-            #region DESCRIBE the memories
+            #region VARIABLES: DESCRIBE the memories
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VALUES: RECALL the memories
 
             #endregion
 
-            #region PROCESS the memories
+            #region **INPUT: PROCESS the memories*
 
             #endregion
 
-            #region TELL the story
+            #region **OUTPUT: TELL the story*
 
             #endregion
         }

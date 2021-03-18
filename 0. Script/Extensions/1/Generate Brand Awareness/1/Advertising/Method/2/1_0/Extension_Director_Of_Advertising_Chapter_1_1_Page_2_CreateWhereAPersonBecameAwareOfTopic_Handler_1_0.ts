@@ -82,20 +82,20 @@ export namespace BaseDI.Advertising.Extensions_2 {
                 }) 
             }
 
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
            
 
             //#endregion
 
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
 
             //#endregion
 
-            //#region PROCESS the memories
+            //#region **INPUT: PROCESS the memories*
 
             //#endregion
 
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
 
             //#endregion
         }
@@ -107,13 +107,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToFacebook_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
             //#endregion
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
             //#endregion
-            //#region PROCESS the memories
+            //#region **INPUT: PROCESS the memories*
             //#endregion
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
             //#endregion
         }
 
@@ -124,13 +124,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToYouTube_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
             //#endregion
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
             //#endregion
-            //#region PROCESS the memories
+            //#region **INPUT: PROCESS the memories*
             //#endregion
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
             //#endregion
         }
 
@@ -141,13 +141,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToLinkedIn_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
             //#endregion
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
             //#endregion
-            //#region PROCESS the memories
+            //#region **INPUT: PROCESS the memories*
             //#endregion
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
             //#endregion
         }
 

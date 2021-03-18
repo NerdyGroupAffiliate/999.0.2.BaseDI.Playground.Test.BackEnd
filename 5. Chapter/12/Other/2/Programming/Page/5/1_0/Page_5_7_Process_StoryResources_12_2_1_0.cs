@@ -53,21 +53,21 @@ namespace BaseDI.Chapter.Page.Programming_5
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            #region DESCRIBE the memories
+            #region VARIABLES: DESCRIBE the memories
 
 
             #endregion
 
-            #region DESCRIBE the memories
+            #region VARIABLES: DESCRIBE the memories
 
 
             #endregion
 
-            #region PROCESS the memories
+            #region **INPUT: PROCESS the memories*
 
             #endregion
 
-            #region TELL the story
+            #region **OUTPUT: TELL the story*
 
             return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 

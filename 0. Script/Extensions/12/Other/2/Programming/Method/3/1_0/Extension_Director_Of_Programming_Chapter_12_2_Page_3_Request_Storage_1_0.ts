@@ -32,7 +32,7 @@ export namespace BaseDI.Programming.Extensions_3 {
             //console.log("AA");
             //console.log(JSON.stringify(storylineDetails.outputs[1].baseDIObservations));
 
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
 
             let observationItem: String = "";
 
@@ -53,11 +53,11 @@ export namespace BaseDI.Programming.Extensions_3 {
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES: RECALL the memories
 
             //#endregion
 
-            //#region PROCESS the memories
+            //#region **INPUT: PROCESS the memories*
 
 
             if (uniqueReferenceKey)
@@ -138,7 +138,7 @@ export namespace BaseDI.Programming.Extensions_3 {
 
             //#endregion
 
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
 
             return storylineDetails;
 
@@ -146,7 +146,7 @@ export namespace BaseDI.Programming.Extensions_3 {
         }
 
         public static async Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storageAction: string, storageKey: String, storageValue: any): Promise<any> {
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
 
             let storedCRUDActionRead: boolean = false
             let storageResult: any = null;
@@ -157,7 +157,7 @@ export namespace BaseDI.Programming.Extensions_3 {
             //#endregion
 
             try {
-                //#region RECALL THE MEMORIES
+                //#region VALUES: RECALL the memories
                 storedObservationKey = (Object.keys(storageValue)[0]);
 
                 if (storedObservationKey.toString().toUpperCase().includes("-READ")) {
@@ -177,7 +177,7 @@ export namespace BaseDI.Programming.Extensions_3 {
 
                 //#endregion
 
-                //#region PROCESS the memories
+                //#region **INPUT: PROCESS the memories*
 
                 if (localStorage) {
                     switch (storageAction.toUpperCase()) {
@@ -201,7 +201,7 @@ export namespace BaseDI.Programming.Extensions_3 {
                 throw e;
             }
 
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
 
             return storageResult;
 

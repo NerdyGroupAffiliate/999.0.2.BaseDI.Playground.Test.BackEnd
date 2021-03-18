@@ -8,7 +8,7 @@
 //METHOD REGION STANDARS 1
 //////////////////////////////////////////////
 
-//#region 1. DESCRIBE the memories
+//#region 1. VARIABLES: DESCRIBE the memories
 
 //stored{VariableName}:string = "";
 //stored{VariableName}:int = 0;
@@ -16,7 +16,7 @@
 
 //#endregion
 
-//#region 2. RECALL the memories
+//#region 2. VALUES: RECALL the memories
 
 //#region MEMORIZE { what } { noun }
 
@@ -38,7 +38,9 @@
 
 //#endregion
 
-//#region 3. PROCESS the memories
+
+
+//#region 3. **INPUT: PROCESS the memories*
 
 //#region HANDLE { what } { verb }
 
@@ -70,7 +72,9 @@
 
 //#endregion
 
-//#region 4. TELL the story
+
+
+//#region 4. **OUTPUT: TELL the story*
 
 //#region HANDLE { what } { action }
 
@@ -88,7 +92,7 @@
 //METHOD REGION STANDARS 2
 //////////////////////////////////////////////
 
-//#region 1. DESCRIBE the memories
+//#region 1. VARIABLES: DESCRIBE the memories
 
 //stored{VariableName}:string = "";
 //stored{VariableName}:int = 0;
@@ -96,7 +100,7 @@
 
 //#endregion
 
-//#region 2. RECALL the memories
+//#region 2. VALUES: RECALL the memories
 
 //#region MEMORIZE { what } { noun }
 
@@ -118,20 +122,20 @@
 
 //#endregion
 
-//#region 3. PROCESS the memories
+//#region 3. **INPUT: PROCESS the memories*
 
 //#region HANDLE { what } { verb }
 
-//#region USE cases
-//var { someVariable } = { SomeReturnValue }
+//#region START new block
+//var someVariable  = SomeReturnValue 
 
-//if ({ someVariable } != null) 
+//if (someVariable != null) 
 //{
-    //#region 1. DESCRIBE the memories
+    //#region 1. VARIABLES: DESCRIBE the memories
 
     //#endregion
 
-    //#region 2. RECALL the memories
+    //#region 2. VALUES: RECALL the memories
 
     //#region MEMORIZE { what } { noun }
 
@@ -140,11 +144,12 @@
 
     //#endregion
 
-    //#region 3. PROCESS the memories
 
-    //#region HANDLE { what } { action }
 
-    //if ({ someVariable }.Any()) 
+    //#region 3. **INPUT: PROCESS the memories*
+
+    //#region HANDLE {what} {action}
+    //if (someVariable.Any()) 
     //{
         //#region[IDEAL | EDGE] case
 
@@ -168,15 +173,15 @@
 
     //#endregion
 
-    //#region 4. TELL the story
+
+
+    //#region 4. **OUTPUT: TELL the story*
 
     //#region HANDLE { what } { action }
 
     //#region[IDEAL | EDGE] case
 
     //#region { ACTION } [a | of |for|] { verb }| { noun }
-
-    //#endregion
 
     //#endregion
 
@@ -191,7 +196,7 @@
 
 //#endregion
 
-//#region 4. TELL the story
+//#region 4. **OUTPUT: TELL the story*
 
 //#region HANDLE { what } { action }
 

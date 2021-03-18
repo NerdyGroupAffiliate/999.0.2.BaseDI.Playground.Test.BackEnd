@@ -35,7 +35,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_5 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
             const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0";
 
             let observationItem: String = "";
@@ -61,7 +61,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_5 {
 
             //#endregion
 
-            //#region DESCRIBE the memories
+            //#region VARIABLES: DESCRIBE the memories
 
             observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_5_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
 
@@ -73,7 +73,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_5 {
 
             //#endregion
 
-            //#region PROCESS the memories
+            //#region **INPUT: PROCESS the memories*
 
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);
@@ -92,7 +92,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_5 {
 
             //#endregion
 
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
 
             return await this.StorylineDetails;
 

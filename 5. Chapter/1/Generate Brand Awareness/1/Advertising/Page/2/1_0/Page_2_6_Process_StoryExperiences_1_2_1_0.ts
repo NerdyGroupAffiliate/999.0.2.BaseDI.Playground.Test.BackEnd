@@ -55,19 +55,19 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
             this._actionName = this?._clientORserverInstance["actionName"];
 
             if (this._actionName.toUpperCase().includes("PROCESSREQUEST_1_0")) {
-                //#region DESCRIBE the memories
+                //#region VARIABLES: DESCRIBE the memories
 
 
                 //#endregion
 
-                //#region DESCRIBE the memories
+                //#region VARIABLES: DESCRIBE the memories
 
                 this._jsonAccountInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "AccountItem_SetSeller_Business_Management_AccountLookUp", false);
                 this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
 
                 //#endregion
 
-                //#region PROCESS the memories
+                //#region **INPUT: PROCESS the memories*
 
                 this.HandleDefaults();
 
@@ -75,7 +75,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
 
             //#endregion
 
-                //#region TELL the story
+                //#region **OUTPUT: TELL the story*
 
             //#endregion
             }

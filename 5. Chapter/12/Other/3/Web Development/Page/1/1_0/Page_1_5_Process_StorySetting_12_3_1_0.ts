@@ -39,7 +39,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_1 {
         public async Action(): Promise<object>
         {
             if (this.ClientOrServerInstance["actionName"] == undefined || this.ClientOrServerInstance["actionName"] == null || this.ClientOrServerInstance["actionName"] == "" || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0) {
-                //#region DESCRIBE the memories
+                //#region VARIABLES: DESCRIBE the memories
                 const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
 
                 let observationItem: String = "";
@@ -65,7 +65,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_1 {
 
                 //#endregion
 
-                //#region DESCRIBE the memories
+                //#region VARIABLES: DESCRIBE the memories
 
                 observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
 
@@ -77,7 +77,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_1 {
 
                 //#endregion
 
-                //#region PROCESS the memories
+                //#region **INPUT: PROCESS the memories*
 
                 htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
                 htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);
@@ -97,7 +97,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_1 {
                 //#endregion
             }
 
-            //#region TELL the story
+            //#region **OUTPUT: TELL the story*
 
             return await this.StorylineDetails;
 
