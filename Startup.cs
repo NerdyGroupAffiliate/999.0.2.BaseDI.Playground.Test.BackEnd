@@ -429,8 +429,10 @@ namespace BaseDI
             #endregion
 
             #region MEMORIZE action name
+
             if (requestActionName != "")
                 _storedClientORserverInfo.Add("actionName", requestActionName);
+
             #endregion
 
             #endregion
@@ -511,8 +513,6 @@ namespace BaseDI
 
                 #endregion
 
-
-
                 #region 3. **INPUT: PROCESS the memories*
 
                 #region HANDLE mistake response
@@ -541,13 +541,9 @@ namespace BaseDI
 
                 #endregion
 
-
-
                 #region 4. **OUTPUT: TELL the story*
 
                 #endregion
-
-
 
                 #endregion
 

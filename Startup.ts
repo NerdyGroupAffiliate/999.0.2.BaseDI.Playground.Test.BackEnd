@@ -123,17 +123,30 @@ export namespace BaseDI
         public Action(targetedResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "", requestCallBack: any = null)
         {
             //#region 1. VARIABLES: DESCRIBE the memories
+
             let storedObservation: Promise<any>;
 
             let storedOutput: string = "";
+
             //#endregion
 
             //#region 2. VALUES: RECALL the memories
+
+            //#region MEMORIZE targeted tagID
+
             if (targetedResponseTagID != "")
                 this._storedClientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
 
+
+            //#endregion
+
+            //#region MEMORIZE action name
+
             if (requestActionName != "")
                 this._storedClientORserverInfo["actionName"] = requestActionName;
+
+            //#endregion
+
             //#endregion
 
             //#region 3. **INPUT: PROCESS the memories*
