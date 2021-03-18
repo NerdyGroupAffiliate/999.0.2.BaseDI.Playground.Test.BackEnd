@@ -1,4 +1,5 @@
 ﻿using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Script.Programming.Extensions_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,39 @@ namespace BaseDI.Script.Programming.Extensions_3
             #region **OUTPUT: TELL the story*
 
             #endregion
+        }
+
+        public static JObject Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_1(JObject storylineDetails)
+        {
+            if (storylineDetails == null) return null;
+
+            #region VARIABLES: DESCRIBE the memories
+
+            var serverEnvironmentMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
+            var serverEnvironment = serverEnvironmentMetaData != null ? serverEnvironmentMetaData.Parent : null;
+
+            Dictionary<string, JToken> results = new Dictionary<string, JToken>();
+
+            #endregion
+
+            #region VALUES: RECALL the memories
+
+            #endregion
+
+            #region **INPUT: PROCESS the memories*
+
+            #endregion
+
+            #region **OUTPUT: TELL the story*
+
+            return storylineDetails;
+
+            #endregion            
+        }
+
+        public static Task<JObject> Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(aClass_Programming_ScriptAction_12_2_1_0<JObject> masterLeader_masterStoreReference, string CRUDVerb, string entryPointName, string pageName, string description, JObject storylineDetails, Object data, string uniqueReferenceKey = "") 
+        {
+            return null;
         }
     }
 }

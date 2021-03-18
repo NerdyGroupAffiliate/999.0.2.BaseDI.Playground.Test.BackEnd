@@ -298,10 +298,6 @@ namespace BaseDI.Script.Web_Development.Extensions_13
 
         #endregion
 
-        #region SERVER LOCAL STORAGE
-        
-        #endregion
-
         #endregion
     }
 }

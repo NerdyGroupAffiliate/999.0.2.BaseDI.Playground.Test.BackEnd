@@ -90,7 +90,9 @@ namespace BaseDI
             #region *IDEAL case*
 
             #region COPY local files
+
             var storedCopiedFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, null, Configuration).Result;
+            
             #endregion
 
             #endregion
@@ -119,8 +121,6 @@ namespace BaseDI
 
                     #endregion
 
-
-
                     #region 3. **INPUT: PROCESS the memories*
 
                     #region HANDLE mapping process
@@ -130,26 +130,32 @@ namespace BaseDI
                         #region *IDEAL case*
 
                         #region PERFORM a search
+
                         foreach (dynamic item in storedFilesObservation.FirstOrDefault())
                         {
                             if (item.Value != null)
                             {
                                 #region IF NEEDED: CREATE a directory 
+
                                 if (!Directory.Exists(Path.Combine(item.Value.ToString())))
                                 {
                                     Directory.CreateDirectory(Path.Combine(item.Value.ToString()));
                                 }
+
                                 #endregion
 
                                 #region MAP server folder
+
                                 app.UseStaticFiles(new StaticFileOptions
                                 {
                                     FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine(item.Value.ToString()))),
                                     RequestPath = "/StaticFiles"
                                 });
+
                                 #endregion
                             }
                         }
+
                         #endregion
 
                         #endregion
@@ -173,8 +179,6 @@ namespace BaseDI
                     #endregion
 
                     #endregion
-
-
 
                     #region 4. **OUTPUT: TELL the story*
 
@@ -406,16 +410,22 @@ namespace BaseDI
             #region 2. VALUES: RECALL the memories
 
             #region MEMORIZE application settings
+
             if (StoredAppSettings != null)
-                _storedClientORserverInfo.Add("StoredAppSettings", StoredAppSettings);
+                _storedClientORserverInfo.Add("appSettings", StoredAppSettings);
+
             #endregion
 
             #region MEMORIZE request instance
+
             _storedClientORserverInfo.Add("request", Request);
+
             #endregion
 
             #region MEMORIZE server instance
+
             _storedClientORserverInfo.Add("serverInstance", this);
+
             #endregion
 
             #region MEMORIZE action name
@@ -462,9 +472,9 @@ namespace BaseDI
 
                 Action = (string requestNameToProcess, string requestNameToProcessParameters, ExtraData_12_2_1_0 extraData) =>
                 {
-                    #region RETURN system response
+                    #region STORE system response
                     
-                    return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                    return storedObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                         .SetupStoryline(_storedClientORserverInfo, _storedStorylineDetails, null, extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action().Result;
 
@@ -475,12 +485,7 @@ namespace BaseDI
 
                 #region START system request
 
-                storedObservation = Action(requestNameToProcess, requestNameToProcessParameters, _storedExtraData);
-
-                if (storedObservation != null)
-                {
-                    storedOutput = storedObservation["outputs"];
-                }
+                Action(requestNameToProcess, requestNameToProcessParameters, _storedExtraData);
 
                 #endregion
 
@@ -580,6 +585,8 @@ namespace BaseDI
 
                 if (storedObservation != null)
                 {
+                    storedOutput = storedObservation["outputs"];
+
                     storedResult = new ContentResult
                     {
                         ContentType = "text/html",
