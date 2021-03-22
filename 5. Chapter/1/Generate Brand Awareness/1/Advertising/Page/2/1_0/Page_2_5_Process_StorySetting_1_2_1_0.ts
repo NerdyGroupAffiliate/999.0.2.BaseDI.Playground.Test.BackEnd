@@ -35,7 +35,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 
             let observationItem: String = "";
@@ -61,7 +61,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
 
@@ -74,7 +74,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             // htmlResultString = "<h3>Hello World<\/h3>";
             htmlResultString = this.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);            
@@ -90,7 +90,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
             const observation = observationItem;
             // const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResultString)); 
             //#endregion
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
             storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation.toString()));
             this.StorylineDetails = storylineDetails;
 
@@ -110,14 +110,14 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
         }
 
         public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             let htmlContainerString: string = "";    
             htmlContainerString = `<${htmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.getAttributes(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${htmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
 
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion
@@ -126,7 +126,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
         }
 
         public Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON: any, htmlContainerString: string): string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             let htmlRowsString: string = "";
             let rows = [];
             htmlRowsJSON.value.HTMLContentItems.forEach(row => {
@@ -134,7 +134,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
             });
             htmlRowsString = htmlContainerString.replace("{HTMLRows_Replace}", rows.join("\n"))
             //#endregion
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion
@@ -143,14 +143,14 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
         }
 
         public Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON: any, htmlRowsString: string): string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             let htmlColumnsString: string = htmlRowsString;
             //#endregion
             htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
                 let colItem = `<${col.Tag} ${this.getAttributes(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
                 htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
             });
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion
@@ -159,7 +159,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
         }
 
         public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             let htmlContentString: string = htmlColumnsString;
             let idsAndContant = {}
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
@@ -182,7 +182,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion
@@ -191,7 +191,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
         }
 
         public Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any) : string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             let htmlInlineCSSString: string = "";
             let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
@@ -202,7 +202,7 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
             htmlInlineCSSString = files.join("\n");
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion

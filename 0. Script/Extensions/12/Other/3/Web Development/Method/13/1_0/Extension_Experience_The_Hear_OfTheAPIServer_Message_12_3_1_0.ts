@@ -67,12 +67,12 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
         public static Step_X_X_Custom_Output_ServerResponseToCaller_2_0(input: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             //let storedCallbackURL: string = input.Parameters.getValue("callbackURL");
             //let storedClientID: string = input.Parameters.getValue("clientID");
@@ -91,7 +91,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
             //const storedStrategyCallBack: any = (accessToken, refreshToken, profile, cb) => {
                 // In this example, the user's Facebook profile is supplied as the user
                 // record.  In a production-quality application, the Facebook profile should
@@ -112,7 +112,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
             //passport.use(storedStrategyInstance);
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
@@ -131,20 +131,20 @@ export namespace BaseDI.Web_Development.Extensions_13 {
         }
 
         private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server: any, url: string, options: any, callback: Function): any {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let storedCurlClient: any;
             let storedQueryString: string;
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             storedCurlClient = curl.connect();
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //console.log(url);
             //console.log(options);
@@ -155,7 +155,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
@@ -165,20 +165,20 @@ export namespace BaseDI.Web_Development.Extensions_13 {
         }
 
         private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server: any, url: string, options: any, callback: Function): any {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let storedCurlClient: any;
 
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             storedCurlClient = curl.connect();
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //console.log(url);
             //console.log(options);
@@ -189,7 +189,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
@@ -205,16 +205,16 @@ export namespace BaseDI.Web_Development.Extensions_13 {
         //#region SERVER ASSET MANAGEMENT
 
         public static async Step_X_X_Custom_Store_LocalFilesToServer_1_0(storylineDetails: object): Promise<any> {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             var fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
@@ -297,7 +297,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
@@ -311,7 +311,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
             if (process.env.APP_ENV != "SERVER") return; //REQUIRED VALUE
             if (entryPointName == undefined || entryPointName == null || entryPointName == "") return; //REQUIRED DIRECTOR or EXPREINCE FILE NAME without extension.
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let server: any = null;
 
@@ -319,7 +319,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
             const serverEnvironmentData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_DataConverter", false);
@@ -341,7 +341,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
             if (masterLeader_masterStorerReference != null) {
                 await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING client side BaseDI script SOURCE PATH", storylineDetails, serverEnvironmentScriptName, "BaseDI_PresentationScript_SrcLocation");
                 await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING server side data CONVERSION REPOSITORY mode", storylineDetails, serverEnvironmentDataConversion, "BaseDI_DataConverter_Mode");
@@ -447,7 +447,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             server.get('/favicon.ico', (req, res) => res.status(204));
 
@@ -479,20 +479,20 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
         public static Step_X_X_Custom_Outout_ServerLocalDataFromMemory_1_0(storageKey: String, storageValue: any): any
         {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             let storedValue: any;
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
 
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             if (localStorage) {
                 storedValue = localStorage.getItem(storageKey);
@@ -500,7 +500,7 @@ export namespace BaseDI.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return storedValue;
 

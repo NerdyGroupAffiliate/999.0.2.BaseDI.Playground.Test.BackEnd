@@ -31,20 +31,20 @@ export namespace BaseDI.Chapter.Page.Advertising_2 {
         //#region 4. Action
         public async Action(): Promise<object> {
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
             this.Step_1_0_Custom_Sense_BrandTrustGeneratedByVistor_1_0();
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
 

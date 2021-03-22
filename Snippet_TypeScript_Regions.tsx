@@ -1,194 +1,98 @@
-﻿//////////////////////////////////////////////
-//DEFINITIONS
-//////////////////////////////////////////////
-//[] = Select Word...REMOVE []
-//{} = Replace with your own Words...REMOVE {}
+﻿//#region 1. INPUTS
 
-//////////////////////////////////////////////
-//METHOD REGION STANDARS 1
-//////////////////////////////////////////////
-
-//#region 1. VARIABLES: DESCRIBE the memories
-
-//stored{VariableName}:string = "";
-//stored{VariableName}:int = 0;
-//stored{VariableName}:object = null;
+//[dataType] stored[SomeVariableName];
+//[dataType] stored[SomeVariableName];
+//[dataType] stored[SomeVariableName];
 
 //#endregion
 
-//#region 2. VALUES: RECALL the memories
+//#region 2. VALUES
 
-//#region MEMORIZE { what } { noun }
+//#region MEMORIZE xxxxxx xxxxxx
 
-//stored{VariableName}:string = "Default";
-
-//#endregion
-
-//#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:int = MyBusinessLayer.GetSomeValue();
 
 //#endregion
 
-//#region MEMORIZE { what } { noun }
+//#region MEMORIZE xxxxxx xxxxxx
 
-//stored{VariableName}:object = MyAPIService.GetSomeValue();
+
+//#endregion
+
+//#region MEMORIZE xxxxxx xxxxxx
+
+
+//#endregion
+
+//#region MEMORIZE xxxxxx xxxxxx
+
 
 //#endregion
 
 //#endregion
 
+//#region 3. ** INPUT: PROCESS the memories *
 
+//#region HANDLE xxxxx xxxxx
 
-//#region 3. **INPUT: PROCESS the memories*
+//#region EDGE case
 
-//#region HANDLE { what } { verb }
+//#region[ACTIONNAME] xxxxx xxxxx
 
-//#region[IDEAL | EDGE] case
+//#endregion
 
-//#region { ACTION } [a | of |for|] { verb }| { noun }
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
 
 //#endregion
 
 //#endregion
 
-//#region[IDEAL | EDGE] case
+//#region EDGE case
 
-//#region { ACTION } [a | of |for|] { verb }| { noun }
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
 
 //#endregion
 
 //#endregion
 
-//#region[IDEAL | EDGE] case
+//#region EDGE case
 
-//#region { ACTION } [a | of |for|] { verb }| { noun }
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
 
 //#endregion
 
 //#endregion
 
-//#endregion
+//#region * IDEA case*
+
+//#region[ACTIONNAME] xxxxx xxxxx
 
 //#endregion
 
-
-
-//#region 4. **OUTPUT: TELL the story*
-
-//#region HANDLE { what } { action }
-
-//#region[IDEAL | EDGE] case
+//#region[ACTIONNAME] xxxxx xxxxx
 
 //#endregion
 
-//#endregion
-
-//#endregion
-
-////////////////////////////////////////////// 
-
-//////////////////////////////////////////////
-//METHOD REGION STANDARS 2
-//////////////////////////////////////////////
-
-//#region 1. VARIABLES: DESCRIBE the memories
-
-//stored{VariableName}:string = "";
-//stored{VariableName}:int = 0;
-//stored{VariableName}:object = null;
-
-//#endregion
-
-//#region 2. VALUES: RECALL the memories
-
-//#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:string = "Default";
-
-//#endregion
-
-//#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:int = MyBusinessLayer.GetSomeValue();
-
-//#endregion
-
-//#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:object = MyAPIService.GetSomeValue();
-
-//#endregion
-
-//#endregion
-
-//#region 3. **INPUT: PROCESS the memories*
-
-//#region HANDLE { what } { verb }
-
-//#region START new block
-//var someVariable  = SomeReturnValue 
-
-//if (someVariable != null) 
-//{
-    //#region 1. VARIABLES: DESCRIBE the memories
-
-    //#endregion
-
-    //#region 2. VALUES: RECALL the memories
-
-    //#region MEMORIZE { what } { noun }
-
-
-    //#endregion
-
-    //#endregion
-
-
-
-    //#region 3. **INPUT: PROCESS the memories*
-
-    //#region HANDLE {what} {action}
-    //if (someVariable.Any()) 
-    //{
-        //#region[IDEAL | EDGE] case
-
-        //#region { ACTION } [a | of |for|] { verb }| { noun }
-
-        //#endregion
-
-        //#endregion
-    //}
-    //else 
-    ///{
-        //#region[IDEAL | EDGE] case
-
-        //#region { ACTION } [a | of |for|] { verb }| { noun }
-
-        //#endregion
-
-        //#endregion
-    //}
-    //#endregion
-
-    //#endregion
-
-
-
-    //#region 4. **OUTPUT: TELL the story*
-
-    //#region HANDLE { what } { action }
-
-    //#region[IDEAL | EDGE] case
-
-    //#region { ACTION } [a | of |for|] { verb }| { noun }
-
-    //#endregion
-
-    //#endregion
-
-    //#endregion
-//}
+//#region[ACTIONNAME] xxxxx xxxxx
 
 //#endregion
 
@@ -196,13 +100,55 @@
 
 //#endregion
 
-//#region 4. **OUTPUT: TELL the story*
+//#endregion
 
-//#region HANDLE { what } { action }
+//#region 4. ** OUTPUT: TELL the story *
 
-//#region[IDEAL | EDGE] case
+//#region HANDLE xxxxx xxxxx
 
-//#region { ACTION } [a | of |for|] { verb }| { noun }
+//#region EDGE case
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#endregion
+
+//#region EDGE case
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#endregion
+
+//#region * IDEA case*
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
+
+//#endregion
+
+//#region[ACTIONNAME] xxxxx xxxxx
 
 //#endregion
 

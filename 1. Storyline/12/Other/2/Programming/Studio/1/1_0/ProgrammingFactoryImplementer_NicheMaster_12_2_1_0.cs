@@ -1,4 +1,8 @@
-﻿using BaseDI.Director.Advertising_1;
+﻿#region Imports
+
+#region BaseDI
+
+using BaseDI.Director.Advertising_1;
 using BaseDI.Director.Programming_1;
 using BaseDI.Director.Programming_2;
 using BaseDI.Director.Programming_3;
@@ -18,13 +22,29 @@ using BaseDI.State.Programming_3;
 using BaseDI.State.Programming_4;
 using BaseDI.State.Programming_5;
 using BaseDI.State.Programming_6;
+
+
+#endregion
+
+#region .Net Core
+
 using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json.Linq;
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
+
+#endregion 
+
+#region 3rd Party Core
+
+using Newtonsoft.Json.Linq;
+
+#endregion 
+
+#endregion
 
 namespace BaseDI.Story.Programming_1
 {
@@ -33,47 +53,259 @@ namespace BaseDI.Story.Programming_1
     //A. Story in motion (DO SOMETHING) ACTING
     internal class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _clientORserverInstance;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
+        #region 1. Assign
 
-        private ExtraData_12_2_1_0 _extraData = null;
+        private Dictionary<string, object> _storedClientORserverInstance;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
 
-        private string _requestName = "";
+        private ExtraData_12_2_1_0 _storedExtraData = null;
+
+        private string _storedRequestName = "";
+
+        #endregion
+
+        #region 2. Ready
 
         internal ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(ExtraData_12_2_1_0 extraData)
         {
-            //region 1. Assign
-            _clientORserverInstance = new Dictionary<string, object>();
-            _extraData = extraData;
+            #region 1. INPUTS
 
-            //region 2. Action
+            _storedClientORserverInstance = new Dictionary<string, object>();
 
-            //region 3. Observe
+            #endregion
+
+            #region 2. VALUES
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = extraData;
+
+            #endregion
+
+            #endregion
+
+            #region 3. INPUT
+
+            #region HANDLE niche setup
+
+            #region *IDEA case*
+
+            #region PROCESS niche defaults
+            
+            Setup();
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+
+            #endregion
         }
+
+        #endregion
+
+        #region 3. Set
+
+        //A. Default state of story
+        public void Setup()
+        {
+            #region 1. INPUTS
+
+            //[dataType] stored[SomeVariableName];
+            //[dataType] stored[SomeVariableName];
+            //[dataType] stored[SomeVariableName];
+
+            #endregion
+
+            #region 2. VALUES
+
+            #region MEMORIZE xxxxxx xxxxxx
+
+
+            #endregion
+
+            #region MEMORIZE xxxxxx xxxxxx
+
+
+            #endregion
+
+            #region MEMORIZE xxxxxx xxxxxx
+
+
+            #endregion
+
+            #region MEMORIZE xxxxxx xxxxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region HANDLE xxxxx xxxxx
+
+            #region EDGE case
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #endregion
+
+            #region EDGE case
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #endregion
+
+            #region EDGE case
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #endregion
+
+            #region *IDEA case*
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region HANDLE xxxxx xxxxx
+
+            #region EDGE case
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #endregion
+
+            #region EDGE case
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #endregion
+
+            #region *IDEA case*
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #region [ACTIONNAME] xxxxx xxxxx
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        #endregion
+
+        #region 4. Action
+
+
+        #endregion
 
         public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
-            _clientORserverInstance = clientORserverInstance;
+            _storedClientORserverInstance = clientORserverInstance;
 
-            _centralizedStorer = centralizedStorer;
-            _centralizedDisturber = centralizedDisturber;
-            _centralizedSensor = centralizedSensor;
+            _storedCentralizedStorer = centralizedStorer;
+            _storedCentralizedDisturber = centralizedDisturber;
+            _storedCentralizedSensor = centralizedSensor;
 
-            _extraData.KeyValuePairs = new Dictionary<string, object>();
+            _storedExtraData.KeyValuePairs = new Dictionary<string, object>();
 
-            _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
-            _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
-            _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
+            _storedExtraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
+            _storedExtraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
-            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+            AppSettings = (IConfiguration)_storedClientORserverInstance["appSettings"];
 
             #endregion
 
@@ -89,31 +321,31 @@ namespace BaseDI.Story.Programming_1
                 {
                     //CONTROLLER
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _storedExtraData);
 
                         break;
 
                     //CONVERSION
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails, storylineDetails_Parameters, _storedExtraData);
 
                         break;
 
                     //STORAGE
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails, storylineDetails_Parameters, _storedExtraData);
 
                         break;
 
                     //DISTURBANCES
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails, storylineDetails_Parameters, _storedExtraData);
 
                         break;
 
                     //SENSOR
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, _storedExtraData);
 
                         break;
                 }
@@ -123,7 +355,7 @@ namespace BaseDI.Story.Programming_1
                 switch (requestType)
                 {
                     case Type _ when requestType == typeof(Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0):
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _storedExtraData);
 
                         break;
                 }
@@ -150,13 +382,13 @@ namespace BaseDI.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0();
 
-            director.ClientOrServerInstance = _clientORserverInstance;
+            director.ClientOrServerInstance = _storedClientORserverInstance;
 
             director.ExtraData = extraData;
 
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
+            director.MasterStorer = _storedCentralizedStorer;
+            director.MasterDisturber = _storedCentralizedDisturber;
+            director.MasterSensor = _storedCentralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -171,14 +403,14 @@ namespace BaseDI.Story.Programming_1
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
 
                     director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
             }
@@ -206,13 +438,13 @@ namespace BaseDI.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0();
 
-            director.ClientOrServerInstance = _clientORserverInstance;
+            director.ClientOrServerInstance = _storedClientORserverInstance;
 
             director.ExtraData = extraData;
 
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
+            director.MasterStorer = _storedCentralizedStorer;
+            director.MasterDisturber = _storedCentralizedDisturber;
+            director.MasterSensor = _storedCentralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -227,14 +459,14 @@ namespace BaseDI.Story.Programming_1
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
                     director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
 
                     director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
             }
@@ -263,13 +495,13 @@ namespace BaseDI.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0();
 
-            director.ClientOrServerInstance = _clientORserverInstance;
+            director.ClientOrServerInstance = _storedClientORserverInstance;
 
             director.ExtraData = extraData;
 
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
+            director.MasterStorer = _storedCentralizedStorer;
+            director.MasterDisturber = _storedCentralizedDisturber;
+            director.MasterSensor = _storedCentralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -284,14 +516,14 @@ namespace BaseDI.Story.Programming_1
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
 
                     director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
 
                     director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
             }
@@ -320,13 +552,13 @@ namespace BaseDI.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0();
 
-            director.ClientOrServerInstance = _clientORserverInstance;
+            director.ClientOrServerInstance = _storedClientORserverInstance;
 
             director.ExtraData = extraData;
 
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
+            director.MasterStorer = _storedCentralizedStorer;
+            director.MasterDisturber = _storedCentralizedDisturber;
+            director.MasterSensor = _storedCentralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -341,14 +573,14 @@ namespace BaseDI.Story.Programming_1
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
 
                     director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
 
                     director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
             }
@@ -377,13 +609,13 @@ namespace BaseDI.Story.Programming_1
 
             Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0();
 
-            director.ClientOrServerInstance = _clientORserverInstance;
+            director.ClientOrServerInstance = _storedClientORserverInstance;
 
             director.ExtraData = extraData;
 
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
+            director.MasterStorer = _storedCentralizedStorer;
+            director.MasterDisturber = _storedCentralizedDisturber;
+            director.MasterSensor = _storedCentralizedSensor;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -398,14 +630,14 @@ namespace BaseDI.Story.Programming_1
                     var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
                     director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
 
                     director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                    director.Repository.RequestName = _storedRequestName;
 
                     break;
             }

@@ -29,9 +29,11 @@ export namespace BaseDI.Web_Development.Extensions_0 {
                 let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
                 var baseDIObservations = results.outputs[1].baseDIObservations[results.outputs[1].baseDIObservations.length - 1];
 
-                var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]].observation.metadata[3].item.data[0].dataResult
+                if (process.env.APP_ENV.toUpperCase() == "SERVER") {
+                    var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]].observation.metadata[3].item.data[0].dataResult
 
-                scripts = `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
+                    scripts = `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
+                }
             }
 
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{metaDataReplace}", metaData);
@@ -48,13 +50,13 @@ export namespace BaseDI.Web_Development.Extensions_0 {
         //#region GENERATE HTML PAGE
 
         private static Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(attributes) {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             var attrs = [];
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             for (var attribute in attributes) {
                 attrs.push(`${Object.keys(attributes[attribute])[0]}="${Object.values(attributes[attribute])[0]}"`)
@@ -62,11 +64,11 @@ export namespace BaseDI.Web_Development.Extensions_0 {
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return attrs.join(" ");
 
@@ -74,22 +76,22 @@ export namespace BaseDI.Web_Development.Extensions_0 {
         }
 
         public static Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let htmlContainerString: string = "";
             htmlContainerString = `<${htmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${htmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return htmlContainerString;
 
@@ -97,14 +99,14 @@ export namespace BaseDI.Web_Development.Extensions_0 {
         }
 
         public static Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON: any, htmlContainerString: string): string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let htmlRowsString: string = "";
             let rows = [];
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             htmlRowsJSON.value.HTMLContentItems.forEach(row => {
                 rows.push(`<${row.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(row.Attributes)}>{${row.Attributes[0].id}_Replace}</${row.Tag}>`)
@@ -113,11 +115,11 @@ export namespace BaseDI.Web_Development.Extensions_0 {
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return htmlRowsString;
 
@@ -126,24 +128,24 @@ export namespace BaseDI.Web_Development.Extensions_0 {
 
         public static Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON: any, htmlRowsString: string): string {
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let htmlColumnsString: string = htmlRowsString;
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
             htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
                 let colItem = `<${col.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
                 htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
             });
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return htmlColumnsString;
 
@@ -151,14 +153,14 @@ export namespace BaseDI.Web_Development.Extensions_0 {
         }
 
         public static Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let htmlContentString: string = htmlColumnsString;
             let idsAndConstant = {}
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
                 if (idsAndConstant[con.ParentHTMLContentItemAttributeID] == undefined) {
@@ -183,11 +185,11 @@ export namespace BaseDI.Web_Development.Extensions_0 {
         
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
                      
             return htmlContentString;
 
@@ -195,7 +197,7 @@ export namespace BaseDI.Web_Development.Extensions_0 {
         }
 
         public static Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any): string {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             let htmlInlineCSSString: string = "";
             let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
@@ -211,7 +213,7 @@ export namespace BaseDI.Web_Development.Extensions_0 {
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             filesArray.forEach(file => {
                 file.StyleFileUseProperties.forEach(element => {
@@ -365,11 +367,11 @@ export namespace BaseDI.Web_Development.Extensions_0 {
             }	
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return htmlInlineCSSString;
 

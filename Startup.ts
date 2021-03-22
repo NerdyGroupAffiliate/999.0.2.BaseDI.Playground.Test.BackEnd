@@ -18,9 +18,12 @@ import * as SingleParmPoco_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Prog
 
 //#endregion
 
+//EXECUTION
+//#region HANDLE baseDI http request
 export namespace BaseDI
 {
-    export class Startup {
+    export class Startup
+    {
         //#region 1. Assign
         private _storedClientORserverInfo: Object = new Object();
 
@@ -28,15 +31,15 @@ export namespace BaseDI
 
         private _storedEntryPoint: any;
 
-        private _storedStorylineDetails: object;
-        private _storedStorylineDetails_Parameters: object;
+        private _storedStorylineDetails: object = null;
+        private _storedStorylineDetails_Parameters: object = null;
 
         //#endregion
 
         //#region 2. Ready
         constructor(entryPoint: any)
         {
-            //#region 1. VARIABLES: DESCRIBE the memories
+            //#region 1. INPUTS
             this._storedExtraData = new ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
             this._storedEntryPoint = entryPoint;
@@ -45,20 +48,14 @@ export namespace BaseDI
             this._storedStorylineDetails_Parameters = new Object();
             //#endregion
 
-            //#region 2. VALUES: RECALL the memories
+            //#region 2. PROCESS
 
-            //#endregion
+            //#region EXECUTE process defaults
 
-            //#region 3. **INPUT: PROCESS the memories*
+            //#region EDGE CASE - USE defaults handler
 
-            //#region HANDLE initialization logic
-
-            //#region *IDEAL case*
-
-            //#region PROCESS initialization logic
             this.Setup = this.Setup.bind(this);
             this.Setup();
-            //#endregion
 
             //#endregion
 
@@ -66,7 +63,7 @@ export namespace BaseDI
 
             //#endregion
 
-            //#region 4. **OUTPUT: TELL the story*
+            //#region 3. OUTPUT
 
 
             //#endregion
@@ -76,22 +73,16 @@ export namespace BaseDI
         //#region 3. Set
         public Setup()
         {
-            //#region 1. VARIABLES: DESCRIBE the memories
+            //#region 1. INPUTS
 
             //#endregion
 
-            //#region 2. VALUES: RECALL the memories
-            this._storedStorylineDetails = null;
-            this._storedStorylineDetails_Parameters = null;
-            //#endregion
-
-            //#region 3. **INPUT: PROCESS the memories*
+            //#region 2. PROCESS
 
             //#region HANDLE application defaults
 
-            //#region *IDEAL case*
+            //#region IDEAL CASE - USE hardcoded values
 
-            //#region PROCESS application defaults
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
                 this._storedClientORserverInfo = {
                     "serverInstance": this._storedEntryPoint,
@@ -104,7 +95,6 @@ export namespace BaseDI
                     "clientStartUp": this
                 }
             }
-            //#endregion
 
             //#endregion
 
@@ -112,8 +102,7 @@ export namespace BaseDI
 
             //#endregion
 
-            //#region 4. **OUTPUT: TELL the story*
-
+            //#region 3. OUTPUT
 
             //#endregion
         }
@@ -122,21 +111,11 @@ export namespace BaseDI
         //#region 4. Action
         public Action(targetedResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "", requestCallBack: any = null)
         {
-            //#region 1. VARIABLES: DESCRIBE the memories
+            //#region 1. INPUTS
 
-            let storedObservation: Promise<any>;
+            //#region DEFINE data response
 
-            let storedOutput: string = "";
-
-            //#endregion
-
-            //#region 2. VALUES: RECALL the memories
-
-            //#region MEMORIZE targeted tagID
-
-            if (targetedResponseTagID != "")
-                this._storedClientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
-
+            let storedDataResponse: Promise<any>;
 
             //#endregion
 
@@ -147,68 +126,53 @@ export namespace BaseDI
 
             //#endregion
 
+            //#region MEMORIZE targeted tagID
+
+            if (targetedResponseTagID != "")
+                this._storedClientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
+
             //#endregion
 
-            //#region 3. **INPUT: PROCESS the memories*
+            //#endregion
+
+            //#region 2. PROCESS
 
             try
             {
-                //#region HANDLE our logic
+                //#region EXECUTE client request
 
-                //#region EDGE case
-
-                //#region VALIDATE required values
-                if (requestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
-                //#endregion
-
-                //#endregion
-
-                //#region EDGE case
-
-                //#region PROCESS application updates
+                //#region EDGE CASE - USE updates handler
 
                 this._storedClientORserverInfo["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
                     return this._storedStorylineDetails;
                 }
-                //#endregion
 
                 //#endregion
 
-                //#region *IDEAL case*
+                //#region IDEAL CASE - USE request handler
 
-                //#region HANDLE system request
+                if (requestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
+
                 const Action = (requestNameToProcess: string = "", requestNameToProcessParameters: string = "", extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
                 {
-                    //#region STORE system response
-
-                    storedObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
+                    storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
                         .SetupStoryline(this._storedClientORserverInfo, this._storedStorylineDetails, null, this._storedExtraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action();
-
-                    //#endregion
                 }
-
-                //#region START system request
 
                 Action(requestNameToProcess, requestNameToProcessParameters, this._storedExtraData);
 
                 //#endregion
 
                 //#endregion
-
-                //#endregion
-
-                //#endregion
             }
-            catch (storedMistake)
+            catch
             {
-                //#region HANDLE our mistakes
+                //#region HANDLE execution mistakes
 
-                //#region EDGE case
+                //#region EDGE CASE - USE exception handler
 
-                //#region PRINT out mistakes
-                console.log(storedMistake);
-                //#endregion
+                console.log("");
 
                 //#endregion
 
@@ -217,47 +181,32 @@ export namespace BaseDI
 
             //#endregion
 
-            //#region 4. **OUTPUT: TELL the story*
+            //#region 3. OUTPUT
 
-            //#region HANDLE callback response
+            //#region HANDLE execution response
 
-            //#region EDGE case
+            if (storedDataResponse) {
+                storedDataResponse.then(response =>
+                {
+                    //#region EDGE CASE - USE callback handler
+                    if (requestCallBack) {
+                        requestCallBack(storedDataResponse);
+                    }
+                    //#endregion
 
-            //#region PROCESS startup callback
-            if (requestCallBack) {
-                requestCallBack(storedObservation);
-            }
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-            else
-            //#region HANDLE interface response
-            {
-                //#region *IDEAL case*
-
-                //#region DISPLAY some response
-                if (storedObservation) {
-                    storedObservation.then(response => {
-                        // var iframe = document.createElement('iframe');
-                        // iframe.style.width = "100%";
-                        // iframe.style.height  = "100vh";
-
-                        // document.getElementById("page").appendChild(iframe);
-                        // iframe.contentWindow.document.open();
-                        // iframe.contentWindow.document.write(unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult));
-                        // iframe.contentWindow.document.close();
-
-                        if (targetedResponseTagID != "")
-                            document.getElementById(targetedResponseTagID).innerHTML = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                    //#region IDEAL CASE - USE html responder
+                    response?.outputs[1].baseDIObservations.map(storedObservation => {
+                        if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase().includes("HTML")) {
+                            if (targetedResponseTagID != "") {
+                                document.getElementById(targetedResponseTagID).innerHTML = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                            }                            
+                        }
                     });
-                }
 
-            //#endregion
-
-                //#endregion
+                    //#endregion
+                })
             }
+
             //#endregion
 
             //#endregion
@@ -265,25 +214,27 @@ export namespace BaseDI
         //#endregion
     }
 }
+//#endregion
 
+//SETUP
 //#region Client
 export { Action_12_2_1_0 as ActionList }
 //#endregion
 
 //#region Server
 
-//#region 1. VARIABLES: DESCRIBE the memories
+//#region 1. INPUTS
 
 let storedServerInstance = new BaseDI.Startup(this);
 
 //#endregion
 
-//#region 2. VALUES: RECALL the memories
+//#region 2. VALUES
 
 
 //#endregion
 
-//#region 3. **INPUT: PROCESS the memories*
+//#region 2. PROCESS
 
 //#region HANDLE file copying & server start
 
@@ -308,7 +259,7 @@ if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.e
 
 //#endregion
 
-//#region 4. **OUTPUT: TELL the story*
+//#region 3. OUTPUT
 
 
 //#endregion

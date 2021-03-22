@@ -72,7 +72,7 @@ export namespace BaseDI.State.Programming_3 {
 
         public async Action_8_Process_CRUD(): Promise<any>
         {
-            //#region VARIABLES: DESCRIBE the memories 
+            //#region VARIABLES 
 
             let storedAction: string;
 
@@ -97,7 +97,7 @@ export namespace BaseDI.State.Programming_3 {
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             storedObservationIndex = 0;
             storedObservations = this._storylineDetails.outputs[1].baseDIObservations;
@@ -106,7 +106,7 @@ export namespace BaseDI.State.Programming_3 {
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //EXECUTE THE PROCESS
 
@@ -162,7 +162,7 @@ export namespace BaseDI.State.Programming_3 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return this._storylineDetails;
 

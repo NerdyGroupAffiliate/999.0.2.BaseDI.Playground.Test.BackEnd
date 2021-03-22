@@ -32,7 +32,7 @@ export namespace BaseDI.Programming.Extensions_3 {
             //console.log("AA");
             //console.log(JSON.stringify(storylineDetails.outputs[1].baseDIObservations));
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let observationItem: String = "";
 
@@ -53,11 +53,11 @@ export namespace BaseDI.Programming.Extensions_3 {
 
             //#endregion
 
-            //#region VALUES: RECALL the memories
+            //#region VALUES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
 
             if (uniqueReferenceKey)
@@ -138,7 +138,7 @@ export namespace BaseDI.Programming.Extensions_3 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return storylineDetails;
 
@@ -146,7 +146,7 @@ export namespace BaseDI.Programming.Extensions_3 {
         }
 
         public static async Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storageAction: string, storageKey: String, storageValue: any): Promise<any> {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             let storedCRUDActionRead: boolean = false
             let storageResult: any = null;
@@ -157,7 +157,7 @@ export namespace BaseDI.Programming.Extensions_3 {
             //#endregion
 
             try {
-                //#region VALUES: RECALL the memories
+                //#region VALUES
                 storedObservationKey = (Object.keys(storageValue)[0]);
 
                 if (storedObservationKey.toString().toUpperCase().includes("-READ")) {
@@ -177,7 +177,7 @@ export namespace BaseDI.Programming.Extensions_3 {
 
                 //#endregion
 
-                //#region **INPUT: PROCESS the memories*
+                //#region INPUTS
 
                 if (localStorage) {
                     switch (storageAction.toUpperCase()) {
@@ -201,7 +201,7 @@ export namespace BaseDI.Programming.Extensions_3 {
                 throw e;
             }
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return storageResult;
 

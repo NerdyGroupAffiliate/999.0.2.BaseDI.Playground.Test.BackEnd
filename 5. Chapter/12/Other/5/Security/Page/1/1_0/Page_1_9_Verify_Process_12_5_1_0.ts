@@ -55,15 +55,15 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#region CONTROL
 
@@ -75,7 +75,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return this.StorylineDetails;
 
@@ -91,11 +91,11 @@ export namespace BaseDI.Chapter.Page.Security_1 {
         //#region CONTROL
 
         public async Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0() {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             const storylineDetails: any = this.StorylineDetails;
 
@@ -110,7 +110,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#region CONTROL
 
@@ -129,7 +129,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
@@ -140,7 +140,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
         public async Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0() {
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             let storedAPIPlatform: string = "";
             let storedAPIRequestType: string = "";
             let storedAPIVerb: string = "POST";
@@ -158,11 +158,11 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             if (this._request != undefined && this._request != null) {
                 //#region STORE api querystring value
@@ -231,7 +231,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#region TRANSPORT curl request & handle response
             var self = this;
@@ -251,16 +251,16 @@ export namespace BaseDI.Chapter.Page.Security_1 {
         //#region OUTPUT
 
         public async Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response: any, uniqueStorageKeyValue: any = null) {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*         
+            //#region INPUTS         
 
             if (uniqueStorageKeyValue)
                 await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response, "BaseDI_DataToken_" + uniqueStorageKeyValue);
@@ -269,7 +269,7 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
             //#endregion  
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }

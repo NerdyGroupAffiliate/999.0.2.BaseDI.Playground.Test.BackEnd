@@ -82,20 +82,20 @@ export namespace BaseDI.Advertising.Extensions_2 {
                 }) 
             }
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
            
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
@@ -107,13 +107,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToFacebook_1_0(
             contentMetaData: any
         ): any {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             //#endregion
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             //#endregion
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
             //#endregion
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
             //#endregion
         }
 
@@ -124,13 +124,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToYouTube_1_0(
             contentMetaData: any
         ): any {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             //#endregion
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             //#endregion
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
             //#endregion
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
             //#endregion
         }
 
@@ -141,13 +141,13 @@ export namespace BaseDI.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToLinkedIn_1_0(
             contentMetaData: any
         ): any {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             //#endregion
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
             //#endregion
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
             //#endregion
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
             //#endregion
         }
 

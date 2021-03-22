@@ -36,21 +36,21 @@ export namespace BaseDI.Chapter.Page.Programming_5 {
         //#region 4. Action
         public async Action(): Promise<object> {
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return await this.StorylineDetails;
 

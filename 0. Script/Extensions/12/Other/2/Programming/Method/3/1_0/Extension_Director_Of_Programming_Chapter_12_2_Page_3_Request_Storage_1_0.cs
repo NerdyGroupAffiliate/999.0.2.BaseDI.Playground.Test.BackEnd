@@ -12,19 +12,19 @@ namespace BaseDI.Script.Programming.Extensions_3
     {
         public static void Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(string storageAction, string storageKey, object storageValue)
         {
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             #endregion
 
-            #region VALUES: RECALL the memories
+            #region VALUES
 
             #endregion
 
-            #region **INPUT: PROCESS the memories*
+            #region INPUTS
 
             #endregion
 
-            #region **OUTPUT: TELL the story*
+            #region OUTPUT
 
             #endregion
         }
@@ -33,7 +33,7 @@ namespace BaseDI.Script.Programming.Extensions_3
         {
             if (storylineDetails == null) return null;
 
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             var serverEnvironmentMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
             var serverEnvironment = serverEnvironmentMetaData != null ? serverEnvironmentMetaData.Parent : null;
@@ -42,15 +42,15 @@ namespace BaseDI.Script.Programming.Extensions_3
 
             #endregion
 
-            #region VALUES: RECALL the memories
+            #region VALUES
 
             #endregion
 
-            #region **INPUT: PROCESS the memories*
+            #region INPUTS
 
             #endregion
 
-            #region **OUTPUT: TELL the story*
+            #region OUTPUT
 
             return storylineDetails;
 

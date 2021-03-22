@@ -39,7 +39,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_1 {
         public async Action(): Promise<object>
         {
             if (this.ClientOrServerInstance["actionName"] == undefined || this.ClientOrServerInstance["actionName"] == null || this.ClientOrServerInstance["actionName"] == "" || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0) {
-                //#region VARIABLES: DESCRIBE the memories
+                //#region VARIABLES
                 const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
 
                 let observationItem: String = "";
@@ -63,9 +63,14 @@ export namespace BaseDI.Chapter.Page.Web_Development_1 {
                 let htmlResultInlineStylesString: string = "";
                 let htmlResultString: string = "";
 
+                let storedCounter: number = 0;
+                let storedUpdateMode: boolean = false;
+                let storageKey: string = "StorageKey_" + entryPointName + "-" + "Read-BaseDI_PresentationHTML_Content";
+                let storageDictionary: Object = {};
+
                 //#endregion
 
-                //#region VARIABLES: DESCRIBE the memories
+                //#region VARIABLES
 
                 observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
 
@@ -77,7 +82,7 @@ export namespace BaseDI.Chapter.Page.Web_Development_1 {
 
                 //#endregion
 
-                //#region **INPUT: PROCESS the memories*
+                //#region INPUTS
 
                 htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
                 htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);
@@ -89,15 +94,34 @@ export namespace BaseDI.Chapter.Page.Web_Development_1 {
                 htmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Store_HTMLStructureToString_1_0("", "", "", htmlResultInlineStylesString, htmlResultString, this.MasterStorer, this.StorylineDetails);
 
                 observationItem = observationItem.replace('{htmlResult}', escape(htmlResultString))
+
+                storageDictionary[storageKey] = JSON.parse(observationItem.toString());
+
                 const observation = observationItem;
 
-                storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation.toString()));
-                this.StorylineDetails = storylineDetails;
+                storylineDetails.outputs[1].baseDIObservations.map(storedObservation => {
+                    if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase() == storageKey.toUpperCase()) {
+                        storylineDetails.outputs[1].baseDIObservations[storedCounter][storageKey] = JSON.parse(observationItem.toString());
+
+                        this.StorylineDetails = storylineDetails;
+
+                        storedUpdateMode = true;
+
+                        return;
+                    }
+
+                    storedCounter += 1;
+                });
+
+                if (!storedUpdateMode) {
+                    storylineDetails.outputs[1].baseDIObservations.push(storageDictionary);
+                    this.StorylineDetails = storylineDetails;
+                }
 
                 //#endregion
             }
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return await this.StorylineDetails;
 

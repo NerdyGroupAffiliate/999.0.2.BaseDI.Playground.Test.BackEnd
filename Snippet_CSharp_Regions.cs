@@ -1,211 +1,296 @@
-﻿//////////////////////////////////////////////
-//DEFINITIONS
-//////////////////////////////////////////////
-//[] = Select Word...REMOVE []
-//{} = Replace with your own Words...REMOVE {}
+﻿//IMPORTS
 
-//////////////////////////////////////////////
-//METHOD REGION STANDARS 1
-//////////////////////////////////////////////
+#region Imports
 
-#region 1. VARIABLES: DESCRIBE the memories
+#region BaseDI
 
-//string stored{VariableName} = "";
-//int stored{VariableName} = 0;
-//object stored{VariableName} = null;
+
 
 #endregion
 
-#region 2. VALUES: RECALL the memories
-
-#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:string = "Default";
+#region .Net Core
 
 #endregion
 
-#region MEMORIZE { what } { noun }
+#region 3rd Party Core
 
-//stored{VariableName}:int = MyBusinessLayer.GetSomeValue();
 
-#endregion
-
-#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:object = MyAPIService.GetSomeValue();
 
 #endregion
 
 #endregion
 
+//CLASS
+
+#region 1. Assign
 
 
-#region 3. **INPUT: PROCESS the memories*
-
-#region HANDLE {what} {verb}
-
-#region [IDEAL|EDGE] case
-
-#region {ACTION} [a|of|for|] {verb}|{noun}
 
 #endregion
 
-#endregion
+#region 2. Ready
 
-#region [IDEAL|EDGE] case
-
-#region {ACTION} [a|of|for|] {verb}|{noun}
-
-#endregion
-
-#endregion
-
-#region [IDEAL|EDGE] case
-
-#region {ACTION} [a|of|for|] {verb}|{noun}
-
-#endregion
-
-#endregion
-
-#endregion
-
-#endregion
-
-
-
-#region 4. **OUTPUT: TELL the story*
-
-#region HANDLE {what} {action}
-
-#region [IDEAL|EDGE] case
-
-#endregion
-
-#endregion
-
-#endregion
-
-////////////////////////////////////////////// 
-
-//////////////////////////////////////////////
-//METHOD REGION STANDARS 2
-//////////////////////////////////////////////
-
-#region 1. VARIABLES: DESCRIBE the memories
-
-//string stored{VariableName} = "";
-//int stored{VariableName} = 0;
-//object stored{VariableName} = null;
-
-#endregion
-
-#region 2. VALUES: RECALL the memories
-
-#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:string = "Default";
-
-#endregion
-
-#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:int = MyBusinessLayer.GetSomeValue();
-
-#endregion
-
-#region MEMORIZE { what } { noun }
-
-//stored{VariableName}:object = MyAPIService.GetSomeValue();
-
-#endregion
-
-#endregion
-
-
-
-#region 3. **INPUT: PROCESS the memories*
-
-#region HANDLE {what} {verb}
-
-#region START new block
-//var {someVariable} = {SomeReturnValue}
-
-//if ({someVariable} != null)
+//public Startup_Controller(IConfiguration configuration = null)
 //{
-#region 1. VARIABLES: DESCRIBE the memories
 
-#endregion
-
-#region 2. VALUES: RECALL the memories
-
-#region MEMORIZE {what} {noun}
-
-
-#endregion
-
-#endregion
-
-#region 3. **INPUT: PROCESS the memories*
-
-#region HANDLE {what} {action}
-
-//if ({someVariable}.Any())
-//{
-//    #region [IDEAL|EDGE] case
-
-//    #region {ACTION} [a|of|for|] {verb}|{noun}
-
-//    #endregion
-
-//    #endregion
-//}
-//else
-//{
-#region [IDEAL|EDGE] case
-
-#region {ACTION} [a|of|for|] {verb}|{noun}
-
-#endregion
-
-#endregion
-//}
-#endregion
-
-#endregion
-
-#region 4. **OUTPUT: TELL the story*
-
-#region HANDLE {what} {action}
-
-#region [IDEAL|EDGE] case
-
-#region {ACTION} [a|of|for|] {verb}|{noun}
-
-#endregion
-
-#endregion
-
-#endregion
-
-#endregion
 //}
 
 #endregion
 
+#region 3. Set
+
+//A. Default state of story
+//public void Setup()
+//{
+    #region 1. INPUTS
+
+    //[dataType] stored[SomeVariableName];
+    //[dataType] stored[SomeVariableName];
+    //[dataType] stored[SomeVariableName];
+
+    #endregion
+
+    #region 2. VALUES
+
+    #region MEMORIZE xxxxxx xxxxxx
+
+
+    #endregion
+
+    #region MEMORIZE xxxxxx xxxxxx
+
+
+    #endregion
+
+    #region MEMORIZE xxxxxx xxxxxx
+
+
+    #endregion
+
+    #region MEMORIZE xxxxxx xxxxxx
+
+
+    #endregion
+
+    #endregion
+
+    #region 2. PROCESS
+
+    #region HANDLE xxxxx xxxxx
+
+    #region EDGE case
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #endregion
+
+    #region EDGE case
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #endregion
+
+    #region EDGE case
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #endregion
+
+    #region *IDEA case*
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #endregion
+
+    #endregion
+
+    #endregion
+
+    #region 3. OUTPUT
+
+    #region HANDLE xxxxx xxxxx
+
+    #region EDGE case
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #endregion
+
+    #region EDGE case
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #endregion
+
+    #region *IDEA case*
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #region [ACTIONNAME] xxxxx xxxxx
+
+    #endregion
+
+    #endregion
+
+    #endregion
+
+    #endregion
+//}
+
+#endregion
+
+#region 4. Action
+
+
+#endregion
+
+//METHODS
+
+#region 1. INPUTS
+
+//[dataType] stored[SomeVariableName];
+//[dataType] stored[SomeVariableName];
+//[dataType] stored[SomeVariableName];
+
+#endregion
+
+#region 2. PROCESS
+
+#region EXECUTE xxxxx xxxxx
+
+#region EDGE case
+
+#region [ACTIONNAME] xxxxx xxxxx
+
+#endregion
+
+#region [ACTIONNAME] xxxxx xxxxx
+
+#endregion
+
+#region [ACTIONNAME] xxxxx xxxxx
+
 #endregion
 
 #endregion
 
+#region *IDEA case*
 
+#region [ACTIONNAME] xxxxx xxxxx
 
-#region 4. **OUTPUT: TELL the story*
+#endregion
 
-#region HANDLE {what} {action}
+#region [ACTIONNAME] xxxxx xxxxx
 
-#region [IDEAL|EDGE] case
+#endregion
 
-#region {ACTION} [a|of|for|] {verb}|{noun}
+#region [ACTIONNAME] xxxxx xxxxx
+
+#endregion
+
+#endregion
+
+#endregion
+
+#endregion
+
+#region 3. OUTPUT
+
+#region HANDLE xxxxx xxxxx
+
+#region EDGE case
+
+#region [ACTIONNAME] xxxxx xxxxx
+
+#endregion
+
+#region [ACTIONNAME] xxxxx xxxxx
+
+#endregion
+
+#region [ACTIONNAME] xxxxx xxxxx
+
+#endregion
+
+#endregion
+
+#region *IDEA case*
+
+#region [ACTIONNAME] xxxxx xxxxx
+
+#endregion
+
+#region [ACTIONNAME] xxxxx xxxxx
+
+#endregion
+
+#region [ACTIONNAME] xxxxx xxxxx
 
 #endregion
 

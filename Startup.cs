@@ -40,6 +40,7 @@ using Newtonsoft.Json.Linq;
 
 namespace BaseDI
 {
+    //SETUP
     #region HANDLE .net core pipeline
     
     public partial class Startup
@@ -47,6 +48,8 @@ namespace BaseDI
         #region 1. Assign   
 
         public IConfiguration Configuration { get; set; }
+
+        public Func<JObject, IActionResult> StoredRequestCallBack = null;
 
         #endregion
 
@@ -75,135 +78,96 @@ namespace BaseDI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            #region 1. VARIABLES: DESCRIBE the memories
+            #region 1. INPUTS
+
+            #region MEMORIZE file metadata
+
+            dynamic storedFilesMetaData = null;
+            JArray storedFilesObservation = null;
+
+            IActionResult storedStaticFilesResult = null;
 
             #endregion
 
-            #region 2. VALUES: RECALL the memories
-
             #endregion
 
-            #region 3. **INPUT: PROCESS the memories*
+            #region 2. PROCESS
 
-            #region HANDLE file copying
+            #region EXECUTE copying files
 
-            #region *IDEAL case*
-
-            #region COPY local files
+            #region IDEAL CASE - USE baseDI pipeline
 
             var storedCopiedFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, null, Configuration).Result;
-            
-            #endregion
 
             #endregion
 
             #endregion
 
-            #region HANDLE file mapping
+            #region EXECUTE mapping files
 
-            #region START new block
-            var storedStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, (JObject storedMappedStaticFiles) =>
+            try
             {
-                if (storedMappedStaticFiles != null)
+                #region IDEAL CASE - USE dynamic metadata
+
+                StoredRequestCallBack = (JObject storedMappedStaticFiles) =>
                 {
-                    #region 1. VARIABLES: DESCRIBE the memories
-
-                    #endregion
-
-                    #region 2. VALUES: RECALL the memories
-
-                    #region MEMORIZE file directories
-
-                    dynamic storedFilesMetaData = JObject.Parse(storedMappedStaticFiles.ToString());
-                    JArray storedFilesObservation = storedFilesMetaData.outputs[1].baseDIObservations;
-
-                    #endregion
-
-                    #endregion
-
-                    #region 3. **INPUT: PROCESS the memories*
-
-                    #region HANDLE mapping process
-
-                    if (storedFilesObservation.Any())
+                    if (storedMappedStaticFiles != null)
                     {
-                        #region *IDEAL case*
+                        storedFilesMetaData = JObject.Parse(storedMappedStaticFiles.ToString());
+                        storedFilesObservation = storedFilesMetaData.outputs[1].baseDIObservations;
 
-                        #region PERFORM a search
-
-                        foreach (dynamic item in storedFilesObservation.FirstOrDefault())
+                        if (storedFilesObservation.Any())
                         {
-                            if (item.Value != null)
+                            foreach (dynamic item in storedFilesObservation.FirstOrDefault())
                             {
-                                #region IF NEEDED: CREATE a directory 
-
-                                if (!Directory.Exists(Path.Combine(item.Value.ToString())))
+                                if (item.Value != null)
                                 {
-                                    Directory.CreateDirectory(Path.Combine(item.Value.ToString()));
+                                    if (!Directory.Exists(Path.Combine(item.Value.ToString())))
+                                    {
+                                        Directory.CreateDirectory(Path.Combine(item.Value.ToString()));
+                                    }
+
+                                    app.UseStaticFiles(new StaticFileOptions
+                                    {
+                                        FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine(item.Value.ToString()))),
+                                        RequestPath = "/StaticFiles"
+                                    });
                                 }
-
-                                #endregion
-
-                                #region MAP server folder
-
-                                app.UseStaticFiles(new StaticFileOptions
-                                {
-                                    FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine(item.Value.ToString()))),
-                                    RequestPath = "/StaticFiles"
-                                });
-
-                                #endregion
                             }
                         }
-
-                        #endregion
-
-                        #endregion
-                    }
-                    else
-                    {
-                        #region EDGE case
-
-                        #region MAP server folder
-
-                        app.UseStaticFiles(new StaticFileOptions
+                        else
                         {
-                            FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))),
-                            RequestPath = "/StaticFiles"
-                        });
-
-                        #endregion
-
-                        #endregion
+                            throw new Exception("USE EDGE CASE - hardcoded data");
+                        }
                     }
-                    #endregion
 
-                    #endregion
+                    return new OkResult();
+                };
 
-                    #region 4. **OUTPUT: TELL the story*
+                storedStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, StoredRequestCallBack, Configuration).Result;
+                
+                #endregion
+            }
+            catch
+            {
+                #region EDGE CASE - USE hardcoded data
 
-                    #endregion
-                }
+                app.UseStaticFiles(new StaticFileOptions
+                {
+                    FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))),
+                    RequestPath = "/StaticFiles"
+                });
 
-                return null;
-            }, Configuration).Result;
+                #endregion
+            }
 
             #endregion
 
-            #endregion
+            #region EXECUTE configure server
 
-            #region HANDLE server configurations
-
-            #region *IDEAL case*
-
-            #region SETUP application routing
+            #region IDEAL CASE - USE .net core
 
             app.UseRouting();
-
-            #endregion
-
-            #region SETUP application endpoints
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -215,9 +179,7 @@ namespace BaseDI
 
             #endregion
 
-            #endregion
-
-            #region 4. **OUTPUT: TELL the story*
+            #region 3. OUTPUT
 
             #endregion
         }
@@ -227,7 +189,7 @@ namespace BaseDI
 
     #endregion
 
-    #region HANDLE baseDI startup task
+    #region HANDLE .net core pipeline baseDI task
 
     public partial class Startup
     {
@@ -247,16 +209,11 @@ namespace BaseDI
 
         public static async Task<IActionResult> Action(string requestToProcess = "", string requestToProcessParameters = "", string requestActionName = "", Func<JObject, IActionResult> StoredRequestCallBack = null, IConfiguration StoredAppSettings = null)
         {
-            #region 1. VARIABLES: DESCRIBE the memories
-
-            var storedControllerInstance = new Startup_Controller();
-
-            #endregion
-
-            #region 2. VALUES: RECALL the memories
+            #region 1. INPUTS
 
             #region MEMORIZE application settings
 
+            var storedControllerInstance = new Startup_Controller();
             storedControllerInstance.StoredAppSettings = StoredAppSettings;
 
             #endregion
@@ -269,14 +226,12 @@ namespace BaseDI
 
             #endregion
 
-            #region 3. *INPUT: PROCESS the memories*
+            #region 2. PROCESS
 
-            #region HANDLE our logic
+            #region EXECUTE request handler
 
-            #region *IDEAL case*
+            #region IDEAL CASE - USE baseDI pipeline
 
-            #region PROCESS our request
-            
             IActionResult result = await storedControllerInstance.Action(requestToProcess, requestToProcessParameters, requestActionName);
 
             #endregion
@@ -285,19 +240,13 @@ namespace BaseDI
 
             #endregion
 
-            #endregion
+            #region 3. OUTPUT
 
-            #region 4. *OUTPUT: TELL the story*
+            #region HANDLE request response
 
-            #region HANDLE process response
-
-            #region *IDEAL case*
-
-            #region DISPLAY some response
+            #region IDEAL CASE - USE ok result
 
             return new OkResult();
-
-            #endregion
 
             #endregion
 
@@ -311,6 +260,8 @@ namespace BaseDI
 
     #endregion
 
+
+    //EXECUTION
     #region HANDLE baseDI http request
 
     public class Startup_Controller : ControllerBase
@@ -336,28 +287,51 @@ namespace BaseDI
 
         public Startup_Controller(IConfiguration configuration = null)
         {
-            #region 1. Assign
+            #region 1. INPUTS
 
-            //SET WHAT is needed to create the storyline.
+            #region DEFINE client/server info
+
+            _storedClientORserverInfo = new Dictionary<string, object>();
+
+            #endregion
+
+            #region DEFINE extra data
+
             _storedExtraData = new ExtraData_12_2_1_0();
+
+            #endregion
+
+            #region DEFINE storyline details
 
             _storedStorylineDetails = new JObject();
             _storedStorylineDetails_Parameters = new JObject();
 
-            _storedClientORserverInfo = new Dictionary<string, object>();
+            #endregion
+
+            #region MEMORIZE app settings
 
             if (configuration != null)
                 StoredAppSettings = configuration;
 
             #endregion
 
-            #region 2. Action
+            #endregion
 
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region EDGE CASE - USE defaults handler
+            
             Setup();
 
             #endregion
+            
+            #endregion
 
-            #region 3. Observe
+            #endregion
+
+            #region 3. OUTPUT
 
             #endregion
         }
@@ -369,19 +343,15 @@ namespace BaseDI
         //A. Default state of story
         public void Setup()
         {
-            #region 1. Assign
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action
-
-            _storedStorylineDetails = null;
-            _storedStorylineDetails_Parameters = null;
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe
-
+            #region 3. OUTPUT
 
             #endregion
         }
@@ -393,21 +363,38 @@ namespace BaseDI
         [HttpGet("")]
         public async Task<IActionResult> Action(string requestNameToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestNameToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessHttpRequest_1_0")
         {
-            #region 1. VARIABLES: DESCRIBE the memories
+            #region 1. INPUTS
 
-            ContentResult storedResult = null;
+            #region DEFINE client response
 
-            Func<string?, string?, ExtraData_12_2_1_0?, JObject> Action = null;
-
-            JObject storedObservation = null;
-
-            JToken storedOutput = null;
-
-            StringBuilder storedOutputPrintOut = new StringBuilder();
+            ContentResult storedHttpResult = null;
 
             #endregion
 
-            #region 2. VALUES: RECALL the memories
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region DEFINE error response
+
+            JToken storedErrorResponse = null;
+
+            #endregion
+
+            #region DEFINE event handlers
+
+            Func<string?, string?, ExtraData_12_2_1_0?, JObject> Action = null;
+
+            #endregion
+
+            #region MEMORIZE action name
+
+            if (requestActionName != "")
+                _storedClientORserverInfo.Add("actionName", requestActionName);
+
+            #endregion
 
             #region MEMORIZE application settings
 
@@ -428,24 +415,21 @@ namespace BaseDI
 
             #endregion
 
-            #region MEMORIZE action name
+            #region MEMORIZE storyline details
 
-            if (requestActionName != "")
-                _storedClientORserverInfo.Add("actionName", requestActionName);
-
-            #endregion
+            storedDataResponse = _storedStorylineDetails;
 
             #endregion
 
-            #region 3. **INPUT: PROCESS the memories*
+            #endregion
+
+            #region 2. PROCESS
 
             try
             {
-                #region HANDLE our logic
+                #region EXECUTE client request
 
-                #region EDGE case
-
-                #region PROCESS application updates
+                #region EDGE CASE - USE updates handler
 
                 StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 response) =>
                 {
@@ -455,95 +439,44 @@ namespace BaseDI
 
                 #endregion
 
-                #endregion
+                #region IDEAL CASE - USE request handler
 
-                #region EDGE case
-
-                #region VALIDATE required values
-                
                 if (requestNameToProcess == "") throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank or null!");
                 if (StoredAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
 
-                #endregion
-
-                #endregion
-
-                #region *IDEAL case*
-
-                #region HANDLE system request
-
                 Action = (string requestNameToProcess, string requestNameToProcessParameters, ExtraData_12_2_1_0 extraData) =>
                 {
-                    #region STORE system response
-                    
-                    return storedObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                    return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                         .SetupStoryline(_storedClientORserverInfo, _storedStorylineDetails, null, extraData, "", requestNameToProcess, requestNameToProcessParameters)
                         .Action().Result;
-
-                    #endregion
                 };
-
-                #endregion
-
-                #region START system request
 
                 Action(requestNameToProcess, requestNameToProcessParameters, _storedExtraData);
 
                 #endregion
 
                 #endregion
-
-                #endregion
             }
-            catch (Exception ex)
+            catch
             {
-                #region HANDLE our mistakes
+                #region HANDLE execution mistakes
 
-                #region START new block
+                #region EDGE CASE - USE exception handler
 
-                #region 1. VARIABLES: DESCRIBE the memories
-
-                #endregion
-
-                #region 2. VALUES: RECALL the memories
-
-                #region MEMORIZE storyline details
-                storedObservation = _storedStorylineDetails;
-                #endregion
-
-                #endregion
-
-                #region 3. **INPUT: PROCESS the memories*
-
-                #region HANDLE mistake response
-
-                #region EDGE case
-                if (storedObservation != null)
+                if (storedDataResponse != null)
                 {
-                    #region PERFORM a search
+                    StringBuilder storedErrorResponsePrintOut = new StringBuilder();
 
-                    storedOutput = storedObservation.SelectToken("outputs..baseDIMistakes");
-                    foreach (var programmingMistake in storedOutput.Children())
+                    storedErrorResponse = storedDataResponse.SelectToken("outputs..baseDIMistakes");
+                    foreach (var programmingMistake in storedErrorResponse.Children())
                     {
-                        #region BUILD response message
                         var mistake = programmingMistake.Value<string>("mistake");
 
-                        storedOutputPrintOut.Append(mistake + System.Environment.NewLine);
-                        #endregion
+                        storedErrorResponsePrintOut.Append(mistake + System.Environment.NewLine);
                     }
-                    #endregion
 
-                    Console.Write(storedOutputPrintOut.ToString());
+                    Console.Write(storedErrorResponsePrintOut.ToString());
                 }
-                #endregion
-
-                #endregion
-
-                #endregion
-
-                #region 4. **OUTPUT: TELL the story*
-
-                #endregion
 
                 #endregion
 
@@ -552,61 +485,45 @@ namespace BaseDI
 
             #endregion
 
-            #region 4. **OUTPUT: TELL the story*
+            #region 3. OUTPUT
 
-            #region HANDLE callback response
+            #region HANDLE execution response
 
-            #region EDGE case
-
-            #region PROCESS startup callback
+            #region EDGE CASE - USE callback handler
 
             if (StoredRequestCallBack != null)
             {
-                StoredRequestCallBack(storedObservation);
+                StoredRequestCallBack(storedDataResponse);
 
-                return new OkResult();                
+                return new OkResult();
             }
 
             #endregion
 
-            #endregion
+            #region IDEAL CASE - USE html responder
 
-            #endregion
-            else
-            #region HANDLE interface response
+            if (storedDataResponse != null)
             {
-                #region *IDEAL case*
+                storedErrorResponse = storedDataResponse["outputs"];
 
-                #region DISPLAY html response
-
-                if (storedObservation != null)
+                storedHttpResult = new ContentResult
                 {
-                    storedOutput = storedObservation["outputs"];
+                    ContentType = "text/html",
+                    StatusCode = (int)HttpStatusCode.OK,
+                    Content = (string)storedDataResponse.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
+                };
 
-                    storedResult = new ContentResult
-                    {
-                        ContentType = "text/html",
-                        StatusCode = (int)HttpStatusCode.OK,
-                        Content = (string)storedObservation.SelectToken("outputs[1].baseDIObservations[0].metadata[3].item.presentation[0].htmlResult")
-                    };
-
-                    return await Task.FromResult<ContentResult>(storedResult).ConfigureAwait(true);
-                }
-
-                #endregion
-
-                #endregion
-
-                #region EDGE case
-
-                #region DISPLAY blank response
-
-                return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
-
-                #endregion
-
-                #endregion
+                return await Task.FromResult<ContentResult>(storedHttpResult).ConfigureAwait(true);
             }
+
+            #endregion
+
+            #region EDGE CASE - USE blank response
+
+            return await Task.FromResult<ContentResult>(new ContentResult()).ConfigureAwait(true);
+
+            #endregion
+
             #endregion
 
             #endregion

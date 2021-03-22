@@ -1,9 +1,6 @@
-﻿//3rd Party
-using Newtonsoft.Json.Linq;
+﻿#region Imports
 
-using System;
-using System.Collections.Generic;
-using System.Globalization;
+#region BaseDI
 
 /////////////////////////////////////////////////////////////////////////////////////
 //0. BaseDI Global Dependencies
@@ -58,6 +55,25 @@ using BaseDI.Story.Programming_1;
 using BaseDI.Story.CMS_1;
 using BaseDI.Story.Security_1;
 
+#endregion
+
+#region .Net Core
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+
+#endregion 
+
+#region 3rd Party Core
+
+using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Configuration;
+
+#endregion
+
+#endregion
+
 namespace BaseDI.Story.Programming_1
 {
     public class ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 : aClass_Programming_ScriptMasterLeader_12_2_1_0
@@ -68,9 +84,11 @@ namespace BaseDI.Story.Programming_1
 
         public Exception Mistake { get; set; }
 
-        private ExtraData_12_2_1_0 _extraData = null;
+        private IConfiguration _storedAppSettings = null;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _requestInspector = null;
+        private ExtraData_12_2_1_0 _storedExtraData = null;
+
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedRequestInspector = null;
 
         #endregion
 
@@ -79,13 +97,33 @@ namespace BaseDI.Story.Programming_1
         //A. Constructor Instantiation
         public ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(aClass_Programming_ScriptRoutable_12_2_1_0 requestType)
         {
-            //1. Assign
-            _requestInspector = requestType;
+            #region 1. INPUTS        
 
-            //2. Action
+            #region MEMORIZE request datatype
+
+            _storedRequestInspector = requestType;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - USE defaults handler
+
             HandleStoryDefaults();
 
-            //3. Observe
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion
@@ -95,8 +133,25 @@ namespace BaseDI.Story.Programming_1
         //A. Default state
         private void HandleStoryDefaults()
         {
-            _extraData = new ExtraData_12_2_1_0();
-            _extraData.MasterLeader = this;
+            #region 1. INPUTS        
+
+            #region MEMORIZE masterleader reference
+
+            _storedExtraData = new ExtraData_12_2_1_0();
+            _storedExtraData.MasterLeader = this;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion
@@ -107,77 +162,104 @@ namespace BaseDI.Story.Programming_1
 
         public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> clientORserverInstance, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string controlHandlerName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
-            #region 1. Assign  
+            #region 1. INPUTS        
 
-            object director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = null;
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)clientORserverInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE extra data
 
             if (extraData != null)
-                _extraData = extraData;
+                _storedExtraData = extraData;
 
             #endregion
 
-            #region 2. Ready
+            #region DEFINE developer mode
 
-            Use_DesignPattern_Builder_Chapter_12_2_1_0 directorOrExperienceResolveBuilder = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, _requestInspector, _extraData, controlHandlerName, requestToProcess, requestToProcessParameters);
-
-            #endregion
-
-            #region 3. Set
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
-            #region 4. Action 
+            #region DEFINE request handler
+
+            object stored_ReferenceTo_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = null;
+
+            #endregion
+
+            #region DEFINE request resolver
+
+            Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, _storedRequestInspector, _storedExtraData, controlHandlerName, requestToProcess, requestToProcessParameters);
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
 
             try
             {
-                #region FIND REQUEST HANDLER
+                #region FIND request handler
 
-                director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = directorOrExperienceResolveBuilder.Action();
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                    Console.WriteLine("STEP 1: - FINDING a request handler - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs - SetupStoryline");
+
+                #endregion
+
+                #region IDEAL CASE - USE an experience OR a director handler
+
+                //NOTE: 1. First we route ALL request to Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0                
+                stored_ReferenceTo_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = stored_ResolvedRequestHandler.Action();
 
                 if (controlHandlerName != "")
                 {
-                    #region REQUEST HANDLER FOUND
-
-                    var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
+                    //NOTE: 2. Then we attached the RESOLVED "EXPERIENCE or DIRECTOR" to the "EntryPoint" property of Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0
+                    var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)stored_ReferenceTo_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
 
                     entryPoint.RequestID = controlHandlerName;
                     entryPoint.ClientOrServerInstance = clientORserverInstance;
 
-                    _requestInspector.ClientOrServerInstance = clientORserverInstance;
+                    _storedRequestInspector.ClientOrServerInstance = clientORserverInstance;
 
-                    _requestInspector.EntryPoint = entryPoint;
-                    _requestInspector.ExtraData = _extraData;
+                    _storedRequestInspector.EntryPoint = entryPoint;
+                    _storedRequestInspector.ExtraData = _storedExtraData;
 
-                    _requestInspector.MasterLeader = entryPoint.MasterLeader;
+                    _storedRequestInspector.MasterLeader = entryPoint.MasterLeader;
 
-                    _requestInspector.StorylineDetails = entryPoint.StorylineDetails;
-                    _requestInspector.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
+                    _storedRequestInspector.StorylineDetails = entryPoint.StorylineDetails;
+                    _storedRequestInspector.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
 
-                    director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = _requestInspector;
-
-                    #endregion
+                    stored_ReferenceTo_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler = _storedRequestInspector;
                 }
 
                 #endregion
-            }
-            catch (Exception storyLineMistake)
-            {
-                #region CHECK FOR MISTAKES
-
-                //Inherited_Create_Experience_Movement_TriggerMasterController(this, Enumeration_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.RunMistake, storylineDetails, storylineDetails_Parameters, storyLineMistake, _extraData);
-
-                throw storyLineMistake;
 
                 #endregion
             }
+            catch (Exception)
+            {
+                throw;
+            }
 
-            #region RETURN REQUEST HANDLER
+            #endregion
 
-            return (aClass_Programming_ScriptRoutable_12_2_1_0)director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
+            #region 3. OUTPUT
 
-            #endregion  
+            #region RETURN request handler
 
-            #endregion          
+            #region IDEAL CASE - USE an experience OR a director handler
+
+            return (aClass_Programming_ScriptRoutable_12_2_1_0)stored_ReferenceTo_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler;
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         #endregion
@@ -202,7 +284,7 @@ namespace BaseDI.Story.Programming_1
         internal aClass_Programming_ScriptRoutable_12_2_1_0 _requestToResolveObject;
         internal string _requestToResolveString;
 
-        internal ExtraData_12_2_1_0 _extraData;
+        internal ExtraData_12_2_1_0 _storedExtraData;
 
         #endregion
 
@@ -221,7 +303,7 @@ namespace BaseDI.Story.Programming_1
             _requestToResolveObject = requestToResolveObject;
             _requestToResolveString = requestToResolveString;
 
-            _extraData = extraData;
+            _storedExtraData = extraData;
         }
 
         #endregion
@@ -238,7 +320,7 @@ namespace BaseDI.Story.Programming_1
         {
             #region BEGIN HANDLER SEARCH
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestToResolveString, _requestToProcess, _requestToProcessParameters);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _storedExtraData, _requestToResolveString, _requestToProcess, _requestToProcessParameters);
 
             builder.Action_1_Begin_Process();
             object resolvedRequest = builder.Action_10_End_Process();
@@ -271,7 +353,7 @@ namespace BaseDI.Story.Programming_1
         private aClass_Programming_ScriptRoutable_12_2_1_0 _requestToResolveObject;
         private string _requestToResolveString;
 
-        private ExtraData_12_2_1_0 _extraData;
+        private ExtraData_12_2_1_0 _storedExtraData;
 
         private string _requestName = "";
 
@@ -292,7 +374,7 @@ namespace BaseDI.Story.Programming_1
             _requestToResolveObject = requestToResolveObject;
             _requestToResolveString = requestToResolveString;
 
-            _extraData = extraData;
+            _storedExtraData = extraData;
         }
 
         #endregion
@@ -331,7 +413,7 @@ namespace BaseDI.Story.Programming_1
 
             if (_requestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_"))
             {
-                Implement_DesignPattern_Factory_Director_12_2_1_0 pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestName, _requestToProcess, _requestToProcessParameters);
+                Implement_DesignPattern_Factory_Director_12_2_1_0 pickDirector = new Implement_DesignPattern_Factory_Director_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _storedExtraData, _requestName, _requestToProcess, _requestToProcessParameters);
 
                 return pickDirector.Action_1_Begin_Process();
             }
@@ -344,7 +426,7 @@ namespace BaseDI.Story.Programming_1
 
             if (_requestName.ToUpper(CultureInfo.CurrentCulture).Contains("EXPERIENCE_THE_"))
             {
-                Implement_DesignPattern_Factory_Experience_12_2_1_0 pickExperience = new Implement_DesignPattern_Factory_Experience_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _extraData, _requestName, _requestToProcess, _requestToProcessParameters);
+                Implement_DesignPattern_Factory_Experience_12_2_1_0 pickExperience = new Implement_DesignPattern_Factory_Experience_12_2_1_0(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _requestToResolveObject, _storedExtraData, _requestName, _requestToProcess, _requestToProcessParameters);
 
                 return pickExperience.Action_1_Begin_Process();
             }
@@ -422,7 +504,7 @@ namespace BaseDI.Story.Programming_1
         private aClass_Programming_ScriptRoutable_12_2_1_0 _requestToResolveObject;
         private string _requestToResolveString;
 
-        private ExtraData_12_2_1_0 _extraData;
+        private ExtraData_12_2_1_0 _storedExtraData;
 
         private string _requestToProcess = "";
         private string _requestToProcessParameters = "";
@@ -460,7 +542,7 @@ namespace BaseDI.Story.Programming_1
             _requestToProcess = requestToProcess;
             _requestToProcessParameters = requestToProcessParameters;
 
-            _extraData = extraData;
+            _storedExtraData = extraData;
         }
 
         #endregion
@@ -481,7 +563,7 @@ namespace BaseDI.Story.Programming_1
             {
                 #region 12. Other
                 
-                ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(_extraData);
+                ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(_storedExtraData);
 
                 createDirector.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/programming";
                 createDirector.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/programming";
@@ -499,7 +581,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_ADVERTISING"))
                 {
-                    AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 createDirector = new AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(_extraData);
+                    AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 createDirector = new AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8991/storyline/basedi/io/advertising";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9991/storyline/basedi/io/advertising";
@@ -515,7 +597,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_BLOGGING"))
                 {
-                    BloggingFactoryImplementer_NicheMaster_2_1_1_0 createDirector = new BloggingFactoryImplementer_NicheMaster_2_1_1_0(_extraData);
+                    BloggingFactoryImplementer_NicheMaster_2_1_1_0 createDirector = new BloggingFactoryImplementer_NicheMaster_2_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/blogging";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/blogging";
@@ -527,7 +609,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PODCASTING"))
                 {
-                    PodcastingFactoryImplementer_NicheMaster_2_2_1_0 createDirector = new PodcastingFactoryImplementer_NicheMaster_2_2_1_0(_extraData);
+                    PodcastingFactoryImplementer_NicheMaster_2_2_1_0 createDirector = new PodcastingFactoryImplementer_NicheMaster_2_2_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/podcasting";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/podcasting";
@@ -539,7 +621,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SOCIALMEDIA"))
                 {
-                    SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 createDirector = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(_extraData);
+                    SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 createDirector = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/socialmedia";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/socialmedia";
@@ -555,7 +637,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_LISTBUILDING"))
                 {
-                    ListBuildingFactoryImplementer_NicheMaster_3_1_1_0 createDirector = new ListBuildingFactoryImplementer_NicheMaster_3_1_1_0(_extraData);
+                    ListBuildingFactoryImplementer_NicheMaster_3_1_1_0 createDirector = new ListBuildingFactoryImplementer_NicheMaster_3_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8993/storyline/basedi/io/listbuilding";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9993/storyline/basedi/io/listbuilding";
@@ -571,7 +653,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SUPPLEMENTS"))
                 {
-                    SupplementsFactoryImplementer_NicheMaster_4_1_1_0 createDirector = new SupplementsFactoryImplementer_NicheMaster_4_1_1_0(_extraData);
+                    SupplementsFactoryImplementer_NicheMaster_4_1_1_0 createDirector = new SupplementsFactoryImplementer_NicheMaster_4_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8994/storyline/basedi/io/supplements";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9994/storyline/basedi/io/supplements";
@@ -587,7 +669,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_COACHING"))
                 {
-                    CoachingFactoryImplementer_NicheMaster_5_1_1_0 createDirector = new CoachingFactoryImplementer_NicheMaster_5_1_1_0(_extraData);
+                    CoachingFactoryImplementer_NicheMaster_5_1_1_0 createDirector = new CoachingFactoryImplementer_NicheMaster_5_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/coaching";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/coaching";
@@ -599,7 +681,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CONSULTING"))
                 {
-                    ConsultingFactoryImplementer_NicheMaster_5_2_1_0 createDirector = new ConsultingFactoryImplementer_NicheMaster_5_2_1_0(_extraData);
+                    ConsultingFactoryImplementer_NicheMaster_5_2_1_0 createDirector = new ConsultingFactoryImplementer_NicheMaster_5_2_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/consulting";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/consulting";
@@ -611,7 +693,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PERSONALTRAINING"))
                 {
-                    PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0 createDirector = new PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0(_extraData);
+                    PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0 createDirector = new PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/personaltraining";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/personaltraining";
@@ -627,7 +709,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SOFTWARE"))
                 {
-                    SoftwareFactoryImplementer_NicheMaster_6_1_1_0 createDirector = new SoftwareFactoryImplementer_NicheMaster_6_1_1_0(_extraData);
+                    SoftwareFactoryImplementer_NicheMaster_6_1_1_0 createDirector = new SoftwareFactoryImplementer_NicheMaster_6_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8996/storyline/basedi/io/software";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9996/storyline/basedi/io/software";
@@ -643,7 +725,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_AFFILIATEREVENUE"))
                 {
-                    AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0 createDirector = new AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0(_extraData);
+                    AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0 createDirector = new AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8997/storyline/basedi/io/affiliaterevenue";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9997/storyline/basedi/io/affiliaterevenue";
@@ -659,7 +741,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_ACCOUNTING"))
                 {
-                    AccountingFactoryImplementer_NicheMaster_8_1_1_0 createDirector = new AccountingFactoryImplementer_NicheMaster_8_1_1_0(_extraData);
+                    AccountingFactoryImplementer_NicheMaster_8_1_1_0 createDirector = new AccountingFactoryImplementer_NicheMaster_8_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8998/storyline/basedi/io/accounting";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9998/storyline/basedi/io/accounting";
@@ -675,7 +757,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CUSTOMERSERVICE"))
                 {
-                    CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0 createDirector = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(_extraData);
+                    CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0 createDirector = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8999/storyline/basedi/io/customerservice";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9999/storyline/basedi/io/customerservice";
@@ -691,7 +773,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PRODUCTIVITY"))
                 {
-                    ProductivityFactoryImplementer_NicheMaster_10_1_1_0 createDirector = new ProductivityFactoryImplementer_NicheMaster_10_1_1_0(_extraData);
+                    ProductivityFactoryImplementer_NicheMaster_10_1_1_0 createDirector = new ProductivityFactoryImplementer_NicheMaster_10_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8910/storyline/basedi/io/productivity";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9910/storyline/basedi/io/productivity";
@@ -707,7 +789,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_RISKMANAGEMENT"))
                 {
-                    RiskManagementFactoryTester_NicheMaster_11_1_1_0 createDirector = new RiskManagementFactoryTester_NicheMaster_11_1_1_0(_extraData);
+                    RiskManagementFactoryTester_NicheMaster_11_1_1_0 createDirector = new RiskManagementFactoryTester_NicheMaster_11_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8911/storyline/basedi/io/riskmanagement";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9911/storyline/basedi/io/riskmanagement";
@@ -723,7 +805,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CAREERSEMPLOYMENT"))
                 {
-                    CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0 createDirector = new CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0(_extraData);
+                    CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0 createDirector = new CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/careersemployment";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/careersemployment";
@@ -735,7 +817,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_WEBDEVELOPMENT"))
                 {
-                    WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 createDirector = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(_extraData);
+                    WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 createDirector = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/webdevelopment";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/webdevelopment";
@@ -747,7 +829,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CMS"))
                 {
-                    CMSFactoryImplementer_NicheMaster_12_4_1_0 createDirector = new CMSFactoryImplementer_NicheMaster_12_4_1_0(_extraData);
+                    CMSFactoryImplementer_NicheMaster_12_4_1_0 createDirector = new CMSFactoryImplementer_NicheMaster_12_4_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalNodeJS = "http://localhost:8912/storyline/basedi/io/cms";
                     createDirector.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/cms";
@@ -759,7 +841,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_requestToResolveString.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SECURITY"))
                 {
-                    SecurityFactoryImplementer_NicheMaster_12_5_1_0 createDirector = new SecurityFactoryImplementer_NicheMaster_12_5_1_0(_extraData);
+                    SecurityFactoryImplementer_NicheMaster_12_5_1_0 createDirector = new SecurityFactoryImplementer_NicheMaster_12_5_1_0(_storedExtraData);
 
                     createDirector.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/security";
                     createDirector.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/security";
@@ -844,7 +926,7 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _requestToResolveObject;
 
-        private ExtraData_12_2_1_0 _extraData;
+        private ExtraData_12_2_1_0 _storedExtraData;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
@@ -862,7 +944,7 @@ namespace BaseDI.Story.Programming_1
         {
             _clientORserverInstance = clientORserverInstance;
 
-            _extraData = extraData;
+            _storedExtraData = extraData;
 
             _requestToResolveObject = requestToResolveObject;
             _requestName = requestToResolveString;
@@ -911,7 +993,7 @@ namespace BaseDI.Story.Programming_1
 
             if (_requestName.ToUpper(CultureInfo.CurrentCulture).Contains("EXPERIENCE_THE_MOVEMENT_TOFACEBOOKPAGE_DATATRANSFER"))
             {
-                SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 createExperience = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(_extraData);
+                SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 createExperience = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(_storedExtraData);
 
                 createExperience.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/socialmedia";
                 createExperience.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/socialmedia";
@@ -966,7 +1048,7 @@ namespace BaseDI.Story.Programming_1
             {
                 #region 12. Other
 
-                WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 createExperience = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(_extraData);
+                WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 createExperience = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(_storedExtraData);
 
                 createExperience.APILocationLocalNodeJS = "http://localhost:8912/storyline/basedi/io/webdevelopment";
                 createExperience.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/webdevelopment";
@@ -1052,7 +1134,7 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _requestToResolveObject;
 
-        private ExtraData_12_2_1_0 _extraData;
+        private ExtraData_12_2_1_0 _storedExtraData;
 
         private string _requestName = "";
         private string _requestToProcess = "";
@@ -1066,7 +1148,7 @@ namespace BaseDI.Story.Programming_1
         {
             _clientORserverInstance = clientORserverInstance;
 
-            _extraData = extraData;
+            _storedExtraData = extraData;
 
             _requestToResolveObject = requestToResolveObject;
             _requestName = requestToResolveString;
@@ -1094,7 +1176,7 @@ namespace BaseDI.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
+              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _storedExtraData, "", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;
@@ -1169,7 +1251,7 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _requestToResolveObject;
 
-        private ExtraData_12_2_1_0 _extraData;
+        private ExtraData_12_2_1_0 _storedExtraData;
 
         private string _requestName = "";
         private string _requestToProcess = "";
@@ -1183,7 +1265,7 @@ namespace BaseDI.Story.Programming_1
         {
             _clientORserverInstance = clientORserverInstance;
 
-            _extraData = extraData;
+            _storedExtraData = extraData;
 
             _requestToResolveObject = requestToResolveObject;
             _requestName = requestToResolveString;
@@ -1211,7 +1293,7 @@ namespace BaseDI.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0")
+              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _storedExtraData, "", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0", "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;
@@ -1286,7 +1368,7 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _requestToResolveObject;
 
-        private ExtraData_12_2_1_0 _extraData;
+        private ExtraData_12_2_1_0 _storedExtraData;
 
         private string _requestName = "";
         private string _requestToProcess = "";
@@ -1300,7 +1382,7 @@ namespace BaseDI.Story.Programming_1
         {
             _clientORserverInstance = clientORserverInstance;
 
-            _extraData = extraData;
+            _storedExtraData = extraData;
 
             _requestToResolveObject = requestToResolveObject;
             _requestName = requestToResolveString;
@@ -1328,7 +1410,7 @@ namespace BaseDI.Story.Programming_1
             JObject armTemplateJSONOutput = null;
 
             armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _extraData, "", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0")
+              .SetupStoryline(_clientORserverInstance, _storylineDetails, _storylineDetails_Parameters, _storedExtraData, "", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0", "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0")
               .Action().Result;
 
             return armTemplateJSONOutput;

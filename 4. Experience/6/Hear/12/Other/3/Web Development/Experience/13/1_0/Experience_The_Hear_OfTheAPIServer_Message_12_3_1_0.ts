@@ -11,6 +11,7 @@ import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+import { Stream } from "stream";
 
 export namespace BaseDI.Experience.Hear.Web_Development_13 {
     export class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 extends aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 {
@@ -252,7 +253,8 @@ export namespace BaseDI.Experience.Hear.Web_Development_13 {
 
                         //#region 2. Action
 
-                        try {
+                        try
+                        {
                             //#region EXECUTE OUR LOGIC
 
                             //#region PROCESS LOGIC UPDATES
@@ -280,8 +282,18 @@ export namespace BaseDI.Experience.Hear.Web_Development_13 {
                         //#endregion
 
                         //#region 3. Observe
+                        let result: string = "";
+
                         handleObservation.then(response => {
-                            const result: string = unescape(response?.outputs[1].baseDIObservations[0].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                            console.log(JSON.stringify(response));
+
+                            response?.outputs[1].baseDIObservations.map(storedObservation => {
+                                console.log(JSON.stringify(storedObservation));
+
+                                if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase().includes("HTML")) {
+                                    result = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                                }
+                            });                            
 
                             res.send(result);
                         });
@@ -325,6 +337,7 @@ export namespace BaseDI.Experience.Hear.Web_Development_13 {
                     //#region 3. Observe
 
                     //#region START THE SERVER
+
                     this._server.Server.Instance.listen(this._server.Server.Port, () => {
                         console.log(`server started at http://localhost:${this._server.Server.Port}`);
                     });
@@ -351,21 +364,21 @@ export namespace BaseDI.Experience.Hear.Web_Development_13 {
 
             if (process.env.APP_ENV == "SERVER" && this._actionName.toUpperCase().includes("COPYSTATICFILES_1_0")) {
                 {
-                    //#region VARIABLES: DESCRIBE the memories
+                    //#region VARIABLES
 
                     //#endregion
 
-                    //#region VALUES: RECALL the memories
+                    //#region VALUES
 
                     //#endregion
 
-                    //#region **INPUT: PROCESS the memories*
+                    //#region INPUTS
 
                     await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(this._storylineDetails);
 
                     //#endregion
 
-                    //#region **OUTPUT: TELL the story*
+                    //#region OUTPUT
 
                     //#endregion
                 }

@@ -93,18 +93,18 @@ namespace BaseDI.Chapter.Page.Security_1
             //Example: The_WebClient_1 – Help_Build_Website_Foundation – Apple_iTunes–1-1-WebDesign_Music–1_0
 
             //Set a reference to our the details of our storyline.
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             #endregion
 
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             _serverInfo = (Dictionary<string, object>)ClientOrServerInstance;
             _server = _serverInfo.ContainsKey("Server") ? _serverInfo["Server"] : null;
 
             #endregion
 
-            #region **INPUT: PROCESS the memories*
+            #region INPUTS
 
             #region CONTROL
 
@@ -117,7 +117,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
             #endregion
 
-            #region **OUTPUT: TELL the story*
+            #region OUTPUT
 
             return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
@@ -134,11 +134,11 @@ namespace BaseDI.Chapter.Page.Security_1
 
         public async Task Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0()
         {
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             #endregion
 
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             JObject storylineDetails = StorylineDetails;
 
@@ -164,7 +164,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
             #endregion
 
-            #region **INPUT: PROCESS the memories*
+            #region INPUTS
 
             #region CONTROL
 
@@ -185,7 +185,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
             #endregion
 
-            #region **OUTPUT: TELL the story*
+            #region OUTPUT
 
             #endregion
         }
@@ -196,15 +196,15 @@ namespace BaseDI.Chapter.Page.Security_1
 
         public async Task Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0()
         {
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             #endregion
 
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             #endregion
 
-            #region **INPUT: PROCESS the memories*
+            #region INPUTS
 
             if (_request != null)
             {
@@ -228,7 +228,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
             #endregion
 
-            #region **OUTPUT: TELL the story*
+            #region OUTPUT
 
             #endregion
         }
@@ -237,7 +237,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
         public async Task Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft()
         {
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             Func<Object, Object> callBack = null;
             
@@ -252,7 +252,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
             #endregion
 
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
   
             microsoftProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_apiMetaData as JObject, "searchkey", "SetupDetails_APIS_API_1_0_MicrosoftGraph_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault().Parent.Parent;
             microsoftProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(microsoftProfile as JObject, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault().Parent.Parent;
@@ -275,7 +275,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
             #endregion
 
-            #region **INPUT: PROCESS the memories*
+            #region INPUTS
 
             #region TRANSPORT
 
@@ -290,7 +290,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
             #endregion
 
-            #region **OUTPUT: TELL the story*
+            #region OUTPUT
 
             #endregion
         }
@@ -303,19 +303,19 @@ namespace BaseDI.Chapter.Page.Security_1
 
         private async Task Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0()
         {
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             #endregion
 
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             #endregion
 
-            #region **INPUT: PROCESS the memories*
+            #region INPUTS
 
             #endregion
 
-            #region **OUTPUT: TELL the story*
+            #region OUTPUT
 
             #endregion
         }
@@ -324,16 +324,16 @@ namespace BaseDI.Chapter.Page.Security_1
 
         private async Task Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(Object response, SingleParmPoco_12_2_1_0 extraData = null)
         {
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
             #endregion
 
-            #region VARIABLES: DESCRIBE the memories
+            #region VARIABLES
 
 
             #endregion
 
-            #region **INPUT: PROCESS the memories*         
+            #region INPUTS         
 
             await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(MasterStorer, "Create", _entryPointName, _pageName, "STORING access token", StorylineDetails, response, "BaseDI_DataToken_MicrosoftGraph");
 
@@ -341,7 +341,7 @@ namespace BaseDI.Chapter.Page.Security_1
 
             #endregion  
 
-            #region **OUTPUT: TELL the story*
+            #region OUTPUT
 
             #endregion
         }

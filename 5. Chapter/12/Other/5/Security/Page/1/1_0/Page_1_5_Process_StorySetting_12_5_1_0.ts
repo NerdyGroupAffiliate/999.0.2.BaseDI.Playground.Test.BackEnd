@@ -36,20 +36,20 @@ export namespace BaseDI.Chapter.Page.Security_1 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             return await this.StorylineDetails;
 
@@ -64,58 +64,58 @@ export namespace BaseDI.Chapter.Page.Security_1 {
 
         public async Step_1_0_Custom_Control_ServerAuthenticationRequestToAPI_1_0()
         {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
-
-
-            //#endregion
-
-            //#region **INPUT: PROCESS the memories*
+            //#region VARIABLES
 
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region INPUTS
+
+
+            //#endregion
+
+            //#region OUTPUT
 
             //#endregion
         }
 
         public async Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0() {
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
 
         private async Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0() {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
@@ -123,37 +123,37 @@ export namespace BaseDI.Chapter.Page.Security_1 {
         //#region MICROSOFT
 
         private async Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft() {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
 
         private async Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft() {
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region VARIABLES: DESCRIBE the memories
+            //#region VARIABLES
 
             //#endregion
 
-            //#region **INPUT: PROCESS the memories*
+            //#region INPUTS
 
             //#endregion
 
-            //#region **OUTPUT: TELL the story*
+            //#region OUTPUT
 
             //#endregion
         }
