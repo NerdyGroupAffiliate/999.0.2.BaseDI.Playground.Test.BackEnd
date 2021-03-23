@@ -361,7 +361,7 @@ namespace BaseDI
         #region 4. Action
 
         [HttpGet("")]
-        public async Task<IActionResult> Action(string requestNameToProcess = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string requestNameToProcessParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessHttpRequest_1_0")
+        public async Task<IActionResult> Action(string clientRequestByName = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string clientRequestByNameParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessHttpRequest_1_0")
         {
             #region 1. INPUTS
 
@@ -441,17 +441,17 @@ namespace BaseDI
 
                 #region IDEAL CASE - USE request handler
 
-                if (requestNameToProcess == "") throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank or null!");
+                if (clientRequestByName == "") throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that clientRequestByName is not blank or null!");
                 if (StoredAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
 
-                Action = (string requestNameToProcess, string requestNameToProcessParameters, ExtraData_12_2_1_0 extraData) =>
+                Action = (string clientRequestByName, string clientRequestByNameParameters, ExtraData_12_2_1_0 extraData) =>
                 {
                     return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                        .SetupStoryline(_storedClientORserverInfo, _storedStorylineDetails, null, extraData, "", requestNameToProcess, requestNameToProcessParameters)
+                        .SetupStoryline(_storedClientORserverInfo, _storedStorylineDetails, null, extraData, "", clientRequestByName, clientRequestByNameParameters)
                         .Action().Result;
                 };
 
-                Action(requestNameToProcess, requestNameToProcessParameters, _storedExtraData);
+                Action(clientRequestByName, clientRequestByNameParameters, _storedExtraData);
 
                 #endregion
 
