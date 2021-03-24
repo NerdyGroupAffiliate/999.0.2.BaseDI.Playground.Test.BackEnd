@@ -69,6 +69,7 @@ using System.Globalization;
 
 using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.Configuration;
+using BaseDI.Script.Risk_Management.Extensions_0;
 
 #endregion
 
@@ -82,16 +83,16 @@ namespace BaseDI.Story.Programming_1
 
         //A. Variable Declaration 
 
-        //APPSETTING DETAILS
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
-        //CLIENT DETAILS
+        //CLIENT/SERVER
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject = null;
 
-        //MISC DETAILS
+        //MISC
         private ExtraData_12_2_1_0 _storedExtraData = null;
 
-        //FRAMEWORK SPECFIC
+        //PLUMBING
         public Exception Mistake { get; set; }
 
         #endregion
@@ -199,6 +200,12 @@ namespace BaseDI.Story.Programming_1
 
             #endregion
 
+            #region DEFINE exception handler
+
+            SingleParmPoco_12_2_1_0 stored_exceptionHandler;
+
+            #endregion
+
             #endregion
 
             #region 2. PROCESS
@@ -245,11 +252,24 @@ namespace BaseDI.Story.Programming_1
 
                 #endregion
             }
-            catch (Exception)
+            catch (Exception mistake)
             {
-                throw;
-            }
+                #region EDGE CASE - USE exception handler
 
+                stored_exceptionHandler = new SingleParmPoco_12_2_1_0();
+
+                stored_exceptionHandler.RequestNameToProcess = clientRequestByName;
+                stored_exceptionHandler.RequestNameToProcessParameters = clientRequestByNameParameters;
+
+                stored_exceptionHandler.StorylineDetails = storylineDetails;
+
+                stored_exceptionHandler.Parameters.Add("Mistakes", mistake);
+
+                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Store_AppException_1_0(stored_exceptionHandler);
+
+                #endregion
+            }
+            
             #endregion
 
             #region 3. OUTPUT
@@ -278,10 +298,10 @@ namespace BaseDI.Story.Programming_1
     {
         #region 1. Assign
 
-        //APPSETTING DETAILS
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
-        //CLIENT DETAILS
+        //CLIENT/SERVER
         internal Dictionary<string, object> _storedClientORserverInstance;
 
         internal string _storedClientRequestByName;
@@ -289,14 +309,14 @@ namespace BaseDI.Story.Programming_1
 
         internal aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
-        //DATASET DETAILS
+        //DATASETS
         internal JObject _storedStorylineDetails;
         internal JObject _storedStorylineDetails_Parameters;
 
-        //MISC DETAILS
+        //MISC
         internal ExtraData_12_2_1_0 _storedExtraData;
 
-        //FRAMEWORK SPECFIC
+        //PLUMBING
         internal string _storedRequestName = "";
         internal string _storedSystemRequestByName;
 
@@ -450,10 +470,10 @@ namespace BaseDI.Story.Programming_1
     {
         #region 1. Assign
 
-        //APPSETTING DETAILS
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
-        //CLIENT DETAILS
+        //CLIENT/SERVER
         internal Dictionary<string, object> _storedClientORserverInstance;
 
         private string _storedClientRequestByName = "";
@@ -461,14 +481,14 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
-        //DATASET DETAILS
+        //DATASETS
         private JObject _storedStorylineDetails;
         private JObject _storedStorylineDetails_Parameters;
 
-        //MISC DETAILS
+        //MISC
         private ExtraData_12_2_1_0 _storedExtraData;
 
-        //FRAMEWORK SPECFIC
+        //PLUMBING
         private string _storedRequestName = "";
         private string _storedSystemRequestByName;
 
@@ -710,10 +730,10 @@ namespace BaseDI.Story.Programming_1
     {
         #region 1. Assign
 
-        //APPSETTING DETAILS
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
-        //CLIENT DETAILS
+        //CLIENT/SERVER
         private Dictionary<string, object> _storedClientORserverInstance;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
@@ -721,14 +741,14 @@ namespace BaseDI.Story.Programming_1
         private string _storedClientRequestByName = "";
         private string _storedClientRequestByNameParameters = "";
 
-        //DATASET DETAILS
+        //DATASETS
         private JObject _storedStorylineDetails;
         private JObject _storedStorylineDetails_Parameters;
 
-        //MISC DETAILS
+        //MISC
         private ExtraData_12_2_1_0 _storedExtraData;
 
-        //FRAMEWORK SPECFIC
+        //PLUMBING
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
@@ -869,7 +889,7 @@ namespace BaseDI.Story.Programming_1
             ProductivityFactoryImplementer_NicheMaster_10_1_1_0 _10_1_stored_Director_Of_Productivity_RequestHandler = null;
 
             RiskManagementFactoryTester_NicheMaster_11_1_1_0 _11_1_stored_Director_Of_RiskManagement_RequestHandler = null;
-
+            
             CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0 _12_1_stored_Director_Of_Careers_RequestHandler = null;
             ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 _12_2_stored_Director_Of_Programming_RequestHandler = null;
             WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 _12_3_stored_Director_Of_WebDevelopment_RequestHandler = null;
@@ -901,8 +921,12 @@ namespace BaseDI.Story.Programming_1
 
                     _12_2_stored_Director_Of_Programming_RequestHandler = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(_storedExtraData);
                     
-                    _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/programming";
-                    _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/programming";
+                    _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/programming";
+                    _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/programming";
+
+                    _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalNodeJS = "https://localhost:8912/storyline/basedi/io/programming";
+                    _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9912/storyline/basedi/io/programming";
+
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationRemote = "https://storyline.basedi.io/programming";
 
                     return _12_2_stored_Director_Of_Programming_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -917,9 +941,13 @@ namespace BaseDI.Story.Programming_1
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_ADVERTISING"))
                     {
                         _1_1_stored_Director_Of_Advertising_RequestHandler = new AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(_storedExtraData);
-                        
-                        _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8991/storyline/basedi/io/advertising";
-                        _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalNodeJS = "http://localhost:9991/storyline/basedi/io/advertising";
+
+                        _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalDotNetCore = "http://localhost:6991/storyline/basedi/io/advertising";
+                        _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7991/storyline/basedi/io/advertising";
+
+                        _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalNodeJS = "https://localhost:8991/storyline/basedi/io/advertising";
+                        _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9991/storyline/basedi/io/advertising";
+
                         _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationRemote = "https://storyline.basedi.io/advertising";
 
                         return _1_1_stored_Director_Of_Advertising_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -933,8 +961,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _2_1_stored_Director_Of_Blogging_RequestHandler = new BloggingFactoryImplementer_NicheMaster_2_1_1_0(_storedExtraData);
                         
-                        _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/blogging";
-                        _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/blogging";
+                        _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/blogging";
+                        _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/blogging";
+
+                        _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalNodeJS = "https://localhost:8992/storyline/basedi/io/blogging";
+                        _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9992/storyline/basedi/io/blogging";
+
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationRemote = "https://storyline.basedi.io/blogging";
 
                         return _2_1_stored_Director_Of_Blogging_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -944,8 +976,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _2_2_stored_Director_Of_Podcasting_RequestHandler = new PodcastingFactoryImplementer_NicheMaster_2_2_1_0(_storedExtraData);
 
-                        _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/podcasting";
-                        _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/podcasting";
+                        _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/podcasting";
+                        _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/podcasting";
+
+                        _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalNodeJS = "https://localhost:8992/storyline/basedi/io/podcasting";
+                        _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9992/storyline/basedi/io/podcasting";
+
                         _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationRemote = "https://storyline.basedi.io/podcasting";
 
                         return _2_2_stored_Director_Of_Podcasting_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -955,8 +991,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _2_3_stored_Director_Of_SocialMedia_RequestHandler = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(_storedExtraData);
 
-                        _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/socialmedia";
-                        _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/socialmedia";
+                        _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/socialmedia";
+                        _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/socialmedia";
+
+                        _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS = "https://localhost:8992/storyline/basedi/io/socialmedia";
+                        _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9992/storyline/basedi/io/socialmedia";
+
                         _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationRemote = "https://storyline.basedi.io/socialmedia";
 
                         return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -970,8 +1010,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _3_1_stored_Director_Of_ListBuilding_RequestHandler = new ListBuildingFactoryImplementer_NicheMaster_3_1_1_0(_storedExtraData);
 
-                        _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8993/storyline/basedi/io/listbuilding";
-                        _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalNodeJS = "http://localhost:9993/storyline/basedi/io/listbuilding";
+                        _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6993/storyline/basedi/io/listbuilding";
+                        _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7993/storyline/basedi/io/listbuilding";
+
+                        _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalNodeJS = "https://localhost:8993/storyline/basedi/io/listbuilding";
+                        _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9993/storyline/basedi/io/listbuilding";
+
                         _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationRemote = "https://storyline.basedi.io/listbuilding";
 
                         return _3_1_stored_Director_Of_ListBuilding_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -985,8 +1029,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _4_1_stored_Director_Of_Supplements_RequestHandler = new SupplementsFactoryImplementer_NicheMaster_4_1_1_0(_storedExtraData);
 
-                        _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8994/storyline/basedi/io/supplements";
-                        _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalNodeJS = "http://localhost:9994/storyline/basedi/io/supplements";
+                        _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6994/storyline/basedi/io/supplements";
+                        _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7994/storyline/basedi/io/supplements";
+
+                        _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalNodeJS = "https://localhost:8994/storyline/basedi/io/supplements";
+                        _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9994/storyline/basedi/io/supplements";
+
                         _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationRemote = "https://storyline.basedi.io/supplements";
 
                         return _4_1_stored_Director_Of_Supplements_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1000,8 +1048,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _5_1_stored_Director_Of_Coaching_RequestHandler = new CoachingFactoryImplementer_NicheMaster_5_1_1_0(_storedExtraData);
 
-                        _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/coaching";
-                        _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/coaching";
+                        _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/coaching";
+                        _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/coaching";
+
+                        _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalNodeJS = "https://localhost:8995/storyline/basedi/io/coaching";
+                        _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9995/storyline/basedi/io/coaching";
+
                         _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationRemote = "https://storyline.basedi.io/coaching";
 
                         return _5_1_stored_Director_Of_Coaching_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1011,8 +1063,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _5_2_stored_Director_Of_Consulting_RequestHandler = new ConsultingFactoryImplementer_NicheMaster_5_2_1_0(_storedExtraData);
 
-                        _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/consulting";
-                        _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/consulting";
+                        _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/consulting";
+                        _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/consulting";
+
+                        _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalNodeJS = "https://localhost:8995/storyline/basedi/io/consulting";
+                        _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9995/storyline/basedi/io/consulting";
+
                         _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationRemote = "https://storyline.basedi.io/consulting";
 
                         return _5_2_stored_Director_Of_Consulting_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1022,8 +1078,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _5_3_stored_Director_Of_PersonalTraining_RequestHandler = new PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0(_storedExtraData);
 
-                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8995/storyline/basedi/io/personaltraining";
-                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalNodeJS = "http://localhost:9995/storyline/basedi/io/personaltraining";
+                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/personaltraining";
+                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/personaltraining";
+
+                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalNodeJS = "https://localhost:8995/storyline/basedi/io/personaltraining";
+                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9995/storyline/basedi/io/personaltraining";
+
                         _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationRemote = "https://storyline.basedi.io/personaltraining";
 
                         return _5_3_stored_Director_Of_PersonalTraining_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1037,8 +1097,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _6_1_stored_Director_Of_Software_RequestHandler = new SoftwareFactoryImplementer_NicheMaster_6_1_1_0(_storedExtraData);
 
-                        _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8996/storyline/basedi/io/software";
-                        _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalNodeJS = "http://localhost:9996/storyline/basedi/io/software";
+                        _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6996/storyline/basedi/io/software";
+                        _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7996/storyline/basedi/io/software";
+
+                        _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalNodeJS = "https://localhost:8996/storyline/basedi/io/software";
+                        _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9996/storyline/basedi/io/software";
+
                         _6_1_stored_Director_Of_Software_RequestHandler.APILocationRemote = "https://storyline.basedi.io/software";
 
                         return _6_1_stored_Director_Of_Software_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1052,8 +1116,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler = new AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0(_storedExtraData);
 
-                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8997/storyline/basedi/io/affiliaterevenue";
-                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalNodeJS = "http://localhost:9997/storyline/basedi/io/affiliaterevenue";
+                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6997/storyline/basedi/io/affiliaterevenue";
+                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7997/storyline/basedi/io/affiliaterevenue";
+
+                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalNodeJS = "https://localhost:8997/storyline/basedi/io/affiliaterevenue";
+                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9997/storyline/basedi/io/affiliaterevenue";
+
                         _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationRemote = "https://storyline.basedi.io/affiliaterevenue";
 
                         return _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1067,8 +1135,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _8_1_stored_Director_Of_Accounting_RequestHandler = new AccountingFactoryImplementer_NicheMaster_8_1_1_0(_storedExtraData);
 
-                        _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8998/storyline/basedi/io/accounting";
-                        _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalNodeJS = "http://localhost:9998/storyline/basedi/io/accounting";
+                        _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6998/storyline/basedi/io/accounting";
+                        _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7998/storyline/basedi/io/accounting";
+
+                        _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalNodeJS = "https://localhost:8998/storyline/basedi/io/accounting";
+                        _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9998/storyline/basedi/io/accounting";
+
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationRemote = "https://storyline.basedi.io/accounting";
 
                         return _8_1_stored_Director_Of_Accounting_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1082,8 +1154,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _9_1_stored_Director_Of_CustomerService_RequestHandler = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(_storedExtraData);
 
-                        _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8999/storyline/basedi/io/customerservice";
-                        _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalNodeJS = "http://localhost:9999/storyline/basedi/io/customerservice";
+                        _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6999/storyline/basedi/io/customerservice";
+                        _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7999/storyline/basedi/io/customerservice";
+
+                        _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalNodeJS = "https://localhost:8999/storyline/basedi/io/customerservice";
+                        _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9999/storyline/basedi/io/customerservice";
+
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationRemote = "https://storyline.basedi.io/customerservice";
 
                         return _9_1_stored_Director_Of_CustomerService_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1097,8 +1173,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _10_1_stored_Director_Of_Productivity_RequestHandler = new ProductivityFactoryImplementer_NicheMaster_10_1_1_0(_storedExtraData);
 
-                        _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8910/storyline/basedi/io/productivity";
-                        _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalNodeJS = "http://localhost:9910/storyline/basedi/io/productivity";
+                        _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6910/storyline/basedi/io/productivity";
+                        _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7910/storyline/basedi/io/productivity";
+
+                        _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalNodeJS = "https://localhost:8910/storyline/basedi/io/productivity";
+                        _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9910/storyline/basedi/io/productivity";
+
                         _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationRemote = "https://storyline.basedi.io/productivity";
 
                         return _10_1_stored_Director_Of_Productivity_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1112,8 +1192,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _11_1_stored_Director_Of_RiskManagement_RequestHandler = new RiskManagementFactoryTester_NicheMaster_11_1_1_0(_storedExtraData);
 
-                        _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8911/storyline/basedi/io/riskmanagement";
-                        _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalNodeJS = "http://localhost:9911/storyline/basedi/io/riskmanagement";
+                        _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6911/storyline/basedi/io/riskmanagement";
+                        _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7911/storyline/basedi/io/riskmanagement";
+
+                        _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalNodeJS = "https://localhost:8911/storyline/basedi/io/riskmanagement";
+                        _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9911/storyline/basedi/io/riskmanagement";
+
                         _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationRemote = "https://storyline.basedi.io/riskmanagement";
 
                         return _11_1_stored_Director_Of_RiskManagement_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1127,8 +1211,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _12_1_stored_Director_Of_Careers_RequestHandler = new CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0(_storedExtraData);
 
-                        _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/careersemployment";
-                        _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/careersemployment";
+                        _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/careersemployment";
+                        _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/careersemployment";
+
+                        _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalNodeJS = "https://localhost:8912/storyline/basedi/io/careersemployment";
+                        _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9912/storyline/basedi/io/careersemployment";
+
                         _12_1_stored_Director_Of_Careers_RequestHandler.APILocationRemote = "https://storyline.basedi.io/careersemployment";
 
                         return _12_1_stored_Director_Of_Careers_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1138,8 +1226,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(_storedExtraData);
 
-                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/webdevelopment";
-                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/webdevelopment";
+                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/webdevelopment";
+                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/webdevelopment";
+
+                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalNodeJS = "https://localhost:8912/storyline/basedi/io/webdevelopment";
+                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9912/storyline/basedi/io/webdevelopment";
+
                         _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
 
                         return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1149,8 +1241,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _12_4_stored_Director_Of_CMS_RequestHandler = new CMSFactoryImplementer_NicheMaster_12_4_1_0(_storedExtraData);
 
-                        _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalNodeJS = "http://localhost:8912/storyline/basedi/io/cms";
-                        _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/cms";
+                        _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalNodeJS = "https://localhost:6912/storyline/basedi/io/cms";
+                        _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:7912/storyline/basedi/io/cms";
+
+                        _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalDotNetCore = "https://localhost:8912/storyline/basedi/io/cms";
+                        _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:9912/storyline/basedi/io/cms";
+
                         _12_4_stored_Director_Of_CMS_RequestHandler.APILocationRemote = "https://storyline.basedi.io/cms";
 
                         return _12_4_stored_Director_Of_CMS_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1160,8 +1256,12 @@ namespace BaseDI.Story.Programming_1
                     {
                         _12_5_stored_Director_Of_Security_RequestHandler = new SecurityFactoryImplementer_NicheMaster_12_5_1_0(_storedExtraData);
 
-                        _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8912/storyline/basedi/io/security";
-                        _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalNodeJS = "http://localhost:9912/storyline/basedi/io/security";
+                        _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/security";
+                        _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/security";
+
+                        _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalNodeJS = "https://localhost:8912/storyline/basedi/io/security";
+                        _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9912/storyline/basedi/io/security";
+
                         _12_5_stored_Director_Of_Security_RequestHandler.APILocationRemote = "https://storyline.basedi.io/security";
 
                         return _12_5_stored_Director_Of_Security_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1176,7 +1276,7 @@ namespace BaseDI.Story.Programming_1
             {
                 #region EDGE CASE - USE an exception message
 
-                throw new Exception("NO DIRECTOR REQUEST HANDLER CAN BE FOUND FOR REQUEST - " + _storedRequestName.ToUpper() + " " + "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Director_12_2_1_0 -> Action_1_Begin_Process ");
+                throw new Exception("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Director_12_2_1_0 -> Action_1_Begin_Process - No DIRECTOR can be found for request " + _storedRequestName.ToUpper() + " Please make sure a director is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
 
                 #endregion
             }
@@ -1260,10 +1360,10 @@ namespace BaseDI.Story.Programming_1
     {
         #region 1. Assign
 
-        //APPSETTING DETAILS
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
-        //CLIENT DETAILS
+        //CLIENT/SERVER
         private Dictionary<string, object> _storedClientORserverInstance;
 
         private string _storedClientRequestByName = "";
@@ -1271,14 +1371,14 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
-        //DATASET DETAILS
+        //DATASETS
         private JObject _storedStorylineDetails;
         private JObject _storedStorylineDetails_Parameters;
 
-        //MISC DETAILS
+        //MISC
         private ExtraData_12_2_1_0 _storedExtraData;
 
-        //FRAMEWORK SPECFIC
+        //PLUMBING
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
@@ -1406,8 +1506,8 @@ namespace BaseDI.Story.Programming_1
                 {
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(_storedExtraData);
 
-                    _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore = "http://localhost:8992/storyline/basedi/io/socialmedia";
-                    _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS = "http://localhost:9992/storyline/basedi/io/socialmedia";
+                    _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:8992/storyline/basedi/io/socialmedia";
+                    _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9992/storyline/basedi/io/socialmedia";
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationRemote = "https://storyline.basedi.io/socialmedia";
 
                     return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1460,8 +1560,8 @@ namespace BaseDI.Story.Programming_1
 
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(_storedExtraData);
 
-                    _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalNodeJS = "http://localhost:8912/storyline/basedi/io/webdevelopment";
-                    _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore = "http://localhost:9912/storyline/basedi/io/webdevelopment";
+                    _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:8912/storyline/basedi/io/webdevelopment";
+                    _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:9912/storyline/basedi/io/webdevelopment";
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationRemote = "https://storyline.basedi.io/webdevelopment";
 
                     return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedDisturber, _storedCentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
@@ -1477,7 +1577,7 @@ namespace BaseDI.Story.Programming_1
             {
                 #region EDGE CASE - USE an exception message
 
-                throw new Exception("NO EXPERIENCE REQUEST HANDLER CAN BE FOUND FOR REQUEST - " + _storedRequestName.ToUpper() + " " + "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Experience_12_2_1_0 -> Action_1_Begin_Process ");
+                throw new Exception("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Experience_12_2_1_0 -> Action_1_Begin_Process - No EXPERIENCE can be found for request " + _storedRequestName.ToUpper() + " Please make sure an experience is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
 
                 #endregion
             }
@@ -1561,10 +1661,10 @@ namespace BaseDI.Story.Programming_1
     {
         #region 1. Assign
 
-        //APPSETTING DETAILS
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
-        //CLIENT DETAILS
+        //CLIENT/SERVER
         private Dictionary<string, object> _storedClientORserverInstance;
 
         private string _storedClientRequestByName = "";
@@ -1572,14 +1672,14 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
-        //DATASET DETAILS
+        //DATASETS
         private JObject _storedStorylineDetails;
         private JObject _storedStorylineDetails_Parameters;
 
-        //MISC DETAILS
+        //MISC
         private ExtraData_12_2_1_0 _storedExtraData;
 
-        //FRAMEWORK SPECFIC
+        //PLUMBING
         private string _storedRequestName = "";
         private string _storedSystemRequestByName = "";
 
@@ -1690,7 +1790,7 @@ namespace BaseDI.Story.Programming_1
                 
                 if (_storedAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Storer_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
 
-                return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                   .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
                   .Action().Result;
 
@@ -1698,12 +1798,13 @@ namespace BaseDI.Story.Programming_1
 
                 #endregion
             }
-            catch (Exception)
+            catch
             {
                 #region HANDLE execution mistakes
 
                 #region EDGE CASE - USE exception handler
 
+                throw;
 
                 #endregion
 
@@ -1789,10 +1890,10 @@ namespace BaseDI.Story.Programming_1
     {
         #region 1. Assign
 
-        //APPSETTING DETAILS
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
-        //CLIENT DETAILS
+        //CLIENT/SERVER
         private Dictionary<string, object> _storedClientORserverInstance;
 
         private string _storedClientRequestByName = "";
@@ -1800,14 +1901,14 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
-        //DATASET DETAILS
+        //DATASETS
         private JObject _storedStorylineDetails;
         private JObject _storedStorylineDetails_Parameters;
 
-        //MISC DETAILS
+        //MISC
         private ExtraData_12_2_1_0 _storedExtraData;
 
-        //FRAMEWORK SPECFIC
+        //PLUMBING
         private string _storedRequestName = "";
         private string _storedSystemRequestByName = "";
 
@@ -1917,7 +2018,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_storedAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Disturber_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
 
-                return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                   .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
                   .Action().Result;
 
@@ -1925,12 +2026,13 @@ namespace BaseDI.Story.Programming_1
 
                 #endregion
             }
-            catch (Exception)
+            catch
             {
                 #region HANDLE execution mistakes
 
                 #region EDGE CASE - USE exception handler
 
+                throw;
 
                 #endregion
 
@@ -2016,10 +2118,10 @@ namespace BaseDI.Story.Programming_1
     {
         #region 1. Assign
 
-        //APPSETTING DETAILS
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
-        //CLIENT DETAILS
+        //CLIENT/SERVER
         private Dictionary<string, object> _storedClientORserverInstance;
 
         private string _storedClientRequestByName = "";
@@ -2027,14 +2129,14 @@ namespace BaseDI.Story.Programming_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
-        //DATASET DETAILS
+        //DATASETS
         private JObject _storedStorylineDetails;
         private JObject _storedStorylineDetails_Parameters;
 
-        //MISC DETAILS
+        //MISC
         private ExtraData_12_2_1_0 _storedExtraData;
 
-        //FRAMEWORK SPECFIC
+        //PLUMBING
         private string _storedRequestName = "";
         private string _storedSystemRequestByName = "";
 
@@ -2144,7 +2246,7 @@ namespace BaseDI.Story.Programming_1
 
                 if (_storedAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Sensor_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
 
-                return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                   .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
                   .Action().Result;
 
@@ -2152,12 +2254,13 @@ namespace BaseDI.Story.Programming_1
 
                 #endregion
             }
-            catch (Exception)
+            catch
             {
                 #region HANDLE execution mistakes
 
                 #region EDGE CASE - USE exception handler
 
+                throw;
 
                 #endregion
 

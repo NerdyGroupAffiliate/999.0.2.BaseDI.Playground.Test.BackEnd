@@ -268,17 +268,21 @@ namespace BaseDI
     {
         #region 1. Assign
 
+        //SETTINGS
         public IConfiguration StoredAppSettings { get; set; }
 
+        //CLIENT/SERVER
         private Dictionary<string, object> _storedClientORserverInfo;
 
-        private ExtraData_12_2_1_0 _storedExtraData;
-
-        public Func<SingleParmPoco_12_2_1_0, JObject> StoredStartUpCallBack = null;
-
+        //DATASETS
         private JObject _storedStorylineDetails;
         private JObject _storedStorylineDetails_Parameters;
 
+        //MISC
+        private ExtraData_12_2_1_0 _storedExtraData;
+
+        //PLUMBING
+        public Func<SingleParmPoco_12_2_1_0, JObject> StoredStartUpCallBack = null;
         public Func<JObject, IActionResult> StoredRequestCallBack = null;
 
         #endregion
@@ -457,7 +461,7 @@ namespace BaseDI
 
                 #endregion
             }
-            catch
+            catch(Exception mistakes)
             {
                 #region HANDLE execution mistakes
 

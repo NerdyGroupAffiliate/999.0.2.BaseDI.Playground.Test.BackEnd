@@ -13,8 +13,10 @@ namespace BaseDI.Script.Programming.Abstract_1
         public IConfiguration AppSettings { get; set; }
 
         public string APILocationLocalDotNetCore { get; set; }
+        public string APILocationLocalDotNetCore_SSL { get; set; }
 
         public string APILocationLocalNodeJS { get; set; }
+        public string APILocationLocalNodeJS_SSL { get; set; }
 
         public string APILocationRemote { get; set; }
 

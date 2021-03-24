@@ -8,7 +8,10 @@ export namespace BaseDI.Programming.Abstract_1
         //#region 1. Assign
         public AppSettings: string = "";
         public APILocationLocalNodeJS: string = "";
+        public APILocationLocalNodeJS_SSL: string = "";
+
         public APILocationLocalDotNetCore: string = "";
+        public APILocationLocalDotNetCore_SSL: string = "";
 
         public APILocationRemote: string = "";
 

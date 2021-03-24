@@ -13,6 +13,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Update="0. Script\Extensions\11\Automate Manual Task\1\Risk Management\Method\0\1_0\Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
     <TypeScriptCompile Update="Snippet_TypeScript_Regions.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>

@@ -55,16 +55,20 @@ namespace BaseDI.Story.Programming_1
     {
         #region 1. Assign
 
+        //SETTINGS
         private IConfiguration _storedAppSettings = null;
 
+        //CLIENT/SERVER
         private Dictionary<string, object> _storedClientORserverInstance;
+        private string _storedRequestName = "";
+
+        //MISC
+        private ExtraData_12_2_1_0 _storedExtraData = null;
+
+        //PLUMBING
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
-
-        private ExtraData_12_2_1_0 _storedExtraData = null;
-
-        private string _storedRequestName = "";
 
         #endregion
 
@@ -149,7 +153,10 @@ namespace BaseDI.Story.Programming_1
             #region MEMORIZE api data
 
             _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS_SSL", APILocationLocalNodeJS_SSL);
+
             _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore_SSL", APILocationLocalDotNetCore_SSL);
 
             _storedExtraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
@@ -251,7 +258,7 @@ namespace BaseDI.Story.Programming_1
 
                 #endregion
             }
-            catch (Exception)
+            catch 
             {
                 throw;
             }
