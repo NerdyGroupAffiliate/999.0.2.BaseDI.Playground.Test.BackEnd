@@ -9,7 +9,7 @@ if (process.env.APP_ENV == "SERVER") {
     var fs = require("fs");
 }
 
-export namespace BaseDI.Advertising.Extensions_2 {
+export namespace BaseDI.Professional.Advertising.Extensions_2 {
     export class Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 {
         constructor() { }
 
@@ -26,7 +26,7 @@ export namespace BaseDI.Advertising.Extensions_2 {
                     console.log("instagram task started!");
 
                     //const account = {
-                    //    username: "basedi.instagram.generatebrandawareness.1@basedi.io",
+                    //    username: "BaseDI.Professional.instagram.generatebrandawareness.1@BaseDI.Professional.io",
                     //    password: "TestTech99!@",
                     //};
 

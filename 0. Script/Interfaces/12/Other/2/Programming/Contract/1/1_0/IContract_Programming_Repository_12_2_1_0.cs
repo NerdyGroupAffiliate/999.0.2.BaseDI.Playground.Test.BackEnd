@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Script.Programming.Repository_1
+namespace BaseDI.Professional.Script.Programming.Repository_1
 {
     public interface IContract_Programming_Repository_12_2_1_0
     {

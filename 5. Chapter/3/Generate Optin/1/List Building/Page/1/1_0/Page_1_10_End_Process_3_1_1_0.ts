@@ -8,13 +8,13 @@ import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
-export namespace BaseDI.Chapter.Page.ListBuilding_1 {
-    export class Page_1_10_End_Process_3_1_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
+export namespace BaseDI.Professional.Chapter.Page.ListBuilding_1 {
+    export class Page_1_10_End_Process_3_1_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign

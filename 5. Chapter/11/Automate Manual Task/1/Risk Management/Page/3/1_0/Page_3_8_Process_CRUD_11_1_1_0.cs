@@ -1,14 +1,14 @@
-﻿using BaseDI.Script.Programming_1;
-using BaseDI.Script.Programming.Abstract_1;
+﻿using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
 
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 
-namespace BaseDI.Chapter.Page.Risk_Management_3
+namespace BaseDI.Professional.Chapter.Page.Risk_Management_3
 {
     public class Page_3_8_Process_CRUD_11_1_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

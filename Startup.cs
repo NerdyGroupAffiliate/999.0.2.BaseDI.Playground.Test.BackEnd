@@ -2,9 +2,9 @@
 
 #region BaseDI
 
-using BaseDI.Director.Programming_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Story.Programming_1;
+using BaseDI.Professional.Director.Programming_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Story.Programming_1;
 
 #endregion
 

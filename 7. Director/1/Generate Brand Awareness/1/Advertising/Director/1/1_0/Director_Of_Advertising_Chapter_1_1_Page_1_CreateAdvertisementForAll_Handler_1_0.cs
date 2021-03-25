@@ -1,8 +1,8 @@
-﻿using BaseDI.Character_1;
-using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming.Repository_1;
-using BaseDI.Script.Programming_1;
+﻿using BaseDI.Professional.Character_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Director.Advertising_1
+namespace BaseDI.Professional.Director.Advertising_1
 {
     public class Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

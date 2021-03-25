@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Html;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace BaseDI.Script.Web_Development.Extensions_0
+namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 {
     public class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0
     {
@@ -209,7 +209,7 @@ namespace BaseDI.Script.Web_Development.Extensions_0
                 htmlContentString = htmlContentString.Replace($"{{{item}_Replace}}", content);
             }
 
-            htmlContentString = htmlContentString.Replace("../999.0.3.BaseDI.QuickStart.Templates", "/StaticFiles");
+            htmlContentString = htmlContentString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
 
 
             //#endregion
@@ -490,7 +490,7 @@ namespace BaseDI.Script.Web_Development.Extensions_0
            
             htmlInlineCSSString = $"<style>{ cssString }</style>";
 
-             htmlInlineCSSString = htmlInlineCSSString.Replace("../999.0.3.BaseDI.QuickStart.Templates", "/StaticFiles");
+             htmlInlineCSSString = htmlInlineCSSString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
             htmlInlineCSSString = Regex.Unescape(htmlInlineCSSString);
             return htmlInlineCSSString;
         }

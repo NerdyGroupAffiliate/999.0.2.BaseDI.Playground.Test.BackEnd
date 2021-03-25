@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BaseDI.Playground.Test.BackEnd;
+using BaseDI.Professional.Playground.Test.BackEnd;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace BaseDI.Playground.Test.BackEnd
+namespace BaseDI.Professional.Playground.Test.BackEnd
 {
     public class Program
     {

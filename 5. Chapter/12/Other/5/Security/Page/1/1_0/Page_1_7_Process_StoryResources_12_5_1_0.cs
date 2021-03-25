@@ -1,8 +1,8 @@
-﻿using BaseDI.Script.Programming.Abstract_1;
+﻿using BaseDI.Professional.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 
-namespace BaseDI.Chapter.Page.Security_1
+namespace BaseDI.Professional.Chapter.Page.Security_1
 {
     public class Page_1_7_Process_StoryResources_12_5_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

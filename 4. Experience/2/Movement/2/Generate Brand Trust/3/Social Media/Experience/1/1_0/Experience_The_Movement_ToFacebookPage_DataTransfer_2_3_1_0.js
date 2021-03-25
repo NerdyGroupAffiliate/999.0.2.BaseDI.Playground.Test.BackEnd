@@ -96,7 +96,7 @@ var BaseDI;
                             });
                         };
                         return Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0;
-                    }(aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0));
+                    }(aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0));
                     Social_Media_1.Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0 = Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0;
                     //region 5. Action Script
                     var Use_DesignPattern_Builder_Experience_2_3_1_0 = /** @class */ (function () {
@@ -263,11 +263,11 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Builder_Experience_2_3_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Social_Media_1.Implement_DesignPattern_Builder_Experience_2_3_1_0 = Implement_DesignPattern_Builder_Experience_2_3_1_0;
                 })(Social_Media_1 = Experience.Social_Media_1 || (Experience.Social_Media_1 = {}));
             })(Experience = UnitTest.Experience || (UnitTest.Experience = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.js.map

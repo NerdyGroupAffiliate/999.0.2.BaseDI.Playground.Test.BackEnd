@@ -5,13 +5,13 @@ import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Contro
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
-export namespace BaseDI.Chapter.Page.Programming_3 {
-    export class Page_3_7_Process_StoryResources_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
+export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
+    export class Page_3_7_Process_StoryResources_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign

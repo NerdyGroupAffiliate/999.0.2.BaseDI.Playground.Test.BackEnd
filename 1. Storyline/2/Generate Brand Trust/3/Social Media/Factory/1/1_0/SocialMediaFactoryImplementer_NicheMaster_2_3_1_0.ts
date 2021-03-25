@@ -11,17 +11,17 @@ import * as RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTrans
 
 //import * as Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0 from "../../../../../../../../4. Experience/2/Movement/2/Generate Brand Trust/3/Social Media/Experience/1/1_0/Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0";
 
-export namespace BaseDI.Story.Social_Media_3 {
-    export class SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+export namespace BaseDI.Professional.Story.Social_Media_3 {
+    export class SocialMediaFactoryImplementer_NicheMaster_2_3_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign        
-        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
-        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         private _clientORserverInstance: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
@@ -93,7 +93,7 @@ export namespace BaseDI.Story.Social_Media_3 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            //let experience = new Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Experience.Movement.Social_Media_1.Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(extraData);
+            //let experience = new Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Professional.Experience.Movement.Social_Media_1.Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(extraData);
 
             //experience.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -110,19 +110,19 @@ export namespace BaseDI.Story.Social_Media_3 {
             //#region ASSIGN LOGIC REPOSITORY
             //switch (repositoryType.toUpperCase()) {
             //    case "LOCAL_FILE":
-            //        var localFile = new LocalFile_Experience_MovementToFacebookPage_DataTransfer_2_3_1_0.BaseDI.State.Social_Media_1.LocalFile_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
+            //        var localFile = new LocalFile_Experience_MovementToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Professional.State.Social_Media_1.LocalFile_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
 
             //        experience.Repository = localFile;
 
             //        break;
             //    case "REMOTE_SERVICE":
-            //        var remoteService = new RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.State.Social_Media_1.RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
+            //        var remoteService = new RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Professional.State.Social_Media_1.RemoteService_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
 
             //        experience.Repository = remoteService;
 
             //        break;
             //    case "REMOTESERVICEVENDOR":
-            //        var REMOTESERVICEVENDOR = new RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.State.Social_Media_1.RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
+            //        var REMOTESERVICEVENDOR = new RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.BaseDI.Professional.State.Social_Media_1.RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0(storylineDetails);
 
             //        experience.Repository = REMOTESERVICEVENDOR;
 

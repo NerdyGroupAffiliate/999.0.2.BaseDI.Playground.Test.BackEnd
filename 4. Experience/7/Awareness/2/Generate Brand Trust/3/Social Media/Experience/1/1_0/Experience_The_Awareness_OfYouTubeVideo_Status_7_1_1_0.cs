@@ -1,9 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
 
-namespace BaseDI.Experience_
+namespace BaseDI.Professional.Experience_
 {
     public class Experience_The_Awareness_OfYouTubeVideo_Status_7_1_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
     {

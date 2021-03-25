@@ -1,14 +1,14 @@
-﻿using BaseDI.Director.Advertising_1;
-using BaseDI.Director.Advertising_2;
-using BaseDI.Director.Advertising_3;
+﻿using BaseDI.Professional.Director.Advertising_1;
+using BaseDI.Professional.Director.Advertising_2;
+using BaseDI.Professional.Director.Advertising_3;
 
-using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Extensions_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming_1;
-using BaseDI.State.Advertising_1;
-using BaseDI.State.Advertising_2;
-using BaseDI.State.Advertising_3;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.State.Advertising_1;
+using BaseDI.Professional.State.Advertising_2;
+using BaseDI.Professional.State.Advertising_3;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
@@ -17,7 +17,7 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Story.Advertising_1
+namespace BaseDI.Professional.Story.Advertising_1
 {
     #region 6. Action Implementation
 

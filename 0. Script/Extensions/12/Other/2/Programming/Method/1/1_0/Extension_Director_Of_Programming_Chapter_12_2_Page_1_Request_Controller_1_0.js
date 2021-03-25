@@ -55,6 +55,6 @@ var BaseDI;
                 })(Programming = Script.Programming || (Script.Programming = {}));
             })(Script = UnitTest.Script || (UnitTest.Script = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=eMethods_Programming_JSON_12_2_1_0.js.map

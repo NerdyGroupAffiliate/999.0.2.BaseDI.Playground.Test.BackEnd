@@ -2,26 +2,26 @@
 
 #region BaseDI
 
-using BaseDI.Director.Advertising_1;
-using BaseDI.Director.Programming_1;
-using BaseDI.Director.Programming_2;
-using BaseDI.Director.Programming_3;
-using BaseDI.Director.Programming_4;
-using BaseDI.Director.Programming_5;
-using BaseDI.Director.Risk_Management_3;
-using BaseDI.Director.Risk_Management_4;
+using BaseDI.Professional.Director.Advertising_1;
+using BaseDI.Professional.Director.Programming_1;
+using BaseDI.Professional.Director.Programming_2;
+using BaseDI.Professional.Director.Programming_3;
+using BaseDI.Professional.Director.Programming_4;
+using BaseDI.Professional.Director.Programming_5;
+using BaseDI.Professional.Director.Risk_Management_3;
+using BaseDI.Professional.Director.Risk_Management_4;
 
-using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Extensions_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming_1;
-using BaseDI.State.Advertising_1;
-using BaseDI.State.Programming_1;
-using BaseDI.State.Programming_2;
-using BaseDI.State.Programming_3;
-using BaseDI.State.Programming_4;
-using BaseDI.State.Programming_5;
-using BaseDI.State.Programming_6;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.State.Advertising_1;
+using BaseDI.Professional.State.Programming_1;
+using BaseDI.Professional.State.Programming_2;
+using BaseDI.Professional.State.Programming_3;
+using BaseDI.Professional.State.Programming_4;
+using BaseDI.Professional.State.Programming_5;
+using BaseDI.Professional.State.Programming_6;
 
 
 #endregion
@@ -46,7 +46,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Story.Programming_1
+namespace BaseDI.Professional.Story.Programming_1
 {
     #region 6. Action Implementation
 
@@ -137,9 +137,6 @@ namespace BaseDI.Story.Programming_1
 
         #region 4. Action
 
-
-        #endregion
-
         public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region 1. INPUTS  
@@ -164,7 +161,7 @@ namespace BaseDI.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            AppSettings = (IConfiguration)clientORserverInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)clientORserverInstance["appSettings"];
 
             #endregion
 
@@ -204,7 +201,7 @@ namespace BaseDI.Story.Programming_1
 
             try
             {
-                #region GENERATE programming request object                     
+                #region GENERATE request handler                     
 
                 #region IDEAL CASE - USE director of programming
 
@@ -258,7 +255,7 @@ namespace BaseDI.Story.Programming_1
 
                 #endregion
             }
-            catch 
+            catch
             {
                 throw;
             }
@@ -822,6 +819,8 @@ namespace BaseDI.Story.Programming_1
 
             return director;
         }
+
+        #endregion
 
         #endregion
     }

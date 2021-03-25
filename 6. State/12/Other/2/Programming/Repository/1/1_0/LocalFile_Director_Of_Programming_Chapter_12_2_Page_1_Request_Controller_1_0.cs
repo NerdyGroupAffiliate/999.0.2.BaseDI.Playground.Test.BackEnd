@@ -1,6 +1,6 @@
-﻿using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Repository_1;
-using BaseDI.Script.Programming_1;
+﻿using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.State.Programming_1
+namespace BaseDI.Professional.State.Programming_1
 {
     public class LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
     {

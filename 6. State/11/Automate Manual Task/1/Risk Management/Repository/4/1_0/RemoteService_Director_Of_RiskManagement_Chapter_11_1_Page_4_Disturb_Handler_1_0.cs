@@ -1,6 +1,6 @@
-﻿using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Repository_1;
-using BaseDI.Script.Programming_1;
+﻿using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.State.Risk_Management_4
+namespace BaseDI.Professional.State.Risk_Management_4
 {
     public class RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>,  IContract_Programming_Repository_12_2_1_0
     {

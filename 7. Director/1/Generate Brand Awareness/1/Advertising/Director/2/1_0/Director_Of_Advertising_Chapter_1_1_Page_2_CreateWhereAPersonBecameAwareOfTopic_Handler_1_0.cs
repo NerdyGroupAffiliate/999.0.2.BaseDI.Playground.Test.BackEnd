@@ -1,17 +1,17 @@
-﻿using BaseDI.Character_1;
+﻿using BaseDI.Professional.Character_1;
 
-using BaseDI.Script.Programming_1;
+using BaseDI.Professional.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 
-namespace BaseDI.Director.Advertising_2
+namespace BaseDI.Professional.Director.Advertising_2
 {
     public class Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

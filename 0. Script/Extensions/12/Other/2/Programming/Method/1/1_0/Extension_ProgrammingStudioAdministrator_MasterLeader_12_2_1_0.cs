@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Script.Programming.Extensions_1
+namespace BaseDI.Professional.Script.Programming.Extensions_1
 {
     public static class Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
     {

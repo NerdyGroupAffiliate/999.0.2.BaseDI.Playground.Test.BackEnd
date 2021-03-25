@@ -1,4 +1,4 @@
-﻿using BaseDI.Script.Programming.Extensions_1;
+﻿using BaseDI.Professional.Script.Programming.Extensions_1;
 
 using CurlThin;
 
@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace BaseDI.Script.Web_Development.Extensions_13
+namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 {
     public class Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0
     {
@@ -140,7 +140,7 @@ namespace BaseDI.Script.Web_Development.Extensions_13
                                         var fileDirName = Path.GetDirectoryName(filepath);
                                         var shortDirName =
                                             fileDirName.Replace(
-                                                "C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\", "");
+                                                "C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\", "");
                                         var dest = $"wwwroot/Client/Images/{shortDirName}";
 
                                         if (!Directory.Exists(dest))
@@ -185,7 +185,7 @@ namespace BaseDI.Script.Web_Development.Extensions_13
                                             var fileDirName = Path.GetDirectoryName(filepath);
                                             var shortDirName =
                                                 fileDirName.Replace(
-                                                    "C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\", "");
+                                                    "C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\", "");
                                             var dest = $"wwwroot/Client/Images/{shortDirName}";
 
                                             if (!Directory.Exists(dest))

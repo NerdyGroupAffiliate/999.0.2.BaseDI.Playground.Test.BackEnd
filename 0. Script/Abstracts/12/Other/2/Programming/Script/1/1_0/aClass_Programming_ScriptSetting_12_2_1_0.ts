@@ -1,6 +1,6 @@
 ﻿import *  as ExtraData_12_2_1_0 from "../../../../../../../../Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
-export namespace BaseDI.Programming.Abstract_1
+export namespace BaseDI.Professional.Programming.Abstract_1
 {
     export abstract class aClass_Programming_ScriptSetting_12_2_1_0
     {
@@ -25,7 +25,7 @@ export namespace BaseDI.Programming.Abstract_1
 
         public ARMData: object = new Object();
 
-        public ExtraData_12_2_1_0: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0
+        public ExtraData_12_2_1_0: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0
         //#endregion
 
         //#region 2. Ready

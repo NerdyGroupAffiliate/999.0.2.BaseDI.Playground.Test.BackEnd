@@ -1,13 +1,13 @@
-﻿using BaseDI.Director.Risk_Management_3;
-using BaseDI.Director.Risk_Management_4;
-using BaseDI.Script.Programming.Enumeration_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming_1;
+﻿using BaseDI.Professional.Director.Risk_Management_3;
+using BaseDI.Professional.Director.Risk_Management_4;
+using BaseDI.Professional.Script.Programming.Enumeration_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace BaseDI.Script.Programming.Abstract_1
+namespace BaseDI.Professional.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptMasterLeader_12_2_1_0
     {

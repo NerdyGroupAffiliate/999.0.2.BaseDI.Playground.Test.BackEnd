@@ -1,9 +1,9 @@
-﻿using BaseDI.Director.Programming_1;
-using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming.Repository_1;
-using BaseDI.Script.Web_Development.Extensions_13;
-using BaseDI.Story.Programming_1;
+﻿using BaseDI.Professional.Director.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Web_Development.Extensions_13;
+using BaseDI.Professional.Story.Programming_1;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using System;
@@ -11,9 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BaseDI.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
 
-namespace BaseDI.Experience.Hear.Web_Development_13
+namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 {
     public class Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
     {

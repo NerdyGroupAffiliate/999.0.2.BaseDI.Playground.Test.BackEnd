@@ -9,14 +9,14 @@ import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
-export namespace BaseDI.Chapter.Page.Programming_1 {
-    export class Page_1_10_End_Process_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0
+export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
+    export class Page_1_10_End_Process_12_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0
     {
         //#region 1. Assign
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign
@@ -66,7 +66,7 @@ export namespace BaseDI.Chapter.Page.Programming_1 {
         {
             //#region 1. Assign
 
-            let entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+            let entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
             const requestNameToProcess: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess").toString();
             const requestNameToProcessParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters").toString();
@@ -93,7 +93,7 @@ export namespace BaseDI.Chapter.Page.Programming_1 {
                 }
                 else
                 {
-                    return handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this.ExtraData))
+                    return handleObservation = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this.ExtraData))
                         .SetupStoryline(this.ClientOrServerInstance, this.StorylineDetails, this.StorylineDetails_Parameters, this.ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
                         .Action().then(response => {
                             return response;

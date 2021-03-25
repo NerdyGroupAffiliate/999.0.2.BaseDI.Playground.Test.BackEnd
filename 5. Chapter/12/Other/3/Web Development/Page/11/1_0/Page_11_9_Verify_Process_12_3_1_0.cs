@@ -1,6 +1,6 @@
-﻿using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Repository_1;
-using BaseDI.Script.Programming_1;
+﻿using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming_1;
 
 using Newtonsoft.Json.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Chapter.Page.Web_Development_11
+namespace BaseDI.Professional.Chapter.Page.Web_Development_11
 {
     public class Page_11_9_Verify_Process_12_3_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {

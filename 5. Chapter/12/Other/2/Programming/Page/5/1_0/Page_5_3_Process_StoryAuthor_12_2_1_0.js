@@ -91,12 +91,12 @@ var BaseDI;
                                 });
                             };
                             return Page_1_3_Process_StoryAuthor_12_2_1_0;
-                        }(aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0));
+                        }(aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0));
                         Programming_.Page_1_3_Process_StoryAuthor_12_2_1_0 = Page_1_3_Process_StoryAuthor_12_2_1_0;
                     })(Programming_ = Page.Programming_ || (Page.Programming_ = {}));
                 })(Page = Chapter.Page || (Chapter.Page = {}));
             })(Chapter = UnitTest.Chapter || (UnitTest.Chapter = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=Page_1_3_Process_StoryAuthor_12_2_1_0.js.map

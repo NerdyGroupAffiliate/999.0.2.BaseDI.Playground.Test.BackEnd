@@ -19,14 +19,14 @@ import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../..
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0"
 
-export namespace BaseDI.Programming.Extensions_3 {
+export namespace BaseDI.Professional.Programming.Extensions_3 {
     export class Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 {
         constructor() {
 
         }
 
         //#region STORE 
-        public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStoreReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any,  uniqueReferenceKey: string = ""): Promise<any> {
+        public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStoreReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, CRUDVerb: string, entryPointName: string, pageName: string, description: string, storylineDetails: any, data: any,  uniqueReferenceKey: string = ""): Promise<any> {
             if (masterLeader_masterStoreReference == undefined || masterLeader_masterStoreReference == null) return; //REQUIRED
 
             //console.log("AA");
@@ -64,7 +64,7 @@ export namespace BaseDI.Programming.Extensions_3 {
                 storageKey += "-" + uniqueReferenceKey;
 
             if (data) {
-                observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, pageName, description, observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
+                observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, pageName, description, observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
                
                 if(typeof(data) == "string") {
                     observationItem = observationItem.replace('{dataResult}', escape(data.trim()));

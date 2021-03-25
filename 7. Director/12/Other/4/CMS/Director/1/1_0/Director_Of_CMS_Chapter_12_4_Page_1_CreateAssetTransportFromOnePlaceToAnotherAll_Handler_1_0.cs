@@ -1,16 +1,16 @@
-﻿using BaseDI.Character_1;
-using BaseDI.Script.Programming_1;
-using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming.Repository_1;
+﻿using BaseDI.Professional.Character_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 
 using Newtonsoft.Json.Linq;
 
 using System.Threading.Tasks;
 
-using ChapterPage = BaseDI.Chapter.Page.CMS_1;
+using ChapterPage = BaseDI.Professional.Chapter.Page.CMS_1;
 
-namespace BaseDI.Director.CMS_1
+namespace BaseDI.Professional.Director.CMS_1
 {
     public class Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

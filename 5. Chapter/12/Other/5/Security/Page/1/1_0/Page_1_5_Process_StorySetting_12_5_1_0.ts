@@ -5,14 +5,14 @@ import * as Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticatio
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
-export namespace BaseDI.Chapter.Page.Security_1 {
-    export class Page_1_5_Process_StorySetting_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
+export namespace BaseDI.Professional.Chapter.Page.Security_1 {
+    export class Page_1_5_Process_StorySetting_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
 
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign

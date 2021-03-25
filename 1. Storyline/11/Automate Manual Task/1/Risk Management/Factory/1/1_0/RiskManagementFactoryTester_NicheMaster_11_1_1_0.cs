@@ -1,13 +1,13 @@
-﻿using BaseDI.Director.Programming_5;
-using BaseDI.Director.Risk_Management_3;
-using BaseDI.Director.Risk_Management_4;
-using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Extensions_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming_1;
+﻿using BaseDI.Professional.Director.Programming_5;
+using BaseDI.Professional.Director.Risk_Management_3;
+using BaseDI.Professional.Director.Risk_Management_4;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
 
-using BaseDI.State.Risk_Management_3;
-using BaseDI.State.Risk_Management_4;
+using BaseDI.Professional.State.Risk_Management_3;
+using BaseDI.Professional.State.Risk_Management_4;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.Story.Risk_Management_1
+namespace BaseDI.Professional.Story.Risk_Management_1
 {
     #region 6. Action Implementation
 

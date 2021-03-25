@@ -144,11 +144,11 @@ var BaseDI;
                             });
                         };
                         return Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Risk_Management_.Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0 = Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0;
                 })(Risk_Management_ = State.Risk_Management_ || (State.Risk_Management_ = {}));
             })(State = UnitTest.State || (UnitTest.State = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.js.map

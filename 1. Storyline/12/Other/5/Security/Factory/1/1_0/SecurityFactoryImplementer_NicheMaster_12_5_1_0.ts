@@ -18,17 +18,17 @@ import * as RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthentic
 //7. DIRECTOR - PROPRIETARY FEATURES
 import * as Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/5/Security/Director/1/1_0/Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
 
-export namespace BaseDI.Story.Security_1 {
-    export class SecurityFactoryImplementer_NicheMaster_12_5_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+export namespace BaseDI.Professional.Story.Security_1 {
+    export class SecurityFactoryImplementer_NicheMaster_12_5_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
-        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         private _clientORserverInstance: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         private _requestName: String = "";
         //#endregion
@@ -57,7 +57,7 @@ export namespace BaseDI.Story.Security_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
             this._centralizedStorer = centralizedStorer;
@@ -105,7 +105,7 @@ export namespace BaseDI.Story.Security_1 {
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.Director.Security_1.Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(extraData);
+            let director = new Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.Professional.Director.Security_1.Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(extraData);
 
             director.ClientOrServerInstance = this._clientORserverInstance;
 
@@ -122,14 +122,14 @@ export namespace BaseDI.Story.Security_1 {
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.State.Security_1.LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
+                    var localFile = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.Professional.State.Security_1.LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.State.Security_1.RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
+                    var remoteService = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.Professional.State.Security_1.RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
                     director.Repository.RequestName = this._requestName;

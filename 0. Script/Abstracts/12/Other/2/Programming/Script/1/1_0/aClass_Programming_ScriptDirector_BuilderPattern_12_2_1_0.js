@@ -47,7 +47,7 @@ var BaseDI;
                                 //region 3. Observe
                             };
                             return aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0;
-                        }(aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0));
+                        }(aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0));
                         Abstract_.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 = aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0;
                         //region 5. Action Script
                         //region 6. Action Implementation
@@ -55,6 +55,6 @@ var BaseDI;
                 })(Programming = Script.Programming || (Script.Programming = {}));
             })(Script = UnitTest.Script || (UnitTest.Script = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.js.map

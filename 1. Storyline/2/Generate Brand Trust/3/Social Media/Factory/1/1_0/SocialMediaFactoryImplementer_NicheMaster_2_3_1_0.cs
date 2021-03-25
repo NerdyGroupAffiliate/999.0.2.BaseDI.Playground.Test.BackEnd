@@ -1,10 +1,10 @@
-﻿using BaseDI.Experience.Movement.Social_Media_1;
-using BaseDI.Experience.Movement.Social_Media_2;
-using BaseDI.Script.Programming.Abstract_1;
-using BaseDI.Script.Programming.Extensions_1;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming_1;
-using BaseDI.State.Social_Media_;
+﻿using BaseDI.Professional.Experience.Movement.Social_Media_1;
+using BaseDI.Professional.Experience.Movement.Social_Media_2;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.State.Social_Media_;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.Story.Social_Media_3
+namespace BaseDI.Professional.Story.Social_Media_3
 {
     #region 6. Action Implementation
 

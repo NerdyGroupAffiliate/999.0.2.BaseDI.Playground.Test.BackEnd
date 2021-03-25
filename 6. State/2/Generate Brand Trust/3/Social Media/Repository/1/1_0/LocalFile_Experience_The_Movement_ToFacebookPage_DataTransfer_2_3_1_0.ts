@@ -1,7 +1,7 @@
 ﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 
-export namespace BaseDI.State.Social_Media_1 {
-    export class LocalFile_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+export namespace BaseDI.Professional.State.Social_Media_1 {
+    export class LocalFile_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
         private _storylineDetails: object;

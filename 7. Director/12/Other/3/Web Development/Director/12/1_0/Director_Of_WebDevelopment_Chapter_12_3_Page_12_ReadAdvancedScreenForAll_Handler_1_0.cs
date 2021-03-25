@@ -1,15 +1,15 @@
-﻿using BaseDI.Character_1;
-using BaseDI.Script.Programming_1;
-using BaseDI.Script.Programming.Abstract_1;
+﻿using BaseDI.Professional.Character_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 
-using ChapterPage = BaseDI.Chapter.Page.Web_Development_12;
+using ChapterPage = BaseDI.Professional.Chapter.Page.Web_Development_12;
 using System.Collections.Generic;
 
-namespace BaseDI.Director.Web_Development_12
+namespace BaseDI.Professional.Director.Web_Development_12
 {
     public class Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {

@@ -1,13 +1,13 @@
-﻿using BaseDI.Script.Programming.Poco_1;
-using BaseDI.Script.Programming.Repository_1;
-using BaseDI.Script.Programming_1;
+﻿using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.Script.Programming.Abstract_1
+namespace BaseDI.Professional.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptRoutable_12_2_1_0 
     {
