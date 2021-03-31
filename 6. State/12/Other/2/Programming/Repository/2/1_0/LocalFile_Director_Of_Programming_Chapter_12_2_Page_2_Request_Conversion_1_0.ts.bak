@@ -7,8 +7,8 @@ import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Contro
 import * as state_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/2/Programming/Template/5/1_0/State_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.json";
 import * as state_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/2/Programming/Template/5/1_0/State_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0.json";
 
-import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/1/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.json";   
-import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/1/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0-P1_0.json";
+import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 from "../../../../../../../../../999.0.3.BaseDI.Professional.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/1/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.json";
+import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.Professional.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/1/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0-P1_0.json";
 
 import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0 from "../../../../../../../../../999.0.3.BaseDI.Professional.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/2/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.json";
 import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0_P1_0 from "../../../../../../../../../999.0.3.BaseDI.Professional.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/2/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0-P1_0.json";
@@ -93,11 +93,13 @@ export namespace BaseDI.Professional.State.Programming_2 {
             let storylineDetailsFiltered: Object;
             let storylineDetails_Parameters: Object;
 
-            if (this.ExtraData.KeyValuePairs.getValue("RequestToProcess")) {
+            if (this.ExtraData.KeyValuePairs.getValue("RequestToProcess"))
+            {
                 requestName = this.ExtraData.KeyValuePairs.getValue("RequestToProcess").toString();
                 requestNameParameters = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters").toString();
 
-                switch (requestName.toUpperCase()) {
+                switch (requestName.toUpperCase())
+                {
                     //case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0":
                     //    storylineDetails = state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0;
 
@@ -144,7 +146,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_READOPTINSCREENFORALL_HANDLER_1_0":
                         storylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0;
-
+                        
                         switch (requestNameParameters.toUpperCase()) {
                             case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_READOPTINSCREENFORALL_HANDLER_1_0-P1_0":
                                 storylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0_P1_0;
@@ -275,7 +277,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         break;
 
                     default:
-                        if (storylineDetails == null || storylineDetails == undefined)
+                        if (storylineDetails == null || storylineDetails == undefined) 
                             storylineDetails = {};
 
                         if (storylineDetails_Parameters == null || storylineDetails_Parameters == undefined)
@@ -334,7 +336,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
         public async Action_8_Process_CRUD(): Promise<any> {
             return this._storylineDetails;
         }
-
+      
         public async Action_10_End_Process(): Promise<any> {
             return this._storylineDetails;
         }

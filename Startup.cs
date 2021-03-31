@@ -365,7 +365,7 @@ namespace BaseDI
         #region 4. Action
 
         [HttpGet("")]
-        public async Task<IActionResult> Action(string clientRequestByName = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string clientRequestByNameParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestActionName = "Action_ProcessHttpRequest_1_0")
+        public async Task<IActionResult> Action(string clientRequestByName = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string clientRequestByNameParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestChapterName = "Action_ProcessHttpRequest_1_0", string requestActionName = "Action_ProcessHttpRequest_1_0")
         {
             #region 1. INPUTS
 
@@ -404,6 +404,13 @@ namespace BaseDI
 
             if (StoredAppSettings != null)
                 _storedClientORserverInfo.Add("appSettings", StoredAppSettings);
+
+            #endregion
+
+            #region MEMORIZE chapter name
+
+            if (requestActionName != "")
+                _storedClientORserverInfo.Add("chapterName", requestChapterName);
 
             #endregion
 

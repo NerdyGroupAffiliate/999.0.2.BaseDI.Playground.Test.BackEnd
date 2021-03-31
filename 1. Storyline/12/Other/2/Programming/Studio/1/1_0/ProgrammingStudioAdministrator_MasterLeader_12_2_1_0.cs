@@ -45,6 +45,7 @@ using BaseDI.Professional.Story.Customer_Service_1;
 using BaseDI.Professional.Story.Productivity_1;
 
 //11. Automate Manual Task
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 using BaseDI.Professional.Story.Risk_Management_1;
 using BaseDI.Professional.Story.Social_Media_3;
 
@@ -69,7 +70,6 @@ using System.Globalization;
 
 using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.Configuration;
-using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 #endregion
 
@@ -184,6 +184,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE request resolver
 
+            aClass_Programming_ScriptRoutable_12_2_1_0 stored_DirectorOrExperienceRequestHandler = null;
             Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, systemRequestByName, clientRequestByName, clientRequestByNameParameters);
 
             #endregion
@@ -229,21 +230,21 @@ namespace BaseDI.Professional.Story.Programming_1
                 stored_ReferenceTo_RequestHandler = stored_ResolvedRequestHandler.Action();
 
                 if (systemRequestByName != "")
-                {                    
-                    var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)stored_ReferenceTo_RequestHandler;
+                {
+                    stored_DirectorOrExperienceRequestHandler = (aClass_Programming_ScriptRoutable_12_2_1_0)stored_ReferenceTo_RequestHandler;
 
-                    entryPoint.RequestID = systemRequestByName;
-                    entryPoint.ClientOrServerInstance = clientORserverInstance;
+                    stored_DirectorOrExperienceRequestHandler.RequestID = systemRequestByName;
+                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = clientORserverInstance;
 
                     _storedClientRequestByObject.ClientOrServerInstance = clientORserverInstance;
 
-                    _storedClientRequestByObject.EntryPoint = entryPoint;
+                    _storedClientRequestByObject.EntryPoint = stored_DirectorOrExperienceRequestHandler;
                     _storedClientRequestByObject.ExtraData = _storedExtraData;
 
-                    _storedClientRequestByObject.MasterLeader = entryPoint.MasterLeader;
+                    _storedClientRequestByObject.MasterLeader = stored_DirectorOrExperienceRequestHandler.MasterLeader;
 
-                    _storedClientRequestByObject.StorylineDetails = entryPoint.StorylineDetails;
-                    _storedClientRequestByObject.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
+                    _storedClientRequestByObject.StorylineDetails = stored_DirectorOrExperienceRequestHandler.StorylineDetails;
+                    _storedClientRequestByObject.StorylineDetails_Parameters = stored_DirectorOrExperienceRequestHandler.StorylineDetails_Parameters;
 
                     stored_ReferenceTo_RequestHandler = _storedClientRequestByObject;
                 }

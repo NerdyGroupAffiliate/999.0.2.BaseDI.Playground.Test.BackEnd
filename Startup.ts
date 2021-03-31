@@ -85,12 +85,14 @@ export namespace BaseDI
 
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
                 this._storedClientORserverInfo = {
+                    "appSettings": process.env,
                     "serverInstance": this._storedEntryPoint,
                     "serverStartUp": this
                 }
             }
             else {
                 this._storedClientORserverInfo = {
+                    "appSettings": process.env,
                     "clientInstance": this._storedEntryPoint,
                     "clientStartUp": this
                 }
@@ -109,13 +111,20 @@ export namespace BaseDI
         //#endregion
 
         //#region 4. Action
-        public Action(targetedResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "", requestCallBack: any = null)
+        public Action(targetedResponseTagID: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestChapterName:string = "",  requestActionName: string = "", requestCallBack: any = null)
         {
             //#region 1. INPUTS
 
             //#region DEFINE data response
 
             let storedDataResponse: Promise<any>;
+
+            //#endregion
+
+            //#region MEMORIZE chpater name
+
+            if (requestActionName != "")
+                this._storedClientORserverInfo["chapterName"] = requestChapterName;
 
             //#endregion
 
@@ -243,8 +252,8 @@ let storedServerInstance = new BaseDI.Startup(this);
 //#region COPY local files & start server
 if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
     const Step_1_0_CopyLocalFilesAndStartServer = async () => {
-        storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, function callBack(response: any) {
-            storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0)
+        storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_7_Process_StoryResources", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, function callBack(response: any) {
+            storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_5_Process_StorySetting", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0)
         });
     }
 

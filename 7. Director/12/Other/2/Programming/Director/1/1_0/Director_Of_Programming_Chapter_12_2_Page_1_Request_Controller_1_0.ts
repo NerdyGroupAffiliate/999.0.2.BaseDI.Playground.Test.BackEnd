@@ -24,7 +24,7 @@ export namespace BaseDI.Professional.Director.Programming_1 {
         //#endregion
 
         //#region 2. Ready
-        constructor(extraData: any) {
+        constructor(extraData: any = null) {
             super();
 
             //#region 1. Assign

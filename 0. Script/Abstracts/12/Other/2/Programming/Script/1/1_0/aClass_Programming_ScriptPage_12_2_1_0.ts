@@ -57,7 +57,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         //#endregion
 
         //#region 4. Action
-        public abstract async Action(): Promise<object>;
+        public abstract Action(): Promise<object>;
         //#endregion
     }
 }
