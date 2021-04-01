@@ -45,6 +45,7 @@ using BaseDI.Professional.Story.Customer_Service_1;
 using BaseDI.Professional.Story.Productivity_1;
 
 //11. Automate Manual Task
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 using BaseDI.Professional.Story.Risk_Management_1;
 using BaseDI.Professional.Story.Social_Media_3;
 
@@ -69,7 +70,6 @@ using System.Globalization;
 
 using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.Configuration;
-using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 #endregion
 
@@ -165,26 +165,27 @@ namespace BaseDI.Professional.Story.Programming_1
 
         //A. Story in motion (DO SOMETHING)
 
-        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> clientORserverInstance, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string systemRequestByName = "", string clientRequestByName = "", string clientRequestByNameParameters = "")
+        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> parameterClientORserverInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
         {
             #region 1. INPUTS        
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)clientORserverInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)parameterClientORserverInstance["appSettings"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            if (extraData != null)
-                _storedExtraData = extraData;
+            if (parameterExtraData != null)
+                _storedExtraData = parameterExtraData;
 
             #endregion
 
             #region MEMORIZE request resolver
 
-            Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, systemRequestByName, clientRequestByName, clientRequestByNameParameters);
+            aClass_Programming_ScriptRoutable_12_2_1_0 stored_DirectorOrExperienceRequestHandler = null;
+            Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
 
             #endregion
 
@@ -202,7 +203,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region DEFINE exception handler
 
-            SingleParmPoco_12_2_1_0 stored_exceptionDetails;
+            SingleParmPoco_12_2_1_0 stored_ExceptionDetails;
 
             #endregion
 
@@ -228,22 +229,22 @@ namespace BaseDI.Professional.Story.Programming_1
                    //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
                 stored_ReferenceTo_RequestHandler = stored_ResolvedRequestHandler.Action();
 
-                if (systemRequestByName != "")
-                {                    
-                    var entryPoint = (aClass_Programming_ScriptRoutable_12_2_1_0)stored_ReferenceTo_RequestHandler;
+                if (parameterSystemRequestByName != "")
+                {
+                    stored_DirectorOrExperienceRequestHandler = (aClass_Programming_ScriptRoutable_12_2_1_0)stored_ReferenceTo_RequestHandler;
 
-                    entryPoint.RequestID = systemRequestByName;
-                    entryPoint.ClientOrServerInstance = clientORserverInstance;
+                    stored_DirectorOrExperienceRequestHandler.RequestID = parameterSystemRequestByName;
+                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = parameterClientORserverInstance;
 
-                    _storedClientRequestByObject.ClientOrServerInstance = clientORserverInstance;
+                    _storedClientRequestByObject.ClientOrServerInstance = parameterClientORserverInstance;
 
-                    _storedClientRequestByObject.EntryPoint = entryPoint;
+                    _storedClientRequestByObject.EntryPoint = stored_DirectorOrExperienceRequestHandler;
                     _storedClientRequestByObject.ExtraData = _storedExtraData;
 
-                    _storedClientRequestByObject.MasterLeader = entryPoint.MasterLeader;
+                    _storedClientRequestByObject.MasterLeader = stored_DirectorOrExperienceRequestHandler.MasterLeader;
 
-                    _storedClientRequestByObject.StorylineDetails = entryPoint.StorylineDetails;
-                    _storedClientRequestByObject.StorylineDetails_Parameters = entryPoint.StorylineDetails_Parameters;
+                    _storedClientRequestByObject.StorylineDetails = stored_DirectorOrExperienceRequestHandler.StorylineDetails;
+                    _storedClientRequestByObject.StorylineDetails_Parameters = stored_DirectorOrExperienceRequestHandler.StorylineDetails_Parameters;
 
                     stored_ReferenceTo_RequestHandler = _storedClientRequestByObject;
                 }
@@ -256,18 +257,18 @@ namespace BaseDI.Professional.Story.Programming_1
             {
                 #region EDGE CASE - USE exception handler
 
-                stored_exceptionDetails = new SingleParmPoco_12_2_1_0();
+                stored_ExceptionDetails = new SingleParmPoco_12_2_1_0();
 
-                stored_exceptionDetails.RequestNameToProcess = clientRequestByName;
-                stored_exceptionDetails.RequestNameToProcessParameters = clientRequestByNameParameters;
+                stored_ExceptionDetails.RequestNameToProcess = parameterClientRequestByName;
+                stored_ExceptionDetails.RequestNameToProcessParameters = parameterClientRequestByNameParameters;
 
-                stored_exceptionDetails.StorylineDetails = storylineDetails;
+                stored_ExceptionDetails.StorylineDetails = parameterStorylineDetails;
 
-                stored_exceptionDetails.Parameters.Add("StoredClientOrServerInstance", clientORserverInstance);
-                stored_exceptionDetails.Parameters.Add("StoredExtraData", extraData);
-                stored_exceptionDetails.Parameters.Add("StoredMistakes", mistake);
+                stored_ExceptionDetails.Parameters.Add("StoredClientOrServerInstance", parameterClientORserverInstance);
+                stored_ExceptionDetails.Parameters.Add("StoredExtraData", parameterExtraData);
+                stored_ExceptionDetails.Parameters.Add("StoredMistakes", mistake);
 
-                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Control_AppException_1_0(stored_exceptionDetails);
+                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Control_AppException_1_0(stored_ExceptionDetails);
 
                 #endregion
             }
@@ -433,12 +434,23 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region FIND request handler
 
-            #region IDEAL CASE - USE an experience OR a director request handler
+            try
+            {
+                #region IDEAL CASE - USE an experience OR a director request handler
 
-            storedExeuctionStragety.Action_1_Begin_Process();
-            stored_Resolved_EXPERIENCEorDIRECTOR_RequestHandler = storedExeuctionStragety.Action_10_End_Process();
+                storedExeuctionStragety.Action_1_Begin_Process();
+                stored_Resolved_EXPERIENCEorDIRECTOR_RequestHandler = storedExeuctionStragety.Action_10_End_Process();
 
-            #endregion
+                #endregion
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
+            }
 
             #endregion
 
@@ -628,7 +640,6 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #endregion
 
-
             #region MEMORIZE developer mode
 
             bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
@@ -641,23 +652,34 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region PICK experience OR director
 
-            #region IDEAL CASE - USE director request handler
+            try
+            {
+                #region IDEAL CASE - USE director request handler
 
-            if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_"))
-            {               
-                return storedDirectorRequestHandler.Action_1_Begin_Process();
+                if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_"))
+                {
+                    return storedDirectorRequestHandler.Action_1_Begin_Process();
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE experience request handler
+
+                if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("EXPERIENCE_THE_"))
+                {
+                    return storedExperienceRequestHandler.Action_1_Begin_Process();
+                }
+
+                #endregion
             }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE exception handler
 
-            #endregion
+                throw mistake;
 
-            #region EDGE CASE - USE experience request handler
-
-            if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("EXPERIENCE_THE_"))
-            {                
-                return storedExperienceRequestHandler.Action_1_Begin_Process();
+                #endregion
             }
-
-            #endregion
 
             #endregion
 

@@ -8,8 +8,9 @@ namespace BaseDI.Professional.Script.Programming.Poco_1
     {
         public SingleParmPoco_12_2_1_0()
         {
-
+            Parameters = new Dictionary<string, dynamic>();
         }
+
         public string GenericID { get; set; }
 
         public string ChapterName { get; set; }

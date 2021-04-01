@@ -24,7 +24,7 @@ export namespace BaseDI.Professional.Director.Programming_1 {
         //#endregion
 
         //#region 2. Ready
-        constructor(extraData: any) {
+        constructor(extraData: any = null) {
             super();
 
             //#region 1. Assign
@@ -217,6 +217,7 @@ export namespace BaseDI.Professional.Director.Programming_1 {
         {
             //region 1. Assign 
             let entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = this._entryPoint;
+
             if (entryPoint.RequestID == undefined)
             {
                 var page = new ChapterPage_Page_1_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_1.Page_1_1_Begin_Process_12_2_1_0(this._storylineDetails, this._repository);

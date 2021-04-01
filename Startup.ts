@@ -20,7 +20,7 @@ import * as SingleParmPoco_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Prog
 
 //EXECUTION
 //#region HANDLE baseDI http request
-export namespace BaseDI
+export namespace BaseDI.Professional
 {
     export class Startup
     {
@@ -43,9 +43,7 @@ export namespace BaseDI
             this._storedExtraData = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
             this._storedEntryPoint = entryPoint;
-
-            this._storedStorylineDetails = new Object();
-            this._storedStorylineDetails_Parameters = new Object();
+  
             //#endregion
 
             //#region 2. PROCESS
@@ -85,12 +83,14 @@ export namespace BaseDI
 
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
                 this._storedClientORserverInfo = {
+                    "appSettings": process.env,
                     "serverInstance": this._storedEntryPoint,
                     "serverStartUp": this
                 }
             }
             else {
                 this._storedClientORserverInfo = {
+                    "appSettings": process.env,
                     "clientInstance": this._storedEntryPoint,
                     "clientStartUp": this
                 }
@@ -109,7 +109,7 @@ export namespace BaseDI
         //#endregion
 
         //#region 4. Action
-        public Action(targetedResponseTagID:string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestActionName: string = "", requestCallBack: any = null)
+        public Action(parameterTargetedResponseTagID: string = "", parameterRequestNameToProcess: string = "", parameterRequestNameToProcessParameters: string = "", parameterRequestChapterName: string = "", parameterRequestActionName: string = "", parameterRequestCallBack: any = null)
         {
             //#region 1. INPUTS
 
@@ -119,17 +119,24 @@ export namespace BaseDI
 
             //#endregion
 
+            //#region MEMORIZE chpater name
+
+            if (parameterRequestActionName != "")
+                this._storedClientORserverInfo["chapterName"] = parameterRequestChapterName;
+
+            //#endregion
+
             //#region MEMORIZE action name
 
-            if (requestActionName != "")
-                this._storedClientORserverInfo["actionName"] = requestActionName;
+            if (parameterRequestActionName != "")
+                this._storedClientORserverInfo["actionName"] = parameterRequestActionName;
 
             //#endregion
 
             //#region MEMORIZE targeted tagID
 
-            if (targetedResponseTagID != "")
-                this._storedClientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
+            if (parameterTargetedResponseTagID != "")
+                this._storedClientORserverInfo["targetedResponseTagID"] = parameterTargetedResponseTagID;
 
             //#endregion
 
@@ -151,16 +158,16 @@ export namespace BaseDI
 
                 //#region IDEAL CASE - USE request handler
 
-                if (requestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
+                if (parameterRequestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
 
-                const Action = (requestNameToProcess: string = "", requestNameToProcessParameters: string = "", extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
+                const Action = (parameterRequestNameToProcess: string = "", parameterRequestNameToProcessParameters: string = "", parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
                 {
                     storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
-                        .SetupStoryline(this._storedClientORserverInfo, this._storedStorylineDetails, null, this._storedExtraData, "", requestNameToProcess, requestNameToProcessParameters)
+                        .SetupStoryline(this._storedClientORserverInfo, this._storedStorylineDetails, null, this._storedExtraData, "", parameterRequestNameToProcess, parameterRequestNameToProcessParameters)
                         .Action();
                 }
 
-                Action(requestNameToProcess, requestNameToProcessParameters, this._storedExtraData);
+                Action(parameterRequestNameToProcess, parameterRequestNameToProcessParameters, this._storedExtraData);
 
                 //#endregion
 
@@ -189,16 +196,16 @@ export namespace BaseDI
                 storedDataResponse.then(response =>
                 {
                     //#region EDGE CASE - USE callback handler
-                    if (requestCallBack) {
-                        requestCallBack(storedDataResponse);
+                    if (parameterRequestCallBack) {
+                        parameterRequestCallBack(storedDataResponse);
                     }
                     //#endregion
 
                     //#region IDEAL CASE - USE html responder
                     response?.outputs[1].baseDIObservations.map(storedObservation => {
                         if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase().includes("HTML")) {
-                            if (targetedResponseTagID != "") {
-                                document.getElementById(targetedResponseTagID).innerHTML = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                            if (parameterTargetedResponseTagID != "") {
+                                document.getElementById(parameterTargetedResponseTagID).innerHTML = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
                             }                            
                         }
                     });
@@ -225,7 +232,7 @@ export { Action_12_2_1_0 as ActionList }
 
 //#region 1. INPUTS
 
-let storedServerInstance = new BaseDI.Startup(this);
+let storedServerInstance = new BaseDI.Professional.Startup(this);
 
 //#endregion
 
@@ -243,8 +250,8 @@ let storedServerInstance = new BaseDI.Startup(this);
 //#region COPY local files & start server
 if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
     const Step_1_0_CopyLocalFilesAndStartServer = async () => {
-        storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, function callBack(response: any) {
-            storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0)
+        storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_7_Process_StoryResources", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, function callBack(response: any) {
+            storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_5_Process_StorySetting", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0)
         });
     }
 
