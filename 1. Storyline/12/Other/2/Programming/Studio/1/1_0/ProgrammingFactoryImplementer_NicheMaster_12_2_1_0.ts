@@ -342,7 +342,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - FOUND a request handler of ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> USING data stragety of " + repositoryType);
                 }                    
 
                 //#endregion
@@ -582,7 +582,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - FOUND a request handler of ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> USING data stragety of " + repositoryType);
                 }
       
                 //#endregion
@@ -703,7 +703,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - FOUND a request handler of ***Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> USING data stragety of " + repositoryType);
                 }
 
                 //#endregion
@@ -824,7 +824,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - FOUND a request handler of ***Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 -> USING data stragety of " + repositoryType);
                 }
 
                 //#endregion

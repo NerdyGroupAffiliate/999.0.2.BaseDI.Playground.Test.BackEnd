@@ -43,9 +43,7 @@ export namespace BaseDI.Professional
             this._storedExtraData = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
             this._storedEntryPoint = entryPoint;
-
-            this._storedStorylineDetails = new Object();
-            this._storedStorylineDetails_Parameters = new Object();
+  
             //#endregion
 
             //#region 2. PROCESS
