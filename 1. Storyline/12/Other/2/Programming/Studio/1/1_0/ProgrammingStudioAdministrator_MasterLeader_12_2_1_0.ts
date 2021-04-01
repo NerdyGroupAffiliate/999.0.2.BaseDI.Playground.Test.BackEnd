@@ -213,7 +213,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region DEFINE exception handler
 
-            let stored_exceptionDetails: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            let stored_ExceptionDetails: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //#endregion
 
@@ -269,17 +269,18 @@ export namespace BaseDI.Professional.Story.Programming_1
             catch (mistake)
             {
                 //#region EDGE CASE - USE exception handler
+                stored_ExceptionDetails = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                stored_exceptionDetails.RequestNameToProcess = clientRequestByName;
-                stored_exceptionDetails.RequestNameToProcessParameters = clientRequestByNameParameters;
+                stored_ExceptionDetails.RequestNameToProcess = clientRequestByName;
+                stored_ExceptionDetails.RequestNameToProcessParameters = clientRequestByNameParameters;
 
-                stored_exceptionDetails.StorylineDetails = storylineDetails;
+                stored_ExceptionDetails.StorylineDetails = storylineDetails;
 
-                stored_exceptionDetails.Parameters.setValue("StoredClientOrServerInstance", clientORserverInstance);
-                stored_exceptionDetails.Parameters.setValue("StoredExtraData", extraData);
-                stored_exceptionDetails.Parameters.setValue("StoredMistakes", mistake);
+                stored_ExceptionDetails.Parameters.setValue("StoredClientOrServerInstance", clientORserverInstance);
+                stored_ExceptionDetails.Parameters.setValue("StoredExtraData", extraData);
+                stored_ExceptionDetails.Parameters.setValue("StoredMistakes", mistake);
 
-                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Control_AppException_1_0(stored_exceptionDetails);
+                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Control_AppException_1_0(stored_ExceptionDetails);
 
                 //#endregion
             }
@@ -444,12 +445,23 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region FIND request handler
 
-            //#region IDEAL CASE - USE an experience OR a director request handler
+            try
+            {
+                //#region IDEAL CASE - USE an experience OR a director request handler
 
-            storedExeuctionStragety.Action_1_Begin_Process();
-            stored_Resolved_EXPERIENCEorDIRECTOR_RequestHandler = storedExeuctionStragety.Action_10_End_Process();
+                storedExeuctionStragety.Action_1_Begin_Process();
+                stored_Resolved_EXPERIENCEorDIRECTOR_RequestHandler = storedExeuctionStragety.Action_10_End_Process();
 
-            //#endregion
+                //#endregion
+            }
+            catch (mistake)
+            {
+                //#region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                //#endregion
+            }
 
             //#endregion
 
@@ -654,23 +666,32 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region PICK experience OR director
 
-            //#region IDEAL CASE - USE director request handler
+            try
+            {
+                //#region IDEAL CASE - USE director request handler
 
-            if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_"))
-            {               
-                return storedDirectorRequestHandler.Action_1_Begin_Process();
+                if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_")) {
+                    return storedDirectorRequestHandler.Action_1_Begin_Process();
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE experience request handler
+
+                if (this._storedRequestName.toUpperCase().includes("EXPERIENCE_THE_")) {
+                    return storedExperienceRequestHandler.Action_1_Begin_Process();
+                }
+
+                //#endregion
             }
+            catch (mistake)
+            {
+                //#region EDGE CASE - USE exception handler
 
-            //#endregion
+                throw mistake;
 
-            //#region EDGE CASE - USE experience request handler
-
-            if (this._storedRequestName.toUpperCase().includes("EXPERIENCE_THE_"))
-            {                
-                return storedExperienceRequestHandler.Action_1_Begin_Process();
+                //#endregion
             }
-
-            //#endregion
 
             //#endregion
 

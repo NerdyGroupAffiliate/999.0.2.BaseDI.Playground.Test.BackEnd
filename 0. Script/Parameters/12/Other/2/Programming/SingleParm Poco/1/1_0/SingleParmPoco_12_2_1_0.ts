@@ -2,8 +2,12 @@
 
 export namespace BaseDI.Professional.Script.Programming.Poco_1
 {
-    export interface SingleParmPoco_12_2_1_0
+    export class SingleParmPoco_12_2_1_0
     {
+        constructor() {
+            this.Parameters = new Collections.Dictionary<string, object>();
+        }
+
         GenericID: string;
 
         ChapterName: string;

@@ -8,6 +8,9 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
         public static Step_X_X_Custom_Control_AppException_1_0(input: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : any
         {
+            console.log("GOT EXCEPTION");
+            console.log(input.Parameters["StoredMistakes"]);
+
             return null;
         }
     }
