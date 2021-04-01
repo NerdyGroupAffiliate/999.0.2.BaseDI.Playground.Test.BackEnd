@@ -93,9 +93,9 @@ namespace BaseDI.Professional
 
             #region 2. PROCESS
 
-            #region EXECUTE copying files
+            #region EXECUTE copying static files
 
-            #region IDEAL CASE - USE baseDI pipeline
+            #region IDEAL CASE - USE json metadata
 
             var storedCopiedFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, null, Configuration).Result;
 
@@ -103,11 +103,11 @@ namespace BaseDI.Professional
 
             #endregion
 
-            #region EXECUTE mapping files
+            #region EXECUTE mapping static files
 
             try
             {
-                #region IDEAL CASE - USE dynamic metadata
+                #region IDEAL CASE - USE json metadata
 
                 StoredRequestCallBack = (JObject storedMappedStaticFiles) =>
                 {
@@ -207,20 +207,20 @@ namespace BaseDI.Professional
 
         #region 4. Action   
 
-        public static async Task<IActionResult> Action(string requestToProcess = "", string requestToProcessParameters = "", string requestActionName = "", Func<JObject, IActionResult> StoredRequestCallBack = null, IConfiguration StoredAppSettings = null)
+        public static async Task<IActionResult> Action(string parameterRequestToProcess = "", string parameterRequestToProcessParameters = "", string parameterRequestActionName = "", Func<JObject, IActionResult> parameterStoredRequestCallBack = null, IConfiguration parameterStoredAppSettings = null)
         {
             #region 1. INPUTS
 
             #region MEMORIZE application settings
 
             var storedControllerInstance = new Startup_Controller();
-            storedControllerInstance.StoredAppSettings = StoredAppSettings;
+            storedControllerInstance.StoredAppSettings = parameterStoredAppSettings;
 
             #endregion
 
             #region MEMORIZE process callback
 
-            storedControllerInstance.StoredRequestCallBack = StoredRequestCallBack;
+            storedControllerInstance.StoredRequestCallBack = parameterStoredRequestCallBack;
 
             #endregion
 
@@ -232,7 +232,7 @@ namespace BaseDI.Professional
 
             #region IDEAL CASE - USE baseDI pipeline
 
-            IActionResult result = await storedControllerInstance.Action(requestToProcess, requestToProcessParameters, requestActionName);
+            IActionResult result = await storedControllerInstance.Action(parameterRequestToProcess, parameterRequestToProcessParameters, parameterRequestActionName);
 
             #endregion
 
@@ -365,7 +365,7 @@ namespace BaseDI.Professional
         #region 4. Action
 
         [HttpGet("")]
-        public async Task<IActionResult> Action(string clientRequestByName = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string clientRequestByNameParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string requestChapterName = "Action_ProcessHttpRequest_1_0", string requestActionName = "Action_ProcessHttpRequest_1_0")
+        public async Task<IActionResult> Action(string parameterClientRequestByName = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string parameterClientRequestByNameParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string parameterRequestChapterName = "Action_ProcessHttpRequest_1_0", string parameterRequestActionName = "Action_ProcessHttpRequest_1_0")
         {
             #region 1. INPUTS
 
@@ -395,8 +395,8 @@ namespace BaseDI.Professional
 
             #region MEMORIZE action name
 
-            if (requestActionName != "")
-                _storedClientORserverInfo.Add("actionName", requestActionName);
+            if (parameterRequestActionName != "")
+                _storedClientORserverInfo.Add("actionName", parameterRequestActionName);
 
             #endregion
 
@@ -409,8 +409,8 @@ namespace BaseDI.Professional
 
             #region MEMORIZE chapter name
 
-            if (requestActionName != "")
-                _storedClientORserverInfo.Add("chapterName", requestChapterName);
+            if (parameterRequestActionName != "")
+                _storedClientORserverInfo.Add("chapterName", parameterRequestChapterName);
 
             #endregion
 
@@ -442,7 +442,7 @@ namespace BaseDI.Professional
 
                 #region EDGE CASE - USE updates handler
 
-                StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 response) =>
+                StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 parameterResponse) =>
                 {
                     Action("", "", null);
                     return _storedStorylineDetails;
@@ -452,17 +452,17 @@ namespace BaseDI.Professional
 
                 #region IDEAL CASE - USE request handler
 
-                if (clientRequestByName == "") throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that clientRequestByName is not blank or null!");
+                if (parameterClientRequestByName == "") throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that clientRequestByName is not blank or null!");
                 if (StoredAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
 
-                Action = (string clientRequestByName, string clientRequestByNameParameters, ExtraData_12_2_1_0 extraData) =>
+                Action = (string parameterClientRequestByName, string parameterClientRequestByNameParameters, ExtraData_12_2_1_0 parameterExtraData) =>
                 {
                     return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                        .SetupStoryline(_storedClientORserverInfo, _storedStorylineDetails, null, extraData, "", clientRequestByName, clientRequestByNameParameters)
+                        .SetupStoryline(_storedClientORserverInfo, _storedStorylineDetails, null, parameterExtraData, "", parameterClientRequestByName, parameterClientRequestByNameParameters)
                         .Action().Result;
                 };
 
-                Action(clientRequestByName, clientRequestByNameParameters, _storedExtraData);
+                Action(parameterClientRequestByName, parameterClientRequestByNameParameters, _storedExtraData);
 
                 #endregion
 

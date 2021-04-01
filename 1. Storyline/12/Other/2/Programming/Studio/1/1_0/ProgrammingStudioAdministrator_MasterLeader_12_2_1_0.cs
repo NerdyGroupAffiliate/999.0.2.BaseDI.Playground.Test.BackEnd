@@ -165,27 +165,27 @@ namespace BaseDI.Professional.Story.Programming_1
 
         //A. Story in motion (DO SOMETHING)
 
-        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> clientORserverInstance, JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null, string systemRequestByName = "", string clientRequestByName = "", string clientRequestByNameParameters = "")
+        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> parameterClientORserverInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
         {
             #region 1. INPUTS        
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)clientORserverInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)parameterClientORserverInstance["appSettings"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            if (extraData != null)
-                _storedExtraData = extraData;
+            if (parameterExtraData != null)
+                _storedExtraData = parameterExtraData;
 
             #endregion
 
             #region MEMORIZE request resolver
 
             aClass_Programming_ScriptRoutable_12_2_1_0 stored_DirectorOrExperienceRequestHandler = null;
-            Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, systemRequestByName, clientRequestByName, clientRequestByNameParameters);
+            Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
 
             #endregion
 
@@ -229,14 +229,14 @@ namespace BaseDI.Professional.Story.Programming_1
                    //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
                 stored_ReferenceTo_RequestHandler = stored_ResolvedRequestHandler.Action();
 
-                if (systemRequestByName != "")
+                if (parameterSystemRequestByName != "")
                 {
                     stored_DirectorOrExperienceRequestHandler = (aClass_Programming_ScriptRoutable_12_2_1_0)stored_ReferenceTo_RequestHandler;
 
-                    stored_DirectorOrExperienceRequestHandler.RequestID = systemRequestByName;
-                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = clientORserverInstance;
+                    stored_DirectorOrExperienceRequestHandler.RequestID = parameterSystemRequestByName;
+                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = parameterClientORserverInstance;
 
-                    _storedClientRequestByObject.ClientOrServerInstance = clientORserverInstance;
+                    _storedClientRequestByObject.ClientOrServerInstance = parameterClientORserverInstance;
 
                     _storedClientRequestByObject.EntryPoint = stored_DirectorOrExperienceRequestHandler;
                     _storedClientRequestByObject.ExtraData = _storedExtraData;
@@ -259,13 +259,13 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 stored_ExceptionDetails = new SingleParmPoco_12_2_1_0();
 
-                stored_ExceptionDetails.RequestNameToProcess = clientRequestByName;
-                stored_ExceptionDetails.RequestNameToProcessParameters = clientRequestByNameParameters;
+                stored_ExceptionDetails.RequestNameToProcess = parameterClientRequestByName;
+                stored_ExceptionDetails.RequestNameToProcessParameters = parameterClientRequestByNameParameters;
 
-                stored_ExceptionDetails.StorylineDetails = storylineDetails;
+                stored_ExceptionDetails.StorylineDetails = parameterStorylineDetails;
 
-                stored_ExceptionDetails.Parameters.Add("StoredClientOrServerInstance", clientORserverInstance);
-                stored_ExceptionDetails.Parameters.Add("StoredExtraData", extraData);
+                stored_ExceptionDetails.Parameters.Add("StoredClientOrServerInstance", parameterClientORserverInstance);
+                stored_ExceptionDetails.Parameters.Add("StoredExtraData", parameterExtraData);
                 stored_ExceptionDetails.Parameters.Add("StoredMistakes", mistake);
 
                 throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Control_AppException_1_0(stored_ExceptionDetails);

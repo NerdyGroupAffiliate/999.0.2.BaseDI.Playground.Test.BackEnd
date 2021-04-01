@@ -165,19 +165,19 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //A. Story in motion (DO SOMETHING)
 
-        public SetupStoryline(clientORserverInstance: any, storylineDetails: Object, storylineDetails_Parameters: Object, extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, systemRequestByName: string = "", clientRequestByName: string = "", clientRequestByNameParameters: string = "") : aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
+        public SetupStoryline(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "") : aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
         {
             //#region 1. INPUTS
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = clientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = clientORserverInstance["actionName"];
+            let storedActionName: string = parameterClientORserverInstance["actionName"];
 
             //#endregion
 
@@ -185,15 +185,15 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            if (clientORserverInstance["processStepNumber"] == null)
-                clientORserverInstance["processStepNumber"] = 0;
+            if (parameterClientORserverInstance["processStepNumber"] == null)
+                parameterClientORserverInstance["processStepNumber"] = 0;
 
             //#endregion
 
             //#region MEMORIZE extra data
 
-            if (extraData != null)
-                this._storedExtraData = extraData;
+            if (parameterExtraData != null)
+                this._storedExtraData = parameterExtraData;
 
             //#endregion
 
@@ -201,7 +201,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             let stored_DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
 
-            let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, systemRequestByName, clientRequestByName, clientRequestByNameParameters);
+            let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
 
             //#endregion
 
@@ -228,9 +228,9 @@ export namespace BaseDI.Professional.Story.Programming_1
                 //#region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode) {
-                    clientORserverInstance["processStepNumber"] += 1;
+                    parameterClientORserverInstance["processStepNumber"] += 1;
 
-                    console.log("STEP " + clientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***BEGIN FINDING*** a request handler -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> SetupStoryline -> ACTION = " + storedActionName);
+                    console.log("STEP " + parameterClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***BEGIN FINDING*** a request handler -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> SetupStoryline -> ACTION = " + storedActionName);
                 }                    
 
                 //#endregion
@@ -242,14 +242,14 @@ export namespace BaseDI.Professional.Story.Programming_1
                    //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
                 stored_ReferenceTo_RequestHandler = stored_ResolvedRequestHandler.Action();
 
-                if (systemRequestByName != "")
+                if (parameterSystemRequestByName != "")
                 {                    
                     stored_DirectorOrExperienceRequestHandler = stored_ReferenceTo_RequestHandler;
 
-                    stored_DirectorOrExperienceRequestHandler.RequestID = systemRequestByName;
-                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = clientORserverInstance;
+                    stored_DirectorOrExperienceRequestHandler.RequestID = parameterSystemRequestByName;
+                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = parameterClientORserverInstance;
 
-                    this._storedClientRequestByObject.ClientOrServerInstance = clientORserverInstance;
+                    this._storedClientRequestByObject.ClientOrServerInstance = parameterClientORserverInstance;
 
                     this._storedClientRequestByObject.EntryPoint = stored_DirectorOrExperienceRequestHandler;
                     this._storedClientRequestByObject.ExtraData = this._storedExtraData;
@@ -271,13 +271,13 @@ export namespace BaseDI.Professional.Story.Programming_1
                 //#region EDGE CASE - USE exception handler
                 stored_ExceptionDetails = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                stored_ExceptionDetails.RequestNameToProcess = clientRequestByName;
-                stored_ExceptionDetails.RequestNameToProcessParameters = clientRequestByNameParameters;
+                stored_ExceptionDetails.RequestNameToProcess = parameterClientRequestByName;
+                stored_ExceptionDetails.RequestNameToProcessParameters = parameterClientRequestByNameParameters;
 
-                stored_ExceptionDetails.StorylineDetails = storylineDetails;
+                stored_ExceptionDetails.StorylineDetails = parameterStorylineDetails;
 
-                stored_ExceptionDetails.Parameters.setValue("StoredClientOrServerInstance", clientORserverInstance);
-                stored_ExceptionDetails.Parameters.setValue("StoredExtraData", extraData);
+                stored_ExceptionDetails.Parameters.setValue("StoredClientOrServerInstance", parameterClientORserverInstance);
+                stored_ExceptionDetails.Parameters.setValue("StoredExtraData", parameterExtraData);
                 stored_ExceptionDetails.Parameters.setValue("StoredMistakes", mistake);
 
                 throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Control_AppException_1_0(stored_ExceptionDetails);

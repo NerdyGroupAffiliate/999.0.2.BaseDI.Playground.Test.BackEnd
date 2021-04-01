@@ -109,7 +109,7 @@ export namespace BaseDI.Professional
         //#endregion
 
         //#region 4. Action
-        public Action(targetedResponseTagID: string = "", requestNameToProcess: string = "", requestNameToProcessParameters: string = "", requestChapterName:string = "",  requestActionName: string = "", requestCallBack: any = null)
+        public Action(parameterTargetedResponseTagID: string = "", parameterRequestNameToProcess: string = "", parameterRequestNameToProcessParameters: string = "", parameterRequestChapterName: string = "", parameterRequestActionName: string = "", parameterRequestCallBack: any = null)
         {
             //#region 1. INPUTS
 
@@ -121,22 +121,22 @@ export namespace BaseDI.Professional
 
             //#region MEMORIZE chpater name
 
-            if (requestActionName != "")
-                this._storedClientORserverInfo["chapterName"] = requestChapterName;
+            if (parameterRequestActionName != "")
+                this._storedClientORserverInfo["chapterName"] = parameterRequestChapterName;
 
             //#endregion
 
             //#region MEMORIZE action name
 
-            if (requestActionName != "")
-                this._storedClientORserverInfo["actionName"] = requestActionName;
+            if (parameterRequestActionName != "")
+                this._storedClientORserverInfo["actionName"] = parameterRequestActionName;
 
             //#endregion
 
             //#region MEMORIZE targeted tagID
 
-            if (targetedResponseTagID != "")
-                this._storedClientORserverInfo["targetedResponseTagID"] = targetedResponseTagID;
+            if (parameterTargetedResponseTagID != "")
+                this._storedClientORserverInfo["targetedResponseTagID"] = parameterTargetedResponseTagID;
 
             //#endregion
 
@@ -158,16 +158,16 @@ export namespace BaseDI.Professional
 
                 //#region IDEAL CASE - USE request handler
 
-                if (requestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
+                if (parameterRequestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
 
-                const Action = (requestNameToProcess: string = "", requestNameToProcessParameters: string = "", extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
+                const Action = (parameterRequestNameToProcess: string = "", parameterRequestNameToProcessParameters: string = "", parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
                 {
                     storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
-                        .SetupStoryline(this._storedClientORserverInfo, this._storedStorylineDetails, null, this._storedExtraData, "", requestNameToProcess, requestNameToProcessParameters)
+                        .SetupStoryline(this._storedClientORserverInfo, this._storedStorylineDetails, null, this._storedExtraData, "", parameterRequestNameToProcess, parameterRequestNameToProcessParameters)
                         .Action();
                 }
 
-                Action(requestNameToProcess, requestNameToProcessParameters, this._storedExtraData);
+                Action(parameterRequestNameToProcess, parameterRequestNameToProcessParameters, this._storedExtraData);
 
                 //#endregion
 
@@ -196,16 +196,16 @@ export namespace BaseDI.Professional
                 storedDataResponse.then(response =>
                 {
                     //#region EDGE CASE - USE callback handler
-                    if (requestCallBack) {
-                        requestCallBack(storedDataResponse);
+                    if (parameterRequestCallBack) {
+                        parameterRequestCallBack(storedDataResponse);
                     }
                     //#endregion
 
                     //#region IDEAL CASE - USE html responder
                     response?.outputs[1].baseDIObservations.map(storedObservation => {
                         if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase().includes("HTML")) {
-                            if (targetedResponseTagID != "") {
-                                document.getElementById(targetedResponseTagID).innerHTML = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                            if (parameterTargetedResponseTagID != "") {
+                                document.getElementById(parameterTargetedResponseTagID).innerHTML = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
                             }                            
                         }
                     });
