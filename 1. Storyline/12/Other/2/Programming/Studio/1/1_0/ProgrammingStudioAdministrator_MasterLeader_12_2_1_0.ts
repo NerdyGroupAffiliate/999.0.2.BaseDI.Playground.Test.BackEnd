@@ -175,6 +175,21 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#endregion
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = clientORserverInstance["actionName"];
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            if (clientORserverInstance["processStepNumber"] == null)
+                clientORserverInstance["processStepNumber"] = 0;
+
+            //#endregion
+
             //#region MEMORIZE extra data
 
             if (extraData != null)
@@ -187,12 +202,6 @@ export namespace BaseDI.Professional.Story.Programming_1
             let stored_DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
 
             let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(clientORserverInstance, storylineDetails, storylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, systemRequestByName, clientRequestByName, clientRequestByNameParameters);
-
-            //#endregion
-
-            //#region MEMORIZE developer mode
-
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
@@ -218,8 +227,11 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
-                    console.log("STEP 1 - EXECUTING REQUEST - ***BEGIN FINDING*** a request handler -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> SetupStoryline");
+                if (storedDeveloperMode) {
+                    clientORserverInstance["processStepNumber"] += 1;
+
+                    console.log("STEP " + clientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***BEGIN FINDING*** a request handler -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> SetupStoryline -> ACTION = " + storedActionName);
+                }                    
 
                 //#endregion
 

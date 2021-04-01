@@ -26,6 +26,7 @@
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\5\Security\Method\1\1_0\Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.ts" />
+    <None Remove="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts" />
     <None Remove="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts" />
     <None Remove="6. State\12\Other\2\Programming\Repository\2\1_0\LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts" />
     <None Remove="Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.tsx" />
@@ -78,6 +79,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\2\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
+    <TypeScriptCompile Include="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts" />
     <TypeScriptCompile Include="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts" />
     <TypeScriptCompile Include="6. State\12\Other\2\Programming\Repository\2\1_0\LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts" />
     <TypeScriptCompile Include="Snippet_TypeScript_Regions.tsx" />

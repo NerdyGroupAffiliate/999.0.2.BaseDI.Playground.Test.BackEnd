@@ -20,7 +20,7 @@ import * as SingleParmPoco_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Prog
 
 //EXECUTION
 //#region HANDLE baseDI http request
-export namespace BaseDI
+export namespace BaseDI.Professional
 {
     export class Startup
     {
@@ -234,7 +234,7 @@ export { Action_12_2_1_0 as ActionList }
 
 //#region 1. INPUTS
 
-let storedServerInstance = new BaseDI.Startup(this);
+let storedServerInstance = new BaseDI.Professional.Startup(this);
 
 //#endregion
 

@@ -38,7 +38,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI
+namespace BaseDI.Professional
 {
     //SETUP
     #region HANDLE .net core pipeline
