@@ -389,7 +389,7 @@ namespace BaseDI.Professional
 
             #region DEFINE event handlers
 
-            Func<string?, string?, ExtraData_12_2_1_0?, JObject> Action = null;
+            Func<string, string, ExtraData_12_2_1_0, JObject> Action = null;
 
             #endregion
 
@@ -468,7 +468,7 @@ namespace BaseDI.Professional
 
                 #endregion
             }
-            catch(Exception mistakes)
+            catch
             {
                 #region HANDLE execution mistakes
 

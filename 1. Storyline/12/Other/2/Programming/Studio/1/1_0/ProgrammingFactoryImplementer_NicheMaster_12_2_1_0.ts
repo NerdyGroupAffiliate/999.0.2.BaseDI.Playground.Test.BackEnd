@@ -137,7 +137,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
         //#region 4. Action
 
-        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: object, storylineDetails: object, storylineDetails_Parameters: object, requestName: string = "", requestToProcess: string = "", requestToProcessParameters: string = "") : object
+        public Action(parameterClientORserverInstance: any, parameterCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterRequestToResolve: object, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRequestName: string = "", parameterRequestToProcess: string = "", parameterRequestToProcessParameters: string = "") : object
         {
             //#region 1. INPUTS
 
@@ -158,28 +158,28 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = clientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE centralized processes
 
-            this._storedCentralizedStorer = centralizedStorer;
-            this._storedCentralizedDisturber = centralizedDisturber;
-            this._storedCentralizedSensor = centralizedSensor;
+            this._storedCentralizedStorer = parameterCentralizedStorer;
+            this._storedCentralizedDisturber = parameterCentralizedDisturber;
+            this._storedCentralizedSensor = parameterCentralizedSensor;
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = clientORserverInstance;
+            this._storedClientORserverInstance = parameterClientORserverInstance;
 
             //#endregion
 
             //#region MEMORIZE client request
 
-            this._storedExtraData.KeyValuePairs.setValue("RequestToProcess", Object.assign(requestToProcess, Object))
-            this._storedExtraData.KeyValuePairs.setValue("RequestToProcessParameters", Object.assign(requestToProcessParameters, Object))
+            this._storedExtraData.KeyValuePairs.setValue("RequestToProcess", Object.assign(parameterRequestToProcess, Object))
+            this._storedExtraData.KeyValuePairs.setValue("RequestToProcessParameters", Object.assign(parameterRequestToProcessParameters, Object))
 
             //var storedRequestType = requestToResolve.GetType();
 
@@ -201,37 +201,37 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 //#region IDEAL CASE - USE director of programming
 
-                if (requestName != null && requestName != undefined && requestName != "")
+                if (parameterRequestName != null && parameterRequestName != undefined && parameterRequestName != "")
                 {
-                    switch (requestName.toUpperCase())
+                    switch (parameterRequestName.toUpperCase())
                     {
                         //CONTROLLER
                         case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
-                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, this._storedExtraData);
+                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedExtraData);
 
                             break;
 
                         //CONVERSION
                         case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
-                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails, storylineDetails_Parameters, this._storedExtraData);
+                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedExtraData);
 
                             break;
 
                         //STORAGE
                         case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
-                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails, storylineDetails_Parameters, this._storedExtraData);
+                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedExtraData);
 
                             break;
 
                         //DISTURBANCES
                         case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
-                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails, storylineDetails_Parameters, this._storedExtraData);
+                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedExtraData);
 
                             break;
 
                         //SENSOR
                         case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
-                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, this._storedExtraData);
+                            storedResolvedRequest = this.Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedExtraData);
 
                             break;
                     }
@@ -266,7 +266,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
         //#region Page 1
 
-        private Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails:object, storylineDetails_Parameters:object, extraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
+        private Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails:object, parameterStorylineDetails_Parameters:object, parameterExtraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
         {
             //#region 1. INPUTS
 
@@ -308,26 +308,26 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ClientOrServerInstance = this._storedClientORserverInstance;
 
-                stored_DirectorRequestHandler.ExtraData = extraData;
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
                 stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
                 stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
                 stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
 
-                stored_DirectorRequestHandler.StorylineDetails = storylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = storylineDetails_Parameters;
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
                 switch (repositoryType.toUpperCase())
                 {
                     case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = localFile;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
 
                         break;
                     case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.State.Programming_1.RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.State.Programming_1.RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = remoteService;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
@@ -342,7 +342,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0*** - USING data stragety of " + repositoryType + "]");
                 }                    
 
                 //#endregion
@@ -354,7 +354,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***FAILED FINDING*** a request handler for ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0*** - USING data stragety of " + repositoryType);
                 }
    
                 //#endregion
@@ -387,7 +387,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
         //#region Page 2
 
-        private Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails:object, storylineDetails_Parameters:object, extraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
+        private Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails:object, parameterStorylineDetails_Parameters:object, parameterExtraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
         {
             //#region 1. INPUTS    
 
@@ -429,25 +429,25 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ClientOrServerInstance = this._storedClientORserverInstance;
 
-                stored_DirectorRequestHandler.ExtraData = extraData;
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
                 stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
                 stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
                 stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
 
-                stored_DirectorRequestHandler.StorylineDetails = storylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = storylineDetails_Parameters;
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
                 switch (repositoryType.toUpperCase()) {
                     case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = localFile;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
 
                         break;
                     case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.Professional.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.BaseDI.Professional.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = remoteService;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
@@ -462,7 +462,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** - USING data stragety of " + repositoryType + "]");
                 }
 
                  //#endregion
@@ -474,7 +474,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***FAILED FINDING*** a request handler for ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** - USING data stragety of " + repositoryType);
                 }
         
                 //#endregion
@@ -507,7 +507,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
         //#region Page 3
 
-        private Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails:object, storylineDetails_Parameters:object, extraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
+        private Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails:object, parameterStorylineDetails_Parameters:object, parameterExtraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
         {
             //#region 1. INPUTS  
 
@@ -549,25 +549,25 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ClientOrServerInstance = this._storedClientORserverInstance;
 
-                stored_DirectorRequestHandler.ExtraData = extraData;
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
                 stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
                 stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
                 stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
 
-                stored_DirectorRequestHandler.StorylineDetails = storylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = storylineDetails_Parameters;
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
                 switch (repositoryType.toUpperCase()) {
                     case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.State.Programming_3.LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.State.Programming_3.LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = localFile;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
 
                         break;
                     case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.State.Programming_3.RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.State.Programming_3.RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = remoteService;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
@@ -582,7 +582,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0*** - USING data stragety of " + repositoryType + "]");
                 }
       
                 //#endregion
@@ -594,7 +594,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***FAILED FINDING*** a request handler for ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** - USING data stragety of " + repositoryType);
                 }
 
                 //#endregion
@@ -627,7 +627,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
         //#region Page 4
 
-        private Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails:object, storylineDetails_Parameters:object, extraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
+        private Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails:object, parameterStorylineDetails_Parameters:object, parameterExtraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
         {
             //#region 1. INPUTS  
 
@@ -669,26 +669,26 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ClientOrServerInstance = this._storedClientORserverInstance;
 
-                stored_DirectorRequestHandler.ExtraData = extraData;
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
                 stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
                 stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
                 stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
 
-                stored_DirectorRequestHandler.StorylineDetails = storylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = storylineDetails_Parameters;
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
                 switch (repositoryType.toUpperCase())
                 {
                     case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.Professional.State.Programming_4.LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.Professional.State.Programming_4.LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = localFile;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
 
                         break;
                     case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.Professional.State.Programming_4.RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.BaseDI.Professional.State.Programming_4.RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = remoteService;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
@@ -703,7 +703,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0*** - USING data stragety of " + repositoryType + "]");
                 }
 
                 //#endregion
@@ -716,7 +716,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***FAILED FINDING*** a request handler for ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0*** - USING data stragety of " + repositoryType);
                 }
 
                 //#endregion
@@ -749,7 +749,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
         //#region Page 5
 
-        private Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails:object, storylineDetails_Parameters:object, extraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
+        private Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails:object, parameterStorylineDetails_Parameters:object, parameterExtraData:ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) : object
         {
             //#region 1. INPUTS
 
@@ -791,25 +791,25 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ClientOrServerInstance = this._storedClientORserverInstance;
 
-                stored_DirectorRequestHandler.ExtraData = extraData;
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
                 stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
                 stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
                 stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
 
-                stored_DirectorRequestHandler.StorylineDetails = storylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = storylineDetails_Parameters;
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
                 switch (repositoryType.toUpperCase()) {
                     case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.Professional.State.Programming_5.LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.Professional.State.Programming_5.LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = localFile;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
 
                         break;
                     case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.Professional.State.Programming_5.RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.BaseDI.Professional.State.Programming_5.RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails);
 
                         stored_DirectorRequestHandler.Repository = remoteService;
                         stored_DirectorRequestHandler.Repository.RequestName = this._storedRequestName;
@@ -824,7 +824,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***SUCCESSFULLY FOUND*** a request handler of ***Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0*** - USING data stragety of " + repositoryType + "]");
                 }
 
                 //#endregion
@@ -837,7 +837,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " - EXECUTING REQUEST - ***FAILED FINDING*** a request handler for ***Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0*** -> ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0*** - USING data stragety of " + repositoryType);
                 }
 
                 //#endregion
