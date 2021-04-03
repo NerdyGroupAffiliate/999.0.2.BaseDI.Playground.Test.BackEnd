@@ -25,8 +25,10 @@ import * as ChapterPage_Page_1_10_End_Process_12_2_1_0 from "../../../../../../.
 
 //#endregion
 
-export namespace BaseDI.Professional.Director.Programming_1 {
-    export class Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
+export namespace BaseDI.Professional.Director.Programming_1
+{
+    export class Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
+    {
         //#region 1. Assign
 
         //MISC
@@ -101,20 +103,20 @@ export namespace BaseDI.Professional.Director.Programming_1 {
 
             //#region IDEAL CASE - USE builder pattern
 
-            if (this.EntryPoint != null && (this.EntryPoint.ClientOrServerInstance != undefined && this.EntryPoint.ClientOrServerInstance != null)) {
-                this.ClientOrServerInstance = this.EntryPoint.ClientOrServerInstance;
-                this.MasterLeader = this.EntryPoint.MasterLeader;
-                this.MasterController = this.EntryPoint.MasterController;
-                this.MasterConverter = this.EntryPoint.MasterConverter;
-                this.MasterDisturber = this.EntryPoint.MasterDisturber;
-                this.MasterSensor = this.EntryPoint.MasterSensor;
-                this.MasterStorer = this.EntryPoint.MasterStorer;
-                this.MasterTransporter = this.EntryPoint.MasterTransporter;
-                this.ExtraData = this.EntryPoint.ExtraData;
+            if (this.DirectorOrExperienceRequestHandler != null && (this.DirectorOrExperienceRequestHandler.ClientOrServerInstance != undefined && this.DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)) {
+                this.ClientOrServerInstance = this.DirectorOrExperienceRequestHandler.ClientOrServerInstance;
+                this.MasterLeader = this.DirectorOrExperienceRequestHandler.MasterLeader;
+                this.MasterController = this.DirectorOrExperienceRequestHandler.MasterController;
+                this.MasterConverter = this.DirectorOrExperienceRequestHandler.MasterConverter;
+                this.MasterDisturber = this.DirectorOrExperienceRequestHandler.MasterDisturber;
+                this.MasterSensor = this.DirectorOrExperienceRequestHandler.MasterSensor;
+                this.MasterStorer = this.DirectorOrExperienceRequestHandler.MasterStorer;
+                this.MasterTransporter = this.DirectorOrExperienceRequestHandler.MasterTransporter;
+                this.ExtraData = this.DirectorOrExperienceRequestHandler.ExtraData;
             }
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
+            const designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.DirectorOrExperienceRequestHandler);
 
             this.StorylineDetails = await designPattern.Action();
 
@@ -142,7 +144,8 @@ export namespace BaseDI.Professional.Director.Programming_1 {
     }
 
     //#region 5. Action Script
-    export class Use_DesignPattern_Builder_Chapter_12_2_Page_1 {
+    export class Use_DesignPattern_Builder_Chapter_12_2_Page_1
+    {
         //#region 1. Assign
 
         //SETTINGS
@@ -155,21 +158,22 @@ export namespace BaseDI.Professional.Director.Programming_1 {
         private _storedStorylineDetails: object = new Object();
         private _storedStorylineDetails_Parameters: object = new Object();
 
-        private _storedRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
+        private _stored_Repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         //MISC
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
-        private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         private _stored_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         //#endregion
 
         //#region 2. Ready
+
         constructor(parameterClientORserverInstance: any, parameterCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, parameter_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0)
         {
             //#region 1. INPUTS
@@ -182,9 +186,9 @@ export namespace BaseDI.Professional.Director.Programming_1 {
 
             //#region MEMORIZE centralized processes handlers 
 
-            this._storedCentralizedStorer = parameterCentralizedStorer;
-            this._storedCentralizedDisturber = parameterCentralizedDisturber;
-            this._storedCentralizedSensor = parameterCentralizedSensor;
+            this._stored_CentralizedStorer = parameterCentralizedStorer;
+            this._stored_CentralizedDisturber = parameterCentralizedDisturber;
+            this._stored_CentralizedSensor = parameterCentralizedSensor;
 
             //#endregion
 
@@ -196,13 +200,19 @@ export namespace BaseDI.Professional.Director.Programming_1 {
 
             //#region MEMORIZE data stragety
 
-            this._storedRepository = parameterRepository;
+            this._stored_Repository = parameterRepository;
 
             //#endregion
 
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            //#endregion
+
+            //#region MEMORIZE director request handler
+
+            this._stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
 
             //#endregion
 
@@ -229,26 +239,58 @@ export namespace BaseDI.Professional.Director.Programming_1 {
 
             //#region 2. PROCESS
 
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - USE defaults handler
+
+            this.Action = this.Action.bind(this);
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
             //#region 3. OUTPUT
 
             //#endregion
-
-
-
-
-            this.Action = this.Action.bind(this);
         }
+
         //#endregion        
 
         //#region 3. Set
+
+        //#region 1. INPUTS
+
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#endregion
+
         //#endregion
 
         //#region 4. Action
-        public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(this._storedClientORserverInstance, this._storedCentralizedStorer, this._storedCentralizedDisturber, this._storedCentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRepository, this._storedExtraData, this._stored_DirectorRequestHandler);
+
+        public async Action(): Promise<object>
+        {
+            //#region 1. INPUTS
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region ARRANGE execution order
+
+            //#region IDEAL CASE - USE builder pattern
+
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(this._storedClientORserverInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._stored_Repository, this._storedExtraData, this._stored_DirectorRequestHandler);
 
             this._storedStorylineDetails = await builder.Action_1_Begin_Process();
 
@@ -264,9 +306,29 @@ export namespace BaseDI.Professional.Director.Programming_1 {
 
             this._storedStorylineDetails = await builder.Action_9_Verify_Process();
             this._storedStorylineDetails = await builder.Action_10_End_Process();
+  
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request response
+
+            //#region IDEAL CASE - USE baseDI dataset
 
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
+
         //#endregion
     }
     //#endregion
@@ -275,38 +337,91 @@ export namespace BaseDI.Professional.Director.Programming_1 {
     export class Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
+        //SETTINGS
+        private _storedAppSettings: any;
+
+        //CLIENT/SERVER
         private _storedClientORserverInstance: any;
 
+        //DATASET
         private _storedStorylineDetails: object = new Object();
         private _storedStorylineDetails_Parameters: object = new Object();
 
-        private _storedRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
-
+        //MISC
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+
+        //PLUMBING
+        private _stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
         private _stored_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+
+        private _stored_Repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
+        
         //#endregion
 
         //#region 2. Ready
-        constructor(parameterClientORserverInstance: any, parameterCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, parameter_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+
+        constructor(parameterClientORserverInstance: any, parameterCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, parameter_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0)
+        {
             super();
 
-            this._storedCentralizedStorer = parameterCentralizedStorer;
-            this._storedCentralizedDisturber = parameterCentralizedDisturber;
-            this._storedCentralizedSensor = parameterCentralizedSensor;
+            //#region 1. INPUTS
+
+            //#region MEMORIZE app settings
+
+            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE clientOrServer instance
 
             this._storedClientORserverInstance = parameterClientORserverInstance;
+
+            //#endregion
+
+            //#region MEMORIZE centralized processes
+
+            this._stored_CentralizedDisturber = parameterCentralizedDisturber;
+            this._stored_CentralizedSensor = parameterCentralizedSensor;
+            this._stored_CentralizedStorer = parameterCentralizedStorer;
+
+            //#endregion
+
+            //#region MEMORIZE data stragety
+
+            this._stored_Repository = parameterRepository;
+
+            //#endregion
+
+            //#region MEMORIZE director request handler
+
+            this._stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+
+            //#endregion
+
+            //#region MEMORIZE extra data
+
+            this._storedExtraData = parameterExtraData;
+
+            //#endregion
+
+            //#region MEMORIZE storyline details
 
             this._storedStorylineDetails = parameterStorylineDetails;
             this._storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
-            this._storedRepository = parameterRepository;
+            //#endregion
 
-            this._storedExtraData = parameterExtraData;
-            this._stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - USE defaults handler
 
             this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
 
@@ -322,13 +437,39 @@ export namespace BaseDI.Professional.Director.Programming_1 {
             this.Action_10_End_Process = this.Action_10_End_Process.bind(this);
 
             this.HandleChapterDefaults();
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+
+
+            //#endregion
         }
+
         //#endregion
 
         //#region 3. Set
-        private HandleChapterDefaults() {
 
+        private HandleChapterDefaults()
+        {
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
         }
+
         //#endregion
 
         //#region 4. Action
@@ -338,54 +479,129 @@ export namespace BaseDI.Professional.Director.Programming_1 {
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object>
         {
-            //region 1. Assign 
-            let entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = this._stored_DirectorRequestHandler;
+            //#region 1. INPUTS
 
-            if (entryPoint.RequestID == undefined)
-            {
-                var page = new ChapterPage_Page_1_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_1.Page_1_1_Begin_Process_12_2_1_0(this._storedStorylineDetails, this._storedRepository);
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process handler
+
+            //#region EDGE CASE - USE developer logger
+
+            if (storedDeveloperMode) {
+                this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+
+                console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_1_Begin_Process - [BEGIN process execution]");
+            }                
+
+            //#endregion
+
+            //#region IDEAL CASE - USE process handler
+
+            if (this._stored_DirectorRequestHandler.RequestID == undefined) {
+                var page = new ChapterPage_Page_1_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_1.Page_1_1_Begin_Process_12_2_1_0(this._storedStorylineDetails, this._stored_Repository);
 
                 page.ClientOrServerInstance = this._storedClientORserverInstance;
 
-                page.EntryPoint = this._stored_DirectorRequestHandler;
+                page.DirectorOrExperienceRequestHandler = this._stored_DirectorRequestHandler;
                 page.ExtraData = this._storedExtraData;
 
-                page.MasterStorer = this._storedCentralizedStorer;
-                page.MasterDisturber = this._storedCentralizedDisturber;
-                page.MasterSensor = this._storedCentralizedSensor;
+                page.MasterStorer = this._stored_CentralizedStorer;
+                page.MasterDisturber = this._stored_CentralizedDisturber;
+                page.MasterSensor = this._stored_CentralizedSensor;
 
                 page.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
 
-                //region 2. Action
                 this._storedStorylineDetails = await page.Action();
-
-                //region 3. Observe
-                return this._storedStorylineDetails;
             }
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-10
         public async Action_10_End_Process(): Promise<object>
         {
-            //region 1. Assign 
-            var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storedStorylineDetails, this._storedRepository);
+            //#region 1. INPUTS
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EDGE CASE - USE developer logger
+
+            if (storedDeveloperMode) {
+                this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+
+                console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
+            }
+
+            //#endregion
+
+            //#region IDEAL CASE - USE process handler
+
+            var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storedStorylineDetails, this._stored_Repository);
 
             page.ClientOrServerInstance = this._storedClientORserverInstance;
 
-            page.EntryPoint = this._stored_DirectorRequestHandler;
+            page.DirectorOrExperienceRequestHandler = this._stored_DirectorRequestHandler;
             page.ExtraData = this._storedExtraData;
 
-            page.MasterStorer = this._storedCentralizedStorer;
-            page.MasterDisturber = this._storedCentralizedDisturber;
-            page.MasterSensor = this._storedCentralizedSensor;
+            page.MasterStorer = this._stored_CentralizedStorer;
+            page.MasterDisturber = this._stored_CentralizedDisturber;
+            page.MasterSensor = this._stored_CentralizedSensor;
 
             page.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
 
-            //region 2. Action
             this._storedStorylineDetails = await page.Action();
 
-            //region 3. Observe
-            return this._storedStorylineDetails;       
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;   
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion    
         }
 
         //#endregion 

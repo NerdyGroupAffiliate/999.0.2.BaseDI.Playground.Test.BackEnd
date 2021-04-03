@@ -64,9 +64,9 @@ export namespace BaseDI.Professional.Story.Programming_1 {
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
 
         //PLUMBING
-        private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         //#endregion
 
@@ -164,9 +164,9 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
             //#region MEMORIZE centralized processes
 
-            this._storedCentralizedStorer = parameterCentralizedStorer;
-            this._storedCentralizedDisturber = parameterCentralizedDisturber;
-            this._storedCentralizedSensor = parameterCentralizedSensor;
+            this._stored_CentralizedStorer = parameterCentralizedStorer;
+            this._stored_CentralizedDisturber = parameterCentralizedDisturber;
+            this._stored_CentralizedSensor = parameterCentralizedSensor;
 
             //#endregion
 
@@ -310,9 +310,9 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
-                stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
+                stored_DirectorRequestHandler.MasterStorer = this._stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = this._stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = this._stored_CentralizedSensor;
 
                 stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
                 stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
@@ -431,9 +431,9 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
-                stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
+                stored_DirectorRequestHandler.MasterStorer = this._stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = this._stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = this._stored_CentralizedSensor;
 
                 stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
                 stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
@@ -551,9 +551,9 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
-                stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
+                stored_DirectorRequestHandler.MasterStorer = this._stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = this._stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = this._stored_CentralizedSensor;
 
                 stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
                 stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
@@ -594,7 +594,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** - USING data stragety of " + repositoryType);
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0*** - USING data stragety of " + repositoryType);
                 }
 
                 //#endregion
@@ -671,9 +671,9 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
-                stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
+                stored_DirectorRequestHandler.MasterStorer = this._stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = this._stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = this._stored_CentralizedSensor;
 
                 stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
                 stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
@@ -793,9 +793,9 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
                 stored_DirectorRequestHandler.ExtraData = parameterExtraData;
 
-                stored_DirectorRequestHandler.MasterStorer = this._storedCentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = this._storedCentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = this._storedCentralizedSensor;
+                stored_DirectorRequestHandler.MasterStorer = this._stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = this._stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = this._stored_CentralizedSensor;
 
                 stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
                 stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;

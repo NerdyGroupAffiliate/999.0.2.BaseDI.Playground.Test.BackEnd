@@ -1,301 +1,271 @@
-﻿//IMPORTS
-
-#region Imports
+﻿#region Imports
 
 #region BaseDI
 
+using BaseDI.Professional.Character_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
 
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 
-#endregion
+using ChapterPage = BaseDI.Professional.Chapter.Page.Programming_1;
 
-#region .Net Core
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
-#endregion
-
-#region 3rd Party Core
-
-
-
-#endregion
-
-#endregion
-
-//CLASS
-
-#region 1. Assign
-
-
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 #endregion
 
-#region 2. Ready
-
-//public Startup_Controller(IConfiguration configuration = null)
-//{
-
-//}
-
 #endregion
 
-#region 3. Set
+public class ClassModel
+{
+    #region 1. Assign
 
-//A. Default state of story
-//public void Setup()
-//{
+    //SETTINGS
+    private IConfiguration _storedAppSettings;
+
+    //CLIENT/SERVER
+    internal Dictionary<string, object> _storedClientORserverInstance;
+
+    //DATASETS
+    internal JObject _storedStorylineDetails;
+    internal JObject _storedStorylineDetails_Parameters;
+
+    internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
+
+    //MISC
+    internal ExtraData_12_2_1_0 _storedExtraData;
+
+    //PLUMBING
+    private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
+    private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
+    private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
+
+    internal aClass_Programming_ScriptRoutable_12_2_1_0 _stored_DirectorRequestHandler;
+
+    internal string _storedRequestName = "";
+    internal string _storedSystemRequestByName;
+
+    #endregion
+
+    #region 2. Ready
+
+    public ClassModel()
+    {
+        #region 1. INPUTS
+
+        #region MEMORIZE clientOrServer instance
+
+        //_storedClientORserverInstance = parameterClientORserverInstance;
+
+        #endregion
+
+        #region MEMORIZE centralized processes 
+
+        //_stored_CentralizedDisturber = parameterCentralizedDisturber;
+        //_stored_CentralizedSensor = parameterCentralizedSensor;
+        //_stored_CentralizedStorer = parameterCentralizedStorer;
+
+        #endregion
+
+        #region MEMORIZE data stragety
+
+        //_stored_Repository = parameterRepository;
+
+        #endregion
+
+        #region MEMORIZE director request handler
+
+        //_stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+
+        #endregion
+
+        #region MEMORIZE extra data
+
+        //_storedExtraData = parameterExtraData;
+
+        #endregion
+
+        #region MEMORIZE storyline details
+
+        //_storedStorylineDetails = parameterStorylineDetails;
+        //_storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+        #endregion
+
+        #endregion
+
+        #region 2. PROCESS
+
+        #endregion
+
+        #region 3. OUTPUT
+
+        #endregion
+    }
+
+    #endregion
+
+    #region 3. Set
+
+    //A. Default state of this part of the storyline
+
     #region 1. INPUTS
 
-    //[dataType] stored[SomeVariableName];
-    //[dataType] stored[SomeVariableName];
-    //[dataType] stored[SomeVariableName];
-
-    #endregion
-
-    #region 2. VALUES
-
-    #region MEMORIZE xxxxxx xxxxxx
-
-
-    #endregion
-
-    #region MEMORIZE xxxxxx xxxxxx
-
-
-    #endregion
-
-    #region MEMORIZE xxxxxx xxxxxx
-
-
-    #endregion
-
-    #region MEMORIZE xxxxxx xxxxxx
-
-
-    #endregion
 
     #endregion
 
     #region 2. PROCESS
 
-    #region HANDLE xxxxx xxxxx
-
-    #region EDGE case
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #endregion
-
-    #region EDGE case
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #endregion
-
-    #region EDGE case
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #endregion
-
-    #region *IDEA case*
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #endregion
-
-    #endregion
-
     #endregion
 
     #region 3. OUTPUT
 
-    #region HANDLE xxxxx xxxxx
-
-    #region EDGE case
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
     #endregion
 
     #endregion
 
-    #region EDGE case
+    #region 4. Action
 
-    #region [ACTIONNAME] xxxxx xxxxx
+    //A. Story in motion (DO SOMETHING)
+    public async Task<JObject> Action()
+    {
+        #region 1. INPUTS
+
+        #region DEFINE client response
+
+        //ContentResult storedHttpResult = null;
+
+        #endregion
+
+        #region DEFINE data response
+
+        //JObject storedDataResponse = null;
+
+        #endregion
+
+        #region DEFINE error response
+
+        //JToken storedErrorResponse = null;
+
+        #endregion
+
+        #region DEFINE event handlers
+
+        //Func<string, string, ExtraData_12_2_1_0, JObject> Action = null;
+
+        #endregion
+
+        #region DEFINE exception handler
+
+        //SingleParmPoco_12_2_1_0 stored_ExceptionDetails;
+
+        #endregion
+
+        #region DEFINE request handler
+
+        //object stored_ReferenceTo_RequestHandler = null;
+
+        #endregion
+
+        #region MEMORIZE action name
+
+        //string storedActionName = parameterClientORserverInstance["actionName"] as string;
+
+        #endregion
+
+        #region MEMORIZE app settings
+
+        //_storedAppSettings = (IConfiguration)parameterClientORserverInstance["appSettings"];
+
+        #endregion
+
+        #region MEMORIZE extra data
+
+        //if (parameterExtraData != null)
+        //    _storedExtraData = parameterExtraData;
+
+        #endregion
+
+        #region MEMORIZE developer mode
+
+        bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+        #endregion
+
+        #region MEMORIZE request resolver
+
+        //aClass_Programming_ScriptRoutable_12_2_1_0 stored_DirectorOrExperienceRequestHandler = null;
+        //Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+
+        #endregion
+
+        #endregion
+
+        #region 2. PROCESS
+
+        #region EXECUTE xxx xxx
+
+        #region EDGE CASE - USE developer logger
+
+        if (storedDeveloperMode)
+        {
+            _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+            Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
+        }
+
+        #endregion
+
+        #region IDEAL CASE - USE xxx xxx
+
+
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #region 3. OUTPUT
+
+        #region RETURN xxx xxxx
+
+        #region IDEAL CASE - USE xxx xxx
+
+        return null; // await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+
+        #endregion
+
+        #endregion
+
+        #endregion
+    }
 
     #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #endregion
-
-    #region *IDEA case*
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #region [ACTIONNAME] xxxxx xxxxx
-
-    #endregion
-
-    #endregion
-
-    #endregion
-
-    #endregion
-//}
-
-#endregion
-
-#region 4. Action
+}
 
 
-#endregion
 
-//METHODS
+
+
+//BLANK DEFAULT REEGIONS
 
 #region 1. INPUTS
 
-//[dataType] stored[SomeVariableName];
-//[dataType] stored[SomeVariableName];
-//[dataType] stored[SomeVariableName];
 
 #endregion
 
 #region 2. PROCESS
 
-#region EXECUTE xxxxx xxxxx
-
-#region EDGE case
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#endregion
-
-#region *IDEA case*
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#endregion
-
-#endregion
-
 #endregion
 
 #region 3. OUTPUT
-
-#region HANDLE xxxxx xxxxx
-
-#region EDGE case
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#endregion
-
-#region *IDEA case*
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#region [ACTIONNAME] xxxxx xxxxx
-
-#endregion
-
-#endregion
-
-#endregion
 
 #endregion

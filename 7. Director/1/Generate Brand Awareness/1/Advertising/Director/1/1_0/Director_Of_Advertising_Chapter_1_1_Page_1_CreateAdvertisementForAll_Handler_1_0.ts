@@ -38,7 +38,7 @@ export namespace BaseDI.Professional.Director.Advertising_1 {
             //#region 1. Assign
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_1(this.ClientOrServerInstance, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
+            const designPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_1(this.ClientOrServerInstance, this.MasterLeader, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.DirectorOrExperienceRequestHandler)
 
             //#endregion
 

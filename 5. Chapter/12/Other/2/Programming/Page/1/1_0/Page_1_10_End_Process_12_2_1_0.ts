@@ -83,11 +83,11 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
             const Transport = async () =>
             {
                 //EXECUTE THE PROCESS
-                entryPoint = this.EntryPoint;
+                entryPoint = this.DirectorOrExperienceRequestHandler;
 
                 if (entryPoint != null && entryPoint.RequestID != undefined && !entryPoint.RequestID.toUpperCase().includes("REQUEST_CONTROLLER_"))
                 {
-                    return this.EntryPoint.Action().then(response => {
+                    return this.DirectorOrExperienceRequestHandler.Action().then(response => {
                         return response;
                     });
                 }

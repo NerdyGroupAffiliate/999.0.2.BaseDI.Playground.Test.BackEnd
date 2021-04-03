@@ -88,11 +88,11 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             Transport = () =>
             {
-                entryPoint = EntryPoint;
+                entryPoint = DirectorOrExperienceRequestHandler;
 
                 if (entryPoint != null && !entryPoint.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
                 {
-                    return EntryPoint.Action().Result;
+                    return DirectorOrExperienceRequestHandler.Action().Result;
                 }
                 else
                 {

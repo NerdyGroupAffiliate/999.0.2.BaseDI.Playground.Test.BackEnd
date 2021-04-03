@@ -47,22 +47,22 @@ export namespace BaseDI.Professional.Director.Advertising_2
         //#region 4. Action
         public async Action(): Promise<object> {
             //#region 1. Assign
-            if (this.EntryPoint != null && (this.EntryPoint.ClientOrServerInstance != undefined && this.EntryPoint.ClientOrServerInstance != null)) {
-                this.ClientOrServerInstance = this.EntryPoint.ClientOrServerInstance;
-                this.MasterLeader = this.EntryPoint.MasterLeader;
-                this.MasterController = this.EntryPoint.MasterController;
-                this.MasterConverter = this.EntryPoint.MasterConverter;
-                this.MasterDisturber = this.EntryPoint.MasterDisturber;
-                this.MasterSensor = this.EntryPoint.MasterSensor;
-                this.MasterStorer = this.EntryPoint.MasterStorer;
-                this.MasterTransporter = this.EntryPoint.MasterTransporter;
-                this.ExtraData = this.EntryPoint.ExtraData;
+            if (this.DirectorOrExperienceRequestHandler != null && (this.DirectorOrExperienceRequestHandler.ClientOrServerInstance != undefined && this.DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)) {
+                this.ClientOrServerInstance = this.DirectorOrExperienceRequestHandler.ClientOrServerInstance;
+                this.MasterLeader = this.DirectorOrExperienceRequestHandler.MasterLeader;
+                this.MasterController = this.DirectorOrExperienceRequestHandler.MasterController;
+                this.MasterConverter = this.DirectorOrExperienceRequestHandler.MasterConverter;
+                this.MasterDisturber = this.DirectorOrExperienceRequestHandler.MasterDisturber;
+                this.MasterSensor = this.DirectorOrExperienceRequestHandler.MasterSensor;
+                this.MasterStorer = this.DirectorOrExperienceRequestHandler.MasterStorer;
+                this.MasterTransporter = this.DirectorOrExperienceRequestHandler.MasterTransporter;
+                this.ExtraData = this.DirectorOrExperienceRequestHandler.ExtraData;
             }
 
             //#region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
+            const designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.DirectorOrExperienceRequestHandler);
 
             //#endregion
 
@@ -98,11 +98,11 @@ export namespace BaseDI.Professional.Director.Advertising_2
         private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
-        private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             this._centralizedStorer = centralizedStorer;
             this._centralizedDisturber = centralizedDisturber;
             this._centralizedSensor = centralizedSensor;
@@ -114,7 +114,7 @@ export namespace BaseDI.Professional.Director.Advertising_2
             this._repository = repository;
 
             this._extraData = extraData;
-            this._entryPoint = entryPoint;
+            this._DirectorOrExperienceRequestHandler = DirectorOrExperienceRequestHandler;
 
             this.Action = this.Action.bind(this);
         }
@@ -125,7 +125,7 @@ export namespace BaseDI.Professional.Director.Advertising_2
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Chapter_1_1_Page_2_1_0(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            const builder = new Implement_DesignPattern_Builder_Chapter_1_1_Page_2_1_0(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._DirectorOrExperienceRequestHandler);
 
             this._storylineDetails = await builder.Action_1_Begin_Process();
 
@@ -164,11 +164,11 @@ export namespace BaseDI.Professional.Director.Advertising_2
         private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
 
         private _extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
-        private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
-        constructor(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+        constructor(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             super();
 
             this._centralizedStorer = centralizedStorer;
@@ -183,7 +183,7 @@ export namespace BaseDI.Professional.Director.Advertising_2
             this._repository = repository;
 
             this._extraData = extraData;
-            this._entryPoint = entryPoint;
+            this._DirectorOrExperienceRequestHandler = DirectorOrExperienceRequestHandler;
 
             this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
 
@@ -218,7 +218,7 @@ export namespace BaseDI.Professional.Director.Advertising_2
 
             //page.clientORserverInstance = this._clientORserverInstance;
 
-            //page.EntryPoint = this._entryPoint;
+            //page.DirectorOrExperienceRequestHandler = this._DirectorOrExperienceRequestHandler;
             //page.ExtraData = this._extraData;
 
             //page.MasterStorer = this._centralizedStorer;
@@ -239,7 +239,7 @@ export namespace BaseDI.Professional.Director.Advertising_2
 
             page.ClientOrServerInstance = this._clientORserverInstance;
 
-            page.EntryPoint = this._entryPoint;
+            page.DirectorOrExperienceRequestHandler = this._DirectorOrExperienceRequestHandler;
             page.ExtraData = this._extraData;
 
             page.MasterStorer = this._centralizedStorer;
@@ -260,7 +260,7 @@ export namespace BaseDI.Professional.Director.Advertising_2
 
             //page.clientORserverInstance = this._clientORserverInstance;
 
-            //page.EntryPoint = this._entryPoint;
+            //page.DirectorOrExperienceRequestHandler = this._DirectorOrExperienceRequestHandler;
             //page.ExtraData = this._extraData;
 
             //page.MasterStorer = this._centralizedStorer;
