@@ -33,7 +33,7 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Update="Snippet_TypeScript_Regions.tsx">
+    <TypeScriptCompile Update="Snippet_TypeScript_Regions.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

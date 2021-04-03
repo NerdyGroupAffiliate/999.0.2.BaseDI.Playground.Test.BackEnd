@@ -223,6 +223,7 @@ export namespace BaseDI.Professional
 }
 //#endregion
 
+
 //SETUP
 //#region Client
 export { Action_12_2_1_0 as ActionList }
@@ -233,11 +234,6 @@ export { Action_12_2_1_0 as ActionList }
 //#region 1. INPUTS
 
 let storedServerInstance = new BaseDI.Professional.Startup(this);
-
-//#endregion
-
-//#region 2. VALUES
-
 
 //#endregion
 
