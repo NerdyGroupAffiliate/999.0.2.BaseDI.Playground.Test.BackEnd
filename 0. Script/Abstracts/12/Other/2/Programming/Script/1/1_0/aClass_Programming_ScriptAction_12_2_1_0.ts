@@ -32,6 +32,8 @@ export namespace BaseDI.Professional.Programming.Abstract_1
 
         public StorylineDetails: Object;
 
+        public StorylineDetails_Cached: Object;
+
         public StorylineDetails_Parameters: Object;
 
         //#endregion

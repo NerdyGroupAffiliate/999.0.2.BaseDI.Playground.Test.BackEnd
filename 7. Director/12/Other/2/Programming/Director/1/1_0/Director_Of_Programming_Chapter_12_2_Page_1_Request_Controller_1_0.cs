@@ -11,14 +11,24 @@ using BaseDI.Professional.Script.Programming.Repository_1;
 
 using ChapterPage = BaseDI.Professional.Chapter.Page.Programming_1;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+#endregion
+
+#region .Net Core
+
+using Microsoft.Extensions.Configuration;
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
+
+#endregion 
+
+#region 3rd Party Core
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 
 #endregion
 
@@ -505,7 +515,7 @@ namespace BaseDI.Professional.Director.Programming_1
                 page.ExtraData = _storedExtraData;
 
                 page.MasterStorer = _stored_CentralizedStorer;
-                page.MasterDisturber = _stored_CentralizedStorer;
+                page.MasterDisturber = _stored_CentralizedDisturber;
                 page.MasterSensor = _stored_CentralizedSensor;
 
                 page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
@@ -549,6 +559,8 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region 2. PROCESS
 
+            #region EXECUTE process handler
+
             #region EDGE CASE - USE developer logger
 
             if (storedDeveloperMode)
@@ -570,12 +582,14 @@ namespace BaseDI.Professional.Director.Programming_1
             page.ExtraData = _storedExtraData;
 
             page.MasterStorer = _stored_CentralizedStorer;
-            page.MasterDisturber = _stored_CentralizedStorer;
+            page.MasterDisturber = _stored_CentralizedDisturber;
             page.MasterSensor = _stored_CentralizedSensor;
 
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             _storedStorylineDetails = await page.Action().ConfigureAwait(true);
+
+            #endregion
 
             #endregion
 

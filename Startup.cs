@@ -289,7 +289,7 @@ namespace BaseDI.Professional
 
         #region 2. Ready
 
-        public Startup_Controller(IConfiguration configuration = null)
+        public Startup_Controller(IConfiguration parameterAppSettings = null)
         {
             #region 1. INPUTS
 
@@ -314,8 +314,8 @@ namespace BaseDI.Professional
 
             #region MEMORIZE app settings
 
-            if (configuration != null)
-                StoredAppSettings = configuration;
+            if (parameterAppSettings != null)
+                StoredAppSettings = parameterAppSettings;
 
             #endregion
 

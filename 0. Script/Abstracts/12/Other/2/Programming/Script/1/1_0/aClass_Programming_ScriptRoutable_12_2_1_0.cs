@@ -19,6 +19,8 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
 
         public JObject StorylineDetails { get; set; }
 
+        public JObject StorylineDetails_Cached { get; set; }
+
         public JObject StorylineDetails_Parameters { get; set; }
 
         public ExtraData_12_2_1_0 ExtraData { get; set; }

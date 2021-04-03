@@ -25,6 +25,8 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
             //SET WHAT is needed to create the storyline.
             StorylineDetails = new JObject();
 
+            StorylineDetails_Cached = new JObject();
+
             HandleChapterDefaults();
         }
 

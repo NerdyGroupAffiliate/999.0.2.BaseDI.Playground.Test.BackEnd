@@ -16,6 +16,8 @@ export namespace BaseDI.Professional.Programming.Abstract_1
 
         public StorylineDetails: object = new Object();
 
+        public StorylineDetails_Cached: object = new Object();
+
         public StorylineDetails_Parameters: object = new Object();
 
         public ExtraData: any;
