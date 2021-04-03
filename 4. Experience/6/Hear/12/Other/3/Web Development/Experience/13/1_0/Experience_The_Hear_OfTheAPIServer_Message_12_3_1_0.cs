@@ -574,6 +574,12 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #endregion
 
+            #region DEFINE route details
+
+            JToken storedRouteListDetails = null;
+
+            #endregion
+
             #region DEFINE server routing
 
             List<JToken> storedControllerRoutes = null;
@@ -594,6 +600,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //STORE routing details
             _storedServerInstance = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(_storedStorylineDetails);
+            storedRouteListDetails = _storedServerInstance[_storedServerRequestRESTVerb.ToUpper()];
 
             #endregion
 
@@ -642,10 +649,12 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         #region 1. INPUT http request
 
-                        Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (JToken serverEnvironmentServerRoutes) =>
+                        Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (JToken parameterRouteListDetails) =>
                         {
-                            if (serverEnvironmentServerRoutes != null)
+                            if (parameterRouteListDetails != null)
                             {
+                                #region SEARCH routing list details
+
                                 #region EDGE CASE - USE developer logger
 
                                 if (storedDeveloperMode)
@@ -657,19 +666,19 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                                 #endregion
 
-                                foreach (var item in serverEnvironmentServerRoutes)
+                                foreach (var routeItemDetails in parameterRouteListDetails)
                                 {
                                     //STORE listing of routes
-                                    storedControllerRoutes = item.SelectToken("SetupItemTransportItemRoute.ControllerRoutes").Children().ToList(); //item.SetupItemTransportItemRoute.ControllerRoutes;
-                                   
-                                    //STORE route controller name
-                                    storedControllerName = item.SelectToken("SetupItemTransportItemRoute.ControllerName").ToString();
-                                    
-                                    //STORE route dataset details
-                                    storedControllerModelDataLocalParameter = item.SelectToken("SetupItemTransportItemRoute.ModelDataLocalParameter").ToString();
-                                    storedControllerModelDataLocalObject = (JObject)item.SelectToken("SetupItemTransportItemRoute.ModelDataLocalObject");
+                                    storedControllerRoutes = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ControllerRoutes").Children().ToList(); //item.SetupItemTransportItemRoute.ControllerRoutes;
 
-                                    storedControllerModelDataRemote = (JObject)item.SelectToken("SetupItemTransportItemRoute.ModelDataRemote");
+                                    //STORE route controller name
+                                    storedControllerName = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ControllerName").ToString();
+
+                                    //STORE route dataset details
+                                    storedControllerModelDataLocalParameter = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataLocalParameter").ToString();
+                                    storedControllerModelDataLocalObject = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataLocalObject");
+
+                                    storedControllerModelDataRemote = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataRemote");
 
                                     //DETERMINE if we have any routes
                                     if (storedControllerRoutes != null && storedControllerRoutes.Count() > 0)
@@ -701,13 +710,15 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                         #endregion
                                     }
                                 }
+
+                                #endregion
                             }
 
                             return _storedStorylineDetails;
                         };
 
                         //INPUT http request
-                        _storedStorylineDetails = Step_1_0_Custom_Control_ClientRequestToServer_1_0(_storedServerInstance[_storedServerRequestRESTVerb.ToUpper()]);
+                        _storedStorylineDetails = Step_1_0_Custom_Control_ClientRequestToServer_1_0(storedRouteListDetails);
 
                         #endregion
 

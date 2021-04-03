@@ -193,6 +193,10 @@ public class ClassModel
 
         #endregion
 
+        #region DEFINE route details
+
+        #endregion
+
         #region DEFINE server details
 
 
