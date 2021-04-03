@@ -106,21 +106,21 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE builder pattern
 
-            if (EntryPoint != null && EntryPoint.ClientOrServerInstance != null)
+            if (DirectorOrExperienceRequestHandler != null && DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)
             {
-                ClientOrServerInstance = EntryPoint.ClientOrServerInstance;
-                MasterLeader = EntryPoint.MasterLeader;
-                MasterController = EntryPoint.MasterController;
-                MasterConverter = EntryPoint.MasterConverter;
-                MasterDisturber = EntryPoint.MasterDisturber;
-                MasterSensor = EntryPoint.MasterSensor;
-                MasterStorer = EntryPoint.MasterStorer;
-                MasterTransporter = EntryPoint.MasterTransporter;
-                ExtraData = EntryPoint.ExtraData;
+                ClientOrServerInstance = DirectorOrExperienceRequestHandler.ClientOrServerInstance;
+                MasterLeader = DirectorOrExperienceRequestHandler.MasterLeader;
+                MasterController = DirectorOrExperienceRequestHandler.MasterController;
+                MasterConverter = DirectorOrExperienceRequestHandler.MasterConverter;
+                MasterDisturber = DirectorOrExperienceRequestHandler.MasterDisturber;
+                MasterSensor = DirectorOrExperienceRequestHandler.MasterSensor;
+                MasterStorer = DirectorOrExperienceRequestHandler.MasterStorer;
+                MasterTransporter = DirectorOrExperienceRequestHandler.MasterTransporter;
+                ExtraData = DirectorOrExperienceRequestHandler.ExtraData;
             }
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_2_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_2_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
 
             StorylineDetails = await designPattern.Action().ConfigureAwait(true);
 
@@ -156,6 +156,9 @@ namespace BaseDI.Professional.Director.Programming_1
     {
         #region 1. Assign
 
+        //SETTINGS
+        private IConfiguration _storedAppSettings;
+
         //CLIENT/SERVER
         internal Dictionary<string, object> _storedClientORserverInstance;
 
@@ -163,15 +166,15 @@ namespace BaseDI.Professional.Director.Programming_1
         internal JObject _storedStorylineDetails;
         internal JObject _storedStorylineDetails_Parameters;
 
-        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _storedRepository;
+        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
 
         //MISC
-        internal ExtraData_12_2_1_0 _extraData;
+        internal ExtraData_12_2_1_0 _storedExtraData;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
 
         internal aClass_Programming_ScriptRoutable_12_2_1_0 _stored_DirectorRequestHandler;
 
@@ -179,22 +182,76 @@ namespace BaseDI.Professional.Director.Programming_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_Page_1(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_12_2_Page_1(Dictionary<string, object> parameterClientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedSensor, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterRepository, ExtraData_12_2_1_0 parameterExtraData, aClass_Programming_ScriptRoutable_12_2_1_0 parameter_DirectorRequestHandler = null)
         {
-            _storedCentralizedStorer = centralizedStorer;
-            _storedCentralizedStorer = centralizedDisturber;
-            _storedCentralizedSensor = centralizedSensor;
+            #region 1. INPUTS
 
-            _storedClientORserverInstance = client;
+            #region MEMORIZE app settings
 
-            _extraData = extraData;
+            _storedAppSettings = parameterClientORserverInstance["appSettings"] as IConfiguration;
 
-            _storedStorylineDetails = storylineDetails;
-            _storedStorylineDetails_Parameters = storylineDetails_Parameters;
+            #endregion
 
-            _storedRepository = repository;
+            #region MEMORIZE clientOrServer instance
 
-            _stored_DirectorRequestHandler = entryPoint;
+            _storedClientORserverInstance = parameterClientORserverInstance;
+
+            #endregion
+
+            #region MEMORIZE centralized processes 
+
+            _stored_CentralizedDisturber = parameterCentralizedDisturber;
+            _stored_CentralizedSensor = parameterCentralizedSensor;
+            _stored_CentralizedStorer = parameterCentralizedStorer;
+
+            #endregion
+
+            #region MEMORIZE data stragety
+
+            _stored_Repository = parameterRepository;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #region MEMORIZE director request handler
+
+            _stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = parameterExtraData;
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            _stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+
+            #endregion
+
+            #region MEMORIZE storyline details
+
+            _storedStorylineDetails = parameterStorylineDetails;
+            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion
@@ -203,15 +260,37 @@ namespace BaseDI.Professional.Director.Programming_1
 
         //A. Default state of this part of the storyline
 
+        #region 1. INPUTS
+
+
+        #endregion
+
+        #region 2. PROCESS
+
+        #endregion
+
+        #region 3. OUTPUT
+
+        #endregion
+
         #endregion
 
         #region 4. Action
 
         internal async Task<JObject> Action()
         {
-            #region ARRANGE LOGIC ORDER
+            #region 1. INPUTS
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(_storedClientORserverInstance, _storedCentralizedStorer, _storedCentralizedStorer, _storedCentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRepository, _extraData, _stored_DirectorRequestHandler);
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region ARRANGE execution order
+
+            #region IDEAL CASE - USE builder pattern
+
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_DirectorRequestHandler);
 
             _storedStorylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -231,7 +310,23 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #endregion
 
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request response
+
+            #region IDEAL CASE - USE baseDI dataset
+
             return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         #endregion
@@ -253,21 +348,21 @@ namespace BaseDI.Professional.Director.Programming_1
         //CLIENT/SERVER
         private Dictionary<string, object> _storedClientORserverInstance;
 
-        private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _storedRepository;
-
         //DATASET
         private JObject _storedStorylineDetails = null;
         private JObject _storedStorylineDetails_Parameters = null;
 
         //MISC
-        private ExtraData_12_2_1_0 _extraData = null;
+        private ExtraData_12_2_1_0 _storedExtraData = null;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _stored_DirectorRequestHandler;
+
+        private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
 
         #endregion
 
@@ -275,6 +370,8 @@ namespace BaseDI.Professional.Director.Programming_1
 
         internal Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(Dictionary<string, object> parameterClientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedSensor, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterRepository, ExtraData_12_2_1_0 parameterExtraData, aClass_Programming_ScriptRoutable_12_2_1_0 parameter_DirectorRequestHandler = null)
         {
+            #region 1. INPUTS
+
             #region MEMORIZE app settings
 
             _storedAppSettings = (IConfiguration)parameterClientORserverInstance["appSettings"];
@@ -287,33 +384,58 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE centralized processes 
+
+            _stored_CentralizedDisturber = parameterCentralizedDisturber;
+            _stored_CentralizedSensor = parameterCentralizedSensor;
+            _stored_CentralizedStorer = parameterCentralizedStorer;
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE data stragety
+
+            _stored_Repository = parameterRepository;
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE director request handler
+
+            _stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
 
             #endregion
 
+            #region MEMORIZE extra data
 
-            _storedCentralizedStorer = parameterCentralizedStorer;
-            _storedCentralizedDisturber = parameterCentralizedDisturber;
-            _storedCentralizedSensor = parameterCentralizedSensor;
+            _storedExtraData = parameterExtraData;
+
+            #endregion
+
+            #region MEMORIZE storyline details
 
             _storedStorylineDetails = parameterStorylineDetails;
             _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
-            _storedRepository = parameterRepository;
+            #endregion
 
-            _extraData = parameterExtraData;
+            #endregion
 
-            _stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - USE defaults handler
 
             HandleChapterDefaults();
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion  
         }
 
         #endregion
@@ -322,7 +444,18 @@ namespace BaseDI.Professional.Director.Programming_1
 
         private void HandleChapterDefaults()
         {
+            #region 1. INPUTS
 
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion
@@ -335,72 +468,132 @@ namespace BaseDI.Professional.Director.Programming_1
 
         public override async Task<JObject> Action_1_Begin_Process()
         {
-            aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = _stored_DirectorRequestHandler;
+            #region 1. INPUTS
 
-            if (entryPoint == null)
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process handler
+
+            #region EDGE CASE - USE developer logger
+
+            if (storedDeveloperMode)
             {
-                #region 1. Assign      
+                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storedStorylineDetails, _storedRepository);
+                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_1_Begin_Process - [BEGIN process execution]");
+            }                
+
+            #endregion
+
+            #region IDEAL CASE - USE process handler 
+
+            if (_stored_DirectorRequestHandler == null)
+            {
+                var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
                 page.ClientOrServerInstance = _storedClientORserverInstance;
 
-                page.EntryPoint = _stored_DirectorRequestHandler;
-                page.ExtraData = _extraData;
+                page.DirectorOrExperienceRequestHandler = _stored_DirectorRequestHandler;
+                page.ExtraData = _storedExtraData;
 
-                page.MasterStorer = _storedCentralizedStorer;
-                page.MasterDisturber = _storedCentralizedStorer;
-                page.MasterSensor = _storedCentralizedSensor;
+                page.MasterStorer = _stored_CentralizedStorer;
+                page.MasterDisturber = _stored_CentralizedStorer;
+                page.MasterSensor = _stored_CentralizedSensor;
 
                 page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
-                #endregion
-
-                #region 2. Action              
-
                 _storedStorylineDetails = await page.Action().ConfigureAwait(true);
-
-                #endregion
-
-                #region 3. Observe                      
-
-                #endregion                
             }
 
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
             return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //Page 1-10
         public override async Task<JObject> Action_10_End_Process()
         {
-            #region 1. Assign       
+            #region 1. INPUTS
 
-            var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            #region MEMORIZE developer mode
 
-            page.ClientOrServerInstance = _storedClientORserverInstance;
-
-            page.EntryPoint = _stored_DirectorRequestHandler;
-            page.ExtraData = _extraData;
-
-            page.MasterStorer = _storedCentralizedStorer;
-            page.MasterDisturber = _storedCentralizedStorer;
-            page.MasterSensor = _storedCentralizedSensor;
-
-            page.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
-            #region 2. Action              
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EDGE CASE - USE developer logger
+
+            if (storedDeveloperMode)
+            {
+                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
+            }
+
+            #endregion
+
+            #region IDEAL CASE - USE process handler 
+
+            var page = new ChapterPage.Page_1_10_End_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
+
+            page.ClientOrServerInstance = _storedClientORserverInstance;
+
+            page.DirectorOrExperienceRequestHandler = _stored_DirectorRequestHandler;
+            page.ExtraData = _storedExtraData;
+
+            page.MasterStorer = _stored_CentralizedStorer;
+            page.MasterDisturber = _stored_CentralizedStorer;
+            page.MasterSensor = _stored_CentralizedSensor;
+
+            page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             _storedStorylineDetails = await page.Action().ConfigureAwait(true);
 
             #endregion
 
-            #region 3. Observe                      
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
 
             #endregion
 
-            return _storedStorylineDetails;
+            #endregion
+
+            #endregion
         }
 
         #endregion
@@ -414,9 +607,9 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_2_Validate_Process_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            var page = new ChapterPage.Page_1_2_Validate_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ExtraData = _extraData;
+            page.ExtraData = _storedExtraData;
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             #endregion
@@ -439,9 +632,9 @@ namespace BaseDI.Professional.Director.Programming_1
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_3_Process_StoryAuthor_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            var page = new ChapterPage.Page_1_3_Process_StoryAuthor_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ExtraData = _extraData;
+            page.ExtraData = _storedExtraData;
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             #endregion
@@ -464,9 +657,9 @@ namespace BaseDI.Professional.Director.Programming_1
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_4_Process_StoryCharacters_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            var page = new ChapterPage.Page_1_4_Process_StoryCharacters_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ExtraData = _extraData;
+            page.ExtraData = _storedExtraData;
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             #endregion
@@ -489,9 +682,9 @@ namespace BaseDI.Professional.Director.Programming_1
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_5_Process_StorySetting_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            var page = new ChapterPage.Page_1_5_Process_StorySetting_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ExtraData = _extraData;
+            page.ExtraData = _storedExtraData;
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             #endregion
@@ -514,9 +707,9 @@ namespace BaseDI.Professional.Director.Programming_1
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_6_Process_StoryExperiences_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            var page = new ChapterPage.Page_1_6_Process_StoryExperiences_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ExtraData = _extraData;
+            page.ExtraData = _storedExtraData;
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             #endregion
@@ -539,9 +732,9 @@ namespace BaseDI.Professional.Director.Programming_1
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_7_Process_StoryResources_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            var page = new ChapterPage.Page_1_7_Process_StoryResources_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ExtraData = _extraData;
+            page.ExtraData = _storedExtraData;
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             #endregion
@@ -564,9 +757,9 @@ namespace BaseDI.Professional.Director.Programming_1
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_8_Process_CRUD_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            var page = new ChapterPage.Page_1_8_Process_CRUD_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ExtraData = _extraData;
+            page.ExtraData = _storedExtraData;
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             #endregion
@@ -589,9 +782,9 @@ namespace BaseDI.Professional.Director.Programming_1
         {
             #region 1. Assign          
 
-            var page = new ChapterPage.Page_1_2_Validate_Process_12_2_1_0(_storedStorylineDetails, _storedRepository);
+            var page = new ChapterPage.Page_1_2_Validate_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ExtraData = _extraData;
+            page.ExtraData = _storedExtraData;
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
             #endregion

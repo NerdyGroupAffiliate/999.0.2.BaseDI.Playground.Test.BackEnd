@@ -63,7 +63,7 @@ namespace BaseDI.Professional.Director.Programming_4
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_2_Page_4 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_4(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_2_Page_4 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_4(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
 
             #endregion
 
@@ -242,7 +242,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
             page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterStorer = _centralizedStorer;
@@ -273,7 +273,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
             page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterStorer = _centralizedStorer;

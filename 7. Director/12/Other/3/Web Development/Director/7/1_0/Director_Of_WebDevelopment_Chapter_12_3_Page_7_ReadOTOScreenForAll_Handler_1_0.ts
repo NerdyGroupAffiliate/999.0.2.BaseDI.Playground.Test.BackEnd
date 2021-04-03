@@ -49,7 +49,7 @@ export namespace BaseDI.Professional.Director.Web_Development_7 {
             //#region 1. Assign
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_7(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint);
+            const designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_7(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.DirectorOrExperienceRequestHandler);
             //#endregion
 
             //#region 2. Action
@@ -204,7 +204,7 @@ export namespace BaseDI.Professional.Director.Web_Development_7 {
 
             page.ClientOrServerInstance = this._clientORserverInstance;
 
-            page.EntryPoint = this._entryPoint;
+            page.DirectorOrExperienceRequestHandler = this._entryPoint;
             page.ExtraData = this._extraData;
 
             page.MasterStorer = this._centralizedStorer;

@@ -60,21 +60,21 @@ namespace BaseDI.Professional.Director.Programming_2
 
             #region PICK DESIGN PATTERN
 
-            if (EntryPoint != null && EntryPoint.ClientOrServerInstance != null)
+            if (DirectorOrExperienceRequestHandler != null && DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)
             {
-                ClientOrServerInstance = EntryPoint.ClientOrServerInstance;
-                MasterLeader = EntryPoint.MasterLeader;
-                MasterController = EntryPoint.MasterController;
-                MasterConverter = EntryPoint.MasterConverter;
-                MasterDisturber = EntryPoint.MasterDisturber;
-                MasterSensor = EntryPoint.MasterSensor;
-                MasterStorer = EntryPoint.MasterStorer;
-                MasterTransporter = EntryPoint.MasterTransporter;
-                ExtraData = EntryPoint.ExtraData;
+                ClientOrServerInstance = DirectorOrExperienceRequestHandler.ClientOrServerInstance;
+                MasterLeader = DirectorOrExperienceRequestHandler.MasterLeader;
+                MasterController = DirectorOrExperienceRequestHandler.MasterController;
+                MasterConverter = DirectorOrExperienceRequestHandler.MasterConverter;
+                MasterDisturber = DirectorOrExperienceRequestHandler.MasterDisturber;
+                MasterSensor = DirectorOrExperienceRequestHandler.MasterSensor;
+                MasterStorer = DirectorOrExperienceRequestHandler.MasterStorer;
+                MasterTransporter = DirectorOrExperienceRequestHandler.MasterTransporter;
+                ExtraData = DirectorOrExperienceRequestHandler.ExtraData;
             }
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_2_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_2(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_2_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_2(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
 
             #endregion
 
@@ -256,7 +256,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
             page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterStorer = _centralizedStorer;

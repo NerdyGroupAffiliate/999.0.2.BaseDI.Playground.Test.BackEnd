@@ -20,7 +20,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
 
         public ExtraData: any;
 
-        public EntryPoint: any = new Object();
+        public DirectorOrExperienceRequestHandler: any = new Object();
 
         public MasterLeader: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 

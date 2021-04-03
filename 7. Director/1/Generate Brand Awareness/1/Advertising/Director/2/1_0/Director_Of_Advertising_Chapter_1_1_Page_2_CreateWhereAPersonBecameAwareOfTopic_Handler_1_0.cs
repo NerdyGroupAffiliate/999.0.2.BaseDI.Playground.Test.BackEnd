@@ -60,7 +60,7 @@ namespace BaseDI.Professional.Director.Advertising_2
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_1_1_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_2(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_1_1_Page_2 designPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_2(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
 
             #endregion
 

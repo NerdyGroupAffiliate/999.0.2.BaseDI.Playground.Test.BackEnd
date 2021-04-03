@@ -30,7 +30,7 @@
     <None Remove="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts" />
     <None Remove="6. State\12\Other\2\Programming\Repository\2\1_0\LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts" />
     <None Remove="Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.tsx" />
-    <None Remove="Snippet_TypeScript_Regions.tsx" />
+    <None Remove="Snippet_TypeScript_Regions.ts" />
     <None Remove="Startup_Client_ImportExports_1_0.tsx" />
   </ItemGroup>
 
@@ -82,7 +82,7 @@
     <TypeScriptCompile Include="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts" />
     <TypeScriptCompile Include="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts" />
     <TypeScriptCompile Include="6. State\12\Other\2\Programming\Repository\2\1_0\LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts" />
-    <TypeScriptCompile Include="Snippet_TypeScript_Regions.tsx" />
+    <TypeScriptCompile Include="Snippet_TypeScript_Regions.ts" />
   </ItemGroup>
 
 </Project>

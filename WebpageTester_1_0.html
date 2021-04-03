@@ -34,10 +34,11 @@
     <script type="text/javascript">
         let controller = new Client.BaseDI.Professional.Startup(this);
 
-        function Action(targetedResponseTagID = "", requestNameToProcess = "", requestNameToProcessParameters = "", requestChapterName = "", requestActionName = "") {
-            controller.Action(targetedResponseTagID, requestNameToProcess, requestNameToProcessParameters, requestChapterName, requestActionName);
+        function Action(parameterTargetedResponseTagID = "", parameterRequestNameToProcess = "", parameterRequestNameToProcessParameters = "", parameterRequestChapterName = "", parameterRequestActionName = "") {
+            controller.Action(parameterTargetedResponseTagID, parameterRequestNameToProcess, parameterRequestNameToProcessParameters, parameterRequestChapterName, parameterRequestActionName);
         }
     </script>
+    <script id="baseDIScriptInsertPlaceHolder" type="text/javascript"></script>
     <!--------------------------------------------------------------------------------->
 </body>
 

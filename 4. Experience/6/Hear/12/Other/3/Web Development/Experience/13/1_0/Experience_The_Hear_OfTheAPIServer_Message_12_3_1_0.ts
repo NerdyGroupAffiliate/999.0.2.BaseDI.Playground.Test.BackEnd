@@ -46,7 +46,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13 {
 
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Experience_12_2_1_0(this.ClientOrServerInstance, this.MasterLeader, this.MasterStorer, this.MasterSensor, this.MasterDisturber, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
+            const designPattern = new Use_DesignPattern_Builder_Experience_12_2_1_0(this.ClientOrServerInstance, this.MasterLeader, this.MasterStorer, this.MasterSensor, this.MasterDisturber, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.DirectorOrExperienceRequestHandler)
             //#endregion
 
             //#region 2. Action

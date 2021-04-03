@@ -59,7 +59,7 @@ namespace BaseDI.Professional.Director.CMS_1
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_4_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_4_Page_1(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_4_Page_1 designPattern = new Use_DesignPattern_Builder_Chapter_12_4_Page_1(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
 
             #endregion
 

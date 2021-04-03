@@ -39,7 +39,7 @@ export namespace BaseDI.Professional.Director.Risk_Management_4
             //#region 1. Assign
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_4(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.EntryPoint)
+            const designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_4(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.DirectorOrExperienceRequestHandler)
             //#endregion
 
             //#region 2. Action

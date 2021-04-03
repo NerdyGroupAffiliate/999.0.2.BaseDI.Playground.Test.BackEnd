@@ -23,7 +23,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
 
         public ExtraData_12_2_1_0 ExtraData { get; set; }
 
-        public aClass_Programming_ScriptRoutable_12_2_1_0 EntryPoint { get; set; }
+        public aClass_Programming_ScriptRoutable_12_2_1_0 DirectorOrExperienceRequestHandler { get; set; }
 
         public aClass_Programming_ScriptAction_12_2_1_0<JObject> MasterLeader { get; set; }
 

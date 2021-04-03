@@ -64,7 +64,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
             #region 1. Assign
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns            
-            Use_DesignPattern_Builder_Experience_2_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_2_3_1_0(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Experience_2_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_2_3_1_0(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
 
             #endregion
 
