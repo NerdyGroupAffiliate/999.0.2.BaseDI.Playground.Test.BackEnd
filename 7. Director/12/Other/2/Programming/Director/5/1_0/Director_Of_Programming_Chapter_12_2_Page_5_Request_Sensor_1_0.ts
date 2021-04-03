@@ -271,7 +271,8 @@ export namespace BaseDI.Professional.Director.Programming_5 {
 
         //#region 4. Action
 
-        public async Action(): Promise<object> {
+        public async Action(): Promise<object>
+        {
             //#region 1. INPUTS
 
 

@@ -65,21 +65,21 @@ export class ClassModel
 
         //#region MEMORIZE clientOrServer instance
 
-        //_storedClientORserverInstance = parameterClientORserverInstance;
+        //this._storedClientORserverInstance = parameterClientORserverInstance;
 
         //#endregion
 
         //#region MEMORIZE centralized processes
 
-        //_stored_CentralizedDisturber = parameterCentralizedDisturber;
-        //_stored_CentralizedSensor = parameterCentralizedSensor;
-        //_stored_CentralizedStorer = parameterCentralizedStorer;
+        //this._stored_CentralizedDisturber = parameterCentralizedDisturber;
+        //this._stored_CentralizedSensor = parameterCentralizedSensor;
+        //this._stored_CentralizedStorer = parameterCentralizedStorer;
 
         //#endregion
 
         //#region MEMORIZE data stragety
 
-        //_stored_Repository = parameterRepository;
+        //this._stored_Repository = parameterRepository;
 
         //#endregion
 
@@ -91,14 +91,14 @@ export class ClassModel
 
         //#region MEMORIZE extra data
 
-        //_storedExtraData = parameterExtraData;
+        //this._storedExtraData = parameterExtraData;
 
         //#endregion
 
         //#region MEMORIZE storyline details
 
-        //_storedStorylineDetails = parameterStorylineDetails;
-        //_storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+        //this._storedStorylineDetails = parameterStorylineDetails;
+        //this._storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
         //#endregion
 

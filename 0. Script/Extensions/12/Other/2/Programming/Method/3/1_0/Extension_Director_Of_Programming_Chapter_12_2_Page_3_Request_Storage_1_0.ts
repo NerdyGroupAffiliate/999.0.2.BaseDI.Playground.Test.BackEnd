@@ -197,8 +197,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 //#endregion
             }
-            catch (e) {
-                throw e;
+            catch (mistake) {
+                throw mistake;
             }
 
             //#region OUTPUT
