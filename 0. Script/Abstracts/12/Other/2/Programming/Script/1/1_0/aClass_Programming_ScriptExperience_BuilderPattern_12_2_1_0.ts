@@ -16,6 +16,8 @@ export namespace BaseDI.Professional.Programming.Abstract_1
             //SET WHAT is needed to create the storyline.
             this.StorylineDetails = new Object();
 
+            this.StorylineDetails_Cached = new Object();
+
             this.HandleChapterDefaults();
             //#endregion
 

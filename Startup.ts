@@ -25,24 +25,37 @@ export namespace BaseDI.Professional
     export class Startup
     {
         //#region 1. Assign
+
+        //CLIENT/SERVER
         private _storedClientORserverInfo: Object = new Object();
+        private _storedClientWebPageInstance: any;
 
-        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
-
-        private _storedEntryPoint: any;
-
+        //DATASETS
         private _storedStorylineDetails: object = null;
         private _storedStorylineDetails_Parameters: object = null;
+
+        //MISC
+        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+
 
         //#endregion
 
         //#region 2. Ready
-        constructor(entryPoint: any)
+        constructor(parameterWebPageInstance: any)
         {
             //#region 1. INPUTS
+
+            //#region MEMORIZE clientOrServer instance
+
+            this._storedClientWebPageInstance = parameterWebPageInstance;
+
+            //#endregion
+
+            //#region DEFINE extra data
+
             this._storedExtraData = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
-            this._storedEntryPoint = entryPoint;
+            //#endregion
   
             //#endregion
 
@@ -84,14 +97,14 @@ export namespace BaseDI.Professional
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
                 this._storedClientORserverInfo = {
                     "appSettings": process.env,
-                    "serverInstance": this._storedEntryPoint,
+                    "serverInstance": this._storedClientWebPageInstance,
                     "serverStartUp": this
                 }
             }
             else {
                 this._storedClientORserverInfo = {
                     "appSettings": process.env,
-                    "clientInstance": this._storedEntryPoint,
+                    "clientInstance": this._storedClientWebPageInstance,
                     "clientStartUp": this
                 }
             }

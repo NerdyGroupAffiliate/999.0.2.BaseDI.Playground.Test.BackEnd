@@ -261,7 +261,6 @@ export class ClassModel
 
 //#region 1. INPUTS
 
-
 //#endregion
 
 //#region 2. PROCESS

@@ -22,6 +22,18 @@ using Microsoft.Extensions.Configuration;
 
 #endregion
 
+#region .Net Core
+
+
+
+#endregion 
+
+#region 3rd Party Core
+
+
+
+#endregion
+
 #endregion
 
 public class ClassModel
@@ -151,6 +163,12 @@ public class ClassModel
 
         #endregion
 
+        #region DEFINE server details
+        
+        dynamic storedDynamicData = null;
+
+        #endregion
+
         #region DEFINE error response
 
         //JToken storedErrorResponse = null;
@@ -172,6 +190,15 @@ public class ClassModel
         #region DEFINE request handler
 
         //object stored_ReferenceTo_RequestHandler = null;
+
+        #endregion
+
+        #region DEFINE server details
+
+
+        #endregion
+
+        #region DEFINE server routing
 
         #endregion
 

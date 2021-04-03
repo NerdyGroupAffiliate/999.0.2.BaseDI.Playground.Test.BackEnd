@@ -227,7 +227,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode) {
+                if (storedDeveloperMode && parameterClientORserverInstance["processStepNumber"] == 0) {
                     parameterClientORserverInstance["processStepNumber"] += 1;
 
                     console.log("STEP " + parameterClientORserverInstance["processStepNumber"] + " ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> SetupStoryline -> ACTION = " + storedActionName + "- [BEGIN finding a request handler]");

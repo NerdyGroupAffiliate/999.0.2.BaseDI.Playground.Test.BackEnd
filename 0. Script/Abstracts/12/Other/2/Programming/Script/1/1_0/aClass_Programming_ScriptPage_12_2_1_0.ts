@@ -14,6 +14,8 @@ export namespace BaseDI.Professional.Programming.Abstract_1
 
         public StorylineDetails: any = new Object();
 
+        public StorylineDetails_Cached: any = new Object();
+
         public StorylineDetails_Parameters: object = new Object();
 
         public ExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;

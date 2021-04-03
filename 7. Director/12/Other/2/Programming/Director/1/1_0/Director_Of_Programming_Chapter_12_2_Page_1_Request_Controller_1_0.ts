@@ -558,6 +558,8 @@ export namespace BaseDI.Professional.Director.Programming_1
 
             //#region 2. PROCESS
 
+            //#region EXECUTE process handler
+
             //#region EDGE CASE - USE developer logger
 
             if (storedDeveloperMode) {
@@ -584,6 +586,8 @@ export namespace BaseDI.Professional.Director.Programming_1
             page.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
 
             this._storedStorylineDetails = await page.Action();
+
+            //#endregion
 
             //#endregion
 

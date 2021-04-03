@@ -199,6 +199,9 @@ namespace BaseDI.Professional.Story.Programming_1
 
             bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
+            if (parameterClientORserverInstance["processStepNumber"] == null)
+                parameterClientORserverInstance["processStepNumber"] = 0;
+
             #endregion
 
             #region DEFINE request handler
@@ -223,7 +226,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
+                if (storedDeveloperMode && (int)parameterClientORserverInstance["processStepNumber"] == 0)
                     Console.WriteLine("STEP " + parameterClientORserverInstance["processStepNumber"] + " ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> SetupStoryline -> ACTION = " + storedActionName + "- [BEGIN finding a request handler]");
 
                 #endregion

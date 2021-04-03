@@ -1,4 +1,8 @@
-﻿import * as aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0";
+﻿//#region Imports
+
+//#region BaseDI
+
+import * as aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0";
 import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
@@ -17,56 +21,120 @@ import * as ChapterPage_Page_4_8_Process_CRUD_12_2_1_0 from "../../../../../../.
 import * as ChapterPage_Page_4_9_Verify_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_9_Verify_Process_12_2_1_0";
 import * as ChapterPage_Page_4_10_End_Process_12_2_1_0 from "../../../../../../../../5. Chapter/12/Other/2/Programming/Page/4/1_0/Page_4_10_End_Process_12_2_1_0";
 
+//#endregion
+
+//#endregion
+
+
 export namespace BaseDI.Professional.Director.Programming_4 {
     export class Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+
+        //MISC
+        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+
         //#endregion
 
         //#region 2. Ready
-        constructor(extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) {
+
+        constructor(extraData: any = null) {
             super();
 
-            //#region 1. Assign
-            this._extraData = extraData;
+            //#region 1. INPUTS
+
+            //#region MEMORIZE extra data
+
+            this._storedExtraData = extraData;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - USE defaults handler
+
             this.Action = this.Action.bind(this);
+
             //#endregion
 
-            //#region 2. Action
             //#endregion
 
-            //#region 3. Observe
+            //#endregion
+
+            //#region 3. OUTPUT
+
             //#endregion
         }
+
         //#endregion
 
         //#region 3. Set
+
+        //#region 1. INPUTS
+
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#endregion
+
         //#endregion
 
         //#region 4. Action
         public async Action(): Promise<object> {
-            //#region 1. Assign
+            //#region 1. INPUTS
 
+            //#endregion
 
-            //#region PICK DESIGN PATTERN
+            //#region 2. PROCESS
+
+            //#region BEGIN process execution
+
+            //#region IDEAL CASE - USE builder pattern
+
+            if (this.DirectorOrExperienceRequestHandler != null && (this.DirectorOrExperienceRequestHandler.ClientOrServerInstance != undefined && this.DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)) {
+                this.ClientOrServerInstance = this.DirectorOrExperienceRequestHandler.ClientOrServerInstance;
+                this.MasterLeader = this.DirectorOrExperienceRequestHandler.MasterLeader;
+                this.MasterController = this.DirectorOrExperienceRequestHandler.MasterController;
+                this.MasterConverter = this.DirectorOrExperienceRequestHandler.MasterConverter;
+                this.MasterDisturber = this.DirectorOrExperienceRequestHandler.MasterDisturber;
+                this.MasterSensor = this.DirectorOrExperienceRequestHandler.MasterSensor;
+                this.MasterStorer = this.DirectorOrExperienceRequestHandler.MasterStorer;
+                this.MasterTransporter = this.DirectorOrExperienceRequestHandler.MasterTransporter;
+                this.ExtraData = this.DirectorOrExperienceRequestHandler.ExtraData;
+            }
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
             const designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_4(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.DirectorOrExperienceRequestHandler);
 
-            //#endregion
-
-            //#endregion
-
-            //#region 2. Action
-
-            //#region HANDLE LOGIC REQUEST
             this.StorylineDetails = await designPattern.Action();
+
+            //#endregion
+
             //#endregion
 
             //#endregion
 
-            //#region 3. Observe
+            //#region 3. OUTPUT
+
+            //#region RETURN request respnose
+
+            //#region IDEAL CASE - USE populated data
+
             return this.StorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
             //#endregion
         }
         //#endregion
@@ -75,64 +143,186 @@ export namespace BaseDI.Professional.Director.Programming_4 {
     //#region 5. Action Script
     export class Use_DesignPattern_Builder_Chapter_12_2_Page_4 {
         //#region 1. Assign
-        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _clientORserverInstance: any;
+        //SETTINGS
+        private _storedAppSettings: any;
 
-        private _storylineDetails: object = new Object();
-        private _storylineDetails_Parameters: object = new Object();
+        //CLIENT/SERVER
+        private _storedClientORserverInstance: any;
 
-        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
+        //DATASETS
+        private _storedStorylineDetails: object = new Object();
+        private _storedStorylineDetails_Parameters: object = new Object();
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
-        private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _stored_Repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
+
+        //MISC
+        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+
+        //PLUMBING
+        private _stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
+        private _stored_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+
         //#endregion
 
         //#region 2. Ready
-        constructor(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
-            this._centralizedStorer = centralizedStorer;
-            this._centralizedDisturber = centralizedDisturber;
-            this._centralizedSensor = centralizedSensor;
-            this._clientORserverInstance = clientORserverInstance;
 
-            this._storylineDetails = storylineDetails;
-            this._storylineDetails_Parameters = storylineDetails_Parameters;
+        constructor(parameterClientORserverInstance: any, parameterCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, parameter_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+            //#region 1. INPUTS
 
-            this._repository = repository;
+            //#region MEMORIZE app settings
 
-            this._extraData = extraData;
-            this._entryPoint = entryPoint;
+            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE centralized processes handlers 
+
+            this._stored_CentralizedStorer = parameterCentralizedStorer;
+            this._stored_CentralizedDisturber = parameterCentralizedDisturber;
+            this._stored_CentralizedSensor = parameterCentralizedSensor;
+
+            //#endregion
+
+            //#region MEMORIZE clientOrServer instance
+
+            this._storedClientORserverInstance = parameterClientORserverInstance;
+
+            //#endregion
+
+            //#region MEMORIZE data stragety
+
+            this._stored_Repository = parameterRepository;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            //#endregion
+
+            //#region MEMORIZE director request handler
+
+            this._stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+
+            //#endregion
+
+            //#region MEMORIZE extra data
+
+            this._storedExtraData = parameterExtraData;
+
+            //#endregion
+
+            //#region MEMORIZE request details
+
+            this._stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+
+            //#endregion
+
+            //#region MEMORIZE storyline details
+
+            this._storedStorylineDetails = parameterStorylineDetails;
+            this._storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - USE defaults handler
 
             this.Action = this.Action.bind(this);
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
         }
+
         //#endregion        
 
         //#region 3. Set
+
+        //#region 1. INPUTS
+
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#endregion
+
         //#endregion
 
         //#region 4. Action
+
         public async Action(): Promise<object> {
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0(this._clientORserverInstance, this._centralizedStorer, this._centralizedDisturber, this._centralizedSensor, this._storylineDetails, this._storylineDetails_Parameters, this._repository, this._extraData, this._entryPoint);
+            //#region 1. INPUTS
 
-            this._storylineDetails = await builder.Action_1_Begin_Process();
 
-            this._storylineDetails = await builder.Action_2_Validate_Process();
+            //#endregion
 
-            this._storylineDetails = await builder.Action_3_Process_StoryAuthor();
-            this._storylineDetails = await builder.Action_4_Process_StoryCharacters();
-            this._storylineDetails = await builder.Action_5_Process_StorySetting();
-            this._storylineDetails = await builder.Action_6_Process_StoryExperiences();
-            this._storylineDetails = await builder.Action_7_Process_StoryResources();
+            //#region 2. PROCESS
 
-            this._storylineDetails = await builder.Action_8_Process_CRUD();
+            //#region ARRANGE execution order
 
-            this._storylineDetails = await builder.Action_9_Verify_Process();
-            this._storylineDetails = await builder.Action_10_End_Process();
+            //#region IDEAL CASE - USE builder pattern
 
-            return this._storylineDetails;
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0(this._storedClientORserverInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._stored_Repository, this._storedExtraData, this._stored_DirectorRequestHandler);
+
+            this._storedStorylineDetails = await builder.Action_1_Begin_Process();
+
+            this._storedStorylineDetails = await builder.Action_2_Validate_Process();
+
+            this._storedStorylineDetails = await builder.Action_3_Process_StoryAuthor();
+            this._storedStorylineDetails = await builder.Action_4_Process_StoryCharacters();
+            this._storedStorylineDetails = await builder.Action_5_Process_StorySetting();
+            this._storedStorylineDetails = await builder.Action_6_Process_StoryExperiences();
+            this._storedStorylineDetails = await builder.Action_7_Process_StoryResources();
+
+            this._storedStorylineDetails = await builder.Action_8_Process_CRUD();
+
+            this._storedStorylineDetails = await builder.Action_9_Verify_Process();
+            this._storedStorylineDetails = await builder.Action_10_End_Process();
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
+
         //#endregion
     }
     //#endregion
@@ -141,38 +331,90 @@ export namespace BaseDI.Professional.Director.Programming_4 {
     export class Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _clientORserverInstance: any;
+        //SETTINGS
+        private _storedAppSettings: any;
 
-        private _storylineDetails: object = new Object();
-        private _storylineDetails_Parameters: object = new Object();
+        //CLIENT/SERVER
+        private _storedClientORserverInstance: any;
 
-        private _repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
+        //DATASET
+        private _storedStorylineDetails: object = new Object();
+        private _storedStorylineDetails_Parameters: object = new Object();
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
-        private _entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        //MISC
+        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+
+        //PLUMBING
+        private _stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
+        private _stored_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+
+        private _stored_Repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>;
+
         //#endregion
 
         //#region 2. Ready
-        constructor(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, storylineDetails: object, storylineDetails_Parameters: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
+
+        constructor(parameterClientORserverInstance: any, parameterCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, parameter_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0) {
             super();
 
-            this._centralizedStorer = centralizedStorer;
-            this._centralizedDisturber = centralizedDisturber;
-            this._centralizedSensor = centralizedSensor;
+            //#region 1. INPUTS
 
-            this._clientORserverInstance = clientORserverInstance;
+            //#region MEMORIZE app settings
 
-            this._storylineDetails = storylineDetails;
-            this._storylineDetails_Parameters = storylineDetails_Parameters;
+            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
 
-            this._repository = repository;
+            //#endregion
 
-            this._extraData = extraData;
-            this._entryPoint = entryPoint;
+            //#region MEMORIZE clientOrServer instance
+
+            this._storedClientORserverInstance = parameterClientORserverInstance;
+
+            //#endregion
+
+            //#region MEMORIZE centralized processes
+
+            this._stored_CentralizedDisturber = parameterCentralizedDisturber;
+            this._stored_CentralizedSensor = parameterCentralizedSensor;
+            this._stored_CentralizedStorer = parameterCentralizedStorer;
+
+            //#endregion
+
+            //#region MEMORIZE data stragety
+
+            this._stored_Repository = parameterRepository;
+
+            //#endregion
+
+            //#region MEMORIZE director request handler
+
+            this._stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+
+            //#endregion
+
+            //#region MEMORIZE extra data
+
+            this._storedExtraData = parameterExtraData;
+
+            //#endregion
+
+            //#region MEMORIZE storyline details
+
+            this._storedStorylineDetails = parameterStorylineDetails;
+            this._storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - USE defaults handler
 
             this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
 
@@ -188,14 +430,40 @@ export namespace BaseDI.Professional.Director.Programming_4 {
             this.Action_10_End_Process = this.Action_10_End_Process.bind(this);
 
             this.HandleChapterDefaults();
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+
+
+            //#endregion
         }
+
         //#endregion
 
         //#region 3. Set
-        private HandleChapterDefaults() {
 
+        private HandleChapterDefaults() {
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
         }
+
         //#endregion
+
 
         //#region 4. Action
 
@@ -207,70 +475,252 @@ export namespace BaseDI.Professional.Director.Programming_4 {
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object> {
-            return this._storylineDetails;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-2
         public async Action_2_Validate_Process(): Promise<object> {
-            return this._storylineDetails;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-3
         public async Action_3_Process_StoryAuthor(): Promise<object> {
-            return this._storylineDetails;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-4
         public async Action_4_Process_StoryCharacters(): Promise<object> {
-            return this._storylineDetails;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-5
         public async Action_5_Process_StorySetting(): Promise<object> {
-            return this._storylineDetails;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-6
         public async Action_6_Process_StoryExperiences(): Promise<object> {
-            return this._storylineDetails;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-7
         public async Action_7_Process_StoryResources(): Promise<object> {
-            //region 1. Assign 
-            var page = new ChapterPage_Page_4_7_Process_StoryResources_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_4.Page_4_7_Process_StoryResources_12_2_1_0(this._storylineDetails, this._repository);
+            //#region 1. INPUTS
 
-            page.ClientOrServerInstance = this._clientORserverInstance;
+            //#endregion
 
-            page.DirectorOrExperienceRequestHandler = this._entryPoint;
-            page.ExtraData = this._extraData;
+            //#region 2. PROCESS
 
-            page.MasterStorer = this._centralizedStorer;
-            page.MasterDisturber = this._centralizedDisturber;
-            page.MasterSensor = this._centralizedSensor;
+            //#endregion
 
-            page.StorylineDetails_Parameters = this._storylineDetails_Parameters;
+            //#region 3. OUTPUT
 
-            //region 2. Action
-            this._storylineDetails = await page.Action();
+            //#region RETURN process response
 
-            //region 3. Observe
-            return this._storylineDetails;
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-8
         public async Action_8_Process_CRUD(): Promise<object> {
-            return this._storylineDetails;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-9
         public async Action_9_Verify_Process(): Promise<object> {
-            return this._storylineDetails;;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //Page 1-10
         public async Action_10_End_Process(): Promise<object> {
-            return this._storylineDetails;
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion          
         }
 
         //#endregion
