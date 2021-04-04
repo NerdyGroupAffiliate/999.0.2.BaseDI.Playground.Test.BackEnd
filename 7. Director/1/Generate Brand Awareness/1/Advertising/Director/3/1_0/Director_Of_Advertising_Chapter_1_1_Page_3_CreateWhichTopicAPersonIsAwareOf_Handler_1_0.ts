@@ -143,7 +143,7 @@ export namespace BaseDI.Professional.Director.Advertising_3
             this._extraData = extraData;
             this._entryPoint = entryPoint;
 
-            this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
+            this.HandleDefaults = this.HandleDefaults.bind(this);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -159,7 +159,7 @@ export namespace BaseDI.Professional.Director.Advertising_3
         //#endregion
 
         //#region 3. Set
-        private HandleChapterDefaults() {
+        private HandleDefaults() {
 
         }
         //#endregion

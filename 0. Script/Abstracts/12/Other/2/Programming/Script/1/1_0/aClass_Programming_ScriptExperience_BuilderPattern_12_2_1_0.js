@@ -35,13 +35,13 @@ var BaseDI;
                                 //region 1. Assign
                                 //SET WHAT is needed to create the storyline.
                                 _this.StorylineDetails = new Object();
-                                _this.HandleChapterDefaults();
+                                _this.HandleDefaults();
                                 return _this;
                                 //region 2. Action
                                 //region 3. Observe
                             }
                             //region 3. Set
-                            aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.prototype.HandleChapterDefaults = function () {
+                            aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.prototype.HandleDefaults = function () {
                                 //region 1. Assign
                                 //region 2. Action
                                 //region 3. Observe

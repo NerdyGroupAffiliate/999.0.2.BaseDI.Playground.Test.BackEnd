@@ -203,14 +203,14 @@ namespace BaseDI.Professional.Director.CMS_1
 
             _entryPoint = entryPoint;
 
-            HandleChapterDefaults();
+            HandleDefaults();
         }
 
         #endregion
 
         #region 3. Set
 
-        private void HandleChapterDefaults()
+        private void HandleDefaults()
         {
 
         }

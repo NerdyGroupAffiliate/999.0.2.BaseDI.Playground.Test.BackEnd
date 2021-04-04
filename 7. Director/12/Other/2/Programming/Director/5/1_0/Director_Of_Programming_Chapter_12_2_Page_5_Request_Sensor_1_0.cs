@@ -84,20 +84,31 @@ namespace BaseDI.Professional.Director.Programming_5
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
+        //A. Default state
+        private void HandleDefaults()
+        {
+            #region 1. INPUTS
 
-        #region 1. INPUTS
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
 
 
-        #endregion
+            #endregion
 
-        #region 2. PROCESS
+            #endregion
 
-        #endregion
+            #endregion
 
-        #region 3. OUTPUT
+            #region 3. OUTPUT
 
-        #endregion
+            #endregion
+        }
 
         #endregion
 
@@ -435,7 +446,7 @@ namespace BaseDI.Professional.Director.Programming_5
 
             #region IDEAL CASE - USE defaults handler
 
-            HandleChapterDefaults();
+            HandleDefaults();
 
             #endregion
 
@@ -452,7 +463,7 @@ namespace BaseDI.Professional.Director.Programming_5
 
         #region 3. Set
 
-        private void HandleChapterDefaults()
+        private void HandleDefaults()
         {
             #region 1. INPUTS
 

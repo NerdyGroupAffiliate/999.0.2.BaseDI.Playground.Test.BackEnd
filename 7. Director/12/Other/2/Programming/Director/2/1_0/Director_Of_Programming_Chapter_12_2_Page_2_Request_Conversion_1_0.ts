@@ -73,18 +73,30 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
         //#region 3. Set
 
-        //#region 1. INPUTS
+        //A. Default state
+        private HandleDefaults(): void {
+            //#region 1. INPUTS
 
 
-        //#endregion
+            //#endregion
 
-        //#region 2. PROCESS
+            //#region 2. PROCESS
 
-        //#endregion
+            //#region EXECUTE process defaults
 
-        //#region 3. OUTPUT
+            //#region IDEAL CASE - defaults handler
 
-        //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
 
         //#endregion
 
@@ -418,7 +430,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region IDEAL CASE - USE defaults handler
 
-            this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
+            this.HandleDefaults = this.HandleDefaults.bind(this);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -431,7 +443,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
             this.Action_9_Verify_Process = this.Action_9_Verify_Process.bind(this);
             this.Action_10_End_Process = this.Action_10_End_Process.bind(this);
 
-            this.HandleChapterDefaults();
+            this.HandleDefaults();
 
             //#endregion
 
@@ -449,7 +461,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
         //#endregion
 
         //#region 3. Set
-        private HandleChapterDefaults() {
+        private HandleDefaults() {
 
         }
         //#endregion
@@ -475,19 +487,9 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region EXECUTE process handler
 
-            //#region EDGE CASE - USE developer logger
-
-            if (storedDeveloperMode) {
-                this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
-
-                console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0 -> Action_1_Begin_Process - [BEGIN process execution]");
-            }
-
-            //#endregion
-
             //#region IDEAL CASE - USE process handler
 
-            if (this._stored_DirectorRequestHandler.RequestID == undefined) {
+            if (this._stored_DirectorRequestHandler == undefined || this._stored_DirectorRequestHandler.RequestID == undefined) {
                 var page = new ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0(this._storedStorylineDetails, this._stored_Repository);
 
                 page.ClientOrServerInstance = this._storedClientORserverInstance;

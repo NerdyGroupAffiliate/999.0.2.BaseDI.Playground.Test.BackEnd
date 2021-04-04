@@ -84,20 +84,31 @@ namespace BaseDI.Professional.Director.Programming_1
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
+        //A. Default state
+        private void HandleDefaults()
+        {
+            #region 1. INPUTS
 
-        #region 1. INPUTS
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
 
 
-        #endregion
+            #endregion
 
-        #region 2. PROCESS
+            #endregion
 
-        #endregion
+            #endregion
 
-        #region 3. OUTPUT
+            #region 3. OUTPUT
 
-        #endregion
+            #endregion
+        }
 
         #endregion
 
@@ -435,7 +446,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE defaults handler
 
-            HandleChapterDefaults();
+            HandleDefaults();
 
             #endregion
 
@@ -452,7 +463,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
         #region 3. Set
 
-        private void HandleChapterDefaults()
+        private void HandleDefaults()
         {
             #region 1. INPUTS
 
@@ -491,17 +502,6 @@ namespace BaseDI.Professional.Director.Programming_1
             #region 2. PROCESS
 
             #region EXECUTE process handler
-
-            #region EDGE CASE - USE developer logger
-
-            if (storedDeveloperMode)
-            {
-                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
-
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_1_Begin_Process - [BEGIN process execution]");
-            }                
-
-            #endregion
 
             #region IDEAL CASE - USE process handler 
 
@@ -560,17 +560,6 @@ namespace BaseDI.Professional.Director.Programming_1
             #region 2. PROCESS
 
             #region EXECUTE process handler
-
-            #region EDGE CASE - USE developer logger
-
-            if (storedDeveloperMode)
-            {
-                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
-
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
-            }
-
-            #endregion
 
             #region IDEAL CASE - USE process handler 
 

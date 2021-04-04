@@ -170,7 +170,7 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
             this._extraData = extraData;
             this._entryPoint = entryPoint;
 
-            this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
+            this.HandleDefaults = this.HandleDefaults.bind(this);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -183,12 +183,12 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
             this.Action_9_Verify_Process = this.Action_9_Verify_Process.bind(this);
             this.Action_10_End_Process = this.Action_10_End_Process.bind(this);
 
-            this.HandleChapterDefaults();
+            this.HandleDefaults();
         }
         //#endregion
 
         //#region 3. Set
-        private HandleChapterDefaults() {
+        private HandleDefaults() {
 
         }
         //#endregion

@@ -221,14 +221,14 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
             _entryPoint = entryPoint;
 
-            HandleChapterDefaults();
+            HandleDefaults();
         }
 
         #endregion
 
         #region 3. Set
 
-        private void HandleChapterDefaults()
+        private void HandleDefaults()
         {
 
         }

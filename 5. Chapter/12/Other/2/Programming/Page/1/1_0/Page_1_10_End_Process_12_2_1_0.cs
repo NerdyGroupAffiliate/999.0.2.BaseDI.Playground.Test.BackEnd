@@ -1,12 +1,34 @@
-﻿using BaseDI.Professional.Director.Programming_1;
+﻿#region Imports
+
+#region BaseDI
+
+using BaseDI.Professional.Director.Programming_1;
 using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Programming.Repository_1;
 using BaseDI.Professional.Script.Programming_1;
 using BaseDI.Professional.Story.Programming_1;
-using Newtonsoft.Json.Linq;
+
+#endregion
+
+#region .Net Core
+
+using Microsoft.Extensions.Configuration;
+
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
+
+#endregion 
+
+#region 3rd Party Core
+
+using Newtonsoft.Json.Linq;
+
+#endregion
+
+#endregion
 
 namespace BaseDI.Professional.Chapter.Page.Programming_1
 {
@@ -15,29 +37,70 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
         #region 1. Assign
 
         //A. Variable Declaration   
- 
+
+        //SETTINGS
+        private IConfiguration _storedAppSettings;
+
+        //CLIENT/SERVER
+        internal Dictionary<string, object> _storedClientORserverInstance;
+
+        //DATASETS
+        internal JObject _storedStorylineDetails;
+        internal JObject _storedStorylineDetails_Parameters;
+
+        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
+
+        //MISC
+        internal ExtraData_12_2_1_0 _storedExtraData;
+
+        //PLUMBING
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
+
+        internal aClass_Programming_ScriptRoutable_12_2_1_0 _stored_DirectorRequestHandler;
+
+        internal string _storedRequestName = "";
+        internal string _storedSystemRequestByName;
+
         #endregion
 
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_10_End_Process_12_2_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
+        public Page_1_10_End_Process_12_2_1_0(JObject parameterStorylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterRepository)
         {
-            #region 1. Assign
+            #region 1. INPUTS
 
-            //SET WHAT is needed to make this page of the story happen.
-            StorylineDetails = storylineDetails;
-            Repository = repository;
+            #region MEMORIZE data stragety
+
+            Repository = parameterRepository;
 
             #endregion
 
-            #region 2. Action
+            #region MEMORIZE storyline details
 
-            SetupDefaults();
-           
+            StorylineDetails = parameterStorylineDetails;
+
             #endregion
 
-            #region 3. Observe
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+            HandleDefaults();
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
 
             #endregion
         }
@@ -47,9 +110,29 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
         #region 3. Set
 
         //A. Default state
-        private void SetupDefaults()
+        private void HandleDefaults()
         {
-            
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion
@@ -59,65 +142,118 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            var storylineDetails = await Step_1_0_Custom_Transport_ConvertedDataToController_1_0();
+            #region 1. INPUTS
 
-            return storylineDetails;
-        }
+            #region DEFINE data response
 
-        #region TRANSPORT THE REQUEST
-
-        private async Task<JObject> Step_1_0_Custom_Transport_ConvertedDataToController_1_0()
-        {
-            #region 1. Assign
-
-            aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint;
-
-            string requestNameToProcess = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
-            string requestNameToProcessParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
-
-            dynamic handleObservation;
+            JObject storedDataResponse = null;
 
             #endregion
 
-            #region 2. Action
+            #region MEMORIZE app settings
 
-            #region Transport
+            _storedAppSettings = (IConfiguration)ClientOrServerInstance["appSettings"];
 
-            //CREATE THE PROCESS
-            Func<JObject> Transport = null;
+            #endregion
 
-            Transport = () =>
+            #region MEMORIZE clientOrServer instance
+
+            _storedClientORserverInstance = ClientOrServerInstance;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+            string storedRequestNameParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE request handler
+
+            try
             {
-                entryPoint = DirectorOrExperienceRequestHandler;
-
-                if (entryPoint != null && !entryPoint.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
+                if (DirectorOrExperienceRequestHandler == null)
                 {
-                    return DirectorOrExperienceRequestHandler.Action().Result;
+                    #region IDEAL CASE - USE request resolver
+
+                    storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
+                        .SetupStoryline(ClientOrServerInstance, StorylineDetails, StorylineDetails_Parameters, ExtraData, storedRequestName, storedRequestName, storedRequestNameParameters)
+                        .Action().Result;
+
+                    #endregion
                 }
                 else
                 {
-                    //EXECUTE THE PROCESS
-                    return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
-                           .SetupStoryline(ClientOrServerInstance, StorylineDetails, StorylineDetails_Parameters, ExtraData, requestNameToProcess, requestNameToProcess, requestNameToProcessParameters)
-                           .Action().Result;
+                    if(!DirectorOrExperienceRequestHandler.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+                            Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " PREPARING to now execute request " + DirectorOrExperienceRequestHandler.RequestID);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE request handler
+
+                        storedDataResponse = DirectorOrExperienceRequestHandler.Action().Result;
+
+                        #endregion
+                    }
                 }
-            };
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
 
-            //START THE PROCESS
-            handleObservation = Transport();
+                if (storedDeveloperMode)
+                {
+                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ***LEAKY PIPE*** TRANSPORTING to request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown.");
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
+            }
 
             #endregion
 
             #endregion
 
-            #region 3. Observe
+            #region 3. OUTPUT
 
-            return await Task.FromResult<JObject>(handleObservation).ConfigureAwait(true);
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
 
             #endregion
         }
-
-        #endregion
 
         #endregion
     }

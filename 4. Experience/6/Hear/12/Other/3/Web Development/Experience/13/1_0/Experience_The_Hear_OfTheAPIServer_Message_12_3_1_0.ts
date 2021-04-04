@@ -223,7 +223,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region IDEAL CASE - USE defaults handler
 
-            this.HandleChapterDefaults();
+            this.HandleDefaults();
 
             this.Action = this.Action.bind(this);
 
@@ -242,7 +242,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region 3. Set
 
-        private HandleChapterDefaults(): void
+        private HandleDefaults(): void
         {
             //#region 1. INPUTS
 
@@ -415,7 +415,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region IDEAL CASE - USE defaults handler
 
-            this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
+            this.HandleDefaults = this.HandleDefaults.bind(this);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -428,7 +428,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             this.Action_9_Verify_Process = this.Action_9_Verify_Process.bind(this);
             this.Action_10_End_Process = this.Action_10_End_Process.bind(this);
 
-            this.HandleChapterDefaults();
+            this.HandleDefaults();
 
             //#endregion
 
@@ -445,7 +445,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region 3. Set
 
-        private HandleChapterDefaults()
+        private HandleDefaults()
         {
             //#region 1. INPUTS
 
@@ -477,7 +477,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleChapterDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientORserverInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientORserverInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientORserverInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientORserverInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientORserverInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientORserverInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
                 }
 
                 //#endregion

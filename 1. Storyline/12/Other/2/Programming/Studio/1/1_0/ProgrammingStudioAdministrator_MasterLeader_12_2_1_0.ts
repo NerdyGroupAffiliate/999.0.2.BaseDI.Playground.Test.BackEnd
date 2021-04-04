@@ -80,16 +80,16 @@ export namespace BaseDI.Professional.Story.Programming_1
         //A. Variable Declaration 
 
         //SETTINGS
-        _storedAppSettings: any = null;
+        private _storedAppSettings: any = null;
 
         //CLIENT/SERVER
-        _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = null;
+        private _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = null;
 
         //MISC
-        _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
+        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
 
         //PLUMBING
-        Mistake: any = null;
+        private Mistake: any = null;
 
         //#endregion
 
@@ -230,7 +230,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 if (storedDeveloperMode && parameterClientORserverInstance["processStepNumber"] == 0) {
                     parameterClientORserverInstance["processStepNumber"] += 1;
 
-                    console.log("STEP " + parameterClientORserverInstance["processStepNumber"] + " ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> SetupStoryline -> ACTION = " + storedActionName + "- [BEGIN finding a request handler]");
+                    console.log("STEP " + parameterClientORserverInstance["processStepNumber"] + " START handling request");
                 }                    
 
                 //#endregion

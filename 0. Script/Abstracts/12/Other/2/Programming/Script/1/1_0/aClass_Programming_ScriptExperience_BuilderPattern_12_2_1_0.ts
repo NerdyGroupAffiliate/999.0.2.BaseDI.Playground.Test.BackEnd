@@ -18,7 +18,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
 
             this.StorylineDetails_Cached = new Object();
 
-            this.HandleChapterDefaults();
+            this.HandleDefaults();
             //#endregion
 
             //#region 2. Action
@@ -30,7 +30,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         //#endregion
 
         //#region 3. Set
-        private HandleChapterDefaults() {
+        private HandleDefaults() {
 
             //#region 1. Assign
             //#endregion

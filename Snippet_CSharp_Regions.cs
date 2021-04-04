@@ -127,20 +127,30 @@ public class ClassModel
 
     #region 3. Set
 
-    //A. Default state of this part of the storyline
+    //A. Default state
+    private void HandleDefaults()
+    {
+        #region 1. INPUTS
 
-    #region 1. INPUTS
+        #endregion
+
+        #region 2. PROCESS
+
+        #region EXECUTE process defaults
+
+        #region IDEAL CASE - defaults handler
 
 
-    #endregion
+        #endregion
 
-    #region 2. PROCESS
+        #endregion
 
-    #endregion
+        #endregion
 
-    #region 3. OUTPUT
+        #region 3. OUTPUT
 
-    #endregion
+        #endregion
+    }
 
     #endregion
 
@@ -165,7 +175,7 @@ public class ClassModel
 
         #region DEFINE server details
         
-        dynamic storedDynamicData = null;
+        //dynamic storedDynamicData = null;
 
         #endregion
 
@@ -231,6 +241,13 @@ public class ClassModel
 
         #endregion
 
+        #region MEMORIZE request details
+
+        //string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+        //string storedRequestNameParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+
+        #endregion
+
         #region MEMORIZE request resolver
 
         //aClass_Programming_ScriptRoutable_12_2_1_0 stored_DirectorOrExperienceRequestHandler = null;
@@ -270,7 +287,9 @@ public class ClassModel
 
         #region IDEAL CASE - USE xxx xxx
 
-        return null; // await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+        return await Task.FromResult<JObject>(new JObject()).ConfigureAwait(true);
+
+        //return null; // await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
         #endregion
 

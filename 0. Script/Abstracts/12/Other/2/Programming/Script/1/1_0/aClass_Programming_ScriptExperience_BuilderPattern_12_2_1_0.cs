@@ -27,7 +27,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
 
             StorylineDetails_Cached = new JObject();
 
-            HandleChapterDefaults();
+            HandleDefaults();
         }
 
         #endregion
@@ -35,7 +35,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
         #region 3. Set
 
         //A. Default state of story
-        private void HandleChapterDefaults()
+        private void HandleDefaults()
         {
             #region 1. Assign
 
