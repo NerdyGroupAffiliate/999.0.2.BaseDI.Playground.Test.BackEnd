@@ -230,7 +230,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 if (storedDeveloperMode && parameterClientORserverInstance["processStepNumber"] == 0) {
                     parameterClientORserverInstance["processStepNumber"] += 1;
 
-                    console.log("STEP " + parameterClientORserverInstance["processStepNumber"] + " START handling request");
+                    console.log("STEP " + parameterClientORserverInstance["processStepNumber"] + ": BEGIN processing request");
                 }                    
 
                 //#endregion

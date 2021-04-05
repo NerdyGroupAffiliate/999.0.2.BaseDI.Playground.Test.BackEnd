@@ -183,19 +183,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             try
             {
-                if (DirectorOrExperienceRequestHandler == null)
+                Func<Task<JObject>> ResolveOrExecuteRequest = async () =>
                 {
-                    #region IDEAL CASE - USE request resolver
-
-                    storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
-                        .SetupStoryline(ClientOrServerInstance, StorylineDetails, StorylineDetails_Parameters, ExtraData, storedRequestName, storedRequestName, storedRequestNameParameters)
-                        .Action().Result;
-
-                    #endregion
-                }
-                else
-                {
-                    if(!DirectorOrExperienceRequestHandler.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
+                    if (DirectorOrExperienceRequestHandler != null && !DirectorOrExperienceRequestHandler.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
                     {
                         #region EDGE CASE - USE developer logger
 
@@ -203,18 +193,30 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " PREPARING to now execute request " + DirectorOrExperienceRequestHandler.RequestID);
+                            Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": PREPARING to execute request " + DirectorOrExperienceRequestHandler.RequestID);
                         }
 
                         #endregion
 
                         #region EDGE CASE - USE request handler
 
-                        storedDataResponse = DirectorOrExperienceRequestHandler.Action().Result;
+                        return await DirectorOrExperienceRequestHandler.Action();
 
                         #endregion
                     }
-                }
+                    else
+                    {
+                        #region IDEAL CASE - USE request resolver
+
+                        return storedDataResponse = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
+                            .SetupStoryline(ClientOrServerInstance, StorylineDetails, StorylineDetails_Parameters, ExtraData, storedRequestName, storedRequestName, storedRequestNameParameters)
+                            .Action();
+
+                        #endregion
+                    }
+                };
+
+                storedDataResponse = await ResolveOrExecuteRequest();
             }
             catch (Exception mistake)
             {
@@ -224,7 +226,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                 {
                     _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ***LEAKY PIPE*** TRANSPORTING to request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown.");
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** TRANSPORTING to request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown.");
                 }
 
                 #endregion

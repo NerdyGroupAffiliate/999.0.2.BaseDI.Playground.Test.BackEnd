@@ -186,7 +186,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                     {
                         _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                        Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " RETRIEVING request dataset");
+                        Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedRequestName);
                     }
 
                     #endregion
@@ -217,7 +217,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                 {
                     _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for data retrival method.");
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 #endregion

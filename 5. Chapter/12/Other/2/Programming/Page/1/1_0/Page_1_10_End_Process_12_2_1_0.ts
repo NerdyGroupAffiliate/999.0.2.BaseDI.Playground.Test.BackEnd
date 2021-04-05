@@ -178,7 +178,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                         if (storedDeveloperMode) {
                             this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " PREPARING to now execute request " + this.DirectorOrExperienceRequestHandler.RequestID);
+                            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": PREPARING to execute request " + this.DirectorOrExperienceRequestHandler.RequestID);
                         }
 
                         //#endregion
@@ -214,7 +214,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ***LEAKY PIPE*** TRANSPORTING to request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** TRANSPORTING to request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                 }
 
                 //#endregion
@@ -244,59 +244,6 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
             //#endregion
         }
-
-        //#region TRANSPORT THE REQUEST
-
-        private async Step_1_0_Custom_Transport_ConvertedDataToController_1_0()
-        {
-            //#region 1. Assign
-
-            let entryPoint: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
-
-            const requestNameToProcess: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess").toString();
-            const requestNameToProcessParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters").toString();
-
-            let handleObservation: any;
-
-            //#endregion
-
-            //#region 2. Action
-
-            //#region Transport
-
-            //CREATE THE PROCESS
-            const Transport = async () =>
-            {
-                //EXECUTE THE PROCESS
-                entryPoint = this.DirectorOrExperienceRequestHandler;
-
-                if (entryPoint != null && entryPoint.RequestID != undefined && !entryPoint.RequestID.toUpperCase().includes("REQUEST_CONTROLLER_"))
-                {
-                    return this.DirectorOrExperienceRequestHandler.Action().then(response => {
-                        return response;
-                    });
-                }
-                else
-                {
-
-                }
-            }
-
-            //START THE PROCESS
-            handleObservation = await Transport();
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. Observe
-
-            return handleObservation;
-
-            //#endregion
-        }
-
-        //#endregion
 
         //#endregion
     }

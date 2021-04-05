@@ -227,7 +227,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 #region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode && (int)parameterClientORserverInstance["processStepNumber"] == 0)
-                    Console.WriteLine("STEP " + parameterClientORserverInstance["processStepNumber"] + " START handling request");
+                    Console.WriteLine("STEP " + parameterClientORserverInstance["processStepNumber"] + ": BEGIN processing request");
 
                 #endregion
 

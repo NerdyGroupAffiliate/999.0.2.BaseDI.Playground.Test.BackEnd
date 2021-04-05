@@ -82,7 +82,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        public async Action_9_Verify_Process(): Promise<any> {
+        public async Action_8_Process_CRUD(): Promise<any> {
             //STORE META DATA
             let requestName: string = "";
             let requestNameParameters: string = "";
@@ -331,7 +331,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
             return this._storylineDetails;
         }
 
-        public async Action_8_Process_CRUD(): Promise<any> {
+        public async Action_9_Verify_Process(): Promise<any> {
             return this._storylineDetails;
         }
 

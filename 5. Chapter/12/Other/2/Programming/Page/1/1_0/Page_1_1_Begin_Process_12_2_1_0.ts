@@ -128,6 +128,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
         //#endregion
 
         //#region 4. Action
+
         public async Action(): Promise<object>
         {
             //#region 1. INPUTS
@@ -137,7 +138,6 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
             let storedDataResponse: any = null;
 
             //#endregion
-
 
             //#region DEFINE event handlers
 
@@ -187,7 +187,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
                     if (storedDeveloperMode) {
                         this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " RETRIEVING request dataset");
+                        console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedRequestName);
                     }
 
                     //#endregion
@@ -219,7 +219,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for data retrival method.");
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***webpack.config.[client or server].json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 //#endregion
