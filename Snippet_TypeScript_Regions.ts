@@ -181,9 +181,22 @@ export class ClassModel
 
         //#endregion
 
+        //#region DEFINE process checkpoint
+
+        let storedProcessCheckPointHit: boolean = false;
+
+         //#endregion
+
         //#region DEFINE request handler
 
         //let stored_ReferenceTo_RequestHandler: any = null;
+
+        //#endregion
+
+        //#region DEFINE storyline details
+
+        //let storedStorylineDetails:Object = null;
+        //let storedStorylineDetails_Parameters:Object = null;
 
         //#endregion
 
@@ -209,6 +222,13 @@ export class ClassModel
         //#region MEMORIZE developer mode
 
         let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+        //#endregion
+
+        //#region MEMORIZE request details
+
+        //let storedRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
+        //let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
 
         //#endregion
 

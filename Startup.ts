@@ -271,7 +271,7 @@ let storedServerInstance = new BaseDI.Professional.Startup(this);
 
 //#region HANDLE file copying & server start
 
-//#region *IDEAL case*
+//#region IDEAL CASE - USE baseDI pipeline
 
 //#region COPY local files & start server
 if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {

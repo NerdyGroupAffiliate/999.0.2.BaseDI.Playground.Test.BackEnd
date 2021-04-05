@@ -190,16 +190,6 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                         this.Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(storedDataSet.StorylineDetailsFiltered);
                         this.Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
 
-                        //#region EDGE CASE - USE developer logger
-
-                        if (storedDeveloperMode) {
-                            this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
-
-                            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": SUCCESSFULLY retrieved dataset for request " + storedRequestName);
-                        }
-
-                        //#endregion
-
                         return;
                     })
                 }

@@ -174,7 +174,7 @@ public class ClassModel
         #endregion
 
         #region DEFINE server details
-        
+
         //dynamic storedDynamicData = null;
 
         #endregion
@@ -197,6 +197,19 @@ public class ClassModel
 
         #endregion
 
+        #region DEFINE process checkpoint
+
+        bool storedCheckPointHit = false;
+
+        #endregion
+
+        #region MEMORIZE request details
+
+        //string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+        //string storedRequestNameParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+
+        #endregion
+
         #region DEFINE request handler
 
         //object stored_ReferenceTo_RequestHandler = null;
@@ -213,6 +226,13 @@ public class ClassModel
         #endregion
 
         #region DEFINE server routing
+
+        #endregion
+
+        #region DEFINE storyline details
+
+        //JObject storedStorylineDetails = null;
+        //JObject storedStorylineDetails_Parameters = null;
 
         #endregion
 
