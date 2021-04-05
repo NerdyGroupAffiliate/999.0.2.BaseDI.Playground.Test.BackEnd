@@ -30,17 +30,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         //#endregion
 
         //#region 3. Set
-        private HandleDefaults() {
-
-            //#region 1. Assign
-            //#endregion
-
-            //#region 2. Action
-            //#endregion
-
-            //#region 3. Observe
-            //#endregion
-        }
+        public abstract HandleDefaults(): void;
         //#endregion
 
         //#region 4. Action

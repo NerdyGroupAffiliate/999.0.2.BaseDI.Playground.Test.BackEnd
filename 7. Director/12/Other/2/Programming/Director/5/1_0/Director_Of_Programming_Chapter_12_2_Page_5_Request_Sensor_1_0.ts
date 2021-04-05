@@ -73,7 +73,7 @@ export namespace BaseDI.Professional.Director.Programming_5 {
         //#region 3. Set
 
         //A. Default state
-        private HandleDefaults(): void {
+        public HandleDefaults(): void {
             //#region 1. INPUTS
 
 
@@ -460,7 +460,7 @@ export namespace BaseDI.Professional.Director.Programming_5 {
 
         //#region 3. Set
 
-        private HandleDefaults() {
+        public HandleDefaults() : void {
             //#region 1. INPUTS
 
             //#endregion
@@ -475,7 +475,7 @@ export namespace BaseDI.Professional.Director.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            //return this._storedStorylineDetails;
 
             //#endregion
 

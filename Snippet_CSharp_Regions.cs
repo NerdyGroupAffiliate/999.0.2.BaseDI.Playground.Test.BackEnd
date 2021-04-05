@@ -128,7 +128,7 @@ public class ClassModel
     #region 3. Set
 
     //A. Default state
-    private void HandleDefaults()
+    public void HandleDefaults()
     {
         #region 1. INPUTS
 

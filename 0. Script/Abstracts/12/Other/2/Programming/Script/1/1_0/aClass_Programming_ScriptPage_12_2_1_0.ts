@@ -56,6 +56,9 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         //#endregion
 
         //#region 3. Set
+
+        public abstract HandleDefaults(): void;
+
         //#endregion
 
         //#region 4. Action

@@ -89,6 +89,16 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region 2. PROCESS
 
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - USE defaults handler
+
+            HandleDefaults();
+
+            #endregion
+
+            #endregion
+
             #endregion
 
             #region 3. OUTPUT
@@ -101,7 +111,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
         #region 3. Set
 
         //A. Default state
-        private void HandleDefaults()
+        public override void HandleDefaults()
         {
             #region 1. INPUTS
 

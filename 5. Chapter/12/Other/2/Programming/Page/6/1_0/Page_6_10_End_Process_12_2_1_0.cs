@@ -33,7 +33,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_6
 
             #region 2. Action
 
-            SetupDefaults();
+            HandleDefaults();
            
             #endregion
 
@@ -47,9 +47,29 @@ namespace BaseDI.Professional.Chapter.Page.Programming_6
         #region 3. Set
 
         //A. Default state
-        private void SetupDefaults()
+        public override void HandleDefaults()
         {
-            
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion

@@ -99,7 +99,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
         //#region 3. Set
 
         //A. Default state
-        private HandleDefaults(): void {
+        public HandleDefaults(): void {
             //#region 1. INPUTS
 
 

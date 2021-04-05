@@ -43,7 +43,7 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
         //#endregion
 
         //#region 3. Set
-        private HandleDefaults(): void {
+        public HandleDefaults(): void {
             this._request = this.ClientOrServerInstance.Request;
             this._response = this.ClientOrServerInstance.Response;
         }

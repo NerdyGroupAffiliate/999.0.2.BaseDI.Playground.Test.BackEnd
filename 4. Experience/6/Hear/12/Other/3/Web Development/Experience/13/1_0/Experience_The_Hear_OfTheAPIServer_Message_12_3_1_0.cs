@@ -89,18 +89,31 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //A. Default state of this part of the storyline
 
-        #region 1. INPUTS
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
 
 
-        #endregion
+            #endregion
 
-        #region 2. PROCESS
+            #region 2. PROCESS
 
-        #endregion
+            #region EXECUTE process defaults
 
-        #region 3. OUTPUT
+            #region IDEAL CASE - defaults handler
 
-        #endregion
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
+
 
         #endregion
 
@@ -470,7 +483,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         #region 3. Set
 
-        private void HandleDefaults()
+        public override void HandleDefaults()
         {
             #region 1. INPUTS
 

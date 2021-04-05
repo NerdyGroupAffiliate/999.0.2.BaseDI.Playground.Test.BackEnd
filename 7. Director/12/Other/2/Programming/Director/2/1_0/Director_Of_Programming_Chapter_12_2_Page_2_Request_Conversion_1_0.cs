@@ -82,7 +82,7 @@ namespace BaseDI.Professional.Director.Programming_2
         #region 3. Set
 
         //A. Default state
-        private void HandleDefaults()
+        public override void HandleDefaults()
         {
             #region 1. INPUTS
 
@@ -460,7 +460,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
         #region 3. Set
 
-        private void HandleDefaults()
+        public override void HandleDefaults()
         {
             #region 1. INPUTS
 

@@ -46,6 +46,31 @@ namespace BaseDI.Professional.Director.Advertising_1
         #region 3. Set
 
         //A. Default state of this part of the storyline
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
+
 
         #endregion
 
@@ -210,7 +235,7 @@ namespace BaseDI.Professional.Director.Advertising_1
 
         #region 3. Set
 
-        private void HandleDefaults()
+        public override void HandleDefaults()
         {
 
         }

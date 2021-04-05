@@ -1,4 +1,8 @@
-﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+﻿//#region Imports
+
+//#region BaseDI
+
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
@@ -7,6 +11,10 @@ import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Contro
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
+//#endregion
+
+//#endregion
 
 export namespace BaseDI.Professional.Chapter.Page.Programming_2
 {
@@ -88,7 +96,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         //#region 3. Set
 
         //A. Default state
-        private HandleDefaults(): void {
+        public HandleDefaults(): void {
             //#region 1. INPUTS
 
 
@@ -259,39 +267,72 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
 
+            //#region MEMORIZE app settings
+
+            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            //#endregion
+
+            //#region MEMORIZE request details
+
+            let storedRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
+            let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
+
+            //#endregion
+
             //#endregion
 
             //#region 2. PROCESS
 
             //#region EXECUTE jsonkey search
 
-            //#region IDEAL CASE - USE main profile
-
-            if (this._stored_JSONKeyPlaceHolderName == undefined)
-                this._stored_JSONKeyPlaceHolderName = [];
-
-            if (parameter_BaseDI_JSONDataSchema)
+            try
             {
-                //GET list of json values
-                storedJSONValuesList = Object.values(parameter_BaseDI_JSONDataSchema)
+                //#region IDEAL CASE - USE string placeholder
 
-                //#region SEARCH through list of json values
-                for (const storedJSONValue of storedJSONValuesList) {
-                    storedJSONKey = storedJSONValue[0];
+                if (this._stored_JSONKeyPlaceHolderName == undefined)
+                    this._stored_JSONKeyPlaceHolderName = [];
 
-                    //FIND value that contains string "_MAINPROFILE"
-                    if (storedJSONKey.toUpperCase().includes("_MAINPROFILE")) {
-                        //KEEP track of FULL keyname.
-                        this._stored_JSONKeyPlaceHolderName.push(storedJSONKey);
+                if (parameter_BaseDI_JSONDataSchema) {
+                    //GET list of json values
+                    storedJSONValuesList = Object.values(parameter_BaseDI_JSONDataSchema)
 
-                        //BREAK search functionality.
-                        return;
+                    //#region SEARCH through list of json values
+                    for (const storedJSONValue of storedJSONValuesList) {
+                        storedJSONKey = storedJSONValue[0];
+
+                        //FIND value that contains string "_MAINPROFILE"
+                        if (storedJSONKey.toUpperCase().includes("_MAINPROFILE")) {
+                            //KEEP track of FULL keyname.
+                            this._stored_JSONKeyPlaceHolderName.push(storedJSONKey);
+
+                            //BREAK search functionality.
+                            return;
+                        }
                     }
+                    //#endregion
                 }
-                //#endregion
-            }
 
             //#endregion
+            }
+            catch
+            {
+                //#region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode) {
+                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0]");
+                }
+
+                //#endregion
+            }
 
             //#endregion
 
@@ -308,6 +349,25 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         {
             //#region 1. INPUTS
 
+            //#region MEMORIZE app settings
+
+            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            //#endregion
+
+            //#region MEMORIZE request details
+
+            let storedRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
+            let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
+
+            //#endregion
+
             //#region MEMORIZE search details
 
             let storedSearchColumnNames: any = this._stored_JSONKeyPlaceHolderName;
@@ -322,87 +382,107 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region EXECUTE data conversion
 
-            if (this._stored_JSONKeyPlaceHolderName) {
-                let columnsToUpdate: any = this._stored_JSONKeyPlaceHolderName;
-                let columnsToUpdateValues: any = new Array();
+            try
+            {
+                //#region IDEAL CASE - USE storyline parameter data
 
-                let storylineDetails: any = this.StorylineDetails;
-                let storylineDetails_Parameters: any = this.StorylineDetails_Parameters;
+                if (this._stored_JSONKeyPlaceHolderName) {
+                    let columnsToUpdate: any = this._stored_JSONKeyPlaceHolderName;
+                    let columnsToUpdateValues: any = new Array();
 
-                //CREATE OPTIONS SEARCHER
-                const Step_3_1_Find_User_Options_1_0 = (columnToUpdate, jsonDataSet, jsonDataSetFilter, commitUpdate, updateValue): any => {
-                    let result: any;
+                    let storylineDetails: any = this.StorylineDetails;
+                    let storylineDetails_Parameters: any = this.StorylineDetails_Parameters;
 
-                    //GET TABLE COLUMNS
-                    let keyColumns = Object.keys(jsonDataSet).reverse();
-                    if (jsonDataSetFilter)
-                        keyColumns = Object.keys(jsonDataSet).filter(key => jsonDataSetFilter.includes(key)).reverse();
+                    //CREATE OPTIONS SEARCHER
+                    const Step_3_1_Find_User_Options_1_0 = (columnToUpdate, jsonDataSet, jsonDataSetFilter, commitUpdate, updateValue): any => {
+                        let result: any;
 
-                    //READ COLUMN INFORMATION
-                    keyColumns.forEach(function (columnKey) {
-                        //UPDATE THIS COLUMN
-                        if (columnKey.toLowerCase() === columnToUpdate.toLowerCase()) {
-                            if (commitUpdate) {
-                                //COMMIT THE UPDATE
-                                if (updateValue.value)
-                                    jsonDataSet[columnKey] = { "value": updateValue.value };
+                        //GET TABLE COLUMNS
+                        let keyColumns = Object.keys(jsonDataSet).reverse();
+                        if (jsonDataSetFilter)
+                            keyColumns = Object.keys(jsonDataSet).filter(key => jsonDataSetFilter.includes(key)).reverse();
 
-                                if (updateValue.defaultValue)
-                                    jsonDataSet[columnKey] = { "value": updateValue.defaultValue };
+                        //READ COLUMN INFORMATION
+                        keyColumns.forEach(function (columnKey) {
+                            //UPDATE THIS COLUMN
+                            if (columnKey.toLowerCase() === columnToUpdate.toLowerCase()) {
+                                if (commitUpdate) {
+                                    //COMMIT THE UPDATE
+                                    if (updateValue.value)
+                                        jsonDataSet[columnKey] = { "value": updateValue.value };
+
+                                    if (updateValue.defaultValue)
+                                        jsonDataSet[columnKey] = { "value": updateValue.defaultValue };
+                                }
+                                else {
+                                    //YES..UPDATE COLUMN
+                                    result = jsonDataSet[columnKey];
+
+                                    //MARK FOR UPDATE
+                                    columnsToUpdateValues[columnKey] = result;
+                                }
                             }
                             else {
-                                //YES..UPDATE COLUMN
-                                result = jsonDataSet[columnKey];
+                                //DO CHILDEN EXIST
+                                if (columnKey != "default") {
+                                    //MAYBE CHILDEN EXIST
+                                    var columnType = jsonDataSet[columnKey];
 
-                                //MARK FOR UPDATE
-                                columnsToUpdateValues[columnKey] = result;
-                            }
-                        }
-                        else {
-                            //DO CHILDEN EXIST
-                            if (columnKey != "default") {
-                                //MAYBE CHILDEN EXIST
-                                var columnType = jsonDataSet[columnKey];
-
-                                if (typeof columnType === 'object') {
-                                    if (!columnKey.toUpperCase().includes("_DOCUMENTATIONPROFILE")) {
-                                        //CHILDEN DO EXIST
-                                        Step_3_1_Find_User_Options_1_0(columnToUpdate, jsonDataSet[columnKey], null, commitUpdate, updateValue);
+                                    if (typeof columnType === 'object') {
+                                        if (!columnKey.toUpperCase().includes("_DOCUMENTATIONPROFILE")) {
+                                            //CHILDEN DO EXIST
+                                            Step_3_1_Find_User_Options_1_0(columnToUpdate, jsonDataSet[columnKey], null, commitUpdate, updateValue);
+                                        }
                                     }
                                 }
                             }
-                        }
-                    });
+                        });
 
-                    return columnsToUpdateValues;
-                }
+                        return columnsToUpdateValues;
+                    }
 
-                //SET SEARCH FILTER
-                let filterJSONDataSetBy: any = ['parameters'];
+                    //SET SEARCH FILTER
+                    let filterJSONDataSetBy: any = ['parameters'];
 
-                //SET SEARCH DATASET                 
-                let jsonDataSet: any = storylineDetails; //storylineDetails = C:\Programming\0.3.BaseDI.Professional.QuickStart.Templates\2. Data Movement\ARM Templates\12\Other\2\Programming\Template\2\1_0\State_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.json
-                if (storylineDetails_Parameters) {
-                    jsonDataSet = storylineDetails_Parameters;
+                    //SET SEARCH DATASET                 
+                    let jsonDataSet: any = storylineDetails; //storylineDetails = C:\Programming\0.3.BaseDI.Professional.QuickStart.Templates\2. Data Movement\ARM Templates\12\Other\2\Programming\Template\2\1_0\State_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0.json
+                    if (storylineDetails_Parameters) {
+                        jsonDataSet = storylineDetails_Parameters;
 
-                    filterJSONDataSetBy = null;
-                } //storylineDetails_Parameters = C:\Programming\0.3.BaseDI.Professional.QuickStart.Templates\2. Data Movement\ARM Templates\12\Other\2\Programming\Template\2\1_0\State_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0-P1_0.json
-
-                //MEMORIZE CUSTOM OPTIONS
-                for (const columnToUpdate of columnsToUpdate) {
-                    //FIND CUSTOM OPTIONS
-                    const nodeToUpdateValue: any = Step_3_1_Find_User_Options_1_0(columnToUpdate, jsonDataSet, filterJSONDataSetBy, false, null);
-
-                    //CHANGE SEARCH FILTER
-                    filterJSONDataSetBy = ['resources'];
-
-                    //UPDATE OPTIONS DATASET
-                    Step_3_1_Find_User_Options_1_0(columnToUpdate, storylineDetails, filterJSONDataSetBy, true, nodeToUpdateValue[columnToUpdate]);
+                        filterJSONDataSetBy = null;
+                    } //storylineDetails_Parameters = C:\Programming\0.3.BaseDI.Professional.QuickStart.Templates\2. Data Movement\ARM Templates\12\Other\2\Programming\Template\2\1_0\State_Director_Of_Programming_Chapter_12_2_Page_1_Request_Handler_1_0-P1_0.json
 
                     //MEMORIZE CUSTOM OPTIONS
-                    this.StorylineDetails = storylineDetails; //storylineDetails = CUSTOM OPTIONS
+                    for (const columnToUpdate of columnsToUpdate) {
+                        //FIND CUSTOM OPTIONS
+                        const nodeToUpdateValue: any = Step_3_1_Find_User_Options_1_0(columnToUpdate, jsonDataSet, filterJSONDataSetBy, false, null);
+
+                        //CHANGE SEARCH FILTER
+                        filterJSONDataSetBy = ['resources'];
+
+                        //UPDATE OPTIONS DATASET
+                        Step_3_1_Find_User_Options_1_0(columnToUpdate, storylineDetails, filterJSONDataSetBy, true, nodeToUpdateValue[columnToUpdate]);
+
+                        //MEMORIZE CUSTOM OPTIONS
+                        this.StorylineDetails = storylineDetails; //storylineDetails = CUSTOM OPTIONS
+                    }
                 }
+
+            //#endregion
             }
+            catch
+            {
+                //#region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode) {
+                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0]");
+                }
+
+                //#endregion
+            }
+
 
             //#endregion
 

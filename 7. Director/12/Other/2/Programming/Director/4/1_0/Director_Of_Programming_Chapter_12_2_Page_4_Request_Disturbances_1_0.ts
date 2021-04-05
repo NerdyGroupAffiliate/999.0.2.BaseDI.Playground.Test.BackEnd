@@ -74,7 +74,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
         //#region 3. Set
 
         //A. Default state
-        private HandleDefaults(): void {
+        public HandleDefaults(): void {
             //#region 1. INPUTS
 
 
@@ -460,12 +460,23 @@ export namespace BaseDI.Professional.Director.Programming_4 {
 
         //#region 3. Set
 
-        private HandleDefaults() {
+        //A. Default state
+        public HandleDefaults(): void {
             //#region 1. INPUTS
+
 
             //#endregion
 
             //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
