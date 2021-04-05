@@ -76,13 +76,39 @@ export namespace BaseDI.Professional.State.Programming_2 {
         //#endregion
 
         //#region 3. Set
+
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
+
         //#endregion
 
         //#region 4. Action
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        public async Action_9_Verify_Process(): Promise<any> {
+        public async Action_8_Process_CRUD(): Promise<any> {
             //STORE META DATA
             let requestName: string = "";
             let requestNameParameters: string = "";
@@ -331,7 +357,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
             return this._storylineDetails;
         }
 
-        public async Action_8_Process_CRUD(): Promise<any> {
+        public async Action_9_Verify_Process(): Promise<any> {
             return this._storylineDetails;
         }
 

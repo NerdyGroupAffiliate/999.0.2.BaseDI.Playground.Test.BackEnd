@@ -227,7 +227,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 #region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode && (int)parameterClientORserverInstance["processStepNumber"] == 0)
-                    Console.WriteLine("STEP " + parameterClientORserverInstance["processStepNumber"] + " ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> SetupStoryline -> ACTION = " + storedActionName + "- [BEGIN finding a request handler]");
+                    Console.WriteLine("STEP " + parameterClientORserverInstance["processStepNumber"] + ": BEGIN processing request");
 
                 #endregion
 
@@ -391,7 +391,6 @@ namespace BaseDI.Professional.Story.Programming_1
             #region 3. OUTPUT
 
             #endregion
-
         }
 
         #endregion
@@ -574,18 +573,31 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
-        #region 1. INPUTS     
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
 
-        #endregion
 
-        #region 2. PROCESS
+            #endregion
 
-        #endregion
+            #region 2. PROCESS
 
-        #region 3. OUTPUT
+            #region EXECUTE process defaults
 
-        #endregion
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -874,18 +886,31 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
-        #region 1. INPUTS     
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
 
-        #endregion
 
-        #region 2. PROCESS
+            #endregion
 
-        #endregion
+            #region 2. PROCESS
 
-        #region 3. OUTPUT
+            #region EXECUTE process defaults
 
-        #endregion
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -1490,18 +1515,31 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
-        #region 1. INPUTS     
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
 
-        #endregion
 
-        #region 2. PROCESS
+            #endregion
 
-        #endregion
+            #region 2. PROCESS
 
-        #region 3. OUTPUT
+            #region EXECUTE process defaults
 
-        #endregion
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -1768,19 +1806,31 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
-        #region 1. INPUTS     
-
-        #endregion
-
-        #region 2. PROCESS
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
 
 
-        #endregion
+            #endregion
 
-        #region 3. OUTPUT
+            #region 2. PROCESS
 
-        #endregion
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -1997,18 +2047,31 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
-        #region 1. INPUTS     
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
 
-        #endregion
 
-        #region 2. PROCESS
+            #endregion
 
-        #endregion
+            #region 2. PROCESS
 
-        #region 3. OUTPUT
+            #region EXECUTE process defaults
 
-        #endregion
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -2225,18 +2288,31 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
-        #region 1. INPUTS     
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
 
-        #endregion
 
-        #region 2. PROCESS
+            #endregion
 
-        #endregion
+            #region 2. PROCESS
 
-        #region 3. OUTPUT
+            #region EXECUTE process defaults
 
-        #endregion
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 

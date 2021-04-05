@@ -165,7 +165,7 @@ var BaseDI;
                             _this._repository = repository;
                             _this._extraData = extraData;
                             _this._entryPoint = entryPoint;
-                            _this.HandleChapterDefaults = _this.HandleChapterDefaults.bind(_this);
+                            _this.HandleDefaults = _this.HandleDefaults.bind(_this);
                             _this.Action_1_Begin_Process = _this.Action_1_Begin_Process.bind(_this);
                             _this.Action_2_Validate_Process = _this.Action_2_Validate_Process.bind(_this);
                             _this.Action_3_Process_StoryAuthor = _this.Action_3_Process_StoryAuthor.bind(_this);
@@ -179,7 +179,7 @@ var BaseDI;
                             return _this;
                         }
                         //region 3. Set
-                        Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0.prototype.HandleChapterDefaults = function () {
+                        Implement_DesignPattern_Builder_Chapter_11_1_Page_2_1_0.prototype.HandleDefaults = function () {
                         };
                         //region 4. Action
                         //Page 1-1

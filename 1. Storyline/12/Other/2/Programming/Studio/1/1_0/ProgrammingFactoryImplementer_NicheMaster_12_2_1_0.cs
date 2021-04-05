@@ -350,19 +350,8 @@ namespace BaseDI.Professional.Story.Programming_1
                 }
 
                 #endregion
-
-                #region EDGE CASE - USE developer logger
-
-                if (storedDeveloperMode)
-                {
-                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0*** - USING data stragety of " + repositoryType + "]");
-                }                    
-
-                #endregion
             }
-            catch (Exception)
+            catch (Exception mistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -370,12 +359,14 @@ namespace BaseDI.Professional.Story.Programming_1
                 {
                     _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0*** - USING data stragety of " + repositoryType);
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
                 }
-   
+
                 #endregion
 
                 #region EDGE CASE - USE exception handler
+
+                throw mistake;
 
                 #endregion
             }
@@ -471,19 +462,8 @@ namespace BaseDI.Professional.Story.Programming_1
                 }
 
                 #endregion
-
-                #region EDGE CASE - USE developer logger
-
-                if (storedDeveloperMode)
-                {
-                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** - USING data stragety of " + repositoryType + "]");
-                }
-
-                #endregion
             }
-            catch (Exception)
+            catch (Exception mistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -491,12 +471,14 @@ namespace BaseDI.Professional.Story.Programming_1
                 {
                     _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0*** - USING data stragety of " + repositoryType);
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
                 }
-        
+
                 #endregion
 
                 #region EDGE CASE - USE exception handler
+
+                throw mistake;
 
                 #endregion
             }
@@ -594,19 +576,8 @@ namespace BaseDI.Professional.Story.Programming_1
                 }
 
                 #endregion
-
-                #region EDGE CASE - USE developer logger
-
-                if (storedDeveloperMode)
-                {
-                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0*** - USING data stragety of " + repositoryType + "]");
-                }
-      
-                #endregion
             }
-            catch (Exception)
+            catch (Exception mistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -614,12 +585,14 @@ namespace BaseDI.Professional.Story.Programming_1
                 {
                     _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0*** - USING data stragety of " + repositoryType);
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
                 }
 
                 #endregion
 
                 #region EDGE CASE - USE exception handler
+
+                throw mistake;
 
                 #endregion
             }
@@ -717,19 +690,8 @@ namespace BaseDI.Professional.Story.Programming_1
                 }
 
                 #endregion
-
-                #region EDGE CASE - USE developer logger
-
-                if (storedDeveloperMode)
-                {
-                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0*** - USING data stragety of " + repositoryType + "]");
-                }
-
-                #endregion
             }
-            catch (Exception)
+            catch (Exception mistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -737,12 +699,14 @@ namespace BaseDI.Professional.Story.Programming_1
                 {
                     _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0*** - USING data stragety of " + repositoryType);
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
                 }
 
                 #endregion
 
                 #region EDGE CASE - USE exception handler
+
+                throw mistake;
 
                 #endregion
             }
@@ -840,19 +804,8 @@ namespace BaseDI.Professional.Story.Programming_1
                 }
 
                 #endregion
-
-                #region EDGE CASE - USE developer logger
-
-                if (storedDeveloperMode)
-                {
-                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 -> [SUCCESSFULLY found a request handler of ***Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0*** - USING data stragety of " + repositoryType + "]");
-                }
-
-                #endregion
             }
-            catch (Exception)
+            catch (Exception mistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -860,12 +813,14 @@ namespace BaseDI.Professional.Story.Programming_1
                 {
                     _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs -> Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 -> [FAILED finding a request handler for ***Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0*** - USING data stragety of " + repositoryType);
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
                 }
 
                 #endregion
 
                 #region EDGE CASE - USE exception handler
+
+                throw mistake;
 
                 #endregion
             }

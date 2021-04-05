@@ -26,6 +26,9 @@ export namespace BaseDI.Professional
     {
         //#region 1. Assign
 
+        //SETTINGS
+        private _storedAppSettings: any = null;
+
         //CLIENT/SERVER
         private _storedClientORserverInfo: Object = new Object();
         private _storedClientWebPageInstance: any;
@@ -132,10 +135,9 @@ export namespace BaseDI.Professional
 
             //#endregion
 
-            //#region MEMORIZE chpater name
+            //#region MEMORIZE app settings
 
-            if (parameterRequestActionName != "")
-                this._storedClientORserverInfo["chapterName"] = parameterRequestChapterName;
+            this._storedAppSettings = this._storedClientORserverInfo["appSettings"];
 
             //#endregion
 
@@ -143,6 +145,21 @@ export namespace BaseDI.Professional
 
             if (parameterRequestActionName != "")
                 this._storedClientORserverInfo["actionName"] = parameterRequestActionName;
+
+            //#endregion
+
+            //#region MEMORIZE chpater name
+
+            if (parameterRequestActionName != "")
+                this._storedClientORserverInfo["chapterName"] = parameterRequestChapterName;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            this._storedClientORserverInfo["processStepNumber"] = 0;
 
             //#endregion
 

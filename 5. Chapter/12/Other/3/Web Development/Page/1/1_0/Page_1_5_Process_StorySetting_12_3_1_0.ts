@@ -33,6 +33,32 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
         //#endregion
 
         //#region 3. Set
+
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
+
         //#endregion
 
         //#region 4. Action
@@ -99,19 +125,21 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
                 const observation = observationItem;
 
-                storylineDetails.outputs[1].baseDIObservations.map(storedObservation => {
-                    if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase() == storageKey.toUpperCase()) {
-                        storylineDetails.outputs[1].baseDIObservations[storedCounter][storageKey] = JSON.parse(observationItem.toString());
+                if (storylineDetails.outputs != undefined) {
+                    storylineDetails.outputs[1].baseDIObservations.map(storedObservation => {
+                        if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase() == storageKey.toUpperCase()) {
+                            storylineDetails.outputs[1].baseDIObservations[storedCounter][storageKey] = JSON.parse(observationItem.toString());
 
-                        this.StorylineDetails = storylineDetails;
+                            this.StorylineDetails = storylineDetails;
 
-                        storedUpdateMode = true;
+                            storedUpdateMode = true;
 
-                        return;
-                    }
+                            return;
+                        }
 
-                    storedCounter += 1;
-                });
+                        storedCounter += 1;
+                    });
+                }
 
                 if (!storedUpdateMode) {
                     storylineDetails.outputs[1].baseDIObservations.push(storageDictionary);

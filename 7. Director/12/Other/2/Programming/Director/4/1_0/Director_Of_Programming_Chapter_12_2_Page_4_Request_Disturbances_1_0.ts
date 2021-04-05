@@ -73,18 +73,30 @@ export namespace BaseDI.Professional.Director.Programming_4 {
 
         //#region 3. Set
 
-        //#region 1. INPUTS
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
 
 
-        //#endregion
+            //#endregion
 
-        //#region 2. PROCESS
+            //#region 2. PROCESS
 
-        //#endregion
+            //#region EXECUTE process defaults
 
-        //#region 3. OUTPUT
+            //#region IDEAL CASE - defaults handler
 
-        //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
 
         //#endregion
 
@@ -416,7 +428,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
 
             //#region IDEAL CASE - USE defaults handler
 
-            this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
+            this.HandleDefaults = this.HandleDefaults.bind(this);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -429,7 +441,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
             this.Action_9_Verify_Process = this.Action_9_Verify_Process.bind(this);
             this.Action_10_End_Process = this.Action_10_End_Process.bind(this);
 
-            this.HandleChapterDefaults();
+            this.HandleDefaults();
 
             //#endregion
 
@@ -448,12 +460,23 @@ export namespace BaseDI.Professional.Director.Programming_4 {
 
         //#region 3. Set
 
-        private HandleChapterDefaults() {
+        //A. Default state
+        public HandleDefaults(): void {
             //#region 1. INPUTS
+
 
             //#endregion
 
             //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 

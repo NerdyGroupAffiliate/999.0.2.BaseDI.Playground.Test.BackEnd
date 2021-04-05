@@ -89,18 +89,31 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //A. Default state of this part of the storyline
 
-        #region 1. INPUTS
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
 
 
-        #endregion
+            #endregion
 
-        #region 2. PROCESS
+            #region 2. PROCESS
 
-        #endregion
+            #region EXECUTE process defaults
 
-        #region 3. OUTPUT
+            #region IDEAL CASE - defaults handler
 
-        #endregion
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
+
 
         #endregion
 
@@ -453,7 +466,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region IDEAL CASE - USE defaults handler
 
-            HandleChapterDefaults();
+            HandleDefaults();
 
             #endregion
 
@@ -470,7 +483,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         #region 3. Set
 
-        private void HandleChapterDefaults()
+        public override void HandleDefaults()
         {
             #region 1. INPUTS
 
@@ -509,7 +522,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 {
                     _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleChapterDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientORserverInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientORserverInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientORserverInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientORserverInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientORserverInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientORserverInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
                 }
 
                 #endregion
@@ -533,7 +546,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             {
                 _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
 
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleChapterDefaults - [FINISHED parsing routing information of " + _storedServerRequestRESTVerb + "/" + _storedServerRoutePath + "]");
+                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults - [FINISHED parsing routing information of " + _storedServerRequestRESTVerb + "/" + _storedServerRoutePath + "]");
             }
 
             #endregion

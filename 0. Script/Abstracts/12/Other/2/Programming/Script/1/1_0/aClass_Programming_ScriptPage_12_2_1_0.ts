@@ -20,7 +20,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
 
         public ExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
-        public DirectorOrExperienceRequestHandler: any;
+        public DirectorOrExperienceRequestHandler: any = null;
 
         public MasterLeader: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
@@ -56,6 +56,9 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         //#endregion
 
         //#region 3. Set
+
+        public abstract HandleDefaults(): void;
+
         //#endregion
 
         //#region 4. Action

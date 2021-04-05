@@ -30,6 +30,32 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
         //#endregion
 
         //#region 3. Set
+
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
+
         //#endregion
 
         //#region 4. Action
@@ -141,7 +167,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
             this._extraData = extraData;
             this._entryPoint = entryPoint;
 
-            this.HandleChapterDefaults = this.HandleChapterDefaults.bind(this);
+            this.HandleDefaults = this.HandleDefaults.bind(this);
 
             this.Action_1_Begin_Process = this.Action_1_Begin_Process.bind(this);
             this.Action_2_Validate_Process = this.Action_2_Validate_Process.bind(this);
@@ -157,9 +183,32 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
         //#endregion
 
         //#region 3. Set
-        private HandleChapterDefaults() {
 
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
         }
+
         //#endregion
 
         //#region 4. Action
