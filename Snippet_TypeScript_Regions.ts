@@ -193,6 +193,12 @@ export class ClassModel
 
         //#endregion
 
+        //#region DEFINE stored message
+
+        let storedMessage: string = "";
+
+        //#endregion
+
         //#region DEFINE storyline details
 
         //let storedStorylineDetails:Object = null;
@@ -236,6 +242,12 @@ export class ClassModel
 
         let stored_DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = null;
         //let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+
+        //#endregion
+
+        //#region MEMORIZE server details
+
+        //let storedServerDetails:Object = null;
 
         //#endregion
 

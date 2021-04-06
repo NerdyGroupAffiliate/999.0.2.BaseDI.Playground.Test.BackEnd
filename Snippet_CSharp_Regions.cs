@@ -261,6 +261,12 @@ public class ClassModel
 
         #endregion
 
+        #region MEMORIZE server details
+
+        //JObject storedServerDetails = null;
+
+        #endregion
+
         #region MEMORIZE request details
 
         //string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();

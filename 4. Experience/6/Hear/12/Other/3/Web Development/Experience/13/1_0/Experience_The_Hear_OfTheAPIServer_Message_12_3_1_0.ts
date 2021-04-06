@@ -281,7 +281,6 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         {
             //#region 1. INPUTS
 
-
             //#endregion
 
             //#region 2. PROCESS
@@ -375,6 +374,12 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             super();
 
             //#region 1. INPUTS
+
+            //#region MEMORIZE app settings
+
+            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+
+            //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
@@ -482,6 +487,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             }
             catch (mistake)
             {
+
                 //#region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode) {
@@ -567,6 +573,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             //#region MEMORIZE server instance
 
             //STORE routing details
+
             this._storedServerInstance = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storedStorylineDetails, this._stored_CentralizedStorer, this._stored_ExperienceRequestHandlerActionName, "Action_5_Process_StorySetting");
 
             storedRouteListDetails = this._storedServerInstance.Server.Verbs.Get;
@@ -581,6 +588,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             {
                 if (process.env.APP_ENV == "SERVER" && this._stored_ExperienceRequestHandlerActionName.toUpperCase().includes("PROCESSHTTPREQUEST_1_0"))
                 {
+
                     //#region EXECUTE http request
 
                     //#region IDEAL CASE - USE baseDI pipeline
@@ -685,6 +693,16 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             //#endregion
                         }
                     }
+
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode) {
+                        this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+
+                        console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " STARTING up web server]");
+                    }
+
+                     //#endregion
 
                     Step_1_0_Custom_Control_storedClientORserverInstanceRequestToServer_1_0(storedRouteListDetails); 
 
