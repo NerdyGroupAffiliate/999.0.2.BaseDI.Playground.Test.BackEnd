@@ -209,7 +209,7 @@ export namespace BaseDI.Professional
 
                 //#region EDGE CASE - USE exception handler
 
-                console.log("");
+                console.log("23423432");
 
                 //#endregion
 

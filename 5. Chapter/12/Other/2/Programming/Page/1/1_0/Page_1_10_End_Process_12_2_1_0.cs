@@ -181,31 +181,64 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region EXECUTE request handler
 
-            try
+            Func<Task<JObject>> ResolveOrExecuteRequest = async () =>
             {
-                Func<Task<JObject>> ResolveOrExecuteRequest = async () =>
+                if (DirectorOrExperienceRequestHandler != null && !DirectorOrExperienceRequestHandler.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
                 {
-                    if (DirectorOrExperienceRequestHandler != null && !DirectorOrExperienceRequestHandler.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
+                    try
                     {
                         #region EDGE CASE - USE developer logger
 
                         if (storedDeveloperMode)
                         {
-                            _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                            ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": PREPARING to execute request " + DirectorOrExperienceRequestHandler.RequestID);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + DirectorOrExperienceRequestHandler.RequestID);
                         }
 
                         #endregion
 
-                        #region EDGE CASE - USE request handler
+                        #region EDGE CASE - USE request executor
 
                         return await DirectorOrExperienceRequestHandler.Action();
 
                         #endregion
                     }
-                    else
+                    catch (Exception mistake)
                     {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + this.DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw mistake;
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedRequestName);
+                        }
+
+                        #endregion
+
                         #region IDEAL CASE - USE request resolver
 
                         return storedDataResponse = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
@@ -214,29 +247,29 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         #endregion
                     }
-                };
+                    catch (Exception mistake)
+                    {
+                        #region EDGE CASE - USE developer logger
 
-                storedDataResponse = await ResolveOrExecuteRequest();
-            }
-            catch (Exception mistake)
-            {
-                #region EDGE CASE - USE developer logger
+                        if (storedDeveloperMode)
+                        {
+                            ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                if (storedDeveloperMode)
-                {
-                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                        }
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** TRANSPORTING to request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown.");
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw mistake;
+
+                        #endregion
+                    }
                 }
+            };
 
-                #endregion
-
-                #region EDGE CASE - USE exception handler
-
-                throw mistake;
-
-                #endregion
-            }
+            storedDataResponse = await ResolveOrExecuteRequest();
 
             #endregion
 

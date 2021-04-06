@@ -488,7 +488,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***WEB DEVELOPMENT*** LOCAL DATASET for request " + storedRequestName);
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE*** SUCCESSFULLY retrieved ***WEB DEVELOPMENT*** LOCAL DATASET for request " + storedRequestName);
                         }
 
                         storedProcessCheckPointHit = false;
@@ -519,6 +519,9 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 //#endregion
 
                 //#region 12-5 - Security
+
+                console.log("storedRequestName"); 
+                console.log(storedRequestName);
 
                 try
                 {

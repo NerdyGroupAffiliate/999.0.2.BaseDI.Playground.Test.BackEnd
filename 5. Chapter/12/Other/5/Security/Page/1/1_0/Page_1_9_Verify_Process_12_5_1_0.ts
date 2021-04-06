@@ -11,7 +11,8 @@ import * as Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticatio
 import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/13/1_0/Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
-import { strict } from "assert";
+import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
 
 export namespace BaseDI.Professional.Chapter.Page.Security_1 {
     export class Page_1_9_Verify_Process_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
@@ -93,9 +94,9 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
             //#region CONTROL
 
-            if (process.env.APP_ENV == "SERVER") {
-                await this.Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0();
-            }
+            //if (process.env.APP_ENV == "SERVER") {
+            //    await this.Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0();
+            //}
 
             //#endregion
 
@@ -277,6 +278,37 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
         //#region OUTPUT
 
         public async Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response: any, uniqueStorageKeyValue: any = null) {
+
+            //#region 1. INPUTS
+
+            //#region DEFINE parameter inputs
+
+            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+
+            storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
+            storedParameterInputs.Parameters.setValue("parameterCRUDVerb", "Create");
+            storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", this._entryPointName);
+            storedParameterInputs.Parameters.setValue("parameterMasterStorer", this.MasterStorer);
+            storedParameterInputs.Parameters.setValue("parameterStorageValue", response);
+            storedParameterInputs.Parameters.setValue("parameterStorylineDetails", this.StorylineDetails);
+            storedParameterInputs.Parameters.setValue("parameterPageName", this._pageName);
+            storedParameterInputs.Parameters.setValue("parameterStorageDescription", "STORING access token");
+            storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_DataToken_" + uniqueStorageKeyValue);
+
             //#region VARIABLES
 
             //#endregion
@@ -289,7 +321,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             //#region INPUTS         
 
             if (uniqueStorageKeyValue)
-                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(this.MasterStorer, "Create", this._entryPointName, this._pageName, "STORING access token", this.StorylineDetails, response, "BaseDI_DataToken_" + uniqueStorageKeyValue);
+                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
 
             this._response.send(response);
 

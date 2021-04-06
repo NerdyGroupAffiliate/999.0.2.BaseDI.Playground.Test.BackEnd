@@ -197,9 +197,15 @@ public class ClassModel
 
         #endregion
 
+        #region DEFINE parameter inputs
+
+        //SingleParmPoco_12_2_1_0 storedParameterInputs = null;
+
+        #endregion
+
         #region DEFINE process checkpoint
 
-        bool storedCheckPointHit = false;
+        //bool storedCheckPointHit = false;
 
         #endregion
 

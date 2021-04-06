@@ -169,6 +169,18 @@ export namespace BaseDI.Professional.Story.Programming_1
         {
             //#region 1. INPUTS
 
+            //#region DEFINE request handler
+
+            let stored_ReferenceTo_RequestHandler: any = null;
+
+            //#endregion
+
+            //#region DEFINE exception handler
+
+            let stored_ExceptionDetails: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
             this._storedAppSettings = parameterClientORserverInstance["appSettings"];
@@ -205,24 +217,11 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#endregion
 
-            //#region DEFINE request handler
-
-            let stored_ReferenceTo_RequestHandler: any = null;
-
-            //#endregion
-
-            //#region DEFINE exception handler
-
-            let stored_ExceptionDetails: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //#endregion
-
             //#endregion
 
             //#region 2. PROCESS
 
-            try
-            {
+            try {
                 //#region FIND request handler
 
                 //#region EDGE CASE - USE developer logger
@@ -230,8 +229,8 @@ export namespace BaseDI.Professional.Story.Programming_1
                 if (storedDeveloperMode && parameterClientORserverInstance["processStepNumber"] == 0) {
                     parameterClientORserverInstance["processStepNumber"] += 1;
 
-                    console.log("STEP " + parameterClientORserverInstance["processStepNumber"] + ": BEGIN processing request");
-                }                    
+                    console.log("\n\nSTEP " + parameterClientORserverInstance["processStepNumber"] + ": BEGIN processing request -> " + storedActionName);
+                }
 
                 //#endregion
 
@@ -420,6 +419,12 @@ export namespace BaseDI.Professional.Story.Programming_1
         Action(): object
         {
             //#region 1. INPUTS
+
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this._storedClientORserverInstance ["actionName"] as string;
+
+            //#endregion
 
             //#region MEMORIZE developer mode
 
@@ -621,6 +626,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             if (this._storedSystemRequestByName == "" || this._storedSystemRequestByName == null || this._storedSystemRequestByName == undefined)
             {
+
                 this._storedRequestName = this._storedClientRequestByObject != null ? this._storedClientRequestByObject.constructor.name : this._storedClientRequestByName;
             }
             else
@@ -664,7 +670,6 @@ export namespace BaseDI.Professional.Story.Programming_1
             let _stored_DirectorRequestHandler = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._storedClientORserverInstance, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
 
             //#endregion
-
 
             //#region MEMORIZE developer mode
 
@@ -825,7 +830,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#endregion
 
-            //#region MEMORIZE centralized processes handlers   
+            //#region MEMORIZE centralized processes handlers
 
             if (this._stored_CentralizedDisturber == null)
             {
@@ -1735,7 +1740,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
     //#endregion
 
-    //#region HANDLE REQUEST STORAGE
+    //#region HANDLE CENTRALIZED STORAGE REQUEST
 
     export class Implement_DesignPattern_Factory_Storer_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
@@ -1881,9 +1886,9 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region IDEAL CASE - USE storage handler
                 
-                if (this._storedAppSettings == null) throw new Error("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Storer_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
+                if (this._storedAppSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED STORING a value. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
                   .SetupStoryline(this._storedClientORserverInstance, this._storedStorylineDetails, null, this._storedExtraData, "", this._storedClientRequestByName, this._storedClientRequestByNameParameters)
                   .Action();
 
@@ -1977,7 +1982,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
     //#endregion
 
-    //#region HANDLE REQUEST DISTURBANCE
+    //#region HANDLE CENTRALIZED DISTURBANCE REQUEST
 
     export class Implement_DesignPattern_Factory_Disturber_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
@@ -2123,7 +2128,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region IDEAL CASE - USE exception handler
 
-                if (this._storedAppSettings == null) throw new Error("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Disturber_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
+                if (this._storedAppSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                   .SetupStoryline(this._storedClientORserverInstance, this._storedStorylineDetails, null, this._storedExtraData, "", this._storedClientRequestByName, this._storedClientRequestByNameParameters)
@@ -2219,7 +2224,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
     //#endregion
 
-    //#region HANDLE REQUEST SENSOR
+    //#region HANDLE CENTRALIZED SENSOR REQUEST
 
     export class Implement_DesignPattern_Factory_Sensor_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
@@ -2365,7 +2370,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region IDEAL CASE - USE exception handler
 
-                if (this._storedAppSettings == null) throw new Error("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Sensor_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
+                if (this._storedAppSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                   .SetupStoryline(this._storedClientORserverInstance, this._storedStorylineDetails, null, this._storedExtraData, "", this._storedClientRequestByName, this._storedClientRequestByNameParameters)

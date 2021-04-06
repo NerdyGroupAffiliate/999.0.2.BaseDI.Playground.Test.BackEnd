@@ -341,7 +341,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //CLIENT/SERVER
         private _storedClientORserverInstance: any;
 
-        private _storedServerInstance: any;
+        public _storedServerInstance: any;
         private _storedServerInstanceInfo: any;
 
         //DATASET
@@ -487,7 +487,6 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             }
             catch (mistake)
             {
-
                 //#region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode) {
@@ -548,35 +547,30 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#endregion
 
+            //#region DEFINE parameter inputs
+
+            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
             //#region DEFINE route details
 
             let storedRouteListDetails: any = null;
 
             //#endregion
 
-            //#region DEFINE server routing
+            //#region DEFINE server instance
 
-            let storedControllerRoutes: Array<any> = null;
-            let storedControllerName: string = "";
-            let storedControllerModelDataLocalParameter: string = "";
-            let storedControllerModelDataLocalObject: any = null;
-            let storedControllerModelDataRemote: any = null;   
-
+            let storedRouteListDetailsDELETE: any = null; 
+            let storedRouteListDetailsGET: any = null; 
+            let storedRouteListDetailsPOST: any = null; 
+            let storedRouteListDetailsPUT: any = null; 
+            
             //#endregion
 
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
-
-            //#endregion
-
-            //#region MEMORIZE server instance
-
-            //STORE routing details
-
-            this._storedServerInstance = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(this._storedStorylineDetails, this._stored_CentralizedStorer, this._stored_ExperienceRequestHandlerActionName, "Action_5_Process_StorySetting");
-
-            storedRouteListDetails = this._storedServerInstance.Server.Verbs.Get;
 
             //#endregion
 
@@ -588,36 +582,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             {
                 if (process.env.APP_ENV == "SERVER" && this._stored_ExperienceRequestHandlerActionName.toUpperCase().includes("PROCESSHTTPREQUEST_1_0"))
                 {
-
-                    //#region EXECUTE http request
+                    //#region SETUP http server
 
                     //#region IDEAL CASE - USE baseDI pipeline
 
-                    //#region 2. OUTPUT http response
+                    //#region 3. OUTPUT server response
 
-                    const Step_2_0_Custom_Output_ServerRequestToclientORserverInstance_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataLocalParameter: string, parameterControllerModelDataLocalObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any) =>
+                    const Step_2_0_Custom_Output_ServerRequestToClientORserverInstance_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataLocalParameter: string, parameterControllerModelDataLocalObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any) =>
                     {
-                        //#region HANDLE application defaults
-
-                        if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
-                            this._storedClientORserverInstance = {
-                                "appSettings": process.env,
-                                "serverStartUp": this
-                            }
-                        }
-
-                        this._storedServerInstanceInfo = {
-                            "server_director": this,
-                            "Request": Object.assign(parameterRequest, Object),
-                            "Response": Object.assign(parameterResponse, Object),
-                            "Server": Object.assign(this._storedServerInstance.Server.Instance, Object)
-                        }
-
-                        //#endregion
-
                         //#region EDGE CASE - USE updates handler
 
-                        this._storedClientORserverInstance["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
+                        this._storedClientORserverInstance["StartUpCallBackServer"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
                             return this._storedStorylineDetails;
                         }
 
@@ -625,20 +600,43 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         const Action = (parameterClientRequestByName: string, parameterClientRequestByNameParameters: string, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) => {
                             storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storedExtraData))
-                                .SetupStoryline(this._storedServerInstanceInfo, null, null, parameterExtraData, "", parameterClientRequestByName, parameterClientRequestByNameParameters)
+                                .SetupStoryline(this._storedClientORserverInstance, null, null, parameterExtraData, "", parameterClientRequestByName, parameterClientRequestByNameParameters)
                                 .Action();
                         }
 
                         Action(parameterControllerName, parameterControllerModelDataLocalParameter, this._storedExtraData);
+
+                        storedDataResponse.then(storedHttpResponse => {
+                            storedHttpResponse?.outputs[1].baseDIObservations.map(storedObservation => {
+                                if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase().includes("HTML")) {
+                                    storedClientResponse = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                                }
+                            });
+
+                            if (parameterResponse) {
+                                parameterResponse.send(storedClientResponse);
+                            }
+                            else {
+                                //#region EDGE CASE - USE developer logger
+
+                                if (storedDeveloperMode) {
+                                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+
+                                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [FAILED sending back a response to the client from express server!]");
+                                }
+
+                                //#endregion
+                            }
+                        });
                     }
 
                     //#endregion
 
-                    //#region 1. INPUT http request
+                    //#region 2. INPUT server details
 
                     const Step_1_0_Custom_Control_storedClientORserverInstanceRequestToServer_1_0 = (parameterRouteListDetails: Array<any>) =>
                     {
-                        if (parameterRouteListDetails.length > 0)
+                        if (parameterRouteListDetails != null && parameterRouteListDetails != undefined && parameterRouteListDetails.length > 0)
                         {
                             //#region SEARCH routing list details
 
@@ -647,36 +645,37 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             if (storedDeveloperMode) {
                                 this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                                console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [BEGIN adding dynamic routes to express server]");
+                                console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": CONFIGURING endpoint routes");
                             }
 
                             //#endregion
 
                             parameterRouteListDetails.map(item => {
                                 //STORE listing of routes
-                                storedControllerRoutes = item.SetupItemTransportItemRoute.ControllerRoutes;
+                                const storedControllerRoutes = item.SetupItemTransportItemRoute.ControllerRoutes;
 
                                 //STORE route controller name
-                                storedControllerName = item.SetupItemTransportItemRoute.ControllerName;
+                                const storedControllerName = item.SetupItemTransportItemRoute.ControllerName;
 
                                 //STORE route dataset details
-                                storedControllerModelDataLocalParameter = item.SetupItemTransportItemRoute.ModelDataLocalParameter;
-                                storedControllerModelDataLocalObject = item.SetupItemTransportItemRoute.ModelDataLocalObject;
+                                const storedControllerModelDataLocalParameter = item.SetupItemTransportItemRoute.ModelDataLocalParameter;
+                                const storedControllerModelDataLocalObject = item.SetupItemTransportItemRoute.ModelDataLocalObject;
 
-                                storedControllerModelDataRemote = item.SetupItemTransportItemRoute.ModelDataRemote;
+                                const storedControllerModelDataRemote = item.SetupItemTransportItemRoute.ModelDataRemote;
 
                                 //DETERMINE if we have any routes
                                 if (storedControllerRoutes.length > 0) {
                                     storedControllerRoutes.map(routeItemDetails =>
-                                    {
-                                        //console.log("route =");
-                                        //console.log(route);
+                                    {              
+                                        console.log(routeItemDetails);
 
                                         this._storedServerInstance.Server.Instance.get(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                             //SET instance of our response object.
-                                            this._storedServerInstance["serverResponder"] = parameterResponse;
 
-                                            Step_2_0_Custom_Output_ServerRequestToclientORserverInstance_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse);
+                                            console.log("SASAA")
+                                            this._storedClientORserverInstance["serverResponder"] = parameterResponse;
+
+                                            Step_2_0_Custom_Output_ServerRequestToClientORserverInstance_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse);
                                         });
                                     });
                                 }
@@ -688,23 +687,59 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         {
                             //#region EDGE CASE - USE exception message
 
-                            throw new Error("[DISTURBANCE ISSUE] - Bug - Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> Action_5_Process_StorySetting - BaseDI will not work without a routing details for a server side application . Please make sure that the information was added to the STORYLINEDETAILS object in the Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 process!");
+                            throw new Error("***LEAKY PIPE*** ROUTING failed - BaseDI will not work without a routing details for a server side application. Please make sure that the information was added to the STORYLINEDETAILS object in the Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 process!");
 
                             //#endregion
                         }
                     }
 
-                    //#region EDGE CASE - USE developer logger
+                    //#endregion
 
-                    if (storedDeveloperMode) {
-                        this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                    //#region 1. CONFIGURE server defaults
 
-                        console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " STARTING up web server]");
+                    //#region CONFIGURE server
+
+                    storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0(); 
+
+                    storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(this._storedClientORserverInstance, Object));
+                    storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
+                    storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(this._stored_CentralizedStorer, Object));
+                    storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(this._storedStorylineDetails, Object));
+               
+                    this._storedServerInstance = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storedParameterInputs);
+
+                    //#endregion
+
+                    //#region CONFIGURE routes
+
+                    //SETUP delete routes
+
+                    if (this?._storedServerInstance?.Server?.Verbs?.Delete != undefined) {
+                        storedRouteListDetailsDELETE = this?._storedServerInstance?.Server?.Verbs?.Delete;
+                        Step_1_0_Custom_Control_storedClientORserverInstanceRequestToServer_1_0(storedRouteListDetailsDELETE);
                     }
 
-                     //#endregion
+                    //SETUP get routes
 
-                    Step_1_0_Custom_Control_storedClientORserverInstanceRequestToServer_1_0(storedRouteListDetails); 
+                    if (this?._storedServerInstance?.Server?.Verbs?.Get != undefined) {
+                        storedRouteListDetailsGET = this?._storedServerInstance?.Server?.Verbs?.Get;
+                        Step_1_0_Custom_Control_storedClientORserverInstanceRequestToServer_1_0(storedRouteListDetailsGET);
+                    }
+
+
+                    //SETUP post routes
+                    if (this?._storedServerInstance?.Server?.Verbs?.Post != undefined) {
+                        storedRouteListDetailsPOST = this?._storedServerInstance?.Server?.Verbs?.Post;
+                        Step_1_0_Custom_Control_storedClientORserverInstanceRequestToServer_1_0(storedRouteListDetailsPOST);
+                    }
+
+                    //SETUP put routes
+                    if (this?._storedServerInstance?.Server?.Verbs?.Put != undefined) {
+                        storedRouteListDetailsPUT = this?._storedServerInstance?.Server?.Verbs?.Put;
+                        Step_1_0_Custom_Control_storedClientORserverInstanceRequestToServer_1_0(storedRouteListDetailsPUT);
+                    }
+
+                    //#endregion
 
                     //#endregion
 
@@ -716,8 +751,29 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region IDEAL CASE - USE express server
 
+
                     this._storedServerInstance.Server.Instance.listen(this._storedServerInstance.Server.Port, () => {
-                        console.log(`server started at http://localhost:${this._storedServerInstance.Server.Port}`);
+                        //try
+                        //{
+                        //    //#region EDGE CASE - USE developer logger
+
+                        //    if (storedDeveloperMode) {
+                        //        this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+
+                        //        console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": STARTING up web server");
+                        //    }
+
+                        //    //#endregion
+
+                           console.log(`server started at http://localhost:${this._storedServerInstance.Server.Port}`);
+                        //}
+                        //catch (mistake) {
+                        //    //#region EDGE CASE - USE exception handler
+
+                        //    console.log("SASASA");
+
+                        //    //#endregion
+                        //}
                     });
 
                     //#endregion
@@ -727,7 +783,11 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             }
             catch (mistake)
             {
-                throw mistake; //Let "Startup.cs" handle the exception.
+                //#region EDGE CASE - USE exception handler
+
+                console.log(mistake.toString());
+
+                //#endregion
             }
 
             //#endregion
@@ -736,42 +796,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region HANDLE execution response
 
-            if (storedDataResponse)
-            {
-                //#region IDEAL CASE - USE html responder
-
-                storedDataResponse.then(storedHttpResponse =>
-                {
-                    console.log(JSON.stringify(storedHttpResponse));
-
-                    storedHttpResponse?.outputs[1].baseDIObservations.map(storedObservation =>
-                    {
-                        console.log(JSON.stringify(storedObservation));
-
-                        if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase().includes("HTML")) {
-                            storedClientResponse = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
-                        }
-                    });
-
-                    if (this._storedServerInstance["serverResponder"]) {
-                        this._storedServerInstance["serverResponder"].send(storedClientResponse);
-                    }
-                    else
-                    {
-                        //#region EDGE CASE - USE developer logger
-
-                        if (storedDeveloperMode) {
-                            this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
-
-                            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [FAILED sending back a response to the client from express server!]");
-                        }
-
-                        //#endregion
-                    }
-                });
-
-                //#endregion
-            } 
+    
 
             //#endregion
 

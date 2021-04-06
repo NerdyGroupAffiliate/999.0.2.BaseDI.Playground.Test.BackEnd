@@ -176,6 +176,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             try
             {
+
                 if (this.StorylineDetails == null)
                 {
                     //#region IDEAL CASE - USE data retriever
@@ -185,9 +186,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
                     //#region EDGE CASE - USE developer logger
 
                     if (storedDeveloperMode) {
-                        this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                        this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedRequestName);
+                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedRequestName);
                     }
 
                     //#endregion
@@ -217,9 +218,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
                 //#region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode) {
-                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                    this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***webpack.config.[client or server].json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***webpack.config.[client or server].json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 //#endregion
@@ -239,7 +240,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            this.StorylineDetails = storedDataResponse.StorylineDetails;
+            this.StorylineDetails = (storedDataResponse != null && storedDataResponse != undefined) ? storedDataResponse.StorylineDetails : this.StorylineDetails;
 
             return this.StorylineDetails;
 

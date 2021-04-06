@@ -167,32 +167,62 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
             //#region EXECUTE request handler
 
-            try
-            {
-                const ResolveOrExecuteRequest = async () =>
-                {
-                    if (this.DirectorOrExperienceRequestHandler != null && !this.DirectorOrExperienceRequestHandler.RequestID.toUpperCase().includes("REQUEST_CONTROLLER_"))
+            const ResolveOrExecuteRequest = async () => {
+                if (this.DirectorOrExperienceRequestHandler != null && !this.DirectorOrExperienceRequestHandler.RequestID.toUpperCase().includes("REQUEST_CONTROLLER_")) {
+                    try
                     {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedDeveloperMode) {
-                            this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                            this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": PREPARING to execute request " + this.DirectorOrExperienceRequestHandler.RequestID);
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + storedRequestName);
                         }
 
                         //#endregion
 
-                        //#region EDGE CASE - USE request handler
+                        //#region EDGE CASE - USE request executor
 
                         return this.DirectorOrExperienceRequestHandler.Action().then(storedDataSet => {
                             return storedDataSet;
                         })
 
-                       //#endregion
+                        //#endregion
                     }
-                    else
+                    catch (mistake)
                     {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode) {
+                            this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
+
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + this.DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                        }
+
+                        //#endregion
+
+                        //#region EDGE CASE - USE exception handler
+
+                        throw mistake;
+
+                        //#endregion
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
+
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedRequestName);
+                        }
+
+                        //#endregion
+
                         //#region IDEAL CASE - USE request resolver
 
                         return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this.ExtraData))
@@ -203,28 +233,28 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         //#endregion
                     }
+                    catch (mistake)
+                    {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode) {
+                            this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
+
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                        }
+
+                        //#endregion
+
+                        //#region EDGE CASE - USE exception handler
+
+                        throw mistake;
+
+                        //#endregion
+                    }
                 }
-
-                storedDataResponse = await ResolveOrExecuteRequest();  
             }
-            catch (mistake)
-            {
-                //#region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode) {
-                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
-
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** TRANSPORTING to request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
-                }
-
-                //#endregion
-
-                //#region EDGE CASE - USE exception handler
-
-                throw mistake;
-
-                //#endregion
-            }
+            storedDataResponse = await ResolveOrExecuteRequest(); 
 
             //#endregion
 

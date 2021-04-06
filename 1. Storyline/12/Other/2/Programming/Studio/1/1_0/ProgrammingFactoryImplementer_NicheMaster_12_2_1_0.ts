@@ -495,6 +495,8 @@ export namespace BaseDI.Professional.Story.Programming_1 {
         {
             //#region 1. INPUTS  
 
+
+            console.log("Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0");
             //#region DEFINE request handler
 
             let stored_DirectorRequestHandler: Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Director.Programming_3.Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 = null;

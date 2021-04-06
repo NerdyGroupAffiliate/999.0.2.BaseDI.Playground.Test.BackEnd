@@ -227,7 +227,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 #region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode && (int)parameterClientORserverInstance["processStepNumber"] == 0)
-                    Console.WriteLine("STEP " + parameterClientORserverInstance["processStepNumber"] + ": BEGIN processing request");
+                    Console.WriteLine("STEP " + parameterClientORserverInstance["processStepNumber"] + ": BEGIN processing request -> " + storedActionName);
 
                 #endregion
 
@@ -1726,7 +1726,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
     #endregion
 
-    #region HANDLE REQUEST STORAGE
+    #region HANDLE CENTRALIZED STORAGE REQUEST
 
     internal class Implement_DesignPattern_Factory_Storer_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<JObject>
     {
@@ -1871,7 +1871,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region IDEAL CASE - USE storage handler
                 
-                if (_storedAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Storer_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
+                if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE * **FAILED STORING a value.BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set.  -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                   .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
@@ -1967,7 +1967,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
     #endregion
 
-    #region HANDLE REQUEST DISTURBANCE
+    #region HANDLE CENTRALIZED DISTURBANCE REQUES
 
     internal class Implement_DesignPattern_Factory_Disturber_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<JObject>
     {
@@ -2112,7 +2112,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region IDEAL CASE - USE exception handler
 
-                if (_storedAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Disturber_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
+                if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Disturber_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                   .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
@@ -2208,7 +2208,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
     #endregion
 
-    #region HANDLE REQUEST SENSOR
+    #region HANDLE CENTRALIZED SENSOR REQUEST
 
     internal class Implement_DesignPattern_Factory_Sensor_12_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<JObject>
     {
@@ -2353,7 +2353,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region IDEAL CASE - USE exception handler
 
-                if (_storedAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs -> Implement_DesignPattern_Factory_Sensor_12_2_1_0 -> Action_1_Begin_Process - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
+                if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Sensor_12_2_1_0.");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
                   .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
