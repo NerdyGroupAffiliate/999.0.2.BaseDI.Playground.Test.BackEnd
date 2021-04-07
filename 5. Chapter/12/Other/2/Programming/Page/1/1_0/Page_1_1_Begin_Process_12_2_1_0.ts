@@ -145,6 +145,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             //#endregion
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
             this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
@@ -188,7 +194,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
                     if (storedDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedRequestName);
+                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedActionName + " -> " + storedRequestName);
                     }
 
                     //#endregion
@@ -220,7 +226,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
                 if (storedDeveloperMode) {
                     this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***webpack.config.[client or server].json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***webpack.config.[client or server].json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 //#endregion

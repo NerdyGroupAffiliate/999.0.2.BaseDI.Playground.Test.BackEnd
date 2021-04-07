@@ -136,6 +136,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
             //#endregion
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
             this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
@@ -176,7 +182,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + storedRequestName);
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + storedActionName + " -> " + this.DirectorOrExperienceRequestHandler.RequestID);
                         }
 
                         //#endregion
@@ -196,7 +202,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + this.DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + storedActionName + " -> " + this.DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         //#endregion
@@ -218,7 +224,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                         {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedRequestName);
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedActionName + " -> " + storedRequestName);
                         }
 
                         //#endregion
@@ -240,7 +246,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         //#endregion

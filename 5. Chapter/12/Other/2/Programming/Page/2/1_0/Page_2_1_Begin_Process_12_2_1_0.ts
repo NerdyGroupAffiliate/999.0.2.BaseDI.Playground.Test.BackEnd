@@ -128,6 +128,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         {
             //#region 1. INPUTS
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
             this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
@@ -212,7 +218,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                 if (storedDeveloperMode) {
                     this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 //#endregion

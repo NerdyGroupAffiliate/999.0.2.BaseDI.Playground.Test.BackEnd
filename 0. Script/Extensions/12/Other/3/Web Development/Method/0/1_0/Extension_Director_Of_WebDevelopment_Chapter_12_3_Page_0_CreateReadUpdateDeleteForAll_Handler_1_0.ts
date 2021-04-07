@@ -56,28 +56,28 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     </body>
                 </html>`
 
-            //if (scripts == "") {        
-            //    storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            if (process.env.APP_ENV == "SERVER") {        
+                storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+          
+                storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(parameterClientOrServerInstance, Object));
+                storedParameterInputs.Parameters.setValue("parameterCRUDVerb", "Read");
+                storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0")
+                storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(masterLeader_masterStorerReference, Object));
+                storedParameterInputs.Parameters.setValue("parameterStorageValue", Object.assign(storyLineDetails, Object));
+                storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(storyLineDetails, Object));
+                storedParameterInputs.Parameters.setValue("parameterPageName", "");
+                storedParameterInputs.Parameters.setValue("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");
+                storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
 
-            //    storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", parameterClientOrServerInstance);
-            //    storedParameterInputs.Parameters.setValue("parameterCRUDVerb", "Read");
-            //    storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0")
-            //    storedParameterInputs.Parameters.setValue("parameterMasterStorer", masterLeader_masterStorerReference);
-            //    storedParameterInputs.Parameters.setValue("parameterStorageValue", storyLineDetails);
-            //    storedParameterInputs.Parameters.setValue("parameterStorylineDetails", storyLineDetails);
-            //    storedParameterInputs.Parameters.setValue("parameterPageName", "");
-            //    storedParameterInputs.Parameters.setValue("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");
-            //    storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
+                let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
+                var baseDIObservations = (results && results.outputs.length > 0) ? results.outputs[1].baseDIObservations[results.outputs[1].baseDIObservations.length - 1] : null;
 
-            //    let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
-            //    var baseDIObservations = (results && results.outputs.length > 0) ? results.outputs[1].baseDIObservations[results.outputs[1].baseDIObservations.length - 1] : null;
+                if (baseDIObservations) {
+                    var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]].observation.metadata[3].item.data[0].dataResult
 
-            //    if (baseDIObservations) {
-            //        var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]].observation.metadata[3].item.data[0].dataResult
-
-            //        scripts = `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
-            //    }
-            //}
+                    scripts += `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
+                }
+            }
 
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{metaDataReplace}", metaData);
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{titleReplace}", title);

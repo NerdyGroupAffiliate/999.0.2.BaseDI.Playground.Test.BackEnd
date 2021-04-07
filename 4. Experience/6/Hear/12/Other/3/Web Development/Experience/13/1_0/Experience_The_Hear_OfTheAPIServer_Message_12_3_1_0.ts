@@ -666,15 +666,9 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 //DETERMINE if we have any routes
                                 if (storedControllerRoutes.length > 0) {
                                     storedControllerRoutes.map(routeItemDetails =>
-                                    {              
-                                        console.log(routeItemDetails);
-
+                                    {             
                                         this._storedServerInstance.Server.Instance.get(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
-                                            //SET instance of our response object.
-
-                                            console.log("SASAA")
-                                            this._storedClientORserverInstance["serverResponder"] = parameterResponse;
-
+                                            //SET instance of our response object.         
                                             Step_2_0_Custom_Output_ServerRequestToClientORserverInstance_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse);
                                         });
                                     });
@@ -751,29 +745,26 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region IDEAL CASE - USE express server
 
-
                     this._storedServerInstance.Server.Instance.listen(this._storedServerInstance.Server.Port, () => {
-                        //try
-                        //{
-                        //    //#region EDGE CASE - USE developer logger
+                        try
+                        {
+                            //#region EDGE CASE - USE developer logger
 
-                        //    if (storedDeveloperMode) {
-                        //        this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                            if (storedDeveloperMode) {
+                                this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                        //        console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": STARTING up web server");
-                        //    }
+                                console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": STARTING up web server");
+                            }
 
-                        //    //#endregion
+                            //#endregion
 
                            console.log(`server started at http://localhost:${this._storedServerInstance.Server.Port}`);
-                        //}
-                        //catch (mistake) {
-                        //    //#region EDGE CASE - USE exception handler
+                        }
+                        catch (mistake) {
+                            //#region EDGE CASE - USE exception handler
 
-                        //    console.log("SASASA");
-
-                        //    //#endregion
-                        //}
+                            //#endregion
+                        }
                     });
 
                     //#endregion

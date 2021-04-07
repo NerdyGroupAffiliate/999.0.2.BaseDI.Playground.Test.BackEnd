@@ -21,7 +21,7 @@ if (process.env.APP_ENV == "SERVER") {
     
 }
 else {
-    var _3rdParty_Redux_CreateStore = require('redux').createStore;
+    //var _3rdParty_Redux_CreateStore = require('redux').createStore;
 }
 
 //#endregion

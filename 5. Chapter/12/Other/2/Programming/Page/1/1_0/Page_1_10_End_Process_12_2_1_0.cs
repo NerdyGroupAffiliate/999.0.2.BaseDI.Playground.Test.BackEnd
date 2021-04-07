@@ -150,6 +150,12 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #endregion
 
+            #region MEMORIZE action name
+
+            string storedActionName = ClientOrServerInstance["actionName"] as string;
+
+            #endregion
+
             #region MEMORIZE app settings
 
             _storedAppSettings = (IConfiguration)ClientOrServerInstance["appSettings"];
@@ -193,7 +199,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + DirectorOrExperienceRequestHandler.RequestID);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + storedActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID);
                         }
 
                         #endregion
@@ -212,7 +218,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + this.DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + storedActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         #endregion
@@ -234,7 +240,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedRequestName);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedActionName + " -> " + storedRequestName);
                         }
 
                         #endregion
@@ -255,7 +261,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         #endregion

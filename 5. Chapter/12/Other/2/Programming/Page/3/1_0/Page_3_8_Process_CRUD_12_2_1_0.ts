@@ -128,6 +128,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
 
             //#endregion
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
             this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
@@ -186,7 +192,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
                     if (storedDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": STARTING storage request for " + storedRequestName);
+                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": STARTING storage request for " + storedActionName + " -> " + storedRequestName);
                     }
 
                     //#endregion
@@ -208,7 +214,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
                     if (storedDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING storage request for " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> Page_3_8_Process_CRUD*** for communication breakdown");
+                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING storage request for " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> Page_3_8_Process_CRUD*** for communication breakdown");
                     }
 
                     //#endregion

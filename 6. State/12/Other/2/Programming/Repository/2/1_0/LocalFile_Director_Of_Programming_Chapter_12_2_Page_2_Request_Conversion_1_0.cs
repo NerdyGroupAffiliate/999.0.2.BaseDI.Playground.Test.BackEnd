@@ -243,6 +243,12 @@ namespace BaseDI.Professional.State.Programming_2
 
             #endregion
 
+            #region MEMORIZE action name
+
+            string storedActionName = ClientOrServerInstance["actionName"] as string;
+
+            #endregion
+
             #region MEMORIZE developer mode
 
             bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
@@ -352,7 +358,7 @@ namespace BaseDI.Professional.State.Programming_2
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***PROGRAMMING*** LOCAL DATASET for request " + storedRequestName);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***PROGRAMMING*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
                         }
 
                         #endregion
@@ -578,7 +584,7 @@ namespace BaseDI.Professional.State.Programming_2
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***WEB DEVELOPMENT*** LOCAL DATASET for request " + storedRequestName);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***WEB DEVELOPMENT*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
                         }
 
                         #endregion
@@ -637,7 +643,7 @@ namespace BaseDI.Professional.State.Programming_2
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***SECURITY*** LOCAL DATASET for request " + storedRequestName);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***SECURITY*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
                         }
 
                         #endregion

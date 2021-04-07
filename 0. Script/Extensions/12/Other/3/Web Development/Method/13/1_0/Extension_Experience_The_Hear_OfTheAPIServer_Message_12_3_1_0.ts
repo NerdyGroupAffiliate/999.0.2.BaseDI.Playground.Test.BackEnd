@@ -582,8 +582,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     storedParameterInputs.Parameters.setValue("parameterStorageValue", storedServerScriptName);
                     storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
 
-                    console.log("A");
-
                     //STORE it
                     await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
 
@@ -597,7 +595,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     storedParameterInputs.Parameters.remove("parameterUniqueStorageKey");
                     storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_DataConverter_Mode");
 
-                    console.log("B");
                     //STORE it
                     await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
 

@@ -180,6 +180,12 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#endregion
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this.ClientOrServerInstance["actionName"];
+
+            //#endregion
+
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
@@ -228,7 +234,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                     //    if (storedDeveloperMode) {
                     //        this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    //        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***ADVERTISING*** LOCAL DATASET for request " + storedRequestName);
+                    //        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***ADVERTISING*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
                     //    }
                     // storedProcessCheckPointHit = false;
 
@@ -283,7 +289,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***PROGRAMMING*** LOCAL DATASET for request " + storedRequestName);
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***PROGRAMMING*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
                         }
 
                         storedProcessCheckPointHit = false;
@@ -488,7 +494,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE*** SUCCESSFULLY retrieved ***WEB DEVELOPMENT*** LOCAL DATASET for request " + storedRequestName);
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE*** SUCCESSFULLY retrieved ***WEB DEVELOPMENT*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
                         }
 
                         storedProcessCheckPointHit = false;
@@ -519,10 +525,6 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 //#endregion
 
                 //#region 12-5 - Security
-
-                console.log("storedRequestName"); 
-                console.log(storedRequestName);
-
                 try
                 {
                     switch (storedRequestName.toUpperCase()) {
@@ -546,7 +548,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***SECURITY*** dataset for request " + storedRequestName);
+                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***SECURITY*** dataset for request " + storedActionName + " -> " + storedRequestName);
                         }
 
                         storedProcessCheckPointHit = false;

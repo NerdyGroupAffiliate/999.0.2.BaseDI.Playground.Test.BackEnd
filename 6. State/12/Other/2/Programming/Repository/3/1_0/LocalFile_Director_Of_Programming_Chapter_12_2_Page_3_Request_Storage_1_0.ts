@@ -124,6 +124,12 @@ export namespace BaseDI.Professional.State.Programming_3 {
        
             //#endregion
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
             this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
@@ -219,7 +225,7 @@ export namespace BaseDI.Professional.State.Programming_3 {
                                         if (storedDeveloperMode) {
                                             this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                                            console.log("\nSTEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***EXPENSE STORAGE*** SUCCESSFULLY retrieved value for request " + storedRequestName + "\n" + storedOutPut_ObservationKey);
+                                            console.log("\nSTEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***EXPENSE STORAGE*** SUCCESSFULLY retrieved value for request " + storedActionName + " -> " + storedRequestName + "\n" + storedOutPut_ObservationKey);
                                         }
 
                                         //#endregion
@@ -257,7 +263,7 @@ export namespace BaseDI.Professional.State.Programming_3 {
                 if (storedDeveloperMode) {
                     this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** HANDLING storage request " + storedRequestName + " could not be completed successfully. Please check ***LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> Action_8_Process_CRUD*** for communication breakdown\n" + mistake.toString());
+                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** HANDLING storage request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 -> Action_8_Process_CRUD*** for communication breakdown\n" + mistake.toString());
                 }
 
                 //#endregion
