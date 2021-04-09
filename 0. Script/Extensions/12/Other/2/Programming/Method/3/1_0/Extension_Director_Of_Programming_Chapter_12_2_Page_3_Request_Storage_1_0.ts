@@ -248,6 +248,9 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
 
+            //OPTIONAL
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
+
             //#endregion
 
             //#region MEMORIZE request details
@@ -366,7 +369,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 }
 
                 //#endregion
-                stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
+                stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("parametersInputs", parameterInputs);
+                stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
 
                 storedStorylineDetails = await stored_CentralizedStorer?.Action_1_Begin_Process(); 
                 storedStorylineDetails.outputs[1].baseDIObservations = (storedStorylineDetails && storedStorylineDetails.ouputs) ? storedStorylineDetails?.outputs[1]?.baseDIObservations?.filter((value: {}) => Object.keys(value).length !== 0) : storedStorylineDetails.outputs[1].baseDIObservations;

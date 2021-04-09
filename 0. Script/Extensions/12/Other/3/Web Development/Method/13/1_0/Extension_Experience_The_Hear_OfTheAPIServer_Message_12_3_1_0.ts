@@ -602,7 +602,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(storedStorylineDetails, Object));
 
                     storedParameterInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", true);
-
                     //DYNAMIC inputs
                     storedParameterInputs.Parameters.setValue("parameterStorageDescription", "STORING client side BaseDI script SOURCE PATH");
                     storedParameterInputs.Parameters.setValue("parameterStorageValue", storedServerScriptName);
