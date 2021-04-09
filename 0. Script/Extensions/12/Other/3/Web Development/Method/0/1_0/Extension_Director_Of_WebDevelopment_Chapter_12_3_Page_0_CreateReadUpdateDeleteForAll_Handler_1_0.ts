@@ -1,4 +1,5 @@
-﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+﻿import { Console } from "console";
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0"
 
@@ -25,14 +26,17 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
                 </html>`
 
             if (scripts == "") {
-               
-                let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0
-                .BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0
-                .Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
-                var baseDIObservations = results.outputs[1]
-                .baseDIObservations[results.outputs[1].baseDIObservations.length - 1];
 
-                scripts = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
+                let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0
+                    .BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0
+                    .Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
+                var baseDIObservations = results.outputs[1]
+                    .baseDIObservations[results.outputs[1].baseDIObservations.length - 1];
+
+                var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]]
+                    .observation.metadata[3].item.data[0].dataResult
+
+                scripts = `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
             }
 
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{metaDataReplace}", metaData);
@@ -134,10 +138,24 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             //#endregion
 
             //#region EXECUTE THE VISION
+            var rowColumnCollection = [];
             htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
+                if (!rowColumnCollection[col.ParentHTMLContentItemAttributeID]) {
+                    rowColumnCollection[col.ParentHTMLContentItemAttributeID] = [];
+                }
+
                 let colItem = `<${col.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
-                htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
+
+                rowColumnCollection[col.ParentHTMLContentItemAttributeID].push(colItem)
+
+                // htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
             });
+
+            //    console.log(rowColumnCollection)       
+            Object.keys(rowColumnCollection).forEach((key) => {
+                htmlColumnsString = htmlColumnsString.replace(`{${key}_Replace}`, rowColumnCollection[key].join("\n"));
+            })
+
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -151,6 +169,22 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             //#endregion          
         }
 
+        public static ChildHTMLContentDetails(data) {
+            let node = [];
+            data.ChildHTMLContentDetails.forEach((d, index) => {
+                node.push(`<${d.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(d.Attributes)}>${d.Value ? d.Value : ""}</${d.Tag}>\n`)
+                if (d.ChildHTMLContentDetails.length > 0) {
+                    d.ChildHTMLContentDetails.forEach(element => {
+                        var child = this.ChildHTMLContentDetails(element);
+                        node.push(`<${element.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(element.Attributes)}>${element.Value ? element.Value : child}</${element.Tag}>\n`)
+                    });
+                }
+                return node;
+            })
+            return node;
+        }
+
+
         public static Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
             //#region DESCRIBE THE MEMORIES
 
@@ -161,16 +195,21 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
             //#region EXECUTE THE VISION
 
-            htmlContentJSON.value.HTMLContentItems.forEach(con => {
-                if (idsAndConstant[con.ParentHTMLContentItemAttributeID] == undefined) {
+            htmlContentJSON.value.HTMLContentItems.forEach(async con => {
+                if (!idsAndConstant[con.ParentHTMLContentItemAttributeID]) {
                     idsAndConstant[con.ParentHTMLContentItemAttributeID] = new Array();
-                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
-                else {
-                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
-                }
-            });
 
+                if (con.ChildHTMLContentDetails.length > 0) {
+                    var childString = this.ChildHTMLContentDetails(con).join(" ");
+                    // var childString = "";
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${childString}</${con.Tag}>\n`);
+
+                } else {
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+                }
+
+            });
             Object.keys(idsAndConstant).forEach(item => {
                 let content = idsAndConstant[item].join('\n')
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
@@ -178,10 +217,9 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
             if (process.env.APP_ENV == "SERVER") {
                 htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
-
             }
 
-        
+
             //#endregion
 
             //#region RECALL THE MEMORIES
@@ -189,7 +227,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             //#endregion
 
             //#region REPORT THE FEEDBACK
-                     
+
             return htmlContentString;
 
             //#endregion                        
@@ -213,7 +251,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             //#endregion
 
             //#region EXECUTE THE VISION
-
+          
             filesArray.forEach(file => {
                 file.StyleFileUseProperties.forEach(element => {
                     if (element.IsHtmlTag == "true" && element.properties.length > 0) {
@@ -324,7 +362,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
                     }
                 });
             });
-          
+
 
             Object.keys(PropertyArray).forEach((key, index) => {
                 let obj = Object.values(PropertyArray)[index];
@@ -360,10 +398,9 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
             htmlInlineCSSString = `<style>${cssString}</style>`;
 
-            if (process.env.APP_ENV == "SERVER")
-            {	            
-                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');	                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
-            }	
+            if (process.env.APP_ENV == "SERVER") {
+                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images'); htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
+            }
             //#endregion
 
             //#region RECALL THE MEMORIES
