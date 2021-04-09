@@ -147,8 +147,8 @@ export namespace BaseDI.Professional.State.Programming_3 {
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
-            let storedDeveloperModeSkipConsole: boolean = this.ExtraData.KeyValuePairs.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog");
-
+            let storedDeveloperModeParameters: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = this.ExtraData.KeyValuePairs.getValue("storedDeveloperLoggingInputs");
+            let storedDeveloperModeSkipConsole: boolean = (storedDeveloperModeParameters?.Parameters?.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog")) ? storedDeveloperModeParameters?.Parameters?.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog") : false;
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED

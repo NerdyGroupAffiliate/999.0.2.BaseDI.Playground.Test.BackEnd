@@ -239,40 +239,87 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                 if (!process.env.APP_SETTING_DEVELOPER_MODE_SILENT)
                 {
-                    if (storedMistake) {
-                        console.log("%c" + storedMessage, "color:" + "Orange");
+                    //#region CLIENT side logging
+                    if (process.env.APP_ENV.toUpperCase() == "CLIENT") {
+                        if (storedMistake) {
+                            console.log("%c" + storedMessage, "color:" + "Orange");
 
-                        return;
+                            return;
+                        }
+
+                        if (storedOPTIONALBeginOfProcess == true) {
+                            console.log("%c" + storedMessage, "color:" + "#94f500");
+
+                            return;
+                        }
+
+                        if (storedOPTIONALMiddleOfProcess == true) {
+                            console.log("%c" + storedMessage, "color:" + "#00c6f5");
+
+                            return;
+                        }
+
+                        if (storedOPTIONALAccountingCostType != "") {
+                            console.log("%c" + storedMessage, "color:" + "Yellow");
+
+                            return;
+                        }
+
+                        if (storedOPTIONALEndOfProcess == true) {
+                            console.log("%c" + storedMessage, "color:" + "#ff0e11");
+
+                            return;
+                        }
+                        else {
+                            console.log("%c" + storedMessage, "color:" + "#D3D3D3");
+                        }
                     }
+                    //#endregion
 
-                    if (storedOPTIONALBeginOfProcess == true) {
-                        console.log("%c" + storedMessage, "color:" + "#94f500");
-
-                        return;
-                    }
-
-                    if (storedOPTIONALMiddleOfProcess == true) {
-                        console.log("%c" + storedMessage, "color:" + "#00c6f5");
-
-                        return;
-                    }
-
-                    if (storedOPTIONALAccountingCostType != "") {
-                        console.log("%c" + storedMessage, "color:" + "Yellow");
-
-                        return;
-                    }
-
-                    if (storedOPTIONALEndOfProcess == true) {
-                        console.log("%c" + storedMessage, "color:" + "#ff0e11");
-
-                        return;
-                    }
-                    else
+                    //#region SERVER side logging
+                    if (process.env.APP_ENV.toUpperCase() == "SERVER")
                     {
-                        console.log("%c" + storedMessage, "color:" + "#D3D3D3");
+                        if (storedMistake) {
+                            //console.log("%c" + storedMessage, "color:" + "Orange");
+                            console.log(storedMessage);
+
+                            return;
+                        }
+
+                        if (storedOPTIONALBeginOfProcess == true) {
+                            console.log(storedMessage);
+                            //console.log('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
+
+                            return;
+                        }
+
+                        if (storedOPTIONALMiddleOfProcess == true) {
+                            console.log(storedMessage);
+                            //console.log('\x1b[34m', storedMessage); //BLUE
+
+                            return;
+                        }
+
+                        if (storedOPTIONALAccountingCostType != "") {
+                            console.log(storedMessage);
+                            //console.log("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
+
+                            return;
+                        }
+
+                        if (storedOPTIONALEndOfProcess == true) {
+                            console.log(storedMessage);
+                            //console.log("%c" + storedMessage, "color:" + "#ff0e11"); //RED
+
+                            return;
+                        }
+                        else
+                        {
+                            console.log(storedMessage);
+                            //console.log('\x1b[37m', storedMessage);  //WHITE
+                        }
                     }
-                    
+                    //#endregion                    
                 }
   
                 //#endregion    

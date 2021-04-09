@@ -235,6 +235,10 @@ export class ClassModel
         //if (parameterExtraData != null)
         //    this._storedExtraData = parameterExtraData;
 
+        //stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("parametersInputs", parameterInputs);
+        //stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
+
+
         //#endregion
 
         //#region MEMORIZE developer mode
