@@ -11,6 +11,7 @@ import * as Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 f
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
@@ -145,6 +146,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             //#endregion
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
             this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
@@ -160,6 +167,16 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RETRIEVING request dataset");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Page_1_1_Begin_Process_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");   
 
             //#endregion
 
@@ -185,9 +202,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
                     //#region EDGE CASE - USE developer logger
 
                     if (storedDeveloperMode) {
-                        this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                        this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
+                                                
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
-                        console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedRequestName);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -217,9 +237,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
                 //#region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode) {
-                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                    this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***webpack.config.[client or server].json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED cache retrieval");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 //#endregion
@@ -239,7 +263,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            this.StorylineDetails = storedDataResponse.StorylineDetails;
+            this.StorylineDetails = (storedDataResponse != null && storedDataResponse != undefined) ? storedDataResponse.StorylineDetails : this.StorylineDetails;
 
             return this.StorylineDetails;
 

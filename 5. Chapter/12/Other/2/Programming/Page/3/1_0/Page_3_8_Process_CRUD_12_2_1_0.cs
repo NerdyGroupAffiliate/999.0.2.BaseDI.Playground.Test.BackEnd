@@ -77,6 +77,12 @@ namespace BaseDI.Professional.Chapter.Page.Programming_3
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
+            #region MEMORIZE action name
+
+            string storedActionName = ClientOrServerInstance["actionName"] as string;
+
+            #endregion
+
             //Line 1: The opening “div” tag will hard coded by the software program.
 
             //Line 1: The “class attribute class prefix” of “The_WebClient-Help_Build_Website_Foundation-“

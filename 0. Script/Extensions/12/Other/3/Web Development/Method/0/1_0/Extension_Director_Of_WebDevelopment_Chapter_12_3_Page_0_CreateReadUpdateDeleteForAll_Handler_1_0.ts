@@ -1,6 +1,20 @@
-﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+﻿//#region Imports
+
+//#region 3rd Party
+
+//#endregion
+
+//#region BaseDI
+
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0"
+import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
+//#endregion
+
+//#endregion
+
 
 export namespace BaseDI.Professional.Web_Development.Extensions_0 {
     export class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 {
@@ -10,7 +24,25 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
         //#region GENERATE HTML STRUCTURE
 
-        public static async Step_X_X_Custom_Store_HTMLStructureToString_1_0(metaData: string, title: string, scripts: string, styles: string, body: string, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null, storyLineDetails: any = null): Promise<string> {
+        public static async Step_X_X_Custom_Store_HTMLStructureToString_1_0(metaData: string, title: string, scripts: string, styles: string, body: string, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null, storyLineDetails: any = null, parameterClientOrServerInstance: any = null): Promise<string> {
+            //#region 1. INPUTS
+
+            //#region DEFINE parameter inputs
+
+            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+
             let htmlHomePageTemplate = `<!DOCTYPE html>
                 <html lang="en">
                     <head>
@@ -24,15 +56,26 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     </body>
                 </html>`
 
-            if (scripts == "") {            
-                if (process.env.APP_ENV.toUpperCase() == "SERVER")
-                {
-                    let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
-                    var baseDIObservations = results.outputs[1].baseDIObservations[results.outputs[1].baseDIObservations.length - 1];
+            if (process.env.APP_ENV == "SERVER") {        
+                storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+          
+                storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(parameterClientOrServerInstance, Object));
+                storedParameterInputs.Parameters.setValue("parameterCRUDVerb", "Read");
+                storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0")
+                storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(masterLeader_masterStorerReference, Object));
+                storedParameterInputs.Parameters.setValue("parameterStorageValue", Object.assign(storyLineDetails, Object));
+                storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(storyLineDetails, Object));
+                storedParameterInputs.Parameters.setValue("parameterPageName", "");
+                storedParameterInputs.Parameters.setValue("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");
+                storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
 
+                let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
+                var baseDIObservations = (results && results.outputs.length > 0) ? results.outputs[1].baseDIObservations[results.outputs[1].baseDIObservations.length - 1] : null;
+
+                if (baseDIObservations) {
                     var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]].observation.metadata[3].item.data[0].dataResult
 
-                    scripts = `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
+                    scripts += `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
                 }
             }
 

@@ -163,6 +163,12 @@ export class ClassModel
 
         //#endregion
 
+        //#region DEFINE developer mode
+
+        let storedOPTIONALAccountingCostType: string = "";
+
+         //#endregion
+
         //#region DEFINE error response
 
         //let storedErrorResponse: any = null;
@@ -181,9 +187,34 @@ export class ClassModel
 
         //#endregion
 
+        //#region DEFINE parameter inputs
+
+        //let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+
+        //#endregion
+
+        //#region DEFINE process checkpoint
+
+        let storedProcessCheckPointHit: boolean = false;
+
+         //#endregion
+
         //#region DEFINE request handler
 
         //let stored_ReferenceTo_RequestHandler: any = null;
+
+        //#endregion
+
+        //#region DEFINE stored message
+
+        let storedMessage: string = "";
+
+        //#endregion
+
+        //#region DEFINE storyline details
+
+        //let storedStorylineDetails:Object = null;
+        //let storedStorylineDetails_Parameters:Object = null;
 
         //#endregion
 
@@ -210,12 +241,56 @@ export class ClassModel
 
         let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
+        //if (parameterClientOrServerInstance["processStepNumber"] == null)
+        //    parameterClientOrServerInstance["processStepNumber"] = 0;
+
+        //let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        //REQUIRED
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RETRIEVING cached dataset");
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "SetupStoryline");
+
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+        
+
+        //OPTIONAL
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", true);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALRunSilentMode", true);
+
+        //#endregion
+
+        //#region MEMORIZE request details
+
+        //let storedRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
+        //let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
+
         //#endregion
 
         //#region MEMORIZE request resolver
 
         let stored_DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = null;
         //let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+
+        //#endregion
+
+        //#region MEMORIZE server details
+
+        //let storedServerDetails:Object = null;
+
+        //#endregion
+
+        //#region MEMORIZE storyline details
+
+        //let storedStorylineDetails: any = parameterInputs.Parameters.getValue("parameterStorylineDetails");
+            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
         //#endregion
 
@@ -232,6 +307,16 @@ export class ClassModel
             this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
 
             console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
+        }
+
+        //#endregion
+
+        //#region EDGE CASE - USE developer logger
+
+        if (storedDeveloperMode) {
+            this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+
+            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
         }
 
         //#endregion

@@ -272,7 +272,7 @@ namespace BaseDI.Professional
         public IConfiguration StoredAppSettings { get; set; }
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInfo;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASETS
         private JObject _storedStorylineDetails;
@@ -295,7 +295,7 @@ namespace BaseDI.Professional
 
             #region DEFINE client/server info
 
-            _storedClientORserverInfo = new Dictionary<string, object>();
+            _storedClientOrServerInstance = new Dictionary<string, object>();
 
             #endregion
 
@@ -396,33 +396,41 @@ namespace BaseDI.Professional
             #region MEMORIZE action name
 
             if (parameterRequestActionName != "")
-                _storedClientORserverInfo.Add("actionName", parameterRequestActionName);
+                _storedClientOrServerInstance.Add("actionName", parameterRequestActionName);
 
             #endregion
+
+            #region MEMORIZE developer mode
+
+            _storedClientOrServerInstance.Add("storedIgnoreDeveloperConsoleLog", false);
+
+            #endregion
+
+
 
             #region MEMORIZE application settings
 
             if (StoredAppSettings != null)
-                _storedClientORserverInfo.Add("appSettings", StoredAppSettings);
+                _storedClientOrServerInstance.Add("appSettings", StoredAppSettings);
 
             #endregion
 
             #region MEMORIZE chapter name
 
             if (parameterRequestActionName != "")
-                _storedClientORserverInfo.Add("chapterName", parameterRequestChapterName);
+                _storedClientOrServerInstance.Add("chapterName", parameterRequestChapterName);
 
             #endregion
 
             #region MEMORIZE request instance
 
-            _storedClientORserverInfo.Add("request", Request);
+            _storedClientOrServerInstance.Add("request", Request);
 
             #endregion
 
             #region MEMORIZE server instance
 
-            _storedClientORserverInfo.Add("serverInstance", this);
+            _storedClientOrServerInstance.Add("serverInstance", this);
 
             #endregion
 
@@ -458,7 +466,7 @@ namespace BaseDI.Professional
                 Action = (string parameterClientRequestByName, string parameterClientRequestByNameParameters, ExtraData_12_2_1_0 parameterExtraData) =>
                 {
                     return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                        .SetupStoryline(_storedClientORserverInfo, _storedStorylineDetails, null, parameterExtraData, "", parameterClientRequestByName, parameterClientRequestByNameParameters)
+                        .SetupStoryline(_storedClientOrServerInstance, _storedStorylineDetails, null, parameterExtraData, "", parameterClientRequestByName, parameterClientRequestByNameParameters)
                         .Action().Result;
                 };
 

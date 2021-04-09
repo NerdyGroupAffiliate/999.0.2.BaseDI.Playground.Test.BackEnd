@@ -7,6 +7,7 @@ import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../..
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
@@ -96,7 +97,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         //#region 3. Set
 
         //A. Default state
-        public HandleDefaults(): void {
+        public HandleDefaults(): void
+        {
             //#region 1. INPUTS
 
 
@@ -127,6 +129,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         {
             //#region 1. INPUTS
 
+            //#region MEMORIZE action name
+
+            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
             this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
@@ -136,6 +144,16 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RETRIEVING cached dataset");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.Page_2_1_Begin_Process_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action"); 
 
             //#endregion
 
@@ -190,16 +208,6 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                         this.Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(storedDataSet.StorylineDetailsFiltered);
                         this.Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
 
-                        //#region EDGE CASE - USE developer logger
-
-                        if (storedDeveloperMode) {
-                            this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
-
-                            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": SUCCESSFULLY retrieved dataset for request " + storedRequestName);
-                        }
-
-                        //#endregion
-
                         return;
                     })
                 }
@@ -219,9 +227,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                 //#region EDGE CASE - USE developer logger
 
                 if (storedDeveloperMode) {
-                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                    this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED cache retrieval");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 //#endregion
@@ -273,9 +285,25 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
 
+            //#region MEMORIZE clientOrServer instance
+
+            this._storedClientORserverInstance = this.ClientOrServerInstance;
+
+            //#endregion
+
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PREPARING caching request");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
 
             //#endregion
 
@@ -321,15 +349,23 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
             }
-            catch
+            catch(mistake)
             {
                 //#region EDGE CASE - USE developer logger
-
                 if (storedDeveloperMode) {
-                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                    this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0]");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED processing cached data");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw mistake;
 
                 //#endregion
             }
@@ -355,9 +391,25 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
 
+            //#region MEMORIZE clientOrServer instance
+
+            this._storedClientORserverInstance = this.ClientOrServerInstance;
+
+            //#endregion
+
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PREPARING caching request");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
 
             //#endregion
 
@@ -470,19 +522,25 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
             }
-            catch
-            {
+            catch (mistake) {
                 //#region EDGE CASE - USE developer logger
-
                 if (storedDeveloperMode) {
-                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                    this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0]");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED processing cached data");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw mistake;
 
                 //#endregion
             }
-
 
             //#endregion
 

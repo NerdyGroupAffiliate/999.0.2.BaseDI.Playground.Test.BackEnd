@@ -14,6 +14,7 @@ using BaseDI.Professional.Script.Programming_1;
 using Microsoft.Extensions.Configuration;
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -139,67 +140,229 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
         #endregion
 
-
         #region 4. Action
 
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE action name
+
+            string storedActionName = ClientOrServerInstance["actionName"] as string;
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)ClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            _storedClientORserverInstance = ClientOrServerInstance;
+
+            #endregion
+
+            #region MEMORIZE repository clientOrServer instance
+
             Repository.ClientOrServerInstance = ClientOrServerInstance;
+
+            #endregion
+
+            #region MEMORIZE repository extra data
+
             Repository.ExtraData = ExtraData;
+
+            #endregion
+
+            #region MEMORIZE repository centralized processes
+
             Repository.MasterStorer = MasterStorer;
 
-            //CREATE THE PROCESS
-            Func<bool> processMetaData = null;
+            #endregion
 
-            processMetaData = () =>
+            #region MEMORIZE request details
+
+            string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+            string storedRequestNameParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE get dataset
+
+            try
             {
-                //EXECUTE THE PROCESS
-                var metaData = Repository.Action_9_Verify_Process().Result;
+                #region IDEAL CASE - USE data repository
 
-                //STORE META DATA
-                StorylineDetails = JObject.FromObject(metaData["StorylineDetails"]);
-                StorylineDetails_Parameters = JObject.FromObject(metaData["StorylineDetails_Parameters"]);
+                #region 2. OUTPUT data response
 
-                //STORE JSONSTRING PLACEHOLDER
-                Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0((JObject)StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]"));
-                
-                //CONVERT JSONSTRING PLACEHOLDER
-                Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
+                Func<Task<JObject>> GetDataSet = async () =>
+                {
+                    storedDataResponse = Repository.Action_9_Verify_Process().Result;
 
-                return true;
-            };
+                    StorylineDetails = JObject.FromObject(storedDataResponse["StorylineDetails"]);
+                    StorylineDetails_Parameters = JObject.FromObject(storedDataResponse["StorylineDetails_Parameters"]);
 
-            //START THE PROCESS
-            processMetaData();
+                    Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0((JObject)StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]"));
+                    Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
 
-            //RETURN OUTPUTTED APPSETTINGS
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                };
+
+                #endregion
+
+                #region 1. INPUT data request
+
+                await GetDataSet();
+
+                #endregion
+
+                #endregion
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
+            }
+
+            #endregion
+
+            #endregion    
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
             return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         #region STORE JSONSTRING PLACEHOLDER
-        private void Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(JObject settingsList)
+
+        private void Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(JObject parameter_BaseDI_JSONDataSchema)
         {
-            if (settingsList != null)
+            #region 1. INPUTS
+
+            #region DEFINE data key/values
+
+            List<JToken> storedJSONValuesList = new List<JToken>();
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)ClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+            string storedRequestNameParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE jsonkey search
+
+            try
             {
-                List<JToken> options = new List<JToken>();
+                #region IDEAL CASE - USE string placeholder
 
-                foreach (var settng in settingsList.Children())
+                if (parameter_BaseDI_JSONDataSchema != null)
                 {
-                    options.Add(settng);
-                };
+                    if (_stored_JSONKeyPlaceHolderName == null)
+                        _stored_JSONKeyPlaceHolderName = new List<JToken>();
 
-                foreach (var option in options)
-                {
-                    JProperty optionItem = (JProperty)option;
-
-                    if (optionItem.Name.ToString().ToUpper().Contains("_MAINPROFILE"))
+                    foreach (var storedJSONValue in parameter_BaseDI_JSONDataSchema.Children())
                     {
-                        _stored_JSONKeyPlaceHolderName.Add(optionItem);
+                        storedJSONValuesList.Add(storedJSONValue);
+                    };
+
+                    foreach (var storedJSONValue in storedJSONValuesList)
+                    {
+                        JProperty optionItem = (JProperty)storedJSONValue;
+
+                        if (((JProperty)storedJSONValue).Name.ToString().ToUpper().Contains("_MAINPROFILE"))
+                        {
+                            _stored_JSONKeyPlaceHolderName.Add(optionItem);
+                        }
                     }
                 }
+
+                #endregion
             }
+            catch
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0]");
+                }
+
+                #endregion
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
+
         #endregion
 
         #region CONVERT JSONSTRING PLACEHOLDER

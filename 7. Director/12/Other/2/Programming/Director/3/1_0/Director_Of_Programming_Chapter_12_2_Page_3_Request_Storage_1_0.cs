@@ -485,8 +485,8 @@ namespace BaseDI.Professional.Director.Programming_3
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        //Page 1-9
-        public override async Task<JObject> Action_9_Verify_Process()
+        //Page 1-8
+        public override async Task<JObject> Action_8_Process_CRUD()
         {
             #region 1. INPUTS
 
@@ -502,20 +502,28 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region EXECUTE process handler
 
-            #region EDGE CASE - USE developer logger
+            //#region EDGE CASE - USE developer logger
 
-            if (storedDeveloperMode)
+            if (storedProcessCheckPointHit == true)
             {
-                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                if (storedDeveloperMode)
+                {
+                    this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0 -> Action_9_Verify_Process - [VERIFY process execution]");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                }
+
+                storedProcessCheckPointHit = false;
             }
 
-            #endregion
+            //#endregion
 
             #region IDEAL CASE - USE process handler 
 
-            var page = new ChapterPage.Page_3_9_Verify_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
+            var page = new ChapterPage.Page_3_8_Process_CRUD_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
             page.ClientOrServerInstance = _storedClientORserverInstance;
 
@@ -524,72 +532,6 @@ namespace BaseDI.Professional.Director.Programming_3
 
             page.MasterStorer = _stored_CentralizedStorer;
             page.MasterDisturber = _stored_CentralizedStorer;
-            page.MasterSensor = _stored_CentralizedSensor;
-
-            page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
-
-            _storedStorylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #region RETURN process response
-
-            #region IDEAL CASE - USE baseDI dataset
-
-            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
-
-            #endregion
-
-            #endregion
-
-            #endregion
-        }
-
-        //Page 1-10
-        public override async Task<JObject> Action_10_End_Process()
-        {
-            #region 1. INPUTS
-
-            #region MEMORIZE developer mode
-
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #region EXECUTE process handler
-
-            #region EDGE CASE - USE developer logger
-
-            if (storedDeveloperMode)
-            {
-                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
-
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0 -> Action_10_End_Process - [END process execution]");
-            }
-
-            #endregion
-
-            #region IDEAL CASE - USE process handler 
-
-            var page = new ChapterPage.Page_3_10_End_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
-
-            page.ClientOrServerInstance = _storedClientORserverInstance;
-
-            page.DirectorOrExperienceRequestHandler = _stored_DirectorRequestHandler;
-            page.ExtraData = _storedExtraData;
-
-            page.MasterStorer = _stored_CentralizedStorer;
-            page.MasterDisturber = _stored_CentralizedDisturber;
             page.MasterSensor = _stored_CentralizedSensor;
 
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
@@ -812,8 +754,35 @@ namespace BaseDI.Professional.Director.Programming_3
             #endregion
         }
 
-        //Page 1-8
-        public override async Task<JObject> Action_8_Process_CRUD()
+        //Page 1-9
+        public override async Task<JObject> Action_9_Verify_Process()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        //Page 1-10
+        public override async Task<JObject> Action_10_End_Process()
         {
             #region 1. INPUTS
 

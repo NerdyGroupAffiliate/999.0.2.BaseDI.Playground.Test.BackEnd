@@ -36,8 +36,8 @@ export namespace BaseDI.Professional.Director.Programming_2 {
         //#endregion
 
         //#region 2. Ready
-
-        constructor(extraData: any = null) {
+        constructor(extraData: any = null)
+        {
             super();
 
             //#region 1. INPUTS
@@ -74,7 +74,8 @@ export namespace BaseDI.Professional.Director.Programming_2 {
         //#region 3. Set
 
         //A. Default state
-        public HandleDefaults(): void {
+        public HandleDefaults(): void
+        {
             //#region 1. INPUTS
 
 
@@ -453,8 +454,6 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region 3. OUTPUT
 
-
-
             //#endregion
         }
 
@@ -463,9 +462,9 @@ export namespace BaseDI.Professional.Director.Programming_2 {
         //#region 3. Set
 
         //A. Default state
-        public HandleDefaults(): void {
+        public HandleDefaults(): void
+        {
             //#region 1. INPUTS
-
 
             //#endregion
 

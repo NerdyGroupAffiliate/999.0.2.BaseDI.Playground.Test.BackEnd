@@ -151,6 +151,12 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #endregion
 
+            #region MEMORIZE action name
+
+            string storedActionName = ClientOrServerInstance["actionName"] as string;
+
+            #endregion
+
             #region MEMORIZE app settings
 
             _storedAppSettings = (IConfiguration)ClientOrServerInstance["appSettings"];
@@ -194,9 +200,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                     if (storedDeveloperMode)
                     {
-                        _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                        ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                        Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedRequestName);
+                        Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": RETRIEVING dataset for request " + storedActionName + " -> " + storedRequestName);
                     }
 
                     #endregion
@@ -225,9 +231,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                 if (storedDeveloperMode)
                 {
-                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                    ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 #endregion
