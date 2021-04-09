@@ -42,7 +42,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         constructor()
         {
             //#region 1. Assign
-
+            this.ExtraData = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0();
             //#endregion
 
             //#region 2. Action

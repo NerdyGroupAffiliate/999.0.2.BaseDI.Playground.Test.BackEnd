@@ -502,16 +502,24 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region EXECUTE process handler
 
-            #region EDGE CASE - USE developer logger
+            //#region EDGE CASE - USE developer logger
 
-            if (storedDeveloperMode)
+            if (storedProcessCheckPointHit == true)
             {
-                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                if (storedDeveloperMode)
+                {
+                    this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0 -> Action_9_Verify_Process - [VERIFY process execution]");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                }
+
+                storedProcessCheckPointHit = false;
             }
 
-            #endregion
+            //#endregion
 
             #region IDEAL CASE - USE process handler 
 

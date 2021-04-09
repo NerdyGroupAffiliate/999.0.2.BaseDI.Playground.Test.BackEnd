@@ -165,7 +165,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //A. Story in motion (DO SOMETHING)
 
-        public SetupStoryline(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "") : aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
+        public SetupStoryline(parameterClientOrServerInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "") : aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
         {
             //#region 1. INPUTS
 
@@ -183,13 +183,13 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = parameterClientORserverInstance["actionName"];
+            let storedActionName: string = parameterClientOrServerInstance["actionName"];
 
             //#endregion
 
@@ -197,8 +197,21 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            if (parameterClientORserverInstance["processStepNumber"] == null)
-                parameterClientORserverInstance["processStepNumber"] = 0;
+            if (parameterClientOrServerInstance["processStepNumber"] == null)
+                parameterClientOrServerInstance["processStepNumber"] = 0;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "BEGIN processing request");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", parameterClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", parameterClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", parameterClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "SetupStoryline"); 
+
+            //OPTIONAL
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
 
             //#endregion
 
@@ -213,7 +226,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             let stored_DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
 
-            let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+            let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
 
             //#endregion
 
@@ -226,10 +239,13 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode && parameterClientORserverInstance["processStepNumber"] == 0) {
-                    parameterClientORserverInstance["processStepNumber"] += 1;
+                if (storedDeveloperMode && parameterClientOrServerInstance["processStepNumber"] == 0) {
+                    parameterClientOrServerInstance["processStepNumber"] += 1;
 
-                    console.log("\n\nSTEP " + parameterClientORserverInstance["processStepNumber"] + ": BEGIN processing request -> " + storedActionName);
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", parameterClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 //#endregion
@@ -246,9 +262,9 @@ export namespace BaseDI.Professional.Story.Programming_1
                     stored_DirectorOrExperienceRequestHandler = stored_ReferenceTo_RequestHandler;
 
                     stored_DirectorOrExperienceRequestHandler.RequestID = parameterSystemRequestByName;
-                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = parameterClientORserverInstance;
+                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = parameterClientOrServerInstance;
 
-                    this._storedClientRequestByObject.ClientOrServerInstance = parameterClientORserverInstance;
+                    this._storedClientRequestByObject.ClientOrServerInstance = parameterClientOrServerInstance;
 
                     this._storedClientRequestByObject.DirectorOrExperienceRequestHandler = stored_DirectorOrExperienceRequestHandler;
                     this._storedClientRequestByObject.ExtraData = this._storedExtraData;
@@ -275,7 +291,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 stored_ExceptionDetails.StorylineDetails = parameterStorylineDetails;
 
-                stored_ExceptionDetails.Parameters.setValue("StoredparameterClientORserverInstance", parameterClientORserverInstance);
+                stored_ExceptionDetails.Parameters.setValue("StoredparameterClientOrServerInstance", parameterClientOrServerInstance);
                 stored_ExceptionDetails.Parameters.setValue("StoredExtraData", parameterExtraData);
                 stored_ExceptionDetails.Parameters.setValue("StoredMistakes", mistake);
 
@@ -338,19 +354,19 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
+        constructor(parameterClientOrServerInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
         {
             //#region 1. INPUTS
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientORserverInstance = parameterClientOrServerInstance;
 
             //#endregion
 
@@ -526,7 +542,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
+        constructor(parameterClientOrServerInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
         {
             super();
 
@@ -534,13 +550,13 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientORserverInstance = parameterClientOrServerInstance;
 
             //#endregion
 
@@ -812,7 +828,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
+        constructor(parameterClientOrServerInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
         {
             super()
 
@@ -820,13 +836,13 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientORserverInstance = parameterClientOrServerInstance;
 
             //#endregion
 
@@ -834,17 +850,17 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             if (this._stored_CentralizedDisturber == null)
             {
-                this._stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+                this._stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
             }
 
             if (this._stored_CentralizedStorer == null)
             {
-                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
             }
 
             if (this._stored_CentralizedSensor == null)
             {
-                this._stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+                this._stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
             }
 
             //#endregion
@@ -1455,7 +1471,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
+        constructor(parameterClientOrServerInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
          {
              super()
 
@@ -1463,13 +1479,13 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientORserverInstance = parameterClientOrServerInstance;
 
             //#endregion
 
@@ -1477,17 +1493,17 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             if (this._stored_CentralizedDisturber == null)
             {
-                this._stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+                this._stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
             }
 
             if (this._stored_CentralizedStorer == null)
             {
-                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
             }
 
             if (this._stored_CentralizedSensor == null)
             {
-                this._stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+                this._stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
             }
 
             //#endregion
@@ -1772,19 +1788,19 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
+        constructor(parameterClientOrServerInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
         {
             super();
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientORserverInstance = parameterClientOrServerInstance;
 
             //#endregion
 
@@ -1869,6 +1885,16 @@ export namespace BaseDI.Professional.Story.Programming_1
             this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0";
 
             //#endregion
+
+            //#region OVERRIDE extra data
+
+            if (this.ExtraData != null && this.ExtraData != undefined) {
+                this._storedExtraData = this.ExtraData;
+            }
+
+            //#endregion
+
+
 
             //#region MEMORIZE developer mode
 
@@ -2014,19 +2040,19 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
+        constructor(parameterClientOrServerInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
         {
             super();
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientORserverInstance = parameterClientOrServerInstance;
 
             //#endregion
 
@@ -2256,19 +2282,19 @@ export namespace BaseDI.Professional.Story.Programming_1
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
+        constructor(parameterClientOrServerInstance: any, parameterStorylineDetails: Object, parameterStorylineDetails_Parameters: Object, parameterClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterSystemRequestByName: string = "", parameterClientRequestByName: string = "", parameterClientRequestByNameParameters: string = "")
         {
             super();
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientORserverInstance = parameterClientOrServerInstance;
 
             //#endregion
 

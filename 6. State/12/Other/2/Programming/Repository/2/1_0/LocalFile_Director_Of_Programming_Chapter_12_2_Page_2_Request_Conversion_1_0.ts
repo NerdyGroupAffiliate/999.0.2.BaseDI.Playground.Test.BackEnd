@@ -2,6 +2,10 @@
 
 //#region BaseDI
 
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
+
+import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
 //1-1 - ADVERTISING
 //import * as state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../../999.0.3.BaseDI.Professional.QuickStart.Templates/2. Data Movement/ARM Templates/1/Generate Brand Awareness/1/Advertising/Template/2/1_0/state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0.json"
 //import * as state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0_p1_4_1_1 from "../../../../../../../../../999.0.3.BaseDI.Professional.QuickStart.Templates/2. Data Movement/ARM Templates/1/Generate Brand Awareness/1/Advertising/Template/2/1_0/state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0-P1_4_1_1.json"
@@ -190,6 +194,20 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY used cache");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_8_Process_CRUD");
+
+            //OPTIONAL
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
+
+
             //#endregion
 
             //#region MEMORIZE request details
@@ -232,9 +250,12 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
                     //if (storedProcessCheckPointHit == true) {
                     //    if (storedDeveloperMode) {
-                    //        this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
+                        //this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    //        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***ADVERTISING*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
+                        //storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                        //storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                        //Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     //    }
                     // storedProcessCheckPointHit = false;
 
@@ -243,21 +264,22 @@ export namespace BaseDI.Professional.State.Programming_2 {
                     //#endregion
                
                 }
-                catch
-                {
+                catch (mistake) {
                     //#region EDGE CASE - USE developer logger
-
                     if (storedDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING an ADVERTISING dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
-                    }
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED reading cached data");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
                     //#endregion
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING an ADVERTISING dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
+                    throw mistake;
 
                     //#endregion
                 }
@@ -289,7 +311,10 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***PROGRAMMING*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         storedProcessCheckPointHit = false;
@@ -298,21 +323,22 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
                     //#endregion
                 }
-                catch
-                {
+                catch (mistake) {
                     //#region EDGE CASE - USE developer logger
-
                     if (storedDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING a PROGRAMMING dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
-                    }
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED reading cached data");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
                     //#endregion
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING a PROGRAMMING dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
+                    throw mistake;
 
                     //#endregion
                 }
@@ -494,30 +520,33 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE*** SUCCESSFULLY retrieved ***WEB DEVELOPMENT*** LOCAL DATASET for request " + storedActionName + " -> " + storedRequestName);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         storedProcessCheckPointHit = false;
-
                     }
 
                     //#endregion
                 }
-                catch
-                {
+                catch (mistake) {
                     //#region EDGE CASE - USE developer logger
-
                     if (storedDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING a WEB DEVELOPMENT dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
-                    }
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED reading cached data");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
                     //#endregion
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING a WEB DEVELOPMENT dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
+                    throw mistake;
 
                     //#endregion
                 }
@@ -548,30 +577,33 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         if (storedDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***EXPENSE STORAGE***  SUCCESSFULLY retrieved ***SECURITY*** dataset for request " + storedActionName + " -> " + storedRequestName);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         storedProcessCheckPointHit = false;
-
                     }
 
                     //#endregion
                 }
-                catch
-                {
+                catch (mistake) {
                     //#region EDGE CASE - USE developer logger
-
                     if (storedDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING a SECURITY dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
-                    }
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED reading cached data");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
                     //#endregion
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING a SECURITY dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
+                    throw mistake;
 
                     //#endregion
                 }
@@ -587,14 +619,18 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 if (storedDeveloperMode) {
                     this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING a dataset could not be completed successfully because NO REQUEST NAME was inputted. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED retrieving cache");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 //#endregion
 
                 //#region EDGE CASE - USE exception handler
 
-                throw new Error("STEP " + this.ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** SEARCHING and FINDING a dataset could not be completed successfully because NO REQUEST NAME was inputted. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. - LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 - > Action_8_ProcessCRUD");
+                throw new Error("FAILED retrieving cache");
 
                 //#endregion
             }

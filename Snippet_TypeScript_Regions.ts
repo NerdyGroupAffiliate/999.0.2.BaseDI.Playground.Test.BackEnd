@@ -163,6 +163,12 @@ export class ClassModel
 
         //#endregion
 
+        //#region DEFINE developer mode
+
+        let storedOPTIONALAccountingCostType: string = "";
+
+         //#endregion
+
         //#region DEFINE error response
 
         //let storedErrorResponse: any = null;
@@ -235,6 +241,30 @@ export class ClassModel
 
         let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
+        //if (parameterClientOrServerInstance["processStepNumber"] == null)
+        //    parameterClientOrServerInstance["processStepNumber"] = 0;
+
+        //let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        //REQUIRED
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RETRIEVING cached dataset");
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "SetupStoryline");
+
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+        
+
+        //OPTIONAL
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", true);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALRunSilentMode", true);
+
         //#endregion
 
         //#region MEMORIZE request details
@@ -254,6 +284,13 @@ export class ClassModel
         //#region MEMORIZE server details
 
         //let storedServerDetails:Object = null;
+
+        //#endregion
+
+        //#region MEMORIZE storyline details
+
+        //let storedStorylineDetails: any = parameterInputs.Parameters.getValue("parameterStorylineDetails");
+            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
         //#endregion
 

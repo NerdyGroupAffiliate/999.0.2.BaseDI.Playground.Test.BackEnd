@@ -32,6 +32,7 @@ import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../
 
 import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
 
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0"
 
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
@@ -237,6 +238,16 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
 
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+                        
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PREPARING caching request");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientORserverInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientORserverInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientORserverInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
+
             //#endregion
 
             //#region MEMORIZE request details
@@ -345,15 +356,17 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 //#region 4. EXECUTE storage request
 
-                //#region EDGE CASE - USE developer logger
-
                 if (storedDeveloperMode) {
                     storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + storedClientORserverInstance["processStepNumber"] + ": PROCESSING storage request for item " + storedStorageKey + " in LOCAL STORAGE USING EXTENSION -> Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs)");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 //#endregion
+                stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
                 storedStorylineDetails = await stored_CentralizedStorer?.Action_1_Begin_Process(); 
                 storedStorylineDetails.outputs[1].baseDIObservations = (storedStorylineDetails && storedStorylineDetails.ouputs) ? storedStorylineDetails?.outputs[1]?.baseDIObservations?.filter((value: {}) => Object.keys(value).length !== 0) : storedStorylineDetails.outputs[1].baseDIObservations;
@@ -547,6 +560,16 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
 
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RESOLVING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientORserverInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientORserverInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientORserverInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Page_1_10_End_Process_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");   
+
             //#endregion
 
             //#region MEMORIZE storage details
@@ -615,8 +638,18 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         if (storedDeveloperMode) {
                             storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
 
-                            console.log("STEP " + storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED SETTING UP storage item for STORAGE KEY " + storedStorageKey + " in ***Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(parameterInputs) -> ProcessStorage() Function*** PLEASE CHECK CODE BASE\n\n" + mistake.toString());
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED CRUD setup attempt");
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
+
+                        //#endregion
+
+                        //#region EDGE CASE - USE exception handler
+
+                        throw mistake;
 
                         //#endregion
                     }
@@ -665,8 +698,18 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 if (storedDeveloperMode) {
                     storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
 
-                    console.log("STEP " + storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED SETTING UP storage item for STORAGE KEY " + storedStorageKey + " in ***Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(parameterInputs) -> ProcessStorage() Function*** PLEASE CHECK CODE BASE\n\n" + mistake.toString());
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED CRUD setup attempt");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw mistake;
 
                 //#endregion
             }

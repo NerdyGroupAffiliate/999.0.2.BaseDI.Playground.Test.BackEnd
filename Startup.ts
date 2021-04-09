@@ -6,6 +6,7 @@ import * as Action_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/
 import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "./1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "./7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "./0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
 
 import * as ExtraData_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
@@ -30,7 +31,7 @@ export namespace BaseDI.Professional
         private _storedAppSettings: any = null;
 
         //CLIENT/SERVER
-        private _storedClientORserverInfo: Object = new Object();
+        private _storedClientOrServerInfo: Object = new Object();
         private _storedClientWebPageInstance: any;
 
         //DATASETS
@@ -98,19 +99,21 @@ export namespace BaseDI.Professional
             //#region IDEAL CASE - USE hardcoded values
 
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
-                this._storedClientORserverInfo = {
+                this._storedClientOrServerInfo = {
                     "appSettings": process.env,
                     "serverInstance": this._storedClientWebPageInstance,
                     "serverStartUp": this
                 }
             }
             else {
-                this._storedClientORserverInfo = {
+                this._storedClientOrServerInfo = {
                     "appSettings": process.env,
                     "clientInstance": this._storedClientWebPageInstance,
                     "clientStartUp": this
                 }
             }
+
+            this._storedClientOrServerInfo["storedIgnoreDeveloperConsoleLog"] = false;
 
             //#endregion
 
@@ -137,21 +140,21 @@ export namespace BaseDI.Professional
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientORserverInfo["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInfo["appSettings"];
 
             //#endregion
 
             //#region MEMORIZE action name
 
             if (parameterRequestActionName != "")
-                this._storedClientORserverInfo["actionName"] = parameterRequestActionName;
+                this._storedClientOrServerInfo["actionName"] = parameterRequestActionName;
 
             //#endregion
 
             //#region MEMORIZE chpater name
 
             if (parameterRequestActionName != "")
-                this._storedClientORserverInfo["chapterName"] = parameterRequestChapterName;
+                this._storedClientOrServerInfo["chapterName"] = parameterRequestChapterName;
 
             //#endregion
 
@@ -159,14 +162,24 @@ export namespace BaseDI.Professional
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            this._storedClientORserverInfo["processStepNumber"] = 0;
+            this._storedClientOrServerInfo["processStepNumber"] = 0;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "STARING web request");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInfo["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInfo["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInfo);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Start.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");
 
             //#endregion
 
             //#region MEMORIZE targeted tagID
 
             if (parameterTargetedResponseTagID != "")
-                this._storedClientORserverInfo["targetedResponseTagID"] = parameterTargetedResponseTagID;
+                this._storedClientOrServerInfo["targetedResponseTagID"] = parameterTargetedResponseTagID;
 
             //#endregion
 
@@ -180,7 +193,7 @@ export namespace BaseDI.Professional
 
                 //#region EDGE CASE - USE updates handler
 
-                this._storedClientORserverInfo["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
+                this._storedClientOrServerInfo["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
                     return this._storedStorylineDetails;
                 }
 
@@ -193,7 +206,7 @@ export namespace BaseDI.Professional
                 const Action = (parameterRequestNameToProcess: string = "", parameterRequestNameToProcessParameters: string = "", parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
                 {
                     storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
-                        .SetupStoryline(this._storedClientORserverInfo, this._storedStorylineDetails, null, this._storedExtraData, "", parameterRequestNameToProcess, parameterRequestNameToProcessParameters)
+                        .SetupStoryline(this._storedClientOrServerInfo, this._storedStorylineDetails, null, this._storedExtraData, "", parameterRequestNameToProcess, parameterRequestNameToProcessParameters)
                         .Action();
                 }
 
@@ -236,6 +249,21 @@ export namespace BaseDI.Professional
                         if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase().includes("HTML")) {
                             if (parameterTargetedResponseTagID != "") {
                                 document.getElementById(parameterTargetedResponseTagID).innerHTML = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+
+                                //#region EDGE CASE - USE developer logger
+
+                                if (storedDeveloperMode) {
+                                    this._storedClientOrServerInfo["processStepNumber"] = this._storedClientOrServerInfo["processStepNumber"] + 1;
+
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY rendered webpage");
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInfo["processStepNumber"]);
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", true);
+
+                                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                }
+
+                                //#endregion
                             }                            
                         }
                     });
