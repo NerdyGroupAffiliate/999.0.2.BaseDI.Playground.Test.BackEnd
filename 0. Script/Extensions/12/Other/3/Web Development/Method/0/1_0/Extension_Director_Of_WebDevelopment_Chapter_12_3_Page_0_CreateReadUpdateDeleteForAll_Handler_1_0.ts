@@ -169,19 +169,71 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
             //#endregion          
         }
 
-        public static ChildHTMLContentDetails(data) {
-            let node = [];
-            data.ChildHTMLContentDetails.forEach((d, index) => {
-                node.push(`<${d.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(d.Attributes)}>${d.Value ? d.Value : ""}</${d.Tag}>\n`)
-                if (d.ChildHTMLContentDetails.length > 0) {
-                    d.ChildHTMLContentDetails.forEach(element => {
-                        var child = this.ChildHTMLContentDetails(element);
-                        node.push(`<${element.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(element.Attributes)}>${element.Value ? element.Value : child}</${element.Tag}>\n`)
-                    });
+        public static GenerateHTMLChildern(parameterInputs) {
+            //DEFINE "attributes"
+            var storedAttributes = "";
+
+            //DEFINE "child couter"
+            var storedChildCounter = 0;
+
+            //DEFINE "closing tag"
+            var storedClosingTag = "";
+
+            //DEFINE "child tags"
+            var storedChildTags = "";
+
+            //DEFINE "final html"
+            var storedFinalizedHTML = "";
+
+            //SEARCH through children
+            console.log(parameterInputs)
+            parameterInputs.foreach((storedChildMetaData) =>
+            {
+                console.log(storedChildMetaData)
+                //MEMORIZE "opening tag" of metadata.
+                var storedOpeningTag = "<" + storedChildMetaData.Tag;
+
+                //DETERMINE if there are child elements.
+                if (storedChildMetaData.ChildHTMLContentDetails.Count > 0)
+                {
+                        storedChildMetaData.ChildHTMLContentDetails.forEach(childHTMLContent => {
+                        {
+                            //START over again with child data
+                            storedChildTags += this.GenerateHTMLChildern(childHTMLContent.ChildHTMLContentDetails);
+
+                            storedChildCounter += 1;
+                        }
+                    }) 
                 }
-                return node;
+                
+                if(storedChildCounter == storedChildMetaData.ChildHTMLContentDetails.Count)
+                {
+                    //PREPARE to close of HTML string
+                    storedClosingTag = "</" + storedChildMetaData.Tag + ">";
+
+                    //GENERATE inner tag data
+                    storedChildMetaData.Attributes.forEach(storedAttribute => {
+                        storedAttributes += " " + storedAttribute.key + "='" + storedAttribute.value + "'";
+                    });
+                    storedFinalizedHTML += storedOpeningTag += storedAttributes + ">" + storedChildMetaData.Value + storedChildTags + storedClosingTag;
+                }
             })
-            return node;
+
+            return storedFinalizedHTML;
+
+            // let node = [];
+            // data.ChildHTMLContentDetails.forEach((d, index) => {
+            //     node.push(`<${d.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(d.Attributes)}>${d.Value ? d.Value : ""}</${d.Tag}>\n`)
+            //     if (d.ChildHTMLContentDetails.length > 0) {
+            //         d.ChildHTMLContentDetails.forEach(element => {
+            //             var child = this.ChildHTMLContentDetails(element);
+            //             node.push(`<${element.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(element.Attributes)}>${element.Value ? element.Value : child}</${element.Tag}>\n`)
+            //         });
+            //     }
+            //     return node;
+            // })
+            // return node;
+
         }
 
 
@@ -201,8 +253,9 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
                 }
 
                 if (con.ChildHTMLContentDetails.length > 0) {
-                    var childString = this.ChildHTMLContentDetails(con).join(" ");
-                    // var childString = "";
+                    var childString = this.GenerateHTMLChildern(con);
+                    console.log(childString);
+
                     idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${childString}</${con.Tag}>\n`);
 
                 } else {
