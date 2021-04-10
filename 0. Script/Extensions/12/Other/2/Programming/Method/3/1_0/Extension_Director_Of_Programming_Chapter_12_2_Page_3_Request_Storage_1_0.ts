@@ -58,15 +58,20 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             //#endregion
         }
 
-        //#region STORE 
         public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
         {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters
 
-            const ValidateInputs = () => {
+            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {
                 //#region 1. INPUTS
+
+                //#region DEFINE parameter inputs
+
+                let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+                //#endregion
 
                 //#region DEFINE process checkpoint
 
@@ -77,6 +82,33 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 //#region DEFINE stored message
 
                 let storedMessage: string = "";
+
+                //#endregion
+
+                //#region MEMORIZE clientOrServer instance
+
+                let storedClientORserverInstance: any = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+                //#endregion
+
+                //#region MEMORIZE app settings
+
+                let storedAppSettings: any = storedClientORserverInstance["appSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE developer mode
+
+                let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientORserverInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientORserverInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientORserverInstance);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
 
                 //#endregion
 
@@ -146,21 +178,48 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                     }               
 
                     if (storedProcessCheckPointHit) {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode) {
+                            storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        //#endregion
+
                         //#region EDGE CASE - USE exception handler
 
-                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
-
-                        throw new Error("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        throw new Error("PARSING parameter values failed");
 
                         //#endregion
                     }
                 }
-                else {
+                else
+                {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode) {
+                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("\n***LEAKY PIPE*** PARSING parameter values failed for [parameterInputs || parameterInputs.Parameters]. Values cannot be null or undefined.");
+                    throw new Error("PARSING parameter values failed");
 
-                    //#endregion                    
+                    //#endregion
                 }
 
                 //#endregion
@@ -185,7 +244,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             }
 
             ///BEGIN valdation process
-            ValidateInputs();
+            await ValidateInputs(parameterInputs);
 
             //#endregion
 
@@ -406,8 +465,6 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#endregion
 
-            //#endregion
-
             //#region 3. OUTPUT
 
             //#region RETURN storyline details
@@ -429,7 +486,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#region VALIDATE input parameters
 
-            const ValidateInputs = () =>
+            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
             {
                 //#region 1. INPUTS
 
@@ -442,6 +499,33 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 //#region DEFINE stored message
 
                 let storedMessage: string = "";
+
+                //#endregion
+
+                //#region MEMORIZE clientOrServer instance
+
+                let storedClientORserverInstance: any = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+                //#endregion
+
+                //#region MEMORIZE app settings
+
+                let storedAppSettings: any = storedClientORserverInstance["appSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE developer mode
+
+                let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientORserverInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientORserverInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientORserverInstance);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
 
                 //#endregion
 
@@ -491,21 +575,48 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                     }                   
 
                     if (storedProcessCheckPointHit) {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode) {
+                            storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        //#endregion
+
                         //#region EDGE CASE - USE exception handler
 
-                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
-
-                        throw new Error("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        throw new Error("PARSING parameter values failed");
 
                         //#endregion
                     }
                 }
-                else {
+                else
+                {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode) {
+                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("\n***LEAKY PIPE*** PARSING parameter values failed for [parameterInputs || parameterInputs.Parameters]. Values cannot be null or undefined.");
+                    throw new Error("PARSING parameter values failed");
 
-                    //#endregion                    
+                    //#endregion
                 }
 
                 //#endregion
@@ -530,7 +641,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             }
 
             ///BEGIN valdation process
-            ValidateInputs();
+            await ValidateInputs(parameterInputs);
 
             //#endregion
 
@@ -736,6 +847,5 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#endregion
         }
-        //#endregion
     }
 }
