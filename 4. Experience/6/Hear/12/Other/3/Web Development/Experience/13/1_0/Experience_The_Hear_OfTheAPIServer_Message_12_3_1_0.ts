@@ -9,6 +9,7 @@ import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../.
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
+import * as Action_12_2_1_0 from "../../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/Action Poco/1/1_0/Action_12_2_1_0";
 import * as ExtraData_12_2_1_0 from "../../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
@@ -607,7 +608,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             try
             {
-                if (process.env.APP_ENV == "SERVER" && this._stored_ExperienceRequestHandlerActionName.toUpperCase().includes("PROCESSHTTPREQUEST_1_0"))
+                if (process.env.APP_ENV == "SERVER" && this._stored_ExperienceRequestHandlerActionName == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0)
                 {
                     //#region SETUP http server
 
@@ -615,8 +616,26 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region 3. OUTPUT server response
 
-                    const Step_2_0_Custom_Output_ServerRequestToClientORserverInstance_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataLocalParameter: string, parameterControllerModelDataLocalObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any) =>
+                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataLocalParameter: string, parameterControllerModelDataLocalObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any, parameterRequestActionVerb: string) =>
                     {
+                        this._storedClientOrServerInstance["actionName"] = Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
+                        this._storedClientOrServerInstance["processStepNumber"] = 0;
+
+                        //#region EDGE CASE - USE developer logger
+                        if (storedDeveloperMode) {                            
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"] );
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMasterLeaderIsSecondStep", true);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ROUTING information found - [" + parameterRequestActionVerb + ": '" + parameterRequest.url.match('^[^?]*')[0] + "']");
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+
+                            this._storedExtraData.KeyValuePairs.setValue("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
+                        }
+                        //#endregion
+
                         //#region EDGE CASE - USE updates handler
 
                         this._storedClientOrServerInstance["StartUpCallBackServer"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
@@ -624,8 +643,6 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         }
 
                         //#endregion
-
-                        this._storedClientOrServerInstance["processStepNumber"] = 0;
 
                         const Action = (parameterClientRequestByName: string, parameterClientRequestByNameParameters: string, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0) => {
                             storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storedExtraData))
@@ -642,7 +659,23 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 }
                             });
 
-                            if (parameterResponse) {
+                            if (parameterResponse)
+                            {
+                                //#region EDGE CASE - USE developer logger
+
+                                if (storedDeveloperMode) {
+                                    this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY rendered webpage");
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", false);
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", true);
+
+                                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                }
+
+                                //#endregion
                                 parameterResponse.send(storedClientResponse);
                             }
                             else 
@@ -660,7 +693,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region 2. INPUT server details
 
-                    const Step_1_0_Custom_Control_storedClientOrServerInstanceRequestToServer_1_0 = (verb:string, parameterRouteListDetails: Array<any>) =>
+                    const Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (verb:string, parameterRouteListDetails: Array<any>) =>
                     {
                         if (parameterRouteListDetails != null && parameterRouteListDetails != undefined && parameterRouteListDetails.length > 0)
                         {
@@ -687,28 +720,28 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                             case "DELETE":
                                                 this._storedServerInstance.Server.Instance.delete(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClientORserverInstance_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse);
+                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "DELETE");
                                                 });
                                                 break;
 
                                             case "GET":
                                                 this._storedServerInstance.Server.Instance.get(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClientORserverInstance_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse);
+                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "GET");
                                                 });
                                                 break;
 
                                             case "POST":
                                                 this._storedServerInstance.Server.Instance.post(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClientORserverInstance_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse);
+                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "POST");
                                                 });
                                                 break;
 
                                             case "PUT":
                                                 this._storedServerInstance.Server.Instance.put(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClientORserverInstance_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse);
+                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "PUT");
                                                 });
                                                 break;
                                         }
@@ -781,25 +814,25 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         //SETUP delete routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Delete != undefined) {
                             storedRouteListDetailsDELETE = this?._storedServerInstance?.Server?.Verbs?.Delete;
-                            Step_1_0_Custom_Control_storedClientOrServerInstanceRequestToServer_1_0("DELETE", storedRouteListDetailsDELETE);
+                            Step_1_0_Custom_Control_ClientRequestToServer_1_0("DELETE", storedRouteListDetailsDELETE);
                         }
 
                         //SETUP get routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Get != undefined) {
                             storedRouteListDetailsGET = this?._storedServerInstance?.Server?.Verbs?.Get;
-                            Step_1_0_Custom_Control_storedClientOrServerInstanceRequestToServer_1_0("GET", storedRouteListDetailsGET);
+                            Step_1_0_Custom_Control_ClientRequestToServer_1_0("GET", storedRouteListDetailsGET);
                         }
 
                         //SETUP post routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Post != undefined) {
                             storedRouteListDetailsPOST = this?._storedServerInstance?.Server?.Verbs?.Post;
-                            Step_1_0_Custom_Control_storedClientOrServerInstanceRequestToServer_1_0("POST", storedRouteListDetailsPOST);
+                            Step_1_0_Custom_Control_ClientRequestToServer_1_0("POST", storedRouteListDetailsPOST);
                         }
 
                         //SETUP put routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Put != undefined) {
                             storedRouteListDetailsPUT = this?._storedServerInstance?.Server?.Verbs?.Put;
-                            Step_1_0_Custom_Control_storedClientOrServerInstanceRequestToServer_1_0("PUT", storedRouteListDetailsPUT);
+                            Step_1_0_Custom_Control_ClientRequestToServer_1_0("PUT", storedRouteListDetailsPUT);
                         }
 
                         //#region EDGE CASE - USE developer logger

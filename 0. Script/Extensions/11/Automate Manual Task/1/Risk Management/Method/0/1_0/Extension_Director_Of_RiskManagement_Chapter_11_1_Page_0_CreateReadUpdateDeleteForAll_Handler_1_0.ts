@@ -42,6 +42,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             let storedOPTIONALBeginOfProcess: boolean = false;
             let storedOPTIONALMiddleOfProcess: boolean = false;            
             let storedOPTIONALEndOfProcess: boolean = false;
+            let storedOPTIONALMasterLeaderIsSecondStep: boolean = false;
 
             let storedMistake: boolean = false;
 
@@ -84,7 +85,10 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
 
+  
                     if (!parameterInputs.Parameters.containsKey("parameter3WordDescription")) {
+                        console.log(parameterInputs.Parameters.getValue("parameterFileName"));
+                        console.log(parameterInputs.Parameters.getValue("parameterMethodName"))
                         storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n"
                         storedProcessCheckPointHit = true;
                     }
@@ -208,6 +212,8 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             if (parameterInputs.Parameters.getValue("parameterOPTIONALEndOfProcess") != undefined)
                 storedOPTIONALEndOfProcess = parameterInputs.Parameters.getValue("parameterOPTIONALEndOfProcess");
 
+            if (parameterInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep") != undefined)
+                storedOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep");
 
             //#endregion
 
@@ -248,6 +254,10 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         }
 
                         if (storedOPTIONALBeginOfProcess == true) {
+                            console.log("\n\n------------------------------------------------------------------------------------------------------------------------------");
+                            console.log("NEW REQUEST - " + storedActionName.toUpperCase());
+                            console.log("------------------------------------------------------------------------------------------------------------------------------\n");
+
                             console.log("%c" + storedMessage, "color:" + "#94f500");
 
                             return;
@@ -287,6 +297,10 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         }
 
                         if (storedOPTIONALBeginOfProcess == true) {
+                            console.log("\n\n------------------------------------------------------------------------------------------------------------------------------");
+                            console.log("NEW REQUEST - " + storedActionName.toUpperCase());
+                            console.log("------------------------------------------------------------------------------------------------------------------------------\n");
+
                             console.log(storedMessage);
                             //console.log('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
 

@@ -200,6 +200,8 @@ export namespace BaseDI.Professional.Story.Programming_1
             if (parameterClientOrServerInstance["processStepNumber"] == null)
                 parameterClientOrServerInstance["processStepNumber"] = 0;
 
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterExtraData?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterExtraData?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
+
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
@@ -212,6 +214,16 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //OPTIONAL
             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
+            if (storedDeveloperLoggingStartUpProcessInputs != null && storedDeveloperLoggingStartUpProcessInputs != undefined)
+            {
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMasterLeaderIsSecondStep", storedDeveloperLoggingStartUpProcessInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep"));
+
+                if (storedDeveloperLoggingStartUpProcessInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep") == true) {
+                    storedDeveloperLoggingInputs.Parameters.remove("parameterOPTIONALBeginOfProcess");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", false);
+                }
+            }
 
             //#endregion
 
