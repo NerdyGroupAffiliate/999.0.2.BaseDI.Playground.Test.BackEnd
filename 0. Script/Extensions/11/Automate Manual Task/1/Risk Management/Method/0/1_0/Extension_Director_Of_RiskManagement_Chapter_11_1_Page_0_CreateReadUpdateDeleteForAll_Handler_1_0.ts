@@ -1,5 +1,19 @@
-﻿import * as ExtraData_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
+﻿
+//#region Imports
+
+//#region 3rd Party
+const _3rd_Party_Node_ConsoleColorChanger = require('chalk');
+
+//#endregion
+
+//#region BaseDI
+
+import * as ExtraData_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
+//#endregion
+
+//#endregion
 
 export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
@@ -266,9 +280,9 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         }
 
                         if (storedOPTIONALBeginOfProcess == true) {
-                            console.log("\n\n------------------------------------------------------------------------------------------------------------------------------");
-                            console.log("NEW REQUEST - " + storedActionName.toUpperCase());
-                            console.log("------------------------------------------------------------------------------------------------------------------------------\n");
+                            console.log("%c" + "\n\n------------------------------------------------------------------------------------------------------------------------------", "color:" + "#94f500");
+                            console.log("%c" + "NEW REQUEST - " + storedActionName.toUpperCase(), "color:" + "#94f500");
+                            console.log("%c" + "------------------------------------------------------------------------------------------------------------------------------\n", "color:" + "#94f500");
 
                             console.log("%c" + storedMessage, "color:" + "#94f500");
 
@@ -276,7 +290,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         }
 
                         if (storedOPTIONALMiddleOfProcess == true) {
-                            console.log("%c" + storedMessage, "color:" + "#00c6f5");
+                            console.log("%c" + storedMessage, "color:" + "#00FFFF");
 
                             return;
                         }
@@ -309,32 +323,32 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         }
 
                         if (storedOPTIONALBeginOfProcess == true) {
-                            console.log("\n\n------------------------------------------------------------------------------------------------------------------------------");
-                            console.log("NEW REQUEST - " + storedActionName.toUpperCase());
-                            console.log("------------------------------------------------------------------------------------------------------------------------------\n");
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("\n\n------------------------------------------------------------------------------------------------------------------------------"));
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("NEW REQUEST - " + storedActionName.toUpperCase()));
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("------------------------------------------------------------------------------------------------------------------------------\n"));
 
-                            console.log(storedMessage);
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright(storedMessage));
                             //console.log('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
 
                             return;
                         }
 
                         if (storedOPTIONALMiddleOfProcess == true) {
-                            console.log(storedMessage);
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.cyanBright(storedMessage));
                             //console.log('\x1b[34m', storedMessage); //BLUE
 
                             return;
                         }
 
                         if (storedOPTIONALAccountingCostType != "") {
-                            console.log(storedMessage);
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.yellowBright(storedMessage));
                             //console.log("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
 
                             return;
                         }
 
                         if (storedOPTIONALEndOfProcess == true) {
-                            console.log(storedMessage);
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.redBright(storedMessage));
                             //console.log("%c" + storedMessage, "color:" + "#ff0e11"); //RED
 
                             return;
