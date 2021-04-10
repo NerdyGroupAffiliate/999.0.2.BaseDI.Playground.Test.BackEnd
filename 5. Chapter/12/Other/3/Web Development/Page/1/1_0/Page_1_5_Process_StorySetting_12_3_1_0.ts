@@ -24,7 +24,6 @@ import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Para
 
 //#endregion
 
-
 export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
     export class Page_1_5_Process_StorySetting_12_3_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
