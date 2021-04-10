@@ -46,7 +46,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
         //#endregion
 
         //#region READ
-        public static Step_X_X_Read_And_FindJSONNode(data: object, keyName: string, keyValue: any, returnAsArray: boolean): any {
+        public static Step_X_X_Read_And_FindJSONNode_1_0(data: object, keyName: string, keyValue: any, returnAsArray: boolean): any {
             //EXAMPLE AT https://stackoverflow.com/questions/22222599/javascript-recursive-search-in-json-object
 
             if (data == null)
@@ -228,7 +228,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                 //region CHECK RESOURCE DATA
                 //region CHECK CLIENT DATA
                 //region CHECK DEFAULT DATA
-                repository = this.Step_X_X_Read_And_FindJSONNode(data, "key", "Repository", false);
+                repository = this.Step_X_X_Read_And_FindJSONNode_1_0(data, "key", "Repository", false);
 
                 if (repository)
                     return repository.values[0].value[0].key.dataAccess;
