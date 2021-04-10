@@ -1,19 +1,19 @@
-﻿using BaseDI.BackEnd.Character_1;
+﻿using BaseDI.Professional.Character_1;
 
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
 
-using ChapterPage = BaseDI.BackEnd.Chapter.Page.Risk_Management_3;
+using ChapterPage = BaseDI.Professional.Chapter.Page.Risk_Management_3;
 
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 
-namespace BaseDI.BackEnd.Director.Risk_Management_3
+namespace BaseDI.Professional.Director.Risk_Management_3
 {
     public class Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
@@ -49,6 +49,31 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
         #region 3. Set
 
         //A. Default state of this part of the storyline
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
+
 
         #endregion
 
@@ -62,7 +87,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_11_1_Page_3 designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_3(Client, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_11_1_Page_3 designPattern = new Use_DesignPattern_Builder_Chapter_11_1_Page_3(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
 
             #endregion
 
@@ -97,7 +122,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
         internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
-        internal Dictionary<string, object> _client;
+        internal Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -109,7 +134,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_11_1_Page_3(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Use_DesignPattern_Builder_Chapter_11_1_Page_3(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _extraData = extraData;
 
@@ -117,7 +142,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -141,7 +166,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
         {
             #region ARRANGE LOGIC ORDER
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_3_1_0(_client, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            var builder = new Implement_DesignPattern_Builder_Chapter_11_1_Page_3_1_0(_clientORserverInstance, _centralizedStorer, _centralizedDisturber, _centralizedSensor, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
 
             _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -179,7 +204,7 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
 
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -195,13 +220,13 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_11_1_Page_3_1_0(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Chapter_11_1_Page_3_1_0(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
         {
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
 
             _storylineDetails = storylineDetails;
             _storylineDetails_Parameters = storylineDetails_Parameters;
@@ -212,14 +237,14 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             _entryPoint = entryPoint;
 
-            HandleChapterDefaults();
+            HandleDefaults();
         }
 
         #endregion
 
         #region 3. Set
 
-        private void HandleChapterDefaults()
+        public override void HandleDefaults()
         {
 
         }
@@ -238,9 +263,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_1_Begin_Process_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -271,9 +296,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_2_Validate_Process_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -302,9 +327,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_3_Process_StoryAuthor_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -333,9 +358,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_4_Process_StoryCharacters_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -364,9 +389,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_5_Process_StorySetting_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -395,9 +420,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_6_Process_StoryExperiences_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -426,9 +451,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_7_Process_StoryResources_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -457,9 +482,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_8_Process_CRUD_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -488,9 +513,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_9_Verify_Process_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;
@@ -519,9 +544,9 @@ namespace BaseDI.BackEnd.Director.Risk_Management_3
 
             var page = new ChapterPage.Page_3_10_End_Process_11_1_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _clientORserverInstance;
 
-            page.EntryPoint = _entryPoint;
+            page.DirectorOrExperienceRequestHandler = _entryPoint;
             page.ExtraData = _extraData;
 
             page.MasterLeader = _centralizedStorer;

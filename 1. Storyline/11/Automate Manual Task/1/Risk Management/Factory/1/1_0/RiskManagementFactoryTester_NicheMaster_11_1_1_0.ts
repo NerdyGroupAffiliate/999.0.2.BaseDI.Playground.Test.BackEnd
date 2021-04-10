@@ -14,16 +14,16 @@ import * as RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb
 import * as Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0 from "../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/3/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0";
 import * as Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0 from "../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/4/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturbances_Handler_1_0";
 
-export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
-    export class RiskManagementFactoryTester_NicheMaster_11_1_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+export namespace BaseDI.Professional.Story.Risk_Management_1 {
+    export class RiskManagementFactoryTester_NicheMaster_11_1_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
-        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
-        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _client: any;
+        private _centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
+        private _centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _clientORserverInstance: any;
 
-        private _extraData: ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_1.ExtraData_12_2_1_0;
+        private _extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
         //#endregion
 
         //#region 2. Ready
@@ -31,7 +31,7 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
             super();
 
             //#region 1. Assign
-            this._client = null;
+            this._clientORserverInstance = null;
 
             this._extraData = extraData;
 
@@ -50,9 +50,11 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
         //#endregion
 
         //#region 4. Action
-        public Action(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
+        public Action(clientORserverInstance: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor:aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: Object, storylineDetails: Object, storylineDetails_Parameters: Object, requestName: String, requestToProcess: String, requestToProcessParameters: String): object
         {
             //#region ASSIGN MASTER LEADER
+            this._clientORserverInstance = clientORserverInstance; 
+
             this._centralizedStorer = centralizedStorer;
             this._centralizedDisturber = centralizedDisturber;
             this._centralizedSensor = centralizedSensor;
@@ -87,12 +89,16 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
         private Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            let repositoryType: string = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_The_DataRespository_1_0(storylineDetails, false, true);
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER;
+
+            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.BackEnd.Director.Risk_Management_3.Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(extraData);
+            let director = new Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.Professional.Director.Risk_Management_3.Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(extraData);
+
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -106,14 +112,14 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
 
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_3.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
+                case "LOCAL_FILE":
+                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.Professional.State.Risk_Management_3.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_3.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
+                case "REMOTE_SERVICE":
+                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.Professional.State.Risk_Management_3.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 
@@ -129,13 +135,16 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
         private Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
 
-            const repositoryMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_Data", false);
-            let repositoryType: string = repositoryMetaData?.value?.DataItemLocation;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER;
+
+            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
             //#endregion
 
             //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.BackEnd.Director.Risk_Management_4.Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturbances_Handler_1_0(extraData);
+            let director = new Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.Professional.Director.Risk_Management_4.Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturbances_Handler_1_0(extraData);
+
+            director.ClientOrServerInstance = this._clientORserverInstance;
 
             director.StorylineDetails = storylineDetails;
             director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -150,14 +159,14 @@ export namespace BaseDI.BackEnd.Story.Risk_Management_1 {
 
             //#region ASSIGN LOGIC REPOSITORY
             switch (repositoryType.toUpperCase()) {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_4.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
+                case "LOCAL_FILE":
+                    var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.Professional.State.Risk_Management_4.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.BackEnd.State.Risk_Management_4.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
+                case "REMOTE_SERVICE":
+                    var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.Professional.State.Risk_Management_4.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
 

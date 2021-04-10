@@ -1,11 +1,11 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_3;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Security.Extensions_1;
-using BaseDI.BackEnd.Script.Web_Development.Extensions_13;
+﻿using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Extensions_3;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Security.Extensions_1;
+using BaseDI.Professional.Script.Web_Development.Extensions_13;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using System;
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Security_1
+namespace BaseDI.Professional.Chapter.Page.Security_1
 {
     public class Page_1_9_Verify_Process_12_5_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
@@ -67,6 +67,30 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
         #region 3. Set
 
         //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -93,18 +117,18 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
             //Example: The_WebClient_1 – Help_Build_Website_Foundation – Apple_iTunes–1-1-WebDesign_Music–1_0
 
             //Set a reference to our the details of our storyline.
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VARIABLES
 
-            _serverInfo = (Dictionary<string, object>)Client;
+            _serverInfo = (Dictionary<string, object>)ClientOrServerInstance;
             _server = _serverInfo.ContainsKey("Server") ? _serverInfo["Server"] : null;
 
             #endregion
 
-            #region EXECUTE THE VISION
+            #region INPUTS
 
             #region CONTROL
 
@@ -117,7 +141,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #endregion
 
-            #region REPORT THE FEEDBACK
+            #region OUTPUT
 
             return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
@@ -134,11 +158,11 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
         public async Task Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0()
         {
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VARIABLES
 
             JObject storylineDetails = StorylineDetails;
 
@@ -164,7 +188,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #endregion
 
-            #region EXECUTE THE VISION
+            #region INPUTS
 
             #region CONTROL
 
@@ -185,7 +209,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #endregion
 
-            #region REPORT THE FEEDBACK
+            #region OUTPUT
 
             #endregion
         }
@@ -196,15 +220,15 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
         public async Task Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0()
         {
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VARIABLES
 
             #endregion
 
-            #region EXECUTE THE VISION
+            #region INPUTS
 
             if (_request != null)
             {
@@ -228,7 +252,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #endregion
 
-            #region REPORT THE FEEDBACK
+            #region OUTPUT
 
             #endregion
         }
@@ -237,7 +261,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
         public async Task Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft()
         {
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
             Func<Object, Object> callBack = null;
             
@@ -252,7 +276,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VARIABLES
   
             microsoftProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_apiMetaData as JObject, "searchkey", "SetupDetails_APIS_API_1_0_MicrosoftGraph_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault().Parent.Parent;
             microsoftProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(microsoftProfile as JObject, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault().Parent.Parent;
@@ -275,7 +299,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #endregion
 
-            #region EXECUTE THE VISION
+            #region INPUTS
 
             #region TRANSPORT
 
@@ -290,7 +314,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #endregion
 
-            #region REPORT THE FEEDBACK
+            #region OUTPUT
 
             #endregion
         }
@@ -303,19 +327,19 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
         private async Task Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0()
         {
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VARIABLES
 
             #endregion
 
-            #region EXECUTE THE VISION
+            #region INPUTS
 
             #endregion
 
-            #region REPORT THE FEEDBACK
+            #region OUTPUT
 
             #endregion
         }
@@ -324,16 +348,16 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
         private async Task Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(Object response, SingleParmPoco_12_2_1_0 extraData = null)
         {
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VARIABLES
 
 
             #endregion
 
-            #region EXECUTE THE VISION         
+            #region INPUTS         
 
             await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(MasterStorer, "Create", _entryPointName, _pageName, "STORING access token", StorylineDetails, response, "BaseDI_DataToken_MicrosoftGraph");
 
@@ -341,7 +365,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Security_1
 
             #endregion  
 
-            #region REPORT THE FEEDBACK
+            #region OUTPUT
 
             #endregion
         }

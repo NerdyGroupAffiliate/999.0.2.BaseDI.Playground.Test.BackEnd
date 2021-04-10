@@ -1,46 +1,47 @@
-﻿using BaseDI.BackEnd.Director.Web_Development_1;
-using BaseDI.BackEnd.Director.Web_Development_10;
-using BaseDI.BackEnd.Director.Web_Development_11;
-using BaseDI.BackEnd.Director.Web_Development_12;
-using BaseDI.BackEnd.Director.Web_Development_2;
-using BaseDI.BackEnd.Director.Web_Development_3;
-using BaseDI.BackEnd.Director.Web_Development_4;
-using BaseDI.BackEnd.Director.Web_Development_5;
-using BaseDI.BackEnd.Director.Web_Development_6;
-using BaseDI.BackEnd.Director.Web_Development_7;
-using BaseDI.BackEnd.Director.Web_Development_8;
-using BaseDI.BackEnd.Director.Web_Development_9;
-using BaseDI.BackEnd.Experience.Hear.Web_Development_13;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.State.Web_Development_1;
-using BaseDI.BackEnd.State.Web_Development_10;
-using BaseDI.BackEnd.State.Web_Development_11;
-using BaseDI.BackEnd.State.Web_Development_12;
-using BaseDI.BackEnd.State.Web_Development_13;
-using BaseDI.BackEnd.State.Web_Development_2;
-using BaseDI.BackEnd.State.Web_Development_3;
-using BaseDI.BackEnd.State.Web_Development_4;
-using BaseDI.BackEnd.State.Web_Development_5;
-using BaseDI.BackEnd.State.Web_Development_7;
-using BaseDI.BackEnd.State.Web_Development_8;
-using BaseDI.BackEnd.State.Web_Development_9;
+﻿using BaseDI.Professional.Director.Web_Development_1;
+using BaseDI.Professional.Director.Web_Development_10;
+using BaseDI.Professional.Director.Web_Development_11;
+using BaseDI.Professional.Director.Web_Development_12;
+using BaseDI.Professional.Director.Web_Development_2;
+using BaseDI.Professional.Director.Web_Development_3;
+using BaseDI.Professional.Director.Web_Development_4;
+using BaseDI.Professional.Director.Web_Development_5;
+using BaseDI.Professional.Director.Web_Development_6;
+using BaseDI.Professional.Director.Web_Development_7;
+using BaseDI.Professional.Director.Web_Development_8;
+using BaseDI.Professional.Director.Web_Development_9;
+using BaseDI.Professional.Experience.Hear.Web_Development_13;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.State.Web_Development_1;
+using BaseDI.Professional.State.Web_Development_10;
+using BaseDI.Professional.State.Web_Development_11;
+using BaseDI.Professional.State.Web_Development_12;
+using BaseDI.Professional.State.Web_Development_13;
+using BaseDI.Professional.State.Web_Development_2;
+using BaseDI.Professional.State.Web_Development_3;
+using BaseDI.Professional.State.Web_Development_4;
+using BaseDI.Professional.State.Web_Development_5;
+using BaseDI.Professional.State.Web_Development_7;
+using BaseDI.Professional.State.Web_Development_8;
+using BaseDI.Professional.State.Web_Development_9;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Story.Web_Development_1
+namespace BaseDI.Professional.Story.Web_Development_1
 {
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
     internal class WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -52,7 +53,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         internal WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
 
             _extraData = extraData;
 
@@ -61,11 +62,11 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
@@ -79,6 +80,8 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
+
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
 
             #endregion
 
@@ -172,11 +175,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
             #region CHECK FOR MISTAKES
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
-
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -184,7 +186,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0();
             
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -201,14 +203,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -226,10 +228,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -237,7 +239,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -254,14 +256,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -283,10 +285,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -294,7 +296,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -311,14 +313,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -340,10 +342,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -351,7 +353,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -368,14 +370,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -397,10 +399,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -408,7 +410,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -425,14 +427,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -454,10 +456,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -465,7 +467,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -482,14 +484,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -511,10 +513,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -522,7 +524,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -539,14 +541,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -568,10 +570,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -579,7 +581,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -596,14 +598,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -625,10 +627,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -636,7 +638,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -653,14 +655,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -682,10 +684,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -693,7 +695,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -710,14 +712,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -739,10 +741,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -750,7 +752,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -767,14 +769,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -796,10 +798,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -807,7 +809,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -824,14 +826,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -853,10 +855,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -864,7 +866,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0 director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -881,14 +883,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -909,11 +911,10 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
         private object Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
             #region CHECK FOR MISTAKES
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"); 
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
-
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion       
 
@@ -921,7 +922,7 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0();
 
-            experience.Client = _client;
+            experience.ClientOrServerInstance = _clientORserverInstance;
 
             experience.ExtraData = extraData;
 
@@ -938,14 +939,14 @@ namespace BaseDI.BackEnd.Story.Web_Development_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
 
                     experience.Repository = localFile;
                     experience.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
 
                     experience.Repository = remoteService;

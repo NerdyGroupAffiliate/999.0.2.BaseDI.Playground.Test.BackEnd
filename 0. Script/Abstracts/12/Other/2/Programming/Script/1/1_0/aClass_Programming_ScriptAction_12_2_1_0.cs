@@ -1,12 +1,12 @@
-﻿using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+﻿using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Script.Programming.Abstract_1
+namespace BaseDI.Professional.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptAction_12_2_1_0<ChapterAction> : IContract_Programming_Repository_12_2_1_0
     {
@@ -14,7 +14,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public Func<Object, Object> CallBack { get; set; }
 
-        public Object Client { get; set; }
+        public Dictionary<string, object> ClientOrServerInstance { get; set; }
 
         public ExtraData_12_2_1_0 ExtraData { get; set; }
 
@@ -38,6 +38,8 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public JObject StorylineDetails { get; set; }
 
+        public JObject StorylineDetails_Cached { get; set; }
+
         public JObject StorylineDetails_Parameters { get; set; }
 
         //A. Variable Declaration      
@@ -52,7 +54,9 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
             #region 1. Assign
 
             //SET WHAT is needed to make this page of the story happen.
-            ProgrammingAdministrator = new JObject();
+            ClientOrServerInstance = new Dictionary<string, object>();
+
+            ProgrammingAdministrator = new JObject();            
 
             #endregion
 
@@ -70,6 +74,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
         #region 3. Set
 
         //A. Default state of story
+        public abstract void HandleDefaults();
 
         #endregion
 

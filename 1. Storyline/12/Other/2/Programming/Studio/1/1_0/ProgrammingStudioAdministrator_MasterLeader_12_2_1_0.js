@@ -15,8 +15,8 @@ var __extends = (this && this.__extends) || (function () {
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function fulfilled(value) { try { step(generator.next(value)); } catch (mistake) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (mistake) { reject(e); } }
         function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
@@ -44,7 +44,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     _.trys.pop(); continue;
             }
             op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        } catch (mistake) { op = [6, e]; y = 0; } finally { f = t = 0; }
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
@@ -78,7 +78,7 @@ var BaseDI;
                         }
                         //region 3. Set
                         ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.prototype.HandleStoryDefaults = function () {
-                            this._extraData = new ExtraData_12_2_1_0.BaseDI.BackEnd.Programming_.ExtraData_12_2_1_0();
+                            this._extraData = new ExtraData_12_2_1_0.BaseDI.Professional.Programming_.ExtraData_12_2_1_0();
                             this._extraData.MasterLeader = this;
                         };
                         //region 4. Action
@@ -111,7 +111,7 @@ var BaseDI;
                             });
                         };
                         return ProgrammingStudioAdministrator_MasterLeader_12_2_1_0;
-                    }(aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0));
+                    }(aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0));
                     Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 = ProgrammingStudioAdministrator_MasterLeader_12_2_1_0;
                     //region 5. Action Script
                     var Use_DesignPattern_Builder_Chapter_12_2_1_0 = /** @class */ (function () {
@@ -274,7 +274,7 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Builder_Chapter_12_2_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Programming_1.Implement_DesignPattern_Builder_Chapter_12_2_1_0 = Implement_DesignPattern_Builder_Chapter_12_2_1_0;
                     //region RETURN DIRECTOR WORKER
                     var Implement_DesignPattern_Factory_Director_12_2_1_0 = /** @class */ (function (_super) {
@@ -309,9 +309,9 @@ var BaseDI;
                                     switch (_a.label) {
                                         case 0:
                                             if (!this._requestToResolveString.toUpperCase().includes("DIRECTOR_OF_PROGRAMMING")) return [3 /*break*/, 2];
-                                            createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.BackEnd.Story.Risk_Management_.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
+                                            createDirector = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.Professional.Story.Risk_Management_.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._extraData);
                                             createDirector.APILocationLocalDotNetCore = "http://localhost:9912/api/basedi/io/programming";
-                                            createDirector.APILocationRemote = "https://api.basedi.io/programming";
+                                            createDirector.APILocationRemote = "https://api.BaseDI.Professional.io/programming";
                                             return [4 /*yield*/, createDirector.Action(this._requestToResolveObject, this._storylineDetails, this._storylineDetails_Parameters, this._requestName)];
                                         case 1: return [2 /*return*/, _a.sent()];
                                         case 2: return [2 /*return*/, this._storylineDetails];
@@ -393,7 +393,7 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Factory_Director_12_2_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Programming_1.Implement_DesignPattern_Factory_Director_12_2_1_0 = Implement_DesignPattern_Factory_Director_12_2_1_0;
                     //region RETURN EXPERIENCE WORKER
                     var Implement_DesignPattern_Factory_Experience_12_2_1_0 = /** @class */ (function (_super) {
@@ -501,11 +501,11 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Factory_Experience_12_2_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Programming_1.Implement_DesignPattern_Factory_Experience_12_2_1_0 = Implement_DesignPattern_Factory_Experience_12_2_1_0;
                 })(Programming_1 = Story.Programming_1 || (Story.Programming_1 = {}));
             })(Story = UnitTest.Story || (UnitTest.Story = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.js.map

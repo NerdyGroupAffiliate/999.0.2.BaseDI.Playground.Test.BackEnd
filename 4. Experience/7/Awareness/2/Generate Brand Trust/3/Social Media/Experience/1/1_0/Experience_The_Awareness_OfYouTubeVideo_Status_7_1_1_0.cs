@@ -1,12 +1,42 @@
 ﻿using System;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
 
-namespace BaseDI.BackEnd.Experience_
+namespace BaseDI.Professional.Experience_
 {
     public class Experience_The_Awareness_OfYouTubeVideo_Status_7_1_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
     {
+
+        #region 3. Set
+
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
+
+        #endregion
         //public Experience_AwarenessYouTubeVideo_Status_7_1_1_0(JObject storylineDetails) : base(storylineDetails)
         //{
 

@@ -5,13 +5,13 @@ import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Contro
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 import * as Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/1/1_0/Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 
-export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
-    export class Page_2_5_Process_StorySetting_1_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
+export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
+    export class Page_2_5_Process_StorySetting_1_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign
@@ -30,12 +30,38 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#endregion
 
         //#region 3. Set
+
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
+
         //#endregion
 
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             const entryPointName: string = "Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 
             let observationItem: String = "";
@@ -61,20 +87,20 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
-            observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
+            observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
 
-            htmlContainerJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer", false); 
-            htmlRowsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows", false); 
-            htmlColumnsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns", false); 
-            htmlContentJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent", false); 
-            htmlStylesJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS", false); 
+            htmlContainerJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer", false); 
+            htmlRowsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows", false); 
+            htmlColumnsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns", false); 
+            htmlContentJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent", false); 
+            htmlStylesJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS", false); 
            
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             // htmlResultString = "<h3>Hello World<\/h3>";
             htmlResultString = this.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);            
@@ -83,14 +109,14 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
             htmlResultString = this.Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON, htmlResultString);
             htmlResultInlineStylesString = this.Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON);
            
-            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.BackEnd.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
+            htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_1.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.Step_X_X_Create_A_HTMLHomePageTemplate_1_0("", "", "", htmlResultInlineStylesString, htmlResultString);
            
            
             observationItem = observationItem.replace('{htmlResult}', escape(htmlResultString))
             const observation = observationItem;
             // const observation: any = JSON.stringify(observationItem = observationItem.replace('{htmlResult}', htmlResultString)); 
             //#endregion
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
             storylineDetails.outputs[1].baseDIObservations.push(JSON.parse(observation.toString()));
             this.StorylineDetails = storylineDetails;
 
@@ -110,14 +136,14 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         }
 
         public Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             let htmlContainerString: string = "";    
             htmlContainerString = `<${htmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.getAttributes(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${htmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
 
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
 
             //#endregion
@@ -126,7 +152,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         }
 
         public Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON: any, htmlContainerString: string): string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             let htmlRowsString: string = "";
             let rows = [];
             htmlRowsJSON.value.HTMLContentItems.forEach(row => {
@@ -134,7 +160,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
             });
             htmlRowsString = htmlContainerString.replace("{HTMLRows_Replace}", rows.join("\n"))
             //#endregion
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
 
             //#endregion
@@ -143,14 +169,14 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         }
 
         public Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON: any, htmlRowsString: string): string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             let htmlColumnsString: string = htmlRowsString;
             //#endregion
             htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
                 let colItem = `<${col.Tag} ${this.getAttributes(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
                 htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
             });
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
 
             //#endregion
@@ -159,7 +185,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         }
 
         public Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             let htmlContentString: string = htmlColumnsString;
             let idsAndContant = {}
             htmlContentJSON.value.HTMLContentItems.forEach(con => {
@@ -182,7 +208,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
 
             //#endregion
@@ -191,7 +217,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         }
 
         public Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any) : string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             let htmlInlineCSSString: string = "";
             let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
@@ -202,7 +228,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
             htmlInlineCSSString = files.join("\n");
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
 
             //#endregion

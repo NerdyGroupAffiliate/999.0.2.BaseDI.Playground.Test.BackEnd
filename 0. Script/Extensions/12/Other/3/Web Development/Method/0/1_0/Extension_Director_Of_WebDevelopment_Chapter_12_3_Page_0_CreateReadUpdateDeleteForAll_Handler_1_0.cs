@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Html;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
+namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 {
     public class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0
     {
@@ -45,13 +45,13 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
 
         private static dynamic Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(dynamic attributes)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             var attrs = new List<string>();
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             foreach (var attribute in attributes)
             {
@@ -69,11 +69,11 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return string.Join(" ", attrs);
 
@@ -82,22 +82,22 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
 
         public static string Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(dynamic htmlContainerJSON)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             
             string htmlContainerString = $@"<{htmlContainerJSON.value.HTMLContentItems[0].Tag
                 } {Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{{HTMLRows_Replace}}</{htmlContainerJSON.value.HTMLContentItems[0].Tag}>";
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
             return htmlContainerString;
 
             //#endregion            
@@ -106,14 +106,14 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
         public static string Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(dynamic htmlRowsJSON,
             string htmlContainerString)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             string htmlRowsString = "";
             var rows = new List<string>();
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
             foreach (var row in htmlRowsJSON.value.HTMLContentItems)
             {
                 rows.Add($@"<{
@@ -127,11 +127,11 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
             return htmlRowsString;
 
             //#endregion            
@@ -141,13 +141,13 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
             string htmlRowsString)
         {
 
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             string htmlColumnsString = htmlRowsString;
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
             foreach (var col in htmlColumnsJSON.value.HTMLContentItems)
             {
                 var colItem = $@"<{
@@ -158,11 +158,11 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
             }
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
             return htmlColumnsString;
 
             //#endregion          
@@ -171,14 +171,14 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
         public static string Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(dynamic htmlContentJSON,
             string htmlColumnsString)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             string htmlContentString = htmlColumnsString;
             var idsAndConstant = new Dictionary<string, dynamic>();
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             foreach (var con in htmlContentJSON.value.HTMLContentItems)
             {
@@ -209,16 +209,16 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
                 htmlContentString = htmlContentString.Replace($"{{{item}_Replace}}", content);
             }
 
-            htmlContentString = htmlContentString.Replace("../999.0.3.BaseDI.QuickStart.Templates", "/StaticFiles");
+            htmlContentString = htmlContentString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
 
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return htmlContentString;
 
@@ -227,7 +227,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
 
         public static string Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(dynamic htmlStylesJSON)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             string htmlInlineCSSString = "";
             string styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value
                 .HTMLContentStylingItemFiles[0].StyleFilePathLocal;
@@ -246,7 +246,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
 
             //#endregion
            
-            //#region EXECUTE THE VISION
+            //#region INPUTS
             foreach (var file in filesArray)
             {
               foreach (var element in file.StyleFileUseProperties)
@@ -490,7 +490,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_0
            
             htmlInlineCSSString = $"<style>{ cssString }</style>";
 
-             htmlInlineCSSString = htmlInlineCSSString.Replace("../999.0.3.BaseDI.QuickStart.Templates", "/StaticFiles");
+             htmlInlineCSSString = htmlInlineCSSString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
             htmlInlineCSSString = Regex.Unescape(htmlInlineCSSString);
             return htmlInlineCSSString;
         }

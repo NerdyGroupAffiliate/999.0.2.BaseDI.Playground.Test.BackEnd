@@ -1,8 +1,8 @@
 ﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
-export namespace BaseDI.BackEnd.State.Programming_1 {
-    export class RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>
+export namespace BaseDI.Professional.State.Programming_1 {
+    export class RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>
     {
         //#region 1. Assign
 
@@ -28,6 +28,32 @@ export namespace BaseDI.BackEnd.State.Programming_1 {
         //#endregion
 
         //#region 3. Set
+
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
+
         //#endregion
 
         //#region 4. Action
@@ -36,7 +62,7 @@ export namespace BaseDI.BackEnd.State.Programming_1 {
 
         public async Action_9_Verify_Process(): Promise<any> {
             //STORE META DATA
-            const metaData = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(this._storylineDetails, "", this._baseDIPlaceHolderValue, true);
+            const metaData = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(this._storylineDetails, "", this._baseDIPlaceHolderValue, true);
 
             return metaData;
         }

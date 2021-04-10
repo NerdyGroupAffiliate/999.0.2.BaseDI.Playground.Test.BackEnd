@@ -1,14 +1,14 @@
-﻿using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Professional.Script.Programming.Abstract_1;
 using System;
 using System.Collections.Generic;
 
-namespace BaseDI.BackEnd.Script.Programming.Poco_1
+namespace BaseDI.Professional.Script.Programming.Poco_1
 {
     public class ExtraData_12_2_1_0
     {
         public ExtraData_12_2_1_0()
         {
-            KeyValuePairs = new Dictionary<string, object>();
+            KeyValuePairs = new Dictionary<string, dynamic>();
 
             Mistake = new Exception();
         }

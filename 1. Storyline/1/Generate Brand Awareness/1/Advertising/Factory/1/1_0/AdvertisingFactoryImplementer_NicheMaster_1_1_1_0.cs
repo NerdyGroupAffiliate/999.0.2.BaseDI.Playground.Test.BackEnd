@@ -1,15 +1,15 @@
-﻿using BaseDI.BackEnd.Director.Advertising_1;
-using BaseDI.BackEnd.Director.Advertising_2;
-using BaseDI.BackEnd.Director.Advertising_3;
+﻿using BaseDI.Professional.Director.Advertising_1;
+using BaseDI.Professional.Director.Advertising_2;
+using BaseDI.Professional.Director.Advertising_3;
 
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.State.Advertising_1;
-using BaseDI.BackEnd.State.Advertising_2;
-using BaseDI.BackEnd.State.Advertising_3;
-
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.State.Advertising_1;
+using BaseDI.Professional.State.Advertising_2;
+using BaseDI.Professional.State.Advertising_3;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -17,14 +17,14 @@ using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Story.Advertising_1
+namespace BaseDI.Professional.Story.Advertising_1
 {
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
     internal class AdvertisingFactoryImplementer_NicheMaster_1_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -34,7 +34,7 @@ namespace BaseDI.BackEnd.Story.Advertising_1
         internal AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
 
             _extraData = extraData;
 
@@ -43,14 +43,15 @@ namespace BaseDI.BackEnd.Story.Advertising_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
-            _client = client;
+
+            _clientORserverInstance = clientORserverInstance;
 
             _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
             _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
@@ -59,6 +60,8 @@ namespace BaseDI.BackEnd.Story.Advertising_1
 
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
+
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
 
             #endregion
 
@@ -89,13 +92,11 @@ namespace BaseDI.BackEnd.Story.Advertising_1
 
         private object Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
-            #region CHECK FOR MISTAKES
+            #region CHECK FOR MISTAKES            
 
-            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER"); 
 
-            string repositoryType = ""; // repositoryMetaData.
-
-            if (repositoryType == null) repositoryType = "LOCALFILE";        
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";        
 
             #endregion
 
@@ -103,7 +104,7 @@ namespace BaseDI.BackEnd.Story.Advertising_1
 
             Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -120,13 +121,13 @@ namespace BaseDI.BackEnd.Story.Advertising_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -147,10 +148,9 @@ namespace BaseDI.BackEnd.Story.Advertising_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER");
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -158,7 +158,7 @@ namespace BaseDI.BackEnd.Story.Advertising_1
 
             Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 director = new Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -175,13 +175,13 @@ namespace BaseDI.BackEnd.Story.Advertising_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -202,10 +202,9 @@ namespace BaseDI.BackEnd.Story.Advertising_1
         {
             #region CHECK FOR MISTAKES
 
-            string repositoryType = storylineDetails_Parameters.Step_X_X_Read_The_DataRepository_1_0(true);
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER");
 
-            if (string.IsNullOrEmpty(repositoryType))
-                repositoryType = storylineDetails.Step_X_X_Read_The_DataRepository_1_0(true);
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -213,7 +212,7 @@ namespace BaseDI.BackEnd.Story.Advertising_1
 
             Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_Handler_1_0 director = new Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_Handler_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -230,13 +229,13 @@ namespace BaseDI.BackEnd.Story.Advertising_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;

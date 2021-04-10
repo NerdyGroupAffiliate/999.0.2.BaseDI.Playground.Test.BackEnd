@@ -1,4 +1,4 @@
-﻿using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.Professional.Script.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BaseDI.BackEnd.Script.Programming.Abstract_1
+namespace BaseDI.Professional.Script.Programming.Abstract_1
 {
 
     public abstract class aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 : aClass_Programming_ScriptRoutable_12_2_1_0
@@ -25,7 +25,9 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
             //SET WHAT is needed to create the storyline.
             StorylineDetails = new JObject();
 
-            HandleChapterDefaults();
+            StorylineDetails_Cached = new JObject();
+
+            HandleDefaults();
         }
 
         #endregion
@@ -33,21 +35,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
         #region 3. Set
 
         //A. Default state of story
-        private void HandleChapterDefaults()
-        {
-            #region 1. Assign
-
-            #endregion
-
-            #region 2. Action
-
-
-            #endregion
-
-            #region 3. Observe
-
-            #endregion
-        }
+        public abstract void HandleDefaults();
 
         #endregion
 

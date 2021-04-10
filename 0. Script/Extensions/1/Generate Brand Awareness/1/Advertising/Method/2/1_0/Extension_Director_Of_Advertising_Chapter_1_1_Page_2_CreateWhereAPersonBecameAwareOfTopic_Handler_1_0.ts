@@ -9,7 +9,7 @@ if (process.env.APP_ENV == "SERVER") {
     var fs = require("fs");
 }
 
-export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
+export namespace BaseDI.Professional.Advertising.Extensions_2 {
     export class Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 {
         constructor() { }
 
@@ -26,7 +26,7 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
                     console.log("instagram task started!");
 
                     //const account = {
-                    //    username: "basedi.instagram.generatebrandawareness.1@basedi.io",
+                    //    username: "BaseDI.Professional.instagram.generatebrandawareness.1@BaseDI.Professional.io",
                     //    password: "TestTech99!@",
                     //};
 
@@ -82,20 +82,20 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
                 }) 
             }
 
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
            
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             //#endregion
         }
@@ -107,13 +107,13 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToFacebook_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             //#endregion
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
             //#endregion
-            //#region EXECUTE THE VISION
+            //#region INPUTS
             //#endregion
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
             //#endregion
         }
 
@@ -124,13 +124,13 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToYouTube_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             //#endregion
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
             //#endregion
-            //#region EXECUTE THE VISION
+            //#region INPUTS
             //#endregion
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
             //#endregion
         }
 
@@ -141,13 +141,13 @@ export namespace BaseDI.BackEnd.Advertising.Extensions_2 {
         public static Step_1_0_Custom_Transport_ContentToLinkedIn_1_0(
             contentMetaData: any
         ): any {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             //#endregion
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
             //#endregion
-            //#region EXECUTE THE VISION
+            //#region INPUTS
             //#endregion
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
             //#endregion
         }
 

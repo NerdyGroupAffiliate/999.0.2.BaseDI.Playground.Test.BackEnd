@@ -1,4 +1,4 @@
-﻿using BaseDI.BackEnd.Script.Programming.Extensions_1;
+﻿using BaseDI.Professional.Script.Programming.Extensions_1;
 
 using CurlThin;
 
@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
+namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 {
     public class Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0
     {
@@ -73,16 +73,16 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
         public static async void Step_X_X_Custom_Store_LocalFilesToServer_1_0(JObject storylineDetails)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES
 
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             List<JToken> list = null;
             dynamic parent = null;
@@ -140,7 +140,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
                                         var fileDirName = Path.GetDirectoryName(filepath);
                                         var shortDirName =
                                             fileDirName.Replace(
-                                                "C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\", "");
+                                                "C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\", "");
                                         var dest = $"wwwroot/Client/Images/{shortDirName}";
 
                                         if (!Directory.Exists(dest))
@@ -185,7 +185,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
                                             var fileDirName = Path.GetDirectoryName(filepath);
                                             var shortDirName =
                                                 fileDirName.Replace(
-                                                    "C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\", "");
+                                                    "C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\", "");
                                             var dest = $"wwwroot/Client/Images/{shortDirName}";
 
                                             if (!Directory.Exists(dest))
@@ -214,7 +214,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
                 //#endregion
 
-                //#region REPORT THE FEEDBACK
+                //#region OUTPUT
 
                 //#endregion
             }
@@ -231,7 +231,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
         {
             if (storylineDetails == null) return null;
 
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
             var serverEnvironmentMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
             var serverEnvironmentData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_DataConverter", false).SingleOrDefault();
@@ -252,7 +252,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VALUES
 
             results.Add("GET", serverEnvironmentServerRoutesGET);
             results.Add("POST", serverEnvironmentServerRoutesPOST);
@@ -261,7 +261,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
             #endregion
 
-            #region EXECUTE THE VISION
+            #region INPUTS
 
             #endregion
 
@@ -272,7 +272,7 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
         {
             if (storylineDetails == null) return null;
 
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
             var serverEnvironmentMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
             var serverEnvironment = serverEnvironmentMetaData != null ? serverEnvironmentMetaData.Parent : null;
@@ -281,44 +281,21 @@ namespace BaseDI.BackEnd.Script.Web_Development.Extensions_13
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VALUES
 
             #endregion
 
-            #region EXECUTE THE VISION
+            #region INPUTS
 
             #endregion
 
-            #region REPORT THE FEEDBACK
+            #region OUTPUT
 
             return storylineDetails;
 
             #endregion            
         }
 
-        #endregion
-
-        #region SERVER LOCAL STORAGE
-
-        public static void Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(string storageAction, string storageKey, object storageValue)
-        {
-            #region DESCRIBE THE MEMORIES
-
-            #endregion
-
-            #region RECALL THE MEMORIES
-
-            #endregion
-
-            #region EXECUTE THE VISION
-
-            #endregion
-
-            #region REPORT THE FEEDBACK
-
-            #endregion
-        }
-        
         #endregion
 
         #endregion

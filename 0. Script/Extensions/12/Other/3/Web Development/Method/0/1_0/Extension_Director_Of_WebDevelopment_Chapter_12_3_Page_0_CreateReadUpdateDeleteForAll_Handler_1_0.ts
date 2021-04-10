@@ -1,9 +1,22 @@
-﻿import { Console } from "console";
+﻿//#region Imports
+
+//#region 3rd Party
+
+//#endregion
+
+//#region BaseDI
+
 import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0"
+import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
-export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
+//#endregion
+
+//#endregion
+
+
+export namespace BaseDI.Professional.Web_Development.Extensions_0 {
     export class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 {
         constructor() {
 
@@ -11,7 +24,25 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
         //#region GENERATE HTML STRUCTURE
 
-        public static async Step_X_X_Custom_Store_HTMLStructureToString_1_0(metaData: string, title: string, scripts: string, styles: string, body: string, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null, storyLineDetails: any = null): Promise<string> {
+        public static async Step_X_X_Custom_Store_HTMLStructureToString_1_0(metaData: string, title: string, scripts: string, styles: string, body: string, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null, storyLineDetails: any = null, parameterClientOrServerInstance: any = null): Promise<string> {
+            //#region 1. INPUTS
+
+            //#region DEFINE parameter inputs
+
+            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+
             let htmlHomePageTemplate = `<!DOCTYPE html>
                 <html lang="en">
                     <head>
@@ -25,18 +56,27 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
                     </body>
                 </html>`
 
-            if (scripts == "") {
+            if (process.env.APP_ENV == "SERVER") {        
+                storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+          
+                storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(parameterClientOrServerInstance, Object));
+                storedParameterInputs.Parameters.setValue("parameterCRUDVerb", "Read");
+                storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0")
+                storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(masterLeader_masterStorerReference, Object));
+                storedParameterInputs.Parameters.setValue("parameterStorageValue", Object.assign(storyLineDetails, Object));
+                storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(storyLineDetails, Object));
+                storedParameterInputs.Parameters.setValue("parameterPageName", "");
+                storedParameterInputs.Parameters.setValue("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");
+                storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
 
-                let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0
-                    .BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0
-                    .Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Read", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "", "READING client side BaseDI script SOURCE PATH", storyLineDetails, {}, "BaseDI_PresentationScript_SrcLocation");
-                var baseDIObservations = results.outputs[1]
-                    .baseDIObservations[results.outputs[1].baseDIObservations.length - 1];
+                let results = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
+                var baseDIObservations = (results && results.outputs.length > 0) ? results.outputs[1].baseDIObservations[results.outputs[1].baseDIObservations.length - 1] : null;
 
-                var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]]
-                    .observation.metadata[3].item.data[0].dataResult
+                if (baseDIObservations) {
+                    var scriptName = baseDIObservations[Object.keys(baseDIObservations)[0]].observation.metadata[3].item.data[0].dataResult
 
-                scripts = `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
+                    scripts += `<script src="/scripts/${scriptName}" type="text/javascript"></script>`;
+                }
             }
 
             htmlHomePageTemplate = htmlHomePageTemplate.replace("{metaDataReplace}", metaData);
@@ -53,13 +93,13 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
         //#region GENERATE HTML PAGE
 
         private static Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(attributes) {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             var attrs = [];
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             for (var attribute in attributes) {
                 attrs.push(`${Object.keys(attributes[attribute])[0]}="${Object.values(attributes[attribute])[0]}"`)
@@ -67,11 +107,11 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return attrs.join(" ");
 
@@ -79,22 +119,22 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
         }
 
         public static Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON: any): string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             let htmlContainerString: string = "";
             htmlContainerString = `<${htmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(htmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${htmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return htmlContainerString;
 
@@ -102,14 +142,14 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
         }
 
         public static Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON: any, htmlContainerString: string): string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             let htmlRowsString: string = "";
             let rows = [];
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             htmlRowsJSON.value.HTMLContentItems.forEach(row => {
                 rows.push(`<${row.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(row.Attributes)}>{${row.Attributes[0].id}_Replace}</${row.Tag}>`)
@@ -118,11 +158,11 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return htmlRowsString;
 
@@ -131,163 +171,76 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
         public static Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(htmlColumnsJSON: any, htmlRowsString: string): string {
 
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             let htmlColumnsString: string = htmlRowsString;
 
             //#endregion
 
-            //#region EXECUTE THE VISION
-            var rowColumnCollection = [];
+            //#region INPUTS
             htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
-                if (!rowColumnCollection[col.ParentHTMLContentItemAttributeID]) {
-                    rowColumnCollection[col.ParentHTMLContentItemAttributeID] = [];
-                }
-
                 let colItem = `<${col.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
-
-                rowColumnCollection[col.ParentHTMLContentItemAttributeID].push(colItem)
-
-                // htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
+                htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
             });
+            //#endregion
 
-            //    console.log(rowColumnCollection)       
-            Object.keys(rowColumnCollection).forEach((key) => {
-                htmlColumnsString = htmlColumnsString.replace(`{${key}_Replace}`, rowColumnCollection[key].join("\n"));
-            })
+            //#region VALUES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
-
-            //#endregion
-
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return htmlColumnsString;
 
             //#endregion          
         }
 
-        public static GenerateHTMLChildern(parameterInputs) {
-            //DEFINE "attributes"
-            var storedAttributes = "";
-
-            //DEFINE "child couter"
-            var storedChildCounter = 0;
-
-            //DEFINE "closing tag"
-            var storedClosingTag = "";
-
-            //DEFINE "child tags"
-            var storedChildTags = "";
-
-            //DEFINE "final html"
-            var storedFinalizedHTML = "";
-
-            //SEARCH through children
-            console.log(parameterInputs)
-            parameterInputs.foreach((storedChildMetaData) =>
-            {
-                console.log(storedChildMetaData)
-                //MEMORIZE "opening tag" of metadata.
-                var storedOpeningTag = "<" + storedChildMetaData.Tag;
-
-                //DETERMINE if there are child elements.
-                if (storedChildMetaData.ChildHTMLContentDetails.Count > 0)
-                {
-                        storedChildMetaData.ChildHTMLContentDetails.forEach(childHTMLContent => {
-                        {
-                            //START over again with child data
-                            storedChildTags += this.GenerateHTMLChildern(childHTMLContent.ChildHTMLContentDetails);
-
-                            storedChildCounter += 1;
-                        }
-                    }) 
-                }
-                
-                if(storedChildCounter == storedChildMetaData.ChildHTMLContentDetails.Count)
-                {
-                    //PREPARE to close of HTML string
-                    storedClosingTag = "</" + storedChildMetaData.Tag + ">";
-
-                    //GENERATE inner tag data
-                    storedChildMetaData.Attributes.forEach(storedAttribute => {
-                        storedAttributes += " " + storedAttribute.key + "='" + storedAttribute.value + "'";
-                    });
-                    storedFinalizedHTML += storedOpeningTag += storedAttributes + ">" + storedChildMetaData.Value + storedChildTags + storedClosingTag;
-                }
-            })
-
-            return storedFinalizedHTML;
-
-            // let node = [];
-            // data.ChildHTMLContentDetails.forEach((d, index) => {
-            //     node.push(`<${d.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(d.Attributes)}>${d.Value ? d.Value : ""}</${d.Tag}>\n`)
-            //     if (d.ChildHTMLContentDetails.length > 0) {
-            //         d.ChildHTMLContentDetails.forEach(element => {
-            //             var child = this.ChildHTMLContentDetails(element);
-            //             node.push(`<${element.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(element.Attributes)}>${element.Value ? element.Value : child}</${element.Tag}>\n`)
-            //         });
-            //     }
-            //     return node;
-            // })
-            // return node;
-
-        }
-
-
         public static Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             let htmlContentString: string = htmlColumnsString;
             let idsAndConstant = {}
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
-            htmlContentJSON.value.HTMLContentItems.forEach(async con => {
-                if (!idsAndConstant[con.ParentHTMLContentItemAttributeID]) {
+            htmlContentJSON.value.HTMLContentItems.forEach(con => {
+                if (idsAndConstant[con.ParentHTMLContentItemAttributeID] == undefined) {
                     idsAndConstant[con.ParentHTMLContentItemAttributeID] = new Array();
-                }
-
-                if (con.ChildHTMLContentDetails.length > 0) {
-                    var childString = this.GenerateHTMLChildern(con);
-                    console.log(childString);
-
-                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${childString}</${con.Tag}>\n`);
-
-                } else {
                     idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
-
+                else {
+                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+                }
             });
+
             Object.keys(idsAndConstant).forEach(item => {
                 let content = idsAndConstant[item].join('\n')
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
             });
 
             if (process.env.APP_ENV == "SERVER") {
-                htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
+                htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
+
             }
 
+        
+            //#endregion
+
+            //#region VALUES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
-
-            //#endregion
-
-            //#region REPORT THE FEEDBACK
-
+            //#region OUTPUT
+                     
             return htmlContentString;
 
             //#endregion                        
         }
 
         public static Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any): string {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             let htmlInlineCSSString: string = "";
             let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
@@ -303,8 +256,8 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
-          
+            //#region INPUTS
+
             filesArray.forEach(file => {
                 file.StyleFileUseProperties.forEach(element => {
                     if (element.IsHtmlTag == "true" && element.properties.length > 0) {
@@ -415,7 +368,7 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
                     }
                 });
             });
-
+          
 
             Object.keys(PropertyArray).forEach((key, index) => {
                 let obj = Object.values(PropertyArray)[index];
@@ -451,16 +404,17 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_0 {
 
             htmlInlineCSSString = `<style>${cssString}</style>`;
 
-            if (process.env.APP_ENV == "SERVER") {
-                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images'); htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.QuickStart.Templates/g, '/Images');
-            }
+            if (process.env.APP_ENV == "SERVER")
+            {	            
+                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');	                htmlInlineCSSString = htmlInlineCSSString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
+            }	
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return htmlInlineCSSString;
 

@@ -15,8 +15,8 @@ var __extends = (this && this.__extends) || (function () {
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function fulfilled(value) { try { step(generator.next(value)); } catch (mistake) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (mistake) { reject(e); } }
         function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
@@ -44,7 +44,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     _.trys.pop(); continue;
             }
             op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        } catch (mistake) { op = [6, e]; y = 0; } finally { f = t = 0; }
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
@@ -96,7 +96,7 @@ var BaseDI;
                             });
                         };
                         return Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0;
-                    }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
+                    }(aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0));
                     Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 = Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0;
                     //region 5. Action Script
                     var Use_DesignPattern_Builder_Chapter_1_1_Page_1 = /** @class */ (function () {
@@ -165,7 +165,7 @@ var BaseDI;
                             _this._repository = repository;
                             _this._extraData = extraData;
                             _this._entryPoint = entryPoint;
-                            _this.HandleChapterDefaults = _this.HandleChapterDefaults.bind(_this);
+                            _this.HandleDefaults = _this.HandleDefaults.bind(_this);
                             _this.Action_1_Begin_Process = _this.Action_1_Begin_Process.bind(_this);
                             _this.Action_2_Validate_Process = _this.Action_2_Validate_Process.bind(_this);
                             _this.Action_3_Process_StoryAuthor = _this.Action_3_Process_StoryAuthor.bind(_this);
@@ -179,7 +179,7 @@ var BaseDI;
                             return _this;
                         }
                         //region 3. Set
-                        Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0.prototype.HandleChapterDefaults = function () {
+                        Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0.prototype.HandleDefaults = function () {
                         };
                         //region 4. Action
                         //Page 1-1
@@ -263,11 +263,11 @@ var BaseDI;
                             });
                         };
                         return Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0;
-                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
+                    }(aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0));
                     Advertising_1.Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0 = Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0;
                 })(Advertising_1 = Director.Advertising_1 || (Director.Advertising_1 = {}));
             })(Director = UnitTest.Director || (UnitTest.Director = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.js.map

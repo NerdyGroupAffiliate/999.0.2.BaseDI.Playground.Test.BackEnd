@@ -8,11 +8,11 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
-export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
-    export class Page_2_6_Process_StoryExperiences_1_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
+export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
+    export class Page_2_6_Process_StoryExperiences_1_2_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
         private _actionName: string = "";
-        private _client: any = null;
+        private _clientORserverInstance: any = null;
 
         private _jsonAccountInformation: any = null;
         private _jsonSearchInformation: any = null;
@@ -23,7 +23,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign
@@ -43,31 +43,31 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
         //#endregion
 
         //#region 3. Set
-        private HandleDefaults(): void {
-            this._request = this.Client.Request;
-            this._response = this.Client.Response;
+        public HandleDefaults(): void {
+            this._request = this.ClientOrServerInstance.Request;
+            this._response = this.ClientOrServerInstance.Response;
         }
         //#endregion
 
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            this._actionName = this?._client["actionName"];
+            this._actionName = this?._clientORserverInstance["actionName"];
 
             if (this._actionName.toUpperCase().includes("PROCESSREQUEST_1_0")) {
-                //#region DESCRIBE THE MEMORIES
+                //#region VARIABLES
 
 
                 //#endregion
 
-                //#region RECALL THE MEMORIES
+                //#region VARIABLES
 
-                this._jsonAccountInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "AccountItem_SetSeller_Business_Management_AccountLookUp", false);
-                this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
+                this._jsonAccountInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "AccountItem_SetSeller_Business_Management_AccountLookUp", false);
+                this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
 
                 //#endregion
 
-                //#region EXECUTE THE VISION
+                //#region INPUTS
 
                 this.HandleDefaults();
 
@@ -75,7 +75,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
             //#endregion
 
-                //#region REPORT THE FEEDBACK
+                //#region OUTPUT
 
             //#endregion
             }
@@ -121,7 +121,7 @@ export namespace BaseDI.BackEnd.Chapter.Page.Advertising_2 {
 
         public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Instagram(): any
         {
-            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.BackEnd.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToInstagram_1_0(this.StorylineDetails).then((data) => {
+            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToInstagram_1_0(this.StorylineDetails).then((data) => {
                 this._response.json({ message: "Instagram Publish Done!" });
 
                 console.log(data);

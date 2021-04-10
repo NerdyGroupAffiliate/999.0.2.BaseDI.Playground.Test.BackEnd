@@ -1,15 +1,15 @@
-﻿using BaseDI.BackEnd.Character_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Professional.Character_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 
-using ChapterPage = BaseDI.BackEnd.Chapter.Page.Web_Development_12;
+using ChapterPage = BaseDI.Professional.Chapter.Page.Web_Development_12;
 using System.Collections.Generic;
 
-namespace BaseDI.BackEnd.Director.Web_Development_12
+namespace BaseDI.Professional.Director.Web_Development_12
 {
     public class Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
@@ -45,6 +45,31 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
         #region 3. Set
 
         //A. Default state of this part of the storyline
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
+
 
         #endregion
 
@@ -58,7 +83,7 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
             #region PICK DESIGN PATTERN
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_3_Page_12 designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_12(Client, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, EntryPoint);
+            Use_DesignPattern_Builder_Chapter_12_3_Page_12 designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_12(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
 
             #endregion
 
@@ -204,14 +229,14 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
 
             _entryPoint = entryPoint;
 
-            HandleChapterDefaults();
+            HandleDefaults();
         }
 
         #endregion
 
         #region 3. Set
 
-        private void HandleChapterDefaults()
+        public override void HandleDefaults()
         {
 
         }
@@ -229,9 +254,9 @@ namespace BaseDI.BackEnd.Director.Web_Development_12
 
             var page = new ChapterPage.Page_12_5_Process_StorySetting_12_3_1_0(_storylineDetails, _repository);
 
-            page.Client = _client;
+            page.ClientOrServerInstance = _client;
 
-            page.EntryPoint = this._entryPoint;
+            page.DirectorOrExperienceRequestHandler = this._entryPoint;
             page.ExtraData = this._extraData;
 
             page.MasterStorer = this._centralizedStorer;

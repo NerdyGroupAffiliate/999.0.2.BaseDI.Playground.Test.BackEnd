@@ -15,8 +15,8 @@ var __extends = (this && this.__extends) || (function () {
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function fulfilled(value) { try { step(generator.next(value)); } catch (mistake) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (mistake) { reject(e); } }
         function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
@@ -44,7 +44,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     _.trys.pop(); continue;
             }
             op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        } catch (mistake) { op = [6, e]; y = 0; } finally { f = t = 0; }
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
@@ -100,18 +100,18 @@ var BaseDI;
                                     //region CHECK FOR MISTAKES
                                     //let repositoryType: string = storylineDetails.Extension_Try_Read_RepositoryType(false, true);
                                     //region ASSIGN REQUEST HANDLER
-                                    //let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.Director.Advertising_.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
+                                    //let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Professional.Director.Advertising_.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
                                     //director.StorylineDetails = storylineDetails;
                                     //director.StorylineDetails_Parameters = storylineDetails_Parameters;
                                     //director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     //switch (repositoryType.toUpperCase()) {
-                                    //    case "LOCALFILE":
-                                    //        var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                                    //    case "LOCAL_FILE":
+                                    //        var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Professional.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
                                     //        director.Repository = localFile;
                                     //        break;
-                                    //    case "REMOTESERVICE":
-                                    //        var remoteService = new RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.BackEnd.State.Advertising_.RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                                    //    case "REMOTE_SERVICE":
+                                    //        var remoteService = new RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Professional.State.Advertising_.RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
                                     //        director.Repository = remoteService;
                                     //        break;
                                     //}
@@ -120,11 +120,11 @@ var BaseDI;
                             });
                         };
                         return CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0;
-                    }(aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0));
+                    }(aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0));
                     Productivity_.CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0 = CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0;
                 })(Productivity_ = Story.Productivity_ || (Story.Productivity_ = {}));
             })(Story = UnitTest.Story || (UnitTest.Story = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0.js.map

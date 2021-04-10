@@ -35,19 +35,19 @@ var BaseDI;
                                 //region 1. Assign
                                 //SET WHAT is needed to create the storyline.
                                 _this.StorylineDetails = new Object();
-                                _this.HandleChapterDefaults();
+                                _this.HandleDefaults();
                                 return _this;
                                 //region 2. Action
                                 //region 3. Observe
                             }
                             //region 3. Set
-                            aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.prototype.HandleChapterDefaults = function () {
+                            aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.prototype.HandleDefaults = function () {
                                 //region 1. Assign
                                 //region 2. Action
                                 //region 3. Observe
                             };
                             return aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0;
-                        }(aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0));
+                        }(aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0));
                         Abstract_.aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 = aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0;
                         //region 5. Action Script
                         //region 6. Action Implementation
@@ -55,6 +55,6 @@ var BaseDI;
                 })(Programming = Script.Programming || (Script.Programming = {}));
             })(Script = UnitTest.Script || (UnitTest.Script = {}));
         })(UnitTest = ProtoType.UnitTest || (ProtoType.UnitTest = {}));
-    })(ProtoType = BaseDI.ProtoType || (BaseDI.ProtoType = {}));
+    })(ProtoType = BaseDI.Professional.ProtoType || (BaseDI.Professional.ProtoType = {}));
 })(BaseDI = exports.BaseDI || (exports.BaseDI = {}));
 //# sourceMappingURL=aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.js.map

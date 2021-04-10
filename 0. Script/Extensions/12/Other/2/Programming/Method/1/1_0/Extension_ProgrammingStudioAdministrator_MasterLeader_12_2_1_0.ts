@@ -2,7 +2,7 @@
 
 const objectScan = require('object-scan');
 
-export namespace BaseDI.BackEnd.Programming.Extensions_1
+export namespace BaseDI.Professional.Programming.Extensions_1
 {
     export class Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
     {

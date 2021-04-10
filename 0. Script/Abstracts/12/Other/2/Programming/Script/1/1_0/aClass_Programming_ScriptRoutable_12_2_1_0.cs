@@ -1,13 +1,13 @@
-﻿using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
-using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming_1;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Script.Programming.Abstract_1
+namespace BaseDI.Professional.Script.Programming.Abstract_1
 {
     public abstract class aClass_Programming_ScriptRoutable_12_2_1_0 
     {
@@ -19,11 +19,13 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public JObject StorylineDetails { get; set; }
 
+        public JObject StorylineDetails_Cached { get; set; }
+
         public JObject StorylineDetails_Parameters { get; set; }
 
         public ExtraData_12_2_1_0 ExtraData { get; set; }
 
-        public aClass_Programming_ScriptRoutable_12_2_1_0 EntryPoint { get; set; }
+        public aClass_Programming_ScriptRoutable_12_2_1_0 DirectorOrExperienceRequestHandler { get; set; }
 
         public aClass_Programming_ScriptAction_12_2_1_0<JObject> MasterLeader { get; set; }
 
@@ -39,7 +41,7 @@ namespace BaseDI.BackEnd.Script.Programming.Abstract_1
 
         public aClass_Programming_ScriptAction_12_2_1_0<JObject> MasterSensor { get; set; }
 
-        public Dictionary<string, object> Client { get; set; }
+        public Dictionary<string, object> ClientOrServerInstance { get; set; }
 
         public string RequestID { get; set; }
 }

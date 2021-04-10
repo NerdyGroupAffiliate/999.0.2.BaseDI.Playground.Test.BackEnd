@@ -5,14 +5,14 @@ import * as Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticatio
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
-export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
-    export class Page_1_5_Process_StorySetting_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
+export namespace BaseDI.Professional.Chapter.Page.Security_1 {
+    export class Page_1_5_Process_StorySetting_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
 
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. Assign
@@ -31,25 +31,51 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
         //#endregion
 
         //#region 3. Set
+
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
+
         //#endregion
 
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return await this.StorylineDetails;
 
@@ -64,58 +90,58 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
 
         public async Step_1_0_Custom_Control_ServerAuthenticationRequestToAPI_1_0()
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
-
-
-            //#endregion
-
-            //#region EXECUTE THE VISION
+            //#region VARIABLES
 
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region INPUTS
+
+
+            //#endregion
+
+            //#region OUTPUT
 
             //#endregion
         }
 
         public async Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0() {
 
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             //#endregion
         }
 
         private async Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0() {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             //#endregion
         }
@@ -123,37 +149,37 @@ export namespace BaseDI.BackEnd.Chapter.Page.Security_1 {
         //#region MICROSOFT
 
         private async Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft() {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             //#endregion
         }
 
         private async Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft() {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             //#endregion
         }

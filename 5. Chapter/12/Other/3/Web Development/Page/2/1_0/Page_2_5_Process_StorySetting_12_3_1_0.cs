@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Web_Development.Extensions_0;
+using BaseDI.Professional.Script.Web_Development.Extensions_0;
 
-namespace BaseDI.BackEnd.Chapter.Page.Web_Development_2
+namespace BaseDI.Professional.Chapter.Page.Web_Development_2
 {
     public class Page_2_5_Process_StorySetting_12_3_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
@@ -43,7 +43,31 @@ namespace BaseDI.BackEnd.Chapter.Page.Web_Development_2
 
         #region 3. Set
 
-        //A. Default state of story
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -60,7 +84,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Web_Development_2
 
             //Parse HTML into Linq to HTML object.
             //var HTMLdocument = HDocument.Parse(detail.Value);
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
             string entryPointName = "Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0";
 
             string observationItem = "";
@@ -85,7 +109,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Web_Development_2
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VARIABLES
 
             observationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Page_1_5_Process_StorySetting_12_3_1_0", "GENERATING html page", observationPresentationTemplateItem, observationBusinessTemplateItem, observationServiceTemplateItem, observationSecurityTemplateItem, observationDataTemplateItem);
             
@@ -99,7 +123,7 @@ namespace BaseDI.BackEnd.Chapter.Page.Web_Development_2
 
             htmlStylesJSON = styles.Count > 0 ? styles[1].Parent.Parent : styles[0].Parent.Parent;
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(htmlContainerJSON);
             htmlResultString = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(htmlRowsJSON, htmlResultString);

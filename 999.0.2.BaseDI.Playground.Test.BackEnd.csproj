@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_999._0._2.BaseDI.BackEnd</RootNamespace>
+    <RootNamespace>_999._0._2.BaseDI.Professional.BackEnd</RootNamespace>
     <UserSecretsId>69357c9e-c71d-4207-b5ac-8941c0b55e0e</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <TypeScriptBuildMode>true</TypeScriptBuildMode>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,12 +21,17 @@
 
   <ItemGroup>
     <None Remove="0. Script\Enumerations\12\Other\2\Programming\Enumeration\3\1_0\Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.tsx" />
+    <None Remove="0. Script\Extensions\11\Automate Manual Task\1\Risk Management\Method\0\1_0\Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\2\Programming\Method\3\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\5\Security\Method\1\1_0\Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.ts" />
-    <None Remove="basedi_1_0.tsx" />
+    <None Remove="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts" />
+    <None Remove="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts" />
+    <None Remove="6. State\12\Other\2\Programming\Repository\2\1_0\LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts" />
     <None Remove="Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_Test.tsx" />
+    <None Remove="Snippet_TypeScript_Regions.ts" />
+    <None Remove="Startup_Client_ImportExports_1_0.tsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,11 +47,12 @@
     <Folder Include="4. Experience\2\Movement\12\Other\2\Programming\Experience\3\1_0\" />
     <Folder Include="7. Director\12\Other\2\Programming\Director\" />
     <Folder Include="9. Organizing\MRichardson001\Pages\" />
-    <Folder Include="wwwroot\Server\State\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
+    <None Include="Snippet_CSharp_Regions.cs" />
     <None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
     <None Include="9. Organizing\MRichardson001\Shared\MainLayout.razor" />
     <None Include="9. Organizing\MRichardson001\Shared\NavMenu.razor" />
@@ -53,6 +61,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="0. Script\Enumerations\12\Other\2\Programming\Enumeration\3\1_0\Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.tsx" />
+    <TypeScriptCompile Include="0. Script\Extensions\11\Automate Manual Task\1\Risk Management\Method\0\1_0\Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\3\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\5\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\6\1_0\Extension_Experience_The_Movement_OfTheAssets_Content_12_2_1_0.ts" />
@@ -70,7 +79,10 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\2\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\1\1_0\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.ts" />
-    <TypeScriptCompile Include="BaseDI_1_0.tsx" />
+    <TypeScriptCompile Include="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts" />
+    <TypeScriptCompile Include="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts" />
+    <TypeScriptCompile Include="6. State\12\Other\2\Programming\Repository\2\1_0\LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts" />
+    <TypeScriptCompile Include="Snippet_TypeScript_Regions.ts" />
   </ItemGroup>
 
 </Project>

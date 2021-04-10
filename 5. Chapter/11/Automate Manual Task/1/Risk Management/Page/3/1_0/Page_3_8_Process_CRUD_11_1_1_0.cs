@@ -1,14 +1,14 @@
-﻿using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
+﻿using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
 
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BaseDI.BackEnd.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
 
-namespace BaseDI.BackEnd.Chapter.Page.Risk_Management_3
+namespace BaseDI.Professional.Chapter.Page.Risk_Management_3
 {
     public class Page_3_8_Process_CRUD_11_1_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
@@ -45,6 +45,30 @@ namespace BaseDI.BackEnd.Chapter.Page.Risk_Management_3
         #region 3. Set
 
         //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 

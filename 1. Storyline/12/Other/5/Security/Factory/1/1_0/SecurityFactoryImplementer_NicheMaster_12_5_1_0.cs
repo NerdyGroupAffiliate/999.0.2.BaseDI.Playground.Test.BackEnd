@@ -1,27 +1,27 @@
-﻿using BaseDI.BackEnd.Director.Security_1;
+﻿using BaseDI.Professional.Director.Security_1;
 
-using BaseDI.BackEnd.Experience.Hear.Web_Development_13;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming_1;
+using BaseDI.Professional.Experience.Hear.Web_Development_13;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
 
-using BaseDI.BackEnd.State.Security_1;
-
+using BaseDI.Professional.State.Security_1;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Story.Security_1
+namespace BaseDI.Professional.Story.Security_1
 {
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
     internal class SecurityFactoryImplementer_NicheMaster_12_5_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -33,7 +33,7 @@ namespace BaseDI.BackEnd.Story.Security_1
         internal SecurityFactoryImplementer_NicheMaster_12_5_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
 
             _extraData = extraData;
 
@@ -42,11 +42,11 @@ namespace BaseDI.BackEnd.Story.Security_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
@@ -60,6 +60,8 @@ namespace BaseDI.BackEnd.Story.Security_1
 
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
+
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
 
             #endregion
 
@@ -90,10 +92,10 @@ namespace BaseDI.BackEnd.Story.Security_1
         {
             #region CHECK FOR MISTAKES
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER"); 
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
+            if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -101,7 +103,7 @@ namespace BaseDI.BackEnd.Story.Security_1
 
             Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 director = new Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0();
             
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -118,14 +120,14 @@ namespace BaseDI.BackEnd.Story.Security_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
                     director.Repository.RequestName = _requestName;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;

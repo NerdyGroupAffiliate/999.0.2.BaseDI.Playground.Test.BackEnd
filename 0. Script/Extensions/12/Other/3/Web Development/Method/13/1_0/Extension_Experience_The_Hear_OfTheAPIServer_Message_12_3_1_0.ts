@@ -1,14 +1,6 @@
-﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+﻿//#region Imports
 
-import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
-
-import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
-
-import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
-
-import * as Collections from 'typescript-collections';
-
-const localFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 = "../../../../../../../../6. State/12/Other/2/Programming/Repository/3/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.json";
+//#region 3rd Party
 
 var express = null;
 var curl = null;
@@ -18,26 +10,54 @@ var localStorage = null;
 var passport = null;
 var PassportFacebookStrategy = null;
 
+//LIST
+import * as Collections from 'typescript-collections';
+
 if (process.env.APP_ENV == "SERVER") {
-    express = require("express");
 
-    oauth2 = require("simple-oauth2");
-    OIDCStragety = require("passport-azure-ad");
-
+    //COMMUNICATION
     curl = require("curling");
 
-    var LocalStorage = require('node-localstorage').LocalStorage;
-    localStorage = new LocalStorage('./wwwroot/Server/State');
-
+    //FILES
     var objectScan = require('copyfiles');
     var fs = require('fs');
     var path = require('path');
 
+    //SERVER
+    express = require("express");
+
+    //SECURITY
+    oauth2 = require("simple-oauth2");
+    OIDCStragety = require("passport-azure-ad");
+
     passport = require("passport");
-   // PassportFacebookStrategy = require('passport-facebook').Strategy;
+    // PassportFacebookStrategy = require('passport-facebook').Strategy;
+
+    //STORAGE
+    var LocalStorage = require('node-localstorage').LocalStorage;
+    localStorage = new LocalStorage('./wwwroot/Server/State');
 }
 
-export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
+
+
+//#endregion
+
+//#region BaseDI
+
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
+import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
+
+import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+
+import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
+//#endregion
+
+//#endregion
+
+export namespace BaseDI.Professional.Web_Development.Extensions_13 {
     export class Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 {
         constructor() {
 
@@ -65,14 +85,14 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             }
         }
 
-        public static Step_X_X_Custom_Output_ServerResponseToCaller_2_0(input: SingleParmPoco_12_2_1_0.BaseDI.BackEnd.Programming_1.SingleParmPoco_12_2_1_0)
+        public static Step_X_X_Custom_Output_ServerResponseToCaller_2_0(input: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES
 
             //let storedCallbackURL: string = input.Parameters.getValue("callbackURL");
             //let storedClientID: string = input.Parameters.getValue("clientID");
@@ -91,14 +111,14 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
             //const storedStrategyCallBack: any = (accessToken, refreshToken, profile, cb) => {
                 // In this example, the user's Facebook profile is supplied as the user
                 // record.  In a production-quality application, the Facebook profile should
                 // be associated with a user record in the application's database, which
                 // allows for account linking and authentication with other identity
                 // providers.
-            //    Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedMasterLeader_MasterStorerReference, "Create", storedEntryPointName, storedPageName, "STORING server side FACEBOOK TOKENS", storedStorylineDetails, { accessToken: accessToken, refreshToken: refreshToken, profile: profile }, "BaseDI_ConfigurationTokens_" + storedStrategy);
+            //    Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedMasterLeader_MasterStorerReference, "Create", storedEntryPointName, storedPageName, "STORING server side FACEBOOK TOKENS", storedStorylineDetails, { accessToken: accessToken, refreshToken: refreshToken, profile: profile }, "BaseDI_ConfigurationTokens_" + storedStrategy);
 
             //    return cb(null, profile);
             //};
@@ -112,12 +132,12 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
             //passport.use(storedStrategyInstance);
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             //#endregion
         }
 
-        public static Step_X_X_Custom_Output_ServerResponseToCaller_2_1(input: SingleParmPoco_12_2_1_0.BaseDI.BackEnd.Programming_1.SingleParmPoco_12_2_1_0) {
+        public static Step_X_X_Custom_Output_ServerResponseToCaller_2_1(input: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
             let storedServer: any = input.Parameters.getValue("server");
             let storedStrategy: string = input.Parameters.getValue("strategy");
             let url: string = input.Parameters.getValue("url");
@@ -126,68 +146,70 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
         }
         //#region REST ACTION VERBS
 
-        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server: any, url: string, options: Object, callback: Function): any {
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server: any, url: string, options: any, callback: Function): any {
 
         }
 
-        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server: any, url: string, options: Object, callback: Function): any {
-            //#region DESCRIBE THE MEMORIES
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server: any, url: string, options: any, callback: Function): any {
+            //#region VARIABLES
 
-            let curlClient: any;
-
-            //#endregion
-
-            //#region RECALL THE MEMORIES
-
-            curlClient = curl.connect();
+            let storedCurlClient: any;
+            let storedQueryString: string;
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region VALUES
 
-            curlClient.get("https://www.google.com/logos/2020/halloween20/rc1/messages.en.nocache.json", null, function (error, response) {
-                console.log(response);
-            });
-
-            //get.get("http://www.microsoft.com", options, function (err, response, body) { });
+            storedCurlClient = curl.connect();
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region INPUTS
 
-            //#endregion
-        }
+            //console.log(url);
+            //console.log(options);
 
-        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(server: any, url: string, options: Object, callback: Function): any {
-
-        }
-
-        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server: any, url: string, options: Object, callback: Function): any {
-            //#region DESCRIBE THE MEMORIES
-
-            let curlClient: any;
-
-
-            //#endregion
-
-            //#region RECALL THE MEMORIES
-
-            curlClient = curl.connect();
-
-            //#endregion
-
-            //#region EXECUTE THE VISION
-
-            console.log(url);
-            console.log(options);
-
-            curlClient.post(url, options, function (error, response) {
+            storedCurlClient.get(url, options, function (error, response) {
                 callback(response);
             });
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
+
+            //#endregion
+        }
+
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(server: any, url: string, options: any, callback: Function): any {
+
+        }
+
+        private static Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server: any, url: string, options: any, callback: Function): any {
+            //#region VARIABLES
+
+            let storedCurlClient: any;
+
+
+            //#endregion
+
+            //#region VALUES
+
+            storedCurlClient = curl.connect();
+
+            //#endregion
+
+            //#region INPUTS
+
+            //console.log(url);
+            //console.log(options);
+
+            storedCurlClient.post(url, options, function (error, response) {
+                callback(response);
+            });
+
+            //#endregion
+
+            //#region OUTPUT
 
             //#endregion
         }
@@ -203,48 +225,88 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
         //#region SERVER ASSET MANAGEMENT
 
         public static async Step_X_X_Custom_Store_LocalFilesToServer_1_0(storylineDetails: object): Promise<any> {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES
 
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
-            var fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+            try
+            {
+                var fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
-            if (fileMetaData == undefined || fileMetaData == null)
-                fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+                if (fileMetaData == undefined || fileMetaData == null)
+                    fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
-            var SetupItemEnvironmentServerMetaDataPaths = fileMetaData.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
+                var SetupItemEnvironmentServerMetaDataPaths = fileMetaData.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
 
-            SetupItemEnvironmentServerMetaDataPaths.forEach(metaDataPaths => {
-                let rawdata = fs.readFileSync(metaDataPaths.MetaDataLocalPath);
-                let obj = JSON.parse(rawdata);
-                let contentItems = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
+                SetupItemEnvironmentServerMetaDataPaths.forEach(metaDataPaths => {
+                    let rawdata = fs.readFileSync(metaDataPaths.MetaDataLocalPath);
+                    let obj = JSON.parse(rawdata);
+                    let contentItems = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
 
-                let stylingItemFiles = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
+                    let stylingItemFiles = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
 
-                stylingItemFiles.forEach(file => {
-                    file.StyleFileUseProperties.forEach(property => {
-                        property.properties.forEach(prop => {
-                            prop.properyValues.forEach(element => {
-                                if (element.includes('url')) {
-                                    var url = element.replace(/(^.*\(|\).*$)/g, '');
-                                    let filepath = path.resolve(decodeURI(url))
+                    stylingItemFiles.forEach(file => {
+                        file.StyleFileUseProperties.forEach(property => {
+                            property.properties.forEach(prop => {
+                                prop.properyValues.forEach(element => {
+                                    if (element.includes('url')) {
+                                        var url = element.replace(/(^.*\(|\).*$)/g, '');
+                                        let filepath = path.resolve(decodeURI(url))
+                                        if (fs.existsSync(filepath)) {
+                                            var fileDirName = path.dirname(filepath)
+                                            var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\`, '')
+                                            let dest = `wwwroot/Client/Images/${shortDirName}`
+
+                                            fs.mkdir(dest, { recursive: true }, (err) => {
+                                                if (err) throw err;
+                                                else {
+                                                    fs.copyFile(filepath, `${dest}/${path.basename(filepath)}`, (err) => {
+                                                        if (err) throw err;
+                                                    });
+                                                }
+                                            });
+
+                                        } else {
+                                            console.log('File Not Found: ' + filepath)
+                                        }
+                                    }
+                                });
+                            });
+                        });
+                    });
+
+                    Object.keys(contentItems).forEach(function (key) {
+                        var val = contentItems[key];
+                        let HTMLContentItems = val.value.HTMLContentItems;
+                        HTMLContentItems.forEach(item => {
+                            var attributes = item.Attributes;
+                            attributes.forEach(att => {
+                                if (att.src != undefined) {
+                                    let filepath = path.resolve(decodeURI(att.src))
+                                    // console.log(att.src)
                                     if (fs.existsSync(filepath)) {
                                         var fileDirName = path.dirname(filepath)
-                                        var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\`, '')
+                                        var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\`, '')
                                         let dest = `wwwroot/Client/Images/${shortDirName}`
 
                                         fs.mkdir(dest, { recursive: true }, (err) => {
-                                            if (err) throw err;
-                                            else {
+                                            if (err) 
+                                            {
+                                                let a = "";
+                                            }
+                                            else
+                                            {
                                                 fs.copyFile(filepath, `${dest}/${path.basename(filepath)}`, (err) => {
-                                                    if (err) throw err;
+                                                    if (err) {
+                                                        let a = "";
+                                                    }
                                                 });
                                             }
                                         });
@@ -256,213 +318,378 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
                             });
                         });
                     });
+                    // contentItems.forEach(contentItem => {
+                    //     console.log(contentItem)
+                    // });
                 });
+            }
+            catch (e) {
 
-                Object.keys(contentItems).forEach(function (key) {
-                    var val = contentItems[key];
-                    let HTMLContentItems = val.value.HTMLContentItems;
-                    HTMLContentItems.forEach(item => {
-                        var attributes = item.Attributes;
-                        attributes.forEach(att => {
-                            if (att.src != undefined) {
-                                let filepath = path.resolve(decodeURI(att.src))
-                                // console.log(att.src)
-                                if (fs.existsSync(filepath)) {
-                                    var fileDirName = path.dirname(filepath)
-                                    var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\`, '')
-                                    let dest = `wwwroot/Client/Images/${shortDirName}`
-
-                                    fs.mkdir(dest, { recursive: true }, (err) => {
-                                        if (err) throw err;
-                                        else {
-                                            fs.copyFile(filepath, `${dest}/${path.basename(filepath)}`, (err) => {
-                                                if (err) throw err;
-                                            });
-                                        }
-                                    });
-
-                                } else {
-                                    console.log('File Not Found: ' + filepath)
-                                }
-                            }
-                        });
-                    });
-                });
-                // contentItems.forEach(contentItem => {
-                //     console.log(contentItem)
-                // });
-            });
+            }
+            
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             //#endregion
+
+
         }
 
         //#endregion
 
         //#region SERVER CONFIGURATION
 
-        public static async Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storylineDetails: Object, masterLeader_masterStorerReference: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, entryPointName: string, pageName: string = ""): Promise<any> {
-            if (storylineDetails == undefined || storylineDetails == null) return; //REQUIRED VALUE
-            if (process.env.APP_ENV != "SERVER") return; //REQUIRED VALUE
-            if (entryPointName == undefined || entryPointName == null || entryPointName == "") return; //REQUIRED DIRECTOR or EXPREINCE FILE NAME without extension.
+        public static async Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
+        {
+            //#region 1. INPUTS
 
-            //#region DESCRIBE THE MEMORIES
+            //#region VALIDATE input parameters
 
-            let server: any = null;
+            const ValidateInputs = () =>
+            {
+                //#region 1. INPUTS
 
-            let storedInput: SingleParmPoco_12_2_1_0.BaseDI.BackEnd.Programming_1.SingleParmPoco_12_2_1_0;
+                //#region DEFINE process checkpoint
 
-            //#endregion
+                let storedProcessCheckPointHit: boolean = false;
 
-            //#region RECALL THE MEMORIES
+                //#endregion
 
-            const serverEnvironment: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
-            const serverEnvironmentData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.BackEnd.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_DataConverter", false);
+                //#region DEFINE stored message
 
-            const serverEnvironmentName: number = serverEnvironment?.value?.SetupItemEnvironmentName;
-            const serverEnvironmentPort: number = serverEnvironment?.value?.SetupItemEnvironmentPort;
-            const serverEnvironmentDomainName: number = serverEnvironment?.value?.SetupItemEnvironmentDomainName;
+                let storedMessage: string = "";
 
-            const serverEnvironmentBuildItemClientPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemBuildItemClientPath;
-            const serverEnvironmentDataPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemDataPath;
-            const serverEnvironmentDocumentPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemDocumentPath;
-            const serverEnvironmentFontPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemFontPath;
-            const serverEnvironmentImagePath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemImagePath;
-            const serverEnvironmentScriptPath: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
-            const serverEnvironmentScriptName: string = serverEnvironment?.value?.SetupItemEnvironmentClient?.SetupItemScriptName;
-            const serverEnvironmentServerRoutesGET: Array<any> = serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
+                //#endregion
 
-            const serverEnvironmentDataConversion: string = serverEnvironmentData?.value?.DataItemLocation;
+                //#endregion
 
-            //#endregion
+                //#region 2. PROCESS
 
-            //#region EXECUTE THE VISION
-            if (masterLeader_masterStorerReference != null) {
-                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING client side BaseDI script SOURCE PATH", storylineDetails, serverEnvironmentScriptName, "BaseDI_PresentationScript_SrcLocation");
-                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.BackEnd.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(masterLeader_masterStorerReference, "Create", entryPointName, pageName, "STORING server side data CONVERSION REPOSITORY mode", storylineDetails, serverEnvironmentDataConversion, "BaseDI_DataConverter_Mode");
+                //#region EXECUTE validation process
+
+                //#region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
+                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
+                        storedMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterClientOrServerInstance")) {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n"
+                        storedProcessCheckPointHit = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"]  == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessCheckPointHit = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterDirectorOrExperienceName")) {
+                        storedMessage += "***parameterDirectorOrExperienceName*** cannot be blank or empty.\n"
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterMasterStorer")) {
+                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n"
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterStorylineDetails")) {
+                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n"
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        //#region EDGE CASE - USE exception handler
+
+                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 -> Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(parameterInputs)\n\n" + storedMessage);
+
+                        throw new Error("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+
+                        //#endregion
+                    }
+                }
+                else
+                {
+                    //#region EDGE CASE - USE exception handler
+
+                    throw new Error("***LEAKY PIPE*** PARSING parameter values failed for [parameterInputs || parameterInputs.Parameters]. Values cannot be null or undefined.");
+
+                    //#endregion                    
+                }
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+
+                //#region 3. OUTPUT
+
+                //#region RETURN validation passed
+
+                //#region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
             }
 
-            //#region SET API STRATEGIES
-
-            //#region Facebook
-
-            //storedInput.EntryPointName = "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
-            //storedInput.Parameters.setValue("callbackURL", "AuthResponse");
-            //storedInput.Parameters.setValue("clientID", process.env['FACEBOOK_CLIENT_ID']);
-            //storedInput.Parameters.setValue("clientSecret", process.env['FACEBOOK_CLIENT_SECRET']);
-
-            //storedInput.Parameters.setValue("masterStorerReference", masterLeader_masterStorerReference);
-
-            //storedInput.Parameters.setValue("strategy", "Facebook");
-
-            //storedInput.StorylineDetails = storylineDetails;
-
-            //this.Step_X_X_Custom_Output_ServerResponseToCaller_2_0(storedInput);
+            ///BEGIN valdation process
+            ValidateInputs();
 
             //#endregion
 
-            //passport.serializeUser(function (user, cb) {
-            //    cb(null, user);
-            //});
+            //#region DEFINE parameter inputs
 
-            //passport.deserializeUser(function (obj, cb) {
-            //    cb(null, obj);
-            //});
+            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //#endregion
 
-            //#region PICK THE SERVER
+            //#region MEMORIZE centralized processes
 
-            server = express();
-
-            //#endregion
-
-            //#region SET VIEW ENGINE
-
-            //SET PRESENTATION VIEWS
-
-            //server.set('view engine', 'hbs');
-            //server.set('views', viewPaths);
+            let stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterMasterStorer");
+            //this._stored_CentralizedSensor = parameterCentralizedSensor;
+            //this._stored_CentralizedStorer = parameterCentralizedStorer;
 
             //#endregion
 
-            //#region SET STATIC FOLDERS
+            //#region MEMORIZE clientOrServer instance
 
-            //const viewsPath = path.join(__dirname, '../Templates');
+            let storedClientORserverInstance: Object = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 
-            //server.use(
-            //    "/data",
-            //    express.static(serverEnvironmentDataPath, {
-            //        maxAge: "15d",
-            //        fallthrough: false
-            //    })
-            //);
+            //#endregion
 
-            //server.use(
-            //    "/documents",
-            //    express.static(serverEnvironmentDocumentPath, {
-            //        maxAge: "15d",
-            //        fallthrough: false
-            //    })
-            //);
+            //#region MEMORIZE app settings
 
-            //server.use(
-            //    "/fonts",
-            //    express.static(serverEnvironmentFontPath, {
-            //        maxAge: "15d",
-            //        fallthrough: false
-            //    })
-            //);
+            let storedAppSettings: any = storedClientORserverInstance["appSettings"];
 
-            server.use(
-                "/images",
-                express.static(serverEnvironmentImagePath, {
-                    maxAge: "15d",
-                    fallthrough: false
-                })
-            );
+            //#endregion
 
-            //server.use(
-            //    "/localstorage",
-            //    express.static(localFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0, {
-            //        maxAge: "15d",
-            //        fallthrough: false
-            //    })
-            //);
+            //#region MEMORIZE developer mode
 
-            server.use(
-                "/scripts",
-                express.static(serverEnvironmentScriptPath, {
-                    maxAge: "15d",
-                    fallthrough: false
-                })
-            );
+            let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web server");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientORserverInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientORserverInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientORserverInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
+
+            //#endregion
+
+            //#region MEMORIZE request details
+
+            let storedRequestName: string = parameterInputs.Parameters.getValue("parameterDirectorOrExperienceName");
+            //let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
+
+            //#endregion
+
+            //#region MEMORIZE storyline details
+
+            let storedStorylineDetails: Object = parameterInputs.Parameters.getValue("parameterStorylineDetails");
+            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+            //#endregion
+
+            //#region MEMORIZE server details
+
+            let storedServerInstance: any = null;
+
+            const storedServerDetails: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storedStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
+
+            //DOMAIN url
+            const storedServerDomainName: number = storedServerDetails?.value?.SetupItemEnvironmentDomainName;
+
+            //PORT number
+            const storedServerPort: number = storedServerDetails?.value?.SetupItemEnvironmentPort;   
+
+            //STATIC paths
+
+            //DOCUMENTS
+            const storedServerDocumentPath: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemDataPath;
+
+            //FONTS
+            const storedServerFontsPath: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemFontPath;
+            const storedServerImagesPath: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemImagePath;
+
+            //SCRIPTS
+            const storedServerScriptsPath: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
+            const storedServerScriptName: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemScriptName;
+
+            //ROUTES 
+            const storedServerRoutesGET: Array<any> = storedServerDetails?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;    
+            const storedServerRoutesDELETE: Array<any> = storedServerDetails?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesDELETE;    
+            const storedServerRoutesPOST: Array<any> = storedServerDetails?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesPOST;    
+            const storedServerRoutesPUT: Array<any> = storedServerDetails?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesPUT;    
 
             //#endregion
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region 2. PROCESS
 
-            server.get('/favicon.ico', (req, res) => res.status(204));
+            //#region EXECUTE configuration process
+
+            //#region EDGE CASE - USE developer logger
+
+            if (storedDeveloperMode) {
+                storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+                                
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", false);
+            }
+
+            //#endregion
+
+            if (stored_CentralizedStorer != null)
+            {
+                try
+                {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode) {
+                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ATTEMPTING to store " + storedServerScriptName);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+
+                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ATTEMPTING to store " + process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
+                    //#region EDGE CASE - USE local storage
+                    storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+                    //STATIC inputs               
+                    storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(storedClientORserverInstance, Object));
+                    storedParameterInputs.Parameters.setValue("parameterCRUDVerb", "Create");
+
+                    storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
+
+                    storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(stored_CentralizedStorer, Object));
+
+                    storedParameterInputs.Parameters.setValue("parameterPageName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
+
+                    storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(storedStorylineDetails, Object));
+
+                    storedParameterInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", true);
+                    //DYNAMIC inputs
+                    storedParameterInputs.Parameters.setValue("parameterStorageDescription", "STORING client side BaseDI script SOURCE PATH");
+                    storedParameterInputs.Parameters.setValue("parameterStorageValue", storedServerScriptName);
+                    storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
+
+                    //STORE it
+                    await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
+
+                    //DYNAMIC inputs
+                    
+                    storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(storedClientORserverInstance, Object));
+
+                    storedParameterInputs.Parameters.remove("parameterStorageDescription");
+                    storedParameterInputs.Parameters.setValue("parameterStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
+
+                    storedParameterInputs.Parameters.remove("parameterStorageValue");
+                    storedParameterInputs.Parameters.setValue("parameterStorageValue", process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER);
+
+                    storedParameterInputs.Parameters.remove("parameterUniqueStorageKey");
+                    storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_DataConverter_Mode");
+
+                    storedParameterInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", false);
+
+                    //STORE it
+                    await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
+
+                    //#endregion
+                }
+                catch (mistake)
+                {
+                    //#region EDGE CASE - USE developer logger
+                    if (storedDeveloperMode)
+                    {
+                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED configurating server");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+                    //#endregion
+
+                    //#region EDGE CASE - USE exception handler
+
+                    throw mistake;
+
+                    //#endregion
+                }     
+            }
+
+            //#region IDEAL CASE - USE express server
+
+            storedServerInstance = express();
+
+            //BROWSER fav icon
+            storedServerInstance.get('/favicon.ico', (req, res) => res.status(204));
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN server details
+
+            //#region IDEAL CASE - USE server details
 
             return {
                 Server:
                 {
-                    Instance: server,
-                    Port: serverEnvironmentPort,
+                    Instance: storedServerInstance,
+                    Port: storedServerPort,
                     Verbs: {
-                        Get: serverEnvironmentServerRoutesGET,
-                        Post: "",
-                        Put: "",
-                        Delete: "",
+                        Delete: storedServerRoutesDELETE,
+                        Get: storedServerRoutesGET,
+                        Post: storedServerRoutesPOST,
+                        Put: storedServerRoutesPUT
                     }
                 },
 
             };
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
         }
@@ -477,20 +704,20 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
         public static Step_X_X_Custom_Outout_ServerLocalDataFromMemory_1_0(storageKey: String, storageValue: any): any
         {
-            //#region DESCRIBE THE MEMORIES
+            //#region VARIABLES
 
 
             let storedValue: any;
 
             //#endregion
 
-            //#region RECALL THE MEMORIES
+            //#region VALUES
 
 
 
             //#endregion
 
-            //#region EXECUTE THE VISION
+            //#region INPUTS
 
             if (localStorage) {
                 storedValue = localStorage.getItem(storageKey);
@@ -498,75 +725,9 @@ export namespace BaseDI.BackEnd.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region REPORT THE FEEDBACK
+            //#region OUTPUT
 
             return storedValue;
-
-            //#endregion
-        }
-
-        public static Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storageAction: string, storageKey: String, storageValue: any) : any
-        {
-            //#region DESCRIBE THE MEMORIES
-
-            let storedCRUDActionRead: boolean = false
-            let storageResult: any = null;
-            let storedObservation: any = null;
-            let storedObservationFiltered: Object = {};
-            let storedObservationKey: string = null;           
-
-            //#endregion
-
-            try
-            {
-                //#region RECALL THE MEMORIES
-                storedObservationKey = (Object.keys(storageValue)[0]);
-
-                if (storedObservationKey.toString().toUpperCase().includes("-READ")) {
-                    storedCRUDActionRead = true;
-                }
-
-                storedObservationKey = storedObservationKey.toString().replace("-Create", "");
-                storedObservationKey = storedObservationKey.toString().replace("-Read", "");
-                storedObservationKey = storedObservationKey.toString().replace("-Update", "");
-                storedObservationKey = storedObservationKey.toString().replace("-Delete", "");
-
-                if (!storedCRUDActionRead) {
-                    storedObservation = JSON.parse(storageValue[(Object.keys(storageValue)[0])]);
-
-                    storedObservationFiltered[storedObservationKey] = storedObservation?.baseDIObservations[0];
-                }
-
-                //#endregion
-
-                //#region EXECUTE THE VISION
-
-                if (localStorage) {
-                    switch (storageAction.toUpperCase()) {
-                        case "CREATE":
-                        case "UPDATE":
-                            localStorage.setItem(storageKey, JSON.stringify(storedObservationFiltered));
-                            break;
-                        case "DELETE":
-                            localStorage.removeItem(storageKey);
-                            break;
-                        case "READ":
-                            storageResult = localStorage.getItem(storageKey);
-                            break;
-
-                    }
-                }
-
-                //#endregion
-            }
-            catch (e)
-            {
-                throw e;
-            }
-
-            //#region REPORT THE FEEDBACK
-
-            return storageResult;
 
             //#endregion
         }

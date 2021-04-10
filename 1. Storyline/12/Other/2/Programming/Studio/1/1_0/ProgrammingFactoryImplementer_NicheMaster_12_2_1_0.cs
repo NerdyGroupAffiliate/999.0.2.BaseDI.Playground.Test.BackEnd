@@ -1,417 +1,850 @@
-﻿using BaseDI.BackEnd.Director.Advertising_1;
-using BaseDI.BackEnd.Director.Programming_1;
-using BaseDI.BackEnd.Director.Programming_2;
-using BaseDI.BackEnd.Director.Programming_3;
-using BaseDI.BackEnd.Director.Programming_4;
-using BaseDI.BackEnd.Director.Programming_5;
-using BaseDI.BackEnd.Director.Risk_Management_3;
-using BaseDI.BackEnd.Director.Risk_Management_4;
+﻿#region Imports
 
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming_1;
-using BaseDI.BackEnd.State.Advertising_1;
-using BaseDI.BackEnd.State.Programming_1;
-using BaseDI.BackEnd.State.Programming_2;
-using BaseDI.BackEnd.State.Programming_3;
-using BaseDI.BackEnd.State.Programming_4;
-using BaseDI.BackEnd.State.Programming_5;
-using BaseDI.BackEnd.State.Programming_6;
-using Newtonsoft.Json.Linq;
+#region BaseDI
+
+using BaseDI.Professional.Director.Advertising_1;
+using BaseDI.Professional.Director.Programming_1;
+using BaseDI.Professional.Director.Programming_2;
+using BaseDI.Professional.Director.Programming_3;
+using BaseDI.Professional.Director.Programming_4;
+using BaseDI.Professional.Director.Programming_5;
+using BaseDI.Professional.Director.Risk_Management_3;
+using BaseDI.Professional.Director.Risk_Management_4;
+
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.State.Advertising_1;
+using BaseDI.Professional.State.Programming_1;
+using BaseDI.Professional.State.Programming_2;
+using BaseDI.Professional.State.Programming_3;
+using BaseDI.Professional.State.Programming_4;
+using BaseDI.Professional.State.Programming_5;
+using BaseDI.Professional.State.Programming_6;
+
+
+#endregion
+
+#region .Net Core
+
+using Microsoft.Extensions.Configuration;
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Story.Programming_1
+#endregion 
+
+#region 3rd Party Core
+
+using Newtonsoft.Json.Linq;
+
+#endregion 
+
+#endregion
+
+namespace BaseDI.Professional.Story.Programming_1
 {
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
     internal class ProgrammingFactoryImplementer_NicheMaster_12_2_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
+        #region 1. Assign
 
-        private ExtraData_12_2_1_0 _extraData = null;
+        //SETTINGS
+        private IConfiguration _storedAppSettings = null;
 
-        private string _requestName = "";
+        //CLIENT/SERVER
+        private Dictionary<string, object> _storedClientORserverInstance;
+        private string _storedRequestName = "";
+
+        //MISC
+        private ExtraData_12_2_1_0 _storedExtraData = null;
+
+        //PLUMBING
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
+
+        #endregion
+
+        #region 2. Ready
 
         internal ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(ExtraData_12_2_1_0 extraData)
         {
-            //region 1. Assign
-            _client = new Dictionary<string, object>();
-            _extraData = extraData;
+            #region 1. INPUTS
 
-            //region 2. Action
+            #region DEFINE clientOrServer instance
 
-            //region 3. Observe
+            _storedClientORserverInstance = new Dictionary<string, object>();
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = extraData;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region HANDLE niche setup
+
+            #region EDGE CASE - USE niche faults
+
+            Setup();
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+
+            #endregion
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        #endregion
+
+        #region 3. Set
+
+        //A. Default state of story
+        public void Setup()
         {
-            #region ASSIGN MASTER LEADER
-
-            _client = client;
-            _centralizedStorer = centralizedStorer;
-            _centralizedDisturber = centralizedDisturber;
-            _centralizedSensor = centralizedSensor;
-
-            _extraData.KeyValuePairs = new Dictionary<string, object>();
-
-            _extraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
-
-            _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
-
-            _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
-            _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
+            #region 1. INPUTS     
 
             #endregion
 
-            #region ASSIGN REQUEST HANDLER
+            #region 2. PROCESS
 
-            var requestType = requestToResolve.GetType();
 
-            object resolvedRequest = null;
+            #endregion
 
-            if (!string.IsNullOrEmpty(requestName))
+            #region 3. OUTPUT
+
+            #endregion
+        }
+
+        #endregion
+
+        #region 4. Action
+
+        public override object Action(Dictionary<string, object> parameterClientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedSensor, object parameterRequestToResolve, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, string parameterRequestName = "", string parameterRequestToProcess = "", string parameterRequestToProcessParameters = "")
+        {
+            #region 1. INPUTS  
+
+            #region DECLARE request handler
+
+            object storedResolvedRequest = null;
+
+            #endregion
+
+            #region MEMORIZE api data
+
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS_SSL", APILocationLocalNodeJS_SSL);
+
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore_SSL", APILocationLocalDotNetCore_SSL);
+
+            _storedExtraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)parameterClientORserverInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes   
+
+            _stored_CentralizedStorer = parameterCentralizedStorer;
+            _stored_CentralizedDisturber = parameterCentralizedDisturber;
+            _stored_CentralizedSensor = parameterCentralizedSensor;
+
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            _storedClientORserverInstance = parameterClientORserverInstance;
+
+            #endregion
+
+            #region MEMORIZE client request
+
+            _storedExtraData.KeyValuePairs = new Dictionary<string, object>();
+            _storedExtraData.KeyValuePairs.TryAdd("RequestToProcess", parameterRequestToProcess);
+            _storedExtraData.KeyValuePairs.TryAdd("RequestToProcessParameters", parameterRequestToProcessParameters);
+
+            var storedRequestType = parameterRequestToResolve.GetType();
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            try
             {
-                switch(requestName.ToUpper(CultureInfo.CurrentCulture))
+                #region GENERATE request handler                     
+
+                #region IDEAL CASE - USE director of programming
+
+                if (!string.IsNullOrEmpty(parameterRequestName))
                 {
-                    //CONTROLLER
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                    switch (parameterRequestName.ToUpper(CultureInfo.CurrentCulture))
+                    {
+                        //CONTROLLER
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
+                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
 
-                        break;
+                            break;
 
-                    //CONVERSION
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        //CONVERSION
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
+                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
 
-                        break;
+                            break;
 
-                    //STORAGE
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        //STORAGE
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
+                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
 
-                        break;
+                            break;
 
-                    //DISTURBANCES
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        //DISTURBANCES
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
+                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
 
-                        break;
+                            break;
 
-                    //SENSOR
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
+                        //SENSOR
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
+                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
 
-                        break;
+                            break;
+                    }
                 }
+                else
+                {
+                    switch (storedRequestType)
+                    {
+                        case Type _ when storedRequestType == typeof(Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0):
+                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
+
+                            break;
+                    }
+                }
+
+                #endregion
+
+                #endregion
             }
-            else
+            catch
             {
-                switch (requestType)
-                {
-                    case Type _ when requestType == typeof(Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0):
-                        resolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails, storylineDetails_Parameters, _extraData);
-
-                        break;
-                }
+                throw;
             }
 
             #endregion
 
-            return resolvedRequest;
+            #region 3. OUTPUT
+
+            #region RETURN request handler
+
+            #region IDEAL CASE - USE director of programming
+
+            return storedResolvedRequest;
+
+            #endregion
+
+
+            #endregion
+
+            #endregion
         }
 
         #region Page 1
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
         {
-            #region CHECK FOR MISTAKES
+            #region 1. INPUTS  
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            #region MEMORIZE data access stragety
 
-            if (string.IsNullOrEmpty(repositoryType)) repositoryType = "LOCALFILE";
-
-            #endregion         
-
-            #region ASSIGN REQUEST HANDLER
-
-            Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0();
-
-            director.Client = _client;
-
-            director.ExtraData = extraData;
-
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
-
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
 
             #endregion
 
-            #region ASSIGN LOGIC REPOSITORY
+            #region MEMORIZE developer mode
 
-            switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #region DEFINE request handler
+
+            Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 stored_DirectorRequestHandler = null;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region GENERATE programming request object 
+
+            try
             {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                #region EDGE CASE - USE default data access strategy
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
-                    break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(storylineDetails);
+                #endregion
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                #region IDEAL CASE - USE director of programming
 
-                    break;
+                stored_DirectorRequestHandler = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0();
+
+                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientORserverInstance;
+
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
+
+                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
+
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+                {
+                    case "LOCAL_FILE":
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = localFile;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                    case "REMOTE_SERVICE":
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = remoteService;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                }
+
+                #endregion
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
             }
 
             #endregion
 
-            return director;
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request handler
+
+            #region IDEAL CASE - USE a director
+
+            return stored_DirectorRequestHandler;
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         #endregion
 
         #region Page 2
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
         {
-            #region CHECK FOR MISTAKES
+            #region 1. INPUTS    
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            #region DEFINE request handler
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
-
-            #endregion       
-
-            #region ASSIGN REQUEST HANDLER
-
-            Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0();
-
-            director.Client = _client;
-
-            director.ExtraData = extraData;
-
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
-
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 stored_DirectorRequestHandler = null;
 
             #endregion
 
-            #region ASSIGN LOGIC REPOSITORY
+            #region MEMORIZE data access stragety
 
-            switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region GENERATE programming request object 
+
+            try
             {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
+                #region EDGE CASE - USE default data access strategy
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
-                    break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(storylineDetails);
+                #endregion
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                #region IDEAL CASE - USE director of programming
 
-                    break;
+                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientORserverInstance;
+
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
+
+                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
+
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+                {
+                    case "LOCAL_FILE":
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = localFile;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                    case "REMOTE_SERVICE":
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = remoteService;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                }
+
+                #endregion
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
             }
 
             #endregion
 
-            return director;
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request handler
+
+            #region IDEAL CASE - USE director of programming
+
+            return stored_DirectorRequestHandler;
+
+            #endregion
+
+            #endregion
+
+            #endregion    
         }
 
         #endregion
 
         #region Page 3
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
         {
-            #region CHECK FOR MISTAKES
+            #region 1. INPUTS  
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            #region DEFINE request handler
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
-
-            #endregion       
-
-            #region ASSIGN REQUEST HANDLER
-
-            Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0();
-
-            director.Client = _client;
-
-            director.ExtraData = extraData;
-
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
-
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 stored_DirectorRequestHandler = null;
 
             #endregion
 
-            #region ASSIGN LOGIC REPOSITORY
+            #region MEMORIZE data access stragety
 
-            switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region GENERATE programming request object 
+
+            try
             {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+                #region EDGE CASE - USE default data access strategy
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
-                    break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(storylineDetails);
+                #endregion
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                #region IDEAL CASE - USE director of programming
 
-                    break;
+                stored_DirectorRequestHandler = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0();
+
+                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientORserverInstance;
+
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
+
+                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
+
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+                {
+                    case "LOCAL_FILE":
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = localFile;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                    case "REMOTE_SERVICE":
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = remoteService;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                }
+
+                #endregion
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
             }
 
             #endregion
 
-            return director;
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request handler
+
+            #region IDEAL CASE - USE director of programming
+
+            return stored_DirectorRequestHandler;
+
+            #endregion
+
+            #endregion
+
+            #endregion    
         }
 
         #endregion
 
         #region Page 4
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
         {
-            #region CHECK FOR MISTAKES
+            #region 1. INPUTS  
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            #region DEFINE request handler
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
-
-            #endregion       
-
-            #region ASSIGN REQUEST HANDLER
-
-            Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0();
-
-            director.Client = _client;
-
-            director.ExtraData = extraData;
-
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
-
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 stored_DirectorRequestHandler = null;
 
             #endregion
 
-            #region ASSIGN LOGIC REPOSITORY
+            #region MEMORIZE data access stragety
 
-            switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region GENERATE programming request object 
+
+            try
             {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
+                #region EDGE CASE - USE default data access strategy
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
-                    break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(storylineDetails);
+                #endregion
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                #region IDEAL CASE - USE director of programming
 
-                    break;
+                stored_DirectorRequestHandler = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0();
+
+                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientORserverInstance;
+
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
+
+                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
+
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+                {
+                    case "LOCAL_FILE":
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = localFile;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                    case "REMOTE_SERVICE":
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = remoteService;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                }
+
+                #endregion
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
             }
 
             #endregion
 
-            return director;
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request handler
+
+            #region IDEAL CASE - USE director of programming
+
+            return stored_DirectorRequestHandler;
+
+            #endregion
+
+            #endregion
+
+            #endregion    
         }
 
         #endregion
 
         #region Page 5
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
         {
-            #region CHECK FOR MISTAKES
+            #region 1. INPUTS
 
-            var repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
-            string repositoryType = ""; // repositoryMetaData?.value?.DataItemLocation;
+            #region DEFINE request handler
 
-            if (repositoryType == "") repositoryType = "LOCALFILE";
-
-            #endregion       
-
-            #region ASSIGN REQUEST HANDLER
-
-            Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0();
-
-            director.Client = _client;
-
-            director.ExtraData = extraData;
-
-            director.MasterStorer = _centralizedStorer;
-            director.MasterDisturber = _centralizedDisturber;
-            director.MasterSensor = _centralizedSensor;
-
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 stored_DirectorRequestHandler = null;
 
             #endregion
 
-            #region ASSIGN LOGIC REPOSITORY
+            #region MEMORIZE data access stragety
 
-            switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region GENERATE programming request object 
+
+            try
             {
-                case "LOCALFILE":
-                    var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+                #region EDGE CASE - USE default data access strategy
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = _requestName;
+                if (repositoryType == "") repositoryType = "LOCAL_FILE";
 
-                    break;
-                case "REMOTESERVICE":
-                    var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(storylineDetails);
+                #endregion
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = _requestName;
+                #region IDEAL CASE - USE director of programming
 
-                    break;
+                stored_DirectorRequestHandler = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0();
+
+                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientORserverInstance;
+
+                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
+
+                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
+                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
+                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
+
+                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
+                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+                {
+                    case "LOCAL_FILE":
+                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = localFile;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                    case "REMOTE_SERVICE":
+                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails);
+
+                        stored_DirectorRequestHandler.Repository = remoteService;
+                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+
+                        break;
+                }
+
+                #endregion
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
             }
 
             #endregion
 
-            return director;
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request handler
+
+            #region IDEAL CASE - USE director of programming
+
+            return stored_DirectorRequestHandler;
+
+            #endregion
+
+            #endregion
+
+            #endregion 
         }
+
+        #endregion
 
         #endregion
     }

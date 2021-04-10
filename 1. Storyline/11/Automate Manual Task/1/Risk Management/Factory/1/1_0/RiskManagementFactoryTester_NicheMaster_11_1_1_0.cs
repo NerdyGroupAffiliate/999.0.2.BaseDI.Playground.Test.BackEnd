@@ -1,28 +1,28 @@
-﻿using BaseDI.BackEnd.Director.Programming_5;
-using BaseDI.BackEnd.Director.Risk_Management_3;
-using BaseDI.BackEnd.Director.Risk_Management_4;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Poco_1;
-using BaseDI.BackEnd.Script.Programming_1;
+﻿using BaseDI.Professional.Director.Programming_5;
+using BaseDI.Professional.Director.Risk_Management_3;
+using BaseDI.Professional.Director.Risk_Management_4;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
 
-using BaseDI.BackEnd.State.Risk_Management_3;
-using BaseDI.BackEnd.State.Risk_Management_4;
-
+using BaseDI.Professional.State.Risk_Management_3;
+using BaseDI.Professional.State.Risk_Management_4;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Story.Risk_Management_1
+namespace BaseDI.Professional.Story.Risk_Management_1
 {
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
     internal class RiskManagementFactoryTester_NicheMaster_11_1_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
-        private Dictionary<string, object> _client;
+        private Dictionary<string, object> _clientORserverInstance;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _centralizedSensor;
@@ -32,7 +32,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
         internal RiskManagementFactoryTester_NicheMaster_11_1_1_0(ExtraData_12_2_1_0 extraData)
         {
             //region 1. Assign
-            _client = new Dictionary<string, object>();
+            _clientORserverInstance = new Dictionary<string, object>();
 
             _extraData = extraData;
 
@@ -41,11 +41,12 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
         {
             #region ASSIGN MASTER LEADER
 
-            _client = client;
+            _clientORserverInstance = clientORserverInstance;
+
             _centralizedStorer = centralizedStorer;
             _centralizedDisturber = centralizedDisturber;
             _centralizedSensor = centralizedSensor;
@@ -54,6 +55,8 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
             _extraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
             _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
+
+            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
 
             #endregion
 
@@ -82,13 +85,11 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
         private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
-            #region CHECK FOR MISTAKES
+            #region CHECK FOR MISTAKES            
 
-            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER"); 
 
-            string repositoryType = ""; // repositoryMetaData.
-
-            if (repositoryType == null) repositoryType = "LOCALFILE";
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -96,7 +97,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0 director = new Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0();
             
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -113,13 +114,13 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;
@@ -138,13 +139,11 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
         private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData = null)
         {
-            #region CHECK FOR MISTAKES
+            #region CHECK FOR MISTAKES            
 
-            List<JToken> repositoryMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0((storylineDetails_Parameters) != null ? storylineDetails_Parameters : storylineDetails, "searchkey", "SetImplementer_ProductCreation_Software_MasterLeaderController", false);
+            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER"); 
 
-            string repositoryType = ""; // repositoryMetaData.
-
-            if (repositoryType == null) repositoryType = "LOCALFILE";
+            if (repositoryType == null) repositoryType = "LOCAL_FILE";
 
             #endregion
 
@@ -152,7 +151,7 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0();
 
-            director.Client = _client;
+            director.ClientOrServerInstance = _clientORserverInstance;
 
             director.ExtraData = extraData;
 
@@ -169,13 +168,13 @@ namespace BaseDI.BackEnd.Story.Risk_Management_1
 
             switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
             {
-                case "LOCALFILE":
+                case "LOCAL_FILE":
                     var localFile = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = localFile;
 
                     break;
-                case "REMOTESERVICE":
+                case "REMOTE_SERVICE":
                     var remoteService = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails);
 
                     director.Repository = remoteService;

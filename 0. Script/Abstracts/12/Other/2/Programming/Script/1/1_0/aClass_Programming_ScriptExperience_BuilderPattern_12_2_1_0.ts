@@ -1,8 +1,8 @@
 ﻿import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
-export namespace BaseDI.BackEnd.Programming.Abstract_1
+export namespace BaseDI.Professional.Programming.Abstract_1
 {
-    export abstract class aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 extends aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.BackEnd.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
+    export abstract class aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 extends aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
     {
         //#region 1. Assign
         //#endregion
@@ -16,7 +16,9 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
             //SET WHAT is needed to create the storyline.
             this.StorylineDetails = new Object();
 
-            this.HandleChapterDefaults();
+            this.StorylineDetails_Cached = new Object();
+
+            this.HandleDefaults();
             //#endregion
 
             //#region 2. Action
@@ -28,17 +30,7 @@ export namespace BaseDI.BackEnd.Programming.Abstract_1
         //#endregion
 
         //#region 3. Set
-        private HandleChapterDefaults() {
-
-            //#region 1. Assign
-            //#endregion
-
-            //#region 2. Action
-            //#endregion
-
-            //#region 3. Observe
-            //#endregion
-        }
+        public abstract HandleDefaults(): void;
         //#endregion
 
         //#region 4. Action

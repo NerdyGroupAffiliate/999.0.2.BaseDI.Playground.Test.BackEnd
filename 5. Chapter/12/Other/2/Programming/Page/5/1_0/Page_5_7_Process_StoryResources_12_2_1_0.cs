@@ -1,14 +1,14 @@
 ﻿
 using System;
-using BaseDI.BackEnd.Script.Programming.Abstract_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_1;
-using BaseDI.BackEnd.Script.Programming.Extensions_5;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Extensions_5;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BaseDI.BackEnd.Chapter.Page.Programming_5
+namespace BaseDI.Professional.Chapter.Page.Programming_5
 {
     public class Page_5_7_Process_StoryResources_12_2_1_0 : aClass_Programming_ScriptPage_12_2_1_0
     {
@@ -44,7 +44,31 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_5
 
         #region 3. Set
 
-        //A. Default state of story
+        //A. Default state
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -53,21 +77,21 @@ namespace BaseDI.BackEnd.Chapter.Page.Programming_5
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            #region DESCRIBE THE MEMORIES
+            #region VARIABLES
 
 
             #endregion
 
-            #region RECALL THE MEMORIES
+            #region VARIABLES
 
 
             #endregion
 
-            #region EXECUTE THE VISION
+            #region INPUTS
 
             #endregion
 
-            #region REPORT THE FEEDBACK
+            #region OUTPUT
 
             return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
