@@ -406,8 +406,6 @@ namespace BaseDI.Professional
 
             #endregion
 
-
-
             #region MEMORIZE application settings
 
             if (StoredAppSettings != null)

@@ -238,10 +238,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             try
             {
-                var fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+                var fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
                 if (fileMetaData == undefined || fileMetaData == null)
-                    fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storylineDetails, "searchkey", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+                    fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "searchkey", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
 
                 var SetupItemEnvironmentServerMetaDataPaths = fileMetaData.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
 
@@ -347,7 +347,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region VALIDATE input parameters
 
-            const ValidateInputs = () =>
+            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
             {
                 //#region 1. INPUTS
 
@@ -403,24 +403,49 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         storedProcessCheckPointHit = true;
                     }
 
-                    if (storedProcessCheckPointHit)
-                    {
+                    if (storedProcessCheckPointHit) {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode) {
+                            storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        //#endregion
+
                         //#region EDGE CASE - USE exception handler
 
-                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 -> Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(parameterInputs)\n\n" + storedMessage);
-
-                        throw new Error("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        throw new Error("PARSING parameter values failed");
 
                         //#endregion
                     }
                 }
                 else
                 {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode) {
+                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("***LEAKY PIPE*** PARSING parameter values failed for [parameterInputs || parameterInputs.Parameters]. Values cannot be null or undefined.");
+                    throw new Error("PARSING parameter values failed");
 
-                    //#endregion                    
+                    //#endregion
                 }
 
                 //#endregion
@@ -445,7 +470,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             }
 
             ///BEGIN valdation process
-            ValidateInputs();
+            await ValidateInputs(parameterInputs);
 
             //#endregion
 
@@ -510,7 +535,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             let storedServerInstance: any = null;
 
-            const storedServerDetails: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode(storedStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
+            const storedServerDetails: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storedStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
 
             //DOMAIN url
             const storedServerDomainName: number = storedServerDetails?.value?.SetupItemEnvironmentDomainName;

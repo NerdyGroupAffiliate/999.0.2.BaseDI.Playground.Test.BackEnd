@@ -34,7 +34,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
         }
 
         public static Step_X_X_Custom_Output_DeveloperMessage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any {
-            //#region 1. INPUTS     
+            //#region 1. INPUTS
 
             //#region DEFINE developer mode
 
