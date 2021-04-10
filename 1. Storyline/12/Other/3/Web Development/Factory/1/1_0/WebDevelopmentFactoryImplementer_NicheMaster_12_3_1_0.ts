@@ -180,7 +180,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(storylineDetails: object, storylineDetails_Parameters: object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -226,7 +226,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -276,7 +276,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -302,15 +302,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -326,7 +326,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -352,15 +352,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -376,7 +376,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -402,15 +402,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -426,7 +426,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -452,15 +452,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -476,7 +476,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -502,15 +502,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -526,7 +526,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -552,15 +552,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -576,7 +576,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -602,15 +602,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -626,7 +626,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -652,15 +652,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -676,7 +676,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -702,15 +702,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -726,7 +726,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -752,15 +752,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -776,7 +776,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
@@ -802,15 +802,15 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 case "LOCAL_FILE":
                     var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = localFile;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
 
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._requestName;
+                    //director.Repository = remoteService;
+                    //director.Repository.RequestName = this._requestName;
 
                     break;
             }
@@ -826,7 +826,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         private Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails: Object, storylineDetails_Parameters: Object, extraData: any): object {
             //#region CHECK FOR MISTAKES
             
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE;
+            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
 
             if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
 
