@@ -118,6 +118,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             bool storedOPTIONALBeginOfProcess = false;
             bool storedOPTIONALMiddleOfProcess = false;
             bool storedOPTIONALEndOfProcess = false;
+            bool storedOPTIONALMasterLeaderIsSecondStep = false;
 
             bool storedMistake = false;
 
@@ -293,6 +294,9 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             if (parameterInputs.Parameters["parameterOPTIONALEndOfProcess"] != null)
                 storedOPTIONALEndOfProcess = parameterInputs.Parameters["parameterOPTIONALEndOfProcess"];
+
+            if (parameterInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"] != null)
+                storedOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"];
 
             #endregion
 

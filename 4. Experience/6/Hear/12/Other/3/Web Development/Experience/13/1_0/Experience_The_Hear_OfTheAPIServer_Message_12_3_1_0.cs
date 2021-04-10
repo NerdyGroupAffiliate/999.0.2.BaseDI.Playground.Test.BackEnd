@@ -32,6 +32,7 @@ using System.Threading.Tasks;
 #region 3rd Party Core
 
 using Newtonsoft.Json.Linq;
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 #endregion
 
@@ -186,7 +187,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASETS
         internal JObject _storedStorylineDetails;
@@ -220,7 +221,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterClientORserverInstance;
 
             #endregion
 
@@ -316,7 +317,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region IDEAL CASE - USE builder pattern
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_ExperienceRequestHandler);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_ExperienceRequestHandler);
 
             _storedStorylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -376,7 +377,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private string _storedSettingSecurityAppToken = "";
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         private Dictionary<string, JToken> _storedServerInstance = null;
         private object _storedServerInstanceExperienceRequestHandler = null;
@@ -421,7 +422,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterClientORserverInstance;
 
             #endregion
 
@@ -504,13 +505,13 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 #region IDEAL CASE - USE request parser
 
                 //STORE request http instance
-                _storedServerHTTPRequestInstance = _storedClientORserverInstance.ContainsKey("request") ? (HttpRequest)_storedClientORserverInstance["request"] : null;
+                _storedServerHTTPRequestInstance = _storedClientOrServerInstance.ContainsKey("request") ? (HttpRequest)_storedClientOrServerInstance["request"] : null;
 
                 //STORE request server instance
-                _storedServerInstanceExperienceRequestHandler = _storedClientORserverInstance.ContainsKey("Server") ? _storedClientORserverInstance["Server"] : null;
+                _storedServerInstanceExperienceRequestHandler = _storedClientOrServerInstance.ContainsKey("Server") ? _storedClientOrServerInstance["Server"] : null;
 
                 //STORE request action name
-                _stored_ExperienceRequestHandlerActionName = _storedClientORserverInstance.ContainsKey("actionName") ? (string)_storedClientORserverInstance["actionName"] : null;
+                _stored_ExperienceRequestHandlerActionName = _storedClientOrServerInstance.ContainsKey("actionName") ? (string)_storedClientOrServerInstance["actionName"] : null;
 
                 #endregion
             }
@@ -520,9 +521,9 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 if (storedDeveloperMode)
                 {
-                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientORserverInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientORserverInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientORserverInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
+                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientORserverInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientORserverInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientORserverInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
                 }
 
                 #endregion
@@ -544,9 +545,9 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             if (storedDeveloperMode)
             {
-                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults - [FINISHED parsing routing information of " + _storedServerRequestRESTVerb + "/" + _storedServerRoutePath + "]");
+                Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults - [FINISHED parsing routing information of " + _storedServerRequestRESTVerb + "/" + _storedServerRoutePath + "]");
             }
 
             #endregion
@@ -582,7 +583,13 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             Func<string, string, ExtraData_12_2_1_0, JObject> Action = null;
 
             Func<JToken, JObject> Step_1_0_Custom_Control_ClientRequestToServer_1_0 = null;
-            Func<object, string, string, object, object, HttpRequest, HttpResponse, JObject> Step_2_0_Custom_Output_ServerRequestToClient_1_0;
+            Func<object, string, string, object, object, HttpRequest, HttpResponse, string, JObject> Step_2_0_Custom_Output_ServerRequestToClient_1_0;
+
+            #endregion
+
+            #region DEFINE parameter inputs
+
+            SingleParmPoco_12_2_1_0 storedParameterInputs = null;
 
             #endregion
 
@@ -605,6 +612,16 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             #region MEMORIZE developer mode
 
             bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs= new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
 
             #endregion
 
@@ -632,8 +649,26 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         #region 2. OUTPUT http response                        
 
-                        Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataLocalParameter, object parameterControllerModelDataLocalObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse) =>
+                        Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataLocalParameter, object parameterControllerModelDataLocalObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse, string parameterRequestActionVerb) =>
                         {
+                            _storedClientOrServerInstance["actionName"] = Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
+                            _storedClientOrServerInstance["processStepNumber"] = 0;
+
+                            #region EDGE CASE - USE developer logger
+                            if (storedDeveloperMode)
+                            {
+                                storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+                                storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMasterLeaderIsSecondStep", true);
+                                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ROUTING information found - [" + parameterRequestActionVerb + ": '" + parameterRequest.Path);
+                                storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                                storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+
+                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+
+                                _storedExtraData.KeyValuePairs.Add("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
+                            }
+                            #endregion
+
                             #region EDGE CASE - USE updates handler
 
                             StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 parameterResponse) =>
@@ -647,7 +682,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             Action = (string parameterClientRequestByName, string parameterClientRequestByNameParameters, ExtraData_12_2_1_0 parameterExtraData) =>
                             {
                                 return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                                    .SetupStoryline(_storedClientORserverInstance, null, null, parameterExtraData, "", parameterControllerName, parameterControllerModelDataLocalParameter)
+                                    .SetupStoryline(_storedClientOrServerInstance, null, null, parameterExtraData, "", parameterControllerName, parameterControllerModelDataLocalParameter)
                                     .Action().Result;
                             };
 
@@ -671,9 +706,9 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                                 if (storedDeveloperMode)
                                 {
-                                    _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                                    Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [BEGIN searching for route " + _storedServerRoutePath + " in storylineDetails DataSet]");
+                                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [BEGIN searching for route " + _storedServerRoutePath + " in storylineDetails DataSet]");
                                 }
 
                                 #endregion
@@ -703,14 +738,14 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                                             if (storedDeveloperMode)
                                             {
-                                                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                                                _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                                                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [SUCCESSFULLY found a route for " + _storedServerRoutePath + " in storylineDetails DataSet]");
+                                                Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [SUCCESSFULLY found a route for " + _storedServerRoutePath + " in storylineDetails DataSet]");
                                             }
 
                                             #endregion
 
-                                            return Step_2_0_Custom_Output_ServerRequestToClient_1_0(route.ToString(), storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, _storedServerHTTPRequestInstance, null);
+                                            return Step_2_0_Custom_Output_ServerRequestToClient_1_0(route.ToString(), storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, _storedServerHTTPRequestInstance, null, "GET");
                                         }
                                     }
                                     else
@@ -800,11 +835,11 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     #region IDEAL CASE - USE baseDI extension
 
-                    storedDynamicData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storedStorylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedClientORserverInstancermationSetupDetails", false).SingleOrDefault()?.Parent;
+                    storedDynamicData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storedStorylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedClientOrServerInstancermationSetupDetails", false).SingleOrDefault()?.Parent;
 
                     if (storedDynamicData != null)
                     {
-                        var setupItemEnvironmentClient = storedDynamicData?.Parent.value[0]._2_2_2_1_1_storedClientORserverInstancermationSetupItem.value.SetupItemEnvironmentClient;
+                        var setupItemEnvironmentClient = storedDynamicData?.Parent.value[0]._2_2_2_1_1_storedClientOrServerInstancermationSetupItem.value.SetupItemEnvironmentClient;
                         
                         storedDynamicData = _storedStorylineDetails;
                         storedDynamicData.outputs[1].baseDIObservations.Add(setupItemEnvironmentClient);
