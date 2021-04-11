@@ -274,7 +274,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             #region 1. Assign 
 
             //ACCESS THE CLIENT
-            _storylineDetails = _client.Step_X_X_Update_The_Client_1_0(_storylineDetails);
+            _storylineDetails = null; // _client.Step_X_X_Update_The_Client_1_0(_storylineDetails);
 
             #region CREATE OBSERVATION TEMPLATE
 

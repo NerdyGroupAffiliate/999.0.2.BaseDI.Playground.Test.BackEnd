@@ -14,7 +14,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
         private static IConfiguration _storedAppSettings = null;
 
         //CLIENT/SERVER
-        private static Dictionary<string, object> _storedClientORserverInstance;
+        private static Dictionary<string, object> _storedClientOrServerInstance;
 
         //EXCEPTIONS
         private static Exception _storedExceptionDetails = null;
@@ -35,13 +35,13 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region MEMORIZE client/server instance
 
-            _storedClientORserverInstance = parameterInputs.Parameters["StoredClientOrServerInstance"];
+            _storedClientOrServerInstance = parameterInputs.Parameters["StoredClientOrServerInstance"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientORserverInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -109,28 +109,9 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             #endregion
         }
 
-        public static bool Step_X_X_Custom_Output_DeveloperMessage_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<bool> Step_X_X_Custom_Output_DeveloperMessage_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
-
-            #region DEFINE developer mode
-
-            string storedOPTIONALAccountingCostType = "";
-
-            bool storedOPTIONALBeginOfProcess = false;
-            bool storedOPTIONALMiddleOfProcess = false;
-            bool storedOPTIONALEndOfProcess = false;
-            bool storedOPTIONALMasterLeaderIsSecondStep = false;
-
-            bool storedMistake = false;
-
-            #endregion
-
-            #region DEFINE stored message
-
-            string storedMessage = "";
-
-            #endregion
 
             #region VALIDATE input parameters
 
@@ -261,15 +242,34 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #endregion
 
+            #region DEFINE developer mode
+
+            string storedOPTIONALAccountingCostType = "";
+
+            bool storedOPTIONALBeginOfProcess = false;
+            bool storedOPTIONALMiddleOfProcess = false;
+            bool storedOPTIONALEndOfProcess = false;
+            bool storedOPTIONALMasterLeaderIsSecondStep = false;
+
+            bool storedMistake = false;
+
+            #endregion
+
+            #region DEFINE stored message
+
+            string storedMessage = "";
+
+            #endregion
+
             #region MEMORIZE client / server instance
 
-            _storedClientORserverInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientORserverInstance["parameterAppSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["parameterAppSettings"];
 
             #endregion
 
@@ -308,152 +308,172 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             try
             {
-                #region HANDLE application logging
+                #region EXECUTE application logging
 
                 #region IDEAL CASE - USE developer logger
 
-                if (storedMessageType.ToUpper() == "LOGGING")
+                Func<Task<bool>> ExecuteOutputRequest = async () =>
                 {
-                    if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess)
+                    #region 1A. SETUP logging output
+
+                    if (storedMessageType.ToUpper() == "LOGGING")
                     {
-                        storedMessage = _storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-                    }
-                    else
-                    {
-                        if (!string.IsNullOrEmpty(storedOPTIONALAccountingCostType))
+                        if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess)
                         {
-                            storedMessage = _storedDeveloperStepConsoleLogTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                            storedMessage = _storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
                         }
                         else
                         {
-                            storedMessage = _storedDeveloperStepConsoleLogTemplate_Idented; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                            if (!string.IsNullOrEmpty(storedOPTIONALAccountingCostType))
+                            {
+                                storedMessage = _storedDeveloperStepConsoleLogTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                            }
+                            else
+                            {
+                                storedMessage = _storedDeveloperStepConsoleLogTemplate_Idented; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                            }
                         }
                     }
-                }
 
-                if (storedMessageType.ToUpper() == "MISTAKE")
-                {
-                    storedMessage = _storedDeveloperExceptionConsoleLogTemplate; // ***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n\n";
-
-                    storedMistake = true;
-                }
-
-                storedMessage = storedMessage.Replace("{storedStepNumberReplace}", storedStepNumberReplace.ToString());
-                storedMessage = storedMessage.Replace("{stored3WordDescription}", (storedOPTIONALAccountingCostType != "") ? "[" + storedOPTIONALAccountingCostType.ToUpper()  + " COST] - " + stored3WordDescription : "[ZERO COST] - " + stored3WordDescription);
-                storedMessage = storedMessage.Replace("{storedActionName}", storedActionName);
-                storedMessage = storedMessage.Replace("{storedFileName}", storedFileName);
-                storedMessage = storedMessage.Replace("{storedMethodName}", storedMethodName);
-
-                if (!_storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE_SILENT"))
-                {
-                    #region CLIENT side logging
-
-                    if (_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper()  == "CLIENT")
-                    {
-                        if (storedMistake)
-                        {
-                            Console.WriteLine("%c" + storedMessage, "color:" + "Orange");
-
-                            return true;
-                        }
-
-                        if (storedOPTIONALBeginOfProcess == true)
-                        {
-                            Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------------------------");
-                            Console.WriteLine("NEW REQUEST - " + storedActionName.ToUpper());
-                            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------\n");
-
-                            Console.WriteLine("%c" + storedMessage, "color:" + "#94f500");
-
-                            return true;
-                        }
-
-                        if (storedOPTIONALMiddleOfProcess == true)
-                        {
-                            Console.WriteLine("%c" + storedMessage, "color:" + "#00c6f5");
-
-                            return true;
-                        }
-
-                        if (storedOPTIONALAccountingCostType != "")
-                        {
-                            Console.WriteLine("%c" + storedMessage, "color:" + "Yellow");
-
-                            return true;
-                        }
-
-                        if (storedOPTIONALEndOfProcess == true)
-                        {
-                            Console.WriteLine("%c" + storedMessage, "color:" + "#ff0e11");
-
-                            return true;
-                        }
-                        else
-                        {
-                            Console.WriteLine("%c" + storedMessage, "color:" + "#D3D3D3");
-
-                            return true;
-                        }
-                    }
                     #endregion
 
-                    #region SERVER side logging
+                    #region 1B. SETUP exception output
 
-                    if (_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "SERVER")
+                    if (storedMessageType.ToUpper() == "MISTAKE")
                     {
-                        if (storedMistake)
-                        {
-                            //Console.WriteLine("%c" + storedMessage, "color:" + "Orange");
-                            Console.WriteLine(storedMessage);
+                        storedMessage = _storedDeveloperExceptionConsoleLogTemplate; // ***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n\n";
 
-                            return true;
-                        }
-
-                        if (storedOPTIONALBeginOfProcess == true)
-                        {
-                            Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------------------------");
-                            Console.WriteLine("NEW REQUEST - " + storedActionName.ToUpper());
-                            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------\n");
-
-                            Console.WriteLine(storedMessage);
-                            //Console.WriteLine('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
-
-                            return true;
-                        }
-
-                        if (storedOPTIONALMiddleOfProcess == true)
-                        {
-                            Console.WriteLine(storedMessage);
-                            //Console.WriteLine('\x1b[34m', storedMessage); //BLUE
-
-                            return true;
-                        }
-
-                        if (storedOPTIONALAccountingCostType != "")
-                        {
-                            Console.WriteLine(storedMessage);
-                            //Console.WriteLine("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
-
-                            return true;
-                        }
-
-                        if (storedOPTIONALEndOfProcess == true)
-                        {
-                            Console.WriteLine(storedMessage);
-                            //Console.WriteLine("%c" + storedMessage, "color:" + "#ff0e11"); //RED
-
-                            return true;
-                        }
-                        else
-                        {
-                            Console.WriteLine(storedMessage);
-                            //Console.WriteLine('\x1b[37m', storedMessage);  //WHITE
-
-                            return true;
-                        }
+                        storedMistake = true;
                     }
-                    #endregion                    
-                }
+
+                    #endregion
+
+                    #region 2. SETUP default message
+
+                    storedMessage = storedMessage.Replace("{storedStepNumberReplace}", storedStepNumberReplace.ToString());
+                    storedMessage = storedMessage.Replace("{stored3WordDescription}", (storedOPTIONALAccountingCostType != "") ? "[" + storedOPTIONALAccountingCostType.ToUpper() + " COST] - " + stored3WordDescription : "[ZERO COST] - " + stored3WordDescription);
+                    storedMessage = storedMessage.Replace("{storedActionName}", storedActionName);
+                    storedMessage = storedMessage.Replace("{storedFileName}", storedFileName);
+                    storedMessage = storedMessage.Replace("{storedMethodName}", storedMethodName);
+
+                    #endregion
+
+                    if (!_storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE_SILENT"))
+                    {
+                        #region 3A. OUPUT client message
+
+                        if (_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "CLIENT")
+                        {
+                            if (storedMistake)
+                            {
+                                Console.WriteLine("%c" + storedMessage, "color:" + "Orange");
+
+                                return true;
+                            }
+
+                            if (storedOPTIONALBeginOfProcess == true)
+                            {
+                                Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------------------------");
+                                Console.WriteLine("NEW REQUEST - " + storedActionName.ToUpper());
+                                Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------\n");
+
+                                Console.WriteLine("%c" + storedMessage, "color:" + "#94f500");
+
+                                return true;
+                            }
+
+                            if (storedOPTIONALMiddleOfProcess == true)
+                            {
+                                Console.WriteLine("%c" + storedMessage, "color:" + "#00c6f5");
+
+                                return true;
+                            }
+
+                            if (storedOPTIONALAccountingCostType != "")
+                            {
+                                Console.WriteLine("%c" + storedMessage, "color:" + "Yellow");
+
+                                return true;
+                            }
+
+                            if (storedOPTIONALEndOfProcess == true)
+                            {
+                                Console.WriteLine("%c" + storedMessage, "color:" + "#ff0e11");
+
+                                return true;
+                            }
+                            else
+                            {
+                                Console.WriteLine("%c" + storedMessage, "color:" + "#D3D3D3");
+
+                                return true;
+                            }
+                        }
+                        #endregion
+
+                        #region 3B. OUPUT server message
+
+                        if (_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "SERVER")
+                        {
+                            if (storedMistake)
+                            {
+                                //Console.WriteLine("%c" + storedMessage, "color:" + "Orange");
+                                Console.WriteLine(storedMessage);
+
+                                return true;
+                            }
+
+                            if (storedOPTIONALBeginOfProcess == true)
+                            {
+                                Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------------------------");
+                                Console.WriteLine("NEW REQUEST - " + storedActionName.ToUpper());
+                                Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------\n");
+
+                                Console.WriteLine(storedMessage);
+                                //Console.WriteLine('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
+
+                                return true;
+                            }
+
+                            if (storedOPTIONALMiddleOfProcess == true)
+                            {
+                                Console.WriteLine(storedMessage);
+                                //Console.WriteLine('\x1b[34m', storedMessage); //BLUE
+
+                                return true;
+                            }
+
+                            if (storedOPTIONALAccountingCostType != "")
+                            {
+                                Console.WriteLine(storedMessage);
+                                //Console.WriteLine("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
+
+                                return true;
+                            }
+
+                            if (storedOPTIONALEndOfProcess == true)
+                            {
+                                Console.WriteLine(storedMessage);
+                                //Console.WriteLine("%c" + storedMessage, "color:" + "#ff0e11"); //RED
+
+                                return true;
+                            }
+                            else
+                            {
+                                Console.WriteLine(storedMessage);
+                                //Console.WriteLine('\x1b[37m', storedMessage);  //WHITE
+
+                                return true;
+                            }
+                        }
+
+                        #endregion
+                    }
+
+                    return await Task.FromResult<bool>(true).ConfigureAwait(true);
+                };
+
+                await ExecuteOutputRequest();
 
                 #endregion    
 

@@ -338,7 +338,7 @@ namespace BaseDI.Professional.Story.Programming_1
         private IConfiguration _storedAppSettings = null;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         internal string _storedClientRequestByName;
         internal string _storedClientRequestByNameParameters;
@@ -372,7 +372,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterClientOrServerInstance;
 
             #endregion
 
@@ -450,7 +450,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE execution strategy
 
-            var storedExeuctionStragety = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(_storedClientORserverInstance, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, _storedSystemRequestByName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+            var storedExeuctionStragety = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(_storedClientOrServerInstance, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, _storedSystemRequestByName, _storedClientRequestByName, _storedClientRequestByNameParameters);
 
             #endregion
 
@@ -520,7 +520,7 @@ namespace BaseDI.Professional.Story.Programming_1
         private IConfiguration _storedAppSettings = null;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         private string _storedClientRequestByName = "";
         private string _storedClientRequestByNameParameters = "";
@@ -554,7 +554,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterClientOrServerInstance;
 
             #endregion
 
@@ -675,13 +675,13 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE experience request handler
 
-            Implement_DesignPattern_Factory_Experience_12_2_1_0 storedExperienceRequestHandler = new Implement_DesignPattern_Factory_Experience_12_2_1_0(_storedClientORserverInstance, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+            Implement_DesignPattern_Factory_Experience_12_2_1_0 storedExperienceRequestHandler = new Implement_DesignPattern_Factory_Experience_12_2_1_0(_storedClientOrServerInstance, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
 
             #endregion
 
             #region MEMORIZE director request handler
 
-            Implement_DesignPattern_Factory_Director_12_2_1_0 _stored_DirectorRequestHandler = new Implement_DesignPattern_Factory_Director_12_2_1_0(_storedClientORserverInstance, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+            Implement_DesignPattern_Factory_Director_12_2_1_0 _stored_DirectorRequestHandler = new Implement_DesignPattern_Factory_Director_12_2_1_0(_storedClientOrServerInstance, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
 
             #endregion
 
@@ -803,7 +803,7 @@ namespace BaseDI.Professional.Story.Programming_1
         private IConfiguration _storedAppSettings = null;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
@@ -841,7 +841,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterClientOrServerInstance;
 
             #endregion
 
@@ -1011,7 +1011,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/programming";
 
-                    return _12_2_stored_Director_Of_Programming_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                    return _12_2_stored_Director_Of_Programming_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
 
                     #endregion
                 }
@@ -1032,7 +1032,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/advertising";
 
-                        return _1_1_stored_Director_Of_Advertising_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _1_1_stored_Director_Of_Advertising_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1051,7 +1051,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/blogging";
 
-                        return _2_1_stored_Director_Of_Blogging_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _2_1_stored_Director_Of_Blogging_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PODCASTING"))
@@ -1066,7 +1066,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/podcasting";
 
-                        return _2_2_stored_Director_Of_Podcasting_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _2_2_stored_Director_Of_Podcasting_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SOCIALMEDIA"))
@@ -1081,7 +1081,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/socialmedia";
 
-                        return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1100,7 +1100,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/listbuilding";
 
-                        return _3_1_stored_Director_Of_ListBuilding_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _3_1_stored_Director_Of_ListBuilding_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1119,7 +1119,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/supplements";
 
-                        return _4_1_stored_Director_Of_Supplements_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _4_1_stored_Director_Of_Supplements_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1138,7 +1138,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/coaching";
 
-                        return _5_1_stored_Director_Of_Coaching_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _5_1_stored_Director_Of_Coaching_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CONSULTING"))
@@ -1153,7 +1153,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/consulting";
 
-                        return _5_2_stored_Director_Of_Consulting_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _5_2_stored_Director_Of_Consulting_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_PERSONALTRAINING"))
@@ -1168,7 +1168,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/personaltraining";
 
-                        return _5_3_stored_Director_Of_PersonalTraining_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _5_3_stored_Director_Of_PersonalTraining_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1187,7 +1187,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _6_1_stored_Director_Of_Software_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/software";
 
-                        return _6_1_stored_Director_Of_Software_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _6_1_stored_Director_Of_Software_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1206,7 +1206,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/affiliaterevenue";
 
-                        return _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1225,7 +1225,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/accounting";
 
-                        return _8_1_stored_Director_Of_Accounting_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _8_1_stored_Director_Of_Accounting_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1244,7 +1244,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/customerservice";
 
-                        return _9_1_stored_Director_Of_CustomerService_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _9_1_stored_Director_Of_CustomerService_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1263,7 +1263,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/productivity";
 
-                        return _10_1_stored_Director_Of_Productivity_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _10_1_stored_Director_Of_Productivity_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1282,7 +1282,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/riskmanagement";
 
-                        return _11_1_stored_Director_Of_RiskManagement_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _11_1_stored_Director_Of_RiskManagement_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1301,7 +1301,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _12_1_stored_Director_Of_Careers_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/careersemployment";
 
-                        return _12_1_stored_Director_Of_Careers_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _12_1_stored_Director_Of_Careers_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_WEBDEVELOPMENT"))
@@ -1316,7 +1316,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/webdevelopment";
 
-                        return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CMS"))
@@ -1331,7 +1331,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _12_4_stored_Director_Of_CMS_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/cms";
 
-                        return _12_4_stored_Director_Of_CMS_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _12_4_stored_Director_Of_CMS_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_SECURITY"))
@@ -1346,7 +1346,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                         _12_5_stored_Director_Of_Security_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/security";
 
-                        return _12_5_stored_Director_Of_Security_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                        return _12_5_stored_Director_Of_Security_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                     }
 
                     #endregion
@@ -1446,7 +1446,7 @@ namespace BaseDI.Professional.Story.Programming_1
         private IConfiguration _storedAppSettings = null;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         private string _storedClientRequestByName = "";
         private string _storedClientRequestByNameParameters = "";
@@ -1482,7 +1482,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterClientOrServerInstance;
 
             #endregion
 
@@ -1605,7 +1605,7 @@ namespace BaseDI.Professional.Story.Programming_1
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9992/storyline/basedi/io/socialmedia";
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/socialmedia";
 
-                    return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                    return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
                 }
 
                 #endregion
@@ -1659,7 +1659,7 @@ namespace BaseDI.Professional.Story.Programming_1
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:9912/storyline/basedi/io/webdevelopment";
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/webdevelopment";
 
-                    return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+                    return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedDisturber, _stored_CentralizedSensor, _storedClientRequestByObject, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRequestName, _storedClientRequestByName, _storedClientRequestByNameParameters);
 
                     #endregion
                 }
@@ -1760,7 +1760,7 @@ namespace BaseDI.Professional.Story.Programming_1
         private IConfiguration _storedAppSettings = null;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         private string _storedClientRequestByName = "";
         private string _storedClientRequestByNameParameters = "";
@@ -1792,7 +1792,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterClientOrServerInstance;
 
             #endregion
 
@@ -1898,7 +1898,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE * **FAILED STORING a value.BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set.  -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                  .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
+                  .SetupStoryline(_storedClientOrServerInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
                   .Action().Result;
 
                 #endregion
@@ -2001,7 +2001,7 @@ namespace BaseDI.Professional.Story.Programming_1
         private IConfiguration _storedAppSettings = null;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         private string _storedClientRequestByName = "";
         private string _storedClientRequestByNameParameters = "";
@@ -2033,7 +2033,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterClientOrServerInstance;
 
             #endregion
 
@@ -2139,7 +2139,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Disturber_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                  .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
+                  .SetupStoryline(_storedClientOrServerInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
                   .Action().Result;
 
                 #endregion
@@ -2242,7 +2242,7 @@ namespace BaseDI.Professional.Story.Programming_1
         private IConfiguration _storedAppSettings = null;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         private string _storedClientRequestByName = "";
         private string _storedClientRequestByNameParameters = "";
@@ -2274,7 +2274,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterClientOrServerInstance;
 
             #endregion
 
@@ -2380,7 +2380,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Sensor_12_2_1_0.");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                  .SetupStoryline(_storedClientORserverInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
+                  .SetupStoryline(_storedClientOrServerInstance, _storedStorylineDetails, null, _storedExtraData, "", _storedClientRequestByName, _storedClientRequestByNameParameters)
                   .Action().Result;
 
                 #endregion

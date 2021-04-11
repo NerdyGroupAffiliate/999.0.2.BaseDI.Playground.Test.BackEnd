@@ -43,7 +43,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASETS
         internal JObject _storedStorylineDetails;
@@ -165,7 +165,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = ClientOrServerInstance;
+            _storedClientOrServerInstance = ClientOrServerInstance;
 
             #endregion
 
@@ -210,7 +210,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                     GetDataResponse = () =>
                     {
                         return new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0())
-                            .SetupStoryline(_storedClientORserverInstance, null, null, ExtraData, "", storedRequestName, storedRequestNameParameters)
+                            .SetupStoryline(_storedClientOrServerInstance, null, null, ExtraData, "", storedRequestName, storedRequestNameParameters)
                             .Action().Result;
                     };
 

@@ -24,7 +24,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
         private _storedAppSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientORserverInstance: any;
+        private _storedClientOrServerInstance: any;
 
         //DATASETS
         private _storedStorylineDetails: any;
@@ -143,7 +143,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = this.ClientOrServerInstance;
+            this._storedClientOrServerInstance = this.ClientOrServerInstance;
 
             //#endregion
 
@@ -154,9 +154,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientORserverInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientORserverInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientORserverInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Page_3_8_Process_CRUD_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");
 
@@ -170,7 +170,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
             //#endregion
 
             //#region MEMORIZE repository clientOrServer instance
-            this.Repository.ClientOrServerInstance = this._storedClientORserverInstance;
+            this.Repository.ClientOrServerInstance = this._storedClientOrServerInstance;
 
             //#endregion
 

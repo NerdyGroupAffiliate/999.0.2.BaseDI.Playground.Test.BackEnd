@@ -33,7 +33,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
         private _storedAppSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientORserverInstance: any;
+        private _storedClientOrServerInstance: any;
 
         //DATASETS
         private _storedStorylineDetails: any;
@@ -160,7 +160,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = this.ClientOrServerInstance;
+            this._storedClientOrServerInstance = this.ClientOrServerInstance;
 
             //#endregion
 

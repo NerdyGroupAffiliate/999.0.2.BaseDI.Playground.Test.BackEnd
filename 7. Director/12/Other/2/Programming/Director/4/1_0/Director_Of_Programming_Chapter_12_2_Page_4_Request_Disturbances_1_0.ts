@@ -160,7 +160,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
         private _storedAppSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientORserverInstance: any;
+        private _storedClientOrServerInstance: any;
 
         //DATASETS
         private _storedStorylineDetails: object = new Object();
@@ -201,7 +201,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientOrServerInstance = parameterClientORserverInstance;
 
             //#endregion
 
@@ -296,7 +296,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
 
             //#region IDEAL CASE - USE builder pattern
 
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0(this._storedClientORserverInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._stored_Repository, this._storedExtraData, this._stored_DirectorRequestHandler);
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._stored_Repository, this._storedExtraData, this._stored_DirectorRequestHandler);
 
             this._storedStorylineDetails = await builder.Action_1_Begin_Process();
 
@@ -348,7 +348,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
         private _storedAppSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientORserverInstance: any;
+        private _storedClientOrServerInstance: any;
 
         //DATASET
         private _storedStorylineDetails: object = new Object();
@@ -383,7 +383,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientOrServerInstance = parameterClientORserverInstance;
 
             //#endregion
 

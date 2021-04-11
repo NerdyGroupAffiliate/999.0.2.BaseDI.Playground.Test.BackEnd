@@ -407,11 +407,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedDeveloperMode) {
-                            storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+                            storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
 
                             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -430,11 +430,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedDeveloperMode) {
-                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -490,13 +490,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region MEMORIZE clientOrServer instance
 
-            let storedClientORserverInstance: Object = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+            let storedClientOrServerInstance: Object = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientORserverInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
 
             //#endregion
 
@@ -508,9 +508,9 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web server");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientORserverInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientORserverInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientORserverInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
@@ -573,10 +573,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             //#region EDGE CASE - USE developer logger
 
             if (storedDeveloperMode) {
-                storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+                storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
                                 
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                 Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
@@ -592,19 +592,19 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedDeveloperMode) {
-                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ATTEMPTING to store " + storedServerScriptName);
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
-                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ATTEMPTING to store " + process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER);
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -615,7 +615,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
                     //STATIC inputs               
-                    storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(storedClientORserverInstance, Object));
+                    storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(storedClientOrServerInstance, Object));
                     storedParameterInputs.Parameters.setValue("parameterCRUDVerb", "Create");
 
                     storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
@@ -637,7 +637,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     //DYNAMIC inputs
                     
-                    storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(storedClientORserverInstance, Object));
+                    storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(storedClientOrServerInstance, Object));
 
                     storedParameterInputs.Parameters.remove("parameterStorageDescription");
                     storedParameterInputs.Parameters.setValue("parameterStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
@@ -660,11 +660,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     //#region EDGE CASE - USE developer logger
                     if (storedDeveloperMode)
                     {
-                        storedClientORserverInstance["processStepNumber"] = storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED configurating server");
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }

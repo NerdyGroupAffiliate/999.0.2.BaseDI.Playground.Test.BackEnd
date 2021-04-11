@@ -44,7 +44,7 @@ public class ClassModel
     private IConfiguration _storedAppSettings;
 
     //CLIENT/SERVER
-    internal Dictionary<string, object> _storedClientORserverInstance;
+    internal Dictionary<string, object> _storedClientOrServerInstance;
 
     //DATASETS
     internal JObject _storedStorylineDetails;
@@ -75,7 +75,7 @@ public class ClassModel
 
         #region MEMORIZE clientOrServer instance
 
-        //_storedClientORserverInstance = parameterClientORserverInstance;
+        //_storedClientOrServerInstance = parameterClientORserverInstance;
 
         #endregion
 
@@ -297,9 +297,9 @@ public class ClassModel
 
         if (storedDeveloperMode)
         {
-            _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+            _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-            Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
+            Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
         }
 
         #endregion

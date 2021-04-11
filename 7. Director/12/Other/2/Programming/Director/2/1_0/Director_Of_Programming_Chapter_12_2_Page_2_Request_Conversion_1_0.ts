@@ -163,7 +163,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
         private _storedAppSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientORserverInstance: any;
+        private _storedClientOrServerInstance: any;
 
         //DATASETS
         private _storedStorylineDetails: object = new Object();
@@ -204,7 +204,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientOrServerInstance = parameterClientORserverInstance;
 
             //#endregion
 
@@ -299,7 +299,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region IDEAL CASE - USE builder pattern
 
-            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(this._storedClientORserverInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._stored_Repository, this._storedExtraData, this._stored_DirectorRequestHandler);
+            const builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._stored_Repository, this._storedExtraData, this._stored_DirectorRequestHandler);
 
             this._storedStorylineDetails = await builder.Action_1_Begin_Process();
 
@@ -351,7 +351,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
         private _storedAppSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientORserverInstance: any;
+        private _storedClientOrServerInstance: any;
 
         //DATASET
         private _storedStorylineDetails: object = new Object();
@@ -386,7 +386,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = parameterClientORserverInstance;
+            this._storedClientOrServerInstance = parameterClientORserverInstance;
 
             //#endregion
 
@@ -514,7 +514,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
             if (this._stored_DirectorRequestHandler == undefined || this._stored_DirectorRequestHandler.RequestID == undefined) {
                 var page = new ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0(this._storedStorylineDetails, this._stored_Repository);
 
-                page.ClientOrServerInstance = this._storedClientORserverInstance;
+                page.ClientOrServerInstance = this._storedClientOrServerInstance;
 
                 page.DirectorOrExperienceRequestHandler = this._stored_DirectorRequestHandler;
                 page.ExtraData = this._storedExtraData;

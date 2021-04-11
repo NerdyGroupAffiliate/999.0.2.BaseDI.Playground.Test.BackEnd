@@ -1,12 +1,20 @@
-﻿using BaseDI.Professional.Script.Programming.Abstract_1;
+﻿#region Imports
+
+#region BaseDI
+
+using BaseDI.Professional.Script.Programming.Abstract_1;
 using BaseDI.Professional.Script.Programming.Extensions_1;
 using BaseDI.Professional.Script.Programming.Extensions_3;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Risk_Management.Extensions_0;
-using CurlThin;
+
+#endregion
+
+#region .Net Core
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json.Linq;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,10 +24,35 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
+#endregion 
+
+#region 3rd Party Core
+
+using CurlThin;
+
+using Newtonsoft.Json.Linq;
+
+#endregion
+
+#endregion
+
 namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 {
     public class Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0
     {
+        //SETTINGS
+        private static IConfiguration _storedAppSettings = null;
+
+        //CLIENT/SERVER
+        private static Dictionary<string, object> _storedClientOrServerInstance;
+
+        //EXCEPTIONS
+        private static Exception _storedExceptionDetails = null;
+
+        //MISC
+        private static ExtraData_12_2_1_0 _storedExtraData = null;
+
+
         #region SERVER SIDE CODE
 
         #region SERVER API REQUEST
@@ -75,93 +108,295 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
         #region SERVER ASSET MANAGEMENT
 
-        public static async void Step_X_X_Custom_Store_LocalFilesToServer_1_0(JObject storylineDetails)
+        public static async void Step_X_X_Custom_Store_LocalFilesToServer_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region INPUTS
+            #region 1. INPUTS
 
-            List<JToken> list = null;
-            dynamic parent = null;
+            #region VALIDATE input parameters
 
-            try
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
             {
-                list = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_2_0(storylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+                #region 1. INPUTS
 
-                parent = list.Count > 0 ? list[0].Parent.Parent : null;
-            }
-            catch (Exception)
-            {
-                list = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_2_0(storylineDetails, "searchkey", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment", false);
+                #region DEFINE process checkpoint
 
-                parent = list.Count > 0 ? list[1].Parent.Parent : list[0].Parent.Parent;
-            }
+                bool storedProcessCheckPointHit = false;
 
-            JArray SetupItemEnvironmentServerMetaDataPaths = (JArray)parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths");
+                #endregion
 
-            foreach (var metaDataPath in SetupItemEnvironmentServerMetaDataPaths)
-            {
-                dynamic obj = JObject.Parse(await File.ReadAllTextAsync(metaDataPath.SelectToken("MetaDataLocalPath")?.ToString()));
+                #region DEFINE stored message
 
-                var contentItems = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
-                var stylingItemFiles = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
-                var currentDir = Environment.CurrentDirectory;
+                string storedMessage = "";
 
-                foreach (var file in stylingItemFiles)
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs.Parameters.Count() > 0)
                 {
-                    foreach (var property in file.StyleFileUseProperties)
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
                     {
-                        foreach (var prop in property.properties)
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
                         {
-                            foreach (string element in prop.properyValues)
-                            {
-                                if (element.Contains("url"))
-                                {
-                                    var url = Regex.Replace(element, @"(^.*\(|\).*$)", "");
-                                    var filepath = Path.GetFullPath(Path.Combine(currentDir, HttpUtility.UrlDecode(url)));
-                                    
-                                    if (File.Exists(filepath))
-                                    {
-                                        var fileDirName = Path.GetDirectoryName(filepath);
-                                        var shortDirName = fileDirName.Replace("C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\", "");
-                                        var dest = $"wwwroot/Client/Images/{shortDirName}";
-
-                                        if (!Directory.Exists(dest))
-                                        {
-                                            Directory.CreateDirectory(dest);
-                                        }
-
-                                        File.Copy(filepath, $"{dest}/{Path.GetFileName(filepath)}", true);
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine($"File Not Found:  {filepath}");
-                                    }
-                                }
-
-                            }
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessCheckPointHit = true;
                         }
                     }
 
-                    foreach (var x in contentItems)
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
                     {
-                        var key = ((JProperty)(x)).Name;
-                        var jvalue = ((JProperty)(x)).Value;
+                        storedMessage += "***parameterData*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                        var val = contentItems[key];
-                        var HTMLContentItems = val.value.HTMLContentItems;
 
-                        foreach (var item in HTMLContentItems)
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE exception handler
+
+                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE blank return
+
+                    return await Task.FromResult<bool>(false).ConfigureAwait(true);
+
+                    #endregion                    
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return await Task.FromResult<bool>(true).ConfigureAwait(true);
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+            };
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE data response
+
+            List<JToken> storedDataResponse = new List<JToken>();
+            dynamic storedJSONParent = null;
+
+            bool storedDataResponseUserData = false;
+
+            #endregion
+
+            #region DEFINE parameter inputs
+
+            SingleParmPoco_12_2_1_0 storedParameterInputs = null;
+
+            #endregion
+
+            #region MEMORIZE client / server instance
+
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["parameterAppSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING data into filtered version");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Store_LocalFilesToServer_1_0");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE file metadata
+
+            JArray storedSetupItemEnvironmentServerMetaDataPaths = null;
+
+            #endregion
+
+            #region MEMORIZE filter metadata
+
+            JObject storedData = parameterInputs.Parameters["parameterData"];
+
+            string storedKeyValuePairKey = parameterInputs.Parameters["parameterKeyValuePairKey"];
+            string storedKeyValuePairValue = parameterInputs.Parameters["parameterKeyValuePairValue"];
+
+            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterReturnValueAsArray"];
+
+            #endregion
+
+            #region MEMORIZE storyline details
+
+            dynamic storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE conversion process
+
+            //CONVERT dataset to a filtered down version
+            Func<Task<List<JToken>>> ExecuteConversionProcess = async () => {
+                try
+                {
+                    #region IDEAL CASE - USE user data
+
+                    storedParameterInputs = new SingleParmPoco_12_2_1_0();
+
+                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+                    storedParameterInputs.Parameters.Add("parameterAppSettings", _storedAppSettings);
+                    storedParameterInputs.Parameters.Add("parameterData", storedStorylineDetails);
+
+                    storedParameterInputs.Parameters.Add("parameterKeyValuePairKey", "searchkey");
+                    storedParameterInputs.Parameters.Add("parameterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+
+                    storedParameterInputs.Parameters.Add("parameterReturnValueAsArray", false);
+
+                    storedDataResponse = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_2_0(storedParameterInputs).Result;
+
+                    storedDataResponseUserData = true;
+
+                    #endregion
+                }
+                catch
+                {
+                    try
+                    {
+                        #region EDGE CASE - USE default data
+
+                        storedParameterInputs = new SingleParmPoco_12_2_1_0();
+
+                        storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+                        storedParameterInputs.Parameters.Add("parameterAppSettings", _storedAppSettings);
+                        storedParameterInputs.Parameters.Add("parameterData", storedStorylineDetails);
+
+                        storedParameterInputs.Parameters.Add("parameterKeyValuePairKey", "searchkey");
+                        storedParameterInputs.Parameters.Add("parameterKeyValuePairValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+
+                        storedParameterInputs.Parameters.Add("parameterReturnValueAsArray", false);
+
+                        storedDataResponse = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_2_0(storedParameterInputs).Result;
+
+                        #endregion
+                    }
+                    catch (Exception mistake)
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
                         {
-                            var attributes = item.Attributes;
+                            _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                            foreach (var att in attributes)
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting data into filtered version");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw mistake;
+
+                        #endregion
+                    }
+                }
+
+                return storedDataResponse;
+            };
+
+            storedDataResponse = await ExecuteConversionProcess();
+
+            if(storedDataResponseUserData)
+            {
+                storedJSONParent = storedDataResponse.Count > 0 ? storedDataResponse[0].Parent.Parent : null;
+            }
+            else
+            {
+                storedJSONParent = storedDataResponse.Count > 0 ? storedDataResponse[1].Parent.Parent : storedDataResponse[0].Parent.Parent;
+            }
+
+            #endregion
+
+            #region EXECUTE transport process
+
+            //TRANSPORT local files from one place to another
+            Func<dynamic, JArray, Task<JToken>> ExecuteTransportProcess = async (dynamic parameterJSONParent, JArray parameterSetupItemEnvironmentServerMetaDataPaths) => {
+                parameterSetupItemEnvironmentServerMetaDataPaths = (JArray)parameterJSONParent.SelectToken("value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths");
+
+                foreach (var storedSetupItemEnvironmentServerMetaDataPaths in parameterSetupItemEnvironmentServerMetaDataPaths)
+                {
+                    dynamic obj = JObject.Parse(await File.ReadAllTextAsync(storedSetupItemEnvironmentServerMetaDataPaths.SelectToken("MetaDataLocalPath")?.ToString()));
+
+                    var contentItems = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
+                    var stylingItemFiles = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
+                    var currentDir = Environment.CurrentDirectory;
+
+                    foreach (var file in stylingItemFiles)
+                    {
+                        foreach (var property in file.StyleFileUseProperties)
+                        {
+                            foreach (var prop in property.properties)
                             {
-                                if (att.src != null)
+                                foreach (string element in prop.properyValues)
                                 {
-                                    try
+                                    if (element.Contains("url"))
                                     {
-                                        var src = Regex.Replace(HttpUtility.UrlDecode(att.src.Value), @"(^.*\(|\).*$)", "");
-
-                                        var filepath = Path.GetFullPath(Path.Combine(currentDir, src));
+                                        var url = Regex.Replace(element, @"(^.*\(|\).*$)", "");
+                                        var filepath = Path.GetFullPath(Path.Combine(currentDir, HttpUtility.UrlDecode(url)));
 
                                         if (File.Exists(filepath))
                                         {
@@ -181,28 +416,76 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                                             Console.WriteLine($"File Not Found:  {filepath}");
                                         }
                                     }
-                                    catch (Exception e)
-                                    {
-                                        Console.WriteLine(e);
-                                        // throw;
-                                    }
+
                                 }
                             }
                         }
 
+                        foreach (var x in contentItems)
+                        {
+                            var key = ((JProperty)(x)).Name;
+                            var jvalue = ((JProperty)(x)).Value;
+
+                            var val = contentItems[key];
+                            var HTMLContentItems = val.value.HTMLContentItems;
+
+                            foreach (var item in HTMLContentItems)
+                            {
+                                var attributes = item.Attributes;
+
+                                foreach (var att in attributes)
+                                {
+                                    if (att.src != null)
+                                    {
+                                        try
+                                        {
+                                            var src = Regex.Replace(HttpUtility.UrlDecode(att.src.Value), @"(^.*\(|\).*$)", "");
+
+                                            var filepath = Path.GetFullPath(Path.Combine(currentDir, src));
+
+                                            if (File.Exists(filepath))
+                                            {
+                                                var fileDirName = Path.GetDirectoryName(filepath);
+                                                var shortDirName = fileDirName.Replace("C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\", "");
+                                                var dest = $"wwwroot/Client/Images/{shortDirName}";
+
+                                                if (!Directory.Exists(dest))
+                                                {
+                                                    Directory.CreateDirectory(dest);
+                                                }
+
+                                                File.Copy(filepath, $"{dest}/{Path.GetFileName(filepath)}", true);
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine($"File Not Found:  {filepath}");
+                                            }
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            Console.WriteLine(e);
+                                            // throw;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
                     }
                 }
 
+                return null;
+            };
 
-                #endregion
-
-                #region OUTPUT
-
-                #endregion
-            }
+            await ExecuteTransportProcess(storedJSONParent, storedSetupItemEnvironmentServerMetaDataPaths);
 
             #endregion
 
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion
@@ -239,13 +522,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientORserverInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientORserverInstance["appSettings"];
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
 
                 #endregion
 
@@ -256,9 +539,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientORserverInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientORserverInstance["appSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientORserverInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
 
@@ -312,11 +595,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                         if (storedDeveloperMode)
                         {
-                            storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -336,11 +619,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     if (storedDeveloperMode)
                     {
-                        storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -366,7 +649,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return await Task.FromResult<bool>(true).ConfigureAwait(true);
 
                 #endregion
 
@@ -402,13 +685,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientORserverInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientORserverInstance["appSettings"];
+            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -420,9 +703,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web server");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientORserverInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientORserverInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientORserverInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
             storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
@@ -445,9 +728,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE server details
 
-            ControllerBase storedServerInstance = null; 
+            ControllerBase storedServerInstance = null;
 
-            dynamic storedServerDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storedStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
+            dynamic storedServerDetails = null; //Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storedStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
 
             //DOMAIN url
             string storedServerDomainName = (string)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentDomainName");
@@ -486,12 +769,12 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             if (storedDeveloperMode)
             {
-                storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
                 storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", false);
             }
@@ -506,21 +789,21 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     if (storedDeveloperMode)
                     {
-                        storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ATTEMPTING to store " + storedServerScriptName);
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
-                        storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
                         
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ATTEMPTING to store " + storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"));
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -529,7 +812,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     storedParameterInputs = new SingleParmPoco_12_2_1_0();
 
                     //STATIC inputs               
-                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", storedClientORserverInstance);
+                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                     storedParameterInputs.Parameters.Add("parameterCRUDVerb", "Create");
 
                     storedParameterInputs.Parameters.Add("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
@@ -552,7 +835,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     //DYNAMIC inputs
 
-                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", storedClientORserverInstance);
+                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
 
                     storedParameterInputs.Parameters.Remove("parameterStorageDescription");
                     storedParameterInputs.Parameters.Add("parameterStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
@@ -575,13 +858,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     #region EDGE CASE - USE developer logger
                     if (storedDeveloperMode)
                     {
-                        storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED configurating server");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
                     #endregion
 
@@ -621,6 +904,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #endregion
         }
+
+        #endregion
 
         #endregion
     }
