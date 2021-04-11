@@ -166,7 +166,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             JObject storylineDetails = StorylineDetails;
 
-            _apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "key_1", "APIS", false).SingleOrDefault().Parent.Parent;
+            //_apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "key_1", "APIS", false).SingleOrDefault().Parent.Parent;
 
             _actionName = _serverInfo.ContainsKey("actionName") ? (string)_serverInfo["actionName"] : null;
 
@@ -278,12 +278,12 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             #region VARIABLES
   
-            microsoftProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_apiMetaData as JObject, "searchkey", "SetupDetails_APIS_API_1_0_MicrosoftGraph_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault().Parent.Parent;
-            microsoftProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(microsoftProfile as JObject, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault().Parent.Parent;
-            microsoftProfileDetailsAPIEndPointsAndRoutes =  microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
-            microsoftProfileDetailsSecurityAPISecurityDetails = microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPISecurityDetails;
+            //microsoftProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_apiMetaData as JObject, "searchkey", "SetupDetails_APIS_API_1_0_MicrosoftGraph_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault().Parent.Parent;
+            //microsoftProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(microsoftProfile as JObject, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault().Parent.Parent;
+            //microsoftProfileDetailsAPIEndPointsAndRoutes =  microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
+            //microsoftProfileDetailsSecurityAPISecurityDetails = microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPISecurityDetails;
 
-            curlClientOptions = null;
+            //curlClientOptions = null;
             //    {
             //header:[
             //        "Content-Type: application/x-www-form-urlencoded"],
@@ -303,12 +303,12 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             #region TRANSPORT
 
-            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(_server, microsoftTokenEndpoint, "POST", curlClientOptions,(dynamic response) =>
-            {
-                Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response, microsoftProfileDetailsSecurityAPISecurityDetails);
+            //Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(_server, microsoftTokenEndpoint, "POST", curlClientOptions,(dynamic response) =>
+            //{
+            //    Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response, microsoftProfileDetailsSecurityAPISecurityDetails);
 
-                return null;
-            });
+            //    return null;
+            //});
 
             #endregion
 
@@ -359,7 +359,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             #region INPUTS         
 
-            await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(MasterStorer, "Create", _entryPointName, _pageName, "STORING access token", StorylineDetails, response, "BaseDI_DataToken_MicrosoftGraph");
+            //await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(MasterStorer, "Create", _entryPointName, _pageName, "STORING access token", StorylineDetails, response, "BaseDI_DataToken_MicrosoftGraph");
 
             //_response.send(response);
 

@@ -1,4 +1,16 @@
-﻿using Newtonsoft.Json.Linq;
+﻿
+#region Imports
+
+#region BaseDI
+
+using BaseDI.Professional.Script.Programming.Poco_1;
+
+#endregion
+
+#region .Net Core
+
+using Microsoft.Extensions.Configuration;
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,34 +18,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+#endregion 
+
+#region 3rd Party Core
+
+using Newtonsoft.Json.Linq;
+
+#endregion
+
+#endregion
+
 namespace BaseDI.Professional.Script.Programming.Extensions_1
 {
     public static class Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
     {
-        #region CREATE
+        //SETTINGS
+        private static IConfiguration _storedAppSettings = null;
 
-        public static string Step_X_X_Create_A_MistakeJsonNode_1_0(string metaDataCalledByEntryPointName, string metaDataCalledByMethodName, string metaDataCalledByMethodReason, string mistakeDetailsTemplate = "{}")
-        {
-            string outputMistakeBody = @"{'baseDIMistakes': [{
-                                                'mistake':
-                                                {
-                                                    'metadata': [{'calledByEntryPointName':'{calledByEntryPointName}'},{'calledByMethodName':'{calledByMethodName}'},{'calledByMethodReason':'{calledByMethodReason}'},{'item':{{item}}}]
-                                                }
-                                            }]
-                                         }";
+        //CLIENT/SERVER
+        private static Dictionary<string, object> _storedClientOrServerInstance;
 
-            string outputMistakeItem = @"'details': [{details}]";
+        //EXCEPTIONS
+        private static Exception _storedExceptionDetails = null;
 
-            outputMistakeBody = outputMistakeBody.Replace("{item}", outputMistakeItem);
-
-            outputMistakeBody = outputMistakeBody.Replace("{calledByEntryPointName}", metaDataCalledByEntryPointName);
-            outputMistakeBody = outputMistakeBody.Replace("{calledByMethodName}", metaDataCalledByMethodName);
-            outputMistakeBody = outputMistakeBody.Replace("{calledByMethodReason}", metaDataCalledByMethodReason);
-
-            outputMistakeBody = outputMistakeBody.Replace("{details}", mistakeDetailsTemplate);
-
-            return outputMistakeBody;
-        }
+        //MISC
+        private static ExtraData_12_2_1_0 _storedExtraData = null;
 
         public static string Step_X_X_Create_An_ObservationJsonNode_1_0(string metaDataCalledByEntryPointName, string metaDataCalledByMethodName, string metaDataCalledByMethodReason, string presentationTemplate = "{}", string businessTemplate = "{}", string serviceTemplate = "{}", string securityTemplate = "{}", string dataTemplate = "{}")
         {
@@ -66,216 +75,504 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
             return outputObservationBody;
         }
 
-        #endregion
+        //JObject data, string keyName, string keyValue, bool returnAsArray
 
-        #region READ
-
-        public static List<JToken> Step_X_X_Read_And_FindJSONNode_1_0(JObject data, string keyName, string keyValue, bool returnAsArray)
+        public static async Task<List<JToken>> Step_X_X_Read_And_FindJSONNode_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
+            #region 1. Inputs    
 
-           List<JToken> matches = new List<JToken>();
+            #region VALIDATE input parameters
 
-            if (data == null) return null;
-            
-            Func<JToken, Dictionary<string, string>, string, bool> Step_X_X_Read_And_FindJSONNode_1_1 = null;
-
-            Step_X_X_Read_And_FindJSONNode_1_1 = (JToken token, Dictionary<string, string> nodes, string parentLocation) =>
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
             {
-                if (token.HasValues)
-                {
-                    foreach (JToken child in token.Children())
-                    {
-                        if (token.Type == JTokenType.Property)
-                        {
-                            if (parentLocation == "")
-                            {
-                                parentLocation = ((JProperty)token).Name;
-                            }
-                            else
-                            {
-                                parentLocation += "." + ((JProperty)token).Name;
-                            }
-                        }
+                #region 1. INPUTS
 
-                        Step_X_X_Read_And_FindJSONNode_1_1(child, nodes, parentLocation);
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs.Parameters.Count() > 0)
+                {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
                     }
 
-                    // we are done parsing and this is a parent node
-                    return true;
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessCheckPointHit = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterData"))
+                    {
+                        storedMessage += "***parameterData*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterKeyValuePairKey"))
+                    {
+                        storedMessage += "***parameterKeyValuePairKey*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterKeyValuePairValue"))
+                    {
+                        storedMessage += "***parameterKeyValuePairValue*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterReturnValueAsArray"))
+                    {
+                        storedMessage += "***parameterReturnValueAsArray*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE exception handler
+
+                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+
+                        #endregion
+                    }
                 }
                 else
                 {
-                    // leaf of the tree
-                    if(token.ToString().ToUpper(CultureInfo.CurrentCulture) == keyValue.ToUpper(CultureInfo.CurrentCulture))
-                    {
-                        if(!matches.Contains(token))
-                            matches.Add(token);
-                    }
-                    //if (nodes.ContainsKey(parentLocation))
-                    //{
-                    //    // this was an array
-                    //    nodes[parentLocation] += "|" + token.ToString();
-                    //}
-                    //else
-                    //{
-                    //    // this was a single property
-                    //    nodes.Add(parentLocation, token.ToString());
-                    //}
+                    #region EDGE CASE - USE blank return
 
-                    return false;
+                    return await Task.FromResult<bool>(false).ConfigureAwait(true);
+
+                    #endregion                    
                 }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return await Task.FromResult<bool>(true).ConfigureAwait(true);
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
             };
 
-            Step_X_X_Read_And_FindJSONNode_1_1(data, null, "");
-            return matches;
-        }
-
-        public static List<JToken> Step_X_X_Read_And_FindJSONNode_2_0(JObject data, string keyName, string keyValue, bool returnAsArray)
-        {
-
-            List<JToken> matches = new List<JToken>();
-
-            if (data == null) return null;
-
-            Step_X_X_Read_And_FindJSONNode_2_1(data, n =>
-            {
-                JToken token = n[keyName];
-              
-                if (token != null && token.Type == JTokenType.String)
-                {
-                    if (keyValue == token.Value<string>())
-                    {
-                        matches.Add(token);
-                    }
-                }
-            });
-
-            return matches;
-        }
-
-        public static void Step_X_X_Read_And_FindJSONNode_2_1(JToken node, Action<JObject> action)
-        {
-
-            if (node.Type == JTokenType.Object)
-            {
-                action((JObject)node);
-
-                foreach (JProperty child in node.Children<JProperty>())
-                {
-                    Step_X_X_Read_And_FindJSONNode_2_1(child.Value, action);
-                }
-            }
-            else if (node.Type == JTokenType.Array)
-            {
-                foreach (JToken child in node.Children())
-                {
-                    Step_X_X_Read_And_FindJSONNode_2_1(child, action);
-                }
-            }
-        }
-
-        public static string Step_X_X_Read_The_DataRepository_1_0(this JObject jsonObject, bool parseExceptionRepository = false, bool isParameterJSON = false)
-        {
-            #region CHECK DATA EXIST
-
-            string repositoryType = "";
-
-            if (jsonObject == null)
-                throw new Exception("MISSING JSON INSTRUCTIONS.");
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
 
             #endregion
 
-            try
+            #region DEFINE data response
+
+            List<JToken> storedDataResponse = new List<JToken>();
+
+            #endregion
+
+            #region DEFINE event handlers
+
+            Func<JToken, Dictionary<string, string>, string, bool> ExecuteConversionProcess = null;
+
+            #endregion
+
+            #region DEFINE parameter inputs
+
+            SingleParmPoco_12_2_1_0 storedParameterInputs = null;
+
+            #endregion
+
+            #region MEMORIZE client / server instance
+
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["parameterAppSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web server");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Read_And_FindJSONNode_1_0");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE filter metadata
+
+            JObject storedData = parameterInputs.Parameters["parameterData"];
+
+            string storedKeyValuePairKey = parameterInputs.Parameters["parameterKeyValuePairKey"];
+            string storedKeyValuePairValue = parameterInputs.Parameters["parameterKeyValuePairValue"];
+
+            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterReturnValueAsArray"];
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE conversion process
+
+            #region IDEAL CASE - USE recursive filter
+
+            if (storedData != null)
             {
-                #region CHECK RESOURCE DATA
-
-                if (!isParameterJSON)
+                ExecuteConversionProcess = (JToken parameterToken, Dictionary<string, string> parameterNodes, string parameterParentLocation) =>
                 {
-                    JToken r1 = jsonObject.SelectToken("resources[*].baseDIProfiles[*]..baseDIInstructions.data[?(@.key == 'Repository')].values[0].value[0].key.dataAccess");
-
-                    if (r1 != null)
+                    if (parameterToken.HasValues)
                     {
-                        return r1.Value<string>().ToUpper();
+                        foreach (JToken parameterTokenChild in parameterToken.Children())
+                        {
+                            if (parameterToken.Type == JTokenType.Property)
+                            {
+                                if (parameterParentLocation == "")
+                                {
+                                    parameterParentLocation = ((JProperty)parameterToken).Name;
+                                }
+                                else
+                                {
+                                    parameterParentLocation += "." + ((JProperty)parameterToken).Name;
+                                }
+                            }
+
+                            ExecuteConversionProcess(parameterTokenChild, parameterNodes, parameterParentLocation);
+                        }
+
+                        // we are done parsing and this is a parent node
+                        return true;
                     }
-                }
-
-                #endregion
-
-                #region CHECK CLIENT DATA
-
-                if (isParameterJSON)
-                {
-                    JToken r2 = jsonObject.SelectToken("..value.baseDIInstructions.data[?(@.key == 'Repository')].values[0].value[0].key.dataAccess");
-
-                    if (r2 != null)
+                    else
                     {
-                        return r2.Value<string>().ToUpper();
-                    }
-                }
+                        // leaf of the tree
+                        if (parameterToken.ToString().ToUpper(CultureInfo.CurrentCulture) == storedKeyValuePairValue.ToUpper(CultureInfo.CurrentCulture))
+                        {
+                            if (!storedDataResponse.Contains(parameterToken))
+                            {
+                                storedDataResponse.Add(parameterToken);
+                            }
 
-                #endregion
+                            return false;
+                        }
+                    };
 
-                #region CHECK DEFAULT DATA
+                    return true;
+                };
 
-                if (!isParameterJSON)
-                {
-                    JToken r2 = jsonObject.SelectToken("..defaultValue.baseDIInstructions.data[?(@.key == 'Repository')].values[0].value[0].key.dataAccess");
-
-                    if (r2 != null)
-                    {
-                        return r2.Value<string>().ToUpper();
-                    }
-                }
-
-                #endregion
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                ExecuteConversionProcess(storedData, null, "");
             }
 
-            return repositoryType;
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN converted data
+
+            #region IDEAL CASE - USE json dataset
+
+            return storedDataResponse;
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
-        #endregion
+        //JObject data, string keyName, string keyValue, bool returnAsArray
 
-        #region UPDATE
-        
-        public static JObject Step_X_X_Update_The_Client_1_0(this Dictionary<string, object> clientInfo, JObject storylineDetails)
+        public static async Task<List<JToken>> Step_X_X_Read_And_FindJSONNode_2_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            JObject result = null;
+            #region 1. Inputs    
 
-            if(clientInfo != null && clientInfo.Keys.Count > 0 && clientInfo.Keys.Contains("presentation_director"))
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
             {
-                var client = clientInfo["presentation_director"];
+                #region 1. INPUTS
 
-                var clientFieldInfo = client?.GetType().GetField("Update_Client");
+                #region DEFINE process checkpoint
 
-                if(clientFieldInfo != null)
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs.Parameters.Count() > 0)
                 {
-                    var valueOfField = clientFieldInfo.GetValue(client);
-
-                    var customControlType = clientFieldInfo.FieldType;
-                    var methodInfo = customControlType.GetMethod("Invoke");
-
-                    try
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
                     {
-                        result = (JObject)methodInfo.Invoke(valueOfField, new object[] { storylineDetails });
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
                     }
-                    catch
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
                     {
-                        return storylineDetails;
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessCheckPointHit = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterData"))
+                    {
+                        storedMessage += "***parameterData*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterKeyValuePairKey"))
+                    {
+                        storedMessage += "***parameterKeyValuePairKey*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterKeyValuePairValue"))
+                    {
+                        storedMessage += "***parameterKeyValuePairValue*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterReturnValueAsArray"))
+                    {
+                        storedMessage += "***parameterReturnValueAsArray*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE exception handler
+
+                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+
+                        #endregion
                     }
                 }
+                else
+                {
+                    #region EDGE CASE - USE blank return
+
+                    return await Task.FromResult<bool>(false).ConfigureAwait(true);
+
+                    #endregion                    
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return await Task.FromResult<bool>(true).ConfigureAwait(true);
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+            };
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE data response
+
+            List<JToken> storedDataResponse = new List<JToken>();
+
+            #endregion
+
+            #region DEFINE event handlers
+
+            Func<JToken, Action<JObject>, JToken> ExecuteConversionProcess = null;
+
+            #endregion
+
+            #region DEFINE parameter inputs
+
+            SingleParmPoco_12_2_1_0 storedParameterInputs = null;
+
+            #endregion
+
+            #region MEMORIZE client / server instance
+
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["parameterAppSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web server");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Read_And_FindJSONNode_2_0");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE filter metadata
+
+            JObject storedData = parameterInputs.Parameters["parameterData"];
+
+            string storedKeyValuePairKey = parameterInputs.Parameters["parameterKeyValuePairKey"];
+            string storedKeyValuePairValue = parameterInputs.Parameters["parameterKeyValuePairValue"];
+
+            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterReturnValueAsArray"];
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE conversion process
+
+            if (storedData != null)
+            {
+                ExecuteConversionProcess = (JToken parameterNode, Action<JObject> parameterAction) =>
+                {
+                    if (parameterNode.Type == JTokenType.Object)
+                    {
+                        parameterAction((JObject)parameterNode);
+
+                        foreach (JProperty child in parameterNode.Children<JProperty>())
+                        {
+                            ExecuteConversionProcess(child.Value, parameterAction);
+                        }
+                    }
+                    else if (parameterNode.Type == JTokenType.Array)
+                    {
+                        foreach (JToken child in parameterNode.Children())
+                        {
+                            ExecuteConversionProcess(child, parameterAction);
+                        }
+                    }
+
+                    return null;
+                };
+
+                ExecuteConversionProcess(storedData, n =>
+                {
+                    JToken token = n[storedKeyValuePairKey];
+
+                    if (token != null && token.Type == JTokenType.String)
+                    {
+                        if (storedKeyValuePairValue == token.Value<string>())
+                        {
+                            storedDataResponse.Add(token);
+                        }
+                    }
+                });
             }
 
-            return result;
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN filtered data
+
+            #region IDEAL CASE - USE json dataset
+
+            return storedDataResponse;
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
-
-        #endregion
-
-        #region DELETE
-
-        #endregion        
     }
 }

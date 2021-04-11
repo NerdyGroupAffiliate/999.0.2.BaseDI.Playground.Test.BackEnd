@@ -63,13 +63,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientORserverInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientORserverInstance["appSettings"];
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
 
                 #endregion
 
@@ -80,9 +80,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientORserverInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientORserverInstance["appSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientORserverInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
 
@@ -166,11 +166,11 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                         if (storedDeveloperMode)
                         {
-                            storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -190,11 +190,11 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                     if (storedDeveloperMode)
                     {
-                        storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -263,13 +263,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientORserverInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
+            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientORserverInstance["appSettings"];
+            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -287,9 +287,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PREPARING caching request");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientORserverInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientORserverInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientORserverInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
 
@@ -414,10 +414,10 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 if (storedDeveloperMode)
                 {
-                    storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                    storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                     storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
@@ -506,13 +506,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientORserverInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientORserverInstance["appSettings"];
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
 
                 #endregion
 
@@ -523,9 +523,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientORserverInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientORserverInstance["appSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientORserverInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
 
@@ -585,11 +585,11 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                         if (storedDeveloperMode)
                         {
-                            storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -609,11 +609,11 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                     if (storedDeveloperMode)
                     {
-                        storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -669,13 +669,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientORserverInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
+            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"] as Dictionary<string, object>;
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientORserverInstance["appSettings"];
+            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -687,9 +687,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "RESOLVING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientORserverInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientORserverInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientORserverInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Page_1_10_End_Process_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
 
@@ -762,11 +762,11 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                         if (storedDeveloperMode)
                         {
-                            storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED CRUD setup attempt");
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -827,11 +827,11 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 if (storedDeveloperMode)
                 {
-                    storedClientORserverInstance["processStepNumber"] = (int)storedClientORserverInstance["processStepNumber"] + 1;
+                    storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
 
                     storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED CRUD setup attempt");
                     storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientORserverInstance["processStepNumber"]);
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }

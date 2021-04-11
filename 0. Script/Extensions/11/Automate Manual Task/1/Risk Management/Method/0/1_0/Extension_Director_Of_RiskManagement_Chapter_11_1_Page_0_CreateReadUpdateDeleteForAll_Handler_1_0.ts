@@ -2,7 +2,7 @@
 //#region Imports
 
 //#region 3rd Party
-const _3rd_Party_Node_ConsoleColorChanger = require('chalk');
+const _3rdParty_Chalk_ConsoleColorChanger = require('chalk');
 
 //#endregion
 
@@ -22,7 +22,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
         private static _storedAppSettings: any = null;
 
         //CLIENT/SERVER
-        private static _storedClientORserverInstance: any;
+        private static _storedClientOrServerInstance: any;
 
         //EXCEPTIONS
         private static _storedExceptionDetails: any = null;
@@ -38,7 +38,17 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
         private static _storedDeveloperStepConsoleLogTemplate_Idented_Twice: string = "     STEP {storedStepNumberReplace}: {stored3WordDescription}\n        {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
 
         constructor() {
+            //#region 1. INPUTS
 
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
         }
 
         public static Step_X_X_Custom_Control_AppException_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : any
@@ -49,26 +59,8 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             return null;
         }
 
-        public static Step_X_X_Custom_Output_DeveloperMessage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any {
+        public static async Step_X_X_Custom_Output_DeveloperMessage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> {
             //#region 1. INPUTS
-
-            //#region DEFINE developer mode
-
-            let storedOPTIONALAccountingCostType: string = "";
-            let storedOPTIONALBeginOfProcess: boolean = false;
-            let storedOPTIONALMiddleOfProcess: boolean = false;            
-            let storedOPTIONALEndOfProcess: boolean = false;
-            let storedOPTIONALMasterLeaderIsSecondStep: boolean = false;
-
-            let storedMistake: boolean = false;
-
-            //#endregion
-
-            //#region DEFINE stored message
-
-            let storedMessage: string = "";
-
-            //#endregion
 
             //#region VALIDATE input parameters
 
@@ -192,15 +184,33 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             //#endregion
 
+            //#region DEFINE developer mode
+
+            let storedOPTIONALAccountingCostType: string = "";
+            let storedOPTIONALBeginOfProcess: boolean = false;
+            let storedOPTIONALMiddleOfProcess: boolean = false;
+            let storedOPTIONALEndOfProcess: boolean = false;
+            let storedOPTIONALMasterLeaderIsSecondStep: boolean = false;
+
+            let storedMistake: boolean = false;
+
+            //#endregion
+
+            //#region DEFINE stored message
+
+            let storedMessage: string = "";
+
+            //#endregion
+
             //#region MEMORIZE client / server instance
 
-            this._storedClientORserverInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientORserverInstance["parameterAppSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["parameterAppSettings"];
 
             //#endregion
 
@@ -239,129 +249,142 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             try
             {
-                //#region HANDLE application logging
+                //#region EXECUTE application logging
 
                 //#region IDEAL CASE - USE developer logger
 
-                if (storedMessageType.toUpperCase() == "LOGGING") {
-                    if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess) {
-                        storedMessage = this._storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-                    }
-                    else {
-                        if (storedOPTIONALAccountingCostType) {
-                            storedMessage = this._storedDeveloperStepConsoleLogTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
-                        }
-                        else {
-                            storedMessage = this._storedDeveloperStepConsoleLogTemplate_Idented; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
-                        }                        
-                    }                    
-                }
-
-                if (storedMessageType.toUpperCase() == "MISTAKE") {
-                    storedMessage = this._storedDeveloperExceptionConsoleLogTemplate; // ***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-
-                    storedMistake = true;
-                }
-                
-                storedMessage = storedMessage.replace("{storedStepNumberReplace}", storedStepNumberReplace.toString());
-                storedMessage = storedMessage.replace("{stored3WordDescription}", (storedOPTIONALAccountingCostType != "") ? "[" + storedOPTIONALAccountingCostType.toUpperCase() + " COST] - " + stored3WordDescription : "[ZERO COST] - " + stored3WordDescription);
-                storedMessage = storedMessage.replace("{storedActionName}", storedActionName);
-                storedMessage = storedMessage.replace("{storedFileName}", storedFileName);
-                storedMessage = storedMessage.replace("{storedMethodName}", storedMethodName);
-
-                if (!process.env.APP_SETTING_DEVELOPER_MODE_SILENT)
+                const ExecuteOutputRequest = async () : Promise<boolean> =>
                 {
-                    //#region CLIENT side logging
-                    if (process.env.APP_ENV.toUpperCase() == "CLIENT") {
-                        if (storedMistake) {
-                            console.log("%c" + storedMessage, "color:" + "Orange");
-
-                            return;
-                        }
-
-                        if (storedOPTIONALBeginOfProcess == true) {
-                            console.log("%c" + "\n\n------------------------------------------------------------------------------------------------------------------------------", "color:" + "#94f500");
-                            console.log("%c" + "NEW REQUEST - " + storedActionName.toUpperCase(), "color:" + "#94f500");
-                            console.log("%c" + "------------------------------------------------------------------------------------------------------------------------------\n", "color:" + "#94f500");
-
-                            console.log("%c" + storedMessage, "color:" + "#94f500");
-
-                            return;
-                        }
-
-                        if (storedOPTIONALMiddleOfProcess == true) {
-                            console.log("%c" + storedMessage, "color:" + "#00FFFF");
-
-                            return;
-                        }
-
-                        if (storedOPTIONALAccountingCostType != "") {
-                            console.log("%c" + storedMessage, "color:" + "Yellow");
-
-                            return;
-                        }
-
-                        if (storedOPTIONALEndOfProcess == true) {
-                            console.log("%c" + storedMessage, "color:" + "#ff0e11");
-
-                            return;
+                    //#region 1A. SETUP logging output
+                    if (storedMessageType.toUpperCase() == "LOGGING") {
+                        if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess) {
+                            storedMessage = this._storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
                         }
                         else {
-                            console.log("%c" + storedMessage, "color:" + "#D3D3D3");
+                            if (storedOPTIONALAccountingCostType) {
+                                storedMessage = this._storedDeveloperStepConsoleLogTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                            }
+                            else {
+                                storedMessage = this._storedDeveloperStepConsoleLogTemplate_Idented; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                            }
                         }
                     }
                     //#endregion
 
-                    //#region SERVER side logging
-                    if (process.env.APP_ENV.toUpperCase() == "SERVER")
-                    {
-                        if (storedMistake) {
-                            //console.log("%c" + storedMessage, "color:" + "Orange");
-                            console.log(storedMessage);
+                    //#region 1B. SETUP exception output
+                    if (storedMessageType.toUpperCase() == "MISTAKE") {
+                        storedMessage = this._storedDeveloperExceptionConsoleLogTemplate; // ***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
 
-                            return;
-                        }
-
-                        if (storedOPTIONALBeginOfProcess == true) {
-                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("\n\n------------------------------------------------------------------------------------------------------------------------------"));
-                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("NEW REQUEST - " + storedActionName.toUpperCase()));
-                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("------------------------------------------------------------------------------------------------------------------------------\n"));
-
-                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright(storedMessage));
-                            //console.log('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
-
-                            return;
-                        }
-
-                        if (storedOPTIONALMiddleOfProcess == true) {
-                            console.log(_3rd_Party_Node_ConsoleColorChanger.cyanBright(storedMessage));
-                            //console.log('\x1b[34m', storedMessage); //BLUE
-
-                            return;
-                        }
-
-                        if (storedOPTIONALAccountingCostType != "") {
-                            console.log(_3rd_Party_Node_ConsoleColorChanger.yellowBright(storedMessage));
-                            //console.log("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
-
-                            return;
-                        }
-
-                        if (storedOPTIONALEndOfProcess == true) {
-                            console.log(_3rd_Party_Node_ConsoleColorChanger.redBright(storedMessage));
-                            //console.log("%c" + storedMessage, "color:" + "#ff0e11"); //RED
-
-                            return;
-                        }
-                        else
-                        {
-                            console.log(storedMessage);
-                            //console.log('\x1b[37m', storedMessage);  //WHITE
-                        }
+                        storedMistake = true;
                     }
-                    //#endregion                    
+                    //#endregion
+
+                    //#region 2. SETUP default message
+
+                    storedMessage = storedMessage.replace("{storedStepNumberReplace}", storedStepNumberReplace.toString());
+                    storedMessage = storedMessage.replace("{stored3WordDescription}", (storedOPTIONALAccountingCostType != "") ? "[" + storedOPTIONALAccountingCostType.toUpperCase() + " COST] - " + stored3WordDescription : "[ZERO COST] - " + stored3WordDescription);
+                    storedMessage = storedMessage.replace("{storedActionName}", storedActionName);
+                    storedMessage = storedMessage.replace("{storedFileName}", storedFileName);
+                    storedMessage = storedMessage.replace("{storedMethodName}", storedMethodName);
+
+                    //#endregion
+
+                    if (!process.env.APP_SETTING_DEVELOPER_MODE_SILENT)
+                    {
+                        //#region 3A. OUPUT client message
+                        if (process.env.APP_ENV.toUpperCase() == "CLIENT") {
+                            if (storedMistake) {
+                                console.log("%c" + storedMessage, "color:" + "Orange");
+
+                                return;
+                            }
+
+                            if (storedOPTIONALBeginOfProcess == true) {
+                                console.log("%c" + "\n\n------------------------------------------------------------------------------------------------------------------------------", "color:" + "#94f500");
+                                console.log("%c" + "NEW REQUEST - " + storedActionName.toUpperCase(), "color:" + "#94f500");
+                                console.log("%c" + "------------------------------------------------------------------------------------------------------------------------------\n", "color:" + "#94f500");
+
+                                console.log("%c" + storedMessage, "color:" + "#94f500");
+
+                                return;
+                            }
+
+                            if (storedOPTIONALMiddleOfProcess == true) {
+                                console.log("%c" + storedMessage, "color:" + "#00FFFF");
+
+                                return;
+                            }
+
+                            if (storedOPTIONALAccountingCostType != "") {
+                                console.log("%c" + storedMessage, "color:" + "Yellow");
+
+                                return;
+                            }
+
+                            if (storedOPTIONALEndOfProcess == true) {
+                                console.log("%c" + storedMessage, "color:" + "#ff0e11");
+
+                                return;
+                            }
+                            else {
+                                console.log("%c" + storedMessage, "color:" + "#D3D3D3");
+                            }
+                        }
+                        //#endregion
+
+                        //#region 3B. OUPUT server message
+                        if (process.env.APP_ENV.toUpperCase() == "SERVER") {
+                            if (storedMistake) {
+                                //console.log("%c" + storedMessage, "color:" + "Orange");
+                                console.log(storedMessage);
+
+                                return;
+                            }
+
+                            if (storedOPTIONALBeginOfProcess == true) {
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.greenBright("\n\n------------------------------------------------------------------------------------------------------------------------------"));
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.greenBright("NEW REQUEST - " + storedActionName.toUpperCase()));
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.greenBright("------------------------------------------------------------------------------------------------------------------------------\n"));
+
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.greenBright(storedMessage));
+                                //console.log('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
+
+                                return;
+                            }
+
+                            if (storedOPTIONALMiddleOfProcess == true) {
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.cyanBright(storedMessage));
+                                //console.log('\x1b[34m', storedMessage); //BLUE
+
+                                return;
+                            }
+
+                            if (storedOPTIONALAccountingCostType != "") {
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.yellowBright(storedMessage));
+                                //console.log("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
+
+                                return;
+                            }
+
+                            if (storedOPTIONALEndOfProcess == true) {
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.redBright(storedMessage));
+                                //console.log("%c" + storedMessage, "color:" + "#ff0e11"); //RED
+
+                                return;
+                            }
+                            else {
+                                console.log(storedMessage);
+                                //console.log('\x1b[37m', storedMessage);  //WHITE
+                            }
+                        }
+                        //#endregion
+                    }
+
+                    return true;
                 }
-  
+
+                await ExecuteOutputRequest();
+
                 //#endregion    
 
                 //#endregion

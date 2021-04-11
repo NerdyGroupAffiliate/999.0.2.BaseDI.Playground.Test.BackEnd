@@ -26,7 +26,7 @@ export namespace BaseDI.Professional.State.Programming_3 {
         private _storedAppSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientORserverInstance: any;
+        private _storedClientOrServerInstance: any;
 
          //DATASETS
         private _storedStorylineDetails: any;
@@ -140,7 +140,7 @@ export namespace BaseDI.Professional.State.Programming_3 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientORserverInstance = this.ClientOrServerInstance;
+            this._storedClientOrServerInstance = this.ClientOrServerInstance;
 
             //#endregion
 
@@ -292,11 +292,11 @@ export namespace BaseDI.Professional.State.Programming_3 {
             {
                 //#region EDGE CASE - USE developer logger
                 if (storedDeveloperMode) {
-                    this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+                    this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
                     storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED handling storage request");
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientORserverInstance["processStepNumber"]);
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }

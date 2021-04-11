@@ -9,6 +9,8 @@ using BaseDI.Professional.Script.Programming.Extensions_1;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Programming.Repository_1;
 
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
+
 using BaseDI.Professional.Script.Web_Development.Extensions_13;
 
 using BaseDI.Professional.Story.Programming_1;
@@ -32,7 +34,6 @@ using System.Threading.Tasks;
 #region 3rd Party Core
 
 using Newtonsoft.Json.Linq;
-using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 #endregion
 
@@ -379,7 +380,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //CLIENT/SERVER
         internal Dictionary<string, object> _storedClientOrServerInstance;
 
-        private Dictionary<string, JToken> _storedServerInstance = null;
+        private Task<Dictionary<string, JToken>> _storedServerInstance = null;
         private object _storedServerInstanceExperienceRequestHandler = null;
         private HttpRequest _storedServerHTTPRequestInstance = null;
 
@@ -523,7 +524,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 {
                     _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientORserverInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientORserverInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientORserverInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
+                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientOrServerInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientOrServerInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientOrServerInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
                 }
 
                 #endregion
@@ -625,14 +626,6 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #endregion
 
-            #region MEMORIZE server instance
-
-            //STORE routing details
-            _storedServerInstance = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(_storedStorylineDetails);
-            storedRouteListDetails = _storedServerInstance[_storedServerRequestRESTVerb.ToUpper()];
-
-            #endregion
-
             #endregion
 
             #region 2. PROCESS
@@ -643,11 +636,11 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 {
                     if (_storedServerHTTPRequestInstance != null && _storedServerHTTPRequestInstance is HttpRequest)
                     {
-                        #region EXECUTE http request
+                        #region SETUP http server
 
                         #region IDEAL CASE - USE baseDI pipeline
 
-                        #region 2. OUTPUT http response                        
+                        #region 3. OUTPUT server response                       
 
                         Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataLocalParameter, object parameterControllerModelDataLocalObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse, string parameterRequestActionVerb) =>
                         {
@@ -694,7 +687,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         #endregion
 
-                        #region 1. INPUT http request
+                        #region 2. INPUT server details
 
                         Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (JToken parameterRouteListDetails) =>
                         {
@@ -764,10 +757,32 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             return _storedStorylineDetails;
                         };
 
-                        //INPUT http request
-                        _storedStorylineDetails = Step_1_0_Custom_Control_ClientRequestToServer_1_0(storedRouteListDetails);
+                        #endregion
+
+                        #region 1. CONFIGURE server defaults
+
+                        storedParameterInputs = new SingleParmPoco_12_2_1_0();
+
+                        storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+                        storedParameterInputs.Parameters.Add("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
+                        storedParameterInputs.Parameters.Add("parameterMasterStorer", _stored_CentralizedStorer);
+                        storedParameterInputs.Parameters.Add("parameterStorylineDetails", _storedStorylineDetails);
+
+                        _storedServerInstance = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storedParameterInputs);
+                        
+                        storedRouteListDetails = _storedServerInstance.Result[_storedServerRequestRESTVerb.ToUpper()];
 
                         #endregion
+
+                        #endregion
+
+                        #endregion
+
+                        #region START http server
+
+                        #region IDEAL CASE - USE .netcore server
+
+                        _storedStorylineDetails = Step_1_0_Custom_Control_ClientRequestToServer_1_0(storedRouteListDetails);
 
                         #endregion
 
@@ -822,7 +837,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     #region IDEAL CASE - USE baseDI extension
 
-                    Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(_storedStorylineDetails);
+                    //Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(_storedStorylineDetails);
 
                     #endregion
 
@@ -835,7 +850,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     #region IDEAL CASE - USE baseDI extension
 
-                    storedDynamicData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storedStorylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedClientOrServerInstancermationSetupDetails", false).SingleOrDefault()?.Parent;
+                    storedDynamicData = null;//Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storedStorylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedClientOrServerInstancermationSetupDetails", false).SingleOrDefault()?.Parent;
 
                     if (storedDynamicData != null)
                     {

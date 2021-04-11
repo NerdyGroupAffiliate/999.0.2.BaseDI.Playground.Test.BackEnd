@@ -42,7 +42,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASETS
         internal JObject _storedStorylineDetails;
@@ -164,7 +164,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = ClientOrServerInstance;
+            _storedClientOrServerInstance = ClientOrServerInstance;
 
             #endregion
 

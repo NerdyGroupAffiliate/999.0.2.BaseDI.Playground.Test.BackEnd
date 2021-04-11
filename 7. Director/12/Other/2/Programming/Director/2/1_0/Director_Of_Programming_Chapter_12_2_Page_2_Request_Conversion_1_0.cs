@@ -178,7 +178,7 @@ namespace BaseDI.Professional.Director.Programming_2
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASETS
         internal JObject _storedStorylineDetails;
@@ -212,7 +212,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterClientORserverInstance;
 
             #endregion
 
@@ -308,7 +308,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
             #region IDEAL CASE - USE builder pattern
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_DirectorRequestHandler);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_2_1_0(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_DirectorRequestHandler);
 
             _storedStorylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -364,7 +364,7 @@ namespace BaseDI.Professional.Director.Programming_2
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASET
         private JObject _storedStorylineDetails = null;
@@ -398,7 +398,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterClientORserverInstance;
 
             #endregion
 
@@ -504,7 +504,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
             var page = new ChapterPage.Page_2_1_Begin_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ClientOrServerInstance = _storedClientORserverInstance;
+            page.ClientOrServerInstance = _storedClientOrServerInstance;
 
             page.DirectorOrExperienceRequestHandler = _stored_DirectorRequestHandler;
             page.ExtraData = _storedExtraData;
