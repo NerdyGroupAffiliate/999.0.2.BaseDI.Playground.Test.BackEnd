@@ -1,5 +1,19 @@
-﻿import * as ExtraData_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
+﻿
+//#region Imports
+
+//#region 3rd Party
+const _3rd_Party_Node_ConsoleColorChanger = require('chalk');
+
+//#endregion
+
+//#region BaseDI
+
+import * as ExtraData_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
+//#endregion
+
+//#endregion
 
 export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
@@ -20,6 +34,8 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
         private static _storedDeveloperExceptionConsoleLogTemplate: string = "***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
 
         private static _storedDeveloperStepConsoleLogTemplate: string = "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static _storedDeveloperStepConsoleLogTemplate_Idented: string = "  STEP {storedStepNumberReplace}: {stored3WordDescription}\n     {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static _storedDeveloperStepConsoleLogTemplate_Idented_Twice: string = "     STEP {storedStepNumberReplace}: {stored3WordDescription}\n        {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
 
         constructor() {
 
@@ -42,6 +58,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             let storedOPTIONALBeginOfProcess: boolean = false;
             let storedOPTIONALMiddleOfProcess: boolean = false;            
             let storedOPTIONALEndOfProcess: boolean = false;
+            let storedOPTIONALMasterLeaderIsSecondStep: boolean = false;
 
             let storedMistake: boolean = false;
 
@@ -84,7 +101,10 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
 
+  
                     if (!parameterInputs.Parameters.containsKey("parameter3WordDescription")) {
+                        console.log(parameterInputs.Parameters.getValue("parameterFileName"));
+                        console.log(parameterInputs.Parameters.getValue("parameterMethodName"))
                         storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n"
                         storedProcessCheckPointHit = true;
                     }
@@ -208,6 +228,8 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             if (parameterInputs.Parameters.getValue("parameterOPTIONALEndOfProcess") != undefined)
                 storedOPTIONALEndOfProcess = parameterInputs.Parameters.getValue("parameterOPTIONALEndOfProcess");
 
+            if (parameterInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep") != undefined)
+                storedOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep");
 
             //#endregion
 
@@ -222,11 +244,21 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                 //#region IDEAL CASE - USE developer logger
 
                 if (storedMessageType.toUpperCase() == "LOGGING") {
-                    storedMessage = this._storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n\n";
+                    if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess) {
+                        storedMessage = this._storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+                    }
+                    else {
+                        if (storedOPTIONALAccountingCostType) {
+                            storedMessage = this._storedDeveloperStepConsoleLogTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                        }
+                        else {
+                            storedMessage = this._storedDeveloperStepConsoleLogTemplate_Idented; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                        }                        
+                    }                    
                 }
 
                 if (storedMessageType.toUpperCase() == "MISTAKE") {
-                    storedMessage = this._storedDeveloperExceptionConsoleLogTemplate; // ***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n\n";
+                    storedMessage = this._storedDeveloperExceptionConsoleLogTemplate; // ***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
 
                     storedMistake = true;
                 }
@@ -248,13 +280,17 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         }
 
                         if (storedOPTIONALBeginOfProcess == true) {
+                            console.log("%c" + "\n\n------------------------------------------------------------------------------------------------------------------------------", "color:" + "#94f500");
+                            console.log("%c" + "NEW REQUEST - " + storedActionName.toUpperCase(), "color:" + "#94f500");
+                            console.log("%c" + "------------------------------------------------------------------------------------------------------------------------------\n", "color:" + "#94f500");
+
                             console.log("%c" + storedMessage, "color:" + "#94f500");
 
                             return;
                         }
 
                         if (storedOPTIONALMiddleOfProcess == true) {
-                            console.log("%c" + storedMessage, "color:" + "#00c6f5");
+                            console.log("%c" + storedMessage, "color:" + "#00FFFF");
 
                             return;
                         }
@@ -287,28 +323,32 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         }
 
                         if (storedOPTIONALBeginOfProcess == true) {
-                            console.log(storedMessage);
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("\n\n------------------------------------------------------------------------------------------------------------------------------"));
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("NEW REQUEST - " + storedActionName.toUpperCase()));
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright("------------------------------------------------------------------------------------------------------------------------------\n"));
+
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.greenBright(storedMessage));
                             //console.log('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
 
                             return;
                         }
 
                         if (storedOPTIONALMiddleOfProcess == true) {
-                            console.log(storedMessage);
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.cyanBright(storedMessage));
                             //console.log('\x1b[34m', storedMessage); //BLUE
 
                             return;
                         }
 
                         if (storedOPTIONALAccountingCostType != "") {
-                            console.log(storedMessage);
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.yellowBright(storedMessage));
                             //console.log("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
 
                             return;
                         }
 
                         if (storedOPTIONALEndOfProcess == true) {
-                            console.log(storedMessage);
+                            console.log(_3rd_Party_Node_ConsoleColorChanger.redBright(storedMessage));
                             //console.log("%c" + storedMessage, "color:" + "#ff0e11"); //RED
 
                             return;

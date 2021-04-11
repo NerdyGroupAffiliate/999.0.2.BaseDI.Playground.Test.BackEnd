@@ -236,7 +236,7 @@ export namespace BaseDI.Professional
             //#region HANDLE execution response
 
             if (storedDataResponse) {
-                storedDataResponse.then(response =>
+                storedDataResponse.then(storedResponse =>
                 {
                     //#region EDGE CASE - USE callback handler
                     if (parameterRequestCallBack) {
@@ -245,7 +245,7 @@ export namespace BaseDI.Professional
                     //#endregion
 
                     //#region IDEAL CASE - USE html responder
-                    response?.outputs[1].baseDIObservations.map(storedObservation => {
+                    storedResponse?.outputs[1].baseDIObservations.map(storedObservation => {
                         if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase().includes("HTML")) {
                             if (parameterTargetedResponseTagID != "") {
                                 document.getElementById(parameterTargetedResponseTagID).innerHTML = unescape(storedObservation[Object.keys(storedObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
@@ -305,7 +305,7 @@ let storedServerInstance = new BaseDI.Professional.Startup(this);
 if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
     const Step_1_0_CopyLocalFilesAndStartServer = async () => {
         storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_7_Process_StoryResources", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, function callBack(response: any) {
-            storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_5_Process_StorySetting", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0)
+            storedServerInstance.Action("", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", "Action_5_Process_StorySetting", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0)
         });
     }
 

@@ -228,12 +228,13 @@ export namespace BaseDI.Professional.State.Programming_3 {
 
                                     storedDataResponse = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(storedParameterInputs);
 
-                                    if (storedOutPut_ObservationStorageCRUDValue.toUpperCase() == "READ" && storedDataResponse) {
+                                    if (storedOutPut_ObservationStorageCRUDValue.toUpperCase() == "READ")
+                                    {
                                         this._storedStorylineDetails.outputs[1].baseDIObservations.push(JSON.parse(storedDataResponse));
 
                                         //#region EDGE CASE - USE developer logger
 
-                                        if (storedDeveloperMode && !storedDeveloperModeSkipConsole) {
+                                        if (storedDeveloperMode && !storedDeveloperModeSkipConsole && storedDataResponse != null) {
                                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
                                             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY retrieved cached key ***" + storedOutPut_ObservationKey + "***");
@@ -245,7 +246,8 @@ export namespace BaseDI.Professional.State.Programming_3 {
 
                                         //#endregion
                                     }
-                                    else {
+                                    else
+                                    {
                                         //#region EDGE CASE - USE developer logger
 
                                         if (storedDeveloperMode && !storedDeveloperModeSkipConsole) {
@@ -265,14 +267,13 @@ export namespace BaseDI.Professional.State.Programming_3 {
 
                                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                                            storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALAccountingCostType", "STORAGE"); //Values = Logging or Mistake
 
                                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                                         }
 
                                         //#endregion
-
                                     }
-
                                 }
                                 //START THE PROCESS
                                 handleObservation(storedOutPut_Observation);

@@ -231,7 +231,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
 
             //#region EXECUTE request handler
 
-            if (this.ClientOrServerInstance["actionName"] == undefined || this.ClientOrServerInstance["actionName"] == null || this.ClientOrServerInstance["actionName"] == "" || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0 || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Window_OnLoad_1_0 || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0) {
+            if (this.ClientOrServerInstance["actionName"] == undefined || this.ClientOrServerInstance["actionName"] == null || this.ClientOrServerInstance["actionName"] == "" || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0 || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Client_Window_OnLoad_1_0 || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0) {
                 const ExecuteRequest = async () => {
                     try {
                         //#region EDGE CASE - USE developer logger

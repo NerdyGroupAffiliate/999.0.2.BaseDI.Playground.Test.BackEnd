@@ -26,6 +26,8 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
         private static string _storedDeveloperExceptionConsoleLogTemplate = "***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
 
         private static string _storedDeveloperStepConsoleLogTemplate = "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static string _storedDeveloperStepConsoleLogTemplate_Idented = "  STEP {storedStepNumberReplace}: {stored3WordDescription}\n     {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static string _storedDeveloperStepConsoleLogTemplate_Idented_Twice = "     STEP {storedStepNumberReplace}: {stored3WordDescription}\n        {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
 
         public static Exception Step_X_X_Custom_Control_AppException_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
@@ -118,6 +120,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             bool storedOPTIONALBeginOfProcess = false;
             bool storedOPTIONALMiddleOfProcess = false;
             bool storedOPTIONALEndOfProcess = false;
+            bool storedOPTIONALMasterLeaderIsSecondStep = false;
 
             bool storedMistake = false;
 
@@ -294,6 +297,9 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             if (parameterInputs.Parameters["parameterOPTIONALEndOfProcess"] != null)
                 storedOPTIONALEndOfProcess = parameterInputs.Parameters["parameterOPTIONALEndOfProcess"];
 
+            if (parameterInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"] != null)
+                storedOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"];
+
             #endregion
 
             #endregion
@@ -306,9 +312,23 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 #region IDEAL CASE - USE developer logger
 
-                if (storedMessageType.ToUpper()  == "LOGGING")
+                if (storedMessageType.ToUpper() == "LOGGING")
                 {
-                    storedMessage = _storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n\n";
+                    if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess)
+                    {
+                        storedMessage = _storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(storedOPTIONALAccountingCostType))
+                        {
+                            storedMessage = _storedDeveloperStepConsoleLogTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                        }
+                        else
+                        {
+                            storedMessage = _storedDeveloperStepConsoleLogTemplate_Idented; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                        }
+                    }
                 }
 
                 if (storedMessageType.ToUpper() == "MISTAKE")
@@ -339,6 +359,10 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                         if (storedOPTIONALBeginOfProcess == true)
                         {
+                            Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("NEW REQUEST - " + storedActionName.ToUpper());
+                            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------\n");
+
                             Console.WriteLine("%c" + storedMessage, "color:" + "#94f500");
 
                             return true;
@@ -387,6 +411,10 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                         if (storedOPTIONALBeginOfProcess == true)
                         {
+                            Console.WriteLine("\n\n------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("NEW REQUEST - " + storedActionName.ToUpper());
+                            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------\n");
+
                             Console.WriteLine(storedMessage);
                             //Console.WriteLine('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
 

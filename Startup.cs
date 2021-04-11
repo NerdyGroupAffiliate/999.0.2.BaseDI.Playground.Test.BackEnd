@@ -365,7 +365,7 @@ namespace BaseDI.Professional
         #region 4. Action
 
         [HttpGet("")]
-        public async Task<IActionResult> Action(string parameterClientRequestByName = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string parameterClientRequestByNameParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string parameterRequestChapterName = "Action_ProcessHttpRequest_1_0", string parameterRequestActionName = "Action_ProcessHttpRequest_1_0")
+        public async Task<IActionResult> Action(string parameterClientRequestByName = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string parameterClientRequestByNameParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string parameterRequestChapterName = "Action_Server_ProcessHttpRequest_1_0", string parameterRequestActionName = "Action_ProcessHttpRequest_1_0")
         {
             #region 1. INPUTS
 

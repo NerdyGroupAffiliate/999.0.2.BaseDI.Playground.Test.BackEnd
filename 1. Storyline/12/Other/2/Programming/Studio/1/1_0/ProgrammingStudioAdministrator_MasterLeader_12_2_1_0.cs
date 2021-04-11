@@ -202,6 +202,30 @@ namespace BaseDI.Professional.Story.Programming_1
             if (parameterClientOrServerInstance["processStepNumber"] == null)
                 parameterClientOrServerInstance["processStepNumber"] = 0;
 
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterExtraData?.KeyValuePairs?["storedDeveloperLoggingInputs"] != null ? parameterExtraData?.KeyValuePairs?["storedDeveloperLoggingInputs"] as SingleParmPoco_12_2_1_0 : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "BEGIN processing request");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", parameterClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", parameterClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", parameterClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "SetupStoryline");
+
+            //OPTIONAL
+            storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+
+            if (storedDeveloperLoggingStartUpProcessInputs != null)
+            {
+                storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMasterLeaderIsSecondStep", storedDeveloperLoggingStartUpProcessInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"]);
+
+                if (storedDeveloperLoggingStartUpProcessInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"] == true) {
+                    storedDeveloperLoggingInputs.Parameters["parameterOPTIONALBeginOfProcess"] = false;
+                }
+            }
+
             #endregion
 
             #region DEFINE request handler
