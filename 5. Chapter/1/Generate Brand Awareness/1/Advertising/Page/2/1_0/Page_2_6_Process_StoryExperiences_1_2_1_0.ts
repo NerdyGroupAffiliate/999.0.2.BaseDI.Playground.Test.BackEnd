@@ -121,7 +121,7 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
 
         public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Instagram(): any
         {
-            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Transport_ContentToInstagram_1_0(this.StorylineDetails).then((data) => {
+            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Output_ContentToInstagram_1_0(this.StorylineDetails).then((data) => {
                 this._response.json({ message: "Instagram Publish Done!" });
 
                 console.log(data);

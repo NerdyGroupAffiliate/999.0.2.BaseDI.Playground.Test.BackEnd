@@ -34,7 +34,7 @@ export class ClassModel
     private _storedAppSettings: any;
 
     //CLIENT/SERVER
-    private _storedClientORserverInstance: any;
+    private _storedClientOrServerInstance: any;
 
     //DATASETS
     private _storedStorylineDetails: any;
@@ -65,7 +65,7 @@ export class ClassModel
 
         //#region MEMORIZE clientOrServer instance
 
-        //this._storedClientORserverInstance = parameterClientORserverInstance;
+        //this._storedClientOrServerInstance = parameterClientORserverInstance;
 
         //#endregion
 
@@ -308,9 +308,9 @@ export class ClassModel
 
         if (storedDeveloperMode)
         {
-            this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+            this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
-            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
+            console.log("STEP " + this._storedClientOrServerInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
         }
 
         //#endregion
@@ -318,9 +318,9 @@ export class ClassModel
         //#region EDGE CASE - USE developer logger
 
         if (storedDeveloperMode) {
-            this._storedClientORserverInstance["processStepNumber"] = this._storedClientORserverInstance["processStepNumber"] + 1;
+            this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
-            console.log("STEP " + this._storedClientORserverInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
+            console.log("STEP " + this._storedClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
         }
 
         //#endregion

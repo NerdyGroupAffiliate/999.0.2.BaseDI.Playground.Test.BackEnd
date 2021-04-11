@@ -181,7 +181,7 @@ namespace BaseDI.Professional.Director.Programming_4
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASETS
         internal JObject _storedStorylineDetails;
@@ -215,7 +215,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterClientORserverInstance;
 
             #endregion
 
@@ -311,7 +311,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
             #region IDEAL CASE - USE builder pattern
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0(_storedClientORserverInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_DirectorRequestHandler);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_DirectorRequestHandler);
 
             _storedStorylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -367,7 +367,7 @@ namespace BaseDI.Professional.Director.Programming_4
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASET
         private JObject _storedStorylineDetails = null;
@@ -401,7 +401,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterClientORserverInstance;
 
             #endregion
 
@@ -506,9 +506,9 @@ namespace BaseDI.Professional.Director.Programming_4
 
             if (storedDeveloperMode)
             {
-                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0 -> Action_9_Verify_Process - [VERIFY process execution]");
+                Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0 -> Action_9_Verify_Process - [VERIFY process execution]");
             }
 
             #endregion
@@ -517,7 +517,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
             var page = new ChapterPage.Page_4_9_Verify_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ClientOrServerInstance = _storedClientORserverInstance;
+            page.ClientOrServerInstance = _storedClientOrServerInstance;
 
             page.DirectorOrExperienceRequestHandler = _stored_DirectorRequestHandler;
             page.ExtraData = _storedExtraData;
@@ -572,9 +572,9 @@ namespace BaseDI.Professional.Director.Programming_4
 
             if (storedDeveloperMode)
             {
-                _storedClientORserverInstance["processStepNumber"] = (int)_storedClientORserverInstance["processStepNumber"] + 1;
+                _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                Console.WriteLine("STEP " + _storedClientORserverInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0 -> Action_10_End_Process - [END process execution]");
+                Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_4_1_0 -> Action_10_End_Process - [END process execution]");
             }
 
             #endregion
@@ -583,7 +583,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
             var page = new ChapterPage.Page_4_10_End_Process_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ClientOrServerInstance = _storedClientORserverInstance;
+            page.ClientOrServerInstance = _storedClientOrServerInstance;
 
             page.DirectorOrExperienceRequestHandler = _stored_DirectorRequestHandler;
             page.ExtraData = _storedExtraData;

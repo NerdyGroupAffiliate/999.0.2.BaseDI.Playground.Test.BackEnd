@@ -28,6 +28,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 
 #endregion
@@ -181,7 +182,7 @@ namespace BaseDI.Professional.Director.Programming_3
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientORserverInstance;
+        internal Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASETS
         internal JObject _storedStorylineDetails;
@@ -215,7 +216,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterClientORserverInstance;
 
             #endregion
 
@@ -311,7 +312,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region IDEAL CASE - USE builder pattern
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0(_storedClientORserverInstance, _stored_stored_CentralizedStorer, _stored_stored_CentralizedStorer, _stored_stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_DirectorRequestHandler);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0(_storedClientOrServerInstance, _stored_stored_CentralizedStorer, _stored_stored_CentralizedStorer, _stored_stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_DirectorRequestHandler);
 
             _storedStorylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -367,7 +368,7 @@ namespace BaseDI.Professional.Director.Programming_3
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientORserverInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
         //DATASET
         private JObject _storedStorylineDetails = null;
@@ -401,7 +402,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientORserverInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterClientORserverInstance;
 
             #endregion
 
@@ -504,20 +505,20 @@ namespace BaseDI.Professional.Director.Programming_3
 
             //#region EDGE CASE - USE developer logger
 
-            if (storedProcessCheckPointHit == true)
-            {
-                if (storedDeveloperMode)
-                {
-                    this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
+            //if (storedProcessCheckPointHit == true)
+            //{
+            //    if (storedDeveloperMode)
+            //    {
+            //        ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+            //        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+            //        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
-                }
+            //        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+            //    }
 
-                storedProcessCheckPointHit = false;
-            }
+            //    storedProcessCheckPointHit = false;
+            //}
 
             //#endregion
 
@@ -525,7 +526,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
             var page = new ChapterPage.Page_3_8_Process_CRUD_12_2_1_0(_storedStorylineDetails, _stored_Repository);
 
-            page.ClientOrServerInstance = _storedClientORserverInstance;
+            page.ClientOrServerInstance = _storedClientOrServerInstance;
 
             page.DirectorOrExperienceRequestHandler = _stored_DirectorRequestHandler;
             page.ExtraData = _storedExtraData;
