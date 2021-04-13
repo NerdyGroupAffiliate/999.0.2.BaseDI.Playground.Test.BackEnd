@@ -616,7 +616,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region 3. OUTPUT server response
 
-                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataLocalParameter: string, parameterControllerModelDataLocalObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any, parameterRequestActionVerb: string) =>
+                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataParameter: string, parameterControllerModelDataObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any, parameterRequestActionVerb: string) =>
                     {
                         this._storedClientOrServerInstance["actionName"] = Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
                         this._storedClientOrServerInstance["processStepNumber"] = 0;
@@ -650,7 +650,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 .Action();
                         }
 
-                        Action(parameterControllerName, parameterControllerModelDataLocalParameter, this._storedExtraData);
+                        Action(parameterControllerName, parameterControllerModelDataParameter, this._storedExtraData);
 
                         storedDataResponse.then(storedHttpResponse => {
                             storedHttpResponse?.outputs[1].baseDIObservations.map(storedObservation => {
@@ -707,8 +707,8 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 const storedControllerName = item.SetupItemTransportItemRoute.ControllerName;
 
                                 //STORE route dataset details
-                                const storedControllerModelDataLocalParameter = item.SetupItemTransportItemRoute.ModelDataLocalParameter;
-                                const storedControllerModelDataLocalObject = item.SetupItemTransportItemRoute.ModelDataLocalObject;
+                                const storedControllerModelDataParameter = item.SetupItemTransportItemRoute.ModelDataParameter;
+                                const storedControllerModelDataObject = item.SetupItemTransportItemRoute.ModelDataObject;
 
                                 const storedControllerModelDataRemote = item.SetupItemTransportItemRoute.ModelDataRemote;
 
@@ -720,28 +720,28 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                             case "DELETE":
                                                 this._storedServerInstance.Server.Instance.delete(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "DELETE");
+                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "DELETE");
                                                 });
                                                 break;
 
                                             case "GET":
                                                 this._storedServerInstance.Server.Instance.get(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "GET");
+                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "GET");
                                                 });
                                                 break;
 
                                             case "POST":
                                                 this._storedServerInstance.Server.Instance.post(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "POST");
+                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "POST");
                                                 });
                                                 break;
 
                                             case "PUT":
                                                 this._storedServerInstance.Server.Instance.put(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "PUT");
+                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "PUT");
                                                 });
                                                 break;
                                         }

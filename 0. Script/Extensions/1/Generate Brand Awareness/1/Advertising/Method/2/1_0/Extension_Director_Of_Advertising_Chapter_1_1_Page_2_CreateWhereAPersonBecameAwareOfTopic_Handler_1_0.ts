@@ -68,7 +68,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //#region VALIDATE input parameters
 
-            const ValidateInputs = () =>
+            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
             {
                 //#region 1. INPUTS
 
@@ -218,7 +218,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
             }
 
             ///BEGIN valdation process
-            ValidateInputs();
+            await ValidateInputs(parameterInputs);
 
             //#endregion
 
@@ -318,9 +318,11 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
             //#region IDEAL CASE - USE 3rdParty module
             if (process.env.APP_ENV == "SERVER")
             {
-                try {
-                    const ExecuteOutputRequest = async (parameterDataResponse: any, parameterInstagramClient: any, parameterInstagramAccountUserName: string, parameterInstagramAccountPassword: string, parameterInstagramContent: any): Promise<any> => {
-                        //#region 1A. TRANSPORT credentials to instagram
+                try
+                {
+                    const ExecuteOutputRequest = async (parameterAuthenticationResponse: any, parameterInstagramClient: any, parameterInstagramAccountUserName: string, parameterInstagramAccountPassword: string, parameterInstagramContent: any): Promise<any> =>
+                    {
+                        //#region 1A. TRANSPORT authentication to instagram
 
                         try
                         {
@@ -353,7 +355,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                 //#endregion
                             }
 
-                            parameterDataResponse = await ExecuteTransportRequest(storedInstagramClient, storedInstagramAccountUserName, storedInstagramAccountPassword, storedInstagramContent);
+                            parameterAuthenticationResponse = await ExecuteTransportRequest(parameterInstagramClient, parameterInstagramAccountUserName, parameterInstagramAccountPassword, parameterInstagramContent);
                         }
                         catch (mistake)
                         {
@@ -378,12 +380,12 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                         //#endregion
 
-                        //#region 2. TRANSPORT content to instagram
-
-                        if (parameterDataResponse != null && parameterDataResponse != undefined) {
-                            parameterDataResponse.then(async (storedResponse) =>
+                        if (parameterAuthenticationResponse != null && parameterAuthenticationResponse != undefined) {
+                            parameterAuthenticationResponse.then(async (storedResponse) =>
                             {
-                                const ExecuteTransportRequest = async (storedResponse: any) => {
+                                //#region 2. TRANSPORT content to instagram
+
+                                const ExecuteTransportRequest = async (parameterInstagramContent: any) => {
                                     
                                     //#region EDGE CASE - USE developer logger
 
@@ -410,10 +412,12 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                     storedInstagramContentFromBytes = (parameterInstagramContent.ContentFromBytes != undefined && storedInstagramContent.ContentFromBytes != null) ? parameterInstagramContent.ContentFromBytes : await get({ url: parameterInstagramContent.ContentFromUrl, encoding: null, });
                                     storedInstagramContentCaption = (parameterInstagramContent.ContentCaption != undefined && storedInstagramContent.ContentCaption != null) ? parameterInstagramContent.ContentCaption : "";
 
-                                    return await storedInstagramClient.publish.photo({ file: storedInstagramContentFromBytes, caption: storedInstagramContentCaption });
+                                    return await storedInstagramClient.publish.photo({ file: parameterInstagramContent, caption: parameterInstagramContent.ContentCaption });
                                 }
 
-                                await ExecuteTransportRequest(storedResponse);
+                                //#endregion
+
+                                await ExecuteTransportRequest(parameterInstagramContent);
                             }).catch(async (mistake) =>
                             {
                                 //#region EDGE CASE - USE developer logger
@@ -435,8 +439,6 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                 //#endregion
                             });
                         }
-
-                        //#endregion
                     };
 
                     await ExecuteOutputRequest(storedDataResponse, storedInstagramClient, storedInstagramAccountUserName, storedInstagramAccountPassword, storedInstagramContent);

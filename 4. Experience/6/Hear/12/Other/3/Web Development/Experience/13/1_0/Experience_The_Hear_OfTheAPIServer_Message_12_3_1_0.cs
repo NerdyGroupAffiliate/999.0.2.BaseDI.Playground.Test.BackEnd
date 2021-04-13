@@ -604,8 +604,8 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             List<JToken> storedControllerRoutes = null;
             string storedControllerName = "";
-            string storedControllerModelDataLocalParameter = "";
-            JObject storedControllerModelDataLocalObject = null;
+            string storedControllerModelDataParameter = "";
+            JObject storedControllerModelDataObject = null;
             JObject storedControllerModelDataRemote = null;   
 
             #endregion
@@ -642,7 +642,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         #region 3. OUTPUT server response                       
 
-                        Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataLocalParameter, object parameterControllerModelDataLocalObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse, string parameterRequestActionVerb) =>
+                        Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataParameter, object parameterControllerModelDataObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse, string parameterRequestActionVerb) =>
                         {
                             _storedClientOrServerInstance["actionName"] = Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
                             _storedClientOrServerInstance["processStepNumber"] = 0;
@@ -675,11 +675,11 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             Action = (string parameterClientRequestByName, string parameterClientRequestByNameParameters, ExtraData_12_2_1_0 parameterExtraData) =>
                             {
                                 return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                                    .SetupStoryline(_storedClientOrServerInstance, null, null, parameterExtraData, "", parameterControllerName, parameterControllerModelDataLocalParameter)
+                                    .SetupStoryline(_storedClientOrServerInstance, null, null, parameterExtraData, "", parameterControllerName, parameterControllerModelDataParameter)
                                     .Action().Result;
                             };
 
-                            Action(parameterControllerName, parameterControllerModelDataLocalParameter, _storedExtraData);
+                            Action(parameterControllerName, parameterControllerModelDataParameter, _storedExtraData);
 
                             //OUTPUT http response
                             return storedDataResponse;
@@ -715,8 +715,8 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                     storedControllerName = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ControllerName").ToString();
 
                                     //STORE route dataset details
-                                    storedControllerModelDataLocalParameter = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataLocalParameter").ToString();
-                                    storedControllerModelDataLocalObject = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataLocalObject");
+                                    storedControllerModelDataParameter = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataParameter").ToString();
+                                    storedControllerModelDataObject = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataObject");
 
                                     storedControllerModelDataRemote = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataRemote");
 
@@ -738,7 +738,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                                             #endregion
 
-                                            return Step_2_0_Custom_Output_ServerRequestToClient_1_0(route.ToString(), storedControllerName, storedControllerModelDataLocalParameter, storedControllerModelDataLocalObject, storedControllerModelDataRemote, _storedServerHTTPRequestInstance, null, "GET");
+                                            return Step_2_0_Custom_Output_ServerRequestToClient_1_0(route.ToString(), storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, _storedServerHTTPRequestInstance, null, "GET");
                                         }
                                     }
                                     else

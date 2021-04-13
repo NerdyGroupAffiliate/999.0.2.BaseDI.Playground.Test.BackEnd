@@ -367,15 +367,17 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
+                storedParameterInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedParameterInputs.Parameters.setValue("parameterAppSettings", storedAppSettings);
                 storedParameterInputs.Parameters.setValue("parameterPageName", storedPageName);
-                storedParameterInputs.Parameters.setValue("parameterStorageDescription", storedStorageDescription);
+                storedParameterInputs.Parameters.setValue("parameter3WordDescription", storedStorageDescription);
                 storedParameterInputs.Parameters.setValue("parameter_ObservationPresentationTemplateItem", storedOutPut_ObservationPresentationTemplateItem);
                 storedParameterInputs.Parameters.setValue("parameter_ObservationBusinessTemplateItem", storedOutPut_ObservationBusinessTemplateItem);
                 storedParameterInputs.Parameters.setValue("parameter_ObservationServiceTemplateItem", storedOutPut_ObservationServiceTemplateItem);
                 storedParameterInputs.Parameters.setValue("parameter_ObservationSecurityTemplateItem", storedOutPut_ObservationSecurityTemplateItem);
                 storedParameterInputs.Parameters.setValue("parameter_ObservationDataTemplateItem", storedOutPut_ObservationDataTemplateItem);
        
-                storedOutPut_ObservationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(storedDirectorOrExperienceName, storedPageName, storedStorageDescription, storedOutPut_ObservationPresentationTemplateItem, storedOutPut_ObservationBusinessTemplateItem,  storedOutPut_ObservationServiceTemplateItem, storedOutPut_ObservationSecurityTemplateItem, storedOutPut_ObservationDataTemplateItem);
+                storedOutPut_ObservationItem = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(storedParameterInputs);
 
                 //DETERMINE if we are storing a string value.
                 if (typeof (storedStorageValue) == "string")
@@ -427,11 +429,10 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
-                //#endregion
                 stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("parametersInputs", parameterInputs);
                 stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
 
-                storedStorylineDetails = await stored_CentralizedStorer?.Action_1_Begin_Process(); 
+                storedStorylineDetails = await stored_CentralizedStorer?.Action_1_Begin_Process();
                 storedStorylineDetails.outputs[1].baseDIObservations = (storedStorylineDetails && storedStorylineDetails.ouputs) ? storedStorylineDetails?.outputs[1]?.baseDIObservations?.filter((value: {}) => Object.keys(value).length !== 0) : storedStorylineDetails.outputs[1].baseDIObservations;
 
                 //#endregion
@@ -464,6 +465,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             //#endregion
 
             //#endregion
+
+            //#endegion
 
             //#region 3. OUTPUT
 

@@ -1,5 +1,4 @@
-﻿
-//#region Imports
+﻿//#region Imports
 
 //#region 3rd Party
 const _3rdParty_Chalk_ConsoleColorChanger = require('chalk');
@@ -7,6 +6,8 @@ const _3rdParty_Chalk_ConsoleColorChanger = require('chalk');
 //#endregion
 
 //#region BaseDI
+
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
@@ -59,12 +60,13 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             return null;
         }
 
-        public static async Step_X_X_Custom_Output_DeveloperMessage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> {
+        public static async Step_X_X_Custom_Output_DeveloperMessage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
+        {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters
 
-            const ValidateInputs = () => {
+            const ValidateInputs = (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {
                 //#region 1. INPUTS
 
                 //#region DEFINE process checkpoint
@@ -127,6 +129,11 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
 
+                    if (!parameterInputs.Parameters.containsKey("parameterMasterStorer")) {
+                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n"
+                        storedProcessCheckPointHit = true;
+                    }
+
                     if (!parameterInputs.Parameters.containsKey("parameterMessageType")) {
                         storedMessage += "***parameterMessageType*** cannot be blank or empty.\n"
                         storedProcessCheckPointHit = true;
@@ -141,6 +148,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         storedMessage += "***parameterStepNumberReplace*** cannot be blank or empty.\n"
                         storedProcessCheckPointHit = true;
                     }
+
 
                     if (storedProcessCheckPointHit) {
                         //#region EDGE CASE - USE exception handler
@@ -180,7 +188,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             }
 
             ///BEGIN valdation process
-            ValidateInputs();
+            ValidateInputs(parameterInputs);
 
             //#endregion
 
@@ -240,6 +248,12 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             if (parameterInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep") != undefined)
                 storedOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep");
+
+            //#endregion
+
+            //#region MEMORIZE master storer
+
+            let storedMasterStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterMasterStorer");
 
             //#endregion
 

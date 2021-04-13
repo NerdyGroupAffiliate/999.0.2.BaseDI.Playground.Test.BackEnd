@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using BaseDI.Professional.Script.Programming.Poco_1;
 using Microsoft.AspNetCore.Html;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -14,8 +15,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 {
     public class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0
     {
-        public static string Step_X_X_Custom_Store_HTMLStructureToString_1_0(string metaData, string title,
-            string scripts, string styles, string body)
+        //string metaData, string title, string scripts, string styles, string body
+        public static string Step_X_X_Custom_Store_HTMLStructureToString_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             var htmlHomePageTemplate = @"<!DOCTYPE html>
                 <html lang='en'>
@@ -42,8 +43,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
         //#endregion
 
         //#region GENERATE HTML PAGE
-
-        private static dynamic Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(dynamic attributes)
+//dynamic attributes
+        private static dynamic Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             //#region VARIABLES
 
@@ -79,8 +80,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             //#endregion           
         }
-
-        public static string Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(dynamic htmlContainerJSON)
+//dynamic htmlContainerJSON
+        public static string Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             //#region VARIABLES
             
@@ -102,9 +103,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             //#endregion            
         }
-
-        public static string Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(dynamic htmlRowsJSON,
-            string htmlContainerString)
+//dynamic htmlRowsJSON, string htmlContainerString
+        public static string Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             //#region VARIABLES
 
@@ -136,9 +136,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             //#endregion            
         }
-
-        public static string Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(dynamic htmlColumnsJSON,
-            string htmlRowsString)
+//dynamic htmlColumnsJSON, string htmlRowsString
+        public static string Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
 
             //#region VARIABLES
@@ -167,9 +166,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             //#endregion          
         }
-
-        public static string Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(dynamic htmlContentJSON,
-            string htmlColumnsString)
+//dynamic htmlContentJSON, string htmlColumnsString
+        public static string Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             //#region VARIABLES
 
@@ -224,8 +222,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             //#endregion                        
         }
-
-        public static string Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(dynamic htmlStylesJSON)
+//dynamic htmlStylesJSON
+        public static string Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             //#region VARIABLES
             string htmlInlineCSSString = "";

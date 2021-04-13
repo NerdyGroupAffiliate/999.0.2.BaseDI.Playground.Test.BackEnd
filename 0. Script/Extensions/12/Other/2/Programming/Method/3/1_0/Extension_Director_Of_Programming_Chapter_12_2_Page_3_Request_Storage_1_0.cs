@@ -1,16 +1,36 @@
-﻿using BaseDI.Professional.Script.Programming.Abstract_1;
+﻿#region Imports
+
+#region BaseDI
+
+using BaseDI.Professional.Script.Programming.Abstract_1;
 using BaseDI.Professional.Script.Programming.Extensions_1;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Risk_Management.Extensions_0;
-using Hanssens.Net;
+
+#endregion
+
+#region .Net Core
+
 using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
+#endregion 
+
+#region 3rd Party Core
+
+using Hanssens.Net;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+#endregion
+
+#endregion
 
 namespace BaseDI.Professional.Script.Programming.Extensions_3
 {
@@ -353,15 +373,21 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 storedParameterInputs = new SingleParmPoco_12_2_1_0();
 
-                storedParameterInputs.Parameters.Add("parameterPageName", storedPageName);
-                storedParameterInputs.Parameters.Add("parameterStorageDescription", storedStorageDescription);
-                storedParameterInputs.Parameters.Add("parameter_ObservationPresentationTemplateItem", storedOutPut_ObservationPresentationTemplateItem);
-                storedParameterInputs.Parameters.Add("parameter_ObservationBusinessTemplateItem", storedOutPut_ObservationBusinessTemplateItem);
-                storedParameterInputs.Parameters.Add("parameter_ObservationServiceTemplateItem", storedOutPut_ObservationServiceTemplateItem);
-                storedParameterInputs.Parameters.Add("parameter_ObservationSecurityTemplateItem", storedOutPut_ObservationSecurityTemplateItem);
-                storedParameterInputs.Parameters.Add("parameter_ObservationDataTemplateItem", storedOutPut_ObservationDataTemplateItem);
+                storedParameterInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedParameterInputs.Parameters.Add("parameterAppSettings", storedAppSettings);
 
-                storedOutPut_ObservationItem = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(storedDirectorOrExperienceName, storedPageName, storedStorageDescription, storedOutPut_ObservationPresentationTemplateItem, storedOutPut_ObservationBusinessTemplateItem, storedOutPut_ObservationServiceTemplateItem, storedOutPut_ObservationSecurityTemplateItem, storedOutPut_ObservationDataTemplateItem);
+                storedParameterInputs.Parameters.Add("parameter3WordDescription", "CREATING storage output item");
+                storedParameterInputs.Parameters.Add("parameterObservationFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0");
+                storedParameterInputs.Parameters.Add("parameterObservationMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
+
+                storedParameterInputs.Parameters.Add("parameterObservationPresentationTemplate", storedOutPut_ObservationPresentationTemplateItem);
+                storedParameterInputs.Parameters.Add("parameterObservationBusinessTemplate", storedOutPut_ObservationBusinessTemplateItem);
+                storedParameterInputs.Parameters.Add("parameterObservationServiceTemplate", storedOutPut_ObservationServiceTemplateItem);
+                storedParameterInputs.Parameters.Add("parameterObservationSecurityTemplate", storedOutPut_ObservationSecurityTemplateItem);
+                storedParameterInputs.Parameters.Add("parameterObservationDataTemplate", storedOutPut_ObservationDataTemplateItem);
+
+                storedOutPut_ObservationItem = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(storedParameterInputs);
 
                 //DETERMINE if we are storing a string value.
                 if (storedStorageValue is string)

@@ -1,10 +1,30 @@
-﻿using BaseDI.Professional.Script.Programming.Poco_1;
-using Microsoft.Extensions.Configuration;
+﻿#region Imports
+
+#region 3rd Party
+
 using Newtonsoft.Json.Linq;
+
+#endregion
+
+#region BaseDI
+
+using BaseDI.Professional.Script.Programming.Poco_1;
+
+#endregion
+
+#region .Net Core
+
+using Microsoft.Extensions.Configuration;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+
+#endregion
+
+#endregion
 
 namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 {
@@ -115,7 +135,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region VALIDATE input parameters
 
-            Func<Task<bool>> ValidateInputs = async () =>
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
             {
                 #region 1. INPUTS
 
@@ -185,6 +205,12 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                             storedProcessCheckPointHit = true;
                     }
 
+                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    {
+                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n"
+                        storedProcessCheckPointHit = true;
+                    }
+
                     if (!parameterInputs.Parameters.ContainsKey("parameterMethodName"))
                     {
                         storedMessage += "***parameterMethodName*** cannot be blank or empty.\n";
@@ -238,7 +264,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             };
 
             ///BEGIN valdation process
-             ValidateInputs();
+            await ValidateInputs(parameterInputs);
 
             #endregion
 
@@ -300,6 +326,12 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             if (parameterInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"] != null)
                 storedOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"];
 
+            #endregion
+
+            #region MEMORIZE master storer
+            
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedMasterStorer = parameterInputs.Parameters["parameterMasterStorer"];
+            
             #endregion
 
             #endregion

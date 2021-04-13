@@ -1,5 +1,4 @@
-﻿
-#region Imports
+﻿#region Imports
 
 #region BaseDI
 
@@ -44,42 +43,542 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
         //MISC
         private static ExtraData_12_2_1_0 _storedExtraData = null;
 
-        public static string Step_X_X_Create_An_ObservationJsonNode_1_0(string metaDataCalledByEntryPointName, string metaDataCalledByMethodName, string metaDataCalledByMethodReason, string presentationTemplate = "{}", string businessTemplate = "{}", string serviceTemplate = "{}", string securityTemplate = "{}", string dataTemplate = "{}")
+        public static async Task<string> Step_X_X_Create_A_MistakeJsonNode_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            string outputObservationBody = @"{'baseDIObservations': [{
+            #region 1. INPUTS
+
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
+            {
+                #region 1. INPUTS
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null)
+                {
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameter3WordDescription"))
+                    {
+                        storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterActionName"))
+                    {
+                        storedMessage += "***parameterActionName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                                                storedProcessCheckPointHit = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterFileName"))
+                    {
+                        storedMessage += "***parameterFileName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterMethodName"))
+                    {
+                        storedMessage += "***parameterMethodName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterMistakeTemplate"))
+                    {
+                        storedMessage += "***parameterMistakeTemplate*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE exception handler
+
+                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE blank return
+
+                    return await Task.FromResult<bool>(true).ConfigureAwait(true);
+
+                    #endregion                    
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            //BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE developer mode
+
+            string storedOPTIONALAccountingCostType = "";
+            bool storedOPTIONALBeginOfProcess = false;
+            bool storedOPTIONALMiddleOfProcess = false;
+            bool storedOPTIONALEndOfProcess = false;
+            bool storedOPTIONALMasterLeaderIsSecondStep = false;
+
+            bool storedMistake = false;
+
+            #endregion
+
+            #region DEFINE data response
+
+            string storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE action name
+
+            string storedActionName = parameterInputs.Parameters["parameterActionName"];
+
+            #endregion
+
+            #region MEMORIZE client / server instance
+
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["parameterAppSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING data into mistake");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Create_A_MistakeJsonNode_1_0");
+
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALEndOfProcess", true);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALRunSilentMode", true);
+
+            #endregion
+
+            #region MEMORIZE mistake details
+
+            string storedMistakeDescription = parameterInputs.Parameters["parameter3WordDescription"];
+            string storedMistakeFileName = parameterInputs.Parameters["parameterFileName"];
+            string storedMistakeMethodName = parameterInputs.Parameters["parameterMethodName"];
+
+            string storedMistakeTemplate = parameterInputs.Parameters["parameterMistakeTemplate"];
+
+            string storedMistakeBody = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}} }] }}]}";
+            string storedMistakeItem = "'details': [{details}]";
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE mistake creation
+
+            #region IDEAL CASE - USE baseDi template
+
+            Func<string, string, dynamic, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterMistakeTemplate, string parameterMistakeBody, dynamic parameterMistakeItem, string parameterMistakeFileName, string parameterMistakeMethodName, string parameter3WordDescription) =>
+            {
+                parameterMistakeBody = parameterMistakeBody.Replace("{item}", parameterMistakeItem);
+
+                parameterMistakeBody = parameterMistakeBody.Replace("{calledByEntryPointName}", parameterMistakeFileName);
+                parameterMistakeBody = parameterMistakeBody.Replace("{calledByMethodName}", parameterMistakeMethodName);
+                parameterMistakeBody = parameterMistakeBody.Replace("{calledByMethodReason}", parameter3WordDescription);
+
+                parameterMistakeBody = parameterMistakeBody.Replace("{details}", parameterMistakeTemplate);
+
+                return parameterMistakeBody;
+            };
+
+            storedDataResponse = await ExecuteConversionRequest(storedMistakeTemplate, storedMistakeBody, storedMistakeItem, storedMistakeFileName, storedMistakeMethodName, storedMistakeDescription);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN converted data
+
+            #region IDEAL CASE - USE json dataset
+
+            return storedDataResponse;
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        //string metaDataCalledByEntryPointName, string metaDataCalledByMethodName, string metaDataCalledByMethodReason, string presentationTemplate = "{}", string businessTemplate = "{}", string serviceTemplate = "{}", string securityTemplate = "{}", string dataTemplate = "{}"
+        public static async Task<string> Step_X_X_Create_An_ObservationJsonNode_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        {
+            #region 1. INPUTS
+
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) => {
+                #region 1. INPUTS
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null)
+                {
+                    if (!parameterInputs.Parameters.ContainsKey("parameter3WordDescription"))
+                    {
+                        storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterActionName"))
+                    {
+                        storedMessage += "***parameterActionName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterObservationFileName"))
+                    {
+                        storedMessage += "***parameterObservationFileName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterObservationMethodName"))
+                    {
+                        storedMessage += "***parameterObservationMethodName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterObservationPresentationTemplate"))
+                    {
+                        storedMessage += "***parameterObservationPresentationTemplate*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterObservationBusinessTemplate"))
+                    {
+                        storedMessage += "***parameterObservationBusinessTemplate*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterObservationServiceTemplate"))
+                    {
+                        storedMessage += "***parameterObservationServiceTemplate*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterObservationSecurityTemplate"))
+                    {
+                        storedMessage += "***parameterObservationSecurityTemplate*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterObservationDataTemplate"))
+                    {
+                        storedMessage += "***parameterObservationDataTemplate*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE exception handler
+
+                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE blank return
+
+                    return await Task.FromResult<bool>(false).ConfigureAwait(true);
+
+                    #endregion                    
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE developer mode
+
+            string storedOPTIONALAccountingCostType = "";
+            bool storedOPTIONALBeginOfProcess = false;
+            bool storedOPTIONALMiddleOfProcess = false;
+            bool storedOPTIONALEndOfProcess = false;
+            bool storedOPTIONALMasterLeaderIsSecondStep = false;
+
+            bool storedMistake = false;
+
+            #endregion
+
+            #region DEFINE data response
+
+            string storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE action name
+
+            string storedActionName = parameterInputs.Parameters["parameterActionName"];
+
+            #endregion
+
+            #region MEMORIZE client / server instance
+
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["parameterAppSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING data into observation");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Create_An_ObservationJsonNode_1_0");
+
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALEndOfProcess", true);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALRunSilentMode", true);
+
+            #endregion
+
+            #region MEMORIZE observation details
+
+            string storedObservationDescription = parameterInputs.Parameters["parameter3WordDescription"];
+            string storedObservationFileName = parameterInputs.Parameters["parameterObservationFileName"];
+            string storedObservationMethodName = parameterInputs.Parameters["parameterObservationMethodName"];
+            
+            string storedObservationTemplate = parameterInputs.Parameters["parameterObservationTemplate"];
+            
+            string storedObservationBody = @"{'baseDIObservations': [{
                                                 'observation':
                                                 {
                                                     'metadata': [{'calledByEntryPointName':'{calledByEntryPointName}'},{'calledByMethodName':'{calledByMethodName}'},{'calledByMethodReason':'{calledByMethodReason}'},{'item':{{item}}}]
                                                 }
                                             }]
                                          }";
-
-            string outputObservationItem = @"'presentation': [{presentation}],
+            string storedObservationItem = @"'presentation': [{presentation}],
                                              'business': [{business}],
                                              'service': [{service}],
                                              'security': [{security}],
                                              'data': [{data}]";
 
-            outputObservationBody = outputObservationBody.Replace("{item}", outputObservationItem);
+            string storedObservationPresentationTemplate = parameterInputs.Parameters["parameterObservationPresentationTemplate"];
+            string storedObservationBusinessTemplate = parameterInputs.Parameters["parameterObservationBusinessTemplate"];
+            string storedObservationServiceTemplate = parameterInputs.Parameters["parameterObservationServiceTemplate"];
+            string storedObservationSecurityTemplate = parameterInputs.Parameters["parameterObservationSecurityTemplate"];
+            string storedObservationDataTemplate = parameterInputs.Parameters["parameterObservationDataTemplate"];
 
-            outputObservationBody = outputObservationBody.Replace("{calledByEntryPointName}", metaDataCalledByEntryPointName);
-            outputObservationBody = outputObservationBody.Replace("{calledByMethodName}", metaDataCalledByMethodName);
-            outputObservationBody = outputObservationBody.Replace("{calledByMethodReason}", metaDataCalledByMethodReason);
+            #endregion
 
-            outputObservationBody = outputObservationBody.Replace("{presentation}", presentationTemplate);
-            outputObservationBody = outputObservationBody.Replace("{business}", businessTemplate);
-            outputObservationBody = outputObservationBody.Replace("{service}", serviceTemplate);
-            outputObservationBody = outputObservationBody.Replace("{security}", securityTemplate);
-            outputObservationBody = outputObservationBody.Replace("{data}", dataTemplate);
+            #endregion
 
-            return outputObservationBody;
+            #region 2. PROCESS
+
+            #region EXECUTE obversation creation
+
+            #region IDEAL CASE - USE baseDi template
+
+            Func<string, string, dynamic, string, string, string, string, string, string, string, string, Task<string>> ExecuteConversionRequest = async(string parameterObservationTemplate, string parameterObservationBody, dynamic parameterObservationItem, string parameterObservationFileName, string parameterObservationMethodName, string parameter3WordDescription, string parameterObservationPresentationTemplate, string parameterObservationBusinessTemplate, string parameterObservationServiceTemplate, string parameterObservationSecurityTemplate, string parameterObservationDataTemplate) => {
+                parameterObservationBody = parameterObservationBody.Replace("{item}", parameterObservationItem);
+
+                parameterObservationBody = parameterObservationBody.Replace("{calledByEntryPointName}", parameterObservationFileName);
+                parameterObservationBody = parameterObservationBody.Replace("{calledByMethodName}", parameterObservationMethodName);
+                parameterObservationBody = parameterObservationBody.Replace("{calledByMethodReason}", parameter3WordDescription);
+
+                parameterObservationBody = parameterObservationBody.Replace("{presentation}", parameterObservationPresentationTemplate);
+                parameterObservationBody = parameterObservationBody.Replace("{business}", parameterObservationBusinessTemplate);
+                parameterObservationBody = parameterObservationBody.Replace("{service}", parameterObservationServiceTemplate);
+                parameterObservationBody = parameterObservationBody.Replace("{security}", parameterObservationSecurityTemplate);
+                parameterObservationBody = parameterObservationBody.Replace("{data}", parameterObservationDataTemplate);
+
+                return parameterObservationBody;
+            };
+
+            storedDataResponse = await ExecuteConversionRequest(storedObservationTemplate, storedObservationBody, storedObservationItem, storedObservationFileName, storedObservationMethodName, storedObservationDescription, storedObservationPresentationTemplate, storedObservationBusinessTemplate, storedObservationServiceTemplate, storedObservationSecurityTemplate, storedObservationDataTemplate);
+            
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN converted data
+
+            #region IDEAL CASE - USE json dataset
+
+            return storedDataResponse;
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //JObject data, string keyName, string keyValue, bool returnAsArray
 
         public static async Task<List<JToken>> Step_X_X_Read_And_FindJSONNode_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region 1. Inputs    
+            #region 1. INPUTS    
 
             #region VALIDATE input parameters
 
@@ -111,45 +610,45 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                 {
                     if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n"; ;
                         storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n"; ;
                         storedProcessCheckPointHit = true;
                     }
                     else
                     {
                         if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                             storedProcessCheckPointHit = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterData"))
                     {
-                        storedMessage += "***parameterData*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterData*** cannot be blank or empty.\n"; ;
                         storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterKeyValuePairKey"))
                     {
-                        storedMessage += "***parameterKeyValuePairKey*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterKeyValuePairKey*** cannot be blank or empty.\n"; ;
                         storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterKeyValuePairValue"))
                     {
-                        storedMessage += "***parameterKeyValuePairValue*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterKeyValuePairValue*** cannot be blank or empty.\n"; ;
                         storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterReturnValueAsArray"))
                     {
-                        storedMessage += "***parameterReturnValueAsArray*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterReturnValueAsArray*** cannot be blank or empty.\n"; ;
                         storedProcessCheckPointHit = true;
                     }
 
@@ -206,7 +705,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region DEFINE event handlers
 
-            Func<JToken, Dictionary<string, string>, string, bool> ExecuteConversionProcess = null;
+            Func<JToken, Dictionary<string, string>, string, bool> ExecuteConversionRequest = null;
 
             #endregion
 
@@ -235,7 +734,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web server");
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING filtered dataset");
             storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
@@ -266,7 +765,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             if (storedData != null)
             {
-                ExecuteConversionProcess = (JToken parameterToken, Dictionary<string, string> parameterNodes, string parameterParentLocation) =>
+                ExecuteConversionRequest = (JToken parameterToken, Dictionary<string, string> parameterNodes, string parameterParentLocation) =>
                 {
                     if (parameterToken.HasValues)
                     {
@@ -284,7 +783,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                                 }
                             }
 
-                            ExecuteConversionProcess(parameterTokenChild, parameterNodes, parameterParentLocation);
+                            ExecuteConversionRequest(parameterTokenChild, parameterNodes, parameterParentLocation);
                         }
 
                         // we are done parsing and this is a parent node
@@ -307,7 +806,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                     return true;
                 };
 
-                ExecuteConversionProcess(storedData, null, "");
+                ExecuteConversionRequest(storedData, null, "");
             }
 
             #endregion
@@ -328,17 +827,16 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #endregion
 
-            #endregion
+            #endregion           
         }
 
         //JObject data, string keyName, string keyValue, bool returnAsArray
 
         public static async Task<List<JToken>> Step_X_X_Read_And_FindJSONNode_2_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region 1. Inputs    
+            #region 1. INPUTS    
 
             #region VALIDATE input parameters
-
             Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
             {
                 #region 1. INPUTS
@@ -367,45 +865,45 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                 {
                     if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";;
                         storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";;
                         storedProcessCheckPointHit = true;
                     }
                     else
                     {
                         if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                             storedProcessCheckPointHit = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterData"))
                     {
-                        storedMessage += "***parameterData*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterData*** cannot be blank or empty.\n";;
                         storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterKeyValuePairKey"))
                     {
-                        storedMessage += "***parameterKeyValuePairKey*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterKeyValuePairKey*** cannot be blank or empty.\n";;
                         storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterKeyValuePairValue"))
                     {
-                        storedMessage += "***parameterKeyValuePairValue*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterKeyValuePairValue*** cannot be blank or empty.\n";;
                         storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterReturnValueAsArray"))
                     {
-                        storedMessage += "***parameterReturnValueAsArray*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterReturnValueAsArray*** cannot be blank or empty.\n";;
                         storedProcessCheckPointHit = true;
                     }
 
@@ -448,11 +946,10 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                 #endregion
 
             };
+            #endregion
 
             ///BEGIN valdation process
             await ValidateInputs(parameterInputs);
-
-            #endregion
 
             #region DEFINE data response
 
@@ -462,7 +959,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region DEFINE event handlers
 
-            Func<JToken, Action<JObject>, JToken> ExecuteConversionProcess = null;
+            Func<JToken, Action<JObject>, JToken> ExecuteConversionRequest = null;
 
             #endregion
 
@@ -491,7 +988,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web server");
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING filtered dataset");
             storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
@@ -520,7 +1017,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             if (storedData != null)
             {
-                ExecuteConversionProcess = (JToken parameterNode, Action<JObject> parameterAction) =>
+                ExecuteConversionRequest = (JToken parameterNode, Action<JObject> parameterAction) =>
                 {
                     if (parameterNode.Type == JTokenType.Object)
                     {
@@ -528,21 +1025,21 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
                         foreach (JProperty child in parameterNode.Children<JProperty>())
                         {
-                            ExecuteConversionProcess(child.Value, parameterAction);
+                            ExecuteConversionRequest(child.Value, parameterAction);
                         }
                     }
                     else if (parameterNode.Type == JTokenType.Array)
                     {
                         foreach (JToken child in parameterNode.Children())
                         {
-                            ExecuteConversionProcess(child, parameterAction);
+                            ExecuteConversionRequest(child, parameterAction);
                         }
                     }
 
                     return null;
                 };
 
-                ExecuteConversionProcess(storedData, n =>
+                ExecuteConversionRequest(storedData, n =>
                 {
                     JToken token = n[storedKeyValuePairKey];
 
@@ -562,7 +1059,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region 3. OUTPUT
 
-            #region RETURN filtered data
+            #region RETURN converted data
 
             #region IDEAL CASE - USE json dataset
 

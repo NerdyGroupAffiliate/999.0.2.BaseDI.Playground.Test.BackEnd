@@ -1,68 +1,266 @@
-﻿import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+﻿//#region Imports
 
-const objectScan = require('object-scan');
-var _ = require('lodash');
+//#region 3rd Party
+
+//#endregion
+
+//#region BaseDI
+
+import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+
+import * as ExtraData_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
+import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
+//#endregion
+
+//#endregion
 
 export namespace BaseDI.Professional.Programming.Extensions_1
 {
     export class Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0
     {      
+        //SETTINGS
+        private static _storedAppSettings: any = null;
+
+        //CLIENT/SERVER
+        private static _storedClientOrServerInstance: any;
+
+        //EXCEPTIONS
+        private static _storedExceptionDetails: any = null;
+
+        //MISC
+        private static _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
+
         constructor() {
-            
+            //#region 1. INPUTS
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
         }        
 
-        //#region STORE 
-        public static Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(data:object, keyName: string, keyValue: any, returnAsArray:boolean): any
+        //data: object, keyName: string, keyValue: any, returnAsArray: boolean
+
+        public static async Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
         {
-            let returnValue: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(data, keyName, keyValue, returnAsArray);
+            //#region 1. Inputs
 
-            return returnValue;
-        }
+            //#region VALIDATE input parameters
 
-        public static Step_X_X_Custom_Store_RequestRoutes_1_0(data:object): Array<string> {
-            const requests: Array<string> = new Array<string>();
+            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
+            {
+                //#region 1. INPUTS
 
-            const businessLogicMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(data, "key_1", "Request", false);
+                //#region DEFINE process checkpoint
 
-            const businessLogicList: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(businessLogicMetaData, "values_2_2", "", false);
+                let storedProcessCheckPointHit: boolean = false;
 
-            for (var i = 0; i < businessLogicList.values_2_2.length; i++) {
-                const businessLogicItem = businessLogicList.values_2_2[i];
+                //#endregion
 
-                const businessLogicItemCallStackList = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(businessLogicItem, "EventCallStackItems", "", false);
+                //#region DEFINE stored message
 
-                if (businessLogicItemCallStackList.EventCallStackItems != null &&
-                    businessLogicItemCallStackList.EventCallStackItems.length > 0) {
-                    for (var i2 = 0; i2 < businessLogicItemCallStackList.EventCallStackItems.length; i2++) {
-                        const businessLogicItemCallStackItem = businessLogicItemCallStackList.EventCallStackItems[i2];
+                let storedMessage: string = "";
 
-                        if (businessLogicItemCallStackItem.Events != null &&
-                            businessLogicItemCallStackItem.Events.length > 0) {
+                //#endregion
 
-                            let functionsEnabled: boolean = false;
+                //#endregion
 
-                            for (var i3 = 0; i3 < businessLogicItemCallStackItem.Events.length; i3++) {
-                                const businessLogicItemCallStackItemEvent = businessLogicItemCallStackItem.Events[i3];
+                //#region 2. PROCESS
 
-                                if (businessLogicItemCallStackItemEvent.functionsEnabled != undefined) {
-                                    if (businessLogicItemCallStackItemEvent.functionsEnabled.toUpperCase() == "TRUE") {
-                                        functionsEnabled = true;
-                                    }
-                                }
-                                else {
-                                    if (functionsEnabled)
-                                        requests.push(businessLogicItemCallStackItemEvent);
-                                }
-                            }
+                //#region EXECUTE validation process
+
+                //#region IDEAL CASE - USE valid information
+
+                if (parameterInputs.Parameters.size() > 0) {
+                    if (!parameterInputs.Parameters.containsKey("parameterAppSettings")) {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterClientOrServerInstance")) {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessCheckPointHit = true;
                         }
                     }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterData")) {
+                        storedMessage += "***parameterData*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterKeyValuePairKey")) {
+                        storedMessage += "***parameterKeyValuePairKey*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterKeyValuePairValue")) {
+                        storedMessage += "***parameterKeyValuePairValue*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterReturnValueAsArray")) {
+                        storedMessage += "***parameterReturnValueAsArray*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit) {
+                        //#region EDGE CASE - USE exception handler
+
+                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+
+                        //#endregion
+                    }
                 }
+                else {
+                    //#region EDGE CASE - USE blank return
+
+                    return await false;
+
+                    //#endregion
+                }
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+
+                //#region 3. OUTPUT
+
+                //#region RETURN validation passed
+
+                //#region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+
+            };
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            //#endregion
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region DEFINE parameter inputs
+
+            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;        
+
+            //#endregion
+
+            //#region MEMORIZE client / server instance
+
+            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+            //#endregion
+
+            //#region MEMORIZE app settings
+
+            this._storedAppSettings = this._storedClientOrServerInstance["parameterAppSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE ? this._storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web server");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+            //#endregion
+
+            //#region MEMORIZE filter metadata
+
+            let storedData: any = parameterInputs.Parameters.getValue("parameterData");
+
+            let storedKeyValuePairKey: string = parameterInputs.Parameters.getValue("parameterKeyValuePairKey");
+            let storedKeyValuePairValue: string = parameterInputs.Parameters.getValue("parameterKeyValuePairValue");
+
+            let storedReturnValueAsArray: boolean = parameterInputs.Parameters.getValue("parameterReturnValueAsArray");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try
+            {
+                //#region EXECUTE storage process
+
+                //#region IDEAL CASE - USE baseDI extension
+
+                storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance);
+                storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+
+                storedParameterInputs.Parameters.setValue("parameterData", storedData);
+
+                storedParameterInputs.Parameters.setValue("parameterKeyValuePairKey", storedKeyValuePairKey);
+                storedParameterInputs.Parameters.setValue("parameterKeyValuePairValue", storedKeyValuePairValue);
+
+                storedParameterInputs.Parameters.setValue("parameterReturnValueAsArray", storedReturnValueAsArray);
+
+                storedDataResponse = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storedParameterInputs);
+
+                //#endregion
+
+                //#endregion
+            }
+            catch (mistake)
+            {
+                //#region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                //#endregion
             }
 
-            return requests;
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE an experience OR a director handler
+
+            return storedDataResponse;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
-        //#endregion
-
-
     }
 }
