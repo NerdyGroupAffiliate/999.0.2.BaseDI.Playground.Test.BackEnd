@@ -53,7 +53,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
             #endregion
         }
 
-        public static async Task<JObject> Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        #region CACHE MANAGEMENT
+
+        public static async Task<JObject> Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -104,7 +106,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -192,7 +194,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -216,7 +218,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -311,7 +313,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
 
             //OPTIONAL
             storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"]);
@@ -379,7 +381,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 storedParameterInputs.Parameters.Add("parameter3WordDescription", "CREATING storage output item");
                 storedParameterInputs.Parameters.Add("parameterObservationFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0");
-                storedParameterInputs.Parameters.Add("parameterObservationMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
+                storedParameterInputs.Parameters.Add("parameterObservationMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
 
                 storedParameterInputs.Parameters.Add("parameterObservationPresentationTemplate", storedOutPut_ObservationPresentationTemplateItem);
                 storedParameterInputs.Parameters.Add("parameterObservationBusinessTemplate", storedOutPut_ObservationBusinessTemplateItem);
@@ -387,7 +389,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 storedParameterInputs.Parameters.Add("parameterObservationSecurityTemplate", storedOutPut_ObservationSecurityTemplateItem);
                 storedParameterInputs.Parameters.Add("parameterObservationDataTemplate", storedOutPut_ObservationDataTemplateItem);
 
-                storedOutPut_ObservationItem = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(storedParameterInputs);
+                storedOutPut_ObservationItem = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedParameterInputs);
 
                 //DETERMINE if we are storing a string value.
                 if (storedStorageValue is string)
@@ -445,7 +447,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                     storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 stored_CentralizedStorer.ExtraData.KeyValuePairs.Add("parametersInputs", parameterInputs);
@@ -502,7 +504,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
             #endregion
         }
 
-        public static async Task<JObject> Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<JObject> Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_1(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -553,7 +555,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -617,7 +619,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -641,7 +643,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -754,7 +756,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             try
             {
-                Func<Task<bool>> ProcessStorage = async () =>
+                Func<Task<bool>> ExecuteStorageRequest = async () =>
                 {
                     #region SETUP storage item
 
@@ -794,7 +796,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -845,7 +847,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                     return await Task.FromResult<bool>(true).ConfigureAwait(true);
                 };
 
-                await ProcessStorage();
+                await ExecuteStorageRequest();
             }
             catch (Exception mistake)
             {
@@ -859,7 +861,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                     storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 #endregion
@@ -889,5 +891,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #endregion
         }
+
+        #endregion
     }
 }

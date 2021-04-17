@@ -49,7 +49,9 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
         private static string _storedDeveloperStepConsoleLogTemplate_Idented = "  STEP {storedStepNumberReplace}: {stored3WordDescription}\n     {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
         private static string _storedDeveloperStepConsoleLogTemplate_Idented_Twice = "     STEP {storedStepNumberReplace}: {stored3WordDescription}\n        {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
 
-        public static Exception Step_X_X_Custom_Control_AppException_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        #region DEVELOPER MANAGEMENT
+
+        public static async Task<Exception> Step_X_X_Framework_Control_DeveloperException_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. Inputs    
 
@@ -93,7 +95,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 #region EDGE CASE - USE developer logger
 
-          
+
                 #endregion
 
                 #region IDEAL CASE - USE an experience OR a director request handler
@@ -107,7 +109,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             {
                 #region EDGE CASE - USE exception handler
 
-                
+
 
                 #endregion
             }
@@ -129,7 +131,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             #endregion
         }
 
-        public static async Task<bool> Step_X_X_Custom_Output_DeveloperMessage_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<bool> Step_X_X_Framework_Output_DeveloperMessage_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -164,45 +166,45 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                     if (!parameterInputs.Parameters.ContainsKey("parameter3WordDescription"))
                     {
                         storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                        storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterActionName"))
                     {
                         storedMessage += "***parameterActionName*** cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                        storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
                     {
                         storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                        storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
                     {
                         storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                        storedProcessCheckPointHit = true;
                     }
                     else
                     {
                         if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
                         {
                             storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                                storedProcessCheckPointHit = true;
+                            storedProcessCheckPointHit = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterFileName"))
                     {
                         storedMessage += "***parameterFileName*** cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                        storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterMessageType"))
                     {
                         storedMessage += "***parameterMessageType*** cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                        storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
@@ -214,13 +216,13 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                     if (!parameterInputs.Parameters.ContainsKey("parameterMethodName"))
                     {
                         storedMessage += "***parameterMethodName*** cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                        storedProcessCheckPointHit = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterStepNumberReplace"))
                     {
                         storedMessage += "***parameterStepNumberReplace*** cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                        storedProcessCheckPointHit = true;
                     }
 
                     if (storedProcessCheckPointHit)
@@ -329,9 +331,9 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             #endregion
 
             #region MEMORIZE master storer
-            
+
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedMasterStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            
+
             #endregion
 
             #endregion
@@ -536,5 +538,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #endregion
         }
+
+        #endregion
     }
 }

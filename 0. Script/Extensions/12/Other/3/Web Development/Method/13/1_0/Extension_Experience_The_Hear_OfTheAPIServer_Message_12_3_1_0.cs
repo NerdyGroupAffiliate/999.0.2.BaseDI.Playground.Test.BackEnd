@@ -31,6 +31,8 @@ using System.Web;
 using CurlThin;
 
 using Newtonsoft.Json.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
 
 #endregion
 
@@ -52,63 +54,378 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
         //MISC
         private static ExtraData_12_2_1_0 _storedExtraData = null;
 
+        #region API MANAGEMENT
 
-        #region SERVER SIDE CODE
-
-        #region SERVER API REQUEST
-
-        public static Object Step_X_X_Custom_Output_ServerResponseToCaller_1_0(object server, string url, string verbName, Object options, Func<Object, Object> callback)
+        public static async Task<Object> Step_X_X_Framework_Transport_ApiRequestToServer_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            if (server == null) return null;
-            if (verbName == null || verbName == "") return null;
+            #region 1. INPUTS
 
-            switch (verbName.ToUpper())
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) => 
             {
-                case "DELETE":
-                    return Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(server, url, options, callback);
-                case "GET":
-                    return Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(server, url, options, callback);
-                case "HEAD":
-                    return Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(server, url, options, callback);
-                case "POST":
-                    return Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(server, url, options, callback);
-                case "PUT":
-                    return Step_X_X_Custom_Output_ServerResponseToCaller_1_1_PUT(server, url, options, callback);
-                default:
-                    return null;
+                #region 1. INPUTS
+
+                #region DEFINE parameter inputs
+
+                SingleParmPoco_12_2_1_0 storedParameterInputs;
+
+                #endregion
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #region MEMORIZE clientOrServer instance
+
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance");
+
+                #endregion
+
+                #region MEMORIZE app settings
+
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+
+                #endregion
+
+                #region MEMORIZE developer mode
+
+                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSetting:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSetting:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html container");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ValidateInputs()");
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings")) {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterApiRequestCallBack")) {
+                        storedMessage += "***parameterApiRequestCallBack*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterApiRequestEndPointAddress")) {
+                        storedMessage += "***parameterApiRequestEndPointAddress*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterApiRequestData")) {
+                        storedMessage += "***parameterApiRequestData*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterApiRequestVerb")) {
+                        storedMessage += "***parameterApiRequestVerb*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit) {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode) {
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode) {
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("PARSING parameter values failed");
+
+                    #endregion
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE api inputs
+
+            byte[] storedApiDataMemoryBuffer = null;
+            dynamic storedApiDataMemoryLength = null;
+            Stream storedApiDataMemoryStream = null;
+            
+            dynamic storedApiInit = null;
+
+            #endregion
+
+            #region DEFINE data response
+
+            dynamic storedDataResponse = null;
+            bool storedDataResponseFailed = false;
+
+            #endregion
+
+            #region DEFINE parameter inputs
+
+            SingleParmPoco_12_2_1_0 storedParameterInputs;
+
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html container");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Transport_ApiRequestToServer_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+
+            #endregion
+
+            #region MEMORIZE api inputs
+
+            var storedApiControllerUsingCurl = CurlNative.Init();
+
+            Func<dynamic> storedApiRequestCallBack = parameterInputs.Parameters["parameterApiRequestCallBack"];
+            string storedApiRequestEndPointAddress = parameterInputs.Parameters["parameterApiRequestEndPointAddress"];
+            dynamic storedApiRequestData = parameterInputs.Parameters["parameterApiRequestData"];
+            string storedApiRequestVerb = parameterInputs.Parameters["parameterApiRequestVerb"];
+
+            #endregion
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE api transport
+
+            if (storedAppSettings.GetValue<string>("AppSettings:APP_ENV").ToUpper() == "SERVER") {
+                #region IDEAL CASE - USE server module
+
+                try
+                {
+                    Func<dynamic, string, dynamic, string, dynamic, Stream, byte[], dynamic, string, Task<dynamic>> ExecuteTransportRequest = async (dynamic parameterApiRequestCallBack, string parameterApiRequestEndPointAddress, dynamic parameterApiRequestData, string parameterApiRequestVerb, dynamic parameterApiInit, Stream parameterApiDataMemoryStream, byte[] parameterApiDataMemoryBuffer, dynamic parameterApiDataMemoryLength, string parameterPostData) => {
+
+                    switch (parameterApiRequestVerb.ToUpper()) 
+                    {
+                            case "DELETE":
+                                break;
+
+                            case "GET":
+                                parameterApiDataMemoryStream = new MemoryStream();
+
+                                parameterApiInit = CurlNative.Easy.SetOpt(CurlNative.Easy.Init(), CurlThin.Enums.CURLoption.URL, parameterApiRequestEndPointAddress);
+
+
+                                //CurlNative.Easy.SetOpt(parameterApiInit, CurlThin.Enums.CURLoption.WRITEFUNCTION, (parameterData, parameterSize, parameterNmemb, user) =>
+                                //{
+                                //    var storedLength = (int)parameterSize * (int)parameterNmemb;
+                                //    var buffer = new byte[storedLength];
+                                //    Marshal.Copy(parameterData, buffer, 0, storedLength);
+                                //    parameterApiDataMemoryStream.Write(buffer, 0, storedLength);
+                                //    //return (UIntPtr)storedLength;
+                             
+                                //});
+
+                                return CurlNative.Easy.Perform(parameterApiInit);
+
+                            case "HEAD":
+                                //storedApiControllerUsingCurl.head(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
+                                //    if (!storedError) {
+                                //        parameterApiRequestCallBack(storedResponse);
+                                //    }
+                                //    else {
+                                //        throw Error(storedError.toString());
+                                //    }
+                                //});
+
+                                break;
+
+                            case "POST":
+                                parameterApiDataMemoryStream = new MemoryStream();
+                                parameterApiInit = CurlNative.Easy.SetOpt(CurlNative.Easy.Init(), CurlThin.Enums.CURLoption.URL, parameterApiRequestEndPointAddress);
+
+                                //CurlNative.Easy.SetOpt(parameterApiInit, CurlThin.Enums.CURLoption.POSTFIELDSIZE, Encoding.ASCII.GetByteCount(parameterPostData));
+                                //CurlNative.Easy.SetOpt(parameterApiInit, CurlThin.Enums.CURLoption.COPYPOSTFIELDS, parameterPostData);
+                                //CurlNative.Easy.SetOpt(parameterApiInit, CurlThin.Enums.CURLoption.WRITEFUNCTION, (parameterData, parameterSize, parameterNmemb, user) =>
+                                //{
+                                //    parameterApiDataMemoryLength = ((int)parameterSize * (int)parameterNmemb);
+                                //    parameterApiDataMemoryBuffer = new byte[parameterApiDataMemoryLength];
+
+                                //    Marshal.Copy(parameterData, new byte[parameterApiDataMemoryLength], 0, parameterApiDataMemoryLength);
+                                //    parameterApiDataMemoryStream.Write(parameterApiDataMemoryBuffer, 0, parameterApiDataMemoryLength);
+                                //    //return (UIntPtr)parameterApiDataMemoryLength;
+
+                                //    return null;
+                                //});
+
+                                return CurlNative.Easy.Perform(parameterApiInit);
+
+                            case "PUT":
+                                //storedApiControllerUsingCurl.put(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
+                                //    if (!storedError) {
+                                //        parameterApiRequestCallBack(storedResponse);
+                                //    }
+                                //    else {
+                                //        throw Error(storedError.toString());
+                                //    }
+                                //});
+
+                                break;
+                        }
+                    };
+
+                    //storedDataResponse = await ExecuteTransportRequest(storedApiRequestCallBack, storedApiRequestEndPointAddress, storedApiRequestData, storedApiRequestVerb);
+
+                }
+                catch (Exception mistake)
+                {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode) {
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED calling api");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Transport_ApiRequestToServer_1_0.ExecuteTransportRequest");
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("API request failed " + mistake.ToString());
+
+                    #endregion
+                }
+        
+                #endregion
             }
-        }
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_DELETE(object server, string url, Object options, Func<Object, Object> callback)
-        {
-            return null;
-        }
+            if (storedAppSettings.GetValue<string>("AppSettings:APP_ENV").ToUpper() == "CLIENT") {
+                #region EDGE CASE - USE client module
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_GET(object server, string url, Object options, Func<Object, Object> callback)
-        {
-            return null;
-        }
+                #endregion
+            }
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_HEAD(object server, string url, Object options, Func<Object, Object> callback)
-        {
-            return null;
-        }
+            #endregion
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_POST(object server, string url, Object options, Func<Object, Object> callback)
-        {
-            return null;
-        }
+            #endregion
 
-        private static Func<Object> Step_X_X_Custom_Output_ServerResponseToCaller_1_1_PUT(object server, string url, Object options, Func<Object, Object> callback)
-        {
-            return null;
+            #region 3. OUTPUT
+
+            #region RETURN storyline details
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return storedDataResponse;
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         #endregion
 
-        #region SERVER ASSET MANAGEMENT
+        #region FILE MANAGEMENT
 
-        public static async void Step_X_X_Custom_Store_LocalFilesToServer_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task Step_X_X_Framework_Store_FilesToServer_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -155,14 +472,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     {
                         if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                             storedProcessCheckPointHit = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
                     {
-                        storedMessage += "***parameterData*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterFilterData*** cannot be blank or empty.\n";
                         storedProcessCheckPointHit = true;
                     }
 
@@ -204,7 +521,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                 #endregion
 
                 #endregion
-
             };
 
             ///BEGIN valdation process
@@ -251,7 +567,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Store_LocalFilesToServer_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_FilesToServer_1_0");
             //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
 
             #endregion
@@ -264,12 +580,12 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE filter metadata
 
-            JObject storedData = parameterInputs.Parameters["parameterData"];
+            JObject storedData = parameterInputs.Parameters["parameterFilterData"];
 
-            string storedKeyValuePairKey = parameterInputs.Parameters["parameterKeyValuePairKey"];
-            string storedKeyValuePairValue = parameterInputs.Parameters["parameterKeyValuePairValue"];
+            string storedKeyValuePairKey = parameterInputs.Parameters["parameterFilterKeyValuePairKey"];
+            string storedKeyValuePairValue = parameterInputs.Parameters["parameterFilterKeyValuePairValue"];
 
-            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterReturnValueAsArray"];
+            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterFilterReturnValueAsArray"];
 
             #endregion
 
@@ -284,10 +600,10 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region 2. PROCESS
 
-            #region EXECUTE conversion process
+            #region EXECUTE conversion request
 
             //CONVERT dataset to a filtered down version
-            Func<Task<List<JToken>>> ExecuteConversionProcess = async () => {
+            Func<Task<List<JToken>>> ExecuteConversionRequest = async () => {
                 try
                 {
                     #region IDEAL CASE - USE user data
@@ -296,14 +612,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
                     storedParameterInputs.Parameters.Add("parameterAppSettings", _storedAppSettings);
-                    storedParameterInputs.Parameters.Add("parameterData", storedStorylineDetails);
+                    storedParameterInputs.Parameters.Add("parameterFilterData", storedStorylineDetails);
 
-                    storedParameterInputs.Parameters.Add("parameterKeyValuePairKey", "searchkey");
-                    storedParameterInputs.Parameters.Add("parameterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                    storedParameterInputs.Parameters.Add("parameterFilterKeyValuePairKey", "searchkey");
+                    storedParameterInputs.Parameters.Add("parameterFilterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
 
-                    storedParameterInputs.Parameters.Add("parameterReturnValueAsArray", false);
+                    storedParameterInputs.Parameters.Add("parameterFilterReturnValueAsArray", false);
 
-                    storedDataResponse = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_2_0(storedParameterInputs).Result;
+                    storedDataResponse = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0(storedParameterInputs).Result;
 
                     storedDataResponseUserData = true;
 
@@ -319,14 +635,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                         storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
                         storedParameterInputs.Parameters.Add("parameterAppSettings", _storedAppSettings);
-                        storedParameterInputs.Parameters.Add("parameterData", storedStorylineDetails);
+                        storedParameterInputs.Parameters.Add("parameterFilterData", storedStorylineDetails);
 
-                        storedParameterInputs.Parameters.Add("parameterKeyValuePairKey", "searchkey");
-                        storedParameterInputs.Parameters.Add("parameterKeyValuePairValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                        storedParameterInputs.Parameters.Add("parameterFilterKeyValuePairKey", "searchkey");
+                        storedParameterInputs.Parameters.Add("parameterFilterKeyValuePairValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
 
-                        storedParameterInputs.Parameters.Add("parameterReturnValueAsArray", false);
+                        storedParameterInputs.Parameters.Add("parameterFilterReturnValueAsArray", false);
 
-                        storedDataResponse = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_2_0(storedParameterInputs).Result;
+                        storedDataResponse = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0(storedParameterInputs).Result;
 
                         #endregion
                     }
@@ -342,7 +658,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -358,9 +674,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                 return storedDataResponse;
             };
 
-            storedDataResponse = await ExecuteConversionProcess();
+            storedDataResponse = await ExecuteConversionRequest();
 
-            if(storedDataResponseUserData)
+            if (storedDataResponseUserData)
             {
                 storedJSONParent = storedDataResponse.Count > 0 ? storedDataResponse[0].Parent.Parent : null;
             }
@@ -371,10 +687,10 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #endregion
 
-            #region EXECUTE transport process
+            #region EXECUTE transport request
 
             //TRANSPORT local files from one place to another
-            Func<dynamic, JArray, Task<JToken>> ExecuteTransportProcess = async (dynamic parameterJSONParent, JArray parameterSetupItemEnvironmentServerMetaDataPaths) => {
+            Func<dynamic, JArray, Task<JToken>> ExecuteTransportRequest = async (dynamic parameterJSONParent, JArray parameterSetupItemEnvironmentServerMetaDataPaths) => {
                 parameterSetupItemEnvironmentServerMetaDataPaths = (JArray)parameterJSONParent.SelectToken("value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths");
 
                 foreach (var storedSetupItemEnvironmentServerMetaDataPaths in parameterSetupItemEnvironmentServerMetaDataPaths)
@@ -477,7 +793,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                 return null;
             };
 
-            await ExecuteTransportProcess(storedJSONParent, storedSetupItemEnvironmentServerMetaDataPaths);
+            await ExecuteTransportRequest(storedJSONParent, storedSetupItemEnvironmentServerMetaDataPaths);
 
             #endregion
 
@@ -490,9 +806,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
         #endregion
 
-        #region SERVER CONFIGURATION
+        #region SERVER MANAGEMENT
 
-        public static async Task<Dictionary<string, JToken>> Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<Dictionary<string, JToken>> Step_X_X_Framework_Control_ServerSetup_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -543,7 +859,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -601,7 +917,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -625,7 +941,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -707,7 +1023,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
             storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
 
             #endregion
@@ -730,7 +1046,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             ControllerBase storedServerInstance = null;
 
-            dynamic storedServerDetails = null; //Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storedStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
+            dynamic storedServerDetails = null; //Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
 
             //DOMAIN url
             string storedServerDomainName = (string)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentDomainName");
@@ -774,7 +1090,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
                 storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
                 storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", false);
             }
@@ -795,15 +1111,15 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
                         storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
-                        
+
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ATTEMPTING to store " + storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"));
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -819,7 +1135,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     storedParameterInputs.Parameters.Add("parameterMasterStorer", stored_CentralizedStorer);
 
-                    storedParameterInputs.Parameters.Add("parameterPageName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
+                    storedParameterInputs.Parameters.Add("parameterPageName", "Step_X_X_Framework_Control_ServerSetup_1_0");
 
                     storedParameterInputs.Parameters.Add("parameterStorylineDetails", storedStorylineDetails);
 
@@ -831,7 +1147,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     storedParameterInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
 
                     //STORE it
-                    await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
+                    await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedParameterInputs);
 
                     //DYNAMIC inputs
 
@@ -849,7 +1165,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     storedParameterInputs.Parameters.Add("parameterOPTIONALIgnoreDeveloperConsoleLog", false);
 
                     //STORE it
-                    await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
+                    await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedParameterInputs);
 
                     #endregion
                 }
@@ -864,7 +1180,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
                     #endregion
 
@@ -904,8 +1220,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #endregion
         }
-
-        #endregion
 
         #endregion
     }

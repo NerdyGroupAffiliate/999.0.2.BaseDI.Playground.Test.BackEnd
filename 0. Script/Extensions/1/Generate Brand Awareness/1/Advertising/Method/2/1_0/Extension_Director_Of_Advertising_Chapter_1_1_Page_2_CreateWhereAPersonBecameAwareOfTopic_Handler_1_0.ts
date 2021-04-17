@@ -62,7 +62,9 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
             //#endregion
         }
 
-        public static async Step_1_0_Custom_Output_ContentToInstagram_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
+        //#region CONTENT MANAGEMENT
+
+        public static async Step_X_X_Framework_Output_ContentToInstagram_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
             //#region 1. INPUTS
 
@@ -96,7 +98,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                     if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
                         storedMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
                         storedProcessCheckPointHit = true;
-                    }                   
+                    }
 
                     if (!parameterInputs.Parameters.containsKey("parameterAppSettings")) {
                         storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n"
@@ -140,17 +142,15 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                         storedMessage += "***parameterContent*** cannot be blank or empty.\n"
                         storedProcessCheckPointHit = true;
                     }
-                    else
-                    {
+                    else {
                         if ((parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromUrl == "" || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromUrl == null || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromUrl == undefined) &&
                             (parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromBytes == "" || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromBytes == null || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromBytes == undefined) &&
-                            (parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == "" || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == null || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == undefined))
-                        {
+                            (parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == "" || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == null || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == undefined)) {
                             storedMessage += "***parameterInstagramContent*** must contain content by a URL or in Bytes to send to Instagram.\n"
                             storedProcessCheckPointHit = true;
                         }
                     }
-                   
+
                     if (storedProcessCheckPointHit) {
                         //#region EDGE CASE - USE developer logger
 
@@ -161,7 +161,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -173,8 +173,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                         //#endregion
                     }
                 }
-                else
-                {
+                else {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedDeveloperMode) {
@@ -184,7 +183,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -242,8 +241,8 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //#region DEFINE instagram client details
 
-            let storedInstagramClient: any  = new _3rdParty_InstagramPrivateAPI_APIClient();
-            
+            let storedInstagramClient: any = new _3rdParty_InstagramPrivateAPI_APIClient();
+
             //#endregion
 
             //#region DEFINE instagram content details
@@ -281,7 +280,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
             //#region MEMORIZE instagram content details
 
             let storedInstagramContent: any = parameterInputs.Parameters.getValue("parameterInstagramContent");
-      
+
             //#endregion
 
             //#region MEMORIZE developer mode
@@ -296,10 +295,10 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
             storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Custom_Output_ContentToInstagram_1_0");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Output_ContentToInstagram_1_0");
 
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-    
+
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
@@ -316,16 +315,12 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
             //#region EXECUTE application logging
 
             //#region IDEAL CASE - USE 3rdParty module
-            if (process.env.APP_ENV == "SERVER")
-            {
-                try
-                {
-                    const ExecuteOutputRequest = async (parameterAuthenticationResponse: any, parameterInstagramClient: any, parameterInstagramAccountUserName: string, parameterInstagramAccountPassword: string, parameterInstagramContent: any): Promise<any> =>
-                    {
+            if (process.env.APP_ENV == "SERVER") {
+                try {
+                    const ExecuteOutputRequest = async (parameterAuthenticationResponse: any, parameterInstagramClient: any, parameterInstagramAccountUserName: string, parameterInstagramAccountPassword: string, parameterInstagramContent: any): Promise<any> => {
                         //#region 1A. TRANSPORT authentication to instagram
 
-                        try
-                        {
+                        try {
                             const ExecuteTransportRequest = async (parameterInstagramClient: any, parameterInstagramAccountUserName: string, parameterInstagramAccountPassword: string, parameterInstagramContent: any): Promise<any> => {
                                 //#region 1B. SETUP instagram device inputs
 
@@ -345,7 +340,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                                 }
 
                                 //#endregion
@@ -357,8 +352,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                             parameterAuthenticationResponse = await ExecuteTransportRequest(parameterInstagramClient, parameterInstagramAccountUserName, parameterInstagramAccountPassword, parameterInstagramContent);
                         }
-                        catch (mistake)
-                        {
+                        catch (mistake) {
                             //#region EDGE CASE - USE developer logger
                             if (storedDeveloperMode) {
                                 this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
@@ -367,7 +361,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                             }
                             //#endregion
 
@@ -381,12 +375,11 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                         //#endregion
 
                         if (parameterAuthenticationResponse != null && parameterAuthenticationResponse != undefined) {
-                            parameterAuthenticationResponse.then(async (storedResponse) =>
-                            {
+                            parameterAuthenticationResponse.then(async (storedResponse) => {
                                 //#region 2. TRANSPORT content to instagram
 
                                 const ExecuteTransportRequest = async (parameterInstagramContent: any) => {
-                                    
+
                                     //#region EDGE CASE - USE developer logger
 
                                     if (storedDeveloperMode) {
@@ -396,7 +389,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                                         storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
                                         this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
@@ -404,7 +397,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                                         storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                                     }
 
                                     //#endregion
@@ -418,8 +411,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                 //#endregion
 
                                 await ExecuteTransportRequest(parameterInstagramContent);
-                            }).catch(async (mistake) =>
-                            {
+                            }).catch(async (mistake) => {
                                 //#region EDGE CASE - USE developer logger
                                 if (storedDeveloperMode) {
                                     this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
@@ -428,7 +420,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                                 }
                                 //#endregion                        
 
@@ -443,8 +435,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                     await ExecuteOutputRequest(storedDataResponse, storedInstagramClient, storedInstagramAccountUserName, storedInstagramAccountPassword, storedInstagramContent);
                 }
-                catch (mistake)
-                {
+                catch (mistake) {
                     //#region EDGE CASE - USE exception handler
 
                     throw mistake;
@@ -473,5 +464,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //#endregion
         }
+
+        //#endregion
     }
 }

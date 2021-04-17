@@ -88,7 +88,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
         //#region SERVER SIDE CODE
 
-        public async Step_1_0_Custom_Control_ServerAuthenticationRequestToAPI_1_0()
+        public async Step_1_0_Framework_Control_ServerAuthenticationRequestToAPI_1_0()
         {
             //#region VARIABLES
 
@@ -109,7 +109,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             //#endregion
         }
 
-        public async Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0() {
+        public async Step_2_0_Framework_Transport_ServerAuthenticationRequestToAPI_1_0() {
 
             //#region VARIABLES
 
@@ -128,7 +128,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             //#endregion
         }
 
-        private async Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0() {
+        private async Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0() {
             //#region VARIABLES
 
             //#endregion
@@ -148,7 +148,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
         //#region MICROSOFT
 
-        private async Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft() {
+        private async Step_2_1_Framework_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft() {
             //#region VARIABLES
 
             //#endregion
@@ -166,7 +166,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             //#endregion
         }
 
-        private async Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft() {
+        private async Step_3_1_Framework_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft() {
             //#region VARIABLES
 
             //#endregion

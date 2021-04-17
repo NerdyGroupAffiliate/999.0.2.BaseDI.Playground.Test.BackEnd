@@ -52,15 +52,16 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             //#endregion
         }
 
-        public static Step_X_X_Custom_Control_AppException_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : any
-        {
+        //#region DEVELOPER MANAGEMENT
+
+        public static async Step_X_X_Framework_Control_DeveloperException_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> {
             console.log("GOT EXCEPTION");
             console.log(parameterInputs.Parameters["StoredMistakes"]);
 
             return null;
         }
 
-        public static async Step_X_X_Custom_Output_DeveloperMessage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
+        public static async Step_X_X_Framework_Output_DeveloperMessage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
         {
             //#region 1. INPUTS
 
@@ -95,7 +96,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
 
-  
+
                     if (!parameterInputs.Parameters.containsKey("parameter3WordDescription")) {
                         console.log(parameterInputs.Parameters.getValue("parameterFileName"));
                         console.log(parameterInputs.Parameters.getValue("parameterMethodName"))
@@ -267,8 +268,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                 //#region IDEAL CASE - USE developer logger
 
-                const ExecuteOutputRequest = async () : Promise<boolean> =>
-                {
+                const ExecuteOutputRequest = async (): Promise<boolean> => {
                     //#region 1A. SETUP logging output
                     if (storedMessageType.toUpperCase() == "LOGGING") {
                         if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess) {
@@ -303,8 +303,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                     //#endregion
 
-                    if (!process.env.APP_SETTING_DEVELOPER_MODE_SILENT)
-                    {
+                    if (!process.env.APP_SETTING_DEVELOPER_MODE_SILENT) {
                         //#region 3A. OUPUT client message
                         if (process.env.APP_ENV.toUpperCase() == "CLIENT") {
                             if (storedMistake) {
@@ -428,5 +427,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             //#endregion
         }
+
+        //#endregion
     }
 }

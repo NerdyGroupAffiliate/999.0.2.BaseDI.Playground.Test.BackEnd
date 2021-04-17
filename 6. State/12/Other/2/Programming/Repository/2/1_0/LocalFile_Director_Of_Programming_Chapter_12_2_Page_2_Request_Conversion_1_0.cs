@@ -705,7 +705,7 @@ namespace BaseDI.Professional.State.Programming_2
 
             #region IDEAL CASE - USE baseDI dataset
 
-            //storedStorylineDetailsFiltered = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(storedStorylineDetails, "", _storedBaseDIPlaceHolderValue, true);
+            //storedStorylineDetailsFiltered = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Framework_Store_JSONSettingsIntoMemory_1_0(storedStorylineDetails, "", _storedBaseDIPlaceHolderValue, true);
 
             storedStorylineDetailsFilteredResult.Add("storedStorylineDetails", storedStorylineDetails);
             storedStorylineDetailsFilteredResult.Add("storedStorylineDetailsFiltered", storedStorylineDetailsFiltered.SingleOrDefault());

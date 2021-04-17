@@ -508,7 +508,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
                 //#endregion
 
@@ -554,8 +554,8 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             //#region DEFINE event handlers
 
             let Action = null;
-            let Step_1_0_Custom_Control_ClientRequestToServer_1_0 = null;
-            let Step_2_0_Custom_Output_ServerRequestToClient_1_0 = null;
+            let Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
+            let Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
  
             //#endregion
 
@@ -598,7 +598,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
 
             //#endregion
 
@@ -616,7 +616,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region 3. OUTPUT server response
 
-                    const Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataParameter: string, parameterControllerModelDataObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any, parameterRequestActionVerb: string) =>
+                    const Step_2_0_Framework_Output_ServerRequestToClient_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataParameter: string, parameterControllerModelDataObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any, parameterRequestActionVerb: string) =>
                     {
                         this._storedClientOrServerInstance["actionName"] = Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
                         this._storedClientOrServerInstance["processStepNumber"] = 0;
@@ -630,7 +630,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
                             this._storedExtraData.KeyValuePairs.setValue("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
                         }
@@ -672,7 +672,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", false);
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", true);
 
-                                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                                 }
 
                                 //#endregion
@@ -693,7 +693,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region 2. INPUT server details
 
-                    const Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (verb:string, parameterRouteListDetails: Array<any>) =>
+                    const Step_1_0_Framework_Control_ClientRequestToServer_1_0 = (verb:string, parameterRouteListDetails: Array<any>) =>
                     {
                         if (parameterRouteListDetails != null && parameterRouteListDetails != undefined && parameterRouteListDetails.length > 0)
                         {
@@ -720,28 +720,28 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                             case "DELETE":
                                                 this._storedServerInstance.Server.Instance.delete(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "DELETE");
+                                                    Step_2_0_Framework_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "DELETE");
                                                 });
                                                 break;
 
                                             case "GET":
                                                 this._storedServerInstance.Server.Instance.get(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "GET");
+                                                    Step_2_0_Framework_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "GET");
                                                 });
                                                 break;
 
                                             case "POST":
                                                 this._storedServerInstance.Server.Instance.post(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "POST");
+                                                    Step_2_0_Framework_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "POST");
                                                 });
                                                 break;
 
                                             case "PUT":
                                                 this._storedServerInstance.Server.Instance.put(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
                                                     //SET instance of our response object.         
-                                                    Step_2_0_Custom_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "PUT");
+                                                    Step_2_0_Framework_Output_ServerRequestToClient_1_0(routeItemDetails, storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, parameterRequest, parameterResponse, "PUT");
                                                 });
                                                 break;
                                         }
@@ -761,7 +761,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                             }
                             //#endregion
 
@@ -787,7 +787,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", false);
                     }
@@ -803,7 +803,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(this._stored_CentralizedStorer, Object));
                     storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(this._storedStorylineDetails, Object));
                
-                    this._storedServerInstance = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storedParameterInputs);
+                    this._storedServerInstance = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Control_ServerSetup_1_0(storedParameterInputs);
 
                     //#endregion
 
@@ -814,25 +814,25 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         //SETUP delete routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Delete != undefined) {
                             storedRouteListDetailsDELETE = this?._storedServerInstance?.Server?.Verbs?.Delete;
-                            Step_1_0_Custom_Control_ClientRequestToServer_1_0("DELETE", storedRouteListDetailsDELETE);
+                            Step_1_0_Framework_Control_ClientRequestToServer_1_0("DELETE", storedRouteListDetailsDELETE);
                         }
 
                         //SETUP get routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Get != undefined) {
                             storedRouteListDetailsGET = this?._storedServerInstance?.Server?.Verbs?.Get;
-                            Step_1_0_Custom_Control_ClientRequestToServer_1_0("GET", storedRouteListDetailsGET);
+                            Step_1_0_Framework_Control_ClientRequestToServer_1_0("GET", storedRouteListDetailsGET);
                         }
 
                         //SETUP post routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Post != undefined) {
                             storedRouteListDetailsPOST = this?._storedServerInstance?.Server?.Verbs?.Post;
-                            Step_1_0_Custom_Control_ClientRequestToServer_1_0("POST", storedRouteListDetailsPOST);
+                            Step_1_0_Framework_Control_ClientRequestToServer_1_0("POST", storedRouteListDetailsPOST);
                         }
 
                         //SETUP put routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Put != undefined) {
                             storedRouteListDetailsPUT = this?._storedServerInstance?.Server?.Verbs?.Put;
-                            Step_1_0_Custom_Control_ClientRequestToServer_1_0("PUT", storedRouteListDetailsPUT);
+                            Step_1_0_Framework_Control_ClientRequestToServer_1_0("PUT", storedRouteListDetailsPUT);
                         }
 
                         //#region EDGE CASE - USE developer logger
@@ -844,7 +844,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
                
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -859,7 +859,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
                         //#endregion
 
@@ -895,7 +895,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", true);
 
-                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", false);
                             }
@@ -913,7 +913,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                                 storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                             }
                             //#endregion
 
@@ -940,7 +940,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
                 //#endregion
 
@@ -982,7 +982,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region IDEAL CASE - USE baseDI extension
 
-                    await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(this._storedStorylineDetails);
+                    await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(this._storedStorylineDetails);
 
                     //#endregion
 

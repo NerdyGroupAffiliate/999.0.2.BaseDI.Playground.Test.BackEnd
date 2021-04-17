@@ -66,7 +66,7 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
             //#endregion
 
             //#region INPUTS
-            this.Step_1_0_Custom_Sense_BrandTrustGeneratedByVistor_1_0();
+            this.Step_1_0_Framework_Sense_BrandTrustGeneratedByVistor_1_0();
 
             //#endregion
 
@@ -81,7 +81,7 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
 
         //#region THE VISION INSTRUCTIONS
 
-        public Step_1_0_Custom_Sense_BrandTrustGeneratedByVistor_1_0(): any {
+        public Step_1_0_Framework_Sense_BrandTrustGeneratedByVistor_1_0(): any {
 
         }
        

@@ -40,402 +40,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 {
     public class Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0
     {
-        public static async Task<string> Step_X_X_Custom_Store_HTMLStructureToString_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
-        {
-            #region 1. INPUTS
+        #region HTML MANAGEMENT
 
-            #region VALIDATE input parameters
-
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
-                #region 1. INPUTS
-
-                #region DEFINE parameter inputs
-
-                SingleParmPoco_12_2_1_0 storedParameterInputs;
-
-                #endregion
-
-                #region DEFINE process checkpoint
-
-                bool storedProcessCheckPointHit = false;
-
-                #endregion
-
-                #region DEFINE stored message
-
-                string storedMessage = "";
-
-                #endregion
-
-                #region MEMORIZE clientOrServer instance
-
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
-
-                #endregion
-
-                #region MEMORIZE app settings
-
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
-
-                #endregion
-
-                #region MEMORIZE developer mode
-
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
-
-                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-                //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
-
-                #endregion
-
-                #endregion
-
-                #region 2. PROCESS
-
-                #region EXECUTE validation process
-
-                #region IDEAL CASE - USE valid information
-
-                if (parameterInputs != null || parameterInputs.Parameters != null)
-                {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
-                    {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
-                        {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
-                        }
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
-                    {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlMetaData"))
-                    {
-                        storedMessage += "***parameterHtmlMetaData*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlTitle"))
-                    {
-                        storedMessage += "***parameterTitle*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlScripts"))
-                    {
-                        storedMessage += "***parameterHtmlScripts*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlStyles"))
-                    {
-                        storedMessage += "***parameterHtmlStyles*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlBody"))
-                    {
-                        storedMessage += "***parameterHtmlBody*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
-                    {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
-                    {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
-                    }
-
-                    if (storedProcessCheckPointHit)
-                    {
-                        #region EDGE CASE - USE developer logger
-
-                        if (storedDeveloperMode)
-                        {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
-
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
-                        }
-
-                        #endregion
-
-                        #region EDGE CASE - USE exception handler
-
-                        throw new Exception("PARSING parameter values failed");
-
-                        #endregion
-                    }
-                }
-                else
-                {
-                    #region EDGE CASE - USE developer logger
-
-                    if (storedDeveloperMode)
-                    {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
-
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
-                    }
-
-                    #endregion
-
-                    #region EDGE CASE - USE exception handler
-
-                    throw new Exception("PARSING parameter values failed");
-
-                    #endregion
-                }
-
-                #endregion
-
-                #endregion
-
-                #endregion
-
-                #region 3. OUTPUT
-
-                #region RETURN validation passed
-
-                #region IDEAL CASE - USE passed indicator
-
-                return true;
-
-                #endregion
-
-                #endregion
-
-                #endregion
-            };
-
-            ///BEGIN valdation process
-            await ValidateInputs(parameterInputs);
-
-            #endregion
-
-            #region DEFINE data response
-
-            dynamic storedDataResponse = null;
-
-            #endregion
-
-            #region DEFINE html inputs
-
-            string storedHtmlBaseDIScriptName = "";
-
-            #endregion
-
-            #region DEFINE parameter inputs
-
-            SingleParmPoco_12_2_1_0 storedParameterInputs;
-
-            #endregion
-
-            #region MEMORIZE centralized processes
-
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
-            #endregion
-
-            #region MEMORIZE clientOrServer instance
-
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
-
-            #endregion
-
-            #region MEMORIZE app settings
-
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
-
-            #endregion
-
-            #region MEMORIZE developer mode
-
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
-
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "STORING html template");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Store_HTMLStructureToString_1_0");
-
-            //OPTIONAL
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
-
-            #endregion
-
-            #region MEMORIZE html inputs
-
-            string storedHtmlPageTemplate = @"<!DOCTYPE html>
-                <html lang='en'>
-                <head>
-                    {metaDataReplace}
-                    <title>{titleReplace}</title>
-                    {scriptsReplace}
-                    {stylesReplace}
-                </head>
-                <body>
-                    {bodyReplace}
-                </body>
-                </ html>";
-
-            string storedHtmlMetaData = parameterInputs.Parameters["parameterHtmlMetaData"];
-            string storedHtmlTitle = parameterInputs.Parameters["parameterHtmlTitle"];
-            string storedHtmlScripts = parameterInputs.Parameters["parameterHtmlScripts"];
-            string storedHtmlStyles = parameterInputs.Parameters["parameterHtmlStyles"];
-            string storedHtmlBody = parameterInputs.Parameters["parameterHtmlBody"];
-
-            #endregion
-
-            #region MEMORIZE storyline details
-
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails");
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #region EXECUTE json to html conversion
-
-            #region IDEAL CASE - USE json metadata
-
-            #region 1. READ cached baseDI script path
-
-            Func<string, string, aClass_Programming_ScriptAction_12_2_1_0<JObject>, Dictionary<string, object>, JObject, dynamic, Task<string>> ExecuteStorageRequest = async (string parameterHtmlBaseDIScriptName, string parameterHtmlScripts, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, dynamic parameterDataResponse) => {
-                try
-                {
-                    storedParameterInputs = new SingleParmPoco_12_2_1_0();
-
-                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", parameterClientOrServerInstance);
-                    storedParameterInputs.Parameters.Add("parameterCRUDVerb", "Read");
-                    storedParameterInputs.Parameters.Add("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
-                    storedParameterInputs.Parameters.Add("parameterMasterStorer", parameterCentralizedStorer);
-                    storedParameterInputs.Parameters.Add("parameterStorageValue", parameterStorylineDetails);
-                    storedParameterInputs.Parameters.Add("parameterStorylineDetails", parameterStorylineDetails);
-                    storedParameterInputs.Parameters.Add("parameterPageName", "");
-                    storedParameterInputs.Parameters.Add("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");
-                    storedParameterInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
-
-                    parameterDataResponse = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
-                    //parameterDataResponse = (parameterDataResponse && parameterDataResponse.outputs.length > 0) ? parameterDataResponse.outputs[1].baseDIObservations[parameterDataResponse.outputs[1].baseDIObservations.length - 1] : null;
-
-                    //if (parameterDataResponse)
-                    //{
-                    //    parameterHtmlBaseDIScriptName = parameterDataResponse[Object.keys(parameterDataResponse)[0]].observation.metadata[3].item.data[0].dataResult
-
-                    //    parameterHtmlScripts += @"<script src = ""/scripts/${parameterHtmlBaseDIScriptName}"" type = ""text/javascript""></script>`";
-                    //}
-
-                    return ""; // parameterHtmlScripts;
-
-                }
-                catch (Exception mistake)
-                {
-                    #region EDGE CASE - USE developer logger
-
-                    if (storedDeveloperMode)
-                    {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
-
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED reading cache");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Store_HTMLStructureToString_1_0.ExecuteStorageRequest");
-
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
-                    }
-
-                    #endregion
-
-                    #region EDGE CASE - USE exception handler
-
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
-
-                    #endregion
-                }
-            };
-
-            if (storedAppSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
-            {
-                storedHtmlScripts = await ExecuteStorageRequest(storedHtmlBaseDIScriptName, storedHtmlScripts, stored_CentralizedStorer, storedClientOrServerInstance, storedStorylineDetails, storedDataResponse);
-            }
-
-            #endregion
-
-            #region 2. CONVERT inputs to html template
-
-            Func<string, string, string, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterHtmlPageTemplate, string parameterHtmlMetaData, string parameterHtmlTitle, string parameterHtmlScripts, string parameterHtmlStyles, string parameterHtmlBody) => {
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{metaDataReplace}", parameterHtmlMetaData);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{titleReplace}", parameterHtmlTitle);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{scriptsReplace}", parameterHtmlScripts);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{stylesReplace}", parameterHtmlStyles);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{bodyReplace}", parameterHtmlBody);
-
-                return await Task.FromResult<string>(parameterHtmlPageTemplate).ConfigureAwait(true);
-            };
-
-            storedHtmlPageTemplate = await ExecuteConversionRequest(storedHtmlPageTemplate, storedHtmlMetaData, storedHtmlTitle, storedHtmlScripts, storedHtmlStyles, storedHtmlBody);
-            
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #region RETURN converted data
-
-            #region IDEAL CASE - USE html string
-
-            return storedHtmlPageTemplate;
-
-            #endregion
-
-            #endregion
-
-            #endregion          
-        }
-
-        private static async Task<dynamic> Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private static async Task<dynamic> Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -487,7 +94,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Custom_Store_HTMLAttributesToArray_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -551,7 +158,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -575,7 +182,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -662,7 +269,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Custom_Store_HTMLAttributesToArray_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -714,9 +321,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html attributes");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Custom_Store_HTMLAttributesToArray_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -752,7 +359,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #endregion                                        
         }
 
-        public static async Task<string> Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -804,7 +411,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Custom_Store_HTMLAttributesToArray_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -868,7 +475,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -892,7 +499,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -979,7 +586,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -1011,7 +618,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             {
                 try
                 {
-                    return await Task.FromResult<string>($@"<{parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag} {Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(parameterHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{{HTMLRows_Replace}}</{parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag}>").ConfigureAwait(true);
+                    return await Task.FromResult<string>($@"<{parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{{HTMLRows_Replace}}</{parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag}>").ConfigureAwait(true);
                 }
                 catch (Exception mistake)
                 {
@@ -1024,9 +631,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting to html container");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_1_0_Custom_Convert_HTMLContainerJSONtoHTML_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ExecuteConversionRequest");
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1062,7 +669,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #endregion                              
         }
 
-        public static async Task<string> Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1114,7 +721,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Custom_Store_HTMLAttributesToArray_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -1184,7 +791,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -1208,7 +815,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1296,7 +903,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -1325,16 +932,16 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, ArrayList, Task<string>> ExecuteConversionRequest = async (string parameterHtmlContainerString, dynamic parameterHtmlRowsJSON, ArrayList parameterDataResponseList) =>
+            Func<string, dynamic, ArrayList, Task<string>> ExecuteConversionRequest = async (string parameterHtmlContainerString, dynamic parameterHtmlRowsJSON, ArrayList parameterFilterDataResponseList) =>
             {
                 try
                 {
                     foreach (var storedHtmlRow in parameterHtmlRowsJSON.value.HTMLContentItems)
                     {
-                        parameterDataResponseList.Add($@"<{ storedHtmlRow.Tag } {Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(storedHtmlRow.Attributes)}>{{{ storedHtmlRow.Attributes[0].id }_Replace}}</{storedHtmlRow.Tag}>");
+                        parameterFilterDataResponseList.Add($@"<{ storedHtmlRow.Tag } {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlRow.Attributes)}>{{{ storedHtmlRow.Attributes[0].id }_Replace}}</{storedHtmlRow.Tag}>");
                     }
 
-                    return await Task.FromResult<string>(parameterHtmlContainerString.Replace("{HTMLRows_Replace}", string.Join("\n", parameterDataResponseList))).ConfigureAwait(true);
+                    return await Task.FromResult<string>(parameterHtmlContainerString.Replace("{HTMLRows_Replace}", string.Join("\n", parameterFilterDataResponseList))).ConfigureAwait(true);
                 }
                 catch (Exception mistake)
                 {
@@ -1347,9 +954,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html row");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_2_0_Custom_Convert_HTMLRowsJSONtoHTML_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0.ExecuteConversionRequest");
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1385,7 +992,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #endregion                              
         }
 
-        public static async Task<string> Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1437,7 +1044,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -1507,7 +1114,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -1531,7 +1138,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1620,7 +1227,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -1655,7 +1262,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     foreach (var storedHtmlColumn in parameterHtmlColumnsJSON.value.HTMLContentItems)
                     {
-                        parameterColumnItem = $@"<{storedHtmlColumn.Tag} {Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(storedHtmlColumn.Attributes)}>{{{storedHtmlColumn.Attributes[0].id}_Replace}}</{storedHtmlColumn.Tag}>\n";
+                        parameterColumnItem = $@"<{storedHtmlColumn.Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlColumn.Attributes)}>{{{storedHtmlColumn.Attributes[0].id}_Replace}}</{storedHtmlColumn.Tag}>\n";
                         parameterHtmlRowString = parameterHtmlRowString.Replace($@"{{{storedHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}}", parameterColumnItem);
                     }
 
@@ -1672,9 +1279,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html column");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Custom_Convert_HTMLColumnsJSONtoHTML_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ExecuteConversionRequest");
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1710,7 +1317,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #endregion                              
         }
 
-        public static async Task<string> Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1762,7 +1369,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -1832,7 +1439,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -1856,7 +1463,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1946,7 +1553,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -1975,31 +1582,31 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, Dictionary<string, List<string>>, dynamic, IConfiguration, Task<string>> ExecuteConversionRequest = async (string parameterHtmlColumnString, dynamic parameterHtmlContentJSON, Dictionary<string, List<string>> parameterDataResponseIdsAndContent, dynamic parameterContent, IConfiguration parameterAppSettings) =>
+            Func<string, dynamic, Dictionary<string, List<string>>, dynamic, IConfiguration, Task<string>> ExecuteConversionRequest = async (string parameterHtmlColumnString, dynamic parameterHtmlContentJSON, Dictionary<string, List<string>> parameterFilterDataResponseIdsAndContent, dynamic parameterContent, IConfiguration parameterAppSettings) =>
             {
                 try
                 {
                     foreach (var storedContentItem in parameterHtmlContentJSON.value.HTMLContentItems)
                     {
-                        if (!parameterDataResponseIdsAndContent.ContainsKey(storedContentItem.ParentHTMLContentItemAttributeID))
+                        if (!parameterFilterDataResponseIdsAndContent.ContainsKey(storedContentItem.ParentHTMLContentItemAttributeID))
                         {
-                            parameterDataResponseIdsAndContent.Add(storedContentItem.ParentHTMLContentItemAttributeID, new List<string>());
+                            parameterFilterDataResponseIdsAndContent.Add(storedContentItem.ParentHTMLContentItemAttributeID, new List<string>());
 
-                            parameterDataResponseIdsAndContent[storedContentItem.ParentHTMLContentItemAttributeID].Add(
-                             $@"<{storedContentItem.Tag} {Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(storedContentItem.Attributes)}>{
+                            parameterFilterDataResponseIdsAndContent[storedContentItem.ParentHTMLContentItemAttributeID].Add(
+                             $@"<{storedContentItem.Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedContentItem.Attributes)}>{
                                      storedContentItem.Value
                                  }</{storedContentItem.Tag}>\n");
                         }
                         else
                         {
-                            parameterDataResponseIdsAndContent[storedContentItem.ParentHTMLContentItemAttributeID].Add(
-                                $@"<{storedContentItem.Tag} {Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(storedContentItem.Attributes)}>{storedContentItem.Value}</{storedContentItem.Tag}>\n");
+                            parameterFilterDataResponseIdsAndContent[storedContentItem.ParentHTMLContentItemAttributeID].Add(
+                                $@"<{storedContentItem.Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedContentItem.Attributes)}>{storedContentItem.Value}</{storedContentItem.Tag}>\n");
                         }
                     }
 
-                    foreach (var storedIdAndContentItem in parameterDataResponseIdsAndContent.Keys)
+                    foreach (var storedIdAndContentItem in parameterFilterDataResponseIdsAndContent.Keys)
                     {
-                        parameterHtmlColumnString = parameterHtmlColumnString.Replace($"{{{storedIdAndContentItem}_Replace}}", string.Join("\n", parameterDataResponseIdsAndContent[storedIdAndContentItem]));
+                        parameterHtmlColumnString = parameterHtmlColumnString.Replace($"{{{storedIdAndContentItem}_Replace}}", string.Join("\n", parameterFilterDataResponseIdsAndContent[storedIdAndContentItem]));
                     }
 
                     if (parameterAppSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
@@ -2021,9 +1628,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html content");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ExecuteConversionRequest");
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -2059,8 +1666,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #endregion                              
         }
 
-
-        public static async Task<string> Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -2112,7 +1718,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -2190,7 +1796,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                             storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -2214,7 +1820,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -2308,7 +1914,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -2601,9 +2207,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html styles");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -2638,5 +2244,403 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion                              
         }
+
+        public static async Task<string> Step_6_0_Framework_Convert_HtmlStructureToString_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        {
+            #region 1. INPUTS
+
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
+            {
+                #region 1. INPUTS
+
+                #region DEFINE parameter inputs
+
+                SingleParmPoco_12_2_1_0 storedParameterInputs;
+
+                #endregion
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #region MEMORIZE clientOrServer instance
+
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+                #endregion
+
+                #region MEMORIZE app settings
+
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+
+                #endregion
+
+                #region MEMORIZE developer mode
+
+                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null)
+                {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessCheckPointHit = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlMetaData"))
+                    {
+                        storedMessage += "***parameterHtmlMetaData*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlTitle"))
+                    {
+                        storedMessage += "***parameterTitle*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlScripts"))
+                    {
+                        storedMessage += "***parameterHtmlScripts*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlStyles"))
+                    {
+                        storedMessage += "***parameterHtmlStyles*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlBody"))
+                    {
+                        storedMessage += "***parameterHtmlBody*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    {
+                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    {
+                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode)
+                    {
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("PARSING parameter values failed");
+
+                    #endregion
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE data response
+
+            dynamic storedDataResponse = null;
+
+            #endregion
+
+            #region DEFINE html inputs
+
+            string storedHtmlBaseDIScriptName = "";
+
+            #endregion
+
+            #region DEFINE parameter inputs
+
+            SingleParmPoco_12_2_1_0 storedParameterInputs;
+
+            #endregion
+
+            #region MEMORIZE centralized processes
+
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
+            //this._stored_CentralizedSensor = parameterCentralizedSensor;
+            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "STORING html template");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+
+            #endregion
+
+            #region MEMORIZE html inputs
+
+            string storedHtmlPageTemplate = @"<!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    {metaDataReplace}
+                    <title>{titleReplace}</title>
+                    {scriptsReplace}
+                    {stylesReplace}
+                </head>
+                <body>
+                    {bodyReplace}
+                </body>
+                </ html>";
+
+            string storedHtmlMetaData = parameterInputs.Parameters["parameterHtmlMetaData"];
+            string storedHtmlTitle = parameterInputs.Parameters["parameterHtmlTitle"];
+            string storedHtmlScripts = parameterInputs.Parameters["parameterHtmlScripts"];
+            string storedHtmlStyles = parameterInputs.Parameters["parameterHtmlStyles"];
+            string storedHtmlBody = parameterInputs.Parameters["parameterHtmlBody"];
+
+            #endregion
+
+            #region MEMORIZE storyline details
+
+            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails");
+            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE json to html conversion
+
+            #region IDEAL CASE - USE json metadata
+
+            #region 1. READ cached baseDI script path
+
+            Func<string, string, aClass_Programming_ScriptAction_12_2_1_0<JObject>, Dictionary<string, object>, JObject, dynamic, Task<string>> ExecuteStorageRequest = async (string parameterHtmlBaseDIScriptName, string parameterHtmlScripts, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, dynamic parameterFilterDataResponse) => {
+                try
+                {
+                    storedParameterInputs = new SingleParmPoco_12_2_1_0();
+
+                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", parameterClientOrServerInstance);
+                    storedParameterInputs.Parameters.Add("parameterCRUDVerb", "Read");
+                    storedParameterInputs.Parameters.Add("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
+                    storedParameterInputs.Parameters.Add("parameterMasterStorer", parameterCentralizedStorer);
+                    storedParameterInputs.Parameters.Add("parameterStorageValue", parameterStorylineDetails);
+                    storedParameterInputs.Parameters.Add("parameterStorylineDetails", parameterStorylineDetails);
+                    storedParameterInputs.Parameters.Add("parameterPageName", "");
+                    storedParameterInputs.Parameters.Add("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");
+                    storedParameterInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
+
+                    parameterFilterDataResponse = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedParameterInputs);
+                    //parameterFilterDataResponse = (parameterFilterDataResponse && parameterFilterDataResponse.outputs.length > 0) ? parameterFilterDataResponse.outputs[1].baseDIObservations[parameterFilterDataResponse.outputs[1].baseDIObservations.length - 1] : null;
+
+                    //if (parameterFilterDataResponse)
+                    //{
+                    //    parameterHtmlBaseDIScriptName = parameterFilterDataResponse[Object.keys(parameterFilterDataResponse)[0]].observation.metadata[3].item.data[0].dataResult
+
+                    //    parameterHtmlScripts += @"<script src = ""/scripts/${parameterHtmlBaseDIScriptName}"" type = ""text/javascript""></script>`";
+                    //}
+
+                    return ""; // parameterHtmlScripts;
+
+                }
+                catch (Exception mistake)
+                {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode)
+                    {
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED reading cache");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0.ExecuteStorageRequest");
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("STORAGE request failed " + mistake.ToString());
+
+                    #endregion
+                }
+            };
+
+            if (storedAppSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
+            {
+                storedHtmlScripts = await ExecuteStorageRequest(storedHtmlBaseDIScriptName, storedHtmlScripts, stored_CentralizedStorer, storedClientOrServerInstance, storedStorylineDetails, storedDataResponse);
+            }
+
+            #endregion
+
+            #region 2. CONVERT inputs to html template
+
+            Func<string, string, string, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterHtmlPageTemplate, string parameterHtmlMetaData, string parameterHtmlTitle, string parameterHtmlScripts, string parameterHtmlStyles, string parameterHtmlBody) => {
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{metaDataReplace}", parameterHtmlMetaData);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{titleReplace}", parameterHtmlTitle);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{scriptsReplace}", parameterHtmlScripts);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{stylesReplace}", parameterHtmlStyles);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{bodyReplace}", parameterHtmlBody);
+
+                return await Task.FromResult<string>(parameterHtmlPageTemplate).ConfigureAwait(true);
+            };
+
+            storedHtmlPageTemplate = await ExecuteConversionRequest(storedHtmlPageTemplate, storedHtmlMetaData, storedHtmlTitle, storedHtmlScripts, storedHtmlStyles, storedHtmlBody);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN converted data
+
+            #region IDEAL CASE - USE html string
+
+            return storedHtmlPageTemplate;
+
+            #endregion
+
+            #endregion
+
+            #endregion          
+        }
+
+
+        #endregion
     }
 }

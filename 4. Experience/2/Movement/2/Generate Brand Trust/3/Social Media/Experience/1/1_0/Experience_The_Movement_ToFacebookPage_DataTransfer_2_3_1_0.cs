@@ -287,7 +287,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             string dataItemTemplate = "{}";
             string dataItem = @"{ 'key': '{key}','value': '{value}' }";
 
-            _dataObservationTemplate = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(_entryPointName, "Action_1_Begin_Process", "PARSING out Facebook API data from JSON", presentationItemTemplate, businessItemTemplate, serviceItemTemplate, securityItemTemplate, dataItemTemplate);
+            _dataObservationTemplate = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(_entryPointName, "Action_1_Begin_Process", "PARSING out Facebook API data from JSON", presentationItemTemplate, businessItemTemplate, serviceItemTemplate, securityItemTemplate, dataItemTemplate);
 
             #endregion
 

@@ -221,8 +221,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
                     StorylineDetails = JObject.FromObject(storedDataResponse["StorylineDetails"]);
                     StorylineDetails_Parameters = JObject.FromObject(storedDataResponse["StorylineDetails_Parameters"]);
 
-                    Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0((JObject)StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]"));
-                    Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
+                    Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0((JObject)StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]"));
+                    Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
 
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
                 };
@@ -278,7 +278,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
         #region STORE JSONSTRING PLACEHOLDER
 
-        private void Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(JObject parameter_BaseDI_JSONDataSchema)
+        private void Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0(JObject parameter_BaseDI_JSONDataSchema)
         {
             #region 1. INPUTS
 
@@ -348,7 +348,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
                 {
                     ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0]");
+                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0]");
                 }
 
                 #endregion
@@ -366,7 +366,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
         #endregion
 
         #region CONVERT JSONSTRING PLACEHOLDER
-        private void Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0()
+        private void Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0()
         {
             if (_stored_JSONKeyPlaceHolderName.Any())
             {

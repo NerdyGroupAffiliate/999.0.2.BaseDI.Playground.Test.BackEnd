@@ -15,8 +15,8 @@ if (process.env.APP_ENV == "SERVER") {
     path = require('path');
 
     //STORAGE
-    var _3rdParty_NodeLocalStorage_LocalStorage = require('node-localstorage').LocalStorage;
-    _3rdParty_NodeLocalStorage_LocalStorage = new _3rdParty_NodeLocalStorage_LocalStorage('./wwwroot/Server/State');
+    var _3rdParty_NodeLocalStorage_StorageController = require('node-localstorage').LocalStorage;
+    _3rdParty_NodeLocalStorage_StorageController = new _3rdParty_NodeLocalStorage_StorageController('./wwwroot/Server/State');
 
     
 }
@@ -58,7 +58,9 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             //#endregion
         }
 
-        public static async Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
+         //#region CACHE MANAGEMENT
+
+        public static async Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
         {
             //#region 1. INPUTS
 
@@ -108,7 +110,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
 
                 //#endregion
 
@@ -187,7 +189,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -210,7 +212,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -305,7 +307,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
 
             //OPTIONAL
             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -377,7 +379,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 storedParameterInputs.Parameters.setValue("parameter_ObservationSecurityTemplateItem", storedOutPut_ObservationSecurityTemplateItem);
                 storedParameterInputs.Parameters.setValue("parameter_ObservationDataTemplateItem", storedOutPut_ObservationDataTemplateItem);
        
-                storedOutPut_ObservationItem = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(storedParameterInputs);
+                storedOutPut_ObservationItem = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedParameterInputs);
 
                 //DETERMINE if we are storing a string value.
                 if (typeof (storedStorageValue) == "string")
@@ -426,7 +428,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("parametersInputs", parameterInputs);
@@ -466,7 +468,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#endregion
 
-            //#endegion
+            //#endregion
 
             //#region 3. OUTPUT
 
@@ -483,7 +485,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             //#endregion
         }
 
-        public static async Step_X_X_Custom_Store_ServerLocalDataToMemory_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
+        public static async Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_1(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
         {
             //#region 1. INPUTS
 
@@ -528,7 +530,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
 
                 //#endregion
 
@@ -587,7 +589,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -610,7 +612,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -723,7 +725,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             try
             {
-                const ProcessStorage = async () =>
+                const ExecuteStorageRequest = async () =>
                 {
                     //#region SETUP storage item
 
@@ -760,7 +762,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -778,17 +780,17 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                     {
                         //#region IDEAL CASE - USE server storage
 
-                        if (_3rdParty_NodeLocalStorage_LocalStorage) {
+                        if (_3rdParty_NodeLocalStorage_StorageController) {
                             switch (storedStorageAction.toUpperCase()) {
                                 case "CREATE":
                                 case "UPDATE":
-                                    _3rdParty_NodeLocalStorage_LocalStorage.setItem(storedStorageKey, JSON.stringify(storedOutPut_ObservationFiltered));
+                                    _3rdParty_NodeLocalStorage_StorageController.setItem(storedStorageKey, JSON.stringify(storedOutPut_ObservationFiltered));
                                     break;
                                 case "DELETE":
-                                    _3rdParty_NodeLocalStorage_LocalStorage.removeItem(storedStorageKey);
+                                    _3rdParty_NodeLocalStorage_StorageController.removeItem(storedStorageKey);
                                     break;
                                 case "READ":
-                                    storedDataResponse = _3rdParty_NodeLocalStorage_LocalStorage.getItem(storedStorageKey);
+                                    storedDataResponse = _3rdParty_NodeLocalStorage_StorageController.getItem(storedStorageKey);
                                     break;
 
                             }
@@ -807,7 +809,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                     }
                 }
 
-                await ProcessStorage();
+                await ExecuteStorageRequest();
             }
             catch (mistake)
             {
@@ -820,7 +822,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 //#endregion
@@ -850,5 +852,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#endregion
         }
+
+        //#endregion
     }
 }

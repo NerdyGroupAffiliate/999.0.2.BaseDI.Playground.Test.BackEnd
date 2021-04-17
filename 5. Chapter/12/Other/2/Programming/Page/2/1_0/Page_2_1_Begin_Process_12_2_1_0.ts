@@ -205,8 +205,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                         this.StorylineDetails = storedDataSet.StorylineDetails;
                         this.StorylineDetails_Parameters = storedDataSet.StorylineDetails_Parameters;
 
-                        this.Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(storedDataSet.StorylineDetailsFiltered);
-                        this.Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
+                        this.Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0(storedDataSet.StorylineDetailsFiltered);
+                        this.Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
 
                         return;
                     })
@@ -233,7 +233,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 //#endregion
@@ -268,7 +268,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         }
 
         //#region STORE JSONSTRING PLACEHOLDER
-        private Step_1_0_Custom_Store_JSONStringPlaceHolder_1_0(parameter_BaseDI_JSONDataSchema: any)
+        private Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0(parameter_BaseDI_JSONDataSchema: any)
         {
             //#region 1. INPUTS
 
@@ -303,7 +303,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
 
             //#endregion
 
@@ -359,7 +359,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
                 //#endregion
 
@@ -381,7 +381,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         //#endregion
 
         //#region CONVERT JSONSTRING PLACEHOLDER
-        private Step_2_0_Custom_Convert_JSONStringPlaceHolderIntoAppSettings_1_0()
+        private Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0()
         {
             //#region 1. INPUTS
 
@@ -409,7 +409,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Custom_Control_LocalDataToServerMemory_1_0");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
 
             //#endregion
 
@@ -531,7 +531,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
                 //#endregion
 

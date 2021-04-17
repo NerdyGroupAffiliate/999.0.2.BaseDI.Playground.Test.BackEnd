@@ -95,7 +95,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             //#region CONTROL
 
             //if (process.env.APP_ENV == "SERVER") {
-            //    await this.Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0();
+            //    await this.Step_1_0_Framework_Control_ServerAuthenticationToAPI_1_0();
             //}
 
             //#endregion
@@ -117,7 +117,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
         //#region CONTROL
 
-        public async Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0() {
+        public async Step_1_0_Framework_Control_ServerAuthenticationToAPI_1_0() {
             //#region VARIABLES
 
             //#endregion
@@ -127,7 +127,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             const storylineDetails: any = this.StorylineDetails;
 
             this._actionName = this?.ClientOrServerInstance["actionName"];
-            this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "key_1", "APIS", false);
+            this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storylineDetails, "key_1", "APIS", false);
 
             this._request = this.ClientOrServerInstance?.Request;
             this._requestRoute = this._request?.route?.path;
@@ -144,11 +144,11 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             if (this._server != undefined && this._server != null)
             {
                 if (this._requestRoute.toUpperCase().includes("AUTHREQUEST") || this._actionName.toUpperCase().includes("AUTHREQUEST")) {
-                    this.Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0();
+                    this.Step_2_0_Framework_Transport_ServerAuthenticationRequestToAPI_1_0();
                 }
 
                 if (this._requestRoute.toUpperCase().includes("AUTHRESPONSE") || this._actionName.toUpperCase().includes("AUTHRESPONSE")) {
-                    this.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(null);
+                    this.Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0(null);
                 }
             }
 
@@ -165,7 +165,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
         //#region TRANSPORT
 
-        public async Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0() {
+        public async Step_2_0_Framework_Transport_ServerAuthenticationRequestToAPI_1_0() {
 
             //#region VARIABLES
             let storedAPIPlatform: string = "";
@@ -211,8 +211,8 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
                 if (this._requestRoute != undefined && this._requestRoute != null) {
                     if (storedAPIPlatform != undefined && storedAPIPlatform != null) {
                         //#region SET api platform general values
-                        storedProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this._apiMetaData, "searchkey", "SetupDetails_APIS_API_1_0_" + storedAPIPlatform + "_2_2_2_1_serverInformationSetupDetails", false);
-                        storedProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storedProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
+                        storedProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(this._apiMetaData, "searchkey", "SetupDetails_APIS_API_1_0_" + storedAPIPlatform + "_2_2_2_1_serverInformationSetupDetails", false);
+                        storedProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
 
                         storedProfileDetails.value.map(apiProfile => {
                             if (apiProfile.SetupItemAPIRequestType.toUpperCase() == storedAPIRequestType.toUpperCase()) {
@@ -263,9 +263,9 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             //#region TRANSPORT curl request & handle response
             var self = this;
 
-            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(this._server, storedTokenEndpoint, storedAPIVerb, storedCurlOptions,
+            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Transport_ApiRequestToServer_1_0(this._server, storedTokenEndpoint, storedAPIVerb, storedCurlOptions,
                 function callback(response) {
-                    self.Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response, storedAPIPlatform + "_" + self._storedAPIRequestType);
+                    self.Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0(response, storedAPIPlatform + "_" + self._storedAPIRequestType);
                 });
 
             //#endregion
@@ -277,7 +277,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
         //#region OUTPUT
 
-        public async Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0(response: any, uniqueStorageKeyValue: any = null) {
+        public async Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0(response: any, uniqueStorageKeyValue: any = null) {
 
             //#region 1. INPUTS
 
@@ -321,7 +321,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
             //#region INPUTS         
 
             if (uniqueStorageKeyValue)
-                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(storedParameterInputs);
+                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedParameterInputs);
 
             this._response.send(response);
 

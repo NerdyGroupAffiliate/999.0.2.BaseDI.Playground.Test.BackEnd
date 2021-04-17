@@ -62,7 +62,7 @@ export namespace BaseDI.Professional.State.Programming_1 {
 
         public async Action_9_Verify_Process(): Promise<any> {
             //STORE META DATA
-            const metaData = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Custom_Store_JSONSettingsIntoMemory_1_0(this._storylineDetails, "", this._baseDIPlaceHolderValue, true);
+            const metaData = Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Step_X_X_Framework_Store_JSONSettingsIntoMemory_1_0(this._storylineDetails, "", this._baseDIPlaceHolderValue, true);
 
             return metaData;
         }

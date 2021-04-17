@@ -301,7 +301,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 stored_ExceptionDetails.Parameters.Add("StoredExtraData", parameterExtraData);
                 stored_ExceptionDetails.Parameters.Add("StoredMistakes", mistake);
 
-                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Control_AppException_1_0(stored_ExceptionDetails);
+                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails);
 
                 #endregion
             }

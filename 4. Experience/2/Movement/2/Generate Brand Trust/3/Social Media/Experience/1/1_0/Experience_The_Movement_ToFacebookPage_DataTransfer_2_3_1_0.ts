@@ -230,7 +230,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1 {
 
             const dataObservationTemplateBuilder: string = "";
 
-            let dataObservationTemplate: String = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Create_An_ObservationJsonNode_1_0(entryPointName, "Extension_Read_Facebook_clientORserverInstanceAccess_1_0", "PARSING out Facebook API data from JSON", presentationItemTemplate, businessItemTemplate, serviceItemTemplate, securityItemTemplate, dataItemTemplate);
+            let dataObservationTemplate: String = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(entryPointName, "Extension_Read_Facebook_clientORserverInstanceAccess_1_0", "PARSING out Facebook API data from JSON", presentationItemTemplate, businessItemTemplate, serviceItemTemplate, securityItemTemplate, dataItemTemplate);
 
             //RETRIEVE ACCESS TOKEN
             const access: Promise<Object> = Extension_Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.BaseDI.Professional.Social_Media.Extensions_1.Extension_Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.Step_2_0_LogInto_The_Experience_1_0();

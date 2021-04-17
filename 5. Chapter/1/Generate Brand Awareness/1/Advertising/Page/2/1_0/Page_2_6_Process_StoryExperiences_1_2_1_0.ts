@@ -62,8 +62,8 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
 
                 //#region VARIABLES
 
-                this._jsonAccountInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "AccountItem_SetSeller_Business_Management_AccountLookUp", false);
-                this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
+                this._jsonAccountInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(this.StorylineDetails, "searchkey", "AccountItem_SetSeller_Business_Management_AccountLookUp", false);
+                this._jsonSearchInformation = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(this.StorylineDetails, "searchkey", "HTMLSEOItem_SetSeller_CMS_SEO_MetaData", false);
 
                 //#endregion
 
@@ -71,7 +71,7 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
 
                 this.HandleDefaults();
 
-                this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0();
+                this.Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0();
 
             //#endregion
 
@@ -89,39 +89,39 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
 
         //#region Day 1
 
-        public async Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0()
+        public async Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0()
         {
             const socialMediaChannelName: string = this._jsonAccountInformation?.value?.AccountItemSocialMediaDetails[0].AccountName;
 
             switch (socialMediaChannelName.toUpperCase()) {
                 case "INSTAGRAM": //PAGE: 4-1-1
-                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Instagram();
+                    this.Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_Instagram();
 
                     break;
                 case "FACEBOOK": //PAGE: 4-1-2
-                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Facebook();
+                    this.Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_Facebook();
 
                     break;
                 case "YOUTUBE": //PAGE: 4-1-3
-                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_YouTube();
+                    this.Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_YouTube();
 
                     break;
 
                 case "LINKEDIN": //PAGE: 4-1-4
-                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_LinkedIn();
+                    this.Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_LinkedIn();
 
                     break;
 
                 case "AMAZON":  //PAGE: 4-1-5
-                    this.Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Amazon();
+                    this.Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_Amazon();
 
                     break;
             }
         }
 
-        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Instagram(): any
+        public Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_Instagram(): any
         {
-            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_1_0_Custom_Output_ContentToInstagram_1_0(this.StorylineDetails).then((data) => {
+            Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.Advertising.Extensions_2.Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.Step_X_X_Framework_Output_ContentToInstagram_1_0(this.StorylineDetails).then((data) => {
                 this._response.json({ message: "Instagram Publish Done!" });
 
                 console.log(data);
@@ -134,19 +134,19 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
             });
         }
 
-        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Facebook(): any {
+        public Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_Facebook(): any {
 
         }
 
-        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_YouTube(): any {
+        public Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_YouTube(): any {
 
         }
 
-        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_LinkedIn(): any {
+        public Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_LinkedIn(): any {
 
         }
 
-        public Step_1_0_Custom_Output_AwarenessContentForTheDay_1_0_Amazon(): any {
+        public Step_1_0_Framework_Output_AwarenessContentForTheDay_1_0_Amazon(): any {
 
         }
 

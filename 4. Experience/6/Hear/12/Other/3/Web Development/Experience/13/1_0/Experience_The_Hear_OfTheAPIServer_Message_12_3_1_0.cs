@@ -408,8 +408,8 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
 
-        private Func<JObject, ExtraData_12_2_1_0, JObject> Step_1_0_Custom_Control_ClientRequestToServer_1_0 = null;
-        private Func<JObject, ExtraData_12_2_1_0, JObject> Step_2_0_Custom_Output_ServerRequestToClient_1_0 = null;
+        private Func<JObject, ExtraData_12_2_1_0, JObject> Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
+        private Func<JObject, ExtraData_12_2_1_0, JObject> Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
 
         private Func<SingleParmPoco_12_2_1_0, JObject> StoredStartUpCallBack = null;
 
@@ -583,8 +583,8 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             Func<string, string, ExtraData_12_2_1_0, JObject> Action = null;
 
-            Func<JToken, JObject> Step_1_0_Custom_Control_ClientRequestToServer_1_0 = null;
-            Func<object, string, string, object, object, HttpRequest, HttpResponse, string, JObject> Step_2_0_Custom_Output_ServerRequestToClient_1_0;
+            Func<JToken, JObject> Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
+            Func<object, string, string, object, object, HttpRequest, HttpResponse, string, JObject> Step_2_0_Framework_Output_ServerRequestToClient_1_0;
 
             #endregion
 
@@ -622,7 +622,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
 
             #endregion
 
@@ -642,7 +642,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         #region 3. OUTPUT server response                       
 
-                        Step_2_0_Custom_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataParameter, object parameterControllerModelDataObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse, string parameterRequestActionVerb) =>
+                        Step_2_0_Framework_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataParameter, object parameterControllerModelDataObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse, string parameterRequestActionVerb) =>
                         {
                             _storedClientOrServerInstance["actionName"] = Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
                             _storedClientOrServerInstance["processStepNumber"] = 0;
@@ -656,7 +656,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
                                 storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Custom_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
                                 _storedExtraData.KeyValuePairs.Add("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
                             }
@@ -689,7 +689,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         #region 2. INPUT server details
 
-                        Step_1_0_Custom_Control_ClientRequestToServer_1_0 = (JToken parameterRouteListDetails) =>
+                        Step_1_0_Framework_Control_ClientRequestToServer_1_0 = (JToken parameterRouteListDetails) =>
                         {
                             if (parameterRouteListDetails != null)
                             {
@@ -738,7 +738,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                                             #endregion
 
-                                            return Step_2_0_Custom_Output_ServerRequestToClient_1_0(route.ToString(), storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, _storedServerHTTPRequestInstance, null, "GET");
+                                            return Step_2_0_Framework_Output_ServerRequestToClient_1_0(route.ToString(), storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, _storedServerHTTPRequestInstance, null, "GET");
                                         }
                                     }
                                     else
@@ -768,7 +768,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         storedParameterInputs.Parameters.Add("parameterMasterStorer", _stored_CentralizedStorer);
                         storedParameterInputs.Parameters.Add("parameterStorylineDetails", _storedStorylineDetails);
 
-                        _storedServerInstance = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_ServerDefaultSettingsToMemory_1_0(storedParameterInputs);
+                        _storedServerInstance = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Control_ServerSetup_1_0(storedParameterInputs);
                         
                         storedRouteListDetails = _storedServerInstance.Result[_storedServerRequestRESTVerb.ToUpper()];
 
@@ -782,7 +782,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         #region IDEAL CASE - USE .netcore server
 
-                        _storedStorylineDetails = Step_1_0_Custom_Control_ClientRequestToServer_1_0(storedRouteListDetails);
+                        _storedStorylineDetails = Step_1_0_Framework_Control_ClientRequestToServer_1_0(storedRouteListDetails);
 
                         #endregion
 
@@ -837,7 +837,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     #region IDEAL CASE - USE baseDI extension
 
-                    //Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Store_LocalFilesToServer_1_0(_storedStorylineDetails);
+                    //Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(_storedStorylineDetails);
 
                     #endregion
 
@@ -850,7 +850,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     #region IDEAL CASE - USE baseDI extension
 
-                    storedDynamicData = null;//Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_storedStorylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedClientOrServerInstancermationSetupDetails", false).SingleOrDefault()?.Parent;
+                    storedDynamicData = null;//Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(_storedStorylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedClientOrServerInstancermationSetupDetails", false).SingleOrDefault()?.Parent;
 
                     if (storedDynamicData != null)
                     {

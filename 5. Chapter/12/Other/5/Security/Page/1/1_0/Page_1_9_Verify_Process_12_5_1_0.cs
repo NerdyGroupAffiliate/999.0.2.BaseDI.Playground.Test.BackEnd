@@ -134,7 +134,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             if (_server != null)
             {
-                await Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0();
+                await Step_1_0_Framework_Control_ServerAuthenticationToAPI_1_0();
             }
 
             #endregion
@@ -156,7 +156,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
         #region CONTROL
 
-        public async Task Step_1_0_Custom_Control_ServerAuthenticationToAPI_1_0()
+        public async Task Step_1_0_Framework_Control_ServerAuthenticationToAPI_1_0()
         {
             #region VARIABLES
 
@@ -166,7 +166,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             JObject storylineDetails = StorylineDetails;
 
-            //_apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(storylineDetails, "key_1", "APIS", false).SingleOrDefault().Parent.Parent;
+            //_apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storylineDetails, "key_1", "APIS", false).SingleOrDefault().Parent.Parent;
 
             _actionName = _serverInfo.ContainsKey("actionName") ? (string)_serverInfo["actionName"] : null;
 
@@ -196,12 +196,12 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
             {
                 if (_requestRoute.ToUpper().Contains("AUTHREQUEST")|| _actionName.ToUpper().Contains("AUTHREQUEST"))
                 {
-                    await Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0();
+                    await Step_2_0_Framework_Transport_ServerAuthenticationRequestToAPI_1_0();
                 }
 
                 if (_requestRoute.ToUpper().Contains("AUTHRESPONSE") || _actionName.ToUpper().Contains("AUTHRESPONSE"))
                 {
-                    await Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0();
+                    await Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0();
                 }
             }
 
@@ -218,7 +218,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
         #region TRANSPORT
 
-        public async Task Step_2_0_Custom_Transport_ServerAuthenticationRequestToAPI_1_0()
+        public async Task Step_2_0_Framework_Transport_ServerAuthenticationRequestToAPI_1_0()
         {
             #region VARIABLES
 
@@ -242,7 +242,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
                         {
                             case "MICROSOFT":
                             case "MICROSOFTGRAPH":
-                                await Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft();
+                                await Step_2_1_Framework_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft();
 
                                 break;
                         }
@@ -259,7 +259,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
         #region MICROSOFT
 
-        public async Task Step_2_1_Custom_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft()
+        public async Task Step_2_1_Framework_Transport_ServerAuthenticationRequestToAPI_1_0_Microsoft()
         {
             #region VARIABLES
 
@@ -278,8 +278,8 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             #region VARIABLES
   
-            //microsoftProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(_apiMetaData as JObject, "searchkey", "SetupDetails_APIS_API_1_0_MicrosoftGraph_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault().Parent.Parent;
-            //microsoftProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Read_And_FindJSONNode_1_0(microsoftProfile as JObject, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault().Parent.Parent;
+            //microsoftProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(_apiMetaData as JObject, "searchkey", "SetupDetails_APIS_API_1_0_MicrosoftGraph_2_2_2_1_serverInformationSetupDetails", false).SingleOrDefault().Parent.Parent;
+            //microsoftProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(microsoftProfile as JObject, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault().Parent.Parent;
             //microsoftProfileDetailsAPIEndPointsAndRoutes =  microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
             //microsoftProfileDetailsSecurityAPISecurityDetails = microsoftProfileDetails.value.SetupItemAPIProfile.SetupItemAPISecurityDetails;
 
@@ -303,9 +303,9 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             #region TRANSPORT
 
-            //Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Custom_Output_ServerResponseToCaller_1_0(_server, microsoftTokenEndpoint, "POST", curlClientOptions,(dynamic response) =>
+            //Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Transport_ApiRequestToServer_1_0(_server, microsoftTokenEndpoint, "POST", curlClientOptions,(dynamic response) =>
             //{
-            //    Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response, microsoftProfileDetailsSecurityAPISecurityDetails);
+            //    Step_3_1_Framework_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(response, microsoftProfileDetailsSecurityAPISecurityDetails);
 
             //    return null;
             //});
@@ -325,7 +325,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
         #region OUTPUT
 
-        private async Task Step_3_0_Custom_Output_ServerAuthenticationResponseFromAPI_1_0()
+        private async Task Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0()
         {
             #region VARIABLES
 
@@ -346,7 +346,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
         #region MICROSOFT
 
-        private async Task Step_3_1_Custom_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(Object response, SingleParmPoco_12_2_1_0 extraData = null)
+        private async Task Step_3_1_Framework_Output_ServerAuthenticationResponseFromAPI_1_0_Microsoft(Object response, SingleParmPoco_12_2_1_0 extraData = null)
         {
             #region VARIABLES
 
@@ -359,7 +359,7 @@ namespace BaseDI.Professional.Chapter.Page.Security_1
 
             #region INPUTS         
 
-            //await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Custom_Control_LocalDataToServerMemory_1_0(MasterStorer, "Create", _entryPointName, _pageName, "STORING access token", StorylineDetails, response, "BaseDI_DataToken_MicrosoftGraph");
+            //await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(MasterStorer, "Create", _entryPointName, _pageName, "STORING access token", StorylineDetails, response, "BaseDI_DataToken_MicrosoftGraph");
 
             //_response.send(response);
 
