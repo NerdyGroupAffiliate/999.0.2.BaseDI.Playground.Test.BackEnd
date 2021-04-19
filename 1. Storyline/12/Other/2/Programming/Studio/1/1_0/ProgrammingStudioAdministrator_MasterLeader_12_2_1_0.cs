@@ -165,33 +165,177 @@ namespace BaseDI.Professional.Story.Programming_1
 
         //A. Story in motion (DO SOMETHING)
 
-        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
+        public aClass_Programming_ScriptRoutable_12_2_1_0 SetupStoryline(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region 1. INPUTS        
+            #region 1. INPUTS   
+
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, bool> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) =>
+            {
+                #region 1. INPUTS
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs.Parameters.Count > 0)
+                {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessCheckPointHit = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    {
+                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails_Parameters"))
+                    {
+                        storedMessage += "***parameterStorylineDetails_Parameters*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByName"))
+                    {
+                        storedMessage += "***parameterClientRequestByName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByNameParameters"))
+                    {
+                        storedMessage += "***parameterClientRequestByNameParameters*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE exception handler
+
+                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE blank return
+
+                    return false;
+
+                    #endregion                    
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            ///BEGIN valdation process
+            ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE request handler
+
+            object stored_ReferenceTo_RequestHandler = null;
+
+            #endregion
+
+            #region DEFINE exception handler
+
+            SingleParmPoco_12_2_1_0 stored_ExceptionDetails;
+
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            parameterInputs.Parameters.Add("parameterClientRequestByObject", _storedClientRequestByObject);
+
+            #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)parameterClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
 
             #endregion
 
             #region MEMORIZE action name
 
-            string storedActionName = parameterClientOrServerInstance["actionName"] as string;
+            string storedActionName = storedClientOrServerInstance["actionName"] as string;
 
             #endregion
 
             #region MEMORIZE extra data
 
-            if (parameterExtraData != null)
-                _storedExtraData = parameterExtraData;
+            if (parameterInputs.Parameters["parameterExtraData"] != null)
+                _storedExtraData = parameterInputs.Parameters["parameterExtraData"];
 
             #endregion
+
+            //#region MEMORIZE request details
+
+            string storedRequestName = parameterInputs.Parameters["parameterRequestToProcess"];
+            string storedRequestNameParameters = parameterInputs.Parameters["parameterRequestToProcessParameters"];
+            string storedSystemRequestName = parameterInputs.Parameters["parameterSystemRequest"];
+
+            //#endregion
 
             #region MEMORIZE request resolver
 
             aClass_Programming_ScriptRoutable_12_2_1_0 stored_DirectorOrExperienceRequestHandler = null;
-            Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+            Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterInputs);
 
             #endregion
 
@@ -199,18 +343,18 @@ namespace BaseDI.Professional.Story.Programming_1
 
             bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            if (parameterClientOrServerInstance["processStepNumber"] == null)
-                parameterClientOrServerInstance["processStepNumber"] = 0;
+            if (storedClientOrServerInstance["processStepNumber"] == null)
+                storedClientOrServerInstance["processStepNumber"] = 0;
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterExtraData?.KeyValuePairs?["storedDeveloperLoggingInputs"] != null ? parameterExtraData?.KeyValuePairs?["storedDeveloperLoggingInputs"] as SingleParmPoco_12_2_1_0 : null);
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (_storedExtraData?.KeyValuePairs?["storedDeveloperLoggingInputs"] != null ? _storedExtraData?.KeyValuePairs?["storedDeveloperLoggingInputs"] as SingleParmPoco_12_2_1_0 : null);
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "BEGIN processing request");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", parameterClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", parameterClientOrServerInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", parameterClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "SetupStoryline");
 
@@ -225,18 +369,6 @@ namespace BaseDI.Professional.Story.Programming_1
                     storedDeveloperLoggingInputs.Parameters["parameterOPTIONALBeginOfProcess"] = false;
                 }
             }
-
-            #endregion
-
-            #region DEFINE request handler
-
-            object stored_ReferenceTo_RequestHandler = null;
-
-            #endregion
-
-            #region DEFINE exception handler
-
-            SingleParmPoco_12_2_1_0 stored_ExceptionDetails;
 
             #endregion
 
@@ -262,14 +394,14 @@ namespace BaseDI.Professional.Story.Programming_1
                    //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
                 stored_ReferenceTo_RequestHandler = stored_ResolvedRequestHandler.Action();
 
-                if (parameterSystemRequestByName != "")
+                if (storedSystemRequestName != "")
                 {
                     stored_DirectorOrExperienceRequestHandler = (aClass_Programming_ScriptRoutable_12_2_1_0)stored_ReferenceTo_RequestHandler;
 
-                    stored_DirectorOrExperienceRequestHandler.RequestID = parameterSystemRequestByName;
-                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = parameterClientOrServerInstance;
+                    stored_DirectorOrExperienceRequestHandler.RequestID = storedSystemRequestName;
+                    stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = storedClientOrServerInstance;
 
-                    _storedClientRequestByObject.ClientOrServerInstance = parameterClientOrServerInstance;
+                    _storedClientRequestByObject.ClientOrServerInstance = storedClientOrServerInstance;
 
                     _storedClientRequestByObject.DirectorOrExperienceRequestHandler = stored_DirectorOrExperienceRequestHandler;
                     _storedClientRequestByObject.ExtraData = _storedExtraData;
@@ -360,19 +492,19 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_1_0(Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
+        internal Use_DesignPattern_Builder_Chapter_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs) //Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = ""
         {
-            #region 1. INPUTS        
-
-            #region MEMORIZE app settings
-
-            _storedAppSettings = (IConfiguration)parameterClientOrServerInstance["appSettings"];
-
-            #endregion
+            #region 1. INPUTS     
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -384,24 +516,25 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterExtraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"];
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByName = parameterClientRequestByName;
-            _storedClientRequestByNameParameters = parameterClientRequestByNameParameters;
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
 
-            _storedClientRequestByObject = parameterClientRequestByObject;
-            _storedSystemRequestByName = parameterSystemRequestByName;
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
             #endregion
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
             #endregion
 
@@ -450,7 +583,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE execution strategy
 
-            var storedExeuctionStragety = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(_storedClientOrServerInstance, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, _storedSystemRequestByName, _storedClientRequestByName, _storedClientRequestByNameParameters);
+            var storedExeuctionStragety = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(parameterInputs);
 
             #endregion
 
@@ -542,44 +675,51 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_2_1_0(Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
+        internal Implement_DesignPattern_Builder_Chapter_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS        
 
-            #region MEMORIZE app settings
+            #region MEMORIZE clientOrServer instance
 
-            _storedAppSettings = (IConfiguration)parameterClientOrServerInstance["appSettings"];
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE app settings
 
-            _storedClientOrServerInstance = parameterClientOrServerInstance;
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterExtraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"];
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByName = parameterClientRequestByName;
-            _storedClientRequestByNameParameters = parameterClientRequestByNameParameters;
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
 
-            _storedClientRequestByObject = parameterClientRequestByObject;
-            _storedSystemRequestByName = parameterSystemRequestByName;
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
             #endregion
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
-            #endregion
+            #endregion/\
 
             #endregion
 
@@ -829,19 +969,19 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Director_12_2_1_0(Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
+        internal Implement_DesignPattern_Factory_Director_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS     
 
-            #region MEMORIZE app settings
+            #region MEMORIZE clientOrServer instance
 
-            _storedAppSettings = (IConfiguration)parameterClientOrServerInstance["appSettings"];
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE app settings
 
-            _storedClientOrServerInstance = parameterClientOrServerInstance;
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -872,26 +1012,26 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterExtraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"];
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByName = parameterClientRequestByName;
-            _storedClientRequestByNameParameters = parameterClientRequestByNameParameters;
-            _storedClientRequestByObject = parameterClientRequestByObject;
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
 
-            _storedRequestName = parameterSystemRequestByName;
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
-            _storedSystemRequestByName = parameterSystemRequestByName;
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
             #endregion
 
@@ -1472,17 +1612,17 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Experience_12_2_1_0(Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
+        internal Implement_DesignPattern_Factory_Experience_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region MEMORIZE app settings
+            #region MEMORIZE clientOrServer instance
 
-            _storedAppSettings = (IConfiguration)parameterClientOrServerInstance["appSettings"];
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE app settings
 
-            _storedClientOrServerInstance = parameterClientOrServerInstance;
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -1513,24 +1653,26 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterExtraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"];
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByObject = parameterClientRequestByObject;
-            _storedSystemRequestByName = parameterSystemRequestByName;
-            _storedRequestName = parameterSystemRequestByName;
-            _storedClientRequestByName = parameterClientRequestByName;
-            _storedClientRequestByNameParameters = parameterClientRequestByNameParameters;
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
             #endregion
         }
@@ -1782,17 +1924,18 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Storer_12_2_1_0(Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
+        internal Implement_DesignPattern_Factory_Storer_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region MEMORIZE app settings
-
-            _storedAppSettings = (IConfiguration)parameterClientOrServerInstance["appSettings"];
-
-            #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = parameterClientOrServerInstance;
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -1804,24 +1947,26 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterExtraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"];
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByObject = parameterClientRequestByObject;
-            _storedSystemRequestByName = parameterSystemRequestByName;
-            _storedRequestName = parameterSystemRequestByName;
-            _storedClientRequestByName = parameterClientRequestByName;
-            _storedClientRequestByNameParameters = parameterClientRequestByNameParameters;
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
             #endregion
         }
@@ -2023,17 +2168,17 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Disturber_12_2_1_0(Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
+        internal Implement_DesignPattern_Factory_Disturber_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region MEMORIZE app settings
+            #region MEMORIZE clientOrServer instance
 
-            _storedAppSettings = (IConfiguration)parameterClientOrServerInstance["appSettings"];
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE app settings
 
-            _storedClientOrServerInstance = parameterClientOrServerInstance;
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -2045,24 +2190,26 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterExtraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"];
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByObject = parameterClientRequestByObject;
-            _storedSystemRequestByName = parameterSystemRequestByName;
-            _storedRequestName = parameterSystemRequestByName;
-            _storedClientRequestByName = parameterClientRequestByName;
-            _storedClientRequestByNameParameters = parameterClientRequestByNameParameters;
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
             #endregion
         }
@@ -2264,17 +2411,17 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Factory_Sensor_12_2_1_0(Dictionary<string, object> parameterClientOrServerInstance, JObject storylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterClientRequestByName = "", string parameterClientRequestByNameParameters = "")
+        internal Implement_DesignPattern_Factory_Sensor_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region MEMORIZE app settings
+            #region MEMORIZE clientOrServer instance
 
-            _storedAppSettings = (IConfiguration)parameterClientOrServerInstance["appSettings"];
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE app settings
 
-            _storedClientOrServerInstance = parameterClientOrServerInstance;
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
 
             #endregion
 
@@ -2286,24 +2433,26 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = storylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterExtraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"];
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByObject = parameterClientRequestByObject;
-            _storedSystemRequestByName = parameterSystemRequestByName;
-            _storedRequestName = parameterSystemRequestByName;
-            _storedClientRequestByName = parameterClientRequestByName;
-            _storedClientRequestByNameParameters = parameterClientRequestByNameParameters;
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
             #endregion
         }

@@ -176,7 +176,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#endregion
 
-            //#region MEMORIZE client / server instance
+            //#region MEMORIZE clientOrServer instance
 
             this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 
@@ -424,7 +424,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#endregion
 
-            //#region MEMORIZE client / server instance
+            //#region MEMORIZE clientOrServer instance
 
             this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 
@@ -659,7 +659,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#endregion
 
-            //#region MEMORIZE client / server instance
+            //#region MEMORIZE clientOrServer instance
 
             this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 

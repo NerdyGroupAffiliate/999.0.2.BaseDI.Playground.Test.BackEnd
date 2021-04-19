@@ -211,7 +211,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             //#endregion
 
-            //#region MEMORIZE client / server instance
+            //#region MEMORIZE clientOrServer instance
 
             this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 

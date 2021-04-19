@@ -86,7 +86,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance");
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
                 #endregion
 
@@ -295,7 +295,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                 try
                 {
-                    Func<dynamic, string, dynamic, string, dynamic, Stream, byte[], dynamic, string, Task<dynamic>> ExecuteTransportRequest = async (dynamic parameterApiRequestCallBack, string parameterApiRequestEndPointAddress, dynamic parameterApiRequestData, string parameterApiRequestVerb, dynamic parameterApiInit, Stream parameterApiDataMemoryStream, byte[] parameterApiDataMemoryBuffer, dynamic parameterApiDataMemoryLength, string parameterPostData) => {
+                    Func<dynamic, string, dynamic, string, dynamic, Stream, byte[], dynamic, string, Task<dynamic>> ExecuteTransportRequest = async (dynamic parameterApiRequestCallBack, string parameterApiRequestEndPointAddress, dynamic parameterApiRequestData, string parameterApiRequestVerb, dynamic parameterApiInit, Stream parameterApiDataMemoryStream, byte[] parameterApiDataMemoryBuffer, dynamic parameterApiDataMemoryLength, string parameterPostData) =>
+                    {
 
                     switch (parameterApiRequestVerb.ToUpper()) 
                     {
@@ -364,6 +365,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                                 break;
                         }
+
+                        return await Task.FromResult<dynamic>(true).ConfigureAwait(true);
                     };
 
                     //storedDataResponse = await ExecuteTransportRequest(storedApiRequestCallBack, storedApiRequestEndPointAddress, storedApiRequestData, storedApiRequestVerb);
@@ -479,7 +482,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
                     {
-                        storedMessage += "***parameterFilterData*** cannot be blank or empty.\n";
+                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessCheckPointHit = true;
                     }
 
@@ -543,7 +546,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #endregion
 
-            #region MEMORIZE client / server instance
+            #region MEMORIZE clientOrServer instance
 
             _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
@@ -1079,7 +1082,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region 2. PROCESS
 
-            #region EXECUTE configuration process
+            #region EXECUTE controller configuration
 
             #region EDGE CASE - USE developer logger
 
@@ -1194,6 +1197,10 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region IDEAL CASE - USE dotnet server
 
+            Func<Task<bool>> ExecuteControllerSetup = async () =>
+            {
+                return await Task.FromResult<bool>(true).ConfigureAwait(true);
+            };
 
             #endregion
 

@@ -209,7 +209,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n"
+                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
                         storedProcessCheckPointHit = true;
                     }
 
@@ -289,7 +289,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #endregion
 
-            #region MEMORIZE client / server instance
+            #region MEMORIZE clientOrServer instance
 
             _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 

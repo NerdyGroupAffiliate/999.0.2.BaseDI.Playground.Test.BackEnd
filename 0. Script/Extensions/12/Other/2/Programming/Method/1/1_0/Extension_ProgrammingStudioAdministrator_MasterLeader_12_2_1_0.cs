@@ -184,7 +184,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #endregion
 
-            #region MEMORIZE client / server instance
+            #region MEMORIZE clientOrServer instance
 
             _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
@@ -436,7 +436,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #endregion
 
-            #region MEMORIZE client / server instance
+            #region MEMORIZE clientOrServer instance
 
             _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
@@ -599,7 +599,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                     {
                         if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                                                 storedProcessCheckPointHit = true;
                         }
                     }
@@ -690,7 +690,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #endregion
 
-            #region MEMORIZE client / server instance
+            #region MEMORIZE clientOrServer instance
 
             _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
@@ -956,7 +956,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #endregion
 
-            #region MEMORIZE client / server instance
+            #region MEMORIZE clientOrServer instance
 
             _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 

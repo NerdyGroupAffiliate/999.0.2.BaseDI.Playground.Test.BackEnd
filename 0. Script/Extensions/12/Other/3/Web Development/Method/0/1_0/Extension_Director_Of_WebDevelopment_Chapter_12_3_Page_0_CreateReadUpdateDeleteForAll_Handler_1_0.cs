@@ -284,7 +284,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails");
+            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
             //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
             #endregion
@@ -2527,7 +2527,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails");
+            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
             //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
 
             #endregion

@@ -64,8 +64,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
         //#region API MANAGEMENT
 
-        //server: any, url: string, verbName: string, options: Object, callback: Function
-
         public static async Step_X_X_Framework_Transport_ApiRequestToServer_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : Promise<any>
         {
             //#region 1. INPUTS
@@ -539,8 +537,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
         //#region SERVER MANAGEMENT
 
-
-        public static async Step_X_X_Framework_Control_ServerSetup_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> {
+        public static async Step_X_X_Framework_Control_ServerSetup_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
+        {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters
@@ -781,8 +779,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#endregion
 
-            if (stored_CentralizedStorer != null) {
-                try {
+            if (stored_CentralizedStorer != null)
+            {
+                try
+                {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedDeveloperMode) {
@@ -872,10 +872,17 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region IDEAL CASE - USE express server
 
-            storedServerInstance = express();
+            const ExecuteControllerSetup = async (parameterServerInstance: any): Promise<any> => {
+                parameterServerInstance = express();
 
-            //BROWSER fav icon
-            storedServerInstance.get('/favicon.ico', (req, res) => res.status(204));
+                //BROWSER fav icon
+                parameterServerInstance.get('/favicon.ico', (req, res) => res.status(204));
+
+                //RETURN configured server
+                return parameterServerInstance;
+            };
+
+            storedServerInstance = await ExecuteControllerSetup(storedServerInstance);
 
             //#endregion
 
@@ -909,10 +916,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             //#endregion
 
             //#endregion
-        }
-
-        public static async Step_X_X_Framework_Store_ServerDefaultSettingsToMemory_1_1(storylineDetails: Object): Promise<any> {
-
         }
 
         //#endregion

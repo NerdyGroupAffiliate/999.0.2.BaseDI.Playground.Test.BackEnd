@@ -258,7 +258,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //#endregion
 
-            //#region MEMORIZE client / server instance
+            //#region MEMORIZE clientOrServer instance
 
             this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 
