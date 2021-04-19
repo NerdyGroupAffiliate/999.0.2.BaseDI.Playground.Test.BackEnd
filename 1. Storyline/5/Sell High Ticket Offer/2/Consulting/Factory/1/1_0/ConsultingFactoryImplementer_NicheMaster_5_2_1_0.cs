@@ -36,7 +36,7 @@ namespace BaseDI.Professional.Story.Consulting_2
             //region 3. Observe
         }
 
-        public override object Action(Dictionary<string, object> clientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, object requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestName = "", string requestToProcess = "", string requestToProcessParameters = "")
+        public override object Action(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region ASSIGN MASTER LEADER
 

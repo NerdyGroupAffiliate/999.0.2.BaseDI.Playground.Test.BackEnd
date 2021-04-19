@@ -1,4 +1,5 @@
-﻿using BaseDI.Professional.Script.Programming_1;
+﻿using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming_1;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
@@ -22,6 +23,6 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
 
         public Func<Object, Object> CallBack { get; set; }
 
-        public abstract StoryRequest Action(Dictionary<string, object> client, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> centralizedSensor, StoryRequest requestToResolve, JObject storylineDetails, JObject storylineDetails_Parameters, string requestToResolveString = "", string requestToProcess = "", string requestToProcessParameters = "");
+        public abstract StoryRequest Action(SingleParmPoco_12_2_1_0 parameterInputs);
     }
 }

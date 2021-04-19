@@ -1,6 +1,8 @@
 ﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
+import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+
 export namespace BaseDI.Professional.Programming.Abstract_1
 {
     export abstract class aClass_Programming_ScriptNicheMaster_12_2_1_0<StoryRequest>
@@ -36,7 +38,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         //#endregion
 
         //#region 4. Action
-        public abstract Action(client: any, centralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, centralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, requestToResolve: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, storylineDetails: object, storylineDetails_Parameters: object, requestName: string, requestToProcess: string, requestToProcessParameters: string): StoryRequest;
+        public abstract Action(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): StoryRequest;
         //#endregion
     }
 }

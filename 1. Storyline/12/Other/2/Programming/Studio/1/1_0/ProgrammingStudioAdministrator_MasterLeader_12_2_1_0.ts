@@ -335,7 +335,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 //#endregion
             }
 
-            ///BEGIN valdation process
+            //BEGIN valdation process
             ValidateInputs(parameterInputs);
 
             //#endregion
@@ -415,9 +415,10 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE request details
 
-            let storedRequestName: string = parameterInputs.Parameters.getValue("parameterRequestToProcess"); 
-            let storedRequestNameParameters: string = parameterInputs.Parameters.getValue("parameterRequestToProcessParameters"); 
-            let storedSystemRequestName: string = parameterInputs.Parameters.getValue("parameterSystemRequest"); 
+            let storedClientRequestByName: string = parameterInputs.Parameters.getValue("parameterClientRequestByName"); 
+            let storedClientRequestByNameParameters: string = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters"); 
+
+            let storedSystemRequestByName: string = parameterInputs.Parameters.getValue("parameterSystemRequestByName") ? parameterInputs.Parameters.getValue("parameterSystemRequestByName") : ""; 
 
             //#endregion
 
@@ -426,6 +427,13 @@ export namespace BaseDI.Professional.Story.Programming_1
             let stored_DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
 
             let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterInputs); //parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters
+
+            //#endregion
+
+            //#region MEMORIZE storyline details
+
+            let storedStorylineDetails: any = parameterInputs.Parameters.getValue("parameterStorylineDetails");
+            let storedStorylineDetails_Parameters: any = parameterInputs.Parameters.getValue("parameterStorylineDetails_Parameters");
 
             //#endregion
 
@@ -457,11 +465,11 @@ export namespace BaseDI.Professional.Story.Programming_1
                    //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
                 stored_ReferenceTo_RequestHandler = stored_ResolvedRequestHandler.Action();
 
-                if (storedSystemRequestName != "")
+                if (storedSystemRequestByName != "")
                 {                    
                     stored_DirectorOrExperienceRequestHandler = stored_ReferenceTo_RequestHandler;
 
-                    stored_DirectorOrExperienceRequestHandler.RequestID = storedSystemRequestName;
+                    stored_DirectorOrExperienceRequestHandler.RequestID = storedSystemRequestByName;
                     stored_DirectorOrExperienceRequestHandler.ClientOrServerInstance = storedClientOrServerInstance;
 
                     this._storedClientRequestByObject.ClientOrServerInstance = storedClientOrServerInstance;
@@ -486,13 +494,13 @@ export namespace BaseDI.Professional.Story.Programming_1
                 //#region EDGE CASE - USE exception handler
                 stored_ExceptionDetails = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                stored_ExceptionDetails.RequestNameToProcess = parameterClientRequestByName;
-                stored_ExceptionDetails.RequestNameToProcessParameters = parameterClientRequestByNameParameters;
+                stored_ExceptionDetails.RequestNameToProcess = storedClientRequestByName;
+                stored_ExceptionDetails.RequestNameToProcessParameters = storedClientRequestByNameParameters;
 
-                stored_ExceptionDetails.StorylineDetails = parameterStorylineDetails;
+                stored_ExceptionDetails.StorylineDetails = storedStorylineDetails;
 
-                stored_ExceptionDetails.Parameters.setValue("StoredparameterClientOrServerInstance", parameterClientOrServerInstance);
-                stored_ExceptionDetails.Parameters.setValue("StoredExtraData", parameterExtraData);
+                stored_ExceptionDetails.Parameters.setValue("StoredparameterClientOrServerInstance", storedClientOrServerInstance);
+                stored_ExceptionDetails.Parameters.setValue("StoredExtraData", this._storedExtraData);
                 stored_ExceptionDetails.Parameters.setValue("StoredMistakes", mistake);
 
                 throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails);
@@ -532,24 +540,26 @@ export namespace BaseDI.Professional.Story.Programming_1
         private _storedAppSettings: any = null;
 
         //CLIENT/SERVER
-        _storedClientOrServerInstance: any;
+        private _storedClientOrServerInstance: any;
 
-        _storedClientRequestByName: string;
-        _storedClientRequestByNameParameters: string;
+        private _storedClientRequestByName: string;
+        private _storedClientRequestByNameParameters: string;
 
-        _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         //DATASETS
-        _storedStorylineDetails: any;
-        _storedStorylineDetails_Parameters: any;
+        private _storedStorylineDetails: any;
+        private _storedStorylineDetails_Parameters: any;
 
         //MISC
-        _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
-        _storedRequestName: string = "";
-        _storedSystemRequestByName: string;
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
 
+        private _storedRequestName: string = "";
+        private _storedSystemRequestByName: string;
+  
         //#endregion
 
         //#region 2. Ready
@@ -590,7 +600,9 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
 
-            this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName") ? parameterInputs.Parameters.getValue("parameterSystemRequestByName") : "";
+
+            this._storedParameterInputs = parameterInputs;
 
             //#endregion
 
@@ -651,7 +663,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE execution strategy
 
-            let storedExeuctionStragety = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(this._storedClientOrServerInstance, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, this._storedSystemRequestByName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+            let storedExeuctionStragety = new Implement_DesignPattern_Builder_Chapter_12_2_1_0(parameterInputs);
 
             //#endregion
 
@@ -736,7 +748,10 @@ export namespace BaseDI.Professional.Story.Programming_1
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+
         private _storedRequestName: string = "";
+
         private _storedSystemRequestByName: string;
 
         //#endregion
@@ -773,7 +788,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#endregion
 
-            ///#region MEMORIZE request details
+            //#region MEMORIZE request details
 
             this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterClientRequestByName");
             this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
@@ -782,6 +797,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
             this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+
+            this._storedParameterInputs = parameterInputs;
 
             //#endregion
 
@@ -886,13 +903,13 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE experience request handler
 
-            let storedExperienceRequestHandler = new Implement_DesignPattern_Factory_Experience_12_2_1_0(this._storedClientOrServerInstance, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+            let storedExperienceRequestHandler = new Implement_DesignPattern_Factory_Experience_12_2_1_0(this._storedParameterInputs);
 
             //#endregion
 
             //#region MEMORIZE director request handler
 
-            let _stored_DirectorRequestHandler = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._storedClientOrServerInstance, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedClientRequestByObject, this._storedExtraData, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+            let _stored_DirectorRequestHandler = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._storedParameterInputs);
 
             //#endregion
 
@@ -1030,6 +1047,8 @@ export namespace BaseDI.Professional.Story.Programming_1
         private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+
         private _storedRequestName: string = "";
         private _storedSystemRequestByName: string;
 
@@ -1101,6 +1120,8 @@ export namespace BaseDI.Professional.Story.Programming_1
             this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
 
             this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+
+            this._storedParameterInputs = parameterInputs;
 
             //#endregion
 
@@ -1218,7 +1239,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/programming";
 
-                    return _12_2_stored_Director_Of_Programming_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                    return _12_2_stored_Director_Of_Programming_RequestHandler.Action(this._storedParameterInputs);
 
                     //#endregion
                 }
@@ -1239,7 +1260,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/advertising";
 
-                        return _1_1_stored_Director_Of_Advertising_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _1_1_stored_Director_Of_Advertising_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1258,7 +1279,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/blogging";
 
-                        return _2_1_stored_Director_Of_Blogging_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _2_1_stored_Director_Of_Blogging_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_PODCASTING"))
@@ -1273,7 +1294,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/podcasting";
 
-                        return _2_2_stored_Director_Of_Podcasting_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _2_2_stored_Director_Of_Podcasting_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SOCIALMEDIA"))
@@ -1288,7 +1309,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/socialmedia";
 
-                        return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1307,7 +1328,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/listbuilding";
 
-                        return _3_1_stored_Director_Of_ListBuilding_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _3_1_stored_Director_Of_ListBuilding_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1326,7 +1347,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/supplements";
 
-                        return _4_1_stored_Director_Of_Supplements_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _4_1_stored_Director_Of_Supplements_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1345,7 +1366,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/coaching";
 
-                        return _5_1_stored_Director_Of_Coaching_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _5_1_stored_Director_Of_Coaching_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CONSULTING"))
@@ -1360,7 +1381,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/consulting";
 
-                        return _5_2_stored_Director_Of_Consulting_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _5_2_stored_Director_Of_Consulting_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_PERSONALTRAINING"))
@@ -1375,7 +1396,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/personaltraining";
 
-                        return _5_3_stored_Director_Of_PersonalTraining_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _5_3_stored_Director_Of_PersonalTraining_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1394,7 +1415,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _6_1_stored_Director_Of_Software_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/software";
 
-                        return _6_1_stored_Director_Of_Software_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _6_1_stored_Director_Of_Software_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1413,7 +1434,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/affiliaterevenue";
 
-                        return _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1432,7 +1453,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/accounting";
 
-                        return _8_1_stored_Director_Of_Accounting_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _8_1_stored_Director_Of_Accounting_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1451,7 +1472,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/customerservice";
 
-                        return _9_1_stored_Director_Of_CustomerService_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _9_1_stored_Director_Of_CustomerService_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1470,7 +1491,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/productivity";
 
-                        return _10_1_stored_Director_Of_Productivity_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _10_1_stored_Director_Of_Productivity_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1489,7 +1510,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/riskmanagement";
 
-                        return _11_1_stored_Director_Of_RiskManagement_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _11_1_stored_Director_Of_RiskManagement_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1508,7 +1529,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _12_1_stored_Director_Of_Careers_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/careersemployment";
 
-                        return _12_1_stored_Director_Of_Careers_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _12_1_stored_Director_Of_Careers_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_WEBDEVELOPMENT"))
@@ -1523,7 +1544,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/webdevelopment";
 
-                        return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CMS"))
@@ -1538,7 +1559,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _12_4_stored_Director_Of_CMS_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/cms";
 
-                        return _12_4_stored_Director_Of_CMS_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _12_4_stored_Director_Of_CMS_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SECURITY"))
@@ -1553,7 +1574,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                         _12_5_stored_Director_Of_Security_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/security";
 
-                        return _12_5_stored_Director_Of_Security_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                        return _12_5_stored_Director_Of_Security_RequestHandler.Action(this._storedParameterInputs);
                     }
 
                     //#endregion
@@ -1672,6 +1693,8 @@ export namespace BaseDI.Professional.Story.Programming_1
         private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+
         private _storedRequestName: string = "";
         private _storedSystemRequestByName: string;
 
@@ -1685,33 +1708,30 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region 1. INPUTS
 
-            //#region MEMORIZE app settings
-
-            this._storedAppSettings = parameterClientOrServerInstance["appSettings"];
-
-            //#endregion
-
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientOrServerInstance = parameterClientOrServerInstance;
+            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
 
             //#endregion
 
-            //#region MEMORIZE centralized processes handlers   
+            //#region MEMORIZE app settings
 
-            if (this._stored_CentralizedDisturber == null)
-            {
-                this._stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE centralized processes handlers
+
+            if (this._stored_CentralizedDisturber == null) {
+                this._stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(parameterInputs);
             }
 
-            if (this._stored_CentralizedStorer == null)
-            {
-                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+            if (this._stored_CentralizedStorer == null) {
+                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs);
             }
 
-            if (this._stored_CentralizedSensor == null)
-            {
-                this._stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(parameterClientOrServerInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, parameterClientRequestByObject, parameterExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+            if (this._stored_CentralizedSensor == null) {
+                this._stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(parameterInputs);
             }
 
             //#endregion
@@ -1724,28 +1744,38 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE storyline details
 
-            this._storedStorylineDetails = parameterStorylineDetails;
-            this._storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            this._storedStorylineDetails = parameterInputs.Parameters.getValue("parameterStorylineDetails");
+            this._storedStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterStorylineDetails_Parameters");
 
             //#endregion
 
             //#region MEMORIZE extra data
 
-            this._storedExtraData = parameterExtraData;
+            this._storedExtraData = parameterInputs.Parameters.getValue("parameterExtraData");
 
             //#endregion
 
             //#region MEMORIZE request details
 
-            this._storedClientRequestByName = parameterClientRequestByName;
-            this._storedClientRequestByNameParameters = parameterClientRequestByNameParameters;
-            this._storedClientRequestByObject = parameterClientRequestByObject;
+            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterClientRequestByName");
+            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
+            this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
 
-            this._storedRequestName = parameterSystemRequestByName;
+            this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
 
-            this._storedSystemRequestByName = parameterSystemRequestByName;
+            this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+
+            this._storedParameterInputs = parameterInputs;
 
             //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
 
             //#endregion
         }
@@ -1819,7 +1849,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9992/storyline/basedi/io/professional/socialmedia";
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/socialmedia";
 
-                    return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                    return _2_3_stored_Director_Of_SocialMedia_RequestHandler.Action(this._storedParameterInputs);
                 }
 
                 //#endregion
@@ -1873,7 +1903,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:9912/storyline/basedi/io/professional/webdevelopment";
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationRemote = "https://storyline.BaseDI.Professional.io/webdevelopment";
 
-                    return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(this._storedClientOrServerInstance, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedClientRequestByObject, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._storedRequestName, this._storedClientRequestByName, this._storedClientRequestByNameParameters);
+                    return _12_3_stored_Director_Of_WebDevelopment_RequestHandler.Action(this._storedParameterInputs);
 
                     //#endregion
                 }
@@ -1989,6 +2019,8 @@ export namespace BaseDI.Professional.Story.Programming_1
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+
         private _storedRequestName: string = "";
         private _storedSystemRequestByName: string = "";
 
@@ -2039,6 +2071,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
             this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+
+            this._storedParameterInputs = parameterInputs;
 
             //#endregion
         }
@@ -2093,6 +2127,11 @@ export namespace BaseDI.Professional.Story.Programming_1
             this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
             this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0";
 
+            this._storedParameterInputs.Parameters.setValue("parameterClientRequestByName", this._storedClientRequestByName);
+            this._storedParameterInputs.Parameters.setValue("parameterClientRequestByNameParameters", this._storedClientRequestByNameParameters);
+
+            this._storedParameterInputs.Parameters.setValue("parameterSystemRequestByName", "");
+
             //#endregion
 
             //#region OVERRIDE extra data
@@ -2102,8 +2141,6 @@ export namespace BaseDI.Professional.Story.Programming_1
             }
 
             //#endregion
-
-
 
             //#region MEMORIZE developer mode
 
@@ -2124,8 +2161,8 @@ export namespace BaseDI.Professional.Story.Programming_1
                 if (this._storedAppSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED STORING a value. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
-                  .SetupStoryline(this._storedClientOrServerInstance, this._storedStorylineDetails, null, this._storedExtraData, "", this._storedClientRequestByName, this._storedClientRequestByNameParameters)
-                  .Action();
+                    .SetupStoryline(this._storedParameterInputs)
+                    .Action();
 
                 //#endregion
 
@@ -2242,6 +2279,8 @@ export namespace BaseDI.Professional.Story.Programming_1
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+
         private _storedRequestName: string = "";
         private _storedSystemRequestByName: string = "";
 
@@ -2284,7 +2323,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#endregion
 
-            ///#region MEMORIZE request details
+            //#region MEMORIZE request details
 
             this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterClientRequestByName");
             this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
@@ -2292,6 +2331,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
             this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+
+            this._storedParameterInputs = parameterInputs;
 
             //#endregion
         }
@@ -2346,6 +2387,11 @@ export namespace BaseDI.Professional.Story.Programming_1
             this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0";
             this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0";
 
+            this._storedParameterInputs.Parameters.setValue("parameterClientRequestByName", this._storedClientRequestByName);
+            this._storedParameterInputs.Parameters.setValue("parameterClientRequestByNameParameters", this._storedClientRequestByNameParameters);
+
+            this._storedParameterInputs.Parameters.setValue("parameterSystemRequestByName", "");
+
             //#endregion
 
             //#region MEMORIZE developer mode
@@ -2367,8 +2413,8 @@ export namespace BaseDI.Professional.Story.Programming_1
                 if (this._storedAppSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                  .SetupStoryline(this._storedClientOrServerInstance, this._storedStorylineDetails, null, this._storedExtraData, "", this._storedClientRequestByName, this._storedClientRequestByNameParameters)
-                  .Action();
+                    .SetupStoryline(this._storedParameterInputs)
+                    .Action();
 
                 //#endregion
 
@@ -2485,6 +2531,8 @@ export namespace BaseDI.Professional.Story.Programming_1
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+
         private _storedRequestName: string = "";
         private _storedSystemRequestByName: string = "";
 
@@ -2527,7 +2575,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#endregion
 
-            ///#region MEMORIZE request details
+            //#region MEMORIZE request details
 
             this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterClientRequestByName");
             this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
@@ -2535,6 +2583,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
             this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+
+            this._storedParameterInputs = parameterInputs;
 
             //#endregion
         }
@@ -2589,6 +2639,11 @@ export namespace BaseDI.Professional.Story.Programming_1
             this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0";
             this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0";
 
+            this._storedParameterInputs.Parameters.setValue("parameterClientRequestByName", this._storedClientRequestByName);
+            this._storedParameterInputs.Parameters.setValue("parameterClientRequestByNameParameters", this._storedClientRequestByNameParameters);
+
+            this._storedParameterInputs.Parameters.setValue("parameterSystemRequestByName", "");
+
             //#endregion
 
             //#region MEMORIZE developer mode
@@ -2610,8 +2665,8 @@ export namespace BaseDI.Professional.Story.Programming_1
                 if (this._storedAppSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
                 storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                  .SetupStoryline(this._storedClientOrServerInstance, this._storedStorylineDetails, null, this._storedExtraData, "", this._storedClientRequestByName, this._storedClientRequestByNameParameters)
-                  .Action();
+                    .SetupStoryline(this._storedParameterInputs)
+                    .Action();
 
                 //#endregion
 

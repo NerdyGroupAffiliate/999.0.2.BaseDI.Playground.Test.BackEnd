@@ -137,7 +137,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 4. Action
 
-        public override object Action(Dictionary<string, object> parameterClientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedSensor, object parameterRequestToResolve, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, string parameterRequestName = "", string parameterRequestToProcess = "", string parameterRequestToProcessParameters = "")
+        public override object Action(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS  
 

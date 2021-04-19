@@ -141,7 +141,7 @@ export namespace BaseDI.Professional.Story.Programming_1 {
 
         //#region 4. Action
 
-        public Action(parameterClientORserverInstance: any, parameterCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterRequestToResolve: object, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRequestName: string = "", parameterRequestToProcess: string = "", parameterRequestToProcessParameters: string = "") : object
+        public Action(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : object
         {
             //#region 1. INPUTS
 
