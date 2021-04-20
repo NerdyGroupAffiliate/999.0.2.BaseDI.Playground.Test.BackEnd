@@ -1015,16 +1015,22 @@ namespace BaseDI.Professional.Story.Programming_1
             if (_stored_CentralizedDisturber == null)
             {
                 _stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(_storedParameterInputs);
-            }
 
-            if (_stored_CentralizedStorer == null)
-            {
-                _stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(_storedParameterInputs);
+                parameterInputs.Parameters.Add("parameterCentralizedDisturber", _stored_CentralizedDisturber);
             }
 
             if (_stored_CentralizedSensor == null)
             {
                 _stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(_storedParameterInputs);
+
+                parameterInputs.Parameters.Add("parameterCentralizedSensor", _stored_CentralizedSensor);
+            }
+
+            if (_stored_CentralizedStorer == null)
+            {
+                _stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(_storedParameterInputs);
+
+                parameterInputs.Parameters.Add("parameterCentralizedStorer", _stored_CentralizedStorer);
             }
 
             #endregion
@@ -1660,16 +1666,22 @@ namespace BaseDI.Professional.Story.Programming_1
             if (_stored_CentralizedDisturber == null)
             {
                 _stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(_storedParameterInputs);
-            }
 
-            if (_stored_CentralizedStorer == null)
-            {
-                _stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(_storedParameterInputs);
+                parameterInputs.Parameters.Add("parameterCentralizedDisturber", _stored_CentralizedDisturber);
             }
 
             if (_stored_CentralizedSensor == null)
             {
                 _stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(_storedParameterInputs);
+
+                parameterInputs.Parameters.Add("parameterCentralizedSensor", _stored_CentralizedSensor);
+            }
+
+            if (_stored_CentralizedStorer == null)
+            {
+                _stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(_storedParameterInputs);
+
+                parameterInputs.Parameters.Add("parameterCentralizedStorer", _stored_CentralizedStorer);
             }
 
             #endregion

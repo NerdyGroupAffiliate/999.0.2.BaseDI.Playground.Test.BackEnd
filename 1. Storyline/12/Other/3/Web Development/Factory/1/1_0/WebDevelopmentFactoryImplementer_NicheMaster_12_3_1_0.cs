@@ -62,7 +62,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             //region 3. Observe
         }
 
-        public override object Action(SingleParmPoco_12_2_1_0 parameterInputs)
+        public override async Task<object> Action(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region ASSIGN MASTER LEADER
 

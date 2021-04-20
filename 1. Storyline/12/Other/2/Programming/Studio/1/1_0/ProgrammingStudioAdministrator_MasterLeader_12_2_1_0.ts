@@ -1076,19 +1076,22 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE centralized processes handlers
 
-            if (this._stored_CentralizedDisturber == null)
-            {
+            if (this._stored_CentralizedDisturber == null) {
                 this._stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(parameterInputs);
+
+                parameterInputs.Parameters.setValue("parameterCentralizedDisturber", Object.assign(this._stored_CentralizedDisturber, Object));
             }
 
-            if (this._stored_CentralizedStorer == null)
-            {
-                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs);
-            }
-
-            if (this._stored_CentralizedSensor == null)
-            {
+            if (this._stored_CentralizedSensor == null) {
                 this._stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(parameterInputs);
+
+                parameterInputs.Parameters.setValue("parameterCentralizedSensor", Object.assign(this._stored_CentralizedSensor, Object));
+            }
+
+            if (this._stored_CentralizedStorer == null) {
+                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs);
+
+                parameterInputs.Parameters.setValue("parameterCentralizedStorer", Object.assign(this._stored_CentralizedStorer, Object));
             }
 
             //#endregion
@@ -1724,14 +1727,20 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             if (this._stored_CentralizedDisturber == null) {
                 this._stored_CentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(parameterInputs);
-            }
 
-            if (this._stored_CentralizedStorer == null) {
-                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs);
+                parameterInputs.Parameters.setValue("parameterCentralizedDisturber", Object.assign(this._stored_CentralizedDisturber, Object));
             }
 
             if (this._stored_CentralizedSensor == null) {
                 this._stored_CentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(parameterInputs);
+
+                parameterInputs.Parameters.setValue("parameterCentralizedSensor", Object.assign(this._stored_CentralizedSensor, Object));
+            }
+
+            if (this._stored_CentralizedStorer == null) {
+                this._stored_CentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs);
+
+                parameterInputs.Parameters.setValue("parameterCentralizedStorer", Object.assign(this._stored_CentralizedStorer, Object));
             }
 
             //#endregion
