@@ -41,8 +41,9 @@ using System.Threading.Tasks;
 #region 3rd Party Core
 
 using Newtonsoft.Json.Linq;
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
-#endregion 
+#endregion
 
 #endregion
 
@@ -60,33 +61,46 @@ namespace BaseDI.Professional.Story.Programming_1
 
         //CLIENT/SERVER
         private Dictionary<string, object> _storedClientOrServerInstance;
-        private string _storedRequestName = "";
+
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
+
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+
+        //DATASETS
+        private JObject _storedStorylineDetails;
+        private JObject _storedStorylineDetails_Parameters;
 
         //MISC
-        private ExtraData_12_2_1_0 _storedExtraData = null;
+        private ExtraData_12_2_1_0 _storedExtraData;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs = null;
+
+        private string _storedRequestName = "";
+        private string _storedSystemRequestByName = "";
 
         #endregion
 
         #region 2. Ready
 
-        internal ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(ExtraData_12_2_1_0 extraData)
+        ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
             #region DEFINE clientOrServer instance
 
-            _storedClientOrServerInstance = new Dictionary<string, object>();
+            _storedClientOrServerInstance = null;
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = extraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] != null ? parameterInputs.Parameters["parameterExtraData"] : null;
 
             #endregion
 
@@ -98,7 +112,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region EDGE CASE - USE niche faults
 
-            Setup();
+
 
             #endregion
 
@@ -116,189 +130,299 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 3. Set
 
-        //A. Default state of story
-        public void Setup()
-        {
-            #region 1. INPUTS     
+        //A. Default state of this part of the storyline
+        #region 1. INPUTS
 
-            #endregion
+        #endregion
 
-            #region 2. PROCESS
+        #region 2. PROCESS
 
+        #endregion
 
-            #endregion
+        #region 3. OUTPUT
 
-            #region 3. OUTPUT
-
-            #endregion
-        }
+        #endregion
 
         #endregion
 
         #region 4. Action
 
-        public override object Action(SingleParmPoco_12_2_1_0 parameterInputs)
+        public override async Task<object> Action(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region 1. INPUTS  
+            #region 1. INPUTS
 
-            #region DECLARE request handler
+            #region VALIDATE input parameters
 
-            object storedResolvedRequest = null;
-
-            #endregion
-
-            #region MEMORIZE api data
-
-            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalNodeJS_SSL", APILocationLocalNodeJS_SSL);
-
-            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore", APILocationLocalDotNetCore);
-            _storedExtraData.KeyValuePairs.TryAdd("APILocationLocalDotNetCore_SSL", APILocationLocalDotNetCore_SSL);
-
-            _storedExtraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
-
-            #endregion
-
-            #region MEMORIZE app settings
-
-            _storedAppSettings = (IConfiguration)parameterClientORserverInstance["appSettings"];
-
-            #endregion
-
-            #region MEMORIZE centralized processes   
-
-            _stored_CentralizedStorer = parameterCentralizedStorer;
-            _stored_CentralizedDisturber = parameterCentralizedDisturber;
-            _stored_CentralizedSensor = parameterCentralizedSensor;
-
-            #endregion
-
-            #region MEMORIZE clientOrServer instance
-
-            _storedClientOrServerInstance = parameterClientORserverInstance;
-
-            #endregion
-
-            #region MEMORIZE client request
-
-            _storedExtraData.KeyValuePairs = new Dictionary<string, object>();
-            _storedExtraData.KeyValuePairs.TryAdd("RequestToProcess", parameterRequestToProcess);
-            _storedExtraData.KeyValuePairs.TryAdd("RequestToProcessParameters", parameterRequestToProcessParameters);
-
-            var storedRequestType = parameterRequestToResolve.GetType();
-
-            #endregion
-
-            #region MEMORIZE developer mode
-
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            try
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
             {
-                #region GENERATE request handler                     
+                #region 1. INPUTS
 
-                #region IDEAL CASE - USE director of programming
+                #region DEFINE parameter inputs
 
-                if (!string.IsNullOrEmpty(parameterRequestName))
+                SingleParmPoco_12_2_1_0 storedParameterInputs;
+
+                #endregion
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #region MEMORIZE clientOrServer instance
+
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+                #endregion
+
+                #region MEMORIZE app settings
+
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+
+                #endregion
+
+                #region MEMORIZE developer mode
+
+                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action.ValidateInputs()");
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    switch (parameterRequestName.ToUpper(CultureInfo.CurrentCulture))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
                     {
-                        //CONTROLLER
-                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
-                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.";
+                            storedProcessCheckPointHit = true;
+                        }
+                    }
 
-                            break;
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                        //CONVERSION
-                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
-                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByName"))
+                    {
+                        storedMessage += "***parameterClientRequestByName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                            break;
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByNameParameters"))
+                    {
+                        storedMessage += "***parameterClientRequestByNameParameters*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                        //STORAGE
-                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
-                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedDisturber"))
+                    {
+                        storedMessage += "***parameterCentralizedDisturber*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                            break;
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedSensor"))
+                    {
+                        storedMessage += "***parameterCentralizedSensor*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                        //DISTURBANCES
-                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
-                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedStorer"))
+                    {
+                        storedMessage += "***parameterCentralizedStorer*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                            break;
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    {
+                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                        //SENSOR
-                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
-                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails_Parameters"))
+                    {
+                        storedMessage += "***parameterStorylineDetails_Parameters*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
 
-                            break;
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
                     }
                 }
                 else
                 {
-                    switch (storedRequestType)
-                    {
-                        case Type _ when storedRequestType == typeof(Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0):
-                            storedResolvedRequest = (object)Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedExtraData);
+                    #region EDGE CASE - USE developer logger
 
-                            break;
+                    if (storedDeveloperMode)
+                    {
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("PARSING parameter values failed");
+
+                    #endregion
                 }
 
                 #endregion
 
                 #endregion
-            }
-            catch
-            {
-                throw;
-            }
 
-            #endregion
+                #endregion
 
-            #region 3. OUTPUT
+                #region 3. OUTPUT
 
-            #region RETURN request handler
+                #region RETURN validation passed
 
-            #region IDEAL CASE - USE director of programming
+                #region IDEAL CASE - USE passed indicator
 
-            return storedResolvedRequest;
+                return true;
 
-            #endregion
+                #endregion
 
+                #endregion
 
-            #endregion
+                #endregion
+            };
 
-            #endregion
-        }
-
-        #region Page 1
-
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
-        {
-            #region 1. INPUTS  
-
-            #region MEMORIZE data access stragety
-
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
-
-            #endregion
-
-            #region MEMORIZE developer mode
-
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            //BEGIN valdation process
+            await ValidateInputs(parameterInputs);
 
             #endregion
 
             #region DEFINE request handler
 
-            Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 stored_DirectorRequestHandler = null;
+            dynamic storedRequestHandler = null;
+
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes handlers
+
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs= (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ASSIGNING request handler");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            string storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            string storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+
+            string storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"] ? parameterInputs.Parameters["parameterSystemRequestByName"] : "";
+
+            _storedRequestName = storedClientRequestByName;
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData.KeyValuePairs.Add("storedAPILocationLocalNodeJS", APILocationLocalNodeJS);
+            _storedExtraData.KeyValuePairs.Add("storedAPILocationLocalDotNetCore", APILocationLocalDotNetCore);
+
+            _storedExtraData.KeyValuePairs.Add("storedAPILocationRemote", APILocationRemote);
+
+            _storedExtraData.KeyValuePairs.Add("storedClientRequestByName", storedClientRequestByName);
+            _storedExtraData.KeyValuePairs.Add("storedClientRequestByNameParameters", storedClientRequestByNameParameters);
+
+            #endregion
+
+            #region MEMORIZE storyline details
+
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
             #endregion
 
@@ -306,45 +430,41 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region 2. PROCESS
 
-            #region GENERATE programming request object 
+            #region ASSIGN request handler
 
             try
             {
-                #region EDGE CASE - USE default data access strategy
+                #region IDEAL CASE - USE director or experience
 
-                if (repositoryType == "") repositoryType = "LOCAL_FILE";
-
-                #endregion
-
-                #region IDEAL CASE - USE director of programming
-
-                stored_DirectorRequestHandler = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0();
-
-                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientOrServerInstance;
-
-                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
-
-                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
-
-                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
-
-                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
+                switch (storedClientRequestByName.ToUpper())
                 {
-                    case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = localFile;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+                    //CONTROLLER
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs);
 
                         break;
-                    case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterStorylineDetails);
 
-                        stored_DirectorRequestHandler.Repository = remoteService;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
+                    //CONVERSION
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterInputs);
+
+                        break;
+
+                    //STORAGE
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterInputs);
+
+                        break;
+
+                    //DISTURBANCES
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterInputs);
+
+                        break;
+
+                    //SENSOR
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterInputs);
 
                         break;
                 }
@@ -359,7 +479,11 @@ namespace BaseDI.Professional.Story.Programming_1
                 {
                     _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
+                    storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED configurating request handler");
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
 
                 #endregion
@@ -379,9 +503,97 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region RETURN request handler
 
-            #region IDEAL CASE - USE a director
+            #region IDEAL CASE - USE experienece or director
 
-            return stored_DirectorRequestHandler;
+            return storedRequestHandler;
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        #region Page 1
+
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        {
+            #region 1. INPUTS
+
+            #region MEMORIZE data repository
+
+            string storedRepositoryType = !string.IsNullOrEmpty(_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER")) ? _storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER") : "LOCAL_FILE";
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region CONFIGURE request handler
+
+            #region IDEAL CASE - USE director
+
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = _storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = _storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = _storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.ToUpper()) {
+                case "LOCAL_FILE":
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
+
+                    break;
+                case "REMOTE_SERVICE":
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
+
+                    break;
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request handler
+
+            #region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
 
             #endregion
 
@@ -394,25 +606,34 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region Page 2
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region 1. INPUTS    
+            #region 1. INPUTS
 
-            #region DEFINE request handler
+            #region MEMORIZE data repository
 
-            Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 stored_DirectorRequestHandler = null;
-
-            #endregion
-
-            #region MEMORIZE data access stragety
-
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
+            string storedRepositoryType = !string.IsNullOrEmpty(_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER")) ? _storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -420,68 +641,38 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region 2. PROCESS
 
-            #region GENERATE programming request object 
+            #region CONFIGURE request handler
 
-            try
+            #region IDEAL CASE - USE director
+
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = _storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = _storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = _storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.ToUpper())
             {
-                #region EDGE CASE - USE default data access strategy
+                case "LOCAL_FILE":
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
-                if (repositoryType == "") repositoryType = "LOCAL_FILE";
+                    break;
+                case "REMOTE_SERVICE":
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
-                #endregion
-
-                #region IDEAL CASE - USE director of programming
-
-                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientOrServerInstance;
-
-                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
-
-                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
-
-                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
-
-                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
-                {
-                    case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = localFile;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
-
-                        break;
-                    case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = remoteService;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
-
-                        break;
-                }
-
-                #endregion
+                    break;
             }
-            catch (Exception mistake)
-            {
-                #region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
-                {
-                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
-                }
-
-                #endregion
-
-                #region EDGE CASE - USE exception handler
-
-                throw mistake;
-
-                #endregion
-            }
+            #endregion
 
             #endregion
 
@@ -491,40 +682,49 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region RETURN request handler
 
-            #region IDEAL CASE - USE director of programming
+            #region IDEAL CASE - USE experienece or director
 
-            return stored_DirectorRequestHandler;
+            return storedRequestHandler_Director;
+
+            #endregion
 
             #endregion
 
             #endregion
-
-            #endregion    
         }
 
         #endregion
 
         #region Page 3
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
-            #region 1. INPUTS  
+            #region 1. INPUTS
 
-            #region DEFINE request handler
+            #region MEMORIZE data repository
 
-            Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 stored_DirectorRequestHandler = null;
-
-            #endregion
-
-            #region MEMORIZE data access stragety
-
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
+            string storedRepositoryType = !string.IsNullOrEmpty(_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER")) ? _storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -532,70 +732,38 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region 2. PROCESS
 
-            #region GENERATE programming request object 
+            #region CONFIGURE request handler
 
-            try
+            #region IDEAL CASE - USE director
+
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = _storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = _storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = _storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.ToUpper())
             {
-                #region EDGE CASE - USE default data access strategy
+                case "LOCAL_FILE":
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
-                if (repositoryType == "") repositoryType = "LOCAL_FILE";
+                    break;
+                case "REMOTE_SERVICE":
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
-                #endregion
-
-                #region IDEAL CASE - USE director of programming
-
-                stored_DirectorRequestHandler = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0();
-
-                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientOrServerInstance;
-
-                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
-
-                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
-
-                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
-
-                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
-                {
-                    case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = localFile;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
-
-                        break;
-                    case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = remoteService;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
-
-                        break;
-                }
-
-                #endregion
+                    break;
             }
-            catch (Exception mistake)
-            {
-                #region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
-                {
-                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
-                }
-
-                #endregion
-
-                #region EDGE CASE - USE exception handler
-
-                throw mistake;
-
-                #endregion
-            }
+            #endregion
 
             #endregion
 
@@ -605,40 +773,49 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region RETURN request handler
 
-            #region IDEAL CASE - USE director of programming
+            #region IDEAL CASE - USE experienece or director
 
-            return stored_DirectorRequestHandler;
+            return storedRequestHandler_Director;
+
+            #endregion
 
             #endregion
 
             #endregion
-
-            #endregion    
         }
 
         #endregion
 
         #region Page 4
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
-            #region 1. INPUTS  
+            #region 1. INPUTS
 
-            #region DEFINE request handler
+            #region MEMORIZE data repository
 
-            Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0 stored_DirectorRequestHandler = null;
-
-            #endregion
-
-            #region MEMORIZE data access stragety
-
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
+            string storedRepositoryType = !string.IsNullOrEmpty(_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER")) ? _storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -646,70 +823,38 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region 2. PROCESS
 
-            #region GENERATE programming request object 
+            #region CONFIGURE request handler
 
-            try
+            #region IDEAL CASE - USE director
+
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = _storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = _storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = _storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.ToUpper())
             {
-                #region EDGE CASE - USE default data access strategy
+                case "LOCAL_FILE":
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
-                if (repositoryType == "") repositoryType = "LOCAL_FILE";
+                    break;
+                case "REMOTE_SERVICE":
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
-                #endregion
-
-                #region IDEAL CASE - USE director of programming
-
-                stored_DirectorRequestHandler = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0();
-
-                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientOrServerInstance;
-
-                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
-
-                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
-
-                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
-
-                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
-                {
-                    case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = localFile;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
-
-                        break;
-                    case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = remoteService;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
-
-                        break;
-                }
-
-                #endregion
+                    break;
             }
-            catch (Exception mistake)
-            {
-                #region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
-                {
-                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
-                }
-
-                #endregion
-
-                #region EDGE CASE - USE exception handler
-
-                throw mistake;
-
-                #endregion
-            }
+            #endregion
 
             #endregion
 
@@ -719,40 +864,49 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region RETURN request handler
 
-            #region IDEAL CASE - USE director of programming
+            #region IDEAL CASE - USE experienece or director
 
-            return stored_DirectorRequestHandler;
+            return storedRequestHandler_Director;
+
+            #endregion
 
             #endregion
 
             #endregion
-
-            #endregion    
         }
 
         #endregion
 
         #region Page 5
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, ExtraData_12_2_1_0 parameterExtraData)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
             #region 1. INPUTS
 
-            #region DEFINE request handler
+            #region MEMORIZE data repository
 
-            Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0 stored_DirectorRequestHandler = null;
-
-            #endregion
-
-            #region MEMORIZE data access stragety
-
-            string repositoryType = AppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER_12_2_PROGRAMMING_NICHE_MASTER");
+            string storedRepositoryType = !string.IsNullOrEmpty(_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER")) ? _storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -760,70 +914,38 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region 2. PROCESS
 
-            #region GENERATE programming request object 
+            #region CONFIGURE request handler
 
-            try
+            #region IDEAL CASE - USE director
+
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = _storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = _storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = _storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.ToUpper())
             {
-                #region EDGE CASE - USE default data access strategy
+                case "LOCAL_FILE":
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
-                if (repositoryType == "") repositoryType = "LOCAL_FILE";
+                    break;
+                case "REMOTE_SERVICE":
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
-                #endregion
-
-                #region IDEAL CASE - USE director of programming
-
-                stored_DirectorRequestHandler = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0();
-
-                stored_DirectorRequestHandler.ClientOrServerInstance = _storedClientOrServerInstance;
-
-                stored_DirectorRequestHandler.ExtraData = parameterExtraData;
-
-                stored_DirectorRequestHandler.MasterStorer = _stored_CentralizedStorer;
-                stored_DirectorRequestHandler.MasterDisturber = _stored_CentralizedDisturber;
-                stored_DirectorRequestHandler.MasterSensor = _stored_CentralizedSensor;
-
-                stored_DirectorRequestHandler.StorylineDetails = parameterStorylineDetails;
-                stored_DirectorRequestHandler.StorylineDetails_Parameters = parameterStorylineDetails_Parameters;
-
-                switch (repositoryType.ToUpper(CultureInfo.CurrentCulture))
-                {
-                    case "LOCAL_FILE":
-                        var localFile = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = localFile;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
-
-                        break;
-                    case "REMOTE_SERVICE":
-                        var remoteService = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterStorylineDetails);
-
-                        stored_DirectorRequestHandler.Repository = remoteService;
-                        stored_DirectorRequestHandler.Repository.RequestName = _storedRequestName;
-
-                        break;
-                }
-
-                #endregion
+                    break;
             }
-            catch (Exception mistake)
-            {
-                #region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
-                {
-                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
-
-                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED ASSIGNING request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
-                }
-
-                #endregion
-
-                #region EDGE CASE - USE exception handler
-
-                throw mistake;
-
-                #endregion
-            }
+            #endregion
 
             #endregion
 
@@ -833,15 +955,15 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region RETURN request handler
 
-            #region IDEAL CASE - USE director of programming
+            #region IDEAL CASE - USE experienece or director
 
-            return stored_DirectorRequestHandler;
+            return storedRequestHandler_Director;
+
+            #endregion
 
             #endregion
 
             #endregion
-
-            #endregion 
         }
 
         #endregion

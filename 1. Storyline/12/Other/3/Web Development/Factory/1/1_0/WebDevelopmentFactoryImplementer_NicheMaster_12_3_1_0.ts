@@ -89,7 +89,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
         //#endregion
 
         //#region 2. Ready
-        constructor(parameterExtraData: any)
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
             super();
 
@@ -103,7 +103,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
             //#region MEMORIZE extra data
 
-            this._storedExtraData = parameterExtraData;
+            this._storedExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
 
             //#endregion
 
@@ -352,7 +352,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
 
             //#endregion
 
@@ -373,15 +373,26 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ASSIGNING request handler");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
+            //#endregion
+
+            //#region MEMORIZE request details
+
+            let storedClientRequestByName: string = parameterInputs.Parameters.getValue("parameterClientRequestByName");
+            let storedClientRequestByNameParameters: string = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
+
+            let storedSystemRequestByName: string = parameterInputs.Parameters.getValue("parameterSystemRequestByName") ? parameterInputs.Parameters.getValue("parameterSystemRequestByName") : "";
+
+            this._storedRequestName = storedClientRequestByName;
 
             //#endregion
 
@@ -392,17 +403,8 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
             this._storedExtraData.KeyValuePairs.setValue("storedAPILocationRemote", Object.assign(this.APILocationRemote, Object));
 
-            this._storedExtraData.KeyValuePairs.setValue("storedClientRequestByName", Object.assign(requestToProcess, Object))
-            this._storedExtraData.KeyValuePairs.setValue("storedClientRequestByNameParameters", Object.assign(requestToProcessParameters, Object))
-
-            //#endregion
-
-            //#region MEMORIZE request details
-
-            let storedClientRequestByName: string = parameterInputs.Parameters.getValue("parameterClientRequestByName");
-            let storedClientRequestByNameParameters: string = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
-
-            let storedSystemRequestByName: string = parameterInputs.Parameters.getValue("parameterSystemRequestByName") ? parameterInputs.Parameters.getValue("parameterSystemRequestByName") : "";
+            this._storedExtraData.KeyValuePairs.setValue("storedClientRequestByName", storedClientRequestByName);
+            this._storedExtraData.KeyValuePairs.setValue("storedClientRequestByNameParameters", storedClientRequestByNameParameters);
 
             //#endregion
 
@@ -419,12 +421,12 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
             //#region ASSIGN request handler
 
-            //#region IDEAL CASE - USE director or experience
-
             try
             {
+                //#region IDEAL CASE - USE director or experience
 
-                switch (storedClientRequestByName.toUpperCase()) {
+                switch (storedClientRequestByName.toUpperCase())
+                {
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_CREATEHOMESCREENFORALL_HANDLER_1_0":
                         storedRequestHandler = this.Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(parameterInputs);
 
@@ -495,6 +497,8 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
                         break;
                 }
+
+                //#endregion
             }
             catch (mistake)
             {
@@ -502,7 +506,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                 if (storedDeveloperMode) {
                     this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED assigning request handler");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED configurating request handler");
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
@@ -518,8 +522,6 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
             }
 
             //#endregion
-
-             //#endregion
 
             //#endregion
 
@@ -558,7 +560,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING up request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
@@ -578,7 +580,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
             //#region IDEAL CASE - USE director
 
-            let storedRequestHandler_Director = null; //new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(extraData);
+            let storedRequestHandler_Director = null; //new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
 
@@ -593,16 +595,12 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
             switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    storedRequestHandler_Director.Repository = localFile;
+                    storedRequestHandler_Director.Repository = null; //new 
                     storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null;//new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoveService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    storedRequestHandler_Director.Repository = remoteService;
+                    storedRequestHandler_Director.Repository = null; //new 
                     storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
@@ -629,650 +627,1170 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
             //#endregion
         }
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_1.Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_1.Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_1.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    director.Repository = localFile;
-                    director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_1.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    director.Repository = remoteService;
-                    director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 2
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_2.Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_2.Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 3
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_3.Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 4
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_4.Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_4.Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 5
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_5.Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_5.Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 6
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_6.Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_6.Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 7
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_7.Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_7.Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 8
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_8.Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_8.Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 9
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_9.Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_9.Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 10
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_10.Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_10.Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 11
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_11.Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_11.Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 12
 
-        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_12.Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            director.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            director.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            director.MasterStorer = this._storedCentralizedStorer;
-            director.MasterDisturber = this._storedCentralizedDisturber;
-            director.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            director.StorylineDetails = storylineDetails;
-            director.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0.BaseDI.Professional.Director.Web_Development_12.Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(parameterInputs);
+
+            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Director.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = null; //new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = localFile;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = null; //new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0.BaseDI.Professional.State.Web_Development_3.RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(storylineDetails);
-
-                    //director.Repository = remoteService;
-                    //director.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Director.Repository = null; //new 
+                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return director;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Director;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Page 13
 
-        private Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region CHECK FOR MISTAKES
-            
-            let repositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER;
+        private Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        {
+            //#region 1. INPUTS
 
-            if (repositoryType == undefined) repositoryType = "LOCAL_FILE";
+            //#region MEMORIZE data repository
+
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
-            //#region ASSIGN REQUEST HANDLER
-            let experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Experience.Hear.Web_Development_13.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(extraData);
+            //#region MEMORIZE developer mode
 
-            experience.ClientOrServerInstance = this._storedClientOrServerInstance;
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            experience.ExtraData = extraData;
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
 
-            experience.MasterStorer = this._storedCentralizedStorer;
-            experience.MasterDisturber = this._storedCentralizedDisturber;
-            experience.MasterSensor = this._storedCentralizedSensor;
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            experience.StorylineDetails = storylineDetails;
-            experience.StorylineDetails_Parameters = storylineDetails_Parameters;
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
+
+            //OPTIONAL
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
+
             //#endregion
 
-            //#region ASSIGN LOGIC REPOSITORY
-            switch (repositoryType.toUpperCase()) {
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            let storedRequestHandler_Experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Experience.Hear.Web_Development_13.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+
+            storedRequestHandler_Experience.ClientOrServerInstance = this._storedClientOrServerInstance;
+
+            storedRequestHandler_Experience.ExtraData = this._storedExtraData;
+
+            storedRequestHandler_Experience.MasterStorer = this._storedCentralizedStorer;
+            storedRequestHandler_Experience.MasterDisturber = this._storedCentralizedDisturber;
+            storedRequestHandler_Experience.MasterSensor = this._storedCentralizedSensor;
+
+            storedRequestHandler_Experience.StorylineDetails = this._storedStorylineDetails;
+            storedRequestHandler_Experience.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
+
+            switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    var localFile = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.State.Web_Development_13.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
-
-                    experience.Repository = localFile;
-                    experience.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Experience.Repository = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.State.Web_Development_13.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+                    storedRequestHandler_Experience.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    var remoteService = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.State.Web_Development_13.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(storylineDetails);
-
-                    experience.Repository = remoteService;
-                    experience.Repository.RequestName = this._storedRequestName;
+                    storedRequestHandler_Experience.Repository = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.State.Web_Development_13.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+                    storedRequestHandler_Experience.Repository.RequestName = this._storedRequestName;
 
                     break;
             }
+
             //#endregion
 
-            return experience;
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedRequestHandler_Experience;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion

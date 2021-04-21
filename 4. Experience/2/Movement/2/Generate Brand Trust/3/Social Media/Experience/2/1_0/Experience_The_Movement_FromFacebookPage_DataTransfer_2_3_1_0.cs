@@ -13,6 +13,8 @@ using System.Linq;
 using BaseDI.Professional.State.Social_Media_;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
+using Microsoft.Extensions.Configuration;
 
 namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 {    
@@ -20,30 +22,66 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
     {
         #region 1. Assign
 
-        //A. Variable Declaration
+        //SETTINGS
+        private IConfiguration _storedAppSettings = null;
 
-        //Assign Characters involved in storyline
-        private ProgrammingDotNet_Implementer_3_12_1_0 _dotNetDeveloper = null;
+        //CLIENT/SERVER
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
-        private ExtraData_12_2_1_0 _extraData = null;
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
+
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+
+        //DATASETS
+        private JObject _storedStorylineDetails;
+        private JObject _storedStorylineDetails_Parameters;
+
+        //MISC
+        private ExtraData_12_2_1_0 _storedExtraData;
+
+        //PLUMBING
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+
+        private string _storedRequestName = "";
+        private string _storedSystemRequestByName = "";
 
         #endregion
 
         #region 2. Ready
 
-        //A. Constructor Instantiation
-        public Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0()
+        Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region 1. Assign            
+
+            #region 1. INPUTS
+
+            #region MEMORIZE input parameters
+
+            _storedParameterInputs = parameterInputs;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region HANDLE niche setup
+
+            #region EDGE CASE - USE niche faults
 
 
             #endregion
 
-            #region 2. Action
+            #endregion
 
             #endregion
 
-            #region 3. Observe
+            #region 3. OUTPUT
+
 
             #endregion
         }
@@ -78,36 +116,356 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
             #endregion
         }
 
-
         #endregion
 
         #region 4. Action
 
-        //A. Story in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            #region 1. Assign
+            #region 1. INPUTS
 
-            //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns            
-            Use_DesignPattern_Builder_Experience_2_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_2_3_1_0(ClientOrServerInstance, MasterLeader, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
+            {
+                #region 1. INPUTS
+
+                #region DEFINE parameter inputs
+
+                SingleParmPoco_12_2_1_0 storedParameterInputs;
+
+                #endregion
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #region MEMORIZE clientOrServer instance
+
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+                #endregion
+
+                #region MEMORIZE app settings
+
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+
+                #endregion
+
+                #region MEMORIZE developer mode
+
+                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "EXECUTING request handler");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.cs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action.ValidateInputs()");
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null)
+                {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.";
+                            storedProcessCheckPointHit = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByName"))
+                    {
+                        storedMessage += "***parameterClientRequestByName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByNameParameters"))
+                    {
+                        storedMessage += "***parameterClientRequestByNameParameters*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedDisturber"))
+                    {
+                        storedMessage += "***parameterCentralizedDisturber*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedSensor"))
+                    {
+                        storedMessage += "***parameterCentralizedSensor*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedStorer"))
+                    {
+                        storedMessage += "***parameterCentralizedStorer*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    {
+                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails_Parameters"))
+                    {
+                        storedMessage += "***parameterStorylineDetails_Parameters*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode)
+                    {
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("PARSING parameter values failed");
+
+                    #endregion
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            //BEGIN valdation process
+            await ValidateInputs(_storedParameterInputs);
 
             #endregion
 
-            #region 2. Action
+            #region DEFINE request handler
 
-            #region HANDLE LOGIC REQUEST
+            Use_DesignPattern_Builder_Experience_2_3_1_0 storedRequestHandler_UsingBuilderPattern = null;
 
-            StorylineDetails = await designPattern.Action().ConfigureAwait(true);
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            _storedClientOrServerInstance = _storedParameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes handlers
+
+            _storedCentralizedDisturber = _storedParameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = _storedParameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = _storedParameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (_storedParameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? _storedParameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "EXECUTING request handler");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
+
+            //OPTIONAL
+            storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            string storedClientRequestByName = _storedParameterInputs.Parameters["parameterClientRequestByName"];
+            string storedClientRequestByNameParameters = _storedParameterInputs.Parameters["parameterClientRequestByNameParameters"];
+
+            string storedSystemRequestByName = _storedParameterInputs.Parameters["parameterSystemRequestByName"] ? _storedParameterInputs.Parameters["parameterSystemRequestByName"] : "";
+
+            _storedRequestName = storedClientRequestByName;
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = _storedParameterInputs.Parameters["parameterExtraData"] ? _storedParameterInputs.Parameters["parameterExtraData"] : null;
+
+            #endregion
+
+            #region MEMORIZE storyline details
+
+            _storedStorylineDetails = _storedParameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = _storedParameterInputs.Parameters["parameterStorylineDetails_Parameters"]s;
 
             #endregion
 
             #endregion
 
-            #region 3. Observe
+            #region 2. PROCESS
+
+            #region EXECUTE request handler
+
+            try
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode && (int)_storedClientOrServerInstance["processStepNumber"] == 0)
+                {
+                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
+
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                }
+
+                #endregion
+
+                #region IDEAL CASE - USE design pattern
+
+                //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
+                storedRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Experience_2_3_1_0(_storedParameterInputs);
+
+                StorylineDetails = await storedRequestHandler_UsingBuilderPattern.Action();
+
+                #endregion
+            }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
+
+                    storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED configurating request handler");
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
+            }
 
             #endregion
 
-            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request handler
+
+            #region IDEAL CASE - USE baseID dataset
+
+            return StorylineDetails;
+
+            #endregion
+
+
+            #endregion
+
+            #endregion
         }
 
         #endregion
@@ -121,70 +479,215 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
     {
         #region 1. Assign
 
-        internal object _centralizedStorer;
-        internal Dictionary<string, object> _client;
+        //SETTINGS
+        private IConfiguration _storedAppSettings = null;
 
-        internal JObject _storylineDetails;
-        internal JObject _storylineDetails_Parameters;
+        //CLIENT/SERVER
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
-        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
 
-        internal ExtraData_12_2_1_0 _extraData;
-        internal aClass_Programming_ScriptRoutable_12_2_1_0 _entryPoint;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+
+        //DATASETS
+        private JObject _storedStorylineDetails;
+        private JObject _storedStorylineDetails_Parameters;
+
+        //MISC
+        private ExtraData_12_2_1_0 _storedExtraData;
+
+        //PLUMBING
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+
+        private string _storedRequestName = "";
+        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private string _storedSystemRequestByName;
 
         #endregion
 
         #region 2. Ready
-        internal Use_DesignPattern_Builder_Experience_2_3_1_0(Dictionary<string, object> client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+
+        Use_DesignPattern_Builder_Experience_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            _centralizedStorer = centralizedStorer;
-            _client = client;
+            #region 1. INPUTS
 
-            _extraData = extraData;
+            #region MEMORIZE clientOrServer instance
 
-            _storylineDetails = storylineDetails;
-            _storylineDetails_Parameters = storylineDetails_Parameters;
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
-            _repository = repository;
+            #endregion
 
-            _entryPoint = entryPoint;
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes handlers
+
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE data repository
+
+            _storedRepository = parameterInputs.Parameters["parameterRepository"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #region MEMORIZE storyline details
+
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedParameterInputs = parameterInputs;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - USE defaults handler
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
-        #endregion
+        #endregion        
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
+        //A. Default state
+        public void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
         #region 4. Action
 
-        internal async Task<JObject> Action()
-        {            
-            #region ARRANGE LOGIC ORDER
+        public async Task<JObject> Action()
+        {
+            #region 1. INPUTS
 
-            var builder = new Implement_DesignPattern_Builder_Experience_2_3_1_0(_client, _centralizedStorer, _storylineDetails, _storylineDetails_Parameters, _repository, _extraData, _entryPoint);
+            #region DEFINE data response
 
-            _storylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
-
-            _storylineDetails = await builder.Action_2_Validate_Process().ConfigureAwait(true);
-
-            _storylineDetails = await builder.Action_3_Process_StoryAuthor().ConfigureAwait(true);
-            _storylineDetails = await builder.Action_4_Process_StoryCharacters().ConfigureAwait(true);
-            _storylineDetails = await builder.Action_5_Process_StorySetting().ConfigureAwait(true);
-            _storylineDetails = await builder.Action_6_Process_StoryExperiences().ConfigureAwait(true);
-            _storylineDetails = await builder.Action_7_Process_StoryResources().ConfigureAwait(true);
-
-            _storylineDetails = await builder.Action_8_Process_CRUD().ConfigureAwait(true);
-
-            _storylineDetails = await builder.Action_9_Verify_Process().ConfigureAwait(true);
-
-            _storylineDetails = await builder.Action_10_End_Process().ConfigureAwait(true);
+            dynamic storedDataResponse = null;
 
             #endregion
 
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+            #region DEFINE request handler
+
+            aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> storedRequestHandler_UsingBuilderPattern;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region ARRANGE execution order
+
+            #region IDEAL CASE - USE builder pattern
+
+            storedRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Experience_2_3_1_0(_storedParameterInputs);
+
+            await storedRequestHandler_UsingBuilderPattern.Action_1_Begin_Process();
+
+            await storedRequestHandler_UsingBuilderPattern.Action_2_Validate_Process();
+
+            await storedRequestHandler_UsingBuilderPattern.Action_3_Process_StoryAuthor();
+            await storedRequestHandler_UsingBuilderPattern.Action_4_Process_StoryCharacters();
+            await storedRequestHandler_UsingBuilderPattern.Action_5_Process_StorySetting();
+            await storedRequestHandler_UsingBuilderPattern.Action_6_Process_StoryExperiences();
+            await storedRequestHandler_UsingBuilderPattern.Action_7_Process_StoryResources();
+            await storedRequestHandler_UsingBuilderPattern.Action_8_Process_CRUD();
+
+            await storedRequestHandler_UsingBuilderPattern.Action_9_Verify_Process();
+
+            storedDataResponse = await storedRequestHandler_UsingBuilderPattern.Action_10_End_Process();
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN request response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return storedDataResponse;
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         #endregion
@@ -200,585 +703,346 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
     {
         #region 1. Assign
 
-        //Coding information
-        private string _entryPointName = "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0";
+        //SETTINGS
+        private IConfiguration _storedAppSettings = null;
 
-        private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _repository;
+        //CLIENT/SERVER
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
-        private object _centralizedStorer;
-        private Dictionary<string, object> _client;
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
 
-        private JObject _storylineDetails = null;
-        private JObject _storylineDetails_Parameters = null;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
-        private ExtraData_12_2_1_0 _extraData = null;
+        //DATASETS
+        private JObject _storedStorylineDetails;
+        private JObject _storedStorylineDetails_Parameters;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _entryPoint;
+        //MISC
+        private ExtraData_12_2_1_0 _storedExtraData;
 
-        //Available Repositories
-        //private RemoteServiceVendor_Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0 _experienceRepository_2_3_1_0;
+        //PLUMBING
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        //Response Observation template
-        private string _dataObservationTemplate = "";
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
 
-        //API Information
-        private List<JToken> _parameterTokens = null;
-
-        private string _securityAppId = "";
-        private string _securityAppSecret = "";
-        private string _securityToken = "";
+        private string _storedRequestName = "";
+        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private string _storedSystemRequestByName;
 
         #endregion
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Experience_2_3_1_0(object client, object centralizedStorer, JObject storylineDetails, JObject storylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository, ExtraData_12_2_1_0 extraData, aClass_Programming_ScriptRoutable_12_2_1_0 entryPoint = null)
+        internal Implement_DesignPattern_Builder_Experience_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            _centralizedStorer = centralizedStorer;
-            _client = (Dictionary<string, object>)client;
+            #region 1. INPUTS
 
-            _storylineDetails = storylineDetails;
-            _storylineDetails_Parameters = storylineDetails_Parameters;
+            #region MEMORIZE clientOrServer instance
 
-            _repository = repository;
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
-            _extraData = extraData;
+            #endregion
 
-            _entryPoint = entryPoint;
+            #region MEMORIZE app settings
 
-            HandleDefaults();
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes handlers
+
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE data repository
+
+            _storedRepository = parameterInputs.Parameters["parameterRepository"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #region MEMORIZE storyline details
+
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedParameterInputs = parameterInputs;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - USE defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion
 
         #region 3. Set
 
+        //A. Default state
         public override void HandleDefaults()
         {
+            #region 1. INPUTS
 
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
         }
 
         #endregion
 
         #region 4. Action
 
-        //Page 1-1
+        #region EXECUTE LOGIC INSTUCTIONS
 
+        //Page 1-1
         public override async Task<JObject> Action_1_Begin_Process()
         {
-            #region 1. Assign 
-
-
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action     
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe                      
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
 
             #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
-        //Page 1-7
-        public override async Task<JObject> Action_7_Process_StoryResources()
-        {
-            #region 1. Assign          
-
-            #endregion
-
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
-        //Page 1-8
-        public override async Task<JObject> Action_8_Process_CRUD()
-        {
-            #region 1. Assign          
-
-            #endregion
-
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
-
-            #endregion
-
-            #region 3. Observe                      
-
-            #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
-        }
-
+        #endregion
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
         //Page 1-2
-
         public override async Task<JObject> Action_2_Validate_Process()
         {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_7_Process_CRUD_1_1_0(_storylineDetails, _repository);
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe                      
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
 
             #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
         //Page 1-3
         public override async Task<JObject> Action_3_Process_StoryAuthor()
         {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_3_Process_HTMLLayoutContainer_1_1_0(_storylineDetails, _repository);
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe                      
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
 
             #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
         //Page 1-4
         public override async Task<JObject> Action_4_Process_StoryCharacters()
         {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_4_Process_HTMLLayoutRows_1_1_0(_storylineDetails, _repository);
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe                      
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
 
             #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
         //Page 1-5
         public override async Task<JObject> Action_5_Process_StorySetting()
         {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_5_Process_HTMLLayoutZones_1_1_0(_storylineDetails, _repository);
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe                      
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
 
             #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
         //Page 1-6
         public override async Task<JObject> Action_6_Process_StoryExperiences()
         {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_6_Process_HTMLLayoutZoneColumns_1_1_0(_storylineDetails, _repository);
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe                      
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+
+            #endregion
+        }
+
+        //Page 1-7
+        public override async Task<JObject> Action_7_Process_StoryResources()
+        {
+            #region 1. INPUTS
 
             #endregion
 
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+
+            #endregion
+        }
+
+        //Page 1-8
+        public override async Task<JObject> Action_8_Process_CRUD()
+        {
+            #region 1. INPUTS
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+
+            #endregion
         }
 
         //Page 1-9
         public override async Task<JObject> Action_9_Verify_Process()
         {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_8_Verify_Process_1_1_0(_storylineDetails, _repository);
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe                      
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
 
             #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
         //Page 1-10
         public override async Task<JObject> Action_10_End_Process()
         {
-            #region 1. Assign          
-
-            //var page = new ChapterPage.Page_1_9_End_Process_1_1_0(_storylineDetails, _repository);
+            #region 1. INPUTS
 
             #endregion
 
-            #region 2. Action              
-
-            //_storylineDetails = await page.Action().ConfigureAwait(true);
+            #region 2. PROCESS
 
             #endregion
 
-            #region 3. Observe                      
+            #region 3. OUTPUT
+
+            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
 
             #endregion
-
-            return await Task.FromResult<JObject>(_storylineDetails).ConfigureAwait(true);
         }
 
         #endregion
 
-        #endregion
+        #endregion        
     }
 
     #endregion
 }
-
-//public class Experience_AwarenessFacebookVideo_Status_7_1_1_0 : aScriptExperience_12_2_1_0
-//{
-//    readonly string _accessToken;
-//    readonly string _pageID;
-//    readonly string _facebookAPI = "https://graph.facebook.com/";
-//    readonly string _pageEdgeFeed = "feed";
-//    readonly string _pageEdgePhotos = "photos";
-//    readonly string _pageEdgeVideo = "videos";
-//    readonly string _postToPageURL;
-//    readonly string _postToPagePhotosURL;
-//    readonly string _postToPageVideosURL;
-
-
-//    public Experience_AwarenessFacebookVideo_Status_7_1_1_0(string accessToken, string pageID, JObject storylineDetails)
-//    {
-//        _accessToken = accessToken;
-//        _pageID = pageID;
-//        _postToPageURL = $"{_facebookAPI}{pageID}/{_pageEdgeFeed}";
-//        _postToPagePhotosURL = $"{_facebookAPI}{pageID}/{_pageEdgePhotos}";
-//        _postToPageVideosURL = $"{_facebookAPI}{pageID}/{_pageEdgeVideo}";
-//    }
-
-//    /// <summary>
-//    /// Publish a simple text post
-//    /// </summary>
-//    /// <returns>StatusCode and JSON response</returns>
-//    /// <param name="postText">Text for posting</param>
-//    public async Task<Tuple<int, string>> PublishSimplePost(string postText)
-//    {
-//        using (var http = new HttpClient())
-//        {
-//            var postData = new Dictionary<string, string> {
-//                { "access_token", _accessToken },
-//                { "message", postText }//,
-//                // { "formatting", "MARKDOWN" } // doesn't work
-//            };
-
-//            var httpResponse = await http.PostAsync(
-//                _postToPageURL,
-//                new FormUrlEncodedContent(postData)
-//                );
-//            var httpContent = await httpResponse.Content.ReadAsStringAsync();
-
-//            return new Tuple<int, string>(
-//                (int)httpResponse.StatusCode,
-//                httpContent
-//                );
-//        }
-//    }
-
-//    public string PublishVideoToFaceBook(string videoURL)
-//    {
-//        try
-//        {
-//            var resVideo = Task.Run(async () =>
-//            {
-//                using (var http = new HttpClient())
-//                {
-//                    return await UploadVideo(videoURL);
-//                }
-//            });
-//            var resVideoJson = JObject.Parse(resVideo.Result.Item2);
-
-//            if (resVideo.Result.Item1 != 200)
-//            {
-//                try // return error from JSON
-//                {
-//                    return $"Error uploading photo to Facebook. {resVideoJson["error"]["message"].Value<string>()}";
-//                }
-//                catch (Exception ex) // return unknown error
-//                {
-//                    // log exception somewhere
-//                    return $"Unknown error uploading photo to Facebook. {ex.Message}";
-//                }
-//            }
-
-//            //string uploadSessionID = resVideoJson["upload_session_id"].Value<string>();
-
-
-//        }
-//        catch (Exception ex)
-//        {
-//            return $"Unknown error publishing post to Facebook. {ex.Message}";
-//        }
-
-//        return "ok";
-//    }
-
-//    /// <summary>
-//    /// Publish a post to Facebook page
-//    /// </summary>
-//    /// <returns>Result</returns>
-//    /// <param name="postText">Post to publish</param>
-//    /// <param name="pictureURL">Post to publish</param>
-//    public string PublishToFacebook(string postText, string pictureURL)
-//    {
-//        try
-//        {
-//            // upload picture first
-//            var resImage = Task.Run(async () =>
-//            {
-//                using (var http = new HttpClient())
-//                {
-//                    return await UploadPhoto(pictureURL);
-//                }
-//            });
-//            var resImageJson = JObject.Parse(resImage.Result.Item2);
-
-//            if (resImage.Result.Item1 != 200)
-//            {
-//                try // return error from JSON
-//                {
-//                    return $"Error uploading photo to Facebook. {resImageJson["error"]["message"].Value<string>()}";
-//                }
-//                catch (Exception ex) // return unknown error
-//                {
-//                    // log exception somewhere
-//                    return $"Unknown error uploading photo to Facebook. {ex.Message}";
-//                }
-//            }
-//            // get post ID from the response
-//            string postID = resImageJson["post_id"].Value<string>();
-
-//            // and update this post (which is actually a photo) with your text
-//            var resText = Task.Run(async () =>
-//            {
-//                using (var http = new HttpClient())
-//                {
-//                    return await UpdatePhotoWithPost(postID, postText);
-//                }
-//            });
-//            var resTextJson = JObject.Parse(resText.Result.Item2);
-
-//            if (resText.Result.Item1 != 200)
-//            {
-//                try // return error from JSON
-//                {
-//                    return $"Error posting to Facebook. {resTextJson["error"]["message"].Value<string>()}";
-//                }
-//                catch (Exception ex) // return unknown error
-//                {
-//                    // log exception somewhere
-//                    return $"Unknown error posting to Facebook. {ex.Message}";
-//                }
-//            }
-
-//            return "OK";
-//        }
-//        catch (Exception ex)
-//        {
-//            // log exception somewhere
-//            return $"Unknown error publishing post to Facebook. {ex.Message}";
-//        }
-//    }
-
-//    /// <summary>
-//    /// 
-//    /// </summary>
-//    /// <param name="videoURL"></param>
-//    /// <returns></returns>
-//    public async Task<Tuple<int, string>> UploadVideo(string videoURL)
-//    {
-//        using (var http = new HttpClient())
-//        {
-//            var postData = new Dictionary<string, string>
-//            {
-//                {"access_toke", _accessToken},
-//                {"url", videoURL},
-//                {"upload_phase", "start"},
-//                {"file_size", ""}
-//            };
-
-//            var httpResponse = await http.PostAsync(
-//                _postToPageVideosURL,
-//                new FormUrlEncodedContent(postData)
-//            );
-//            var httpContent = await httpResponse.Content.ReadAsStringAsync();
-
-//            return new Tuple<int, string>(
-//                (int)httpResponse.StatusCode,
-//                httpContent
-//            );
-//        }
-//    }
-
-//    /// <summary>
-//    /// Upload a picture (photo)
-//    /// </summary>
-//    /// <returns>StatusCode and JSON response</returns>
-//    /// <param name="photoURL">URL of the picture to upload</param>
-//    public async Task<Tuple<int, string>> UploadPhoto(string photoURL)
-//    {
-//        using (var http = new HttpClient())
-//        {
-//            var postData = new Dictionary<string, string> {
-//                { "access_token", _accessToken },
-//                { "url", photoURL }
-//            };
-
-//            var httpResponse = await http.PostAsync(
-//                _postToPagePhotosURL,
-//                new FormUrlEncodedContent(postData)
-//                );
-//            var httpContent = await httpResponse.Content.ReadAsStringAsync();
-
-//            return new Tuple<int, string>(
-//                (int)httpResponse.StatusCode,
-//                httpContent
-//                );
-//        }
-//    }
-
-//    /// <summary>
-//    /// Update the uploaded picture (photo) with the given text
-//    /// </summary>
-//    /// <returns>StatusCode and JSON response</returns>
-//    /// <param name="postID">Post ID</param>
-//    /// <param name="postText">Text to add tp the post</param>
-//    public async Task<Tuple<int, string>> UpdatePhotoWithPost(string postID, string postText)
-//    {
-//        using (var http = new HttpClient())
-//        {
-//            var postData = new Dictionary<string, string> {
-//                { "access_token", _accessToken },
-//                { "message", postText }//,
-//                // { "formatting", "MARKDOWN" } // doesn't work
-//            };
-
-//            var httpResponse = await http.PostAsync(
-//                $"{_facebookAPI}{postID}",
-//                new FormUrlEncodedContent(postData)
-//                );
-//            var httpContent = await httpResponse.Content.ReadAsStringAsync();
-
-//            return new Tuple<int, string>(
-//                (int)httpResponse.StatusCode,
-//                httpContent
-//                );
-//        }
-//    }
-
-//    public override Task<JObject> Action_1_Begin_Process()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_2_Validate_Process()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_3_Process_StoryAuthor()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_4_Process_StoryCharacters()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_5_Process_StorySetting()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_6_Process_StoryExperiences()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_7_Process_StoryResources()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_8_Process_CRUD()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_9_Verify_Process()
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public override Task<JObject> Action_10_End_Process()
-//    {
-//        throw new NotImplementedException();
-//    }
-//}

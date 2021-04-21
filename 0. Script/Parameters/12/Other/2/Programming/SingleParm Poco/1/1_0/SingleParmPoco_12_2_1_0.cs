@@ -10,21 +10,7 @@ namespace BaseDI.Professional.Script.Programming.Poco_1
         {
             Parameters = new Dictionary<string, dynamic>();
         }
-
-        public string GenericID { get; set; }
-
-        public string ChapterName { get; set; }
-
-        public string EntryPointName { get; set; }
-
-        public string PageName { get; set; }
-
+    
         public Dictionary<string, dynamic> Parameters { get; set; }
-
-        public string RequestNameToProcess { get; set; }
-
-        public string RequestNameToProcessParameters { get; set; }
-
-        public dynamic StorylineDetails { get; set; }
     }
 }

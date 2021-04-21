@@ -8,20 +8,6 @@ export namespace BaseDI.Professional.Script.Programming.Poco_1
             this.Parameters = new Collections.Dictionary<string, object>();
         }
 
-        GenericID: string;
-
-        ChapterName: string;
-
-        EntryPointName: string;
-
-        PageName: string;
-
         Parameters: Collections.Dictionary<string, any>;
-
-        RequestNameToProcess: string;
-
-        RequestNameToProcessParameters: string;
-
-        StorylineDetails: Object;
     }
 }

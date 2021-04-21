@@ -60,6 +60,8 @@ using BaseDI.Professional.Story.Security_1;
 
 #region .Net Core
 
+using Microsoft.Extensions.Configuration;
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -69,7 +71,6 @@ using System.Globalization;
 #region 3rd Party Core
 
 using Newtonsoft.Json.Linq;
-using Microsoft.Extensions.Configuration;
 
 #endregion
 

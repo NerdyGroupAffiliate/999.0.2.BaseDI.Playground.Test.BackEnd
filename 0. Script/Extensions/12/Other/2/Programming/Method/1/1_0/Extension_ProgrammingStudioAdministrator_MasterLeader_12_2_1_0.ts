@@ -159,8 +159,8 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#region DEFINE data response
 
-            let storedDataFilteredData: any = null;;
-            let storedDataResponse: any = null;;
+            let storedDataFilteredData: any = null;
+            let storedDataResponse: any = null;
 
             //#endregion
 
