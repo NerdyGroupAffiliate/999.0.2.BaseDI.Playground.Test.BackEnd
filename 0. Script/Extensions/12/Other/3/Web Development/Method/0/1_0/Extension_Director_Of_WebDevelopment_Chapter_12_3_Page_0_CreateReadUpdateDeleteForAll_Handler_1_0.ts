@@ -150,7 +150,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#endregion
 
             //#region INPUTS
-
             htmlRowsJSON.value.HTMLContentItems.forEach(row => {
                 rows.push(`<${row.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(row.Attributes)}>{${row.Attributes[0].id}_Replace}</${row.Tag}>`)
             });
@@ -174,27 +173,88 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region VARIABLES
 
             let htmlColumnsString: string = htmlRowsString;
+            let storeCols = {};
 
             //#endregion
-
+            
             //#region INPUTS
-            htmlColumnsJSON.value.HTMLContentItems.forEach(col => {
-                let colItem = `<${col.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
-                htmlColumnsString = htmlColumnsString.replace(`{${col.ParentHTMLContentItemAttributeID}_Replace}`, colItem);
-            });
-            //#endregion
+            for(let col of htmlColumnsJSON.value.HTMLContentItems)
+            {
+                if(!storeCols[col.ParentHTMLContentItemAttributeID]) {
+                    storeCols[col.ParentHTMLContentItemAttributeID] = new Array();
+                }
 
+                let colItem = `<${col.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(col.Attributes)}>{${col.Attributes[0].id}_Replace}</${col.Tag}>\n`;
+                storeCols[col.ParentHTMLContentItemAttributeID].push(colItem);
+            };
+            
+            //#endregion
+            Object.keys(storeCols).forEach(item => {
+                let content = storeCols[item].join('\n')
+                htmlColumnsString = htmlColumnsString.replace(`{${item}_Replace}`, content);
+            });
             //#region VALUES
 
             //#endregion
 
             //#region OUTPUT
-
             return htmlColumnsString;
 
             //#endregion          
         }
 
+        public static GenerateHTMLChildern(parameterInputs) {
+            //DEFINE "attributes"
+            var storedAttributes = "";
+
+            //DEFINE "child couter"
+            var storedChildCounter = 0;
+
+            //DEFINE "closing tag"
+            var storedClosingTag = "";
+
+            //DEFINE "child tags"
+            var storedChildTags = "";
+
+            //DEFINE "final html"
+            var storedFinalizedHTML = "";
+
+            //SEARCH through children
+            // console.log("ChildHTMLContentDetails", parameterInputs.ChildHTMLContentDetails)
+
+            for (let storedChildMetaData of parameterInputs.ChildHTMLContentDetails) {
+                // console.log("storedChildMetaData", storedChildMetaData)
+
+                //MEMORIZE "opening tag" of metadata.
+                var storedOpeningTag = "<" + storedChildMetaData.Tag;
+
+                // //DETERMINE if there are child elements.
+                if (storedChildMetaData.ChildHTMLContentDetails.length > 0)
+                {
+                        for(let childHTMLContent of storedChildMetaData.ChildHTMLContentDetails)
+                        {
+                            //START over again with child data
+                            storedChildTags += this.GenerateHTMLChildern(childHTMLContent.ChildHTMLContentDetails);
+
+                            storedChildCounter += 1;
+                        }
+                }
+                
+                if(storedChildCounter == storedChildMetaData.ChildHTMLContentDetails.length)
+                {
+                    //PREPARE to close of HTML string
+                    storedClosingTag = "</" + storedChildMetaData.Tag + ">";
+
+                    storedAttributes = this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(storedChildMetaData.Attributes)
+
+                    storedFinalizedHTML += storedOpeningTag += " " + storedAttributes + ">" + storedChildMetaData?.Value + storedChildTags + storedClosingTag;
+                }
+            }
+
+            return storedFinalizedHTML;
+
+
+        }
         public static Step_4_0_Custom_Convert_HTMLContentJSONtoHTML_1_0(htmlContentJSON: any, htmlColumnsString: string): string {
             //#region VARIABLES
 
@@ -205,14 +265,24 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region INPUTS
 
-            htmlContentJSON.value.HTMLContentItems.forEach(con => {
-                if (idsAndConstant[con.ParentHTMLContentItemAttributeID] == undefined) {
+           htmlContentJSON.value.HTMLContentItems.forEach(con => {
+               var outputString;
+                if (!idsAndConstant[con.ParentHTMLContentItemAttributeID]) {
                     idsAndConstant[con.ParentHTMLContentItemAttributeID] = new Array();
-                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
                 }
-                else {
-                    idsAndConstant[con.ParentHTMLContentItemAttributeID].push(`<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`);
+
+                if (con.ChildHTMLContentDetails.length > 0) {
+                    var childString = this.GenerateHTMLChildern(con);
+                    childString = childString.replace(/"/g,`'`).replace(/undefined/g, ``);
+
+                    outputString = `<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${childString}</${con.Tag}>\n`;
+
+                } else {
+                    outputString = `<${con.Tag} ${this.Step_0_0_Custom_Store_HTMLAttributesToArray_1_0(con.Attributes)}>${con.Value}</${con.Tag}>\n`;
                 }
+
+                idsAndConstant[con.ParentHTMLContentItemAttributeID].push(outputString)
+
             });
 
             Object.keys(idsAndConstant).forEach(item => {
@@ -220,9 +290,9 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 htmlContentString = htmlContentString.replace(`{${item}_Replace}`, content);
             });
 
+
             if (process.env.APP_ENV == "SERVER") {
                 htmlContentString = htmlContentString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
-
             }
 
         
@@ -241,7 +311,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
         public static Step_5_0_Custom_Convert_CSSJSONToInlineStyles_1_0(htmlStylesJSON: any): string {
             //#region VARIABLES
+
             let htmlInlineCSSString: string = "";
+            // htmlInlineCSSString =  '<style>body { background: black }</style>';
+            // return htmlInlineCSSString;
+
             let styleFilePathLocal = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal
             let filesArray = htmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles
             // let files = [];
@@ -249,7 +323,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //     files.push(`<link rel="stylesheet" href="${styleFilePathLocal}${file.StyleFileName}.css" />\n`)
             // });
             // htmlInlineCSSString = files.join("\n");
-
+            
             let cssString = "";
             let PropertyArray = [];
             let MediaQueryArray = [];
@@ -365,6 +439,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     }
                     else {
                         console.log("Something wrong in Json file!")
+                        console.log(element.Attributes)
                     }
                 });
             });
