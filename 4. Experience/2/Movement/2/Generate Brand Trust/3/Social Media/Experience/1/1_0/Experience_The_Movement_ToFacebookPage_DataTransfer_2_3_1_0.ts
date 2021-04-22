@@ -704,6 +704,8 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
+        private _storedActionName: string = "";
+
         private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;;
         private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -726,6 +728,12 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             //#region MEMORIZE clientOrServer instance
 
             this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+            //#endregion
+
+            //#region MEMORIZE action name
+
+            this._storedActionName = this._storedClientOrServerInstance["actionName"];
 
             //#endregion
 
@@ -866,6 +874,160 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //#endregion
         }
+
+        //#region Factories
+
+        //#region Action_1_Begin_Process
+
+        private async Action_1_Begin_Process_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_2_Validate_Process
+
+        private async Action_2_Validate_Process_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_3_Process_StoryAuthor
+
+        private async Action_3_Process_StoryAuthor_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_4_Process_StoryCharacters
+
+        private async Action_4_Process_StoryCharacters_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_5_Process_StorySetting
+
+        private async Action_5_Process_StorySetting_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_6_Process_StoryExperiences
+
+        private async Action_6_Process_StoryExperiences_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_7_Process_StoryResources
+
+        private async Action_7_Process_StoryResources_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_8_Process_CRUD
+
+        private async Action_8_Process_CRUD_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_9_Verify_Process
+
+        private async Action_9_Verify_Process_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Action_10_End_Process
+
+        private async Action_10_End_Process_Factory(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
 
         //#endregion
 

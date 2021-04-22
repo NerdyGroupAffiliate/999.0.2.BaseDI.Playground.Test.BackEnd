@@ -740,6 +740,8 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
         private ExtraData_12_2_1_0 _storedExtraData;
 
         //PLUMBING
+        private string _storedActionName = "";
+
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
@@ -761,6 +763,12 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             #region MEMORIZE clientOrServer instance
 
             _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE action name
+
+            _storedActionName = (string)_storedClientOrServerInstance["actionName"];
 
             #endregion
 
@@ -890,6 +898,180 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             #endregion
         }
+
+        #region Factories
+
+        #region Action_1_Begin_Process
+
+        private async Task<JObject> Action_1_Begin_Process_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_2_Validate_Process
+
+        private async Task<JObject> Action_2_Validate_Process_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_3_Process_StoryAuthor
+
+        private async Task<JObject> Action_3_Process_StoryAuthor_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_4_Process_StoryCharacters
+
+        private async Task<JObject> Action_4_Process_StoryCharacters_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_5_Process_StorySetting
+
+        private async Task<JObject> Action_5_Process_StorySetting_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_6_Process_StoryExperiences
+
+        private async Task<JObject> Action_6_Process_StoryExperiences_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_7_Process_StoryResources
+
+        private async Task<JObject> Action_7_Process_StoryResources_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_8_Process_CRUD
+
+        private async Task<JObject> Action_8_Process_CRUD_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_9_Verify_Process
+
+        private async Task<JObject> Action_9_Verify_Process_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Action_10_End_Process
+
+        private async Task<JObject> Action_10_End_Process_Factory()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #endregion
 
         #endregion
 
@@ -1050,7 +1232,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
         #endregion
 
-        #endregion        
+        #endregion
     }
 
     #endregion
