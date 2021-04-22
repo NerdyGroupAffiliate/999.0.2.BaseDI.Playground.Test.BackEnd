@@ -454,7 +454,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 }
 
                 //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-                Use_DesignPattern_Builder_Experience_12_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_12_3_1_0(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
+                Use_DesignPattern_Builder_Experience_12_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_12_3_1_0(_storedParameterInputs);
 
                 StorylineDetails = await designPattern.Action().ConfigureAwait(true);
 
@@ -524,12 +524,14 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         internal JObject _storedStorylineDetails;
         internal JObject _storedStorylineDetails_Parameters;
 
-        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
+        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _storedRepository;
 
         //MISC
         internal ExtraData_12_2_1_0 _storedExtraData;
 
         //PLUMBING
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
@@ -540,7 +542,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Experience_12_3_1_0(Dictionary<string, object> parameterClientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedSensor, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterRepository, ExtraData_12_2_1_0 parameterExtraData, aClass_Programming_ScriptRoutable_12_2_1_0 parameter_ExperienceRequestHandler = null)
+        internal Use_DesignPattern_Builder_Experience_12_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -566,7 +568,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region MEMORIZE data stragety
 
-            _stored_Repository = parameterRepository;
+            _storedRepository = parameterDataRepository;
 
             #endregion
 
@@ -591,6 +593,8 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             #region MEMORIZE request details
 
             _stored_ExperienceRequestHandler = parameter_ExperienceRequestHandler;
+
+            _storedParameterInputs = parameterInputs;
 
             #endregion
 
@@ -648,7 +652,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region IDEAL CASE - USE builder pattern
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_ExperienceRequestHandler);
+            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(_storedClientOrServerInstance, _stored_CentralizedStorer, _stored_CentralizedStorer, _stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _storedRepository, _storedExtraData, _stored_ExperienceRequestHandler);
 
             _storedStorylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
 
@@ -708,7 +712,12 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private string _storedSettingSecurityAppToken = "";
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientOrServerInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
+
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
+
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
         private Task<Dictionary<string, JToken>> _storedServerInstance = null;
         private object _storedServerInstanceExperienceRequestHandler = null;
@@ -727,16 +736,18 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private ExtraData_12_2_1_0 _storedExtraData = null;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
+        private string _storedActionName = "";
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _stored_ExperienceRequestHandler;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        private string _stored_ExperienceRequestHandlerName = "Experience_The_Movement_ToFacebookPage_DataTransfer_12_2_1_0";
-        private string _stored_ExperienceRequestHandlerActionName = "";
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
 
-        private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
+        private string _storedRequestFileName = "Experience_The_Movement_ToFacebookPage_DataTransfer_12_2_1_0";
+        private string _storedRequestName = "";
+        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private string _storedSystemRequestByName;
 
         private Func<JObject, ExtraData_12_2_1_0, JObject> Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
         private Func<JObject, ExtraData_12_2_1_0, JObject> Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
@@ -747,46 +758,72 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Experience_12_3_1_0(Dictionary<string, object> parameterClientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedSensor, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterRepository, ExtraData_12_2_1_0 parameterExtraData, aClass_Programming_ScriptRoutable_12_2_1_0 parameter_ExperienceRequestHandler = null)
+        internal Implement_DesignPattern_Builder_Experience_12_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
-            #region MEMORIZE centralized processes 
+            #region MEMORIZE action name
 
-            _stored_CentralizedDisturber = parameterCentralizedDisturber;
-            _stored_CentralizedSensor = parameterCentralizedSensor;
-            _stored_CentralizedStorer = parameterCentralizedStorer;
+            _storedActionName = (string)_storedClientOrServerInstance["actionName"];
 
             #endregion
 
-            #region MEMORIZE data stragety
+            #region MEMORIZE app settings
 
-            _stored_Repository = parameterRepository;
-
-            #endregion
-
-            #region MEMORIZE experience request handler
-
-            _stored_ExperienceRequestHandler = parameter_ExperienceRequestHandler;
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
 
             #endregion
 
-            #region MEMORIZE extra data
+            #region MEMORIZE centralized processes handlers
 
-            _storedExtraData = parameterExtraData;
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE data repository
+
+            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedParameterInputs = parameterInputs;
 
             #endregion
 
@@ -840,9 +877,6 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 //STORE request server instance
                 _storedServerInstanceExperienceRequestHandler = _storedClientOrServerInstance.ContainsKey("Server") ? _storedClientOrServerInstance["Server"] : null;
-
-                //STORE request action name
-                _stored_ExperienceRequestHandlerActionName = _storedClientOrServerInstance.ContainsKey("actionName") ? (string)_storedClientOrServerInstance["actionName"] : null;
 
                 #endregion
             }
@@ -898,8 +932,191 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         #region EXECUTE LOGIC INSTUCTIONS
 
+        #region Action Methods
+
         //Page 1-5
         public override async Task<JObject> Action_5_Process_StorySetting()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs= new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            try
+            {
+                storedDataResponse = await Factory_Action_5_Process_StorySetting();
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        //Page 1-7
+        public override async Task<JObject> Action_7_Process_StoryResources()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            try
+            {
+                storedDataResponse = await Factory_Action_7_Process_StoryResources();
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Action Factories
+
+        #region Factory_Action_5_Process_StorySetting
+
+        private async Task<JObject> Factory_Action_5_Process_StorySetting()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            #region IDEAL CASE - USE factory method
+
+            if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+            {
+                storedDataResponse = await Execute_Action_5_Process_StorySetting_ProcessHttpRequest();
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        #region Logic
+
+        private async Task<JObject> Execute_Action_5_Process_StorySetting_ProcessHttpRequest()
         {
             #region 1. INPUTS
 
@@ -936,7 +1153,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             string storedControllerName = "";
             string storedControllerModelDataParameter = "";
             JObject storedControllerModelDataObject = null;
-            JObject storedControllerModelDataRemote = null;   
+            JObject storedControllerModelDataRemote = null;
 
             #endregion
 
@@ -944,15 +1161,15 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs= new SingleParmPoco_12_2_1_0();
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
             storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action.Action_5_Process_StorySetting.Execute_Action_5_Process_StorySetting_ProcessHttpRequest");
 
             #endregion
 
@@ -962,162 +1179,159 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             try
             {
-                if (_stored_ExperienceRequestHandlerActionName != null && _stored_ExperienceRequestHandlerActionName.ToString().ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                if (_storedServerHTTPRequestInstance != null && _storedServerHTTPRequestInstance is HttpRequest)
                 {
-                    if (_storedServerHTTPRequestInstance != null && _storedServerHTTPRequestInstance is HttpRequest)
+                    #region SETUP http server
+
+                    #region IDEAL CASE - USE baseDI pipeline
+
+                    #region 3. OUTPUT server response                       
+
+                    Step_2_0_Framework_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataParameter, object parameterControllerModelDataObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse, string parameterRequestActionVerb) =>
                     {
-                        #region SETUP http server
+                        _storedClientOrServerInstance["actionName"] = Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
+                        _storedClientOrServerInstance["processStepNumber"] = 0;
 
-                        #region IDEAL CASE - USE baseDI pipeline
-
-                        #region 3. OUTPUT server response                       
-
-                        Step_2_0_Framework_Output_ServerRequestToClient_1_0 = (object parameterControllerRoute, string parameterControllerName, string parameterControllerModelDataParameter, object parameterControllerModelDataObject, object parameterControllerModelDataRemote, HttpRequest parameterRequest, HttpResponse parameterResponse, string parameterRequestActionVerb) =>
+                        #region EDGE CASE - USE developer logger
+                        if (storedDeveloperMode)
                         {
-                            _storedClientOrServerInstance["actionName"] = Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
-                            _storedClientOrServerInstance["processStepNumber"] = 0;
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMasterLeaderIsSecondStep", true);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ROUTING information found - [" + parameterRequestActionVerb + ": '" + parameterRequest.Path);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                            #region EDGE CASE - USE developer logger
-                            if (storedDeveloperMode)
-                            {
-                                storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
-                                storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMasterLeaderIsSecondStep", true);
-                                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ROUTING information found - [" + parameterRequestActionVerb + ": '" + parameterRequest.Path);
-                                storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                                storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
-                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
-
-                                _storedExtraData.KeyValuePairs.Add("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
-                            }
-                            #endregion
-
-                            #region EDGE CASE - USE updates handler
-
-                            StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 parameterResponse) =>
-                            {
-                                Action("", "", null);
-                                return _storedStorylineDetails;
-                            };
-
-                            #endregion
-
-                            Action = (string parameterClientRequestByName, string parameterClientRequestByNameParameters, ExtraData_12_2_1_0 parameterExtraData) =>
-                            {
-                                return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                                    .SetupStoryline(_storedClientOrServerInstance, null, null, parameterExtraData, "", parameterControllerName, parameterControllerModelDataParameter)
-                                    .Action().Result;
-                            };
-
-                            Action(parameterControllerName, parameterControllerModelDataParameter, _storedExtraData);
-
-                            //OUTPUT http response
-                            return storedDataResponse;
-                        };
-
+                            _storedExtraData.KeyValuePairs.Add("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
+                        }
                         #endregion
 
-                        #region 2. INPUT server details
+                        #region EDGE CASE - USE updates handler
 
-                        Step_1_0_Framework_Control_ClientRequestToServer_1_0 = (JToken parameterRouteListDetails) =>
+                        StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 parameterResponse) =>
                         {
-                            if (parameterRouteListDetails != null)
-                            {
-                                #region SEARCH routing list details
-
-                                #region EDGE CASE - USE developer logger
-
-                                if (storedDeveloperMode)
-                                {
-                                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
-
-                                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [BEGIN searching for route " + _storedServerRoutePath + " in storylineDetails DataSet]");
-                                }
-
-                                #endregion
-
-                                foreach (var routeItemDetails in parameterRouteListDetails)
-                                {
-                                    //STORE listing of routes
-                                    storedControllerRoutes = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ControllerRoutes").Children().ToList(); //item.SetupItemTransportItemRoute.ControllerRoutes;
-
-                                    //STORE route controller name
-                                    storedControllerName = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ControllerName").ToString();
-
-                                    //STORE route dataset details
-                                    storedControllerModelDataParameter = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataParameter").ToString();
-                                    storedControllerModelDataObject = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataObject");
-
-                                    storedControllerModelDataRemote = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataRemote");
-
-                                    //DETERMINE if we have any routes
-                                    if (storedControllerRoutes != null && storedControllerRoutes.Count() > 0)
-                                    {
-                                        var route = storedControllerRoutes.Where(r => r.ToString().ToUpper() == _storedServerRoutePath.ToUpper()).SingleOrDefault();
-
-                                        if (route != null)
-                                        {
-                                            #region EDGE CASE - USE developer logger
-
-                                            if (storedDeveloperMode)
-                                            {
-                                                _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
-
-                                                Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [SUCCESSFULLY found a route for " + _storedServerRoutePath + " in storylineDetails DataSet]");
-                                            }
-
-                                            #endregion
-
-                                            return Step_2_0_Framework_Output_ServerRequestToClient_1_0(route.ToString(), storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, _storedServerHTTPRequestInstance, null, "GET");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        #region EDGE CASE - USE exception message
-
-                                        throw new Exception("[DISTURBANCE ISSUE] - Bug - Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> Action_5_Process_StorySetting - BaseDI will not work without a routing details for a server side application . Please make sure that the information was added to the STORYLINEDETAILS object in the Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 process!");
-
-                                        #endregion
-                                    }
-                                }
-
-                                #endregion
-                            }
-
+                            Action("", "", null);
                             return _storedStorylineDetails;
                         };
 
                         #endregion
 
-                        #region 1. CONFIGURE server defaults
+                        Action = (string parameterClientRequestByName, string parameterClientRequestByNameParameters, ExtraData_12_2_1_0 parameterExtraData) =>
+                        {
+                            return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                                .SetupStoryline(_storedClientOrServerInstance, null, null, parameterExtraData, "", parameterControllerName, parameterControllerModelDataParameter)
+                                .Action().Result;
+                        };
 
-                        storedParameterInputs = new SingleParmPoco_12_2_1_0();
+                        Action(parameterControllerName, parameterControllerModelDataParameter, _storedExtraData);
 
-                        storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.Add("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
-                        storedParameterInputs.Parameters.Add("parameterMasterStorer", _stored_CentralizedStorer);
-                        storedParameterInputs.Parameters.Add("parameterStorylineDetails", _storedStorylineDetails);
+                        //OUTPUT http response
+                        return storedDataResponse;
+                    };
 
-                        _storedServerInstance = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Control_ServerSetup_1_0(storedParameterInputs);
-                        
-                        storedRouteListDetails = _storedServerInstance.Result[_storedServerRequestRESTVerb.ToUpper()];
+                    #endregion
 
-                        #endregion
+                    #region 2. INPUT server details
 
-                        #endregion
+                    Step_1_0_Framework_Control_ClientRequestToServer_1_0 = (JToken parameterRouteListDetails) =>
+                    {
+                        if (parameterRouteListDetails != null)
+                        {
+                            #region SEARCH routing list details
 
-                        #endregion
+                            #region EDGE CASE - USE developer logger
 
-                        #region START http server
+                            if (storedDeveloperMode)
+                            {
+                                _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                        #region IDEAL CASE - USE .netcore server
+                                Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [BEGIN searching for route " + _storedServerRoutePath + " in storylineDetails DataSet]");
+                            }
 
-                        _storedStorylineDetails = Step_1_0_Framework_Control_ClientRequestToServer_1_0(storedRouteListDetails);
+                            #endregion
 
-                        #endregion
+                            foreach (var routeItemDetails in parameterRouteListDetails)
+                            {
+                                //STORE listing of routes
+                                storedControllerRoutes = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ControllerRoutes").Children().ToList(); //item.SetupItemTransportItemRoute.ControllerRoutes;
 
-                        #endregion
-                    }
+                                //STORE route controller name
+                                storedControllerName = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ControllerName").ToString();
+
+                                //STORE route dataset details
+                                storedControllerModelDataParameter = routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataParameter").ToString();
+                                storedControllerModelDataObject = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataObject");
+
+                                storedControllerModelDataRemote = (JObject)routeItemDetails.SelectToken("SetupItemTransportItemRoute.ModelDataRemote");
+
+                                //DETERMINE if we have any routes
+                                if (storedControllerRoutes != null && storedControllerRoutes.Count() > 0)
+                                {
+                                    var route = storedControllerRoutes.Where(r => r.ToString().ToUpper() == _storedServerRoutePath.ToUpper()).SingleOrDefault();
+
+                                    if (route != null)
+                                    {
+                                        #region EDGE CASE - USE developer logger
+
+                                        if (storedDeveloperMode)
+                                        {
+                                            _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
+
+                                            Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_5_Process_StorySetting - [SUCCESSFULLY found a route for " + _storedServerRoutePath + " in storylineDetails DataSet]");
+                                        }
+
+                                        #endregion
+
+                                        return Step_2_0_Framework_Output_ServerRequestToClient_1_0(route.ToString(), storedControllerName, storedControllerModelDataParameter, storedControllerModelDataObject, storedControllerModelDataRemote, _storedServerHTTPRequestInstance, null, "GET");
+                                    }
+                                }
+                                else
+                                {
+                                    #region EDGE CASE - USE exception message
+
+                                    throw new Exception("[DISTURBANCE ISSUE] - Bug - Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> Action_5_Process_StorySetting - BaseDI will not work without a routing details for a server side application . Please make sure that the information was added to the STORYLINEDETAILS object in the Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 process!");
+
+                                    #endregion
+                                }
+                            }
+
+                            #endregion
+                        }
+
+                        return _storedStorylineDetails;
+                    };
+
+                    #endregion
+
+                    #region 1. CONFIGURE server defaults
+
+                    storedParameterInputs = new SingleParmPoco_12_2_1_0();
+
+                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+                    storedParameterInputs.Parameters.Add("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
+                    storedParameterInputs.Parameters.Add("parameterMasterStorer", _stored_CentralizedStorer);
+                    storedParameterInputs.Parameters.Add("parameterStorylineDetails", _storedStorylineDetails);
+
+                    _storedServerInstance = Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Control_ServerSetup_1_0(storedParameterInputs);
+
+                    storedRouteListDetails = _storedServerInstance.Result[_storedServerRequestRESTVerb.ToUpper()];
+
+                    #endregion
+
+                    #endregion
+
+                    #endregion
+
+                    #region START http server
+
+                    #region IDEAL CASE - USE .netcore server
+
+                    _storedStorylineDetails = Step_1_0_Framework_Control_ClientRequestToServer_1_0(storedRouteListDetails);
+
+                    #endregion
+
+                    #endregion
                 }
             }
             catch
@@ -1140,18 +1354,37 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             #endregion
 
             #endregion
-
         }
 
-        //Page 1-7
+        #endregion
 
-        public override async Task<JObject> Action_7_Process_StoryResources()
+        #endregion
+
+        #region Factory_Action_7_Process_StoryResources
+
+        private async Task<JObject> Factory_Action_7_Process_StoryResources()
         {
             #region 1. INPUTS
 
-            #region DEFINE dynamic data
+            #region DEFINE data response
 
-            dynamic storedDynamicData = null;
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
 
             #endregion
 
@@ -1159,58 +1392,125 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region 2. PROCESS
 
-            try
+            #region EXECUTE process factory
+
+            #region IDEAL CASE - USE factory method
+
+            if (_storedActionName.ToUpper().Contains("COPYSTATICFILES_1_0"))
             {
-                if (_stored_ExperienceRequestHandlerActionName != null && _stored_ExperienceRequestHandlerActionName.ToString().ToUpper().Contains("COPYSTATICFILES_1_0"))
-                {
-                    #region EXECUTE copying static files
-
-                    #region IDEAL CASE - USE baseDI extension
-
-                    //Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(_storedStorylineDetails);
-
-                    #endregion
-
-                    #endregion
-                }
-
-                if (_stored_ExperienceRequestHandlerActionName != null && _stored_ExperienceRequestHandlerActionName.ToString().ToUpper().Contains("MAPSTATICFILES_1_0"))
-                {
-                    #region EXECUTE mapping static files
-
-                    #region IDEAL CASE - USE baseDI extension
-
-                    storedDynamicData = null;//Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(_storedStorylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedClientOrServerInstancermationSetupDetails", false).SingleOrDefault()?.Parent;
-
-                    if (storedDynamicData != null)
-                    {
-                        var setupItemEnvironmentClient = storedDynamicData?.Parent.value[0]._2_2_2_1_1_storedClientOrServerInstancermationSetupItem.value.SetupItemEnvironmentClient;
-                        
-                        storedDynamicData = _storedStorylineDetails;
-                        storedDynamicData.outputs[1].baseDIObservations.Add(setupItemEnvironmentClient);
-
-                        return await Task.FromResult<JObject>(storedDynamicData).ConfigureAwait(true);
-                    }
-
-                    #endregion
-
-                    #endregion
-                }
+                storedDataResponse = await Execute_Factory_Action_7_Process_StoryResources_CopyStaticFiles();
             }
-            catch
+
+            if (_storedActionName.ToUpper().Contains("MAPSTATICFILES_1_0"))
             {
-                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+                storedDataResponse = await Execute_Factory_Action_7_Process_StoryResources_MapStaticFiles();
             }
+
+            #endregion
+
+            #endregion
 
             #endregion
 
             #region 3. OUTPUT
 
-            #region RETURN process response
+            #region RETURN http response
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        #region Logic
+
+        private async Task<JObject> Execute_Factory_Action_7_Process_StoryResources_CopyStaticFiles()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            dynamic storedDataResponse = null;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE copying static files
+
+            #region IDEAL CASE - USE baseDI extension
+
+            //Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(_storedStorylineDetails);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        private async Task<JObject> Execute_Factory_Action_7_Process_StoryResources_MapStaticFiles()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            dynamic storedDataResponse = null;
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE mapping static files
+
+            #region IDEAL CASE - USE baseDI extension
+
+            storedDataResponse = null;//Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(_storedStorylineDetails, "searchkey", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedClientOrServerInstancermationSetupDetails", false).SingleOrDefault()?.Parent;
+
+            if (storedDataResponse != null)
+            {
+                var setupItemEnvironmentClient = storedDataResponse?.Parent.value[0]._2_2_2_1_1_storedClientOrServerInstancermationSetupItem.value.SetupItemEnvironmentClient;
+
+                storedDataResponse = _storedStorylineDetails;
+                storedDataResponse.outputs[1].baseDIObservations.Add(setupItemEnvironmentClient);
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
 
             #endregion
 
@@ -1221,7 +1521,15 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         #endregion
 
+        #endregion
+
+        #endregion
+
+        #endregion
+
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        #region Action Methods
 
         //Page 1-1
         public override async Task<JObject> Action_1_Begin_Process()
@@ -1439,6 +1747,148 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #endregion
         }
+
+        #endregion
+
+        #region Action Factories
+
+        #region Factory_Action_1_Begin_Process
+
+        private async Task<JObject> Factory_Action_1_Begin_Process()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Factory_Action_2_Validate_Process
+
+        private async Task<JObject> Factory_Action_2_Validate_Process()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Factory_Action_3_Process_StoryAuthor
+
+        private async Task<JObject> Factory_Action_3_Process_StoryAuthor()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Factory_Action_4_Process_StoryCharacters
+
+        private async Task<JObject> Factory_Action_4_Process_StoryCharacters()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Factory_Action_6_Process_StoryExperiences
+
+        private async Task<JObject> Factory_Action_6_Process_StoryExperiences()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Factory_Action_8_Process_CRUD
+
+        private async Task<JObject> Factory_Action_8_Process_CRUD()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Factory_Action_9_Verify_Process
+
+        private async Task<JObject> Factory_Action_9_Verify_Process()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #region Factory_Action_10_End_Process
+
+        private async Task<JObject> Factory_Action_10_End_Process()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        #region Logic
+
+        #endregion
+
+        #endregion
+
+        #endregion
 
         #endregion
 

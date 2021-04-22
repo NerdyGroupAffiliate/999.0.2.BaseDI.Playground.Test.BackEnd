@@ -1,20 +1,41 @@
-﻿
+﻿#region Imports
+
+#region BaseDI
+
+using BaseDI.Professional.Character_1;
+
+using BaseDI.Professional.Script.Programming_1;
+using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_1;
+using BaseDI.Professional.Script.Programming.Poco_1;
+using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
+
+using BaseDI.Professional.State.Social_Media_;
+
+#endregion
+
+#region .Net Core
+
+using Microsoft.Extensions.Configuration;
 
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using BaseDI.Professional.Character_1;
-using BaseDI.Professional.Script.Programming_1;
-using BaseDI.Professional.Script.Programming.Abstract_1;
+
 using System.Text;
-using BaseDI.Professional.Script.Programming.Extensions_1;
+
 using System.Linq;
-using BaseDI.Professional.State.Social_Media_;
-using BaseDI.Professional.Script.Programming.Poco_1;
-using BaseDI.Professional.Script.Programming.Repository_1;
-using BaseDI.Professional.Script.Risk_Management.Extensions_0;
-using Microsoft.Extensions.Configuration;
+
+#endregion 
+
+#region 3rd Party Core
+
+using Newtonsoft.Json.Linq;
+
+#endregion
+
+#endregion
 
 namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 {    
@@ -54,14 +75,33 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #region 2. Ready
 
-        Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-
             #region 1. INPUTS
 
             #region MEMORIZE input parameters
 
             _storedParameterInputs = parameterInputs;
+
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            _storedClientOrServerInstance = _storedParameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes handlers
+
+            _storedCentralizedDisturber = _storedParameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = _storedParameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = _storedParameterInputs.Parameters["parameterCentralizedStorer"];
 
             #endregion
 
@@ -124,6 +164,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
         {
             #region 1. INPUTS
 
+
             #region VALIDATE input parameters
 
             Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
@@ -167,7 +208,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "EXECUTING request handler");
+                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "VALIDATING request inputs");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
@@ -328,26 +369,6 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
-
-            _storedClientOrServerInstance = _storedParameterInputs.Parameters["parameterClientOrServerInstance"];
-
-            #endregion
-
-            #region MEMORIZE app settings
-
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
-
-            #endregion
-
-            #region MEMORIZE centralized processes handlers
-
-            _storedCentralizedDisturber = _storedParameterInputs.Parameters["parameterCentralizedDisturber"];
-            _storedCentralizedSensor = _storedParameterInputs.Parameters["parameterCentralizedSensor"];
-            _storedCentralizedStorer = _storedParameterInputs.Parameters["parameterCentralizedStorer"];
-
-            #endregion
-
             #region MEMORIZE developer mode
 
             bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
@@ -361,35 +382,11 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
             storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
 
             //OPTIONAL
             storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
-
-            #endregion
-
-            #region MEMORIZE request details
-
-            string storedClientRequestByName = _storedParameterInputs.Parameters["parameterClientRequestByName"];
-            string storedClientRequestByNameParameters = _storedParameterInputs.Parameters["parameterClientRequestByNameParameters"];
-
-            string storedSystemRequestByName = _storedParameterInputs.Parameters["parameterSystemRequestByName"] ? _storedParameterInputs.Parameters["parameterSystemRequestByName"] : "";
-
-            _storedRequestName = storedClientRequestByName;
-
-            #endregion
-
-            #region MEMORIZE extra data
-
-            _storedExtraData = _storedParameterInputs.Parameters["parameterExtraData"] ? _storedParameterInputs.Parameters["parameterExtraData"] : null;
-
-            #endregion
-
-            #region MEMORIZE storyline details
-
-            _storedStorylineDetails = _storedParameterInputs.Parameters["parameterStorylineDetails"];
-            _storedStorylineDetails_Parameters = _storedParameterInputs.Parameters["parameterStorylineDetails_Parameters"]s;
 
             #endregion
 
@@ -512,7 +509,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #region 2. Ready
 
-        Use_DesignPattern_Builder_Experience_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        internal Use_DesignPattern_Builder_Experience_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -538,7 +535,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
             #region MEMORIZE data repository
 
-            _storedRepository = parameterInputs.Parameters["parameterRepository"];
+            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
 
             #endregion
 
@@ -770,7 +767,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
             #region MEMORIZE data repository
 
-            _storedRepository = parameterInputs.Parameters["parameterRepository"];
+            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
 
             #endregion
 
@@ -863,6 +860,8 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #region EXECUTE LOGIC INSTUCTIONS
 
+        #region Action Methods
+
         //Page 1-1
         public override async Task<JObject> Action_1_Begin_Process()
         {
@@ -881,11 +880,13 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
             #endregion
         }
 
-        #region Factories
+        #endregion
 
-        #region Action_1_Begin_Process
+        #region Action Factories
 
-        private async Task<JObject> Action_1_Begin_Process_Factory()
+        #region Factory_Action_1_Begin_Process
+
+        private async Task<JObject> Factory_Action_1_Begin_Process()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -900,9 +901,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_2_Validate_Process
+        #region Factory_Action_2_Validate_Process
 
-        private async Task<JObject> Action_2_Validate_Process_Factory()
+        private async Task<JObject> Factory_Action_2_Validate_Process()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -917,9 +918,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_3_Process_StoryAuthor
+        #region Factory_Action_3_Process_StoryAuthor
 
-        private async Task<JObject> Action_3_Process_StoryAuthor_Factory()
+        private async Task<JObject> Factory_Action_3_Process_StoryAuthor()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -934,9 +935,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_4_Process_StoryCharacters
+        #region Factory_Action_4_Process_StoryCharacters
 
-        private async Task<JObject> Action_4_Process_StoryCharacters_Factory()
+        private async Task<JObject> Factory_Action_4_Process_StoryCharacters()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -951,9 +952,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_5_Process_StorySetting
+        #region Factory_Action_5_Process_StorySetting
 
-        private async Task<JObject> Action_5_Process_StorySetting_Factory()
+        private async Task<JObject> Factory_Action_5_Process_StorySetting()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -968,9 +969,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_6_Process_StoryExperiences
+        #region Factory_Action_6_Process_StoryExperiences
 
-        private async Task<JObject> Action_6_Process_StoryExperiences_Factory()
+        private async Task<JObject> Factory_Action_6_Process_StoryExperiences()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -985,9 +986,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_7_Process_StoryResources
+        #region Factory_Action_7_Process_StoryResources
 
-        private async Task<JObject> Action_7_Process_StoryResources_Factory()
+        private async Task<JObject> Factory_Action_7_Process_StoryResources()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -1002,9 +1003,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_8_Process_CRUD
+        #region Factory_Action_8_Process_CRUD
 
-        private async Task<JObject> Action_8_Process_CRUD_Factory()
+        private async Task<JObject> Factory_Action_8_Process_CRUD()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -1019,9 +1020,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_9_Verify_Process
+        #region Factory_Action_9_Verify_Process
 
-        private async Task<JObject> Action_9_Verify_Process_Factory()
+        private async Task<JObject> Factory_Action_9_Verify_Process()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -1036,9 +1037,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #endregion
 
-        #region Action_10_End_Process
+        #region Factory_Action_10_End_Process
 
-        private async Task<JObject> Action_10_End_Process_Factory()
+        private async Task<JObject> Factory_Action_10_End_Process()
         {
             switch (_storedActionName.ToUpper())
             {
@@ -1058,6 +1059,8 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
         #endregion
 
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        #region Action Methods
 
         //Page 1-2
         public override async Task<JObject> Action_2_Validate_Process()
@@ -1220,6 +1223,12 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
             #endregion
         }
+
+        #endregion
+
+        #region Action Factories
+
+        #endregion
 
         #endregion
 

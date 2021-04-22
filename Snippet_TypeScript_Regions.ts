@@ -79,7 +79,7 @@ export class ClassModel
 
         //#region MEMORIZE data stragety
 
-        //this._stored_Repository = parameterRepository;
+        //this._stored_Repository = parameterDataRepository;
 
         //#endregion
 

@@ -89,7 +89,7 @@ public class ClassModel
 
         #region MEMORIZE data stragety
 
-        //_stored_Repository = parameterRepository;
+        //_stored_Repository = parameterDataRepository;
 
         #endregion
 

@@ -20,7 +20,8 @@ import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from 
 //#endregion
 
 export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
-    export class Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0 extends aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 {
+    export class Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0 extends aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
+    {
         //#region 1. Assign
 
         //SETTINGS
@@ -518,7 +519,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
             //#region MEMORIZE data repository
 
-            this._storedRepository = parameterInputs.Parameters.getValue("parameterRepository");
+            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
 
             //#endregion
 
@@ -747,7 +748,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
             //#region MEMORIZE data repository
 
-            this._storedRepository = parameterInputs.Parameters.getValue("parameterRepository");
+            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
 
             //#endregion
 
@@ -851,6 +852,8 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
+        //#region Action Methods
+
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object> {
             //#region 1. INPUTS
@@ -868,11 +871,13 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
             //#endregion
         }
 
-        //#region Factories
+        //#endregion
 
-        //#region Action_1_Begin_Process
+        //#region Action Factories
 
-        private async Action_1_Begin_Process_Factory(): Promise<object> {
+        //#region Factory_Action_1_Begin_Process
+
+        private async Factory_Action_1_Begin_Process(): Promise<object> {
             switch (this._storedActionName.toUpperCase()) {
                 default:
                     return null;
@@ -883,148 +888,15 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
         //#endregion
 
-        //#endregion
-
-        //#region Action_2_Validate_Process
-
-        private async Action_2_Validate_Process_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_3_Process_StoryAuthor
-
-        private async Action_3_Process_StoryAuthor_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_4_Process_StoryCharacters
-
-        private async Action_4_Process_StoryCharacters_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_5_Process_StorySetting
-
-        private async Action_5_Process_StorySetting_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_6_Process_StoryExperiences
-
-        private async Action_6_Process_StoryExperiences_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_7_Process_StoryResources
-
-        private async Action_7_Process_StoryResources_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_8_Process_CRUD
-
-        private async Action_8_Process_CRUD_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_9_Verify_Process
-
-        private async Action_9_Verify_Process_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_10_End_Process
-
-        private async Action_10_End_Process_Factory(): Promise<object>  {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
+        //#endregion       
 
         //#endregion
 
         //#endregion
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        //#region Action Methods
 
         //Page 1-2
         public async Action_2_Validate_Process(): Promise<object> {
@@ -1070,6 +942,147 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
         public async Action_10_End_Process(): Promise<object> {
             return this._storedStorylineDetails;
         }
+
+        //#endregion
+
+        //#region Action Factories
+
+        //#region Factory_Action_2_Validate_Process
+
+        private async Factory_Action_2_Validate_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_3_Process_StoryAuthor
+
+        private async Factory_Action_3_Process_StoryAuthor(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_4_Process_StoryCharacters
+
+        private async Factory_Action_4_Process_StoryCharacters(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_5_Process_StorySetting
+
+        private async Factory_Action_5_Process_StorySetting(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_6_Process_StoryExperiences
+
+        private async Factory_Action_6_Process_StoryExperiences(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_7_Process_StoryResources
+
+        private async Factory_Action_7_Process_StoryResources(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_8_Process_CRUD
+
+        private async Factory_Action_8_Process_CRUD(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_9_Verify_Process
+
+        private async Factory_Action_9_Verify_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_10_End_Process
+
+        private async Factory_Action_10_End_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion        
 
         //#endregion
 

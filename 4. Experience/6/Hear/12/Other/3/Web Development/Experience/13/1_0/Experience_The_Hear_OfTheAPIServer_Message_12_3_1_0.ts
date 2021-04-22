@@ -36,7 +36,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region 2. Ready
 
-        constructor(extraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0)
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
             super();
 
@@ -164,7 +164,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //PLUMBING
         private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         private _stored_ExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -176,7 +176,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterMasterLeader: any, parameterCentralizedStorer: any, parameterCentralizedSensor: any, parameterCentralizedDisturber: any, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRepository: IContract_Programming_Repository_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, parameter_ExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0)
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
             //#region 1. INPUTS
 
@@ -196,7 +196,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             this._stored_CentralizedDisturber = parameterCentralizedDisturber;
             this._stored_CentralizedSensor = parameterCentralizedSensor;
-            this._stored_CentralizedStorer = parameterCentralizedStorer;
+            this._storedCentralizedDisturber = parameterCentralizedStorer;
 
             this._stored_MasterLeader = parameterMasterLeader;
 
@@ -204,7 +204,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region MEMORIZE data stragety
 
-            this._stored_Repository = parameterRepository;
+            this._stored_Repository = parameterDataRepository;
 
             //#endregion
 
@@ -291,7 +291,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region IDEAL CASE - USE builder pattern
 
-            const builder = new Implement_DesignPattern_Builder_Experience_12_2_1_0(this._storedClientOrServerInstance, this._stored_MasterLeader, this._stored_CentralizedStorer, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._stored_Repository, this._storedExtraData, this._stored_ExperienceRequestHandler);
+            const builder = new Implement_DesignPattern_Builder_Experience_12_2_1_0(this._storedClientOrServerInstance, this._stored_MasterLeader, this._storedCentralizedDisturber, this._stored_CentralizedDisturber, this._stored_CentralizedSensor, this._storedStorylineDetails, this._storedStorylineDetails_Parameters, this._stored_Repository, this._storedExtraData, this._stored_ExperienceRequestHandler);
 
             this._storedStorylineDetails = await builder.Action_1_Begin_Process();
 
@@ -331,6 +331,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         }
         //#endregion
     }
+    //#endregion
 
     //#region 6. Action Implementation
     export class Implement_DesignPattern_Builder_Experience_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
@@ -354,16 +355,18 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
-        private _stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;      
+        private _storedActionName: string = "";
 
-        private _stored_ExperienceRequestHandler: any
-        private _stored_ExperienceRequestHandlerActionName: string = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+        private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;      
 
-        private _stored_MasterLeader: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-        private _stored_Repository: IContract_Programming_Repository_12_2_1_0;
+        private _storedRequestFileName: string = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+        private _storedRequestName: string = "";
+        private _storedRepository: IContract_Programming_Repository_12_2_1_0;
+        private _storedSystemRequestByName: string;
 
         public StoredStartUpCallBack;
 
@@ -371,7 +374,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region 2. Ready
 
-        constructor(parameterClientORserverInstance: any, parameterMasterLeader: any, parameterCentralizedStorer: any, parameterCentralizedSensor: any, parameterCentralizedDisturber: any, parameterStorylineDetails: object, parameterStorylineDetails_Parameters: object, parameterRepository: IContract_Programming_Repository_12_2_1_0, parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0, parameter_ExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0)
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
             super();
 
@@ -393,7 +396,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             this._stored_CentralizedDisturber = parameterCentralizedDisturber;
             this._stored_CentralizedSensor = parameterCentralizedSensor;
-            this._stored_CentralizedStorer = parameterCentralizedStorer;
+            this._storedCentralizedDisturber = parameterCentralizedStorer;
 
             this._stored_MasterLeader = parameterMasterLeader;
 
@@ -401,7 +404,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region MEMORIZE data stragety
 
-            this._stored_Repository = parameterRepository;
+            this._stored_Repository = parameterDataRepository;
 
             //#endregion
 
@@ -800,7 +803,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(this._storedClientOrServerInstance, Object));
                     storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
-                    storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(this._stored_CentralizedStorer, Object));
+                    storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(this._storedCentralizedDisturber, Object));
                     storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(this._storedStorylineDetails, Object));
                
                     this._storedServerInstance = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Control_ServerSetup_1_0(storedParameterInputs);
@@ -1059,4 +1062,5 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#endregion        
     }
+    //#endregion
 }

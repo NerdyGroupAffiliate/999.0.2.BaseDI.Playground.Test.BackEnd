@@ -56,14 +56,14 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
         //#endregion
 
         //#region 2. Ready
-        constructor(parameterStorylineDetails: object, parameterRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+        constructor(parameterStorylineDetails: object, parameterDataRepository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
             super();
 
             //#region 1. INPUTS
 
             //#region MEMORIZE data stragety
 
-            this.Repository = parameterRepository;
+            this.Repository = parameterDataRepository;
 
             //#endregion
 

@@ -68,6 +68,26 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //#endregion
 
+            //#region MEMORIZE clientOrServer instance
+
+            this._storedClientOrServerInstance = this._storedParameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+            //#endregion
+
+            //#region MEMORIZE app settings
+
+            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE centralized processes handlers
+
+            this._storedCentralizedDisturber = this._storedParameterInputs.Parameters.getValue("parameterCentralizedDisturber");
+            this._storedCentralizedSensor = this._storedParameterInputs.Parameters.getValue("parameterCentralizedSensor");
+            this._storedCentralizedStorer = this._storedParameterInputs.Parameters.getValue("parameterCentralizedStorer");
+
+            //#endregion
+
             //#endregion
 
             //#region 2. PROCESS
@@ -168,11 +188,11 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "EXECUTING request handler");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "VALIDATING request inputs");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action.ValidateInputs()");
 
                 //#endregion
@@ -316,27 +336,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             let storedRequestHandler_UsingBuilderPattern: Use_DesignPattern_Builder_Experience_2_3_1_0 = null;
 
-            //#endregion
-
-            //#region MEMORIZE clientOrServer instance
-
-            this._storedClientOrServerInstance = this._storedParameterInputs.Parameters.getValue("parameterClientOrServerInstance");
-
-            //#endregion
-
-            //#region MEMORIZE app settings
-
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
-
-            //#endregion
-
-            //#region MEMORIZE centralized processes handlers
-
-            this._storedCentralizedDisturber = this._storedParameterInputs.Parameters.getValue("parameterCentralizedDisturber");
-            this._storedCentralizedSensor = this._storedParameterInputs.Parameters.getValue("parameterCentralizedSensor");
-            this._storedCentralizedStorer = this._storedParameterInputs.Parameters.getValue("parameterCentralizedStorer");
-
-            //#endregion
+            //#endregion  
 
             //#region MEMORIZE developer mode
 
@@ -356,30 +356,6 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //OPTIONAL
             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
-
-            //#endregion
-
-            //#region MEMORIZE request details
-
-            let storedClientRequestByName: string = this._storedParameterInputs.Parameters.getValue("parameterClientRequestByName");
-            let storedClientRequestByNameParameters: string = this._storedParameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
-
-            let storedSystemRequestByName: string = this._storedParameterInputs.Parameters.getValue("parameterSystemRequestByName") ? parameterInputs.Parameters.getValue("parameterSystemRequestByName") : "";
-
-            this._storedRequestName = storedClientRequestByName;
-
-            //#endregion
-
-            //#region MEMORIZE extra data
-
-            this._storedExtraData = this._storedParameterInputs.Parameters.getValue("parameterExtraData") ? this._storedParameterInputs.Parameters.getValue("parameterExtraData") : null;
-    
-            //#endregion
-
-            //#region MEMORIZE storyline details
-
-            this._storedStorylineDetails = this._storedParameterInputs.Parameters.getValue("parameterStorylineDetails");
-            this._storedStorylineDetails_Parameters = this._storedParameterInputs.Parameters.getValue("parameterStorylineDetails_Parameters");
 
             //#endregion
 
@@ -524,7 +500,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //#region MEMORIZE data repository
 
-            this._storedRepository = parameterInputs.Parameters.getValue("parameterRepository");
+            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
 
             //#endregion
 
@@ -679,6 +655,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
         //#endregion
     }
+    //#endregion
 
     //#region 6. Action Implementation
     export class Implement_DesignPattern_Builder_Experience_2_3_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
@@ -753,7 +730,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //#region MEMORIZE data repository
 
-            this._storedRepository = parameterInputs.Parameters.getValue("parameterRepository");
+            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
 
             //#endregion
 
@@ -857,164 +834,71 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
+        //#region Action Methods
+
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object>
         {
             //#region 1. INPUTS
 
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance",this. _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action.Action_1_Begin_Process");
+
+            //#endregion
+
             //#endregion
 
             //#region 2. PROCESS
+
+            try {
+                storedDataResponse = await this.Factory_Action_1_Begin_Process();
+            }
+            catch(mistake)
+            {
+                throw mistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
 
             //#endregion
 
             //#region 3. OUTPUT
 
-            return null;
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedDataResponse;
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
         }
 
-        //#region Factories
-
-        //#region Action_1_Begin_Process
-
-        private async Action_1_Begin_Process_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
         //#endregion
 
-        //#endregion
+        //#region Action Factories
 
-        //#region Action_2_Validate_Process
+        //#region Factory_Action_1_Begin_Process
 
-        private async Action_2_Validate_Process_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_3_Process_StoryAuthor
-
-        private async Action_3_Process_StoryAuthor_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_4_Process_StoryCharacters
-
-        private async Action_4_Process_StoryCharacters_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_5_Process_StorySetting
-
-        private async Action_5_Process_StorySetting_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_6_Process_StoryExperiences
-
-        private async Action_6_Process_StoryExperiences_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_7_Process_StoryResources
-
-        private async Action_7_Process_StoryResources_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_8_Process_CRUD
-
-        private async Action_8_Process_CRUD_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_9_Verify_Process
-
-        private async Action_9_Verify_Process_Factory(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //#region Logic
-
-        //#endregion
-
-        //#endregion
-
-        //#region Action_10_End_Process
-
-        private async Action_10_End_Process_Factory(): Promise<object> {
+        private async Factory_Action_1_Begin_Process(): Promise<object> {
             switch (this._storedActionName.toUpperCase()) {
                 default:
                     return null;
@@ -1032,6 +916,8 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
         //#endregion
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        //#region Action Methods
 
         //Page 1-2
         public async Action_2_Validate_Process(): Promise<object> {
@@ -1080,6 +966,148 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
         //#endregion
 
+        //#region Action Factories
+
+        //#region Factory_Action_2_Validate_Process
+
+        private async Factory_Action_2_Validate_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_3_Process_StoryAuthor
+
+        private async Factory_Action_3_Process_StoryAuthor(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_4_Process_StoryCharacters
+
+        private async Factory_Action_4_Process_StoryCharacters(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_5_Process_StorySetting
+
+        private async Factory_Action_5_Process_StorySetting(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_6_Process_StoryExperiences
+
+        private async Factory_Action_6_Process_StoryExperiences(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_7_Process_StoryResources
+
+        private async Factory_Action_7_Process_StoryResources(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_8_Process_CRUD
+
+        private async Factory_Action_8_Process_CRUD(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_9_Verify_Process
+
+        private async Factory_Action_9_Verify_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_10_End_Process
+
+        private async Factory_Action_10_End_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion        
+
+        //#endregion
+
         //#endregion        
     }
+    //#endregion
 }

@@ -68,13 +68,13 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_10_End_Process_12_2_1_0(JObject parameterStorylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterRepository)
+        public Page_1_10_End_Process_12_2_1_0(JObject parameterStorylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterDataRepository)
         {
             #region 1. INPUTS
 
             #region MEMORIZE data stragety
 
-            Repository = parameterRepository;
+            Repository = parameterDataRepository;
 
             #endregion
 
