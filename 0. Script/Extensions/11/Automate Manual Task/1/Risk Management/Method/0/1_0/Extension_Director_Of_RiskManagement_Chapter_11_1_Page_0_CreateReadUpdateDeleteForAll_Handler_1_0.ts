@@ -348,8 +348,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         //#region 3B. OUPUT server message
                         if (process.env.APP_ENV.toUpperCase() == "SERVER") {
                             if (storedMistake) {
-                                //console.log("%c" + storedMessage, "color:" + "Orange");
-                                console.log(storedMessage);
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.underline.magentaBright(storedMessage));
 
                                 return;
                             }

@@ -334,6 +334,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
     //#endregion
 
     //#region 6. Action Implementation
+
     export class Implement_DesignPattern_Builder_Experience_12_2_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
@@ -537,9 +538,210 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
+        //#region Action Methods
+
         //Page 1-5
         public async Action_5_Process_StorySetting(): Promise<object>
         {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_5_Process_StorySetting");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try
+            {
+                storedDataResponse = await this.Factory_Action_5_Process_StorySetting();
+            }
+            catch(mistake)
+            {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region HANDLE execution response
+    
+
+            //#endregion
+
+            return storedDataResponse;
+
+            //#endregion
+        }
+
+        //Page 1-7
+        public async Action_7_Process_StoryResources(): Promise<object>
+        {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            try
+            {
+                if (this._stored_ExperienceRequestHandlerActionName != null && this._stored_ExperienceRequestHandlerActionName.toUpperCase().includes("COPYSTATICFILES_1_0"))
+                {
+                    //#region EXECUTE copying static files
+
+                    //#region IDEAL CASE - USE baseDI extension
+
+                    await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(this._storedStorylineDetails);
+
+                    //#endregion
+
+                    //#endregion
+                }
+            }
+            catch(mistake)
+            {
+                throw mistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //#endregion
+
+        //#region Action Factories
+
+        //#region Factory_Action_5_Process_StorySetting
+
+        private async Factory_Action_5_Process_StorySetting(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Action_5_Process_StorySetting -> Factory_Action_5_Process_StorySetting");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                if (this._storedActionName.toUpperCase().includes("PROCESSHTTPREQUEST_1_0")) {
+                    storedDataResponse = await this.Execute_Action_5_Process_StorySetting_ProcessHttpRequest();
+                }
+
+                //#endregion
+
+            }
+            catch(mistake)
+            {
+                throw mistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedDataResponse;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //#region Logic
+        private async Execute_Action_5_Process_StorySetting_ProcessHttpRequest() : Promise<any> {
             //#region 1. INPUTS
 
             //#region DEFINE client response
@@ -550,7 +752,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region DEFINE data response
 
-            let storedDataResponse: Promise<any> = null;
+            let storedDataResponse: any = null;
 
             //#endregion
 
@@ -559,7 +761,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             let Action = null;
             let Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
             let Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
- 
+
             //#endregion
 
             //#region DEFINE extra data
@@ -582,11 +784,11 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region DEFINE server instance
 
-            let storedRouteListDetailsDELETE: any = null; 
-            let storedRouteListDetailsGET: any = null; 
-            let storedRouteListDetailsPOST: any = null; 
-            let storedRouteListDetailsPUT: any = null; 
-            
+            let storedRouteListDetailsDELETE: any = null;
+            let storedRouteListDetailsGET: any = null;
+            let storedRouteListDetailsPOST: any = null;
+            let storedRouteListDetailsPUT: any = null;
+
             //#endregion
 
             //#region MEMORIZE developer mode
@@ -596,12 +798,12 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["actionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Action_5_Process_StorySetting -> Factory_Action_5_Process_StorySetting -> Execute_Action_5_Process_StorySetting_ProcessHttpRequest");
 
             //#endregion
 
@@ -609,24 +811,22 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region 2. PROCESS
 
-            try
-            {
-                if (process.env.APP_ENV == "SERVER" && this._stored_ExperienceRequestHandlerActionName == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0)
-                {
+
+            try {
+                if (process.env.APP_ENV == "SERVER" && this._stored_ExperienceRequestHandlerActionName == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0) {
                     //#region SETUP http server
 
                     //#region IDEAL CASE - USE baseDI pipeline
 
                     //#region 3. OUTPUT server response
 
-                    const Step_2_0_Framework_Output_ServerRequestToClient_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataParameter: string, parameterControllerModelDataObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any, parameterRequestActionVerb: string) =>
-                    {
+                    const Step_2_0_Framework_Output_ServerRequestToClient_1_0 = (parameterControllerRoute: Object, parameterControllerName: string, parameterControllerModelDataParameter: string, parameterControllerModelDataObject: Object, parameterControllerModelDataRemote: Object, parameterRequest: any, parameterResponse: any, parameterRequestActionVerb: string) => {
                         this._storedClientOrServerInstance["actionName"] = Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0;
                         this._storedClientOrServerInstance["processStepNumber"] = 0;
 
                         //#region EDGE CASE - USE developer logger
-                        if (storedDeveloperMode) {                            
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"] );
+                        if (storedDeveloperMode) {
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMasterLeaderIsSecondStep", true);
                             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ROUTING information found - [" + parameterRequestActionVerb + ": '" + parameterRequest.url.match('^[^?]*')[0] + "']");
@@ -662,8 +862,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 }
                             });
 
-                            if (parameterResponse)
-                            {
+                            if (parameterResponse) {
                                 //#region EDGE CASE - USE developer logger
 
                                 if (storedDeveloperMode) {
@@ -681,8 +880,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                 //#endregion
                                 parameterResponse.send(storedClientResponse);
                             }
-                            else 
-                            {
+                            else {
                                 //#region EDGE CASE - USE exception handler
 
                                 throw new Error("FAILED configuring server");
@@ -696,10 +894,8 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region 2. INPUT server details
 
-                    const Step_1_0_Framework_Control_ClientRequestToServer_1_0 = (verb:string, parameterRouteListDetails: Array<any>) =>
-                    {
-                        if (parameterRouteListDetails != null && parameterRouteListDetails != undefined && parameterRouteListDetails.length > 0)
-                        {
+                    const Step_1_0_Framework_Control_ClientRequestToServer_1_0 = (verb: string, parameterRouteListDetails: Array<any>) => {
+                        if (parameterRouteListDetails != null && parameterRouteListDetails != undefined && parameterRouteListDetails.length > 0) {
                             //#region SEARCH routing list details
 
                             parameterRouteListDetails.map(item => {
@@ -717,8 +913,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                                 //DETERMINE if we have any routes
                                 if (storedControllerRoutes.length > 0) {
-                                    storedControllerRoutes.map(routeItemDetails =>
-                                    {             
+                                    storedControllerRoutes.map(routeItemDetails => {
                                         switch (verb.toUpperCase()) {
                                             case "DELETE":
                                                 this._storedServerInstance.Server.Instance.delete(routeItemDetails, (parameterRequest: any, parameterResponse: any) => {
@@ -754,8 +949,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                             //#endregion
                         }
-                        else
-                        {
+                        else {
                             //#region EDGE CASE - USE developer logger
                             if (storedDeveloperMode) {
                                 this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
@@ -799,21 +993,20 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region CONFIGURE server
 
-                    storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0(); 
+                    storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                     storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", Object.assign(this._storedClientOrServerInstance, Object));
                     storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
                     storedParameterInputs.Parameters.setValue("parameterMasterStorer", Object.assign(this._storedCentralizedDisturber, Object));
                     storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(this._storedStorylineDetails, Object));
-               
+
                     this._storedServerInstance = await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Control_ServerSetup_1_0(storedParameterInputs);
 
                     //#endregion
 
                     //#region CONFIGURE routes
 
-                    try
-                    {
+                    try {
                         //SETUP delete routes
                         if (this?._storedServerInstance?.Server?.Verbs?.Delete != undefined) {
                             storedRouteListDetailsDELETE = this?._storedServerInstance?.Server?.Verbs?.Delete;
@@ -846,14 +1039,13 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY configured routes");
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                             storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
-               
+
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
                         //#endregion
                     }
-                    catch (mistake)
-                    {
+                    catch (mistake) {
                         //#region EDGE CASE - USE developer logger
                         if (storedDeveloperMode) {
                             this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
@@ -871,7 +1063,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         throw mistake;
 
                         //#endregion
-                    }                    
+                    }
 
                     //#endregion
 
@@ -886,9 +1078,8 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     //#region IDEAL CASE - USE express server
 
                     this._storedServerInstance.Server.Instance.listen(this._storedServerInstance.Server.Port, () => {
-                        try
-                        {
-                           //#region EDGE CASE - USE developer logger
+                        try {
+                            //#region EDGE CASE - USE developer logger
 
                             if (storedDeveloperMode) {
                                 this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
@@ -905,7 +1096,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                             //#endregion
 
-                           console.log(`server started at http://localhost:${this._storedServerInstance.Server.Port}`);
+                            console.log(`server started at http://localhost:${this._storedServerInstance.Server.Port}`);
                         }
                         catch (mistake) {
                             //#region EDGE CASE - USE developer logger
@@ -933,8 +1124,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     //#endregion
                 }
             }
-            catch (mistake)
-            {
+            catch (mistake) {
                 //#region EDGE CASE - USE developer logger
                 if (storedDeveloperMode) {
                     this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
@@ -959,7 +1149,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             //#region 3. OUTPUT
 
             //#region HANDLE execution response
-    
+
 
             //#endregion
 
@@ -967,56 +1157,32 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#endregion
         }
+        //#endregion
 
-        //Page 1-7
-        public async Action_7_Process_StoryResources(): Promise<object>
-        {
-            //#region 1. INPUTS
+        //#endregion
 
-            //#endregion
+        //#region Factory_Action_7_Process_StoryResources
 
-            //#region 2. PROCESS
-
-            try
-            {
-                if (this._stored_ExperienceRequestHandlerActionName != null && this._stored_ExperienceRequestHandlerActionName.toUpperCase().includes("COPYSTATICFILES_1_0"))
-                {
-                    //#region EXECUTE copying static files
-
-                    //#region IDEAL CASE - USE baseDI extension
-
-                    await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(this._storedStorylineDetails);
-
-                    //#endregion
-
-                    //#endregion
-                }
+        private async Factory_Action_7_Process_StoryResources(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
             }
-            catch(mistake)
-            {
-                throw mistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
-            }
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN process response
-
-            //#region IDEAL CASE - USE baseDI dataset
-
-            return this._storedStorylineDetails;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
         }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
 
         //#endregion
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        //#region Action Methods
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object> {
@@ -1060,7 +1226,134 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#endregion
 
+        //#region Action Factories
+
+        //#region Factory_Action_1_Begin_Process
+
+        private async Factory_Action_1_Begin_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_2_Validate_Process
+
+        private async Factory_Action_2_Validate_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_3_Process_StoryAuthor
+
+        private async Factory_Action_3_Process_StoryAuthor(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_4_Process_StoryCharacters
+
+        private async Factory_Action_4_Process_StoryCharacters(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_6_Process_StoryExperiences
+
+        private async Factory_Action_6_Process_StoryExperiences(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion 
+
+        //#region Factory_Action_8_Process_CRUD
+
+        private async Factory_Action_8_Process_CRUD(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_9_Verify_Process
+
+        private async Factory_Action_9_Verify_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#region Factory_Action_10_End_Process
+
+        private async Factory_Action_10_End_Process(): Promise<object> {
+            switch (this._storedActionName.toUpperCase()) {
+                default:
+                    return null;
+            }
+        }
+
+        //#region Logic
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion        
+
+        //#endregion
+
         //#endregion        
     }
+
     //#endregion
 }

@@ -164,7 +164,6 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
         {
             #region 1. INPUTS
 
-
             #region VALIDATE input parameters
 
             Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>

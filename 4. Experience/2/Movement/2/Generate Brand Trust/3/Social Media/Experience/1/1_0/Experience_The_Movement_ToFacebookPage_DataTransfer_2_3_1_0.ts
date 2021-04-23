@@ -437,6 +437,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
     }
 
     //#region 5. Action Script
+
     export class Use_DesignPattern_Builder_Experience_2_3_1_0
     {
         //#region 1. Assign
@@ -655,9 +656,11 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
         //#endregion
     }
+
     //#endregion
 
     //#region 6. Action Implementation
+
     export class Implement_DesignPattern_Builder_Experience_2_3_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
@@ -1109,5 +1112,6 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
         //#endregion        
     }
+
     //#endregion
 }

@@ -67,6 +67,26 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
             //#endregion
 
+            //#region MEMORIZE clientOrServer instance
+
+            this._storedClientOrServerInstance = this._storedParameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+            //#endregion
+
+            //#region MEMORIZE app settings
+
+            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE centralized processes handlers
+
+            this._storedCentralizedDisturber = this._storedParameterInputs.Parameters.getValue("parameterCentralizedDisturber");
+            this._storedCentralizedSensor = this._storedParameterInputs.Parameters.getValue("parameterCentralizedSensor");
+            this._storedCentralizedStorer = this._storedParameterInputs.Parameters.getValue("parameterCentralizedStorer");
+
+            //#endregion
+
             //#endregion
 
             //#region 2. PROCESS
@@ -121,7 +141,8 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
         //#region 4. Action
 
-        public async Action(): Promise<object> {
+        public async Action(): Promise<object>
+        {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters
@@ -166,11 +187,11 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "EXECUTING request handler");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "VALIDATING request inputs");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action.ValidateInputs()");
 
                 //#endregion
@@ -316,26 +337,6 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
             //#endregion
 
-            //#region MEMORIZE clientOrServer instance
-
-            this._storedClientOrServerInstance = this._storedParameterInputs.Parameters.getValue("parameterClientOrServerInstance");
-
-            //#endregion
-
-            //#region MEMORIZE app settings
-
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
-
-            //#endregion
-
-            //#region MEMORIZE centralized processes handlers
-
-            this._storedCentralizedDisturber = this._storedParameterInputs.Parameters.getValue("parameterCentralizedDisturber");
-            this._storedCentralizedSensor = this._storedParameterInputs.Parameters.getValue("parameterCentralizedSensor");
-            this._storedCentralizedStorer = this._storedParameterInputs.Parameters.getValue("parameterCentralizedStorer");
-
-            //#endregion
-
             //#region MEMORIZE developer mode
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
@@ -354,30 +355,6 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
             //OPTIONAL
             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
-
-            //#endregion
-
-            //#region MEMORIZE request details
-
-            let storedClientRequestByName: string = this._storedParameterInputs.Parameters.getValue("parameterClientRequestByName");
-            let storedClientRequestByNameParameters: string = this._storedParameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
-
-            let storedSystemRequestByName: string = this._storedParameterInputs.Parameters.getValue("parameterSystemRequestByName") ? parameterInputs.Parameters.getValue("parameterSystemRequestByName") : "";
-
-            this._storedRequestName = storedClientRequestByName;
-
-            //#endregion
-
-            //#region MEMORIZE extra data
-
-            this._storedExtraData = this._storedParameterInputs.Parameters.getValue("parameterExtraData") ? this._storedParameterInputs.Parameters.getValue("parameterExtraData") : null;
-
-            //#endregion
-
-            //#region MEMORIZE storyline details
-
-            this._storedStorylineDetails = this._storedParameterInputs.Parameters.getValue("parameterStorylineDetails");
-            this._storedStorylineDetails_Parameters = this._storedParameterInputs.Parameters.getValue("parameterStorylineDetails_Parameters");
 
             //#endregion
 
@@ -458,7 +435,9 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
     }
 
     //#region 5. Action Script
-    export class Use_DesignPattern_Builder_Experience_2_3_1_0 {
+
+    export class Use_DesignPattern_Builder_Experience_2_3_1_0
+    {
         //#region 1. Assign
 
         //SETTINGS
@@ -673,6 +652,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_2 {
 
         //#endregion
     }
+
     //#endregion
 
     //#region 6. Action Implementation
