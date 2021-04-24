@@ -186,7 +186,7 @@ export namespace BaseDI.Professional.Director.Web_Development_1 {
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientORserverInstance["storedAppSettings"];
 
             //#endregion
 
@@ -370,7 +370,7 @@ export namespace BaseDI.Professional.Director.Web_Development_1 {
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+            this._storedAppSettings = parameterClientORserverInstance["storedAppSettings"];
 
             //#endregion
 

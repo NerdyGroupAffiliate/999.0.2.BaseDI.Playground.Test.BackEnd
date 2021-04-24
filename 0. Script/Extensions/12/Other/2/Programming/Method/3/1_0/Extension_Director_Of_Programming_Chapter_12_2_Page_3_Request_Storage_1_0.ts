@@ -95,7 +95,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -106,8 +106,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
@@ -133,8 +133,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -285,7 +285,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -303,8 +303,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PREPARING caching request");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
@@ -369,7 +369,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-                storedParameterInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedParameterInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
                 storedParameterInputs.Parameters.setValue("parameterAppSettings", storedAppSettings);
                 storedParameterInputs.Parameters.setValue("parameterPageName", storedPageName);
                 storedParameterInputs.Parameters.setValue("parameter3WordDescription", storedStorageDescription);
@@ -515,7 +515,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -526,8 +526,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
@@ -553,8 +553,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -672,7 +672,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -684,8 +684,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RESOLVING request handler");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Page_1_10_End_Process_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");   

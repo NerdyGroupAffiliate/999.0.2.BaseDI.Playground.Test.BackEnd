@@ -61,7 +61,7 @@ namespace BaseDI.Professional.Story.Advertising_1
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
-            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+            AppSettings = (IConfiguration)_clientORserverInstance["storedAppSettings"];
 
             #endregion
 

@@ -200,7 +200,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -212,8 +212,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING request pipeline");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "SetupStoryline.ValidateInputs()");
@@ -239,8 +239,8 @@ export namespace BaseDI.Professional.Story.Programming_1
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -362,13 +362,13 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = storedClientOrServerInstance["actionName"];
+            let storedActionName: string = storedClientOrServerInstance["storedActionName"];
 
             //#endregion
 
@@ -385,8 +385,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "BEGIN processing request");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "SetupStoryline"); 
@@ -577,7 +577,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -651,7 +651,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = this._storedClientOrServerInstance["actionName"] as string;
+            let storedActionName: string = this._storedClientOrServerInstance["storedActionName"] as string;
 
             //#endregion
 
@@ -772,7 +772,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -1070,7 +1070,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -1720,7 +1720,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -2050,7 +2050,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -2310,7 +2310,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -2562,7 +2562,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 

@@ -71,7 +71,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -83,8 +83,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html attributes");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
@@ -110,8 +110,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -233,7 +233,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -245,8 +245,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html attributes");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0");
@@ -367,7 +367,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -379,8 +379,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html container");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ValidateInputs()");
@@ -406,8 +406,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -529,7 +529,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -541,8 +541,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html container");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0");
@@ -658,7 +658,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -670,8 +670,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html row");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ValidateInputs()");
@@ -697,8 +697,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -826,7 +826,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -838,8 +838,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html row");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0");
@@ -960,7 +960,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -972,8 +972,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html column");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ValidateInputs()");
@@ -999,8 +999,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -1129,7 +1129,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -1141,8 +1141,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html column");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0");
@@ -1264,7 +1264,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -1275,8 +1275,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ValidateInputs()");
@@ -1302,8 +1302,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -1433,7 +1433,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -1445,8 +1445,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "HELPING out other methods");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0");
@@ -1583,7 +1583,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -1595,8 +1595,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html styles");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ValidateInputs()");
@@ -1622,8 +1622,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -1763,7 +1763,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -1775,8 +1775,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html styles");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0");
@@ -2045,7 +2045,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region MEMORIZE app settings
 
-                let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
                 //#endregion
 
@@ -2057,8 +2057,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "STORING html template");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
@@ -2084,8 +2084,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessCheckPointHit = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["appSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -2233,7 +2233,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE app settings
 
-            let storedAppSettings: any = storedClientOrServerInstance["appSettings"];
+            let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -2245,8 +2245,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "STORING html template");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0");

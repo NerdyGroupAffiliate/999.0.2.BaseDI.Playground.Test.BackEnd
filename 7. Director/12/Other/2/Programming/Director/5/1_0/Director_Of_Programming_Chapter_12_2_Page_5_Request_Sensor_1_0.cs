@@ -209,7 +209,7 @@ namespace BaseDI.Professional.Director.Programming_5
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = parameterClientORserverInstance["appSettings"] as IConfiguration;
+            _storedAppSettings = parameterClientORserverInstance["storedAppSettings"] as IConfiguration;
 
             #endregion
 
@@ -395,7 +395,7 @@ namespace BaseDI.Professional.Director.Programming_5
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)parameterClientORserverInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)parameterClientORserverInstance["storedAppSettings"];
 
             #endregion
 

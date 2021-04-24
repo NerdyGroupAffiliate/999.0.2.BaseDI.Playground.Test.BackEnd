@@ -205,9 +205,9 @@ namespace BaseDI.Professional.Story.Programming_1
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -308,13 +308,13 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
             #region MEMORIZE action name
 
-            string storedActionName = storedClientOrServerInstance["actionName"] as string;
+            string storedActionName = storedClientOrServerInstance["storedActionName"] as string;
 
             #endregion
 
@@ -331,8 +331,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "BEGIN processing request");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "SetupStoryline");
@@ -516,7 +516,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -591,7 +591,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE action name
 
-            string storedActionName = _storedClientOrServerInstance["actionName"] as string;
+            string storedActionName = _storedClientOrServerInstance["storedActionName"] as string;
 
             #endregion
 
@@ -709,7 +709,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -1007,7 +1007,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -1658,7 +1658,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -1981,7 +1981,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -2233,7 +2233,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -2485,7 +2485,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 

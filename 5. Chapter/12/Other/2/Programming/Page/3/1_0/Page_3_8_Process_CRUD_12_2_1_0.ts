@@ -131,13 +131,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+            let storedActionName: string = this.ClientOrServerInstance["storedActionName"] as string;
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this.ClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -154,8 +154,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Page_3_8_Process_CRUD_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");

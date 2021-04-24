@@ -56,7 +56,7 @@ namespace BaseDI.Professional.Story.Social_Media_3
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
-            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+            AppSettings = (IConfiguration)_clientORserverInstance["storedAppSettings"];
 
             #endregion
 

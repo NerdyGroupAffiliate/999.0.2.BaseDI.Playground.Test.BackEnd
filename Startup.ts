@@ -100,14 +100,14 @@ export namespace BaseDI.Professional
 
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
                 this._storedClientOrServerInfo = {
-                    "appSettings": process.env,
+                    "storedAppSettings": process.env,
                     "serverInstance": this._storedClientWebPageInstance,
                     "serverStartUp": this
                 }
             }
             else {
                 this._storedClientOrServerInfo = {
-                    "appSettings": process.env,
+                    "storedAppSettings": process.env,
                     "clientInstance": this._storedClientWebPageInstance,
                     "clientStartUp": this
                 }
@@ -140,14 +140,14 @@ export namespace BaseDI.Professional
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInfo["appSettings"];
+            this._storedAppSettings = this._storedClientOrServerInfo["storedAppSettings"];
 
             //#endregion
 
             //#region MEMORIZE action name
 
             if (parameterRequestActionName != "")
-                this._storedClientOrServerInfo["actionName"] = parameterRequestActionName;
+                this._storedClientOrServerInfo["storedActionName"] = parameterRequestActionName;
 
             //#endregion
 
@@ -168,8 +168,8 @@ export namespace BaseDI.Professional
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "STARING web request");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInfo["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInfo["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInfo["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInfo["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInfo);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Start.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");

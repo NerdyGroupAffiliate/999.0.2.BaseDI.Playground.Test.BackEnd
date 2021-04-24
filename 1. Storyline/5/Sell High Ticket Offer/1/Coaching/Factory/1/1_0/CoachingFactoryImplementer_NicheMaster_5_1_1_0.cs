@@ -54,7 +54,7 @@ namespace BaseDI.Professional.Story.Coaching_1
             _extraData.KeyValuePairs.TryAdd("RequestToProcess", requestToProcess);
             _extraData.KeyValuePairs.TryAdd("RequestToProcessParameters", requestToProcessParameters);
 
-            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+            AppSettings = (IConfiguration)_clientORserverInstance["storedAppSettings"];
 
             #endregion
 

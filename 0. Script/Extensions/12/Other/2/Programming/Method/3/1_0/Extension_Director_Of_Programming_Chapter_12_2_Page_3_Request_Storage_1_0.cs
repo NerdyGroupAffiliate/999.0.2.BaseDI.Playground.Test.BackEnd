@@ -91,7 +91,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
 
                 #endregion
 
@@ -102,8 +102,8 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
@@ -127,9 +127,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -291,7 +291,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -309,8 +309,8 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PREPARING caching request");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
@@ -375,7 +375,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 storedParameterInputs = new SingleParmPoco_12_2_1_0();
 
-                storedParameterInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
+                storedParameterInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
                 storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedParameterInputs.Parameters.Add("parameterAppSettings", storedAppSettings);
 
@@ -540,7 +540,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
 
                 #endregion
 
@@ -551,8 +551,8 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
@@ -576,9 +576,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -703,7 +703,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -715,8 +715,8 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "RESOLVING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Page_1_10_End_Process_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");

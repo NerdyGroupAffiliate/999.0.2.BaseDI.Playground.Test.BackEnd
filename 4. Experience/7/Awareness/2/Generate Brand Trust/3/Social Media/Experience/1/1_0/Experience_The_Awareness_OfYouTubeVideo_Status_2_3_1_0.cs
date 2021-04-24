@@ -2,30 +2,32 @@
 
 #region BaseDI
 
-using BaseDI.Professional.Character_1;
+using BaseDI.Professional.Director.Programming_1;
 
-using BaseDI.Professional.Script.Programming_1;
 using BaseDI.Professional.Script.Programming.Abstract_1;
 using BaseDI.Professional.Script.Programming.Extensions_1;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Programming.Repository_1;
+
 using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
-using BaseDI.Professional.State.Social_Media_;
+using BaseDI.Professional.Script.Web_Development.Extensions_13;
+
+using BaseDI.Professional.Story.Programming_1;
 
 #endregion
 
 #region .Net Core
 
+using Microsoft.AspNetCore.Http;
+
 using Microsoft.Extensions.Configuration;
 
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-
-using System.Text;
-
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 #endregion 
 
@@ -37,9 +39,10 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Experience.Movement.Social_Media_2
-{    
-    public class Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
+
+namespace BaseDI.Professional.Experience.Awareness.Social_Media_1
+{
+    public class Experience_The_Awareness_OfYouTubeVideo_Status_2_3_1_0 : aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0
     {
         #region 1. Assign
 
@@ -75,33 +78,13 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         #region 2. Ready
 
-        public Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public Experience_The_Awareness_OfYouTubeVideo_Status_2_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
             #region MEMORIZE input parameters
 
             _storedParameterInputs = parameterInputs;
-
-            #endregion
-
-            #region MEMORIZE clientOrServer instance
-
-            _storedClientOrServerInstance = _storedParameterInputs.Parameters["parameterClientOrServerInstance"];
-
-            #endregion
-
-            #region MEMORIZE app settings
-
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
-
-            #endregion
-
-            #region MEMORIZE centralized processes handlers
-
-            _storedCentralizedDisturber = _storedParameterInputs.Parameters["parameterCentralizedDisturber"];
-            _storedCentralizedSensor = _storedParameterInputs.Parameters["parameterCentralizedSensor"];
-            _storedCentralizedStorer = _storedParameterInputs.Parameters["parameterCentralizedStorer"];
 
             #endregion
 
@@ -211,7 +194,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
                 storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.cs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.cs");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action.ValidateInputs()");
 
                 #endregion
@@ -381,7 +364,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
             storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_FromFacebookPage_DataTransfer_2_3_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
 
             //OPTIONAL
@@ -457,7 +440,6 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
             return StorylineDetails;
 
             #endregion
-
 
             #endregion
 
@@ -590,41 +572,30 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
             #endregion
         }
 
-        #endregion        
+        #endregion
 
         #region 3. Set
 
-        //A. Default state
-        public void HandleDefaults()
-        {
-            #region 1. INPUTS
+        //A. Default state of this part of the storyline
+
+        #region 1. INPUTS
 
 
-            #endregion
+        #endregion
 
-            #region 2. PROCESS
+        #region 2. PROCESS
 
-            #region EXECUTE process defaults
+        #endregion
 
-            #region IDEAL CASE - defaults handler
+        #region 3. OUTPUT
 
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #endregion
-        }
+        #endregion
 
         #endregion
 
         #region 4. Action
 
-        public async Task<JObject> Action()
+        internal async Task<JObject> Action()
         {
             #region 1. INPUTS
 
@@ -700,7 +671,11 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
         #region 1. Assign
 
         //SETTINGS
-        private IConfiguration _storedAppSettings = null;
+        private IConfiguration _storedAppSettings;
+
+        private string _storedSettingSecurityAppId = "";
+        private string _storedSettingSecurityAppSecret = "";
+        private string _storedSettingSecurityAppToken = "";
 
         //CLIENT/SERVER
         private Dictionary<string, object> _storedClientOrServerInstance;
@@ -710,12 +685,21 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
-        //DATASETS
-        private JObject _storedStorylineDetails;
-        private JObject _storedStorylineDetails_Parameters;
+        private Task<Dictionary<string, JToken>> _storedServerInstance = null;
+        private object _storedServerInstanceExperienceRequestHandler = null;
+        private HttpRequest _storedServerHTTPRequestInstance = null;
+
+        private string _storedServerRequestRESTVerb = "";
+        private string _storedServerRoutePath = "";
+
+        //DATASET
+        private JObject _storedStorylineDetails = null;
+        private JObject _storedStorylineDetails_Parameters = null;
+
+        private string _storedDataObservationTemplate = "";
 
         //MISC
-        private ExtraData_12_2_1_0 _storedExtraData;
+        private ExtraData_12_2_1_0 _storedExtraData = null;
 
         //PLUMBING
         private string _storedActionName = "";
@@ -726,9 +710,15 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
         private SingleParmPoco_12_2_1_0 _storedParameterInputs;
 
+        private string _storedRequestFileName = "Experience_The_Awareness_OfYouTubeVideo_Status_7_1_1_0";
         private string _storedRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedRepository;
         private string _storedSystemRequestByName;
+
+        private Func<JObject, ExtraData_12_2_1_0, JObject> Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
+        private Func<JObject, ExtraData_12_2_1_0, JObject> Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
+
+        private Func<SingleParmPoco_12_2_1_0, JObject> StoredStartUpCallBack = null;
 
         #endregion
 
@@ -811,6 +801,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
             #region IDEAL CASE - USE defaults handler
 
+            HandleDefaults();
 
             #endregion
 
@@ -820,18 +811,22 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
             #region 3. OUTPUT
 
-            #endregion
+            #endregion  
         }
 
         #endregion
 
         #region 3. Set
 
-        //A. Default state
         public override void HandleDefaults()
         {
             #region 1. INPUTS
 
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
 
             #endregion
 
@@ -839,10 +834,28 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_2
 
             #region EXECUTE process defaults
 
-            #region IDEAL CASE - defaults handler
+            try
+            {
+                #region IDEAL CASE - USE request parser
 
 
-            #endregion
+                #endregion
+            }
+            catch (Exception)
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode)
+                {
+                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
+
+                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientOrServerInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientOrServerInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientOrServerInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
+                }
+
+                #endregion
+
+                throw;
+            }
 
             #endregion
 

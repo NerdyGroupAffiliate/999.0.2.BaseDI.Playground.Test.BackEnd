@@ -220,13 +220,13 @@ export class ClassModel
 
         //#region MEMORIZE action name
 
-        //let storedActionName: string = parameterClientORserverInstance["actionName"] as string;
+        //let storedActionName: string = parameterClientORserverInstance["storedActionName"] as string;
 
         //#endregion
 
         //#region MEMORIZE app settings
 
-        //this._storedAppSettings = parameterClientORserverInstance["appSettings"];
+        //this._storedAppSettings = parameterClientORserverInstance["storedAppSettings"];
 
         //#endregion
 
@@ -252,8 +252,8 @@ export class ClassModel
 
         //REQUIRED
         //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RETRIEVING cached dataset");
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
         //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
         //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
         //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "SetupStoryline");

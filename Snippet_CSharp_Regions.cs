@@ -244,13 +244,13 @@ public class ClassModel
 
         #region MEMORIZE action name
 
-        //string storedActionName = parameterClientORserverInstance["actionName"] as string;
+        //string storedActionName = parameterClientORserverInstance["storedActionName"] as string;
 
         #endregion
 
         #region MEMORIZE app settings
 
-        //_storedAppSettings = (IConfiguration)parameterClientORserverInstance["appSettings"];
+        //_storedAppSettings = (IConfiguration)parameterClientORserverInstance["storedAppSettings"];
 
         #endregion
 

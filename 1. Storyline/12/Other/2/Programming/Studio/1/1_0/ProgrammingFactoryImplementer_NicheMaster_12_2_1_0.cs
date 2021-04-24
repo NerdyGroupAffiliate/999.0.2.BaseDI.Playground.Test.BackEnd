@@ -183,7 +183,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
 
                 #endregion
 
@@ -195,8 +195,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action.ValidateInputs()");
@@ -220,9 +220,9 @@ namespace BaseDI.Professional.Story.Programming_1
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.";
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -363,7 +363,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -385,8 +385,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ASSIGNING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
@@ -536,8 +536,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0");
@@ -626,8 +626,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0");
@@ -717,8 +717,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0");
@@ -808,8 +808,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0");
@@ -899,8 +899,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0");

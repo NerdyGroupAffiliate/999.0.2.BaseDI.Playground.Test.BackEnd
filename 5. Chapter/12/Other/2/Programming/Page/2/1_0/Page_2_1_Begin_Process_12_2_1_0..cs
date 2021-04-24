@@ -155,13 +155,13 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE action name
 
-            string storedActionName = ClientOrServerInstance["actionName"] as string;
+            string storedActionName = ClientOrServerInstance["storedActionName"] as string;
 
             #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)ClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)ClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -290,7 +290,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)ClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)ClientOrServerInstance["storedAppSettings"];
 
             #endregion
 

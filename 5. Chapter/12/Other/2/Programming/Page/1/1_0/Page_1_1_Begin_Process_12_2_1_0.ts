@@ -148,13 +148,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+            let storedActionName: string = this.ClientOrServerInstance["storedActionName"] as string;
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this.ClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -172,8 +172,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RETRIEVING request dataset");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.Page_1_1_Begin_Process_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");   

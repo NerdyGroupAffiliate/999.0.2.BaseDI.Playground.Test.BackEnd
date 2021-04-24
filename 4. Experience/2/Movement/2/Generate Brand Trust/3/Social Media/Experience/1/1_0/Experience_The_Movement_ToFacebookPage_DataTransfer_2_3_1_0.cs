@@ -93,7 +93,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -196,7 +196,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["appSettings"];
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
 
                 #endregion
 
@@ -208,8 +208,8 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "VALIDATING request inputs");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["actionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["appSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.cs");
                 storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action.ValidateInputs()");
@@ -233,9 +233,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.";
                             storedProcessCheckPointHit = true;
                         }
                     }
@@ -378,8 +378,8 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "EXECUTING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
@@ -520,7 +520,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -747,13 +747,13 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedClientOrServerInstance["actionName"];
+            _storedActionName = (string)_storedClientOrServerInstance["storedActionName"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -860,10 +860,137 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
         #region EXECUTE LOGIC INSTUCTIONS
 
-        #region Action Methods
+        #region A. Action Methods
+
+
+        #endregion
+
+        #region B. Action Factories
+
+
+        #endregion
+
+        #region C. Action Logic
+
+
+        #endregion
+
+        #endregion
+
+        #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
+
+        #region A. Action Methods
 
         //Page 1-1
         public override async Task<JObject> Action_1_Begin_Process()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        //Page 1-2
+        public override async Task<JObject> Action_2_Validate_Process()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        //Page 1-3
+        public override async Task<JObject> Action_3_Process_StoryAuthor()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        //Page 1-4
+        public override async Task<JObject> Action_4_Process_StoryCharacters()
+        {
+            #region 1. INPUTS
+
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        //Page 1-5
+        public override async Task<JObject> Action_5_Process_StorySetting()
         {
             #region 1. INPUTS
 
@@ -881,11 +1008,11 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //REQUIRED
             //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["actionName"]);
-            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["appSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
-            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> Action_5_Process_StorySetting");
 
             #endregion
 
@@ -895,7 +1022,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             try
             {
-                storedDataResponse = await Factory_Action_1_Begin_Process();
+                //storedDataResponse = await Factory_Action_5_Process_StorySetting();
             }
             catch
             {
@@ -919,112 +1046,12 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             #endregion
         }
 
-        #endregion
-
-        #region Action Factories
-
-        #region Factory_Action_1_Begin_Process
-
-        private async Task<JObject> Factory_Action_1_Begin_Process()
-        {
-            switch (_storedActionName.ToUpper())
-            {
-                default:
-                    return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
-            }
-        }
-
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #endregion
-
-        #endregion
-
-        #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
-
-        #region Action Methods
-
-        //Page 1-2
-        public override async Task<JObject> Action_2_Validate_Process()
-        {
-            #region 1. INPUTS
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
-
-            #endregion
-        }
-
-        //Page 1-3
-        public override async Task<JObject> Action_3_Process_StoryAuthor()
-        {
-            #region 1. INPUTS
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
-
-            #endregion
-        }
-
-        //Page 1-4
-        public override async Task<JObject> Action_4_Process_StoryCharacters()
-        {
-            #region 1. INPUTS
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
-
-            #endregion
-        }
-
-        //Page 1-5
-        public override async Task<JObject> Action_5_Process_StorySetting()
-        {
-            #region 1. INPUTS
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
-
-            #endregion
-        }
-
         //Page 1-6
         public override async Task<JObject> Action_6_Process_StoryExperiences()
         {
             #region 1. INPUTS
 
+
             #endregion
 
             #region 2. PROCESS
@@ -1033,7 +1060,15 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             #region 3. OUTPUT
 
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
 
             #endregion
         }
@@ -1043,15 +1078,54 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
         {
             #region 1. INPUTS
 
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> Action_7_Process_StoryResources");
+
+            #endregion
+
             #endregion
 
             #region 2. PROCESS
+
+            try
+            {
+                //storedDataResponse = await Factory_Action_7_Process_StoryResources();
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
 
             #endregion
 
             #region 3. OUTPUT
 
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
 
             #endregion
         }
@@ -1061,6 +1135,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
         {
             #region 1. INPUTS
 
+
             #endregion
 
             #region 2. PROCESS
@@ -1069,7 +1144,15 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             #region 3. OUTPUT
 
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
 
             #endregion
         }
@@ -1079,6 +1162,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
         {
             #region 1. INPUTS
 
+
             #endregion
 
             #region 2. PROCESS
@@ -1087,7 +1171,15 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             #region 3. OUTPUT
 
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
 
             #endregion
         }
@@ -1097,6 +1189,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
         {
             #region 1. INPUTS
 
+
             #endregion
 
             #region 2. PROCESS
@@ -1105,17 +1198,34 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             #region 3. OUTPUT
 
-            return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
 
             #endregion
         }
 
         #endregion
 
-        #region Action Factories
+        #region B. Action Factories
 
-        #region Factory_Action_2_Validate_Process
+        //Page 1-1
+        private async Task<JObject> Factory_Action_1_Begin_Process()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
 
+        //Page 1-2
         private async Task<JObject> Factory_Action_2_Validate_Process()
         {
             switch (_storedActionName.ToUpper())
@@ -1125,14 +1235,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             }
         }
 
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #region Factory_Action_3_Process_StoryAuthor
-
+        //Page 1-3
         private async Task<JObject> Factory_Action_3_Process_StoryAuthor()
         {
             switch (_storedActionName.ToUpper())
@@ -1142,14 +1245,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             }
         }
 
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #region Factory_Action_4_Process_StoryCharacters
-
+        //Page 1-4
         private async Task<JObject> Factory_Action_4_Process_StoryCharacters()
         {
             switch (_storedActionName.ToUpper())
@@ -1159,31 +1255,76 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             }
         }
 
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #region Factory_Action_5_Process_StorySetting
-
+        //Page 1-5
         private async Task<JObject> Factory_Action_5_Process_StorySetting()
         {
-            switch (_storedActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> Action_5_Process_StorySetting -> Factory_Action_5_Process_StorySetting");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedDataResponse = await Execute_Action_5_Process_StorySetting_ProcessHttpRequest();
+                //}
+
+                #endregion
+
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #region Factory_Action_6_Process_StoryExperiences
-
+        //Page 1-6
         private async Task<JObject> Factory_Action_6_Process_StoryExperiences()
         {
             switch (_storedActionName.ToUpper())
@@ -1193,31 +1334,80 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             }
         }
 
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #region Factory_Action_7_Process_StoryResources
-
+        //Page 1-7
         private async Task<JObject> Factory_Action_7_Process_StoryResources()
         {
-            switch (_storedActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");         
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> Action_7_Process_StoryResources -> Factory_Action_7_Process_StoryResources");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                if (_storedActionName.ToUpper() == Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.ToUpper())
+                {
+                    //storedDataResponse = await Execute_Factory_Action_7_Process_StoryResources_CopyStaticFiles();
+                }
+
+                if (_storedActionName.ToUpper() == Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0.ToUpper())
+                {
+                    //storedDataResponse = await Execute_Factory_Action_7_Process_StoryResources_MapStaticFiles();
+                }
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #region Factory_Action_8_Process_CRUD
-
+        //Page 1-8
         private async Task<JObject> Factory_Action_8_Process_CRUD()
         {
             switch (_storedActionName.ToUpper())
@@ -1227,14 +1417,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             }
         }
 
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #region Factory_Action_9_Verify_Process
-
+        //Page 1-9
         private async Task<JObject> Factory_Action_9_Verify_Process()
         {
             switch (_storedActionName.ToUpper())
@@ -1244,14 +1427,7 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             }
         }
 
-        #region Logic
-
-        #endregion
-
-        #endregion
-
-        #region Factory_Action_10_End_Process
-
+        //Page 1-10
         private async Task<JObject> Factory_Action_10_End_Process()
         {
             switch (_storedActionName.ToUpper())
@@ -1261,11 +1437,9 @@ namespace BaseDI.Professional.Experience.Movement.Social_Media_1
             }
         }
 
-        #region Logic
-
         #endregion
 
-        #endregion
+        #region C. Action Logic
 
         #endregion
 

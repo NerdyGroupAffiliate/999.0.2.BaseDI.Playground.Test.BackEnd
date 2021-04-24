@@ -181,13 +181,13 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this.ClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = this.ClientOrServerInstance["actionName"];
+            let storedActionName: string = this.ClientOrServerInstance["storedActionName"];
 
             //#endregion
 
@@ -199,8 +199,8 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY used cache");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_8_Process_CRUD");

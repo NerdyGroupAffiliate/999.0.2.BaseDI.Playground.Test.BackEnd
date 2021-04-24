@@ -56,7 +56,7 @@ namespace BaseDI.Professional.Story.Risk_Management_1
 
             _extraData.KeyValuePairs.TryAdd("APILocationRemote", APILocationRemote);
 
-            AppSettings = (IConfiguration)_clientORserverInstance["appSettings"];
+            AppSettings = (IConfiguration)_clientORserverInstance["storedAppSettings"];
 
             #endregion
 

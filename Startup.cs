@@ -396,7 +396,7 @@ namespace BaseDI.Professional
             #region MEMORIZE action name
 
             if (parameterRequestActionName != "")
-                _storedClientOrServerInstance.Add("actionName", parameterRequestActionName);
+                _storedClientOrServerInstance.Add("storedActionName", parameterRequestActionName);
 
             #endregion
 
@@ -409,26 +409,19 @@ namespace BaseDI.Professional
             #region MEMORIZE application settings
 
             if (StoredAppSettings != null)
-                _storedClientOrServerInstance.Add("appSettings", StoredAppSettings);
-
-            #endregion
-
-            #region MEMORIZE chapter name
-
-            if (parameterRequestActionName != "")
-                _storedClientOrServerInstance.Add("chapterName", parameterRequestChapterName);
+                _storedClientOrServerInstance.Add("storedAppSettings", StoredAppSettings);
 
             #endregion
 
             #region MEMORIZE request instance
 
-            _storedClientOrServerInstance.Add("request", Request);
+            _storedClientOrServerInstance.Add("storedHttpRequest", Request);
 
             #endregion
 
             #region MEMORIZE server instance
 
-            _storedClientOrServerInstance.Add("serverInstance", this);
+            _storedClientOrServerInstance.Add("storedServerInstance", this);
 
             #endregion
 
@@ -457,10 +450,7 @@ namespace BaseDI.Professional
                 #endregion
 
                 #region IDEAL CASE - USE request handler
-
-                if (parameterClientRequestByName == "") throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that clientRequestByName is not blank or null!");
-                if (StoredAppSettings == null) throw new Exception("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI C# version will not work without an StoredAppSettings object. Please make sure that StoredAppSettings have a REQUIRED [StoredAppSettings:APP_SETTING_CONVERSION_MODE] value.");
-
+  
                 Action = (string parameterClientRequestByName, string parameterClientRequestByNameParameters, ExtraData_12_2_1_0 parameterExtraData) =>
                 {
                     return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())

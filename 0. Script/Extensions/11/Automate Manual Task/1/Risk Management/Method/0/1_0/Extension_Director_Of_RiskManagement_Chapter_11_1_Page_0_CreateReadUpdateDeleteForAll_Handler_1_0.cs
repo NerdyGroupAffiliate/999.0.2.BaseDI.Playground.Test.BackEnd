@@ -63,7 +63,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["appSettings"];
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
@@ -188,9 +188,9 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["appSettings"] == null)
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***appSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                             storedProcessCheckPointHit = true;
                         }
                     }

@@ -79,7 +79,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_3
         {
             #region MEMORIZE action name
 
-            string storedActionName = ClientOrServerInstance["actionName"] as string;
+            string storedActionName = ClientOrServerInstance["storedActionName"] as string;
 
             #endregion
 

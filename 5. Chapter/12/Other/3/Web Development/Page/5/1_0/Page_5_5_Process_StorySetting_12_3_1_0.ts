@@ -158,13 +158,13 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_5 {
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+            let storedActionName: string = this.ClientOrServerInstance["storedActionName"] as string;
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this.ClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -182,8 +182,8 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_5 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PREPARING home webpage");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");
@@ -231,7 +231,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_5 {
 
             //#region EXECUTE request handler
 
-            if (this.ClientOrServerInstance["actionName"] == undefined || this.ClientOrServerInstance["actionName"] == null || this.ClientOrServerInstance["actionName"] == "" || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0 || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Client_Window_OnLoad_1_0 || this.ClientOrServerInstance["actionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0) {
+            if (this.ClientOrServerInstance["storedActionName"] == undefined || this.ClientOrServerInstance["storedActionName"] == null || this.ClientOrServerInstance["storedActionName"] == "" || this.ClientOrServerInstance["storedActionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0 || this.ClientOrServerInstance["storedActionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Client_Window_OnLoad_1_0 || this.ClientOrServerInstance["storedActionName"] == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0) {
                 const ExecuteRequest = async () => {
                     try {
                         //#region EDGE CASE - USE developer logger

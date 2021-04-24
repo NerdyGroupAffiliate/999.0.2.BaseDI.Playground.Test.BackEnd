@@ -52,7 +52,7 @@ export namespace BaseDI.Professional.Chapter.Page.Advertising_2 {
         //#region 4. Action
         public async Action(): Promise<object>
         {
-            this._actionName = this?._clientORserverInstance["actionName"];
+            this._actionName = this?._clientORserverInstance["storedActionName"];
 
             if (this._actionName.toUpperCase().includes("PROCESSREQUEST_1_0")) {
                 //#region VARIABLES

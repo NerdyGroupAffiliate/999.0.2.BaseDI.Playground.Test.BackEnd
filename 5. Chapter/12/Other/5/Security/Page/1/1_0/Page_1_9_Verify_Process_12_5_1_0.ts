@@ -126,7 +126,7 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
             const storylineDetails: any = this.StorylineDetails;
 
-            this._actionName = this?.ClientOrServerInstance["actionName"];
+            this._actionName = this?.ClientOrServerInstance["storedActionName"];
             this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storylineDetails, "key_1", "APIS", false);
 
             this._request = this.ClientOrServerInstance?.Request;

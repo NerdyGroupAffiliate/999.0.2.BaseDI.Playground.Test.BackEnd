@@ -131,13 +131,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = this.ClientOrServerInstance["actionName"] as string;
+            let storedActionName: string = this.ClientOrServerInstance["storedActionName"] as string;
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this.ClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -149,8 +149,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RETRIEVING cached dataset");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.Page_2_1_Begin_Process_12_2_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action"); 
@@ -281,7 +281,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this.ClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -299,8 +299,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PREPARING caching request");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
@@ -387,7 +387,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this.ClientOrServerInstance["appSettings"];
+            this._storedAppSettings = this.ClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
@@ -405,8 +405,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PREPARING caching request");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["actionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["appSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
