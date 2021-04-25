@@ -1221,7 +1221,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             try
             {
-                //#region 1. EXECUTE server management
+                //#region 1. EXECUTE request management
 
                 //#region IDEAL CASE - USE baseDI pipeline
 
@@ -1318,7 +1318,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 //#endregion
 
-                //#region B. CONTROL server response
+                //#region B. CONTROL server request
 
                 const ExecuteInputRequest = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
                 {
@@ -1375,7 +1375,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#endregion
 
-                    //#region 2. CONTROL request response
+                    //#region 2. CONTROL request request
 
                     try
                     {
@@ -1734,7 +1734,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 //#endregion
 
-                //#region 2. EXECUTE request management
+                //#region 2. EXECUTE response management
 
                 //#region EDGE CASE - USE developer logger
 
