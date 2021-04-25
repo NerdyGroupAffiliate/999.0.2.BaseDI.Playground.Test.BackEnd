@@ -8,6 +8,7 @@ const _3rdParty_ObjectScan_ObjectSearcher = require('object-scan');
 
 //#region BaseDI
 
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
 import * as ExtraData_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
@@ -70,6 +71,34 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
                 //#endregion
 
+                //#region MEMORIZE clientOrServer instance
+
+                let storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+                //#endregion
+
+                //#region MEMORIZE app settings
+
+                let storedAppSettings = storedClientOrServerInstance["parameterAppSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE developer mode
+
+                let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0 -> ValidateInputs");
+                //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+                //#endregion
+
                 //#endregion
 
                 //#region 2. PROCESS
@@ -115,15 +144,29 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                         storedProcessCheckPointHit = true;
                     }
 
-                    if (storedProcessCheckPointHit) {
+                    if (storedProcessCheckPointHit)
+                    {
+                        //#region EDGE CASE - USE developer logger
+
+                        storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+            
+                        //#endregion
+
                         //#region EDGE CASE - USE exception handler
 
-                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        throw new Error("PARSING parameter values failed");
 
                         //#endregion
                     }
                 }
-                else {
+                else
+                {
                     //#region EDGE CASE - USE blank return
 
                     return false;
@@ -302,6 +345,34 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
                 //#endregion
 
+                //#region MEMORIZE clientOrServer instance
+
+                let storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+                //#endregion
+
+                //#region MEMORIZE app settings
+
+                let storedAppSettings = storedClientOrServerInstance["parameterAppSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE developer mode
+
+                let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Output_JsonMistakeNode_1_0 -> ValidateInputs");
+                //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+                //#endregion
+
                 //#endregion
 
                 //#region 2. PROCESS
@@ -315,7 +386,6 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                         storedMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
                         storedProcessCheckPointHit = true;
                     }
-
 
                     if (!parameterInputs.Parameters.containsKey("parameter3WordDescription")) {
                         storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n"
@@ -359,14 +429,27 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                     }
 
                     if (storedProcessCheckPointHit) {
+                        //#region EDGE CASE - USE developer logger
+
+                        storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+
+                        //#endregion
+
                         //#region EDGE CASE - USE exception handler
 
-                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        throw new Error("PARSING parameter values failed");
 
                         //#endregion
                     }
                 }
-                else {
+                else
+                {
                     //#region EDGE CASE - USE blank return
 
                     return;
@@ -537,6 +620,34 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
                 //#endregion
 
+                //#region MEMORIZE clientOrServer instance
+
+                let storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+                //#endregion
+
+                //#region MEMORIZE app settings
+
+                let storedAppSettings = storedClientOrServerInstance["parameterAppSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE developer mode
+
+                let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Output_JsonObservationNode_1_0 -> ValidateInputs");
+                //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+                //#endregion
+
                 //#endregion
 
                 //#region 2. PROCESS
@@ -550,7 +661,6 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                         storedMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
                         storedProcessCheckPointHit = true;
                     }
-
 
                     if (!parameterInputs.Parameters.containsKey("parameter3WordDescription")) {
                         storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n"
@@ -594,14 +704,27 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                     }
 
                     if (storedProcessCheckPointHit) {
+                        //#region EDGE CASE - USE developer logger
+
+                        storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+
+                        //#endregion
+
                         //#region EDGE CASE - USE exception handler
 
-                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        throw new Error("PARSING parameter values failed");
 
                         //#endregion
                     }
                 }
-                else {
+                else
+                {
                     //#region EDGE CASE - USE blank return
 
                     return;

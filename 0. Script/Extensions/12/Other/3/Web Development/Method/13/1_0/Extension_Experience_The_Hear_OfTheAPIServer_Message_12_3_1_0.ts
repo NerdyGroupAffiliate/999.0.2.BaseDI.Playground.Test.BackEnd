@@ -110,12 +110,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html container");
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0 -> ValidateInputs");
 
                 //#endregion
 
@@ -558,6 +557,33 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                 //#endregion
 
+                //#region MEMORIZE clientOrServer instance
+
+                let storedClientOrServerInstance: any = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+                //#endregion
+
+                //#region MEMORIZE app settings
+
+                let storedAppSettings: any = storedClientOrServerInstance["storedAppSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE developer mode
+
+                let storedDeveloperMode: boolean = storedAppSettings.APP_SETTING_DEVELOPER_MODE ? storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0 -> ValidateInputs");
+
+                //#endregion
+
                 //#endregion
 
                 //#region 2. PROCESS
@@ -620,7 +646,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         //#endregion
                     }
                 }
-                else {
+                else
+                {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedDeveloperMode) {
@@ -707,7 +734,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
 
             //#endregion
 
@@ -821,6 +848,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     storedParameterInputs.Parameters.setValue("parameterStorylineDetails", Object.assign(storedStorylineDetails, Object));
 
                     storedParameterInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", true);
+
                     //DYNAMIC inputs
                     storedParameterInputs.Parameters.setValue("parameterStorageDescription", "STORING client side BaseDI script SOURCE PATH");
                     storedParameterInputs.Parameters.setValue("parameterStorageValue", storedServerScriptName);
@@ -849,7 +877,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     //#endregion
                 }
-                catch (mistake) {
+                catch (mistake)
+                {
                     //#region EDGE CASE - USE developer logger
                     if (storedDeveloperMode) {
                         storedClientOrServerInstance["processStepNumber"] = storedClientOrServerInstance["processStepNumber"] + 1;

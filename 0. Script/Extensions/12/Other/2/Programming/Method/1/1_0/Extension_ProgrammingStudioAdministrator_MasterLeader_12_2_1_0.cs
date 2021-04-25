@@ -22,6 +22,7 @@ using System.Threading.Tasks;
 #region 3rd Party Core
 
 using Newtonsoft.Json.Linq;
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 #endregion
 
@@ -64,6 +65,34 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                 #region DEFINE stored message
 
                 string storedMessage = "";
+
+            #endregion
+
+                #region MEMORIZE clientOrServer instance
+
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+                #endregion
+
+                #region MEMORIZE app settings
+
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["parameterAppSettings"];
+
+                #endregion
+
+                #region MEMORIZE developer mode
+
+                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0 -> ValidateInputs");
+                //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
 
                 #endregion
 
@@ -123,9 +152,24 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
                     if (storedProcessCheckPointHit)
                     {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
                         #region EDGE CASE - USE exception handler
 
-                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        throw new Exception("PARSING parameter values failed");
 
                         #endregion
                     }
