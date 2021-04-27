@@ -162,6 +162,12 @@ export namespace BaseDI.Professional.State.Programming_2 {
         {
             //#region 1. INPUTS
 
+            //#region DEFINE parameter inputs
+
+            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
             //#region DEFINE process checkpoint
 
             let storedProcessCheckPointHit: boolean = false;
@@ -647,7 +653,13 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            storedStorylineDetailsFiltered = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedStorylineDetails, "", this._storedBaseDIPlaceHolderValue, true);
+            storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+            storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+            storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "");
+            storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", this._storedBaseDIPlaceHolderValue);
+            storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", true);
+
+            storedStorylineDetailsFiltered = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedParameterInputs);
 
             storedStorylineDetailsFilteredResult = {
                 StorylineDetails: storedStorylineDetails,

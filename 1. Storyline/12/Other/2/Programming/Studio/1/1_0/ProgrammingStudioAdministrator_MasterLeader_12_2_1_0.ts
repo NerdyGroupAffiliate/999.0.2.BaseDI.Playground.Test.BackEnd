@@ -494,14 +494,14 @@ export namespace BaseDI.Professional.Story.Programming_1
                 //#region EDGE CASE - USE exception handler
                 stored_ExceptionDetails = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                stored_ExceptionDetails.RequestNameToProcess = storedClientRequestByName;
-                stored_ExceptionDetails.RequestNameToProcessParameters = storedClientRequestByNameParameters;
+                stored_ExceptionDetails.Parameters.setValue("storedClientRequestByName", storedClientRequestByName);
+                stored_ExceptionDetails.Parameters.setValue("storedClientRequestByNameParameters", storedClientRequestByNameParameters);
 
-                stored_ExceptionDetails.StorylineDetails = storedStorylineDetails;
+                stored_ExceptionDetails.Parameters.setValue("storedStorylineDetails", storedStorylineDetails);
 
-                stored_ExceptionDetails.Parameters.setValue("StoredparameterClientOrServerInstance", storedClientOrServerInstance);
-                stored_ExceptionDetails.Parameters.setValue("StoredExtraData", this._storedExtraData);
-                stored_ExceptionDetails.Parameters.setValue("StoredMistakes", mistake);
+                stored_ExceptionDetails.Parameters.setValue("storedClientOrServerInstance", storedClientOrServerInstance);
+                stored_ExceptionDetails.Parameters.setValue("storedExtraData", this._storedExtraData);
+                stored_ExceptionDetails.Parameters.setValue("storedMistakes", mistake);
 
                 throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails);
 
@@ -1233,7 +1233,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 {
                     //#region 12. Other
 
-                    _12_2_stored_Director_Of_Programming_RequestHandler = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._storedExtraData);
+                    _12_2_stored_Director_Of_Programming_RequestHandler = new ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(this._storedParameterInputs);
                     
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/professional/programming";
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/professional/programming";
@@ -1254,7 +1254,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_ADVERTISING"))
                     {
-                        _1_1_stored_Director_Of_Advertising_RequestHandler = new AdvertisingFactoryImplementer_NicheMaster_1_1_1_0.BaseDI.Professional.Story.Advertising_1.AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(this._storedExtraData);
+                        _1_1_stored_Director_Of_Advertising_RequestHandler = new AdvertisingFactoryImplementer_NicheMaster_1_1_1_0.BaseDI.Professional.Story.Advertising_1.AdvertisingFactoryImplementer_NicheMaster_1_1_1_0(this._storedParameterInputs);
 
                         _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalDotNetCore = "http://localhost:6991/storyline/basedi/io/professional/advertising";
                         _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7991/storyline/basedi/io/professional/advertising";
@@ -1273,7 +1273,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_BLOGGING"))
                     {
-                        _2_1_stored_Director_Of_Blogging_RequestHandler = new BloggingFactoryImplementer_NicheMaster_2_1_1_0.BaseDI.Professional.Story.Blogging_1.BloggingFactoryImplementer_NicheMaster_2_1_1_0(this._storedExtraData);
+                        _2_1_stored_Director_Of_Blogging_RequestHandler = new BloggingFactoryImplementer_NicheMaster_2_1_1_0.BaseDI.Professional.Story.Blogging_1.BloggingFactoryImplementer_NicheMaster_2_1_1_0(this._storedParameterInputs);
                         
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/professional/blogging";
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/professional/blogging";
@@ -1288,7 +1288,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_PODCASTING"))
                     {
-                        _2_2_stored_Director_Of_Podcasting_RequestHandler = new PodcastingFactoryImplementer_NicheMaster_2_2_1_0.BaseDI.Professional.Story.Podcasting_2.PodcastingFactoryImplementer_NicheMaster_2_2_1_0(this._storedExtraData);
+                        _2_2_stored_Director_Of_Podcasting_RequestHandler = new PodcastingFactoryImplementer_NicheMaster_2_2_1_0.BaseDI.Professional.Story.Podcasting_2.PodcastingFactoryImplementer_NicheMaster_2_2_1_0(this._storedParameterInputs);
 
                         _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/professional/podcasting";
                         _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/professional/podcasting";
@@ -1303,7 +1303,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SOCIALMEDIA"))
                     {
-                        _2_3_stored_Director_Of_SocialMedia_RequestHandler = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.Professional.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._storedExtraData);
+                        _2_3_stored_Director_Of_SocialMedia_RequestHandler = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.Professional.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._storedParameterInputs);
 
                         _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/professional/socialmedia";
                         _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/professional/socialmedia";
@@ -1322,7 +1322,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_LISTBUILDING"))
                     {
-                        _3_1_stored_Director_Of_ListBuilding_RequestHandler = new ListBuildingFactoryImplementer_NicheMaster_3_1_1_0.BaseDI.Professional.Story.Listing_Building_1.ListBuildingFactoryImplementer_NicheMaster_3_1_1_0(this._storedExtraData);
+                        _3_1_stored_Director_Of_ListBuilding_RequestHandler = new ListBuildingFactoryImplementer_NicheMaster_3_1_1_0.BaseDI.Professional.Story.Listing_Building_1.ListBuildingFactoryImplementer_NicheMaster_3_1_1_0(this._storedParameterInputs);
 
                         _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6993/storyline/basedi/io/professional/listbuilding";
                         _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7993/storyline/basedi/io/professional/listbuilding";
@@ -1341,7 +1341,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SUPPLEMENTS"))
                     {
-                        _4_1_stored_Director_Of_Supplements_RequestHandler = new SupplementsFactoryImplementer_NicheMaster_4_1_1_0.BaseDI.Professional.Story.Supplements_1.SupplementsFactoryImplementer_NicheMaster_4_1_1_0(this._storedExtraData);
+                        _4_1_stored_Director_Of_Supplements_RequestHandler = new SupplementsFactoryImplementer_NicheMaster_4_1_1_0.BaseDI.Professional.Story.Supplements_1.SupplementsFactoryImplementer_NicheMaster_4_1_1_0(this._storedParameterInputs);
 
                         _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6994/storyline/basedi/io/professional/supplements";
                         _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7994/storyline/basedi/io/professional/supplements";
@@ -1360,7 +1360,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_COACHING"))
                     {
-                        _5_1_stored_Director_Of_Coaching_RequestHandler = new CoachingFactoryImplementer_NicheMaster_5_1_1_0.BaseDI.Professional.Story.Coaching_1.CoachingFactoryImplementer_NicheMaster_5_1_1_0(this._storedExtraData);
+                        _5_1_stored_Director_Of_Coaching_RequestHandler = new CoachingFactoryImplementer_NicheMaster_5_1_1_0.BaseDI.Professional.Story.Coaching_1.CoachingFactoryImplementer_NicheMaster_5_1_1_0(this._storedParameterInputs);
 
                         _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/professional/coaching";
                         _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/professional/coaching";
@@ -1375,7 +1375,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CONSULTING"))
                     {
-                        _5_2_stored_Director_Of_Consulting_RequestHandler = new ConsultingFactoryImplementer_NicheMaster_5_2_1_0.BaseDI.Professional.Story.Consulting_2.ConsultingFactoryImplementer_NicheMaster_5_2_1_0(this._storedExtraData);
+                        _5_2_stored_Director_Of_Consulting_RequestHandler = new ConsultingFactoryImplementer_NicheMaster_5_2_1_0.BaseDI.Professional.Story.Consulting_2.ConsultingFactoryImplementer_NicheMaster_5_2_1_0(this._storedParameterInputs);
 
                         _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/professional/consulting";
                         _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/professional/consulting";
@@ -1390,7 +1390,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_PERSONALTRAINING"))
                     {
-                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler = new PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0.BaseDI.Professional.Story.Personal_Training_3.PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0(this._storedExtraData);
+                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler = new PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0.BaseDI.Professional.Story.Personal_Training_3.PersonalTrainingFactoryImplementer_NicheMaster_5_3_1_0(this._storedParameterInputs);
 
                         _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/professional/personaltraining";
                         _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/professional/personaltraining";
@@ -1409,7 +1409,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SOFTWARE"))
                     {
-                        _6_1_stored_Director_Of_Software_RequestHandler = new SoftwareFactoryImplementer_NicheMaster_6_1_1_0.BaseDI.Professional.Story.Software_1.SoftwareFactoryImplementer_NicheMaster_6_1_1_0(this._storedExtraData);
+                        _6_1_stored_Director_Of_Software_RequestHandler = new SoftwareFactoryImplementer_NicheMaster_6_1_1_0.BaseDI.Professional.Story.Software_1.SoftwareFactoryImplementer_NicheMaster_6_1_1_0(this._storedParameterInputs);
 
                         _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6996/storyline/basedi/io/professional/software";
                         _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7996/storyline/basedi/io/professional/software";
@@ -1428,7 +1428,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_AFFILIATEREVENUE"))
                     {
-                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler = new AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0.BaseDI.Professional.Story.Affiliate_Revenue_1.AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0(this._storedExtraData);
+                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler = new AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0.BaseDI.Professional.Story.Affiliate_Revenue_1.AffiliateRevenueFactoryImplementer_NicheMaster_7_1_1_0(this._storedParameterInputs);
 
                         _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6997/storyline/basedi/io/professional/affiliaterevenue";
                         _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7997/storyline/basedi/io/professional/affiliaterevenue";
@@ -1447,7 +1447,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_ACCOUNTING"))
                     {
-                        _8_1_stored_Director_Of_Accounting_RequestHandler = new AccountingFactoryImplementer_NicheMaster_8_1_1_0.BaseDI.Professional.Story.Accounting_1.AccountingFactoryImplementer_NicheMaster_8_1_1_0(this._storedExtraData);
+                        _8_1_stored_Director_Of_Accounting_RequestHandler = new AccountingFactoryImplementer_NicheMaster_8_1_1_0.BaseDI.Professional.Story.Accounting_1.AccountingFactoryImplementer_NicheMaster_8_1_1_0(this._storedParameterInputs);
 
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6998/storyline/basedi/io/professional/accounting";
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7998/storyline/basedi/io/professional/accounting";
@@ -1466,7 +1466,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CUSTOMERSERVICE"))
                     {
-                        _9_1_stored_Director_Of_CustomerService_RequestHandler = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0.BaseDI.Professional.Story.Customer_Service_1.CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(this._storedExtraData);
+                        _9_1_stored_Director_Of_CustomerService_RequestHandler = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0.BaseDI.Professional.Story.Customer_Service_1.CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(this._storedParameterInputs);
 
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6999/storyline/basedi/io/professional/customerservice";
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7999/storyline/basedi/io/professional/customerservice";
@@ -1485,7 +1485,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_PRODUCTIVITY"))
                     {
-                        _10_1_stored_Director_Of_Productivity_RequestHandler = new ProductivityFactoryImplementer_NicheMaster_10_1_1_0.BaseDI.Professional.Story.Productivity_1.ProductivityFactoryImplementer_NicheMaster_10_1_1_0(this._storedExtraData);
+                        _10_1_stored_Director_Of_Productivity_RequestHandler = new ProductivityFactoryImplementer_NicheMaster_10_1_1_0.BaseDI.Professional.Story.Productivity_1.ProductivityFactoryImplementer_NicheMaster_10_1_1_0(this._storedParameterInputs);
 
                         _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6910/storyline/basedi/io/professional/productivity";
                         _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7910/storyline/basedi/io/professional/productivity";
@@ -1504,7 +1504,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_RISKMANAGEMENT"))
                     {
-                        _11_1_stored_Director_Of_RiskManagement_RequestHandler = new RiskManagementFactoryTester_NicheMaster_11_1_1_0.BaseDI.Professional.Story.Risk_Management_1.RiskManagementFactoryTester_NicheMaster_11_1_1_0(this._storedExtraData);
+                        _11_1_stored_Director_Of_RiskManagement_RequestHandler = new RiskManagementFactoryTester_NicheMaster_11_1_1_0.BaseDI.Professional.Story.Risk_Management_1.RiskManagementFactoryTester_NicheMaster_11_1_1_0(this._storedParameterInputs);
 
                         _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6911/storyline/basedi/io/professional/riskmanagement";
                         _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7911/storyline/basedi/io/professional/riskmanagement";
@@ -1523,7 +1523,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CAREERSEMPLOYMENT"))
                     {
-                        _12_1_stored_Director_Of_Careers_RequestHandler = new CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0.BaseDI.Professional.Story.Careers_Employment_1.CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0(this._storedExtraData);
+                        _12_1_stored_Director_Of_Careers_RequestHandler = new CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0.BaseDI.Professional.Story.Careers_Employment_1.CareersEmploymentFactoryImplementer_NicheMaster_12_1_1_0(this._storedParameterInputs);
 
                         _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/professional/careersemployment";
                         _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/professional/careersemployment";
@@ -1538,7 +1538,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_WEBDEVELOPMENT"))
                     {
-                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.BaseDI.Professional.Story.Web_Development_1.WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(this._storedExtraData);
+                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.BaseDI.Professional.Story.Web_Development_1.WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(this._storedParameterInputs);
 
                         _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/professional/webdevelopment";
                         _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/professional/webdevelopment";
@@ -1553,7 +1553,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CMS"))
                     {
-                        _12_4_stored_Director_Of_CMS_RequestHandler = new CMSFactoryImplementer_NicheMaster_12_4_1_0.BaseDI.Professional.Story.CMS_1.CMSFactoryImplementer_NicheMaster_12_4_1_0(this._storedExtraData);
+                        _12_4_stored_Director_Of_CMS_RequestHandler = new CMSFactoryImplementer_NicheMaster_12_4_1_0.BaseDI.Professional.Story.CMS_1.CMSFactoryImplementer_NicheMaster_12_4_1_0(this._storedParameterInputs);
 
                         _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalNodeJS = "https://localhost:6912/storyline/basedi/io/professional/cms";
                         _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:7912/storyline/basedi/io/professional/cms";
@@ -1568,7 +1568,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SECURITY"))
                     {
-                        _12_5_stored_Director_Of_Security_RequestHandler = new SecurityFactoryImplementer_NicheMaster_12_5_1_0.BaseDI.Professional.Story.Security_1.SecurityFactoryImplementer_NicheMaster_12_5_1_0(this._storedExtraData);
+                        _12_5_stored_Director_Of_Security_RequestHandler = new SecurityFactoryImplementer_NicheMaster_12_5_1_0.BaseDI.Professional.Story.Security_1.SecurityFactoryImplementer_NicheMaster_12_5_1_0(this._storedParameterInputs);
 
                         _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/professional/security";
                         _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/professional/security";
@@ -1853,7 +1853,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 if (this._storedRequestName.toUpperCase().includes("EXPERIENCE_THE_MOVEMENT_TOFACEBOOKPAGE_DATATRANSFER"))
                 {
-                    _2_3_stored_Director_Of_SocialMedia_RequestHandler = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.Professional.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._storedExtraData);
+                    _2_3_stored_Director_Of_SocialMedia_RequestHandler = new SocialMediaFactoryImplementer_NicheMaster_2_3_1_0.BaseDI.Professional.Story.Social_Media_3.SocialMediaFactoryImplementer_NicheMaster_2_3_1_0(this._storedParameterInputs);
 
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:8992/storyline/basedi/io/professional/socialmedia";
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9992/storyline/basedi/io/professional/socialmedia";
@@ -1907,7 +1907,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 {
                     //#region 12. Other
 
-                    _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.BaseDI.Professional.Story.Web_Development_1.WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(this._storedExtraData);
+                    _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.BaseDI.Professional.Story.Web_Development_1.WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(this._storedParameterInputs);
 
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:8912/storyline/basedi/io/professional/webdevelopment";
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:9912/storyline/basedi/io/professional/webdevelopment";
@@ -2170,7 +2170,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 
                 if (this._storedAppSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED STORING a value. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
+                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedParameterInputs))
                     .SetupStoryline(this._storedParameterInputs)
                     .Action();
 

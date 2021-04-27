@@ -31,7 +31,7 @@ export namespace BaseDI.Professional
         private _storedAppSettings: any = null;
 
         //CLIENT/SERVER
-        private _storedClientOrServerInfo: Object = new Object();
+        private _storedClientOrServerInstance: Object = new Object();
         private _storedClientWebPageInstance: any;
 
         //DATASETS
@@ -99,21 +99,21 @@ export namespace BaseDI.Professional
             //#region IDEAL CASE - USE hardcoded values
 
             if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
-                this._storedClientOrServerInfo = {
+                this._storedClientOrServerInstance = {
                     "storedAppSettings": process.env,
                     "serverInstance": this._storedClientWebPageInstance,
                     "serverStartUp": this
                 }
             }
             else {
-                this._storedClientOrServerInfo = {
+                this._storedClientOrServerInstance = {
                     "storedAppSettings": process.env,
                     "clientInstance": this._storedClientWebPageInstance,
                     "clientStartUp": this
                 }
             }
 
-            this._storedClientOrServerInfo["storedIgnoreDeveloperConsoleLog"] = false;
+            this._storedClientOrServerInstance["storedIgnoreDeveloperConsoleLog"] = false;
 
             //#endregion
 
@@ -138,23 +138,29 @@ export namespace BaseDI.Professional
 
             //#endregion
 
+            //#region DEFINE parameter inputs
+
+            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInfo["storedAppSettings"];
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
 
             //#endregion
 
             //#region MEMORIZE action name
 
             if (parameterRequestActionName != "")
-                this._storedClientOrServerInfo["storedActionName"] = parameterRequestActionName;
+                this._storedClientOrServerInstance["storedActionName"] = parameterRequestActionName;
 
             //#endregion
 
             //#region MEMORIZE chpater name
 
             if (parameterRequestActionName != "")
-                this._storedClientOrServerInfo["chapterName"] = parameterRequestChapterName;
+                this._storedClientOrServerInstance["chapterName"] = parameterRequestChapterName;
 
             //#endregion
 
@@ -162,15 +168,15 @@ export namespace BaseDI.Professional
 
             let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
 
-            this._storedClientOrServerInfo["processStepNumber"] = 0;
+            this._storedClientOrServerInstance["processStepNumber"] = 0;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "STARING web request");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInfo["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInfo["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInfo);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Start.ts");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");
 
@@ -179,7 +185,7 @@ export namespace BaseDI.Professional
             //#region MEMORIZE targeted tagID
 
             if (parameterTargetedResponseTagID != "")
-                this._storedClientOrServerInfo["targetedResponseTagID"] = parameterTargetedResponseTagID;
+                this._storedClientOrServerInstance["targetedResponseTagID"] = parameterTargetedResponseTagID;
 
             //#endregion
 
@@ -193,7 +199,7 @@ export namespace BaseDI.Professional
 
                 //#region EDGE CASE - USE updates handler
 
-                this._storedClientOrServerInfo["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
+                this._storedClientOrServerInstance["StartUpCallBack"] = (response: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => {
                     return this._storedStorylineDetails;
                 }
 
@@ -201,16 +207,33 @@ export namespace BaseDI.Professional
 
                 //#region IDEAL CASE - USE request handler
 
-                if (parameterRequestNameToProcess == "") throw new Error("[DISTURBANCE ISSUE] - Bug - Startup.ts - BaseDI will not work without a request name. Please make sure that requestNameToProcess is not blank, null or undefined!");
+                //#region A. STORE route details
 
-                const Action = (parameterRequestNameToProcess: string = "", parameterRequestNameToProcessParameters: string = "", parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) =>
-                {
+                storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+                storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
+
+                storedParameterInputs.Parameters.setValue("parameterStorylineDetails", null);
+                storedParameterInputs.Parameters.setValue("parameterStorylineDetails_Parameters", null);
+                storedParameterInputs.Parameters.setValue("parameterStorylineDetails_Remote", null);
+
+                storedParameterInputs.Parameters.setValue("parameterClientRequestByName", parameterRequestNameToProcess);
+                storedParameterInputs.Parameters.setValue("parameterClientRequestByNameParameters", parameterRequestNameToProcessParameters);
+
+                //#endregion
+
+                //#region B. INPUT request details
+
+                const Action = (parameterRequestNameToProcess: string = "", parameterRequestNameToProcessParameters: string = "", parameterExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null) => {
                     storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Story.Programming_1.ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedExtraData))
-                        .SetupStoryline(this._storedClientOrServerInfo, this._storedStorylineDetails, null, this._storedExtraData, "", parameterRequestNameToProcess, parameterRequestNameToProcessParameters)
+                        .SetupStoryline(storedParameterInputs)
                         .Action();
                 }
 
                 Action(parameterRequestNameToProcess, parameterRequestNameToProcessParameters, this._storedExtraData);
+
+                //#endregion
 
                 //#endregion
 
@@ -253,11 +276,11 @@ export namespace BaseDI.Professional
                                 //#region EDGE CASE - USE developer logger
 
                                 if (storedDeveloperMode) {
-                                    this._storedClientOrServerInfo["processStepNumber"] = this._storedClientOrServerInfo["processStepNumber"] + 1;
+                                    this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY rendered webpage");
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInfo["processStepNumber"]);
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
                                     storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", true);
 
                                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);

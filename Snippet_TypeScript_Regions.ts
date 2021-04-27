@@ -298,6 +298,17 @@ export class ClassModel
 
         //#endregion
 
+        //#region MEMORIZE json filter
+        //storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+        //storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+        //storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
+        //storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment");
+        //storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
+
+        //const storedServerDetails: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedParameterInputs);
+
+        //#endregion
+
         //#endregion
 
         //#region 2. PROCESS

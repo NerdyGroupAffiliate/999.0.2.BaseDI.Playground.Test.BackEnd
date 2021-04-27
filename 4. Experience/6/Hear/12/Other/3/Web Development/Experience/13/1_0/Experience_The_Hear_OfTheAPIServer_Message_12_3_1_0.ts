@@ -196,7 +196,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> ValidateInputs");
 
                 //#endregion
 
@@ -1174,16 +1174,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region DEFINE route details
 
-            let storedRouteListDetails: any = null;
+            let storedRoute: any = null;
+            let storedRoutesFound: boolean = false;
 
             //#endregion
 
             //#region DEFINE server instance
 
-            let storedRouteListDetailsDELETE: any = null;
-            let storedRouteListDetailsGET: any = null;
-            let storedRouteListDetailsPOST: any = null;
-            let storedRouteListDetailsPUT: any = null;
+            let storedRouteListDetailsDELETE: Array<any> = null;
+            let storedRouteListDetailsGET: Array<any> = null;
+            let storedRouteListDetailsPOST: Array<any> = null;
+            let storedRouteListDetailsPUT: Array<any> = null;
 
             let storedServerInstance: any = null;
 
@@ -1544,7 +1545,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 //#region 1. CONFIGURE request goals
 
-                //#region A. STORE server configurations to memory
+                //#region A. CONFIGURE request prerequisites
 
                 try
                 {
@@ -1568,7 +1569,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     if (storedDeveloperMode) {
                         this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY configured server");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY configured request prerequisites");
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
@@ -1613,51 +1614,46 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                         //CONFIGURE delete routes
-                        if (this?._storedServerInstance?.Server?.Verbs?.Delete != undefined) {
-                            storedRouteListDetailsDELETE = this?._storedServerInstance?.Server?.Verbs?.Delete;
+                        if (this?._storedServerInstance?.Server?.Verbs?.Delete != undefined && this?._storedServerInstance?.Server?.Verbs?.Delete != null) {
+                            storedRouteListDetailsDELETE = this?._storedServerInstance?.Server?.Verbs?.Delete as Array<any>;
 
                             storedParameterInputs.Parameters.setValue("parameterRouteListDetailsDELETE", storedRouteListDetailsDELETE);
                         }
 
                         //CONFIGURE get routes
-                        if (this?._storedServerInstance?.Server?.Verbs?.Get != undefined) {
-                            storedRouteListDetailsGET = this?._storedServerInstance?.Server?.Verbs?.Get;
+                        if (this?._storedServerInstance?.Server?.Verbs?.Get != undefined && this?._storedServerInstance?.Server?.Verbs?.Get != null) {
+                            storedRouteListDetailsGET = this?._storedServerInstance?.Server?.Verbs?.Get as Array<any>;
 
                             storedParameterInputs.Parameters.setValue("parameterRouteListDetailsGET", storedRouteListDetailsGET);
                         }
 
                         //CONFIGURE post routes
-                        if (this?._storedServerInstance?.Server?.Verbs?.Post != undefined) {
-                            storedRouteListDetailsPOST = this?._storedServerInstance?.Server?.Verbs?.Post;
+                        if (this?._storedServerInstance?.Server?.Verbs?.Post != undefined && this?._storedServerInstance?.Server?.Verbs?.Post != null) {
+                            storedRouteListDetailsPOST = this?._storedServerInstance?.Server?.Verbs?.Post as Array<any>;
 
                             storedParameterInputs.Parameters.setValue("parameterRouteListDetailsPOST", storedRouteListDetailsPOST);
                         }
 
                         //CONFIGURE put routes
-                        if (this?._storedServerInstance?.Server?.Verbs?.Put != undefined) {
-                            storedRouteListDetailsPUT = this?._storedServerInstance?.Server?.Verbs?.Put;
+                        if (this?._storedServerInstance?.Server?.Verbs?.Put != undefined && this?._storedServerInstance?.Server?.Verbs?.Put != null) {
+                            storedRouteListDetailsPUT = this?._storedServerInstance?.Server?.Verbs?.Put as Array<any>;
 
                             storedParameterInputs.Parameters.setValue("parameterRouteListDetailsPUT", storedRouteListDetailsPUT);
                         }
 
-                        return true;
+                        if (storedParameterInputs.Parameters.containsKey("parameterRouteListDetailsDELETE") ||
+                            storedParameterInputs.Parameters.containsKey("parameterRouteListDetailsGET") ||
+                            storedParameterInputs.Parameters.containsKey("parameterRouteListDetailsPOST") ||
+                            storedParameterInputs.Parameters.containsKey("parameterRouteListDetailsPUT")) {
+
+                            return true;
+                        }
+
+                        return false;
+                        
                     }
 
-                    await ExecuteStorageRequest();
-
-                    //#region EDGE CASE - USE developer logger
-
-                    if (storedDeveloperMode) {
-                        this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
-
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY configured routes");
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
-
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
-                    }
-
-                    //#endregion
+                    storedRoutesFound = await ExecuteStorageRequest();
                 }
                 catch (mistake)
                 {
@@ -1687,20 +1683,40 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 try
                 {
-                    storedParameterInputs.Parameters.setValue("parameterRouteVerb", "DELETE");
-                    await ExecuteInputRequest(storedParameterInputs);
+                    //#region EDGE CASE - USE developer logger
 
-                    storedParameterInputs.Parameters.remove("parameterRouteVerb");
-                    storedParameterInputs.Parameters.setValue("parameterRouteVerb", "GET");
-                    await ExecuteInputRequest(storedParameterInputs);
+                    if (storedDeveloperMode && storedRoutesFound) {
+                        this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
-                    storedParameterInputs.Parameters.remove("parameterRouteVerb");
-                    storedParameterInputs.Parameters.setValue("parameterRouteVerb", "POST");
-                    await ExecuteInputRequest(storedParameterInputs);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY configured routes");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
-                    storedParameterInputs.Parameters.remove("parameterRouteVerb");
-                    storedParameterInputs.Parameters.setValue("parameterRouteVerb", "PUT");
-                    await ExecuteInputRequest(storedParameterInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
+                    if (storedRoutesFound) {
+                        storedParameterInputs.Parameters.setValue("parameterRouteVerb", "DELETE");
+                        await ExecuteInputRequest(storedParameterInputs);
+
+                        storedParameterInputs.Parameters.remove("parameterRouteVerb");
+                        storedParameterInputs.Parameters.setValue("parameterRouteVerb", "GET");
+                        await ExecuteInputRequest(storedParameterInputs);
+
+                        storedParameterInputs.Parameters.remove("parameterRouteVerb");
+                        storedParameterInputs.Parameters.setValue("parameterRouteVerb", "POST");
+                        await ExecuteInputRequest(storedParameterInputs);
+
+                        storedParameterInputs.Parameters.remove("parameterRouteVerb");
+                        storedParameterInputs.Parameters.setValue("parameterRouteVerb", "PUT");
+                        await ExecuteInputRequest(storedParameterInputs);
+                    }
+                    else
+                    {
+                        throw new Error("FAILED configurating routes");
+                    }
                 }
                 catch (mistake)
                 {
@@ -1927,7 +1943,12 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 //#region IDEAL CASE - USE baseDI extension
 
-                await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(this._storedStorylineDetails);
+                storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+                storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
+                storedParameterInputs.Parameters.setValue("parameterStorylineDetails", this._storedStorylineDetails);
+
+                await Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(storedParameterInputs);
 
                 //#endregion
 

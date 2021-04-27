@@ -3,11 +3,13 @@
 #region BaseDI
 
 using BaseDI.Professional.Director.Advertising_1;
+
 using BaseDI.Professional.Director.Programming_1;
 using BaseDI.Professional.Director.Programming_2;
 using BaseDI.Professional.Director.Programming_3;
 using BaseDI.Professional.Director.Programming_4;
 using BaseDI.Professional.Director.Programming_5;
+
 using BaseDI.Professional.Director.Risk_Management_3;
 using BaseDI.Professional.Director.Risk_Management_4;
 
@@ -15,6 +17,9 @@ using BaseDI.Professional.Script.Programming.Abstract_1;
 using BaseDI.Professional.Script.Programming.Extensions_1;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Programming_1;
+
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
+
 using BaseDI.Professional.State.Advertising_1;
 using BaseDI.Professional.State.Programming_1;
 using BaseDI.Professional.State.Programming_2;
@@ -41,7 +46,6 @@ using System.Threading.Tasks;
 #region 3rd Party Core
 
 using Newtonsoft.Json.Linq;
-using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 #endregion
 
@@ -88,7 +92,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        internal ProgrammingFactoryImplementer_NicheMaster_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -199,7 +203,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> ValidateInputs");
 
                 #endregion
 

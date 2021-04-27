@@ -215,7 +215,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> ValidateInputs");
 
                 #endregion
 
@@ -1235,6 +1235,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             #region DEFINE route details
 
             dynamic storedRoute = null;
+            bool storedRoutesFound = false;
 
             #endregion
 
@@ -1514,7 +1515,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 #region 1. CONFIGURE request goals
 
-                #region A. STORE server configurations to memory
+                #region A. CONFIGURE request prerequisites
 
                 try
                 {
@@ -1539,7 +1540,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     {
                         _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "SUCCESSFULLY configured server");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "SUCCESSFULLY configured request prerequisites");
                         storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
                         storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
@@ -1619,27 +1620,20 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             storedParameterInputs.Parameters.Add("parameterRouteListDetailsPUT", storedRouteListDetailsPUT);
                         }
 
-                        storedParameterInputs.Parameters.Add("parameterRouteVerb", _storedServerHTTPRequestInstance.HttpContext.Request.Method.ToUpper());
+                        if (storedParameterInputs.Parameters.ContainsKey("parameterRouteListDetailsDELETE") ||
+                            storedParameterInputs.Parameters.ContainsKey("parameterRouteListDetailsGET") ||
+                            storedParameterInputs.Parameters.ContainsKey("parameterRouteListDetailsPOST") ||
+                            storedParameterInputs.Parameters.ContainsKey("parameterRouteListDetailsPUT"))
+                        {
+                            storedParameterInputs.Parameters.Add("parameterRouteVerb", _storedServerHTTPRequestInstance.HttpContext.Request.Method.ToUpper());
 
-                        return await Task.FromResult<bool>(true).ConfigureAwait(true);
+                            return await Task.FromResult<bool>(true).ConfigureAwait(true);
+                        }                        
+
+                        return await Task.FromResult<bool>(false).ConfigureAwait(true);
                     };
 
-                    await ExecuteStorageRequest();
-
-                    #region EDGE CASE - USE developer logger
-
-                    if (storedDeveloperMode)
-                    {
-                        _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
-
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "SUCCESSFULLY configured routes");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
-
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
-                    }
-
-                    #endregion
+                    storedRoutesFound = await ExecuteStorageRequest();
                 }
                 catch (Exception mistake)
                 {
@@ -1672,7 +1666,29 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 try
                 {
-                    _storedStorylineDetails = await ExecuteInputRequest(storedParameterInputs);
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode && storedRoutesFound)
+                    {
+                        _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "SUCCESSFULLY configured routes");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    if(storedRoutesFound) {
+                        _storedStorylineDetails = await ExecuteInputRequest(storedParameterInputs);
+                    }
+                    else
+                    {
+                        throw new Exception("FAILED configurating routes");
+                    }
+
                 }
                 catch (Exception mistake)
                 {

@@ -75,13 +75,13 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region MEMORIZE exception details
 
-            _storedExceptionDetails = parameterInputs.Parameters["StoredMistakes"];
+            _storedExceptionDetails = parameterInputs.Parameters["storedMistakes"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterInputs.Parameters["StoredExtraData"];
+            _storedExtraData = parameterInputs.Parameters["storedExtraData"];
 
             #endregion
 

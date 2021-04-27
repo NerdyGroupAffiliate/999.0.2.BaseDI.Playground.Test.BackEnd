@@ -179,7 +179,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", storedClientOrServerInstance);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "SecurityFactoryImplementer_NicheMaster_12_5_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> ValidateInputs");
 
                 //#endregion
 
@@ -459,7 +459,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
 
             //#region MEMORIZE data repository
 
-            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
+            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
@@ -476,8 +476,8 @@ export namespace BaseDI.Professional.Story.Security_1 {
             storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "SecurityFactoryImplementer_NicheMaster_12_5_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
