@@ -8,6 +8,7 @@ using BaseDI.Professional.Script.Programming.Abstract_1;
 
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Programming.Repository_1;
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 using ChapterPage = BaseDI.Professional.Chapter.Page.Programming_3;
 
@@ -28,7 +29,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using BaseDI.Professional.Script.Risk_Management.Extensions_0;
+
 
 
 #endregion
@@ -41,23 +42,65 @@ namespace BaseDI.Professional.Director.Programming_3
     {
         #region 1. Assign
 
-        //A. Variable Declaration
+        //SETTINGS
+        private IConfiguration _storedAppSettings = null;
+
+        //CLIENT/SERVER
+        private Dictionary<string, object> _storedClientOrServerInstance;
+
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
+
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+
+        //DATASETS
+        private JObject _storedStorylineDetails;
+        private JObject _storedStorylineDetails_Parameters;
 
         //MISC
         private ExtraData_12_2_1_0 _storedExtraData;
+
+        //PLUMBING
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+
+        private string _storedRequestName = "";
+        private string _storedSystemRequestByName = "";
 
         #endregion
 
         #region 2. Ready
 
-        //A. Constructor Instantiation
-        public Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(ExtraData_12_2_1_0 parameterExtraData = null)
+        public Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
-            #region MEMORIZE extra data
+            #region MEMORIZE input parameters
 
-            _storedExtraData = parameterExtraData;
+            _storedParameterInputs = parameterInputs;
+
+            #endregion
+
+            #region MEMORIZE clientOrServer instance
+
+            _storedClientOrServerInstance = _storedParameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes handlers
+
+            _storedCentralizedDisturber = _storedParameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = _storedParameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = _storedParameterInputs.Parameters["parameterCentralizedStorer"];
 
             #endregion
 
@@ -65,9 +108,9 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region 2. PROCESS
 
-            #region EXECUTE process defaults
+            #region HANDLE niche setup
 
-            #region IDEAL CASE - USE defaults handler
+            #region EDGE CASE - USE niche faults
 
 
             #endregion
@@ -78,6 +121,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region 3. OUTPUT
 
+
             #endregion
         }
 
@@ -85,7 +129,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
         #region 3. Set
 
-        //A. Default state
+        //A. Default state of this part of the storyline
         public override void HandleDefaults()
         {
             #region 1. INPUTS
@@ -120,33 +164,314 @@ namespace BaseDI.Professional.Director.Programming_3
         {
             #region 1. INPUTS
 
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
+            {
+                #region 1. INPUTS
+
+                #region DEFINE parameter inputs
+
+                SingleParmPoco_12_2_1_0 storedParameterInputs;
+
+                #endregion
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedMessage = "";
+
+                #endregion
+
+                #region MEMORIZE clientOrServer instance
+
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+                #endregion
+
+                #region MEMORIZE app settings
+
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+
+                #endregion
+
+                #region MEMORIZE developer mode
+
+                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "VALIDATING request inputs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.cs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> ValidateInputs");
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null)
+                {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    {
+                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.";
+                            storedProcessCheckPointHit = true;
+                        }
+
+                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedHttpRequest"] == null)
+                        {
+                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedHttpRequest***.";
+                            storedProcessCheckPointHit = true;
+                        }
+                        else
+                        {
+                            if (!parameterInputs.Parameters["parameterClientOrServerInstance"]["storedHttpRequest"] is HttpRequest)
+                            {
+                                storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedHttpRequest*** which must be a type of ***HttpRequest*** .";
+                                storedProcessCheckPointHit = true;
+                            }
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    {
+                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByName"))
+                    {
+                        storedMessage += "***parameterClientRequestByName*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByNameParameters"))
+                    {
+                        storedMessage += "***parameterClientRequestByNameParameters*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedDisturber"))
+                    {
+                        storedMessage += "***parameterCentralizedDisturber*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedSensor"))
+                    {
+                        storedMessage += "***parameterCentralizedSensor*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedStorer"))
+                    {
+                        storedMessage += "***parameterCentralizedStorer*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    {
+                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails_Parameters"))
+                    {
+                        storedMessage += "***parameterStorylineDetails_Parameters*** cannot be blank or empty.\n";
+                        storedProcessCheckPointHit = true;
+                    }
+
+                    if (storedProcessCheckPointHit)
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode)
+                    {
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("PARSING parameter values failed");
+
+                    #endregion
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            //BEGIN valdation process
+            await ValidateInputs(_storedParameterInputs);
+
+            #endregion
+
+            #region DEFINE request handler
+
+            Use_DesignPattern_Builder_Chapter_12_2_Page_3 storedRequestHandler_UsingBuilderPattern = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (_storedParameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? _storedParameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] : null);
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "EXECUTING request handler");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
+
+            //OPTIONAL
+            storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
+
+            #endregion
+
             #endregion
 
             #region 2. PROCESS
 
-            #region BEGIN process execution
+            #region EXECUTE request handler
 
-            #region IDEAL CASE - USE builder pattern
-
-            if (DirectorOrExperienceRequestHandler != null && DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)
+            try
             {
-                ClientOrServerInstance = DirectorOrExperienceRequestHandler.ClientOrServerInstance;
-                MasterLeader = DirectorOrExperienceRequestHandler.MasterLeader;
-                MasterController = DirectorOrExperienceRequestHandler.MasterController;
-                MasterConverter = DirectorOrExperienceRequestHandler.MasterConverter;
-                MasterDisturber = DirectorOrExperienceRequestHandler.MasterDisturber;
-                MasterSensor = DirectorOrExperienceRequestHandler.MasterSensor;
-                MasterStorer = DirectorOrExperienceRequestHandler.MasterStorer;
-                MasterTransporter = DirectorOrExperienceRequestHandler.MasterTransporter;
-                ExtraData = DirectorOrExperienceRequestHandler.ExtraData;
+                #region EDGE CASE - USE developer logger
+
+                if (storedDeveloperMode && (int)_storedClientOrServerInstance["processStepNumber"] == 0)
+                {
+                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
+
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Logging"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                }
+
+                #endregion
+
+                #region IDEAL CASE - USE design pattern
+
+                if (DirectorOrExperienceRequestHandler != null && DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)
+                {
+                    ClientOrServerInstance = DirectorOrExperienceRequestHandler.ClientOrServerInstance;
+                    MasterLeader = DirectorOrExperienceRequestHandler.MasterLeader;
+                    MasterController = DirectorOrExperienceRequestHandler.MasterController;
+                    MasterConverter = DirectorOrExperienceRequestHandler.MasterConverter;
+                    MasterDisturber = DirectorOrExperienceRequestHandler.MasterDisturber;
+                    MasterSensor = DirectorOrExperienceRequestHandler.MasterSensor;
+                    MasterStorer = DirectorOrExperienceRequestHandler.MasterStorer;
+                    MasterTransporter = DirectorOrExperienceRequestHandler.MasterTransporter;
+                    ExtraData = DirectorOrExperienceRequestHandler.ExtraData;
+
+                    _storedParameterInputs.Parameters.Add("parameterBusinessDirectorOrExperienceRequestHandler", DirectorOrExperienceRequestHandler);
+                }
+
+                //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
+                storedRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_3(_storedParameterInputs);
+
+                StorylineDetails = await storedRequestHandler_UsingBuilderPattern.Action().ConfigureAwait(true);
+
+                #endregion
             }
+            catch (Exception mistake)
+            {
+                #region EDGE CASE - USE developer logger
 
-            //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            Use_DesignPattern_Builder_Chapter_12_2_Page_3 designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_3(ClientOrServerInstance, MasterStorer, MasterDisturber, MasterSensor, StorylineDetails, StorylineDetails_Parameters, (aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>)Repository, ExtraData, DirectorOrExperienceRequestHandler);
+                if (storedDeveloperMode)
+                {
+                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-            StorylineDetails = await designPattern.Action().ConfigureAwait(true);
+                    storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED configurating request handler");
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
 
-            #endregion
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
+            }
 
             #endregion
 
@@ -154,9 +479,9 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region 3. OUTPUT
 
-            #region RETURN request respnose
+            #region RETURN request handler
 
-            #region IDEAL CASE - USE populated data
+            #region IDEAL CASE - USE baseID dataset
 
             return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
@@ -182,55 +507,64 @@ namespace BaseDI.Professional.Director.Programming_3
         private IConfiguration _storedAppSettings;
 
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientOrServerInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
+
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
+
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
 
         //DATASETS
-        internal JObject _storedStorylineDetails;
-        internal JObject _storedStorylineDetails_Parameters;
-
-        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
+        private JObject _storedStorylineDetails;
+        private JObject _storedStorylineDetails_Parameters;
 
         //MISC
-        internal ExtraData_12_2_1_0 _storedExtraData;
+        private ExtraData_12_2_1_0 _storedExtraData;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_stored_CentralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_stored_CentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_stored_CentralizedSensor;
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
 
-        internal aClass_Programming_ScriptRoutable_12_2_1_0 _stored_DirectorRequestHandler;
+        private string _storedRequestName = "";
+        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private string _storedSystemRequestByName;
+
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+
+        internal aClass_Programming_ScriptRoutable_12_2_1_0 _stored_ExperienceRequestHandler;
 
         #endregion
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_Page_3(Dictionary<string, object> parameterClientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedSensor, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterDataRepository, ExtraData_12_2_1_0 parameterExtraData, aClass_Programming_ScriptRoutable_12_2_1_0 parameter_DirectorRequestHandler = null)
+        internal Use_DesignPattern_Builder_Chapter_12_2_Page_3(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
-            #region MEMORIZE app settings
-
-            _storedAppSettings = parameterClientORserverInstance["storedAppSettings"] as IConfiguration;
-
-            #endregion
-
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
-            #region MEMORIZE centralized processes 
+            #region MEMORIZE app settings
 
-            _stored_stored_CentralizedDisturber = parameterCentralizedDisturber;
-            _stored_stored_CentralizedSensor = parameterCentralizedSensor;
-            _stored_stored_CentralizedStorer = parameterCentralizedStorer;
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
-            #region MEMORIZE data stragety
+            #region MEMORIZE centralized processes handlers
 
-            _stored_Repository = parameterDataRepository;
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE data repository
+
+            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
 
             #endregion
 
@@ -240,28 +574,30 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #endregion
 
-            #region MEMORIZE director request handler
+            #region MEMORIZE storyline details
 
-            _stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterExtraData;
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
 
             #endregion
 
             #region MEMORIZE request details
 
-            _stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
-            #endregion
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
-            #region MEMORIZE storyline details
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedParameterInputs = parameterInputs;
 
             #endregion
 
@@ -303,6 +639,17 @@ namespace BaseDI.Professional.Director.Programming_3
         {
             #region 1. INPUTS
 
+            #region DEFINE data response
+
+            dynamic storedDataResponse = null;
+
+            #endregion
+
+            #region DEFINE request handler
+
+            aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> storedRequestHandler_UsingBuilderPattern;
+
+            #endregion
 
             #endregion
 
@@ -312,23 +659,23 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region IDEAL CASE - USE builder pattern
 
-            var builder = new Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0(_storedClientOrServerInstance, _stored_stored_CentralizedStorer, _stored_stored_CentralizedStorer, _stored_stored_CentralizedSensor, _storedStorylineDetails, _storedStorylineDetails_Parameters, _stored_Repository, _storedExtraData, _stored_DirectorRequestHandler);
+            storedRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0(_storedParameterInputs);
 
-            _storedStorylineDetails = await builder.Action_1_Begin_Process().ConfigureAwait(true);
+            await storedRequestHandler_UsingBuilderPattern.Action_1_Begin_Process();
 
-            _storedStorylineDetails = await builder.Action_2_Validate_Process().ConfigureAwait(true);
+            await storedRequestHandler_UsingBuilderPattern.Action_2_Validate_Process();
 
-            _storedStorylineDetails = await builder.Action_3_Process_StoryAuthor().ConfigureAwait(true);
-            _storedStorylineDetails = await builder.Action_4_Process_StoryCharacters().ConfigureAwait(true);
-            _storedStorylineDetails = await builder.Action_5_Process_StorySetting().ConfigureAwait(true);
-            _storedStorylineDetails = await builder.Action_6_Process_StoryExperiences().ConfigureAwait(true);
-            _storedStorylineDetails = await builder.Action_7_Process_StoryResources().ConfigureAwait(true);
+            await storedRequestHandler_UsingBuilderPattern.Action_3_Process_StoryAuthor();
+            await storedRequestHandler_UsingBuilderPattern.Action_4_Process_StoryCharacters();
+            await storedRequestHandler_UsingBuilderPattern.Action_5_Process_StorySetting();
+            await storedRequestHandler_UsingBuilderPattern.Action_6_Process_StoryExperiences();
+            await storedRequestHandler_UsingBuilderPattern.Action_7_Process_StoryResources();
+            await storedRequestHandler_UsingBuilderPattern.Action_8_Process_CRUD();
 
-            _storedStorylineDetails = await builder.Action_8_Process_CRUD().ConfigureAwait(true);
+            await storedRequestHandler_UsingBuilderPattern.Action_9_Verify_Process();
 
-            _storedStorylineDetails = await builder.Action_9_Verify_Process().ConfigureAwait(true);
+            storedDataResponse = await storedRequestHandler_UsingBuilderPattern.Action_10_End_Process();
 
-            _storedStorylineDetails = await builder.Action_10_End_Process().ConfigureAwait(true);
 
             #endregion
 
@@ -367,75 +714,120 @@ namespace BaseDI.Professional.Director.Programming_3
         //SETTINGS
         private IConfiguration _storedAppSettings;
 
+        private string _storedSettingSecurityAppId = "";
+        private string _storedSettingSecurityAppSecret = "";
+        private string _storedSettingSecurityAppToken = "";
+
         //CLIENT/SERVER
         private Dictionary<string, object> _storedClientOrServerInstance;
+
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
+
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+
+        private Task<Dictionary<string, JToken>> _storedServerInstance = null;
+        private object _storedServerInstanceExperienceRequestHandler = null;
+
+        private string _storedServerRequestRESTVerb = "";
+        private string _storedServerRoutePath = "";
 
         //DATASET
         private JObject _storedStorylineDetails = null;
         private JObject _storedStorylineDetails_Parameters = null;
 
+        private string _storedDataObservationTemplate = "";
+
         //MISC
         private ExtraData_12_2_1_0 _storedExtraData = null;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
+        private string _storedActionName = "";
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _stored_DirectorRequestHandler;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        private aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+
+        private string _storedRequestFileName = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
+        private string _storedRequestName = "";
+        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private string _storedSystemRequestByName;
 
         #endregion
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0(Dictionary<string, object> parameterClientORserverInstance, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedDisturber, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedSensor, JObject parameterStorylineDetails, JObject parameterStorylineDetails_Parameters, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterDataRepository, ExtraData_12_2_1_0 parameterExtraData, aClass_Programming_ScriptRoutable_12_2_1_0 parameter_DirectorRequestHandler = null)
+        internal Implement_DesignPattern_Builder_Chapter_12_2_Page_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
-            #region MEMORIZE app settings
-
-            _storedAppSettings = (IConfiguration)parameterClientORserverInstance["storedAppSettings"];
-
-            #endregion
-
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = parameterClientORserverInstance;
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
 
             #endregion
 
-            #region MEMORIZE centralized processes 
+            #region MEMORIZE action name
 
-            _stored_CentralizedDisturber = parameterCentralizedDisturber;
-            _stored_CentralizedSensor = parameterCentralizedSensor;
-            _stored_CentralizedStorer = parameterCentralizedStorer;
+            _storedActionName = (string)_storedClientOrServerInstance["storedActionName"];
 
             #endregion
 
-            #region MEMORIZE data stragety
+            #region MEMORIZE app settings
 
-            _stored_Repository = parameterDataRepository;
-
-            #endregion
-
-            #region MEMORIZE director request handler
-
-            _stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
 
             #endregion
 
-            #region MEMORIZE extra data
+            #region MEMORIZE centralized processes handlers
 
-            _storedExtraData = parameterExtraData;
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE data repository
+
+            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterStorylineDetails;
-            _storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+
+            _storedParameterInputs = parameterInputs;
 
             #endregion
 
@@ -468,10 +860,20 @@ namespace BaseDI.Professional.Director.Programming_3
         {
             #region 1. INPUTS
 
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
 
             #endregion
 
             #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+
+            #endregion
 
             #endregion
 
@@ -486,8 +888,147 @@ namespace BaseDI.Professional.Director.Programming_3
 
         #region EXECUTE LOGIC INSTUCTIONS
 
+        #region A. Action Methods
+
         //Page 1-8
+
         public override async Task<JObject> Action_8_Process_CRUD()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> Action_8_Process_CRUD");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            try
+            {
+                storedDataResponse = await Factory_Action_8_Process_CRUD();
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+
+        #endregion
+
+        #region B. Action Factories
+
+        //Page 1-8
+        private async Task<JObject> Factory_Action_8_Process_CRUD()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> Action_8_Process_CRUD -> Factory_Action_8_Process_CRUD");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
+            {
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
+                //}
+
+                storedDataResponse = await Execute_Factory_Action_8_Process_CRUD_StoreDataInCache();
+
+                #endregion
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        #endregion
+
+        #region C. Action Logic
+
+        //Page 1-8
+        private async Task<JObject> Execute_Factory_Action_8_Process_CRUD_StoreDataInCache()
         {
             #region 1. INPUTS
 
@@ -503,37 +1044,18 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region EXECUTE process handler
 
-            //#region EDGE CASE - USE developer logger
-
-            //if (storedProcessCheckPointHit == true)
-            //{
-            //    if (storedDeveloperMode)
-            //    {
-            //        ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
-
-            //        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-            //        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
-
-            //        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
-            //    }
-
-            //    storedProcessCheckPointHit = false;
-            //}
-
-            //#endregion
-
             #region IDEAL CASE - USE process handler 
 
-            var page = new ChapterPage.Page_3_8_Process_CRUD_12_2_1_0(_storedStorylineDetails, _stored_Repository);
+            var page = new ChapterPage.Page_3_8_Process_CRUD_12_2_1_0(_storedParameterInputs);
 
             page.ClientOrServerInstance = _storedClientOrServerInstance;
 
-            page.DirectorOrExperienceRequestHandler = _stored_DirectorRequestHandler;
+            page.DirectorOrExperienceRequestHandler = _storedBusinessDirectorOrExperienceRequestHandler;
             page.ExtraData = _storedExtraData;
 
-            page.MasterStorer = _stored_CentralizedStorer;
-            page.MasterDisturber = _stored_CentralizedStorer;
-            page.MasterSensor = _stored_CentralizedSensor;
+            page.MasterStorer = _storedCentralizedStorer;
+            page.MasterDisturber = _storedCentralizedDisturber;
+            page.MasterSensor = _storedCentralizedSensor;
 
             page.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
 
@@ -562,10 +1084,13 @@ namespace BaseDI.Professional.Director.Programming_3
 
         #endregion
 
+        #endregion
+
         #region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        //Page 1-1
+        #region A. Action Methods
 
+        //Page 1-1
         public override async Task<JObject> Action_1_Begin_Process()
         {
             #region 1. INPUTS
@@ -787,20 +1312,50 @@ namespace BaseDI.Professional.Director.Programming_3
         {
             #region 1. INPUTS
 
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> Action_5_Process_StorySetting");
+
+            #endregion
 
             #endregion
 
             #region 2. PROCESS
 
+            try
+            {
+                storedDataResponse = StorylineDetails; //await Factory_Action_10_End_Process();
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
             #endregion
 
             #region 3. OUTPUT
 
-            #region RETURN process response
+            #region RETURN http response
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
 
             #endregion
 
@@ -808,6 +1363,164 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #endregion
         }
+
+        #endregion
+
+        #region B. Action Factories
+
+        //Page 1-1
+        private async Task<JObject> Factory_Action_1_Begin_Process()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        //Page 1-2
+        private async Task<JObject> Factory_Action_2_Validate_Process()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        //Page 1-3
+        private async Task<JObject> Factory_Action_3_Process_StoryAuthor()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        //Page 1-4
+        private async Task<JObject> Factory_Action_4_Process_StoryCharacters()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        //Page 1-5
+        private async Task<JObject> Factory_Action_5_Process_StorySetting()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        //Page 1-6
+        private async Task<JObject> Factory_Action_6_Process_StoryExperiences()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        //Page 1-7
+        private async Task<JObject> Factory_Action_7_Process_StoryResources()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        //Page 1-9
+        private async Task<JObject> Factory_Action_9_Verify_Process()
+        {
+            switch (_storedActionName.ToUpper())
+            {
+                default:
+                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+            }
+        }
+
+        //Page 1-10
+        private async Task<JObject> Factory_Action_10_End_Process()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE data response
+
+            JObject storedDataResponse = null;
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.cs");         
+            //storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> Factory_Action_10_End_Process -> Factory_Action_7_Process_StoryResources");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
+            {
+                #region IDEAL CASE - USE factory method
+
+                if (_storedActionName.ToUpper() == Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.ToUpper())
+                {
+                    //storedDataResponse = await Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
+                }
+
+                #endregion
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        #endregion
+
+        #region C. Action Logic
+
+        #endregion
 
         #endregion
 

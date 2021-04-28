@@ -422,16 +422,16 @@ export namespace BaseDI.Professional.Story.Risk_Management_1 {
             try {
                 //#region IDEAL CASE - USE director or experience
 
-                switch (storedClientRequestByName.toUpperCase()) {
-                    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
-                        storedRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                //switch (storedClientRequestByName.toUpperCase()) {
+                //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
+                //        storedRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                        break;
-                    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
-                        storedRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                //        break;
+                //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
+                //        storedRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                        break;
-                }
+                //        break;
+                //}
 
                 //#endregion
             }
@@ -474,181 +474,6 @@ export namespace BaseDI.Professional.Story.Risk_Management_1 {
 
             //#endregion
         }
-
-        //#region Page 3
-        private Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region 1. INPUTS
-
-            //#region MEMORIZE data repository
-
-            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
-
-            //#endregion
-
-            //#region MEMORIZE developer mode
-
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
-
-            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "RiskManagementFactoryTester_NicheMaster_11_1_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0");
-
-            //OPTIONAL
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region CONFIGURE request handler
-
-            //#region IDEAL CASE - USE director
-
-            let storedRequestHandler_Director = new Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.Professional.Director.Risk_Management_3.Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(extraData);
-
-            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
-
-            storedRequestHandler_Director.ExtraData = this._storedExtraData;
-
-            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
-
-            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
-
-            switch (storedRepositoryType.toUpperCase()) {
-                case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.Professional.State.Risk_Management_3.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0((parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
-
-                    break;
-                case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0.BaseDI.Professional.State.Risk_Management_3.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
-
-                    break;
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN request handler
-
-            //#region IDEAL CASE - USE experienece or director
-
-            return storedRequestHandler_Director;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
-        //#endregion 
-
-        //#region Page 4
-        private Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
-        {
-            //#region 1. INPUTS
-
-            //#region MEMORIZE data repository
-
-            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER : "LOCAL_FILE";
-
-            //#endregion
-
-            //#region MEMORIZE developer mode
-
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
-
-            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "RiskManagementFactoryTester_NicheMaster_11_1_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0");
-
-            //OPTIONAL
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region CONFIGURE request handler
-
-            //#region IDEAL CASE - USE director
-
-            let storedRequestHandler_Director = new Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.Professional.Director.Risk_Management_4.Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturbances_Handler_1_0(parameterInputs);
-
-            storedRequestHandler_Director.ClientOrServerInstance = this._storedClientOrServerInstance;
-
-            storedRequestHandler_Director.ExtraData = this._storedExtraData;
-
-            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
-
-            storedRequestHandler_Director.StorylineDetails = this._storedStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedStorylineDetails_Parameters;
-
-            switch (storedRepositoryType.toUpperCase()) {
-                case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.Professional.State.Risk_Management_4.LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
-
-                    break;
-                case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0.BaseDI.Professional.State.Risk_Management_4.RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
-
-                    break;
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN request handler
-
-            //#region IDEAL CASE - USE experienece or director
-
-            return storedRequestHandler_Director;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
-        //#endregion
 
         //#endregion 
     }

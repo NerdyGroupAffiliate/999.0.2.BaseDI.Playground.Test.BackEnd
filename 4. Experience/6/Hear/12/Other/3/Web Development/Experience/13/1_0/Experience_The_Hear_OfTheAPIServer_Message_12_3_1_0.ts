@@ -146,7 +146,8 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region 4. Action
 
-        public async Action(): Promise<object> {
+        public async Action(): Promise<object>
+        {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters
@@ -822,12 +823,12 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web server");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "HANDLING request defaults");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "HandleDefaults");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Implement_DesignPattern_Builder_Experience_12_2_1_0 -> HandleDefaults");
             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
 
             //#endregion
@@ -850,7 +851,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 if (storedDeveloperMode) {
                     this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
 
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED parsing action name");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED handling request defaults");
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
 
@@ -880,7 +881,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        //#region Action Methods
+        //#region A. Action Methods
 
         //Page 1-5
         public async Action_5_Process_StorySetting(): Promise<object>
@@ -2001,42 +2002,434 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = null; //await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //Page 1-2
         public async Action_2_Validate_Process(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = null; //await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //Page 1-3
         public async Action_3_Process_StoryAuthor(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = null; //await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //Page 1-4
         public async Action_4_Process_StoryCharacters(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = null; //await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //Page 1-6
         public async Action_6_Process_StoryExperiences(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = null; //await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //Page 1-8
         public async Action_8_Process_CRUD(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = null; //await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //Page 1-9
         public async Action_9_Verify_Process(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = null; //await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //Page 1-10
         public async Action_10_End_Process(): Promise<object> {
+            //#region 1. INPUTS
+
+            //#region DEFINE data response
+
+            let storedDataResponse: any = null;
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedDataResponse = null; //await this.Factory_Action_7_Process_StoryResources();
+            }
+            catch (mistake) {
+                throw mistake; //Let "Startup.ts" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
             return this._storedStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
         }
 
         //#endregion

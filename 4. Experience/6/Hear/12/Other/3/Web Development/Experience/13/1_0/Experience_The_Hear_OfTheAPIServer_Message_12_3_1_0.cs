@@ -444,9 +444,9 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 }
 
                 //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-                Use_DesignPattern_Builder_Experience_12_3_1_0 designPattern = new Use_DesignPattern_Builder_Experience_12_3_1_0(_storedParameterInputs);
+                storedRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Experience_12_3_1_0(_storedParameterInputs);
 
-                StorylineDetails = await designPattern.Action().ConfigureAwait(true);
+                StorylineDetails = await storedRequestHandler_UsingBuilderPattern.Action().ConfigureAwait(true);
 
                 #endregion
             }
@@ -868,7 +868,18 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "HANDLING request defaults");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMiddleOfProcess", true);
 
             #endregion
 
@@ -887,7 +898,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 #endregion
             }
-            catch (Exception)
+            catch (Exception mistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -895,12 +906,20 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 {
                     _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs -> Implement_DesignPattern_Builder_Experience_12_3_1_0 -> HandleDefaults -> [FAILED parsing a request [storedServerHTTPRequestInstance FROM storedClientOrServerInstance], [storedServerInstanceExperienceRequestHandler FROM storedClientOrServerInstance] or [stored_ExperienceRequestHandlerActionName FROM storedClientOrServerInstance] for ***Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0***");
+                    storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED handling request defaults");
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs).ConfigureAwait(true);
                 }
 
                 #endregion
 
-                throw;
+                #region EDGE CASE - USE exception handler
+
+                throw mistake;
+
+                #endregion
             }
 
             #region EDGE CASE - USE routing parser

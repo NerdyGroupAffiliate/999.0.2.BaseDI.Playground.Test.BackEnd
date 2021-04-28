@@ -8,9 +8,6 @@ using BaseDI.Professional.Director.Programming_3;
 using BaseDI.Professional.Director.Programming_4;
 using BaseDI.Professional.Director.Programming_5;
 
-using BaseDI.Professional.Director.Risk_Management_3;
-using BaseDI.Professional.Director.Risk_Management_4;
-
 using BaseDI.Professional.Script.Programming.Abstract_1;
 using BaseDI.Professional.Script.Programming.Extensions_1;
 using BaseDI.Professional.Script.Programming.Poco_1;
@@ -440,17 +437,17 @@ namespace BaseDI.Professional.Story.Risk_Management_1
             {
                 #region IDEAL CASE - USE director or experience
 
-                switch (storedClientRequestByName.ToUpper())
-                {
-                    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs);
+                //switch (storedClientRequestByName.ToUpper())
+                //{
+                //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
+                //        storedRequestHandler = Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs);
 
-                        break;
-                    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
+                //        break;
+                //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
+                //        storedRequestHandler = Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
 
-                        break;
-                }
+                //        break;
+                //}
 
                 #endregion
             }
@@ -496,188 +493,6 @@ namespace BaseDI.Professional.Story.Risk_Management_1
 
             #endregion
         }
-
-        #region Page 3
-
-        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
-        {
-            #region 1. INPUTS
-
-            #region MEMORIZE data repository
-
-            string storedRepositoryType = !string.IsNullOrEmpty(_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER")) ? _storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER") : "LOCAL_FILE";
-
-            #endregion
-
-            #region MEMORIZE developer mode
-
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
-
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
-
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0");
-
-            //OPTIONAL
-            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #region CONFIGURE request handler
-
-            #region IDEAL CASE - USE director
-
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs);
-
-            storedRequestHandler_Director.ClientOrServerInstance = _storedClientOrServerInstance;
-
-            storedRequestHandler_Director.ExtraData = _storedExtraData;
-
-            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
-
-            storedRequestHandler_Director.StorylineDetails = _storedStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
-
-            switch (storedRepositoryType.ToUpper())
-            {
-                case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
-
-                    break;
-                case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
-
-                    break;
-            }
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #region RETURN request handler
-
-            #region IDEAL CASE - USE experienece or director
-
-            return storedRequestHandler_Director;
-
-            #endregion
-
-            #endregion
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Page 4
-
-        private object Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
-        {
-            #region 1. INPUTS
-
-            #region MEMORIZE data repository
-
-            string storedRepositoryType = !string.IsNullOrEmpty(_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_11_1_RISKMANAGEMENT_NICHE_MASTER")) ? _storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER") : "LOCAL_FILE";
-
-            #endregion
-
-            #region MEMORIZE developer mode
-
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
-
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
-
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0");
-
-            //OPTIONAL
-            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #region CONFIGURE request handler
-
-            #region IDEAL CASE - USE director
-
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = null; //new Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
-
-            storedRequestHandler_Director.ClientOrServerInstance = _storedClientOrServerInstance;
-
-            storedRequestHandler_Director.ExtraData = _storedExtraData;
-
-            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
-
-            storedRequestHandler_Director.StorylineDetails = _storedStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
-
-            switch (storedRepositoryType.ToUpper())
-            {
-                case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
-
-                    break;
-                case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
-
-                    break;
-            }
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #region RETURN request handler
-
-            #region IDEAL CASE - USE experienece or director
-
-            return storedRequestHandler_Director;
-
-            #endregion
-
-            #endregion
-
-            #endregion
-        }
-
-        #endregion
 
         #endregion
     }
