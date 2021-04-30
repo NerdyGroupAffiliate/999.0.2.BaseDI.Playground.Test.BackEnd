@@ -28,7 +28,7 @@ import * as LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "
 //6. STATE - REMOTE REPOSITORIES
 //import * as RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
 import * as RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0";
-import * as RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/13/1_0/RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+import * as RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/13/1_0/RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
 
 //7. DIRECTOR - PROPRIETARY FEATURES
 //import * as Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/1/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0";
@@ -1766,7 +1766,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Experience.Repository = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.State.Web_Development_13.RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+                    storedRequestHandler_Experience.Repository = new RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.State.Web_Development_13.RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
                     storedRequestHandler_Experience.Repository.RequestName = this._storedRequestName;
 
                     break;

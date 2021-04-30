@@ -1,12 +1,34 @@
-﻿using BaseDI.Professional.Script.Programming.Abstract_1;
+#region Imports
+
+#region BaseDI
+
+using BaseDI.Professional.Script.Programming.Abstract_1;
 using BaseDI.Professional.Script.Programming.Repository_1;
 using BaseDI.Professional.Script.Programming_1;
 
-using Newtonsoft.Json.Linq;
+using BaseDI.Professional.Script.Programming.Poco_1;
+
+#endregion
+
+#region .Net Core
+
+using Microsoft.Extensions.Configuration;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+
+#endregion 
+
+#region 3rd Party Core
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+#endregion
+
+#endregion
 
 namespace BaseDI.Professional.Chapter.Page.Web_Development_5
 {
@@ -14,41 +36,126 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_5
     {
         #region 1. Assign
 
-        //A. Variable Declaration   
+        //SETTINGS
+        private IConfiguration _storedAppSettings;
+
+        private string _storedSettingSecurityAppId = "";
+        private string _storedSettingSecurityAppSecret = "";
+        private string _storedSettingSecurityAppToken = "";
+
+        //CLIENT/SERVER
+        private Dictionary<string, object> _storedClientOrServerInstance;
+
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
+
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+
+        private Task<Dictionary<string, JToken>> _storedServerInstance = null;
+        private object _storedServerInstanceExperienceRequestHandler = null;
+
+        private string _storedServerRequestRESTVerb = "";
+        private string _storedServerRoutePath = "";
+
+        //DATASET
+        private JObject _storedStorylineDetails = null;
+        private JObject _storedStorylineDetails_Parameters = null;
+
+        private string _storedDataObservationTemplate = "";
+
+        //MISC
+        private ExtraData_12_2_1_0 _storedExtraData = null;
+
+        //PLUMBING
+        private string _storedActionName = "";
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
+
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+
+        private string _storedRequestFileName = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_5_CreateAdvertisementForAll_Handler_1_0";
+        private string _storedRequestName = "";
+        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private string _storedSystemRequestByName;
 
         #endregion
 
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_5_9_Verify_Process_12_3_1_0(JObject storylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> repository)
-        {
-            #region 1. Assign
-
-            //SET WHAT is needed to make this page of the story happen.
-            StorylineDetails = storylineDetails;
-            Repository = repository;
-
-            #endregion
-
-            #region 2. Action
-
-            #endregion
-
-            #region 3. Observe
-
-            #endregion
-        }
-
-        #endregion
-
-        #region 3. Set
-
-        //A. Default state
-        public override void HandleDefaults()
+        public Page_5_9_Verify_Process_12_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
+            #region MEMORIZE clientOrServer instance
+
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE action name
+
+            _storedActionName = (string)_storedClientOrServerInstance["storedActionName"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes handlers
+
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE data repository
+
+            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #region MEMORIZE storyline details
+
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+
+            _storedParameterInputs = parameterInputs;
+
+            #endregion
 
             #endregion
 
@@ -56,10 +163,41 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_5
 
             #region EXECUTE process defaults
 
-            #region IDEAL CASE - defaults handler
+            #region IDEAL CASE - USE defaults handler
 
+            HandleDefaults();
 
             #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion  
+        }
+
+        #endregion
+
+        #region 3. Set
+
+        public override void HandleDefaults()
+        {
+            #region 1. INPUTS
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
 
             #endregion
 
@@ -77,27 +215,28 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_5
         //A. Page in motion (DO SOMETHING)
         public override async Task<JObject> Action()
         {
-            //Line 1: The opening “div” tag will hard coded by the software program.
+            #region 1. INPUTS
 
-            //Line 1: The “class attribute class prefix” of “The_WebClient-Help_Build_Website_Foundation-“
-            //will be hard coded by the software program.
 
-            //Line 1: 
-            //  1. This is the “Theme’s Brand Name” produced by the table column to the right.
-            //  2. This is the “Theme’s Brand Product Name” produced by the table column to the right.
-            //  3. This is the “Theme’s Version Number” produced by the table column to the right.
-            //  4. This is the “Foundation’s Secondary Niche” produced by the table column to the right.
-            //  5. This is the “Foundation’s Main Niche” produced by the table column to the right.
-            //     4 and 5 are refers to an Ezines.com Niche
-            //     These are referenced in the PerformanceArts database that holds storyline information.
-            //  6. This is the “Foundation’s Version Number” produced by the table column to the right.
+            #endregion
 
-            //Example: The_WebClient_1 – Help_Build_Website_Foundation – Apple_iTunes–1-1-WebDesign_Music–1_0
+            #region 2. PROCESS
 
-            //Set a reference to our the details of our storyline.
-            var storylineDetails = StorylineDetails;
+            #endregion
 
-            return await Task.FromResult<JObject>(storylineDetails).ConfigureAwait(true);
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedStorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         #endregion

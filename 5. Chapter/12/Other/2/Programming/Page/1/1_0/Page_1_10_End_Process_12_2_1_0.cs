@@ -36,51 +36,124 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
     {
         #region 1. Assign
 
-        //A. Variable Declaration   
-
         //SETTINGS
         private IConfiguration _storedAppSettings;
 
+        private string _storedSettingSecurityAppId = "";
+        private string _storedSettingSecurityAppSecret = "";
+        private string _storedSettingSecurityAppToken = "";
+
         //CLIENT/SERVER
-        internal Dictionary<string, object> _storedClientOrServerInstance;
+        private Dictionary<string, object> _storedClientOrServerInstance;
 
-        //DATASETS
-        internal JObject _storedStorylineDetails;
-        internal JObject _storedStorylineDetails_Parameters;
+        private string _storedClientRequestByName;
+        private string _storedClientRequestByNameParameters;
 
-        internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+
+        private Task<Dictionary<string, JToken>> _storedServerInstance = null;
+        private object _storedServerInstanceExperienceRequestHandler = null;
+
+        private string _storedServerRequestRESTVerb = "";
+        private string _storedServerRoutePath = "";
+
+        //DATASET
+        private JObject _storedStorylineDetails = null;
+        private JObject _storedStorylineDetails_Parameters = null;
+
+        private string _storedDataObservationTemplate = "";
 
         //MISC
-        internal ExtraData_12_2_1_0 _storedExtraData;
+        private ExtraData_12_2_1_0 _storedExtraData = null;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
+        private string _storedActionName = "";
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
 
-        internal aClass_Programming_ScriptRoutable_12_2_1_0 _stored_DirectorRequestHandler;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        internal string _storedRequestName = "";
-        internal string _storedSystemRequestByName;
+        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+
+        private string _storedRequestFileName = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0";
+        private string _storedRequestName = "";
+        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private string _storedSystemRequestByName;
 
         #endregion
 
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_1_10_End_Process_12_2_1_0(JObject parameterStorylineDetails, aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> parameterDataRepository)
+        public Page_1_10_End_Process_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
-            #region MEMORIZE data stragety
+            #region MEMORIZE clientOrServer instance
 
-            Repository = parameterDataRepository;
+            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+            #endregion
+
+            #region MEMORIZE action name
+
+            _storedActionName = (string)_storedClientOrServerInstance["storedActionName"];
+
+            #endregion
+
+            #region MEMORIZE app settings
+
+            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
+
+            #endregion
+
+            #region MEMORIZE centralized processes handlers
+
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE data repository
+
+            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
+
+            #endregion
+
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
             #region MEMORIZE storyline details
 
-            StorylineDetails = parameterStorylineDetails;
+            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
+            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
+
+            #endregion
+
+            #region MEMORIZE extra data
+
+            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+
+            #endregion
+
+            #region MEMORIZE request details
+
+            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+
+            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+
+            _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+
+            _storedParameterInputs = parameterInputs;
 
             #endregion
 
@@ -90,7 +163,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region EXECUTE process defaults
 
-            #region IDEAL CASE - defaults handler
+            #region IDEAL CASE - USE defaults handler
 
             HandleDefaults();
 
@@ -102,18 +175,22 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region 3. OUTPUT
 
-            #endregion
+            #endregion  
         }
 
         #endregion
 
         #region 3. Set
 
-        //A. Default state
         public override void HandleDefaults()
         {
             #region 1. INPUTS
 
+            #region MEMORIZE developer mode
+
+            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            #endregion
 
             #endregion
 
@@ -121,10 +198,6 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region EXECUTE process defaults
 
-            #region IDEAL CASE - defaults handler
-
-
-            #endregion
 
             #endregion
 
@@ -247,8 +320,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         #region IDEAL CASE - USE request resolver
 
-                        return storedDataResponse = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(ExtraData))
-                            .SetupStoryline(ClientOrServerInstance, StorylineDetails, StorylineDetails_Parameters, ExtraData, storedRequestName, storedRequestName, storedRequestNameParameters)
+                        return storedDataResponse = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                            .SetupStoryline(_storedParameterInputs)
                             .Action();
 
                         #endregion

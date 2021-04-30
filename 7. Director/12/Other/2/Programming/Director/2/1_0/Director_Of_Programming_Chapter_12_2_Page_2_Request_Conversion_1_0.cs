@@ -989,10 +989,10 @@ namespace BaseDI.Professional.Director.Programming_2
 
                 //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
+                //    storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputData();
                 //}
 
-                storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
+                storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputData();
 
                 #endregion
             }
@@ -1025,7 +1025,7 @@ namespace BaseDI.Professional.Director.Programming_2
         #region C. Action Logic
 
         //Page 1-1
-        private async Task<JObject> Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory()
+        private async Task<JObject> Execute_Factory_Action_1_Begin_Process_StoreInputData()
         {
             #region 1. INPUTS
 

@@ -348,6 +348,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
             #region 1. INPUTS    
 
             #region VALIDATE input parameters
+
             Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
             {
                 #region 1. INPUTS
@@ -457,6 +458,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                 #endregion
 
             };
+
             #endregion
 
             ///BEGIN valdation process

@@ -956,10 +956,10 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
                 //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
+                //    storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputData();
                 //}
 
-                storedDataResponse = await this.Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
+                storedDataResponse = await this.Execute_Factory_Action_1_Begin_Process_StoreInputData();
 
                 //#endregion
             }
@@ -991,7 +991,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
         //#region C. Action Logic
 
         //Page 1-1
-        private async Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory(): Promise<object> {
+        private async Execute_Factory_Action_1_Begin_Process_StoreInputData(): Promise<object> {
             //#region 1. INPUTS
 
             //#region MEMORIZE developer mode
@@ -1006,7 +1006,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory -> Factory_Action_5_Process_StorySetting");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Execute_Factory_Action_1_Begin_Process_StoreInputData -> Factory_Action_5_Process_StorySetting");
 
             //#endregion
 
@@ -1434,7 +1434,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
                 //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
+                //    storedDataResponse = await Execute_Factory_Action_1_Begin_Process_StoreInputData();
                 //}
 
                 storedDataResponse = this.StorylineDetails; //await this.Execute_Factory_Action_10_End_Process_TransportRequestToHandler();

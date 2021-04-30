@@ -448,11 +448,11 @@ namespace BaseDI.Professional.Story.Advertising_1
                 switch (storedClientRequestByName.ToUpper())
                 {
                     case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_1_CREATEADVERTISEMENTFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                        storedRequestHandler = Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(parameterInputs);
 
                         break;
                     case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                        storedRequestHandler = Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
 
                         break;
                 }

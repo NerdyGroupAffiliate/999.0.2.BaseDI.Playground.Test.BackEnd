@@ -1807,7 +1807,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Experience.Repository = new RemoveService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs); //new 
+                    storedRequestHandler_Experience.Repository = new RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs); //new 
                     storedRequestHandler_Experience.Repository.RequestName = _storedRequestName;
 
                     break;
