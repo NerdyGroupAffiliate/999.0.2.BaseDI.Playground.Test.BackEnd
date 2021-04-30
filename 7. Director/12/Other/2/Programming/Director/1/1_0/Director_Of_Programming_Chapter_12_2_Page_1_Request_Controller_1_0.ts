@@ -1219,7 +1219,7 @@ export namespace BaseDI.Professional.Director.Programming_1
 
             //#region IDEAL CASE - USE process handler
             
-            var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(_storedParameterInputs);
+            var page = new ChapterPage_Page_1_10_End_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_1.Page_1_10_End_Process_12_2_1_0(this._storedParameterInputs);
 
             page.ClientOrServerInstance = this._storedClientOrServerInstance;
 

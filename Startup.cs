@@ -33,8 +33,9 @@ using System.Web;
 #region 3rd Party Core
 
 using Newtonsoft.Json.Linq;
+using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
-#endregion 
+#endregion
 
 #endregion
 
@@ -97,7 +98,7 @@ namespace BaseDI.Professional
 
             #region IDEAL CASE - USE json metadata
 
-            var storedCopiedFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, null, Configuration).Result;
+            //var storedCopiedFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0, null, Configuration).Result;
 
             #endregion
 
@@ -144,7 +145,7 @@ namespace BaseDI.Professional
                     return new OkResult();
                 };
 
-                storedStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, StoredRequestCallBack, Configuration).Result;
+                //storedStaticFilesResult = Action("Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0, StoredRequestCallBack, Configuration).Result;
                 
                 #endregion
             }
@@ -207,20 +208,20 @@ namespace BaseDI.Professional
 
         #region 4. Action   
 
-        public static async Task<IActionResult> Action(string parameterRequestToProcess = "", string parameterRequestToProcessParameters = "", string parameterRequestActionName = "", Func<JObject, IActionResult> parameterStoredRequestCallBack = null, IConfiguration parameterStoredAppSettings = null)
+        public static async Task<IActionResult> Action(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
             #region MEMORIZE application settings
 
             var storedControllerInstance = new Startup_Controller();
-            storedControllerInstance.StoredAppSettings = parameterStoredAppSettings;
+            //storedControllerInstance.StoredAppSettings = parameterStoredAppSettings;
 
             #endregion
 
             #region MEMORIZE process callback
 
-            storedControllerInstance.StoredRequestCallBack = parameterStoredRequestCallBack;
+            //storedControllerInstance.StoredRequestCallBack = parameterStoredRequestCallBack;
 
             #endregion
 
@@ -232,7 +233,7 @@ namespace BaseDI.Professional
 
             #region IDEAL CASE - USE baseDI pipeline
 
-            IActionResult result = await storedControllerInstance.Action(parameterRequestToProcess, parameterRequestToProcessParameters, parameterRequestActionName);
+            IActionResult result = await storedControllerInstance.Action(parameterInputs);
 
             #endregion
 
@@ -365,9 +366,181 @@ namespace BaseDI.Professional
         #region 4. Action
 
         [HttpGet("")]
-        public async Task<IActionResult> Action(string parameterClientRequestByName = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0", string parameterClientRequestByNameParameters = "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0", string parameterRequestChapterName = "Action_Server_ProcessHttpRequest_1_0", string parameterRequestActionName = "Action_ProcessHttpRequest_1_0")
-        {
+        public async Task<IActionResult> Action(SingleParmPoco_12_2_1_0 parameterInputs)
+        {        
             #region 1. INPUTS
+
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
+            {
+                #region 1. INPUTS
+
+                #region DEFINE parameter inputs
+
+                SingleParmPoco_12_2_1_0 storedParameterInputs;
+
+                #endregion
+
+                #region DEFINE process checkpoint
+
+                bool storedProcessSystemRequestCheckPointHit = false;
+
+                #endregion
+
+                #region DEFINE stored message
+
+                string storedOutputClientResponseMessage = "";
+
+                #endregion
+
+                #region MEMORIZE clientOrServer instance
+
+                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+
+                #endregion
+
+                #region MEMORIZE app settings
+
+                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+
+                #endregion
+
+                #region MEMORIZE developer mode
+
+                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "VALIDATING request inputs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Startup.cs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null)
+                {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputClientRequestName"))
+                    {
+                        storedOutputClientResponseMessage += "***parameterInputClientRequestName*** cannot be blank or empty.\n";
+                        storedProcessSystemRequestCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputClientRequestActionName"))
+                    {
+                        storedOutputClientResponseMessage += "***parameterInputClientRequestActionName*** cannot be blank or empty.\n";
+                        storedProcessSystemRequestCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputDataRequestCacheKey"))
+                    {
+                        storedOutputClientResponseMessage += "***parameterInputDataRequestCacheKey*** cannot be blank or empty.\n";
+                        storedProcessSystemRequestCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputDataRequest"))
+                    {
+                        storedOutputClientResponseMessage += "***parameterInputDataRequest*** cannot be blank or empty.\n";
+                        storedProcessSystemRequestCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessSystemRequestCallBack"))
+                    {
+                        storedOutputClientResponseMessage += "***parameterProcessSystemRequestCallBack*** cannot be blank or empty.\n";
+                        storedProcessSystemRequestCheckPointHit = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessSystemRequestFunctionCall"))
+                    {
+                        storedOutputClientResponseMessage += "***parameterProcessSystemRequestFunctionCall*** cannot be blank or empty.\n";
+                        storedProcessSystemRequestCheckPointHit = true;
+                    }
+
+                    if (storedProcessSystemRequestCheckPointHit)
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedDeveloperMode)
+                        {
+                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedDeveloperMode)
+                    {
+                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+
+                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("PARSING parameter values failed");
+
+                    #endregion
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            //BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            #endregion
 
             #region DEFINE client response
 
@@ -389,14 +562,19 @@ namespace BaseDI.Professional
 
             #region DEFINE event handlers
 
-            Func<string, string, ExtraData_12_2_1_0, JObject> Action = null;
+            Func<SingleParmPoco_12_2_1_0, JObject> Action = null;
+
+            #endregion
+
+            #region DEFINE parameter inputs
+
+            SingleParmPoco_12_2_1_0 storedParameterInputs;
 
             #endregion
 
             #region MEMORIZE action name
 
-            if (parameterRequestActionName != "")
-                _storedClientOrServerInstance.Add("storedActionName", parameterRequestActionName);
+            _storedClientOrServerInstance.Add("storedClientActionName", parameterInputs.Parameters["parameterClientRequestByName"]);
 
             #endregion
 
@@ -443,22 +621,29 @@ namespace BaseDI.Professional
 
                 StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 parameterResponse) =>
                 {
-                    Action("", "", null);
+                    Action(parameterResponse);
                     return _storedStorylineDetails;
                 };
 
                 #endregion
 
                 #region IDEAL CASE - USE request handler
-  
-                Action = (string parameterClientRequestByName, string parameterClientRequestByNameParameters, ExtraData_12_2_1_0 parameterExtraData) =>
+
+                #region A. STORE route details
+
+                parameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
+                parameterInputs.Parameters.Add("parameterAppSettings", StoredAppSettings);
+
+                #endregion
+
+                Action = (SingleParmPoco_12_2_1_0 parameterInputs) =>
                 {
-                    return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
-                        .SetupStoryline(_storedClientOrServerInstance, _storedStorylineDetails, null, parameterExtraData, "", parameterClientRequestByName, parameterClientRequestByNameParameters)
+                    return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs))
+                        .SetupStoryline(parameterInputs)
                         .Action().Result;
                 };
 
-                Action(parameterClientRequestByName, parameterClientRequestByNameParameters, _storedExtraData);
+                Action(parameterInputs);
 
                 #endregion
 

@@ -81,6 +81,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
         private string _storedRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedRepository;
         private string _storedSystemRequestByName;
+        private List<JToken> _storedJSONKeyPlaceHolderName;
 
         #endregion
 
@@ -390,8 +391,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
                 if (parameter_BaseDI_JSONDataSchema != null)
                 {
-                    if (_stored_JSONKeyPlaceHolderName == null)
-                        _stored_JSONKeyPlaceHolderName = new List<JToken>();
+                    if (_storedJSONKeyPlaceHolderName == null)
+                        _storedJSONKeyPlaceHolderName = new List<JToken>();
 
                     foreach (var storedJSONValue in parameter_BaseDI_JSONDataSchema.Children())
                     {
@@ -404,7 +405,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
                         if (((JProperty)storedJSONValue).Name.ToString().ToUpper().Contains("_MAINPROFILE"))
                         {
-                            _stored_JSONKeyPlaceHolderName.Add(optionItem);
+                            _storedJSONKeyPlaceHolderName.Add(optionItem);
                         }
                     }
                 }
@@ -439,9 +440,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
         #region CONVERT JSONSTRING PLACEHOLDER
         private void Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0()
         {
-            if (_stored_JSONKeyPlaceHolderName.Any())
+            if (_storedJSONKeyPlaceHolderName.Any())
             {
-                foreach(var profile in _stored_JSONKeyPlaceHolderName)
+                foreach(var profile in _storedJSONKeyPlaceHolderName)
                 {
                     StorylineDetails.SelectToken(profile.Path).Replace(StorylineDetails_Parameters.SelectToken("baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value"));
                 }

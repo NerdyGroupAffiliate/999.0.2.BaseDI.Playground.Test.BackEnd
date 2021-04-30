@@ -100,7 +100,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region 2. Ready
 
-        WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        internal WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 

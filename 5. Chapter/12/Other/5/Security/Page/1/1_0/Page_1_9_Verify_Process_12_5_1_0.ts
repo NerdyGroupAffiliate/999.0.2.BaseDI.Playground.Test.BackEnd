@@ -1,62 +1,140 @@
-﻿import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
+﻿//#region Imports
+
+//#region BaseDI
+
+import * as aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0";
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 import * as aClass_Programming_ScriptPage_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptPage_12_2_1_0";
+import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
-import * as Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../0. Script/Enumerations/12/Other/2/Programming/Enumeration/3/1_0/Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
-
-import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
-import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
-
-import * as Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/5/Security/Method/1/1_0/Extension_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
-
-import * as Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/13/1_0/Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
-
-import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+import * as Action_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/Action Poco/1/1_0/Action_12_2_1_0";
+import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
+import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+
+//#endregion
+
+//#endregion
 
 export namespace BaseDI.Professional.Chapter.Page.Security_1 {
     export class Page_1_9_Verify_Process_12_5_1_0 extends aClass_Programming_ScriptPage_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptPage_12_2_1_0 {
         //#region 1. Assign
-        private _apiMetaData: any = null;
-        private _actionName: string = "";
 
-        private _entryPointName: string = "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
+        //SETTINGS
+        private _storedAppSettings: any;
 
-        private _pageName: string = "Page_1_9_Verify_Process_12_5_1_0";
-        private _processKey: string = "Page_1_9_Verify_Process_12_5_1_0";
+        //CLIENT/SERVER
+        private _storedClientOrServerInstance: any;
 
-        private _request: any = null;
-        private _response: any = null;
-        private _requestRoute: string = null;
+        private _storedClientRequestByName: string;
+        private _storedClientRequestByNameParameters: string;
 
-        private _server: any = null;
+        private _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
-        private _storedAPIRequestType: string = "";
+        public _storedServerInstance: any;
+        private _storedServerInstanceInfo: any;
+
+        //DATASET
+        private _storedStorylineDetails: object = new Object();
+        private _storedStorylineDetails_Parameters: object = new Object();
+
+        //MISC
+        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+
+        //PLUMBING
+        private _storedActionName: string = "";
+        private _storedBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+
+        private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+
+        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        private _storedRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_12_CreateAdvertisementForAll_Handler_1_0 ";
+        private _storedRequestName: string = "";
+        private _storedRepository: IContract_Programming_Repository_12_2_1_0;
+        private _storedSystemRequestByName: string;
+
+        public StoredStartUpCallBack;
 
         //#endregion
 
         //#region 2. Ready
-        constructor(storylineDetails: object, repository: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<any>) {
+
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
             super();
 
-            //region 1. Assign
-            this.StorylineDetails = storylineDetails;
-            this.Repository = repository;
-
-            this.Action = this.Action.bind(this);
-       
-            //region 2. Action
-
-            //region 3. Observe
-        }
-        //#endregion
-
-        //#region 3. Set
-
-        //A. Default state
-        public HandleDefaults(): void {
             //#region 1. INPUTS
 
+            //#region MEMORIZE clientOrServer instance
+
+            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+
+            //#endregion
+
+            //#region MEMORIZE action name
+
+            this._storedActionName = this._storedClientOrServerInstance["storedActionName"];
+
+            //#endregion
+
+            //#region MEMORIZE app settings
+
+            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE centralized processes handlers
+
+            this._storedCentralizedDisturber = parameterInputs.Parameters.getValue("parameterCentralizedDisturber");
+            this._storedCentralizedSensor = parameterInputs.Parameters.getValue("parameterCentralizedSensor");
+            this._storedCentralizedStorer = parameterInputs.Parameters.getValue("parameterCentralizedStorer");
+
+            //#endregion
+
+            //#region MEMORIZE data repository
+
+            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
+
+            //#endregion
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            //#endregion
+
+            //#region MEMORIZE storyline details
+
+            this._storedStorylineDetails = parameterInputs.Parameters.getValue("parameterStorylineDetails");
+            this._storedStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterStorylineDetails_Parameters");
+
+            //#endregion
+
+            //#region MEMORIZE extra data
+
+            this._storedExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+
+            //#endregion
+
+            //#region MEMORIZE request details
+
+            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterClientRequestByName");
+            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
+            this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
+
+            this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+
+            this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+
+            this._storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
+
+            this._storedParameterInputs = parameterInputs;
+
+            //#endregion
 
             //#endregion
 
@@ -64,10 +142,40 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
             //#region EXECUTE process defaults
 
-            //#region IDEAL CASE - defaults handler
+            //#region IDEAL CASE - USE defaults handler
 
+            this.HandleDefaults = this.HandleDefaults.bind(this);
 
             //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
+
+        //#endregion
+
+        //#region 3. Set
+
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
+
+            //#region MEMORIZE developer mode
+
+            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
 
             //#endregion
 
@@ -81,211 +189,10 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
         //#endregion
 
         //#region 4. Action
+
         public async Action(): Promise<object> {
-            //#region VARIABLES
-
-            //#endregion
-
-            //#region VARIABLES
-
-            //#endregion
-
-            //#region INPUTS
-
-            //#region CONTROL
-
-            //if (process.env.APP_ENV == "SERVER") {
-            //    await this.Step_1_0_Framework_Control_ServerAuthenticationToAPI_1_0();
-            //}
-
-            //#endregion
-
-            //#endregion
-
-            //#region OUTPUT
-
-            return this.StorylineDetails;
-
-            //#endregion
-        }
-
-        //#region CLIENT SIDE CODE
-
-        //#endregion
-
-        //#region SERVER SIDE CODE
-
-        //#region CONTROL
-
-        public async Step_1_0_Framework_Control_ServerAuthenticationToAPI_1_0() {
-            //#region VARIABLES
-
-            //#endregion
-
-            //#region VARIABLES
-
-            const storylineDetails: any = this.StorylineDetails;
-
-            this._actionName = this?.ClientOrServerInstance["storedActionName"];
-            this._apiMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storylineDetails, "key_1", "APIS", false);
-
-            this._request = this.ClientOrServerInstance?.Request;
-            this._requestRoute = this._request?.route?.path;
-            this._response = this.ClientOrServerInstance?.Response;
-
-            this._server = this.ClientOrServerInstance?.Server;
-
-            //#endregion
-
-            //#region INPUTS
-
-            //#region CONTROL
-
-            if (this._server != undefined && this._server != null)
-            {
-                if (this._requestRoute.toUpperCase().includes("AUTHREQUEST") || this._actionName.toUpperCase().includes("AUTHREQUEST")) {
-                    this.Step_2_0_Framework_Transport_ServerAuthenticationRequestToAPI_1_0();
-                }
-
-                if (this._requestRoute.toUpperCase().includes("AUTHRESPONSE") || this._actionName.toUpperCase().includes("AUTHRESPONSE")) {
-                    this.Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0(null);
-                }
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#region OUTPUT
-
-            //#endregion
-        }
-
-        //#endregion
-
-        //#region TRANSPORT
-
-        public async Step_2_0_Framework_Transport_ServerAuthenticationRequestToAPI_1_0() {
-
-            //#region VARIABLES
-            let storedAPIPlatform: string = "";
-            let storedAPIRequestType: string = "";
-            let storedAPIVerb: string = "POST";
-
-            let storedCurlOptions: Object = new Object();
-
-            let storedProfile: any = null;
-            let storedProfileDetails: any = null;
-            let storedProfileDetailsAPIEndPointsAndRoutes: any = null;
-            let storedProfileDetailsSecurityAPISecurityDetails: any = null;
-
-            let storedExtraInformation: string = "";
-            let storedTokenEndpoint: string = "";
-            let storedQueryStingKeyValues: any = null;
-
-            //#endregion
-
-            //#region VARIABLES
-
-            //#endregion
-
-            //#region INPUTS
-
-            if (this._request != undefined && this._request != null) {
-                //#region STORE api querystring value
-                storedQueryStingKeyValues = Object.keys(this._request?.query);
-                storedQueryStingKeyValues.map(storedQueryString => {
-                    if (storedQueryString.toUpperCase() == "API") {
-                        storedAPIPlatform = this._request?.query[storedQueryString]
-                    }
-
-                    if (storedQueryString.toUpperCase() == "REQUESTTYPE") {
-                        storedAPIRequestType = this._request?.query[storedQueryString]
-                    }
-
-                    if (this._storedAPIRequestType == "")
-                        this._storedAPIRequestType = "ApplicationTokenRequest";
-                });
-                //#endregion
-
-                if (this._requestRoute != undefined && this._requestRoute != null) {
-                    if (storedAPIPlatform != undefined && storedAPIPlatform != null) {
-                        //#region SET api platform general values
-                        storedProfile = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(this._apiMetaData, "searchkey", "SetupDetails_APIS_API_1_0_" + storedAPIPlatform + "_2_2_2_1_serverInformationSetupDetails", false);
-                        storedProfileDetails = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedProfile, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false);
-
-                        storedProfileDetails.value.map(apiProfile => {
-                            if (apiProfile.SetupItemAPIRequestType.toUpperCase() == storedAPIRequestType.toUpperCase()) {
-                                storedProfileDetailsAPIEndPointsAndRoutes = apiProfile.SetupItemAPIProfile.SetupItemAPIEndPointsAndRoutes;
-                                storedProfileDetailsSecurityAPISecurityDetails = apiProfile.SetupItemAPIProfile.SetupItemAPISecurityDetails;
-
-                                storedAPIVerb = storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIVerb;
-
-                                return;
-                            }
-                        })
-
-                        //#endregion
-
-                        //#region SET api platform specific values
-                        switch (storedAPIPlatform.toUpperCase()) {
-                            case "FACEBOOK":
-                            case "FACEBOOKGRAPH":
-                                storedTokenEndpoint = storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIBaseEndpoint +  "/" + storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPITokenRoute;
-
-                                break;
-                            case "MICROSOFT":
-                            case "MICROSOFTGRAPH":
-                                storedCurlOptions["header"] = "Content-Type: application/x-www-form-urlencoded";
-                                storedTokenEndpoint = storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIBaseEndpoint + "/" + storedProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityCustomerID + "/" + storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPITokenRoute;
-
-                                break;
-                        }
-                        //#endregion
-
-                        //#region BUILD curl request object
-                        storedCurlOptions["data"] = [
-                            "grant_type=client_credentials",
-                            "client_id=" + storedProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityAppID,
-                            "client_secret=" + storedProfileDetailsSecurityAPISecurityDetails.SetupItemAPISecurityPassword,
-                            storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIScope.length > 0 ? "scope=" + storedProfileDetailsAPIEndPointsAndRoutes.SetupItemAPIScope : ""
-                        ];  
-
-                        //#endregion
-                    }
-                }
-            }
-
-            //#endregion
-
-            //#region OUTPUT
-
-            //#region TRANSPORT curl request & handle response
-            var self = this;
-
-            Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.Step_X_X_Framework_Transport_ApiRequestToServer_1_0(this._server, storedTokenEndpoint, storedAPIVerb, storedCurlOptions,
-                function callback(response) {
-                    self.Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0(response, storedAPIPlatform + "_" + self._storedAPIRequestType);
-                });
-
-            //#endregion
-
-            //#endregion
-        }
-
-        //#endregion
-
-        //#region OUTPUT
-
-        public async Step_3_0_Framework_Output_ServerAuthenticationResponseFromAPI_1_0(response: any, uniqueStorageKeyValue: any = null) {
-
             //#region 1. INPUTS
 
-            //#region DEFINE parameter inputs
-
-            let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //#endregion
 
             //#endregion
 
@@ -295,48 +202,18 @@ export namespace BaseDI.Professional.Chapter.Page.Security_1 {
 
             //#region 3. OUTPUT
 
-            //#endregion
+            //#region RETURN process response
 
-            storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region IDEAL CASE - USE baseDI dataset
 
-            storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
-            storedParameterInputs.Parameters.setValue("parameterCRUDVerb", "Create");
-            storedParameterInputs.Parameters.setValue("parameterDirectorOrExperienceName", this._entryPointName);
-            storedParameterInputs.Parameters.setValue("parameterMasterStorer", this.MasterStorer);
-            storedParameterInputs.Parameters.setValue("parameterStorageValue", response);
-            storedParameterInputs.Parameters.setValue("parameterStorylineDetails", this.StorylineDetails);
-            storedParameterInputs.Parameters.setValue("parameterPageName", this._pageName);
-            storedParameterInputs.Parameters.setValue("parameterStorageDescription", "STORING access token");
-            storedParameterInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_DataToken_" + uniqueStorageKeyValue);
-
-            //#region VARIABLES
+            return this.StorylineDetails;
 
             //#endregion
 
-            //#region VARIABLES
-
-
             //#endregion
-
-            //#region INPUTS         
-
-            if (uniqueStorageKeyValue)
-                await Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedParameterInputs);
-
-            this._response.send(response);
-
-            //#endregion  
-
-            //#region OUTPUT
 
             //#endregion
         }
-
-
-
-        //#endregion
-
-        //#endregion
 
         //#endregion
     }

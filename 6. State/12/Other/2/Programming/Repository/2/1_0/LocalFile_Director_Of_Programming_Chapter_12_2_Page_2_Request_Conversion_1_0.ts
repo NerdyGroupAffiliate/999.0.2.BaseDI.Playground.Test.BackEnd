@@ -100,6 +100,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //PLUMBING
         private _storedActionName: string = "";
+        private _storedBaseDIPlaceHolderValue: string = "{BASEDICUSTOMOPTION}";
         private _storedBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;

@@ -86,7 +86,7 @@ namespace BaseDI.Professional.Chapter.Page.Advertising_3
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Page_2_1_Begin_Process_1_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public Page_3_3_Process_StoryAuthor_1_1_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 

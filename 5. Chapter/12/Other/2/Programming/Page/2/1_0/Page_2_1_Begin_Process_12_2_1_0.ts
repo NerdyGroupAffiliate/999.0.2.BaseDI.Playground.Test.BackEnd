@@ -61,6 +61,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
         public StoredStartUpCallBack;
 
+        private _storedJSONKeyPlaceHolderName: Array<any>;
+
         //#endregion
 
         //#region 2. Ready
@@ -389,8 +391,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 //#region IDEAL CASE - USE string placeholder
 
-                if (this._stored_JSONKeyPlaceHolderName == undefined)
-                    this._stored_JSONKeyPlaceHolderName = [];
+                if (this._storedJSONKeyPlaceHolderName == undefined)
+                    this._storedJSONKeyPlaceHolderName = [];
 
                 if (parameter_BaseDI_JSONDataSchema) {
                     //GET list of json values
@@ -403,7 +405,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                         //FIND value that contains string "_MAINPROFILE"
                         if (storedJSONKey.toUpperCase().includes("_MAINPROFILE")) {
                             //KEEP track of FULL keyname.
-                            this._stored_JSONKeyPlaceHolderName.push(storedJSONKey);
+                            this._storedJSONKeyPlaceHolderName.push(storedJSONKey);
 
                             //BREAK search functionality.
                             return;
@@ -487,7 +489,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region MEMORIZE search details
 
-            let storedSearchColumnNames: any = this._stored_JSONKeyPlaceHolderName;
+            let storedSearchColumnNames: any = this._storedJSONKeyPlaceHolderName;
             let storedSearchDataSet: Object = (this.StorylineDetails_Parameters ? this.StorylineDetails_Parameters : this.StorylineDetails);
             let storedSearchFilterBy: any = ['parameters'];
 
@@ -503,8 +505,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 //#region IDEAL CASE - USE storyline parameter data
 
-                if (this._stored_JSONKeyPlaceHolderName) {
-                    let columnsToUpdate: any = this._stored_JSONKeyPlaceHolderName;
+                if (this._storedJSONKeyPlaceHolderName) {
+                    let columnsToUpdate: any = this._storedJSONKeyPlaceHolderName;
                     let columnsToUpdateValues: any = new Array();
 
                     let storylineDetails: any = this.StorylineDetails;

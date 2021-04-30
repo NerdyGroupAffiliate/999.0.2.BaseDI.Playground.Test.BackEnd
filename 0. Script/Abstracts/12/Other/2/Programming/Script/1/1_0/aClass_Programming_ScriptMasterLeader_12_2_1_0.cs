@@ -1,6 +1,4 @@
-﻿using BaseDI.Professional.Director.Risk_Management_3;
-using BaseDI.Professional.Director.Risk_Management_4;
-using BaseDI.Professional.Script.Programming.Enumeration_1;
+﻿using BaseDI.Professional.Script.Programming.Enumeration_1;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Programming_1;
 

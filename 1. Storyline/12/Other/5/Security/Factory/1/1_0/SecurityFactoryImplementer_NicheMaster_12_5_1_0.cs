@@ -79,7 +79,7 @@ namespace BaseDI.Professional.Story.Security_1
 
         #region 2. Ready
 
-        SecurityFactoryImplementer_NicheMaster_12_5_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        internal SecurityFactoryImplementer_NicheMaster_12_5_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 

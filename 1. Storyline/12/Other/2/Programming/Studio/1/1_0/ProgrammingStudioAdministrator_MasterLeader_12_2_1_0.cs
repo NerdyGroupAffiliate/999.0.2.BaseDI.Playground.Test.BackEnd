@@ -434,10 +434,10 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 stored_ExceptionDetails = new SingleParmPoco_12_2_1_0();
 
-                stored_ExceptionDetails.RequestNameToProcess = storedClientRequestByName;
-                stored_ExceptionDetails.RequestNameToProcessParameters = storedClientRequestByNameParameters;
+                stored_ExceptionDetails.Parameters.Add("storedClientRequestByName", storedClientRequestByName);
+                stored_ExceptionDetails.Parameters.Add("storedClientRequestByNameParameters", storedClientRequestByNameParameters);
 
-                stored_ExceptionDetails.StorylineDetails = storedStorylineDetails;
+                stored_ExceptionDetails.Parameters.Add("storedStorylineDetails", storedStorylineDetails);
 
                 stored_ExceptionDetails.Parameters.Add("StoredClientOrServerInstance", storedClientOrServerInstance);
                 stored_ExceptionDetails.Parameters.Add("storedExtraData", _storedExtraData);
@@ -2095,7 +2095,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 
                 if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE * **FAILED STORING a value.BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set.  -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2347,7 +2347,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Disturber_12_2_1_0");
 
-                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2599,7 +2599,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 if (_storedAppSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Sensor_12_2_1_0.");
 
-                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 

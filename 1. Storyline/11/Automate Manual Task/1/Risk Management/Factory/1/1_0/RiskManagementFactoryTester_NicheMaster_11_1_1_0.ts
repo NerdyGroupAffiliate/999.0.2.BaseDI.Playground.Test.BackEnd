@@ -20,8 +20,6 @@ import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../..
 //4. EXPERIENCES - SHARED FEATURES
 
 //6. STATE - LOCAL REPOSITORIES
-import * as LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0 from "../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/3/1_0/LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0";
-import * as LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0 from "../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/4/1_0/LocalFile_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0";
 
 import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/1/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 from "../../../../../../../../6. State/12/Other/2/Programming/Repository/2/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0";
@@ -33,14 +31,8 @@ import * as LocalFile_Experience_The_Movement_OfTheAssets_Content_12_2_1_0 from 
 
 //6. STATE - REMOTE REPOSITORIES
 
-import * as RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0 from "../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/3/1_0/RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0";
-import * as RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0 from "../../../../../../../../6. State/11/Automate Manual Task/1/Risk Management/Repository/4/1_0/RemoteService_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0";
-
 
 //7. DIRECTOR - PROPRIETARY FEATURES
-
-import * as Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0 from "../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/3/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0";
-import * as Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0 from "../../../../../../../../7. Director/11/Automate Manual Task/1/Risk Management/Director/4/1_0/Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturbances_Handler_1_0";
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 import * as Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/2/1_0/Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0";

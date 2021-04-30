@@ -14,6 +14,7 @@ using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
 #region .Net Core
 
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
 using System;

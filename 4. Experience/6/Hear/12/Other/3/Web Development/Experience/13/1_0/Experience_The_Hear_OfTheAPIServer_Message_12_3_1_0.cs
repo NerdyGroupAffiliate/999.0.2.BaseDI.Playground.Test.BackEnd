@@ -1342,7 +1342,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     Action = (SingleParmPoco_12_2_1_0 parameterInputs) =>
                     {
-                        return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0())
+                        return storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs))
                             .SetupStoryline(parameterInputs)
                             .Action().Result;
                     };

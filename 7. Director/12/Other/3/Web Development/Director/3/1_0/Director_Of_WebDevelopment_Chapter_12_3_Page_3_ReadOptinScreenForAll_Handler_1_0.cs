@@ -16,6 +16,7 @@ using ChapterPage = BaseDI.Professional.Chapter.Page.Web_Development_1;
 
 #region .Net Core
 
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
 using System;
@@ -34,9 +35,9 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Director.Web_Development_1
+namespace BaseDI.Professional.Director.Web_Development_3
 {
-    public class Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
+    public class Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
         #region 1. Assign
 
@@ -72,7 +73,7 @@ namespace BaseDI.Professional.Director.Web_Development_1
 
         #region 2. Ready
 
-        public Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1467,7 +1468,7 @@ namespace BaseDI.Professional.Director.Web_Development_1
             {
                 #region IDEAL CASE - USE factory method
 
-                if (_storedActionName.ToUpper() == Action_12_3_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.ToUpper())
+                if (_storedActionName.ToUpper() == Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.ToUpper())
                 {
                     //storedDataResponse = await Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
                 }

@@ -388,7 +388,7 @@ export namespace BaseDI.Professional.Director.Programming_4 {
             }
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_4(this.ClientOrServerInstance, this.MasterStorer, this.MasterDisturber, this.MasterSensor, this.StorylineDetails, this.StorylineDetails_Parameters, this.Repository, this.ExtraData, this.DirectorOrExperienceRequestHandler);
+            const designPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_4(this._storedParameterInputs);
 
             this.StorylineDetails = await designPattern.Action();
 

@@ -16,6 +16,7 @@ using ChapterPage = BaseDI.Professional.Chapter.Page.Programming_3;
 
 #region .Net Core
 
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
 using System;

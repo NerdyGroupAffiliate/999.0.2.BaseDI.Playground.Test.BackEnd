@@ -22,9 +22,6 @@ using BaseDI.Professional.State.Programming_4;
 using BaseDI.Professional.State.Programming_5;
 using BaseDI.Professional.State.Programming_6;
 
-using BaseDI.Professional.State.Risk_Management_3;
-using BaseDI.Professional.State.Risk_Management_4;
-
 #endregion
 
 #region .Net Core
