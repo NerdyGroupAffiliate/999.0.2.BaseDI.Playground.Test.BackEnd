@@ -31,23 +31,23 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
     public class Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0
     {
         //SETTINGS
-        private static IConfiguration _storedAppSettings = null;
+        private static IConfiguration _storedProcessRequestSettings = null;
 
         //CLIENT/SERVER
-        private static Dictionary<string, object> _storedClientOrServerInstance;
+        private static Dictionary<string, object> _storedProcessRequestTracker;
 
         //EXCEPTIONS
-        private static Exception _storedExceptionDetails = null;
+        private static Exception _storedProcessRequestMistake = null;
 
         //MISC
-        private static ExtraData_12_2_1_0 _storedExtraData = null;
+        private static ExtraData_12_2_1_0 _storedProcessRequestExtraData = null;
 
         //PLUMBING
-        private static string _storedDeveloperExceptionConsoleLogTemplate = "***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static string _storedOutputResponseMistakeTemplate = "***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
-        private static string _storedDeveloperStepConsoleLogTemplate = "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-        private static string _storedDeveloperStepConsoleLogTemplate_Idented = "  STEP {storedStepNumberReplace}: {stored3WordDescription}\n     {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-        private static string _storedDeveloperStepConsoleLogTemplate_Idented_Twice = "     STEP {storedStepNumberReplace}: {stored3WordDescription}\n        {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static string _storedOutputResponseStepTemplate = "STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static string _storedOutputResponseStepTemplate_Idented = "  STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static string _storedOutputResponseStepTemplate_Idented_Twice = "     STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
         #region DEVELOPER MANAGEMENT
 
@@ -57,31 +57,31 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region MEMORIZE client/server instance
 
-            _storedClientOrServerInstance = parameterInputs.Parameters["StoredClientOrServerInstance"];
+            _storedProcessRequestTracker = parameterInputs.Parameters["storedProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
-
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            
             #endregion
 
             #region MEMORIZE exception details
 
-            _storedExceptionDetails = parameterInputs.Parameters["storedMistakes"];
-
+            _storedProcessRequestMistake = parameterInputs.Parameters["storedProcessRequestMistakes"];
+            
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterInputs.Parameters["storedExtraData"];
+            _storedProcessRequestExtraData = parameterInputs.Parameters["storedProcessRequestExtraData"];
 
             #endregion
 
@@ -115,7 +115,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             }
 
             #endregion
-
+            
             #region 3. OUTPUT
 
             #region RETURN request handler
@@ -143,13 +143,13 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
@@ -163,73 +163,73 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 if (parameterInputs.Parameters.Count() > 0)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameter3WordDescription"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequest3WordDescription"))
                     {
-                        storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequest3WordDescription*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterActionName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestActionName"))
                     {
-                        storedMessage += "***parameterActionName*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFileName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestFileName"))
                     {
-                        storedMessage += "***parameterFileName*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestFileName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMessageType"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseMessageType"))
                     {
-                        storedMessage += "***parameterMessageType*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterOutputResponseMessageType*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMethodName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMethodName"))
                     {
-                        storedMessage += "***parameterMethodName*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMethodName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStepNumberReplace"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestStepNumberReplace"))
                     {
-                        storedMessage += "***parameterStepNumberReplace*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestStepNumberReplace*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE exception handler
 
-                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        Console.WriteLine("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedOutputResponseMessage);
 
                         #endregion
                     }
@@ -285,33 +285,33 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region DEFINE stored message
 
-            string storedMessage = "";
+            string storedOutputResponseMessage = "";
 
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["parameterAppSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["parameterProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            string stored3WordDescription = parameterInputs.Parameters["parameter3WordDescription"];
-            string storedActionName = parameterInputs.Parameters["parameterActionName"];
-            IConfiguration storedAppSettings = parameterInputs.Parameters["parameterAppSettings"];
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
-            string storedFileName = parameterInputs.Parameters["parameterFileName"];
-            string storedMethodName = parameterInputs.Parameters["parameterMethodName"];
-            int storedStepNumberReplace = parameterInputs.Parameters["parameterStepNumberReplace"];
+            string stored3WordDescription = parameterInputs.Parameters["parameterProcessRequest3WordDescription"];
+            string storedActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+            IConfiguration storedProcessRequestSettings = parameterInputs.Parameters["parameterProcessRequestSettings"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+            string storedFileName = parameterInputs.Parameters["parameterProcessRequestFileName"];
+            string storedMethodName = parameterInputs.Parameters["parameterProcessRequestMethodName"];
+            int storedStepNumberReplace = parameterInputs.Parameters["parameterProcessRequestStepNumberReplace"];
 
-            string storedMessageType = (parameterInputs.Parameters["parameterMessageType"] != null ? parameterInputs.Parameters["parameterMessageType"] : "LOGGING");
+            string storedOutputResponseMessageType = (parameterInputs.Parameters["parameterOutputResponseMessageType"] != null ? parameterInputs.Parameters["parameterOutputResponseMessageType"] : "LOGGING");
 
             if (parameterInputs.Parameters["parameterOPTIONALAccountingCostType"] != null)
                 storedOPTIONALAccountingCostType = parameterInputs.Parameters["parameterOPTIONALAccountingCostType"];
@@ -332,7 +332,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region MEMORIZE master storer
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedMasterStorer = parameterInputs.Parameters["parameterMasterStorer"];
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedMasterStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
 
             #endregion
 
@@ -346,25 +346,25 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 #region IDEAL CASE - USE developer logger
 
-                Func<Task<bool>> ExecuteOutputRequest = async () =>
+                Func<Task<bool>> ExecuteOutputResponse = async () =>
                 {
                     #region 1A. SETUP logging output
 
-                    if (storedMessageType.ToUpper() == "LOGGING")
+                    if (storedOutputResponseMessageType.ToUpper() == "LOGGING")
                     {
                         if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess)
                         {
-                            storedMessage = _storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+                            storedOutputResponseMessage = _storedOutputResponseStepTemplate; // "STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
                         }
                         else
                         {
                             if (!string.IsNullOrEmpty(storedOPTIONALAccountingCostType))
                             {
-                                storedMessage = _storedDeveloperStepConsoleLogTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                                storedOutputResponseMessage = _storedOutputResponseStepTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";      
                             }
                             else
                             {
-                                storedMessage = _storedDeveloperStepConsoleLogTemplate_Idented; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                                storedOutputResponseMessage = _storedOutputResponseStepTemplate_Idented; // "   STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";      
                             }
                         }
                     }
@@ -373,9 +373,9 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                     #region 1B. SETUP exception output
 
-                    if (storedMessageType.ToUpper() == "MISTAKE")
+                    if (storedOutputResponseMessageType.ToUpper() == "MISTAKE")
                     {
-                        storedMessage = _storedDeveloperExceptionConsoleLogTemplate; // ***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n\n";
+                        storedOutputResponseMessage = _storedOutputResponseMistakeTemplate; // ***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n\n";
 
                         storedMistake = true;
                     }
@@ -384,23 +384,23 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                     #region 2. SETUP default message
 
-                    storedMessage = storedMessage.Replace("{storedStepNumberReplace}", storedStepNumberReplace.ToString());
-                    storedMessage = storedMessage.Replace("{stored3WordDescription}", (storedOPTIONALAccountingCostType != "") ? "[" + storedOPTIONALAccountingCostType.ToUpper() + " COST] - " + stored3WordDescription : "[ZERO COST] - " + stored3WordDescription);
-                    storedMessage = storedMessage.Replace("{storedActionName}", storedActionName);
-                    storedMessage = storedMessage.Replace("{storedFileName}", storedFileName);
-                    storedMessage = storedMessage.Replace("{storedMethodName}", storedMethodName);
+                    storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedStepNumberReplace}", storedStepNumberReplace.ToString());
+                    storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedProcessRequest3WordDescription}", (storedOPTIONALAccountingCostType != "") ? "[" + storedOPTIONALAccountingCostType.ToUpper() + " COST] - " + stored3WordDescription : "[ZERO COST] - " + stored3WordDescription);
+                    storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedInputRequestActionName}", storedActionName);
+                    storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedProcessRequestFileName}", storedFileName);
+                    storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedProcessRequestMethodName}", storedMethodName);
 
                     #endregion
 
-                    if (!_storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE_SILENT"))
+                    if (!_storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE_SILENT"))
                     {
                         #region 3A. OUPUT client message
 
-                        if (_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "CLIENT")
+                        if (_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "CLIENT")
                         {
                             if (storedMistake)
                             {
-                                Console.WriteLine("%c" + storedMessage, "color:" + "Orange");
+                                Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "Orange");
 
                                 return true;
                             }
@@ -411,34 +411,34 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                                 Console.WriteLine("NEW REQUEST - " + storedActionName.ToUpper());
                                 Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------\n");
 
-                                Console.WriteLine("%c" + storedMessage, "color:" + "#94f500");
+                                Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "#94f500");
 
                                 return true;
                             }
 
                             if (storedOPTIONALMiddleOfProcess == true)
                             {
-                                Console.WriteLine("%c" + storedMessage, "color:" + "#00c6f5");
+                                Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "#00c6f5");
 
                                 return true;
                             }
 
                             if (storedOPTIONALAccountingCostType != "")
                             {
-                                Console.WriteLine("%c" + storedMessage, "color:" + "Yellow");
+                                Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "Yellow");
 
                                 return true;
                             }
 
                             if (storedOPTIONALEndOfProcess == true)
                             {
-                                Console.WriteLine("%c" + storedMessage, "color:" + "#ff0e11");
+                                Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "#ff0e11");
 
                                 return true;
                             }
                             else
                             {
-                                Console.WriteLine("%c" + storedMessage, "color:" + "#D3D3D3");
+                                Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "#D3D3D3");
 
                                 return true;
                             }
@@ -447,12 +447,12 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                         #region 3B. OUPUT server message
 
-                        if (_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "SERVER")
+                        if (_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "SERVER")
                         {
                             if (storedMistake)
                             {
-                                //Console.WriteLine("%c" + storedMessage, "color:" + "Orange");
-                                Console.WriteLine(storedMessage);
+                                //Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "Orange");
+                                Console.WriteLine(storedOutputResponseMessage);
 
                                 return true;
                             }
@@ -463,39 +463,39 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                                 Console.WriteLine("NEW REQUEST - " + storedActionName.ToUpper());
                                 Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------\n");
 
-                                Console.WriteLine(storedMessage);
-                                //Console.WriteLine('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
+                                Console.WriteLine(storedOutputResponseMessage);
+                                //Console.WriteLine('\x1b[32m', storedOutputResponseMessage, '\x1b[0m'); //GREEN
 
                                 return true;
                             }
 
                             if (storedOPTIONALMiddleOfProcess == true)
                             {
-                                Console.WriteLine(storedMessage);
-                                //Console.WriteLine('\x1b[34m', storedMessage); //BLUE
+                                Console.WriteLine(storedOutputResponseMessage);
+                                //Console.WriteLine('\x1b[34m', storedOutputResponseMessage); //BLUE
 
                                 return true;
                             }
 
                             if (storedOPTIONALAccountingCostType != "")
                             {
-                                Console.WriteLine(storedMessage);
-                                //Console.WriteLine("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
+                                Console.WriteLine(storedOutputResponseMessage);
+                                //Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "Yellow"); //YELLOW
 
                                 return true;
                             }
 
                             if (storedOPTIONALEndOfProcess == true)
                             {
-                                Console.WriteLine(storedMessage);
-                                //Console.WriteLine("%c" + storedMessage, "color:" + "#ff0e11"); //RED
+                                Console.WriteLine(storedOutputResponseMessage);
+                                //Console.WriteLine("%c" + storedOutputResponseMessage, "color:" + "#ff0e11"); //RED
 
                                 return true;
                             }
                             else
                             {
-                                Console.WriteLine(storedMessage);
-                                //Console.WriteLine('\x1b[37m', storedMessage);  //WHITE
+                                Console.WriteLine(storedOutputResponseMessage);
+                                //Console.WriteLine('\x1b[37m', storedOutputResponseMessage);  //WHITE
 
                                 return true;
                             }
@@ -507,7 +507,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                     return await Task.FromResult<bool>(true).ConfigureAwait(true);
                 };
 
-                await ExecuteOutputRequest();
+                await ExecuteOutputResponse();
 
                 #endregion    
 

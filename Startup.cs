@@ -273,14 +273,14 @@ namespace BaseDI.Professional
         public IConfiguration StoredAppSettings { get; set; }
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientOrServerInstance;
+        private Dictionary<string, object> _storedProcessRequestTracker;
 
         //DATASETS
-        private JObject _storedStorylineDetails;
-        private JObject _storedStorylineDetails_Parameters;
+        private JObject _storedProcessRequestDataStorylineDetails;
+        private JObject _storedProcessRequestDataStorylineDetails_Parameters;
 
         //MISC
-        private ExtraData_12_2_1_0 _storedExtraData;
+        private ExtraData_12_2_1_0 _storedProcessRequestExtraData;
 
         //PLUMBING
         public Func<SingleParmPoco_12_2_1_0, JObject> StoredStartUpCallBack = null;
@@ -290,33 +290,33 @@ namespace BaseDI.Professional
 
         #region 2. Ready
 
-        public Startup_Controller(IConfiguration parameterAppSettings = null)
+        public Startup_Controller(IConfiguration parameterProcessRequestSettings = null)
         {
             #region 1. INPUTS
 
             #region DEFINE client/server info
 
-            _storedClientOrServerInstance = new Dictionary<string, object>();
+            _storedProcessRequestTracker = new Dictionary<string, object>();
 
             #endregion
 
             #region DEFINE extra data
 
-            _storedExtraData = new ExtraData_12_2_1_0();
+            _storedProcessRequestExtraData = new ExtraData_12_2_1_0();
 
             #endregion
 
             #region DEFINE storyline details
 
-            _storedStorylineDetails = new JObject();
-            _storedStorylineDetails_Parameters = new JObject();
+            _storedProcessRequestDataStorylineDetails = new JObject();
+            _storedProcessRequestDataStorylineDetails_Parameters = new JObject();
 
             #endregion
 
             #region MEMORIZE app settings
 
-            if (parameterAppSettings != null)
-                StoredAppSettings = parameterAppSettings;
+            if (parameterProcessRequestSettings != null)
+                StoredAppSettings = parameterProcessRequestSettings;
 
             #endregion
 
@@ -396,29 +396,29 @@ namespace BaseDI.Professional
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "VALIDATING request inputs");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Startup.cs");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Startup.cs");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
 
                 #endregion
 
@@ -472,13 +472,13 @@ namespace BaseDI.Professional
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -496,13 +496,13 @@ namespace BaseDI.Professional
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -574,38 +574,38 @@ namespace BaseDI.Professional
 
             #region MEMORIZE action name
 
-            _storedClientOrServerInstance.Add("storedClientActionName", parameterInputs.Parameters["parameterClientRequestByName"]);
+            _storedProcessRequestTracker.Add("storedClientActionName", parameterInputs.Parameters["parameterInputRequestName"]);
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            _storedClientOrServerInstance.Add("storedIgnoreDeveloperConsoleLog", false);
+            _storedProcessRequestTracker.Add("storedIgnoreDeveloperConsoleLog", false);
 
             #endregion
 
             #region MEMORIZE application settings
 
             if (StoredAppSettings != null)
-                _storedClientOrServerInstance.Add("storedAppSettings", StoredAppSettings);
+                _storedProcessRequestTracker.Add("storedProcessRequestSettings", StoredAppSettings);
 
             #endregion
 
             #region MEMORIZE request instance
 
-            _storedClientOrServerInstance.Add("storedHttpRequest", Request);
+            _storedProcessRequestTracker.Add("storedHttpRequest", Request);
 
             #endregion
 
             #region MEMORIZE server instance
 
-            _storedClientOrServerInstance.Add("storedServerInstance", this);
+            _storedProcessRequestTracker.Add("storedServerInstance", this);
 
             #endregion
 
             #region MEMORIZE storyline details
 
-            storedDataResponse = _storedStorylineDetails;
+            storedDataResponse = _storedProcessRequestDataStorylineDetails;
 
             #endregion
 
@@ -622,7 +622,7 @@ namespace BaseDI.Professional
                 StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 parameterResponse) =>
                 {
                     Action(parameterResponse);
-                    return _storedStorylineDetails;
+                    return _storedProcessRequestDataStorylineDetails;
                 };
 
                 #endregion
@@ -631,8 +631,8 @@ namespace BaseDI.Professional
 
                 #region A. STORE route details
 
-                parameterInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-                parameterInputs.Parameters.Add("parameterAppSettings", StoredAppSettings);
+                parameterInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+                parameterInputs.Parameters.Add("parameterProcessRequestSettings", StoredAppSettings);
 
                 #endregion
 

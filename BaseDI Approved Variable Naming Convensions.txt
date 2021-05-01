@@ -1,0 +1,70 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//INPUT variables
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+storedInputRequestName -
+	WHO Uses - Client	
+	WHY Used - To input the name of the request that we want to execute inside of BaseDI
+	HOW Used - By calling an Event Handler passing in parameterInput information.
+	WHAT Type - "string (C#)" or "string (JavaScript)"
+
+storedInputRequestDataCacheKey -
+	WHO Uses - Client	
+	WHY Used - To input the name of the cache key that we want to use while executing a BaseDI request.
+	HOW Used - By calling an Event Handler passing in parameterInput information.
+	WHAT Type - "string (C#)" or "string (JavaScript)"
+
+storedInputRequestDataCustom -
+	WHO Uses - Client	
+	WHY Used - To input the a raw object into baseDI.
+	HOW Used - By calling an Event Handler passing in parameterInput information.
+	WHAT Type - "JObject (C#)" or "Object (JavaScript)"
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//PROCESS variables
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+storedProcessRequestSettings -
+	WHO Uses - System	
+	WHY Used - To input GLOBAL configuration information into program. (Located in "appsettings.json (C#)" or "webpack.config.client | webpack.config.server.js (javascript)")
+	HOW Used - By loading preconfigured values into a configuration file.
+	WHAT Type - "IConfiguration (C#)" or "Object (JavaScript)"
+
+storedProcessRequestDeveloperMode -
+	WHO Uses - System
+	WHY Used - To control if developer logging is turned on or not.
+	HOW Used - By setting a KEY called "appSettings" in the "storedProcessRequestSettings" object.
+	WHAT Type - "bool (C#)" or "boolean (JavaScript)" 
+
+storedProcessRequestExtraData -
+	WHO Uses - System
+	WHY Used - To store and track unplanned information while a request is in process.
+	HOW Used - By appending a "key/value" to it's instance. 
+	WHAT Type - "Dictionary<string, object) (C#)" or "Collections (JavaScript)" 
+
+storedProcessRequestMistake -
+	WHO Uses - System
+	WHY Used - To store exception information.
+	HOW Used - By adding a string to it's CONSTRUCTOR 
+	WHAT Type - "Exception (C#)" or "Error (JavaScript)" 
+
+storedProcessRequestTracker -
+	WHO Uses - System
+	WHY Used - To store and track changes while a request is in process.
+	HOW Used - By appending a "key/value" to it's instance. 
+	WHAT Type - "Dictionary<string, object) (C#)" or "Object (JavaScript)" 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//OUTPUT variables
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+storedOutputResponseMistakeTemplate -
+	WHO Uses - Client
+	WHY Used - To display mistakes inside our program to the developer debugging.
+	HOW Used - By creating a piece of text that a developer can read. 
+	WHAT Type - "string (C#)" or "string (JavaScript)" 
+
+storedOutputResponseStepTemplate -
+	WHO Uses - Client
+	WHY Used - To display each logical step that is executed inside our program to the developer debugging.
+	HOW Used - By creating a piece of text that a developer can read. 
+	WHAT Type - "string (C#)" or "string (JavaScript)" 

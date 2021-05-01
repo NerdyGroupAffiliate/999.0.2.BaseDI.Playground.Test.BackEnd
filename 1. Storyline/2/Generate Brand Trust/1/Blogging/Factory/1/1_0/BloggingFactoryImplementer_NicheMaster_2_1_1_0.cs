@@ -57,32 +57,32 @@ namespace BaseDI.Professional.Story.Blogging_1
         #region 1. Assign
 
         //SETTINGS
-        private IConfiguration _storedAppSettings = null;
+        private IConfiguration _storedProcessRequestSettings = null;
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientOrServerInstance;
+        private Dictionary<string, object> _storedProcessRequestTracker;
 
-        private string _storedClientRequestByName;
-        private string _storedClientRequestByNameParameters;
+        private string _storedInputRequestName;
+        private string _storedInputRequestDataCacheKey;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedInputRequestDataCustom;
 
         //DATASETS
-        private JObject _storedStorylineDetails;
-        private JObject _storedStorylineDetails_Parameters;
+        private JObject _storedProcessRequestDataStorylineDetails;
+        private JObject _storedProcessRequestDataStorylineDetails_Parameters;
 
         //MISC
-        private ExtraData_12_2_1_0 _storedExtraData;
+        private ExtraData_12_2_1_0 _storedProcessRequestExtraData;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
 
-        private SingleParmPoco_12_2_1_0 _storedParameterInputs = null;
+        private SingleParmPoco_12_2_1_0 _storedInputs = null;
 
-        private string _storedRequestName = "";
-        private string _storedSystemRequestByName = "";
+        private string _storedProcessRequestName = "";
+        private string _storedProcessRequestSystemRequestByName = "";
 
         #endregion
 
@@ -94,13 +94,13 @@ namespace BaseDI.Professional.Story.Blogging_1
 
             #region DEFINE clientOrServer instance
 
-            _storedClientOrServerInstance = null;
+            _storedProcessRequestTracker = null;
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] != null ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] != null ? parameterInputs.Parameters["parameterExtraData"] : null;
 
             #endregion
 
@@ -159,47 +159,47 @@ namespace BaseDI.Professional.Story.Blogging_1
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedParameterInputs;
+                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE {storedProcessRequestMethodName} message
 
-                string storedMessage = "";
+                string storedProcessRequestMethodNameMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
-                SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+                SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "BloggingFactoryImplementer_NicheMaster_2_1_1_0.cs");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action -> ValidateInputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "BloggingFactoryImplementer_NicheMaster_2_1_1_0.cs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> ValidateInputs");
 
                 #endregion
 
@@ -213,81 +213,81 @@ namespace BaseDI.Professional.Story.Blogging_1
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.";
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMethodNameMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestName"))
                     {
-                        storedMessage += "***parameterClientRequestByName*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientRequestByNameParameters"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestDataCacheKey"))
                     {
-                        storedMessage += "***parameterClientRequestByNameParameters*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterInputRequestDataCacheKey*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedDisturber"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedDisturber"))
                     {
-                        storedMessage += "***parameterCentralizedDisturber*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestCentralizedDisturber*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedSensor"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedSensor"))
                     {
-                        storedMessage += "***parameterCentralizedSensor*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestCentralizedSensor*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterCentralizedStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
                     {
-                        storedMessage += "***parameterCentralizedStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails_Parameters"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;_Parameters"))
                     {
-                        storedMessage += "***parameterStorylineDetails_Parameters*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestDataStorylineDetails;_Parameters*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -303,15 +303,15 @@ namespace BaseDI.Professional.Story.Blogging_1
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -351,78 +351,78 @@ namespace BaseDI.Professional.Story.Blogging_1
 
             #region DEFINE request handler
 
-            dynamic storedRequestHandler = null;
+            dynamic storedProcessRequestHandler = null;
 
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE centralized processes handlers
 
-            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
-            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
-            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+            _storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            _storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            _storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "ASSIGNING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "BloggingFactoryImplementer_NicheMaster_2_1_1_0.cs");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Action");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "ASSIGNING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "BloggingFactoryImplementer_NicheMaster_2_1_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
 
             //OPTIONAL
-            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
 
             #endregion
 
             #region MEMORIZE request details
 
-            string storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
-            string storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            string storedInputRequestDataCustomCacheKey = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
 
-            string storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"] ? parameterInputs.Parameters["parameterSystemRequestByName"] : "";
+            string storedProcessRequestSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"] ? parameterInputs.Parameters["parameterSystemRequestByName"] : "";
 
-            _storedRequestName = storedClientRequestByName;
+            _storedProcessRequestName = storedInputRequestName;
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData.KeyValuePairs.Add("storedAPILocationLocalNodeJS", APILocationLocalNodeJS);
-            _storedExtraData.KeyValuePairs.Add("storedAPILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationLocalNodeJS", APILocationLocalNodeJS);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _storedExtraData.KeyValuePairs.Add("storedAPILocationRemote", APILocationRemote);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationRemote", APILocationRemote);
 
-            _storedExtraData.KeyValuePairs.Add("storedClientRequestByName", storedClientRequestByName);
-            _storedExtraData.KeyValuePairs.Add("storedClientRequestByNameParameters", storedClientRequestByNameParameters);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestName", storedInputRequestName);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestDataCustomCacheKey", storedInputRequestDataCustomCacheKey);
 
             #endregion
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
 
             #endregion
 
@@ -436,10 +436,10 @@ namespace BaseDI.Professional.Story.Blogging_1
             {
                 #region IDEAL CASE - USE director or experience
 
-                switch (storedClientRequestByName.ToUpper())
+                switch (storedInputRequestName.ToUpper())
                 {
                     //case "DIRECTOR_OF_BLOGGING_CHAPTER_2_1_PAGE_1_XXXXXX_HANDLER_1_0":
-                    //    storedRequestHandler = Create_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                    //    storedProcessRequestHandler = Create_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
                     //    break;
                 }
@@ -450,15 +450,15 @@ namespace BaseDI.Professional.Story.Blogging_1
             {
                 #region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
+                if (storedProcessRequestDeveloperMode)
                 {
-                    _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
+                    _storedProcessRequestTracker["processStepNumber"] = (int)_storedProcessRequestTracker["processStepNumber"] + 1;
 
-                    storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED configurating request handler");
-                    storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", _storedClientOrServerInstance["processStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED configurating request handler");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["processStepNumber"]);
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
 
                 #endregion
@@ -480,7 +480,7 @@ namespace BaseDI.Professional.Story.Blogging_1
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler;
+            return storedProcessRequestHandler;
 
             #endregion
 
@@ -497,28 +497,28 @@ namespace BaseDI.Professional.Story.Blogging_1
 
             #region MEMORIZE data repository
 
-            string storedRepositoryType = !string.IsNullOrEmpty(_storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_1_BLOGGING_NICHE_MASTER")) ? _storedAppSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_1_BLOGGING_NICHE_MASTER") : "LOCAL_FILE";
+            string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_1_BLOGGING_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_1_BLOGGING_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONFIGURATING request handler");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "BloggingFactoryImplementer_NicheMaster_2_1_1_0.cs");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Create_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "BloggingFactoryImplementer_NicheMaster_2_1_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0");
 
             //OPTIONAL
-            //storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -530,29 +530,29 @@ namespace BaseDI.Professional.Story.Blogging_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = null;//new Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = null;//new Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
 
-            storedRequestHandler_Director.ClientOrServerInstance = _storedClientOrServerInstance;
+            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedRequestHandler_Director.ExtraData = _storedExtraData;
+            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
 
-            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
+            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedRequestHandler_Director.StorylineDetails = _storedStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = _storedStorylineDetails_Parameters;
+            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
-            switch (storedRepositoryType.ToUpper())
+            switch (storedProcessRequestRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = null; //new LocalFile_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = null; //new LocalFile_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = null; //new RemoteService_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = null; //new RemoteService_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -569,7 +569,7 @@ namespace BaseDI.Professional.Story.Blogging_1
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler_Director;
+            return storedProcessRequestHandler_Director;
 
             #endregion
 

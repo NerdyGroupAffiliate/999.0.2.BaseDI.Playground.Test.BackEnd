@@ -38,14 +38,14 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
         #region 1. Assign
 
         //SETTINGS
-        private IConfiguration _storedAppSettings;
+        private IConfiguration _storedProcessRequestSettings;
 
         private string _storedSettingSecurityAppId = "";
         private string _storedSettingSecurityAppSecret = "";
         private string _storedSettingSecurityAppToken = "";
 
         //CLIENT/SERVER
-        private Dictionary<string, object> _storedClientOrServerInstance;
+        private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedClientRequestByName;
         private string _storedClientRequestByNameParameters;
@@ -59,13 +59,13 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
         private string _storedServerRoutePath = "";
 
         //DATASET
-        private JObject _storedStorylineDetails = null;
-        private JObject _storedStorylineDetails_Parameters = null;
+        private JObject _storedProcessRequestDataStorylineDetails = null;
+        private JObject _storedProcessRequestDataStorylineDetails_Parameters = null;
 
         private string _storedDataObservationTemplate = "";
 
         //MISC
-        private ExtraData_12_2_1_0 _storedExtraData = null;
+        private ExtraData_12_2_1_0 _storedProcessRequestExtraData = null;
 
         //PLUMBING
         private string _storedActionName = "";
@@ -94,27 +94,27 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedClientOrServerInstance["storedActionName"];
+            _storedActionName = (string)_storedProcessRequestTracker["storedActionName"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)_storedClientOrServerInstance["storedAppSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE centralized processes handlers
 
-            _storedCentralizedDisturber = parameterInputs.Parameters["parameterCentralizedDisturber"];
-            _storedCentralizedSensor = parameterInputs.Parameters["parameterCentralizedSensor"];
-            _storedCentralizedStorer = parameterInputs.Parameters["parameterCentralizedStorer"];
+            _storedCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            _storedCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            _storedCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -126,27 +126,27 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
             #region MEMORIZE storyline details
 
-            _storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            _storedStorylineDetails_Parameters = parameterInputs.Parameters["parameterStorylineDetails_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
 
             #endregion
 
             #region MEMORIZE extra data
 
-            _storedExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByName = parameterInputs.Parameters["parameterClientRequestByName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterClientRequestByNameParameters"];
+            _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
             _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
@@ -190,7 +190,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
@@ -233,19 +233,19 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)ClientOrServerInstance["storedAppSettings"];
+            _storedProcessRequestSettings = (IConfiguration)ClientOrServerInstance["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            _storedClientOrServerInstance = ClientOrServerInstance;
+            _storedProcessRequestTracker = ClientOrServerInstance;
 
             #endregion
 
@@ -313,7 +313,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 #region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
+                if (storedProcessRequestDeveloperMode)
                 {
                     ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
@@ -362,13 +362,13 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE app settings
 
-            _storedAppSettings = (IConfiguration)ClientOrServerInstance["storedAppSettings"];
+            _storedProcessRequestSettings = (IConfiguration)ClientOrServerInstance["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
@@ -416,7 +416,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 #region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode)
+                if (storedProcessRequestDeveloperMode)
                 {
                     ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 

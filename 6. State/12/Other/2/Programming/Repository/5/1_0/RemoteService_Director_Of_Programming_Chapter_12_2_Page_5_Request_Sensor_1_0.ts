@@ -23,10 +23,10 @@ export namespace BaseDI.Professional.State.Programming_5 {
         //#region 1. Assign
 
         //SETTINGS
-        private _storedAppSettings: any;
+        private _storedProcessRequestSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientOrServerInstance: any;
+        private _storedProcessRequestTracker: any;
 
         private _storedClientRequestByName: string;
         private _storedClientRequestByNameParameters: string;
@@ -37,11 +37,11 @@ export namespace BaseDI.Professional.State.Programming_5 {
         private _storedServerInstanceInfo: any;
 
         //DATASET
-        private _storedStorylineDetails: object = new Object();
-        private _storedStorylineDetails_Parameters: object = new Object();
+        private _storedProcessRequestDataStorylineDetails: object = new Object();
+        private _storedProcessRequestDataStorylineDetails_Parameters: object = new Object();
 
         //MISC
-        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+        private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
         private _storedActionName: string = "";
@@ -71,27 +71,27 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
             //#region MEMORIZE action name
 
-            this._storedActionName = this._storedClientOrServerInstance["storedActionName"];
+            this._storedActionName = this._storedProcessRequestTracker["storedActionName"];
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
             //#region MEMORIZE centralized processes handlers
 
-            this._storedCentralizedDisturber = parameterInputs.Parameters.getValue("parameterCentralizedDisturber");
-            this._storedCentralizedSensor = parameterInputs.Parameters.getValue("parameterCentralizedSensor");
-            this._storedCentralizedStorer = parameterInputs.Parameters.getValue("parameterCentralizedStorer");
+            this._storedCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            this._storedCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            this._storedCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
 
             //#endregion
 
@@ -103,27 +103,27 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
             //#region MEMORIZE storyline details
 
-            this._storedStorylineDetails = parameterInputs.Parameters.getValue("parameterStorylineDetails");
-            this._storedStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterStorylineDetails_Parameters");
+            this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails;");
+            this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails;_Parameters");
 
             //#endregion
 
             //#region MEMORIZE extra data
 
-            this._storedExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
 
             //#endregion
 
             //#region MEMORIZE request details
 
-            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterClientRequestByName");
-            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
+            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestDataCacheKey");
             this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
 
             this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
@@ -177,7 +177,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
@@ -238,7 +238,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -264,7 +264,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -290,7 +290,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -316,7 +316,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -342,7 +342,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -368,7 +368,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -394,7 +394,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -420,7 +420,7 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -441,17 +441,17 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 .cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Action_5_Process_StorySetting");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 .cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
 
             //#endregion
 
@@ -495,17 +495,17 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Action_10_End_Process");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Action_10_End_Process");
 
             //#endregion
 
@@ -617,17 +617,17 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Factory_Action_1_Begin_Process -> Factory_Action_5_Process_StorySetting");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Factory_Action_1_Begin_Process -> Factory_Action_5_Process_StorySetting");
 
             //#endregion
 
@@ -682,17 +682,17 @@ export namespace BaseDI.Professional.State.Programming_5 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Factory_Action_10_End_Process -> Factory_Action_5_Process_StorySetting");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Factory_Action_10_End_Process -> Factory_Action_5_Process_StorySetting");
 
             //#endregion
 

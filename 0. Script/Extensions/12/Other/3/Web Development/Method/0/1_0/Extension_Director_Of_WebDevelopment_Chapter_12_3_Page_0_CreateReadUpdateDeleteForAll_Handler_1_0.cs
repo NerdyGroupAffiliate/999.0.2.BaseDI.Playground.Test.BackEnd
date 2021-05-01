@@ -60,41 +60,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html attributes");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html attributes");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -108,55 +108,55 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlAttributes"))
                     {
-                        storedMessage += "***parameterHtmlAttributes*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlAttributes*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -174,13 +174,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -240,36 +240,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html attributes");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html attributes");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -284,8 +284,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -314,14 +314,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html attributes");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html attributes");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -377,41 +377,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html container");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html container");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -425,55 +425,55 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlContainerJSON"))
                     {
-                        storedMessage += "***parameterHtmlContainerJSON*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlContainerJSON*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -491,13 +491,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -557,36 +557,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html container");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html container");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -601,8 +601,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -624,14 +624,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting to html container");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting to html container");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ExecuteConversionRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -687,41 +687,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html row");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html row");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -735,61 +735,61 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlContainerString"))
                     {
-                        storedMessage += "***parameterHtmlContainerString*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlContainerString*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlRowsJSON"))
                     {
-                        storedMessage += "***parameterHtmlRowsJSON*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlRowsJSON*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -807,13 +807,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -874,36 +874,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html row");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html row");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -919,8 +919,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -947,14 +947,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html row");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html row");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0.ExecuteConversionRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -1010,41 +1010,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html column");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html column");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -1058,61 +1058,61 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlRowString"))
                     {
-                        storedMessage += "***parameterHtmlRowString*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlRowString*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlColumnsJSON"))
                     {
-                        storedMessage += "***parameterHtmlColumnsJSON*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlColumnsJSON*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -1130,13 +1130,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -1198,36 +1198,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PREPARING caching request");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PREPARING caching request");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -1243,8 +1243,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -1272,14 +1272,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html column");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html column");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ExecuteConversionRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -1335,41 +1335,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html content");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html content");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -1383,61 +1383,61 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlColumnString"))
                     {
-                        storedMessage += "***parameterHtmlColumnString*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlColumnString*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlContentJSON"))
                     {
-                        storedMessage += "***parameterHtmlContentJSON*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlContentJSON*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -1455,13 +1455,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -1524,36 +1524,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html content");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html content");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -1569,8 +1569,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -1582,7 +1582,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, Dictionary<string, List<string>>, dynamic, IConfiguration, Task<string>> ExecuteConversionRequest = async (string parameterHtmlColumnString, dynamic parameterHtmlContentJSON, Dictionary<string, List<string>> parameterFilterDataResponseIdsAndContent, dynamic parameterContent, IConfiguration parameterAppSettings) =>
+            Func<string, dynamic, Dictionary<string, List<string>>, dynamic, IConfiguration, Task<string>> ExecuteConversionRequest = async (string parameterHtmlColumnString, dynamic parameterHtmlContentJSON, Dictionary<string, List<string>> parameterFilterDataResponseIdsAndContent, dynamic parameterContent, IConfiguration parameterProcessRequestSettings) =>
             {
                 try
                 {
@@ -1609,7 +1609,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         parameterHtmlColumnString = parameterHtmlColumnString.Replace($"{{{storedIdAndContentItem}_Replace}}", string.Join("\n", parameterFilterDataResponseIdsAndContent[storedIdAndContentItem]));
                     }
 
-                    if (parameterAppSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
+                    if (parameterProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
                     {
                         parameterHtmlColumnString = parameterHtmlColumnString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
                     }                    
@@ -1621,14 +1621,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html content");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html content");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ExecuteConversionRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -1643,7 +1643,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 }
             };
 
-            storedDataResponse = await ExecuteConversionRequest(storedHtmlColumnString, storedHtmlContentJSON, storedDataResponseIdsAndContent, storedContent, storedAppSettings);
+            storedDataResponse = await ExecuteConversionRequest(storedHtmlColumnString, storedHtmlContentJSON, storedDataResponseIdsAndContent, storedContent, storedProcessRequestSettings);
 
             #endregion
 
@@ -1684,41 +1684,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html styles");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -1732,69 +1732,69 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlStylesJSON"))
                     {
-                        storedMessage += "***parameterHtmlStylesJSON*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlStylesJSON*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
                         if (!parameterInputs.Parameters["parameterHtmlStylesJSON"].value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal)
                         {
-                            storedMessage += "***parameterHtmlStylesJSON*** [StyleFilePathLocal] cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterHtmlStylesJSON*** [StyleFilePathLocal] cannot be blank or empty.\n";
+                            storedProcessRequestMistakeMade = true;
                         }
 
                         if (!parameterInputs.Parameters["parameterHtmlStylesJSON"].value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles)
                         {
-                            storedMessage += "***parameterHtmlStylesJSON*** [StyleFiles] cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterHtmlStylesJSON*** [StyleFiles] cannot be blank or empty.\n";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -1812,13 +1812,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -1885,36 +1885,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html styles");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -1931,8 +1931,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -2200,14 +2200,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html styles");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -2263,41 +2263,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html styles");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -2311,69 +2311,69 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlScriptsJSON"))
                     {
-                        storedMessage += "***parameterHtmlScriptsJSON*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlScriptsJSON*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
                         if (!parameterInputs.Parameters["parameterHtmlScriptsJSON"].value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFilePathLocal)
                         {
-                            storedMessage += "***parameterHtmlScriptsJSON*** [ScriptFilePathLocal] cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterHtmlScriptsJSON*** [ScriptFilePathLocal] cannot be blank or empty.\n";
+                            storedProcessRequestMistakeMade = true;
                         }
 
                         if (!parameterInputs.Parameters["parameterHtmlScriptsJSON"].value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFiles)
                         {
-                            storedMessage += "***parameterHtmlScriptsJSON*** [ScriptFiles] cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterHtmlScriptsJSON*** [ScriptFiles] cannot be blank or empty.\n";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -2391,13 +2391,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -2464,36 +2464,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html styles");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -2510,8 +2510,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -2533,14 +2533,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html styles");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -2596,41 +2596,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html styles");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -2644,69 +2644,69 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlMetaDataJSON"))
                     {
-                        storedMessage += "***parameterHtmlMetaDataJSON*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
                         if (!parameterInputs.Parameters["parameterHtmlMetaDataJSON"].value[0]?._2_2_2_6_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.MetaDataFilePathLocal)
                         {
-                            storedMessage += "***parameterHtmlMetaDataJSON*** [MetaDataFilePathLocal] cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** [MetaDataFilePathLocal] cannot be blank or empty.\n";
+                            storedProcessRequestMistakeMade = true;
                         }
 
                         if (!parameterInputs.Parameters["parameterHtmlScriptsJSON"].value[0]?._2_2_2_6_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.MetaDataFiles)
                         {
-                            storedMessage += "***parameterHtmlMetaDataJSON*** [MetaDataFiles] cannot be blank or empty.\n";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** [MetaDataFiles] cannot be blank or empty.\n";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -2724,13 +2724,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -2797,36 +2797,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "CONVERTING json to html styles");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -2843,8 +2843,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -2866,14 +2866,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED converting json to html styles");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -2929,40 +2929,40 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE process checkpoint
 
-                bool storedProcessCheckPointHit = false;
+                bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
                 #region DEFINE stored message
 
-                string storedMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
                 #region MEMORIZE clientOrServer instance
 
-                Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
                 #region MEMORIZE app settings
 
-                IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
                 #region MEMORIZE developer mode
 
-                bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-                storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-                storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
 
                 #endregion
 
@@ -2976,85 +2976,85 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterClientOrServerInstance"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (parameterInputs.Parameters["parameterClientOrServerInstance"]["storedAppSettings"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterAppSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlMetaData"))
                     {
-                        storedMessage += "***parameterHtmlMetaData*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlMetaData*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlTitle"))
                     {
-                        storedMessage += "***parameterTitle*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterTitle*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlAdditionalHeadData"))
                     {
-                        storedMessage += "***parameterHtmlAdditionalHeadData*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlAdditionalHeadData*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlScripts"))
                     {
-                        storedMessage += "***parameterHtmlScripts*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlScripts*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlStyles"))
                     {
-                        storedMessage += "***parameterHtmlStyles*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlStyles*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterHtmlBody"))
                     {
-                        storedMessage += "***parameterHtmlBody*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterHtmlBody*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
                     {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorylineDetails"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedMessage += "***parameterStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessCheckPointHit)
+                    if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode)
+                        if (storedProcessRequestDeveloperMode)
                         {
-                            storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -3072,13 +3072,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -3138,36 +3138,36 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> stored_CentralizedStorer = parameterInputs.Parameters["parameterMasterStorer"];
-            //this._stored_CentralizedSensor = parameterCentralizedSensor;
-            //this._stored_CentralizedStorer = parameterCentralizedStorer;
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
             #region MEMORIZE clientOrServer instance
 
-            Dictionary<string, object> storedClientOrServerInstance = parameterInputs.Parameters["parameterClientOrServerInstance"];
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
             #region MEMORIZE app settings
 
-            IConfiguration storedAppSettings = (IConfiguration)storedClientOrServerInstance["storedAppSettings"];
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
             #region MEMORIZE developer mode
 
-            bool storedDeveloperMode = storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "STORING html template");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterActionName", storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterAppSettings", storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterClientOrServerInstance", storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "STORING html template");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -3201,8 +3201,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE storyline details
 
-            JObject storedStorylineDetails = parameterInputs.Parameters["parameterStorylineDetails"];
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
             #endregion
 
@@ -3216,17 +3216,17 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region 1. READ cached baseDI script path
 
-            Func<string, string, aClass_Programming_ScriptAction_12_2_1_0<JObject>, Dictionary<string, object>, JObject, dynamic, Task<string>> ExecuteStorageRequest = async (string parameterHtmlBaseDIScriptName, string parameterHtmlScripts, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterCentralizedStorer, Dictionary<string, object> parameterClientOrServerInstance, JObject parameterStorylineDetails, dynamic parameterFilterDataResponse) => {
+            Func<string, string, aClass_Programming_ScriptAction_12_2_1_0<JObject>, Dictionary<string, object>, JObject, dynamic, Task<string>> ExecuteStorageRequest = async (string parameterHtmlBaseDIScriptName, string parameterHtmlScripts, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterProcessRequestCentralizedStorer, Dictionary<string, object> parameterProcessRequestTracker, JObject parameterProcessRequestDataStorylineDetails, dynamic parameterFilterDataResponse) => {
                 try
                 {
                     storedParameterInputs = new SingleParmPoco_12_2_1_0();
 
-                    storedParameterInputs.Parameters.Add("parameterClientOrServerInstance", parameterClientOrServerInstance);
+                    storedParameterInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
                     storedParameterInputs.Parameters.Add("parameterCRUDVerb", "Read");
                     storedParameterInputs.Parameters.Add("parameterDirectorOrExperienceName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
-                    storedParameterInputs.Parameters.Add("parameterMasterStorer", parameterCentralizedStorer);
-                    storedParameterInputs.Parameters.Add("parameterStorageValue", parameterStorylineDetails);
-                    storedParameterInputs.Parameters.Add("parameterStorylineDetails", parameterStorylineDetails);
+                    storedParameterInputs.Parameters.Add("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
+                    storedParameterInputs.Parameters.Add("parameterStorageValue", storedProcessRequestDataStorylineDetails);
+                    storedParameterInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails;", storedProcessRequestDataStorylineDetails);
                     storedParameterInputs.Parameters.Add("parameterPageName", "");
                     storedParameterInputs.Parameters.Add("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");
                     storedParameterInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
@@ -3248,14 +3248,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode)
+                    if (storedProcessRequestDeveloperMode)
                     {
-                        storedClientOrServerInstance["processStepNumber"] = (int)storedClientOrServerInstance["processStepNumber"] + 1;
+                        storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.Add("parameter3WordDescription", "FAILED reading cache");
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterStepNumberReplace", storedClientOrServerInstance["processStepNumber"]);
-                        storedDeveloperLoggingInputs.Parameters.Add("parameterMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0.ExecuteStorageRequest");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED reading cache");
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0.ExecuteStorageRequest");
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -3270,9 +3270,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 }
             };
 
-            if (storedAppSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
+            if (storedProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
             {
-                storedHtmlScripts = await ExecuteStorageRequest(storedHtmlBaseDIScriptName, storedHtmlScripts, stored_CentralizedStorer, storedClientOrServerInstance, storedStorylineDetails, storedDataResponse);
+                storedHtmlScripts = await ExecuteStorageRequest(storedHtmlBaseDIScriptName, storedHtmlScripts, storedProcessRequestCentralizedStorer, storedProcessRequestTracker, storedProcessRequestDataStorylineDetails, storedDataResponse);
             }
 
             #endregion

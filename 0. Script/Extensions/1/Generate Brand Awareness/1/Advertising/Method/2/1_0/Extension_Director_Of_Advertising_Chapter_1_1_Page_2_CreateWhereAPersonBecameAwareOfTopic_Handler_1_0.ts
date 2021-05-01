@@ -30,23 +30,23 @@ import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadU
 export namespace BaseDI.Professional.Advertising.Extensions_2 {
     export class Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 {
         //SETTINGS
-        private static _storedAppSettings: any = null;
+        private static _storedProcessRequestSettings: any = null;
 
         //CLIENT/SERVER
-        private static _storedClientOrServerInstance: any;
+        private static _storedProcessRequestTracker: any;
 
         //EXCEPTIONS
-        private static _storedExceptionDetails: any = null;
+        private static _storedProcessRequestMistake: any = null;
 
         //MISC
-        private static _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
+        private static _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
 
         //PLUMBING
-        private static _storedDeveloperExceptionConsoleLogTemplate: string = "***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static _storedOutputResponseMistakeTemplate: string = "***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
-        private static _storedDeveloperStepConsoleLogTemplate: string = "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-        private static _storedDeveloperStepConsoleLogTemplate_Idented: string = "  STEP {storedStepNumberReplace}: {stored3WordDescription}\n     {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-        private static _storedDeveloperStepConsoleLogTemplate_Idented_Twice: string = "     STEP {storedStepNumberReplace}: {stored3WordDescription}\n        {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static _storedOutputResponseStepTemplate: string = "STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseStepTemplate_Idented: string = "  STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseStepTemplate_Idented_Twice: string = "     STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
         constructor() {
             //#region 1. INPUTS
@@ -76,13 +76,13 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                 //#region DEFINE process checkpoint
 
-                let storedProcessCheckPointHit: boolean = false;
+                let storedProcessRequestMistakeMade: boolean = false;
 
                 //#endregion
 
                 //#region DEFINE stored message
 
-                let storedMessage: string = "";
+                let storedOutputResponseMessage: string = "";
 
                 //#endregion
 
@@ -96,70 +96,70 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
                     if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterAppSettings")) {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterClientOrServerInstance")) {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
-                            storedProcessCheckPointHit = true;
+                        if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null || parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == undefined) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.containsKey("parameterInstagramAccountUsername")) {
-                        storedMessage += "***parameterInstagramAccountUsername*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterInstagramAccountUsername*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
                     else {
                         if (parameterInputs.Parameters.getValue("parameterInstagramAccountUsername") == "" || parameterInputs.Parameters.getValue("parameterInstagramAccountUsername") == null || parameterInputs.Parameters.getValue("parameterInstagramAccountUsername") == undefined) {
-                            storedMessage += "***parameterInstagramAccountUsername*** cannot be blank or empty.\n"
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterInstagramAccountUsername*** cannot be blank or empty.\n"
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.containsKey("parameterInstagramAccountPassword")) {
-                        storedMessage += "***parameterInstagramAccountUsername*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterInstagramAccountUsername*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
                     else {
                         if (parameterInputs.Parameters.getValue("parameterInstagramAccountPassword") == "" || parameterInputs.Parameters.getValue("parameterInstagramAccountPassword") == null || parameterInputs.Parameters.getValue("parameterInstagramAccountPassword") == undefined) {
-                            storedMessage += "***parameterInstagramAccountPassword*** cannot be blank or empty.\n"
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterInstagramAccountPassword*** cannot be blank or empty.\n"
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.containsKey("parameterInstagramContent")) {
-                        storedMessage += "***parameterContent*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***parameterContent*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
                     else {
                         if ((parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromUrl == "" || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromUrl == null || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromUrl == undefined) &&
                             (parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromBytes == "" || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromBytes == null || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentFromBytes == undefined) &&
                             (parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == "" || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == null || parameterInputs.Parameters.getValue("parameterInstagramContent").ContentCaption == undefined)) {
-                            storedMessage += "***parameterInstagramContent*** must contain content by a URL or in Bytes to send to Instagram.\n"
-                            storedProcessCheckPointHit = true;
+                            storedOutputResponseMessage += "***parameterInstagramContent*** must contain content by a URL or in Bytes to send to Instagram.\n"
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (storedProcessCheckPointHit) {
+                    if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
-                        if (storedDeveloperMode) {
-                            this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+                        if (storedProcessRequestDeveloperMode) {
+                            this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
@@ -176,12 +176,12 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                 else {
                     //#region EDGE CASE - USE developer logger
 
-                    if (storedDeveloperMode) {
-                        this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+                    if (storedProcessRequestDeveloperMode) {
+                        this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "PARSING parameter values failed");
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -254,19 +254,19 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //#region DEFINE stored message
 
-            let storedMessage: string = "";
+            let storedOutputResponseMessage: string = "";
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["parameterAppSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["parameterProcessRequestSettings"];
 
             //#endregion
 
@@ -285,19 +285,19 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SENDING instagram content");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Step_X_X_Framework_Output_ContentToInstagram_1_0");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SENDING instagram content");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_ContentToInstagram_1_0");
 
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
@@ -317,7 +317,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
             //#region IDEAL CASE - USE 3rdParty module
             if (process.env.APP_ENV == "SERVER") {
                 try {
-                    const ExecuteOutputRequest = async (parameterAuthenticationResponse: any, parameterInstagramClient: any, parameterInstagramAccountUserName: string, parameterInstagramAccountPassword: string, parameterInstagramContent: any): Promise<any> => {
+                    const ExecuteOutputResponse = async (parameterAuthenticationResponse: any, parameterInstagramClient: any, parameterInstagramAccountUserName: string, parameterInstagramAccountPassword: string, parameterInstagramContent: any): Promise<any> => {
                         //#region 1A. TRANSPORT authentication to instagram
 
                         try {
@@ -333,12 +333,12 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                                 //#region EDGE CASE - USE developer logger
 
-                                if (storedDeveloperMode) {
-                                    this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+                                if (storedProcessRequestDeveloperMode) {
+                                    this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-                                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ATTEMPTING to sign in " + parameterInstagramAccountUserName);
-                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "ATTEMPTING to sign in " + parameterInstagramAccountUserName);
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["processStepNumber"]);
 
                                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                                 }
@@ -354,12 +354,12 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                         }
                         catch (mistake) {
                             //#region EDGE CASE - USE developer logger
-                            if (storedDeveloperMode) {
-                                this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+                            if (storedProcessRequestDeveloperMode) {
+                                this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-                                storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED instagram authentication");
-                                storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                                storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                                storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED instagram authentication");
+                                storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                                storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["processStepNumber"]);
 
                                 Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                             }
@@ -382,20 +382,20 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                                     //#region EDGE CASE - USE developer logger
 
-                                    if (storedDeveloperMode) {
-                                        this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+                                    if (storedProcessRequestDeveloperMode) {
+                                        this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-                                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY signed into instagram");
-                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY signed into instagram");
+                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["processStepNumber"]);
 
                                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
 
-                                        this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+                                        this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-                                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "ATTEMPTING to send content");
-                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "ATTEMPTING to send content");
+                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["processStepNumber"]);
 
                                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                                     }
@@ -413,12 +413,12 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                 await ExecuteTransportRequest(parameterInstagramContent);
                             }).catch(async (mistake) => {
                                 //#region EDGE CASE - USE developer logger
-                                if (storedDeveloperMode) {
-                                    this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+                                if (storedProcessRequestDeveloperMode) {
+                                    this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-                                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED sending content to instagram");
-                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED sending content to instagram");
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["processStepNumber"]);
 
                                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                                 }
@@ -433,7 +433,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                         }
                     };
 
-                    await ExecuteOutputRequest(storedDataResponse, storedInstagramClient, storedInstagramAccountUserName, storedInstagramAccountPassword, storedInstagramContent);
+                    await ExecuteOutputResponse(storedDataResponse, storedInstagramClient, storedInstagramAccountUserName, storedInstagramAccountPassword, storedInstagramContent);
                 }
                 catch (mistake) {
                     //#region EDGE CASE - USE exception handler

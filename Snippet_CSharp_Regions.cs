@@ -41,22 +41,22 @@ public class ClassModel
     #region 1. Assign
 
     //SETTINGS
-    private IConfiguration _storedAppSettings;
+    private IConfiguration _storedProcessRequestSettings;
 
     //CLIENT/SERVER
-    internal Dictionary<string, object> _storedClientOrServerInstance;
+    internal Dictionary<string, object> _storedProcessRequestTracker;
 
     //DATASETS
-    internal JObject _storedStorylineDetails;
-    internal JObject _storedStorylineDetails_Parameters;
+    internal JObject _storedProcessRequestDataStorylineDetails;
+    internal JObject _storedProcessRequestDataStorylineDetails_Parameters;
 
     internal aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> _stored_Repository;
 
     //MISC
-    internal ExtraData_12_2_1_0 _storedExtraData;
+    internal ExtraData_12_2_1_0 _storedProcessRequestExtraData;
 
     //PLUMBING
-    private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedStorer;
+    private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
     private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedDisturber;
     private aClass_Programming_ScriptAction_12_2_1_0<JObject> _stored_CentralizedSensor;
 
@@ -75,15 +75,15 @@ public class ClassModel
 
         #region MEMORIZE clientOrServer instance
 
-        //_storedClientOrServerInstance = parameterClientORserverInstance;
+        //_storedProcessRequestTracker = parameterProcessRequestTracker;
 
         #endregion
 
         #region MEMORIZE centralized processes 
 
-        //_stored_CentralizedDisturber = parameterCentralizedDisturber;
-        //_stored_CentralizedSensor = parameterCentralizedSensor;
-        //_stored_CentralizedStorer = parameterCentralizedStorer;
+        //_stored_CentralizedDisturber = parameterProcessRequestCentralizedDisturber;
+        //_stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+        //_storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
 
         #endregion
 
@@ -101,14 +101,14 @@ public class ClassModel
 
         #region MEMORIZE extra data
 
-        //_storedExtraData = parameterExtraData;
+        //_storedProcessRequestExtraData = parameterExtraData;
 
         #endregion
 
         #region MEMORIZE storyline details
 
-        //_storedStorylineDetails = parameterStorylineDetails;
-        //_storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+        //_storedProcessRequestDataStorylineDetails = parameterProcessRequestDataStorylineDetails;;
+        //_storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
         #endregion
 
@@ -237,33 +237,33 @@ public class ClassModel
 
         #region DEFINE storyline details
 
-        //JObject storedStorylineDetails = null;
-        //JObject storedStorylineDetails_Parameters = null;
+        //JObject storedProcessRequestDataStorylineDetails = null;
+        //JObject storedProcessRequestDataStorylineDetails_Parameters = null;
 
         #endregion
 
         #region MEMORIZE action name
 
-        //string storedActionName = parameterClientORserverInstance["storedActionName"] as string;
+        //string storedActionName = parameterProcessRequestTracker["storedActionName"] as string;
 
         #endregion
 
         #region MEMORIZE app settings
 
-        //_storedAppSettings = (IConfiguration)parameterClientORserverInstance["storedAppSettings"];
+        //_storedProcessRequestSettings = (IConfiguration)parameterProcessRequestTracker["storedProcessRequestSettings"];
 
         #endregion
 
         #region MEMORIZE extra data
 
         //if (parameterExtraData != null)
-        //    _storedExtraData = parameterExtraData;
+        //    _storedProcessRequestExtraData = parameterExtraData;
 
         #endregion
 
         #region MEMORIZE developer mode
 
-        bool storedDeveloperMode = _storedAppSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+        bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
         #endregion
 
@@ -283,7 +283,7 @@ public class ClassModel
         #region MEMORIZE request resolver
 
         //aClass_Programming_ScriptRoutable_12_2_1_0 stored_DirectorOrExperienceRequestHandler = null;
-        //Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+        //Use_DesignPattern_Builder_Chapter_12_2_1_0 stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterProcessRequestTracker, parameterProcessRequestDataStorylineDetails;, parameterProcessRequestDataStorylineDetails;_Parameters, _storedClientRequestByObject, _storedProcessRequestExtraData, parameterSystemRequestByName, parameterInputRequestName, parameterInputRequestDataCacheKey);
 
         #endregion
 
@@ -295,11 +295,11 @@ public class ClassModel
 
         #region EDGE CASE - USE developer logger
 
-        if (storedDeveloperMode)
+        if (storedProcessRequestDeveloperMode)
         {
-            _storedClientOrServerInstance["processStepNumber"] = (int)_storedClientOrServerInstance["processStepNumber"] + 1;
+            _storedProcessRequestTracker["processStepNumber"] = (int)_storedProcessRequestTracker["processStepNumber"] + 1;
 
-            Console.WriteLine("STEP " + _storedClientOrServerInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
+            Console.WriteLine("STEP " + _storedProcessRequestTracker["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
         }
 
         #endregion

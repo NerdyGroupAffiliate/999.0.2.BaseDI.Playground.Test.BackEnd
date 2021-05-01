@@ -13,8 +13,8 @@ Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
 =================================================================================================
 //CONVERT json dataset to filetered version 1 - Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0
 //CONVERT json dataset to filetered version 2 - Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0
-parameterAppSettings
-parameterClientOrServerInstance
+parameterProcessRequestSettings
+parameterProcessRequestTracker
 parameterFilterData
 parameterFilterKeyValuePairKey
 parameterFilterKeyValuePairValue
@@ -22,10 +22,10 @@ parameterFilterReturnValueAsArray
 
 
 //OUTPUT observation item - Step_X_X_Framework_Output_JsonObservationNode_1_0
-parameter3WordDescription
-parameterActionName
-parameterAppSettings
-parameterClientOrServerInstance
+parameterProcessRequest3WordDescription
+parameterInputRequestActionName
+parameterProcessRequestSettings
+parameterProcessRequestTracker
 parameterObservationFileName
 parameterObservationMethodName
 parameterObservationPresentationTemplate
@@ -40,55 +40,55 @@ Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteF
 
 //CONVERT json to html container - Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0
 parameterHtmlContainerJSON
-parameterClientOrServerInstance
-parameterAppSettings
-parameterMasterStorer
-parameterStorylineDetails
+parameterProcessRequestTracker
+parameterProcessRequestSettings
+parameterProcessRequestMasterStorer
+parameterProcessRequestDataStorylineDetails;
 
 //CONVERT json to html rows - Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0
 parameterHtmlRowsJSON
 parameterHtmlContainerString
-parameterClientOrServerInstance
-parameterAppSettings
-parameterMasterStorer
-parameterStorylineDetails
+parameterProcessRequestTracker
+parameterProcessRequestSettings
+parameterProcessRequestMasterStorer
+parameterProcessRequestDataStorylineDetails;
 
 //CONVERT json to html rows - Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0
 parameterHtmlColumnsJSON
 parameterHtmlRowString
-parameterClientOrServerInstance
-parameterAppSettings
-parameterMasterStorer
-parameterStorylineDetails
+parameterProcessRequestTracker
+parameterProcessRequestSettings
+parameterProcessRequestMasterStorer
+parameterProcessRequestDataStorylineDetails;
 
 //CONVERT json to html columns - Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0
 parameterHtmlContentJSON
 parameterHtmlColumnString
-parameterClientOrServerInstance
-parameterAppSettings
-parameterMasterStorer
-parameterStorylineDetails
+parameterProcessRequestTracker
+parameterProcessRequestSettings
+parameterProcessRequestMasterStorer
+parameterProcessRequestDataStorylineDetails;
 
 //CONVERT json to html inline css - Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0
 parameterHtmlStylesJSON
-parameterClientOrServerInstance
-parameterAppSettings
-parameterMasterStorer
-parameterStorylineDetails
+parameterProcessRequestTracker
+parameterProcessRequestSettings
+parameterProcessRequestMasterStorer
+parameterProcessRequestDataStorylineDetails;
 
 //CONVERT json to html inline scripts - Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0
 parameterHtmlScriptsJSON
-parameterClientOrServerInstance
-parameterAppSettings
-parameterMasterStorer
-parameterStorylineDetails
+parameterProcessRequestTracker
+parameterProcessRequestSettings
+parameterProcessRequestMasterStorer
+parameterProcessRequestDataStorylineDetails;
 
 //CONVERT json to html inline metadata - Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0
 parameterHtmlMetaDataJSON
-parameterClientOrServerInstance
-parameterAppSettings
-parameterMasterStorer
-parameterStorylineDetails
+parameterProcessRequestTracker
+parameterProcessRequestSettings
+parameterProcessRequestMasterStorer
+parameterProcessRequestDataStorylineDetails;
 
 //CONVERT json to html content - Step_8_0_Framework_Convert_HtmlStructureToString_1_0
 parameterHtmlMetaData
@@ -96,7 +96,7 @@ parameterHtmlTitle
 parameterHtmlScripts
 parameterHtmlStyles
 parameterHtmlBody
-parameterClientOrServerInstance
-parameterAppSettings
-parameterMasterStorer
-parameterStorylineDetails
+parameterProcessRequestTracker
+parameterProcessRequestSettings
+parameterProcessRequestMasterStorer
+parameterProcessRequestDataStorylineDetails;

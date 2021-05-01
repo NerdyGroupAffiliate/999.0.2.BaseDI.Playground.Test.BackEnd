@@ -29,10 +29,10 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
         //#region 1. Assign
 
         //SETTINGS
-        private _storedAppSettings: any;
+        private _storedProcessRequestSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientOrServerInstance: any;
+        private _storedProcessRequestTracker: any;
 
         private _storedClientRequestByName: string;
         private _storedClientRequestByNameParameters: string;
@@ -43,11 +43,11 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
         private _storedServerInstanceInfo: any;
 
         //DATASET
-        private _storedStorylineDetails: object = new Object();
-        private _storedStorylineDetails_Parameters: object = new Object();
+        private _storedProcessRequestDataStorylineDetails: object = new Object();
+        private _storedProcessRequestDataStorylineDetails_Parameters: object = new Object();
 
         //MISC
-        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+        private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
         private _storedActionName: string = "";
@@ -77,27 +77,27 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
             //#region MEMORIZE action name
 
-            this._storedActionName = this._storedClientOrServerInstance["storedActionName"];
+            this._storedActionName = this._storedProcessRequestTracker["storedActionName"];
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
             //#region MEMORIZE centralized processes handlers
 
-            this._storedCentralizedDisturber = parameterInputs.Parameters.getValue("parameterCentralizedDisturber");
-            this._storedCentralizedSensor = parameterInputs.Parameters.getValue("parameterCentralizedSensor");
-            this._storedCentralizedStorer = parameterInputs.Parameters.getValue("parameterCentralizedStorer");
+            this._storedCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            this._storedCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            this._storedCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
 
             //#endregion
 
@@ -109,27 +109,27 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
             //#region MEMORIZE storyline details
 
-            this._storedStorylineDetails = parameterInputs.Parameters.getValue("parameterStorylineDetails");
-            this._storedStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterStorylineDetails_Parameters");
+            this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails;");
+            this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails;_Parameters");
 
             //#endregion
 
             //#region MEMORIZE extra data
 
-            this._storedExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
 
             //#endregion
 
             //#region MEMORIZE request details
 
-            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterClientRequestByName");
-            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
+            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestDataCacheKey");
             this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
 
             this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
@@ -172,7 +172,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
@@ -228,17 +228,17 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE ? this._storedAppSettings.APP_SETTING_DEVELOPER_MODE : false;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONVERTING json to html");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this._storedClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this._storedClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 -> Page_1_5_Process_StorySetting_12_3_1_0.cs");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONVERTING json to html");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0 -> Page_1_5_Process_StorySetting_12_3_1_0.cs");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
 
             //OPTIONAL
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
@@ -257,10 +257,10 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
             let storedObservationDataTemplateBuilder = "";
 
-            storedParameterInputs.Parameters.setValue("parameter3WordDescription", "RENDER web page");
-            storedParameterInputs.Parameters.setValue("parameterActionName", this._storedActionName);
-            storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-            storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
+            storedParameterInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "RENDER web page");
+            storedParameterInputs.Parameters.setValue("parameterInputRequestActionName", this._storedActionName);
+            storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+            storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedParameterInputs.Parameters.setValue("parameterObservationFileName", "Page_1_5_Process_StorySetting_12_3_1_0.cs");
             storedParameterInputs.Parameters.setValue("parameterObservationMethodName", "Action");
             storedParameterInputs.Parameters.setValue("parameterObservationPresentationTemplate", storedObservationPresentationTemplateItem);
@@ -286,7 +286,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
             //#region MEMORIZE storyline details
 
-            let storedStorylineDetails: any = this._storedStorylineDetails;
+            let storedProcessRequestDataStorylineDetails: any = this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -305,9 +305,9 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                 try {
                     const ExecuteConversionRequest = async () : Promise<string> => {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer");
                         storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
@@ -316,10 +316,10 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                         storedParameterInputs.Parameters.setValue("parameterHtmlContainerJSON", storedHtmlContainerJSON);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterMasterStorer", this._storedCentralizedStorer);
-                        storedParameterInputs.Parameters.setValue("parameterStorylineDetails", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails;", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedParameterInputs);
 
@@ -340,9 +340,9 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                     const ExecuteConversionRequest = async (): Promise<string> =>
                     {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows");
                         storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
@@ -352,10 +352,10 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                         storedParameterInputs.Parameters.setValue("parameterHtmlRowsJSON", storedHtmlRowsJSON);
                         storedParameterInputs.Parameters.setValue("parameterHtmlContainerString", storedHtmlResultString);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterMasterStorer", this._storedCentralizedStorer);
-                        storedParameterInputs.Parameters.setValue("parameterStorylineDetails", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails;", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedParameterInputs);
 
@@ -376,9 +376,9 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                 try {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns");
                         storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
@@ -388,10 +388,10 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                         storedParameterInputs.Parameters.setValue("parameterHtmlColumnsJSON", storedHtmlColumnsJSON);
                         storedParameterInputs.Parameters.setValue("parameterHtmlRowString", storedHtmlResultString);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterMasterStorer", this._storedCentralizedStorer);
-                        storedParameterInputs.Parameters.setValue("parameterStorylineDetails", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails;", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedParameterInputs);
 
@@ -412,9 +412,9 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                 try {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent");
                         storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
@@ -424,10 +424,10 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                         storedParameterInputs.Parameters.setValue("parameterHtmlContentJSON", storedHtmlContentJSON);
                         storedParameterInputs.Parameters.setValue("parameterHtmlColumnString", storedHtmlResultString);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterMasterStorer", this._storedCentralizedStorer);
-                        storedParameterInputs.Parameters.setValue("parameterStorylineDetails", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails;", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedParameterInputs);
 
@@ -448,9 +448,9 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                 try {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
                         storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS");
                         storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
@@ -461,10 +461,10 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                         storedParameterInputs.Parameters.setValue("parameterHtmlStylesJSON", storedHtmlStylesJSON);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterMasterStorer", this._storedCentralizedStorer);
-                        storedParameterInputs.Parameters.setValue("parameterStorylineDetails", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails;", storedProcessRequestDataStorylineDetails);
 
                         return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedParameterInputs);
                     };
@@ -511,7 +511,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                 //#region 8. OUTPUT html string
 
                 try {
-                    const ExecuteOutputRequest = async (): Promise<string> => {
+                    const ExecuteOutputResponse = async (): Promise<string> => {
                         storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                         storedParameterInputs.Parameters.setValue("parameterHtmlMetaData", "");
                         storedParameterInputs.Parameters.setValue("parameterHtmlTitle", "");
@@ -519,15 +519,15 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                         storedParameterInputs.Parameters.setValue("parameterHtmlStyles", storedHtmlResultInlineStylesString);
                         storedParameterInputs.Parameters.setValue("parameterHtmlAdditionalHeadData", "");
                         storedParameterInputs.Parameters.setValue("parameterHtmlBody", storedHtmlResultString);
-                        storedParameterInputs.Parameters.setValue("parameterClientOrServerInstance", this._storedClientOrServerInstance);
-                        storedParameterInputs.Parameters.setValue("parameterAppSettings", this._storedAppSettings);
-                        storedParameterInputs.Parameters.setValue("parameterMasterStorer", this._storedCentralizedStorer);
-                        storedParameterInputs.Parameters.setValue("parameterStorylineDetails", storedStorylineDetails);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedParameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails;", storedProcessRequestDataStorylineDetails);
 
                         return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedParameterInputs);
                     };
 
-                    storedHtmlResultString = await ExecuteOutputRequest();
+                    storedHtmlResultString = await ExecuteOutputResponse();
                 }
                 catch (mistake)
                 {
@@ -539,7 +539,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
                 //#region 9. STORE html string
 
                 try {
-                    const ExecuteOutputRequest = async () =>
+                    const ExecuteOutputResponse = async () =>
                     {
                         storedObservationItem = storedObservationItem.replace("'", "\"");
                         storedObservationItem = storedObservationItem.replace("{htmlResult}", escape(storedHtmlResultString));
@@ -548,11 +548,11 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
                         //#region USE existing output observation item
 
-                        storedStorylineDetails.outputs[1].baseDIObservations.map(storedObservation => {
+                        storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.map(storedObservation => {
                             if (Object.keys(storedObservation).length > 0 && Object.keys(storedObservation)[0].toUpperCase() == storedStorageKey.toUpperCase()) {
-                                storedStorylineDetails.outputs[1].baseDIObservations[storedStorageCounter][storedStorageKey] = JSON.parse(storedOutput.toString());
+                                storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations[storedStorageCounter][storedStorageKey] = JSON.parse(storedOutput.toString());
 
-                                this.StorylineDetails = storedStorylineDetails;
+                                this.StorylineDetails = storedProcessRequestDataStorylineDetails;
 
                                 storedStorageUpdateMode = true;
 
@@ -566,14 +566,14 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
                         //#region USE new output observation item
                         if (!storedStorageUpdateMode) {
-                            storedStorylineDetails.outputs[1].baseDIObservations.push(storedStorageDictionary);
+                            storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.push(storedStorageDictionary);
                         }
                         //#endregion
 
-                        return storedStorylineDetails;
+                        return storedProcessRequestDataStorylineDetails;
                     };
 
-                    this.StorylineDetails = await ExecuteOutputRequest();
+                    this.StorylineDetails = await ExecuteOutputResponse();
                 }
                 catch (mistake)
                 {
@@ -588,13 +588,13 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
             {
                 //#region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode) {
-                    this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+                if (storedProcessRequestDeveloperMode) {
+                    this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED converting json to html");
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this._storedClientOrServerInstance["processStepNumber"]);
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to html");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["processStepNumber"]);
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
                     storedDeveloperLoggingInputs.Parameters.setValue("parameterMistake", mistake);
 
                     await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);

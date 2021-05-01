@@ -20,23 +20,23 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
     export class Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 {
         //SETTINGS
-        private static _storedAppSettings: any = null;
+        private static _storedProcessRequestSettings: any = null;
 
         //CLIENT/SERVER
-        private static _storedClientOrServerInstance: any;
+        private static _storedProcessRequestTracker: any;
 
         //EXCEPTIONS
-        private static _storedExceptionDetails: any = null;
+        private static _storedProcessRequestMistake: any = null;
 
         //MISC
-        private static _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
+        private static _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
 
         //PLUMBING
-        private static _storedDeveloperExceptionConsoleLogTemplate: string = "***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static _storedOutputResponseMistakeTemplate: string = "***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
-        private static _storedDeveloperStepConsoleLogTemplate: string = "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-        private static _storedDeveloperStepConsoleLogTemplate_Idented: string = "  STEP {storedStepNumberReplace}: {stored3WordDescription}\n     {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
-        private static _storedDeveloperStepConsoleLogTemplate_Idented_Twice: string = "     STEP {storedStepNumberReplace}: {stored3WordDescription}\n        {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+        private static _storedOutputResponseStepTemplate: string = "STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseStepTemplate_Idented: string = "  STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseStepTemplate_Idented_Twice: string = "     STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
         constructor() {
             //#region 1. INPUTS
@@ -56,7 +56,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
         public static async Step_X_X_Framework_Control_DeveloperException_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> {
             console.log("GOT EXCEPTION");
-            console.log(parameterInputs.Parameters["storedMistakes"]);
+            console.log(parameterInputs.Parameters["storedProcessRequestMistakes"]);
 
             return null;
         }
@@ -72,13 +72,13 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                 //#region DEFINE process checkpoint
 
-                let storedProcessCheckPointHit: boolean = false;
+                let storedProcessRequestMistakeMade: boolean = false;
 
                 //#endregion
 
                 //#region DEFINE stored message
 
-                let storedMessage: string = "";
+                let storedOutputResponseMessage: string = "";
 
                 //#endregion
 
@@ -92,69 +92,69 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
                     if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
 
-                    if (!parameterInputs.Parameters.containsKey("parameter3WordDescription")) {
-                        console.log(parameterInputs.Parameters.getValue("parameterFileName"));
-                        console.log(parameterInputs.Parameters.getValue("parameterMethodName"))
-                        storedMessage += "***parameter3WordDescription*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequest3WordDescription")) {
+                        console.log(parameterInputs.Parameters.getValue("parameterProcessRequestFileName"));
+                        console.log(parameterInputs.Parameters.getValue("parameterProcessRequestMethodName"))
+                        storedOutputResponseMessage += "***parameterProcessRequest3WordDescription*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterActionName")) {
-                        storedMessage += "***parameterActionName*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestActionName")) {
+                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterAppSettings")) {
-                        storedMessage += "***parameterAppSettings*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterClientOrServerInstance")) {
-                        storedMessage += "***parameterClientOrServerInstance*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
                     else {
-                        if (parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == null || parameterInputs.Parameters.getValue("parameterClientOrServerInstance")["storedAppSettings"] == undefined) {
-                            storedMessage += "***parameterClientOrServerInstance*** must contain a key of ***storedAppSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
-                            storedProcessCheckPointHit = true;
+                        if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null || parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == undefined) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterFileName")) {
-                        storedMessage += "***parameterFileName*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestFileName")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestFileName*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterMasterStorer")) {
-                        storedMessage += "***parameterMasterStorer*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestMasterStorer")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterMessageType")) {
-                        storedMessage += "***parameterMessageType*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseMessageType")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseMessageType*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterMethodName")) {
-                        storedMessage += "***parameterMethodName*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestMethodName")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestMethodName*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterStepNumberReplace")) {
-                        storedMessage += "***parameterStepNumberReplace*** cannot be blank or empty.\n"
-                        storedProcessCheckPointHit = true;
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestStepNumberReplace")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestStepNumberReplace*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
                     }
 
 
-                    if (storedProcessCheckPointHit) {
+                    if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE exception handler
 
-                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedMessage);
+                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedOutputResponseMessage);
 
                         //#endregion
                     }
@@ -207,33 +207,33 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             //#region DEFINE stored message
 
-            let storedMessage: string = "";
+            let storedOutputResponseMessage: string = "";
 
             //#endregion
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["parameterAppSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["parameterProcessRequestSettings"];
 
             //#endregion
 
             //#region MEMORIZE developer mode
 
-            let stored3WordDescription: string = parameterInputs.Parameters.getValue("parameter3WordDescription");
-            let storedActionName: string = parameterInputs.Parameters.getValue("parameterActionName");
-            let storedAppSettings: any = parameterInputs.Parameters.getValue("parameterAppSettings");
-            let storedClientOrServerInstance: any = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
-            let storedFileName: string = parameterInputs.Parameters.getValue("parameterFileName");
-            let storedMethodName: string = parameterInputs.Parameters.getValue("parameterMethodName");
-            let storedStepNumberReplace: number = parameterInputs.Parameters.getValue("parameterStepNumberReplace");
+            let stored3WordDescription: string = parameterInputs.Parameters.getValue("parameterProcessRequest3WordDescription");
+            let storedActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+            let storedProcessRequestSettings: any = parameterInputs.Parameters.getValue("parameterProcessRequestSettings");
+            let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+            let storedFileName: string = parameterInputs.Parameters.getValue("parameterProcessRequestFileName");
+            let storedMethodName: string = parameterInputs.Parameters.getValue("parameterProcessRequestMethodName");
+            let storedStepNumberReplace: number = parameterInputs.Parameters.getValue("parameterProcessRequestStepNumberReplace");
 
-            let storedMessageType: string = (parameterInputs.Parameters.getValue("parameterMessageType") != undefined ? parameterInputs.Parameters.getValue("parameterMessageType") : "LOGGING");
+            let storedOutputResponseMessageType: string = (parameterInputs.Parameters.getValue("parameterOutputResponseMessageType") != undefined ? parameterInputs.Parameters.getValue("parameterOutputResponseMessageType") : "LOGGING");
 
             if (parameterInputs.Parameters.getValue("parameterOPTIONALAccountingCostType") != undefined)
                 storedOPTIONALAccountingCostType = parameterInputs.Parameters.getValue("parameterOPTIONALAccountingCostType");
@@ -254,7 +254,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             //#region MEMORIZE master storer
 
-            let storedMasterStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterMasterStorer");
+            let storedMasterStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
 
             //#endregion
 
@@ -268,26 +268,26 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                 //#region IDEAL CASE - USE developer logger
 
-                const ExecuteOutputRequest = async (): Promise<boolean> => {
+                const ExecuteOutputResponse = async (): Promise<boolean> => {
                     //#region 1A. SETUP logging output
-                    if (storedMessageType.toUpperCase() == "LOGGING") {
+                    if (storedOutputResponseMessageType.toUpperCase() == "LOGGING") {
                         if (storedOPTIONALBeginOfProcess || storedOPTIONALEndOfProcess) {
-                            storedMessage = this._storedDeveloperStepConsoleLogTemplate; // "STEP {storedStepNumberReplace}: {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+                            storedOutputResponseMessage = this._storedOutputResponseStepTemplate; // "STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
                         }
                         else {
                             if (storedOPTIONALAccountingCostType) {
-                                storedMessage = this._storedDeveloperStepConsoleLogTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                                storedOutputResponseMessage = this._storedOutputResponseStepTemplate_Idented_Twice; // "   STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";      
                             }
                             else {
-                                storedMessage = this._storedDeveloperStepConsoleLogTemplate_Idented; // "   STEP {storedStepNumberReplace}: {stored3WordDescription}\n      {storedActionName} -> {storedFileName} -> {storedMethodName}\n";      
+                                storedOutputResponseMessage = this._storedOutputResponseStepTemplate_Idented; // "   STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";      
                             }
                         }
                     }
                     //#endregion
 
                     //#region 1B. SETUP exception output
-                    if (storedMessageType.toUpperCase() == "MISTAKE") {
-                        storedMessage = this._storedDeveloperExceptionConsoleLogTemplate; // ***LEAKY PIPE*** {stored3WordDescription}\n  {storedActionName} -> {storedFileName} -> {storedMethodName}\n";
+                    if (storedOutputResponseMessageType.toUpperCase() == "MISTAKE") {
+                        storedOutputResponseMessage = this._storedOutputResponseMistakeTemplate; // ***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
                         storedMistake = true;
                     }
@@ -295,11 +295,11 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                     //#region 2. SETUP default message
 
-                    storedMessage = storedMessage.replace("{storedStepNumberReplace}", storedStepNumberReplace.toString());
-                    storedMessage = storedMessage.replace("{stored3WordDescription}", (storedOPTIONALAccountingCostType != "") ? "[" + storedOPTIONALAccountingCostType.toUpperCase() + " COST] - " + stored3WordDescription : "[ZERO COST] - " + stored3WordDescription);
-                    storedMessage = storedMessage.replace("{storedActionName}", storedActionName);
-                    storedMessage = storedMessage.replace("{storedFileName}", storedFileName);
-                    storedMessage = storedMessage.replace("{storedMethodName}", storedMethodName);
+                    storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedStepNumberReplace}", storedStepNumberReplace.toString());
+                    storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequest3WordDescription}", (storedOPTIONALAccountingCostType != "") ? "[" + storedOPTIONALAccountingCostType.toUpperCase() + " COST] - " + stored3WordDescription : "[ZERO COST] - " + stored3WordDescription);
+                    storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedInputRequestActionName}", storedActionName);
+                    storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequestFileName}", storedFileName);
+                    storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequestMethodName}", storedMethodName);
 
                     //#endregion
 
@@ -307,7 +307,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         //#region 3A. OUPUT client message
                         if (process.env.APP_ENV.toUpperCase() == "CLIENT") {
                             if (storedMistake) {
-                                console.log("%c" + storedMessage, "color:" + "Orange");
+                                console.log("%c" + storedOutputResponseMessage, "color:" + "Orange");
 
                                 return;
                             }
@@ -317,30 +317,30 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                                 console.log("%c" + "NEW REQUEST - " + storedActionName.toUpperCase(), "color:" + "#94f500");
                                 console.log("%c" + "------------------------------------------------------------------------------------------------------------------------------\n", "color:" + "#94f500");
 
-                                console.log("%c" + storedMessage, "color:" + "#94f500");
+                                console.log("%c" + storedOutputResponseMessage, "color:" + "#94f500");
 
                                 return;
                             }
 
                             if (storedOPTIONALMiddleOfProcess == true) {
-                                console.log("%c" + storedMessage, "color:" + "#00FFFF");
+                                console.log("%c" + storedOutputResponseMessage, "color:" + "#00FFFF");
 
                                 return;
                             }
 
                             if (storedOPTIONALAccountingCostType != "") {
-                                console.log("%c" + storedMessage, "color:" + "Yellow");
+                                console.log("%c" + storedOutputResponseMessage, "color:" + "Yellow");
 
                                 return;
                             }
 
                             if (storedOPTIONALEndOfProcess == true) {
-                                console.log("%c" + storedMessage, "color:" + "#ff0e11");
+                                console.log("%c" + storedOutputResponseMessage, "color:" + "#ff0e11");
 
                                 return;
                             }
                             else {
-                                console.log("%c" + storedMessage, "color:" + "#D3D3D3");
+                                console.log("%c" + storedOutputResponseMessage, "color:" + "#D3D3D3");
                             }
                         }
                         //#endregion
@@ -348,7 +348,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         //#region 3B. OUPUT server message
                         if (process.env.APP_ENV.toUpperCase() == "SERVER") {
                             if (storedMistake) {
-                                console.log(_3rdParty_Chalk_ConsoleColorChanger.underline.magentaBright(storedMessage));
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.underline.magentaBright(storedOutputResponseMessage));
 
                                 return;
                             }
@@ -358,35 +358,35 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                                 console.log(_3rdParty_Chalk_ConsoleColorChanger.greenBright("NEW REQUEST - " + storedActionName.toUpperCase()));
                                 console.log(_3rdParty_Chalk_ConsoleColorChanger.greenBright("------------------------------------------------------------------------------------------------------------------------------\n"));
 
-                                console.log(_3rdParty_Chalk_ConsoleColorChanger.greenBright(storedMessage));
-                                //console.log('\x1b[32m', storedMessage, '\x1b[0m'); //GREEN
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.greenBright(storedOutputResponseMessage));
+                                //console.log('\x1b[32m', storedOutputResponseMessage, '\x1b[0m'); //GREEN
 
                                 return;
                             }
 
                             if (storedOPTIONALMiddleOfProcess == true) {
-                                console.log(_3rdParty_Chalk_ConsoleColorChanger.cyanBright(storedMessage));
-                                //console.log('\x1b[34m', storedMessage); //BLUE
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.cyanBright(storedOutputResponseMessage));
+                                //console.log('\x1b[34m', storedOutputResponseMessage); //BLUE
 
                                 return;
                             }
 
                             if (storedOPTIONALAccountingCostType != "") {
-                                console.log(_3rdParty_Chalk_ConsoleColorChanger.yellowBright(storedMessage));
-                                //console.log("%c" + storedMessage, "color:" + "Yellow"); //YELLOW
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.yellowBright(storedOutputResponseMessage));
+                                //console.log("%c" + storedOutputResponseMessage, "color:" + "Yellow"); //YELLOW
 
                                 return;
                             }
 
                             if (storedOPTIONALEndOfProcess == true) {
-                                console.log(_3rdParty_Chalk_ConsoleColorChanger.redBright(storedMessage));
-                                //console.log("%c" + storedMessage, "color:" + "#ff0e11"); //RED
+                                console.log(_3rdParty_Chalk_ConsoleColorChanger.redBright(storedOutputResponseMessage));
+                                //console.log("%c" + storedOutputResponseMessage, "color:" + "#ff0e11"); //RED
 
                                 return;
                             }
                             else {
-                                console.log(storedMessage);
-                                //console.log('\x1b[37m', storedMessage);  //WHITE
+                                console.log(storedOutputResponseMessage);
+                                //console.log('\x1b[37m', storedOutputResponseMessage);  //WHITE
                             }
                         }
                         //#endregion
@@ -395,7 +395,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                     return true;
                 }
 
-                await ExecuteOutputRequest();
+                await ExecuteOutputResponse();
 
                 //#endregion    
 

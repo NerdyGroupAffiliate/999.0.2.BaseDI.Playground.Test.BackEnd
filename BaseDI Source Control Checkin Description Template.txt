@@ -1,0 +1,51 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//PROGRAMING related task
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+	****************************************************************************************************
+	FEATURES
+	****************************************************************************************************
+
+	****************************************************************************************************
+	BUGS
+	****************************************************************************************************
+		Task 18-3-1-1_PXXX_BDI_G12 - [Mark Richardson] - PROGRAMMING - OUTPUT conversion fix - update {replaceWithFeatureDescription} code to {replaceWithReason}
+		Task 18-4-1-1_PXXX_BDI_G12 - [Mark Richardson] - PROGRAMMING - OUTPUT storage fix - update {replaceWithFeatureDescription} code to {replaceWithReason}
+		Task 18-7-1-1_PXXX_BDI_G12 - [Mark Richardson] - PROGRAMMING - OUTPUT transport fix - update {replaceWithFeatureDescription} code to {replaceWithReason}
+		Task 18-8-1-1_PXXX_BDI_G12 - [Mark Richardson] - PROGRAMMING - OUTPUT input fix - update {replaceWithFeatureDescription} code to {replaceWithReason}
+		Task 18-9-1-1_PXXX_BDI_G12 - [Mark Richardson] - PROGRAMMING - OUTPUT output fix - update {replaceWithFeatureDescription} code to {replaceWithReason}
+
+	****************************************************************************************************
+	ENHANCEMENTS
+	****************************************************************************************************
+		Task 18-10-1-1_PXXX_BDI_G12 - [Mark Richardson] - PROGRAMMING - OUTPUT plumbing enhancement - update code to better follow baseDI standards
+
+	****************************************************************************************************
+	DEPLOYMENTS
+	****************************************************************************************************
+		Task 18-11-1-1 - [Mark Richardson] - PROGRAMMING - OUTPUT code rollback - reverting {replaceWithFeatureDescription} code because {replaceWithReason} 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//DESIGN related task
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	****************************************************************************************************
+	WEB DESIGN
+	****************************************************************************************************
+	Task X-X-1-1_PXXX_AJC_GX - [Mark Richardson] - VISUAL GRAPHIC ARTS - OUPUT graphics file - create SCREEN BOOK COVER file for {replaceWithReason}
+	Task X-X-1-2_PXXX_AJC_GX - [Mark Richardson] - VISUAL GRAPHIC ARTS - OUPUT graphics file - create SCREEN BOOK TOC file for {replaceWithReason}
+	Task X-X-1-3_PXXX_AJC_GX - [Mark Richardson] - VISUAL GRAPHIC ARTS - OUPUT graphics file - create SCREEN DESIGN STYLE CHEATSHEET file for {replaceWithReason}
+	Task X-X-1-4_PXXX_AJC_GX - [Mark Richardson] - VISUAL GRAPHIC ARTS - OUPUT graphics file - create SCREEN DESIGN SOURCE file for {replaceWithReason}
+	Task X-X-1-5_PXXX_AJC_GX - [Mark Richardson] - VISUAL GRAPHIC ARTS - OUPUT graphics file - create SCREEN DESIGN MANIFEST file for {replaceWithReason}
+	Task X-X-1-6_PXXX_AJC_GX - [Mark Richardson] - VISUAL GRAPHIC ARTS - OUPUT graphics file - create SCREEN BACKGROUND file for {replaceWithReason}
+	Task X-X-1-7_PXXX_AJC_GX - [Mark Richardson] - VISUAL GRAPHIC ARTS - OUPUT graphics file - create SCREEN ELEMENTS file for {replaceWithReason}
+	Task X-X-1-8_PXXX_AJC_GX - [Mark Richardson] - VISUAL GRAPHIC ARTS - STORE graphics files - create SOURCE CONTROL checkin for {replaceWithReason}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//PRODUCTIVITY related task
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Task 66 - [Mir Akrash] - PRODUCTIVITY - OUTPUT diagram file - create accounting & split test diagrams

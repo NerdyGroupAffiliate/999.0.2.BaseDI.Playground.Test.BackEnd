@@ -31,22 +31,22 @@ export class ClassModel
     //#region 1. Assign
 
     //SETTINGS
-    private _storedAppSettings: any;
+    private _storedProcessRequestSettings: any;
 
     //CLIENT/SERVER
-    private _storedClientOrServerInstance: any;
+    private _storedProcessRequestTracker: any;
 
     //DATASETS
-    private _storedStorylineDetails: any;
-    private _storedStorylineDetails_Parameters: any;
+    private _storedProcessRequestDataStorylineDetails: any;
+    private _storedProcessRequestDataStorylineDetails_Parameters: any;
 
     private _stored_Repository: any;
 
     //MISC
-    private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+    private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
     //PLUMBING
-    private _stored_CentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+    private _storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
     private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
     private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
@@ -65,15 +65,15 @@ export class ClassModel
 
         //#region MEMORIZE clientOrServer instance
 
-        //this._storedClientOrServerInstance = parameterClientORserverInstance;
+        //this._storedProcessRequestTracker = parameterProcessRequestTracker;
 
         //#endregion
 
         //#region MEMORIZE centralized processes
 
-        //this._stored_CentralizedDisturber = parameterCentralizedDisturber;
-        //this._stored_CentralizedSensor = parameterCentralizedSensor;
-        //this._stored_CentralizedStorer = parameterCentralizedStorer;
+        //this._stored_CentralizedDisturber = parameterProcessRequestCentralizedDisturber;
+        //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+        //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
 
         //#endregion
 
@@ -91,14 +91,14 @@ export class ClassModel
 
         //#region MEMORIZE extra data
 
-        //this._storedExtraData = parameterExtraData;
+        //this._storedProcessRequestExtraData = parameterExtraData;
 
         //#endregion
 
         //#region MEMORIZE storyline details
 
-        //this._storedStorylineDetails = parameterStorylineDetails;
-        //this._storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+        //this._storedProcessRequestDataStorylineDetails = parameterProcessRequestDataStorylineDetails;;
+        //this._storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
         //#endregion
 
@@ -195,7 +195,7 @@ export class ClassModel
 
         //#region DEFINE process checkpoint
 
-        let storedProcessCheckPointHit: boolean = false;
+        let storedProcessRequestMistakeMade: boolean = false;
 
          //#endregion
 
@@ -207,59 +207,59 @@ export class ClassModel
 
         //#region DEFINE stored message
 
-        let storedMessage: string = "";
+        let storedOutputResponseMessage: string = "";
 
         //#endregion
 
         //#region DEFINE storyline details
 
-        //let storedStorylineDetails:Object = null;
-        //let storedStorylineDetails_Parameters:Object = null;
+        //let storedProcessRequestDataStorylineDetails:Object = null;
+        //let storedProcessRequestDataStorylineDetails_Parameters:Object = null;
 
         //#endregion
 
         //#region MEMORIZE action name
 
-        //let storedActionName: string = parameterClientORserverInstance["storedActionName"] as string;
+        //let storedActionName: string = parameterProcessRequestTracker["storedActionName"] as string;
 
         //#endregion
 
         //#region MEMORIZE app settings
 
-        //this._storedAppSettings = parameterClientORserverInstance["storedAppSettings"];
+        //this._storedProcessRequestSettings = parameterProcessRequestTracker["storedProcessRequestSettings"];
 
         //#endregion
 
         //#region MEMORIZE extra data
 
         //if (parameterExtraData != null)
-        //    this._storedExtraData = parameterExtraData;
+        //    this._storedProcessRequestExtraData = parameterExtraData;
 
-        //stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("parametersInputs", parameterInputs);
-        //stored_CentralizedStorer.ExtraData.KeyValuePairs.setValue("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
+        //storedProcessRequestCentralizedStorer.ExtraData.KeyValuePairs.setValue("parametersInputs", parameterInputs);
+        //storedProcessRequestCentralizedStorer.ExtraData.KeyValuePairs.setValue("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
 
 
         //#endregion
 
         //#region MEMORIZE developer mode
 
-        let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+        let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-        //if (parameterClientOrServerInstance["processStepNumber"] == null)
-        //    parameterClientOrServerInstance["processStepNumber"] = 0;
+        //if (parameterProcessRequestTracker["processStepNumber"] == null)
+        //    parameterProcessRequestTracker["processStepNumber"] = 0;
 
         //let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
         //REQUIRED
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "RETRIEVING cached dataset");
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "SetupStoryline");
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "RETRIEVING cached dataset");
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedActionName"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this.ClientOrServerInstance["storedProcessRequestSettings"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this.ClientOrServerInstance);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "SetupStoryline");
 
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
         
 
         //OPTIONAL
@@ -281,7 +281,7 @@ export class ClassModel
         //#region MEMORIZE request resolver
 
         let stored_DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = null;
-        //let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterClientORserverInstance, parameterStorylineDetails, parameterStorylineDetails_Parameters, _storedClientRequestByObject, _storedExtraData, parameterSystemRequestByName, parameterClientRequestByName, parameterClientRequestByNameParameters);
+        //let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterProcessRequestTracker, parameterProcessRequestDataStorylineDetails;, parameterProcessRequestDataStorylineDetails;_Parameters, _storedClientRequestByObject, _storedProcessRequestExtraData, parameterSystemRequestByName, parameterInputRequestName, parameterInputRequestDataCacheKey);
 
         //#endregion
 
@@ -293,14 +293,14 @@ export class ClassModel
 
         //#region MEMORIZE storyline details
 
-        //let storedStorylineDetails: any = parameterInputs.Parameters.getValue("parameterStorylineDetails");
-            //storedStorylineDetails_Parameters = parameterStorylineDetails_Parameters;
+        //let storedProcessRequestDataStorylineDetails: any = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails;");
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
 
         //#endregion
 
         //#region MEMORIZE json filter
         //storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-        //storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+        //storedParameterInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
         //storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
         //storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment");
         //storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
@@ -317,21 +317,21 @@ export class ClassModel
 
         //#region EDGE CASE - USE developer logger
 
-        if (storedDeveloperMode)
+        if (storedProcessRequestDeveloperMode)
         {
-            this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+            this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-            console.log("STEP " + this._storedClientOrServerInstance["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
+            console.log("STEP " + this._storedProcessRequestTracker["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
         }
 
         //#endregion
 
         //#region EDGE CASE - USE developer logger
 
-        if (storedDeveloperMode) {
-            this._storedClientOrServerInstance["processStepNumber"] = this._storedClientOrServerInstance["processStepNumber"] + 1;
+        if (storedProcessRequestDeveloperMode) {
+            this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
 
-            console.log("STEP " + this._storedClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** FAILED configurating request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
+            console.log("STEP " + this._storedProcessRequestTracker["processStepNumber"] + ": ***LEAKY PIPE*** FAILED configurating request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
         }
 
         //#endregion

@@ -78,10 +78,10 @@ export namespace BaseDI.Professional.State.Programming_2 {
         //#region 1. Assign
 
         //SETTINGS
-        private _storedAppSettings: any;
+        private _storedProcessRequestSettings: any;
 
         //CLIENT/SERVER
-        private _storedClientOrServerInstance: any;
+        private _storedProcessRequestTracker: any;
 
         private _storedClientRequestByName: string;
         private _storedClientRequestByNameParameters: string;
@@ -92,11 +92,11 @@ export namespace BaseDI.Professional.State.Programming_2 {
         private _storedServerInstanceInfo: any;
 
         //DATASET
-        private _storedStorylineDetails: object = new Object();
-        private _storedStorylineDetails_Parameters: object = new Object();
+        private _storedProcessRequestDataStorylineDetails: object = new Object();
+        private _storedProcessRequestDataStorylineDetails_Parameters: object = new Object();
 
         //MISC
-        private _storedExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+        private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
         private _storedActionName: string = "";
@@ -127,27 +127,27 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE clientOrServer instance
 
-            this._storedClientOrServerInstance = parameterInputs.Parameters.getValue("parameterClientOrServerInstance");
+            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
             //#region MEMORIZE action name
 
-            this._storedActionName = this._storedClientOrServerInstance["storedActionName"];
+            this._storedActionName = this._storedProcessRequestTracker["storedActionName"];
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this._storedClientOrServerInstance["storedAppSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
             //#region MEMORIZE centralized processes handlers
 
-            this._storedCentralizedDisturber = parameterInputs.Parameters.getValue("parameterCentralizedDisturber");
-            this._storedCentralizedSensor = parameterInputs.Parameters.getValue("parameterCentralizedSensor");
-            this._storedCentralizedStorer = parameterInputs.Parameters.getValue("parameterCentralizedStorer");
+            this._storedCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            this._storedCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            this._storedCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
 
             //#endregion
 
@@ -159,27 +159,27 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
             //#region MEMORIZE storyline details
 
-            this._storedStorylineDetails = parameterInputs.Parameters.getValue("parameterStorylineDetails");
-            this._storedStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterStorylineDetails_Parameters");
+            this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails;");
+            this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails;_Parameters");
 
             //#endregion
 
             //#region MEMORIZE extra data
 
-            this._storedExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
 
             //#endregion
 
             //#region MEMORIZE request details
 
-            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterClientRequestByName");
-            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterClientRequestByNameParameters");
+            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestDataCacheKey");
             this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
 
             this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
@@ -233,7 +233,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
@@ -279,7 +279,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -305,17 +305,17 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Factory_Action_1_Begin_Process -> Factory_Action_5_Process_StorySetting");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Factory_Action_1_Begin_Process -> Factory_Action_5_Process_StorySetting");
 
             //#endregion
 
@@ -376,24 +376,24 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region DEFINE process checkpoint
 
-            let storedProcessCheckPointHit: boolean = false;
+            let storedProcessRequestMistakeMade: boolean = false;
 
             //#endregion
 
             //#region DEFINE storyline details
 
-            let storedStorylineDetails: Object = null;
+            let storedProcessRequestDataStorylineDetails: Object = null;
 
-            let storedStorylineDetailsFiltered: Object = null;
-            let storedStorylineDetailsFilteredResult: Object = null;
+            let storedProcessRequestDataStorylineDetailsFiltered: Object = null;
+            let storedProcessRequestDataStorylineDetailsFilteredResult: Object = null;
 
-            let storedStorylineDetails_Parameters: Object = null;
+            let storedProcessRequestDataStorylineDetails_Parameters: Object = null;
 
             //#endregion
 
             //#region MEMORIZE app settings
 
-            this._storedAppSettings = this.ClientOrServerInstance["storedAppSettings"];
+            this._storedProcessRequestSettings = this.ClientOrServerInstance["storedProcessRequestSettings"];
 
             //#endregion
 
@@ -405,17 +405,17 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "SUCCESSFULLY used cache");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", this.ClientOrServerInstance["storedActionName"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", this.ClientOrServerInstance["storedAppSettings"]);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", this.ClientOrServerInstance);
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action_8_Process_CRUD");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY used cache");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this.ClientOrServerInstance["storedProcessRequestSettings"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this.ClientOrServerInstance);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0.ts");
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_8_Process_CRUD");
 
             //OPTIONAL
             storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
@@ -444,31 +444,31 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 try {
                     switch (storedRequestName.toUpperCase()) {
                         //case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0":
-                        //    storedStorylineDetails = state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0;
+                        //    storedProcessRequestDataStorylineDetails = state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0;
 
                         //    switch (storedRequestNameParameters.toUpperCase())
                         //    {
                         //        case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0-P1_4_1_1":
-                        //            storedStorylineDetails_Parameters = state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0_p1_4_1_1;
+                        //            storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0_p1_4_1_1;
                         //            break;
                         //    }
-                        //    storedProcessCheckPointHit = true;
+                        //    storedProcessRequestMistakeMade = true;
 
                         //    break;
                     }
 
                     //#region EDGE CASE - USE developer logger
 
-                    //if (storedProcessCheckPointHit == true) {
-                    //    if (storedDeveloperMode) {
+                    //if (storedProcessRequestMistakeMade == true) {
+                    //    if (storedProcessRequestDeveloperMode) {
                     //this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    //storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                    //storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                    //storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                    //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                     //Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     //    }
-                    // storedProcessCheckPointHit = false;
+                    // storedProcessRequestMistakeMade = false;
 
                     //}
 
@@ -477,12 +477,12 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 }
                 catch (mistake) {
                     //#region EDGE CASE - USE developer logger
-                    if (storedDeveloperMode) {
+                    if (storedProcessRequestDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED reading cached data");
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED reading cached data");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -502,32 +502,32 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 try {
                     switch (storedRequestName.toUpperCase()) {
                         case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
-                            storedStorylineDetails = state_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
                     }
 
                     //#region EDGE CASE - USE developer logger
 
-                    if (storedProcessCheckPointHit == true) {
-                        if (storedDeveloperMode) {
+                    if (storedProcessRequestMistakeMade == true) {
+                        if (storedProcessRequestDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
-                        storedProcessCheckPointHit = false;
+                        storedProcessRequestMistakeMade = false;
 
                     }
 
@@ -535,12 +535,12 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 }
                 catch (mistake) {
                     //#region EDGE CASE - USE developer logger
-                    if (storedDeveloperMode) {
+                    if (storedProcessRequestDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED reading cached data");
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED reading cached data");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -560,194 +560,194 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 try {
                     switch (storedRequestName.toUpperCase()) {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_READHOMESCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_READHOMESCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_2_READPRESALESSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_2_READPRESALESSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_READOPTINSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_READOPTINSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_4_READTHANKYOUSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_4_READTHANKYOUSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_5_READSALESSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_5_READSALESSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_6_READORDERFORMSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_6_READORDERFORMSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_7_READOTOSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_7_READOTOSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_8_READWEBINARSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_8_READWEBINARSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_9_READMEMBERSHIPSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_8_READWEBINARSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_10_READAFFILIATESCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_10_READAFFILIATESCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_11_READOTHERSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_11_READOTHERSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_12_READADVANCEDSCREENFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_12_READADVANCEDSCREENFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
 
                         case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_3_1_0":
-                            storedStorylineDetails = state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_3_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
                     }
 
                     //#region EDGE CASE - USE developer logger
 
-                    if (storedProcessCheckPointHit == true) {
-                        if (storedDeveloperMode) {
+                    if (storedProcessRequestMistakeMade == true) {
+                        if (storedProcessRequestDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
-                        storedProcessCheckPointHit = false;
+                        storedProcessRequestMistakeMade = false;
                     }
 
                     //#endregion
                 }
                 catch (mistake) {
                     //#region EDGE CASE - USE developer logger
-                    if (storedDeveloperMode) {
+                    if (storedProcessRequestDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED reading cached data");
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED reading cached data");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -766,44 +766,44 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 try {
                     switch (storedRequestName.toUpperCase()) {
                         case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
-                            storedStorylineDetails = state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0;
+                            storedProcessRequestDataStorylineDetails = state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0;
 
                             switch (storedRequestNameParameters.toUpperCase()) {
                                 case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0-P1_0":
-                                    storedStorylineDetails_Parameters = state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0_P1_0;
+                                    storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0_P1_0;
                                     break;
                             }
 
-                            storedProcessCheckPointHit = true;
+                            storedProcessRequestMistakeMade = true;
 
                             break;
                     }
 
                     //#region EDGE CASE - USE developer logger
 
-                    if (storedProcessCheckPointHit == true) {
-                        if (storedDeveloperMode) {
+                    if (storedProcessRequestMistakeMade == true) {
+                        if (storedProcessRequestDeveloperMode) {
                             this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Logging"); //Values = Logging or Mistake
-                            storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                            storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                         }
 
-                        storedProcessCheckPointHit = false;
+                        storedProcessRequestMistakeMade = false;
                     }
 
                     //#endregion
                 }
                 catch (mistake) {
                     //#region EDGE CASE - USE developer logger
-                    if (storedDeveloperMode) {
+                    if (storedProcessRequestDeveloperMode) {
                         this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED reading cached data");
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED reading cached data");
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                     }
@@ -824,12 +824,12 @@ export namespace BaseDI.Professional.State.Programming_2 {
             {
                 //#region EDGE CASE - USE developer logger
 
-                if (storedDeveloperMode) {
+                if (storedProcessRequestDeveloperMode) {
                     this.ClientOrServerInstance["processStepNumber"] = this.ClientOrServerInstance["processStepNumber"] + 1;
 
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "FAILED retrieving cache");
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameterMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedDeveloperLoggingInputs.Parameters.setValue("parameterStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED retrieving cache");
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedDeveloperLoggingInputs);
                 }
@@ -854,20 +854,20 @@ export namespace BaseDI.Professional.State.Programming_2 {
             //#region IDEAL CASE - USE baseDI dataset
 
             storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-            storedParameterInputs.Parameters.setValue("parameterFilterData", storedStorylineDetails);
+            storedParameterInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
             storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "");
             storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", this._storedBaseDIPlaceHolderValue);
             storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", true);
 
-            storedStorylineDetailsFiltered = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedParameterInputs);
+            storedProcessRequestDataStorylineDetailsFiltered = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedParameterInputs);
 
-            storedStorylineDetailsFilteredResult = {
-                StorylineDetails: storedStorylineDetails,
-                StorylineDetailsFiltered: storedStorylineDetailsFiltered,
-                StorylineDetails_Parameters: storedStorylineDetails_Parameters
+            storedProcessRequestDataStorylineDetailsFilteredResult = {
+                StorylineDetails: storedProcessRequestDataStorylineDetails,
+                StorylineDetailsFiltered: storedProcessRequestDataStorylineDetailsFiltered,
+                StorylineDetails_Parameters: storedProcessRequestDataStorylineDetails_Parameters
             };
 
-            return storedStorylineDetailsFilteredResult;
+            return storedProcessRequestDataStorylineDetailsFilteredResult;
 
             //#endregion
 
@@ -901,7 +901,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -927,7 +927,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -953,7 +953,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -979,7 +979,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -1005,7 +1005,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -1031,7 +1031,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -1057,7 +1057,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 
@@ -1078,17 +1078,17 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 .cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Action_5_Process_StorySetting");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 .cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
 
             //#endregion
 
@@ -1132,17 +1132,17 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Action_10_End_Process");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Action_10_End_Process");
 
             //#endregion
 
@@ -1246,17 +1246,17 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Factory_Action_1_Begin_Process -> Factory_Action_5_Process_StorySetting");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Factory_Action_1_Begin_Process -> Factory_Action_5_Process_StorySetting");
 
             //#endregion
 
@@ -1311,17 +1311,17 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE developer mode
 
-            let storedDeveloperMode: boolean = this._storedAppSettings.APP_SETTING_DEVELOPER_MODE;
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameter3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterActionName", _storedClientOrServerInstance["storedActionName"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterAppSettings", _storedClientOrServerInstance["storedAppSettings"]);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterClientOrServerInstance", _storedClientOrServerInstance);
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterMethodName", "Action -> Factory_Action_10_End_Process -> Factory_Action_5_Process_StorySetting");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.cs");
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Factory_Action_10_End_Process -> Factory_Action_5_Process_StorySetting");
 
             //#endregion
 
