@@ -56,9 +56,11 @@ namespace BaseDI.Professional
         //SETTINGS
         public IConfiguration _storedProcessRequestSettings { get; set; }
         private Dictionary<string, object> _storedProcessRequestTracker = new Dictionary<string, object>();
+
         //DATASETS
 
         //MISC
+        private ExtraData_12_2_1_0 _storedProcessRequestExtraData = new ExtraData_12_2_1_0();
 
         //PLUMBING
         public Func<JObject, IActionResult> ExecuteControlRequest = null;
@@ -245,13 +247,15 @@ namespace BaseDI.Professional
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection parameterControlRequestServices)
         {
-            services.AddControllers();
+            parameterControlRequestServices.AddControllers();
+
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequestServices", parameterControlRequestServices);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder parameterControlRequest_IApplicationBuilder, IWebHostEnvironment parameterControlRequest_IWebHostEnvironment)
         {
             #region 1. INPUTS
 
@@ -362,6 +366,15 @@ namespace BaseDI.Professional
 
             #endregion
 
+            #region MEMORIZE process extra data
+
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IApplicationBuilder", parameterControlRequest_IApplicationBuilder);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IWebHostEnvironment", parameterControlRequest_IWebHostEnvironment);
+
+            _storedProcessRequestTracker.Add("storedProcessRequestExtraData", _storedProcessRequestExtraData);
+
+            #endregion
+
             #endregion
 
             #region MEMORIZE output variables
@@ -383,7 +396,7 @@ namespace BaseDI.Professional
             try
             {
                 _storedProcessRequestTracker.Remove("storedInputRequestActionName");
-                _storedProcessRequestTracker.Remove("storedProcessRequestStepNumber");
+                _storedProcessRequestTracker.Remove("storedProcessRequestStepNumber");                
 
                 _storedProcessRequestTracker.Add("storedInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0);
                 _storedProcessRequestTracker.Add("storedProcessRequestStepNumber", 0);
@@ -449,7 +462,7 @@ namespace BaseDI.Professional
                                         Directory.CreateDirectory(Path.Combine(item.Value.ToString()));
                                     }
 
-                                    app.UseStaticFiles(new StaticFileOptions
+                                    parameterControlRequest_IApplicationBuilder.UseStaticFiles(new StaticFileOptions
                                     {
                                         FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine(item.Value.ToString()))),
                                         RequestPath = "/StaticFiles"
@@ -483,7 +496,7 @@ namespace BaseDI.Professional
             {
                 #region EDGE CASE - USE hardcoded data
 
-                app.UseStaticFiles(new StaticFileOptions
+                parameterControlRequest_IApplicationBuilder.UseStaticFiles(new StaticFileOptions
                 {
                     FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))),
                     RequestPath = "/StaticFiles"
@@ -498,8 +511,8 @@ namespace BaseDI.Professional
 
             #region IDEAL CASE - USE .net core
 
-            app.UseRouting();
-            app.UseEndpoints(endpoints =>
+            parameterControlRequest_IApplicationBuilder.UseRouting();
+            parameterControlRequest_IApplicationBuilder.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
