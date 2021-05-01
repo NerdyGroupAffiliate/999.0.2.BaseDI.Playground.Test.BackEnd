@@ -44,9 +44,9 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
         //PLUMBING
         private static _storedOutputResponseMistakeTemplate: string = "***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
-        private static _storedOutputResponseStepTemplate: string = "STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
-        private static _storedOutputResponseStepTemplate_Idented: string = "  STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
-        private static _storedOutputResponseStepTemplate_Idented_Twice: string = "     STEP {storedStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseStepTemplate: string = "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseStepTemplate_Idented: string = "  STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseStepTemplate_Idented_Twice: string = "     STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
 
         constructor() {
             //#region 1. INPUTS
@@ -223,11 +223,11 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //#region DEFINE developer mode
 
-            let storedOPTIONALAccountingCostType: string = "";
-            let storedOPTIONALBeginOfProcess: boolean = false;
-            let storedOPTIONALMiddleOfProcess: boolean = false;
-            let storedOPTIONALEndOfProcess: boolean = false;
-            let storedOPTIONALMasterLeaderIsSecondStep: boolean = false;
+            let storedOutputResponseOPTIONALAccountingCostType: string = "";
+            let storedOutputResponseOPTIONALBeginOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALMiddleOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALEndOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALMasterLeaderIsSecondStep: boolean = false;
 
             let storedMistake: boolean = false;
 
@@ -291,7 +291,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SENDING instagram content");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.ts");

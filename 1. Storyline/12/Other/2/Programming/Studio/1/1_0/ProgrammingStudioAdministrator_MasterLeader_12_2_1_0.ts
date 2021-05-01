@@ -212,7 +212,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING request pipeline");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -368,7 +368,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = storedProcessRequestTracker["storedActionName"];
+            let storedInputRequestActionName: string = storedProcessRequestTracker["storedInputRequestActionName"];
 
             //#endregion
 
@@ -385,7 +385,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "BEGIN processing request");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -651,7 +651,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = this._storedProcessRequestTracker["storedActionName"] as string;
+            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
 
             //#endregion
 

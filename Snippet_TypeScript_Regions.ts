@@ -165,7 +165,7 @@ export class ClassModel
 
         //#region DEFINE developer mode
 
-        let storedOPTIONALAccountingCostType: string = "";
+        let storedOutputResponseOPTIONALAccountingCostType: string = "";
 
          //#endregion
 
@@ -220,7 +220,7 @@ export class ClassModel
 
         //#region MEMORIZE action name
 
-        //let storedActionName: string = parameterProcessRequestTracker["storedActionName"] as string;
+        //let storedInputRequestActionName: string = parameterProcessRequestTracker["storedInputRequestActionName"] as string;
 
         //#endregion
 
@@ -252,7 +252,7 @@ export class ClassModel
 
         //REQUIRED
         //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "RETRIEVING cached dataset");
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedActionName"]);
+        //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedInputRequestActionName"]);
         //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this.ClientOrServerInstance["storedProcessRequestSettings"]);
         //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this.ClientOrServerInstance);
         //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");

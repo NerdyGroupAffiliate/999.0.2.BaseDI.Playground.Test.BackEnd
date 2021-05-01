@@ -104,7 +104,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedProcessRequestTracker["storedActionName"];
+            _storedActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
 
             #endregion
 
@@ -252,7 +252,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadHomeScreenForAll_Handler_1_0 -> Page_10_5_Process_StorySetting_12_3_1_0.cs");

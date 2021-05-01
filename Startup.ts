@@ -153,7 +153,7 @@ export namespace BaseDI.Professional
             //#region MEMORIZE action name
 
             if (parameterRequestActionName != "")
-                this._storedProcessRequestTracker["storedActionName"] = parameterRequestActionName;
+                this._storedProcessRequestTracker["storedInputRequestActionName"] = parameterRequestActionName;
 
             //#endregion
 
@@ -174,7 +174,7 @@ export namespace BaseDI.Professional
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING web request");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Start.ts");

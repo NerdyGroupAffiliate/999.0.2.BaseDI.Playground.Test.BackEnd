@@ -189,7 +189,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
                 //REQUIRED
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
@@ -348,7 +348,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING request handler");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
@@ -713,7 +713,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //#region MEMORIZE action name
 
-            this._storedActionName = this._storedProcessRequestTracker["storedActionName"];
+            this._storedActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
 
             //#endregion
 
@@ -858,7 +858,7 @@ export namespace BaseDI.Professional.Experience.Movement.Social_Media_1
 
             //REQUIRED
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker",this. _storedProcessRequestTracker);
             //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.ts");

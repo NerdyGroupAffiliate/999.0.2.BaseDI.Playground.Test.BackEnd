@@ -77,7 +77,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_5 {
 
             //#region MEMORIZE action name
 
-            this._storedActionName = this._storedProcessRequestTracker["storedActionName"];
+            this._storedActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
 
             //#endregion
 

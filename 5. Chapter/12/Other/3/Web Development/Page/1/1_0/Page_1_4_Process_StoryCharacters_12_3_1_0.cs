@@ -97,7 +97,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_1
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedProcessRequestTracker["storedActionName"];
+            _storedActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
 
             #endregion
 

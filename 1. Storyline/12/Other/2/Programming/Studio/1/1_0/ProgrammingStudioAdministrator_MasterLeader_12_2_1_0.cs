@@ -314,7 +314,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE action name
 
-            string storedActionName = storedProcessRequestTracker["storedActionName"] as string;
+            string storedInputRequestActionName = storedProcessRequestTracker["storedInputRequestActionName"] as string;
 
             #endregion
 
@@ -331,7 +331,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN processing request");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -393,7 +393,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 #region EDGE CASE - USE developer logger
 
                 if (storedProcessRequestDeveloperMode && (int)storedProcessRequestTracker["processStepNumber"] == 0)
-                    Console.WriteLine("STEP " + storedProcessRequestTracker["processStepNumber"] + ": BEGIN processing request -> " + storedActionName);
+                    Console.WriteLine("STEP " + storedProcessRequestTracker["processStepNumber"] + ": BEGIN processing request -> " + storedInputRequestActionName);
 
                 #endregion
 
@@ -591,7 +591,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE action name
 
-            string storedActionName = _storedProcessRequestTracker["storedActionName"] as string;
+            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
 
             #endregion
 

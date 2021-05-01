@@ -169,9 +169,9 @@ namespace BaseDI.Professional.Story.Careers_Employment_1
 
                 #endregion
 
-                #region DEFINE {storedProcessRequestMethodName} message
+                #region DEFINE stored message
 
-                string storedProcessRequestMethodNameMessage = "";
+                string storedOutputResponseMessage = "";
 
                 #endregion
 
@@ -215,63 +215,63 @@ namespace BaseDI.Professional.Story.Careers_Employment_1
                 {
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
                         if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedProcessRequestMethodNameMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.";
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.";
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestName"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestDataCacheKey"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterInputRequestDataCacheKey*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestDataCacheKey*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedDisturber"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestCentralizedDisturber*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedDisturber*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedSensor"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestCentralizedSensor*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedSensor*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;_Parameters"))
                     {
-                        storedProcessRequestMethodNameMessage += "***parameterProcessRequestDataStorylineDetails;_Parameters*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;_Parameters*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 

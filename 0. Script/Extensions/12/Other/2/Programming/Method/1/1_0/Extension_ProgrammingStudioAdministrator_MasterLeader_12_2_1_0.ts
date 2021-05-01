@@ -90,7 +90,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -239,7 +239,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web server");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -364,7 +364,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -485,11 +485,11 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#region DEFINE developer mode
 
-            let storedOPTIONALAccountingCostType: string = "";
-            let storedOPTIONALBeginOfProcess: boolean = false;
-            let storedOPTIONALMiddleOfProcess: boolean = false;
-            let storedOPTIONALEndOfProcess: boolean = false;
-            let storedOPTIONALMasterLeaderIsSecondStep: boolean = false;
+            let storedOutputResponseOPTIONALAccountingCostType: string = "";
+            let storedOutputResponseOPTIONALBeginOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALMiddleOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALEndOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALMasterLeaderIsSecondStep: boolean = false;
 
             let storedMistake: boolean = false;
 
@@ -503,7 +503,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
 
             //#endregion
 
@@ -527,7 +527,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SENDING instagram content");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -639,7 +639,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                 let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -760,11 +760,11 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#region DEFINE developer mode
 
-            let storedOPTIONALAccountingCostType: string = "";
-            let storedOPTIONALBeginOfProcess: boolean = false;
-            let storedOPTIONALMiddleOfProcess: boolean = false;
-            let storedOPTIONALEndOfProcess: boolean = false;
-            let storedOPTIONALMasterLeaderIsSecondStep: boolean = false;
+            let storedOutputResponseOPTIONALAccountingCostType: string = "";
+            let storedOutputResponseOPTIONALBeginOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALMiddleOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALEndOfProcess: boolean = false;
+            let storedOutputResponseOPTIONALMasterLeaderIsSecondStep: boolean = false;
 
             let storedMistake: boolean = false;
 
@@ -778,7 +778,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#region MEMORIZE action name
 
-            let storedActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
 
             //#endregion
 
@@ -802,7 +802,7 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SENDING instagram content");
-            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");

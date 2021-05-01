@@ -98,7 +98,7 @@ namespace BaseDI.Professional.Chapter.Page.Advertising_3
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedProcessRequestTracker["storedActionName"];
+            _storedActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
 
             #endregion
 

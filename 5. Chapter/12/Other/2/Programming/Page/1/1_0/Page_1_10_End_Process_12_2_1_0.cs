@@ -98,7 +98,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedProcessRequestTracker["storedActionName"];
+            _storedActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
 
             #endregion
 
@@ -225,7 +225,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region MEMORIZE action name
 
-            string storedActionName = ClientOrServerInstance["storedActionName"] as string;
+            string storedInputRequestActionName = ClientOrServerInstance["storedInputRequestActionName"] as string;
 
             #endregion
 
@@ -272,7 +272,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + storedActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + storedInputRequestActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID);
                         }
 
                         #endregion
@@ -291,7 +291,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + storedActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + storedInputRequestActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         #endregion
@@ -313,7 +313,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedActionName + " -> " + storedRequestName);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedInputRequestActionName + " -> " + storedRequestName);
                         }
 
                         #endregion
@@ -334,7 +334,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         #endregion

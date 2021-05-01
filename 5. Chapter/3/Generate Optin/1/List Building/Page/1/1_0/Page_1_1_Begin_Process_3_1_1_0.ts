@@ -79,7 +79,7 @@ export namespace BaseDI.Professional.Chapter.Page.ListBuilding_1
 
             //#region MEMORIZE action name
 
-            this._storedActionName = this._storedProcessRequestTracker["storedActionName"];
+            this._storedActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
 
             //#endregion
 

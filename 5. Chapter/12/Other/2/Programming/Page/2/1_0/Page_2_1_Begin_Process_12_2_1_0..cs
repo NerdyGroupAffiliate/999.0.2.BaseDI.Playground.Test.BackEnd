@@ -100,7 +100,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedProcessRequestTracker["storedActionName"];
+            _storedActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
 
             #endregion
 
@@ -227,7 +227,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE action name
 
-            string storedActionName = ClientOrServerInstance["storedActionName"] as string;
+            string storedInputRequestActionName = ClientOrServerInstance["storedInputRequestActionName"] as string;
 
             #endregion
 
@@ -317,7 +317,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
                 {
                     ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 #endregion

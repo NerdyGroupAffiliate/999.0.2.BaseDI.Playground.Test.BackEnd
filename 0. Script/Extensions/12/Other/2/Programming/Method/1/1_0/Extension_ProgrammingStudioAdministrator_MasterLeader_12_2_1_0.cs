@@ -87,7 +87,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                 SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedActionName"]);
+                storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -248,7 +248,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -502,7 +502,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -714,13 +714,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region DEFINE developer mode
 
-            string storedOPTIONALAccountingCostType = "";
-            bool storedOPTIONALBeginOfProcess = false;
-            bool storedOPTIONALMiddleOfProcess = false;
-            bool storedOPTIONALEndOfProcess = false;
-            bool storedOPTIONALMasterLeaderIsSecondStep = false;
+            string storedOutputResponseOPTIONALAccountingCostType = "";
+            bool storedOutputResponseOPTIONALBeginOfProcess = false;
+            bool storedOutputResponseOPTIONALMiddleOfProcess = false;
+            bool storedOutputResponseOPTIONALEndOfProcess = false;
+            bool storedOutputResponseOPTIONALMasterLeaderIsSecondStep = false;
 
-            bool storedMistake = false;
+            bool storedOutputResponseMistake = false;
 
             #endregion
 
@@ -732,7 +732,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region MEMORIZE action name
 
-            string storedActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion
 
@@ -756,7 +756,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING data into mistake");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
@@ -980,13 +980,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region DEFINE developer mode
 
-            string storedOPTIONALAccountingCostType = "";
-            bool storedOPTIONALBeginOfProcess = false;
-            bool storedOPTIONALMiddleOfProcess = false;
-            bool storedOPTIONALEndOfProcess = false;
-            bool storedOPTIONALMasterLeaderIsSecondStep = false;
+            string storedOutputResponseOPTIONALAccountingCostType = "";
+            bool storedOutputResponseOPTIONALBeginOfProcess = false;
+            bool storedOutputResponseOPTIONALMiddleOfProcess = false;
+            bool storedOutputResponseOPTIONALEndOfProcess = false;
+            bool storedOutputResponseOPTIONALMasterLeaderIsSecondStep = false;
 
-            bool storedMistake = false;
+            bool storedOutputResponseMistake = false;
 
             #endregion
 
@@ -998,7 +998,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region MEMORIZE action name
 
-            string storedActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion
 
@@ -1022,7 +1022,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             //REQUIRED
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING data into observation");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedActionName"]);
+            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
