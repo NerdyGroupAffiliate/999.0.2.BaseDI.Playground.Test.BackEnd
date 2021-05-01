@@ -89,7 +89,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
         {
             #region 1. INPUTS
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -129,8 +129,8 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -143,7 +143,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
             _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];

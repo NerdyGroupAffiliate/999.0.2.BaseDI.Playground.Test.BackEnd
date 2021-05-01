@@ -218,15 +218,15 @@ namespace BaseDI.Professional.Story.Programming_1
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails;_Parameters"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails_Parameters"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails;_Parameters*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails_Parameters*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -236,9 +236,9 @@ namespace BaseDI.Professional.Story.Programming_1
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestDataCacheKey"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestNameDataCacheKey"))
                     {
-                        storedOutputResponseMessage += "***parameterInputRequestDataCacheKey*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -298,7 +298,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -322,31 +322,31 @@ namespace BaseDI.Professional.Story.Programming_1
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            if (storedProcessRequestTracker["processStepNumber"] == null)
-                storedProcessRequestTracker["processStepNumber"] = 0;
+            if (storedProcessRequestTracker["storedProcessRequestStepNumber"] == null)
+                storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (_storedProcessRequestExtraData?.KeyValuePairs?["storedDeveloperLoggingInputs"] != null ? _storedProcessRequestExtraData?.KeyValuePairs?["storedDeveloperLoggingInputs"] as SingleParmPoco_12_2_1_0 : null);
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (_storedProcessRequestExtraData?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] != null ? _storedProcessRequestExtraData?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] as SingleParmPoco_12_2_1_0 : null);
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN processing request");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
-            storedDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "SetupStoryline");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN processing request");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "SetupStoryline");
 
             //OPTIONAL
-            storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALBeginOfProcess", true);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             if (storedDeveloperLoggingStartUpProcessInputs != null)
             {
-                storedDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALMasterLeaderIsSecondStep", storedDeveloperLoggingStartUpProcessInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMasterLeaderIsSecondStep", storedDeveloperLoggingStartUpProcessInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"]);
 
-                if (storedDeveloperLoggingStartUpProcessInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"] == true)
+                if (storedDeveloperLoggingStartUpProcessInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"] == true)
                 {
-                    storedDeveloperLoggingInputs.Parameters["parameterOPTIONALBeginOfProcess"] = false;
+                    storedProcessRequestDeveloperLoggingInputs.Parameters["parameterOutputResponseOPTIONALBeginOfProcess"] = false;
                 }
             }
 
@@ -362,7 +362,7 @@ namespace BaseDI.Professional.Story.Programming_1
             #region MEMORIZE request details
 
             string storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            string storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            string storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
            
             string storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"] ? parameterInputs.Parameters["parameterSystemRequestByName"] : "";
 
@@ -377,8 +377,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            JObject storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            JObject storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -392,8 +392,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region EDGE CASE - USE developer logger
 
-                if (storedProcessRequestDeveloperMode && (int)storedProcessRequestTracker["processStepNumber"] == 0)
-                    Console.WriteLine("STEP " + storedProcessRequestTracker["processStepNumber"] + ": BEGIN processing request -> " + storedInputRequestActionName);
+                if (storedProcessRequestDeveloperMode && (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] == 0)
+                    Console.WriteLine("STEP " + storedProcessRequestTracker["storedProcessRequestStepNumber"] + ": BEGIN processing request -> " + storedInputRequestActionName);
 
                 #endregion
 
@@ -504,11 +504,11 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs) //Dictionary<string, object> parameterProcessRequestTracker, JObject parameterProcessRequestDataStorylineDetails;, JObject parameterProcessRequestDataStorylineDetails;_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterInputRequestName = "", string parameterInputRequestDataCacheKey = ""
+        internal Use_DesignPattern_Builder_Chapter_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs) //Dictionary<string, object> parameterProcessRequestTracker, JObject parameterProcessRequestDataStorylineDetails, JObject parameterProcessRequestDataStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterClientRequestByObject, ExtraData_12_2_1_0 parameterExtraData = null, string parameterSystemRequestByName = "", string parameterInputRequestName = "", string parameterInputRequestNameDataCacheKey = ""
         {
             #region 1. INPUTS     
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -535,7 +535,7 @@ namespace BaseDI.Professional.Story.Programming_1
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
@@ -547,8 +547,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -701,7 +701,7 @@ namespace BaseDI.Professional.Story.Programming_1
         {
             #region 1. INPUTS        
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -728,7 +728,7 @@ namespace BaseDI.Professional.Story.Programming_1
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
@@ -740,8 +740,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion/\
 
@@ -999,7 +999,7 @@ namespace BaseDI.Professional.Story.Programming_1
         {
             #region 1. INPUTS     
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -1044,8 +1044,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -1058,7 +1058,7 @@ namespace BaseDI.Professional.Story.Programming_1
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
@@ -1650,7 +1650,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Experience_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -1695,8 +1695,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -1709,7 +1709,7 @@ namespace BaseDI.Professional.Story.Programming_1
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
@@ -1973,7 +1973,7 @@ namespace BaseDI.Professional.Story.Programming_1
         internal Implement_DesignPattern_Factory_Storer_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -1993,8 +1993,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -2007,7 +2007,7 @@ namespace BaseDI.Professional.Story.Programming_1
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
@@ -2061,7 +2061,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region DEFINE data response
 
-            JObject storedDataResponse = null;
+            JObject storedOutputResponseData = null;
 
             #endregion
 
@@ -2071,7 +2071,7 @@ namespace BaseDI.Professional.Story.Programming_1
             _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0";
 
             _storedParameterInputs.Parameters["parameterInputRequestName"] =_storedClientRequestByName;
-            _storedParameterInputs.Parameters["parameterInputRequestDataCacheKey"] = _storedClientRequestByNameParameters;
+            _storedParameterInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedClientRequestByNameParameters;
 
             _storedParameterInputs.Parameters["parameterSystemRequestByName"] = "";
 
@@ -2095,7 +2095,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 
                 if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE * **FAILED STORING a value.BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set.  -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2124,7 +2124,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region IDEAL CASE - USE data object
 
-            return storedDataResponse;
+            return storedOutputResponseData;
 
             #endregion
 
@@ -2225,7 +2225,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Disturber_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -2245,8 +2245,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -2259,7 +2259,7 @@ namespace BaseDI.Professional.Story.Programming_1
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
@@ -2313,7 +2313,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region DEFINE data response
 
-            JObject storedDataResponse = null;
+            JObject storedOutputResponseData = null;
 
             #endregion
 
@@ -2323,7 +2323,7 @@ namespace BaseDI.Professional.Story.Programming_1
             _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0";
 
             _storedParameterInputs.Parameters["parameterInputRequestName"] = _storedClientRequestByName;
-            _storedParameterInputs.Parameters["parameterInputRequestDataCacheKey"] = _storedClientRequestByNameParameters;
+            _storedParameterInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedClientRequestByNameParameters;
 
             _storedParameterInputs.Parameters["parameterSystemRequestByName"] = "";
 
@@ -2347,7 +2347,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Disturber_12_2_1_0");
 
-                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2376,7 +2376,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region IDEAL CASE - USE data object
 
-            return storedDataResponse;
+            return storedOutputResponseData;
 
             #endregion
 
@@ -2477,7 +2477,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         internal Implement_DesignPattern_Factory_Sensor_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -2497,8 +2497,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -2511,7 +2511,7 @@ namespace BaseDI.Professional.Story.Programming_1
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
@@ -2565,7 +2565,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region DEFINE data response
 
-            JObject storedDataResponse = null;
+            JObject storedOutputResponseData = null;
 
             #endregion
 
@@ -2575,7 +2575,7 @@ namespace BaseDI.Professional.Story.Programming_1
             _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0";
 
             _storedParameterInputs.Parameters["parameterInputRequestName"] = _storedClientRequestByName;
-            _storedParameterInputs.Parameters["parameterInputRequestDataCacheKey"] = _storedClientRequestByNameParameters;
+            _storedParameterInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedClientRequestByNameParameters;
 
             _storedParameterInputs.Parameters["parameterSystemRequestByName"] = "";
 
@@ -2599,7 +2599,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Sensor_12_2_1_0.");
 
-                storedDataResponse = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2628,7 +2628,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region IDEAL CASE - USE data object
 
-            return storedDataResponse;
+            return storedOutputResponseData;
 
             #endregion
 

@@ -1,15 +1,27 @@
 =================================================================================================
-StartUp
+StartUp.cs / ts
 =================================================================================================
 //CONTROL baseDI action - Action
-parameterInputClientRequestName
-parameterInputClientRequestActionName
-parameterInputDataRequestCacheKey
-parameterInputDataRequest
-parameterProcessSystemRequestCallBack
+parameterControlRequestClientOrServer
+
+parameterInputRequestActionName
+parameterInputRequestName
+parameterInputRequestNameDataCacheKey
+
+parameterProcessRequestCallBack
+parameterProcessRequestSettings
+parameterProcessRequestTracker
+
+parameterOutputResponseControlID
+
+OPTIONAL: parameterProcessRequestDataStorylineDetails
+OPTIONAL: parameterProcessRequestDataStorylineDetails_Parameters
+OPTIONAL: parameterProcessRequestDataStorylineDetails_CallBack
+OPTIONAL: parameterProcessRequestSettings
+OPTIONAL: parameterProcessRequestTracker
 
 =================================================================================================
-Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0
+Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs / ts
 =================================================================================================
 //CONVERT json dataset to filetered version 1 - Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0
 //CONVERT json dataset to filetered version 2 - Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0
@@ -26,13 +38,13 @@ parameterProcessRequest3WordDescription
 parameterInputRequestActionName
 parameterProcessRequestSettings
 parameterProcessRequestTracker
-parameterObservationFileName
-parameterObservationMethodName
-parameterObservationPresentationTemplate
-parameterObservationBusinessTemplate
-parameterObservationServiceTemplate
-parameterObservationSecurityTemplate
-parameterObservationDataTemplate
+parameterOutputResponseObservationFileName
+parameterOutputResponseObservationMethodName
+parameterOutputResponseObservationPresentationTemplate
+parameterOutputResponseObservationBusinessTemplate
+parameterOutputResponseObservationServiceTemplate
+parameterOutputResponseObservationSecurityTemplate
+parameterOutputResponseObservationDataTemplate
 
 =================================================================================================
 Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0
@@ -43,7 +55,7 @@ parameterHtmlContainerJSON
 parameterProcessRequestTracker
 parameterProcessRequestSettings
 parameterProcessRequestMasterStorer
-parameterProcessRequestDataStorylineDetails;
+parameterProcessRequestDataStorylineDetails
 
 //CONVERT json to html rows - Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0
 parameterHtmlRowsJSON
@@ -51,7 +63,7 @@ parameterHtmlContainerString
 parameterProcessRequestTracker
 parameterProcessRequestSettings
 parameterProcessRequestMasterStorer
-parameterProcessRequestDataStorylineDetails;
+parameterProcessRequestDataStorylineDetails
 
 //CONVERT json to html rows - Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0
 parameterHtmlColumnsJSON
@@ -59,7 +71,7 @@ parameterHtmlRowString
 parameterProcessRequestTracker
 parameterProcessRequestSettings
 parameterProcessRequestMasterStorer
-parameterProcessRequestDataStorylineDetails;
+parameterProcessRequestDataStorylineDetails
 
 //CONVERT json to html columns - Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0
 parameterHtmlContentJSON
@@ -67,28 +79,28 @@ parameterHtmlColumnString
 parameterProcessRequestTracker
 parameterProcessRequestSettings
 parameterProcessRequestMasterStorer
-parameterProcessRequestDataStorylineDetails;
+parameterProcessRequestDataStorylineDetails
 
 //CONVERT json to html inline css - Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0
 parameterHtmlStylesJSON
 parameterProcessRequestTracker
 parameterProcessRequestSettings
 parameterProcessRequestMasterStorer
-parameterProcessRequestDataStorylineDetails;
+parameterProcessRequestDataStorylineDetails
 
 //CONVERT json to html inline scripts - Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0
 parameterHtmlScriptsJSON
 parameterProcessRequestTracker
 parameterProcessRequestSettings
 parameterProcessRequestMasterStorer
-parameterProcessRequestDataStorylineDetails;
+parameterProcessRequestDataStorylineDetails
 
 //CONVERT json to html inline metadata - Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0
 parameterHtmlMetaDataJSON
 parameterProcessRequestTracker
 parameterProcessRequestSettings
 parameterProcessRequestMasterStorer
-parameterProcessRequestDataStorylineDetails;
+parameterProcessRequestDataStorylineDetails
 
 //CONVERT json to html content - Step_8_0_Framework_Convert_HtmlStructureToString_1_0
 parameterHtmlMetaData
@@ -99,4 +111,4 @@ parameterHtmlBody
 parameterProcessRequestTracker
 parameterProcessRequestSettings
 parameterProcessRequestMasterStorer
-parameterProcessRequestDataStorylineDetails;
+parameterProcessRequestDataStorylineDetails

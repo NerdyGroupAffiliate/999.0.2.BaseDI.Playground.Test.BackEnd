@@ -159,7 +159,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 #endregion
 
-                #region MEMORIZE clientOrServer instance
+                #region MEMORIZE control client server
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -265,11 +265,11 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                         if (storedProcessRequestDeveloperMode)
                         {
-                            storedProcessRequestTracker["processStepNumber"] = (int)storedProcessRequestTracker["processStepNumber"] + 1;
+                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["processStepNumber"]);
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -338,7 +338,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -363,20 +363,20 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             string storedOutputResponseMessageType = (parameterInputs.Parameters["parameterOutputResponseMessageType"] != null ? parameterInputs.Parameters["parameterOutputResponseMessageType"] : "LOGGING");
 
-            if (parameterInputs.Parameters["parameterOPTIONALAccountingCostType"] != null)
-                storedOutputResponseOPTIONALAccountingCostType = parameterInputs.Parameters["parameterOPTIONALAccountingCostType"];
+            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALAccountingCostType"] != null)
+                storedOutputResponseOPTIONALAccountingCostType = parameterInputs.Parameters["parameterOutputResponseOPTIONALAccountingCostType"];
 
-            if (parameterInputs.Parameters["parameterOPTIONALBeginOfProcess"] != null)
-                storedOutputResponseOPTIONALBeginOfProcess = parameterInputs.Parameters["parameterOPTIONALBeginOfProcess"];
+            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALBeginOfProcess"] != null)
+                storedOutputResponseOPTIONALBeginOfProcess = parameterInputs.Parameters["parameterOutputResponseOPTIONALBeginOfProcess"];
 
-            if (parameterInputs.Parameters["parameterOPTIONALMiddleOfProcess"] != null)
-                storedOutputResponseOPTIONALMiddleOfProcess = parameterInputs.Parameters["parameterOPTIONALMiddleOfProcess"];
+            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALMiddleOfProcess"] != null)
+                storedOutputResponseOPTIONALMiddleOfProcess = parameterInputs.Parameters["parameterOutputResponseOPTIONALMiddleOfProcess"];
 
-            if (parameterInputs.Parameters["parameterOPTIONALEndOfProcess"] != null)
-                storedOutputResponseOPTIONALEndOfProcess = parameterInputs.Parameters["parameterOPTIONALEndOfProcess"];
+            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALEndOfProcess"] != null)
+                storedOutputResponseOPTIONALEndOfProcess = parameterInputs.Parameters["parameterOutputResponseOPTIONALEndOfProcess"];
 
-            if (parameterInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"] != null)
-                storedOutputResponseOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters["parameterOPTIONALMasterLeaderIsSecondStep"];
+            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"] != null)
+                storedOutputResponseOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"];
 
             
             #endregion

@@ -90,7 +90,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
         {
             #region 1. INPUTS
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -130,8 +130,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -144,7 +144,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
             _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
@@ -219,7 +219,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region DEFINE data response
 
-            JObject storedDataResponse = null;
+            JObject storedOutputResponseData = null;
 
             #endregion
 
@@ -235,7 +235,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = ClientOrServerInstance;
 
@@ -270,9 +270,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         if (storedProcessRequestDeveloperMode)
                         {
-                            ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+                            ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": EXECUTING request handler " + storedInputRequestActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": EXECUTING request handler " + storedInputRequestActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID);
                         }
 
                         #endregion
@@ -289,9 +289,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         if (storedProcessRequestDeveloperMode)
                         {
-                            ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+                            ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + storedInputRequestActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + storedInputRequestActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         #endregion
@@ -311,16 +311,16 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         if (storedProcessRequestDeveloperMode)
                         {
-                            ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+                            ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": RESOLVING request handler " + storedInputRequestActionName + " -> " + storedRequestName);
+                            Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": RESOLVING request handler " + storedInputRequestActionName + " -> " + storedRequestName);
                         }
 
                         #endregion
 
                         #region IDEAL CASE - USE request resolver
 
-                        return storedDataResponse = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                        return storedOutputResponseData = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
                             .SetupStoryline(_storedParameterInputs)
                             .Action();
 
@@ -332,9 +332,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         if (storedProcessRequestDeveloperMode)
                         {
-                            ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+                            ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         #endregion
@@ -348,7 +348,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                 }
             };
 
-            storedDataResponse = await ResolveOrExecuteRequest();
+            storedOutputResponseData = await ResolveOrExecuteRequest();
 
             #endregion
 
@@ -360,7 +360,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedDataResponse).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
 
             #endregion
 

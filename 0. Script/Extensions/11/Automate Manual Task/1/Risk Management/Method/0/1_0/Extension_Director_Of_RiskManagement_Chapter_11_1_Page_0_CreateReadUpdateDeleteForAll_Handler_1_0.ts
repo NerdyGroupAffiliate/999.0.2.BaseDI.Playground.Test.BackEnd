@@ -82,6 +82,34 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                 //#endregion
 
+                //#region MEMORIZE control client server
+
+                let storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+
+                //#endregion
+
+                //#region MEMORIZE app settings
+
+                let storedProcessRequestSettings = storedProcessRequestTracker["parameterProcessRequestSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE developer mode
+
+                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_DeveloperMessage_1_0 -> ValidateInputs");
+                //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+                //#endregion
+
                 //#endregion
 
                 //#region 2. PROCESS
@@ -152,9 +180,21 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
 
                     if (storedProcessRequestMistakeMade) {
+                        //#region EDGE CASE - USE developer logger
+
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+
+                        //#endregion
+
                         //#region EDGE CASE - USE exception handler
 
-                        console.log("\n***LEAKY PIPE*** PARSING parameter values failed!\n\n" + storedOutputResponseMessage);
+                        throw new Error("PARSING parameter values failed");
 
                         //#endregion
                     }
@@ -211,7 +251,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             //#endregion
 
-            //#region MEMORIZE clientOrServer instance
+            //#region MEMORIZE control client server
 
             this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
@@ -235,20 +275,20 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             let storedOutputResponseMessageType: string = (parameterInputs.Parameters.getValue("parameterOutputResponseMessageType") != undefined ? parameterInputs.Parameters.getValue("parameterOutputResponseMessageType") : "LOGGING");
 
-            if (parameterInputs.Parameters.getValue("parameterOPTIONALAccountingCostType") != undefined)
-                storedOutputResponseOPTIONALAccountingCostType = parameterInputs.Parameters.getValue("parameterOPTIONALAccountingCostType");
+            if (parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALAccountingCostType") != undefined)
+                storedOutputResponseOPTIONALAccountingCostType = parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALAccountingCostType");
 
-            if (parameterInputs.Parameters.getValue("parameterOPTIONALBeginOfProcess") != undefined)
-                storedOutputResponseOPTIONALBeginOfProcess = parameterInputs.Parameters.getValue("parameterOPTIONALBeginOfProcess");
+            if (parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALBeginOfProcess") != undefined)
+                storedOutputResponseOPTIONALBeginOfProcess = parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALBeginOfProcess");
 
-            if (parameterInputs.Parameters.getValue("parameterOPTIONALMiddleOfProcess") != undefined)
-                storedOutputResponseOPTIONALMiddleOfProcess = parameterInputs.Parameters.getValue("parameterOPTIONALMiddleOfProcess");
+            if (parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALMiddleOfProcess") != undefined)
+                storedOutputResponseOPTIONALMiddleOfProcess = parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALMiddleOfProcess");
 
-            if (parameterInputs.Parameters.getValue("parameterOPTIONALEndOfProcess") != undefined)
-                storedOutputResponseOPTIONALEndOfProcess = parameterInputs.Parameters.getValue("parameterOPTIONALEndOfProcess");
+            if (parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALEndOfProcess") != undefined)
+                storedOutputResponseOPTIONALEndOfProcess = parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALEndOfProcess");
 
-            if (parameterInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep") != undefined)
-                storedOutputResponseOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters.getValue("parameterOPTIONALMasterLeaderIsSecondStep");
+            if (parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALMasterLeaderIsSecondStep") != undefined)
+                storedOutputResponseOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALMasterLeaderIsSecondStep");
 
             //#endregion
 

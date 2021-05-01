@@ -1,110 +1,161 @@
 ﻿//#region Imports
 
 //#region BaseDI
+import * as Action_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/Action Poco/1/1_0/Action_12_2_1_0";
 
-import * as aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 from  "./0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0";
-import * as aClass_Programming_ScriptAction_12_2_1_0 from "./0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
-import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "./0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
+import * as ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "./1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
+
+import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "./7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "./0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
 
 import * as ExtraData_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
+
 import * as SingleParmPoco_12_2_1_0 from "./0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+//#endregion
 
-import * as IContract_Programming_Repository_12_2_1_0 from "./0. Script/Interfaces/12/Other/2/Programming/Contract/1/1_0//IContract_Programming_Repository_12_2_1_0";
-
-import * as ChapterPage_Page_1_1_Begin_Process_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_1_Begin_Process_12_2_1_0";
-import * as ChapterPage_Page_1_2_Validate_Process_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_2_Validate_Process_12_2_1_0";
-import * as ChapterPage_Page_1_3_Process_StoryAuthor_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_3_Process_StoryAuthor_12_2_1_0";
-import * as ChapterPage_Page_1_4_Process_StoryCharacters_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_4_Process_StoryCharacters_12_2_1_0";
-import * as ChapterPage_Page_1_5_Process_StorySetting_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_5_Process_StorySetting_12_2_1_0";
-import * as ChapterPage_Page_1_6_Process_StoryExperiences_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_6_Process_StoryExperiences_12_2_1_0";
-import * as ChapterPage_Page_1_7_Process_StoryResources_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_7_Process_StoryResources_12_2_1_0";
-import * as ChapterPage_Page_1_8_Process_CRUD_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_8_Process_CRUD_12_2_1_0";
-import * as ChapterPage_Page_1_9_Verify_Process_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_9_Verify_Process_12_2_1_0";
-import * as ChapterPage_Page_1_10_End_Process_12_2_1_0 from "./5. Chapter/12/Other/2/Programming/Page/1/1_0/Page_1_10_End_Process_12_2_1_0";
+//#region Modules
 
 //#endregion
 
 //#endregion
 
-export class ClassModel
-{
+export class BusinessLogicTemplate {
     //#region 1. Assign
 
-    //SETTINGS
-    private _storedProcessRequestSettings: any;
-
     //CLIENT/SERVER
-    private _storedProcessRequestTracker: any;
+    private _storedControlRequestClientOrServer: any;
+
+    //SETTINGS
+    private _storedProcessRequestSettings: any = null;
 
     //DATASETS
-    private _storedProcessRequestDataStorylineDetails: any;
-    private _storedProcessRequestDataStorylineDetails_Parameters: any;
-
-    private _stored_Repository: any;
+    private _storedProcessRequestDataStorylineDetails: object = null;
+    private _storedProcessRequestDataStorylineDetails_Parameters: object = null;
 
     //MISC
     private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
     //PLUMBING
-    private _storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-    private _stored_CentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-    private _stored_CentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-
-    private _stored_DirectorRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
-
-    private _storedRequestName: string = "";
-    private _storedSystemRequestByName: string;
+    private _storedProcessRequestTracker: Object = new Object();
 
     //#endregion
 
     //#region 2. Ready
 
-    constructor()
+    constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
     {
         //#region 1. INPUTS
 
-        //#region MEMORIZE clientOrServer instance
-
-        //this._storedProcessRequestTracker = parameterProcessRequestTracker;
+        //#region DEFINE control variables
 
         //#endregion
 
-        //#region MEMORIZE centralized processes
+        //#region DEFINE input variables
 
-        //this._stored_CentralizedDisturber = parameterProcessRequestCentralizedDisturber;
-        //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
-        //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+      
+        //#endregion
+
+        //#region DEFINE process variables
+
+        this._storedProcessRequestExtraData = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
         //#endregion
 
-        //#region MEMORIZE data stragety
+        //#region DEFINE output variables
 
-        //this._stored_Repository = parameterDataRepository;
-
-        //#endregion
-
-        //#region MEMORIZE director request handler
-
-        //_stored_DirectorRequestHandler = parameter_DirectorRequestHandler;
+        let storedOutputResponseData: Promise<any>;
 
         //#endregion
 
-        //#region MEMORIZE extra data
+        //#region MEMORIZE control variables
 
-        //this._storedProcessRequestExtraData = parameterExtraData;
+        //#region MEMORIZE control client server
+
+        this._storedControlRequestClientOrServer = parameterInputs.Parameters.getValue("parameterControlRequestClientOrServer");
+
+        //#endregion
 
         //#endregion
 
-        //#region MEMORIZE storyline details
+        //#region MEMORIZE input variables
 
-        //this._storedProcessRequestDataStorylineDetails = parameterProcessRequestDataStorylineDetails;;
-        //this._storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
+        //#region MEMORIZE input xxx xxx
+  
+        //#endregion
 
         //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxxx
+
+        //#endregion
+
+        //#endregion
+  
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region EDGE CASE - USE defaults handler
+
+        this.HandleDefaults = this.HandleDefaults.bind(this);
+        this.HandleDefaults();
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+
+        //#endregion
+    }
+
+    //#endregion
+
+    //#region 3. Set
+
+    //A. Default state
+    public HandleDefaults(): void {
+        //#region 1. INPUTS
 
         //#endregion
 
         //#region 2. PROCESS
+
+        //#region HANDLE application defaults
+
+        //#region IDEAL CASE - USE hardcoded values
+
+        if (process.env.APP_ENV != undefined && process.env.APP_ENV != null && process.env.APP_ENV.toUpperCase() == "SERVER") {
+            this._storedProcessRequestTracker = {
+                "storedProcessRequestSettings": process.env,
+                "serverInstance": this._storedControlRequestClientOrServer,
+                "serverStartUp": this
+            }
+        }
+        else {
+            this._storedProcessRequestTracker = {
+                "storedProcessRequestSettings": process.env,
+                "clientInstance": this._storedControlRequestClientOrServer,
+                "clientStartUp": this
+            }
+        }
+
+        this._storedProcessRequestTracker["storedProcessRequestIgnoreDeveloperConsoleLog"] = false;
+
+        //#endregion
+
+        //#endregion
 
         //#endregion
 
@@ -115,12 +166,372 @@ export class ClassModel
 
     //#endregion
 
-    //#region 3. Set
+    //#region 4. Action
 
-    //A. Default state
-    private HandleDefaults(): void {
+    public async Action(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> {
         //#region 1. INPUTS
 
+        //#region VALIDATE input parameters
+
+        const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<boolean> => {
+            //#region 1. INPUTS
+
+            //#region DEFINE input variables
+
+            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedProcessRequestMistakeMade: boolean = false;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            let storedOutputResponseData: Promise<any>;
+            let storedOutputResponseMessage: string = "";
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
+
+            let storedProcessRequestTracker: any = this._storedProcessRequestTracker;
+
+            //#endregion
+
+            //#region MEMORIZE process request settings
+
+            let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Startup.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> ValidateInputs");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE validation process
+
+            //#region IDEAL CASE - USE valid information
+
+            if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
+                if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
+                    storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterOutputResponseControlID")) {
+                    storedOutputResponseMessage += "***parameterOutputResponseControlID*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterInputRequestName")) {
+                    storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterInputRequestActionName")) {
+                    storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterInputRequestNameDataCacheKey")) {
+                    storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack")) {
+                    storedOutputResponseMessage += "***parameterProcessRequestCallBack*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (storedProcessRequestMistakeMade) {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode) {
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
+                    //#region EDGE CASE - USE exception handler
+
+                    throw new Error("PARSING parameter values failed");
+
+                    //#endregion
+                }
+            }
+            else {
+                //#region EDGE CASE - USE developer logger
+
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw new Error("PARSING parameter values failed");
+
+                //#endregion
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN validation passed
+
+            //#region IDEAL CASE - USE passed indicator
+
+            return true;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //BEGIN valdation process
+        await ValidateInputs(parameterInputs);
+
+        //#endregion
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+        let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: Promise<any>;
+
+        //#endregion
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+ 
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input action name
+
+        this._storedProcessRequestTracker["storedInputRequestActionName"] = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process request settings
+
+        this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
+
+        //#endregion
+
+        //#region MEMORIZE process developer mode
+
+        let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+        this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+
+        let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        //REQUIRED
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING web request");
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Start.ts");
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxxx
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+    }
+
+    //#endregion
+}
+
+export class DefaultRegionsTemplate {
+    //#region 1. Assign
+
+    //CLIENT/SERVER
+    private _storedControlRequestClientOrServer: any;
+
+    //SETTINGS
+    private _storedProcessRequestSettings: any = null;
+
+    //DATASETS
+    private _storedProcessRequestDataStorylineDetails: object = null;
+    private _storedProcessRequestDataStorylineDetails_Parameters: object = null;
+
+    //MISC
+    private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+
+    //PLUMBING
+    private _storedProcessRequestTracker: Object = new Object();
+
+    //#endregion
+
+    //#region 2. Ready
+
+    constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+        let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: Promise<any>;
+
+        //#endregion
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process xxx xxxx
+
+        //#endregion
+
+        //#region MEMORIZE process developer mode
+
+        let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+        this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+
+        let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        //REQUIRED
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING web request");
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Start.ts");
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxxx
+
+        //#endregion
+
+        //#endregion
 
         //#endregion
 
@@ -128,7 +539,107 @@ export class ClassModel
 
         //#region EXECUTE process defaults
 
-        //#region IDEAL CASE - defaults handler
+        //#region EDGE CASE - USE defaults handler
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+
+        //#endregion
+    }
+
+    //#endregion
+
+    //#region 3. Set
+
+    //A. Default state
+    public HandleDefaults(): void {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+        let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: Promise<any>;
+
+        //#endregion
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process xxx xxxx
+
+        //#endregion
+
+        //#region MEMORIZE process developer mode
+
+        let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+        this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+
+        let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+        //REQUIRED
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING web request");
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Start.ts");
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxxx
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region HANDLE application defaults
+
+        //#region IDEAL CASE - USE hardcoded values
 
 
         //#endregion
@@ -146,218 +657,284 @@ export class ClassModel
 
     //#region 4. Action
 
-    //A. Story in motion (DO SOMETHING)
-    public async Action(): Promise<object>
+    public async Action(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
     {
         //#region 1. INPUTS
 
-        //#region DEFINE client response
+        //#region VALIDATE input parameters
 
-        //let storedHttpResult: any = null;
+        const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<boolean> => {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedProcessRequestMistakeMade: boolean = false;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            let storedOutputResponseData: Promise<any>;
+            let storedOutputResponseMessage: string = "";
+
+            //#endregion
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
+
+            let storedProcessRequestTracker: any = this._storedProcessRequestTracker;
+
+            //#endregion
+
+            //#region MEMORIZE process request settings
+
+            let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+
+            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING web request");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Start.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE process xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE validation process
+
+            //#region IDEAL CASE - USE valid information
+
+            if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
+                //0. CONTROLLERS
+                if (!parameterInputs.Parameters.containsKey("parameterControlRequestClientOrServer")) {
+                    storedOutputResponseMessage += "***parameterControlRequestClientOrServer*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                //1. INPUTS
+                if (!parameterInputs.Parameters.containsKey("parameterInputRequestName")) {
+                    storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterInputRequestActionName")) {
+                    storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterInputRequestNameDataCacheKey")) {
+                    storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                //2. PROCESS
+                if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
+                    storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack")) {
+                    storedOutputResponseMessage += "***parameterProcessRequestCallBack*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (!parameterInputs.Parameters.containsKey("parameterOutputResponseControlID")) {
+                    storedOutputResponseMessage += "***parameterOutputResponseControlID*** cannot be blank or empty.\n"
+                    storedProcessRequestMistakeMade = true;
+                }
+
+                if (storedProcessRequestMistakeMade) {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode) {
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
+                    //#region EDGE CASE - USE exception handler
+
+                    throw new Error("PARSING parameter values failed");
+
+                    //#endregion
+                }
+            }
+            else {
+                //#region EDGE CASE - USE developer logger
+
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw new Error("PARSING parameter values failed");
+
+                //#endregion
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN validation passed
+
+            //#region IDEAL CASE - USE passed indicator
+
+            return true;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //BEGIN valdation process
+        await ValidateInputs(parameterInputs);
 
         //#endregion
 
-        //#region DEFINE data response
-
-        //let storedDataResponse: any = null;
+        //#region DEFINE control variables
 
         //#endregion
 
-        //#region DEFINE developer mode
+        //#region DEFINE input variables
 
-        let storedOutputResponseOPTIONALAccountingCostType: string = "";
-
-         //#endregion
-
-        //#region DEFINE error response
-
-        //let storedErrorResponse: any = null;
+        let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
         //#endregion
 
-        //#region DEFINE event handlers
-
-        //let Action = (response: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): any => { };
+        //#region DEFINE process variables
 
         //#endregion
 
-        //#region DEFINE exception handler
+        //#region DEFINE output variables
 
-        let stored_ExceptionDetails: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-        //#endregion
-
-        //#region DEFINE parameter inputs
-
-        //let storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+        let storedOutputResponseData: Promise<any>;
 
         //#endregion
 
-        //#region DEFINE process checkpoint
+        //#region MEMORIZE control variables
 
-        let storedProcessRequestMistakeMade: boolean = false;
-
-         //#endregion
-
-        //#region DEFINE request handler
-
-        //let stored_ReferenceTo_RequestHandler: any = null;
-
-        //#endregion
-
-        //#region DEFINE stored message
-
-        let storedOutputResponseMessage: string = "";
-
-        //#endregion
-
-        //#region DEFINE storyline details
-
-        //let storedProcessRequestDataStorylineDetails:Object = null;
-        //let storedProcessRequestDataStorylineDetails_Parameters:Object = null;
-
-        //#endregion
-
-        //#region MEMORIZE action name
-
-        //let storedInputRequestActionName: string = parameterProcessRequestTracker["storedInputRequestActionName"] as string;
-
-        //#endregion
-
-        //#region MEMORIZE app settings
-
-        //this._storedProcessRequestSettings = parameterProcessRequestTracker["storedProcessRequestSettings"];
-
-        //#endregion
-
-        //#region MEMORIZE extra data
-
-        //if (parameterExtraData != null)
-        //    this._storedProcessRequestExtraData = parameterExtraData;
-
-        //storedProcessRequestCentralizedStorer.ExtraData.KeyValuePairs.setValue("parametersInputs", parameterInputs);
-        //storedProcessRequestCentralizedStorer.ExtraData.KeyValuePairs.setValue("storedDeveloperLoggingInputs", storedDeveloperLoggingInputs);
+        //#region MEMORIZE control xxx xxx
 
 
         //#endregion
 
-        //#region MEMORIZE developer mode
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process xxx xxxx
+
+        //#endregion
+
+        //#region MEMORIZE process developer mode
 
         let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-        //if (parameterProcessRequestTracker["processStepNumber"] == null)
-        //    parameterProcessRequestTracker["processStepNumber"] = 0;
+        this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
-        //let storedDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+        let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
         //REQUIRED
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "RETRIEVING cached dataset");
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedInputRequestActionName"]);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this.ClientOrServerInstance["storedProcessRequestSettings"]);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this.ClientOrServerInstance);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts");
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "SetupStoryline");
-
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["processStepNumber"]);
-        
-
-        //OPTIONAL
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALBeginOfProcess", true);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALMiddleOfProcess", true);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALEndOfProcess", true);
-        //storedDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALRunSilentMode", true);
-
-        //#endregion
-
-        //#region MEMORIZE request details
-
-        //let storedRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
-        //let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
-
-        //#endregion
-
-        //#region MEMORIZE request resolver
-
-        let stored_DirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0 = null;
-        //let stored_ResolvedRequestHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterProcessRequestTracker, parameterProcessRequestDataStorylineDetails;, parameterProcessRequestDataStorylineDetails;_Parameters, _storedClientRequestByObject, _storedProcessRequestExtraData, parameterSystemRequestByName, parameterInputRequestName, parameterInputRequestDataCacheKey);
-
-        //#endregion
-
-        //#region MEMORIZE server details
-
-        //let storedServerDetails:Object = null;
-
-        //#endregion
-
-        //#region MEMORIZE storyline details
-
-        //let storedProcessRequestDataStorylineDetails: any = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails;");
-            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails;_Parameters;
-
-        //#endregion
-
-        //#region MEMORIZE json filter
-        //storedParameterInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-        //storedParameterInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
-        //storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
-        //storedParameterInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment");
-        //storedParameterInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
-
-        //const storedServerDetails: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedParameterInputs);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING web request");
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Start.ts");
+        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
 
         //#endregion
 
         //#endregion
 
-        //#region 2. PROCESS
+        //#region MEMORIZE output variables
 
-        //#region EXECUTE xxx xxx
-
-        //#region EDGE CASE - USE developer logger
-
-        if (storedProcessRequestDeveloperMode)
-        {
-            this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
-
-            console.log("STEP " + this._storedProcessRequestTracker["processStepNumber"] + " Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0 -> Action_10_End_Process - [END process execution]");
-        }
-
-        //#endregion
-
-        //#region EDGE CASE - USE developer logger
-
-        if (storedProcessRequestDeveloperMode) {
-            this._storedProcessRequestTracker["processStepNumber"] = this._storedProcessRequestTracker["processStepNumber"] + 1;
-
-            console.log("STEP " + this._storedProcessRequestTracker["processStepNumber"] + ": ***LEAKY PIPE*** FAILED configurating request handler for REQUEST NAME Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0. PLEASE CHECK CASE STATEMENT IN FILE ***ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts -> Method: Action]");
-        }
-
-        //#endregion
-
-        //#region EDGE CASE - USE exception handler
-
-        //throw mistake;
-
-        //#endregion
-
-        //#region IDEAL CASE - USE xxx xxx
-
-
-        //#endregion
-
-        //#endregion
-
-        //#endregion
-
-        //#region 3. OUTPUT
-
-        //#region RETURN xxx xxxx
-
-        //#region IDEAL CASE - USE xxx xxx
-
-        return null; // await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+        //#region MEMORIZE output xxx xxxx
 
         //#endregion
 
@@ -368,21 +945,3 @@ export class ClassModel
 
     //#endregion
 }
-
-
-
-
-
-//BLANK DEFAULT REEGIONS
-
-//#region 1. INPUTS
-
-//#endregion
-
-//#region 2. PROCESS
-
-//#endregion
-
-//#region 3. OUTPUT
-
-//#endregion

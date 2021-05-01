@@ -2,6 +2,10 @@
 VARIABLE PREFIXS
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+storedControlRequestClient
+storedControlRequestClientOrServer
+storedControlRequestServer
+
 storedInputs
 storedInputRequest{XXXXX}
 storedProcessRequest{XXXXX}
@@ -25,7 +29,7 @@ storedInputRequestName -
 	HOW Used - By calling an Event Handler passing in parameterInputs information.
 	WHAT Type - "string (C#)" or "string (JavaScript)"
 
-storedInputRequestDataCacheKey -
+storedInputRequestNameDataCacheKey -
 	WHO Uses - Client	
 	WHY Used - To input the name of the cache key that we want to use while executing a BaseDI request.
 	HOW Used - By calling an Event Handler passing in parameterInputs information.

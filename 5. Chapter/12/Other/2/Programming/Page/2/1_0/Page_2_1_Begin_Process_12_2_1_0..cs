@@ -92,7 +92,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
         {
             #region 1. INPUTS
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
@@ -132,8 +132,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE storyline details
 
-            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;"];
-            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails;_Parameters"];
+            _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
@@ -146,7 +146,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
             #region MEMORIZE request details
 
             _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestDataCacheKey"];
+            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
             _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
 
             _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
@@ -221,7 +221,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region DEFINE data response
 
-            JObject storedDataResponse = null;
+            JObject storedOutputResponseData = null;
 
             #endregion
 
@@ -243,7 +243,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #endregion
 
-            #region MEMORIZE clientOrServer instance
+            #region MEMORIZE control client server
 
             _storedProcessRequestTracker = ClientOrServerInstance;
 
@@ -288,10 +288,10 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
                 Func<Task<JObject>> GetDataSet = async () =>
                 {
-                    storedDataResponse = Repository.Action_8_Process_CRUD().Result;
+                    storedOutputResponseData = Repository.Action_8_Process_CRUD().Result;
 
-                    StorylineDetails = JObject.FromObject(storedDataResponse["StorylineDetails"]);
-                    StorylineDetails_Parameters = JObject.FromObject(storedDataResponse["StorylineDetails_Parameters"]);
+                    StorylineDetails = JObject.FromObject(storedOutputResponseData["StorylineDetails"]);
+                    StorylineDetails_Parameters = JObject.FromObject(storedOutputResponseData["StorylineDetails_Parameters"]);
 
                     Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0((JObject)StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]"));
                     Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
@@ -315,9 +315,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
                 if (storedProcessRequestDeveloperMode)
                 {
-                    ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+                    ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 #endregion
@@ -418,9 +418,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
                 if (storedProcessRequestDeveloperMode)
                 {
-                    ClientOrServerInstance["processStepNumber"] = (int)ClientOrServerInstance["processStepNumber"] + 1;
+                    ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + ClientOrServerInstance["processStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0]");
+                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0]");
                 }
 
                 #endregion
