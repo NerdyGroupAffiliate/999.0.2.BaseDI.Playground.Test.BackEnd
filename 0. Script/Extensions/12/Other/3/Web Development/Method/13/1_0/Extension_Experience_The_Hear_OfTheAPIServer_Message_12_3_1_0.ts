@@ -654,16 +654,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             try
             {
                 storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                storedInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
-                storedInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
-                storedInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
-                storedInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
+                storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
+                storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
                 let fileMetaData: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
 
                 if (fileMetaData == undefined || fileMetaData == null) {
-                    storedInputs.Parameters.remove("parameterFilterKeyValuePairValue");
-                    storedInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                    storedInputs.Parameters.remove("parameterProcessRequestDataToFilterValue");
+                    storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
 
                     fileMetaData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
                 }
@@ -986,10 +986,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             let storedServerInstance: any = null;
 
             storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-            storedInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
-            storedInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "searchkey");
-            storedInputs.Parameters.setValue("parameterFilterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment");
-            storedInputs.Parameters.setValue("parameterFilterReturnValueAsArray", false);
+            storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+            storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
+            storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment");
+            storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
             const storedServerDetails: any = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
 

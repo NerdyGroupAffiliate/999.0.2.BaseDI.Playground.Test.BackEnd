@@ -583,12 +583,12 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE filter metadata
 
-            JObject storedData = parameterInputs.Parameters["parameterFilterData"];
+            JObject storedData = parameterInputs.Parameters["parameterProcessRequestDataToFilter"];
 
-            string storedKeyValuePairKey = parameterInputs.Parameters["parameterFilterKeyValuePairKey"];
-            string storedKeyValuePairValue = parameterInputs.Parameters["parameterFilterKeyValuePairValue"];
+            string storedKeyValuePairKey = parameterInputs.Parameters["parameterProcessRequestDataToFilterKey"];
+            string storedKeyValuePairValue = parameterInputs.Parameters["parameterProcessRequestDataToFilterValue"];
 
-            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterFilterReturnValueAsArray"];
+            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterOutputResponseAsArray"];
 
             #endregion
 
@@ -615,12 +615,12 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                     storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                    storedInputs.Parameters.Add("parameterFilterData", storedProcessRequestDataStorylineDetails);
+                    storedInputs.Parameters.Add("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
 
-                    storedInputs.Parameters.Add("parameterFilterKeyValuePairKey", "searchkey");
-                    storedInputs.Parameters.Add("parameterFilterKeyValuePairValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                    storedInputs.Parameters.Add("parameterProcessRequestDataToFilterKey", "searchkey");
+                    storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
 
-                    storedInputs.Parameters.Add("parameterFilterReturnValueAsArray", false);
+                    storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
                     storedOutputResponseData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0(storedInputs).Result;
 
@@ -638,12 +638,12 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterFilterData", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.Add("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
 
-                        storedInputs.Parameters.Add("parameterFilterKeyValuePairKey", "searchkey");
-                        storedInputs.Parameters.Add("parameterFilterKeyValuePairValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                        storedInputs.Parameters.Add("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
 
-                        storedInputs.Parameters.Add("parameterFilterReturnValueAsArray", false);
+                        storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
                         storedOutputResponseData = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0(storedInputs).Result;
 

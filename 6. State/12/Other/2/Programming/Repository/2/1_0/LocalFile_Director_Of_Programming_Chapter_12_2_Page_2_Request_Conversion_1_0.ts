@@ -854,10 +854,10 @@ export namespace BaseDI.Professional.State.Programming_2 {
             //#region IDEAL CASE - USE baseDI dataset
 
             storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-            storedInputs.Parameters.setValue("parameterFilterData", storedProcessRequestDataStorylineDetails);
-            storedInputs.Parameters.setValue("parameterFilterKeyValuePairKey", "");
-            storedInputs.Parameters.setValue("parameterFilterKeyValuePairValue", this._storedBaseDIPlaceHolderValue);
-            storedInputs.Parameters.setValue("parameterFilterReturnValueAsArray", true);
+            storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+            storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "");
+            storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", this._storedBaseDIPlaceHolderValue);
+            storedInputs.Parameters.setValue("parameterOutputResponseAsArray", true);
 
             storedProcessRequestDataStorylineDetailsFiltered = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
 

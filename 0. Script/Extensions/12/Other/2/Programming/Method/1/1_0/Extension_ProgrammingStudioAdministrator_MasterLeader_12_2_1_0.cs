@@ -126,27 +126,27 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFilterData"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilter"))
                     {
-                        storedOutputResponseMessage += "***parameterFilterData*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilter*** cannot be blank or empty.\n"; ;
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFilterKeyValuePairKey"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterKey"))
                     {
-                        storedOutputResponseMessage += "***parameterFilterKeyValuePairKey*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterKey*** cannot be blank or empty.\n"; ;
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFilterKeyValuePairValue"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterValue"))
                     {
-                        storedOutputResponseMessage += "***parameterFilterKeyValuePairValue*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterValue*** cannot be blank or empty.\n"; ;
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFilterReturnValueAsArray"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseAsArray"))
                     {
-                        storedOutputResponseMessage += "***parameterFilterReturnValueAsArray*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterOutputResponseAsArray*** cannot be blank or empty.\n"; ;
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -259,12 +259,12 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region MEMORIZE filter metadata
 
-            JObject storedData = parameterInputs.Parameters["parameterFilterData"];
+            JObject storedData = parameterInputs.Parameters["parameterProcessRequestDataToFilter"];
 
-            string storedKeyValuePairKey = parameterInputs.Parameters["parameterFilterKeyValuePairKey"];
-            string storedKeyValuePairValue = parameterInputs.Parameters["parameterFilterKeyValuePairValue"];
+            string storedKeyValuePairKey = parameterInputs.Parameters["parameterProcessRequestDataToFilterKey"];
+            string storedKeyValuePairValue = parameterInputs.Parameters["parameterProcessRequestDataToFilterValue"];
 
-            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterFilterReturnValueAsArray"];
+            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterOutputResponseAsArray"];
 
             #endregion
 
@@ -429,27 +429,27 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFilterData"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilter"))
                     {
-                        storedOutputResponseMessage += "***parameterFilterData*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilter*** cannot be blank or empty.\n"; ;
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFilterKeyValuePairKey"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterKey"))
                     {
-                        storedOutputResponseMessage += "***parameterFilterKeyValuePairKey*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterKey*** cannot be blank or empty.\n"; ;
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFilterKeyValuePairValue"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterValue"))
                     {
-                        storedOutputResponseMessage += "***parameterFilterKeyValuePairValue*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterValue*** cannot be blank or empty.\n"; ;
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterFilterReturnValueAsArray"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseAsArray"))
                     {
-                        storedOutputResponseMessage += "***parameterFilterReturnValueAsArray*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterOutputResponseAsArray*** cannot be blank or empty.\n"; ;
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -562,12 +562,12 @@ namespace BaseDI.Professional.Script.Programming.Extensions_1
 
             #region MEMORIZE filter metadata
 
-            JObject storedData = parameterInputs.Parameters["parameterFilterData"];
+            JObject storedData = parameterInputs.Parameters["parameterProcessRequestDataToFilter"];
 
-            string storedKeyValuePairKey = parameterInputs.Parameters["parameterFilterKeyValuePairKey"];
-            string storedKeyValuePairValue = parameterInputs.Parameters["parameterFilterKeyValuePairValue"];
+            string storedKeyValuePairKey = parameterInputs.Parameters["parameterProcessRequestDataToFilterKey"];
+            string storedKeyValuePairValue = parameterInputs.Parameters["parameterProcessRequestDataToFilterValue"];
 
-            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterFilterReturnValueAsArray"];
+            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterOutputResponseAsArray"];
 
             #endregion
 

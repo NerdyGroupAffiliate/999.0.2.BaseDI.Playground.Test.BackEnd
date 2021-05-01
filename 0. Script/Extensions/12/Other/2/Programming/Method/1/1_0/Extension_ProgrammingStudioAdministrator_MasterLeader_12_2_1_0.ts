@@ -124,23 +124,23 @@ export namespace BaseDI.Professional.Programming.Extensions_1
                         }
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterFilterData")) {
-                        storedOutputResponseMessage += "***parameterFilterData*** cannot be blank or empty.\n";
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataToFilter")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilter*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterFilterKeyValuePairKey")) {
-                        storedOutputResponseMessage += "***parameterFilterKeyValuePairKey*** cannot be blank or empty.\n";
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataToFilterKey")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterKey*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterFilterKeyValuePairValue")) {
-                        storedOutputResponseMessage += "***parameterFilterKeyValuePairValue*** cannot be blank or empty.\n";
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataToFilterValue")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterValue*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterFilterReturnValueAsArray")) {
-                        storedOutputResponseMessage += "***parameterFilterReturnValueAsArray*** cannot be blank or empty.\n";
+                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseAsArray")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseAsArray*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -250,12 +250,12 @@ export namespace BaseDI.Professional.Programming.Extensions_1
 
             //#region MEMORIZE filter metadata
 
-            let storedData = parameterInputs.Parameters.getValue("parameterFilterData");
+            let storedData = parameterInputs.Parameters.getValue("parameterProcessRequestDataToFilter");
 
-            let storedKeyValuePairKey: string = parameterInputs.Parameters.getValue("parameterFilterKeyValuePairKey");
-            let storedKeyValuePairValue: string = parameterInputs.Parameters.getValue("parameterFilterKeyValuePairValue");
+            let storedKeyValuePairKey: string = parameterInputs.Parameters.getValue("parameterProcessRequestDataToFilterKey");
+            let storedKeyValuePairValue: string = parameterInputs.Parameters.getValue("parameterProcessRequestDataToFilterValue");
 
-            let storedReturnValueAsArray: boolean = parameterInputs.Parameters.getValue("parameterFilterReturnValueAsArray");
+            let storedReturnValueAsArray: boolean = parameterInputs.Parameters.getValue("parameterOutputResponseAsArray");
 
             //#endregion
 

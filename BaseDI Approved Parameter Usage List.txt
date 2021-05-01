@@ -27,10 +27,10 @@ Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.cs / ts
 //CONVERT json dataset to filetered version 2 - Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0
 parameterProcessRequestSettings
 parameterProcessRequestTracker
-parameterFilterData
-parameterFilterKeyValuePairKey
-parameterFilterKeyValuePairValue
-parameterFilterReturnValueAsArray
+parameterProcessRequestDataToFilter
+parameterProcessRequestDataToFilterKey
+parameterProcessRequestDataToFilterValue
+parameterOutputResponseAsArray
 
 
 //OUTPUT observation item - Step_X_X_Framework_Output_JsonObservationNode_1_0

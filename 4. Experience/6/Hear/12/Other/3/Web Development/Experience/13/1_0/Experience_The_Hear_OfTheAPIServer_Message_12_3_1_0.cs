@@ -19,15 +19,22 @@ using BaseDI.Professional.Story.Programming_1;
 
 #region .Net Core
 
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 
 using Microsoft.Extensions.Configuration;
+
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.IO;
 
 #endregion 
 
@@ -1901,6 +1908,12 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #endregion
 
+            #region DEFINE input variables
+
+            dynamic storedInputRequestFilesMetaData = null;
+
+            #endregion
+
             #region DEFINE parameter inputs
 
             SingleParmPoco_12_2_1_0 storedInputs = null;
@@ -1914,12 +1927,21 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_7_Process_StoryResources -> Factory_Action_7_Process_StoryResources -> Execute_Factory_Action_7_Process_StoryResources_MapStaticFiles");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");            
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_7_Process_StoryResources -> Factory_Action_7_Process_StoryResources -> Execute_Factory_Action_7_Process_StoryResources_MapStaticFiles");
+
+            #endregion
+
+            #region MEMORIZE process extra data
+
+            IApplicationBuilder storedControlRequest_IApplicationBuilder = (_storedProcessRequestExtraData.KeyValuePairs["storedControlRequest_IApplicationBuilder"] != null) ? (IApplicationBuilder)_storedProcessRequestExtraData.KeyValuePairs["storedControlRequest_IApplicationBuilder"] : null;
+            IServiceCollection storedControlRequest_IServiceCollection = (_storedProcessRequestExtraData.KeyValuePairs["storedControlRequest_IServiceCollection"] != null) ? (IServiceCollection)_storedProcessRequestExtraData.KeyValuePairs["storedControlRequest_IServiceCollection"] : null;
+            IWebHostEnvironment storedControlRequest_IWebHostEnvironment = (_storedProcessRequestExtraData.KeyValuePairs["storedControlRequest_IWebHostEnvironment"] != null) ? (IWebHostEnvironment)_storedProcessRequestExtraData.KeyValuePairs["storedControlRequest_IWebHostEnvironment"] : null;
 
             #endregion
 
@@ -1933,24 +1955,119 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             {
                 #region IDEAL CASE - USE baseDI extension
 
-                storedInputs = new SingleParmPoco_12_2_1_0();
-                storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-                storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", _storedProcessRequestDataStorylineDetails);
-                storedInputs.Parameters.Add("parameterFilterData", _storedProcessRequestDataStorylineDetails);
-                storedInputs.Parameters.Add("parameterFilterKeyValuePairKey", "searchkey");
-                storedInputs.Parameters.Add("parameterFilterKeyValuePairValue", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_storedProcessRequestTrackerrmationSetupDetails");
-                storedInputs.Parameters.Add("parameterFilterReturnValueAsArray", false);
+                #region A. CONVERT dataset to filtered file data
 
-                storedOutputResponseData = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs); //.SingleOrDefault()?.Parent;
-
-                if (storedOutputResponseData != null)
+                try
                 {
-                    var setupItemEnvironmentClient = storedOutputResponseData?.Parent.value[0]._2_2_2_1_1_storedProcessRequestTrackerrmationSetupItem.value.SetupItemEnvironmentClient;
+                    Func<Task<dynamic>> ExecuteConversionRequest = async () =>
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+                        storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
 
-                    storedOutputResponseData = _storedProcessRequestDataStorylineDetails;
-                    storedOutputResponseData.outputs[1].baseDIObservations.Add(setupItemEnvironmentClient);
+                        storedInputs.Parameters.Add("parameterProcessRequestDataToFilter", _storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.Add("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "SetupDetails_Servers_Server_1_0_ServerWeb_2_2_2_1_serverInformationSetupDetails");
+
+                        storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
+
+                        storedOutputResponseData = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs); //.SingleOrDefault()?.Parent;
+
+                        if (storedOutputResponseData != null)
+                        {
+                            var setupItemEnvironmentClient = storedOutputResponseData?.Parent.value[0]._2_2_2_1_1_storedProcessRequestTrackerrmationSetupItem.value.SetupItemEnvironmentClient;
+
+                            storedOutputResponseData = _storedProcessRequestDataStorylineDetails;
+                            storedOutputResponseData.outputs[1].baseDIObservations.Add(setupItemEnvironmentClient);
+                        }
+
+                        return storedOutputResponseData;
+                    };
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
                 }
+                catch (Exception mistake)
+                {
+                    throw new Exception("FAILED to convert dataset to static folder data", mistake);
+                }
+
+                #endregion
+
+                #region B. STORE memory reference to filtered file data
+
+                try
+                {
+                    Func<Task<dynamic>> ExecuteStorageRequest = async () =>
+                    {
+                        if (storedOutputResponseData != null)
+                        {
+                            storedInputRequestFilesMetaData = JObject.Parse(storedOutputResponseData.ToString());
+                            storedOutputResponseData = storedInputRequestFilesMetaData.outputs[1].baseDIObservations;
+
+                            if (storedOutputResponseData.Any())
+                            {
+                                foreach (dynamic storedOutputResponseDataItem in storedOutputResponseData.FirstOrDefault())
+                                {
+                                    if (storedOutputResponseDataItem.Value != null)
+                                    {
+                                        if (!Directory.Exists(Path.Combine(storedOutputResponseDataItem.Value.ToString())))
+                                        {
+                                            Directory.CreateDirectory(Path.Combine(storedOutputResponseDataItem.Value.ToString()));
+                                        }
+
+                                        storedControlRequest_IApplicationBuilder.UseStaticFiles(new StaticFileOptions
+                                        {
+                                            FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine(storedOutputResponseDataItem.Value.ToString()))),
+                                            RequestPath = "/StaticFiles"
+                                        });
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception("USE EDGE CASE - hardcoded data");
+                            }
+                        }
+
+                        return await Task.FromResult<bool>(true).ConfigureAwait(true);
+                    };
+
+                    await ExecuteStorageRequest();
+                }
+                catch
+                {
+                    #region EDGE CASE - USE hardcoded data
+
+                    storedControlRequest_IApplicationBuilder.UseStaticFiles(new StaticFileOptions
+                    {
+                        FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))),
+                        RequestPath = "/StaticFiles"
+                    });
+
+                    #endregion
+
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode)
+                    {
+                        _storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)_storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED mapping static files...USING hardcoded values");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_7_Process_StoryResources -> Factory_Action_7_Process_StoryResources -> Execute_Factory_Action_7_Process_StoryResources_MapStaticFiles");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake", null);
+
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
+                    }
+
+                    #endregion
+                }
+
+                #endregion
 
                 #endregion
             }

@@ -249,9 +249,87 @@ namespace BaseDI.Professional
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection parameterControlRequestServices)
         {
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs1;
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control client server
+
+            _storedControlRequestClientOrServer = this;
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process extra data
+
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IServiceCollection", parameterControlRequestServices);
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process .net services
+
+            #region EDGE CASE - USE .net pipeline
+
             parameterControlRequestServices.AddControllers();
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequestServices", parameterControlRequestServices);
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+
+            #endregion       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -342,6 +420,13 @@ namespace BaseDI.Professional
 
             #region MEMORIZE process variables
 
+            #region MEMORIZE process configure instances
+
+            IApplicationBuilder storedControlRequest_IApplicationBuilder = parameterControlRequest_IApplicationBuilder;
+            IWebHostEnvironment storedControlRequest_IWebHostEnvironment = parameterControlRequest_IWebHostEnvironment;
+
+            #endregion
+
             #region MEMORIZE process request settings
 
             _storedProcessRequestTracker.Add("storedProcessRequestSettings", _storedProcessRequestSettings);
@@ -368,8 +453,8 @@ namespace BaseDI.Professional
 
             #region MEMORIZE process extra data
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IApplicationBuilder", parameterControlRequest_IApplicationBuilder);
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IWebHostEnvironment", parameterControlRequest_IWebHostEnvironment);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IApplicationBuilder", storedControlRequest_IApplicationBuilder);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IWebHostEnvironment", storedControlRequest_IWebHostEnvironment);
 
             _storedProcessRequestTracker.Add("storedProcessRequestExtraData", _storedProcessRequestExtraData);
 
@@ -395,6 +480,8 @@ namespace BaseDI.Professional
 
             try
             {
+                #region A. INPUT request
+
                 _storedProcessRequestTracker.Remove("storedInputRequestActionName");
                 _storedProcessRequestTracker.Remove("storedProcessRequestStepNumber");                
 
@@ -403,7 +490,13 @@ namespace BaseDI.Professional
 
                 storedInputs1.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
 
+                #endregion
+
+                #region B. PROCESS request
+
                 storedOutputResponseActionResult = Action(storedInputs1).Result;
+
+                #endregion
             }
             catch (Exception mistake)
             {
@@ -444,40 +537,7 @@ namespace BaseDI.Professional
             {
                 #region IDEAL CASE - USE json metadata
 
-                ExecuteControlRequest = (JObject storedInputRequestMappedStaticFiles) =>
-                {
-                    if (storedInputRequestMappedStaticFiles != null)
-                    {
-                        storedInputRequestFilesMetaData = JObject.Parse(storedInputRequestMappedStaticFiles.ToString());
-                        storedOutputResponseData = storedInputRequestFilesMetaData.outputs[1].baseDIObservations;
-
-                        if (storedOutputResponseData.Any())
-                        {
-                            foreach (dynamic item in storedOutputResponseData.FirstOrDefault())
-                            {
-                                if (item.Value != null)
-                                {
-                                    if (!Directory.Exists(Path.Combine(item.Value.ToString())))
-                                    {
-                                        Directory.CreateDirectory(Path.Combine(item.Value.ToString()));
-                                    }
-
-                                    parameterControlRequest_IApplicationBuilder.UseStaticFiles(new StaticFileOptions
-                                    {
-                                        FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine(item.Value.ToString()))),
-                                        RequestPath = "/StaticFiles"
-                                    });
-                                }
-                            }
-                        }
-                        else
-                        {
-                            throw new Exception("USE EDGE CASE - hardcoded data");
-                        }
-                    }
-
-                    return new OkResult();
-                };
+                #region A. INPUT request
 
                 _storedProcessRequestTracker.Remove("storedInputRequestActionName");
                 _storedProcessRequestTracker.Remove("storedProcessRequestStepNumber");
@@ -488,21 +548,43 @@ namespace BaseDI.Professional
                 storedInputs2.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                 storedInputs2.Parameters.Add("parameterProcessRequestCallBack", ExecuteControlRequest);
 
+                #endregion
+
+                #region B. PROCESS request
+
                 storedOutputResponseActionResult = Action(storedInputs2).Result;
 
                 #endregion
+
+                #endregion
             }
-            catch
+            catch (Exception mistake)
             {
-                #region EDGE CASE - USE hardcoded data
+                #region EDGE CASE - USE developer logger
 
-                parameterControlRequest_IApplicationBuilder.UseStaticFiles(new StaticFileOptions
+                if (storedProcessRequestDeveloperMode)
                 {
-                    FileProvider = new PhysicalFileProvider(Path.GetFullPath(Path.Combine("wwwroot/Client/Images"))),
-                    RequestPath = "/StaticFiles"
-                });
+                    _storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)_storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                #endregion     
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED mapping static files");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake", mistake);
+
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw new Exception("CONVERSION request failed " + mistake.ToString());
+
+                #endregion
             }
 
             #endregion
@@ -511,8 +593,8 @@ namespace BaseDI.Professional
 
             #region IDEAL CASE - USE .net core
 
-            parameterControlRequest_IApplicationBuilder.UseRouting();
-            parameterControlRequest_IApplicationBuilder.UseEndpoints(endpoints =>
+            storedControlRequest_IApplicationBuilder.UseRouting();
+            storedControlRequest_IApplicationBuilder.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
