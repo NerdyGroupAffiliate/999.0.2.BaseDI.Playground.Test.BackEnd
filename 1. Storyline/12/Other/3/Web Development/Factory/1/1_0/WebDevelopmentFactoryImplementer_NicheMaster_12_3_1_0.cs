@@ -301,7 +301,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -325,7 +325,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -453,67 +453,67 @@ namespace BaseDI.Professional.Story.Web_Development_1
                 switch (storedClientRequestByName.ToUpper())
                 {
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_CREATEHOMESCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_READHOMESCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_2_READPRESALESSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_READOPTINSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_4_READTHANKYOUSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_5_READSALESSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_6_READORDERFORMSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_7_READOTOSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_8_READWEBINARSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_9_READMEMBERSHIPSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_10_READAFFILIATESCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_11_READOTHERSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs);
 
                         break;
 
                     case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_12_READADVANCEDSCREENFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs);
 
                         break;
 
@@ -536,7 +536,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
                 #endregion
 
@@ -568,7 +568,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 1
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -592,7 +592,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -607,7 +607,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = null;// new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = null;// new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -655,7 +655,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             #endregion
         }
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -679,7 +679,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -694,7 +694,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -710,12 +710,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_ReadHomeScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -746,7 +746,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 2
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -770,7 +770,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -785,7 +785,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -801,12 +801,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_2_ReadPresalesScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -837,7 +837,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 3
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -861,7 +861,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -876,7 +876,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -892,12 +892,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_3_ReadOptinScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -928,7 +928,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 4
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -952,7 +952,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -967,7 +967,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -983,12 +983,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_4_ReadThankYouScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -1019,7 +1019,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 5
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1043,7 +1043,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1058,7 +1058,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1074,12 +1074,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_5_ReadSalesScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -1110,7 +1110,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 6
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1134,7 +1134,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1149,7 +1149,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1165,12 +1165,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_6_ReadOrderFormScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -1201,7 +1201,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 7
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1225,7 +1225,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1240,7 +1240,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1256,12 +1256,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -1292,7 +1292,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 8
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1316,7 +1316,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadOTOScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1331,7 +1331,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1347,12 +1347,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_8_ReadWebinarScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -1383,7 +1383,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 9
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1407,7 +1407,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1422,7 +1422,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1438,12 +1438,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_9_ReadMembershipScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -1474,7 +1474,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 10
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1498,7 +1498,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1513,7 +1513,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1529,12 +1529,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_10_ReadAffiliateScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -1565,7 +1565,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 11
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1589,7 +1589,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1604,7 +1604,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1620,12 +1620,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_11_ReadOtherScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -1656,7 +1656,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 12
 
-        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1680,7 +1680,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1695,7 +1695,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1711,12 +1711,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_12_ReadAdvancedScreenForAll_Handler_1_0(parameterInputs); //new 
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;

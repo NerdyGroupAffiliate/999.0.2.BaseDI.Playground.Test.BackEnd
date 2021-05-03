@@ -1,0 +1,8 @@
+﻿const ExecutionControlRequest = () => {}
+const ExecutionInputRequest = () => {}
+const ExecutionConvertRequest = () => {}
+const ExecutionTransportRequest = () => {}
+const ExecutionStorageRequest = () => {}
+const ExecutionDisturbanceRequest = () => {}
+const ExecutionSensorRequest = () => {}
+const ExecutionOutputRequest = () => {}

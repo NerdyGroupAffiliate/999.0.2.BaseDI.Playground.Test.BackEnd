@@ -14,9 +14,9 @@ var BaseDI;
                     (function (Extensions_) {
                         var eMethods_Programming_Repository_12_2_1_0 = /** @class */ (function () {
                             function eMethods_Programming_Repository_12_2_1_0() {
-                                String.prototype.Extension_Try_Read_RepositoryType = this.Extension_Try_Read_RepositoryType;
+                                String.prototype.Extension_Try_Output_RepositoryType = this.Extension_Try_Output_RepositoryType;
                             }
-                            eMethods_Programming_Repository_12_2_1_0.prototype.Extension_Try_Read_RepositoryType = function (parseExceptionRepository, isParameterJSON) {
+                            eMethods_Programming_Repository_12_2_1_0.prototype.Extension_Try_Output_RepositoryType = function (parseExceptionRepository, isParameterJSON) {
                                 //region CHECK DATA EXIST
                                 var repositoryType = "";
                                 try {

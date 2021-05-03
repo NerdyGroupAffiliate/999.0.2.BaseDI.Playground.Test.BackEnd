@@ -11,8 +11,8 @@ import * as Action_12_2_1_0 from "../../../../../../../../0. Script/Parameters/1
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
 
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
-import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
-import * as Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/0/1_0/Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0";
+import * as Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/3/Web Development/Method/0/1_0/Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0";
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
@@ -59,7 +59,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
 
         private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-        private _storedRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_7_CreateAdvertisementForAll_Handler_1_0 ";
+        private _storedRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_7_CreateAdvertisement_Handler_1_0 ";
         private _storedRequestName: string = "";
         private _storedRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedSystemRequestByName: string;
@@ -237,7 +237,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadHomeScreenForAll_Handler_1_0 -> Page_7_5_Process_StorySetting_12_3_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputHomeScreen_Handler_1_0 -> Page_7_5_Process_StorySetting_12_3_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
 
             //OPTIONAL
@@ -278,7 +278,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
             let storedStorageCounter: number = 0;
 
             let storedStorageDictionary: Object = {};
-            let storedStorageKey: string = "StorageKey_" + "Director_Of_WebDevelopment_Chapter_12_3_Page_7_ReadHomeScreenForAll_Handler_1_0" + "-" + "Read-BaseDI_PresentationHTML_Content";
+            let storedStorageKey: string = "StorageKey_" + "Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputHomeScreen_Handler_1_0" + "-" + "Read-BaseDI_PresentationHTML_Content";
 
             let storedStorageUpdateMode: boolean = false;
 
@@ -321,7 +321,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
                         storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs);
+                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs);
 
                         return storedHtmlResultString;
                     };
@@ -357,7 +357,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
                         storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs);
+                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs);
 
                         return storedHtmlResultString;
                     };
@@ -393,7 +393,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
                         storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs);
+                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs);
 
                         return storedHtmlResultString;
                     };
@@ -429,7 +429,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
                         storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs);
+                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs);
 
                         return storedHtmlResultString;
                     };
@@ -466,7 +466,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
                         storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs);
+                        return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs);
                     };
 
                     storedHtmlResultInlineStylesString = await ExecuteConversionRequest();
@@ -524,7 +524,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
                         storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs);
+                        return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs);
                     };
 
                     storedHtmlResultString = await ExecuteOutputResponse();
@@ -597,7 +597,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", mistake);
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
 
                 //#endregion

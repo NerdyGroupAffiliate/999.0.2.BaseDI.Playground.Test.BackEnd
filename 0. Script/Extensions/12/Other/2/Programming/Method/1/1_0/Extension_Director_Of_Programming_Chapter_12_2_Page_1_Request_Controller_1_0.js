@@ -16,7 +16,7 @@ var BaseDI;
                             function eMethods_Programming_JSON_12_2_1_0() {
                                 String.prototype.Extension_Create_JSON_Node_MistakeTemplate_1_0 = this.Extension_Create_JSON_Node_MistakeTemplate_1_0;
                                 String.prototype.Extension_Create_JSON_Node_ObservationTemplate_1_0 = this.Extension_Create_JSON_Node_ObservationTemplate_1_0;
-                                String.prototype.Extension_Read_JSON_Nodes_1_0 = this.Extension_Read_JSON_Nodes_1_0;
+                                String.prototype.Extension_Output_JSON_Nodes_1_0 = this.Extension_Output_JSON_Nodes_1_0;
                             }
                             //region CREATE SOMETHING METHODS
                             eMethods_Programming_JSON_12_2_1_0.prototype.Extension_Create_JSON_Node_MistakeTemplate_1_0 = function (metaDataCalledByEntryPointName, metaDataCalledByMethodName, metaDataCalledByMethodReason, mistakeDetailsTemplate) {
@@ -44,8 +44,8 @@ var BaseDI;
                                 return outputObservationBody;
                             };
                             //region READ SOMETHING METHODS
-                            eMethods_Programming_JSON_12_2_1_0.prototype.Extension_Read_JSON_Nodes_1_0 = function (name) {
-                                //this.Extension_Read_JSON_Nodes_1_1(name,)
+                            eMethods_Programming_JSON_12_2_1_0.prototype.Extension_Output_JSON_Nodes_1_0 = function (name) {
+                                //this.Extension_Output_JSON_Nodes_1_1(name,)
                                 return null;
                             };
                             return eMethods_Programming_JSON_12_2_1_0;

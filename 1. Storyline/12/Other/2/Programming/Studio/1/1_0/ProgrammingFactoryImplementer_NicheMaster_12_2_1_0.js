@@ -95,7 +95,7 @@ var BaseDI;
                                                 case "Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0": return [3 /*break*/, 3];
                                             }
                                             return [3 /*break*/, 5];
-                                        case 1: return [4 /*yield*/, this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_ReadAndHandleMistakes_1_0(storylineDetails, storylineDetails_Parameters, this._extraData)];
+                                        case 1: return [4 /*yield*/, this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_OutputAndHandleMistakes_1_0(storylineDetails, storylineDetails_Parameters, this._extraData)];
                                         case 2:
                                             resolvedRequest = _b.sent();
                                             return [2 /*return*/, resolvedRequest];
@@ -109,11 +109,11 @@ var BaseDI;
                             });
                         };
                         //region Page 1
-                        ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.prototype.Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_ReadAndHandleMistakes_1_0 = function (storylineDetails, storylineDetails_Parameters, extraData) {
+                        ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.prototype.Create_Director_Of_RiskManagement_Chapter_11_1_Page_1_OutputAndHandleMistakes_1_0 = function (storylineDetails, storylineDetails_Parameters, extraData) {
                             return __awaiter(this, void 0, void 0, function () {
                                 var repositoryType, director, localFile, remoteService;
                                 return __generator(this, function (_a) {
-                                    repositoryType = storylineDetails.Extension_Try_Read_RepositoryType(false, true);
+                                    repositoryType = storylineDetails.Extension_Try_Output_RepositoryType(false, true);
                                     director = new Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0.BaseDI.Professional.Director.Risk_Management_1.Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0(extraData);
                                     director.StorylineDetails = storylineDetails;
                                     director.StorylineDetails_Parameters = storylineDetails_Parameters;
@@ -138,7 +138,7 @@ var BaseDI;
                             return __awaiter(this, void 0, void 0, function () {
                                 var repositoryType, director, localFile, remoteService;
                                 return __generator(this, function (_a) {
-                                    repositoryType = storylineDetails.Extension_Try_Read_RepositoryType(false, true);
+                                    repositoryType = storylineDetails.Extension_Try_Output_RepositoryType(false, true);
                                     director = new Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0.BaseDI.Professional.Director.Risk_Management_2.Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0(extraData);
                                     director.StorylineDetails = storylineDetails;
                                     director.StorylineDetails_Parameters = storylineDetails_Parameters;

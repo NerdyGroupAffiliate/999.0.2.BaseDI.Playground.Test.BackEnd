@@ -443,7 +443,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 stored_ExceptionDetails.Parameters.Add("storedProcessRequestExtraData", _storedProcessRequestExtraData);
                 stored_ExceptionDetails.Parameters.Add("storedProcessRequestMistakes", mistake);
 
-                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails).Result;
+                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails).Result;
 
                 #endregion
             }

@@ -278,7 +278,7 @@ namespace BaseDI.Professional.Story.Security_1
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -302,7 +302,7 @@ namespace BaseDI.Professional.Story.Security_1
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -430,7 +430,7 @@ namespace BaseDI.Professional.Story.Security_1
                 switch (storedClientRequestByName.ToUpper())
                 {
                     case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
-                        storedRequestHandler = Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
 
                         break;
                 }
@@ -449,7 +449,7 @@ namespace BaseDI.Professional.Story.Security_1
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
 
                 #endregion
@@ -482,7 +482,7 @@ namespace BaseDI.Professional.Story.Security_1
 
         #region Page 1
 
-        private object Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -506,7 +506,7 @@ namespace BaseDI.Professional.Story.Security_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "SecurityFactoryImplementer_NicheMaster_12_5_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -521,7 +521,7 @@ namespace BaseDI.Professional.Story.Security_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -537,12 +537,12 @@ namespace BaseDI.Professional.Story.Security_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;

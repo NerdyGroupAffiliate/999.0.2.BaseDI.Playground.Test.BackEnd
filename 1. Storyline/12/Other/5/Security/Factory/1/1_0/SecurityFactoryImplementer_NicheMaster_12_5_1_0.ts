@@ -9,7 +9,7 @@ import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../.
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
-import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0";
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0";
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
@@ -21,13 +21,13 @@ import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../..
 //4. EXPERIENCES - SHARED FEATURES
 
 //6. STATE - LOCAL REPOSITORIES
-import * as LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 from "../../../../../../../../6. State/12/Other/5/Security/Repository/1/1_0/LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
+import * as LocalFile_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0 from "../../../../../../../../6. State/12/Other/5/Security/Repository/1/1_0/LocalFile_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0";
 
 //6. STATE - REMOTE REPOSITORIES
-import * as RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 from "../../../../../../../../6. State/12/Other/5/Security/Repository/1/1_0/RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
+import * as RemoteService_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0 from "../../../../../../../../6. State/12/Other/5/Security/Repository/1/1_0/RemoteService_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0";
 
 //7. DIRECTOR - PROPRIETARY FEATURES
-import * as Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0 from "../../../../../../../../7. Director/12/Other/5/Security/Director/1/1_0/Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0";
+import * as Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0 from "../../../../../../../../7. Director/12/Other/5/Security/Director/1/1_0/Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0";
 
 //#endregion
 
@@ -258,7 +258,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -280,7 +280,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -406,7 +406,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
 
                 switch (storedClientRequestByName.toUpperCase()) {
                      case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
-                        storedRequestHandler = this.Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs);
+                        storedRequestHandler = this.Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
 
                         break;
                 }
@@ -422,7 +422,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_CreateReadUpdateDeleteForAll_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
                 //#endregion
 
@@ -453,7 +453,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
         }
 
         //#region Page 1
-        private Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        private Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
         {
             //#region 1. INPUTS
 
@@ -477,7 +477,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "SecurityFactoryImplementer_NicheMaster_12_5_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -492,7 +492,7 @@ export namespace BaseDI.Professional.Story.Security_1 {
 
             //#region IDEAL CASE - USE director
 
-            let storedRequestHandler_Director = new Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.Professional.Director.Security_1.Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs);
+            let storedRequestHandler_Director = new Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0.BaseDI.Professional.Director.Security_1.Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
 
@@ -507,12 +507,12 @@ export namespace BaseDI.Professional.Story.Security_1 {
 
             switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.Professional.State.Security_1.LocalFile_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0.BaseDI.Professional.State.Security_1.LocalFile_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0.BaseDI.Professional.State.Security_1.RemoteService_Director_Of_Security_Chapter_12_5_Page_1_ReadAuthenticationForAll_Handler_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0.BaseDI.Professional.State.Security_1.RemoteService_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
 
                     break;

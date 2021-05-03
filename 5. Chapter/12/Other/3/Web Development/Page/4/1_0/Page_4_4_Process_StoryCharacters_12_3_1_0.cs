@@ -75,7 +75,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_4
 
         private SingleParmPoco_12_2_1_0 _storedParameterInputs;
 
-        private string _storedRequestFileName = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_4_CreateAdvertisementForAll_Handler_1_0";
+        private string _storedRequestFileName = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_4_CreateAdvertisement_Handler_1_0";
         private string _storedRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedRepository;
         private string _storedSystemRequestByName;

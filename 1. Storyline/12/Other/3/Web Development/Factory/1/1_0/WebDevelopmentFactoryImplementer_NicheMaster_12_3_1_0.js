@@ -50,9 +50,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aClass_Programming_ScriptNicheMaster_12_2_1_0 = require("../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptNicheMaster_12_2_1_0");
-//import * as LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/1/1_0/LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0";
-//import * as RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/1/1_0/RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0";
-//import * as Director_Of_Productivity_Chapter_1_1_Page_1_XXXXX_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/1/1_0/Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0";
+//import * as LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/1/1_0/LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
+//import * as RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/1/1_0/RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
+//import * as Director_Of_Productivity_Chapter_1_1_Page_1_XXXXX_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/1/1_0/Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
 var BaseDI;
 (function (BaseDI) {
     var ProtoType;
@@ -98,20 +98,20 @@ var BaseDI;
                             return __awaiter(this, void 0, void 0, function () {
                                 return __generator(this, function (_a) {
                                     //region CHECK FOR MISTAKES
-                                    //let repositoryType: string = storylineDetails.Extension_Try_Read_RepositoryType(false, true);
+                                    //let repositoryType: string = storylineDetails.Extension_Try_Output_RepositoryType(false, true);
                                     //region ASSIGN REQUEST HANDLER
-                                    //let director = new Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Professional.Director.Advertising_.Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(extraData);
+                                    //let director = new Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.BaseDI.Professional.Director.Advertising_.Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(extraData);
                                     //director.StorylineDetails = storylineDetails;
                                     //director.StorylineDetails_Parameters = storylineDetails_Parameters;
                                     //director.ExtraData = extraData;
                                     //region ASSIGN LOGIC REPOSITORY
                                     //switch (repositoryType.toUpperCase()) {
                                     //    case "LOCAL_FILE":
-                                    //        var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Professional.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                                    //        var localFile = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.BaseDI.Professional.State.Advertising_.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(storylineDetails);
                                     //        director.Repository = localFile;
                                     //        break;
                                     //    case "REMOTE_SERVICE":
-                                    //        var remoteService = new RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0.BaseDI.Professional.State.Advertising_.RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisementForAll_Handler_1_0(storylineDetails);
+                                    //        var remoteService = new RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_Handler_1_0.BaseDI.Professional.State.Advertising_.RemoteService_Direct_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_Handler_1_0(storylineDetails);
                                     //        director.Repository = remoteService;
                                     //        break;
                                     //}
