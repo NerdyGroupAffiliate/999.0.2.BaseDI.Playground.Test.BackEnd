@@ -47,7 +47,7 @@ parameterOutputResponseObservationSecurityTemplate
 parameterOutputResponseObservationDataTemplate
 
 =================================================================================================
-Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0
+Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0
 =================================================================================================
 
 //CONVERT json to html container - Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0

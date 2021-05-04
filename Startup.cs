@@ -383,8 +383,8 @@ namespace BaseDI.Professional
 
             //2. INPUTS
             storedInputs1.Parameters.Add("parameterInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0);
-            storedInputs1.Parameters.Add("parameterInputRequestName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
-            storedInputs1.Parameters.Add("parameterInputRequestNameDataCacheKey", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0");
+            storedInputs1.Parameters.Add("parameterInputRequestName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
+            storedInputs1.Parameters.Add("parameterInputRequestNameDataCacheKey", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-P1_0");
 
             //3. PROCESS
             storedInputs1.Parameters.Add("parameterProcessRequestCallBack", null);
@@ -404,8 +404,8 @@ namespace BaseDI.Professional
 
             //2. INPUTS
             storedInputs2.Parameters.Add("parameterInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0);
-            storedInputs2.Parameters.Add("parameterInputRequestName", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
-            storedInputs2.Parameters.Add("parameterInputRequestNameDataCacheKey", "Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0-P1_0");
+            storedInputs2.Parameters.Add("parameterInputRequestName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
+            storedInputs2.Parameters.Add("parameterInputRequestNameDataCacheKey", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-P1_0");
 
             //3. PROCESS
             storedInputs2.Parameters.Add("parameterProcessRequestCallBack", null);
@@ -515,7 +515,7 @@ namespace BaseDI.Professional
 
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
                 }
 
                 #endregion
@@ -575,7 +575,7 @@ namespace BaseDI.Professional
 
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
                 }
 
                 #endregion
@@ -754,7 +754,7 @@ namespace BaseDI.Professional
 
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
                 }
 
                 #endregion
@@ -1051,7 +1051,7 @@ namespace BaseDI.Professional
 
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -1075,7 +1075,7 @@ namespace BaseDI.Professional
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1255,7 +1255,7 @@ namespace BaseDI.Professional
 
                 Action = (SingleParmPoco_12_2_1_0 parameterInputs) =>
                 {
-                    return storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs))
+                    return storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs))
                         .SetupStoryline(parameterInputs)
                         .Action().Result;
                 };

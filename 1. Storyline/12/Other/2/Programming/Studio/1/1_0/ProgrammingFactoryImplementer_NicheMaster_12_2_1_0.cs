@@ -288,7 +288,7 @@ namespace BaseDI.Professional.Story.Programming_1
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -312,7 +312,7 @@ namespace BaseDI.Professional.Story.Programming_1
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -441,31 +441,31 @@ namespace BaseDI.Professional.Story.Programming_1
                 {
                     //CONTROLLER
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
-                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //CONVERSION
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
-                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //STORAGE
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
-                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //DISTURBANCES
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
-                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //SENSOR
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
-                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterInputs);
+                        storedRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
 
                         break;
                 }
@@ -484,7 +484,7 @@ namespace BaseDI.Professional.Story.Programming_1
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
 
                 #endregion
@@ -517,7 +517,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region Page 1
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -541,7 +541,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -556,7 +556,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -571,12 +571,12 @@ namespace BaseDI.Professional.Story.Programming_1
 
             switch (storedRepositoryType.ToUpper()) {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -607,7 +607,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region Page 2
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -631,7 +631,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -646,7 +646,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -662,12 +662,12 @@ namespace BaseDI.Professional.Story.Programming_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_Request_Conversion_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -698,7 +698,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region Page 3
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
             #region 1. INPUTS
 
@@ -722,7 +722,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -737,7 +737,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -753,12 +753,12 @@ namespace BaseDI.Professional.Story.Programming_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -789,7 +789,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region Page 4
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
             #region 1. INPUTS
 
@@ -813,7 +813,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -828,7 +828,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -844,12 +844,12 @@ namespace BaseDI.Professional.Story.Programming_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
@@ -880,7 +880,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region Page 5
 
-        private object Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
+        private object Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
             #region 1. INPUTS
 
@@ -904,7 +904,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -919,7 +919,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -935,12 +935,12 @@ namespace BaseDI.Professional.Story.Programming_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0(parameterInputs);
+                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
 
                     break;

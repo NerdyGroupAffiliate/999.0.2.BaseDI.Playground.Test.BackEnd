@@ -291,7 +291,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + storedInputRequestActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** EXECUTING request handler " + storedInputRequestActionName + " -> " + DirectorOrExperienceRequestHandler.RequestID + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         #endregion
@@ -320,7 +320,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         #region IDEAL CASE - USE request resolver
 
-                        return storedOutputResponseData = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                        return storedOutputResponseData = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
                             .SetupStoryline(_storedParameterInputs)
                             .Action();
 
@@ -334,7 +334,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                         {
                             ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                            Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
+                            Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** RESOLVING request handler for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0 -> Page_1_10_EndProcess*** for communication breakdown");
                         }
 
                         #endregion

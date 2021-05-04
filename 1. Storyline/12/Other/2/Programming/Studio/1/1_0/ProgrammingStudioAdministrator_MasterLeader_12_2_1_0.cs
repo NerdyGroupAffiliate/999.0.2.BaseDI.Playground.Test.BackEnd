@@ -399,7 +399,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region IDEAL CASE - USE an experience OR a director request handler
 
-                //NOTE: 1. The Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 is called "TWICE" per request.
+                //NOTE: 1. The Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0 is called "TWICE" per request.
                    //A: The first time is to "MERGE" the data objects of "StorylineDetails" and "StorylineDetails_Parameters" into ONE SINGLE data object.
                    //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
                 stored_ReferenceTo_RequestHandler = stored_ResolvedRequestHandler.Action();
@@ -443,7 +443,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 stored_ExceptionDetails.Parameters.Add("storedProcessRequestExtraData", _storedProcessRequestExtraData);
                 stored_ExceptionDetails.Parameters.Add("storedProcessRequestMistakes", mistake);
 
-                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails).Result;
+                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails).Result;
 
                 #endregion
             }
@@ -2067,8 +2067,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region OVERRIDE client request names
 
-            _storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
-            _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0";
+            _storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0";
+            _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
 
             _storedParameterInputs.Parameters["parameterInputRequestName"] =_storedClientRequestByName;
             _storedParameterInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedClientRequestByNameParameters;
@@ -2095,7 +2095,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 
                 if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE * **FAILED STORING a value.BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set.  -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2319,8 +2319,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region OVERRIDE client request names
 
-            _storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0";
-            _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0";
+            _storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0";
+            _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0-P1_0";
 
             _storedParameterInputs.Parameters["parameterInputRequestName"] = _storedClientRequestByName;
             _storedParameterInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedClientRequestByNameParameters;
@@ -2347,7 +2347,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Disturber_12_2_1_0");
 
-                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2571,8 +2571,8 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region OVERRIDE client request names
 
-            _storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0";
-            _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0";
+            _storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0";
+            _storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0-P1_0";
 
             _storedParameterInputs.Parameters["parameterInputRequestName"] = _storedClientRequestByName;
             _storedParameterInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedClientRequestByNameParameters;
@@ -2599,7 +2599,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Sensor_12_2_1_0.");
 
-                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(_storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 

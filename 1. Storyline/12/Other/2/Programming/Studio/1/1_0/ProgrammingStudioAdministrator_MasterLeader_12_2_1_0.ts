@@ -50,7 +50,7 @@ import * as CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0 from "../../..
 import * as ProductivityFactoryImplementer_NicheMaster_10_1_1_0 from "../../../../../../../../1. Storyline/10/Perform Manual Task/1/Productivity/Factory/1/1_0/ProductivityFactoryImplementer_NicheMaster_10_1_1_0";
 
 //11. Automate Manual Task
-import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0";
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
 import * as RiskManagementFactoryTester_NicheMaster_11_1_1_0 from "../../../../../../../../1. Storyline/11/Automate Manual Task/1/Risk Management/Factory/1/1_0/RiskManagementFactoryTester_NicheMaster_11_1_1_0";
 
 //12. Other
@@ -60,7 +60,7 @@ import * as WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0 from "../../..
 import * as CMSFactoryImplementer_NicheMaster_12_4_1_0 from "../../../../../../../../1. Storyline/12/Other/4/CMS/Factory/1/1_0/CMSFactoryImplementer_NicheMaster_12_4_1_0";
 import * as SecurityFactoryImplementer_NicheMaster_12_5_1_0 from "../../../../../../../../1. Storyline/12/Other/5/Security/Factory/1/1_0/SecurityFactoryImplementer_NicheMaster_12_5_1_0";
 
-import * as Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0";
+import * as Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0";
 
 //#endregion
 
@@ -280,7 +280,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -302,7 +302,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -453,14 +453,14 @@ export namespace BaseDI.Professional.Story.Programming_1
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
 
                 //#endregion
 
                 //#region IDEAL CASE - USE an experience OR a director request handler
 
-                //NOTE: 1. The Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0 is called "TWICE" per request.
+                //NOTE: 1. The Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0 is called "TWICE" per request.
                    //A: The first time is to "MERGE" the data objects of "StorylineDetails" and "StorylineDetails_Parameters" into ONE SINGLE data object.
                    //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
                 stored_ReferenceTo_RequestHandler = stored_ResolvedRequestHandler.Action();
@@ -503,7 +503,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 stored_ExceptionDetails.Parameters.setValue("storedProcessRequestExtraData", this._storedProcessRequestExtraData);
                 stored_ExceptionDetails.Parameters.setValue("storedProcessRequestMistakes", mistake);
 
-                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails);
+                throw Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Control_DeveloperException_1_0(stored_ExceptionDetails);
 
                 //#endregion
             }
@@ -2134,8 +2134,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region OVERRIDE client request names
 
-            this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0";
-            this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_Request_Storage_1_0-P1_0";
+            this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0";
+            this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
 
             this._storedParameterInputs.Parameters.setValue("parameterInputRequestName", this._storedClientRequestByName);
             this._storedParameterInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedClientRequestByNameParameters);
@@ -2170,7 +2170,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 
                 if (this._storedProcessRequestSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED STORING a value. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
                     .SetupStoryline(this._storedParameterInputs)
                     .Action();
 
@@ -2394,8 +2394,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region OVERRIDE client request names
 
-            this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0";
-            this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_4_Request_Disturbances_1_0-P1_0";
+            this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0";
+            this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0-P1_0";
 
             this._storedParameterInputs.Parameters.setValue("parameterInputRequestName", this._storedClientRequestByName);
             this._storedParameterInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedClientRequestByNameParameters);
@@ -2422,7 +2422,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 if (this._storedProcessRequestSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
                     .SetupStoryline(this._storedParameterInputs)
                     .Action();
 
@@ -2646,8 +2646,8 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region OVERRIDE client request names
 
-            this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0";
-            this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_5_Request_Sensor_1_0-P1_0";
+            this._storedClientRequestByName = "Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0";
+            this._storedClientRequestByNameParameters = "Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0-P1_0";
 
             this._storedParameterInputs.Parameters.setValue("parameterInputRequestName", this._storedClientRequestByName);
             this._storedParameterInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedClientRequestByNameParameters);
@@ -2672,7 +2672,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region IDEAL CASE - USE exception handler
 
-                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_Request_Controller_1_0(this._storedParameterInputs))
+                storedOutputResponseData = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
                     .SetupStoryline(this._storedParameterInputs)
                     .Action();
 

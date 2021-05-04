@@ -7,7 +7,7 @@ import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../
 import * as aClass_Programming_ScriptNicheMaster_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptNicheMaster_12_2_1_0"
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
-import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0";
+import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
 import * as Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/1/1_0/Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
@@ -18,17 +18,17 @@ import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Para
 import * as Implement_DesignPattern_Factory_Master_12_2_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/ProgrammingStudioAdministrator_MasterLeader_12_2_1_0";
 
 //4. EXPERIENCES - SHARED FEATURES
-import * as Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../4. Experience/6/Hear/12/Other/3/Web Development/Experience/13/1_0/Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+import * as Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0 from "../../../../../../../../4. Experience/6/Hear/12/Other/3/Web Development/Experience/13/1_0/Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0";
 
 //6. STATE - LOCAL REPOSITORIES
 //import * as LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0";
 import * as LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0";
-import * as LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/13/1_0/LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+import * as LocalFile_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/13/1_0/LocalFile_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0";
 
 //6. STATE - REMOTE REPOSITORIES
 //import * as RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0";
 import * as RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/1/1_0/RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0";
-import * as RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/13/1_0/RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0";
+import * as RemoteService_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0 from "../../../../../../../../6. State/12/Other/3/Web Development/Repository/13/1_0/RemoteService_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0";
 
 //7. DIRECTOR - PROPRIETARY FEATURES
 //import * as Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0 from "../../../../../../../../7. Director/12/Other/3/Web Development/Director/1/1_0/Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0";
@@ -277,7 +277,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -300,7 +300,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -493,7 +493,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                         break;
 
                     case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_3_1_0":
-                        storedRequestHandler = this.Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+                        storedRequestHandler = this.Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
 
                         break;
                 }
@@ -510,7 +510,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
                 //#endregion
 
@@ -1707,7 +1707,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
         //#region Page 13
 
-        private Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
+        private Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
         {
             //#region 1. INPUTS
 
@@ -1731,7 +1731,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1746,7 +1746,7 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
             //#region IDEAL CASE - USE director
 
-            let storedRequestHandler_Experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.Experience.Hear.Web_Development_13.Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+            let storedRequestHandler_Experience = new Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.BaseDI.Professional.Experience.Hear.Web_Development_13.Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Experience.ClientOrServerInstance = this._storedProcessRequestTracker;
 
@@ -1761,12 +1761,12 @@ export namespace BaseDI.Professional.Story.Web_Development_1 {
 
             switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Experience.Repository = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.State.Web_Development_13.LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+                    storedRequestHandler_Experience.Repository = new LocalFile_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.BaseDI.Professional.State.Web_Development_13.LocalFile_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Experience.Repository.RequestName = this._storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Experience.Repository = new RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0.BaseDI.Professional.State.Web_Development_13.RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+                    storedRequestHandler_Experience.Repository = new RemoteService_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.BaseDI.Professional.State.Web_Development_13.RemoteService_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
                     storedRequestHandler_Experience.Repository.RequestName = this._storedRequestName;
 
                     break;

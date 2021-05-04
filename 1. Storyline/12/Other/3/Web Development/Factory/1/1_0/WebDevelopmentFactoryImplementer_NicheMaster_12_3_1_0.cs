@@ -301,7 +301,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -325,7 +325,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -518,7 +518,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
                         break;
 
                     case "EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE_12_3_1_0":
-                        storedRequestHandler = Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+                        storedRequestHandler = Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
 
                         break;
                 }
@@ -536,7 +536,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
                 #endregion
 
@@ -1747,7 +1747,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
         #region Page 13
 
-        private object Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1771,7 +1771,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "WebDevelopmentFactoryImplementer_NicheMaster_12_3_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
@@ -1786,7 +1786,7 @@ namespace BaseDI.Professional.Story.Web_Development_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 storedRequestHandler_Experience = new Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs);
+            aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 storedRequestHandler_Experience = new Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
 
             storedRequestHandler_Experience.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -1802,12 +1802,12 @@ namespace BaseDI.Professional.Story.Web_Development_1
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Experience.Repository = new LocalFile_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs); //new 
+                    storedRequestHandler_Experience.Repository = new LocalFile_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Experience.Repository.RequestName = _storedRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Experience.Repository = new RemoteService_Experience_The_Hear_OfTheAPIServer_Message_12_3_1_0(parameterInputs); //new 
+                    storedRequestHandler_Experience.Repository = new RemoteService_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs); //new 
                     storedRequestHandler_Experience.Repository.RequestName = _storedRequestName;
 
                     break;

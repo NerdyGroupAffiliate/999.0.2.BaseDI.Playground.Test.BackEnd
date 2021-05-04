@@ -330,7 +330,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs);
+                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs);
 
                         return storedHtmlResultString;
                     };
@@ -367,7 +367,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs);
+                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs);
 
                         return storedHtmlResultString;
                     };
@@ -405,7 +405,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs);
+                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs);
 
                         return storedHtmlResultString;
                     };
@@ -443,7 +443,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs);
+                        storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs);
 
                         return storedHtmlResultString;
                     };
@@ -482,7 +482,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs);
+                        return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs);
                     };
 
                     storedHtmlResultInlineStylesString = await ExecuteConversionRequest();
@@ -544,7 +544,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
-                        return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_ProcessHelper_Handler_1_0.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs);
+                        return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs);
                     };
 
                     storedHtmlResultString = await ExecuteOutputResponse();
@@ -594,7 +594,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake", mistake);
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_ProcessHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
 
                 #endregion
