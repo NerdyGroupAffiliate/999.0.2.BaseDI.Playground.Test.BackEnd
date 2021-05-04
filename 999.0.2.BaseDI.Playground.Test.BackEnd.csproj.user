@@ -7,17 +7,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
-  <ItemGroup>
-    <TypeScriptCompile Update="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingFactoryImplementer_NicheMaster_12_2_1_0.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-  </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <TypeScriptCompile Update="1. Storyline\12\Other\2\Programming\Studio\1\1_0\ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Update="Snippet_TypeScript_Regions.ts">

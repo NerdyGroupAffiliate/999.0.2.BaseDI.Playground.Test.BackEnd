@@ -62,15 +62,15 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
         //A. Page in motion (DO SOMETHING)        
         private void Inherited_Create_Experience_Movement_TriggerAutoBackUp(JObject storylineDetails, JObject storylineDetails_Parameters, ExtraData_12_2_1_0 extraData)
         {
-            Inherited_Create_Experience_Movement_TriggerMasterController(this, Enumeration_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.RunMistake, storylineDetails, storylineDetails_Parameters, null, extraData);
+            Inherited_Create_Experience_Movement_TriggerMasterController(this, Enumeration_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.RunMistake, storylineDetails, storylineDetails_Parameters, null, extraData);
         }
 
         private void Inherited_Create_Experience_Movement_TriggerMistake(JObject storylineDetails, JObject storylineDetails_Parameters, Exception storylineMistake, ExtraData_12_2_1_0 extraData)
         {
-            Inherited_Create_Experience_Movement_TriggerMasterController(this, Enumeration_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.RunMistake, storylineDetails, storylineDetails_Parameters, storylineMistake, extraData);
+            Inherited_Create_Experience_Movement_TriggerMasterController(this, Enumeration_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.RunMistake, storylineDetails, storylineDetails_Parameters, storylineMistake, extraData);
         }
 
-        public JObject Inherited_Create_Experience_Movement_TriggerMasterController(aClass_Programming_ScriptMasterLeader_12_2_1_0 masterLeaderReference, Enumeration_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0 leaderJobType, JObject storylineDetails, JObject storylineDetails_Parameters, Exception exceptionData = null, ExtraData_12_2_1_0 extraData = null)
+        public JObject Inherited_Create_Experience_Movement_TriggerMasterController(aClass_Programming_ScriptMasterLeader_12_2_1_0 masterLeaderReference, Enumeration_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 leaderJobType, JObject storylineDetails, JObject storylineDetails_Parameters, Exception exceptionData = null, ExtraData_12_2_1_0 extraData = null)
         {
             //Instruction 1: 
             //  A. IF something is reported to the controller that a mistake has happened. THEN handle it.
@@ -95,7 +95,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
 
             //        extraData.Mistake = exceptionData;
 
-            //        armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0>()
+            //        armTemplateJSONOutput = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0<Director_Of_RiskManagement_Chapter_11_1_Page_1_Disturb_Handler_1_0>()
             //            .SetupStoryline(storylineDetails, storylineDetails_Parameters, extraData)
             //            .Action().Result;
 
@@ -104,7 +104,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
             //        break;
             //    // Instruction 2
             //    case eEnumerations_Programming_MasterLeader_12_2_1_0.RunAutoBackup:
-            //        armTemplateJSONOutput = new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0<Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0>()
+            //        armTemplateJSONOutput = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0<Director_Of_RiskManagement_Chapter_11_1_Page_2_Storage_Handler_1_0>()
             //            .SetupStoryline(storylineDetails, storylineDetails_Parameters)
             //            .Action().Result;
             //        break;

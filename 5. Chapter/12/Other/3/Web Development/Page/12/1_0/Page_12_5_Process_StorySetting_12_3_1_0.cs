@@ -287,7 +287,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
             storedInputs.Parameters.Add("parameterOutputResponseObservationSecurityTemplate", storedObservationSecurityTemplateItem);
             storedInputs.Parameters.Add("parameterOutputResponseObservationDataTemplate", storedObservationDataTemplateItem);
 
-            string storedObservationItem = await Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
+            string storedObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
 
             #endregion
 
@@ -321,7 +321,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
                         storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer");
                         storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
-                        storedHtmlContainerJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
+                        storedHtmlContainerJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
                         storedInputs.Parameters.Add("parameterHtmlContainerJSON", storedHtmlContainerJSON);
@@ -357,7 +357,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
                         storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows");
                         storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
-                        storedHtmlRowsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
+                        storedHtmlRowsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
                         storedInputs.Parameters.Add("parameterHtmlRowsJSON", storedHtmlRowsJSON);
@@ -395,7 +395,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
                         storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns");
                         storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
-                        storedHtmlColumnsJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
+                        storedHtmlColumnsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
                         storedInputs.Parameters.Add("parameterHtmlColumnsJSON", storedHtmlColumnsJSON);
@@ -433,7 +433,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
                         storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent");
                         storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
-                        storedHtmlContentJSON = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
+                        storedHtmlContentJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
                         storedInputs.Parameters.Add("parameterHtmlContentJSON", storedHtmlContentJSON);
@@ -471,7 +471,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_12
                         storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS");
                         storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
-                        storedHtmlStylesFiltered  = Extension_ProgrammingStudioAdministrator_MasterLeader_12_2_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0(storedInputs).Result.SingleOrDefault();
+                        storedHtmlStylesFiltered  = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0(storedInputs).Result.SingleOrDefault();
                                             
                         storedHtmlStylesJSON = storedHtmlStylesFiltered.Count > 0 ? storedHtmlStylesFiltered[0].Parent.Parent :  null;
 

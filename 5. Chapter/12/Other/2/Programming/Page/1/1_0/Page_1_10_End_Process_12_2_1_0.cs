@@ -320,7 +320,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         #region IDEAL CASE - USE request resolver
 
-                        return storedOutputResponseData = await new ProgrammingStudioAdministrator_MasterLeader_12_2_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
+                        return storedOutputResponseData = await new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
                             .SetupStoryline(_storedParameterInputs)
                             .Action();
 
