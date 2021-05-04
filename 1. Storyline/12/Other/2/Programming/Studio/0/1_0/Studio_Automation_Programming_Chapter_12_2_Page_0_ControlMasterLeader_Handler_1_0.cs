@@ -78,7 +78,7 @@ using Newtonsoft.Json.Linq;
 
 namespace BaseDI.Professional.Story.Programming_1
 {
-    public class Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler : aClass_Programming_ScriptMasterLeader_12_2_1_0
+    public class Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 : aClass_Programming_ScriptMasterLeader_12_2_1_0
     {
         #region 1. Assign
 
@@ -101,7 +101,7 @@ namespace BaseDI.Professional.Story.Programming_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler(aClass_Programming_ScriptRoutable_12_2_1_0 clientRequestByObject)
+        public Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(aClass_Programming_ScriptRoutable_12_2_1_0 clientRequestByObject)
         {
             #region 1. INPUTS        
 
@@ -334,7 +334,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "SetupStoryline");
 
             //OPTIONAL
@@ -900,7 +900,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
             #region EDGE CASE - USE exception message
 
-            throw new Exception("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.cs -> Implement_DesignPattern_Builder_Chapter_12_2_1_0 -> Action_10_End_Process - BaseDI will not work without a request handler. Please make sure that clientRequestByName is not blank, null or begins with ***DIRECTOR_OF_*** or ***EXPERIENCE_THE_***!");
+            throw new Exception("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_1_0 -> Action_10_End_Process - BaseDI will not work without a request handler. Please make sure that clientRequestByName is not blank, null or begins with ***DIRECTOR_OF_*** or ***EXPERIENCE_THE_***!");
 
             #endregion
 
@@ -1532,7 +1532,7 @@ namespace BaseDI.Professional.Story.Programming_1
             {
                 #region EDGE CASE - USE an exception message
 
-                throw new Exception("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.cs -> Implement_DesignPattern_Factory_Director_12_2_1_0 -> Action_1_Begin_Process - No DIRECTOR can be found for request " + _storedRequestName.ToUpper() + " Please make sure a director is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
+                throw new Exception("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs -> Implement_DesignPattern_Factory_Director_12_2_1_0 -> Action_1_Begin_Process - No DIRECTOR can be found for request " + _storedRequestName.ToUpper() + " Please make sure a director is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
 
                 #endregion
             }
@@ -1858,7 +1858,7 @@ namespace BaseDI.Professional.Story.Programming_1
             {
                 #region EDGE CASE - USE an exception message
 
-                throw new Exception("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.cs -> Implement_DesignPattern_Factory_Experience_12_2_1_0 -> Action_1_Begin_Process - No EXPERIENCE can be found for request " + _storedRequestName.ToUpper() + " Please make sure an experience is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
+                throw new Exception("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs -> Implement_DesignPattern_Factory_Experience_12_2_1_0 -> Action_1_Begin_Process - No EXPERIENCE can be found for request " + _storedRequestName.ToUpper() + " Please make sure an experience is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
 
                 #endregion
             }
@@ -2093,9 +2093,9 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region IDEAL CASE - USE storage handler
                 
-                if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE * **FAILED STORING a value.BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set.  -> Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
+                if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE * **FAILED STORING a value.BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set.  -> Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
+                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2345,9 +2345,9 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region IDEAL CASE - USE exception handler
 
-                if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler -> Implement_DesignPattern_Factory_Disturber_12_2_1_0");
+                if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 -> Implement_DesignPattern_Factory_Disturber_12_2_1_0");
 
-                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
+                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 
@@ -2597,9 +2597,9 @@ namespace BaseDI.Professional.Story.Programming_1
 
                 #region IDEAL CASE - USE exception handler
 
-                if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler -> Implement_DesignPattern_Factory_Sensor_12_2_1_0.");
+                if (_storedProcessRequestSettings == null) throw new Exception(": ***LEAKY PIPE*** FAILED REACTING to a situation. BaseDI C# version will not work without AppSettings. Please make sure that AppSettings has the REQUIRED [AppSettings:APP_SETTING_CONVERSION_MODE] value set. -> Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 -> Implement_DesignPattern_Factory_Sensor_12_2_1_0.");
 
-                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
+                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedParameterInputs))
                   .SetupStoryline(_storedParameterInputs)
                   .Action().Result;
 

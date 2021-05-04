@@ -53,7 +53,7 @@ namespace BaseDI.Professional.Story.Programming_1
     #region 6. Action Implementation
 
     //A. Story in motion (DO SOMETHING) ACTING
-    internal class Director_Of_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
+    internal class Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0 : aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         #region 1. Assign
 
@@ -89,7 +89,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
         #region 2. Ready
 
-        internal Director_Of_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler(SingleParmPoco_12_2_1_0 parameterInputs)
+        internal Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -199,7 +199,7 @@ namespace BaseDI.Professional.Story.Programming_1
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler.cs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.cs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> ValidateInputs");
 
                 #endregion
@@ -540,7 +540,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0");
 
             //OPTIONAL
@@ -630,7 +630,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0");
 
             //OPTIONAL
@@ -721,7 +721,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0");
 
             //OPTIONAL
@@ -812,7 +812,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0");
 
             //OPTIONAL
@@ -903,7 +903,7 @@ namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0");
 
             //OPTIONAL

@@ -282,7 +282,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                     GetDataResponse = () =>
                     {
-                        return new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(_storedParameterInputs))
+                        return new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0_1_0(new Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(_storedParameterInputs))
                             .SetupStoryline(_storedParameterInputs)
                             .Action().Result;
                     };
