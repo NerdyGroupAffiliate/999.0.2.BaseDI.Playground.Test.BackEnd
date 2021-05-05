@@ -722,7 +722,7 @@ namespace BaseDI.Professional.Story.Advertising_1
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
 
             storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
@@ -738,12 +738,12 @@ namespace BaseDI.Professional.Story.Advertising_1
             switch (storedProcessRequestRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
                     storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
                     storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
 
                     break;

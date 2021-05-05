@@ -16,49 +16,49 @@ import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Para
 /////////////////////////////////////////////////////////////////////////////////////
 
 //1. Generate Brand Awareness
-import * as Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/1/Generate Brand Awareness/1/Advertising/Factory/1/1_0/Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/1/Generate Brand Awareness/1/Advertising/Studio/0/1_0/Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //2. Generate Brand Trust
-import * as Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/1/Blogging/Factory/1/1_0/Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0";
-import * as Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/2/Podcasting/Factory/1/1_0/Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0";
-import * as Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/3/Social Media/Factory/1/1_0/Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/1/Blogging/Studio/0/1_0/Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/2/Podcasting/Studio/0/1_0/Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/2/Generate Brand Trust/3/Social Media/Studio/0/1_0/Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0";
 
 //3. Generate Optin
-import * as Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/3/Generate Optin/1/List Building/Factory/1/1_0/Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/3/Generate Optin/1/List Building/Studio/0/1_0/Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //4. Sell Low Ticket Offer
-import * as Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/4/Sell Low Ticket Offer/1/Supplements/Factory/1/1_0/Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/4/Sell Low Ticket Offer/1/Supplements/Studio/0/1_0/Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //5. Sell High Ticket Offer
-import * as Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/1/Coaching/Factory/1/1_0/Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0";
-import * as Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/2/Consulting/Factory/1/1_0/Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0";
-import * as Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/3/Personal Training/Factory/1/1_0/Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/1/Coaching/Studio/0/1_0/Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/2/Consulting/Studio/0/1_0/Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/5/Sell High Ticket Offer/3/Personal Training/Studio/0/1_0/Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0";
 
 //6. Sell Subscription Offer
-import * as Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/6/Sell Subscription Offer/1/Software/Factory/1/1_0/Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/6/Sell Subscription Offer/1/Software/Studio/0/1_0/Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //7. Sell Commission Offer
-import * as Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/7/Sell Commission Offer/1/Affiliate Revenue/Factory/1/1_0/Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/7/Sell Commission Offer/1/Affiliate Revenue/Studio/0/1_0/Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //8. Account Gain or Loss
-import * as AccountingFactoryImplementer_NicheMaster_8_1_1_0 from "../../../../../../../../1. Storyline/8/Account Gain or Loss/1/Accounting/Factory/1/1_0/AccountingFactoryImplementer_NicheMaster_8_1_1_0";
+import * as Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/8/Account Gain or Loss/1/Accounting/Studio/0/1_0/Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //9. Improve Customer Service
-import * as CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0 from "../../../../../../../../1. Storyline/9/Improve Customer Service/1/Customer Service/Factory/1/1_0/CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0";
+import * as Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/9/Improve Customer Service/1/Customer Service/Studio/0/1_0/Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //10. Perform Manual Task
-import * as Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler from "../../../../../../../../1. Storyline/10/Perform Manual Task/1/Productivity/Factory/1/1_0/Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler";
+import * as Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler from "../../../../../../../../1. Storyline/10/Perform Manual Task/1/Productivity/Studio/0/1_0/Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //11. Automate Manual Task
 import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
-import * as Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler from "../../../../../../../../1. Storyline/11/Automate Manual Task/1/Risk Management/Factory/1/1_0/Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler";
+import * as Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler from "../../../../../../../../1. Storyline/11/Automate Manual Task/1/Risk Management/Studio/0/1_0/Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler_1_0";
 
 //12. Other
-import * as Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler from "../../../../../../../../1. Storyline/12/Other/1/Careers Employment/Factory/1/1_0/Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler";
-import * as Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/1/1_0/Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0";
-import * as Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/12/Other/3/Web Development/Factory/1/1_0/Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0";
-import * as Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/12/Other/4/CMS/Factory/1/1_0/Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0";
-import * as Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/12/Other/5/Security/Factory/1/1_0/Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler from "../../../../../../../../1. Storyline/12/Other/1/Careers Employment/Studio/0/1_0/Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/0/1_0/Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/12/Other/3/Web Development/Studio/0/1_0/Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/12/Other/4/CMS/Studio/0/1_0/Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0";
+import * as Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0 from "../../../../../../../../1. Storyline/12/Other/5/Security/Studio/0/1_0/Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0";
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0";
 
@@ -1197,9 +1197,9 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             let _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler: Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Affiliate_Revenue_1.Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _8_1_stored_Director_Of_Accounting_RequestHandler: AccountingFactoryImplementer_NicheMaster_8_1_1_0.BaseDI.Professional.Story.Accounting_1.AccountingFactoryImplementer_NicheMaster_8_1_1_0 = null;
+            let _8_1_stored_Director_Of_Accounting_RequestHandler: Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Accounting_1.Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _9_1_stored_Director_Of_CustomerService_RequestHandler: CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0.BaseDI.Professional.Story.Customer_Service_1.CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0 = null;
+            let _9_1_stored_Director_Of_CustomerService_RequestHandler: Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Customer_Service_1.Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
             let _10_1_stored_Director_Of_Productivity_RequestHandler: Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Productivity_1.Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler = null;
 
@@ -1447,7 +1447,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_ACCOUNTING"))
                     {
-                        _8_1_stored_Director_Of_Accounting_RequestHandler = new AccountingFactoryImplementer_NicheMaster_8_1_1_0.BaseDI.Professional.Story.Accounting_1.AccountingFactoryImplementer_NicheMaster_8_1_1_0(this._storedParameterInputs);
+                        _8_1_stored_Director_Of_Accounting_RequestHandler = new Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Accounting_1.Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6998/storyline/basedi/io/professional/accounting";
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7998/storyline/basedi/io/professional/accounting";
@@ -1466,7 +1466,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CUSTOMERSERVICE"))
                     {
-                        _9_1_stored_Director_Of_CustomerService_RequestHandler = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0.BaseDI.Professional.Story.Customer_Service_1.CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(this._storedParameterInputs);
+                        _9_1_stored_Director_Of_CustomerService_RequestHandler = new Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Customer_Service_1.Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6999/storyline/basedi/io/professional/customerservice";
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7999/storyline/basedi/io/professional/customerservice";

@@ -1138,9 +1138,9 @@ namespace BaseDI.Professional.Story.Programming_1
 
             Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0 _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler = null;
 
-            AccountingFactoryImplementer_NicheMaster_8_1_1_0 _8_1_stored_Director_Of_Accounting_RequestHandler = null;
+            Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0 _8_1_stored_Director_Of_Accounting_RequestHandler = null;
 
-            CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0 _9_1_stored_Director_Of_CustomerService_RequestHandler = null;
+            Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0 _9_1_stored_Director_Of_CustomerService_RequestHandler = null;
 
             Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler _10_1_stored_Director_Of_Productivity_RequestHandler = null;
 
@@ -1389,7 +1389,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_ACCOUNTING"))
                     {
-                        _8_1_stored_Director_Of_Accounting_RequestHandler = new AccountingFactoryImplementer_NicheMaster_8_1_1_0(_storedParameterInputs);
+                        _8_1_stored_Director_Of_Accounting_RequestHandler = new Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0(_storedParameterInputs);
 
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6998/storyline/basedi/io/accounting";
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7998/storyline/basedi/io/accounting";
@@ -1408,7 +1408,7 @@ namespace BaseDI.Professional.Story.Programming_1
 
                     if (_storedRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_CUSTOMERSERVICE"))
                     {
-                        _9_1_stored_Director_Of_CustomerService_RequestHandler = new CustomerServiceFactoryImplementer_NicheMaster_9_1_1_0(_storedParameterInputs);
+                        _9_1_stored_Director_Of_CustomerService_RequestHandler = new Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0(_storedParameterInputs);
 
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6999/storyline/basedi/io/customerservice";
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7999/storyline/basedi/io/customerservice";

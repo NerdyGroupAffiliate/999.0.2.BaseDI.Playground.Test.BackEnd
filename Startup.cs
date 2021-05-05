@@ -1255,7 +1255,7 @@ namespace BaseDI.Professional
 
                 Action = (SingleParmPoco_12_2_1_0 parameterInputs) =>
                 {
-                    return storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs))
+                    return storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs))
                         .SetupStoryline(parameterInputs)
                         .Action().Result;
                 };
