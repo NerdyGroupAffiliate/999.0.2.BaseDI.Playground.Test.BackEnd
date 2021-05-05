@@ -105,7 +105,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception)
             {
                 #region EDGE CASE - USE exception handler
 
@@ -143,7 +143,6 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -564,7 +563,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception)
             {
                 #region EDGE CASE - USE return false
 

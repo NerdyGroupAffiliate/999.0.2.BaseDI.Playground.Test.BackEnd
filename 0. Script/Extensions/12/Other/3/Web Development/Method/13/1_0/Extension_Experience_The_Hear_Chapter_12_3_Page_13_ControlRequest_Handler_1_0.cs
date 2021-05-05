@@ -69,7 +69,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -221,24 +220,17 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region DEFINE api inputs
 
-            byte[] storedApiDataMemoryBuffer = null;
-            dynamic storedApiDataMemoryLength = null;
-            Stream storedApiDataMemoryStream = null;
-            
-            dynamic storedApiInit = null;
 
             #endregion
 
             #region DEFINE data response
 
             dynamic storedOutputResponseData = null;
-            bool storedDataResponseFailed = false;
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -824,7 +816,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -1048,7 +1039,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE server details
 
-            ControllerBase storedServerInstance = null;
 
             dynamic storedServerDetails = null; //Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedProcessRequestDataStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
 

@@ -183,7 +183,6 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -1246,7 +1245,6 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             #region DEFINE event handlers
 
             Func<SingleParmPoco_12_2_1_0, JObject> Action = null;
-            SingleParmPoco_12_2_1_0 parameterInputs = null;
 
             Func<SingleParmPoco_12_2_1_0, Task<JObject>> ExecuteInputRequest = null;
             Func<SingleParmPoco_12_2_1_0, Task<JObject>> ExecuteOutputResponse;

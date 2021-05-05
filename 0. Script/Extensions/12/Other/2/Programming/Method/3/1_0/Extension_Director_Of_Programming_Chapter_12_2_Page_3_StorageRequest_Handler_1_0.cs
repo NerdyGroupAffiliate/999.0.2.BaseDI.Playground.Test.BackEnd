@@ -68,7 +68,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -517,7 +516,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -742,10 +740,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE storyline details outputs
 
-            string storedOutputResponseObservationBusinessTemplateItem = "{}";
-            string storedOutputResponseObservationServiceTemplateItem = "{}";
-            string storedOutputResponseObservationSecurityTemplateItem = "{}";
-            string storedOutputResponseObservationDataTemplateItem = @"{ 'dataResult': '{dataResult}' }";
 
             #endregion
 

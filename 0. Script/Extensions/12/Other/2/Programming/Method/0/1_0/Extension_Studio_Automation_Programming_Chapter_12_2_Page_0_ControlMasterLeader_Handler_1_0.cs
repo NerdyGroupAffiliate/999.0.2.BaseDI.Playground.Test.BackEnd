@@ -224,7 +224,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs = null;
 
             #endregion
 
@@ -355,7 +354,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -527,7 +525,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs = null;
 
             #endregion
 
@@ -646,7 +643,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -812,13 +808,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region DEFINE developer mode
 
-            string storedOutputResponseOPTIONALAccountingCostType = "";
-            bool storedOutputResponseOPTIONALBeginOfProcess = false;
-            bool storedOutputResponseOPTIONALMiddleOfProcess = false;
-            bool storedOutputResponseOPTIONALEndOfProcess = false;
-            bool storedOutputResponseOPTIONALMasterLeaderIsSecondStep = false;
-
-            bool storedOutputResponseMistake = false;
 
             #endregion
 
@@ -939,7 +928,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -1127,13 +1115,6 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region DEFINE developer mode
 
-            string storedOutputResponseOPTIONALAccountingCostType = "";
-            bool storedOutputResponseOPTIONALBeginOfProcess = false;
-            bool storedOutputResponseOPTIONALMiddleOfProcess = false;
-            bool storedOutputResponseOPTIONALEndOfProcess = false;
-            bool storedOutputResponseOPTIONALMasterLeaderIsSecondStep = false;
-
-            bool storedOutputResponseMistake = false;
 
             #endregion
 

@@ -54,7 +54,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -228,13 +227,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region DEFINE html inputs
 
-            string storedHtmlBaseDIScriptName = "";
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -371,7 +368,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -545,13 +541,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region DEFINE html inputs
 
-            string storedHtmlBaseDIScriptName = "";
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -681,7 +675,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -862,13 +855,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region DEFINE html inputs
 
-            string storedHtmlBaseDIScriptName = "";
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -1004,7 +995,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -1181,18 +1171,16 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             string storedColumnItem = "";
 
             dynamic storedOutputResponseData = null;
-            
+
             #endregion
 
             #region DEFINE html inputs
 
-            string storedHtmlBaseDIScriptName = "";
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -1329,7 +1317,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -1512,13 +1499,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region DEFINE html inputs
 
-            string storedHtmlBaseDIScriptName = "";
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -1678,7 +1663,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -1863,8 +1847,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             dynamic storedOutputResponseData = null;
 
             string storedHtmlCssString = "";
-
-            string storedHtmlInlineCSSString = "";
             Dictionary<string, List<dynamic>> storedHtmlMediaQueryArray = new Dictionary<string, List<dynamic>>();
             ArrayList storedHtmlMediaQueryFeatures = new ArrayList();
             Dictionary<string, List<dynamic>> storedHtmlPropertyArray = new Dictionary<string, List<dynamic>>();
@@ -1873,13 +1855,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region DEFINE html inputs
 
-            string storedHtmlBaseDIScriptName = "";
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -2257,7 +2237,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -2440,10 +2419,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region DEFINE data response
 
             dynamic storedOutputResponseData = null;
-
-            string storedHtmlCssString = "";
-
-            string storedHtmlInlineCSSString = "";
             Dictionary<string, List<dynamic>> storedHtmlMediaQueryArray = new Dictionary<string, List<dynamic>>();
             ArrayList storedHtmlMediaQueryFeatures = new ArrayList();
             Dictionary<string, List<dynamic>> storedHtmlPropertyArray = new Dictionary<string, List<dynamic>>();
@@ -2452,13 +2427,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region DEFINE html inputs
 
-            string storedHtmlBaseDIScriptName = "";
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -2590,7 +2563,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
@@ -2773,10 +2745,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region DEFINE data response
 
             dynamic storedOutputResponseData = null;
-
-            string storedHtmlCssString = "";
-
-            string storedHtmlInlineCSSString = "";
             Dictionary<string, List<dynamic>> storedHtmlMediaQueryArray = new Dictionary<string, List<dynamic>>();
             ArrayList storedHtmlMediaQueryFeatures = new ArrayList();
             Dictionary<string, List<dynamic>> storedHtmlPropertyArray = new Dictionary<string, List<dynamic>>();
@@ -2785,13 +2753,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region DEFINE html inputs
 
-            string storedHtmlBaseDIScriptName = "";
 
             #endregion
 
             #region DEFINE parameter inputs
 
-            SingleParmPoco_12_2_1_0 storedInputs;
 
             #endregion
 
@@ -2923,7 +2889,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 

@@ -274,8 +274,6 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
             string storedObservationSecurityTemplateItem = "{}";
             string storedObservationDataTemplateItem = "{}";
 
-            string storedObservationDataTemplateBuilder = "";
-
             storedInputs.Parameters.Add("parameterProcessRequest3WordDescription", "RENDER web page");
             storedInputs.Parameters.Add("parameterInputRequestActionName", _storedActionName);
             storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);

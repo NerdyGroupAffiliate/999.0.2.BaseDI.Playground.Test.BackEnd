@@ -79,7 +79,6 @@ namespace BaseDI.Professional
 
             #region DEFINE input variables
 
-            SingleParmPoco_12_2_1_0 storedInputs1;
 
             #endregion
 
@@ -96,7 +95,7 @@ namespace BaseDI.Professional
             ///////////////////////////////////////////////////////////
 
             #region MEMORIZE control variables
-         
+
             #region MEMORIZE control client server
 
             _storedControlRequestClientOrServer = this;
@@ -169,18 +168,16 @@ namespace BaseDI.Professional
 
             #region DEFINE input variables
 
-            SingleParmPoco_12_2_1_0 storedInputs1 = null;
 
             #endregion
 
             #region DEFINE process variables
 
-           
+
             #endregion
 
             #region DEFINE output variables
 
-            dynamic storedOutputResponseData = null;
 
             #endregion
 
@@ -257,7 +254,6 @@ namespace BaseDI.Professional
 
             #region DEFINE input variables
 
-            SingleParmPoco_12_2_1_0 storedInputs1;
 
             #endregion
 
@@ -346,8 +342,6 @@ namespace BaseDI.Professional
             SingleParmPoco_12_2_1_0 storedInputs1 = null;
             SingleParmPoco_12_2_1_0 storedInputs2 = null;
 
-            dynamic storedInputRequestFilesMetaData = null;
-
             #endregion
 
             #region DEFINE process variables
@@ -358,7 +352,6 @@ namespace BaseDI.Professional
             #region DEFINE output variables
 
             IActionResult storedOutputResponseActionResult = null;
-            dynamic storedOutputResponseData = null;
 
             #endregion
 
@@ -645,7 +638,6 @@ namespace BaseDI.Professional
 
             #region DEFINE input variables
 
-            SingleParmPoco_12_2_1_0 storedInputs = null;
 
             #endregion
 
@@ -656,7 +648,6 @@ namespace BaseDI.Professional
 
             #region DEFINE output variables
 
-            dynamic storedOutputResponseData = null;
 
             #endregion
 
@@ -909,7 +900,6 @@ namespace BaseDI.Professional
 
                 #region DEFINE input variables
 
-                SingleParmPoco_12_2_1_0 storedInputs = null;
 
                 #endregion
 
@@ -921,7 +911,6 @@ namespace BaseDI.Professional
 
                 #region DEFINE output variables
 
-                dynamic storedOutputResponseData = null;
                 string storedOutputResponseMessage = "";
 
                 #endregion

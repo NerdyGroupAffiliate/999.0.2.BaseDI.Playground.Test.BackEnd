@@ -159,7 +159,6 @@ namespace BaseDI.Professional.Story.Accounting_0
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 

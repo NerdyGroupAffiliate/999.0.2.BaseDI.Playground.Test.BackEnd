@@ -173,7 +173,6 @@ namespace BaseDI.Professional.Director.Programming_3
 
                 #region DEFINE parameter inputs
 
-                SingleParmPoco_12_2_1_0 storedInputs;
 
                 #endregion
 
