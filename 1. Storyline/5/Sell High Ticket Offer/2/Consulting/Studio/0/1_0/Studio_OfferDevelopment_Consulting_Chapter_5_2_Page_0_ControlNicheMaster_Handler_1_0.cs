@@ -47,7 +47,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Story.Consulting_2
+namespace BaseDI.Professional.Story.Consulting_0
 {
     #region 6. Action Implementation
 

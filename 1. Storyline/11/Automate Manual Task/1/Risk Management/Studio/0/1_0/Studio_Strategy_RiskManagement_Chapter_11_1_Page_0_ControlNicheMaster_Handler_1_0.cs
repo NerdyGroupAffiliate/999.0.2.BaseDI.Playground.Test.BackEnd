@@ -45,7 +45,7 @@ using Newtonsoft.Json.Linq;
 #endregion
 
 
-namespace BaseDI.Professional.Story.Risk_Management_1
+namespace BaseDI.Professional.Story.Risk_Management_0
 {
     #region 6. Action Implementation
 

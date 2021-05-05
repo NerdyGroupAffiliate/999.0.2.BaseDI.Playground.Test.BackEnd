@@ -53,7 +53,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Story.Advertising_1
+namespace BaseDI.Professional.Story.Advertising_0
 {
     #region 6. Action Implementation
 

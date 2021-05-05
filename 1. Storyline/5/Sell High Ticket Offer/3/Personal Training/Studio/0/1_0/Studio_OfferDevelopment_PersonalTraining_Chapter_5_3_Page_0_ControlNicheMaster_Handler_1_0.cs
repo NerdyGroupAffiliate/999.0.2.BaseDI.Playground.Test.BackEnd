@@ -47,7 +47,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Story.Personal_Training_3
+namespace BaseDI.Professional.Story.Personal_Training_0
 {
     #region 6. Action Implementation
 

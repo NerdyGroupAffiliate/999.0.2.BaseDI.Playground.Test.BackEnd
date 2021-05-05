@@ -3,6 +3,7 @@
 #region BaseDI
 
 using BaseDI.Professional.Script.Programming.Abstract_1;
+using BaseDI.Professional.Script.Programming.Extensions_0;
 using BaseDI.Professional.Script.Programming.Extensions_1;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Risk_Management.Extensions_0;
@@ -389,7 +390,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 storedInputs.Parameters.Add("parameterOutputResponseObservationSecurityTemplate", storedOutputResponseObservationSecurityTemplateItem);
                 storedInputs.Parameters.Add("parameterOutputResponseObservationDataTemplate", storedOutputResponseObservationDataTemplateItem);
 
-                storedOutPut_ObservationItem = await Extension_Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
+                storedOutPut_ObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
 
                 //DETERMINE if we are storing a string value.
                 if (storedStorageValue is string)

@@ -71,9 +71,9 @@ import * as Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1
 
 //#endregion
 
-export namespace BaseDI.Professional.Story.Programming_1
+export namespace BaseDI.Professional.Story.Programming_0
 {
-    export class Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler extends aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0
+    export class Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 extends aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0
     {
         //#region 1. Assign
 
@@ -215,7 +215,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "SetupStoryline.ValidateInputs()");
 
                 //#endregion
@@ -388,7 +388,7 @@ export namespace BaseDI.Professional.Story.Programming_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "SetupStoryline"); 
 
             //OPTIONAL
@@ -962,7 +962,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region EDGE CASE - USE exception message
 
-            throw new Error("[DISTURBANCE ISSUE] - Bug - Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.cs -> Implement_DesignPattern_Builder_Chapter_12_2_1_0 -> Action_10_End_Process - BaseDI will not work without a request handler. Please make sure that clientRequestByName is not blank, null or begins with ***DIRECTOR_OF_*** or ***EXPERIENCE_THE_***!");
+            throw new Error("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs -> Implement_DesignPattern_Builder_Chapter_12_2_1_0 -> Action_10_End_Process - BaseDI will not work without a request handler. Please make sure that clientRequestByName is not blank, null or begins with ***DIRECTOR_OF_*** or ***EXPERIENCE_THE_***!");
 
             //#endregion
 
@@ -1179,37 +1179,37 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region DEFINE director request handlers
 
-            let _1_1_stored_Director_Of_Advertising_RequestHandler: Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Advertising_1.Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _1_1_stored_Director_Of_Advertising_RequestHandler: Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Advertising_0.Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
             
-            let _2_1_stored_Director_Of_Blogging_RequestHandler: Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Blogging_1.Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
-            let _2_2_stored_Director_Of_Podcasting_RequestHandler: Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Podcasting_2.Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0 = null;
-            let _2_3_stored_Director_Of_SocialMedia_RequestHandler: Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Social_Media_3.Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _2_1_stored_Director_Of_Blogging_RequestHandler: Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Blogging_0.Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _2_2_stored_Director_Of_Podcasting_RequestHandler: Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Podcasting_0.Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _2_3_stored_Director_Of_SocialMedia_RequestHandler: Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Social_Media_0.Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _3_1_stored_Director_Of_ListBuilding_RequestHandler: Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Listing_Building_1.Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _3_1_stored_Director_Of_ListBuilding_RequestHandler: Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Listing_Building_0.Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _4_1_stored_Director_Of_Supplements_RequestHandler: Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Supplements_1.Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _4_1_stored_Director_Of_Supplements_RequestHandler: Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Supplements_0.Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _5_1_stored_Director_Of_Coaching_RequestHandler: Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Coaching_1.Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
-            let _5_2_stored_Director_Of_Consulting_RequestHandler: Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Consulting_2.Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0 = null;
-            let _5_3_stored_Director_Of_PersonalTraining_RequestHandler: Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Personal_Training_3.Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _5_1_stored_Director_Of_Coaching_RequestHandler: Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Coaching_0.Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _5_2_stored_Director_Of_Consulting_RequestHandler: Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Consulting_0.Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _5_3_stored_Director_Of_PersonalTraining_RequestHandler: Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Personal_Training_0.Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _6_1_stored_Director_Of_Software_RequestHandler: Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Software_1.Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _6_1_stored_Director_Of_Software_RequestHandler: Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Software_0.Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler: Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Affiliate_Revenue_1.Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler: Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Affiliate_Revenue_0.Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _8_1_stored_Director_Of_Accounting_RequestHandler: Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Accounting_1.Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _8_1_stored_Director_Of_Accounting_RequestHandler: Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Accounting_0.Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _9_1_stored_Director_Of_CustomerService_RequestHandler: Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Customer_Service_1.Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _9_1_stored_Director_Of_CustomerService_RequestHandler: Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Customer_Service_0.Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _10_1_stored_Director_Of_Productivity_RequestHandler: Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Productivity_1.Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler = null;
+            let _10_1_stored_Director_Of_Productivity_RequestHandler: Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Productivity_0.Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler = null;
 
-            let _11_1_stored_Director_Of_RiskManagement_RequestHandler: Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Risk_Management_1.Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler = null;
+            let _11_1_stored_Director_Of_RiskManagement_RequestHandler: Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Risk_Management_0.Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler = null;
             
-            let _12_1_stored_Director_Of_Careers_RequestHandler: Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Careers_Employment_1.Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler = null;
-            let _12_2_stored_Director_Of_Programming_RequestHandler: Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Programming_1.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0 = null;
-            let _12_3_stored_Director_Of_WebDevelopment_RequestHandler: Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Web_Development_1.Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
-            let _12_4_stored_Director_Of_CMS_RequestHandler: Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.CMS_1.Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0 = null;
-            let _12_5_stored_Director_Of_Security_RequestHandler: Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Security_1.Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _12_1_stored_Director_Of_Careers_RequestHandler: Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Careers_Employment_0.Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler = null;
+            let _12_2_stored_Director_Of_Programming_RequestHandler: Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _12_3_stored_Director_Of_WebDevelopment_RequestHandler: Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Web_Development_0.Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _12_4_stored_Director_Of_CMS_RequestHandler: Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.CMS_0.Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _12_5_stored_Director_Of_Security_RequestHandler: Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Security_0.Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
             //#endregion
 
@@ -1233,7 +1233,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 {
                     //#region 12. Other
 
-                    _12_2_stored_Director_Of_Programming_RequestHandler = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Programming_1.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                    _12_2_stored_Director_Of_Programming_RequestHandler = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
                     
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/professional/programming";
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/professional/programming";
@@ -1254,7 +1254,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_ADVERTISING"))
                     {
-                        _1_1_stored_Director_Of_Advertising_RequestHandler = new Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Advertising_1.Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _1_1_stored_Director_Of_Advertising_RequestHandler = new Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Advertising_0.Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalDotNetCore = "http://localhost:6991/storyline/basedi/io/professional/advertising";
                         _1_1_stored_Director_Of_Advertising_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7991/storyline/basedi/io/professional/advertising";
@@ -1273,7 +1273,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_BLOGGING"))
                     {
-                        _2_1_stored_Director_Of_Blogging_RequestHandler = new Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Blogging_1.Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _2_1_stored_Director_Of_Blogging_RequestHandler = new Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Blogging_0.Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
                         
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/professional/blogging";
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/professional/blogging";
@@ -1288,7 +1288,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_PODCASTING"))
                     {
-                        _2_2_stored_Director_Of_Podcasting_RequestHandler = new Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Podcasting_2.Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _2_2_stored_Director_Of_Podcasting_RequestHandler = new Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Podcasting_0.Studio_AudienceTesting_Podcasting_Chapter_2_2_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/professional/podcasting";
                         _2_2_stored_Director_Of_Podcasting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/professional/podcasting";
@@ -1303,7 +1303,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SOCIALMEDIA"))
                     {
-                        _2_3_stored_Director_Of_SocialMedia_RequestHandler = new Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Social_Media_3.Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _2_3_stored_Director_Of_SocialMedia_RequestHandler = new Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Social_Media_0.Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/professional/socialmedia";
                         _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/professional/socialmedia";
@@ -1322,7 +1322,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_LISTBUILDING"))
                     {
-                        _3_1_stored_Director_Of_ListBuilding_RequestHandler = new Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Listing_Building_1.Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _3_1_stored_Director_Of_ListBuilding_RequestHandler = new Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Listing_Building_0.Studio_AudienceTesting_ListBuilding_Chapter_3_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6993/storyline/basedi/io/professional/listbuilding";
                         _3_1_stored_Director_Of_ListBuilding_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7993/storyline/basedi/io/professional/listbuilding";
@@ -1341,7 +1341,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SUPPLEMENTS"))
                     {
-                        _4_1_stored_Director_Of_Supplements_RequestHandler = new Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Supplements_1.Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _4_1_stored_Director_Of_Supplements_RequestHandler = new Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Supplements_0.Studio_OfferDevelopment_Supplements_Chapter_4_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6994/storyline/basedi/io/professional/supplements";
                         _4_1_stored_Director_Of_Supplements_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7994/storyline/basedi/io/professional/supplements";
@@ -1360,7 +1360,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_COACHING"))
                     {
-                        _5_1_stored_Director_Of_Coaching_RequestHandler = new Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Coaching_1.Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _5_1_stored_Director_Of_Coaching_RequestHandler = new Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Coaching_0.Studio_OfferDevelopment_Coaching_Chapter_5_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/professional/coaching";
                         _5_1_stored_Director_Of_Coaching_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/professional/coaching";
@@ -1375,7 +1375,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CONSULTING"))
                     {
-                        _5_2_stored_Director_Of_Consulting_RequestHandler = new Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Consulting_2.Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _5_2_stored_Director_Of_Consulting_RequestHandler = new Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Consulting_0.Studio_OfferDevelopment_Consulting_Chapter_5_2_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/professional/consulting";
                         _5_2_stored_Director_Of_Consulting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/professional/consulting";
@@ -1390,7 +1390,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_PERSONALTRAINING"))
                     {
-                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler = new Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Personal_Training_3.Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _5_3_stored_Director_Of_PersonalTraining_RequestHandler = new Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Personal_Training_0.Studio_OfferDevelopment_PersonalTraining_Chapter_5_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6995/storyline/basedi/io/professional/personaltraining";
                         _5_3_stored_Director_Of_PersonalTraining_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7995/storyline/basedi/io/professional/personaltraining";
@@ -1409,7 +1409,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SOFTWARE"))
                     {
-                        _6_1_stored_Director_Of_Software_RequestHandler = new Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Software_1.Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _6_1_stored_Director_Of_Software_RequestHandler = new Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Software_0.Studio_OfferDevelopment_Software_Chapter_6_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6996/storyline/basedi/io/professional/software";
                         _6_1_stored_Director_Of_Software_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7996/storyline/basedi/io/professional/software";
@@ -1428,7 +1428,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_AFFILIATEREVENUE"))
                     {
-                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler = new Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Affiliate_Revenue_1.Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler = new Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Affiliate_Revenue_0.Studio_OfferDevelopment_AffiliateRevenue_Chapter_7_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6997/storyline/basedi/io/professional/affiliaterevenue";
                         _7_1_stored_Director_Of_AffiliateRevenue_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7997/storyline/basedi/io/professional/affiliaterevenue";
@@ -1447,7 +1447,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_ACCOUNTING"))
                     {
-                        _8_1_stored_Director_Of_Accounting_RequestHandler = new Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Accounting_1.Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _8_1_stored_Director_Of_Accounting_RequestHandler = new Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Accounting_0.Studio_Strategy_Accounting_Chapter_8_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6998/storyline/basedi/io/professional/accounting";
                         _8_1_stored_Director_Of_Accounting_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7998/storyline/basedi/io/professional/accounting";
@@ -1466,7 +1466,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CUSTOMERSERVICE"))
                     {
-                        _9_1_stored_Director_Of_CustomerService_RequestHandler = new Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Customer_Service_1.Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _9_1_stored_Director_Of_CustomerService_RequestHandler = new Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Customer_Service_0.Studio_Strategy_CustomerService_Chapter_9_1_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6999/storyline/basedi/io/professional/customerservice";
                         _9_1_stored_Director_Of_CustomerService_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7999/storyline/basedi/io/professional/customerservice";
@@ -1485,7 +1485,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_PRODUCTIVITY"))
                     {
-                        _10_1_stored_Director_Of_Productivity_RequestHandler = new Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Productivity_1.Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler(this._storedParameterInputs);
+                        _10_1_stored_Director_Of_Productivity_RequestHandler = new Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Productivity_0.Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler(this._storedParameterInputs);
 
                         _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6910/storyline/basedi/io/professional/productivity";
                         _10_1_stored_Director_Of_Productivity_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7910/storyline/basedi/io/professional/productivity";
@@ -1504,7 +1504,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_RISKMANAGEMENT"))
                     {
-                        _11_1_stored_Director_Of_RiskManagement_RequestHandler = new Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Risk_Management_1.Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler(this._storedParameterInputs);
+                        _11_1_stored_Director_Of_RiskManagement_RequestHandler = new Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Risk_Management_0.Studio_Strategy_RiskManagement_Chapter_11_1_Page_0_ControlNicheMaster_Handler(this._storedParameterInputs);
 
                         _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6911/storyline/basedi/io/professional/riskmanagement";
                         _11_1_stored_Director_Of_RiskManagement_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7911/storyline/basedi/io/professional/riskmanagement";
@@ -1523,7 +1523,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CAREERSEMPLOYMENT"))
                     {
-                        _12_1_stored_Director_Of_Careers_RequestHandler = new Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Careers_Employment_1.Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler(this._storedParameterInputs);
+                        _12_1_stored_Director_Of_Careers_RequestHandler = new Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler.BaseDI.Professional.Story.Careers_Employment_0.Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler(this._storedParameterInputs);
 
                         _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/professional/careersemployment";
                         _12_1_stored_Director_Of_Careers_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/professional/careersemployment";
@@ -1538,7 +1538,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_WEBDEVELOPMENT"))
                     {
-                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Web_Development_1.Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Web_Development_0.Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/professional/webdevelopment";
                         _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/professional/webdevelopment";
@@ -1553,7 +1553,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_CMS"))
                     {
-                        _12_4_stored_Director_Of_CMS_RequestHandler = new Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.CMS_1.Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _12_4_stored_Director_Of_CMS_RequestHandler = new Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.CMS_0.Studio_AudienceTesting_CMS_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalNodeJS = "https://localhost:6912/storyline/basedi/io/professional/cms";
                         _12_4_stored_Director_Of_CMS_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:7912/storyline/basedi/io/professional/cms";
@@ -1568,7 +1568,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                     if (this._storedRequestName.toUpperCase().includes("DIRECTOR_OF_SECURITY"))
                     {
-                        _12_5_stored_Director_Of_Security_RequestHandler = new Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Security_1.Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                        _12_5_stored_Director_Of_Security_RequestHandler = new Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Security_0.Studio_Automation_Security_Chapter_12_4_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                         _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/professional/security";
                         _12_5_stored_Director_Of_Security_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/professional/security";
@@ -1590,7 +1590,7 @@ export namespace BaseDI.Professional.Story.Programming_1
             {
                 //#region EDGE CASE - USE an exception message
 
-                throw new Error("[DISTURBANCE ISSUE] - Bug - Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.cs -> Implement_DesignPattern_Factory_Director_12_2_1_0 -> Action_1_Begin_Process - No DIRECTOR can be found for request " + this._storedRequestName.toUpperCase() + " Please make sure a director is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
+                throw new Error("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs -> Implement_DesignPattern_Factory_Director_12_2_1_0 -> Action_1_Begin_Process - No DIRECTOR can be found for request " + this._storedRequestName.toUpperCase() + " Please make sure a director is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
 
                 //#endregion
             }
@@ -1829,9 +1829,9 @@ export namespace BaseDI.Professional.Story.Programming_1
 
             //#region DEFINE director request handlers
 
-            let _2_3_stored_Director_Of_SocialMedia_RequestHandler: Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Social_Media_3.Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _2_3_stored_Director_Of_SocialMedia_RequestHandler: Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Social_Media_0.Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
-            let _12_3_stored_Director_Of_WebDevelopment_RequestHandler: Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Web_Development_1.Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
+            let _12_3_stored_Director_Of_WebDevelopment_RequestHandler: Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Web_Development_0.Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0 = null;
 
             //#endregion
 
@@ -1853,7 +1853,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 if (this._storedRequestName.toUpperCase().includes("EXPERIENCE_THE_MOVEMENT_TOFACEBOOKPAGE_DATATRANSFER"))
                 {
-                    _2_3_stored_Director_Of_SocialMedia_RequestHandler = new Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Social_Media_3.Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                    _2_3_stored_Director_Of_SocialMedia_RequestHandler = new Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Social_Media_0.Studio_AudienceTesting_SocialMedia_Chapter_2_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:8992/storyline/basedi/io/professional/socialmedia";
                     _2_3_stored_Director_Of_SocialMedia_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:9992/storyline/basedi/io/professional/socialmedia";
@@ -1907,7 +1907,7 @@ export namespace BaseDI.Professional.Story.Programming_1
                 {
                     //#region 12. Other
 
-                    _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Web_Development_1.Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
+                    _12_3_stored_Director_Of_WebDevelopment_RequestHandler = new Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.BaseDI.Professional.Story.Web_Development_0.Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0(this._storedParameterInputs);
 
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalNodeJS_SSL = "https://localhost:8912/storyline/basedi/io/professional/webdevelopment";
                     _12_3_stored_Director_Of_WebDevelopment_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:9912/storyline/basedi/io/professional/webdevelopment";
@@ -1926,7 +1926,7 @@ export namespace BaseDI.Professional.Story.Programming_1
             {
                 //#region EDGE CASE - USE an exception message
 
-                throw new Error("[DISTURBANCE ISSUE] - Bug - Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler.cs -> Implement_DesignPattern_Factory_Experience_12_2_1_0 -> Action_1_Begin_Process - No EXPERIENCE can be found for request " + this._storedRequestName.toUpperCase() + " Please make sure an experience is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
+                throw new Error("[DISTURBANCE ISSUE] - Bug - Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs -> Implement_DesignPattern_Factory_Experience_12_2_1_0 -> Action_1_Begin_Process - No EXPERIENCE can be found for request " + this._storedRequestName.toUpperCase() + " Please make sure an experience is wired in the pipeline in the METHOD [Action_1_Begin_Process]");
 
                 //#endregion
             }
@@ -2168,9 +2168,9 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region IDEAL CASE - USE storage handler
                 
-                if (this._storedProcessRequestSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED STORING a value. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
+                if (this._storedProcessRequestSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED STORING a value. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedOutputResponseData = new Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
+                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
                     .SetupStoryline(this._storedParameterInputs)
                     .Action();
 
@@ -2420,9 +2420,9 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region IDEAL CASE - USE exception handler
 
-                if (this._storedProcessRequestSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
+                if (this._storedProcessRequestSettings == null) throw new Error(": ***LEAKY PIPE*** FAILED HANDLING a distrubance. BaseDI TypeScript version will not work without PROCESS.ENV AppSettings. Please make sure that PROCESS.ENV AppSettings has the REQUIRED [APP_SETTING_CONVERSION_MODE] value set. -> Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 -> Implement_DesignPattern_Factory_Storer_12_2_1_0");
 
-                storedOutputResponseData = new Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
+                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
                     .SetupStoryline(this._storedParameterInputs)
                     .Action();
 
@@ -2672,7 +2672,7 @@ export namespace BaseDI.Professional.Story.Programming_1
 
                 //#region IDEAL CASE - USE exception handler
 
-                storedOutputResponseData = new Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
+                storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
                     .SetupStoryline(this._storedParameterInputs)
                     .Action();
 

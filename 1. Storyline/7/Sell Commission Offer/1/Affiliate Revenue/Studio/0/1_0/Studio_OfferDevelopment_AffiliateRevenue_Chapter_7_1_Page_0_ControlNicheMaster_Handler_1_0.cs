@@ -47,7 +47,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Story.Affiliate_Revenue_1
+namespace BaseDI.Professional.Story.Affiliate_Revenue_0
 {
     #region 6. Action Implementation
 

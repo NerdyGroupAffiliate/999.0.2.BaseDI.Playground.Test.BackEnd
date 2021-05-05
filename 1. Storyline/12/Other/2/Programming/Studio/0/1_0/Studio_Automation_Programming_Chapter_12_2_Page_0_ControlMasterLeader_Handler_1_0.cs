@@ -12,49 +12,49 @@ using BaseDI.Professional.Script.Programming_1;
 /////////////////////////////////////////////////////////////////////////////////////
 
 //1. Generate Brand Awareness
-using BaseDI.Professional.Story.Advertising_1;
+using BaseDI.Professional.Story.Advertising_0;
 
 //2. Generate Brand Trust
-using BaseDI.Professional.Story.Blogging_1;
+using BaseDI.Professional.Story.Blogging_0;
 
 //3. Generate Optin
-using BaseDI.Professional.Story.Listing_Building_1;
-using BaseDI.Professional.Story.Personal_Training_3;
-using BaseDI.Professional.Story.Podcasting_2;
+using BaseDI.Professional.Story.Listing_Building_0;
+using BaseDI.Professional.Story.Personal_Training_0;
+using BaseDI.Professional.Story.Podcasting_0;
 
 //4. Sell Low Ticket Offer
-using BaseDI.Professional.Story.Supplements_1;
+using BaseDI.Professional.Story.Supplements_0;
 
 //5. Sell High Ticket Offer
-using BaseDI.Professional.Story.Coaching_1;
-using BaseDI.Professional.Story.Consulting_2;
+using BaseDI.Professional.Story.Coaching_0;
+using BaseDI.Professional.Story.Consulting_0;
 
 //6. Sell Subscription Offer
-using BaseDI.Professional.Story.Software_1;
+using BaseDI.Professional.Story.Software_0;
 
 //7. Sell Commission Offer
-using BaseDI.Professional.Story.Affiliate_Revenue_1;
+using BaseDI.Professional.Story.Affiliate_Revenue_0;
 
 //8. Account Gain or Loss
-using BaseDI.Professional.Story.Accounting_1;
+using BaseDI.Professional.Story.Accounting_0;
 
 //9. Improve Customer Service
-using BaseDI.Professional.Story.Customer_Service_1;
+using BaseDI.Professional.Story.Customer_Service_0;
 
 //10. Perform Manual Task
-using BaseDI.Professional.Story.Productivity_1;
+using BaseDI.Professional.Story.Productivity_0;
 
 //11. Automate Manual Task
 using BaseDI.Professional.Script.Risk_Management.Extensions_0;
-using BaseDI.Professional.Story.Risk_Management_1;
-using BaseDI.Professional.Story.Social_Media_3;
+using BaseDI.Professional.Story.Risk_Management_0;
+using BaseDI.Professional.Story.Social_Media_0;
 
 //12. Other
-using BaseDI.Professional.Story.Careers_Employment_1;
-using BaseDI.Professional.Story.Web_Development_1;
-using BaseDI.Professional.Story.Programming_1;
-using BaseDI.Professional.Story.CMS_1;
-using BaseDI.Professional.Story.Security_1;
+using BaseDI.Professional.Story.Careers_Employment_0;
+using BaseDI.Professional.Story.Web_Development_0;
+using BaseDI.Professional.Story.Programming_0;
+using BaseDI.Professional.Story.CMS_0;
+using BaseDI.Professional.Story.Security_0;
 
 #endregion
 
@@ -76,7 +76,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Story.Programming_1
+namespace BaseDI.Professional.Story.Programming_0
 {
     public class Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 : aClass_Programming_ScriptMasterLeader_12_2_1_0
     {

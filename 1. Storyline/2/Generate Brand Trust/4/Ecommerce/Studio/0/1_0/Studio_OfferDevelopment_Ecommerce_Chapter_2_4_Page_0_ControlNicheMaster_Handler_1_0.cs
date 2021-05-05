@@ -47,7 +47,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Story.Friendship_4
+namespace BaseDI.Professional.Story.Friendship_0
 {
     #region 6. Action Implementation
 

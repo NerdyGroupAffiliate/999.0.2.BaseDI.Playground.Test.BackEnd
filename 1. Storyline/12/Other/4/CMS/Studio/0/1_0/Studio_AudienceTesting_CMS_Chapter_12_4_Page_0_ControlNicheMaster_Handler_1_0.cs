@@ -47,7 +47,7 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Story.CMS_1
+namespace BaseDI.Professional.Story.CMS_0
 {
     #region 6. Action Implementation
 

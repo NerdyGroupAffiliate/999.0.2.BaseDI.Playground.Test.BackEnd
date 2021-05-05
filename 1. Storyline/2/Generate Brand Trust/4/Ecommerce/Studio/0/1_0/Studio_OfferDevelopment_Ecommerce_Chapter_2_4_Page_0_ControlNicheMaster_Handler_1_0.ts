@@ -10,7 +10,7 @@ import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../.
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
 import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
-import * as Extension_Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
+import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
 
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
@@ -40,7 +40,7 @@ import * as Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_
 
 //#endregion
 
-export namespace BaseDI.Professional.Story.Friendship_4 {
+export namespace BaseDI.Professional.Story.Friendship_0 {
     export class Studio_OfferDevelopment_Ecommerce_Chapter_2_4_Page_0_ControlNicheMaster_Handler_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign

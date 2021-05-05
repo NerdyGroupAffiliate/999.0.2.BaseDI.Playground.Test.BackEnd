@@ -66,7 +66,7 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
 import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
-import * as Extension_Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
+import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
 
 //#endregion
 
@@ -859,7 +859,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
             storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", this._storedBaseDIPlaceHolderValue);
             storedInputs.Parameters.setValue("parameterOutputResponseAsArray", true);
 
-            storedProcessRequestDataStorylineDetailsFiltered = Extension_Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_1.Extension_Director_Of_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+            storedProcessRequestDataStorylineDetailsFiltered = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
 
             storedProcessRequestDataStorylineDetailsFilteredResult = {
                 StorylineDetails: storedProcessRequestDataStorylineDetails,
