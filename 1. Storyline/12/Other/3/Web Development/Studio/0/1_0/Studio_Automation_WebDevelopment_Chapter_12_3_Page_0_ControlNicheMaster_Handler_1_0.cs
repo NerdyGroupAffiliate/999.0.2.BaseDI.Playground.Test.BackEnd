@@ -606,29 +606,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = null;// new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = null;// new Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = null; //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = null; //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = null; //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = null; //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -645,7 +645,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -693,29 +693,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -732,7 +732,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -784,29 +784,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -823,7 +823,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -875,29 +875,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -914,7 +914,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -966,29 +966,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1005,7 +1005,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1057,29 +1057,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1096,7 +1096,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1148,29 +1148,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1187,7 +1187,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1239,29 +1239,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1278,7 +1278,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1330,29 +1330,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1369,7 +1369,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1421,29 +1421,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1460,7 +1460,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1512,29 +1512,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1551,7 +1551,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1603,29 +1603,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1642,7 +1642,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1694,29 +1694,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1733,7 +1733,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -1785,29 +1785,29 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Experience = new Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
+            aClass_Programming_ScriptExperience_BuilderPattern_12_2_1_0 storedProcessRequestHandlerExperience = new Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Experience.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerExperience.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Experience.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerExperience.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Experience.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Experience.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Experience.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerExperience.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerExperience.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerExperience.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Experience.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Experience.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerExperience.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerExperience.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Experience.Repository = new LocalFile_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Experience.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerExperience.Repository = new LocalFile_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerExperience.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Experience.Repository = new RemoteService_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs); //new 
-                    storedProcessRequestHandler_Experience.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerExperience.Repository = new RemoteService_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs); //new 
+                    storedProcessRequestHandlerExperience.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -1824,7 +1824,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Experience;
+            return storedProcessRequestHandlerExperience;
 
             #endregion
 

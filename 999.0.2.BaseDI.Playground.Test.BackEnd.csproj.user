@@ -11,7 +11,6 @@
   <ItemGroup />
   <ItemGroup />
   <ItemGroup />
-  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Update="Snippet_TypeScript_Regions.ts">
       <SubType>Code</SubType>

@@ -4,6 +4,7 @@
 
 //0. SCRIPT - ABSTRACT, BASE & INTERFACE CLASSES
 import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0"
+import * as aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0";
 import * as aClass_Programming_ScriptNicheMaster_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptNicheMaster_12_2_1_0"
 import * as aClass_Programming_ScriptRoutable_12_2_1_0 from "../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptRoutable_12_2_1_0";
 
@@ -31,14 +32,17 @@ import * as LocalFile_Experience_The_Movement_Chapter_12_2_Page_6_TransportAsset
 //6. STATE - REMOTE REPOSITORIES
 import * as LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/1/1_0/LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
 import * as LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/2/1_0/LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0";
+import * as LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/3/1_0/LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0";
 
 import * as RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/1/1_0/RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
 import * as RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/2/1_0/RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0";
+import * as RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0 from "../../../../../../../../6. State/1/Generate Brand Awareness/1/Advertising/Repository/3/1_0/RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0";
 
 //7. DIRECTOR - PROPRIETARY FEATURES
 
 import * as Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/1/1_0/Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
 import * as Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/2/1_0/Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0";
+import * as Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0 from "../../../../../../../../7. Director/1/Generate Brand Awareness/1/Advertising/Director/3/1_0/Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0";
 
 import * as Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/1/1_0/Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0";
 import * as Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0 from "../../../../../../../../7. Director/12/Other/2/Programming/Director/2/1_0/Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0";
@@ -50,9 +54,7 @@ import * as Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_
 
 //#endregion
 
-
-export namespace BaseDI.Professional.Story.Advertising_0
-{
+export namespace BaseDI.Professional.Story.Advertising_0 {
     export class Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0 extends aClass_Programming_ScriptNicheMaster_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptNicheMaster_12_2_1_0<object>
     {
         //#region 1. Assign
@@ -94,15 +96,60 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
             //#region 1. INPUTS
 
-            //#region DEFINE clientOrServer instance
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
 
             this._storedProcessRequestTracker = null;
 
             //#endregion
 
-            //#region MEMORIZE extra data
+            //#region DEFINE output variables
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process extra data
+
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") != null ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+            //#endregion
 
             //#endregion
 
@@ -113,6 +160,7 @@ export namespace BaseDI.Professional.Story.Advertising_0
             //#region HANDLE niche setup
 
             //#region EDGE CASE - USE niche faults
+
 
 
             //#endregion
@@ -131,74 +179,191 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
         //#region 3. Set
 
-        //A. Default state of this part of the storyline
-        //#region 1. INPUTS
+        //A. Default state
+        public HandleDefaults(): void {
+            //#region 1. INPUTS
 
-        //#endregion
+            //#region DEFINE control variables
 
-        //#region 2. PROCESS
+            //#endregion
 
-        //#endregion
+            //#region DEFINE input variables
 
-        //#region 3. OUTPUT
 
-        //#endregion
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE process xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process defaults
+
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
+        }
 
         //#endregion
 
         //#region 4. Action
-        public async Action(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<object>
-        {
+
+        public async Action(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<object> {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters
 
-            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<boolean> => {
+            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
+            {
                 //#region 1. INPUTS
 
-                //#region DEFINE parameter inputs
-
-                let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+                //#region DEFINE control variabless
 
                 //#endregion
 
-                //#region DEFINE process checkpoint
+                //#region DEFINE input variables
+
+
+                //#endregion
+
+                //#region DEFINE process variables
 
                 let storedProcessRequestMistakeMade: boolean = false;
 
                 //#endregion
 
-                //#region DEFINE stored message
+                //#region DEFINE output variables
 
                 let storedOutputResponseMessage: string = "";
 
                 //#endregion
 
-                //#region MEMORIZE control client server
+                ///////////////////////////////
+
+                //#region MEMORIZE control variables
+
+                //#region MEMORIZE control xxx xxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE input variables
+
+                //#region MEMORIZE input xxx xxxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE process variables
+
+                //#region MEMORIZE process request tracker
 
                 let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
                 //#endregion
 
-                //#region MEMORIZE app settings
+                //#region MEMORIZE process request settings
 
                 let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 //#endregion
 
-                //#region MEMORIZE developer mode
+                //#region MEMORIZE process developer mode
 
-                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
+                let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+                this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
                 let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> ValidateInputs");
+
+                //0. CONTROLLERS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+
+                //1. INPUTS
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "BEGIN processing request");
+
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "SetupStoryline -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE output variables
+
+                //#region MEMORIZE process xxx xxxx
+
+
+                //#endregion
 
                 //#endregion
 
@@ -210,60 +375,84 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
                 //#region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+                    //0. CONTROLLERS
+                    if (!parameterInputs.Parameters.containsKey("parameterControlRequestClientOrServer")) {
+                        storedOutputResponseMessage += "***parameterControlRequestClientOrServer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-                    else {
-                        if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null || parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == undefined) {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
-                            storedProcessRequestMistakeMade = true;
-                        }
-                    }
-
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"
+                    //1. INPUTS
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestActionName")) {
+                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.containsKey("parameterInputRequestName")) {
-                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n"
+                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.containsKey("parameterInputRequestNameDataCacheKey")) {
-                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n"
+                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedDisturber")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedDisturber*** cannot be blank or empty.\n"
+                    //2. PROCESS
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCallBack*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedSensor")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedSensor*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedStorer")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.";
+                            storedProcessRequestMistakeMade = true;
+                        }
                     }
 
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n"
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails_Parameters")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails_Parameters*** cannot be blank or empty.\n"
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails_Parameters*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails_CallBack")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails_CallBack*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedDisturber")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedDisturber*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedSensor")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedSensor*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedStorer")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //3. OUTPUTS
+                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseControlID")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseControlID*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -277,7 +466,7 @@ export namespace BaseDI.Professional.Story.Advertising_0
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         //#endregion
@@ -295,11 +484,18 @@ export namespace BaseDI.Professional.Story.Advertising_0
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -330,64 +526,113 @@ export namespace BaseDI.Professional.Story.Advertising_0
                 //#endregion
 
                 //#endregion
-            }
+            };
 
             //BEGIN valdation process
             await ValidateInputs(parameterInputs);
 
             //#endregion
 
-            //#region DEFINE request handler
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
 
             let storedProcessRequestHandler: any = null;
 
             //#endregion
 
-            //#region MEMORIZE control client server
-
-            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+            //#region DEFINE output variables
 
             //#endregion
 
-            //#region MEMORIZE app settings
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input request details
+
+            let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            let storedInputRequestDataCustomCacheKey: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+
+            //#endregion
+
+            //#region MEMORIZE input extra data
+
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestName", storedInputRequestName);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestDataCustomCacheKey", storedInputRequestDataCustomCacheKey);
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
+
+            this._storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+
+            //#endregion
+
+            //#region MEMORIZE process request settings
 
             this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
-            //#region MEMORIZE centralized processes handlers
+            //#region MEMORIZE process centralized handlers
 
-            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
-            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
-            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
+            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs["storedProcessRequestDeveloperLoggingInputs"] : null);
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "ASSIGNING request handler");
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "ASSIGNING request handler");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
+            //3. OUTPUTS
+
             //#endregion
 
-            //#region MEMORIZE request details
-
-            let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            let storedInputRequestDataCustomCacheKey: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            //#region MEMORIZE process request details
 
             let storedProcessRequestProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
 
@@ -395,22 +640,30 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
             //#endregion
 
-            //#region MEMORIZE extra data
+            //#region MEMORIZE process extra data
 
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationLocalNodeJS", Object.assign(this.APILocationLocalNodeJS, Object));
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationLocalDotNetCore", Object.assign(this.APILocationLocalDotNetCore, Object));
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationLocalNodeJS", this.APILocationLocalNodeJS);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationLocalDotNetCore", this.APILocationLocalDotNetCore);
 
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationRemote", Object.assign(this.APILocationRemote, Object));
-
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestName", storedInputRequestName);
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestDataCustomCacheKey", storedInputRequestDataCustomCacheKey);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationRemote", this.APILocationRemote);
 
             //#endregion
 
-            //#region MEMORIZE storyline details
+            //#region MEMORIZE process storyline details
 
             this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
             this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -420,8 +673,7 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
             //#region ASSIGN request handler
 
-            try
-            {
+            try {
                 //#region IDEAL CASE - USE director or experience
 
                 switch (storedInputRequestName.toUpperCase()) {
@@ -437,17 +689,27 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
                 //#endregion
             }
-            catch (storedProcessRequestMistake) {
+            catch (storedProcessRequestMistake)
+            {
                 //#region EDGE CASE - USE developer logger
+
                 if (storedProcessRequestDeveloperMode) {
                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED configurating request handler");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
+
                 //#endregion
 
                 //#region EDGE CASE - USE exception handler
@@ -465,12 +727,11 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
             //#region RETURN request handler
 
-            //#region IDEAL CASE - USE director of programming
+            //#region IDEAL CASE - USE experienece or director
 
             return storedProcessRequestHandler;
 
             //#endregion
-
 
             //#endregion
 
@@ -478,34 +739,109 @@ export namespace BaseDI.Professional.Story.Advertising_0
         }
 
         //#region Page 1
-        private Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
-        {
+
+        private Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
             //#region 1. INPUTS
 
-            //#region MEMORIZE data repository
-
-            let storedProcessRequestRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER : "LOCAL_FILE";
+            //#region DEFINE control variables
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedProcessRequestHandlerDirector: aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 = new Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.BaseDI.Professional.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process data repository
+
+            let storedProcessRequestRepositoryType: string = this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER ? this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER : "LOCAL_FILE";
+
+            //#endregion
+
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            let storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0");
 
+            //3. OUTPUTS
+
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
+
+            //#endregion
+
+            //#region MEMORIZE process request handler
+
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = this._storedProcessRequestTracker;
+
+            storedProcessRequestHandlerDirector.ExtraData = this._storedProcessRequestExtraData;
+
+            storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -517,28 +853,15 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
             //#region IDEAL CASE - USE director
 
-            let storedProcessRequestHandler_Director = new Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.BaseDI.Professional.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-
-            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
-
-            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
-
-            storedProcessRequestHandler_Director.MasterStorer = this._storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = this._storedProcessRequestCentralizedSensor;
-
-            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
-
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.BaseDI.Professional.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.BaseDI.Professional.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.BaseDI.Professional.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.BaseDI.Professional.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -555,7 +878,7 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
             //#region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             //#endregion
 
@@ -563,184 +886,311 @@ export namespace BaseDI.Professional.Story.Advertising_0
 
             //#endregion
         }
-        //#endregion 
 
-        //#region Page 2
-        private Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
-        {
-            //#region 1. INPUTS
-
-            //#region MEMORIZE data repository
-
-            let storedProcessRequestRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER : "LOCAL_FILE";
-
-            //#endregion
-
-            //#region MEMORIZE developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
-
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0");
-
-            //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region CONFIGURE request handler
-
-            //#region IDEAL CASE - USE director
-
-            let storedProcessRequestHandler_Director = new Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.Director.Advertising_2.Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0(parameterInputs);
-
-            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
-
-            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
-
-            storedProcessRequestHandler_Director.MasterStorer = this._storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = this._storedProcessRequestCentralizedSensor;
-
-            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
-
-            switch (storedProcessRequestRepositoryType.toUpperCase()) {
-                case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.State.Advertising_2.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
-
-                    break;
-                case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.State.Advertising_2.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
-
-                    break;
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN request handler
-
-            //#region IDEAL CASE - USE experienece or director
-
-            return storedProcessRequestHandler_Director;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
-        //#endregion 
-
-        //#region Page 3
-        private Create_Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object
-        {
-            //#region 1. INPUTS
-
-            //#region MEMORIZE data repository
-
-            let storedProcessRequestRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER : "LOCAL_FILE";
-
-            //#endregion
-
-            //#region MEMORIZE developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
-
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_1_0");
-
-            //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region CONFIGURE request handler
-
-            //#region IDEAL CASE - USE director
-
-            let storedProcessRequestHandler_Director = null; // new Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.Director.Advertising_2.Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_Handler_1_0(parameterInputs);
-
-            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
-
-            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
-
-            storedProcessRequestHandler_Director.MasterStorer = this._storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = this._storedProcessRequestCentralizedSensor;
-
-            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
-
-            switch (storedProcessRequestRepositoryType.toUpperCase()) {
-                case "LOCAL_FILE":
-                    //storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.State.Advertising_2.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
-
-                    break;
-                case "REMOTE_SERVICE":
-                    //storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.BaseDI.Professional.State.Advertising_2.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
-
-                    break;
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN request handler
-
-            //#region IDEAL CASE - USE experienece or director
-
-            return storedProcessRequestHandler_Director;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
         //#endregion
 
-        //#endregion 
+        //#region Page 2
+
+        private Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedProcessRequestHandlerDirector: aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 = null;//new Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process data repository
+
+            let storedProcessRequestRepositoryType: string = this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER ? this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER : "LOCAL_FILE";
+
+            //#endregion
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+
+            let storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0");
+
+            //3. OUTPUTS
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
+
+            //#endregion
+
+            //#region MEMORIZE process request handler
+
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = this._storedProcessRequestTracker;
+
+            storedProcessRequestHandlerDirector.ExtraData = this._storedProcessRequestExtraData;
+
+            storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            switch (storedProcessRequestRepositoryType.toUpperCase()) {
+                case "LOCAL_FILE":
+                    storedProcessRequestHandlerDirector.Repository = null;// new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+
+                    break;
+                case "REMOTE_SERVICE":
+                    storedProcessRequestHandlerDirector.Repository = null;// new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+
+                    break;
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedProcessRequestHandlerDirector;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //#endregion
+
+        //#region Page 3
+
+        private Create_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedProcessRequestHandlerDirector: aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 = new Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0.BaseDI.Professional.Director.Advertising_3.Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process data repository
+
+            let storedProcessRequestRepositoryType: string = this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER ? this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER : "LOCAL_FILE";
+
+            //#endregion
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+
+            let storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_1_0");
+
+            //3. OUTPUTS
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
+
+            //#endregion
+
+            //#region MEMORIZE process request handler
+
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = this._storedProcessRequestTracker;
+
+            storedProcessRequestHandlerDirector.ExtraData = this._storedProcessRequestExtraData;
+
+            storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region CONFIGURE request handler
+
+            //#region IDEAL CASE - USE director
+
+            switch (storedProcessRequestRepositoryType.toUpperCase()) {
+                case "LOCAL_FILE":
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0.BaseDI.Professional.State.Advertising_3.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+
+                    break;
+                case "REMOTE_SERVICE":
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0.BaseDI.Professional.State.Advertising_3.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+
+                    break;
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN request handler
+
+            //#region IDEAL CASE - USE experienece or director
+
+            return storedProcessRequestHandlerDirector;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //#endregion
+
+        //#endregion
     }
 }

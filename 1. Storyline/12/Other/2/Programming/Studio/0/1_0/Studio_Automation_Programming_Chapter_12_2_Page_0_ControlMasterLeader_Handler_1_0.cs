@@ -2369,7 +2369,7 @@ namespace BaseDI.Professional.Story.Programming_0
             {
                 #region EDGE CASE - USE an exception message
 
-                throw new Exception("No DIRECTOR request handler found for " + this._storedProcessRequestName.toUpperCase());
+                throw new Exception("No DIRECTOR request handler found for " + _storedProcessRequestName.ToUpper());
 
                 #endregion
             }

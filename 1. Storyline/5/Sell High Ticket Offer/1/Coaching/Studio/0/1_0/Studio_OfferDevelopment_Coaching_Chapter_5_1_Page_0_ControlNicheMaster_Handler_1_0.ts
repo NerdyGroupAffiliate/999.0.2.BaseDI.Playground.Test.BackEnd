@@ -498,28 +498,28 @@ export namespace BaseDI.Professional.Story.Coaching_0 {
 
             //#region IDEAL CASE - USE director
 
-            let storedProcessRequestHandler_Director = null; //new Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0.BaseDI.Professional.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+            let storedProcessRequestHandlerDirector = null; //new Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0.BaseDI.Professional.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = this._storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = this._storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = this._storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = this._storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = null; //new LocalFile_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0.BaseDI.Professional.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = null; //new LocalFile_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0.BaseDI.Professional.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = null; //new RemoteService_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0.BaseDI.Professional.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = null; //new RemoteService_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0.BaseDI.Professional.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -536,7 +536,7 @@ export namespace BaseDI.Professional.Story.Coaching_0 {
 
             //#region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             //#endregion
 

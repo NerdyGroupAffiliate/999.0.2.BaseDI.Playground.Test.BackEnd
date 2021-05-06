@@ -98,13 +98,48 @@ namespace BaseDI.Professional.Story.Advertising_0
         {
             #region 1. INPUTS
 
-            #region DEFINE clientOrServer instance
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
 
             _storedProcessRequestTracker = null;
 
             #endregion
 
-            #region MEMORIZE extra data
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process extra data
 
             _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] != null ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
@@ -112,6 +147,16 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #endregion
 
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxx
+
+            #endregion
+
+            #endregion
+
+            #endregion
+   
             #region 2. PROCESS
 
             #region HANDLE niche setup
@@ -136,18 +181,88 @@ namespace BaseDI.Professional.Story.Advertising_0
 
         #region 3. Set
 
-        //A. Default state of this part of the storyline
-        #region 1. INPUTS
+        //A. Default state
+        public void HandleDefaults()  
+        {
+            #region 1. INPUTS
 
-        #endregion
+            #region DEFINE control variables
 
-        #region 2. PROCESS
+            #endregion
 
-        #endregion
+            #region DEFINE input variables
 
-        #region 3. OUTPUT
 
-        #endregion
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE process xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process defaults
+
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #endregion
+        }
 
         #endregion
 
@@ -163,48 +278,96 @@ namespace BaseDI.Professional.Story.Advertising_0
             {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
+                #region DEFINE control variables
+
+                #endregion
+
+                #region DEFINE input variables
 
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input xxx xxxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE process variables
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
-                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+                bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+                _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> ValidateInputs");
+
+                //0. CONTROLLERS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+                //1. INPUTS
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN processing request");
+
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "SetupStoryline -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables
+
+                #region MEMORIZE process xxx xxxx
+
+
+                #endregion
 
                 #endregion
 
@@ -218,6 +381,45 @@ namespace BaseDI.Professional.Story.Advertising_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
+                    //0. CONTROLLERS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterControlRequestClientOrServer"))
+                    {
+                        storedOutputResponseMessage += "***parameterControlRequestClientOrServer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //1. INPUTS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestActionName"))
+                    {
+                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestName"))
+                    {
+                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestNameDataCacheKey"))
+                    {
+                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //2. PROCESS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCallBack"))
+                    {
+                        storedOutputResponseMessage += "***parameterProcessRequestCallBack*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
+                    {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
@@ -232,21 +434,21 @@ namespace BaseDI.Professional.Story.Advertising_0
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails_Parameters"))
                     {
-                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails_Parameters*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestNameDataCacheKey"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails_CallBack"))
                     {
-                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails_CallBack*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -268,15 +470,10 @@ namespace BaseDI.Professional.Story.Advertising_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
+                    //3. OUTPUTS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseControlID"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails_Parameters"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails_Parameters*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterOutputResponseControlID*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -354,25 +551,69 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #endregion
 
-            #region DEFINE request handler
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
 
             dynamic storedProcessRequestHandler = null;
 
             #endregion
 
-            #region MEMORIZE control client server
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input request details
+
+            string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            string storedInputRequestDataCustomCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+
+            #endregion
+
+            #region MEMORIZE input extra data
+
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestName", storedInputRequestName);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestDataCustomCacheKey", storedInputRequestDataCustomCacheKey);
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request tracker
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE centralized processes handlers
+            #region MEMORIZE process centralized handlers
 
             _storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
             _storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
@@ -380,7 +621,7 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
@@ -389,8 +630,14 @@ namespace BaseDI.Professional.Story.Advertising_0
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "ASSIGNING request handler");
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "ASSIGNING request handler");        
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
@@ -399,12 +646,11 @@ namespace BaseDI.Professional.Story.Advertising_0
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
+            //3. OUTPUTS
+
             #endregion
 
-            #region MEMORIZE request details
-
-            string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            string storedInputRequestDataCustomCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            #region MEMORIZE process request details
 
             string storedProcessRequestProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"] ? parameterInputs.Parameters["parameterProcessRequestByName"] : "";
 
@@ -412,22 +658,30 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #endregion
 
-            #region MEMORIZE extra data
+            #region MEMORIZE process extra data
 
             _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationLocalNodeJS", APILocationLocalNodeJS);
             _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
             _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationRemote", APILocationRemote);
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestName", storedInputRequestName);
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestDataCustomCacheKey", storedInputRequestDataCustomCacheKey);
-
             #endregion
 
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
 
             #endregion
 
@@ -504,13 +758,54 @@ namespace BaseDI.Professional.Story.Advertising_0
         {
             #region 1. INPUTS
 
-            #region MEMORIZE data repository
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process data repository
 
             string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
@@ -519,15 +814,50 @@ namespace BaseDI.Professional.Story.Advertising_0
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");          
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0");
 
+            //3. OUTPUTS
+
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE process request handler
+
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
+
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
+
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
 
             #endregion
 
@@ -539,29 +869,16 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
-
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
-
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
-
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
-
             switch (storedProcessRequestRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -578,7 +895,7 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -595,13 +912,54 @@ namespace BaseDI.Professional.Story.Advertising_0
         {
             #region 1. INPUTS
 
-            #region MEMORIZE data repository
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = null;//new Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process data repository
 
             string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
@@ -610,15 +968,49 @@ namespace BaseDI.Professional.Story.Advertising_0
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0");
 
+            //3. OUTPUTS
+
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE process request handler
+
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
+
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
+
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
 
             #endregion
 
@@ -630,29 +1022,16 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = null;//new Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
-
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
-
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
-
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
-
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
-
             switch (storedProcessRequestRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = null;// new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = null;// new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = null;// new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = null;// new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -669,7 +1048,7 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 
@@ -682,17 +1061,58 @@ namespace BaseDI.Professional.Story.Advertising_0
 
         #region Page 3
 
-        private object Create_Director_Of_Advertising_Chapter_1_1_Page_3_CreateWhichTopicAPersonIsAwareOf_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        private object Create_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
-            #region MEMORIZE data repository
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = new Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process data repository
 
             string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
@@ -701,15 +1121,49 @@ namespace BaseDI.Professional.Story.Advertising_0
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_AudienceTesting_Advertising_Chapter_1_1_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_1_0");
+
+            //3. OUTPUTS
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE process request handler
+
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
+
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
+
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
 
             #endregion
 
@@ -721,29 +1175,16 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = new Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
-
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
-
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
-
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
-
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
-
             switch (storedProcessRequestRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = new RemoteService_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -760,7 +1201,7 @@ namespace BaseDI.Professional.Story.Advertising_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 

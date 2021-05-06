@@ -529,29 +529,29 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = null;//new Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = null;//new Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
 
-            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
+            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
-            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedProcessRequestHandler_Director.Repository = null; //new LocalFile_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = null; //new LocalFile_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedProcessRequestHandler_Director.Repository = null; //new RemoteService_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
-                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
+                    storedProcessRequestHandlerDirector.Repository = null; //new RemoteService_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -568,7 +568,7 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedProcessRequestHandler_Director;
+            return storedProcessRequestHandlerDirector;
 
             #endregion
 

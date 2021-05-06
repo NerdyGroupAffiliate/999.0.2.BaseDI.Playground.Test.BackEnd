@@ -1413,7 +1413,6 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             if (this._storedProcessRequestByName == "" || this._storedProcessRequestByName == null || this._storedProcessRequestByName == undefined)
             {
-
                 this._storedProcessRequestName = this._storedProcessRequestHandler != null ? this._storedProcessRequestHandler.constructor.name : this._storedInputRequestName;
             }
             else
