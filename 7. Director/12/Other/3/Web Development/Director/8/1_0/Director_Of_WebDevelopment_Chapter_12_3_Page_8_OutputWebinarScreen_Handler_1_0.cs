@@ -60,9 +60,9 @@ namespace BaseDI.Professional.Director.Web_Development_8
         private ExtraData_12_2_1_0 _storedProcessRequestExtraData;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
 
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
@@ -97,9 +97,9 @@ namespace BaseDI.Professional.Director.Web_Development_8
 
             #region MEMORIZE centralized processes handlers
 
-            _storedCentralizedDisturber = _storedInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            _storedCentralizedSensor = _storedInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            _storedCentralizedStorer = _storedInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            _storedProcessRequestCentralizedDisturber = _storedInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            _storedProcessRequestCentralizedSensor = _storedInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            _storedProcessRequestCentralizedStorer = _storedInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -511,9 +511,9 @@ namespace BaseDI.Professional.Director.Web_Development_8
         private IContract_Programming_Repository_12_2_1_0 _storedRepository;
         private string _storedProcessRequestByName;
 
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
 
         internal aClass_Programming_ScriptRoutable_12_2_1_0 _stored_ExperienceRequestHandler;
 
@@ -539,9 +539,9 @@ namespace BaseDI.Professional.Director.Web_Development_8
 
             #region MEMORIZE centralized processes handlers
 
-            _storedCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            _storedCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            _storedCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            _storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            _storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            _storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -728,9 +728,9 @@ namespace BaseDI.Professional.Director.Web_Development_8
         private string _storedActionName = "";
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
 
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
 
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
@@ -767,9 +767,9 @@ namespace BaseDI.Professional.Director.Web_Development_8
 
             #region MEMORIZE centralized processes handlers
 
-            _storedCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            _storedCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            _storedCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            _storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            _storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            _storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -1036,9 +1036,9 @@ namespace BaseDI.Professional.Director.Web_Development_8
             page.DirectorOrExperienceRequestHandler = _storedBusinessDirectorOrExperienceRequestHandler;
             page.ExtraData = _storedProcessRequestExtraData;
 
-            page.MasterStorer = _storedCentralizedStorer;
-            page.MasterDisturber = _storedCentralizedDisturber;
-            page.MasterSensor = _storedCentralizedSensor;
+            page.MasterStorer = _storedProcessRequestCentralizedStorer;
+            page.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            page.MasterSensor = _storedProcessRequestCentralizedSensor;
 
             page.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 

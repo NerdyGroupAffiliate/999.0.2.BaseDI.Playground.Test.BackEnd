@@ -66,9 +66,9 @@ namespace BaseDI.Professional.Story.Security_0
         private ExtraData_12_2_1_0 _storedProcessRequestExtraData;
 
         //PLUMBING
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
 
         private SingleParmPoco_12_2_1_0 _storedInputs = null;
 
@@ -359,9 +359,9 @@ namespace BaseDI.Professional.Story.Security_0
 
             #region MEMORIZE centralized processes handlers
 
-            _storedCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            _storedCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            _storedCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            _storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            _storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            _storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -526,9 +526,9 @@ namespace BaseDI.Professional.Story.Security_0
 
             storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
 
-            storedProcessRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
-            storedProcessRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
-            storedProcessRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
+            storedProcessRequestHandler_Director.MasterStorer = _storedProcessRequestCentralizedStorer;
+            storedProcessRequestHandler_Director.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            storedProcessRequestHandler_Director.MasterSensor = _storedProcessRequestCentralizedSensor;
 
             storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;

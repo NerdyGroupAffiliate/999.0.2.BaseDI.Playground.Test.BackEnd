@@ -899,7 +899,7 @@ export namespace BaseDI.Professional.Director.Programming_1
             {
                 storedOutputResponseData = await this.Factory_Action_1_Begin_Process();
             }
-            catch(mistake)
+            catch (storedProcessRequestMistake)
             {
                 throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
@@ -1027,7 +1027,7 @@ export namespace BaseDI.Professional.Director.Programming_1
 
                 //#endregion
             }
-            catch(mistake)
+            catch (storedProcessRequestMistake)
             {
                 throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }

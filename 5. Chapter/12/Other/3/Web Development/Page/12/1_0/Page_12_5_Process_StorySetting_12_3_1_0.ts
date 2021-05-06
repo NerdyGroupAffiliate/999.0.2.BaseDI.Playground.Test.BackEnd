@@ -53,9 +53,9 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
         private _storedActionName: string = "";
         private _storedBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
-        private _storedCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
-        private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedProcessRequestCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedProcessRequestCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
+        private _storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
         private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -95,9 +95,9 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
 
             //#region MEMORIZE centralized processes handlers
 
-            this._storedCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
-            this._storedCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
-            this._storedCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
+            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
 
             //#endregion
 
@@ -318,7 +318,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
                         storedInputs.Parameters.setValue("parameterHtmlContainerJSON", storedHtmlContainerJSON);
                         storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
                         storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
-                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs);
@@ -354,7 +354,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
                         storedInputs.Parameters.setValue("parameterHtmlContainerString", storedHtmlResultString);
                         storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
                         storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
-                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs);
@@ -390,7 +390,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
                         storedInputs.Parameters.setValue("parameterHtmlRowString", storedHtmlResultString);
                         storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
                         storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
-                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs);
@@ -426,7 +426,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
                         storedInputs.Parameters.setValue("parameterHtmlColumnString", storedHtmlResultString);
                         storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
                         storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
-                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs);
@@ -463,7 +463,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
                         storedInputs.Parameters.setValue("parameterHtmlStylesJSON", storedHtmlStylesJSON);
                         storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
                         storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
-                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs);
@@ -521,7 +521,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
                         storedInputs.Parameters.setValue("parameterHtmlBody", storedHtmlResultString);
                         storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
                         storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
-                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", this._storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs);

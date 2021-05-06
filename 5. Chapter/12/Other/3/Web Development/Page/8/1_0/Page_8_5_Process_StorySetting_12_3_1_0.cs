@@ -78,9 +78,9 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
         private string _storedActionName = "";
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
 
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
-        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
+        private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
 
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
@@ -118,9 +118,9 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
 
             #region MEMORIZE centralized processes handlers
 
-            _storedCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            _storedCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            _storedCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            _storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            _storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            _storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -327,7 +327,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                         storedInputs.Parameters.Add("parameterHtmlContainerJSON", storedHtmlContainerJSON);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs);
@@ -339,7 +339,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("converting html container", mistake);
+                    throw new Exception("converting html container", storedProcessRequestMistake);
                 }
                 #endregion
 
@@ -364,7 +364,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                         storedInputs.Parameters.Add("parameterHtmlContainerString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs);
@@ -376,7 +376,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("converting html rows", mistake);
+                    throw new Exception("converting html rows", storedProcessRequestMistake);
                 }
 
                 #endregion
@@ -402,7 +402,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                         storedInputs.Parameters.Add("parameterHtmlRowString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs);
@@ -414,7 +414,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("converting html rows", mistake);
+                    throw new Exception("converting html rows", storedProcessRequestMistake);
                 }
 
                 #endregion
@@ -440,7 +440,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                         storedInputs.Parameters.Add("parameterHtmlColumnString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs);
@@ -452,7 +452,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("converting html content", mistake);
+                    throw new Exception("converting html content", storedProcessRequestMistake);
                 }
 
                 #endregion
@@ -479,7 +479,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                         storedInputs.Parameters.Add("parameterHtmlStylesJSON", storedHtmlStylesJSON);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs);
@@ -489,7 +489,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("converting html inline styles", mistake);
+                    throw new Exception("converting html inline styles", storedProcessRequestMistake);
                 }
 
                 #endregion
@@ -505,7 +505,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("converting html inline scripts", mistake);
+                    throw new Exception("converting html inline scripts", storedProcessRequestMistake);
                 }
 
                 #endregion
@@ -521,7 +521,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("converting html inline metadata", mistake);
+                    throw new Exception("converting html inline metadata", storedProcessRequestMistake);
                 }
 
                 #endregion
@@ -541,7 +541,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                         storedInputs.Parameters.Add("parameterHtmlBody", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs);
@@ -551,7 +551,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("converting html content", mistake);
+                    throw new Exception("converting html content", storedProcessRequestMistake);
                 }
 
                 #endregion
@@ -573,7 +573,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_8
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
-                    throw new Exception("storing html string output observation", mistake);
+                    throw new Exception("storing html string output observation", storedProcessRequestMistake);
                 }
 
                 #endregion
