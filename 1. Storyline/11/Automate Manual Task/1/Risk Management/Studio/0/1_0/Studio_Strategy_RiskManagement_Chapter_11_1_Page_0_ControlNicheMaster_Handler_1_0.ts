@@ -55,10 +55,10 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
         //CLIENT/SERVER
         private _storedProcessRequestTracker: any;
 
-        private _storedClientRequestByName: string;
-        private _storedClientRequestByNameParameters: string;
+        private _storedInputRequestName: string;
+        private _storedInputRequestNameParameters: string;
 
-        private _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         //DATASETS
         private _storedProcessRequestDataStorylineDetails: any;
@@ -72,10 +72,10 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
         private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+        private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
 
-        private _storedRequestName: String = "";
-        private _storedSystemRequestByName: string;
+        private _storedProcessRequestName: String = "";
+        private _storedProcessRequestByName: string;
 
         //#endregion
 
@@ -94,7 +94,7 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
 
             //#region MEMORIZE extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
@@ -330,7 +330,7 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
 
             //#region DEFINE request handler
 
-            let storedRequestHandler: any = null;
+            let storedProcessRequestHandler: any = null;
 
             //#endregion
 
@@ -358,7 +358,7 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -377,12 +377,12 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
 
             //#region MEMORIZE request details
 
-            let storedClientRequestByName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            let storedClientRequestByNameParameters: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            let storedInputRequestNameParameters: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
-            let storedSystemRequestByName: string = parameterInputs.Parameters.getValue("parameterSystemRequestByName") ? parameterInputs.Parameters.getValue("parameterSystemRequestByName") : "";
+            let storedProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
 
-            this._storedRequestName = storedClientRequestByName;
+            this._storedProcessRequestName = storedInputRequestName;
 
             //#endregion
 
@@ -393,8 +393,8 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
 
             this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedAPILocationRemote", Object.assign(this.APILocationRemote, Object));
 
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedClientRequestByName", storedClientRequestByName);
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedClientRequestByNameParameters", storedClientRequestByNameParameters);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestName", storedInputRequestName);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestNameParameters", storedInputRequestNameParameters);
 
             //#endregion
 
@@ -414,20 +414,20 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
             try {
                 //#region IDEAL CASE - USE director or experience
 
-                //switch (storedClientRequestByName.toUpperCase()) {
+                //switch (storedInputRequestName.toUpperCase()) {
                 //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
-                //        storedRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                //        storedProcessRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
                 //        break;
                 //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
-                //        storedRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                //        storedProcessRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
                 //        break;
                 //}
 
                 //#endregion
             }
-            catch (mistake) {
+            catch (storedProcessRequestMistake) {
                 //#region EDGE CASE - USE developer logger
                 if (storedProcessRequestDeveloperMode) {
                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
@@ -442,7 +442,7 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
 
                 //#region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 //#endregion
             }
@@ -457,7 +457,7 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
 
             //#region IDEAL CASE - USE director of programming
 
-            return storedRequestHandler;
+            return storedProcessRequestHandler;
 
             //#endregion
 

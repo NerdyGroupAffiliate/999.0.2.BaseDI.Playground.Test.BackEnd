@@ -491,7 +491,7 @@ namespace BaseDI.Professional
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception storedProcessRequestMistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -504,7 +504,7 @@ namespace BaseDI.Professional
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED copying static files");
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake", mistake);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake",  storedProcessRequestMistake);
 
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
@@ -515,7 +515,7 @@ namespace BaseDI.Professional
 
                 #region EDGE CASE - USE exception handler
 
-                throw new Exception("CONVERSION request failed " + mistake.ToString());
+                throw new Exception("CONVERSION request failed " +  storedProcessRequestMistake.ToString());
 
                 #endregion
             }
@@ -551,7 +551,7 @@ namespace BaseDI.Professional
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception storedProcessRequestMistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -564,7 +564,7 @@ namespace BaseDI.Professional
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED mapping static files");
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake", mistake);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake",  storedProcessRequestMistake);
 
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
@@ -575,7 +575,7 @@ namespace BaseDI.Professional
 
                 #region EDGE CASE - USE exception handler
 
-                throw new Exception("CONVERSION request failed " + mistake.ToString());
+                throw new Exception("CONVERSION request failed " +  storedProcessRequestMistake.ToString());
 
                 #endregion
             }
@@ -728,7 +728,7 @@ namespace BaseDI.Professional
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception storedProcessRequestMistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -741,7 +741,7 @@ namespace BaseDI.Professional
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED configurating server");
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake", mistake);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake",  storedProcessRequestMistake);
 
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
@@ -752,7 +752,7 @@ namespace BaseDI.Professional
 
                 #region EDGE CASE - USE exception handler
 
-                throw new Exception("CONTROL request failed " + mistake.ToString());
+                throw new Exception("CONTROL request failed " +  storedProcessRequestMistake.ToString());
 
                 #endregion
             }
@@ -788,11 +788,11 @@ namespace BaseDI.Professional
     {
         #region 1. Assign
 
+        //CLIENT/SERVER
+        private dynamic _storedControlRequestClientOrServer;
+
         //SETTINGS
         public IConfiguration _storedProcessRequestSettings { get; set; }
-
-        //CLIENT/SERVER
-        private Dictionary<string, object> _storedProcessRequestTracker;
 
         //DATASETS
         private JObject _storedProcessRequestDataStorylineDetails;
@@ -802,6 +802,7 @@ namespace BaseDI.Professional
         private ExtraData_12_2_1_0 _storedProcessRequestExtraData;
 
         //PLUMBING
+        private Dictionary<string, object> _storedProcessRequestTracker;
         public Func<JObject, IActionResult> ExecuteControlRequest = null;
 
         #endregion
@@ -812,29 +813,69 @@ namespace BaseDI.Professional
         {
             #region 1. INPUTS
 
-            #region DEFINE client/server info
-
-            _storedProcessRequestTracker = new Dictionary<string, object>();
+            #region DEFINE control variables
 
             #endregion
 
-            #region DEFINE extra data
+            #region DEFINE input variables
 
-            _storedProcessRequestExtraData = new ExtraData_12_2_1_0();
 
             #endregion
 
-            #region DEFINE storyline details
+            #region DEFINE process variables
 
             _storedProcessRequestDataStorylineDetails = new JObject();
             _storedProcessRequestDataStorylineDetails_Parameters = new JObject();
 
+            _storedProcessRequestExtraData = new ExtraData_12_2_1_0();
+            _storedProcessRequestTracker = new Dictionary<string, object>();
+
             #endregion
 
-            #region MEMORIZE app settings
+            #region DEFINE output variables
+
+
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control client server
+
+            _storedControlRequestClientOrServer = this;
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request settings
 
             if (parameterProcessRequestSettings != null)
                 _storedProcessRequestSettings = parameterProcessRequestSettings;
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE process xxx xxxx
+
+
+            #endregion
 
             #endregion
 
@@ -845,8 +886,8 @@ namespace BaseDI.Professional
             #region EXECUTE process defaults
 
             #region EDGE CASE - USE defaults handler
-            
-            Setup();
+
+            HandleDefaults();
 
             #endregion
             
@@ -864,7 +905,7 @@ namespace BaseDI.Professional
         #region 3. Set
 
         //A. Default state of story
-        public void Setup()
+        public void HandleDefaults()
         {
             #region 1. INPUTS
 
@@ -958,12 +999,20 @@ namespace BaseDI.Professional
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "STARING web request");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "STARING system request");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Start.ts");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
+
+                //3. OUTPUTS
 
                 #endregion
 
@@ -996,15 +1045,15 @@ namespace BaseDI.Professional
                     }
 
                     //1. INPUTS
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestName"))
-                    {
-                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-
                     if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestActionName"))
                     {
                         storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestName"))
+                    {
+                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -1018,6 +1067,18 @@ namespace BaseDI.Professional
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCallBack"))
                     {
                         storedOutputResponseMessage += "***parameterProcessRequestCallBack*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
+                    {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
+                    {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -1103,9 +1164,10 @@ namespace BaseDI.Professional
             #endregion
 
             ///////////////////////////////////////////////////////////
-            ///////////////////////////////////////////////////////////
 
             #region DEFINE control variables
+
+            Func<SingleParmPoco_12_2_1_0, Task<JObject>> Action = null;
 
             #endregion
 
@@ -1131,9 +1193,9 @@ namespace BaseDI.Professional
 
             #region MEMORIZE control variables
 
-            #region MEMORIZE control handler
+            #region MEMORIZE control xxx xxx
 
-            Func<SingleParmPoco_12_2_1_0, Task<JObject>> Action = null;
+
 
             #endregion
 
@@ -1148,15 +1210,15 @@ namespace BaseDI.Professional
 
             #endregion
 
-            #region MEMORIZE input request data cache key
-
-            string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
-
-            #endregion
-
             #region MEMORIZE input request name
 
             string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+
+            #endregion
+
+            #region MEMORIZE input request name data cache key
+
+            string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             #endregion
 
@@ -1176,21 +1238,34 @@ namespace BaseDI.Professional
 
             #endregion
 
+            #region MEMORIZE process request tracker
+
+            _storedProcessRequestTracker.Add("storedProcessRequestSettings", _storedProcessRequestSettings);
+            _storedProcessRequestTracker.Add("storedProcessRequestStepNumber", 0);
+
+            #endregion
+
             #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode =_storedProcessRequestSettings.GetValue<bool>("AppSetting:APP_SETTING_DEVELOPER_MODE");
 
-            _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
-
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "STARING web request");
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "STARING web request");                      
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Start.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
+
+            //3. OUTPUTS
 
             #endregion  
 
@@ -1229,16 +1304,17 @@ namespace BaseDI.Professional
                 storedInputs.Parameters.Add("parameterInputRequestName", storedInputRequestName);
                 storedInputs.Parameters.Add("parameterInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
 
-                //2. PROCESS                
-
+                //2. PROCESS            
                 storedInputs.Parameters.Add("parameterProcessRequestCallBack", storedProcessRequestCallBack);
                 storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
                 storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-
-                //3. OUTPUTS
+                
                 storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", null);
                 storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails_Parameters", null);
                 storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails_CallBack", null);
+
+                //3. OUTPUTS
+                storedInputs.Parameters.Add("parameterOutputResponseControlID", storedOutputResponseControlID);
 
                 #endregion
 

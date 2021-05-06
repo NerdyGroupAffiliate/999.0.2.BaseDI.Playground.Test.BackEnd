@@ -56,7 +56,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
         public static async Step_X_X_Framework_Control_DeveloperException_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> {
             console.log("GOT EXCEPTION");
-            console.log(parameterInputs.Parameters["storedProcessRequestMistakes"]);
+            console.log(parameterInputs.Parameters["storedProcessRequestMistake"]);
 
             return null;
         }
@@ -441,7 +441,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                 //#endregion
             }
-            catch (mistake)
+            catch (storedProcessRequestMistake)
             {
                 //#region EDGE CASE - USE return false
 

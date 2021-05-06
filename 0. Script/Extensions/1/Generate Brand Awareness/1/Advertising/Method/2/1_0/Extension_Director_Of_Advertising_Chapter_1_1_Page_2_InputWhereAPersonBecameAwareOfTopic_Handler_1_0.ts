@@ -300,7 +300,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, Setup, Storage, Uptime
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, HandleDefaults, Storage, Uptime
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALEndOfProcess", true);
@@ -352,7 +352,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                             parameterAuthenticationResponse = await ExecuteTransportRequest(parameterInstagramClient, parameterInstagramAccountUserName, parameterInstagramAccountPassword, parameterInstagramContent);
                         }
-                        catch (mistake) {
+                        catch (storedProcessRequestMistake) {
                             //#region EDGE CASE - USE developer logger
                             if (storedProcessRequestDeveloperMode) {
                                 this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
@@ -367,7 +367,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                             //#region EDGE CASE - USE exception handler
 
-                            throw mistake;
+                            throw storedProcessRequestMistake;
 
                             //#endregion
                         }
@@ -411,7 +411,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
                                 //#endregion
 
                                 await ExecuteTransportRequest(parameterInstagramContent);
-                            }).catch(async (mistake) => {
+                            }).catch(async (storedProcessRequestMistake) => {
                                 //#region EDGE CASE - USE developer logger
                                 if (storedProcessRequestDeveloperMode) {
                                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
@@ -426,7 +426,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                                 //#region EDGE CASE - USE exception handler
 
-                                throw mistake;
+                                throw storedProcessRequestMistake;
 
                                 //#endregion
                             });
@@ -435,10 +435,10 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
                     await ExecuteOutputResponse(storedOutputResponseData, storedInstagramClient, storedInstagramAccountUserName, storedInstagramAccountPassword, storedInstagramContent);
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE exception handler
 
-                    throw mistake;
+                    throw storedProcessRequestMistake;
 
                     //#endregion
                 }

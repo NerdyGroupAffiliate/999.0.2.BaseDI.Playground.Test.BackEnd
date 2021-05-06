@@ -221,7 +221,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -285,7 +285,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     return parameterHtmlAttributesOutput;
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -303,7 +303,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("CONVERSION request failed " + mistake.toString());
+                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -517,7 +517,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -577,7 +577,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 try {
                     return `<${parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -595,7 +595,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("STORAGE request failed " + mistake.toString());
+                    throw new Error("STORAGE request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -814,7 +814,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -879,7 +879,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     return parameterHtmlContainerString.replace("{HTMLRows_Replace}", parameterFilterDataResponseList.join("\n"))
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -897,7 +897,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("CONVERSION request failed " + mistake.toString());
+                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -1117,7 +1117,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -1183,7 +1183,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     return parameterHtmlRowString;
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -1201,7 +1201,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("CONVERSION request failed " + mistake.toString());
+                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -1421,7 +1421,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -1502,7 +1502,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     return parameterHtmlColumnString;
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -1520,7 +1520,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("CONVERSION request failed " + mistake.toString());
+                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -1751,7 +1751,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -1964,7 +1964,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     return storedHtmlInlineCSSString;
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -1982,7 +1982,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("CONVERSION request failed " + mistake.toString());
+                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -2213,7 +2213,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -2277,7 +2277,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     return "";
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -2295,7 +2295,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("CONVERSION request failed " + mistake.toString());
+                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -2526,7 +2526,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -2590,7 +2590,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     return "";
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -2608,7 +2608,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("CONVERSION request failed " + mistake.toString());
+                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -2852,7 +2852,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -2954,7 +2954,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     return parameterHtmlScripts;
 
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -2972,7 +2972,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("STORAGE request failed " + mistake.toString());
+                    throw new Error("STORAGE request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }

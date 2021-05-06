@@ -66,7 +66,7 @@ namespace BaseDI.Professional.Director.Advertising_3
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
         private string _storedProcessRequestName = "";
-        private string _storedProcessRequestSystemRequestByName = "";
+        private string _storedProcessRequestProcessRequestByName = "";
 
         #endregion
 
@@ -383,7 +383,7 @@ namespace BaseDI.Professional.Director.Advertising_3
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? _storedInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -431,7 +431,7 @@ namespace BaseDI.Professional.Director.Advertising_3
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception storedProcessRequestMistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -450,7 +450,7 @@ namespace BaseDI.Professional.Director.Advertising_3
 
                 #region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 #endregion
             }
@@ -509,7 +509,7 @@ namespace BaseDI.Professional.Director.Advertising_3
 
         private string _storedProcessRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedProcessRequestDataRepository;
-        private string _storedProcessRequestSystemRequestByName;
+        private string _storedProcessRequestProcessRequestByName;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
@@ -566,7 +566,7 @@ namespace BaseDI.Professional.Director.Advertising_3
 
             #region MEMORIZE extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 
@@ -574,11 +574,11 @@ namespace BaseDI.Professional.Director.Advertising_3
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
             _storedInputRequestDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
-            _storedInputRequestDataCustom = parameterInputs.Parameters["parameterClientRequestByObject"];
+            _storedInputRequestDataCustom = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedProcessRequestSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
             _storedInputs = parameterInputs;
 
@@ -736,7 +736,7 @@ namespace BaseDI.Professional.Director.Advertising_3
         private string _storedProcessRequestFileName = "Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
         private string _storedProcessRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedProcessRequestDataRepository;
-        private string _storedProcessRequestSystemRequestByName;
+        private string _storedProcessRequestProcessRequestByName;
 
         #endregion
 
@@ -793,7 +793,7 @@ namespace BaseDI.Professional.Director.Advertising_3
 
             #region MEMORIZE extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 
@@ -801,11 +801,11 @@ namespace BaseDI.Professional.Director.Advertising_3
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
             _storedInputRequestDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
-            _storedInputRequestDataCustom = parameterInputs.Parameters["parameterClientRequestByObject"];
+            _storedInputRequestDataCustom = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedProcessRequestSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
             _storedInputs = parameterInputs;
 

@@ -373,7 +373,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     await ExecuteTransportRequest(storedApiRequestCallBack, storedApiRequestEndPointAddress, storedApiRequestData, storedApiRequestVerb);
 
                 }
-                catch (mistake)
+                catch (storedProcessRequestMistake)
                 {
                     //#region EDGE CASE - USE developer logger
 
@@ -392,7 +392,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("API request failed " + mistake.toString());
+                    throw new Error("API request failed " + storedProcessRequestMistake.toString());
 
                     //#endregion
                 }
@@ -656,21 +656,21 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                 storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                 storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
                 storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
-                storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "HandleDefaultsItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
                 storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
                 let fileMetaData: any = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
 
                 if (fileMetaData == undefined || fileMetaData == null) {
                     storedInputs.Parameters.remove("parameterProcessRequestDataToFilterValue");
-                    storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                    storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "Default_HandleDefaultsItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
 
                     fileMetaData = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
                 }
 
-                var SetupItemEnvironmentServerMetaDataPaths = fileMetaData.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
+                var HandleDefaultsItemEnvironmentServerMetaDataPaths = fileMetaData.value.HandleDefaultsItemEnvironmentServer.HandleDefaultsItemEnvironmentServerMetaDataPaths;
 
-                SetupItemEnvironmentServerMetaDataPaths.forEach(metaDataPaths => {
+                HandleDefaultsItemEnvironmentServerMetaDataPaths.forEach(metaDataPaths => {
                     let rawdata = fs.readFileSync(metaDataPaths.MetaDataLocalPath);
                     let obj = JSON.parse(rawdata);
                     let contentItems = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
@@ -765,7 +765,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
         //#region SERVER MANAGEMENT
 
-        public static async Step_X_X_Framework_Control_ServerSetup_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
+        public static async Step_X_X_Framework_Control_ServerHandleDefaults_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any>
         {
             //#region 1. INPUTS
 
@@ -933,7 +933,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
 
             //#endregion
@@ -962,7 +962,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
             //#endregion
@@ -988,35 +988,35 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
             storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
             storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
-            storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment");
+            storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "HandleDefaultsItem_SetBuyer_ProductLaunching_Software_TransportEnvironment");
             storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
             const storedServerDetails: any = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
 
             //DOMAIN url
-            const storedServerDomainName: number = storedServerDetails?.value?.SetupItemEnvironmentDomainName;
+            const storedServerDomainName: number = storedServerDetails?.value?.HandleDefaultsItemEnvironmentDomainName;
 
             //PORT number
-            const storedServerPort: number = storedServerDetails?.value?.SetupItemEnvironmentPort;
+            const storedServerPort: number = storedServerDetails?.value?.HandleDefaultsItemEnvironmentPort;
 
             //STATIC paths
 
             //DOCUMENTS
-            const storedServerDocumentPath: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemDataPath;
+            const storedServerDocumentPath: string = storedServerDetails?.value?.HandleDefaultsItemEnvironmentClient?.HandleDefaultsItemDataPath;
 
             //FONTS
-            const storedServerFontsPath: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemFontPath;
-            const storedServerImagesPath: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemImagePath;
+            const storedServerFontsPath: string = storedServerDetails?.value?.HandleDefaultsItemEnvironmentClient?.HandleDefaultsItemFontPath;
+            const storedServerImagesPath: string = storedServerDetails?.value?.HandleDefaultsItemEnvironmentClient?.HandleDefaultsItemImagePath;
 
             //SCRIPTS
-            const storedServerScriptsPath: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemScriptPath;
-            const storedServerScriptName: string = storedServerDetails?.value?.SetupItemEnvironmentClient?.SetupItemScriptName;
+            const storedServerScriptsPath: string = storedServerDetails?.value?.HandleDefaultsItemEnvironmentClient?.HandleDefaultsItemScriptPath;
+            const storedServerScriptName: string = storedServerDetails?.value?.HandleDefaultsItemEnvironmentClient?.HandleDefaultsItemScriptName;
 
             //ROUTES 
-            const storedServerRoutesGET: Array<any> = storedServerDetails?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
-            const storedServerRoutesDELETE: Array<any> = storedServerDetails?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesDELETE;
-            const storedServerRoutesPOST: Array<any> = storedServerDetails?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesPOST;
-            const storedServerRoutesPUT: Array<any> = storedServerDetails?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesPUT;
+            const storedServerRoutesGET: Array<any> = storedServerDetails?.value?.HandleDefaultsItemEnvironmentServer?.HandleDefaultsItemTransportItemRoutesGET;
+            const storedServerRoutesDELETE: Array<any> = storedServerDetails?.value?.HandleDefaultsItemEnvironmentServer?.HandleDefaultsItemTransportItemRoutesDELETE;
+            const storedServerRoutesPOST: Array<any> = storedServerDetails?.value?.HandleDefaultsItemEnvironmentServer?.HandleDefaultsItemTransportItemRoutesPOST;
+            const storedServerRoutesPUT: Array<any> = storedServerDetails?.value?.HandleDefaultsItemEnvironmentServer?.HandleDefaultsItemTransportItemRoutesPUT;
 
             //#endregion
 
@@ -1078,7 +1078,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", Object.assign(storedProcessRequestCentralizedStorer, Object));
 
-                    storedInputs.Parameters.setValue("parameterPageName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+                    storedInputs.Parameters.setValue("parameterPageName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
 
                     storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", Object.assign(storedProcessRequestDataStorylineDetails, Object));
 
@@ -1112,7 +1112,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     //#endregion
                 }
-                catch (mistake)
+                catch (storedProcessRequestMistake)
                 {
                     //#region EDGE CASE - USE developer logger
                     if (storedProcessRequestDeveloperMode) {
@@ -1128,7 +1128,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw mistake;
+                    throw storedProcessRequestMistake;
 
                     //#endregion
                 }
@@ -1136,7 +1136,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region IDEAL CASE - USE express server
 
-            const ExecuteControllerSetup = async (parameterServerInstance: any): Promise<any> => {
+            const ExecuteControllerHandleDefaults = async (parameterServerInstance: any): Promise<any> => {
                 parameterServerInstance = express();
 
                 //BROWSER fav icon
@@ -1146,7 +1146,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                 return parameterServerInstance;
             };
 
-            storedServerInstance = await ExecuteControllerSetup(storedServerInstance);
+            storedServerInstance = await ExecuteControllerHandleDefaults(storedServerInstance);
 
             //#endregion
 

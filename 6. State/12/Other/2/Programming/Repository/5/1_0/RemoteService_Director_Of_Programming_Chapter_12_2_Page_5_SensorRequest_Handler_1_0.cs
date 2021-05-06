@@ -46,10 +46,10 @@ namespace BaseDI.Professional.State.Programming_5
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
 
-        private string _storedClientRequestByName;
-        private string _storedClientRequestByNameParameters;
+        private string _storedInputRequestName;
+        private string _storedInputRequestNameParameters;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
         private Task<Dictionary<string, JToken>> _storedServerInstance = null;
         private object _storedServerInstanceExperienceRequestHandler = null;
@@ -74,12 +74,12 @@ namespace BaseDI.Professional.State.Programming_5
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+        private SingleParmPoco_12_2_1_0 _storedInputs;
 
         private string _storedRequestFileName = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
-        private string _storedRequestName = "";
+        private string _storedProcessRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedRepository;
-        private string _storedSystemRequestByName;
+        private string _storedProcessRequestByName;
 
         #endregion
 
@@ -137,23 +137,23 @@ namespace BaseDI.Professional.State.Programming_5
 
             #region MEMORIZE extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
-            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+            _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
             _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 
-            _storedParameterInputs = parameterInputs;
+            _storedInputs = parameterInputs;
 
             #endregion
 

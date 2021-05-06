@@ -54,10 +54,10 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
 
-        private string _storedClientRequestByName;
-        private string _storedClientRequestByNameParameters;
+        private string _storedInputRequestName;
+        private string _storedInputRequestNameParameters;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
         private Task<Dictionary<string, JToken>> _storedServerInstance = null;
         private object _storedServerInstanceExperienceRequestHandler = null;
@@ -82,12 +82,12 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+        private SingleParmPoco_12_2_1_0 _storedInputs;
 
         private string _storedRequestFileName = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_10_CreateAdvertisement_Handler_1_0";
-        private string _storedRequestName = "";
+        private string _storedProcessRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedRepository;
-        private string _storedSystemRequestByName;
+        private string _storedProcessRequestByName;
 
         #endregion
 
@@ -145,23 +145,23 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
             #region MEMORIZE extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
-            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+            _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
             _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 
-            _storedParameterInputs = parameterInputs;
+            _storedInputs = parameterInputs;
 
             #endregion
 
@@ -337,7 +337,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                     storedHtmlResultString = await ExecuteConversionRequest();
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("converting html container", mistake);
                 }
@@ -374,7 +374,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                     storedHtmlResultString = await ExecuteConversionRequest();
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("converting html rows", mistake);
                 }
@@ -412,7 +412,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                     storedHtmlResultString = await ExecuteConversionRequest();
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("converting html rows", mistake);
                 }
@@ -450,7 +450,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                     storedHtmlResultString = await ExecuteConversionRequest();
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("converting html content", mistake);
                 }
@@ -487,7 +487,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                     storedHtmlResultInlineStylesString = await ExecuteConversionRequest();
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("converting html inline styles", mistake);
                 }
@@ -503,7 +503,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                         return await Task.FromResult<string>("").ConfigureAwait(true);
                     };
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("converting html inline scripts", mistake);
                 }
@@ -519,7 +519,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                         return await Task.FromResult<string>("").ConfigureAwait(true);
                     };
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("converting html inline metadata", mistake);
                 }
@@ -549,7 +549,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                     storedHtmlResultString = await ExecuteOutputResponse();
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("converting html content", mistake);
                 }
@@ -571,7 +571,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                     StorylineDetails = await ExecuteOutputResponse();
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     throw new Exception("storing html string output observation", mistake);
                 }
@@ -580,7 +580,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception storedProcessRequestMistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -592,7 +592,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake", mistake);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake",  storedProcessRequestMistake);
 
                     await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
@@ -601,7 +601,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
 
                 #region EDGE CASE - USE exception handler
 
-                throw new Exception("CONVERSION request failed " + mistake.ToString());
+                throw new Exception("CONVERSION request failed " +  storedProcessRequestMistake.ToString());
 
                 #endregion
             }

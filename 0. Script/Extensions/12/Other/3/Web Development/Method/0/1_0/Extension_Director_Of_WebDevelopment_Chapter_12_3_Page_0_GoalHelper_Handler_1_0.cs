@@ -238,7 +238,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -307,7 +307,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
          
                     return await Task.FromResult<ArrayList>(parameterHtmlAttributesOutput).ConfigureAwait(true);
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -327,7 +327,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("CONVERSION request failed " + mistake.ToString());
+                    throw new Exception("CONVERSION request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -552,7 +552,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -614,7 +614,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     return await Task.FromResult<string>($@"<{parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{{HTMLRows_Replace}}</{parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag}>").ConfigureAwait(true);
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -634,7 +634,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
+                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -866,7 +866,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -934,7 +934,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     return await Task.FromResult<string>(parameterHtmlContainerString.Replace("{HTMLRows_Replace}", string.Join("\n", parameterFilterDataResponseList))).ConfigureAwait(true);
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -954,7 +954,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
+                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -1187,7 +1187,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -1256,7 +1256,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     return parameterHtmlRowString;
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -1276,7 +1276,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
+                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -1510,7 +1510,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -1602,7 +1602,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                     return await Task.FromResult<string>(parameterHtmlColumnString).ConfigureAwait(true);
 
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -1622,7 +1622,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
+                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -1866,7 +1866,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -2176,7 +2176,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                     
                     return await Task.FromResult<string>(storedHtmlCssString).ConfigureAwait(true);
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -2196,7 +2196,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
+                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -2438,7 +2438,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -2502,7 +2502,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     return await Task.FromResult<string>("").ConfigureAwait(true);
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -2522,7 +2522,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
+                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -2764,7 +2764,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -2828,7 +2828,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     return await Task.FromResult<string>("").ConfigureAwait(true);
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -2848,7 +2848,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
+                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -3104,7 +3104,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion
 
@@ -3209,7 +3209,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                     return ""; // parameterHtmlScripts;
 
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -3229,7 +3229,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " + mistake.ToString());
+                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }

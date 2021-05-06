@@ -313,7 +313,7 @@ export namespace BaseDI.Professional
                 let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING web request");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING system request");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
@@ -350,13 +350,13 @@ export namespace BaseDI.Professional
                     }
 
                     //1. INPUTS
-                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestName")) {
-                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestActionName")) {
+                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestActionName")) {
-                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestName")) {
+                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -373,6 +373,16 @@ export namespace BaseDI.Professional
 
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCallBack*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -494,15 +504,15 @@ export namespace BaseDI.Professional
 
             //#endregion
 
-            //#region MEMORIZE input request data cache key
-
-            let storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
-
-            //#endregion
-
             //#region MEMORIZE input request name
 
             let storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+
+            //#endregion
+
+            //#region MEMORIZE input request name data cache key
+
+            let storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             //#endregion
    
@@ -519,6 +529,13 @@ export namespace BaseDI.Professional
             //#region MEMORIZE process request settings
 
             this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
+   
+            //#endregion
+
+            //#region MEMORIZE process request tracker
+
+            this._storedProcessRequestTracker["storedProcessRequestSettings"] = this._storedProcessRequestSettings;
+            this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
             //#endregion
 
@@ -531,12 +548,20 @@ export namespace BaseDI.Professional
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING web request");
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARING system request");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Start.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+
+            //3. OUTPUTS
 
             //#endregion  
 
@@ -547,7 +572,7 @@ export namespace BaseDI.Professional
             //#region MEMORIZE output response controlID
 
             let storedOutputResponseControlID: string = parameterInputs.Parameters.getValue("parameterOutputResponseControlID");
-            this._storedProcessRequestTracker["storedOutputResponseControlID"] = storedOutputResponseControlID;
+            this._storedProcessRequestTracker["storedOutputResponseControlID"] = parameterInputs.Parameters.getValue("parameterOutputResponseControlID");
                 
             //#endregion
 
@@ -579,12 +604,14 @@ export namespace BaseDI.Professional
                 storedInputs.Parameters.setValue("parameterProcessRequestCallBack", storedProcessRequestCallBack);
                 storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
                 storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-                           
-                //3. OUTPUTS
+
                 storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", null);
                 storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_Parameters", null);
                 storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_CallBack", null);
 
+                //3. OUTPUTS
+                storedInputs.Parameters.setValue("parameterOutputResponseControlID", storedOutputResponseControlID);
+        
                 //#endregion
 
                 //#region B. PROCESS request

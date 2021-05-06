@@ -75,7 +75,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region MEMORIZE exception details
 
-            _storedProcessRequestMistake = parameterInputs.Parameters["storedProcessRequestMistakes"];
+            _storedProcessRequestMistake = parameterInputs.Parameters["storedProcessRequestMistake"];
             
             #endregion
 

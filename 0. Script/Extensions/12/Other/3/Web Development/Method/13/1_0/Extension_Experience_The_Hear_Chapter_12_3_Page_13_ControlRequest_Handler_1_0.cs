@@ -365,7 +365,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     //storedOutputResponseData = await ExecuteTransportRequest(storedApiRequestCallBack, storedApiRequestEndPointAddress, storedApiRequestData, storedApiRequestVerb);
 
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
@@ -384,7 +384,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("API request failed " + mistake.ToString());
+                    throw new Exception("API request failed " +  storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
@@ -570,7 +570,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE file metadata
 
-            JArray storedSetupItemEnvironmentServerMetaDataPaths = null;
+            JArray storedHandleDefaultsItemEnvironmentServerMetaDataPaths = null;
 
             #endregion
 
@@ -611,7 +611,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     storedInputs.Parameters.Add("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
 
                     storedInputs.Parameters.Add("parameterProcessRequestDataToFilterKey", "searchkey");
-                    storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                    storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "HandleDefaultsItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
 
                     storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
@@ -634,7 +634,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                         storedInputs.Parameters.Add("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
 
                         storedInputs.Parameters.Add("parameterProcessRequestDataToFilterKey", "searchkey");
-                        storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+                        storedInputs.Parameters.Add("parameterProcessRequestDataToFilterValue", "Default_HandleDefaultsItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
 
                         storedInputs.Parameters.Add("parameterOutputResponseAsArray", false);
 
@@ -642,7 +642,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                         #endregion
                     }
-                    catch (Exception mistake)
+                    catch (Exception storedProcessRequestMistake)
                     {
                         #region EDGE CASE - USE developer logger
 
@@ -661,7 +661,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                         #region EDGE CASE - USE exception handler
 
-                        throw mistake;
+                        throw storedProcessRequestMistake;
 
                         #endregion
                     }
@@ -686,12 +686,12 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
             #region EXECUTE transport request
 
             //TRANSPORT local files from one place to another
-            Func<dynamic, JArray, Task<JToken>> ExecuteTransportRequest = async (dynamic parameterJSONParent, JArray parameterSetupItemEnvironmentServerMetaDataPaths) => {
-                parameterSetupItemEnvironmentServerMetaDataPaths = (JArray)parameterJSONParent.SelectToken("value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths");
+            Func<dynamic, JArray, Task<JToken>> ExecuteTransportRequest = async (dynamic parameterJSONParent, JArray parameterHandleDefaultsItemEnvironmentServerMetaDataPaths) => {
+                parameterHandleDefaultsItemEnvironmentServerMetaDataPaths = (JArray)parameterJSONParent.SelectToken("value.HandleDefaultsItemEnvironmentServer.HandleDefaultsItemEnvironmentServerMetaDataPaths");
 
-                foreach (var storedSetupItemEnvironmentServerMetaDataPaths in parameterSetupItemEnvironmentServerMetaDataPaths)
+                foreach (var storedHandleDefaultsItemEnvironmentServerMetaDataPaths in parameterHandleDefaultsItemEnvironmentServerMetaDataPaths)
                 {
-                    dynamic obj = JObject.Parse(await File.ReadAllTextAsync(storedSetupItemEnvironmentServerMetaDataPaths.SelectToken("MetaDataLocalPath")?.ToString()));
+                    dynamic obj = JObject.Parse(await File.ReadAllTextAsync(storedHandleDefaultsItemEnvironmentServerMetaDataPaths.SelectToken("MetaDataLocalPath")?.ToString()));
 
                     var contentItems = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
                     var stylingItemFiles = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
@@ -789,7 +789,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                 return null;
             };
 
-            await ExecuteTransportRequest(storedJSONParent, storedSetupItemEnvironmentServerMetaDataPaths);
+            await ExecuteTransportRequest(storedJSONParent, storedHandleDefaultsItemEnvironmentServerMetaDataPaths);
 
             #endregion
 
@@ -804,7 +804,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
         #region SERVER MANAGEMENT
 
-        public static async Task<Dictionary<string, JToken>> Step_X_X_Framework_Control_ServerSetup_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<Dictionary<string, JToken>> Step_X_X_Framework_Control_ServerHandleDefaults_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -989,7 +989,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
             #region MEMORIZE centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<object> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
 
             #endregion
@@ -1018,7 +1018,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
             #endregion
@@ -1040,32 +1040,32 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
             #region MEMORIZE server details
 
 
-            dynamic storedServerDetails = null; //Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedProcessRequestDataStorylineDetails, "searchkey", "SetupItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
+            dynamic storedServerDetails = null; //Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedProcessRequestDataStorylineDetails, "searchkey", "HandleDefaultsItem_SetBuyer_ProductLaunching_Software_TransportEnvironment", false).SingleOrDefault();
 
             //DOMAIN url
-            string storedServerDomainName = (string)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentDomainName");
+            string storedServerDomainName = (string)storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentDomainName");
 
             //PORT number
-            int storedServerPort = (int)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentPort");
+            int storedServerPort = (int)storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentPort");
 
             //STATIC paths
 
             //DOCUMENTS
-            string storedServerDocumentPath = (string)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentClient.SetupItemDataPath");
+            string storedServerDocumentPath = (string)storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentClient.HandleDefaultsItemDataPath");
 
             //FONTS
-            string storedServerFontsPath = (string)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentClient.SetupItemFontPath");
-            string storedServerImagesPath = (string)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentClient.SetupItemImagePath");
+            string storedServerFontsPath = (string)storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentClient.HandleDefaultsItemFontPath");
+            string storedServerImagesPath = (string)storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentClient.HandleDefaultsItemImagePath");
 
             //SCRIPTS
-            string storedServerScriptsPath = (string)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentClient.SetupItemScriptPath");
-            string storedServerScriptName = (string)storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentClient.SetupItemScriptName");
+            string storedServerScriptsPath = (string)storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentClient.HandleDefaultsItemScriptPath");
+            string storedServerScriptName = (string)storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentClient.HandleDefaultsItemScriptName");
 
             //ROUTES 
-            JToken storedServerRoutesGET = storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesGET"); // serverEnvironment?.value?.SetupItemEnvironmentServer?.SetupItemTransportItemRoutesGET;
-            JToken storedServerRoutesPOST = storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesPOST");
-            JToken storedServerRoutesPUT = storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesPUT");
-            JToken storedServerRoutesDELETE = storedServerDetails.Parent.SelectToken("value.SetupItemEnvironmentServer.SetupItemTransportItemRoutesDELETE");
+            JToken storedServerRoutesGET = storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentServer.HandleDefaultsItemTransportItemRoutesGET"); // serverEnvironment?.value?.HandleDefaultsItemEnvironmentServer?.HandleDefaultsItemTransportItemRoutesGET;
+            JToken storedServerRoutesPOST = storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentServer.HandleDefaultsItemTransportItemRoutesPOST");
+            JToken storedServerRoutesPUT = storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentServer.HandleDefaultsItemTransportItemRoutesPUT");
+            JToken storedServerRoutesDELETE = storedServerDetails.Parent.SelectToken("value.HandleDefaultsItemEnvironmentServer.HandleDefaultsItemTransportItemRoutesDELETE");
 
             #endregion
 
@@ -1129,7 +1129,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
 
-                    storedInputs.Parameters.Add("parameterPageName", "Step_X_X_Framework_Control_ServerSetup_1_0");
+                    storedInputs.Parameters.Add("parameterPageName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
 
                     storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
@@ -1163,7 +1163,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     #endregion
                 }
-                catch (Exception mistake)
+                catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
                     if (storedProcessRequestDeveloperMode)
@@ -1180,7 +1180,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     #region EDGE CASE - USE exception handler
 
-                    throw mistake;
+                    throw storedProcessRequestMistake;
 
                     #endregion
                 }
@@ -1188,7 +1188,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region IDEAL CASE - USE dotnet server
 
-            Func<Task<bool>> ExecuteControllerSetup = async () =>
+            Func<Task<bool>> ExecuteControllerHandleDefaults = async () =>
             {
                 return await Task.FromResult<bool>(true).ConfigureAwait(true);
             };

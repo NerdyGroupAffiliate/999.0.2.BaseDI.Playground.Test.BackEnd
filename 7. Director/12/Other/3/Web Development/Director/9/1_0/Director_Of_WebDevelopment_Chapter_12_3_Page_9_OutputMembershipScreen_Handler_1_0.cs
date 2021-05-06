@@ -47,10 +47,10 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
 
-        private string _storedClientRequestByName;
-        private string _storedClientRequestByNameParameters;
+        private string _storedInputRequestName;
+        private string _storedInputRequestNameParameters;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
         //DATASETS
         private JObject _storedProcessRequestDataStorylineDetails;
@@ -64,10 +64,10 @@ namespace BaseDI.Professional.Director.Web_Development_9
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+        private SingleParmPoco_12_2_1_0 _storedInputs;
 
-        private string _storedRequestName = "";
-        private string _storedSystemRequestByName = "";
+        private string _storedProcessRequestName = "";
+        private string _storedProcessRequestByName = "";
 
         #endregion
 
@@ -79,13 +79,13 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region MEMORIZE input parameters
 
-            _storedParameterInputs = parameterInputs;
+            _storedInputs = parameterInputs;
 
             #endregion
 
             #region MEMORIZE control client server
 
-            _storedProcessRequestTracker = _storedParameterInputs.Parameters["parameterProcessRequestTracker"];
+            _storedProcessRequestTracker = _storedInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
@@ -97,9 +97,9 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region MEMORIZE centralized processes handlers
 
-            _storedCentralizedDisturber = _storedParameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            _storedCentralizedSensor = _storedParameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            _storedCentralizedStorer = _storedParameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            _storedCentralizedDisturber = _storedInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            _storedCentralizedSensor = _storedInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            _storedCentralizedStorer = _storedInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -370,13 +370,13 @@ namespace BaseDI.Professional.Director.Web_Development_9
             };
 
             //BEGIN valdation process
-            await ValidateInputs(_storedParameterInputs);
+            await ValidateInputs(_storedInputs);
 
             #endregion
 
             #region DEFINE request handler
 
-            Use_DesignPattern_Builder_Chapter_12_3_Page_9 storedRequestHandler_UsingBuilderPattern = null;
+            Use_DesignPattern_Builder_Chapter_12_3_Page_9 storedProcessRequestHandler_UsingBuilderPattern = null;
 
             #endregion
 
@@ -384,7 +384,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (_storedParameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? _storedParameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -426,13 +426,13 @@ namespace BaseDI.Professional.Director.Web_Development_9
                 #region IDEAL CASE - USE design pattern
 
                 //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-                storedRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_9(_storedParameterInputs);
+                storedProcessRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_9(_storedInputs);
 
-                StorylineDetails = await storedRequestHandler_UsingBuilderPattern.Action().ConfigureAwait(true);
+                StorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action().ConfigureAwait(true);
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception storedProcessRequestMistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -451,7 +451,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
                 #region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 #endregion
             }
@@ -492,10 +492,10 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
 
-        private string _storedClientRequestByName;
-        private string _storedClientRequestByNameParameters;
+        private string _storedInputRequestName;
+        private string _storedInputRequestNameParameters;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
         //DATASETS
         private JObject _storedProcessRequestDataStorylineDetails;
@@ -505,11 +505,11 @@ namespace BaseDI.Professional.Director.Web_Development_9
         private ExtraData_12_2_1_0 _storedProcessRequestExtraData;
 
         //PLUMBING
-        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+        private SingleParmPoco_12_2_1_0 _storedInputs;
 
-        private string _storedRequestName = "";
+        private string _storedProcessRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedRepository;
-        private string _storedSystemRequestByName;
+        private string _storedProcessRequestByName;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
@@ -566,21 +566,21 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region MEMORIZE extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
-            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+            _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedParameterInputs = parameterInputs;
+            _storedInputs = parameterInputs;
 
             #endregion
 
@@ -630,7 +630,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region DEFINE request handler
 
-            aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> storedRequestHandler_UsingBuilderPattern;
+            aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> storedProcessRequestHandler_UsingBuilderPattern;
 
             #endregion
 
@@ -642,22 +642,22 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region IDEAL CASE - USE builder pattern
 
-            storedRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Chapter_12_3_Page_9_1_0(_storedParameterInputs);
+            storedProcessRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Chapter_12_3_Page_9_1_0(_storedInputs);
 
-            await storedRequestHandler_UsingBuilderPattern.Action_1_Begin_Process();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_1_Begin_Process();
 
-            await storedRequestHandler_UsingBuilderPattern.Action_2_Validate_Process();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_2_Validate_Process();
 
-            await storedRequestHandler_UsingBuilderPattern.Action_3_Process_StoryAuthor();
-            await storedRequestHandler_UsingBuilderPattern.Action_4_Process_StoryCharacters();
-            await storedRequestHandler_UsingBuilderPattern.Action_5_Process_StorySetting();
-            await storedRequestHandler_UsingBuilderPattern.Action_6_Process_StoryExperiences();
-            await storedRequestHandler_UsingBuilderPattern.Action_7_Process_StoryResources();
-            await storedRequestHandler_UsingBuilderPattern.Action_8_Process_CRUD();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_3_Process_StoryAuthor();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_4_Process_StoryCharacters();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_5_Process_StorySetting();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_6_Process_StoryExperiences();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_7_Process_StoryResources();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_8_Process_CRUD();
 
-            await storedRequestHandler_UsingBuilderPattern.Action_9_Verify_Process();
+            await storedProcessRequestHandler_UsingBuilderPattern.Action_9_Verify_Process();
 
-            storedOutputResponseData = await storedRequestHandler_UsingBuilderPattern.Action_10_End_Process();
+            storedOutputResponseData = await storedProcessRequestHandler_UsingBuilderPattern.Action_10_End_Process();
 
 
             #endregion
@@ -704,10 +704,10 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
 
-        private string _storedClientRequestByName;
-        private string _storedClientRequestByNameParameters;
+        private string _storedInputRequestName;
+        private string _storedInputRequestNameParameters;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
         private Task<Dictionary<string, JToken>> _storedServerInstance = null;
         private object _storedServerInstanceExperienceRequestHandler = null;
@@ -732,12 +732,12 @@ namespace BaseDI.Professional.Director.Web_Development_9
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        private SingleParmPoco_12_2_1_0 _storedParameterInputs;
+        private SingleParmPoco_12_2_1_0 _storedInputs;
 
         private string _storedRequestFileName = "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0";
-        private string _storedRequestName = "";
+        private string _storedProcessRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedRepository;
-        private string _storedSystemRequestByName;
+        private string _storedProcessRequestByName;
 
         #endregion
 
@@ -794,23 +794,23 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region MEMORIZE extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 
             #region MEMORIZE request details
 
-            _storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
-            _storedClientRequestByObject = parameterInputs.Parameters["parameterClientRequestByObject"];
+            _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedRequestName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
             _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 
-            _storedParameterInputs = parameterInputs;
+            _storedInputs = parameterInputs;
 
             #endregion
 
@@ -1029,7 +1029,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region IDEAL CASE - USE process handler 
 
-            var page = new ChapterPage.Page_9_5_Process_StorySetting_12_3_1_0(_storedParameterInputs);
+            var page = new ChapterPage.Page_9_5_Process_StorySetting_12_3_1_0(_storedInputs);
 
             page.ClientOrServerInstance = _storedProcessRequestTracker;
 

@@ -62,10 +62,10 @@ namespace BaseDI.Professional.Story.Listing_Building_0
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
 
-        private string _storedClientRequestByName;
-        private string _storedClientRequestByNameParameters;
+        private string _storedInputRequestName;
+        private string _storedInputRequestNameParameters;
 
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedClientRequestByObject;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
         //DATASETS
         private JObject _storedProcessRequestDataStorylineDetails;
@@ -79,10 +79,10 @@ namespace BaseDI.Professional.Story.Listing_Building_0
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedSensor;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedCentralizedStorer;
 
-        private SingleParmPoco_12_2_1_0 _storedParameterInputs = null;
+        private SingleParmPoco_12_2_1_0 _storedInputs = null;
 
-        private string _storedRequestName = "";
-        private string _storedSystemRequestByName = "";
+        private string _storedProcessRequestName = "";
+        private string _storedProcessRequestByName = "";
 
         #endregion
 
@@ -100,7 +100,7 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             #region MEMORIZE extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterExtraData"] != null ? parameterInputs.Parameters["parameterExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] != null ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 
@@ -350,7 +350,7 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             #region DEFINE request handler
 
-            dynamic storedRequestHandler = null;
+            dynamic storedProcessRequestHandler = null;
 
             #endregion
 
@@ -378,7 +378,7 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -397,12 +397,12 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             #region MEMORIZE request details
 
-            string storedClientRequestByName = parameterInputs.Parameters["parameterInputRequestName"];
-            string storedClientRequestByNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            string storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
-            string storedSystemRequestByName = parameterInputs.Parameters["parameterSystemRequestByName"] ? parameterInputs.Parameters["parameterSystemRequestByName"] : "";
+            string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"] ? parameterInputs.Parameters["parameterProcessRequestByName"] : "";
 
-            _storedRequestName = storedClientRequestByName;
+            _storedProcessRequestName = storedInputRequestName;
 
             #endregion
 
@@ -413,8 +413,8 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             _storedProcessRequestExtraData.KeyValuePairs.Add("storedAPILocationRemote", APILocationRemote);
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedClientRequestByName", storedClientRequestByName);
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedClientRequestByNameParameters", storedClientRequestByNameParameters);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestName", storedInputRequestName);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestNameParameters", storedInputRequestNameParameters);
 
             #endregion
 
@@ -435,17 +435,17 @@ namespace BaseDI.Professional.Story.Listing_Building_0
             {
                 #region IDEAL CASE - USE director or experience
 
-                switch (storedClientRequestByName.ToUpper())
+                switch (storedInputRequestName.ToUpper())
                 {
                     //case "DIRECTOR_OF_SOCIALMEDIA_CHAPTER_2_3_PAGE_1_XXXXXX_HANDLER_1_0":
-                    //    storedRequestHandler = Create_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                    //    storedProcessRequestHandler = Create_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
                     //    break;
                 }
 
                 #endregion
             }
-            catch (Exception mistake)
+            catch (Exception storedProcessRequestMistake)
             {
                 #region EDGE CASE - USE developer logger
 
@@ -464,7 +464,7 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
                 #region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 #endregion
             }
@@ -479,7 +479,7 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler;
+            return storedProcessRequestHandler;
 
             #endregion
 
@@ -504,7 +504,7 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -529,29 +529,29 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             #region IDEAL CASE - USE director
 
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedRequestHandler_Director = null;//new Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandler_Director = null;//new Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
 
-            storedRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
+            storedProcessRequestHandler_Director.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            storedRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
+            storedProcessRequestHandler_Director.ExtraData = _storedProcessRequestExtraData;
 
-            storedRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
+            storedProcessRequestHandler_Director.MasterStorer = _storedCentralizedStorer;
+            storedProcessRequestHandler_Director.MasterDisturber = _storedCentralizedDisturber;
+            storedProcessRequestHandler_Director.MasterSensor = _storedCentralizedSensor;
 
-            storedRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandler_Director.StorylineDetails = _storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandler_Director.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = null; //new LocalFile_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = null; //new LocalFile_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = null; //new RemoteService_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = _storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = null; //new RemoteService_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = _storedProcessRequestName;
 
                     break;
             }
@@ -568,7 +568,7 @@ namespace BaseDI.Professional.Story.Listing_Building_0
 
             #region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler_Director;
+            return storedProcessRequestHandler_Director;
 
             #endregion
 

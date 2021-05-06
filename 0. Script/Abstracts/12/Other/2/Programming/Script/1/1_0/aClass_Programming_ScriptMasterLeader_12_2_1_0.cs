@@ -29,7 +29,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
 
             #region 2. Action
 
-            HandleStoryDefaults();
+            HandleDefaults();
 
             #endregion
 
@@ -43,7 +43,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
         #region 3. Set
 
         //A. Default state of story
-        private void HandleStoryDefaults()
+        private void HandleDefaults()
         {
 
         }

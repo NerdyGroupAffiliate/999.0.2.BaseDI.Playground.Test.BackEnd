@@ -33,10 +33,10 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
         //CLIENT/SERVER
         private _storedProcessRequestTracker: any;
 
-        private _storedClientRequestByName: string;
-        private _storedClientRequestByNameParameters: string;
+        private _storedInputRequestName: string;
+        private _storedInputRequestNameParameters: string;
 
-        private _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         public _storedServerInstance: any;
         private _storedServerInstanceInfo: any;
@@ -56,12 +56,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
         private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+        private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
         private _storedRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0 ";
-        private _storedRequestName: string = "";
+        private _storedProcessRequestName: string = "";
         private _storedRepository: IContract_Programming_Repository_12_2_1_0;
-        private _storedSystemRequestByName: string;
+        private _storedProcessRequestByName: string;
 
         public StoredStartUpCallBack;
 
@@ -121,23 +121,23 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
             //#region MEMORIZE extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
             //#region MEMORIZE request details
 
-            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
-            this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
+            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             this._storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
 
-            this._storedParameterInputs = parameterInputs;
+            this._storedInputs = parameterInputs;
 
             //#endregion
 
@@ -277,7 +277,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         //#endregion
                     }
-                    catch (mistake)
+                    catch (storedProcessRequestMistake)
                     {
                         //#region EDGE CASE - USE developer logger
 
@@ -295,7 +295,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         //#region EDGE CASE - USE exception handler
 
-                        throw mistake;
+                        throw storedProcessRequestMistake;
 
                         //#endregion
                     }
@@ -321,15 +321,15 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         //#region IDEAL CASE - USE request resolver
 
-                        return storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedParameterInputs))
-                            .SetupStoryline(this._storedParameterInputs)
+                        return storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedInputs))
+                            .SetupStoryline(this._storedInputs)
                             .Action().then(storedDataSet => {
                                 return storedDataSet;
                             });
 
                         //#endregion
                     }
-                    catch (mistake)
+                    catch (storedProcessRequestMistake)
                     {
                         //#region EDGE CASE - USE developer logger
 
@@ -347,7 +347,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         //#region EDGE CASE - USE exception handler
 
-                        throw mistake;
+                        throw storedProcessRequestMistake;
 
                         //#endregion
                     }

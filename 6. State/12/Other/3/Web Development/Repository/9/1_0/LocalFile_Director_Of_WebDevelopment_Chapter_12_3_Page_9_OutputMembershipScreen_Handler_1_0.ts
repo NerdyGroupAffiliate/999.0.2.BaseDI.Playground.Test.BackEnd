@@ -32,10 +32,10 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
         //CLIENT/SERVER
         private _storedProcessRequestTracker: any;
 
-        private _storedClientRequestByName: string;
-        private _storedClientRequestByNameParameters: string;
+        private _storedInputRequestName: string;
+        private _storedInputRequestNameParameters: string;
 
-        private _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         public _storedServerInstance: any;
         private _storedServerInstanceInfo: any;
@@ -55,12 +55,12 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
         private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+        private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
         private _storedRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0 ";
-        private _storedRequestName: string = "";
+        private _storedProcessRequestName: string = "";
         private _storedRepository: IContract_Programming_Repository_12_2_1_0;
-        private _storedSystemRequestByName: string;
+        private _storedProcessRequestByName: string;
 
         public StoredStartUpCallBack;
 
@@ -120,23 +120,23 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
 
             //#region MEMORIZE extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
             //#region MEMORIZE request details
 
-            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
-            this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
+            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             this._storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
 
-            this._storedParameterInputs = parameterInputs;
+            this._storedInputs = parameterInputs;
 
             //#endregion
 
@@ -283,8 +283,8 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
 
                 //#endregion
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -492,7 +492,7 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
 
                 //#endregion
             }
-            catch (mistake) {
+            catch (storedProcessRequestMistake) {
                 //#region EDGE CASE - USE developer logger
                 if (storedProcessRequestDeveloperMode) {
                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
@@ -507,7 +507,7 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
 
                 //#region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 //#endregion
             }
@@ -746,8 +746,8 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
             try {
                 storedOutputResponseData = await this.Factory_Action_9_Verify_Process();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -800,8 +800,8 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
             try {
                 storedOutputResponseData = this.StorylineDetails; //await this.Factory_Action_10_End_Process();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -923,8 +923,8 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
 
                 //#endregion
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -990,8 +990,8 @@ export namespace BaseDI.Professional.State.Web_Development_9 {
 
                 //#endregion
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion

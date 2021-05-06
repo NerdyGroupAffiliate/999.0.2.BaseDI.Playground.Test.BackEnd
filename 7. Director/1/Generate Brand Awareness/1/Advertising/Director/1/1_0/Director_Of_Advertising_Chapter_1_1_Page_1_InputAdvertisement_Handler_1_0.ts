@@ -53,7 +53,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
         private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
 
         private _storedProcessRequestName: String = "";
-        private _storedProcessRequestSystemRequestByName: string;
+        private _storedProcessRequestProcessRequestByName: string;
 
         //#endregion
 
@@ -344,7 +344,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (this._storedInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? this._storedInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (this._storedInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? this._storedInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -391,7 +391,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
                 //#endregion
             }
-            catch (mistake)
+            catch (storedProcessRequestMistake)
             {
                 //#region EDGE CASE - USE developer logger
 
@@ -410,7 +410,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
                 //#region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 //#endregion
             }
@@ -470,7 +470,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
         private _storedProcessRequestName: String = "";
         private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
-        private _storedProcessRequestSystemRequestByName: string;
+        private _storedProcessRequestProcessRequestByName: string;
 
         //#endregion
 
@@ -520,7 +520,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
             //#region MEMORIZE extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
@@ -528,11 +528,11 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
             this._storedInputRequestDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
-            this._storedInputRequestDataCustom = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
+            this._storedInputRequestDataCustom = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedProcessRequestSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             this._storedInputs = parameterInputs;
 
@@ -694,7 +694,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
         private _storedProcessRequestFileName: string = "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0";
         private _storedProcessRequestName: string = "";
         private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
-        private _storedProcessRequestSystemRequestByName: string;
+        private _storedProcessRequestProcessRequestByName: string;
 
         public storedProcessRequestStartUpCallBack;
 
@@ -754,7 +754,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
             //#region MEMORIZE extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
@@ -762,11 +762,11 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
             this._storedInputRequestDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
-            this._storedInputRequestDataCustom = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
+            this._storedInputRequestDataCustom = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedProcessRequestSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             this._storedInputs = parameterInputs;
 
@@ -839,7 +839,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
                 //#endregion
             }
-            catch (mistake) {
+            catch (storedProcessRequestMistake) {
                 //#region EDGE CASE - USE developer logger
                 if (storedProcessRequestDeveloperMode) {
                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
@@ -854,7 +854,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
                 //#region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 //#endregion
             }
@@ -909,8 +909,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = await this.Factory_Action_5_Process_StorySetting();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -960,8 +960,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -1026,8 +1026,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
                 //#endregion
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
             }
 
             //#endregion
@@ -1090,8 +1090,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
                 //#endregion
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
             }
 
             //#endregion
@@ -1158,8 +1158,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = null; //await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -1212,8 +1212,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = null; //await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -1266,8 +1266,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = null; //await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -1320,8 +1320,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = null; //await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -1374,8 +1374,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = null; //await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -1428,8 +1428,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = null; //await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -1482,8 +1482,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = null; //await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion
@@ -1536,8 +1536,8 @@ export namespace BaseDI.Professional.Director.Advertising_1
             try {
                 storedOutputResponseData = null; //await this.Factory_Action_7_Process_StoryResources();
             }
-            catch (mistake) {
-                throw mistake; //Let "Startup.ts" handle the exception.
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
 
             //#endregion

@@ -273,7 +273,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             //#region MEMORIZE centralized processes
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
-            //this._stored_CentralizedSensor = parameterProcessRequestCentralizedSensor;
+            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
@@ -751,7 +751,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         }
 
                     }
-                    catch (mistake)
+                    catch (storedProcessRequestMistake)
                     {
                         //#region EDGE CASE - USE developer logger
 
@@ -769,7 +769,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                         //#region EDGE CASE - USE exception handler
 
-                        throw mistake;
+                        throw storedProcessRequestMistake;
 
                         //#endregion
                     }
@@ -811,7 +811,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 await ExecuteStorageRequest();
             }
-            catch (mistake)
+            catch (storedProcessRequestMistake)
             {
                 //#region EDGE CASE - USE developer logger
 
@@ -829,7 +829,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 //#region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 //#endregion
             }

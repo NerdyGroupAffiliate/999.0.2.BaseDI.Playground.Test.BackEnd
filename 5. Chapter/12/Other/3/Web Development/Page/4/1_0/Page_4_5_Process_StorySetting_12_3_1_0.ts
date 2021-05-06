@@ -34,10 +34,10 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
         //CLIENT/SERVER
         private _storedProcessRequestTracker: any;
 
-        private _storedClientRequestByName: string;
-        private _storedClientRequestByNameParameters: string;
+        private _storedInputRequestName: string;
+        private _storedInputRequestNameParameters: string;
 
-        private _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         public _storedServerInstance: any;
         private _storedServerInstanceInfo: any;
@@ -57,12 +57,12 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
         private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+        private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
         private _storedRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_4_CreateAdvertisement_Handler_1_0 ";
-        private _storedRequestName: string = "";
+        private _storedProcessRequestName: string = "";
         private _storedRepository: IContract_Programming_Repository_12_2_1_0;
-        private _storedSystemRequestByName: string;
+        private _storedProcessRequestByName: string;
 
         public StoredStartUpCallBack;
 
@@ -122,23 +122,23 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
             //#region MEMORIZE extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
             //#region MEMORIZE request details
 
-            this._storedClientRequestByName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedClientRequestByNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
-            this._storedClientRequestByObject = parameterInputs.Parameters.getValue("parameterClientRequestByObject");
+            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedRequestName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedSystemRequestByName = parameterInputs.Parameters.getValue("parameterSystemRequestByName");
+            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             this._storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
 
-            this._storedParameterInputs = parameterInputs;
+            this._storedInputs = parameterInputs;
 
             //#endregion
 
@@ -328,7 +328,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                     storedHtmlResultString = await ExecuteConversionRequest();
                 }
-                catch (mistake)
+                catch (storedProcessRequestMistake)
                 {
                     throw new Error("converting html container");
                 }
@@ -436,7 +436,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                     storedHtmlResultString = await ExecuteConversionRequest();
                 }
-                catch (mistake)
+                catch (storedProcessRequestMistake)
                 {
                     throw new Error("converting html content");
                 }
@@ -471,7 +471,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                     storedHtmlResultInlineStylesString = await ExecuteConversionRequest();
                 }
-                catch (mistake)
+                catch (storedProcessRequestMistake)
                 {
                     throw new Error("converting html inline styles");
                 }
@@ -487,7 +487,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                     }
                 }
-                catch (mistake)
+                catch (storedProcessRequestMistake)
                 {
                     throw new Error("converting html inline scripts");
                 }
@@ -502,7 +502,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                     }
                 }
-                catch (mistake) {
+                catch (storedProcessRequestMistake) {
                     throw new Error("converting html inline metadata");
                 }
 
@@ -529,7 +529,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                     storedHtmlResultString = await ExecuteOutputResponse();
                 }
-                catch (mistake)
+                catch (storedProcessRequestMistake)
                 {
                     throw new Error("converting html content");
                 }
@@ -575,7 +575,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                     this.StorylineDetails = await ExecuteOutputResponse();
                 }
-                catch (mistake)
+                catch (storedProcessRequestMistake)
                 {
                     throw new Error("storing html string output observation");
                 }
@@ -584,7 +584,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                 //#endregion
             }
-            catch (mistake)
+            catch (storedProcessRequestMistake)
             {
                 //#region EDGE CASE - USE developer logger
 
@@ -595,7 +595,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", mistake);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
 
                     await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
@@ -604,7 +604,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
                 //#region EDGE CASE - USE exception handler
 
-                throw new Error("CONVERSION request failed " + mistake.message);
+                throw new Error("CONVERSION request failed " + storedProcessRequestMistake.message);
 
                 //#endregion
             }

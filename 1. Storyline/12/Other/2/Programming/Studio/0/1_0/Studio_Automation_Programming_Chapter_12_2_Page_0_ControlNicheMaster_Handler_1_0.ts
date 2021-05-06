@@ -62,10 +62,10 @@ export namespace BaseDI.Professional.Story.Programming_0 {
         //CLIENT/SERVER
         private _storedProcessRequestTracker: any;
 
-        private _storedClientRequestByName: string;
-        private _storedClientRequestByNameParameters: string;
+        private _storedInputRequestName: string;
+        private _storedInputRequestNameParameters: string;
 
-        private _storedClientRequestByObject: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         //DATASETS
         private _storedProcessRequestDataStorylineDetails: any;
@@ -79,10 +79,10 @@ export namespace BaseDI.Professional.Story.Programming_0 {
         private _storedCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
 
-        private _storedParameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+        private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
 
-        private _storedRequestName: String = "";
-        private _storedSystemRequestByName: string;
+        private _storedProcessRequestName: String = "";
+        private _storedProcessRequestByName: string;
 
         //#endregion
 
@@ -102,7 +102,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region MEMORIZE extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterExtraData") ? parameterInputs.Parameters.getValue("parameterExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
@@ -340,7 +340,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region DEFINE request handler
 
-            let storedRequestHandler: any = null;
+            let storedProcessRequestHandler: any = null;
 
             //#endregion
 
@@ -368,7 +368,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -387,12 +387,12 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region MEMORIZE request details
 
-            let storedClientRequestByName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            let storedClientRequestByNameParameters: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            let storedInputRequestNameParameters: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
-            let storedSystemRequestByName: string = parameterInputs.Parameters.getValue("parameterSystemRequestByName") ? parameterInputs.Parameters.getValue("parameterSystemRequestByName") : "";
+            let storedProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
 
-            this._storedRequestName = storedClientRequestByName;
+            this._storedProcessRequestName = storedInputRequestName;
 
             //#endregion
 
@@ -403,8 +403,8 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedAPILocationRemote", Object.assign(this.APILocationRemote, Object));
 
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedClientRequestByName", storedClientRequestByName);
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedClientRequestByNameParameters", storedClientRequestByNameParameters);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestName", storedInputRequestName);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestNameParameters", storedInputRequestNameParameters);
 
             //#endregion
 
@@ -424,42 +424,42 @@ export namespace BaseDI.Professional.Story.Programming_0 {
             try
             {
                 //#region IDEAL CASE - USE director or experience
-                switch (storedClientRequestByName.toUpperCase())
+                switch (storedInputRequestName.toUpperCase())
                 {
                     //CONTROLLER
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
-                        storedRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
+                        storedProcessRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //CONVERSION
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
-                        storedRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
+                        storedProcessRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //STORAGE
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
-                        storedRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
+                        storedProcessRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //DISTURBANCES
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
-                        storedRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
+                        storedProcessRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //SENSOR
                     case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
-                        storedRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
+                        storedProcessRequestHandler = this.Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
 
                         break;
                 }
 
                 //#endregion
             }
-            catch (mistake)
+            catch (storedProcessRequestMistake)
             {
                 //#region EDGE CASE - USE developer logger
                 if (storedProcessRequestDeveloperMode) {
@@ -475,7 +475,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
                 //#region EDGE CASE - USE exception handler
 
-                throw mistake;
+                throw storedProcessRequestMistake;
 
                 //#endregion
             }
@@ -490,7 +490,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE director of programming
 
-            return storedRequestHandler;
+            return storedProcessRequestHandler;
 
             //#endregion
 
@@ -516,7 +516,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -541,28 +541,28 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE director
 
-            let storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
+            let storedProcessRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
 
-            storedRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
+            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
 
-            storedRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
+            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
 
-            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+            storedProcessRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedProcessRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedProcessRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
 
-            storedRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.State.Programming_1.LocalFile_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.State.Programming_1.RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.State.Programming_1.RemoteService_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -579,7 +579,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler_Director;
+            return storedProcessRequestHandler_Director;
 
             //#endregion
 
@@ -606,7 +606,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -631,28 +631,28 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE director
 
-            let storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
+            let storedProcessRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
 
-            storedRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
+            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
 
-            storedRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
+            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
 
-            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+            storedProcessRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedProcessRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedProcessRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
 
-            storedRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.RemoteService_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -669,7 +669,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler_Director;
+            return storedProcessRequestHandler_Director;
 
             //#endregion
 
@@ -696,7 +696,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -721,29 +721,29 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE director
 
-            let storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.Director.Programming_3.Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
+            let storedProcessRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.Director.Programming_3.Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
 
-            storedRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
+            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
 
-            storedRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
+            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
 
-            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+            storedProcessRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedProcessRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedProcessRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
 
-            storedRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.toUpperCase())
             {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.State.Programming_3.LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.State.Programming_3.LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.State.Programming_3.RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.State.Programming_3.RemoteService_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -760,7 +760,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler_Director;
+            return storedProcessRequestHandler_Director;
 
             //#endregion
 
@@ -787,7 +787,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -812,28 +812,28 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE director
 
-            let storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0.BaseDI.Professional.Director.Programming_4.Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
+            let storedProcessRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0.BaseDI.Professional.Director.Programming_4.Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
 
-            storedRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
+            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
 
-            storedRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
+            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
 
-            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+            storedProcessRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedProcessRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedProcessRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
 
-            storedRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0.BaseDI.Professional.State.Programming_4.LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);;
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0.BaseDI.Professional.State.Programming_4.LocalFile_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);;
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0.BaseDI.Professional.State.Programming_4.RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0.BaseDI.Professional.State.Programming_4.RemoteService_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -850,7 +850,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler_Director;
+            return storedProcessRequestHandler_Director;
 
             //#endregion
 
@@ -877,7 +877,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
-            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -902,28 +902,28 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE director
 
-            let storedRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.BaseDI.Professional.Director.Programming_5.Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
+            let storedProcessRequestHandler_Director = new Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.BaseDI.Professional.Director.Programming_5.Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
 
-            storedRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
+            storedProcessRequestHandler_Director.ClientOrServerInstance = this._storedProcessRequestTracker;
 
-            storedRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
+            storedProcessRequestHandler_Director.ExtraData = this._storedProcessRequestExtraData;
 
-            storedRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
-            storedRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
-            storedRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
+            storedProcessRequestHandler_Director.MasterStorer = this._storedCentralizedStorer;
+            storedProcessRequestHandler_Director.MasterDisturber = this._storedCentralizedDisturber;
+            storedProcessRequestHandler_Director.MasterSensor = this._storedCentralizedSensor;
 
-            storedRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
+            storedProcessRequestHandler_Director.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+            storedProcessRequestHandler_Director.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
             switch (storedRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
-                    storedRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.BaseDI.Professional.State.Programming_5.LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.BaseDI.Professional.State.Programming_5.LocalFile_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
-                    storedRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.BaseDI.Professional.State.Programming_5.RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
-                    storedRequestHandler_Director.Repository.RequestName = this._storedRequestName;
+                    storedProcessRequestHandler_Director.Repository = new RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.BaseDI.Professional.State.Programming_5.RemoteService_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
+                    storedProcessRequestHandler_Director.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -940,7 +940,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region IDEAL CASE - USE experienece or director
 
-            return storedRequestHandler_Director;
+            return storedProcessRequestHandler_Director;
 
             //#endregion
 
