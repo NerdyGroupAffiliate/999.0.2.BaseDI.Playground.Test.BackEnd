@@ -775,7 +775,7 @@ namespace BaseDI.Professional.Story.Programming_0
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName;
-        private string _storedInputRequestNameParameters;
+        private string _storedInputRequestNameDataCacheKey;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -1129,7 +1129,7 @@ namespace BaseDI.Professional.Story.Programming_0
         internal Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName = "";
-        private string _storedInputRequestNameParameters = "";
+        private string _storedInputRequestNameDataCacheKey = "";
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -1194,7 +1194,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedInputs = parameterInputs;
 
@@ -1629,7 +1629,7 @@ namespace BaseDI.Professional.Story.Programming_0
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
         private string _storedInputRequestName = "";
-        private string _storedInputRequestNameParameters = "";
+        private string _storedInputRequestNameDataCacheKey = "";
 
         //DATASETS
         private JObject _storedProcessRequestDataStorylineDetails;
@@ -1696,7 +1696,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedInputs = parameterInputs;
 
@@ -1961,7 +1961,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = _storedInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             #endregion
 
@@ -2460,7 +2460,7 @@ namespace BaseDI.Professional.Story.Programming_0
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName = "";
-        private string _storedInputRequestNameParameters = "";
+        private string _storedInputRequestNameDataCacheKey = "";
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -2529,7 +2529,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedInputs = parameterInputs;
 
@@ -2766,7 +2766,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = _storedInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             #endregion
 
@@ -2985,7 +2985,7 @@ namespace BaseDI.Professional.Story.Programming_0
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName = "";
-        private string _storedInputRequestNameParameters = "";
+        private string _storedInputRequestNameDataCacheKey = "";
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -3050,7 +3050,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedInputs = parameterInputs;
 
@@ -3258,10 +3258,10 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0";
-            _storedInputRequestNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
+            _storedInputRequestNameDataCacheKey = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
 
             _storedInputs.Parameters["parameterInputRequestName"] = _storedInputRequestName;
-            _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameParameters;
+            _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameDataCacheKey;
 
             _storedInputs.Parameters["parameterProcessRequestByName"] = "";
 
@@ -3405,7 +3405,7 @@ namespace BaseDI.Professional.Story.Programming_0
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName = "";
-        private string _storedInputRequestNameParameters = "";
+        private string _storedInputRequestNameDataCacheKey = "";
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -3470,7 +3470,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedInputs = parameterInputs;
 
@@ -3678,10 +3678,10 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0";
-            _storedInputRequestNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
+            _storedInputRequestNameDataCacheKey = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
 
             _storedInputs.Parameters["parameterInputRequestName"] = _storedInputRequestName;
-            _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameParameters;
+            _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameDataCacheKey;
 
             _storedInputs.Parameters["parameterProcessRequestByName"] = "";
 
@@ -3825,7 +3825,7 @@ namespace BaseDI.Professional.Story.Programming_0
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName = "";
-        private string _storedInputRequestNameParameters = "";
+        private string _storedInputRequestNameDataCacheKey = "";
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -3890,7 +3890,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             _storedInputs = parameterInputs;
 
@@ -4098,10 +4098,10 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             _storedInputRequestName = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0";
-            _storedInputRequestNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
+            _storedInputRequestNameDataCacheKey = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
 
             _storedInputs.Parameters["parameterInputRequestName"] = _storedInputRequestName;
-            _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameParameters;
+            _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameDataCacheKey;
 
             _storedInputs.Parameters["parameterProcessRequestByName"] = "";
 

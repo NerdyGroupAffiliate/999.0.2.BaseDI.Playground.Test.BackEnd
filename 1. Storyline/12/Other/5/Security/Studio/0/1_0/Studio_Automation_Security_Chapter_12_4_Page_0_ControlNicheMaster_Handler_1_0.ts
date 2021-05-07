@@ -45,7 +45,7 @@ export namespace BaseDI.Professional.Story.Security_0 {
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string;
-        private _storedInputRequestNameParameters: string;
+        private _storedInputRequestNameDataCacheKey: string;
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -459,7 +459,7 @@ export namespace BaseDI.Professional.Story.Security_0 {
 
             //#region MEMORIZE data repository
 
-            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER : "LOCAL_FILE";
+            let storedProcessRequestRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
@@ -505,7 +505,7 @@ export namespace BaseDI.Professional.Story.Security_0 {
             storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
-            switch (storedRepositoryType.toUpperCase()) {
+            switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0.BaseDI.Professional.State.Security_1.LocalFile_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
                     storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;

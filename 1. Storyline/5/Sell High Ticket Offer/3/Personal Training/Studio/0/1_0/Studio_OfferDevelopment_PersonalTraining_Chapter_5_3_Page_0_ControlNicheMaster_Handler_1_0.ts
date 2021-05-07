@@ -52,7 +52,7 @@ export namespace BaseDI.Professional.Story.Personal_Training_0 {
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string;
-        private _storedInputRequestNameParameters: string;
+        private _storedInputRequestNameDataCacheKey: string;
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -465,7 +465,7 @@ export namespace BaseDI.Professional.Story.Personal_Training_0 {
 
             //#region MEMORIZE data repository
 
-            let storedRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_2_3_SOCIALMEDIA_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_2_3_SOCIALMEDIA_NICHE_MASTER : "LOCAL_FILE";
+            let storedProcessRequestRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_2_3_SOCIALMEDIA_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_2_3_SOCIALMEDIA_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
@@ -511,7 +511,7 @@ export namespace BaseDI.Professional.Story.Personal_Training_0 {
             storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
-            switch (storedRepositoryType.toUpperCase()) {
+            switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new LocalFile_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0.BaseDI.Professional.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
                     storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;

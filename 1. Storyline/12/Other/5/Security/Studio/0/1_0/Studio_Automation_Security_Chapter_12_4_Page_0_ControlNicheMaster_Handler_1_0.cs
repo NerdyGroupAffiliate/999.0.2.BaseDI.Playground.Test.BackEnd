@@ -54,7 +54,7 @@ namespace BaseDI.Professional.Story.Security_0
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName;
-        private string _storedInputRequestNameParameters;
+        private string _storedInputRequestNameDataCacheKey;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -487,7 +487,7 @@ namespace BaseDI.Professional.Story.Security_0
 
             #region MEMORIZE data repository
 
-            string storedRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER") : "LOCAL_FILE";
+            string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_5_SECURITY_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
@@ -533,7 +533,7 @@ namespace BaseDI.Professional.Story.Security_0
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
-            switch (storedRepositoryType.ToUpper())
+            switch (storedProcessRequestRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = new LocalFile_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);

@@ -35,7 +35,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_5 {
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string;
-        private _storedInputRequestNameParameters: string;
+        private _storedInputRequestNameDataCacheKey: string;
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -129,7 +129,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_5 {
             //#region MEMORIZE request details
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");

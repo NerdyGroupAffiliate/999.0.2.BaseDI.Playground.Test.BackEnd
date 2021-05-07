@@ -763,7 +763,7 @@ export namespace BaseDI.Professional.Story.Programming_0
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string;
-        private _storedInputRequestNameParameters: string;
+        private _storedInputRequestNameDataCacheKey: string;
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -1118,7 +1118,7 @@ export namespace BaseDI.Professional.Story.Programming_0
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string = "";
-        private _storedInputRequestNameParameters: string = "";
+        private _storedInputRequestNameDataCacheKey: string = "";
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -1186,7 +1186,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             this._storedInputs = parameterInputs;
 
@@ -1618,7 +1618,7 @@ export namespace BaseDI.Professional.Story.Programming_0
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         private _storedInputRequestName: string = "";
-        private _storedInputRequestNameParameters: string = "";
+        private _storedInputRequestNameDataCacheKey: string = "";
 
         //DATASETS
         private _storedProcessRequestDataStorylineDetails: Object;
@@ -1687,7 +1687,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             this._storedInputs = parameterInputs;
 
@@ -1958,7 +1958,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = this._storedInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = this._storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = this._storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             //#endregion
 
@@ -2459,7 +2459,7 @@ export namespace BaseDI.Professional.Story.Programming_0
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         private _storedInputRequestName: string = "";
-        private _storedInputRequestNameParameters: string = "";
+        private _storedInputRequestNameDataCacheKey: string = "";
 
         //DATASETS
         private _storedProcessRequestDataStorylineDetails: Object;
@@ -2528,7 +2528,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             this._storedInputs = parameterInputs;
 
@@ -2769,7 +2769,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = this._storedInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = this._storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = this._storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             //#endregion
 
@@ -2988,7 +2988,7 @@ export namespace BaseDI.Professional.Story.Programming_0
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string = "";
-        private _storedInputRequestNameParameters: string = "";
+        private _storedInputRequestNameDataCacheKey: string = "";
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -3055,7 +3055,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             this._storedInputs = parameterInputs;
 
@@ -3271,10 +3271,10 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0";
-            this._storedInputRequestNameParameters = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
+            this._storedInputRequestNameDataCacheKey = "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0-P1_0";
 
             this._storedInputs.Parameters.setValue("parameterInputRequestName", this._storedInputRequestName);
-            this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameParameters);
+            this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameDataCacheKey);
 
             this._storedInputs.Parameters.setValue("parameterProcessRequestByName", "");
 
@@ -3418,7 +3418,7 @@ export namespace BaseDI.Professional.Story.Programming_0
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string = "";
-        private _storedInputRequestNameParameters: string = "";
+        private _storedInputRequestNameDataCacheKey: string = "";
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -3485,7 +3485,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             this._storedInputs = parameterInputs;
 
@@ -3701,10 +3701,10 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = "Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0";
-            this._storedInputRequestNameParameters = "Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0-P1_0";
+            this._storedInputRequestNameDataCacheKey = "Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0-P1_0";
 
             this._storedInputs.Parameters.setValue("parameterInputRequestName", this._storedInputRequestName);
-            this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameParameters);
+            this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameDataCacheKey);
 
             this._storedInputs.Parameters.setValue("parameterProcessRequestByName", "");
 
@@ -3848,7 +3848,7 @@ export namespace BaseDI.Professional.Story.Programming_0
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string = "";
-        private _storedInputRequestNameParameters: string = "";
+        private _storedInputRequestNameDataCacheKey: string = "";
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -3915,7 +3915,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameParameters = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             this._storedInputs = parameterInputs;
 
@@ -4131,10 +4131,10 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             this._storedInputRequestName = "Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0";
-            this._storedInputRequestNameParameters = "Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0-P1_0";
+            this._storedInputRequestNameDataCacheKey = "Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0-P1_0";
 
             this._storedInputs.Parameters.setValue("parameterInputRequestName", this._storedInputRequestName);
-            this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameParameters);
+            this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameDataCacheKey);
 
             this._storedInputs.Parameters.setValue("parameterProcessRequestByName", "");
 

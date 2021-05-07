@@ -48,7 +48,7 @@ namespace BaseDI.Professional.Director.Web_Development_8
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName;
-        private string _storedInputRequestNameParameters;
+        private string _storedInputRequestNameDataCacheKey;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -493,7 +493,7 @@ namespace BaseDI.Professional.Director.Web_Development_8
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName;
-        private string _storedInputRequestNameParameters;
+        private string _storedInputRequestNameDataCacheKey;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -573,7 +573,7 @@ namespace BaseDI.Professional.Director.Web_Development_8
             #region MEMORIZE request details
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
@@ -705,7 +705,7 @@ namespace BaseDI.Professional.Director.Web_Development_8
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName;
-        private string _storedInputRequestNameParameters;
+        private string _storedInputRequestNameDataCacheKey;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -801,7 +801,7 @@ namespace BaseDI.Professional.Director.Web_Development_8
             #region MEMORIZE request details
 
             _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];

@@ -63,7 +63,7 @@ namespace BaseDI.Professional.Story.Social_Media_0
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName;
-        private string _storedInputRequestNameParameters;
+        private string _storedInputRequestNameDataCacheKey;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
@@ -496,7 +496,7 @@ namespace BaseDI.Professional.Story.Social_Media_0
 
             #region MEMORIZE data repository
 
-            string storedRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_2_PODCASTING_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_2_PODCASTING_NICHE_MASTER") : "LOCAL_FILE";
+            string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_2_PODCASTING_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_2_2_PODCASTING_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 
@@ -542,7 +542,7 @@ namespace BaseDI.Professional.Story.Social_Media_0
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
-            switch (storedRepositoryType.ToUpper())
+            switch (storedProcessRequestRepositoryType.ToUpper())
             {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new LocalFile_Director_Of_SocialMedia_Chapter_2_Page_1_XXXXXX_1_0(parameterInputs);
