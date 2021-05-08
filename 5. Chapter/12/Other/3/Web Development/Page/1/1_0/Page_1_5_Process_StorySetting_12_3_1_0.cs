@@ -47,9 +47,9 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_1
         //SETTINGS
         private IConfiguration _storedProcessRequestSettings;
 
-        private string _storedSettingSecurityAppId = "";
-        private string _storedSettingSecurityAppSecret = "";
-        private string _storedSettingSecurityAppToken = "";
+        private string _storedInputRequestApiAppId = "";
+        private string _storedInputRequestApiAppSecret = "";
+        private string _storedInputRequestApiAppToken = "";
 
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
@@ -59,23 +59,23 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_1
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
-        private Task<Dictionary<string, JToken>> _storedServerInstance = null;
-        private object _storedServerInstanceExperienceRequestHandler = null;
+        private Task<Dictionary<string, JToken>> _storedProcessRequestServerInstance = null;
+        private object _storedProcessRequestServerInstanceExperienceRequestHandler = null;
 
-        private string _storedServerRequestRESTVerb = "";
-        private string _storedServerRoutePath = "";
+        private string _storedProcessRequestServerHTTPRESTVerb = "";
+        private string _storedProcessRequestServerHTTPRoutePath = "";
 
         //DATASET
         private JObject _storedProcessRequestDataStorylineDetails = null;
         private JObject _storedProcessRequestDataStorylineDetails_Parameters = null;
 
-        private string _storedDataObservationTemplate = "";
+        private string _storedOutputResponseDataObservationTemplate = "";
 
         //MISC
         private ExtraData_12_2_1_0 _storedProcessRequestExtraData = null;
 
         //PLUMBING
-        private string _storedActionName = "";
+        private string _storedInputRequestActionName = "";
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
@@ -84,9 +84,9 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_1
 
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
-        private string _storedRequestFileName = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
+        private string _storedProcessRequestFileName = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
         private string _storedProcessRequestName = "";
-        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private IContract_Programming_Repository_12_2_1_0 _storedProcessRequestDataRepository;
         private string _storedProcessRequestByName;
 
         #endregion
@@ -106,7 +106,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_1
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
+            _storedInputRequestActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
 
             #endregion
 
@@ -126,7 +126,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_1
 
             #region MEMORIZE data repository
 
-            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
+            _storedProcessRequestDataRepository = parameterInputs.Parameters["parameterProcessRequestDataRepository"];
 
             #endregion
 
@@ -276,7 +276,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_1
             string storedObservationDataTemplateItem = "{}";
 
             storedInputs.Parameters.Add("parameterProcessRequest3WordDescription", "RENDER web page");
-            storedInputs.Parameters.Add("parameterInputRequestActionName", _storedActionName);
+            storedInputs.Parameters.Add("parameterInputRequestActionName", _storedInputRequestActionName);
             storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
             storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedInputs.Parameters.Add("parameterOutputResponseObservationFileName", "Page_1_5_Process_StorySetting_12_3_1_0.cs");

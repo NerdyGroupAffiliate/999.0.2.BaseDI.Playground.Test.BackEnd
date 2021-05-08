@@ -882,9 +882,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterDirectorOrExperienceName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestHandler"))
                     {
-                        storedOutputResponseMessage += "***parameterDirectorOrExperienceName*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestHandler*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -1025,7 +1025,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE request details
 
-            string storedRequestName = parameterInputs.Parameters["parameterDirectorOrExperienceName"];
+            string storedRequestName = parameterInputs.Parameters["parameterProcessRequestHandler"];
             //let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs["RequestToProcessParameters");
 
             #endregion
@@ -1125,7 +1125,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     storedInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
                     storedInputs.Parameters.Add("parameterCRUDVerb", "Create");
 
-                    storedInputs.Parameters.Add("parameterDirectorOrExperienceName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
+                    storedInputs.Parameters.Add("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
                     storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
 

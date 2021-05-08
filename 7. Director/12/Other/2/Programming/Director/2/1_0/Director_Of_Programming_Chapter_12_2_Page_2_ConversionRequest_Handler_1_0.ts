@@ -481,7 +481,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region MEMORIZE data repository
 
-            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
+            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
 
             //#endregion
 
@@ -715,7 +715,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region MEMORIZE data repository
 
-            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
+            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
 
             //#endregion
 

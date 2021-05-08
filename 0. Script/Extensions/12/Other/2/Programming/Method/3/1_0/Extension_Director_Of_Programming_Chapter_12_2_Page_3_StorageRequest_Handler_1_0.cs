@@ -140,9 +140,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterDirectorOrExperienceName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestHandler"))
                     {
-                        storedOutputResponseMessage += "***parameterDirectorOrExperienceName*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestHandler*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -322,7 +322,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE request details
 
-            string storedDirectorOrExperienceName = parameterInputs.Parameters["parameterDirectorOrExperienceName"];
+            string storedDirectorOrExperienceName = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             #endregion
 

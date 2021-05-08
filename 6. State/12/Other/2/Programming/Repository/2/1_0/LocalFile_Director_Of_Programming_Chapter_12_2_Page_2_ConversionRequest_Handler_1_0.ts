@@ -88,8 +88,8 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
-        public _storedServerInstance: any;
-        private _storedServerInstanceInfo: any;
+        public _storedProcessRequestServerInstance: any;
+        private _storedProcessRequestServerInstanceInfo: any;
 
         //DATASET
         private _storedProcessRequestDataStorylineDetails: object = new Object();
@@ -99,7 +99,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
         private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
-        private _storedActionName: string = "";
+        private _storedInputRequestActionName: string = "";
         private _storedBaseDIPlaceHolderValue: string = "{BASEDICUSTOMOPTION}";
         private _storedBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
@@ -109,9 +109,9 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-        private _storedRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0 ";
+        private _storedProcessRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0 ";
         private _storedProcessRequestName: string = "";
-        private _storedRepository: IContract_Programming_Repository_12_2_1_0;
+        private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedProcessRequestByName: string;
 
         public StoredStartUpCallBack;
@@ -133,7 +133,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE action name
 
-            this._storedActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
+            this._storedInputRequestActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
 
             //#endregion
 
@@ -153,7 +153,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE data repository
 
-            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
+            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
 
             //#endregion
 
@@ -328,7 +328,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
             try {
                 //#region IDEAL CASE - USE factory method
 
-                //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
                 //    storedOutputResponseData = await Execute_Factory_Action_8_Process_CRUD_StoreDataInCache();
                 //}
@@ -1180,7 +1180,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //Page 1-1
         private async Factory_Action_1_Begin_Process(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -1188,7 +1188,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //Page 1-2
         private async Factory_Action_2_Validate_Process(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -1196,7 +1196,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //Page 1-3
         private async Factory_Action_3_Process_StoryAuthor(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -1204,7 +1204,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //Page 1-4
         private async Factory_Action_4_Process_StoryCharacters(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -1212,7 +1212,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //Page 1-5
         private async Factory_Action_5_Process_StorySetting(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -1220,7 +1220,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //Page 1-6
         private async Factory_Action_6_Process_StoryExperiences(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -1228,7 +1228,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
         //Page 1-7
         private async Factory_Action_7_Process_StoryResources(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -1269,7 +1269,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
             try {
                 //#region IDEAL CASE - USE factory method
 
-                //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
                 //    storedOutputResponseData = await Execute_Factory_Action_9_Verify_Process_OutputApiToken();
                 //}
@@ -1334,7 +1334,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
             try {
                 //#region IDEAL CASE - USE factory method
 
-                //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
                 //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
                 //}

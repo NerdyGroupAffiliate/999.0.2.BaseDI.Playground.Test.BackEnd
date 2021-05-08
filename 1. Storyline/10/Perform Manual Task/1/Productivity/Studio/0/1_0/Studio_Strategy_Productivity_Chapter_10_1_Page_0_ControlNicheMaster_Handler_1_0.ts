@@ -223,7 +223,7 @@ export namespace BaseDI.Professional.Story.Productivity_0 {
 
             //#region MEMORIZE output variables
 
-            //#region MEMORIZE process xxx xxxx
+            //#region MEMORIZE output xxx xxx
 
 
             //#endregion
@@ -348,7 +348,7 @@ export namespace BaseDI.Professional.Story.Productivity_0 {
 
                 //#region MEMORIZE output variables
 
-                //#region MEMORIZE process xxx xxxx
+                //#region MEMORIZE output xxx xxx
 
 
                 //#endregion

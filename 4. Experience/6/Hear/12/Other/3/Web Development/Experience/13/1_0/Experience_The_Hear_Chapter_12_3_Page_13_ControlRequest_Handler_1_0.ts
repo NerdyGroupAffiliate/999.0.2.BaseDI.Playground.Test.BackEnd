@@ -66,29 +66,75 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            this._storedProcessRequestTracker = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
             //#region MEMORIZE input parameters
 
             this._storedInputs = parameterInputs;
 
             //#endregion
 
-            //#region MEMORIZE control client server
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
 
             this._storedProcessRequestTracker = this._storedInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
-            //#region MEMORIZE app settings
+            //#region MEMORIZE process request settings
 
             this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
-            //#region MEMORIZE centralized processes handlers
+            //#region MEMORIZE process centralized handlers
 
             this._storedProcessRequestCentralizedDisturber = this._storedInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
             this._storedProcessRequestCentralizedSensor = this._storedInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
             this._storedProcessRequestCentralizedStorer = this._storedInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+            //#endregion
 
             //#endregion
 
@@ -121,6 +167,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public HandleDefaults(): void {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -155,49 +258,94 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<boolean> => {
                 //#region 1. INPUTS
 
-                //#region DEFINE parameter inputs
+                //#region DEFINE control variables
+
+                //#endregion
+
+                //#region DEFINE input variables
 
                 let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
                 //#endregion
 
-                //#region DEFINE process checkpoint
+                //#region DEFINE process variables
 
                 let storedProcessRequestMistakeMade: boolean = false;
 
                 //#endregion
 
-                //#region DEFINE stored message
+                //#region DEFINE output variables
 
                 let storedOutputResponseMessage: string = "";
 
                 //#endregion
 
-                //#region MEMORIZE control client server
+                ///////////////////////////////
+
+                //#region MEMORIZE control variables
+
+                //#region MEMORIZE control xxx xxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE input variables
+
+                //#region MEMORIZE input xxx xxxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE process variables
+
+                //#region MEMORIZE process request tracker
 
                 let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
                 //#endregion
 
-                //#region MEMORIZE app settings
+                //#region MEMORIZE process request settings
 
                 let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 //#endregion
 
-                //#region MEMORIZE developer mode
+                //#region MEMORIZE process developer mode
 
                 let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
 
                 let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE output variables
+
+                //#region MEMORIZE output xxx xxx
+
+
+                //#endregion
 
                 //#endregion
 
@@ -288,8 +436,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         //#endregion
                     }
                 }
-                else
-                {
+                else {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -337,13 +484,48 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#endregion
 
-            //#region DEFINE request handler
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
 
             let storedProcessRequestHandler_UsingBuilderPattern: Use_DesignPattern_Builder_Experience_12_3_1_0 = null;
 
-            //#endregion  
+            //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
@@ -352,15 +534,34 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING request handler");
+
+            //0. CONTROLLERS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //1. INPUTS
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING request handler");          
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
 
+            //3. OUTPUTS  
+
             //OPTIONAL
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -451,6 +652,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //CLIENT/SERVER
         private _storedProcessRequestTracker: any;
 
+        private _storedInputRequestActionName: string;
         private _storedInputRequestName: string;
         private _storedInputRequestNameDataCacheKey: string;
 
@@ -471,7 +673,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
 
         private _storedProcessRequestName: String = "";
-        private _storedRepository: IContract_Programming_Repository_12_2_1_0;
+        private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedProcessRequestByName: string;
 
         //#endregion
@@ -482,19 +684,70 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         {
             //#region 1. INPUTS
 
-            //#region MEMORIZE control client server
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            this._storedInputRequestActionName = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+            //#endregion
+
+            //#region MEMORIZE input request details
+
+            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+         
+            this._storedInputs = parameterInputs;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
 
             this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
-            //#region MEMORIZE app settings
+            //#region MEMORIZE process request settings
 
             this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
-            //#region MEMORIZE centralized processes handlers
+            //#region MEMORIZE process centralized handlers
 
             this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
             this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
@@ -502,46 +755,53 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#endregion
 
-            //#region MEMORIZE data repository
+            //#region MEMORIZE process data repository
 
-            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
+            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
-            //#region MEMORIZE storyline details
+            //#region MEMORIZE process storyline details
 
             this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
             this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters");
 
             //#endregion
 
-            //#region MEMORIZE extra data
+            //#region MEMORIZE process extra data
 
             this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
-            //#region MEMORIZE request details
-
-            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            //#region MEMORIZE processs request details
+            
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedInputs = parameterInputs;
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
 
             //#endregion
 
             //#endregion
+
+            //#endregion          
 
             //#region 2. PROCESS
 
@@ -572,9 +832,61 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         {
             //#region 1. INPUTS
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE control variables
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -594,18 +906,67 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region 4. Action
 
-        public async Action(): Promise<object> {
+        public async Action(): Promise<object>
+        {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedProcessRequestHandler_UsingBuilderPattern: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region DEFINE request handler
+            ///////////////////////////////
 
-            let storedProcessRequestHandler_UsingBuilderPattern: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = null;
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -676,8 +1037,8 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
-        public _storedServerInstance: any;
-        private _storedServerInstanceInfo: any;
+        public _storedProcessRequestServerInstance: any;
+        private _storedProcessRequestServerInstanceInfo: any;
 
         //DATASET
         private _storedProcessRequestDataStorylineDetails: object = new Object();
@@ -687,7 +1048,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
-        private _storedActionName: string = "";
+        private _storedInputRequestActionName: string = "";
 
         private _storedProcessRequestCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedProcessRequestCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -695,9 +1056,9 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-        private _storedRequestFileName: string = "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0";
+        private _storedProcessRequestFileName: string = "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0";
         private _storedProcessRequestName: string = "";
-        private _storedRepository: IContract_Programming_Repository_12_2_1_0;
+        private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedProcessRequestByName: string;
 
         public StoredStartUpCallBack;
@@ -711,25 +1072,70 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region 1. INPUTS
 
-            //#region MEMORIZE control client server
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            this._storedInputRequestActionName = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+            //#endregion
+
+            //#region MEMORIZE input request details
+
+            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+
+            this._storedInputs = parameterInputs;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
 
             this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
-            //#region MEMORIZE action name
-
-            this._storedActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
-
-            //#endregion
-
-            //#region MEMORIZE app settings
+            //#region MEMORIZE process request settings
 
             this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
-            //#region MEMORIZE centralized processes handlers
+            //#region MEMORIZE process centralized handlers
 
             this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
             this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
@@ -737,46 +1143,53 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#endregion
 
-            //#region MEMORIZE data repository
+            //#region MEMORIZE process data repository
 
-            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
+            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
-            //#region MEMORIZE storyline details
+            //#region MEMORIZE process storyline details
 
             this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
             this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters");
 
             //#endregion
 
-            //#region MEMORIZE extra data
+            //#region MEMORIZE process extra data
 
             this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
-            //#region MEMORIZE request details
+            //#region MEMORIZE processs request details
 
-            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedInputs = parameterInputs;
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
 
             //#endregion
 
             //#endregion
+
+            //#endregion          
 
             //#region 2. PROCESS
 
@@ -812,24 +1225,65 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //#region 3. Set
 
-        public HandleDefaults() : void
+        public HandleDefaults(): void
         {
             //#region 1. INPUTS
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE control variables
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#endregion
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region DEFINE input variables
 
-            //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "HANDLING request defaults");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Implement_DesignPattern_Builder_Experience_12_2_1_0 -> HandleDefaults");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -837,36 +1291,6 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#region 2. PROCESS
 
-            //#region EXECUTE process defaults
-
-            try
-            {
-                //#region IDEAL CASE - USE request parser
-
-                //#endregion
-            }
-            catch (storedProcessRequestMistake)
-            {
-                //#region EDGE CASE - USE developer logger
-                if (storedProcessRequestDeveloperMode) {
-                    this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
-
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED handling request defaults");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                }
-                //#endregion
-
-                //#region EDGE CASE - USE exception handler
-
-                throw storedProcessRequestMistake;
-
-                //#endregion
-            }
-
-            //#endregion
 
             //#endregion
 
@@ -886,6 +1310,69 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-5
         public async Action_5_Process_StorySetting(): Promise<object>
         {
+                        //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+
             //#region 1. INPUTS
 
             //#region DEFINE data response
@@ -940,6 +1427,68 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-7
         public async Action_7_Process_StoryResources(): Promise<object>
         {
+                        //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
             //#region 1. INPUTS
 
             //#region DEFINE data response
@@ -1001,6 +1550,68 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-5
         private async Factory_Action_5_Process_StorySetting(): Promise<object>
         {
+                        //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
             //#region 1. INPUTS
 
             //#region DEFINE data response
@@ -1035,7 +1646,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             {
                 //#region IDEAL CASE - USE factory method
 
-                if (this._storedActionName.toUpperCase() == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0.toUpperCase()) {
+                if (this._storedInputRequestActionName.toUpperCase() == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0.toUpperCase()) {
                     storedOutputResponseData = await this.Execute_Action_5_Process_StorySetting_ProcessHttpRequest();
                 }
 
@@ -1068,6 +1679,68 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-7
         private async Factory_Action_7_Process_StoryResources(): Promise<object>
         {
+                        //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
             //#region 1. INPUTS
 
             //#region DEFINE data response
@@ -1102,7 +1775,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             {
                 //#region IDEAL CASE - USE factory method
 
-                if (this._storedActionName.toUpperCase() == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.toUpperCase()) {
+                if (this._storedInputRequestActionName.toUpperCase() == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.toUpperCase()) {
                     storedOutputResponseData = await this.Execute_Factory_Action_7_Process_StoryResources_CopyStaticFiles();
                 }
 
@@ -1141,79 +1814,97 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         {
             //#region 1. INPUTS
 
-            //#region DEFINE client response
-
-            let storedClientResponse: any = null;
+            //#region DEFINE control variables
 
             //#endregion
 
-            //#region DEFINE data response
+            //#region DEFINE input variables
 
-            let storedOutputResponseData: any = null;
+            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            let storedInputRequestRoute: any = null;
+            let storedInputRequestRoutesFound: boolean = false;
+
+            let storedInputRequestRouteListDetailsDELETE: Array<any> = null;
+            let storedInputRequestRouteListDetailsGET: Array<any> = null;
+            let storedInputRequestRouteListDetailsPOST: Array<any> = null;
+            let storedInputRequestRouteListDetailsPUT: Array<any> = null;
+
+            let storedInputRequestControllerRoutes: any = null;
+            let storedInputRequestControllerName: string = "";
+            let storedInputRequestControllerModelDataParameter: string = "";
+            let storedInputRequestControllerModelDataObject: any = null;
+            let storedInputRequestControllerModelDataRemote: any = null;
 
             //#endregion
 
-            //#region DEFINE event handlers
+            //#region DEFINE process variables
 
             let Action = null;
             let Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
             let Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
 
-            //#endregion
-
-            //#region DEFINE extra data
-
             let storedProcessRequestExtraData = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
-            //#endregion
-
-            //#region DEFINE parameter inputs
-
-            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            let storedProcessRequestServerInstance: any = null;
 
             //#endregion
 
-            //#region DEFINE route details
+            //#region DEFINE output variables
 
-            let storedRoute: any = null;
-            let storedRoutesFound: boolean = false;
-
-            //#endregion
-
-            //#region DEFINE server instance
-
-            let storedRouteListDetailsDELETE: Array<any> = null;
-            let storedRouteListDetailsGET: Array<any> = null;
-            let storedRouteListDetailsPOST: Array<any> = null;
-            let storedRouteListDetailsPUT: Array<any> = null;
-
-            let storedServerInstance: any = null;
+            let storedOutputResponse: any = null;
+            let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region DEFINE server routing
+            ///////////////////////////////
 
-            let storedControllerRoutes: any = null;
-            let storedControllerName: string = "";
-            let storedControllerModelDataParameter: string = "";
-            let storedControllerModelDataObject: any = null;
-            let storedControllerModelDataRemote: any = null;
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");           
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting -> Factory_Action_5_Process_StorySetting -> Execute_Action_5_Process_StorySetting_ProcessHttpRequest");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -1239,13 +1930,20 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData");  
 
+                        //0. CONTROLLES
+
+                        //1. INPUTS
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMasterLeaderIsSecondStep", true);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "ROUTING information found - [" + parameterInputs.Parameters.getValue("parameterRouteVerb") + ": '" + this._storedProcessRequestExtraData.KeyValuePairs.getValue("storedServerHTTPRequestInstance").url.match('^[^?]*')[0] + "']");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "ROUTING information found - [" + parameterInputs.Parameters.getValue("parameterProcessRequestHttpRouteVerb") + ": '" + this._storedProcessRequestExtraData.KeyValuePairs.getValue("storedProcessRequestServerHTTPRequestInstance").url.match('^[^?]*')[0] + "']");
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMasterLeaderIsSecondStep", true);
+      
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
 
                         this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestDeveloperLoggingInputs", storedProcessRequestDeveloperLoggingInputs);
@@ -1274,27 +1972,34 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     //#region 2. OUTPUT server response
 
-                    storedServerInstance = this._storedProcessRequestExtraData.KeyValuePairs.getValue("storedServerInstance");
+                    storedProcessRequestServerInstance = this._storedProcessRequestExtraData.KeyValuePairs.getValue("storedProcessRequestServerInstance");
 
                     storedOutputResponseData.then(storedHttpResponse =>
                     {
                         storedHttpResponse?.outputs[1].baseDIObservations.map(storedOutputResponseObservation => {
                             if (Object.keys(storedOutputResponseObservation).length > 0 && Object.keys(storedOutputResponseObservation)[0].toUpperCase().includes("HTML")) {
-                                storedClientResponse = unescape(storedOutputResponseObservation[Object.keys(storedOutputResponseObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
+                                storedOutputResponse = unescape(storedOutputResponseObservation[Object.keys(storedOutputResponseObservation)[0]].baseDIObservations[0].observation.metadata[3].item.presentation[0].htmlResult)
 
                                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY rendered webpage");
                             }
                         });
 
-                        if (storedServerInstance)
+                        if (storedProcessRequestServerInstance)
                         {
                             //#region EDGE CASE - USE developer logger
 
                             if (storedProcessRequestDeveloperMode) {
                                 this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                                //0. CONTROLLES
+
+                                //1. INPUTS
+
+                                //2. PROCESS
                                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                                //3. OUTPUTS
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
                                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", false);
                                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALEndOfProcess", true);
 
@@ -1303,7 +2008,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                             //#endregion
 
-                            storedServerInstance.send(storedClientResponse);
+                            storedProcessRequestServerInstance.send(storedOutputResponse);
                         }
                         else
                         {
@@ -1330,7 +2035,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     {
                         const ExecuteInputRequest = async () : Promise<any> =>
                         {
-                            switch ((parameterInputs.Parameters["parameterRouteVerb"] as string).toUpperCase())
+                            switch ((parameterInputs.Parameters["parameterProcessRequestHttpRouteVerb"] as string).toUpperCase())
                             {
                                 case "DELETE":
                                     return parameterInputs.Parameters.getValue("parameterRouteListDetailsDELETE");
@@ -1358,10 +2063,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         if (storedProcessRequestDeveloperMode) {
                             this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED retrieving route details");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            //0. CONTROLLES
+
+                            //1. INPUTS
+
+                            //2. PROCESS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED retrieving route details");                           
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -1385,64 +2097,64 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         {
                             if (parameterInputs.Parameters.getValue("parameterRouteListDetails") != undefined && parameterInputs.Parameters.getValue("parameterRouteListDetails") != null)
                             {
-                                parameterInputs.Parameters.getValue("parameterRouteListDetails").map(storedRouteItemDetail =>
+                                parameterInputs.Parameters.getValue("parameterRouteListDetails").map(storedInputRequestRouteItemDetail =>
                                 {
                                     //#region A. STORE controller details
 
                                     //STORE listing of routes
-                                    storedControllerRoutes = storedRouteItemDetail.HandleDefaultsItemTransportItemRoute.ControllerRoutes;
+                                    storedInputRequestControllerRoutes = storedInputRequestRouteItemDetail.HandleDefaultsItemTransportItemRoute.ControllerRoutes;
 
                                     //STORE route controller name
-                                    storedControllerName = storedRouteItemDetail.HandleDefaultsItemTransportItemRoute.ControllerName;
+                                    storedInputRequestControllerName = storedInputRequestRouteItemDetail.HandleDefaultsItemTransportItemRoute.ControllerName;
 
                                     //STORE route dataset details
-                                    storedControllerModelDataParameter = storedRouteItemDetail.HandleDefaultsItemTransportItemRoute.ModelDataParameter;
-                                    storedControllerModelDataObject = storedRouteItemDetail.HandleDefaultsItemTransportItemRoute.ModelDataObject;
+                                    storedInputRequestControllerModelDataParameter = storedInputRequestRouteItemDetail.HandleDefaultsItemTransportItemRoute.ModelDataParameter;
+                                    storedInputRequestControllerModelDataObject = storedInputRequestRouteItemDetail.HandleDefaultsItemTransportItemRoute.ModelDataObject;
 
-                                    storedControllerModelDataRemote = storedRouteItemDetail.HandleDefaultsItemTransportItemRoute.ModelDataRemote;
+                                    storedInputRequestControllerModelDataRemote = storedInputRequestRouteItemDetail.HandleDefaultsItemTransportItemRoute.ModelDataRemote;
 
                                     //#endregion
 
-                                    if (storedControllerRoutes != null && storedControllerRoutes.length > 0)
+                                    if (storedInputRequestControllerRoutes != null && storedInputRequestControllerRoutes.length > 0)
                                     {
-                                        storedControllerRoutes.map(storedRoute =>
+                                        storedInputRequestControllerRoutes.map(storedInputRequestRoute =>
                                         {
                                             //#region B. STORE route details
 
-                                            this._storedProcessRequestExtraData.KeyValuePairs.remove("storedControllerModelDataRemote");
-                                            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedControllerModelDataRemote", storedControllerModelDataRemote);
+                                            this._storedProcessRequestExtraData.KeyValuePairs.remove("storedInputRequestControllerModelDataRemote");
+                                            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestControllerModelDataRemote", storedInputRequestControllerModelDataRemote);
 
                                             this._storedProcessRequestExtraData.KeyValuePairs.remove("storedControllerRoute");
-                                            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedControllerRoute", storedRoute);
+                                            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedControllerRoute", storedInputRequestRoute);
 
                                             storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                                            storedInputs.Parameters.setValue("parameterInputRequestName", storedInputRequestControllerName);
+                                            storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", storedInputRequestControllerModelDataParameter);
 
                                             storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
                                             storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
 
-                                            storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", (storedControllerModelDataObject != null) ? storedControllerModelDataObject : null);
+                                            storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", (storedInputRequestControllerModelDataObject != null) ? storedInputRequestControllerModelDataObject : null);
                                             storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_Parameters", null);
-                                            storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_CallBack", storedControllerModelDataRemote);
+                                            storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_CallBack", storedInputRequestControllerModelDataRemote);
 
-                                            storedInputs.Parameters.setValue("parameterInputRequestName", storedControllerName);
-                                            storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", storedControllerModelDataParameter);
-
-                                            storedInputs.Parameters.setValue("parameterRouteVerb", parameterInputs.Parameters.getValue("parameterRouteVerb"));
+                                            storedInputs.Parameters.setValue("parameterProcessRequestHttpRouteVerb", parameterInputs.Parameters.getValue("parameterProcessRequestHttpRouteVerb"));
                                                              
                                             //#endregion
 
                                             //#region C. CONTROL request response
 
-                                            switch ((parameterInputs.Parameters.getValue("parameterRouteVerb") as string).toUpperCase())
+                                            switch ((parameterInputs.Parameters.getValue("parameterProcessRequestHttpRouteVerb") as string).toUpperCase())
                                             {
                                                 case "DELETE":
-                                                    this._storedServerInstance.Server.Instance.delete(storedRoute, (parameterRequest: any, parameterResponse: any) =>
+                                                    this._storedProcessRequestServerInstance.Server.Instance.delete(storedInputRequestRoute, (parameterRequest: any, parameterResponse: any) =>
                                                     {
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedServerHTTPRequestInstance");
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedServerHTTPRequestInstance", parameterRequest);
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedProcessRequestServerHTTPRequestInstance");
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestServerHTTPRequestInstance", parameterRequest);
 
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedServerInstance");
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedServerInstance", this._storedServerInstance.Server.Instance);
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedProcessRequestServerInstance");
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestServerInstance", this._storedProcessRequestServerInstance.Server.Instance);
                                                         
                                                         storedInputs.Parameters.setValue("parameterProcessRequestExtraData", this._storedProcessRequestExtraData);
 
@@ -1452,12 +2164,12 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                                     break;
 
                                                 case "GET":
-                                                    this._storedServerInstance.Server.Instance.get(storedRoute, (parameterRequest: any, parameterResponse: any) => {
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedServerHTTPRequestInstance");
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedServerHTTPRequestInstance", parameterRequest);
+                                                    this._storedProcessRequestServerInstance.Server.Instance.get(storedInputRequestRoute, (parameterRequest: any, parameterResponse: any) => {
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedProcessRequestServerHTTPRequestInstance");
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestServerHTTPRequestInstance", parameterRequest);
 
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedServerInstance");
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedServerInstance", this._storedServerInstance.Server.Instance);
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedProcessRequestServerInstance");
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestServerInstance", this._storedProcessRequestServerInstance.Server.Instance);
 
                                                         storedInputs.Parameters.setValue("parameterProcessRequestExtraData", this._storedProcessRequestExtraData);
 
@@ -1467,12 +2179,12 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                                     break;
 
                                                 case "POST":
-                                                    this._storedServerInstance.Server.Instance.post(storedRoute, (parameterRequest: any, parameterResponse: any) => {
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedServerHTTPRequestInstance");
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedServerHTTPRequestInstance", parameterRequest);
+                                                    this._storedProcessRequestServerInstance.Server.Instance.post(storedInputRequestRoute, (parameterRequest: any, parameterResponse: any) => {
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedProcessRequestServerHTTPRequestInstance");
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestServerHTTPRequestInstance", parameterRequest);
 
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedServerInstance");
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedServerInstance", this._storedServerInstance.Server.Instance);
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedProcessRequestServerInstance");
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestServerInstance", this._storedProcessRequestServerInstance.Server.Instance);
 
                                                         storedInputs.Parameters.setValue("parameterProcessRequestExtraData", this._storedProcessRequestExtraData);
 
@@ -1482,12 +2194,12 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                                     break;
 
                                                 case "PUT":
-                                                    this._storedServerInstance.Server.Instance.put(storedRoute, (parameterRequest: any, parameterResponse: any) => {
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedServerHTTPRequestInstance");
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedServerHTTPRequestInstance", parameterRequest);
+                                                    this._storedProcessRequestServerInstance.Server.Instance.put(storedInputRequestRoute, (parameterRequest: any, parameterResponse: any) => {
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedProcessRequestServerHTTPRequestInstance");
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestServerHTTPRequestInstance", parameterRequest);
 
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedServerInstance");
-                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedServerInstance", this._storedServerInstance.Server.Instance);
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.remove("storedProcessRequestServerInstance");
+                                                        this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestServerInstance", this._storedProcessRequestServerInstance.Server.Instance);
 
                                                         storedInputs.Parameters.setValue("parameterProcessRequestExtraData", this._storedProcessRequestExtraData);
 
@@ -1520,10 +2232,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         if (storedProcessRequestDeveloperMode) {
                             this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED outputing response");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            //0. CONTROLLES
+
+                            //1. INPUTS
+
+                            //2. PROCESS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED outputing response");                           
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -1553,12 +2272,19 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     const ExecuteStorageRequest = async (): Promise<boolean> => {
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+                        //0. CONTROLLES
+
+                        //1. INPUTS
+
+                        //2. PROCESS
                         storedInputs.Parameters.setValue("parameterProcessRequestTracker", Object.assign(this._storedProcessRequestTracker, Object));
-                        storedInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
+                        storedInputs.Parameters.setValue("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
                         storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", Object.assign(this._storedProcessRequestCentralizedDisturber, Object));
                         storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", Object.assign(this._storedProcessRequestDataStorylineDetails, Object));
 
-                        this._storedServerInstance = await Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.Step_X_X_Framework_Control_ServerHandleDefaults_1_0(storedInputs);
+                        //3. OUTPUTS
+
+                        this._storedProcessRequestServerInstance = await Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.Step_X_X_Framework_Control_ServerHandleDefaults_1_0(storedInputs);
 
                         return true;
                     }
@@ -1570,9 +2296,16 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     if (storedProcessRequestDeveloperMode) {
                         this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY configured request prerequisites");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                        //0. CONTROLLES
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY configured request prerequisites");                       
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -1585,10 +2318,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     if (storedProcessRequestDeveloperMode) {
                         this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED storing server configurations to memory");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        //0. CONTROLLES
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED storing server configurations to memory");                        
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -1615,31 +2355,31 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                         //CONFIGURE delete routes
-                        if (this?._storedServerInstance?.Server?.Verbs?.Delete != undefined && this?._storedServerInstance?.Server?.Verbs?.Delete != null) {
-                            storedRouteListDetailsDELETE = this?._storedServerInstance?.Server?.Verbs?.Delete as Array<any>;
+                        if (this?._storedProcessRequestServerInstance?.Server?.Verbs?.Delete != undefined && this?._storedProcessRequestServerInstance?.Server?.Verbs?.Delete != null) {
+                            storedInputRequestRouteListDetailsDELETE = this?._storedProcessRequestServerInstance?.Server?.Verbs?.Delete as Array<any>;
 
-                            storedInputs.Parameters.setValue("parameterRouteListDetailsDELETE", storedRouteListDetailsDELETE);
+                            storedInputs.Parameters.setValue("parameterRouteListDetailsDELETE", storedInputRequestRouteListDetailsDELETE);
                         }
 
                         //CONFIGURE get routes
-                        if (this?._storedServerInstance?.Server?.Verbs?.Get != undefined && this?._storedServerInstance?.Server?.Verbs?.Get != null) {
-                            storedRouteListDetailsGET = this?._storedServerInstance?.Server?.Verbs?.Get as Array<any>;
+                        if (this?._storedProcessRequestServerInstance?.Server?.Verbs?.Get != undefined && this?._storedProcessRequestServerInstance?.Server?.Verbs?.Get != null) {
+                            storedInputRequestRouteListDetailsGET = this?._storedProcessRequestServerInstance?.Server?.Verbs?.Get as Array<any>;
 
-                            storedInputs.Parameters.setValue("parameterRouteListDetailsGET", storedRouteListDetailsGET);
+                            storedInputs.Parameters.setValue("parameterRouteListDetailsGET", storedInputRequestRouteListDetailsGET);
                         }
 
                         //CONFIGURE post routes
-                        if (this?._storedServerInstance?.Server?.Verbs?.Post != undefined && this?._storedServerInstance?.Server?.Verbs?.Post != null) {
-                            storedRouteListDetailsPOST = this?._storedServerInstance?.Server?.Verbs?.Post as Array<any>;
+                        if (this?._storedProcessRequestServerInstance?.Server?.Verbs?.Post != undefined && this?._storedProcessRequestServerInstance?.Server?.Verbs?.Post != null) {
+                            storedInputRequestRouteListDetailsPOST = this?._storedProcessRequestServerInstance?.Server?.Verbs?.Post as Array<any>;
 
-                            storedInputs.Parameters.setValue("parameterRouteListDetailsPOST", storedRouteListDetailsPOST);
+                            storedInputs.Parameters.setValue("parameterRouteListDetailsPOST", storedInputRequestRouteListDetailsPOST);
                         }
 
                         //CONFIGURE put routes
-                        if (this?._storedServerInstance?.Server?.Verbs?.Put != undefined && this?._storedServerInstance?.Server?.Verbs?.Put != null) {
-                            storedRouteListDetailsPUT = this?._storedServerInstance?.Server?.Verbs?.Put as Array<any>;
+                        if (this?._storedProcessRequestServerInstance?.Server?.Verbs?.Put != undefined && this?._storedProcessRequestServerInstance?.Server?.Verbs?.Put != null) {
+                            storedInputRequestRouteListDetailsPUT = this?._storedProcessRequestServerInstance?.Server?.Verbs?.Put as Array<any>;
 
-                            storedInputs.Parameters.setValue("parameterRouteListDetailsPUT", storedRouteListDetailsPUT);
+                            storedInputs.Parameters.setValue("parameterRouteListDetailsPUT", storedInputRequestRouteListDetailsPUT);
                         }
 
                         if (storedInputs.Parameters.containsKey("parameterRouteListDetailsDELETE") ||
@@ -1654,7 +2394,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         
                     }
 
-                    storedRoutesFound = await ExecuteStorageRequest();
+                    storedInputRequestRoutesFound = await ExecuteStorageRequest();
                 }
                 catch (storedProcessRequestMistake)
                 {
@@ -1662,10 +2402,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     if (storedProcessRequestDeveloperMode) {
                         this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED storing routes to memory");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        //0. CONTROLLES
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED storing routes to memory");                       
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -1686,32 +2433,39 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 {
                     //#region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode && storedRoutesFound) {
+                    if (storedProcessRequestDeveloperMode && storedInputRequestRoutesFound) {
                         this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLES
+
+                        //1. INPUTS
+
+                        //2. PROCESS
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY configured routes");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     //#endregion
 
-                    if (storedRoutesFound) {
-                        storedInputs.Parameters.setValue("parameterRouteVerb", "DELETE");
+                    if (storedInputRequestRoutesFound) {
+                        storedInputs.Parameters.setValue("parameterProcessRequestHttpRouteVerb", "DELETE");
                         await ExecuteInputRequest(storedInputs);
 
-                        storedInputs.Parameters.remove("parameterRouteVerb");
-                        storedInputs.Parameters.setValue("parameterRouteVerb", "GET");
+                        storedInputs.Parameters.remove("parameterProcessRequestHttpRouteVerb");
+                        storedInputs.Parameters.setValue("parameterProcessRequestHttpRouteVerb", "GET");
                         await ExecuteInputRequest(storedInputs);
 
-                        storedInputs.Parameters.remove("parameterRouteVerb");
-                        storedInputs.Parameters.setValue("parameterRouteVerb", "POST");
+                        storedInputs.Parameters.remove("parameterProcessRequestHttpRouteVerb");
+                        storedInputs.Parameters.setValue("parameterProcessRequestHttpRouteVerb", "POST");
                         await ExecuteInputRequest(storedInputs);
 
-                        storedInputs.Parameters.remove("parameterRouteVerb");
-                        storedInputs.Parameters.setValue("parameterRouteVerb", "PUT");
+                        storedInputs.Parameters.remove("parameterProcessRequestHttpRouteVerb");
+                        storedInputs.Parameters.setValue("parameterProcessRequestHttpRouteVerb", "PUT");
                         await ExecuteInputRequest(storedInputs);
                     }
                     else
@@ -1725,11 +2479,18 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     if (storedProcessRequestDeveloperMode) {
                         this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED configurating routes");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        //0. CONTROLLES
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED configurating routes");                       
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
 
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
                     //#endregion
@@ -1758,9 +2519,16 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 if (storedProcessRequestDeveloperMode) {
                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                    //0. CONTROLLES
+
+                    //1. INPUTS
+
+                    //2. PROCESS
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "BOOTING web server");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
@@ -1777,15 +2545,22 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 try
                 {
                     const ExecuteControllerRequest = async () => {
-                        this._storedServerInstance.Server.Instance.listen(this._storedServerInstance.Server.Port, () => {
+                        this._storedProcessRequestServerInstance.Server.Instance.listen(this._storedProcessRequestServerInstance.Server.Port, () => {
                             //#region EDGE CASE - USE developer logger
 
                             if (storedProcessRequestDeveloperMode) {
                                 this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARTING web server");
-                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                                //0. CONTROLLES
+
+                                //1. INPUTS
+
+                                //2. PROCESS
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "STARTING web server");                                
                                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                                //3. OUTPUTS
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
                                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALEndOfProcess", true);
 
                                 Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
@@ -1795,7 +2570,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                             //#endregion
 
-                            console.log(`server started at http://localhost:${this._storedServerInstance.Server.Port}`);
+                            console.log(`server started at http://localhost:${this._storedProcessRequestServerInstance.Server.Port}`);
                         });
                     }
 
@@ -1807,10 +2582,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     if (storedProcessRequestDeveloperMode) {
                         this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED starting server");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        //0. CONTROLLES
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED starting server");                        
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -1835,9 +2617,16 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 if (storedProcessRequestDeveloperMode) {
                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                    //0. CONTROLLES
+
+                    //1. INPUTS
+
+                    //2. PROCESS
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED configuring server");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
@@ -1868,57 +2657,59 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         }
 
         //Page 1-7
-        private async Execute_Factory_Action_7_Process_StoryResources_CopyStaticFiles(): Promise<any> {
+        private async Execute_Factory_Action_7_Process_StoryResources_CopyStaticFiles(): Promise<any>
+        {
             //#region 1. INPUTS
 
-            //#region DEFINE client response
-
-            let storedClientResponse: any = null;
+            //#region DEFINE control variables
 
             //#endregion
 
-            //#region DEFINE data response
-
-            let storedOutputResponseData: any = null;
-
-            //#endregion
-
-            //#region DEFINE event handlers
-
-            let Action = null;
-            let Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
-            let Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
-
-            //#endregion
-
-            //#region DEFINE extra data
-
-            let storedProcessRequestExtraData = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
-
-            //#endregion
-
-            //#region DEFINE parameter inputs
+            //#region DEFINE input variables
 
             let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //#endregion
 
-            //#region DEFINE route details
+            //#region DEFINE process variables
 
-            let storedRouteListDetails: any = null;
+            let Action = null;
+            let Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
+            let Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
 
-            //#endregion
-
-            //#region DEFINE server instance
-
-            let storedRouteListDetailsDELETE: any = null;
-            let storedRouteListDetailsGET: any = null;
-            let storedRouteListDetailsPOST: any = null;
-            let storedRouteListDetailsPUT: any = null;
+            let storedProcessRequestExtraData = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE output variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
@@ -1936,6 +2727,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             //#endregion
 
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
             //#region 2. PROCESS
 
             try
@@ -1945,10 +2747,17 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 //#region IDEAL CASE - USE baseDI extension
 
                 storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //0. CONTROLLES
+
+                //1. INPUTS
+
+                //2. PROCESS
                 storedInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
                 storedInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestSettings);
                 storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
 
+                //3. OUTPUTS
                 await Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_13.Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.Step_X_X_Framework_Store_FilesToServer_1_0(storedInputs);
 
                 //#endregion
@@ -1960,9 +2769,16 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 if (storedProcessRequestDeveloperMode) {
                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED configuring server");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    //0. CONTROLLES
+
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED configuring server");                  
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
@@ -2004,25 +2820,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public async Action_1_Begin_Process(): Promise<object> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            ///////////////////////////////
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#region MEMORIZE control variables
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control xxx xxx
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -2058,25 +2912,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public async Action_2_Validate_Process(): Promise<object> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            ///////////////////////////////
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#region MEMORIZE control variables
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control xxx xxx
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -2112,25 +3004,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public async Action_3_Process_StoryAuthor(): Promise<object> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            ///////////////////////////////
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#region MEMORIZE control variables
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control xxx xxx
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -2166,25 +3096,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public async Action_4_Process_StoryCharacters(): Promise<object> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            ///////////////////////////////
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#region MEMORIZE control variables
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control xxx xxx
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -2220,25 +3188,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public async Action_6_Process_StoryExperiences(): Promise<object> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            ///////////////////////////////
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#region MEMORIZE control variables
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control xxx xxx
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -2274,25 +3280,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public async Action_8_Process_CRUD(): Promise<object> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            ///////////////////////////////
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#region MEMORIZE control variables
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control xxx xxx
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -2328,25 +3372,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public async Action_9_Verify_Process(): Promise<object> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            ///////////////////////////////
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#region MEMORIZE control variables
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control xxx xxx
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -2382,25 +3464,63 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         public async Action_10_End_Process(): Promise<object> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            ///////////////////////////////
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#region MEMORIZE control variables
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control xxx xxx
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action_7_Process_StoryResources");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -2438,7 +3558,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-1
         private async Factory_Action_1_Begin_Process(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -2446,7 +3566,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-2
         private async Factory_Action_2_Validate_Process(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -2454,7 +3574,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-3
         private async Factory_Action_3_Process_StoryAuthor(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -2462,7 +3582,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-4
         private async Factory_Action_4_Process_StoryCharacters(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -2470,7 +3590,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-5
         private async Factory_Action_6_Process_StoryExperiences(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -2478,7 +3598,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-6
         private async Factory_Action_8_Process_CRUD(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -2486,7 +3606,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-7
         private async Factory_Action_9_Verify_Process(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }
@@ -2494,7 +3614,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
         //Page 1-8
         private async Factory_Action_10_End_Process(): Promise<object> {
-            switch (this._storedActionName.toUpperCase()) {
+            switch (this._storedInputRequestActionName.toUpperCase()) {
                 default:
                     return null;
             }

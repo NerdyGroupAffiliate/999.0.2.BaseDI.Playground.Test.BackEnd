@@ -838,8 +838,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         }
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterDirectorOrExperienceName")) {
-                        storedOutputResponseMessage += "***parameterDirectorOrExperienceName*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestHandler")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestHandler*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -969,7 +969,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region MEMORIZE request details
 
-            let storedRequestName: string = parameterInputs.Parameters.getValue("parameterDirectorOrExperienceName");
+            let storedRequestName: string = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
             //let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
 
             //#endregion
@@ -1074,7 +1074,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     storedInputs.Parameters.setValue("parameterProcessRequestTracker", Object.assign(storedProcessRequestTracker, Object));
                     storedInputs.Parameters.setValue("parameterCRUDVerb", "Create");
 
-                    storedInputs.Parameters.setValue("parameterDirectorOrExperienceName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
+                    storedInputs.Parameters.setValue("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
                     storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", Object.assign(storedProcessRequestCentralizedStorer, Object));
 

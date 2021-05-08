@@ -508,14 +508,14 @@ namespace BaseDI.Professional.Director.Web_Development_9
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
         private string _storedProcessRequestName = "";
-        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private IContract_Programming_Repository_12_2_1_0 _storedProcessRequestDataRepository;
         private string _storedProcessRequestByName;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
 
-        internal aClass_Programming_ScriptRoutable_12_2_1_0 _stored_ExperienceRequestHandler;
+        internal aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
         #endregion
 
@@ -547,7 +547,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region MEMORIZE data repository
 
-            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
+            _storedProcessRequestDataRepository = parameterInputs.Parameters["parameterProcessRequestDataRepository"];
 
             #endregion
 
@@ -697,9 +697,9 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //SETTINGS
         private IConfiguration _storedProcessRequestSettings;
 
-        private string _storedSettingSecurityAppId = "";
-        private string _storedSettingSecurityAppSecret = "";
-        private string _storedSettingSecurityAppToken = "";
+        private string _storedInputRequestApiAppId = "";
+        private string _storedInputRequestApiAppSecret = "";
+        private string _storedInputRequestApiAppToken = "";
 
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
@@ -709,23 +709,23 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestHandler;
 
-        private Task<Dictionary<string, JToken>> _storedServerInstance = null;
-        private object _storedServerInstanceExperienceRequestHandler = null;
+        private Task<Dictionary<string, JToken>> _storedProcessRequestServerInstance = null;
+        private object _storedProcessRequestServerInstanceExperienceRequestHandler = null;
 
-        private string _storedServerRequestRESTVerb = "";
-        private string _storedServerRoutePath = "";
+        private string _storedProcessRequestServerHTTPRESTVerb = "";
+        private string _storedProcessRequestServerHTTPRoutePath = "";
 
         //DATASET
         private JObject _storedProcessRequestDataStorylineDetails = null;
         private JObject _storedProcessRequestDataStorylineDetails_Parameters = null;
 
-        private string _storedDataObservationTemplate = "";
+        private string _storedOutputResponseDataObservationTemplate = "";
 
         //MISC
         private ExtraData_12_2_1_0 _storedProcessRequestExtraData = null;
 
         //PLUMBING
-        private string _storedActionName = "";
+        private string _storedInputRequestActionName = "";
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
@@ -734,9 +734,9 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
-        private string _storedRequestFileName = "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0";
+        private string _storedProcessRequestFileName = "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0";
         private string _storedProcessRequestName = "";
-        private IContract_Programming_Repository_12_2_1_0 _storedRepository;
+        private IContract_Programming_Repository_12_2_1_0 _storedProcessRequestDataRepository;
         private string _storedProcessRequestByName;
 
         #endregion
@@ -755,7 +755,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region MEMORIZE action name
 
-            _storedActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
+            _storedInputRequestActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
 
             #endregion
 
@@ -775,7 +775,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             #region MEMORIZE data repository
 
-            _storedRepository = parameterInputs.Parameters["parameterDataRepository"];
+            _storedProcessRequestDataRepository = parameterInputs.Parameters["parameterProcessRequestDataRepository"];
 
             #endregion
 
@@ -973,7 +973,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
             {
                 #region IDEAL CASE - USE factory method
 
-                //if (_storedActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
                 //    storedOutputResponseData = await Execute_Factory_Action_5_Process_StorySetting_OutputHtml();
                 //}
@@ -1353,7 +1353,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //Page 1-1
         private async Task<JObject> Factory_Action_1_Begin_Process()
         {
-            switch (_storedActionName.ToUpper())
+            switch (_storedInputRequestActionName.ToUpper())
             {
                 default:
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
@@ -1363,7 +1363,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //Page 1-2
         private async Task<JObject> Factory_Action_2_Validate_Process()
         {
-            switch (_storedActionName.ToUpper())
+            switch (_storedInputRequestActionName.ToUpper())
             {
                 default:
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
@@ -1373,7 +1373,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //Page 1-3
         private async Task<JObject> Factory_Action_3_Process_StoryAuthor()
         {
-            switch (_storedActionName.ToUpper())
+            switch (_storedInputRequestActionName.ToUpper())
             {
                 default:
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
@@ -1383,7 +1383,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //Page 1-4
         private async Task<JObject> Factory_Action_4_Process_StoryCharacters()
         {
-            switch (_storedActionName.ToUpper())
+            switch (_storedInputRequestActionName.ToUpper())
             {
                 default:
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
@@ -1393,7 +1393,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //Page 1-6
         private async Task<JObject> Factory_Action_6_Process_StoryExperiences()
         {
-            switch (_storedActionName.ToUpper())
+            switch (_storedInputRequestActionName.ToUpper())
             {
                 default:
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
@@ -1403,7 +1403,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //Page 1-7
         private async Task<JObject> Factory_Action_7_Process_StoryResources()
         {
-            switch (_storedActionName.ToUpper())
+            switch (_storedInputRequestActionName.ToUpper())
             {
                 default:
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
@@ -1413,7 +1413,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //Page 1-8
         private async Task<JObject> Factory_Action_8_Process_CRUD()
         {
-            switch (_storedActionName.ToUpper())
+            switch (_storedInputRequestActionName.ToUpper())
             {
                 default:
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
@@ -1423,7 +1423,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
         //Page 1-9
         private async Task<JObject> Factory_Action_9_Verify_Process()
         {
-            switch (_storedActionName.ToUpper())
+            switch (_storedInputRequestActionName.ToUpper())
             {
                 default:
                     return await Task.FromResult<JObject>(null).ConfigureAwait(true);
@@ -1467,7 +1467,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
             {
                 #region IDEAL CASE - USE factory method
 
-                if (_storedActionName.ToUpper() == Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.ToUpper())
+                if (_storedInputRequestActionName.ToUpper() == Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.ToUpper())
                 {
                     //storedOutputResponseData = await Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
                 }

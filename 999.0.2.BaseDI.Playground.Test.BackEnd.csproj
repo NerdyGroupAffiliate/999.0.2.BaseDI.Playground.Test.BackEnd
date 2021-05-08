@@ -6,7 +6,7 @@
     <UserSecretsId>69357c9e-c71d-4207-b5ac-8941c0b55e0e</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
-    <TypeScriptToolsVersion>4.2</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>4.1</TypeScriptToolsVersion>
     <TypeScriptBuildMode>true</TypeScriptBuildMode>
   </PropertyGroup>
 

@@ -501,7 +501,7 @@ export class DefaultRegionsTemplate {
 
         //#region MEMORIZE process variables
 
-        //#region MEMORIZE process xxx xxxx
+        //#region MEMORIZE output xxx xxx
 
         //#endregion
 
@@ -601,7 +601,7 @@ export class DefaultRegionsTemplate {
 
         //#region MEMORIZE process variables
 
-        //#region MEMORIZE process xxx xxxx
+        //#region MEMORIZE output xxx xxx
 
         //#endregion
 
@@ -743,7 +743,7 @@ export class DefaultRegionsTemplate {
 
             //#region MEMORIZE output variables
 
-            //#region MEMORIZE process xxx xxxx
+            //#region MEMORIZE output xxx xxx
 
 
             //#endregion
@@ -908,7 +908,7 @@ export class DefaultRegionsTemplate {
 
         //#region MEMORIZE process variables
 
-        //#region MEMORIZE process xxx xxxx
+        //#region MEMORIZE output xxx xxx
 
         //#endregion
 

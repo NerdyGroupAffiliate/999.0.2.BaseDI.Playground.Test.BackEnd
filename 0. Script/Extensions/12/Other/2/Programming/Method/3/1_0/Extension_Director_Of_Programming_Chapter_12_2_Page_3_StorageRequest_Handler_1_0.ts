@@ -144,8 +144,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterDirectorOrExperienceName")) {
-                        storedOutputResponseMessage += "***parameterDirectorOrExperienceName*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestHandler")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestHandler*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }     
 
@@ -316,7 +316,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#region MEMORIZE request details
 
-            let storedDirectorOrExperienceName: string = parameterInputs.Parameters.getValue("parameterDirectorOrExperienceName");
+            let storedDirectorOrExperienceName: string = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             //#endregion
 

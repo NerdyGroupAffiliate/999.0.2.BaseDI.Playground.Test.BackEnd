@@ -33,8 +33,8 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
-        public _storedServerInstance: any;
-        private _storedServerInstanceInfo: any;
+        public _storedProcessRequestServerInstance: any;
+        private _storedProcessRequestServerInstanceInfo: any;
 
         //DATASET
         private _storedProcessRequestDataStorylineDetails: object = new Object();
@@ -44,7 +44,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
         private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
 
         //PLUMBING
-        private _storedActionName: string = "";
+        private _storedInputRequestActionName: string = "";
         private _storedBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         private _storedProcessRequestCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -53,9 +53,9 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
         private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-        private _storedRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_4_CreateAdvertisement_Handler_1_0 ";
+        private _storedProcessRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_4_CreateAdvertisement_Handler_1_0 ";
         private _storedProcessRequestName: string = "";
-        private _storedRepository: IContract_Programming_Repository_12_2_1_0;
+        private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedProcessRequestByName: string;
 
         public StoredStartUpCallBack;
@@ -77,7 +77,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
             //#region MEMORIZE action name
 
-            this._storedActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
+            this._storedInputRequestActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
 
             //#endregion
 
@@ -97,7 +97,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_4 {
 
             //#region MEMORIZE data repository
 
-            this._storedRepository = parameterInputs.Parameters.getValue("parameterDataRepository");
+            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
 
             //#endregion
 

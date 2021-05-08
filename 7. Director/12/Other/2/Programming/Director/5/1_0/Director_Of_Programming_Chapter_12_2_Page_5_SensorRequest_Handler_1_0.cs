@@ -563,7 +563,7 @@ namespace BaseDI.Professional.Director.Programming_5
 
             #region MEMORIZE data repository
 
-            _storedProcessRequestDataRepository = parameterInputs.Parameters["parameterDataRepository"];
+            _storedProcessRequestDataRepository = parameterInputs.Parameters["parameterProcessRequestDataRepository"];
 
             #endregion
 
@@ -791,7 +791,7 @@ namespace BaseDI.Professional.Director.Programming_5
 
             #region MEMORIZE data repository
 
-            _storedProcessRequestDataRepository = parameterInputs.Parameters["parameterDataRepository"];
+            _storedProcessRequestDataRepository = parameterInputs.Parameters["parameterProcessRequestDataRepository"];
 
             #endregion
 

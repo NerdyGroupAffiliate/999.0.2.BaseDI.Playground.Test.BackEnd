@@ -326,7 +326,7 @@ export namespace BaseDI.Professional
 
                 //#region MEMORIZE output variables
 
-                //#region MEMORIZE process xxx xxxx
+                //#region MEMORIZE output xxx xxx
 
 
                 //#endregion
