@@ -757,7 +757,7 @@ namespace BaseDI.Professional.Story.Careers_Employment_0
 
             #region MEMORIZE data repository
 
-            string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_1_CAREERSEMPLOYMENT_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_10_1_PRODUCTIVITY_NICHE_MASTER") : "LOCAL_FILE";
+            string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_1_CAREERSEMPLOYMENT_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_1_CAREERSEMPLOYMENT_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 

@@ -805,7 +805,7 @@ namespace BaseDI.Professional.Story.CMS_0
 
             #region MEMORIZE process data repository
 
-            string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER") : "LOCAL_FILE";
+            string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_4_CMS_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_4_CMS_NICHE_MASTER") : "LOCAL_FILE";
 
             #endregion
 

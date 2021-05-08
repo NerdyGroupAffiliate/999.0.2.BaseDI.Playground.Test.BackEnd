@@ -768,7 +768,7 @@ export namespace BaseDI.Professional.Story.CMS_0 {
 
             //#region MEMORIZE process data repository
 
-            let storedProcessRequestRepositoryType: string = this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER ? this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_1_1_ADVERTISING_NICHE_MASTER : "LOCAL_FILE";
+            let storedProcessRequestRepositoryType: string = this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_12_4_CMS_NICHE_MASTER ? this._storedProcessRequestSettings.APP_SETTING_CONVERSION_MODE_12_4_CMS_NICHE_MASTER : "LOCAL_FILE";
 
             //#endregion
 
