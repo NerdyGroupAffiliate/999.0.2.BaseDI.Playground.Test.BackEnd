@@ -1025,8 +1025,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE request details
 
-            string storedRequestName = parameterInputs.Parameters["parameterProcessRequestHandler"];
-            //let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs["RequestToProcessParameters");
+            string storedInputRequestName = parameterInputs.Parameters["parameterProcessRequestHandler"];
+            //let storedInputRequestNameDataCacheKey: string = this.ExtraData.KeyValuePairs["RequestToProcessParameters");
 
             #endregion
 

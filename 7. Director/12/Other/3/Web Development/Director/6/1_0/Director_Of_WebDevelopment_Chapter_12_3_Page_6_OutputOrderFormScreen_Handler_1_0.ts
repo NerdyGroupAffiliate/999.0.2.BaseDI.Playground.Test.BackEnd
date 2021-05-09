@@ -659,7 +659,7 @@ export namespace BaseDI.Professional.Director.Web_Development_6 {
 
         //PLUMBING
         private _storedInputRequestActionName: string = "";
-        private _storedBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         private _storedProcessRequestCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedProcessRequestCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -744,7 +744,7 @@ export namespace BaseDI.Professional.Director.Web_Development_6 {
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
+            this._storedProcessRequestRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
 
             this._storedInputs = parameterInputs;
 
@@ -1015,7 +1015,7 @@ export namespace BaseDI.Professional.Director.Web_Development_6 {
 
             page.ClientOrServerInstance = this._storedProcessRequestTracker;
 
-            page.DirectorOrExperienceRequestHandler = this._storedBusinessDirectorOrExperienceRequestHandler;
+            page.DirectorOrExperienceRequestHandler = this._storedProcessRequestRequestHandler;
             page.ExtraData = this._storedProcessRequestExtraData;
 
             page.MasterStorer = this._storedProcessRequestCentralizedStorer;

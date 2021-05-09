@@ -726,7 +726,7 @@ namespace BaseDI.Professional.Director.Web_Development_5
 
         //PLUMBING
         private string _storedInputRequestActionName = "";
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestRequestHandler;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
@@ -808,7 +808,7 @@ namespace BaseDI.Professional.Director.Web_Development_5
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 
             _storedInputs = parameterInputs;
 
@@ -1033,7 +1033,7 @@ namespace BaseDI.Professional.Director.Web_Development_5
 
             page.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            page.DirectorOrExperienceRequestHandler = _storedBusinessDirectorOrExperienceRequestHandler;
+            page.DirectorOrExperienceRequestHandler = _storedProcessRequestRequestHandler;
             page.ExtraData = _storedProcessRequestExtraData;
 
             page.MasterStorer = _storedProcessRequestCentralizedStorer;

@@ -562,7 +562,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             let storedInputRequestName: string = parameterInputs.Parameters["parameterInputRequestName"];
-            let storedInputRequestNameParameters: string = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            let storedInputRequestNameDataCacheKey: string = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
                
             //#endregion
 
@@ -713,7 +713,7 @@ export namespace BaseDI.Professional.Story.Programming_0
                 //1. INPUTS
                 storedProcessRequestExceptionDetails.Parameters.setValue("storedInputs", parameterInputs);
                 storedProcessRequestExceptionDetails.Parameters.setValue("storedInputRequestName", storedInputRequestName);
-                storedProcessRequestExceptionDetails.Parameters.setValue("storedInputRequestNameParameters", storedInputRequestNameParameters);
+                storedProcessRequestExceptionDetails.Parameters.setValue("storedInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
 
                 //2. PROCESS
                 storedProcessRequestExceptionDetails.Parameters.setValue("storedProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
@@ -829,7 +829,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE input request details
 
             let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            let storedInputRequestNameParameters: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            let storedInputRequestNameDataCacheKey: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             let storedProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
 

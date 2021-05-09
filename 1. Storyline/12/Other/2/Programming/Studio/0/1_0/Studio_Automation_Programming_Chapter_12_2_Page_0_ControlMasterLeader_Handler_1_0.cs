@@ -577,7 +577,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            string storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"] ? parameterInputs.Parameters["parameterProcessRequestByName"] : "";
 
@@ -725,7 +725,7 @@ namespace BaseDI.Professional.Story.Programming_0
                 //1. INPUTS
                 storedProcessRequestExceptionDetails.Parameters.Add("storedInputs", parameterInputs);
                 storedProcessRequestExceptionDetails.Parameters.Add("storedInputRequestName", storedInputRequestName);
-                storedProcessRequestExceptionDetails.Parameters.Add("storedInputRequestNameParameters", storedInputRequestNameParameters);
+                storedProcessRequestExceptionDetails.Parameters.Add("storedInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
 
                 //2. PROCESS
                 storedProcessRequestExceptionDetails.Parameters.Add("storedProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
@@ -840,7 +840,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE input request details
 
             string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            string storedInputRequestNameParameters = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"] ? parameterInputs.Parameters["parameterProcessRequestByName"] : "";
 

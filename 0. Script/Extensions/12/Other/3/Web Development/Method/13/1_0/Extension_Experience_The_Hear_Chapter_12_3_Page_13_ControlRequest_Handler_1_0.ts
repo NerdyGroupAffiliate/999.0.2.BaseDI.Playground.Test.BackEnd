@@ -969,8 +969,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region MEMORIZE request details
 
-            let storedRequestName: string = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
-            //let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
+            let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
+            //let storedInputRequestNameDataCacheKey: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
 
             //#endregion
 

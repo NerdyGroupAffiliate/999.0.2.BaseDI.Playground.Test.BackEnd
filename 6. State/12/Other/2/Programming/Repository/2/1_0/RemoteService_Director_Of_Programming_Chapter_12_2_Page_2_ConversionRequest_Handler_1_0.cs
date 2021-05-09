@@ -68,7 +68,7 @@ namespace BaseDI.Professional.State.Programming_2
 
         //PLUMBING
         private string _storedInputRequestActionName = "";
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestRequestHandler;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
@@ -151,7 +151,7 @@ namespace BaseDI.Professional.State.Programming_2
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 
             _storedInputs = parameterInputs;
 

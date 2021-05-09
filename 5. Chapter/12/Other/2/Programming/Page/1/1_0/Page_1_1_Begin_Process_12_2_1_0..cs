@@ -69,7 +69,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
         //PLUMBING
         private string _storedInputRequestActionName = "";
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestRequestHandler;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
@@ -152,7 +152,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 
             _storedInputs = parameterInputs;
 
@@ -250,8 +250,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region MEMORIZE request details
 
-            string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
-            string storedRequestNameParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+            string storedInputRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+            string storedInputRequestNameDataCacheKey = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
 
             #endregion
 
@@ -275,7 +275,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                     {
                         ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                        Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": RETRIEVING dataset for request " + storedInputRequestActionName + " -> " + storedRequestName);
+                        Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": RETRIEVING dataset for request " + storedInputRequestActionName + " -> " + storedInputRequestName);
                     }
 
                     #endregion
@@ -306,7 +306,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                 {
                     ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** DATA RETRIVAL for request " + storedInputRequestActionName + " -> " + storedInputRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 #endregion

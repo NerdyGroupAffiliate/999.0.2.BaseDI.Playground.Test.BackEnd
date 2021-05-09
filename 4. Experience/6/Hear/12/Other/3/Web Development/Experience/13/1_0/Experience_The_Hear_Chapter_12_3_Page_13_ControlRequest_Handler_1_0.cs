@@ -3607,81 +3607,833 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-1
         private async Task<JObject> Factory_Action_1_Begin_Process()
         {
-            switch (_storedInputRequestActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_OutputApiToken();
+                //}
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //Page 1-2
         private async Task<JObject> Factory_Action_2_Validate_Process()
         {
-            switch (_storedInputRequestActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_2_Validate_Process_OutputApiToken();
+                //}
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //Page 1-3
         private async Task<JObject> Factory_Action_3_Process_StoryAuthor()
         {
-            switch (_storedInputRequestActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_3_Process_StoryAuthor_OutputApiToken();
+                //}
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //Page 1-4
         private async Task<JObject> Factory_Action_4_Process_StoryCharacters()
         {
-            switch (_storedInputRequestActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_4_Process_StoryCharacters_OutputApiToken();
+                //}
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //Page 1-6
         private async Task<JObject> Factory_Action_6_Process_StoryExperiences()
         {
-            switch (_storedInputRequestActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_6_Process_StoryExperiences_OutputApiToken();
+                //}
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //Page 1-8
         private async Task<JObject> Factory_Action_8_Process_CRUD()
         {
-            switch (_storedInputRequestActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_8_Process_CRUD_OutputApiToken();
+                //}
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //Page 1-9
         private async Task<JObject> Factory_Action_9_Verify_Process()
         {
-            switch (_storedInputRequestActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_9_Verify_Process_OutputApiToken();
+                //}
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         //Page 1-10
         private async Task<JObject> Factory_Action_10_End_Process()
         {
-            switch (_storedInputRequestActionName.ToUpper())
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
             {
-                default:
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
+                #region IDEAL CASE - USE factory method
+
+                if (_storedInputRequestActionName.ToUpper() == Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.ToUpper())
+                {
+                    //storedOutputResponseData = await Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
+                }
+
+                #endregion
             }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
         #endregion

@@ -69,7 +69,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
         //PLUMBING
         private string _storedInputRequestActionName = "";
-        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedBusinessDirectorOrExperienceRequestHandler;
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestRequestHandler;
 
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
@@ -153,7 +153,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
 
-            _storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 
             _storedInputs = parameterInputs;
 
@@ -269,8 +269,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE request details
 
-            string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
-            string storedRequestNameParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+            string storedInputRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+            string storedInputRequestNameDataCacheKey = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
 
             #endregion
 
@@ -317,7 +317,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
                 {
                     ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedInputRequestActionName + " -> " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedInputRequestActionName + " -> " + storedInputRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 #endregion
@@ -374,8 +374,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region MEMORIZE request details
 
-            string storedRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
-            string storedRequestNameParameters = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
+            string storedInputRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
+            string storedInputRequestNameDataCacheKey = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
 
             #endregion
 
@@ -420,7 +420,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
                 {
                     ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0]");
+                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedInputRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value. [Page_2_1_Begin_Process_12_2_1_0 -> Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0]");
                 }
 
                 #endregion

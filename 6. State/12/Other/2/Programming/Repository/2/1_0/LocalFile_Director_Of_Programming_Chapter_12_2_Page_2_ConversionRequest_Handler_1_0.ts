@@ -101,7 +101,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
         //PLUMBING
         private _storedInputRequestActionName: string = "";
         private _storedBaseDIPlaceHolderValue: string = "{BASEDICUSTOMOPTION}";
-        private _storedBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         private _storedProcessRequestCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedProcessRequestCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -186,7 +186,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
+            this._storedProcessRequestRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
 
             this._storedInputs = parameterInputs;
 
@@ -425,8 +425,8 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region MEMORIZE request details
 
-            let storedRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
-            let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
+            let storedInputRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
+            let storedInputRequestNameDataCacheKey: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
 
             //#endregion
 
@@ -436,17 +436,17 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region GET LOCAL DATASET
 
-            if (storedRequestName != null && storedRequestName != undefined) {
+            if (storedInputRequestName != null && storedInputRequestName != undefined) {
                 //#region IDEAL CASE - USE LOCAL DATASET
 
                 //#region 1-1 - Advertising
 
                 try {
-                    switch (storedRequestName.toUpperCase()) {
+                    switch (storedInputRequestName.toUpperCase()) {
                         //case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0":
                         //    storedProcessRequestDataStorylineDetails = state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0;
 
-                        //    switch (storedRequestNameParameters.toUpperCase())
+                        //    switch (storedInputRequestNameDataCacheKey.toUpperCase())
                         //    {
                         //        case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0-P1_4_1_1":
                         //            storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereaPersonBecameAwareOfTopic_Handler_1_0_p1_4_1_1;
@@ -500,11 +500,11 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 //#region 12-2 - Programming
 
                 try {
-                    switch (storedRequestName.toUpperCase()) {
+                    switch (storedInputRequestName.toUpperCase()) {
                         case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0_P1_0;
                                     break;
@@ -558,11 +558,11 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 //#region 12-3 - Web Development
 
                 try {
-                    switch (storedRequestName.toUpperCase()) {
+                    switch (storedInputRequestName.toUpperCase()) {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_OUTPUTHOMESCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_1_OUTPUTHOMESCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0_P1_0;
                                     break;
@@ -575,7 +575,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_2_OUTPUTPRESALESSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_2_OUTPUTPRESALESSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0_P1_0;
                                     break;
@@ -586,7 +586,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_OUTPUTOPTINSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_3_OUTPUTOPTINSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0_P1_0;
                                     break;
@@ -599,7 +599,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_4_OUTPUTTHANKYOUSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_4_OUTPUTTHANKYOUSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0_P1_0;
                                     break;
@@ -610,7 +610,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_5_OUTPUTSALESSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_5_OUTPUTSALESSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0_P1_0;
                                     break;
@@ -623,7 +623,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_6_OUTPUTORDERFORMSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_6_OUTPUTORDERFORMSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0_P1_0;
                                     break;
@@ -636,7 +636,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_7_OUTPUTOTOSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_7_OUTPUTOTOSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0_P1_0;
                                     break;
@@ -649,7 +649,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_8_OUTPUTWEBINARSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_8_OUTPUTWEBINARSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0_P1_0;
                                     break;
@@ -662,7 +662,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_9_OUTPUTMEMBERSHIPSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_8_OUTPUTWEBINARSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0_P1_0;
                                     break;
@@ -673,7 +673,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_10_OUTPUTAFFILIATESCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_10_OUTPUTAFFILIATESCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0_P1_0;
                                     break;
@@ -686,7 +686,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_11_OUTPUTOTHERSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_11_OUTPUTOTHERSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0_P1_0;
                                     break;
@@ -699,7 +699,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_12_OUTPUTADVANCEDSCREEN_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_WEBDEVELOPMENT_CHAPTER_12_3_PAGE_12_OUTPUTADVANCEDSCREEN_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0_P1_0;
                                     break;
@@ -712,7 +712,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                         case "EXPERIENCE_THE_HEAD_CHAPTER_12_3_PAGE_13_CONTROLREQUEST_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "EXPERIENCE_THE_HEAD_CHAPTER_12_3_PAGE_13_CONTROLREQUEST_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0_P1_0;
                                     break;
@@ -764,11 +764,11 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
                 //#region 12-5 - Security
                 try {
-                    switch (storedRequestName.toUpperCase()) {
+                    switch (storedInputRequestName.toUpperCase()) {
                         case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0;
 
-                            switch (storedRequestNameParameters.toUpperCase()) {
+                            switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
                                 case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0_P1_0;
                                     break;

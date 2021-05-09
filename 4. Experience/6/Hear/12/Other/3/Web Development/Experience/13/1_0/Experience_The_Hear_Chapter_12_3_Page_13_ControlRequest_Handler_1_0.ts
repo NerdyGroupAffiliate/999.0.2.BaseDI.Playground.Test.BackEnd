@@ -1310,7 +1310,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-5
         public async Action_5_Process_StorySetting(): Promise<object>
         {
-                        //#region 1. INPUTS
+            //#region 1. INPUTS
 
             //#region DEFINE control variables
 
@@ -1427,7 +1427,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-7
         public async Action_7_Process_StoryResources(): Promise<object>
         {
-                        //#region 1. INPUTS
+            //#region 1. INPUTS
 
             //#region DEFINE control variables
 
@@ -1550,7 +1550,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-5
         private async Factory_Action_5_Process_StorySetting(): Promise<object>
         {
-                        //#region 1. INPUTS
+            //#region 1. INPUTS
 
             //#region DEFINE control variables
 
@@ -1679,7 +1679,7 @@ export namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         //Page 1-7
         private async Factory_Action_7_Process_StoryResources(): Promise<object>
         {
-                        //#region 1. INPUTS
+            //#region 1. INPUTS
 
             //#region DEFINE control variables
 

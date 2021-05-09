@@ -49,7 +49,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
         //PLUMBING
         private _storedInputRequestActionName: string = "";
-        private _storedBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         private _storedProcessRequestCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedProcessRequestCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -134,7 +134,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
-            this._storedBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
+            this._storedProcessRequestRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
 
             this._storedInputs = parameterInputs;
 
@@ -372,8 +372,8 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region MEMORIZE request details
 
-            let storedRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
-            let storedRequestNameParameters: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
+            let storedInputRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
+            let storedInputRequestNameDataCacheKey: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
 
             //#endregion
 
