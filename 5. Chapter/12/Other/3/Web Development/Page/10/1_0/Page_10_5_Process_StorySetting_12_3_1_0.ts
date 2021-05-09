@@ -207,7 +207,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_10 {
             //#region DEFINE storyline details outputs
 
             let storedOutput: String = "";
-            let storedOutPut_ObservationDataTemplateBuilder: string = "";
+            let storedOutputResponseObservationDataTemplateBuilder: string = "";
 
             //#endregion
 

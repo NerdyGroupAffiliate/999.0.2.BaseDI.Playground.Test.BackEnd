@@ -37,15 +37,17 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
         private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
-        public _storedProcessRequestServerInstance: any;
-        private _storedProcessRequestServerInstanceInfo: any;
+        private _storedProcessRequestServerInstance: any = null;
+        private _storedProcessRequestServerInstanceExperienceRequestHandler: any = null;
 
         //DATASET
-        private _storedProcessRequestDataStorylineDetails: any;
-        private _storedProcessRequestDataStorylineDetails_Parameters: any;
+        private _storedProcessRequestDataStorylineDetails: any = null;
+        private _storedProcessRequestDataStorylineDetails_Parameters: any = null;
+
+        private _storedOutputResponseDataObservationTemplate: string = "";
 
         //MISC
-        private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
+        private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
 
         //PLUMBING
         private _storedInputRequestActionName: string = "";
@@ -57,86 +59,135 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
         private _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-        private _storedProcessRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_3_InputWhichTopicAPersonIsAwareOf_Handler_1_0 ";
+        private _storedProcessRequestFileName: string = "LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0";
         private _storedProcessRequestName: string = "";
         private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedProcessRequestByName: string;
-
-        public StoredStartUpCallBack;
 
         //#endregion
 
         //#region 2. Ready
 
+        //A. Constructor Instantiation
         constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
             super();
 
             //#region 1. INPUTS
 
-            //#region MEMORIZE control client server
-
-            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+            //#region DEFINE control variables
 
             //#endregion
 
-            //#region MEMORIZE action name
+            //#region DEFINE input variables
 
-            this._storedInputRequestActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
 
             //#endregion
 
-            //#region MEMORIZE app settings
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            this._storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            //#endregion
+
+            //#region MEMORIZE input request details
+
+            this._storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+
+            this._storedInputs = parameterInputs;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
+
+            this._storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+
+            //#endregion
+
+            //#region MEMORIZE process request settings
 
             this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
-            //#region MEMORIZE centralized processes handlers
+            //#region MEMORIZE process centralized handlers
 
-            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
-            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
-            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
-
-            //#endregion
-
-            //#region MEMORIZE data repository
-
-            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
+            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region MEMORIZE process data repository
+
+            this._storedProcessRequestDataRepository = parameterInputs.Parameters["parameterProcessRequestDataRepository"];
+
+            //#endregion
+
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             //#endregion
 
-            //#region MEMORIZE storyline details
+            //#region MEMORIZE process request storyline details
 
-            this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
-            this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters");
-
-            //#endregion
-
-            //#region MEMORIZE extra data
-
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
+            this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             //#endregion
 
-            //#region MEMORIZE request details
+            //#region MEMORIZE process request extra data
 
-            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
-            this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
+            this._storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            //#endregion
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            //#region MEMORIZE process request details
 
-            this._storedProcessRequestRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
+            this._storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            this._storedInputs = parameterInputs;
+            this._storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
+
+            this._storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -176,12 +227,65 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
         //#region 3. Set
 
+        //A. Default state
         public HandleDefaults(): void {
             //#region 1. INPUTS
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE control variables
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -191,6 +295,10 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region EXECUTE process defaults
 
+            //#region IDEAL CASE - defaults handler
+
+
+            //#endregion
 
             //#endregion
 
@@ -205,323 +313,21 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
         //#region 4. Action
 
+        //#region A.Action Methods
+
+        //A. Story in motion (DO SOMETHING)
+
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        //#region A. Action Methods
-
-        //Page 1-8
-        public async Action_8_Process_CRUD(): Promise<object> {
-            //#region 1. INPUTS
-
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN process response
-
-            //#region IDEAL CASE - USE baseDI dataset
-
-            return this._storedProcessRequestDataStorylineDetails;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
+        //#region A.Action Methods
 
         //#endregion
 
-        //#region B. Action Factories
-
-        //Page 1-8
-        private async Factory_Action_8_Process_CRUD(): Promise<object> {
-            //#region 1. INPUTS
-
-            //#region DEFINE data response
-
-            let storedOutputResponseData: any = null;
-
-            //#endregion
-
-            //#region MEMORIZE developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Factory_Action_1_Begin_Process -> Factory_Action_5_Process_StorySetting");
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region EXECUTE process factory
-
-            try {
-                //#region IDEAL CASE - USE factory method
-
-                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
-                //{
-                //    storedOutputResponseData = await Execute_Factory_Action_8_Process_CRUD_StoreDataInCache();
-                //}
-
-                storedOutputResponseData = await this.Execute_Factory_Action_8_Process_CRUD_ControlDataInCache();
-
-                //#endregion
-            }
-            catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN http response
-
-            //#region IDEAL CASE - USE baseDI dataset
-
-            return storedOutputResponseData;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
+        //#region B.Action Factories
 
         //#endregion
 
-        //#region C. Action Logic
-
-        private async Execute_Factory_Action_8_Process_CRUD_ControlDataInCache(): Promise<any> {
-            //#region 1. INPUTS
-
-            //#region DEFINE data response
-
-            let storedOutputResponseData: any = null;
-
-            //#endregion
-
-            //#region DEFINE parameter inputs
-
-            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //#endregion
-
-            //#region DEFINE storyline details outputs
-
-            let storedOutPut_ObservationKey: string = "";
-            let storedOutPut_ObservationKeyDelimeterValue: string = "";
-            let storedOutPut_ObservationKeys: any = null;
-            let storedOutPut_ObservationsIndex: number = 0;
-
-            let storedOutPut_ObservationStorageCRUDValue: string = "";
-
-            //#endregion
-
-            //#region MEMORIZE action name
-
-            let storedInputRequestActionName: string = this.ClientOrServerInstance["storedInputRequestActionName"] as string;
-
-            //#endregion
-
-            //#region MEMORIZE app settings
-
-            this._storedProcessRequestSettings = this.ClientOrServerInstance["storedProcessRequestSettings"];
-
-            //#endregion
-
-            //#region MEMORIZE control client server
-
-            this._storedProcessRequestTracker = this.ClientOrServerInstance;
-
-            //#endregion
-
-            //#region MEMORIZE developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-            let storedProcessRequestDeveloperModeParameters: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = this.ExtraData.KeyValuePairs.getValue("storedProcessRequestDeveloperLoggingInputs");
-            let storedProcessRequestDeveloperModeSkipConsole: boolean = (storedProcessRequestDeveloperModeParameters?.Parameters?.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog")) ? storedProcessRequestDeveloperModeParameters?.Parameters?.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog") : false;
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this.ClientOrServerInstance["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this.ClientOrServerInstance);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "LocalFile_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Page_1_10_End_Process_12_2_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
-
-            //#endregion
-
-            //#region MEMORIZE request details
-
-            let storedInputRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
-            let storedInputRequestNameDataCacheKey: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
-
-            //#endregion
-
-            //#region MEMORIZE server details
-
-            let storedServer: any = this?.ClientOrServerInstance?.Server;
-
-            //#endregion
-
-            //#region MEMORIZE storyline details outputs
-
-            const storedOutPut_Observations: Array<Object> = this._storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations;;
-            const storedOutPut_ObservationsCount: number = this._storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.length == 0 ? 0 : this._storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.length;
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region HANDLE storage request
-
-            try {
-                //#region IDEAL CASE - USE baseDI extension
-
-                //#region 1. SEARCH for storage item
-
-                if (storedOutPut_Observations) {
-                    storedOutPut_Observations.map(storedOutPut_Observation => {
-                        storedOutPut_ObservationKeys = Object.keys(storedOutPut_Observation);
-
-                        storedOutPut_ObservationKeys.map(storedOutPut_ObservationKey => {
-                            storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString();
-                            //OUTPUT EXAMPLE: storedOutPut_ObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-Create-BaseDI_DataConverter_Mode"
-
-                            if (storedOutPut_ObservationKey.toString().toUpperCase().includes("STORAGEKEY")) {
-                                storedOutPut_ObservationKeyDelimeterValue = storedOutPut_ObservationKey.toString().split("-");
-
-                                storedOutPut_ObservationStorageCRUDValue = storedOutPut_ObservationKeyDelimeterValue[1];
-                                //OUTPUT EXAMPLE: storedOutPut_ObservationStorageCRUDValue = "Create"
-
-                                storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString().replace("-Create", "");
-                                storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString().replace("-Read", "");
-                                storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString().replace("-Update", "");
-                                storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString().replace("-Delete", "");
-                                //OUTPUT EXAMPLE: storedOutPut_ObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-BaseDI_DataConverter_Mode"
-
-
-                                //CREATE THE PROCESS
-                                const handleObservation = async (storedOutPutObservation) => {
-                                    storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-                                    storedInputs.Parameters.setValue("parameterProcessRequestTracker", Object.assign(this.ClientOrServerInstance, Object));
-                                    storedInputs.Parameters.setValue("parameterStorageAction", storedOutPut_ObservationStorageCRUDValue);
-                                    storedInputs.Parameters.setValue("parameterStorageKey", storedOutPut_ObservationKey as string);
-                                    storedInputs.Parameters.setValue("parameterStorageValue", Object.assign(storedOutPutObservation, Object));
-                                    storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", Object.assign(this._storedProcessRequestDataStorylineDetails, Object));
-
-                                    storedOutputResponseData = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_1(storedInputs);
-
-                                    if (storedOutPut_ObservationStorageCRUDValue.toUpperCase() == "READ") {
-                                        this._storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.push(JSON.parse(storedOutputResponseData));
-
-                                        //#region EDGE CASE - USE developer logger
-
-                                        if (storedProcessRequestDeveloperMode && !storedProcessRequestDeveloperModeSkipConsole && storedOutputResponseData != null) {
-                                            this.ClientOrServerInstance["storedProcessRequestStepNumber"] = this.ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
-
-                                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY retrieved cached key ***" + storedOutPut_ObservationKey + "***");
-                                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
-                                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["storedProcessRequestStepNumber"]);
-
-                                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                                        }
-
-                                        //#endregion
-                                    }
-                                    else {
-                                        //#region EDGE CASE - USE developer logger
-
-                                        if (storedProcessRequestDeveloperMode && !storedProcessRequestDeveloperModeSkipConsole) {
-                                            this.ClientOrServerInstance["storedProcessRequestStepNumber"] = this.ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
-
-                                            if (storedOutPut_ObservationStorageCRUDValue.toUpperCase() == "CREATE") {
-                                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY created cached key ***" + storedOutPut_ObservationKey + "***");
-                                            }
-
-                                            if (storedOutPut_ObservationStorageCRUDValue.toUpperCase() == "DELETE") {
-                                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY deleted cached key " + storedOutPut_ObservationKey);
-                                            }
-
-                                            if (storedOutPut_ObservationStorageCRUDValue.toUpperCase() == "UPDATE") {
-                                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY updated cached key " + storedOutPut_ObservationKey);
-                                            }
-
-                                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
-                                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["storedProcessRequestStepNumber"]);
-                                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALAccountingCostType", "STORAGE"); //Values = Logging or Mistake
-
-                                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                                        }
-
-                                        //#endregion
-                                    }
-                                }
-                                //START THE PROCESS
-                                handleObservation(storedOutPut_Observation);
-                            }
-
-                            storedOutPut_ObservationsIndex += 1;
-                        })
-                    });
-                }
-
-                //#endregion
-
-                //#endregion
-            }
-            catch (storedProcessRequestMistake) {
-                //#region EDGE CASE - USE developer logger
-                if (storedProcessRequestDeveloperMode) {
-                    this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
-
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED handling storage request");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                }
-                //#endregion
-
-                //#region EDGE CASE - USE exception handler
-
-                throw storedProcessRequestMistake;
-
-                //#endregion
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            return this._storedProcessRequestDataStorylineDetails;
-
-            //#endregion
-        }
+        //#region C.Action Logic
 
         //#endregion
 
@@ -529,12 +335,69 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        //#region A. Action Methods
+        //#region A.Action Methods
 
         //Page 1-1
-        public async Action_1_Begin_Process(): Promise<object> {
+        public async Action_1_Begin_Process(): Promise<any> {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -548,7 +411,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return true;
 
             //#endregion
 
@@ -558,9 +421,66 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-2
-        public async Action_2_Validate_Process(): Promise<object> {
+        public async Action_2_Validate_Process(): Promise<any> {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -574,7 +494,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return true;
 
             //#endregion
 
@@ -584,9 +504,66 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-3
-        public async Action_3_Process_StoryAuthor(): Promise<object> {
+        public async Action_3_Process_StoryAuthor(): Promise<any> {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -600,7 +577,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return true;
 
             //#endregion
 
@@ -610,9 +587,66 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-4
-        public async Action_4_Process_StoryCharacters(): Promise<object> {
+        public async Action_4_Process_StoryCharacters(): Promise<any> {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -626,7 +660,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return true;
 
             //#endregion
 
@@ -636,9 +670,66 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-5
-        public async Action_5_Process_StorySetting(): Promise<object> {
+        public async Action_5_Process_StorySetting(): Promise<any> {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -652,7 +743,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return true;
 
             //#endregion
 
@@ -662,9 +753,66 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-6
-        public async Action_6_Process_StoryExperiences(): Promise<object> {
+        public async Action_6_Process_StoryExperiences(): Promise<any> {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -678,7 +826,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return true;
 
             //#endregion
 
@@ -688,9 +836,66 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-7
-        public async Action_7_Process_StoryResources(): Promise<object> {
+        public async Action_7_Process_StoryResources(): Promise<any> {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -704,7 +909,90 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return true;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-8
+        public async Action_8_Process_CRUD(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return true;
 
             //#endregion
 
@@ -714,28 +1002,64 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-9
-        public async Action_9_Verify_Process(): Promise<object> {
+        public async Action_9_Verify_Process(): Promise<any> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE output variables
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#endregion
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+            ///////////////////////////////////////////////////////////
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0 .cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -747,7 +1071,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
                 storedOutputResponseData = await this.Factory_Action_9_Verify_Process();
             }
             catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
             }
 
             //#endregion
@@ -768,28 +1092,64 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-10
-        public async Action_10_End_Process(): Promise<object> {
+        public async Action_10_End_Process(): Promise<any> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE output variables
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#endregion
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+            ///////////////////////////////////////////////////////////
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Action_10_End_Process");
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -798,10 +1158,10 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
             //#region 2. PROCESS
 
             try {
-                storedOutputResponseData = this.StorylineDetails; //await this.Factory_Action_10_End_Process();
+                storedOutputResponseData = this.StorylineDetails; //await Factory_Action_10_End_Process();
             }
             catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
             }
 
             //#endregion
@@ -823,87 +1183,67 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
         //#endregion
 
-        //#region B. Action Factories
+        //#region B.Action Factories
 
         //Page 1-1
-        private async Factory_Action_1_Begin_Process(): Promise<object> {
-            switch (this._storedInputRequestActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //Page 1-2
-        private async Factory_Action_2_Validate_Process(): Promise<object> {
-            switch (this._storedInputRequestActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //Page 1-3
-        private async Factory_Action_3_Process_StoryAuthor(): Promise<object> {
-            switch (this._storedInputRequestActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //Page 1-4
-        private async Factory_Action_4_Process_StoryCharacters(): Promise<object> {
-            switch (this._storedInputRequestActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //Page 1-5
-        private async Factory_Action_5_Process_StorySetting(): Promise<object> {
-            switch (this._storedInputRequestActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //Page 1-6
-        private async Factory_Action_6_Process_StoryExperiences(): Promise<object> {
-            switch (this._storedInputRequestActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //Page 1-7
-        private async Factory_Action_7_Process_StoryResources(): Promise<object> {
-            switch (this._storedInputRequestActionName.toUpperCase()) {
-                default:
-                    return null;
-            }
-        }
-
-        //Page 1-9
-        private async Factory_Action_9_Verify_Process(): Promise<object> {
+        private async Factory_Action_1_Begin_Process(): Promise<any> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE output variables
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#endregion
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+            ///////////////////////////////////////////////////////////
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Factory_Action_1_Begin_Process -> Factory_Action_5_Process_StorySetting");
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -916,7 +1256,815 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
             try {
                 //#region IDEAL CASE - USE factory method
 
-                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_OutputApiToken();
+                //}
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-2
+        private async Factory_Action_2_Validate_Process(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_2_Validate_Process_OutputApiToken();
+                //}
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-3
+        private async Factory_Action_3_Process_StoryAuthor(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_3_Process_StoryAuthor_OutputApiToken();
+                //}
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-4
+        private async Factory_Action_4_Process_StoryCharacters(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_4_Process_StoryCharacters_OutputApiToken();
+                //}
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-5
+        private async Factory_Action_5_Process_StorySetting(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_5_Process_StorySetting_OutputApiToken();
+                //}
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-6
+        private async Factory_Action_6_Process_StoryExperiences(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_6_Process_StoryExperiences_OutputApiToken();
+                //}
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-7
+        private async Factory_Action_7_Process_StoryResources(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_7_Process_StoryResources_OutputApiToken();
+                //}
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-8
+        private async Factory_Action_8_Process_CRUD(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
+                //{
+                //    storedOutputResponseData = await Execute_Factory_Action_8_Process_CRUD_OutputApiToken();
+                //}
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-9
+        private async Factory_Action_9_Verify_Process(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                //if (_storedInputRequestActionName.toUpperCase().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
                 //    storedOutputResponseData = await Execute_Factory_Action_9_Verify_Process_OutputApiToken();
                 //}
@@ -924,7 +2072,7 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
                 //#endregion
             }
             catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
             }
 
             //#endregion
@@ -947,28 +2095,64 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
         }
 
         //Page 1-10
-        private async Factory_Action_10_End_Process(): Promise<object> {
+        private async Factory_Action_10_End_Process(): Promise<any> {
             //#region 1. INPUTS
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
 
             let storedOutputResponseData: any = null;
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE output variables
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#endregion
 
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+            ///////////////////////////////////////////////////////////
 
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> Factory_Action_10_End_Process -> Factory_Action_5_Process_StorySetting");
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -981,17 +2165,14 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
             try {
                 //#region IDEAL CASE - USE factory method
 
-                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
-                //{
-                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
-                //}
-
-                storedOutputResponseData = this.StorylineDetails; //await this.Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
+                if (this._storedInputRequestActionName.toUpperCase() == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.toUpperCase()) {
+                    //storedOutputResponseData = await Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
+                }
 
                 //#endregion
             }
             catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
             }
 
             //#endregion
@@ -1015,7 +2196,9 @@ export namespace BaseDI.Professional.State.Web_Development_13 {
 
         //#endregion
 
-        //#region C. Action Logic
+        //#region C.Action Logic
+
+        //#endregion
 
         //#endregion
 

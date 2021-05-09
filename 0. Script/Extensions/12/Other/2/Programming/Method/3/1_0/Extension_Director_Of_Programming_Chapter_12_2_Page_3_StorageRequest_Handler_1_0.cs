@@ -152,9 +152,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorageValue"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestStorageValue"))
                     {
-                        storedOutputResponseMessage += "***parameterStorageValue*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageValue*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -272,7 +272,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
             #region DEFINE storyline details outputs
 
             string storedOutputResponseObservationPresentationTemplateItem = "";
-            string storedOutPut_ObservationItem = "";
+            string storedOutputResponseObservationItem = "";
 
             #endregion
 
@@ -335,7 +335,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
             #region MEMORIZE storage details
 
             string storedStorageDescription = parameterInputs.Parameters["parameterStorageDescription"];
-            dynamic storedStorageValue = parameterInputs.Parameters["parameterStorageValue"];
+            dynamic storedStorageValue = parameterInputs.Parameters["parameterProcessRequestStorageValue"];
             string storedStorageKey = "StorageKey_" + storedDirectorOrExperienceName + "-" + storedCRUDVerb;
             string storedUniqueStorageKey = parameterInputs.Parameters["parameterUniqueStorageKey"];
 
@@ -389,19 +389,19 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 storedInputs.Parameters.Add("parameterOutputResponseObservationSecurityTemplate", storedOutputResponseObservationSecurityTemplateItem);
                 storedInputs.Parameters.Add("parameterOutputResponseObservationDataTemplate", storedOutputResponseObservationDataTemplateItem);
 
-                storedOutPut_ObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
+                storedOutputResponseObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
 
                 //DETERMINE if we are storing a string value.
                 if (storedStorageValue is string)
                 {
                     //PREPARING to store a string value.
-                    storedOutPut_ObservationItem = storedOutPut_ObservationItem.Replace("{dataResult}", Regex.Unescape(storedStorageValue.trim()));
+                    storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("{dataResult}", Regex.Unescape(storedStorageValue.trim()));
                 }
                 else
                 {
                     //PREPARING to store an object value.
-                    storedOutPut_ObservationItem = storedOutPut_ObservationItem.Replace("{dataResult}", Regex.Unescape(storedStorageValue.ToString(Formatting.None)));
-                    storedStorageDictionary[storedStorageKey] = storedOutPut_ObservationItem.ToString();
+                    storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("{dataResult}", Regex.Unescape(storedStorageValue.ToString(Formatting.None)));
+                    storedStorageDictionary[storedStorageKey] = storedOutputResponseObservationItem.ToString();
                 }
 
                 #endregion
@@ -582,21 +582,21 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorageAction"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestStorageAction"))
                     {
-                        storedOutputResponseMessage += "***parameterStorageAction*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageAction*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorageKey"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationKey"))
                     {
-                        storedOutputResponseMessage += "***parameterStorageKey*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationKey*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorageValue"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestStorageValue"))
                     {
-                        storedOutputResponseMessage += "***parameterStorageValue*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageValue*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -688,9 +688,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region DEFINE storyline details outputs
 
-            dynamic storedOutPut_Observation = "";
-            dynamic storedOutPut_ObservationFiltered = null;
-            string storedOutPut_ObservationKey = "";
+            dynamic storedOutputResponseObservation = "";
+            dynamic storedOutputResponseObservationFiltered = null;
+            string storedOutputResponseObservationKey = "";
 
             #endregion
 
@@ -724,10 +724,10 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE storage details
 
-            string storedStorageAction = parameterInputs.Parameters["parameterStorageAction"];
+            string storedStorageAction = parameterInputs.Parameters["parameterProcessRequestStorageAction"];
             bool storedStorageCRUDActionRead = false;
-            string storedStorageKey = parameterInputs.Parameters["parameterStorageKey"];
-            dynamic storedStorageValue = parameterInputs.Parameters["parameterStorageValue"];
+            string storedStorageKey = parameterInputs.Parameters["parameterOutputResponseObservationKey"];
+            dynamic storedStorageValue = parameterInputs.Parameters["parameterProcessRequestStorageValue"];
 
             #endregion
 
@@ -757,25 +757,25 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                     try
                     {
-                        storedOutPut_ObservationKey = ((JObject)storedStorageValue).Properties().Select(p => p.Name).FirstOrDefault();  //(Object.keys(storedStorageValue)[0]);
-                        //EXAMPLE OUTPUT: storedOutPut_ObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-Create-BaseDI_DataConverter_Mode"
+                        storedOutputResponseObservationKey = ((JObject)storedStorageValue).Properties().Select(p => p.Name).FirstOrDefault();  //(Object.keys(storedStorageValue)[0]);
+                        //EXAMPLE OUTPUT: storedOutputResponseObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-Create-BaseDI_DataConverter_Mode"
 
-                        if (storedOutPut_ObservationKey.ToString().ToUpper().Contains("-READ"))
+                        if (storedOutputResponseObservationKey.ToString().ToUpper().Contains("-READ"))
                         {
                             storedStorageCRUDActionRead = true;
                         }
 
-                        storedOutPut_ObservationKey = storedOutPut_ObservationKey.ToString().Replace("-Create", "");
-                        storedOutPut_ObservationKey = storedOutPut_ObservationKey.ToString().Replace("-Read", "");
-                        storedOutPut_ObservationKey = storedOutPut_ObservationKey.ToString().Replace("-Update", "");
-                        storedOutPut_ObservationKey = storedOutPut_ObservationKey.ToString().Replace("-Delete", "");
-                        //EXAMPLE OUTPUT: storedOutPut_ObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-BaseDI_DataConverter_Mode"
+                        storedOutputResponseObservationKey = storedOutputResponseObservationKey.ToString().Replace("-Create", "");
+                        storedOutputResponseObservationKey = storedOutputResponseObservationKey.ToString().Replace("-Read", "");
+                        storedOutputResponseObservationKey = storedOutputResponseObservationKey.ToString().Replace("-Update", "");
+                        storedOutputResponseObservationKey = storedOutputResponseObservationKey.ToString().Replace("-Delete", "");
+                        //EXAMPLE OUTPUT: storedOutputResponseObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-BaseDI_DataConverter_Mode"
 
                         if (!storedStorageCRUDActionRead)
                         {
-                            storedOutPut_Observation = JObject.Parse(storedStorageValue[((JObject)storedStorageValue).Properties().Select(p => p.Name).FirstOrDefault()]);
+                            storedOutputResponseObservation = JObject.Parse(storedStorageValue[((JObject)storedStorageValue).Properties().Select(p => p.Name).FirstOrDefault()]);
 
-                            storedOutPut_ObservationFiltered[storedOutPut_ObservationKey] = storedOutPut_Observation?.baseDIObservations[0];
+                            storedOutputResponseObservationFiltered[storedOutputResponseObservationKey] = storedOutputResponseObservation?.baseDIObservations[0];
                         }
 
                     }
@@ -815,7 +815,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                             {
                                 case "CREATE":
                                 case "UPDATE":
-                                    _3rdParty_DotNetLocalStorage_LocalStorage.Store(storedStorageKey, storedOutPut_ObservationFiltered);
+                                    _3rdParty_DotNetLocalStorage_LocalStorage.Store(storedStorageKey, storedOutputResponseObservationFiltered);
                                     break;
                                 case "DELETE":
                                     _3rdParty_DotNetLocalStorage_LocalStorage.Remove(storedStorageKey);

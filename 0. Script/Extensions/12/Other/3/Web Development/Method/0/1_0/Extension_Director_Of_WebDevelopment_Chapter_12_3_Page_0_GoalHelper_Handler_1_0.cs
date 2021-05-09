@@ -3190,7 +3190,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                     storedInputs.Parameters.Add("parameterCRUDVerb", "Read");
                     storedInputs.Parameters.Add("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
                     storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
-                    storedInputs.Parameters.Add("parameterStorageValue", storedProcessRequestDataStorylineDetails);
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageValue", storedProcessRequestDataStorylineDetails);
                     storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
                     storedInputs.Parameters.Add("parameterPageName", "");
                     storedInputs.Parameters.Add("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");

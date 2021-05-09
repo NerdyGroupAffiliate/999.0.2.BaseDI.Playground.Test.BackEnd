@@ -1086,7 +1086,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     //DYNAMIC inputs
                     storedInputs.Parameters.setValue("parameterStorageDescription", "STORING client side BaseDI script SOURCE PATH");
-                    storedInputs.Parameters.setValue("parameterStorageValue", storedServerScriptName);
+                    storedInputs.Parameters.setValue("parameterProcessRequestStorageValue", storedServerScriptName);
                     storedInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
 
                     //STORE it
@@ -1099,8 +1099,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     storedInputs.Parameters.remove("parameterStorageDescription");
                     storedInputs.Parameters.setValue("parameterStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
 
-                    storedInputs.Parameters.remove("parameterStorageValue");
-                    storedInputs.Parameters.setValue("parameterStorageValue", process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER);
+                    storedInputs.Parameters.remove("parameterProcessRequestStorageValue");
+                    storedInputs.Parameters.setValue("parameterProcessRequestStorageValue", process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER);
 
                     storedInputs.Parameters.remove("parameterUniqueStorageKey");
                     storedInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_DataConverter_Mode");

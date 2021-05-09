@@ -154,8 +154,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterStorageValue")) {
-                        storedOutputResponseMessage += "***parameterStorageValue*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestStorageValue")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageValue*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -266,7 +266,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             //#region DEFINE storyline details outputs
 
             let storedOutputResponseObservationPresentationTemplateItem: string = "";
-            let storedOutPut_ObservationItem: String = "";
+            let storedOutputResponseObservationItem: String = "";
 
             //#endregion
 
@@ -329,7 +329,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             //#region MEMORIZE storage details
 
             let storedStorageDescription: string = parameterInputs.Parameters.getValue("parameterStorageDescription");
-            let storedStorageValue: any = parameterInputs.Parameters.getValue("parameterStorageValue");
+            let storedStorageValue: any = parameterInputs.Parameters.getValue("parameterProcessRequestStorageValue");
             let storedStorageKey: string = "StorageKey_" + storedDirectorOrExperienceName + "-" + storedCRUDVerb;
             let storedUniqueStorageKey: string = parameterInputs.Parameters.getValue("parameterUniqueStorageKey");
 
@@ -379,21 +379,21 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 storedInputs.Parameters.setValue("parameter_ObservationSecurityTemplateItem", storedOutputResponseObservationSecurityTemplateItem);
                 storedInputs.Parameters.setValue("parameter_ObservationDataTemplateItem", storedOutputResponseObservationDataTemplateItem);
        
-                storedOutPut_ObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
+                storedOutputResponseObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
 
                 //DETERMINE if we are storing a string value.
                 if (typeof (storedStorageValue) == "string")
                 {
                     //PREPARING to store a string value.
-                    storedOutPut_ObservationItem = storedOutPut_ObservationItem.replace('{dataResult}', escape(storedStorageValue.trim()));
+                    storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace('{dataResult}', escape(storedStorageValue.trim()));
                 }
                 else
                 {
                     //PREPARING to store an object value.
-                    storedOutPut_ObservationItem = storedOutPut_ObservationItem.replace('{dataResult}', escape(JSON.stringify(storedStorageValue)));
+                    storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace('{dataResult}', escape(JSON.stringify(storedStorageValue)));
                 }                
 
-                storedStorageDictionary[storedStorageKey] = storedOutPut_ObservationItem.toString();
+                storedStorageDictionary[storedStorageKey] = storedOutputResponseObservationItem.toString();
 
                 //#endregion
 
@@ -559,18 +559,18 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         }
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterStorageAction")) {
-                        storedOutputResponseMessage += "***parameterStorageAction*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestStorageAction")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageAction*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterStorageKey")) {
-                        storedOutputResponseMessage += "***parameterStorageKey*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseObservationKey")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationKey*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterStorageValue")) {
-                        storedOutputResponseMessage += "***parameterStorageValue*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestStorageValue")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageValue*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -658,9 +658,9 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#region DEFINE storyline details outputs
 
-            let storedOutPut_Observation: any = "";
-            let storedOutPut_ObservationFiltered: Object = {};
-            let storedOutPut_ObservationKey: string = "";
+            let storedOutputResponseObservation: any = "";
+            let storedOutputResponseObservationFiltered: Object = {};
+            let storedOutputResponseObservationKey: string = "";
 
             //#endregion
 
@@ -694,10 +694,10 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#region MEMORIZE storage details
 
-            let storedStorageAction: string = parameterInputs.Parameters.getValue("parameterStorageAction");
+            let storedStorageAction: string = parameterInputs.Parameters.getValue("parameterProcessRequestStorageAction");
             let storedStorageCRUDActionRead: boolean = false;
-            let storedStorageKey: string = parameterInputs.Parameters.getValue("parameterStorageKey");
-            let storedStorageValue: any = parameterInputs.Parameters.getValue("parameterStorageValue");
+            let storedStorageKey: string = parameterInputs.Parameters.getValue("parameterOutputResponseObservationKey");
+            let storedStorageValue: any = parameterInputs.Parameters.getValue("parameterProcessRequestStorageValue");
             
             //#endregion
 
@@ -731,23 +731,23 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                     try
                     {
-                        storedOutPut_ObservationKey = (Object.keys(storedStorageValue)[0]);
-                        //EXAMPLE OUTPUT: storedOutPut_ObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-Create-BaseDI_DataConverter_Mode"
+                        storedOutputResponseObservationKey = (Object.keys(storedStorageValue)[0]);
+                        //EXAMPLE OUTPUT: storedOutputResponseObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-Create-BaseDI_DataConverter_Mode"
 
-                        if (storedOutPut_ObservationKey.toString().toUpperCase().includes("-READ")) {
+                        if (storedOutputResponseObservationKey.toString().toUpperCase().includes("-READ")) {
                             storedStorageCRUDActionRead = true;
                         }
 
-                        storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString().replace("-Create", "");
-                        storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString().replace("-Read", "");
-                        storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString().replace("-Update", "");
-                        storedOutPut_ObservationKey = storedOutPut_ObservationKey.toString().replace("-Delete", "");
-                        //EXAMPLE OUTPUT: storedOutPut_ObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-BaseDI_DataConverter_Mode"
+                        storedOutputResponseObservationKey = storedOutputResponseObservationKey.toString().replace("-Create", "");
+                        storedOutputResponseObservationKey = storedOutputResponseObservationKey.toString().replace("-Read", "");
+                        storedOutputResponseObservationKey = storedOutputResponseObservationKey.toString().replace("-Update", "");
+                        storedOutputResponseObservationKey = storedOutputResponseObservationKey.toString().replace("-Delete", "");
+                        //EXAMPLE OUTPUT: storedOutputResponseObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-BaseDI_DataConverter_Mode"
 
                         if (!storedStorageCRUDActionRead) {
-                            storedOutPut_Observation = JSON.parse(storedStorageValue[(Object.keys(storedStorageValue)[0])]);
+                            storedOutputResponseObservation = JSON.parse(storedStorageValue[(Object.keys(storedStorageValue)[0])]);
 
-                            storedOutPut_ObservationFiltered[storedOutPut_ObservationKey] = storedOutPut_Observation?.baseDIObservations[0];
+                            storedOutputResponseObservationFiltered[storedOutputResponseObservationKey] = storedOutputResponseObservation?.baseDIObservations[0];
                         }
 
                     }
@@ -784,7 +784,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                             switch (storedStorageAction.toUpperCase()) {
                                 case "CREATE":
                                 case "UPDATE":
-                                    _3rdParty_NodeLocalStorage_StorageController.setItem(storedStorageKey, JSON.stringify(storedOutPut_ObservationFiltered));
+                                    _3rdParty_NodeLocalStorage_StorageController.setItem(storedStorageKey, JSON.stringify(storedOutputResponseObservationFiltered));
                                     break;
                                 case "DELETE":
                                     _3rdParty_NodeLocalStorage_StorageController.removeItem(storedStorageKey);

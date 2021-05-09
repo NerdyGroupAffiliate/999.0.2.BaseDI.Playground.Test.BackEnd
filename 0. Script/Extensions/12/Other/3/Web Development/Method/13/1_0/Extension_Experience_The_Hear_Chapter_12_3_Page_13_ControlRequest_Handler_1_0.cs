@@ -1137,7 +1137,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     //DYNAMIC inputs
                     storedInputs.Parameters.Add("parameterStorageDescription", "STORING client side BaseDI script SOURCE PATH");
-                    storedInputs.Parameters.Add("parameterStorageValue", storedServerScriptName);
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageValue", storedServerScriptName);
                     storedInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
 
                     //STORE it
@@ -1150,8 +1150,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                     storedInputs.Parameters.Remove("parameterStorageDescription");
                     storedInputs.Parameters.Add("parameterStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
 
-                    storedInputs.Parameters.Remove("parameterStorageValue");
-                    storedInputs.Parameters.Add("parameterStorageValue", storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"));
+                    storedInputs.Parameters.Remove("parameterProcessRequestStorageValue");
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageValue", storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"));
 
                     storedInputs.Parameters.Remove("parameterUniqueStorageKey");
                     storedInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_DataConverter_Mode");
