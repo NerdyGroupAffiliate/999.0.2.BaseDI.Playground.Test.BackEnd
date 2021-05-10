@@ -357,7 +357,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.cs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> ValidateInputs");
 
                 //3. OUTPUTS
@@ -385,6 +385,22 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestName"))
+                    {
+                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestNameDataCacheKey"))
+                    {
+                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //2. PROCESS
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
@@ -419,17 +435,6 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestName"))
-                    {
-                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestNameDataCacheKey"))
-                    {
-                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedDisturber"))
                     {
@@ -469,9 +474,16 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -493,9 +505,16 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                     {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -1144,7 +1163,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private Func<JObject, ExtraData_12_2_1_0, JObject> Step_1_0_Framework_Control_ClientRequestToServer_1_0 = null;
         private Func<JObject, ExtraData_12_2_1_0, JObject> Step_2_0_Framework_Output_ServerRequestToClient_1_0 = null;
 
-        private Func<SingleParmPoco_12_2_1_0, JObject> StoredStartUpCallBack = null;
+        private Func<SingleParmPoco_12_2_1_0, JObject> StartUpCallBack = null;
 
         #endregion
 
@@ -1975,7 +1994,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                     #region EDGE CASE - USE updates handler
 
-                    StoredStartUpCallBack = (SingleParmPoco_12_2_1_0 parameterOutputs) =>
+                    StartUpCallBack = (SingleParmPoco_12_2_1_0 parameterOutputs) =>
                     {
                         Action(parameterOutputs);
                         return _storedProcessRequestDataStorylineDetails;

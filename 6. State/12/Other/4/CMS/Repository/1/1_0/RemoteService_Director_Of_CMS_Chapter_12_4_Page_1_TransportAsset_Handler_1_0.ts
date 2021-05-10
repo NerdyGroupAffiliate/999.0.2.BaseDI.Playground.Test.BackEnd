@@ -18,7 +18,7 @@ import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlM
 //#endregion
 
 export namespace BaseDI.Professional.State.CMS_1 {
-    export class RemoteService_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class RemoteService_Director_Of_CMS_Chapter_12_4_Page_1_TransportAsset_Handler_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
 

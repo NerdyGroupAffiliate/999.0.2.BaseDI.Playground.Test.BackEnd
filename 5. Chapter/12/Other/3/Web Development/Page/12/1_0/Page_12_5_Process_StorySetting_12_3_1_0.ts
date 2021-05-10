@@ -64,7 +64,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_12 {
         private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedProcessRequestByName: string;
 
-        public StoredStartUpCallBack;
+        public StartUpCallBack;
 
         //#endregion
 

@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="0. Script\Enumerations\12\Other\2\Programming\Enumeration\3\1_0\Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.tsx" />
     <None Remove="0. Script\Extensions\11\Automate Manual Task\1\Risk Management\Method\0\1_0\Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelperGoalHelper_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_TransportAssets_Handler_1_0.ts" />
@@ -63,7 +62,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="0. Script\Enumerations\12\Other\2\Programming\Enumeration\3\1_0\Enumeration_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.tsx" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\5\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\6\1_0\Extension_Experience_The_Movement_Chapter_12_2_Page_6_TransportAssets_Handler_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts">

@@ -59,7 +59,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedProcessRequestByName: string;
 
-        public StoredStartUpCallBack;
+        public StartUpCallBack;
 
         private _storedJSONKeyPlaceHolderName: Array<any>;
 

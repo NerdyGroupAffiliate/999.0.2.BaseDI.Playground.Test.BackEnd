@@ -32,9 +32,9 @@ using Newtonsoft.Json.Linq;
 
 #endregion
 
-namespace BaseDI.Professional.Director.Advertising_1
+namespace BaseDI.Professional.Director.Advertising_2
 {
-    public class Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
+    public class Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0 : aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0
     {
         #region 1. Assign
 
@@ -70,7 +70,7 @@ namespace BaseDI.Professional.Director.Advertising_1
 
         #region 2. Ready
 
-        public Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -342,7 +342,7 @@ namespace BaseDI.Professional.Director.Advertising_1
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.cs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.cs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> ValidateInputs");
 
                 //3. OUTPUTS
@@ -419,7 +419,7 @@ namespace BaseDI.Professional.Director.Advertising_1
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    
+
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedDisturber"))
                     {
@@ -495,7 +495,7 @@ namespace BaseDI.Professional.Director.Advertising_1
                         //1. INPUTS
 
                         //2. PROCESS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");                       
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
                         storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
                         //3. OUTPUTS
@@ -550,7 +550,7 @@ namespace BaseDI.Professional.Director.Advertising_1
 
             #region DEFINE process variables
 
-            Use_DesignPattern_Builder_Chapter_1_1_Page_1 storedProcessRequestHandler_UsingBuilderPattern = null;
+            Use_DesignPattern_Builder_Chapter_1_1_Page_2 storedProcessRequestHandler_UsingBuilderPattern = null;
 
 
             #endregion
@@ -600,7 +600,7 @@ namespace BaseDI.Professional.Director.Advertising_1
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "EXECUTING request handler");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
 
             //OPTIONAL
@@ -666,7 +666,7 @@ namespace BaseDI.Professional.Director.Advertising_1
                 }
 
                 //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-                storedProcessRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_1(_storedInputs);
+                storedProcessRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Chapter_1_1_Page_2(_storedInputs);
 
                 StorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action().ConfigureAwait(true);
 
@@ -685,7 +685,7 @@ namespace BaseDI.Professional.Director.Advertising_1
                     //1. INPUTS
 
                     //2. PROCESS
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED configurating request handler");                 
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED configurating request handler");
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
                     //3. OUTPUTS
@@ -729,7 +729,7 @@ namespace BaseDI.Professional.Director.Advertising_1
 
     //A. Prepare for Action (SETUP WHAT WILL HAPPEN)
 
-    internal class Use_DesignPattern_Builder_Chapter_1_1_Page_1
+    internal class Use_DesignPattern_Builder_Chapter_1_1_Page_2
     {
         #region 1. Assign
 
@@ -768,7 +768,7 @@ namespace BaseDI.Professional.Director.Advertising_1
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_1_1_Page_1(SingleParmPoco_12_2_1_0 parameterInputs)
+        internal Use_DesignPattern_Builder_Chapter_1_1_Page_2(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -1063,7 +1063,7 @@ namespace BaseDI.Professional.Director.Advertising_1
 
             #region IDEAL CASE - USE builder pattern
 
-            storedProcessRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0(_storedInputs);
+            storedProcessRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Chapter_1_1_Page_2_1_0(_storedInputs);
 
             await storedProcessRequestHandler_UsingBuilderPattern.Action_1_Begin_Process();
 
@@ -1111,7 +1111,7 @@ namespace BaseDI.Professional.Director.Advertising_1
 
     //A. Commence Storyline (ACT WHAT HAS HAPPENED)
 
-    internal class Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
+    internal class Implement_DesignPattern_Builder_Chapter_1_1_Page_2_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>
     {
         #region 1. Assign
 
@@ -1169,7 +1169,7 @@ namespace BaseDI.Professional.Director.Advertising_1
 
         #region 2. Ready
 
-        internal Implement_DesignPattern_Builder_Chapter_1_1_Page_1_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        internal Implement_DesignPattern_Builder_Chapter_1_1_Page_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 

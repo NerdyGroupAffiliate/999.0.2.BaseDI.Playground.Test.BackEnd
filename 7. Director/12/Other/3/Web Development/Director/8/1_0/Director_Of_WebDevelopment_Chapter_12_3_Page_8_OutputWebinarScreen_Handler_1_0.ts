@@ -672,7 +672,7 @@ export namespace BaseDI.Professional.Director.Web_Development_8 {
         private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
         private _storedProcessRequestByName: string;
 
-        public StoredStartUpCallBack;
+        public StartUpCallBack;
 
         //#endregion
 
@@ -1422,7 +1422,7 @@ export namespace BaseDI.Professional.Director.Web_Development_8 {
 
                 //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreInputDataInMemory();
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreProcessRequestDataInCache();
                 //}
 
                 storedOutputResponseData = this.StorylineDetails; //await this.Execute_Factory_Action_10_End_Process_TransportRequestToHandler();

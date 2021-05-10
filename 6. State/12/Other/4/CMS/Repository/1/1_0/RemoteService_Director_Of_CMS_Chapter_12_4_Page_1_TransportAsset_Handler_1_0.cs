@@ -32,7 +32,7 @@ using Newtonsoft.Json.Linq;
 
 namespace BaseDI.Professional.State.CMS_1
 {
-    public class LocalFile_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>, IContract_Programming_Repository_12_2_1_0
+    public class RemoteService_Director_Of_CMS_Chapter_12_4_Page_1_TransportAsset_Handler_1_0 : aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>>, IContract_Programming_Repository_12_2_1_0
     {
         #region 1. Assign
 
@@ -86,7 +86,7 @@ namespace BaseDI.Professional.State.CMS_1
         #region 2. Ready
 
         //A. Constructor Instantiation
-        public LocalFile_Director_Of_CMS_Chapter_12_4_Page_1_CreateAssetTransportFromOnePlaceToAnotherAll_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public RemoteService_Director_Of_CMS_Chapter_12_4_Page_1_TransportAsset_Handler_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
