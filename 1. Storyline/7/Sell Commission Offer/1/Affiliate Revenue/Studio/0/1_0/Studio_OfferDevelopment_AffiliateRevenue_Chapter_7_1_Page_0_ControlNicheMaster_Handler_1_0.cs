@@ -63,7 +63,7 @@ namespace BaseDI.Professional.Story.Affiliate_Revenue_0
         private Dictionary<string, object> _storedProcessRequestTracker;
 
         private string _storedInputRequestName;
-        private string _storedInputRequestDataCacheKey;
+        private string _storedInputRequestNameDataCacheKey;
 
         private aClass_Programming_ScriptRoutable_12_2_1_0 _storedInputRequestDataCustom;
 

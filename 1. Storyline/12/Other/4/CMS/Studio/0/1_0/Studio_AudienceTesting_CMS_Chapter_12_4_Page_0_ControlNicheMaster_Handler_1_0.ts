@@ -55,7 +55,7 @@ export namespace BaseDI.Professional.Story.CMS_0 {
         private _storedProcessRequestTracker: any;
 
         private _storedInputRequestName: string;
-        private _storedInputRequestDataCacheKey: string;
+        private _storedInputRequestNameDataCacheKey: string;
 
         private _storedInputRequestDataCustom: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 

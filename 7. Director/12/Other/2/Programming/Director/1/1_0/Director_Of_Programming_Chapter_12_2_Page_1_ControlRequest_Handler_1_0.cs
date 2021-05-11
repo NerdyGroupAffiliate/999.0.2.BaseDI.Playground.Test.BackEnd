@@ -1898,7 +1898,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
                 page.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
-                _storedProcessRequestDataStorylineDetails = await page.Action().ConfigureAwait(true);
+                StorylineDetails = await page.Action().ConfigureAwait(true);
             }
 
             #endregion
@@ -1913,7 +1913,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -1954,7 +1954,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             page.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
-            _storedProcessRequestDataStorylineDetails = await page.Action().ConfigureAwait(true);
+            StorylineDetails = await page.Action().ConfigureAwait(true);
 
             #endregion
 
@@ -1968,7 +1968,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2073,7 +2073,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2169,7 +2169,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2265,7 +2265,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2370,7 +2370,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2466,7 +2466,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2571,7 +2571,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2667,7 +2667,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2763,7 +2763,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2871,7 +2871,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -2975,7 +2975,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -3079,7 +3079,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -3196,7 +3196,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -3300,7 +3300,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -3416,7 +3416,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -3520,7 +3520,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
@@ -3624,7 +3624,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
 
             #endregion
 
