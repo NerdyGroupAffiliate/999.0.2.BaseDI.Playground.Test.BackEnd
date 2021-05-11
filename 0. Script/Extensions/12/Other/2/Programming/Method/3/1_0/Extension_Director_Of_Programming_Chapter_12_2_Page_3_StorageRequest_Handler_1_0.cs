@@ -259,7 +259,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
             #region DEFINE storage details
 
             string storedFilteredStorageKey = "";
-            Dictionary<string, dynamic> storedStorageDictionary = new Dictionary<string, dynamic>();
+            Dictionary<string, dynamic> storedProcessRequestStorageDictionary = new Dictionary<string, dynamic>();
 
             #endregion
 
@@ -336,11 +336,11 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             string storedStorageDescription = parameterInputs.Parameters["parameterStorageDescription"];
             dynamic storedStorageValue = parameterInputs.Parameters["parameterProcessRequestStorageValue"];
-            string storedStorageKey = "StorageKey_" + storedDirectorOrExperienceName + "-" + storedCRUDVerb;
+            string storedProcessRequestStorageKey = "StorageKey_" + storedDirectorOrExperienceName + "-" + storedCRUDVerb;
             string storedUniqueStorageKey = parameterInputs.Parameters["parameterUniqueStorageKey"];
 
             if (!string.IsNullOrEmpty(storedUniqueStorageKey))
-                storedStorageKey += "-" + storedUniqueStorageKey;
+                storedProcessRequestStorageKey += "-" + storedUniqueStorageKey;
 
             #endregion
 
@@ -401,14 +401,14 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 {
                     //PREPARING to store an object value.
                     storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("{dataResult}", Regex.Unescape(storedStorageValue.ToString(Formatting.None)));
-                    storedStorageDictionary[storedStorageKey] = storedOutputResponseObservationItem.ToString();
+                    storedProcessRequestStorageDictionary[storedProcessRequestStorageKey] = storedOutputResponseObservationItem.ToString();
                 }
 
                 #endregion
 
                 #region 2. REMOVE previous stored item
 
-                storedFilteredStorageKey = storedStorageKey.ToString().Replace("-Create", "");
+                storedFilteredStorageKey = storedProcessRequestStorageKey.ToString().Replace("-Create", "");
                 storedFilteredStorageKey = storedFilteredStorageKey.ToString().Replace("-Read", "");
                 storedFilteredStorageKey = storedFilteredStorageKey.ToString().Replace("-Update", "");
                 storedFilteredStorageKey = storedFilteredStorageKey.ToString().Replace("-Delete", "");
@@ -427,14 +427,14 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 //                });
 
                 //storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.forEach(element => {
-                //    delete element[storedStorageKey]
+                //    delete element[storedProcessRequestStorageKey]
                 //                });
 
                 #endregion
 
                 #region 3. CREATE storage request
 
-                storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.push(storedStorageDictionary);
+                storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.push(storedProcessRequestStorageDictionary);
 
                 #endregion
 
@@ -726,7 +726,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             string storedStorageAction = parameterInputs.Parameters["parameterProcessRequestStorageAction"];
             bool storedStorageCRUDActionRead = false;
-            string storedStorageKey = parameterInputs.Parameters["parameterOutputResponseObservationKey"];
+            string storedProcessRequestStorageKey = parameterInputs.Parameters["parameterOutputResponseObservationKey"];
             dynamic storedStorageValue = parameterInputs.Parameters["parameterProcessRequestStorageValue"];
 
             #endregion
@@ -815,13 +815,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                             {
                                 case "CREATE":
                                 case "UPDATE":
-                                    _3rdParty_DotNetLocalStorage_LocalStorage.Store(storedStorageKey, storedOutputResponseObservationFiltered);
+                                    _3rdParty_DotNetLocalStorage_LocalStorage.Store(storedProcessRequestStorageKey, storedOutputResponseObservationFiltered);
                                     break;
                                 case "DELETE":
-                                    _3rdParty_DotNetLocalStorage_LocalStorage.Remove(storedStorageKey);
+                                    _3rdParty_DotNetLocalStorage_LocalStorage.Remove(storedProcessRequestStorageKey);
                                     break;
                                 case "READ":
-                                    storedOutputResponseData = _3rdParty_DotNetLocalStorage_LocalStorage.Get(storedStorageKey);
+                                    storedOutputResponseData = _3rdParty_DotNetLocalStorage_LocalStorage.Get(storedProcessRequestStorageKey);
                                     break;
 
                             }

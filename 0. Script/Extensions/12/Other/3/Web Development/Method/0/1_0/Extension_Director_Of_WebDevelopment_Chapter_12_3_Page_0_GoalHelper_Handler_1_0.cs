@@ -441,9 +441,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlContainerJSON"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlContainerJSON"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlContainerJSON*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlContainerJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -589,7 +589,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE html inputs
 
-            dynamic storedHtmlContainerJSON = parameterInputs.Parameters["parameterHtmlContainerJSON"];
+            dynamic storedHtmlContainerJSON = parameterInputs.Parameters["parameterInputRequestHtmlContainerJSON"];
 
             #endregion
 
@@ -608,11 +608,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<dynamic, Task<string>> ExecuteConversionRequest = async (dynamic parameterHtmlContainerJSON) =>
+            Func<dynamic, Task<string>> ExecuteConversionRequest = async (dynamic parameterInputRequestHtmlContainerJSON) =>
             {
                 try
                 {
-                    return await Task.FromResult<string>($@"<{parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{{HTMLRows_Replace}}</{parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag}>").ConfigureAwait(true);
+                    return await Task.FromResult<string>($@"<{parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{{HTMLRows_Replace}}</{parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag}>").ConfigureAwait(true);
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
@@ -748,15 +748,15 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlContainerString"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlContainerString"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlContainerString*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterOutputResponseHtmlContainerString*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlRowsJSON"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlRowsJSON"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlRowsJSON*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlRowsJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -903,8 +903,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE html inputs
 
-            dynamic storedHtmlContainerString = parameterInputs.Parameters["parameterHtmlContainerString"];
-            dynamic storedHtmlRowsJSON = parameterInputs.Parameters["parameterHtmlRowsJSON"];
+            dynamic storedHtmlContainerString = parameterInputs.Parameters["parameterOutputResponseHtmlContainerString"];
+            dynamic storedHtmlRowsJSON = parameterInputs.Parameters["parameterInputRequestHtmlRowsJSON"];
 
             #endregion
 
@@ -923,16 +923,16 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, ArrayList, Task<string>> ExecuteConversionRequest = async (string parameterHtmlContainerString, dynamic parameterHtmlRowsJSON, ArrayList parameterFilterDataResponseList) =>
+            Func<string, dynamic, ArrayList, Task<string>> ExecuteConversionRequest = async (string parameterOutputResponseHtmlContainerString, dynamic parameterInputRequestHtmlRowsJSON, ArrayList parameterFilterDataResponseList) =>
             {
                 try
                 {
-                    foreach (var storedHtmlRow in parameterHtmlRowsJSON.value.HTMLContentItems)
+                    foreach (var storedHtmlRow in parameterInputRequestHtmlRowsJSON.value.HTMLContentItems)
                     {
                         parameterFilterDataResponseList.Add($@"<{ storedHtmlRow.Tag } {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlRow.Attributes)}>{{{ storedHtmlRow.Attributes[0].id }_Replace}}</{storedHtmlRow.Tag}>");
                     }
 
-                    return await Task.FromResult<string>(parameterHtmlContainerString.Replace("{HTMLRows_Replace}", string.Join("\n", parameterFilterDataResponseList))).ConfigureAwait(true);
+                    return await Task.FromResult<string>(parameterOutputResponseHtmlContainerString.Replace("{HTMLRows_Replace}", string.Join("\n", parameterFilterDataResponseList))).ConfigureAwait(true);
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
@@ -1068,15 +1068,15 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlRowString"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlRowString"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlRowString*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterOutputResponseHtmlRowString*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlColumnsJSON"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlColumnsJSON"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlColumnsJSON*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlColumnsJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -1224,8 +1224,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE html inputs
 
-            string storedHtmlRowString = parameterInputs.Parameters["parameterHtmlRowString"];
-            dynamic storedHtmlColumnsJSON = parameterInputs.Parameters["parameterHtmlColumnsJSON"];
+            string storedHtmlRowString = parameterInputs.Parameters["parameterOutputResponseHtmlRowString"];
+            dynamic storedHtmlColumnsJSON = parameterInputs.Parameters["parameterInputRequestHtmlColumnsJSON"];
 
             #endregion
 
@@ -1244,17 +1244,17 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, string, Task<string>> ExecuteConversionRequest = async (string parameterHtmlRowString, dynamic parameterHtmlColumnsJSON, string parameterColumnItem) =>
+            Func<string, dynamic, string, Task<string>> ExecuteConversionRequest = async (string parameterOutputResponseHtmlRowString, dynamic parameterInputRequestHtmlColumnsJSON, string parameterColumnItem) =>
             {
                 try
                 {
-                    foreach (var storedHtmlColumn in parameterHtmlColumnsJSON.value.HTMLContentItems)
+                    foreach (var storedHtmlColumn in parameterInputRequestHtmlColumnsJSON.value.HTMLContentItems)
                     {
                         parameterColumnItem = $@"<{storedHtmlColumn.Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlColumn.Attributes)}>{{{storedHtmlColumn.Attributes[0].id}_Replace}}</{storedHtmlColumn.Tag}>\n";
-                        parameterHtmlRowString = parameterHtmlRowString.Replace($@"{{{storedHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}}", parameterColumnItem);
+                        parameterOutputResponseHtmlRowString = parameterOutputResponseHtmlRowString.Replace($@"{{{storedHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}}", parameterColumnItem);
                     }
 
-                    return parameterHtmlRowString;
+                    return parameterOutputResponseHtmlRowString;
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
@@ -1390,15 +1390,15 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlColumnString"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlColumnString"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlColumnString*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterOutputResponseHtmlColumnString*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlContentJSON"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlContentJSON"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlContentJSON*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlContentJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -1547,8 +1547,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE html inputs
 
-            string storedHtmlColumnString = parameterInputs.Parameters["parameterHtmlColumnString"];
-            dynamic storedHtmlContentJSON = parameterInputs.Parameters["parameterHtmlContentJSON"];
+            string storedHtmlColumnString = parameterInputs.Parameters["parameterOutputResponseHtmlColumnString"];
+            dynamic storedHtmlContentJSON = parameterInputs.Parameters["parameterInputRequestHtmlContentJSON"];
 
             #endregion
 
@@ -1567,11 +1567,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, Dictionary<string, List<string>>, dynamic, IConfiguration, Task<string>> ExecuteConversionRequest = async (string parameterHtmlColumnString, dynamic parameterHtmlContentJSON, Dictionary<string, List<string>> parameterFilterDataResponseIdsAndContent, dynamic parameterContent, IConfiguration parameterProcessRequestSettings) =>
+            Func<string, dynamic, Dictionary<string, List<string>>, dynamic, IConfiguration, Task<string>> ExecuteConversionRequest = async (string parameterOutputResponseHtmlColumnString, dynamic parameterInputRequestHtmlContentJSON, Dictionary<string, List<string>> parameterFilterDataResponseIdsAndContent, dynamic parameterContent, IConfiguration parameterProcessRequestSettings) =>
             {
                 try
                 {
-                    foreach (var storedContentItem in parameterHtmlContentJSON.value.HTMLContentItems)
+                    foreach (var storedContentItem in parameterInputRequestHtmlContentJSON.value.HTMLContentItems)
                     {
                         if (!parameterFilterDataResponseIdsAndContent.ContainsKey(storedContentItem.ParentHTMLContentItemAttributeID))
                         {
@@ -1591,15 +1591,15 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     foreach (var storedIdAndContentItem in parameterFilterDataResponseIdsAndContent.Keys)
                     {
-                        parameterHtmlColumnString = parameterHtmlColumnString.Replace($"{{{storedIdAndContentItem}_Replace}}", string.Join("\n", parameterFilterDataResponseIdsAndContent[storedIdAndContentItem]));
+                        parameterOutputResponseHtmlColumnString = parameterOutputResponseHtmlColumnString.Replace($"{{{storedIdAndContentItem}_Replace}}", string.Join("\n", parameterFilterDataResponseIdsAndContent[storedIdAndContentItem]));
                     }
 
                     if (parameterProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
                     {
-                        parameterHtmlColumnString = parameterHtmlColumnString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
+                        parameterOutputResponseHtmlColumnString = parameterOutputResponseHtmlColumnString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
                     }                    
 
-                    return await Task.FromResult<string>(parameterHtmlColumnString).ConfigureAwait(true);
+                    return await Task.FromResult<string>(parameterOutputResponseHtmlColumnString).ConfigureAwait(true);
 
                 }
                 catch (Exception storedProcessRequestMistake)
@@ -1736,22 +1736,22 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlStylesJSON"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlStylesJSON"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlStylesJSON*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (!parameterInputs.Parameters["parameterHtmlStylesJSON"].value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal)
+                        if (!parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"].value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal)
                         {
-                            storedOutputResponseMessage += "***parameterHtmlStylesJSON*** [StyleFilePathLocal] cannot be blank or empty.\n";
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [StyleFilePathLocal] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (!parameterInputs.Parameters["parameterHtmlStylesJSON"].value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles)
+                        if (!parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"].value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles)
                         {
-                            storedOutputResponseMessage += "***parameterHtmlStylesJSON*** [StyleFiles] cannot be blank or empty.\n";
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [StyleFiles] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
                     }
@@ -1903,7 +1903,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE html inputs
 
-            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterHtmlStylesJSON"];
+            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"];
             string storedHtmlStyleFilePathLocal = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal;
             dynamic storedHtmlFilesArray = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
 
@@ -2310,22 +2310,22 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlScriptsJSON"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlScriptsJSON"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlScriptsJSON*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlScriptsJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (!parameterInputs.Parameters["parameterHtmlScriptsJSON"].value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFilePathLocal)
+                        if (!parameterInputs.Parameters["parameterInputRequestHtmlScriptsJSON"].value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFilePathLocal)
                         {
-                            storedOutputResponseMessage += "***parameterHtmlScriptsJSON*** [ScriptFilePathLocal] cannot be blank or empty.\n";
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlScriptsJSON*** [ScriptFilePathLocal] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (!parameterInputs.Parameters["parameterHtmlScriptsJSON"].value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFiles)
+                        if (!parameterInputs.Parameters["parameterInputRequestHtmlScriptsJSON"].value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFiles)
                         {
-                            storedOutputResponseMessage += "***parameterHtmlScriptsJSON*** [ScriptFiles] cannot be blank or empty.\n";
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlScriptsJSON*** [ScriptFiles] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
                     }
@@ -2475,7 +2475,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE html inputs
 
-            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterHtmlStylesJSON"];
+            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"];
             string storedHtmlStyleFilePathLocal = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal;
             dynamic storedHtmlFilesArray = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
 
@@ -2636,22 +2636,22 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlMetaDataJSON"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlMetaDataJSON"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
-                        if (!parameterInputs.Parameters["parameterHtmlMetaDataJSON"].value[0]?._2_2_2_6_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.MetaDataFilePathLocal)
+                        if (!parameterInputs.Parameters["parameterInputRequestHtmlMetaDataJSON"].value[0]?._2_2_2_6_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.MetaDataFilePathLocal)
                         {
-                            storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** [MetaDataFilePathLocal] cannot be blank or empty.\n";
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** [MetaDataFilePathLocal] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (!parameterInputs.Parameters["parameterHtmlScriptsJSON"].value[0]?._2_2_2_6_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.MetaDataFiles)
+                        if (!parameterInputs.Parameters["parameterInputRequestHtmlScriptsJSON"].value[0]?._2_2_2_6_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.MetaDataFiles)
                         {
-                            storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** [MetaDataFiles] cannot be blank or empty.\n";
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** [MetaDataFiles] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
                     }
@@ -2801,7 +2801,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE html inputs
 
-            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterHtmlStylesJSON"];
+            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"];
             string storedHtmlStyleFilePathLocal = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal;
             dynamic storedHtmlFilesArray = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
 
@@ -2961,39 +2961,39 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlMetaData"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlMetaData"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlMetaData*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlMetaData*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlTitle"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlTitle"))
                     {
                         storedOutputResponseMessage += "***parameterTitle*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlAdditionalHeadData"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlAdditionalHeadData"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlAdditionalHeadData*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlAdditionalHeadData*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlScripts"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlScripts"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlScripts*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlScripts*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlStyles"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlStyles"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlStyles*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlStyles*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlBody"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlBody"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlBody*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlBody*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -3155,12 +3155,12 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 </body>
                 </ html>";
 
-            string storedHtmlMetaData = parameterInputs.Parameters["parameterHtmlMetaData"];
-            string storedHtmlTitle = parameterInputs.Parameters["parameterHtmlTitle"];
-            string storedHtmlScripts = parameterInputs.Parameters["parameterHtmlScripts"];
-            string storedHtmlAdditionalHeadData = parameterInputs.Parameters["parameterHtmlAdditionalHeadData"];
-            string storedHtmlStyles = parameterInputs.Parameters["parameterHtmlStyles"];
-            string storedHtmlBody = parameterInputs.Parameters["parameterHtmlBody"];
+            string storedHtmlMetaData = parameterInputs.Parameters["parameterInputRequestHtmlMetaData"];
+            string storedHtmlTitle = parameterInputs.Parameters["parameterInputRequestHtmlTitle"];
+            string storedHtmlScripts = parameterInputs.Parameters["parameterInputRequestHtmlScripts"];
+            string storedHtmlAdditionalHeadData = parameterInputs.Parameters["parameterInputRequestHtmlAdditionalHeadData"];
+            string storedHtmlStyles = parameterInputs.Parameters["parameterInputRequestHtmlStyles"];
+            string storedHtmlBody = parameterInputs.Parameters["parameterInputRequestHtmlBody"];
             
             #endregion
 
@@ -3181,7 +3181,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region 1. READ cached baseDI script path
 
-            Func<string, string, aClass_Programming_ScriptAction_12_2_1_0<JObject>, Dictionary<string, object>, JObject, dynamic, Task<string>> ExecuteStorageRequest = async (string parameterHtmlBaseDIScriptName, string parameterHtmlScripts, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterProcessRequestCentralizedStorer, Dictionary<string, object> parameterProcessRequestTracker, JObject parameterProcessRequestDataStorylineDetails, dynamic parameterFilterDataResponse) => {
+            Func<string, string, aClass_Programming_ScriptAction_12_2_1_0<JObject>, Dictionary<string, object>, JObject, dynamic, Task<string>> ExecuteStorageRequest = async (string parameterHtmlBaseDIScriptName, string parameterInputRequestHtmlScripts, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterProcessRequestCentralizedStorer, Dictionary<string, object> parameterProcessRequestTracker, JObject parameterProcessRequestDataStorylineDetails, dynamic parameterFilterDataResponse) => {
                 try
                 {
                     storedInputs = new SingleParmPoco_12_2_1_0();
@@ -3203,10 +3203,10 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                     //{
                     //    parameterHtmlBaseDIScriptName = parameterFilterDataResponse[Object.keys(parameterFilterDataResponse)[0]].observation.metadata[3].item.data[0].dataResult
 
-                    //    parameterHtmlScripts += @"<script src = ""/scripts/${parameterHtmlBaseDIScriptName}"" type = ""text/javascript""></script>`";
+                    //    parameterInputRequestHtmlScripts += @"<script src = ""/scripts/${parameterHtmlBaseDIScriptName}"" type = ""text/javascript""></script>`";
                     //}
 
-                    return ""; // parameterHtmlScripts;
+                    return ""; // parameterInputRequestHtmlScripts;
 
                 }
                 catch (Exception storedProcessRequestMistake)
@@ -3244,13 +3244,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region 2. CONVERT inputs to html template
 
-            Func<string, string, string, string, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterHtmlPageTemplate, string parameterHtmlMetaData, string parameterHtmlTitle, string parameterHtmlScripts, string parameterHtmlStyles, string parameterHtmlBody, string parameterHtmlAdditionalHeadData) => {
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{metaDataReplace}", parameterHtmlMetaData);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{titleReplace}", parameterHtmlTitle);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{additionalHeadData}", parameterHtmlAdditionalHeadData);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{scriptsReplace}", parameterHtmlScripts);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{stylesReplace}", parameterHtmlStyles);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{bodyReplace}", parameterHtmlBody);
+            Func<string, string, string, string, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterHtmlPageTemplate, string parameterInputRequestHtmlMetaData, string parameterInputRequestHtmlTitle, string parameterInputRequestHtmlScripts, string parameterInputRequestHtmlStyles, string parameterInputRequestHtmlBody, string parameterInputRequestHtmlAdditionalHeadData) => {
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{metaDataReplace}", parameterInputRequestHtmlMetaData);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{titleReplace}", parameterInputRequestHtmlTitle);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{additionalHeadData}", parameterInputRequestHtmlAdditionalHeadData);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{scriptsReplace}", parameterInputRequestHtmlScripts);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{stylesReplace}", parameterInputRequestHtmlStyles);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{bodyReplace}", parameterInputRequestHtmlBody);
 
                 return await Task.FromResult<string>(parameterHtmlPageTemplate).ConfigureAwait(true);
             };

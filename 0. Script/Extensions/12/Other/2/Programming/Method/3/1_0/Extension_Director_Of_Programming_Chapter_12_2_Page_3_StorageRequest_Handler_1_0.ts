@@ -253,7 +253,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
             //#region DEFINE storage details
 
             let storedFilteredStorageKey: string = "";
-            let storedStorageDictionary: any = {};            
+            let storedProcessRequestStorageDictionary: any = {};            
 
             //#endregion
 
@@ -330,11 +330,11 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             let storedStorageDescription: string = parameterInputs.Parameters.getValue("parameterStorageDescription");
             let storedStorageValue: any = parameterInputs.Parameters.getValue("parameterProcessRequestStorageValue");
-            let storedStorageKey: string = "StorageKey_" + storedDirectorOrExperienceName + "-" + storedCRUDVerb;
+            let storedProcessRequestStorageKey: string = "StorageKey_" + storedDirectorOrExperienceName + "-" + storedCRUDVerb;
             let storedUniqueStorageKey: string = parameterInputs.Parameters.getValue("parameterUniqueStorageKey");
 
             if (storedUniqueStorageKey)
-                storedStorageKey += "-" + storedUniqueStorageKey;
+                storedProcessRequestStorageKey += "-" + storedUniqueStorageKey;
 
             //#endregion
 
@@ -393,13 +393,13 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                     storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace('{dataResult}', escape(JSON.stringify(storedStorageValue)));
                 }                
 
-                storedStorageDictionary[storedStorageKey] = storedOutputResponseObservationItem.toString();
+                storedProcessRequestStorageDictionary[storedProcessRequestStorageKey] = storedOutputResponseObservationItem.toString();
 
                 //#endregion
 
                 //#region 2. REMOVE previous stored item
 
-                storedFilteredStorageKey = storedStorageKey.toString().replace("-Create", "");
+                storedFilteredStorageKey = storedProcessRequestStorageKey.toString().replace("-Create", "");
                 storedFilteredStorageKey = storedFilteredStorageKey.toString().replace("-Read", "");
                 storedFilteredStorageKey = storedFilteredStorageKey.toString().replace("-Update", "");
                 storedFilteredStorageKey = storedFilteredStorageKey.toString().replace("-Delete", "");
@@ -409,14 +409,14 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                 });
 
                 storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.forEach(element => {
-                    delete element[storedStorageKey]
+                    delete element[storedProcessRequestStorageKey]
                 });
 
                 //#endregion
 
                 //#region 3. CREATE storage request
 
-                storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.push(storedStorageDictionary);
+                storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.push(storedProcessRequestStorageDictionary);
 
                 //#endregion
 
@@ -696,7 +696,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             let storedStorageAction: string = parameterInputs.Parameters.getValue("parameterProcessRequestStorageAction");
             let storedStorageCRUDActionRead: boolean = false;
-            let storedStorageKey: string = parameterInputs.Parameters.getValue("parameterOutputResponseObservationKey");
+            let storedProcessRequestStorageKey: string = parameterInputs.Parameters.getValue("parameterOutputResponseObservationKey");
             let storedStorageValue: any = parameterInputs.Parameters.getValue("parameterProcessRequestStorageValue");
             
             //#endregion
@@ -784,13 +784,13 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                             switch (storedStorageAction.toUpperCase()) {
                                 case "CREATE":
                                 case "UPDATE":
-                                    _3rdParty_NodeLocalStorage_StorageController.setItem(storedStorageKey, JSON.stringify(storedOutputResponseObservationFiltered));
+                                    _3rdParty_NodeLocalStorage_StorageController.setItem(storedProcessRequestStorageKey, JSON.stringify(storedOutputResponseObservationFiltered));
                                     break;
                                 case "DELETE":
-                                    _3rdParty_NodeLocalStorage_StorageController.removeItem(storedStorageKey);
+                                    _3rdParty_NodeLocalStorage_StorageController.removeItem(storedProcessRequestStorageKey);
                                     break;
                                 case "READ":
-                                    storedOutputResponseData = _3rdParty_NodeLocalStorage_StorageController.getItem(storedStorageKey);
+                                    storedOutputResponseData = _3rdParty_NodeLocalStorage_StorageController.getItem(storedProcessRequestStorageKey);
                                     break;
 
                             }

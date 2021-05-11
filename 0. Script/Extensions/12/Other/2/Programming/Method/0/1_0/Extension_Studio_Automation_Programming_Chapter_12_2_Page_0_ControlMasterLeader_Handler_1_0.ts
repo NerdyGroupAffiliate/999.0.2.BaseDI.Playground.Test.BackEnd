@@ -828,7 +828,7 @@ export namespace BaseDI.Professional.Programming.Extensions_0
             let storedObservationTemplate: string = parameterInputs.Parameters.getValue("parameterObservationTemplate");
 
             let storedObservationBody: string = '{"baseDIObservations": [{ "observation": { "metadata": [{ "calledByEntryPointName": "{calledByEntryPointName}" }, { "calledByMethodName": "{calledByMethodName}" }, { "calledByMethodReason": "{calledByMethodReason}" }, { "item": {{item}}  }]  } }]}';
-            let storedObservationItem: string = '"presentation": [{presentation}], "business": [{business}], "service": [{service}],  "security": [{security}],"data": [{data}]';
+            let storedOutputResponseObservationItem: string = '"presentation": [{presentation}], "business": [{business}], "service": [{service}],  "security": [{security}],"data": [{data}]';
 
             let storedObservationPresentationTemplate: string = parameterInputs.Parameters.getValue("parameterOutputResponseObservationPresentationTemplate");
             let storedObservationBusinessTemplate: string = parameterInputs.Parameters.getValue("parameterOutputResponseObservationBusinessTemplate");
@@ -862,7 +862,7 @@ export namespace BaseDI.Professional.Programming.Extensions_0
                 return parameterObservationBody;
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedObservationTemplate, storedObservationBody, storedObservationItem, storedObservationFileName, storedObservationMethodName, storedObservationDescription, storedObservationPresentationTemplate, storedObservationBusinessTemplate, storedObservationServiceTemplate, storedObservationSecurityTemplate, storedObservationDataTemplate);
+            storedOutputResponseData = await ExecuteConversionRequest(storedObservationTemplate, storedObservationBody, storedOutputResponseObservationItem, storedObservationFileName, storedObservationMethodName, storedObservationDescription, storedObservationPresentationTemplate, storedObservationBusinessTemplate, storedObservationServiceTemplate, storedObservationSecurityTemplate, storedObservationDataTemplate);
 
             ///#endregion
 

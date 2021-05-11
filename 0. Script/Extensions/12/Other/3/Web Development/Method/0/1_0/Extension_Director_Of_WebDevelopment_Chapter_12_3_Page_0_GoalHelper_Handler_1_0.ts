@@ -12,6 +12,8 @@ import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0";
 import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
+import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
+
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
 //#endregion
@@ -222,7 +224,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -332,6 +334,748 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#endregion                   
         }
 
+        public static async Step_0_0_Framework_Convert_HtmlToJSON_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
+            //#region 1. INPUTS
+
+            //#region VALIDATE input parameters
+
+            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<boolean> => {
+                //#region 1. INPUTS
+
+                //#region DEFINE control variables
+
+                //#endregion
+
+                //#region DEFINE input variables
+
+                let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+                //#endregion
+
+                //#region DEFINE process variables
+
+                let storedProcessRequestMistakeMade: boolean = false;
+
+                //#endregion
+
+                //#region DEFINE output variables
+
+                let storedOutputResponseMessage: string = "";
+
+                //#endregion
+
+                ///////////////////////////////
+
+                //#region MEMORIZE control variables
+
+                //#region MEMORIZE control xxx xxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE input variables
+
+                //#region MEMORIZE input xxx xxxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE process variables
+
+                //#region MEMORIZE process request tracker
+
+                let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+
+                //#endregion
+
+                //#region MEMORIZE process request settings
+
+                let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE process developer mode
+
+                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE output variables
+
+                //#region MEMORIZE output xxx xxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+
+                //#region 2. PROCESS
+
+                //#region EXECUTE validation process
+
+                //#region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+  
+
+                    //2. PROCESS
+                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
+                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null || parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == undefined) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessRequestMistakeMade = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedDisturber")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedDisturber*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedSensor")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedSensor*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedStorer")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (storedProcessRequestMistakeMade) {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedProcessRequestDeveloperMode) {
+                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        }
+
+                        //#endregion
+
+                        //#region EDGE CASE - USE exception handler
+
+                        throw new Error("PARSING parameter values failed");
+
+                        //#endregion
+                    }
+                }
+                else {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode) {
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUT
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
+                    //#region EDGE CASE - USE exception handler
+
+                    throw new Error("PARSING parameter values failed");
+
+                    //#endregion
+                }
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+
+                //#region 3. OUTPUT
+
+                //#region RETURN validation passed
+
+                //#region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+            }
+
+            //BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            //#endregion
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            let storedInputRequestHtmlContainerJSON: any = "";
+            let storedInputRequestHtmlRowsJSON: any = "";
+            let storedInputRequestHtmlColumnsJSON: any = "";
+            let storedInputRequestHtmlContentJSON: any = "";
+
+            let storedInputRequestHtmlStylesFiltered: any = "";
+            let storedInputRequestHtmlStylesJSON: any = "";
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+       
+            //#endregion
+
+            //#region DEFINE output variables
+
+            let storedOutputResponseData: any;
+
+            let storedOutputResponseHtmlResultInlineStylesString: string = "";
+            let storedOutputResponseHtmlResultString: string = "";
+
+            let storedOutputResponseObservationItem: any;
+            
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            let storedInputRequestActionName: any = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
+
+            let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+
+            //#endregion
+
+            //#region MEMORIZE process request settings
+
+            let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+
+            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+
+            //0. CONTROLLERS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+
+            //1. INPUTS
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONVERTING json to html");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_0_0_Framework_Convert_HtmlToJSON_1_0");
+
+            //3. OUTPUTS  
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+            //#endregion
+
+            //#region MEMORIZE process storyline details
+
+            let storedProcessRequestDataStorylineDetails: any = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
+     
+            //#endregion
+
+            //#region MEMORIZE process centralized handlers
+
+            let storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            let storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            let storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
+
+            //#endregion 
+
+            //#region MEMORIZE process storage details
+
+            let storedProcessRequestStorageCounter: number = 0;
+
+            let storedProcessRequestStorageDictionary: Object = {};
+            let storedProcessRequestStorageKey: string = "StorageKey_" + "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0" + "-" + "Read-BaseDI_PresentationHTML_Content";
+
+            let storedProcessRequestStorageUpdateMode: boolean = false;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output observation details
+
+            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+            let storedOutputResponseObservationPresentationTemplateItem: string = "{ 'htmlResult': '{htmlResult}' }";
+            let storedOutputResponseObservationBusinessTemplateItem: string = "{}";
+            let storedOutputResponseObservationServiceTemplateItem: string = "{}";
+            let storedOutputResponseObservationSecurityTemplateItem: string = "{}";
+            let storedOutputResponseObservationDataTemplateItem: string = "{}";
+
+            let storedOutputResponseObservationDataTemplateBuilder = "";
+
+            storedInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "RENDER web page");
+            storedInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
+            storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+            storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedInputs.Parameters.setValue("parameterOutputResponseObservationFileName", "Page_1_5_Process_StorySetting_12_3_1_0.cs");
+            storedInputs.Parameters.setValue("parameterOutputResponseObservationMethodName", "Action");
+            storedInputs.Parameters.setValue("parameterOutputResponseObservationPresentationTemplate", storedOutputResponseObservationPresentationTemplateItem);
+            storedInputs.Parameters.setValue("parameterOutputResponseObservationBusinessTemplate", storedOutputResponseObservationBusinessTemplateItem);
+            storedInputs.Parameters.setValue("parameterOutputResponseObservationServiceTemplate", storedOutputResponseObservationServiceTemplateItem);
+            storedInputs.Parameters.setValue("parameterOutputResponseObservationSecurityTemplate", storedOutputResponseObservationSecurityTemplateItem);
+            storedInputs.Parameters.setValue("parameterOutputResponseObservationDataTemplate", storedOutputResponseObservationDataTemplateItem);
+
+            let storedObservationItem: string = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE json to html conversion
+
+            try {
+                //#region IDEAL CASE - USE baseDI converter
+
+                //#region 1. CONVERT html container
+
+                try {
+                    const ExecuteConversionRequest = async (): Promise<string> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer");
+
+                        storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
+
+                        storedInputRequestHtmlContainerJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlContainerJSON", storedInputRequestHtmlContainerJSON);
+
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        storedOutputResponseHtmlResultString = await this.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs);
+
+                        return storedOutputResponseHtmlResultString;
+                    };
+
+                    storedOutputResponseHtmlResultString = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html container");
+                }
+                //#endregion
+
+                //#region 2. CONVERT html rows
+
+                try {
+                    const ExecuteConversionRequest = async (): Promise<string> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows");
+
+                        storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
+
+                        storedInputRequestHtmlRowsJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlRowsJSON", storedInputRequestHtmlRowsJSON);
+                        
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        storedInputs.Parameters.setValue("parameterOutputResponseHtmlContainerString", storedOutputResponseHtmlResultString);
+
+                        storedOutputResponseHtmlResultString = await this.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs);
+
+                        return storedOutputResponseHtmlResultString;
+                    };
+
+                    storedOutputResponseHtmlResultString = await ExecuteConversionRequest();
+                }
+                catch (mistake) {
+                    throw new Error("converting html rows");
+                }
+
+                //#endregion
+
+                //#region 3. CONVERT html columns
+
+                try {
+                    const ExecuteConversionRequest = async (): Promise<string> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns");
+
+                        storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
+
+                        storedInputRequestHtmlColumnsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlColumnsJSON", storedInputRequestHtmlColumnsJSON);
+                        
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        storedInputs.Parameters.setValue("parameterOutputResponseHtmlRowString", storedOutputResponseHtmlResultString);
+
+                        storedOutputResponseHtmlResultString = await this.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs);
+
+                        return storedOutputResponseHtmlResultString;
+                    };
+
+                    storedOutputResponseHtmlResultString = await ExecuteConversionRequest();
+                }
+                catch (mistake) {
+                    throw new Error("converting html rows");
+                }
+
+                //#endregion
+
+                //#region 4. CONVERT html content
+
+                try {
+                    const ExecuteConversionRequest = async (): Promise<string> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent");
+
+                        storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
+
+                        storedInputRequestHtmlContentJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlContentJSON", storedInputRequestHtmlContentJSON);
+
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        storedInputs.Parameters.setValue("parameterOutputResponseHtmlColumnString", storedOutputResponseHtmlResultString);
+
+                        storedOutputResponseHtmlResultString = await this.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs);
+
+                        return storedOutputResponseHtmlResultString;
+                    };
+
+                    storedOutputResponseHtmlResultString = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html content");
+                }
+
+                //#endregion
+
+                //#region 5. CONVERT html inline styles
+
+                try {
+                    const ExecuteConversionRequest = async (): Promise<string> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS");
+
+                        storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
+
+                        storedInputRequestHtmlStylesFiltered = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0(storedInputs);
+
+                        storedInputRequestHtmlStylesJSON = storedInputRequestHtmlStylesFiltered.Count > 0 ? storedInputRequestHtmlStylesFiltered[0].Parent.Parent : null;
+
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlStylesJSON", storedInputRequestHtmlStylesJSON);
+
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        return await this.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs);
+                    };
+
+                    storedOutputResponseHtmlResultInlineStylesString = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html inline styles");
+                }
+
+                //#endregion
+
+                //#region 6. CONVERT html inline scripts
+
+                //TODO
+                try {
+                    const ExecuteConversionRequest = async () => {
+
+                    }
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html inline scripts");
+                }
+
+                //#endregion
+
+                //#region 7. CONVERT html inline metadata
+
+                //TODO
+                try {
+                    const ExecuteConversionRequest = async () => {
+
+                    }
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html inline metadata");
+                }
+
+                //#endregion
+
+                //#region 8. OUTPUT html string
+
+                try {
+                    const ExecuteOutputResponse = async (): Promise<string> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlMetaData", "");
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlTitle", "");
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlScripts", "");
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlStyles", storedOutputResponseHtmlResultInlineStylesString);
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlAdditionalHeadData", "");
+                        storedInputs.Parameters.setValue("parameterInputRequestHtmlBody", storedOutputResponseHtmlResultString);
+
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        return await this.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs);
+                    };
+
+                    storedOutputResponseHtmlResultString = await ExecuteOutputResponse();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html content");
+                }
+
+                //#endregion
+
+                //#region 9. STORE html string
+
+                try {
+                    const ExecuteOutputResponse = async () => {
+                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace("'", "\"");
+                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace("{htmlResult}", escape(storedOutputResponseHtmlResultString));
+
+                        storedProcessRequestStorageDictionary[storedProcessRequestStorageKey] = JSON.parse(storedOutputResponseObservationItem.toString());
+
+                        //#region USE existing output observation item
+
+                        storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.map(storedOutputResponseObservation => {
+                            if (Object.keys(storedOutputResponseObservation).length > 0 && Object.keys(storedOutputResponseObservation)[0].toUpperCase() == storedProcessRequestStorageKey.toUpperCase()) {
+                                storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations[storedProcessRequestStorageCounter][storedProcessRequestStorageKey] = JSON.parse(storedOutputResponseHtmlResultString.toString());
+
+                                storedOutputResponseData = storedProcessRequestDataStorylineDetails;
+
+                                storedProcessRequestStorageUpdateMode = true;
+
+                                return;
+                            }
+
+                            storedProcessRequestStorageCounter += 1;
+                        });
+
+                        //#endregion
+
+                        //#region USE new output observation item
+                        if (!storedProcessRequestStorageUpdateMode) {
+                            storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.push(storedProcessRequestStorageDictionary);
+                        }
+                        //#endregion
+
+                        return storedProcessRequestDataStorylineDetails;
+                    };
+
+                    storedOutputResponseData = await ExecuteOutputResponse();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("storing html string output observation");
+                }
+
+                //#endregion
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                //#region EDGE CASE - USE developer logger
+
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to html");                  
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw new Error("CONVERSION request failed " + storedProcessRequestMistake.message);
+
+                //#endregion
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
         public static async Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<string>
         {
             //#region 1. INPUTS
@@ -417,8 +1161,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlContainerJSON")) {
-                        storedOutputResponseMessage += "***parameterHtmlContainerJSON*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlContainerJSON")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlContainerJSON*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -518,7 +1262,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -554,7 +1298,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE html inputs
 
-            let storedHtmlContainerJSON: any = parameterInputs.Parameters.getValue("parameterHtmlContainerJSON");
+            let storedInputRequestHtmlContainerJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContainerJSON");
 
             //#endregion
 
@@ -573,9 +1317,9 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region IDEAL CASE - USE json metadata
 
-            const ExecuteConversionRequest = async (parameterHtmlContainerJSON: any): Promise<any> => {
+            const ExecuteConversionRequest = async (parameterInputRequestHtmlContainerJSON: any): Promise<any> => {
                 try {
-                    return `<${parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${parameterHtmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
+                    return `<${parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
                 }
                 catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
@@ -601,7 +1345,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 }
             }
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlContainerJSON);
+            storedOutputResponseData = await ExecuteConversionRequest(storedInputRequestHtmlContainerJSON);
 
             //#endregion
 
@@ -708,13 +1452,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlContainerString")) {
-                        storedOutputResponseMessage += "***parameterHtmlContainerString*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseHtmlContainerString")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseHtmlContainerString*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlRowsJSON")) {
-                        storedOutputResponseMessage += "***parameterHtmlRowsJSON*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlRowsJSON")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlRowsJSON*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -815,7 +1559,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -851,8 +1595,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE html inputs
 
-            let storedHtmlContainerString: any = parameterInputs.Parameters.getValue("parameterHtmlContainerString");
-            let storedHtmlRowsJSON: any = parameterInputs.Parameters.getValue("parameterHtmlRowsJSON");
+            let storedHtmlContainerString: any = parameterInputs.Parameters.getValue("parameterOutputResponseHtmlContainerString");
+            let storedInputRequestHtmlRowsJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlRowsJSON");
 
             //#endregion
 
@@ -871,13 +1615,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region IDEAL CASE - USE json metadata
 
-            const ExecuteConversionRequest = async (parameterHtmlContainerString: string, parameterHtmlRowsJSON: any, parameterFilterDataResponseList: Array<any>): Promise<string> => {
+            const ExecuteConversionRequest = async (parameterOutputResponseHtmlContainerString: string, parameterInputRequestHtmlRowsJSON: any, parameterFilterDataResponseList: Array<any>): Promise<string> => {
                 try {
-                    parameterHtmlRowsJSON.value.HTMLContentItems.forEach(storedHtmlRow => {
+                    parameterInputRequestHtmlRowsJSON.value.HTMLContentItems.forEach(storedHtmlRow => {
                         parameterFilterDataResponseList.push(`<${storedHtmlRow.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlRow.Attributes)}>{${storedHtmlRow.Attributes[0].id}_Replace}</${storedHtmlRow.Tag}>`)
                     });
 
-                    return parameterHtmlContainerString.replace("{HTMLRows_Replace}", parameterFilterDataResponseList.join("\n"))
+                    return parameterOutputResponseHtmlContainerString.replace("{HTMLRows_Replace}", parameterFilterDataResponseList.join("\n"))
                 }
                 catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
@@ -903,7 +1647,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 }
             }
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlContainerString, storedHtmlRowsJSON, storedDataResponseList);
+            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlContainerString, storedInputRequestHtmlRowsJSON, storedDataResponseList);
 
             //#endregion
 
@@ -1010,13 +1754,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlRowString")) {
-                        storedOutputResponseMessage += "***parameterHtmlRowString*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseHtmlRowString")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseHtmlRowString*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlColumnsJSON")) {
-                        storedOutputResponseMessage += "***parameterHtmlColumnsJSON*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlColumnsJSON")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlColumnsJSON*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -1118,7 +1862,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -1154,8 +1898,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE html inputs
 
-            let storedHtmlRowString: any = parameterInputs.Parameters.getValue("parameterHtmlRowString");
-            let storedHtmlColumnsJSON: any = parameterInputs.Parameters.getValue("parameterHtmlColumnsJSON");
+            let storedHtmlRowString: any = parameterInputs.Parameters.getValue("parameterOutputResponseHtmlRowString");
+            let storedInputRequestHtmlColumnsJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlColumnsJSON");
 
             //#endregion
 
@@ -1174,14 +1918,14 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region IDEAL CASE - USE json metadata
 
-            const ExecuteConversionRequest = async (parameterHtmlRowString: string, parameterHtmlColumnsJSON: any, parameterColumnItem: string): Promise<string> => {
+            const ExecuteConversionRequest = async (parameterOutputResponseHtmlRowString: string, parameterInputRequestHtmlColumnsJSON: any, parameterColumnItem: string): Promise<string> => {
                 try {
-                    parameterHtmlColumnsJSON.value.HTMLContentItems.forEach(storedHtmlColumn => {
+                    parameterInputRequestHtmlColumnsJSON.value.HTMLContentItems.forEach(storedHtmlColumn => {
                         parameterColumnItem = `<${storedHtmlColumn.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlColumn.Attributes)}>{${storedHtmlColumn.Attributes[0].id}_Replace}</${storedHtmlColumn.Tag}>\n`;
-                        parameterHtmlRowString = parameterHtmlRowString.replace(`{${storedHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}`, parameterColumnItem);
+                        parameterOutputResponseHtmlRowString = parameterOutputResponseHtmlRowString.replace(`{${storedHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}`, parameterColumnItem);
                     });
 
-                    return parameterHtmlRowString;
+                    return parameterOutputResponseHtmlRowString;
                 }
                 catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
@@ -1207,7 +1951,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 }
             }
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlRowString, storedHtmlColumnsJSON, storedColumnItem);
+            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlRowString, storedInputRequestHtmlColumnsJSON, storedColumnItem);
 
             //#endregion
 
@@ -1313,13 +2057,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlColumnString")) {
-                        storedOutputResponseMessage += "***parameterHtmlColumnString*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseHtmlColumnString")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseHtmlColumnString*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlContentJSON")) {
-                        storedOutputResponseMessage += "***parameterHtmlContentJSON*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlContentJSON")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlContentJSON*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -1422,7 +2166,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -1458,8 +2202,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE html inputs
 
-            let storedHtmlColumnString: any = parameterInputs.Parameters.getValue("parameterHtmlColumnString");
-            let storedHtmlContentJSON: any = parameterInputs.Parameters.getValue("parameterHtmlContentJSON");
+            let storedHtmlColumnString: any = parameterInputs.Parameters.getValue("parameterOutputResponseHtmlColumnString");
+            let storedInputRequestHtmlContentJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContentJSON");
 
             //#endregion
 
@@ -1478,9 +2222,9 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region IDEAL CASE - USE json metadata
 
-            const ExecuteConversionRequest = async (parameterHtmlColumnString: string, parameterHtmlContentJSON: any, parameterFilterDataResponseIdsAndContent: Array<any>, parameterContent: any): Promise<string> => {
+            const ExecuteConversionRequest = async (parameterOutputResponseHtmlColumnString: string, parameterInputRequestHtmlContentJSON: any, parameterFilterDataResponseIdsAndContent: Array<any>, parameterContent: any): Promise<string> => {
                 try {
-                    parameterHtmlContentJSON.value.HTMLContentItems.forEach(storedHtmlContent => {
+                    parameterInputRequestHtmlContentJSON.value.HTMLContentItems.forEach(storedHtmlContent => {
                         if (parameterFilterDataResponseIdsAndContent[storedHtmlContent.ParentHTMLContentItemAttributeID] == undefined) {
                             parameterFilterDataResponseIdsAndContent[storedHtmlContent.ParentHTMLContentItemAttributeID] = new Array();
                             parameterFilterDataResponseIdsAndContent[storedHtmlContent.ParentHTMLContentItemAttributeID].push(`<${storedHtmlContent.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlContent.Attributes)}>${storedHtmlContent.Value}</${storedHtmlContent.Tag}>\n`);
@@ -1492,15 +2236,15 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     Object.keys(parameterFilterDataResponseIdsAndContent).forEach(storedIdAndContentItem => {
                         parameterContent = parameterFilterDataResponseIdsAndContent[storedIdAndContentItem].join('\n')
-                        parameterHtmlColumnString = parameterHtmlColumnString.replace(`{${storedIdAndContentItem}_Replace}`, parameterContent);
+                        parameterOutputResponseHtmlColumnString = parameterOutputResponseHtmlColumnString.replace(`{${storedIdAndContentItem}_Replace}`, parameterContent);
                     });
 
                     if (process.env.APP_ENV == "SERVER") {
-                        parameterHtmlColumnString = parameterHtmlColumnString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
+                        parameterOutputResponseHtmlColumnString = parameterOutputResponseHtmlColumnString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
 
                     }
 
-                    return parameterHtmlColumnString;
+                    return parameterOutputResponseHtmlColumnString;
                 }
                 catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
@@ -1526,7 +2270,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 }
             }
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlColumnString, storedHtmlContentJSON, storedDataResponseIdsAndContent, storedContent);
+            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlColumnString, storedInputRequestHtmlContentJSON, storedDataResponseIdsAndContent, storedContent);
 
             //#endregion
 
@@ -1633,18 +2377,18 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlStylesJSON")) {
-                        storedOutputResponseMessage += "***parameterHtmlStylesJSON*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlStylesJSON")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
                     else {
-                        if (!parameterInputs.Parameters.getValue("parameterHtmlStylesJSON")?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal) {
-                            storedOutputResponseMessage += "***parameterHtmlStylesJSON*** [StyleFilePathLocal] cannot be blank or empty.\n"
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON")?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [StyleFilePathLocal] cannot be blank or empty.\n"
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (!parameterInputs.Parameters.getValue("parameterHtmlStylesJSON")?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles) {
-                            storedOutputResponseMessage += "***parameterHtmlStylesJSON*** [StyleFiles] cannot be blank or empty.\n"
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON")?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [StyleFiles] cannot be blank or empty.\n"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
@@ -1752,7 +2496,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -1788,10 +2532,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE html inputs
 
-            let storedHtmlStylesJSON: any = parameterInputs.Parameters.getValue("parameterHtmlStylesJSON");
+            let storedInputRequestHtmlStylesJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON");
 
-            let storedHtmlStyleFilePathLocal: string = storedHtmlStylesJSON?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal;
-            let storedHtmlFilesArray: any = storedHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
+            let storedHtmlStyleFilePathLocal: string = storedInputRequestHtmlStylesJSON?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal;
+            let storedHtmlFilesArray: any = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
 
             //#endregion
 
@@ -2095,18 +2839,18 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlScriptsJSON")) {
-                        storedOutputResponseMessage += "***parameterHtmlStylesJSON*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlScriptsJSON")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
                     else {
-                        if (!parameterInputs.Parameters.getValue("parameterHtmlScriptsJSON")?.value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFilePathLocal) {
-                            storedOutputResponseMessage += "***parameterHtmlStylesJSON*** [ScriptsFilePathLocal] cannot be blank or empty.\n"
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlScriptsJSON")?.value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFilePathLocal) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [ScriptsFilePathLocal] cannot be blank or empty.\n"
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (!parameterInputs.Parameters.getValue("parameterHtmlScriptsJSON")?.value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFiles) {
-                            storedOutputResponseMessage += "***parameterHtmlStylesJSON*** [ScriptsFiles] cannot be blank or empty.\n"
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlScriptsJSON")?.value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFiles) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [ScriptsFiles] cannot be blank or empty.\n"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
@@ -2214,7 +2958,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -2250,10 +2994,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE html inputs
 
-            let storedHtmlStylesJSON: any = parameterInputs.Parameters.getValue("parameterHtmlStylesJSON");
+            let storedInputRequestHtmlStylesJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON");
 
-            let storedHtmlStyleFilePathLocal: string = storedHtmlStylesJSON?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal;
-            let storedHtmlFilesArray: any = storedHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
+            let storedHtmlStyleFilePathLocal: string = storedInputRequestHtmlStylesJSON?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal;
+            let storedHtmlFilesArray: any = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
 
             //#endregion
 
@@ -2408,18 +3152,18 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlMetaDataJSON")) {
-                        storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlMetaDataJSON")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
                     else {
-                        if (!parameterInputs.Parameters.getValue("parameterHtmlMetaDataJSON")?.value[0]?._2_2_2_6_1_clientInformationHTMLContentMetaDataItem?.value?.HTMLContentMetaDataItemFiles[0]?.MetaDataFilePathLocal) {
-                            storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** [ScriptsFilePathLocal] cannot be blank or empty.\n"
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlMetaDataJSON")?.value[0]?._2_2_2_6_1_clientInformationHTMLContentMetaDataItem?.value?.HTMLContentMetaDataItemFiles[0]?.MetaDataFilePathLocal) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** [ScriptsFilePathLocal] cannot be blank or empty.\n"
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (!parameterInputs.Parameters.getValue("parameterHtmlMetaDataJSON")?.value[0]?._2_2_2_6_1_clientInformationHTMLContentMetaDataItem?.value?.HTMLContentMetaDataItemFiles[0]?.MetaDataFiles) {
-                            storedOutputResponseMessage += "***parameterHtmlMetaDataJSON*** [ScriptsFiles] cannot be blank or empty.\n"
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlMetaDataJSON")?.value[0]?._2_2_2_6_1_clientInformationHTMLContentMetaDataItem?.value?.HTMLContentMetaDataItemFiles[0]?.MetaDataFiles) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** [ScriptsFiles] cannot be blank or empty.\n"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
@@ -2527,7 +3271,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -2563,10 +3307,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE html inputs
 
-            let storedHtmlStylesJSON: any = parameterInputs.Parameters.getValue("parameterHtmlStylesJSON");
+            let storedInputRequestHtmlStylesJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON");
 
-            let storedHtmlStyleFilePathLocal: string = storedHtmlStylesJSON?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal;
-            let storedHtmlFilesArray: any = storedHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
+            let storedHtmlStyleFilePathLocal: string = storedInputRequestHtmlStylesJSON?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal;
+            let storedHtmlFilesArray: any = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
 
             //#endregion
 
@@ -2721,33 +3465,33 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlMetaData")) {
-                        storedOutputResponseMessage += "***parameterHtmlMetaData*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlMetaData")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlMetaData*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlTitle")) {
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlTitle")) {
                         storedOutputResponseMessage += "***parameterTitle*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlAdditionalHeadData")) {
-                        storedOutputResponseMessage += "***parameterHtmlAdditionalHeadData*** cannot be blank or empty.\n";
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlAdditionalHeadData")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlAdditionalHeadData*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlScripts")) {
-                        storedOutputResponseMessage += "***parameterHtmlScripts*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlScripts")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlScripts*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlStyles")) {
-                        storedOutputResponseMessage += "***parameterHtmlStyles*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlStyles")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlStyles*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterHtmlBody")) {
-                        storedOutputResponseMessage += "***parameterHtmlBody*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlBody")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlBody*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -2853,7 +3597,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            //storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             //#endregion
 
             //#region MEMORIZE control client server
@@ -2902,12 +3646,12 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     </body>
                 </html>`;
 
-            let storedHtmlMetaData: string = parameterInputs.Parameters.getValue("parameterHtmlMetaData");
-            let storedHtmlTitle: string = parameterInputs.Parameters.getValue("parameterHtmlTitle");
-            let storedHtmlScripts: string = parameterInputs.Parameters.getValue("parameterHtmlScripts");
-            let storedHtmlAdditionalHeadData: string = parameterInputs.Parameters.getValue("parameterHtmlAdditionalHeadData");
-            let storedHtmlStyles: string = parameterInputs.Parameters.getValue("parameterHtmlStyles");
-            let storedHtmlBody: string = parameterInputs.Parameters.getValue("parameterHtmlBody");
+            let storedHtmlMetaData: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlMetaData");
+            let storedHtmlTitle: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlTitle");
+            let storedHtmlScripts: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlScripts");
+            let storedHtmlAdditionalHeadData: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlAdditionalHeadData");
+            let storedHtmlStyles: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStyles");
+            let storedHtmlBody: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlBody");
 
             //#endregion
 
@@ -2928,7 +3672,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region 1. READ cached baseDI script path
 
-            const ExecuteStorageRequest = async (parameterHtmlBaseDIScriptName: string, parameterHtmlScripts: string, parameterProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterProcessRequestTracker: Object, parameterProcessRequestDataStorylineDetails: Object, parameterFilterDataResponse: any): Promise<string> => {
+            const ExecuteStorageRequest = async (parameterHtmlBaseDIScriptName: string, parameterInputRequestHtmlScripts: string, parameterProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>, parameterProcessRequestTracker: Object, parameterProcessRequestDataStorylineDetails: Object, parameterFilterDataResponse: any): Promise<string> => {
                 try {
                     storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
@@ -2948,10 +3692,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (parameterFilterDataResponse) {
                         parameterHtmlBaseDIScriptName = parameterFilterDataResponse[Object.keys(parameterFilterDataResponse)[0]].observation.metadata[3].item.data[0].dataResult
 
-                        parameterHtmlScripts += `<script src="/scripts/${parameterHtmlBaseDIScriptName}" type="text/javascript"></script>`;
+                        parameterInputRequestHtmlScripts += `<script src="/scripts/${parameterHtmlBaseDIScriptName}" type="text/javascript"></script>`;
                     }
 
-                    return parameterHtmlScripts;
+                    return parameterInputRequestHtmlScripts;
 
                 }
                 catch (storedProcessRequestMistake) {
@@ -2986,13 +3730,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region 2. CONVERT inputs to html template
 
-            const ExecuteConversionRequest = async (parameterHtmlPageTemplate: string, parameterHtmlMetaData: string, parameterHtmlTitle: string, parameterHtmlScripts: string, parameterHtmlStyles: string, parameterHtmlBody: string, parameterHtmlAdditionalHeadData: string) => {
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{metaDataReplace}", parameterHtmlMetaData);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{titleReplace}", parameterHtmlTitle);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{additionalHeadData}", parameterHtmlAdditionalHeadData);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{scriptsReplace}", parameterHtmlScripts);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{stylesReplace}", parameterHtmlStyles);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{bodyReplace}", parameterHtmlBody);
+            const ExecuteConversionRequest = async (parameterHtmlPageTemplate: string, parameterInputRequestHtmlMetaData: string, parameterInputRequestHtmlTitle: string, parameterInputRequestHtmlScripts: string, parameterInputRequestHtmlStyles: string, parameterInputRequestHtmlBody: string, parameterInputRequestHtmlAdditionalHeadData: string) => {
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{metaDataReplace}", parameterInputRequestHtmlMetaData);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{titleReplace}", parameterInputRequestHtmlTitle);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{additionalHeadData}", parameterInputRequestHtmlAdditionalHeadData);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{scriptsReplace}", parameterInputRequestHtmlScripts);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{stylesReplace}", parameterInputRequestHtmlStyles);
+                parameterHtmlPageTemplate = parameterHtmlPageTemplate.replace("{bodyReplace}", parameterInputRequestHtmlBody);
 
                 return parameterHtmlPageTemplate;
             }

@@ -1182,7 +1182,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                                                 }
                                             }]
                                          }";
-            string storedObservationItem = @"'presentation': [{presentation}],
+            string storedOutputResponseObservationItem = @"'presentation': [{presentation}],
                                              'business': [{business}],
                                              'service': [{service}],
                                              'security': [{security}],
@@ -1220,7 +1220,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                 return parameterObservationBody;
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedObservationTemplate, storedObservationBody, storedObservationItem, storedObservationFileName, storedObservationMethodName, storedObservationDescription, storedObservationPresentationTemplate, storedObservationBusinessTemplate, storedObservationServiceTemplate, storedObservationSecurityTemplate, storedObservationDataTemplate);
+            storedOutputResponseData = await ExecuteConversionRequest(storedObservationTemplate, storedObservationBody, storedOutputResponseObservationItem, storedObservationFileName, storedObservationMethodName, storedObservationDescription, storedObservationPresentationTemplate, storedObservationBusinessTemplate, storedObservationServiceTemplate, storedObservationSecurityTemplate, storedObservationDataTemplate);
             
             #endregion
 

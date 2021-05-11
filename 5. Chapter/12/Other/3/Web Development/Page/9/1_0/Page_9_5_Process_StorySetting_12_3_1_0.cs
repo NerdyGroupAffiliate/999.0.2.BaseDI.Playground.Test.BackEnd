@@ -268,11 +268,11 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
 
             storedInputs = new SingleParmPoco_12_2_1_0();
 
-            string storedObservationPresentationTemplateItem = @"{ 'htmlResult': '{htmlResult}' }";
-            string storedObservationBusinessTemplateItem = "{}";
-            string storedObservationServiceTemplateItem = "{}";
-            string storedObservationSecurityTemplateItem = "{}";
-            string storedObservationDataTemplateItem = "{}";
+            string storedOutputResponseObservationPresentationTemplateItem = @"{ 'htmlResult': '{htmlResult}' }";
+            string storedOutputResponseObservationBusinessTemplateItem = "{}";
+            string storedOutputResponseObservationServiceTemplateItem = "{}";
+            string storedOutputResponseObservationSecurityTemplateItem = "{}";
+            string storedOutputResponseObservationDataTemplateItem = "{}";
 
             storedInputs.Parameters.Add("parameterProcessRequest3WordDescription", "RENDER web page");
             storedInputs.Parameters.Add("parameterInputRequestActionName", _storedInputRequestActionName);
@@ -280,13 +280,13 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
             storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedInputs.Parameters.Add("parameterOutputResponseObservationFileName", "Page_9_5_Process_StorySetting_12_3_1_0.cs");
             storedInputs.Parameters.Add("parameterOutputResponseObservationMethodName", "Action");
-            storedInputs.Parameters.Add("parameterOutputResponseObservationPresentationTemplate", storedObservationPresentationTemplateItem);
-            storedInputs.Parameters.Add("parameterOutputResponseObservationBusinessTemplate", storedObservationBusinessTemplateItem);
-            storedInputs.Parameters.Add("parameterOutputResponseObservationServiceTemplate", storedObservationServiceTemplateItem);
-            storedInputs.Parameters.Add("parameterOutputResponseObservationSecurityTemplate", storedObservationSecurityTemplateItem);
-            storedInputs.Parameters.Add("parameterOutputResponseObservationDataTemplate", storedObservationDataTemplateItem);
+            storedInputs.Parameters.Add("parameterOutputResponseObservationPresentationTemplate", storedOutputResponseObservationPresentationTemplateItem);
+            storedInputs.Parameters.Add("parameterOutputResponseObservationBusinessTemplate", storedOutputResponseObservationBusinessTemplateItem);
+            storedInputs.Parameters.Add("parameterOutputResponseObservationServiceTemplate", storedOutputResponseObservationServiceTemplateItem);
+            storedInputs.Parameters.Add("parameterOutputResponseObservationSecurityTemplate", storedOutputResponseObservationSecurityTemplateItem);
+            storedInputs.Parameters.Add("parameterOutputResponseObservationDataTemplate", storedOutputResponseObservationDataTemplateItem);
 
-            string storedObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
+            string storedOutputResponseObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
 
             #endregion
 
@@ -323,7 +323,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
                         storedHtmlContainerJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
-                        storedInputs.Parameters.Add("parameterHtmlContainerJSON", storedHtmlContainerJSON);
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlContainerJSON", storedHtmlContainerJSON);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
@@ -359,8 +359,8 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
                         storedHtmlRowsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
-                        storedInputs.Parameters.Add("parameterHtmlRowsJSON", storedHtmlRowsJSON);
-                        storedInputs.Parameters.Add("parameterHtmlContainerString", storedHtmlResultString);
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlRowsJSON", storedHtmlRowsJSON);
+                        storedInputs.Parameters.Add("parameterOutputResponseHtmlContainerString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
@@ -397,8 +397,8 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
                         storedHtmlColumnsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
-                        storedInputs.Parameters.Add("parameterHtmlColumnsJSON", storedHtmlColumnsJSON);
-                        storedInputs.Parameters.Add("parameterHtmlRowString", storedHtmlResultString);
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlColumnsJSON", storedHtmlColumnsJSON);
+                        storedInputs.Parameters.Add("parameterOutputResponseHtmlRowString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
@@ -435,8 +435,8 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
                         storedHtmlContentJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result.SingleOrDefault().Parent.Parent;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
-                        storedInputs.Parameters.Add("parameterHtmlContentJSON", storedHtmlContentJSON);
-                        storedInputs.Parameters.Add("parameterHtmlColumnString", storedHtmlResultString);
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlContentJSON", storedHtmlContentJSON);
+                        storedInputs.Parameters.Add("parameterOutputResponseHtmlColumnString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
@@ -475,7 +475,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
                         storedHtmlStylesJSON = storedHtmlStylesFiltered.Count > 0 ? storedHtmlStylesFiltered[0].Parent.Parent :  null;
 
                         storedInputs = new SingleParmPoco_12_2_1_0();
-                        storedInputs.Parameters.Add("parameterHtmlStylesJSON", storedHtmlStylesJSON);
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlStylesJSON", storedHtmlStylesJSON);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
@@ -532,12 +532,12 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
                     Func<Task<string>> ExecuteOutputResponse = async () =>
                     {
                         storedInputs = new SingleParmPoco_12_2_1_0();
-                        storedInputs.Parameters.Add("parameterHtmlMetaData", "");
-                        storedInputs.Parameters.Add("parameterHtmlTitle", "");
-                        storedInputs.Parameters.Add("parameterHtmlScripts", "");
-                        storedInputs.Parameters.Add("parameterHtmlStyles", storedHtmlResultInlineStylesString);
-                        storedInputs.Parameters.Add("parameterHtmlAdditionalHeadData", "");
-                        storedInputs.Parameters.Add("parameterHtmlBody", storedHtmlResultString);
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlMetaData", "");
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlTitle", "");
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlScripts", "");
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlStyles", storedHtmlResultInlineStylesString);
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlAdditionalHeadData", "");
+                        storedInputs.Parameters.Add("parameterInputRequestHtmlBody", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
                         storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
@@ -560,10 +560,10 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
                 try
                 {
                     Func<Task<JObject>> ExecuteOutputResponse = async () => {
-                        storedObservationItem = storedObservationItem.Replace("'", "\"");
-                        storedObservationItem = storedObservationItem.Replace("{htmlResult}", Regex.Unescape(storedHtmlResultString));
+                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("'", "\"");
+                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("{htmlResult}", Regex.Unescape(storedHtmlResultString));
 
-                        storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.Add((JObject.Parse(storedObservationItem) as dynamic).baseDIObservations[0].observation);
+                        storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.Add((JObject.Parse(storedOutputResponseObservationItem) as dynamic).baseDIObservations[0].observation);
 
                         return storedProcessRequestDataStorylineDetails;
                     };
