@@ -16,23 +16,23 @@ import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlM
 
 import * as IContract_Programming_Repository_12_2_1_0 from "../../../../../../../../0. Script/Interfaces/12/Other/2/Programming/Contract/1/1_0/IContract_Programming_Repository_12_2_1_0";
 
-import * as ChapterPage_Page_5_1_Begin_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_1_Begin_Process_12_3_1_0";
-import * as ChapterPage_Page_5_2_Validate_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_2_Validate_Process_12_3_1_0";
-import * as ChapterPage_Page_5_3_Process_StoryAuthor_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_3_Process_StoryAuthor_12_3_1_0";
-import * as ChapterPage_Page_5_4_Process_StoryCharacters_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_4_Process_StoryCharacters_12_3_1_0";
-import * as ChapterPage_Page_5_5_Process_StorySetting_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_5_Process_StorySetting_12_3_1_0";
-import * as ChapterPage_Page_5_6_Process_StoryExperiences_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_6_Process_StoryExperiences_12_3_1_0";
-import * as ChapterPage_Page_5_7_Process_StoryResources_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_7_Process_StoryResources_12_3_1_0";
-import * as ChapterPage_Page_5_8_Process_CRUD_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_8_Process_CRUD_12_3_1_0";
-import * as ChapterPage_Page_5_9_Verify_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_9_Verify_Process_12_3_1_0";
-import * as ChapterPage_Page_5_10_End_Process_12_3_1_0 from "../../../../../../../../5. Chapter/12/Other/3/Web Development/Page/5/1_0/Page_5_10_End_Process_12_3_1_0";
+import * as ChapterPage_Page_1_1_Begin_Process_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_1_Begin_Process_12_4_1_0";
+import * as ChapterPage_Page_1_2_Validate_Process_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_2_Validate_Process_12_4_1_0";
+import * as ChapterPage_Page_1_3_Process_StoryAuthor_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_3_Process_StoryAuthor_12_4_1_0";
+import * as ChapterPage_Page_1_4_Process_StoryCharacters_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_4_Process_StoryCharacters_12_4_1_0";
+import * as ChapterPage_Page_1_5_Process_StorySetting_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_5_Process_StorySetting_12_4_1_0";
+import * as ChapterPage_Page_1_6_Process_StoryExperiences_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_6_Process_StoryExperiences_12_4_1_0";
+import * as ChapterPage_Page_1_7_Process_StoryResources_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_7_Process_StoryResources_12_4_1_0";
+import * as ChapterPage_Page_1_8_Process_CRUD_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_8_Process_CRUD_12_4_1_0";
+import * as ChapterPage_Page_1_9_Verify_Process_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_9_Verify_Process_12_4_1_0";
+import * as ChapterPage_Page_1_10_End_Process_12_4_1_0 from "../../../../../../../../5. Chapter/12/Other/4/CMS/Page/1/1_0/Page_1_10_End_Process_12_4_1_0";
 
 //#endregion
 
 //#endregion
 
-export namespace BaseDI.Professional.Director.Web_Development_5 {
-    export class Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
+export namespace BaseDI.Professional.Director.CMS_1 {
+    export class Director_Of_CMS_Chapter_12_4_Page_1_TransportAsset_Handler_1_0 extends aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 {
         //#region 1. Assign
 
         //SETTINGS
@@ -254,6 +254,7 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
         //#endregion
 
         //#region 4. Action
+
         public async Action(): Promise<object> {
             //#region 1. INPUTS
 
@@ -335,7 +336,7 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_CMS_Chapter_12_4_Page_1_TransportAsset_Handler_1_0.ts");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> ValidateInputs");
 
                 //3. OUTPUTS
@@ -518,7 +519,7 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
             //#region DEFINE process variables
 
-            let storedProcessRequestHandler_UsingBuilderPattern: Use_DesignPattern_Builder_Chapter_12_3_Page_5 = null;
+            let storedProcessRequestHandler_UsingBuilderPattern: Use_DesignPattern_Builder_Chapter_12_4_Page_1 = null;
 
             //#endregion
 
@@ -567,7 +568,7 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING request handler");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_CMS_Chapter_12_4_Page_1_TransportAsset_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
 
             //3. OUTPUTS  
@@ -592,28 +593,66 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
             //#region 2. PROCESS
 
-            //#region BEGIN process execution
+            //#region EXECUTE request handler
 
-            //#region IDEAL CASE - USE builder pattern
+            try {
+                //#region EDGE CASE - USE developer logger
 
-            if (this.DirectorOrExperienceRequestHandler != null && (this.DirectorOrExperienceRequestHandler.ClientOrServerInstance != undefined && this.DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)) {
-                this.ClientOrServerInstance = this.DirectorOrExperienceRequestHandler.ClientOrServerInstance;
-                this.MasterLeader = this.DirectorOrExperienceRequestHandler.MasterLeader;
-                this.MasterController = this.DirectorOrExperienceRequestHandler.MasterController;
-                this.MasterConverter = this.DirectorOrExperienceRequestHandler.MasterConverter;
-                this.MasterDisturber = this.DirectorOrExperienceRequestHandler.MasterDisturber;
-                this.MasterSensor = this.DirectorOrExperienceRequestHandler.MasterSensor;
-                this.MasterStorer = this.DirectorOrExperienceRequestHandler.MasterStorer;
-                this.MasterTransporter = this.DirectorOrExperienceRequestHandler.MasterTransporter;
-                this.ExtraData = this.DirectorOrExperienceRequestHandler.ExtraData;
+                if (storedProcessRequestDeveloperMode && this._storedProcessRequestTracker["storedProcessRequestStepNumber"] == 0) {
+                    this._storedProcessRequestTracker["storedProcessRequestStepNumber"] += 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                    
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region IDEAL CASE - USE design pattern
+
+                //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
+                storedProcessRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Chapter_12_4_Page_1(this._storedInputs);
+
+                this.StorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action();
+
+                //#endregion
             }
+            catch (storedProcessRequestMistake) {
+                //#region EDGE CASE - USE developer logger
 
-            //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
-            const designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_5(this._storedInputs);
+                if (storedProcessRequestDeveloperMode) {
+                    this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-            this.StorylineDetails = await designPattern.Action();
+                    //0. CONTROLLERS
 
-            //#endregion
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED configurating request handler");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw storedProcessRequestMistake;
+
+                //#endregion
+            }
 
             //#endregion
 
@@ -621,23 +660,26 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
             //#region 3. OUTPUT
 
-            //#region RETURN request respnose
+            //#region RETURN request handler
 
-            //#region IDEAL CASE - USE populated data
+            //#region IDEAL CASE - USE baseID dataset
 
             return this.StorylineDetails;
 
             //#endregion
 
+
             //#endregion
 
             //#endregion
         }
+
         //#endregion
     }
 
     //#region 5. Action Script
-    export class Use_DesignPattern_Builder_Chapter_12_3_Page_5 {
+
+    export class Use_DesignPattern_Builder_Chapter_12_4_Page_1 {
         //#region 1. Assign
 
         //SETTINGS
@@ -969,7 +1011,7 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
             //#region IDEAL CASE - USE builder pattern
 
-            storedProcessRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Chapter_12_3_Page_5_1_0(this._storedInputs);
+            storedProcessRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Chapter_12_4_Page_1_1_0(this._storedInputs);
 
             await storedProcessRequestHandler_UsingBuilderPattern.Action_1_Begin_Process();
 
@@ -1009,10 +1051,11 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
         //#endregion
     }
+
     //#endregion
 
     //#region 6. Action Implementation
-    export class Implement_DesignPattern_Builder_Chapter_12_3_Page_5_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
+    export class Implement_DesignPattern_Builder_Chapter_12_4_Page_1_1_0 extends aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>
     {
         //#region 1. Assign
 
@@ -1025,7 +1068,7 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
         private _storedInputRequestName: string;
         private _storedInputRequestNameDataCacheKey: string;
 
-        private _storedInputRequestDataCustom: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
+        private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         public _storedProcessRequestServerInstance: any;
         private _storedProcessRequestServerInstanceInfo: any;
@@ -1040,7 +1083,6 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
         //PLUMBING
         private _storedInputRequestActionName: string = "";
-        private _storedProcessRequestBusinessDirectorOrExperienceRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
 
         private _storedProcessRequestCentralizedDisturber: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
         private _storedProcessRequestCentralizedSensor: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object>;
@@ -1051,12 +1093,9 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
         private _storedProcessRequestFileName: string = "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0";
         private _storedProcessRequestName: string = "";
         private _storedProcessRequestDataRepository: IContract_Programming_Repository_12_2_1_0;
-        private _storedProcessRequestProcessRequestByName: string;
+        private _storedProcessRequestByName: string;
 
-        private _storedProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0;
-        private _storedProcessRequestByName: string = "";
-
-        public storedProcessRequestStartUpCallBack;
+        public StartUpCallBack;
 
         //#endregion
 
@@ -1301,347 +1340,16 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
         //#region A. Action Methods
 
-        //Page 1-5
-        public async Action_5_Process_StorySetting(): Promise<object> {
-            //#region 1. INPUTS
 
-            //#region DEFINE control variables
-
-            //#endregion
-
-            //#region DEFINE input variables
-
-
-            //#endregion
-
-            //#region DEFINE process variables
-
-
-
-            //#endregion
-
-            //#region DEFINE output variables
-
-            let storedOutputResponseData: any = null;
-
-            //#endregion
-
-            ///////////////////////////////////////////////////////////
-
-            //#region MEMORIZE control variables
-
-            //#region MEMORIZE control xxx xxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE input variables
-
-            //#region MEMORIZE input xxx xxxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE process variables
-
-            //#region MEMORIZE process developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE output variables
-
-            //#region MEMORIZE output xxx xxxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            try {
-                storedOutputResponseData = await this.Factory_Action_5_Process_StorySetting();
-            }
-            catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
-            }
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN http response
-
-            //#region IDEAL CASE - USE baseDI dataset
-
-            return storedOutputResponseData;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
 
         //#endregion
 
         //#region B. Action Factories
 
-        //Page 1-5
-        private async Factory_Action_5_Process_StorySetting(): Promise<object> {
-            //#region 1. INPUTS
-
-            //#region DEFINE control variables
-
-            //#endregion
-
-            //#region DEFINE input variables
-
-
-            //#endregion
-
-            //#region DEFINE process variables
-
-
-
-            //#endregion
-
-            //#region DEFINE output variables
-
-            let storedOutputResponseData: any = null;
-
-            //#endregion
-
-            ///////////////////////////////////////////////////////////
-
-            //#region MEMORIZE control variables
-
-            //#region MEMORIZE control xxx xxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE input variables
-
-            //#region MEMORIZE input xxx xxxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE process variables
-
-            //#region MEMORIZE process developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE output variables
-
-            //#region MEMORIZE output xxx xxxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region EXECUTE process factory
-
-            try {
-                //#region IDEAL CASE - USE factory method
-
-                //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
-                //{
-                //    storedOutputResponseData = await Execute_Factory_Action_5_Process_StorySetting_OutputHtml();
-                //}
-
-                storedOutputResponseData = await this.Execute_Factory_Action_5_Process_StorySetting_OutputHtml();
-
-                //#endregion
-            }
-            catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN http response
-
-            //#region IDEAL CASE - USE baseDI dataset
-
-            return storedOutputResponseData;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
 
         //#endregion
 
         //#region C. Action Logic
-
-        //Page 1-5
-        private async Execute_Factory_Action_5_Process_StorySetting_OutputHtml(): Promise<object> {
-            //#region 1. INPUTS
-
-            //#region DEFINE control variables
-
-            //#endregion
-
-            //#region DEFINE input variables
-
-
-            //#endregion
-
-            //#region DEFINE process variables
-
-
-
-            //#endregion
-
-            //#region DEFINE output variables
-
-            let storedOutputResponseData: any = null;
-
-            //#endregion
-
-            ///////////////////////////////////////////////////////////
-
-            //#region MEMORIZE control variables
-
-            //#region MEMORIZE control xxx xxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE input variables
-
-            //#region MEMORIZE input xxx xxxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE process variables
-
-            //#region MEMORIZE process developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE output variables
-
-            //#region MEMORIZE output xxx xxxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region EXECUTE process handler
-
-            //#region IDEAL CASE - USE process handler
-            var page = new ChapterPage_Page_5_5_Process_StorySetting_12_3_1_0.BaseDI.Professional.Chapter.Page.Web_Development_5.Page_5_5_Process_StorySetting_12_3_1_0(this._storedInputs);
-
-            page.ClientOrServerInstance = this._storedProcessRequestTracker;
-
-            page.DirectorOrExperienceRequestHandler = this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler;
-            page.ExtraData = this._storedProcessRequestExtraData;
-
-            page.MasterStorer = this._storedProcessRequestCentralizedStorer;
-            page.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
-            page.MasterSensor = this._storedProcessRequestCentralizedSensor;
-
-            page.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
-
-            this._storedProcessRequestDataStorylineDetails_Altered = await page.Action();
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN process response
-
-            //#region IDEAL CASE - USE baseDI dataset
-
-            return this._storedProcessRequestDataStorylineDetails;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
 
         //#endregion
 
@@ -1729,14 +1437,6 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
             //#region 2. PROCESS
 
-            try {
-                storedOutputResponseData = await this.Factory_Action_1_Begin_Process();
-            }
-            catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
-            }
-
-
             //#endregion
 
             //#region 3. OUTPUT
@@ -1755,6 +1455,7 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
         }
 
         //Page 1-2
+
         public async Action_2_Validate_Process(): Promise<any> {
             //#region 1. INPUTS
 
@@ -2031,6 +1732,108 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
             //#region IDEAL CASE - USE baseDI dataset
 
             return this._storedProcessRequestDataStorylineDetails;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-5
+        public async Action_5_Process_StorySetting(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            try {
+                storedOutputResponseData = await this.Factory_Action_5_Process_StorySetting();
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
 
             //#endregion
 
@@ -2504,13 +2307,6 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
 
             //#region 2. PROCESS
 
-            try {
-                storedOutputResponseData = await this.Factory_Action_10_End_Process();
-            }
-            catch (storedProcessRequestMistake) {
-                throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
-            }
-
             //#endregion
 
             //#region 3. OUTPUT
@@ -2912,6 +2708,119 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
                 //}
 
                 //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN http response
+
+            //#region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }
+
+        //Page 1-5
+        private async Factory_Action_5_Process_StorySetting(): Promise<any> {
+            //#region 1. INPUTS
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE process factory
+
+            try {
+                //#region IDEAL CASE - USE factory method
+
+                if (this._storedInputRequestActionName.toUpperCase().includes("PROCESSHTTPREQUEST_1_0")) {
+                    //storedOutputResponseData = await Execute_Action_5_Process_StorySetting_ProcessHttpRequest();
+                }
+
+                //#endregion
+
             }
             catch (storedProcessRequestMistake) {
                 throw storedProcessRequestMistake; //Let "Startup.cs -> Startup_Controller" handle the exception.
@@ -3423,11 +3332,9 @@ export namespace BaseDI.Professional.Director.Web_Development_5 {
             try {
                 //#region IDEAL CASE - USE factory method
 
-                //if (this._storedInputRequestActionName.toUpperCase() == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.toUpperCase()) {
-                //storedOutputResponseData = await Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
-                //}
-
-                //storedOutputResponseData = await this.Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
+                if (this._storedInputRequestActionName.toUpperCase() == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0.toUpperCase()) {
+                    //storedOutputResponseData = await Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
+                }
 
                 //#endregion
             }

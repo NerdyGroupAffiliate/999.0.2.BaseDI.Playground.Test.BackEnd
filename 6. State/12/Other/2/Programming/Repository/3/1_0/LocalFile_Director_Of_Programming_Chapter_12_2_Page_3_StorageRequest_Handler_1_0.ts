@@ -316,13 +316,13 @@ export namespace BaseDI.Professional.State.Programming_3
 
         //#region 4. Action
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //A. Story in motion (DO SOMETHING)
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //Page 1-8
         public async Action_8_Process_CRUD(): Promise<any> {
@@ -409,7 +409,7 @@ export namespace BaseDI.Professional.State.Programming_3
 
         //#endregion
 
-        //#region B.Action Factories
+        //#region B. Action Factories
 
         //Page 1-8
         private async Factory_Action_8_Process_CRUD(): Promise<any> {
@@ -516,7 +516,7 @@ export namespace BaseDI.Professional.State.Programming_3
 
         //#endregion
 
-        //#region C.Action Logic
+        //#region C. Action Logic
 
         //Page 1-8
         private async Execute_Factory_Action_8_Process_CRUD_ControlDataInCache(): Promise<any>
@@ -809,7 +809,7 @@ export namespace BaseDI.Professional.State.Programming_3
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<any> {
@@ -1574,7 +1574,7 @@ export namespace BaseDI.Professional.State.Programming_3
 
         //#endregion
 
-        //#region B.Action Factories
+        //#region B. Action Factories
 
         //Page 1-1
         private async Factory_Action_1_Begin_Process(): Promise<any> {
@@ -2487,7 +2487,7 @@ export namespace BaseDI.Professional.State.Programming_3
 
         //#endregion
 
-        //#region C.Action Logic
+        //#region C. Action Logic
 
         //#endregion
 

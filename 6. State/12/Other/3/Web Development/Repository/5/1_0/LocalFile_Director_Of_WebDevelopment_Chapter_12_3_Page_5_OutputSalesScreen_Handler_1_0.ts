@@ -312,21 +312,21 @@ export namespace BaseDI.Professional.State.Web_Development_5 {
 
         //#region 4. Action
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //A. Story in motion (DO SOMETHING)
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //#endregion
 
-        //#region B.Action Factories
+        //#region B. Action Factories
 
         //#endregion
 
-        //#region C.Action Logic
+        //#region C. Action Logic
 
         //#endregion
 
@@ -334,7 +334,7 @@ export namespace BaseDI.Professional.State.Web_Development_5 {
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<any> {
@@ -1182,7 +1182,7 @@ export namespace BaseDI.Professional.State.Web_Development_5 {
 
         //#endregion
 
-        //#region B.Action Factories
+        //#region B. Action Factories
 
         //Page 1-1
         private async Factory_Action_1_Begin_Process(): Promise<any> {
@@ -2195,7 +2195,7 @@ export namespace BaseDI.Professional.State.Web_Development_5 {
 
         //#endregion
 
-        //#region C.Action Logic
+        //#region C. Action Logic
 
         //#endregion
 

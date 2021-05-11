@@ -1035,6 +1035,7 @@ export namespace BaseDI.Professional.Director.Programming_3
         //DATASET
         private _storedProcessRequestDataStorylineDetails: object = new Object();
         private _storedProcessRequestDataStorylineDetails_Parameters: object = new Object();
+        private _storedProcessRequestDataStorylineDetails_Altered: object = new Object();
 
         //MISC
         private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
@@ -1300,7 +1301,7 @@ export namespace BaseDI.Professional.Director.Programming_3
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //Page 1-8
         public async Action_8_Process_CRUD(): Promise<any>
@@ -1408,7 +1409,7 @@ export namespace BaseDI.Professional.Director.Programming_3
 
         //#endregion
 
-        //#region B.Action Factories
+        //#region B. Action Factories
 
         //Page 1-8
         private async Factory_Action_8_Process_CRUD(): Promise<any> {
@@ -1515,7 +1516,7 @@ export namespace BaseDI.Professional.Director.Programming_3
 
         //#endregion
 
-        //#region C.Action Logic
+        //#region C. Action Logic
 
         //Page 1-8
         private async Execute_Factory_Action_8_Process_CRUD_StoreDataInCache(): Promise<object> {
@@ -1612,7 +1613,7 @@ export namespace BaseDI.Professional.Director.Programming_3
 
             page.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
-            this._storedProcessRequestDataStorylineDetails = await page.Action();
+            this._storedProcessRequestDataStorylineDetails_Altered = await page.Action();
 
             //#endregion
 
@@ -1626,7 +1627,7 @@ export namespace BaseDI.Professional.Director.Programming_3
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails_Altered;
 
             //#endregion
 
@@ -1641,7 +1642,7 @@ export namespace BaseDI.Professional.Director.Programming_3
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<any> {
@@ -2521,7 +2522,7 @@ export namespace BaseDI.Professional.Director.Programming_3
 
         //#endregion
 
-        //#region B.Action Factories
+        //#region B. Action Factories
 
         //Page 1-1
         private async Factory_Action_1_Begin_Process(): Promise<any> {
@@ -3430,7 +3431,7 @@ export namespace BaseDI.Professional.Director.Programming_3
                 //storedOutputResponseData = await Execute_Factory_Action_10_End_Process_TransportRequestToHandler();
                 //}
 
-                //storedOutputResponseData = await this.Execute_Factory_Action_1_Begin_Process_StoreInputData();
+                //storedOutputResponseData = await this.Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
 
                 //#endregion
             }
@@ -3459,7 +3460,7 @@ export namespace BaseDI.Professional.Director.Programming_3
 
         //#endregion
 
-        //#region C.Action Logic
+        //#region C. Action Logic
 
         //#endregion
 

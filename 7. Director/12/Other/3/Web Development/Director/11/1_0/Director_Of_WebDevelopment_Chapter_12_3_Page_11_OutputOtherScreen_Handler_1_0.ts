@@ -653,6 +653,7 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
         //DATASET
         private _storedProcessRequestDataStorylineDetails: object = new Object();
         private _storedProcessRequestDataStorylineDetails_Parameters: object = new Object();
+        private _storedProcessRequestDataStorylineDetails_Altered: object = new Object();
 
         //MISC
         private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
@@ -1024,7 +1025,7 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
 
             page.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
-            this._storedProcessRequestDataStorylineDetails = await page.Action();
+            this._storedProcessRequestDataStorylineDetails_Altered = await page.Action();
 
             //#endregion
 
@@ -1038,7 +1039,7 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return this._storedProcessRequestDataStorylineDetails;
+            return this._storedProcessRequestDataStorylineDetails_Altered;
 
             //#endregion
 
@@ -1422,7 +1423,7 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
 
                 //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreProcessRequestDataInCache();
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
                 //}
 
                 storedOutputResponseData = this.StorylineDetails; //await this.Execute_Factory_Action_10_End_Process_TransportRequestToHandler();

@@ -1142,6 +1142,7 @@ namespace BaseDI.Professional.Director.Advertising_3
         //DATASET
         private JObject _storedProcessRequestDataStorylineDetails = null;
         private JObject _storedProcessRequestDataStorylineDetails_Parameters = null;
+        private JObject _storedProcessRequestDataStorylineDetails_Altered = null;
 
         private string _storedOutputResponseDataObservationTemplate = "";
 

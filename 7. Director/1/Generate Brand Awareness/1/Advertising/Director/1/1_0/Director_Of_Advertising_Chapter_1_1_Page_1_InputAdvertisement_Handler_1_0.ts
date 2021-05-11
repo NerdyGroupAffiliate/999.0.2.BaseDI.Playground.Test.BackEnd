@@ -328,7 +328,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Experience_The_Movement_ToFacebookPage_DataTransfer_2_3_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0.ts");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> ValidateInputs");
 
                 //3. OUTPUTS
@@ -1069,6 +1069,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
         //DATASET
         private _storedProcessRequestDataStorylineDetails: object = new Object();
         private _storedProcessRequestDataStorylineDetails_Parameters: object = new Object();
+        private _storedProcessRequestDataStorylineDetails_Altered: object = new Object();
 
         //MISC
         private _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0;
@@ -1330,18 +1331,18 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
         //#region EXECUTE LOGIC INSTUCTIONS
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
 
 
         //#endregion
 
-        //#region B.Action Factories
+        //#region B. Action Factories
 
 
         //#endregion
 
-        //#region C.Action Logic
+        //#region C. Action Logic
 
         //#endregion
 
@@ -1349,7 +1350,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
         //#region NOT APART OF THE REQUEST PIPELINE AT THIS TIME
 
-        //#region A.Action Methods
+        //#region A. Action Methods
 
         //Page 1-1
         public async Action_1_Begin_Process(): Promise<any> {
@@ -2320,7 +2321,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
         //#endregion
 
-        //#region B.Action Factories
+        //#region B. Action Factories
 
         //Page 1-1
         private async Factory_Action_1_Begin_Process(): Promise<any> {
@@ -3367,7 +3368,7 @@ export namespace BaseDI.Professional.Director.Advertising_1
 
         //#endregion
 
-        //#region C.Action Logic
+        //#region C. Action Logic
 
         //#endregion
 

@@ -1007,6 +1007,7 @@ namespace BaseDI.Professional.Director.Programming_3
         //DATASET
         private JObject _storedProcessRequestDataStorylineDetails = null;
         private JObject _storedProcessRequestDataStorylineDetails_Parameters = null;
+        private JObject _storedProcessRequestDataStorylineDetails_Altered = null;
 
         private string _storedOutputResponseDataObservationTemplate = "";
 
@@ -1369,7 +1370,6 @@ namespace BaseDI.Professional.Director.Programming_3
             #endregion
         }
 
-
         #endregion
 
         #region B. Action Factories
@@ -1461,7 +1461,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
                 //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreProcessRequestDataInCache();
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
                 //}
 
                 storedOutputResponseData = await Execute_Factory_Action_8_Process_CRUD_StoreDataInCache();
@@ -1592,7 +1592,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
             page.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
-            _storedProcessRequestDataStorylineDetails = await page.Action().ConfigureAwait(true);
+            _storedProcessRequestDataStorylineDetails_Altered = await page.Action().ConfigureAwait(true);
 
             #endregion
 
@@ -1606,7 +1606,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails_Altered).ConfigureAwait(true);
 
             #endregion
 
@@ -2588,7 +2588,7 @@ namespace BaseDI.Professional.Director.Programming_3
 
                 //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreProcessRequestDataInCache();
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
                 //}
 
                 #endregion

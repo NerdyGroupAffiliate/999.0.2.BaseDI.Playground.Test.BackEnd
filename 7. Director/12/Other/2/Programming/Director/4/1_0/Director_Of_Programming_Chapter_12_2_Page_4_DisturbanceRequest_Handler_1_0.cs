@@ -1133,6 +1133,7 @@ namespace BaseDI.Professional.Director.Programming_4
         //DATASET
         private JObject _storedProcessRequestDataStorylineDetails = null;
         private JObject _storedProcessRequestDataStorylineDetails_Parameters = null;
+        private JObject _storedProcessRequestDataStorylineDetails_Altered = null;
 
         private string _storedOutputResponseDataObservationTemplate = "";
 
@@ -2480,7 +2481,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
                 //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreProcessRequestDataInCache();
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
                 //}
 
                 #endregion
@@ -3245,7 +3246,7 @@ namespace BaseDI.Professional.Director.Programming_4
 
                 //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreProcessRequestDataInCache();
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
                 //}
 
                 #endregion

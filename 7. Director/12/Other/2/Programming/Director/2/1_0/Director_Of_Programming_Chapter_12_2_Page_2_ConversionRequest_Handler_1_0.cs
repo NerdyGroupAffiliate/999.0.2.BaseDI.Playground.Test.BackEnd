@@ -1130,6 +1130,8 @@ namespace BaseDI.Professional.Director.Programming_2
         private JObject _storedProcessRequestDataStorylineDetails = null;
         private JObject _storedProcessRequestDataStorylineDetails_Parameters = null;
 
+        private JObject _storedProcessRequestDataStorylineDetails_Altered = null;
+
         private string _storedOutputResponseDataObservationTemplate = "";
 
         //MISC
@@ -1481,7 +1483,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
 
             #endregion
 
@@ -1581,10 +1583,10 @@ namespace BaseDI.Professional.Director.Programming_2
 
                 //if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
                 //{
-                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreProcessRequestDataInCache();
+                //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
                 //}
 
-                storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreInputData();
+                storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
 
                 #endregion
             }
@@ -1617,7 +1619,7 @@ namespace BaseDI.Professional.Director.Programming_2
         #region C. Action Logic
 
         //Page 1-1
-        private async Task<JObject> Execute_Factory_Action_1_Begin_Process_StoreInputData()
+        private async Task<JObject> Execute_Factory_Action_1_Begin_Process_StoreDataInCache()
         {
             #region 1. INPUTS
 
@@ -1712,7 +1714,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
             page.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
-            this.StorylineDetails = await page.Action().ConfigureAwait(true);
+            _storedProcessRequestDataStorylineDetails_Altered = await page.Action().ConfigureAwait(true);
 
             #endregion
 
@@ -1726,7 +1728,7 @@ namespace BaseDI.Professional.Director.Programming_2
 
             #region IDEAL CASE - USE baseDI dataset
 
-            return await Task.FromResult<JObject>(this.StorylineDetails).ConfigureAwait(true);
+            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails_Altered).ConfigureAwait(true);
 
             #endregion
 

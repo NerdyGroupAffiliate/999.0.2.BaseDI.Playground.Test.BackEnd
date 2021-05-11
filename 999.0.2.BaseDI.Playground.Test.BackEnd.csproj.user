@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ActiveDebugProfile>_999._0._2.BaseDI</ActiveDebugProfile>
     <ShowAllFiles>false</ShowAllFiles>
-    <ToolsVersionPromptShown>4.1</ToolsVersionPromptShown>
+    <ToolsVersionPromptShown>4.2</ToolsVersionPromptShown>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
