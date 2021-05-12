@@ -10,7 +10,11 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Update="8. Testing\0. Script\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.test.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Update="Snippet_TypeScript_Regions.ts">
       <SubType>Code</SubType>

@@ -3043,7 +3043,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -3089,18 +3089,6 @@ namespace BaseDI.Professional.Story.Programming_0
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
-
-            #endregion
-
-            #region MEMORIZE process request tracker
-
-            _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
-
-            #endregion
-
-            #region MEMORIZE process request settings
-
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
@@ -3463,7 +3451,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -3509,18 +3497,6 @@ namespace BaseDI.Professional.Story.Programming_0
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
-
-            #endregion
-
-            #region MEMORIZE process request tracker
-
-            _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
-
-            #endregion
-
-            #region MEMORIZE process request settings
-
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
@@ -3883,7 +3859,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -3929,18 +3905,6 @@ namespace BaseDI.Professional.Story.Programming_0
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
-
-            #endregion
-
-            #region MEMORIZE process request tracker
-
-            _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
-
-            #endregion
-
-            #region MEMORIZE process request settings
-
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 

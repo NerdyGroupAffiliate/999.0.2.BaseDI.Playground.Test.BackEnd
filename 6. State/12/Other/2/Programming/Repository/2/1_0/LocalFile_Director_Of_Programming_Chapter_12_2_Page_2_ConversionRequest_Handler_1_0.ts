@@ -1102,6 +1102,11 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
             //#region IDEAL CASE - USE baseDI dataset
 
+            storedOutputResponseData = {
+                StorylineDetails: storedProcessRequestDataStorylineDetails,
+                StorylineDetails_Parameters: storedProcessRequestDataStorylineDetails_Parameters
+            }
+
             return storedOutputResponseData;
 
             //#endregion

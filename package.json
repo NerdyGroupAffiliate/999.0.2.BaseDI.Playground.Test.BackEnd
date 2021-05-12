@@ -164,6 +164,7 @@
     "@types/express": "^4.17.2",
     "@types/facebook-js-sdk": "^3.3.0",
     "@types/fs-extra": "^8.0.1",
+    "@types/jest": "^26.0.23",
     "@types/node": "^12.12.22",
     "@types/passport": "1.0.6",
     "@types/passport-facebook": "^2.1.10",

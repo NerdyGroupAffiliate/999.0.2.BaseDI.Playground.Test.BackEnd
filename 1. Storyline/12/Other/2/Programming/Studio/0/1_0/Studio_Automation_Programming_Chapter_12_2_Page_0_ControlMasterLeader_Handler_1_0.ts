@@ -3048,7 +3048,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -3094,18 +3094,6 @@ export namespace BaseDI.Professional.Story.Programming_0
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
-
-            //#endregion
-
-            //#region MEMORIZE process request tracker
-
-            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
-
-            //#endregion
-
-            //#region MEMORIZE process request settings
-
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
@@ -3478,7 +3466,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -3524,18 +3512,6 @@ export namespace BaseDI.Professional.Story.Programming_0
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
-
-            //#endregion
-
-            //#region MEMORIZE process request tracker
-
-            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
-
-            //#endregion
-
-            //#region MEMORIZE process request settings
-
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
@@ -3908,7 +3884,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -3954,18 +3930,6 @@ export namespace BaseDI.Professional.Story.Programming_0
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
-
-            //#endregion
-
-            //#region MEMORIZE process request tracker
-
-            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
-
-            //#endregion
-
-            //#region MEMORIZE process request settings
-
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 

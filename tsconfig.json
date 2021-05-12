@@ -38,7 +38,8 @@
       "es6-promise",
       "express-serve-static-core",
       "passport",
-      "passport-facebook"
+      "passport-facebook",
+      "jest"
     ],
     "paths": {
       "*": [
