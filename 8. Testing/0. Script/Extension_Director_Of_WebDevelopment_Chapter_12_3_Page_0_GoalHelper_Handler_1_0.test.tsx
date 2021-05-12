@@ -25,6 +25,127 @@ import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequ
 
 //#endregion
 
+//#region 1. Assign
+
+//CLIENT/SERVER
+let _storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+//SETTINGS
+
+//DATASETS
+let _storedOutputResponseData: any;
+
+//MISC
+
+//PLUMBING
+let _storedProcessRequestCentralizedStorer: Implement_DesignPattern_Factory_Storer_12_2_1_0.BaseDI.Professional.Story.Programming_0.Implement_DesignPattern_Factory_Storer_12_2_1_0 = null;
+let _storedProcessRequestLocalCacheDataRepository: ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0;
+let _storedProcessRequestTracker: object;
+
+//#endregion
+
+//#region 2. Ready
+
+beforeEach(() => {
+    //#region 1. INPUTS
+
+    //#region DEFINE control variables
+
+    //#endregion
+
+    //#region DEFINE input variables
+
+
+    //#endregion
+
+    //#region DEFINE process variables
+
+
+
+    //#endregion
+
+    //#region DEFINE output variables
+
+    //#endregion
+
+    ///////////////////////////////
+
+    //#region MEMORIZE control variables
+
+    //#region MEMORIZE control xxx xxx
+
+
+    //#endregion
+
+    //#endregion
+
+    //#region MEMORIZE input variables
+
+    //#region MEMORIZE input xxx xxxx
+
+
+    //#endregion
+
+    //#endregion
+
+    //#region MEMORIZE process variables
+
+    //#region MEMORIZE process request settings
+
+    _storedProcessRequestTracker = new Object();
+
+    _storedProcessRequestTracker["storedProcessRequestIgnoreDeveloperConsoleLog"] = false;
+    _storedProcessRequestTracker["storedProcessRequestSettings"] = {
+        NODE_ENV: JSON.stringify("development"),
+        PORT: JSON.stringify(0),
+        APP_ENV: JSON.stringify("SERVER"),
+        APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER: JSON.stringify("LOCAL_FILE"), //OPTIONS = LOCAL_FILE, LOCAL_DATABASE, LOCAL_SERVICE, REMOTE_FILE, REMOTE_DATABASE, REMOTE_SERVICE, REMOTE_SERVICE_VENDOR
+        APP_SETTING_DEVELOPER_MODE: JSON.stringify(true),
+        APP_SETTING_DEVELOPER_MODE_SILENT: JSON.stringify(false)
+    }
+    _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+
+    //#endregion
+
+    //#endregion
+
+    //#region MEMORIZE output variables
+
+    //#region MEMORIZE output xxx xxx
+
+
+    //#endregion
+
+    //#endregion
+
+    //#endregion
+
+    //#region 2. PROCESS
+
+    //#region EXECUTE process defaults
+
+    //#region IDEAL CASE - defaults handler
+
+
+    //#endregion
+
+    //#endregion
+
+    //#endregion
+
+    //#region 3. OUTPUT
+
+    //#endregion
+});
+
+//#endregion
+
+//#region 3. Set
+
+//#endregion
+
+//#region 4. Action
+
 describe('Web Development Test', () => {
     test('Test JSON to HTML Conversion', () =>
     {
@@ -36,20 +157,15 @@ describe('Web Development Test', () => {
 
         //#region DEFINE input variables
 
-        let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
         //#endregion
 
         //#region DEFINE process variables
 
-        let storedProcessRequestCentralizedStorer: Implement_DesignPattern_Factory_Storer_12_2_1_0.BaseDI.Professional.Story.Programming_0.Implement_DesignPattern_Factory_Storer_12_2_1_0 = null;
-        let storedProcessRequestDataRepository: ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0;
 
         //#endregion
 
         //#region DEFINE output variables
-
-        let storedOutputResponseData: any;
 
         //#endregion
 
@@ -74,58 +190,41 @@ describe('Web Development Test', () => {
 
         //#region MEMORIZE process variables
 
-        //#region MEMORIZE process request settings
-
-        let storedProcessRequestTracker: object = new Object();
-
-        storedProcessRequestTracker["storedProcessRequestIgnoreDeveloperConsoleLog"] = false;
-        storedProcessRequestTracker["storedProcessRequestSettings"] = {
-            NODE_ENV: JSON.stringify("development"),
-            PORT: JSON.stringify(0),
-            APP_ENV: JSON.stringify("SERVER"),
-            APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER: JSON.stringify("LOCAL_FILE"), //OPTIONS = LOCAL_FILE, LOCAL_DATABASE, LOCAL_SERVICE, REMOTE_FILE, REMOTE_DATABASE, REMOTE_SERVICE, REMOTE_SERVICE_VENDOR
-            APP_SETTING_DEVELOPER_MODE: JSON.stringify(true),
-            APP_SETTING_DEVELOPER_MODE_SILENT: JSON.stringify(false)
-        }
-        storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
-
-        //#endregion
-
         //#region MEMORIZE process test variables
 
-        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+        _storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
         //0. CONTROLLERS
 
         //1. INPUTS
-        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
-        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0");
-        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0-P1_0");
+        _storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
+        _storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0");
+        _storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0-P1_0");
 
         //2. PROCESS
-        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-    
-        storedInputs.Parameters.setValue("parameterProcessRequestExtraData", null);
+        _storedInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
+        _storedInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
 
-        storedProcessRequestCentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0.BaseDI.Professional.Story.Programming_0.Implement_DesignPattern_Factory_Storer_12_2_1_0(storedInputs);
+        _storedInputs.Parameters.setValue("parameterProcessRequestExtraData", null);
 
-        storedInputs.Parameters.setValue("parameterProcessRequestCentralizedDisturber", null);
-        storedInputs.Parameters.setValue("parameterProcessRequestCentralizedSensor", null);
-        storedInputs.Parameters.setValue("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
+        _storedProcessRequestCentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0.BaseDI.Professional.Story.Programming_0.Implement_DesignPattern_Factory_Storer_12_2_1_0(_storedInputs);
 
-        storedProcessRequestDataRepository = new ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0(storedInputs);
-        storedProcessRequestDataRepository.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(storedInputs);
+        _storedInputs.Parameters.setValue("parameterProcessRequestCentralizedDisturber", null);
+        _storedInputs.Parameters.setValue("parameterProcessRequestCentralizedSensor", null);
+        _storedInputs.Parameters.setValue("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
+
+        _storedProcessRequestLocalCacheDataRepository = new ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0(_storedInputs);
+        _storedProcessRequestLocalCacheDataRepository.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(_storedInputs);
 
         const ExecuteConversionRequest = async () => {
-            storedOutputResponseData = await storedProcessRequestDataRepository.Action();
+            _storedOutputResponseData = await _storedProcessRequestLocalCacheDataRepository.Action();
 
-            return storedOutputResponseData.StorylineDetails;
+            return _storedOutputResponseData.StorylineDetails;
         }
 
-        storedOutputResponseData = ExecuteConversionRequest();
+        _storedOutputResponseData = ExecuteConversionRequest();
 
-        storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedOutputResponseData);
+        _storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", _storedOutputResponseData);
 
 
         //3. OUTPUTS
@@ -151,9 +250,7 @@ describe('Web Development Test', () => {
 
         //#region IDEAL CASE - USE baseDI converted
 
-       
-       
-        storedOutputResponseData = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_0_0_Framework_Convert_HtmlToJSON_1_0(storedInputs);
+        _storedOutputResponseData = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_0_0_Framework_Convert_HtmlToJSON_1_0(_storedInputs);
 
         //#endregion
 
@@ -165,11 +262,15 @@ describe('Web Development Test', () => {
 
         //#region HANDLE execution response
 
-        console.log(storedOutputResponseData);
+        console.log(_storedOutputResponseData);
 
         //#endregion
 
         //#endregion
     })
 });
+
+//#endregion
+
+
 
