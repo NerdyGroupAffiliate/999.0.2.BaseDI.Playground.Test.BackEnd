@@ -90,7 +90,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                 //#region MEMORIZE app settings
 
-                let storedProcessRequestSettings = storedProcessRequestTracker["parameterProcessRequestSettings"];
+                let storedProcessRequestSettings = storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 //#endregion
 
@@ -259,7 +259,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             //#region MEMORIZE app settings
 
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker["parameterProcessRequestSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 

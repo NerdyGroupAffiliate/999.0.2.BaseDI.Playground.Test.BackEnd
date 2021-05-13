@@ -1072,22 +1072,22 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     //STATIC inputs               
                     storedInputs.Parameters.setValue("parameterProcessRequestTracker", Object.assign(storedProcessRequestTracker, Object));
-                    storedInputs.Parameters.setValue("parameterCRUDVerb", "Create");
+                    storedInputs.Parameters.setValue("parameterProcessRequestCRUDVerb", "Create");
 
                     storedInputs.Parameters.setValue("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
                     storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", Object.assign(storedProcessRequestCentralizedStorer, Object));
 
-                    storedInputs.Parameters.setValue("parameterPageName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
+                    storedInputs.Parameters.setValue("parameterProcessRequestPageName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
 
                     storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", Object.assign(storedProcessRequestDataStorylineDetails, Object));
 
                     storedInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", true);
 
                     //DYNAMIC inputs
-                    storedInputs.Parameters.setValue("parameterStorageDescription", "STORING client side BaseDI script SOURCE PATH");
+                    storedInputs.Parameters.setValue("parameterProcessRequestStorageDescription", "STORING client side BaseDI script SOURCE PATH");
                     storedInputs.Parameters.setValue("parameterProcessRequestStorageValue", storedServerScriptName);
-                    storedInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
+                    storedInputs.Parameters.setValue("parameterProcessRequestStorageUniqueKey", "BaseDI_PresentationScript_SrcLocation");
 
                     //STORE it
                     await Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedInputs);
@@ -1096,14 +1096,14 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     storedInputs.Parameters.setValue("parameterProcessRequestTracker", Object.assign(storedProcessRequestTracker, Object));
 
-                    storedInputs.Parameters.remove("parameterStorageDescription");
-                    storedInputs.Parameters.setValue("parameterStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
+                    storedInputs.Parameters.remove("parameterProcessRequestStorageDescription");
+                    storedInputs.Parameters.setValue("parameterProcessRequestStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
 
                     storedInputs.Parameters.remove("parameterProcessRequestStorageValue");
                     storedInputs.Parameters.setValue("parameterProcessRequestStorageValue", process.env.APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER);
 
-                    storedInputs.Parameters.remove("parameterUniqueStorageKey");
-                    storedInputs.Parameters.setValue("parameterUniqueStorageKey", "BaseDI_DataConverter_Mode");
+                    storedInputs.Parameters.remove("parameterProcessRequestStorageUniqueKey");
+                    storedInputs.Parameters.setValue("parameterProcessRequestStorageUniqueKey", "BaseDI_DataConverter_Mode");
 
                     storedInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", false);
 

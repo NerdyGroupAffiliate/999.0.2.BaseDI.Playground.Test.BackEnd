@@ -266,7 +266,7 @@ export namespace BaseDI.Professional.Advertising.Extensions_2 {
 
             //#region MEMORIZE app settings
 
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker["parameterProcessRequestSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 

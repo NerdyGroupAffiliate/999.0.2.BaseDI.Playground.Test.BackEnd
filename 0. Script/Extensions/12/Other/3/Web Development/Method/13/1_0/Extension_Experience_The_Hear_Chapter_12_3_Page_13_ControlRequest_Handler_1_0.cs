@@ -547,7 +547,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE app settings
 
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["parameterProcessRequestSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
@@ -1123,22 +1123,22 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     //STATIC inputs               
                     storedInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                    storedInputs.Parameters.Add("parameterCRUDVerb", "Create");
+                    storedInputs.Parameters.Add("parameterProcessRequestCRUDVerb", "Create");
 
                     storedInputs.Parameters.Add("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
                     storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
 
-                    storedInputs.Parameters.Add("parameterPageName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
+                    storedInputs.Parameters.Add("parameterProcessRequestPageName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
 
                     storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                     storedInputs.Parameters.Add("parameterOPTIONALIgnoreDeveloperConsoleLog", true);
 
                     //DYNAMIC inputs
-                    storedInputs.Parameters.Add("parameterStorageDescription", "STORING client side BaseDI script SOURCE PATH");
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageDescription", "STORING client side BaseDI script SOURCE PATH");
                     storedInputs.Parameters.Add("parameterProcessRequestStorageValue", storedServerScriptName);
-                    storedInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageUniqueKey", "BaseDI_PresentationScript_SrcLocation");
 
                     //STORE it
                     await Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedInputs);
@@ -1147,14 +1147,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     storedInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
 
-                    storedInputs.Parameters.Remove("parameterStorageDescription");
-                    storedInputs.Parameters.Add("parameterStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
+                    storedInputs.Parameters.Remove("parameterProcessRequestStorageDescription");
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageDescription", "STORING server side data CONVERSION REPOSITORY mode");
 
                     storedInputs.Parameters.Remove("parameterProcessRequestStorageValue");
                     storedInputs.Parameters.Add("parameterProcessRequestStorageValue", storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER"));
 
-                    storedInputs.Parameters.Remove("parameterUniqueStorageKey");
-                    storedInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_DataConverter_Mode");
+                    storedInputs.Parameters.Remove("parameterProcessRequestStorageUniqueKey");
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageUniqueKey", "BaseDI_DataConverter_Mode");
 
                     storedInputs.Parameters.Add("parameterOPTIONALIgnoreDeveloperConsoleLog", false);
 

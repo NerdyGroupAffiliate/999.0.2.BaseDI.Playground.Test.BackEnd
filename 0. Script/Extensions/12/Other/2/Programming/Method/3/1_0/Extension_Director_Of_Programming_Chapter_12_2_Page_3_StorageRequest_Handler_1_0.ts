@@ -139,8 +139,8 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         }
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterCRUDVerb")) {
-                        storedOutputResponseMessage += "***parameterCRUDVerb*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCRUDVerb")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCRUDVerb*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -164,18 +164,18 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterPageName")) {
-                        storedOutputResponseMessage += "***parameterPageName*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestPageName")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestPageName*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterStorageDescription")) {
-                        storedOutputResponseMessage += "***parameterStorageDescription*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestStorageDescription")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageDescription*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterUniqueStorageKey")) {
-                        storedOutputResponseMessage += "***parameterUniqueStorageKey*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestStorageUniqueKey")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageUniqueKey*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }               
 
@@ -291,7 +291,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#region MEMORIZE CRUD verb
 
-            let storedCRUDVerb: string = parameterInputs.Parameters.getValue("parameterCRUDVerb");
+            let storedCRUDVerb: string = parameterInputs.Parameters.getValue("parameterProcessRequestCRUDVerb");
 
             //#endregion
             
@@ -322,16 +322,16 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
             //#region MEMORIZE page name
 
-            let storedPageName: string = parameterInputs.Parameters.getValue("parameterPageName");
+            let storedPageName: string = parameterInputs.Parameters.getValue("parameterProcessRequestPageName");
 
             //#endregion
 
             //#region MEMORIZE storage details
 
-            let storedStorageDescription: string = parameterInputs.Parameters.getValue("parameterStorageDescription");
+            let storedStorageDescription: string = parameterInputs.Parameters.getValue("parameterProcessRequestStorageDescription");
             let storedStorageValue: any = parameterInputs.Parameters.getValue("parameterProcessRequestStorageValue");
             let storedProcessRequestStorageKey: string = "StorageKey_" + storedDirectorOrExperienceName + "-" + storedCRUDVerb;
-            let storedUniqueStorageKey: string = parameterInputs.Parameters.getValue("parameterUniqueStorageKey");
+            let storedUniqueStorageKey: string = parameterInputs.Parameters.getValue("parameterProcessRequestStorageUniqueKey");
 
             if (storedUniqueStorageKey)
                 storedProcessRequestStorageKey += "-" + storedUniqueStorageKey;
@@ -371,7 +371,7 @@ export namespace BaseDI.Professional.Programming.Extensions_3 {
 
                 storedInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
                 storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
-                storedInputs.Parameters.setValue("parameterPageName", storedPageName);
+                storedInputs.Parameters.setValue("parameterProcessRequestPageName", storedPageName);
                 storedInputs.Parameters.setValue("parameterProcessRequest3WordDescription", storedStorageDescription);
                 storedInputs.Parameters.setValue("parameter_ObservationPresentationTemplateItem", storedOutputResponseObservationPresentationTemplateItem);
                 storedInputs.Parameters.setValue("parameter_ObservationBusinessTemplateItem", storedOutputResponseObservationBusinessTemplateItem);

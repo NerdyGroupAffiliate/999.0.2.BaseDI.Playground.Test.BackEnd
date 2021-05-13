@@ -127,9 +127,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterHtmlAttributes"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestHtmlAttributes"))
                     {
-                        storedOutputResponseMessage += "***parameterHtmlAttributes*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestHtmlAttributes*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -275,7 +275,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE html inputs
 
-            dynamic storedHtmlAttributes = parameterInputs.Parameters["parameterHtmlAttributes"];
+            dynamic storedProcessRequestHtmlAttributes = parameterInputs.Parameters["parameterProcessRequestHtmlAttributes"];
 
             #endregion
 
@@ -294,18 +294,18 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<dynamic, ArrayList, Task<ArrayList>> ExecuteConversionRequest = async (dynamic parameterHtmlAttributes, ArrayList parameterHtmlAttributesOutput) => {
+            Func<dynamic, ArrayList, Task<ArrayList>> ExecuteConversionRequest = async (dynamic parameterProcessRequestHtmlAttributes, ArrayList parameterProcessRequestHtmlAttributesOutput) => {
                 try
                 {
-                    foreach (var parameterHtmlAttribute in parameterHtmlAttributes)
+                    foreach (var parameterHtmlAttribute in parameterProcessRequestHtmlAttributes)
                     {              
                         foreach (var attributeKeyValue in parameterHtmlAttribute.ToObject<Dictionary<string, string>>())
                         {
-                            parameterHtmlAttributesOutput.Add($"{attributeKeyValue.Key}='{attributeKeyValue.Value}'");
+                            parameterProcessRequestHtmlAttributesOutput.Add($"{attributeKeyValue.Key}='{attributeKeyValue.Value}'");
                         }
                     }
          
-                    return await Task.FromResult<ArrayList>(parameterHtmlAttributesOutput).ConfigureAwait(true);
+                    return await Task.FromResult<ArrayList>(parameterProcessRequestHtmlAttributesOutput).ConfigureAwait(true);
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
@@ -333,7 +333,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 }
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlAttributes, storedOutputResponseData);
+            storedOutputResponseData = await ExecuteConversionRequest(storedProcessRequestHtmlAttributes, storedOutputResponseData);
 
             #endregion
 
@@ -3187,14 +3187,14 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                     storedInputs = new SingleParmPoco_12_2_1_0();
 
                     storedInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                    storedInputs.Parameters.Add("parameterCRUDVerb", "Read");
+                    storedInputs.Parameters.Add("parameterProcessRequestCRUDVerb", "Read");
                     storedInputs.Parameters.Add("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
                     storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
                     storedInputs.Parameters.Add("parameterProcessRequestStorageValue", storedProcessRequestDataStorylineDetails);
                     storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
-                    storedInputs.Parameters.Add("parameterPageName", "");
-                    storedInputs.Parameters.Add("parameterStorageDescription", "READING client side BaseDI script SOURCE PATH");
-                    storedInputs.Parameters.Add("parameterUniqueStorageKey", "BaseDI_PresentationScript_SrcLocation");
+                    storedInputs.Parameters.Add("parameterProcessRequestPageName", "");
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageDescription", "READING client side BaseDI script SOURCE PATH");
+                    storedInputs.Parameters.Add("parameterProcessRequestStorageUniqueKey", "BaseDI_PresentationScript_SrcLocation");
 
                     parameterFilterDataResponse = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedInputs);
                     //parameterFilterDataResponse = (parameterFilterDataResponse && parameterFilterDataResponse.outputs.length > 0) ? parameterFilterDataResponse.outputs[1].baseDIObservations[parameterFilterDataResponse.outputs[1].baseDIObservations.length - 1] : null;

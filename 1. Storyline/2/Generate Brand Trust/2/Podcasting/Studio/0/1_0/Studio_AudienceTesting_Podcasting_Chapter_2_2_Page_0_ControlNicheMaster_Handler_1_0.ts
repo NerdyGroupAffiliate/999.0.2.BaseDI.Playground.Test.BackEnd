@@ -398,7 +398,7 @@ export namespace BaseDI.Professional.Story.Podcasting_0 {
                         storedProcessRequestMistakeMade = true;
                     }
                     else {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                        if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null) {
                             storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.";
                             storedProcessRequestMistakeMade = true;
                         }

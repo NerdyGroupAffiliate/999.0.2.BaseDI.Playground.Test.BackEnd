@@ -96,12 +96,12 @@ beforeEach(() => {
 
     _storedProcessRequestTracker["storedProcessRequestIgnoreDeveloperConsoleLog"] = false;
     _storedProcessRequestTracker["storedProcessRequestSettings"] = {
-        NODE_ENV: JSON.stringify("development"),
-        PORT: JSON.stringify(0),
-        APP_ENV: JSON.stringify("SERVER"),
-        APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER: JSON.stringify("LOCAL_FILE"), //OPTIONS = LOCAL_FILE, LOCAL_DATABASE, LOCAL_SERVICE, REMOTE_FILE, REMOTE_DATABASE, REMOTE_SERVICE, REMOTE_SERVICE_VENDOR
-        APP_SETTING_DEVELOPER_MODE: JSON.stringify(true),
-        APP_SETTING_DEVELOPER_MODE_SILENT: JSON.stringify(false)
+        NODE_ENV: "development",
+        PORT: 0,
+        APP_ENV: "SERVER",
+        APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER:"LOCAL_FILE", //OPTIONS = LOCAL_FILE, LOCAL_DATABASE, LOCAL_SERVICE, REMOTE_FILE, REMOTE_DATABASE, REMOTE_SERVICE, REMOTE_SERVICE_VENDOR
+        APP_SETTING_DEVELOPER_MODE: true,
+        APP_SETTING_DEVELOPER_MODE_SILENT: false
     }
     _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
@@ -147,7 +147,7 @@ beforeEach(() => {
 //#region 4. Action
 
 describe('Web Development Test', () => {
-    test('Test JSON to HTML Conversion', () =>
+    test('Conversion Test - Convert JSON to HTML', async () =>
     {
         //#region 1. INPUTS
 
@@ -166,6 +166,8 @@ describe('Web Development Test', () => {
         //#endregion
 
         //#region DEFINE output variables
+
+        let storedOutputResponseProcess: any = null;
 
         //#endregion
 
@@ -204,6 +206,7 @@ describe('Web Development Test', () => {
         //2. PROCESS
         _storedInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
         _storedInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+        _storedInputs.Parameters.setValue("parameterProcessRequestRequestHandlerFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0");
 
         _storedInputs.Parameters.setValue("parameterProcessRequestExtraData", null);
 
@@ -216,19 +219,11 @@ describe('Web Development Test', () => {
         _storedProcessRequestLocalCacheDataRepository = new ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0(_storedInputs);
         _storedProcessRequestLocalCacheDataRepository.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(_storedInputs);
 
-        const ExecuteConversionRequest = async () => {
-            _storedOutputResponseData = await _storedProcessRequestLocalCacheDataRepository.Action();
+        storedOutputResponseProcess = await Promise.all([_storedProcessRequestLocalCacheDataRepository.Action()]);
 
-            return _storedOutputResponseData.StorylineDetails;
-        }
-
-        _storedOutputResponseData = ExecuteConversionRequest();
-
-        _storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", _storedOutputResponseData);
-
+        _storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedOutputResponseProcess[0].StorylineDetails);
 
         //3. OUTPUTS
-
 
         //#endregion
 
@@ -250,7 +245,7 @@ describe('Web Development Test', () => {
 
         //#region IDEAL CASE - USE baseDI converter
 
-        _storedOutputResponseData = Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_0_0_Framework_Convert_HtmlToJSON_1_0(_storedInputs);
+        _storedOutputResponseData = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Web_Development.Extensions_0.Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_0_0_Framework_Convert_HtmlToJSON_1_0(_storedInputs);
 
         //#endregion
 

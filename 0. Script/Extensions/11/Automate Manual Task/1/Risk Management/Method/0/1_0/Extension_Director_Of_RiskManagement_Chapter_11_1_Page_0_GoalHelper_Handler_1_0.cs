@@ -345,7 +345,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             #region MEMORIZE app settings
 
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["parameterProcessRequestSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
             

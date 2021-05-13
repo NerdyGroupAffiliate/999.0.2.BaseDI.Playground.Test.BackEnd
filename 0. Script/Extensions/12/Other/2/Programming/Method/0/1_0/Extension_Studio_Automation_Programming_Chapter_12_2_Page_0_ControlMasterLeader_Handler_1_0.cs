@@ -235,7 +235,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region MEMORIZE app settings
 
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["parameterProcessRequestSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
@@ -536,7 +536,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region MEMORIZE app settings
 
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["parameterProcessRequestSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
@@ -741,9 +741,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterMistakeTemplate"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMistakeTemplate"))
                     {
-                        storedOutputResponseMessage += "***parameterMistakeTemplate*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestMistakeTemplate*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -831,7 +831,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region MEMORIZE app settings
 
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["parameterProcessRequestSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
@@ -866,7 +866,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             string storedMistakeFileName = parameterInputs.Parameters["parameterProcessRequestFileName"];
             string storedMistakeMethodName = parameterInputs.Parameters["parameterProcessRequestMethodName"];
 
-            string storedMistakeTemplate = parameterInputs.Parameters["parameterMistakeTemplate"];
+            string storedMistakeTemplate = parameterInputs.Parameters["parameterProcessRequestMistakeTemplate"];
 
             string storedMistakeBody = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}} }] }}]}";
             string storedMistakeItem = "'details': [{details}]";
@@ -881,7 +881,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region IDEAL CASE - USE baseDi template
 
-            Func<string, string, dynamic, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterMistakeTemplate, string parameterMistakeBody, dynamic parameterMistakeItem, string parameterMistakeFileName, string parameterMistakeMethodName, string parameterProcessRequest3WordDescription) =>
+            Func<string, string, dynamic, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterProcessRequestMistakeTemplate, string parameterMistakeBody, dynamic parameterMistakeItem, string parameterMistakeFileName, string parameterMistakeMethodName, string parameterProcessRequest3WordDescription) =>
             {
                 parameterMistakeBody = parameterMistakeBody.Replace("{item}", parameterMistakeItem);
 
@@ -889,7 +889,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                 parameterMistakeBody = parameterMistakeBody.Replace("{calledByMethodName}", parameterMistakeMethodName);
                 parameterMistakeBody = parameterMistakeBody.Replace("{calledByMethodReason}", parameterProcessRequest3WordDescription);
 
-                parameterMistakeBody = parameterMistakeBody.Replace("{details}", parameterMistakeTemplate);
+                parameterMistakeBody = parameterMistakeBody.Replace("{details}", parameterProcessRequestMistakeTemplate);
 
                 return parameterMistakeBody;
             };
@@ -1138,7 +1138,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region MEMORIZE app settings
 
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["parameterProcessRequestSettings"];
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
@@ -1169,13 +1169,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region MEMORIZE observation details
 
-            string storedObservationDescription = parameterInputs.Parameters["parameterProcessRequest3WordDescription"];
-            string storedObservationFileName = parameterInputs.Parameters["parameterOutputResponseObservationFileName"];
-            string storedObservationMethodName = parameterInputs.Parameters["parameterOutputResponseObservationMethodName"];
+            string storedOutputResponseObservationDescription = parameterInputs.Parameters["parameterProcessRequest3WordDescription"];
+            string storedOutputResponseObservationFileName = parameterInputs.Parameters["parameterOutputResponseObservationFileName"];
+            string storedOutputResponseObservationMethodName = parameterInputs.Parameters["parameterOutputResponseObservationMethodName"];
             
-            string storedObservationTemplate = parameterInputs.Parameters["parameterObservationTemplate"];
+            string storedOutputResponseObservationTemplate = parameterInputs.Parameters["parameterObservationTemplate"];
             
-            string storedObservationBody = @"{'baseDIObservations': [{
+            string storedOutputResponseObservationBody = @"{'baseDIObservations': [{
                                                 'observation':
                                                 {
                                                     'metadata': [{'calledByEntryPointName':'{calledByEntryPointName}'},{'calledByMethodName':'{calledByMethodName}'},{'calledByMethodReason':'{calledByMethodReason}'},{'item':{{item}}}]
@@ -1188,11 +1188,11 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                                              'security': [{security}],
                                              'data': [{data}]";
 
-            string storedObservationPresentationTemplate = parameterInputs.Parameters["parameterOutputResponseObservationPresentationTemplate"];
-            string storedObservationBusinessTemplate = parameterInputs.Parameters["parameterOutputResponseObservationBusinessTemplate"];
-            string storedObservationServiceTemplate = parameterInputs.Parameters["parameterOutputResponseObservationServiceTemplate"];
-            string storedObservationSecurityTemplate = parameterInputs.Parameters["parameterOutputResponseObservationSecurityTemplate"];
-            string storedObservationDataTemplate = parameterInputs.Parameters["parameterOutputResponseObservationDataTemplate"];
+            string storedOutputResponseObservationPresentationTemplate = parameterInputs.Parameters["parameterOutputResponseObservationPresentationTemplate"];
+            string storedOutputResponseObservationBusinessTemplate = parameterInputs.Parameters["parameterOutputResponseObservationBusinessTemplate"];
+            string storedOutputResponseObservationServiceTemplate = parameterInputs.Parameters["parameterOutputResponseObservationServiceTemplate"];
+            string storedOutputResponseObservationSecurityTemplate = parameterInputs.Parameters["parameterOutputResponseObservationSecurityTemplate"];
+            string storedOutputResponseObservationDataTemplate = parameterInputs.Parameters["parameterOutputResponseObservationDataTemplate"];
 
             #endregion
 
@@ -1220,7 +1220,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                 return parameterObservationBody;
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedObservationTemplate, storedObservationBody, storedOutputResponseObservationItem, storedObservationFileName, storedObservationMethodName, storedObservationDescription, storedObservationPresentationTemplate, storedObservationBusinessTemplate, storedObservationServiceTemplate, storedObservationSecurityTemplate, storedObservationDataTemplate);
+            storedOutputResponseData = await ExecuteConversionRequest(storedOutputResponseObservationTemplate, storedOutputResponseObservationBody, storedOutputResponseObservationItem, storedOutputResponseObservationFileName, storedOutputResponseObservationMethodName, storedOutputResponseObservationDescription, storedOutputResponseObservationPresentationTemplate, storedOutputResponseObservationBusinessTemplate, storedOutputResponseObservationServiceTemplate, storedOutputResponseObservationSecurityTemplate, storedOutputResponseObservationDataTemplate);
             
             #endregion
 

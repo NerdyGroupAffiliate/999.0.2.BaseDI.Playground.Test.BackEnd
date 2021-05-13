@@ -91,7 +91,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
 
-            ///////////////////////////////
+            ///////////////////////////////////////////////////////////
 
             //#region MEMORIZE control variables
 
@@ -155,20 +155,20 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
 
-            //#region MEMORIZE process storyline details
+            //#region MEMORIZE process request storyline details
 
             this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
             this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters");
 
             //#endregion
 
-            //#region MEMORIZE process extra data
+            //#region MEMORIZE process request extra data
 
             this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
-            //#region MEMORIZE processs request details
+            //#region MEMORIZE process request details
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
@@ -189,7 +189,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
 
-            //#endregion          
+            //#endregion
 
             //#region 2. PROCESS
 
@@ -244,64 +244,84 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         //#region 4. Action
         public async Action(): Promise<object>
         {
+
             //#region 1. INPUTS
 
-            //#region MEMORIZE action name
-
-            let storedInputRequestActionName: string = this.ClientOrServerInstance["storedInputRequestActionName"] as string;
+            //#region DEFINE control variables
 
             //#endregion
 
-            //#region MEMORIZE app settings
+            //#region DEFINE input variables
 
-            this._storedProcessRequestSettings = this.ClientOrServerInstance["storedProcessRequestSettings"];
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE process variables
+
+            let storedOutputResponseData: any = null;
+            let storedOutputResponseDataCached: any = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            let storedInputRequestActionName: string = this._storedInputRequestActionName;
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "RETRIEVING cached dataset");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this.ClientOrServerInstance["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this.ClientOrServerInstance);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.Page_2_1_Begin_Process_12_2_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0 -> Page_2_1_Begin_Process_12_2_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action"); 
 
-            //#endregion
-
-            //#region MEMORIZE control client server
-
-            this._storedProcessRequestTracker = this.ClientOrServerInstance;
+            //3. OUTPUTS
 
             //#endregion
 
-            //#region MEMORIZE repository clientOrServer instance
-
-            this.Repository.ClientOrServerInstance = this.ClientOrServerInstance;
-
             //#endregion
 
-            //#region MEMORIZE repository extra data
+            //#region MEMORIZE output variables
 
-            this.Repository.ExtraData = this.ExtraData;
+            //#region MEMORIZE output xxx xxxx
 
-            //#endregion
-
-            //#region MEMORIZE repository centralized processes
-
-            this.Repository.MasterStorer = this.MasterStorer;
 
             //#endregion
-
-            //#region MEMORIZE request details
-
-            let storedInputRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
-            let storedInputRequestNameDataCacheKey: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
 
             //#endregion
 
@@ -317,23 +337,18 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
                 //#region 2. OUTPUT data response
 
-                const GetDataSet = async () => {
-                    this.Repository.Action_8_Process_CRUD().then(storedDataSet => {
-                        this.StorylineDetails = storedDataSet.StorylineDetails;
-                        this.StorylineDetails_Parameters = storedDataSet.StorylineDetails_Parameters;
+                storedOutputResponseDataCached = await Promise.all([this.Repository.Action_8_Process_CRUD()]);
 
-                        this.Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0(storedDataSet.StorylineDetailsFiltered);
-                        this.Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
+                this.StorylineDetails = storedOutputResponseDataCached[0].StorylineDetails;
+                this.StorylineDetails_Parameters = storedOutputResponseDataCached[0].StorylineDetails_Parameters;
 
-                        return;
-                    })
-                }
-
+                this.Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0(storedOutputResponseDataCached[0].StorylineDetailsFiltered);
+                this.Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
+   
                 //#endregion
 
                 //#region 1. INPUT data request
 
-                await GetDataSet();
 
                 //#endregion
 
@@ -344,11 +359,17 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                 //#region EDGE CASE - USE developer logger
 
                 if (storedProcessRequestDeveloperMode) {
-                    this.ClientOrServerInstance["storedProcessRequestStepNumber"] = this.ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
+                    this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED cache retrieval");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["storedProcessRequestStepNumber"]);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
@@ -398,13 +419,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region MEMORIZE app settings
 
-            this._storedProcessRequestSettings = this.ClientOrServerInstance["storedProcessRequestSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
             //#region MEMORIZE control client server
 
-            this._storedProcessRequestTracker = this.ClientOrServerInstance;
+            this._storedProcessRequestTracker = this._storedProcessRequestTracker;
 
             //#endregion
 
@@ -415,20 +436,21 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
+
+            //0. CONTAINERS
+
+            //1. INPUTS            
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputRequestActionName);
+
+            //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PREPARING caching request");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this.ClientOrServerInstance["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this.ClientOrServerInstance);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
 
-            //#endregion
-
-            //#region MEMORIZE request details
-
-            let storedInputRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
-            let storedInputRequestNameDataCacheKey: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
-
+            //3. OUTPUTS
+            
             //#endregion
 
             //#endregion
@@ -470,11 +492,12 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 //#region EDGE CASE - USE developer logger
                 if (storedProcessRequestDeveloperMode) {
-                    this.ClientOrServerInstance["storedProcessRequestStepNumber"] = this.ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
+                    this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED processing cached data");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED processing cached data");                   
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["storedProcessRequestStepNumber"]);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
@@ -504,13 +527,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region MEMORIZE app settings
 
-            this._storedProcessRequestSettings = this.ClientOrServerInstance["storedProcessRequestSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
             //#region MEMORIZE control client server
 
-            this._storedProcessRequestTracker = this.ClientOrServerInstance;
+            this._storedProcessRequestTracker = this._storedProcessRequestTracker;
 
             //#endregion
 
@@ -521,27 +544,20 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
+
+            //0. CONTAINERS
+
+            //1. INPUTS            
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputRequestActionName);
+
+            //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PREPARING caching request");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this.ClientOrServerInstance["storedInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this.ClientOrServerInstance["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this.ClientOrServerInstance);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
 
-            //#endregion
-
-            //#region MEMORIZE request details
-
-            let storedInputRequestName: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcess");
-            let storedInputRequestNameDataCacheKey: string = this.ExtraData.KeyValuePairs.getValue("RequestToProcessParameters");
-
-            //#endregion
-
-            //#region MEMORIZE search details
-
-            let storedSearchColumnNames: any = this._storedJSONKeyPlaceHolderName;
-            let storedSearchDataSet: Object = (this.StorylineDetails_Parameters ? this.StorylineDetails_Parameters : this.StorylineDetails);
-            let storedSearchFilterBy: any = ['parameters'];
+            //3. OUTPUTS
 
             //#endregion
 
@@ -642,11 +658,18 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             catch (storedProcessRequestMistake) {
                 //#region EDGE CASE - USE developer logger
                 if (storedProcessRequestDeveloperMode) {
-                    this.ClientOrServerInstance["storedProcessRequestStepNumber"] = this.ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
+                    this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED processing cached data");
+                    //0. CONTAINERS
+
+                    //1. INPUTS       
+                    
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED processing cached data");                    
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                   
+                    //3. OUTPUTS
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this.ClientOrServerInstance["storedProcessRequestStepNumber"]);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }

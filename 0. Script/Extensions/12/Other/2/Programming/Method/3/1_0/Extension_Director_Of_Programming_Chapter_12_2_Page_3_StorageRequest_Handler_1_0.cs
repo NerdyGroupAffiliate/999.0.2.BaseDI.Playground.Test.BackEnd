@@ -134,9 +134,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterCRUDVerb"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCRUDVerb"))
                     {
-                        storedOutputResponseMessage += "***parameterCRUDVerb*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestCRUDVerb*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -164,21 +164,21 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterPageName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestPageName"))
                     {
-                        storedOutputResponseMessage += "***parameterPageName*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestPageName*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterStorageDescription"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestStorageDescription"))
                     {
-                        storedOutputResponseMessage += "***parameterStorageDescription*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageDescription*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterUniqueStorageKey"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestStorageUniqueKey"))
                     {
-                        storedOutputResponseMessage += "***parameterUniqueStorageKey*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestStorageUniqueKey*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -297,7 +297,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE CRUD verb
 
-            string storedCRUDVerb = parameterInputs.Parameters["parameterCRUDVerb"];
+            string storedCRUDVerb = parameterInputs.Parameters["parameterProcessRequestCRUDVerb"];
 
             #endregion
 
@@ -328,16 +328,16 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE page name
 
-            string storedPageName = parameterInputs.Parameters["parameterPageName"];
+            string storedPageName = parameterInputs.Parameters["parameterProcessRequestPageName"];
 
             #endregion
 
             #region MEMORIZE storage details
 
-            string storedStorageDescription = parameterInputs.Parameters["parameterStorageDescription"];
+            string storedStorageDescription = parameterInputs.Parameters["parameterProcessRequestStorageDescription"];
             dynamic storedStorageValue = parameterInputs.Parameters["parameterProcessRequestStorageValue"];
             string storedProcessRequestStorageKey = "StorageKey_" + storedDirectorOrExperienceName + "-" + storedCRUDVerb;
-            string storedUniqueStorageKey = parameterInputs.Parameters["parameterUniqueStorageKey"];
+            string storedUniqueStorageKey = parameterInputs.Parameters["parameterProcessRequestStorageUniqueKey"];
 
             if (!string.IsNullOrEmpty(storedUniqueStorageKey))
                 storedProcessRequestStorageKey += "-" + storedUniqueStorageKey;
