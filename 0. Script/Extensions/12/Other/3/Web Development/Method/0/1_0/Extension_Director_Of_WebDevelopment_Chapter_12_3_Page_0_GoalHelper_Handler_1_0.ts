@@ -39,407 +39,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
         //#region HTML MANAGEMENT
 
-        private static async Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
-            //#region 1. INPUTS
-
-            //#region VALIDATE input parameters
-
-            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {
-                //#region 1. INPUTS
-
-                //#region DEFINE control variables
-
-                //#endregion
-
-                //#region DEFINE input variables
-
-                let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-                //#endregion
-
-                //#region DEFINE process variables
-
-                let storedProcessRequestMistakeMade: boolean = false;
-
-                //#endregion
-
-                //#region DEFINE output variables
-
-                let storedOutputResponseMessage: string = "";
-
-                //#endregion
-
-                ///////////////////////////////
-
-                //#region MEMORIZE control variables
-
-                //#region MEMORIZE control xxx xxx
-
-
-                //#endregion
-
-                //#endregion
-
-                //#region MEMORIZE input variables
-
-                //#region MEMORIZE input action name
-
-                let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
-
-                //#endregion 
-
-                //#endregion
-
-                //#region MEMORIZE process variables   
-
-                //#region MEMORIZE process request tracker
-
-                let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
-
-                //#endregion
-
-                //#region MEMORIZE process request settings
-
-                let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
-
-                //#endregion
-
-                //#region MEMORIZE process developer mode
-
-                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
-
-                let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-
-                //REQUIRED
-
-                //0. CONTROLLERS
-
-                //1. INPUTS
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
-
-                //2. PROCESS
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0 -> ValidateInputs");
-
-                //3. OUTPUTS
-
-                //#endregion
-
-                //#endregion
-
-                //#region MEMORIZE output variables  
-
-                //#region MEMORIZE output xxx xxx  
-
-                //#endregion
-
-                //#endregion
-
-                //#endregion
-
-                //#region 2. PROCESS
-
-                //#region EXECUTE validation process
-
-                //#region IDEAL CASE - USE valid information
-
-                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-                    else {
-                        if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null || parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == undefined) {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
-                            storedProcessRequestMistakeMade = true;
-                        }
-                    }
-
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestHtmlAttributes")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestHtmlAttributes*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestMasterStorer")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (storedProcessRequestMistakeMade) {
-                        //#region EDGE CASE - USE developer logger
-
-                        if (storedProcessRequestDeveloperMode) {
-                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
-
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                        }
-
-                        //#endregion
-
-                        //#region EDGE CASE - USE exception handler
-
-                        throw new Error("PARSING parameter values failed");
-
-                        //#endregion
-                    }
-                }
-                else {
-                    //#region EDGE CASE - USE developer logger
-
-                    if (storedProcessRequestDeveloperMode) {
-                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
-
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                    }
-
-                    //#endregion
-
-                    //#region EDGE CASE - USE exception handler
-
-                    throw new Error("PARSING parameter values failed");
-
-                    //#endregion
-                }
-
-                //#endregion
-
-                //#endregion
-
-                //#endregion
-
-                //#region 3. OUTPUT
-
-                //#region RETURN validation passed
-
-                //#region IDEAL CASE - USE passed indicator
-
-                return true;
-
-                //#endregion
-
-                //#endregion
-
-                //#endregion
-            }
-
-            //BEGIN valdation process
-            await ValidateInputs(parameterInputs);
-
-            //#endregion
-
-            //#region DEFINE control variables
-
-            //#endregion
-
-            //#region DEFINE input variables
-
-            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-             //#endregion
-
-            //#region DEFINE process variables
-
-
-            //#endregion
-
-            //#region DEFINE output variables
-
-            let storedOutputResponseData: any;
-            let storedOutputResponseHtmlAttributesOutput: Array<any> = [];
-
-            //#endregion
-
-            ///////////////////////////////
-
-            //#region MEMORIZE control variables
-
-            //#region MEMORIZE control xxx xxx
-
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE input variables
-
-            //#region MEMORIZE input action name
-
-            let storedInputRequestActionName: any = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
-
-            //#endregion
-
-            //#endregion
-
-            //#region MEMORIZE process variables
-
-            //#region MEMORIZE process request html
-
-            let storedProcessRequestHtmlAttributes: any = parameterInputs.Parameters.getValue("parameterProcessRequestHtmlAttributes");
-
-            //#endregion
-
-            //#region MEMORIZE process request tracker
-
-            let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
-
-            //#endregion
-
-            //#region MEMORIZE process request settings
-
-            let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
-
-            //#endregion  
-
-            //#region MEMORIZE process developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
-
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //REQUIRED
-
-            //0. CONTROLLERS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
-
-            //1. INPUTS
-
-            //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONVERTING json to html attributes");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0");
-
-            //3. OUTPUTS  
-
-            //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
-
-            //#endregion
-
-            //#region MEMORIZE process storyline details
-
-            let storedProcessRequestDataStorylineDetails: any = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
-
-            //#endregion
-
-            //#region MEMORIZE process centralized handlers
-
-            let storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
-            let storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
-            let storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
-
-            //#endregion             
-
-            //#endregion
-
-            //#region MEMORIZE output variables
-
-            //#region MEMORIZE output xxx xxx
-
-           
-            //#endregion
-
-            //#endregion
-
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region EXECUTE json to html conversion
-
-            //#region IDEAL CASE - USE json metadata
-
-            const ExecuteConversionRequest = async (): Promise<any> => {
-                try {
-                    for (var storedProcessRequestHtmlAttribute in storedProcessRequestHtmlAttributes) {
-                        storedOutputResponseHtmlAttributesOutput.push(`${Object.keys(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0]}="${Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0]}"`)
-                    }
-
-                    return storedOutputResponseHtmlAttributesOutput;
-                }
-                catch (storedProcessRequestMistake) {
-                    //#region EDGE CASE - USE developer logger
-
-                    if (storedProcessRequestDeveloperMode) {
-                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
-
-                        //0. CONTAINERS
-
-                        //1. INPUTS
-
-                        //2. PROCESS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to html attributes");                      
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
-
-                        //3. OUTPUTS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                    }
-
-                    //#endregion
-
-                    //#region EDGE CASE - USE exception handler
-
-                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
-
-                    //#endregion
-                }
-            }
-
-            storedOutputResponseData = await ExecuteConversionRequest();
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN converted data
-
-            //#region IDEAL CASE - USE html string
-
-            return storedOutputResponseData.join(" ");
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion                   
-        }
 
         public static async Step_0_0_Framework_Convert_HtmlToJSON_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
             //#region 1. INPUTS
@@ -812,7 +411,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-            let storedOutputResponseObservationPresentationTemplateItem: string = "{ 'htmlResult': '{htmlResult}' }";
+            let storedOutputResponseObservationPresentationTemplateItem: string = "{ \"htmlResult\": \"{htmlResult}\" }";
             let storedOutputResponseObservationBusinessTemplateItem: string = "{}";
             let storedOutputResponseObservationServiceTemplateItem: string = "{}";
             let storedOutputResponseObservationSecurityTemplateItem: string = "{}";
@@ -820,7 +419,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedOutputResponseObservationDataTemplateBuilder = "";
 
-            //0. CONTAINERS
+            //0. CONTROLLERS
 
             //1. INPUTS
             storedInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
@@ -839,7 +438,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             storedInputs.Parameters.setValue("parameterOutputResponseObservationSecurityTemplate", storedOutputResponseObservationSecurityTemplateItem);
             storedInputs.Parameters.setValue("parameterOutputResponseObservationDataTemplate", storedOutputResponseObservationDataTemplateItem);
 
-            let storedObservationItem: string = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
+            storedOutputResponseObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
 
             //#endregion
 
@@ -860,7 +459,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS
 
@@ -874,14 +473,15 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         //3. OUTPUTS
                         storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
+                        storedInputRequestHtmlContainerJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
-                        //1. INPUTS                        
-                        storedInputRequestHtmlContainerJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+                        //1. INPUTS                       
                         storedInputs.Parameters.setValue("parameterInputRequestHtmlContainerJSON", storedInputRequestHtmlContainerJSON);
 
                         //2. PROCESS
@@ -910,7 +510,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS
 
@@ -924,14 +524,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         //3. OUTPUTS
                         storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
+                        storedInputRequestHtmlRowsJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS                        
-                        storedInputRequestHtmlRowsJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+;
                         storedInputs.Parameters.setValue("parameterInputRequestHtmlRowsJSON", storedInputRequestHtmlRowsJSON);
                         
                         //2. PROCESS
@@ -962,7 +564,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS    
 
@@ -975,14 +577,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                         storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
+                        storedInputRequestHtmlColumnsJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS                            
-                        storedInputRequestHtmlColumnsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
                         storedInputs.Parameters.setValue("parameterInputRequestHtmlColumnsJSON", storedInputRequestHtmlColumnsJSON);
                         
                         //2. PROCESS
@@ -1013,7 +617,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS    
 
@@ -1027,14 +631,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         //3. OUTPUTS
                         storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
+                        storedInputRequestHtmlContentJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                        //0. CONTAINERS
-
-                        //1. INPUTS                            
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                        
-                        storedInputRequestHtmlContentJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS                          
+
                         storedInputs.Parameters.setValue("parameterInputRequestHtmlContentJSON", storedInputRequestHtmlContentJSON);
 
                         //2. PROCESS  
@@ -1065,7 +671,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS    
 
@@ -1079,15 +685,15 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         //3. OUTPUTS
                         storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
 
+                        storedInputRequestHtmlStylesJSON = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                        //0. CONTAINERS
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();   
 
-                        //1. INPUTS                         
-                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        //0. CONTROLLERS
 
-                        storedInputRequestHtmlStylesFiltered = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0(storedInputs);
-                        storedInputRequestHtmlStylesJSON = storedInputRequestHtmlStylesFiltered.Count > 0 ? storedInputRequestHtmlStylesFiltered[0].Parent.Parent : null;                       
+                        //1. INPUTS                                          
                         storedInputs.Parameters.setValue("parameterInputRequestHtmlStylesJSON", storedInputRequestHtmlStylesJSON);
 
                         //2. PROCESS 
@@ -1142,7 +748,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     const ExecuteOutputResponse = async (): Promise<string> => {
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS                            
                         storedInputs.Parameters.setValue("parameterInputRequestHtmlMetaData", "");
@@ -1266,6 +872,419 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#endregion
         }
 
+        private static Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : string {
+            //#region 1. INPUTS
+
+            //#region VALIDATE input parameters
+
+            const ValidateInputs = (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {
+                //#region 1. INPUTS
+
+                //#region DEFINE control variables
+
+                //#endregion
+
+                //#region DEFINE input variables
+
+                let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+                //#endregion
+
+                //#region DEFINE process variables
+
+                let storedProcessRequestMistakeMade: boolean = false;
+
+                //#endregion
+
+                //#region DEFINE output variables
+
+                let storedOutputResponseMessage: string = "";
+
+                //#endregion
+
+                ///////////////////////////////
+
+                //#region MEMORIZE control variables
+
+                //#region MEMORIZE control xxx xxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE input variables
+
+                //#region MEMORIZE input action name
+
+                let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+                //#endregion 
+
+                //#endregion
+
+                //#region MEMORIZE process variables   
+
+                //#region MEMORIZE process request tracker
+
+                let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+
+                //#endregion
+
+                //#region MEMORIZE process request settings
+
+                let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE process developer mode
+
+                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE output variables  
+
+                //#region MEMORIZE output xxx xxx  
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+
+                //#region 2. PROCESS
+
+                //#region EXECUTE validation process
+
+                //#region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) 
+                {        
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                    
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null || parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == undefined) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessRequestMistakeMade = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestHtmlAttributes")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestHtmlAttributes*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestMasterStorer")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //3. OUTPUTS   
+
+                    if (storedProcessRequestMistakeMade) {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedProcessRequestDeveloperMode) {
+                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        }
+
+                        //#endregion
+
+                        //#region EDGE CASE - USE exception handler
+
+                        throw new Error("PARSING parameter values failed");
+
+                        //#endregion
+                    }
+                }
+                else {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode) {
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                         
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
+                    //#region EDGE CASE - USE exception handler
+
+                    throw new Error("PARSING parameter values failed");
+
+                    //#endregion
+                }
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+
+                //#region 3. OUTPUT
+
+                //#region RETURN validation passed
+
+                //#region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+            }
+
+            //BEGIN valdation process
+            ValidateInputs(parameterInputs);
+
+            //#endregion
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+             //#endregion
+
+            //#region DEFINE process variables
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            let storedOutputResponseData: Array<string>;
+            let storedOutputResponseHtmlAttributesOutput: Array<any> = [];
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            let storedInputRequestActionName: any = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request html
+
+            let storedProcessRequestHtmlAttributes: any = parameterInputs.Parameters.getValue("parameterProcessRequestHtmlAttributes");
+
+            //#endregion
+
+            //#region MEMORIZE process request tracker
+
+            let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+
+            //#endregion
+
+            //#region MEMORIZE process request settings
+
+            let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
+
+            //#endregion  
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+
+            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //REQUIRED
+
+            //0. CONTROLLERS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //1. INPUTS
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONVERTING json to html attributes");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0");
+
+            //3. OUTPUTS  
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+            //#endregion
+
+            //#region MEMORIZE process storyline details
+
+            let storedProcessRequestDataStorylineDetails: any = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
+
+            //#endregion
+
+            //#region MEMORIZE process centralized handlers
+
+            let storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            let storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            let storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
+
+            //#endregion             
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+           
+            //#endregion
+
+            //#endregion
+
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE json to html conversion
+
+            //#region IDEAL CASE - USE json metadata
+
+            const ExecuteConversionRequest = () : Array<string> => {
+                try {
+                    for (var storedProcessRequestHtmlAttribute in storedProcessRequestHtmlAttributes) {
+                        storedOutputResponseHtmlAttributesOutput.push(`${Object.keys(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0]}="${Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0]}"`)
+                    }
+
+                    return storedOutputResponseHtmlAttributesOutput;
+                }
+                catch (storedProcessRequestMistake) {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode) {
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to html attributes");                      
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
+                    //#region EDGE CASE - USE exception handler
+
+                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
+
+                    //#endregion
+                }
+            }
+
+            storedOutputResponseData = ExecuteConversionRequest();
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN converted data
+
+            //#region IDEAL CASE - USE html string
+
+            return storedOutputResponseData.join(" ");
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion                   
+        }
+
         public static async Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<string>
         {
             //#region 1. INPUTS
@@ -1375,11 +1394,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 //#region IDEAL CASE - USE valid information
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
+
+                    //2. PROCESS                     
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -1411,15 +1430,24 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
+
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                             
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS  
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -1439,9 +1467,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                          
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS  
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -1558,7 +1593,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //REQUIRED
 
-            //0. CONTAINERS
+            //0. CONTROLLERS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
 
             //1. INPUTS                        
@@ -1604,8 +1639,15 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region IDEAL CASE - USE json metadata
 
             const ExecuteConversionRequest = async (): Promise<any> => {
-                try {
-                    return `<${storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{HTMLRows_Replace}</${storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
+                try 
+                {
+                    parameterInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
+                    parameterInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Attributes);
+
+                    storedOutputResponseData = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+
+                    //OUTPUT: <div                                                                  id="container_xxx">         {HTMLRows_Replace}</div>
+                    return   `<${storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag} ${storedOutputResponseData}>{HTMLRows_Replace}</${storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag}>`;
                 }
                 catch (storedProcessRequestMistake) {
                     //#region EDGE CASE - USE developer logger
@@ -1613,7 +1655,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS
 
@@ -1625,7 +1667,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         //3. OUTPUTS
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     //#endregion
@@ -1768,12 +1810,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) 
+                {
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
+
+                    //2. PROCESS                     
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -1810,15 +1853,23 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                             
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS 
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -1838,9 +1889,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                         
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS 
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -1999,8 +2057,14 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             const ExecuteConversionRequest = async (): Promise<string> => {
                 try {
-                    storedInputRequestHtmlRowsJSON.value.HTMLContentItems.forEach(storedProcessRequestHtmlRow => {
-                        storedOutputResponseDataList.push(`<${storedProcessRequestHtmlRow.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedProcessRequestHtmlRow.Attributes)}>{${storedProcessRequestHtmlRow.Attributes[0].id}_Replace}</${storedProcessRequestHtmlRow.Tag}>`)
+                    storedInputRequestHtmlRowsJSON.value.HTMLContentItems.map(storedProcessRequestHtmlRow => {
+                        parameterInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
+                        parameterInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlRow.Attributes);
+                        
+                        storedOutputResponseData = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+                        
+                        //OUTPUT:                          <div                                id="row-_A_1_xxx">          {row_A-1_xxx_Replace}                                    </div>
+                        storedOutputResponseDataList.push(`<${storedProcessRequestHtmlRow.Tag} ${storedOutputResponseData}>{${storedProcessRequestHtmlRow.Attributes[0].id}_Replace}</${storedProcessRequestHtmlRow.Tag}>`)
                     });
 
                     return storedOutputResponseHtmlContainerString.replace("{HTMLRows_Replace}", storedOutputResponseDataList.join("\n"))
@@ -2011,7 +2075,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS
 
@@ -2166,12 +2230,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) 
+                {
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
+
+                    //2. PROCESS                       
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -2208,15 +2273,24 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
+
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                               
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS  
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -2236,9 +2310,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                         
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS  
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -2291,13 +2372,14 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#region DEFINE process variables
 
 
+            let storedProcessRequestHtmlColumnString: string = "";
 
             //#endregion
 
             //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
-            let storedOutputResponseDataList: Array<any> = [];
+            let storedOutputResponseDataList: Array<any> = [];            
 
             //#endregion
 
@@ -2398,8 +2480,24 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             const ExecuteConversionRequest = async (): Promise<string> => {
                 try {
                     storedInputRequestHtmlColumnsJSON.value.HTMLContentItems.forEach(storedProcessRequestHtmlColumn => {
-                        storedProcessRequestHtmlColumn = `<${storedProcessRequestHtmlColumn.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedProcessRequestHtmlColumn.Attributes)}>{${storedProcessRequestHtmlColumn.Attributes[0].id}_Replace}</${storedProcessRequestHtmlColumn.Tag}>\n`;
-                        storedOutputResponseHtmlRowString = storedOutputResponseHtmlRowString.replace(`{${storedProcessRequestHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}`, storedProcessRequestHtmlColumn);
+                        //OUTPUT 1: 
+                        //storedOutputResponseHtmlRowString = <div id="row-_A_1_xxx">{row_A-1_xxx_Replace}</div>
+                
+                        parameterInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
+                        parameterInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlColumn.Attributes);
+
+                        storedOutputResponseData = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+
+                        //OUTPUT 2:                              <div                                    id="column_A_1_1_xxx">     {column_A_1_1_xxx_Replace}                                   </div>
+                        storedProcessRequestHtmlColumnString = `<${storedProcessRequestHtmlColumn.Tag} ${storedOutputResponseData}>{${storedProcessRequestHtmlColumn.Attributes[0].id}_Replace}</${storedProcessRequestHtmlColumn.Tag}>\n`;
+
+                        //OUTPUT 3:                                                                     "row_A-1_xxx_Replace                                                          ***SEE OUTPUT 2 ABOVE***
+                        storedOutputResponseHtmlRowString = storedOutputResponseHtmlRowString.replace(`{${storedProcessRequestHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}`, storedProcessRequestHtmlColumnString);
+
+                        //OUTPUT 4: 
+                        //storedOutputResponseHtmlRowString = <div id="row-_A_1_xxx">
+                        //                                          <div id="column_A_1_1_xxx">{column_A_1_1_xxx_Replace}</div>   
+                        //                                    </div>   
                     });
 
                     return storedOutputResponseHtmlRowString;
@@ -2410,7 +2508,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS
 
@@ -2566,11 +2664,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 //#region IDEAL CASE - USE valid information
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
+
+                    //2. PROCESS                    
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -2607,15 +2705,24 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
+
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                            
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -2635,10 +2742,17 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                          
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
+                        //3. OUTPUTS  
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
@@ -2697,6 +2811,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedOutputResponseData: any = null;
             let storedOutputResponseDataIdsAndContent: Array<any> = [];
+            let storedOutputResponseHtmlAttributeKeyValuePairs: any = null;
 
             //#endregion
 
@@ -2797,23 +2912,47 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             const ExecuteConversionRequest = async (): Promise<string> => {
                 try {
                     storedInputRequestHtmlContentJSON.value.HTMLContentItems.forEach(storedProcessRequestHtmlContent => {
+                        //OUTPUT 1: 
+                        //storedOutputResponseHtmlColumnString =  <div id="row-_A_1_xxx">
+                        //                                              <div id="column_A_1_1_xxx">{column_A_1_1_xxx_Replace}</div>   
+                        //                                       </div>     
+
                         if (storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID] == undefined) {
                             storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID] = new Array();
-                            storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID].push(`<${storedProcessRequestHtmlContent.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedProcessRequestHtmlContent.Attributes)}>${storedProcessRequestHtmlContent.Value}</${storedProcessRequestHtmlContent.Tag}>\n`);
+
+                            parameterInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
+                            parameterInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContent.Attributes);
+
+                            storedOutputResponseHtmlAttributeKeyValuePairs = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+
+                            //OUTPUT 2:                          //column_A_1_1_xxx                                                       <div                                    id="content_A-1-1-1_xxx"                          <img id="content_A-1-1-1_xxx">          </img>
+                            storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID].push(`<${storedProcessRequestHtmlContent.Tag} ${storedOutputResponseHtmlAttributeKeyValuePairs}>${storedProcessRequestHtmlContent.Value}</${storedProcessRequestHtmlContent.Tag}>\n`);
                         }
                         else {
-                            storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID].push(`<${storedProcessRequestHtmlContent.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedProcessRequestHtmlContent.Attributes)}>${storedProcessRequestHtmlContent.Value}</${storedProcessRequestHtmlContent.Tag}>\n`);
+
+                            parameterInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
+                            parameterInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContent.Attributes);
+
+                            storedOutputResponseHtmlAttributeKeyValuePairs = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+
+                            //OUTPUT 3:                          //column_A_1_1_xxx                                                       <div                                    id="content_A-1-1-1_xxx"                          <img id="content_A-1-1-1_xxx">          </img>
+                            storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID].push(`<${storedProcessRequestHtmlContent.Tag} ${storedOutputResponseHtmlAttributeKeyValuePairs}>${storedProcessRequestHtmlContent.Value}</${storedProcessRequestHtmlContent.Tag}>\n`);
                         }
                     });
 
                     Object.keys(storedOutputResponseDataIdsAndContent).forEach(storedProcessRequestIdAndContentItem => {
-                        storedProcesseRequestContent = storedOutputResponseDataIdsAndContent[storedProcessRequestIdAndContentItem].join('\n')
+                        //OUTPUT 4: 
+                        //storedProcesseRequestContent = <img id="content_A-1-1-1_xxx" alt="xxx" src=""></img>
+                        //                               <img id="content_A-1-1-2_xxx" alt="xxx" src=""></img>
+                        //                               <img id="content_A-1-1-3_xxx" alt="xxx" src=""></img>
+                        storedProcesseRequestContent = storedOutputResponseDataIdsAndContent[storedProcessRequestIdAndContentItem].join('\n');
+                                                                                                             //***SEE OUTPUT 1 ABOVE***              
                         storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace(`{${storedProcessRequestIdAndContentItem}_Replace}`, storedProcesseRequestContent);
                     });
 
                     if (process.env.APP_ENV == "SERVER") {
+                        //OUTPUT 5:                            <img id="content_A-1-1-3_xxx" alt="xxx" src="/...999.0.3.BaseDI.Professional.QuickStart.Templates/image.jpg"> CONVERT TO <img id="content_A-1-1-3_xxx" alt="xxx" src="/Images/image.jpg">
                         storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
-
                     }
 
                     return storedOutputResponseHtmlColumnString;
@@ -2824,7 +2963,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS
 
@@ -2980,11 +3119,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 //#region IDEAL CASE - USE valid information
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
+
+                    //2. PROCESS                     
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -3027,15 +3166,24 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
+
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                            
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS   
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -3055,9 +3203,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                           
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS   
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -3384,7 +3539,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS
 
@@ -3539,12 +3694,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) 
+                {
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
+
+                    //2. PROCESS                    
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -3587,15 +3743,23 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                              
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS 
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -3615,10 +3779,17 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
+                        //1. INPUTS
+
+                        //2. PROCESS                        
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
@@ -3785,7 +3956,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS
 
@@ -3941,11 +4112,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 //#region IDEAL CASE - USE valid information
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
+
+                    //2. PROCESS                    
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -3988,15 +4159,24 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
+
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                              
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -4016,9 +4196,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                          
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -4186,10 +4373,17 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                        
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
+
+                        //3. OUTPUTS      
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -4335,7 +4529,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 //#region IDEAL CASE - USE valid information
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    //0. CONTAINERS
+                    //0. CONTROLLERS
 
                     //1. INPUTS
                     if (!parameterInputs.Parameters.containsKey("parameterInputRequestHtmlTitle")) {
@@ -4403,7 +4597,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            //0. CONTAINERS
+                            //0. CONTROLLERS
 
                             //1. INPUTS
 
@@ -4432,7 +4626,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        //0. CONTAINERS
+                        //0. CONTROLLERS
 
                         //1. INPUTS                        
 
@@ -4541,7 +4735,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedInputRequestHtmlMetaData: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlMetaData");
             let storedInputRequestHtmlTitle: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlTitle");
-            let storedOutputResponseHtmlScripts: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlScripts");
+            let storedInputRequestHtmlScripts: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlScripts");
             let storedInputRequestHtmlAdditionalHeadData: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlAdditionalHeadData");
             let storedInputRequestHtmlStyles: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStyles");
             let storedInputRequestHtmlBody: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlBody");
@@ -4623,6 +4817,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 try {
                     storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                      
                     storedInputs.Parameters.setValue("parameterProcessRequestTracker", Object.assign(storedProcessRequestTracker, Object));
                     storedInputs.Parameters.setValue("parameterProcessRequestCRUDVerb", "Read");
                     storedInputs.Parameters.setValue("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0")
@@ -4633,16 +4832,17 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     storedInputs.Parameters.setValue("parameterProcessRequestStorageDescription", "READING client side BaseDI script SOURCE PATH");
                     storedInputs.Parameters.setValue("parameterProcessRequestStorageUniqueKey", "BaseDI_PresentationScript_SrcLocation");
 
+                    //4. OUTPUTS
                     storedOutputResponseDataCached = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedInputs);
                     storedOutputResponseDataCached = (storedOutputResponseDataCached && storedOutputResponseDataCached.outputs.length > 0) ? storedOutputResponseDataCached.outputs[1].baseDIObservations[storedOutputResponseDataCached.outputs[1].baseDIObservations.length - 1] : null;
 
                     if (storedOutputResponseDataCached) {
                         storedProcessRequestHtmlBaseDIScriptName = storedOutputResponseDataCached[Object.keys(storedOutputResponseDataCached)[0]].observation.metadata[3].item.data[0].dataResult
 
-                        storedOutputResponseHtmlScripts += `<script src="/scripts/${storedProcessRequestHtmlBaseDIScriptName}" type="text/javascript"></script>`;
+                        storedInputRequestHtmlScripts += `<script src="/scripts/${storedProcessRequestHtmlBaseDIScriptName}" type="text/javascript"></script>`;
                     }
 
-                    return storedOutputResponseHtmlScripts;
+                    return storedInputRequestHtmlScripts;
 
                 }
                 catch (storedProcessRequestMistake) {
@@ -4651,10 +4851,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                          
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED reading cache");
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0.ExecuteStorageRequest");
 
+                        //4. OUTPUTS
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
@@ -4671,7 +4877,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             }
 
             if (process.env.APP_ENV == "SERVER") {
-                storedOutputResponseHtmlScripts = await ExecuteStorageRequest();
+                storedInputRequestHtmlScripts = await ExecuteStorageRequest();
             }
 
             //#endregion
@@ -4682,7 +4888,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{metaDataReplace}", storedInputRequestHtmlMetaData);
                 storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{titleReplace}", storedInputRequestHtmlTitle);
                 storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{additionalHeadData}", storedInputRequestHtmlAdditionalHeadData);
-                storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{scriptsReplace}", storedOutputResponseHtmlScripts);
+                storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{scriptsReplace}", storedInputRequestHtmlScripts);
                 storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{stylesReplace}", storedInputRequestHtmlStyles);
                 storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{bodyReplace}", storedInputRequestHtmlBody);
 
