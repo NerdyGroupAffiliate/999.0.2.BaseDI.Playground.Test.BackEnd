@@ -75,7 +75,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
 
             //#region MEMORIZE action name
 
-            this._storedInputRequestActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
+            this._storedInputRequestActionName = this._storedInputs.Parameters.getValue("parameterInputRequestActionName");
 
             //#endregion
 
@@ -222,7 +222,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_3 {
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputs.Parameters.getValue("parameterInputRequestActionName"));
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Page_3_8_Process_CRUD_12_2_1_0.ts");

@@ -345,7 +345,7 @@ export namespace BaseDI.Professional.Story.Programming_0
                 //0. CONTROLLERS
 
                 //1. INPUTS
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
                 //2. PROCESS
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "BEGIN processing request");
@@ -395,10 +395,6 @@ export namespace BaseDI.Professional.Story.Programming_0
                     }
 
                     //2. PROCESS
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
 
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCallBack*** cannot be blank or empty.\n"
@@ -555,14 +551,14 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = parameterInputs.Parameters["parameterProcessRequestTracker"]["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
             //#region MEMORIZE input request details
 
-            let storedInputRequestName: string = parameterInputs.Parameters["parameterInputRequestName"];
-            let storedInputRequestNameDataCacheKey: string = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            let storedInputRequestNameDataCacheKey: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
                
             //#endregion
 
@@ -572,11 +568,11 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE process request details
 
-            let storedProcessRequestTracker: any = parameterInputs.Parameters["parameterProcessRequestTracker"];
+            let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             parameterInputs.Parameters.setValue("parameterProcessRequestHandler", this._storedProcessRequestHandler);
 
-            let storedProcessRequestByName: string = parameterInputs.Parameters["parameterProcessRequestByName"] ? parameterInputs.Parameters["parameterProcessRequestByName"] : "";
+            let storedProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
 
             //#endregion
 
@@ -602,7 +598,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "BEGIN processing request");
@@ -610,7 +606,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "SetupStoryline");
-
+            
             //3. OUTPUTS
 
             //OPTIONAL
@@ -619,8 +615,8 @@ export namespace BaseDI.Professional.Story.Programming_0
             if (storedProcessRequestDeveloperLoggingStartUpProcessInputs != null) {
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMasterLeaderIsSecondStep", storedProcessRequestDeveloperLoggingStartUpProcessInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"]);
 
-                if (storedProcessRequestDeveloperLoggingStartUpProcessInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"] == true) {
-                    storedProcessRequestDeveloperLoggingInputs.Parameters["parameterOutputResponseOPTIONALBeginOfProcess"] = false;
+                if (storedProcessRequestDeveloperLoggingStartUpProcessInputs.Parameters.getValue("parameterOutputResponseOPTIONALMasterLeaderIsSecondStep") == true) {
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", false);
                 }
             }
 
@@ -629,7 +625,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#region MEMORIZE process extra data
 
             if (parameterInputs.Parameters["parameterProcessRequestExtraData"] != null)
-                this._storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"];
+                this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData");
 
             //#endregion
 
@@ -664,9 +660,16 @@ export namespace BaseDI.Professional.Story.Programming_0
                 if (storedProcessRequestDeveloperMode && storedProcessRequestTracker["storedProcessRequestStepNumber"] == 0) {
                     storedProcessRequestTracker["storedProcessRequestStepNumber"] += 1;
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    //0. CONTROLLERS
 
+                    //1. INPUTS                    
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);                    
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMasterStorer", new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs)); 
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                    
+                    //3. OUTPUTS
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
 
@@ -716,6 +719,7 @@ export namespace BaseDI.Professional.Story.Programming_0
                 storedProcessRequestExceptionDetails.Parameters.setValue("storedInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
 
                 //2. PROCESS
+                storedProcessRequestExceptionDetails.Parameters.setValue("storedProcessRequestMasterStorer", new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs)); 
                 storedProcessRequestExceptionDetails.Parameters.setValue("storedProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
                 storedProcessRequestExceptionDetails.Parameters.setValue("storedProcessRequestTracker", storedProcessRequestTracker);
                 storedProcessRequestExceptionDetails.Parameters.setValue("storedProcessRequestExtraData", this._storedProcessRequestExtraData);
@@ -822,7 +826,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -861,7 +865,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE process extra data
 
-            if (parameterInputs.Parameters["parameterProcessRequestExtraData"] != null)
+            if (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") != null)
                 this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData");
 
             //#endregion
@@ -1029,7 +1033,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = this._storedInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -1179,7 +1183,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -1419,7 +1423,6 @@ export namespace BaseDI.Professional.Story.Programming_0
             {
                 this._storedProcessRequestName = this._storedProcessRequestByName;
             }
-
             //#endregion
 
             //#endregion
@@ -1455,6 +1458,8 @@ export namespace BaseDI.Professional.Story.Programming_0
             //#endregion
 
             //#region DEFINE process variables
+
+            this._storedInputs.Parameters.setValue("parameterProcessRequestName", this._storedProcessRequestName);
 
             let storedProcessRequestExperienceHandler = new Implement_DesignPattern_Factory_Experience_12_2_1_0(this._storedInputs);
             let storedProcessRequestDirectorHandler = new Implement_DesignPattern_Factory_Director_12_2_1_0(this._storedInputs);
@@ -1680,7 +1685,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -1747,7 +1752,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 
@@ -1951,7 +1956,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = this._storedInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -2521,7 +2526,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -2588,7 +2593,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 
@@ -2762,7 +2767,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE input action name
 
-            let storedInputRequestActionName: string = this._storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            let storedInputRequestActionName: string = this._storedInputs.Parameters.getValue("parameterInputRequestActionName") as string;
 
             //#endregion
 
@@ -3093,7 +3098,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             //#endregion
 
@@ -3511,7 +3516,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
 
             //#endregion
 

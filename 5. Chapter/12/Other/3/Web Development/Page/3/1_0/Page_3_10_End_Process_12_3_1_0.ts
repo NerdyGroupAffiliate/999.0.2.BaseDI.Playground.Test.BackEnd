@@ -77,7 +77,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_3 {
 
             //#region MEMORIZE action name
 
-            this._storedInputRequestActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
+            this._storedInputRequestActionName = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
 
             //#endregion
 

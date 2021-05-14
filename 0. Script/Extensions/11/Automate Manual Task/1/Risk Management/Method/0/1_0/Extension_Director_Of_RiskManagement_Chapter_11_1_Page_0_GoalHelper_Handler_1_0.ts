@@ -101,7 +101,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                 let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedProcessRequestTracker["storedInputRequestActionName"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.ts");
@@ -119,21 +119,17 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                 //#region IDEAL CASE - USE valid information
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                    //0. CONTROLLES
 
-
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequest3WordDescription")) {
-                        console.log(parameterInputs.Parameters.getValue("parameterProcessRequestFileName"));
-                        console.log(parameterInputs.Parameters.getValue("parameterProcessRequestMethodName"))
-                        storedOutputResponseMessage += "***parameterProcessRequest3WordDescription*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
+                    //1. INPUTS
                     if (!parameterInputs.Parameters.containsKey("parameterInputRequestActionName")) {
                         storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //2. PROCESS
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequest3WordDescription")) {
+                        storedOutputResponseMessage += "***parameterProcessRequest3WordDescription*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -148,7 +144,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                     }
                     else {
                         if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null || parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == undefined) {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(this._storedProcessRequestSettings).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(this._storedProcessRequestSettings{'this._storedProcessRequestSettings':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
@@ -178,16 +174,23 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
 
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLES
+
+                        //1. INPUTS                        
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        //3. OUTPUTS
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
 
                         //#endregion
@@ -265,14 +268,21 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
             //#region MEMORIZE developer mode
 
-            let storedProcessRequest3WordDescription: string = parameterInputs.Parameters.getValue("parameterProcessRequest3WordDescription");
+
+            //0. CONTROLLES
+
+            //1. INPUTS               
             let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+            //2. PROCESS
+            let storedProcessRequest3WordDescription: string = parameterInputs.Parameters.getValue("parameterProcessRequest3WordDescription");
             let storedProcessRequestSettings: any = parameterInputs.Parameters.getValue("parameterProcessRequestSettings");
             let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
             let storedProcessRequestFileName: string = parameterInputs.Parameters.getValue("parameterProcessRequestFileName");
             let storedProcessRequestMethodName: string = parameterInputs.Parameters.getValue("parameterProcessRequestMethodName");
             let storedProcessRequestStepNumberReplace: number = parameterInputs.Parameters.getValue("parameterProcessRequestStepNumberReplace");
 
+            //3. OUTPUTS
             let storedOutputResponseMessageType: string = (parameterInputs.Parameters.getValue("parameterOutputResponseMessageType") != undefined ? parameterInputs.Parameters.getValue("parameterOutputResponseMessageType") : "LOGGING");
 
             if (parameterInputs.Parameters.getValue("parameterOutputResponseOPTIONALAccountingCostType") != undefined)
@@ -335,17 +345,22 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 
                     //#region 2. SETUP default message
 
+                    //0. CONTROLLES
+
+                    //1. INPUTS                              
+                    storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedInputRequestActionName}", storedInputRequestActionName);
+
+                    //2. PROCESS                         
                     storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequestStepNumberReplace}", storedProcessRequestStepNumberReplace.toString());
                     storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequest3WordDescription}", (storedOutputResponseOPTIONALAccountingCostType != "") ? "[" + storedOutputResponseOPTIONALAccountingCostType.toUpperCase() + " COST] - " + storedProcessRequest3WordDescription : "[ZERO COST] - " + storedProcessRequest3WordDescription);
-                    storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedInputRequestActionName}", storedInputRequestActionName);
                     storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequestFileName}", storedProcessRequestFileName);
                     storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequestMethodName}", storedProcessRequestMethodName);
 
                     //#endregion
 
-                    if (!process.env.APP_SETTING_DEVELOPER_MODE_SILENT) {
+                    if (!this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE_SILENT) {
                         //#region 3A. OUPUT client message
-                        if (process.env.APP_ENV.toUpperCase() == "CLIENT") {
+                        if (this._storedProcessRequestSettings.APP_ENV.toUpperCase() == "CLIENT") {
                             if (storedOutputResponseMistake) {
                                 console.log("%c" + storedOutputResponseMessage, "color:" + "Orange");
 
@@ -386,7 +401,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         //#endregion
 
                         //#region 3B. OUPUT server message
-                        if (process.env.APP_ENV.toUpperCase() == "SERVER") {
+                        if (this._storedProcessRequestSettings.APP_ENV.toUpperCase() == "SERVER") {
                             if (storedOutputResponseMistake) {
                                 console.log(_3rdParty_Chalk_ConsoleColorChanger.underline.magentaBright(storedOutputResponseMessage));
 

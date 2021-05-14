@@ -347,7 +347,7 @@ namespace BaseDI.Professional.Story.Programming_0
                 //REQUIRED
 
                 //0. CONTROLLERS
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+                //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
                 //1. INPUTS
 
@@ -617,7 +617,7 @@ namespace BaseDI.Professional.Story.Programming_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedProcessRequestTracker["storedInputRequestActionName"]);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN processing request");          
@@ -1040,7 +1040,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -1187,7 +1187,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -1689,7 +1689,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -1954,7 +1954,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -2522,7 +2522,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -2759,7 +2759,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedProcessRequestTracker["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 

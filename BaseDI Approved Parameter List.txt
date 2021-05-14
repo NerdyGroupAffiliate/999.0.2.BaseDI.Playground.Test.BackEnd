@@ -9,14 +9,14 @@ parameterInputRequestName
 parameterInputRequestNameDataCacheKey
 
 parameterProcessRequestCallBack
-parameterProcessRequestSettings
 parameterProcessRequestTracker
+parameterProcessRequestSettings
 
 parameterOutputResponseControlID
 
-OPTIONAL: parameterProcessRequestDataStorylineDetails
-OPTIONAL: parameterProcessRequestDataStorylineDetails_Parameters
-OPTIONAL: parameterProcessRequestDataStorylineDetails_CallBack
+NULLABLE: parameterProcessRequestDataStorylineDetails
+NULLABLE: parameterProcessRequestDataStorylineDetails_Parameters
+NULLABLE: parameterProcessRequestDataStorylineDetails_CallBack
 
 =================================================================================================
 Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs / ts

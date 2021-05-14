@@ -98,7 +98,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region MEMORIZE action name
 
-            _storedInputRequestActionName = (string)_storedProcessRequestTracker["storedInputRequestActionName"];
+            _storedInputRequestActionName = (string)_storedInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion
 

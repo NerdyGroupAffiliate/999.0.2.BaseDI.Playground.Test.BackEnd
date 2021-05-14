@@ -83,7 +83,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_10 {
 
             //#region MEMORIZE action name
 
-            this._storedInputRequestActionName = this._storedProcessRequestTracker["storedInputRequestActionName"];
+            this._storedInputRequestActionName = this._storedInputs.Parameters.getValue("parameterInputRequestActionName");
 
             //#endregion
 
@@ -254,7 +254,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_10 {
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedProcessRequestTracker["storedInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "RENDING web page");
