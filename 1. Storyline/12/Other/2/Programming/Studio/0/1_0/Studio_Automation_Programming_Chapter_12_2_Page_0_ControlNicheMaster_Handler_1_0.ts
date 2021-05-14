@@ -329,9 +329,9 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
                 //#region MEMORIZE process developer mode
 
-                let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestTracker.APP_SETTING_DEVELOPER_MODE;
 
-                storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+                //storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
                 let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
@@ -573,14 +573,14 @@ export namespace BaseDI.Professional.Story.Programming_0 {
             //#region MEMORIZE input request details
 
             let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
-            let storedInputRequestDataCustomCacheKey: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
+            let storedInputRequestNameDataCacheKey: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             //#endregion
 
             //#region MEMORIZE input extra data
 
             this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestName", storedInputRequestName);
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestDataCustomCacheKey", storedInputRequestDataCustomCacheKey);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
 
             //#endregion
 
@@ -647,10 +647,10 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region MEMORIZE process extra data
 
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationLocalNodeJS", this.APILocationLocalNodeJS);
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationLocalDotNetCore", this.APILocationLocalDotNetCore);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestAPILocationLocalNodeJS", this.APILocationLocalNodeJS);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestAPILocationLocalDotNetCore", this.APILocationLocalDotNetCore);
 
-            this._storedProcessRequestExtraData.KeyValuePairs.setValue("{storedProcessRequestMethodName}APILocationRemote", this.APILocationRemote);
+            this._storedProcessRequestExtraData.KeyValuePairs.setValue("storedProcessRequestAPILocationRemote", this.APILocationRemote);
 
             //#endregion
 

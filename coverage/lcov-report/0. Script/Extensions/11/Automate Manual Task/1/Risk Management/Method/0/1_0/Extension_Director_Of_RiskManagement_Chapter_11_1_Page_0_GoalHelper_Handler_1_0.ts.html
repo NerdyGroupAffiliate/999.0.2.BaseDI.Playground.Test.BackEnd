@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">55.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>92/161</span>
+                <span class='fraction'>89/161</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.91% </span>
+                <span class="strong">81.82% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/11</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.77% </span>
+                <span class="strong">53.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>87/156</span>
+                <span class='fraction'>84/156</span>
             </div>
         
             
@@ -600,10 +600,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1063,11 +1063,11 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
         private static _storedProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null;
 &nbsp;
         //PLUMBING
-        private static _storedOutputResponseMistakeTemplate: string = "***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseMistakeTemplate: string = "***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; storedProcessRequest\n";
 &nbsp;
-        private static _storedOutputResponseStepTemplate: string = "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; {storedProcessRequestMethodName}\n";
-        private static _storedOutputResponseStepTemplate_Idented: string = "  STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; {storedProcessRequestMethodName}\n";
-        private static _storedOutputResponseStepTemplate_Idented_Twice: string = "     STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; {storedProcessRequestMethodName}\n";
+        private static _storedOutputResponseStepTemplate: string = "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; storedProcessRequest\n";
+        private static _storedOutputResponseStepTemplate_Idented: string = "  STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; storedProcessRequest\n";
+        private static _storedOutputResponseStepTemplate_Idented_Twice: string = "     STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; storedProcessRequest\n";
 &nbsp;
 <span class="fstat-no" title="function not covered" >        constructor() {</span>
             //#region 1. INPUTS
@@ -1085,11 +1085,11 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 &nbsp;
         //#region DEVELOPER MANAGEMENT
 &nbsp;
-        public static async Step_X_X_Framework_Control_DeveloperException_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise&lt;any&gt; {
-            console.log("GOT EXCEPTION");
-            console.log(parameterInputs.Parameters["storedProcessRequestMistake"]);
+        public <span class="fstat-no" title="function not covered" >static </span>async Step_X_X_Framework_Control_DeveloperException_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise&lt;any&gt; {
+<span class="cstat-no" title="statement not covered" >            console.log("GOT EXCEPTION");</span>
+<span class="cstat-no" title="statement not covered" >            console.log(parameterInputs.Parameters["storedProcessRequestMistake"]);</span>
 &nbsp;
-            return null;
+<span class="cstat-no" title="statement not covered" >            return null;</span>
         }
 &nbsp;
         public static async Step_X_X_Framework_Output_DeveloperMessage_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise&lt;any&gt;
@@ -1353,14 +1353,14 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                     //#region 1A. SETUP logging output
                     <span class="missing-if-branch" title="else path not taken" >E</span>if (storedOutputResponseMessageType.toUpperCase() == "LOGGING") {
                         <span class="missing-if-branch" title="else path not taken" >E</span>if (storedOutputResponseOPTIONALBeginOfProcess || <span class="branch-1 cbranch-no" title="branch not covered" >storedOutputResponseOPTIONALEndOfProcess)</span> {
-                            storedOutputResponseMessage = this._storedOutputResponseStepTemplate; // "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; {storedProcessRequestMethodName}\n";
+                            storedOutputResponseMessage = this._storedOutputResponseStepTemplate; // "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; storedProcessRequest\n";
                         }
                         else {
 <span class="cstat-no" title="statement not covered" >                            if (storedOutputResponseOPTIONALAccountingCostType) {</span>
-<span class="cstat-no" title="statement not covered" >                                storedOutputResponseMessage = this._storedOutputResponseStepTemplate_Idented_Twice; </span>// "   STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; {storedProcessRequestMethodName}\n";      
+<span class="cstat-no" title="statement not covered" >                                storedOutputResponseMessage = this._storedOutputResponseStepTemplate_Idented_Twice; </span>// "   STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; storedProcessRequest\n";      
                             }
                             else {
-<span class="cstat-no" title="statement not covered" >                                storedOutputResponseMessage = this._storedOutputResponseStepTemplate_Idented; </span>// "   STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; {storedProcessRequestMethodName}\n";      
+<span class="cstat-no" title="statement not covered" >                                storedOutputResponseMessage = this._storedOutputResponseStepTemplate_Idented; </span>// "   STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; storedProcessRequest\n";      
                             }
                         }
                     }
@@ -1368,7 +1368,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
 &nbsp;
                     //#region 1B. SETUP exception output
                     <span class="missing-if-branch" title="if path not taken" >I</span>if (storedOutputResponseMessageType.toUpperCase() == "MISTAKE") {
-<span class="cstat-no" title="statement not covered" >                        storedOutputResponseMessage = this._storedOutputResponseMistakeTemplate; </span>// ***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; {storedProcessRequestMethodName}\n";
+<span class="cstat-no" title="statement not covered" >                        storedOutputResponseMessage = this._storedOutputResponseMistakeTemplate; </span>// ***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -&gt; {storedProcessRequestFileName} -&gt; storedProcessRequest\n";
 &nbsp;
 <span class="cstat-no" title="statement not covered" >                        storedOutputResponseMistake = true;</span>
                     }
@@ -1385,7 +1385,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                     storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequestStepNumberReplace}", storedProcessRequestStepNumberReplace.toString());
                     storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequest3WordDescription}", (storedOutputResponseOPTIONALAccountingCostType != "") ? <span class="branch-0 cbranch-no" title="branch not covered" >"[" + storedOutputResponseOPTIONALAccountingCostType.toUpperCase() + " COST] - " + storedProcessRequest3WordDescription </span>: "[ZERO COST] - " + storedProcessRequest3WordDescription);
                     storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequestFileName}", storedProcessRequestFileName);
-                    storedOutputResponseMessage = storedOutputResponseMessage.replace("{storedProcessRequestMethodName}", storedProcessRequestMethodName);
+                    storedOutputResponseMessage = storedOutputResponseMessage.replace("storedProcessRequest", storedProcessRequestMethodName);
 &nbsp;
                     //#endregion
 &nbsp;
@@ -1522,7 +1522,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 13 2021 22:42:31 GMT-0500 (Central Daylight Time)
+                at Fri May 14 2021 10:22:28 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="../../../../../../../../../prettify.js"></script>

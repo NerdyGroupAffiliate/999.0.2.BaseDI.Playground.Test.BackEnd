@@ -779,7 +779,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 //#region 9. STORE html string
 
                 try {
-                    const ExecuteOutputResponse = async () => {
+                    const ExecuteStorageRequest = async () => {
                         storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace("'", "\"");
                         storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace("{htmlResult}", escape(storedOutputResponseHtmlResultString));
 
@@ -812,7 +812,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         return storedProcessRequestDataStorylineDetails;
                     };
 
-                    storedOutputResponseData = await ExecuteOutputResponse();
+                    storedOutputResponseData = await ExecuteStorageRequest();
                 }
                 catch (storedProcessRequestMistake) {
                     throw new Error("storing html string output observation");

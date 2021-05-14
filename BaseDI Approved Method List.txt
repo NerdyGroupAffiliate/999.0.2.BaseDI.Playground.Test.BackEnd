@@ -1,8 +1,17 @@
-﻿const ExecutionControlRequest = () => {}
-const ExecutionInputRequest = () => {}
-const ExecutionConvertRequest = () => {}
-const ExecutionTransportRequest = () => {}
-const ExecutionStorageRequest = () => {}
-const ExecutionDisturbanceRequest = () => {}
-const ExecutionSensorRequest = () => {}
-const ExecutionOutputRequest = () => {}
+﻿//0. CONTROLLERS
+const ExecuteControlRequest = async () => {}
+
+//1. INPUTS
+const ExecuteInputRequest = async () => {}
+
+//2. PROCESS 
+const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {}
+const ExecuteConversionRequest = async () => {}
+const ExecuteTransportRequest = async () => {}
+const ExecuteStorageRequest = async () => {}
+const ExecuteDisturbanceRequest = async () => {}
+const ExecuteSensorRequest = async () => {}
+
+//3. OUTPUT
+const ExecuteOutputResponse = async () => {}
+

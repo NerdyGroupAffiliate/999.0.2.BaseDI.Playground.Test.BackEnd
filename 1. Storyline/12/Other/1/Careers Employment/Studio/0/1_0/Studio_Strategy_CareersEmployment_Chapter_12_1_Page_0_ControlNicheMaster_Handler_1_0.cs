@@ -329,24 +329,24 @@ namespace BaseDI.Professional.Story.Careers_Employment_0
 
                 #region MEMORIZE process developer mode
 
-                bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-                _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+                //storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
 
                 //0. CONTROLLERS
-                //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
 
                 //1. INPUTS
 
                 //2. PROCESS
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
 
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler_1_0.ts");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "SetupStoryline -> ValidateInputs");
 
@@ -587,14 +587,14 @@ namespace BaseDI.Professional.Story.Careers_Employment_0
             #region MEMORIZE input request details
 
             string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            string storedInputRequestDataCustomCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
             #endregion
 
             #region MEMORIZE input extra data
 
             _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestName", storedInputRequestName);
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestDataCustomCacheKey", storedInputRequestDataCustomCacheKey);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
 
             #endregion
 
@@ -661,10 +661,10 @@ namespace BaseDI.Professional.Story.Careers_Employment_0
 
             #region MEMORIZE process extra data
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationLocalNodeJS", APILocationLocalNodeJS);
-            _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedProcessRequestAPILocationLocalNodeJS", APILocationLocalNodeJS);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedProcessRequestAPILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("{storedProcessRequestMethodName}APILocationRemote", APILocationRemote);
+            _storedProcessRequestExtraData.KeyValuePairs.Add("storedProcessRequestAPILocationRemote", APILocationRemote);
 
             #endregion
 

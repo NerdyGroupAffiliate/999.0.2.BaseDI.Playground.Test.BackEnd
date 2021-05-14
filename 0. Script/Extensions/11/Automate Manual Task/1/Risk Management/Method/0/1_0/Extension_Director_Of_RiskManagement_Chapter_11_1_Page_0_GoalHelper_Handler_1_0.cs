@@ -43,11 +43,11 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
         private static ExtraData_12_2_1_0 _storedProcessRequestExtraData = null;
 
         //PLUMBING
-        private static string _storedOutputResponseMistakeTemplate = "***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static string _storedOutputResponseMistakeTemplate = "***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> storedProcessRequest\n";
 
-        private static string _storedOutputResponseStepTemplate = "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
-        private static string _storedOutputResponseStepTemplate_Idented = "  STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
-        private static string _storedOutputResponseStepTemplate_Idented_Twice = "     STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+        private static string _storedOutputResponseStepTemplate = "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> storedProcessRequest\n";
+        private static string _storedOutputResponseStepTemplate_Idented = "  STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n     {storedInputRequestActionName} -> {storedProcessRequestFileName} -> storedProcessRequest\n";
+        private static string _storedOutputResponseStepTemplate_Idented_Twice = "     STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n        {storedInputRequestActionName} -> {storedProcessRequestFileName} -> storedProcessRequest\n";
 
         #region DEVELOPER MANAGEMENT
 
@@ -404,17 +404,17 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                     {
                         if (storedOutputResponseOPTIONALBeginOfProcess || storedOutputResponseOPTIONALEndOfProcess)
                         {
-                            storedOutputResponseMessage = _storedOutputResponseStepTemplate; // "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";
+                            storedOutputResponseMessage = _storedOutputResponseStepTemplate; // "STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> storedProcessRequest\n";
                         }
                         else
                         {
                             if (!string.IsNullOrEmpty(storedOutputResponseOPTIONALAccountingCostType))
                             {
-                                storedOutputResponseMessage = _storedOutputResponseStepTemplate_Idented_Twice; // "   STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";      
+                                storedOutputResponseMessage = _storedOutputResponseStepTemplate_Idented_Twice; // "   STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -> {storedProcessRequestFileName} -> storedProcessRequest\n";      
                             }
                             else
                             {
-                                storedOutputResponseMessage = _storedOutputResponseStepTemplate_Idented; // "   STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n";      
+                                storedOutputResponseMessage = _storedOutputResponseStepTemplate_Idented; // "   STEP {storedProcessRequestStepNumberReplace}: {storedProcessRequest3WordDescription}\n      {storedInputRequestActionName} -> {storedProcessRequestFileName} -> storedProcessRequest\n";      
                             }
                         }
                     }
@@ -425,7 +425,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                     if (storedOutputResponseMessageType.ToUpper() == "MISTAKE")
                     {
-                        storedOutputResponseMessage = _storedOutputResponseMistakeTemplate; // ***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> {storedProcessRequestMethodName}\n\n";
+                        storedOutputResponseMessage = _storedOutputResponseMistakeTemplate; // ***LEAKY PIPE*** {storedProcessRequest3WordDescription}\n  {storedInputRequestActionName} -> {storedProcessRequestFileName} -> storedProcessRequest\n\n";
 
                         storedOutputResponseMistake = true;
                     }
@@ -438,7 +438,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                     storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedProcessRequest3WordDescription}", (storedOutputResponseOPTIONALAccountingCostType != "") ? "[" + storedOutputResponseOPTIONALAccountingCostType.ToUpper() + " COST] - " + storedProcessRequest3WordDescription : "[ZERO COST] - " + storedProcessRequest3WordDescription);
                     storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedInputRequestActionName}", storedInputRequestActionName);
                     storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedProcessRequestFileName}", storedProcessRequestFileName);
-                    storedOutputResponseMessage = storedOutputResponseMessage.Replace("{storedProcessRequestMethodName}", storedProcessRequestMethodName);
+                    storedOutputResponseMessage = storedOutputResponseMessage.Replace("storedProcessRequest", storedProcessRequestMethodName);
 
                     #endregion
 

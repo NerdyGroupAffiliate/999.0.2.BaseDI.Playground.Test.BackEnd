@@ -271,6 +271,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         //#region EDGE CASE - USE request executor
 
+                        this._storedProcessRequestTracker["storedProcessRequestHandlerName"] = this._storedInputRequestName;
+
                         return this.DirectorOrExperienceRequestHandler.Action().then(storedDataSet => {
                             return storedDataSet;
                         })
