@@ -282,7 +282,7 @@ const ExecuteConversionRequest = async (parameterInputs: SingleParmPoco_12_2_1_0
 }
 
 describe('Web Development Test', () => {
-    test('1. Homepage - Conversion Test - Convert JSON to HTML', async () =>
+    test('1. Home Screen - Conversion Test - Convert JSON to HTML', async () =>
     {
         //#region 1. INPUTS
 
@@ -379,6 +379,1139 @@ describe('Web Development Test', () => {
         catch (storedProcessRequestMistake) {
             console.log(storedProcessRequestMistake.message);
         }        
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('2. Presale Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('3. Optin Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('4. Thank You Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('5. Sales Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('6. Order Form Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('7. One Time Offer Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('8. Webinar Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('9. Membership Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('10. Affiliate Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('11. Other Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
+
+        //#endregion
+
+        //#endregion    
+
+        //#endregion
+    })
+
+    test('12. Advanced Screen - Conversion Test - Convert JSON to HTML', async () => {
+        //#region 1. INPUTS
+
+        //#region DEFINE control variables
+
+        //#endregion
+
+        //#region DEFINE input variables
+
+
+        //#endregion
+
+        //#region DEFINE process variables
+
+
+
+        //#endregion
+
+        //#region DEFINE output variables
+
+        let storedOutputResponseData: any = null;
+
+        //#endregion
+
+        ///////////////////////////////
+
+        //#region MEMORIZE control variables
+
+        //#region MEMORIZE control xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE input variables
+
+        //#region MEMORIZE input xxx xxxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE process variables
+
+        //#region MEMORIZE process test variables
+
+        let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+        storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler");
+        storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler-P1_0")
+
+        //#endregion
+
+        //#endregion
+
+        //#region MEMORIZE output variables
+
+        //#region MEMORIZE output xxx xxx
+
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 2. PROCESS
+
+        //#region EXECUTE process defaults
+
+        //#region IDEAL CASE - USE baseDI extension
+
+        storedOutputResponseData = await ExecuteConversionRequest(storedInputs);
+
+        //#endregion
+
+        //#endregion
+
+        //#endregion
+
+        //#region 3. OUTPUT
+
+        //#region HANDLE execution response
+
+        //#region IDEAL CASE - USE baseDI data
+
+        try {
+            //importedFileManager_VendorNodeJS.writeFileSync(".\8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" + storedInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey") + ".json", JSON.stringify(storedOutputResponseData));
+            console.log(JSON.stringify(storedOutputResponseData));
+        }
+        catch (storedProcessRequestMistake) {
+            console.log(storedProcessRequestMistake.message);
+        }
 
         //#endregion
 

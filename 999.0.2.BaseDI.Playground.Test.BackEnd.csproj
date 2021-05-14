@@ -30,6 +30,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include=".vscode\launch.json" />
+    <Content Include=".vscode\tasks.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Box.V2.Core" Version="3.23.0" />
     <PackageReference Include="curl" Version="7.30.0.2" />
     <PackageReference Include="CurlThin" Version="0.0.7" />
@@ -49,11 +54,13 @@
     <Folder Include="6. State\2\Generate Brand Trust\3\Social Media\Repository\1\1_0\" />
     <Folder Include="7. Director\11\Automate Manual Task\1\Risk Management\Director\3\1_0\" />
     <Folder Include="7. Director\12\Other\2\Programming\Director\0\1_0\" />
+    <Folder Include="8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" />
     <Folder Include="9. Organizing\MRichardson001\Pages\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include=".vscode\launch.json copy.dotnet" />
     <None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
     <None Include="Snippet_CSharp_Regions.cs" />
     <None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
