@@ -329,7 +329,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
                 //#region MEMORIZE process developer mode
 
-                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestTracker.APP_SETTING_DEVELOPER_MODE;
+                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
                 //storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 

@@ -21,7 +21,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
 
         public string APILocationRemote { get; set; }
 
-        public Func<Object, Object> CallBack { get; set; }
+        public Func<SingleParmPoco_12_2_1_0, dynamic> CallBack { get; set; }
 
         public abstract Task<StoryRequest> Action(SingleParmPoco_12_2_1_0 parameterInputs);
     }

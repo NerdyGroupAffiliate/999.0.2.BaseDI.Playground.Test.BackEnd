@@ -8,7 +8,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Update="8. Testing\Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlTestingVariables_Handler_1_0.test.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Update="8. Testing\1. Storyline\Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.test.tsx">
       <SubType>Code</SubType>

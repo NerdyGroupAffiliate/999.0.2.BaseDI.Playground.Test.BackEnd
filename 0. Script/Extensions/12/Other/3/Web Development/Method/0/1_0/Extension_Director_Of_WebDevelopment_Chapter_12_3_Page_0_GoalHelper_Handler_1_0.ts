@@ -280,7 +280,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#endregion
 
             //#region DEFINE control variables
-
+            
             //#endregion
 
             //#region DEFINE input variables

@@ -2,6 +2,8 @@
 
 //#region BaseDI
 
+import * as TestVariables from "../Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlTestingVariables_Handler_1_0.test";
+
 //0. SCRIPT
 import * as Action_12_2_1_0 from "../../0. Script/Parameters/12/Other/2/Programming/Action Poco/1/1_0/Action_12_2_1_0";
 import * as ExtraData_12_2_1_0 from "../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
@@ -20,10 +22,6 @@ import * as ChapterPage_Page_2_1_Begin_Process_12_2_1_0 from "../../5. Chapter/1
 
 //6. STATE
 import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0 from "../../6. State/12/Other/2/Programming/Repository/2/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0";
-
-    //12-3 - WEB DEVELOPMENT
-    import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0 from "../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/1/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0.json";
-    import * as state_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0_P1_0 from "../../../999.0.3.BaseDI.QuickStart.Templates/2. Data Movement/ARM Templates/12/Other/3/Web Development/Template/1/1_0/State_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0-P1_0.json";
 
 //#endregion
 
@@ -184,7 +182,6 @@ const ExecuteConversionRequest = async (parameterInputs: SingleParmPoco_12_2_1_0
     //#region DEFINE output variables
 
     let storedOutputResponseData: any = null;
-    let storedOutputResponseProcess: any = null;
 
     //#endregion
 
@@ -208,41 +205,6 @@ const ExecuteConversionRequest = async (parameterInputs: SingleParmPoco_12_2_1_0
     //#endregion
 
     //#region MEMORIZE process variables
-
-    //#region MEMORIZE process test variables
-
-    let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-
-    //0. CONTROLLERS
-
-    //1. INPUTS
-    storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
-    storedInputs.Parameters.setValue("parameterInputRequestName", parameterInputs.Parameters.getValue("parameterInputRequestName"));
-    storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey"));
-
-    //2. PROCESS
-    storedInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
-    storedInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-    storedInputs.Parameters.setValue("parameterProcessRequestRequestHandlerFileName", parameterInputs.Parameters.getValue("parameterInputRequestName"));
-
-    storedInputs.Parameters.setValue("parameterProcessRequestExtraData", null);
-
-    _storedProcessRequestCentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0.BaseDI.Professional.Story.Programming_0.Implement_DesignPattern_Factory_Storer_12_2_1_0(storedInputs);
-
-    storedInputs.Parameters.setValue("parameterProcessRequestCentralizedDisturber", null);
-    storedInputs.Parameters.setValue("parameterProcessRequestCentralizedSensor", null);
-    storedInputs.Parameters.setValue("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
-
-    _storedProcessRequestLocalCacheDataRepository = new ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0(storedInputs);
-    _storedProcessRequestLocalCacheDataRepository.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(storedInputs);
-
-    //3. OUTPUT
-    storedOutputResponseProcess = await Promise.all([_storedProcessRequestLocalCacheDataRepository.Action()]);
-    storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedOutputResponseProcess[0].StorylineDetails);
-
-    //3. OUTPUTS
-
-    //#endregion
 
     //#endregion
 
@@ -337,8 +299,11 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0-P1_0")
+
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -441,8 +406,11 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0-P1_0")
+
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -544,8 +512,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -647,8 +617,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_4_OutputThankYouScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -750,8 +722,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_5_OutputSalesScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -853,8 +827,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_6_OutputOrderFormScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -956,8 +932,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_7_OutputOTOScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -1059,8 +1037,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_8_OutputWebinarScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -1162,8 +1142,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_9_OutputMembershipScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -1265,8 +1247,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_10_OutputAffiliateScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -1368,8 +1352,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 
@@ -1471,8 +1457,10 @@ describe('Web Development Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler-P1_0")
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
 
         //#endregion
 

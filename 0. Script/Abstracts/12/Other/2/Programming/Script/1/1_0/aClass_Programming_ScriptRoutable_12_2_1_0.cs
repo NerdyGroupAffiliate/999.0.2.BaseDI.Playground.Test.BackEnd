@@ -13,7 +13,7 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
     {
         public abstract Task<JObject> Action();
 
-        public Func<Object, Object> CallBack { get; set; }
+        public Func<SingleParmPoco_12_2_1_0, dynamic> CallBack { get; set; }
 
         public aClass_Programming_ScriptAction_12_2_1_0<Task<JObject>> Repository { get; set; }
 
@@ -40,6 +40,8 @@ namespace BaseDI.Professional.Script.Programming.Abstract_1
         public aClass_Programming_ScriptAction_12_2_1_0<JObject> MasterDisturber { get; set; }
 
         public aClass_Programming_ScriptAction_12_2_1_0<JObject> MasterSensor { get; set; }
+
+        public aClass_Programming_ScriptNicheMaster_12_2_1_0<JObject> NicheMaster { get; set; }
 
         public Dictionary<string, object> ClientOrServerInstance { get; set; }
 

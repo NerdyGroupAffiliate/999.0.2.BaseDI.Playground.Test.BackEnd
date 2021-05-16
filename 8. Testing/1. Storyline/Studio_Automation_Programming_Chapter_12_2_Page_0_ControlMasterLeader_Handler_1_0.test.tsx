@@ -2,6 +2,8 @@
 
 //#region BaseDI
 
+import * as TestVariables from "../Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlTestingVariables_Handler_1_0.test";
+
 //0. SCRIPT
 import * as Action_12_2_1_0 from "../../0. Script/Parameters/12/Other/2/Programming/Action Poco/1/1_0/Action_12_2_1_0";
 import * as ExtraData_12_2_1_0 from "../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
@@ -104,25 +106,6 @@ beforeEach(() => {
 
     //#region MEMORIZE process variables
 
-    //#region MEMORIZE process request settings
-
-    _storedProcessRequestTracker = new Object();
-
-    _storedProcessRequestTracker["storedProcessRequestIgnoreDeveloperConsoleLog"] = false;
-    _storedProcessRequestTracker["storedProcessRequestSettings"] = {
-        NODE_ENV: "development",
-        PORT: 0,
-        APP_ENV: "SERVER",
-        APP_SETTING_CONVERSION_MODE_12_2_PROGRAMMING_NICHE_MASTER: "LOCAL_FILE", //OPTIONS = LOCAL_FILE, LOCAL_DATABASE, LOCAL_SERVICE, REMOTE_FILE, REMOTE_DATABASE, REMOTE_SERVICE, REMOTE_SERVICE_VENDOR 
-        APP_SETTING_CONVERSION_MODE_12_3_WEBDEVELOPMENT_NICHE_MASTER: "LOCAL_FILE", //OPTIONS = LOCAL_FILE, LOCAL_DATABASE, LOCAL_SERVICE, REMOTE_FILE, REMOTE_DATABASE, REMOTE_SERVICE, REMOTE_SERVICE_VENDOR
-        APP_SETTING_DEVELOPER_MODE: true,
-        APP_SETTING_DEVELOPER_MODE_SILENT: false
-    }
-
-    _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
-
-    //#endregion
-
     //#endregion
 
     //#region MEMORIZE output variables
@@ -190,7 +173,6 @@ const ExecuteTransportRequest = async (parameterInputs: SingleParmPoco_12_2_1_0.
     //#region DEFINE output variables
 
     let storedOutputResponseData: any = null;
-    let storedOutputResponseProcess: any = null;
 
     //#endregion
 
@@ -206,7 +188,7 @@ const ExecuteTransportRequest = async (parameterInputs: SingleParmPoco_12_2_1_0.
 
     //#region MEMORIZE input variables
 
-    //#region MEMORIZE input xxx xxxx
+    //#region MEMORIZE input xxx xxx
 
 
     //#endregion
@@ -215,32 +197,8 @@ const ExecuteTransportRequest = async (parameterInputs: SingleParmPoco_12_2_1_0.
 
     //#region MEMORIZE process variables
 
-    //#region MEMORIZE process test variables
+    //#region MEMORIZE process xxx xxx
 
-    let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-
-    //0. CONTROLLERS    
-    storedInputs.Parameters.setValue("parameterControlRequestClientOrServer", this);
-
-    //1. INPUTS
-    storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
-    storedInputs.Parameters.setValue("parameterInputRequestName", parameterInputs.Parameters.getValue("parameterInputRequestName"));
-    storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey"));
-
-    //2. PROCESS
-    storedInputs.Parameters.setValue("parameterProcessRequestCallBack", null);
-    storedInputs.Parameters.setValue("parameterProcessRequestTracker", _storedProcessRequestTracker);
-    storedInputs.Parameters.setValue("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-
-    storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", null);
-    storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_Parameters", null);
-    storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_CallBack", null);
-
-    //SET DURING TESTING ONLY
-    //storedInputs.Parameters.setValue("parameterProcessRequestByName", parameterInputs.Parameters.getValue("parameterInputRequestName"));
-    
-    //3. OUTPUTS
-    storedInputs.Parameters.setValue("parameterOutputResponseControlID", "");
 
     //#endregion
 
@@ -263,12 +221,12 @@ const ExecuteTransportRequest = async (parameterInputs: SingleParmPoco_12_2_1_0.
     //#region IDEAL CASE - USE baseDI transporter
 
     const Action = (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {
-        storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(storedInputs))
+        storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs))
             .SetupStoryline(parameterInputs)
             .Action();
     }
 
-    Action(storedInputs);
+    Action(parameterInputs);
  
     //#endregion
 
@@ -342,8 +300,18 @@ describe('Request Handler Test', () => {
 
         let storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
+        //0. CONTROLLERS
+
+        //1. INPUTS
+        storedInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0-P1_0")
+
+        storedInputs = await TestVariables.ExecuteInputRequest_TestVariables_12_2_Programming(storedInputs);
+
+        //2. PROCESS
+
+        //3. OUTPUTS
 
         //#endregion
 
