@@ -146,9 +146,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -278,7 +278,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<dynamic> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"] as aClass_Programming_ScriptAction_12_2_1_0<dynamic>;
+            aClass_Programming_ScriptAction_12_2_1_0<dynamic> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"] as aClass_Programming_ScriptAction_12_2_1_0<dynamic>;
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
             #endregion

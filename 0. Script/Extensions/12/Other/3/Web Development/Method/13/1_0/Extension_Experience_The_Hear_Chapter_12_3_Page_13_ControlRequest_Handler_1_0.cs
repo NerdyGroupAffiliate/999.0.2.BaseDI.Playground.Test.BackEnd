@@ -888,9 +888,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -988,7 +988,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
             #region MEMORIZE centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<object> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            aClass_Programming_ScriptAction_12_2_1_0<object> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
 
@@ -1127,7 +1127,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
 
                     storedInputs.Parameters.Add("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
-                    storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", storedProcessRequestCentralizedStorer);
+                    storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
 
                     storedInputs.Parameters.Add("parameterProcessRequestPageName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
 

@@ -843,8 +843,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestMasterStorer")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n"
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedStorer")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -932,7 +932,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region MEMORIZE centralized processes
 
-            let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestMasterStorer");
+            let storedProcessRequestCentralizedStorer: aClass_Programming_ScriptAction_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptAction_12_2_1_0<object> = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
             //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
             //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
 
@@ -1076,7 +1076,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                     storedInputs.Parameters.setValue("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
-                    storedInputs.Parameters.setValue("parameterProcessRequestMasterStorer", Object.assign(storedProcessRequestCentralizedStorer, Object));
+                    storedInputs.Parameters.setValue("parameterProcessRequestCentralizedStorer", Object.assign(storedProcessRequestCentralizedStorer, Object));
 
                     storedInputs.Parameters.setValue("parameterProcessRequestPageName", "Step_X_X_Framework_Control_ServerHandleDefaults_1_0");
 

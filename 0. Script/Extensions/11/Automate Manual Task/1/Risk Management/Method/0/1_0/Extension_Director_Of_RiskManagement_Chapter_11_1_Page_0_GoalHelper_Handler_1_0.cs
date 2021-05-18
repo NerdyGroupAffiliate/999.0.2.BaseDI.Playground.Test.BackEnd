@@ -240,9 +240,9 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMasterStorer"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestMasterStorer*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -382,7 +382,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
             
             #region MEMORIZE master storer
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestMasterStorer = parameterInputs.Parameters["parameterProcessRequestMasterStorer"];
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestMasterStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 

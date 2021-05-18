@@ -327,7 +327,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_7
                         storedInputs.Parameters.Add("parameterInputRequestHtmlContainerJSON", storedHtmlContainerJSON);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs);
@@ -364,7 +364,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_7
                         storedInputs.Parameters.Add("parameterOutputResponseHtmlContainerString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs);
@@ -402,7 +402,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_7
                         storedInputs.Parameters.Add("parameterOutputResponseHtmlRowString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs);
@@ -440,7 +440,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_7
                         storedInputs.Parameters.Add("parameterOutputResponseHtmlColumnString", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         storedHtmlResultString = await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs);
@@ -479,7 +479,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_7
                         storedInputs.Parameters.Add("parameterInputRequestHtmlStylesJSON", storedHtmlStylesJSON);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs);
@@ -541,7 +541,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_7
                         storedInputs.Parameters.Add("parameterInputRequestHtmlBody", storedHtmlResultString);
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
 
                         return await Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs);

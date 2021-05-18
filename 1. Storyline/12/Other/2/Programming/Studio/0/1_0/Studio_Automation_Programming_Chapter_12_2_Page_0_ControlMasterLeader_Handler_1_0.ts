@@ -684,7 +684,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
                     //1. INPUTS                    
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);                    
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMasterStorer", new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs)); 
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestCentralizedStorer", new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs)); 
 
                     //2. PROCESS
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake

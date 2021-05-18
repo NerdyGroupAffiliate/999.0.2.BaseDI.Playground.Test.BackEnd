@@ -17,7 +17,6 @@ import * as ChapterPage_Page_2_1_Begin_Process_12_2_1_0 from "../5. Chapter/12/O
 //6. STATE
 import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0 from "../6. State/12/Other/2/Programming/Repository/2/1_0/LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0";
 
-
 //#endregion
 
 //#endregion
@@ -50,9 +49,11 @@ import * as LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequ
 
 //#region 4. Action
 
-//#region 12-2 - Programming
+//#region 1. EXECUTE store static test variable process
 
-export const ExecuteInputRequest_TestVariables_12_2_Programming = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> => {
+//#region IDEA CASE - USE default values
+
+export const Action = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> => {
     //#region 1. INPUTS
 
     //#region DEFINE control variables
@@ -66,11 +67,14 @@ export const ExecuteInputRequest_TestVariables_12_2_Programming = async (paramet
 
     //#region DEFINE process variables
 
+    let storedProcessRequestDataRepository: ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0;
+
     //#endregion
 
     //#region DEFINE output variables
 
     let storedOutputResponseData: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+    let storedOutputResponseDataRepository: any = null;
 
     //#endregion
 
@@ -154,10 +158,6 @@ export const ExecuteInputRequest_TestVariables_12_2_Programming = async (paramet
     parameterInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
     parameterInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
 
-    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack") || parameterInputs.Parameters.getValue("parameterProcessRequestCallBack") == undefined) {
-        parameterInputs.Parameters.setValue("parameterProcessRequestCallBack", null);
-    }
-
     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails_Parameters") || parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters") == undefined) {
         parameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_Parameters", null);
     }
@@ -166,10 +166,40 @@ export const ExecuteInputRequest_TestVariables_12_2_Programming = async (paramet
         parameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_CallBack", null);
     }
 
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack") || parameterInputs.Parameters.getValue("parameterProcessRequestCallBack") == undefined) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestCallBack", null);
+    }
+
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedDisturber") || parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber") == undefined) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestCentralizedDisturber", null);
+    }    
+
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedSensor") || parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor") == undefined) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestCentralizedSensor", null);
+    }
+    
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedStorer") || parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer") == undefined) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestCentralizedStorer", new Implement_DesignPattern_Factory_Storer_12_2_1_0.BaseDI.Professional.Story.Programming_0.Implement_DesignPattern_Builder_Chapter_12_2_1_0(parameterInputs));
+    }
+
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails") || parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails") == undefined) {
+        
+        storedProcessRequestDataRepository = new ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0(parameterInputs);
+        storedProcessRequestDataRepository.Repository = new LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.State.Programming_2.LocalFile_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);        
+        
+        storedOutputResponseDataRepository = await Promise.resolve(storedProcessRequestDataRepository.Action());
+
+        parameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedOutputResponseDataRepository.StorylineDetails);
+    }    
+
     //3. OUTPUTS
     if (!parameterInputs.Parameters.containsKey("parameterOutputResponseControlID") || parameterInputs.Parameters.getValue("parameterOutputResponseControlID") == undefined) {
         parameterInputs.Parameters.setValue("parameterOutputResponseControlID", null);
     }
+
+    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseType") || parameterInputs.Parameters.getValue("parameterOutputResponseType") == undefined) {
+        parameterInputs.Parameters.setValue("parameterOutputResponseType", "HTML");
+    }    
 
     //#endregion
 
@@ -191,7 +221,7 @@ export const ExecuteInputRequest_TestVariables_12_2_Programming = async (paramet
 
     //#region IDEAL CASE - USE baseDI converter
 
-    storedOutputResponseData = await ExecuteInputRequest_Factory_12_2_Programming(parameterInputs);
+    storedOutputResponseData = await Action_Factory_Start(parameterInputs);
 
     //#endregion
 
@@ -214,17 +244,139 @@ export const ExecuteInputRequest_TestVariables_12_2_Programming = async (paramet
     //#endregion
 }
 
-const ExecuteInputRequest_Factory_12_2_Programming = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0> => {
+//#endregion
+
+//#endregion
+
+//#region 2. EXECUTE store dynamic test variable process
+
+//#region IDEA CASE - USE baseDI variables
+
+const Action_Factory_Start = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0> => {
     if (parameterInputs.Parameters.size() > 0) {
-        if (parameterInputs.Parameters.getValue("parameterInputRequestName").toLocaleUpperCase().includes("DIRECTOR_OF_WEBDEVELOPMENT")) {
-            return ExecuteInputRequest_Factory_12_3_Web_Development(parameterInputs);
+        if (parameterInputs.Parameters.getValue("parameterInputRequestName").toLocaleUpperCase().includes("DIRECTOR_OF_WEBDEVELOPMENT") ||
+            parameterInputs.Parameters.getValue("parameterInputRequestName").toLocaleUpperCase().includes("EXPERIENCE_THE_HEAR_OFTHEAPISERVER_MESSAGE")) {
+
+            return Action_Factory_Start_12_3_WebDevelopment(parameterInputs);
         }
     }
 
-    return ExecuteInputRequest_End_12_2_Programming(parameterInputs);
+    return Action_Factory_End(parameterInputs);
 }
 
-const ExecuteInputRequest_End_12_2_Programming = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0> => {
+//#region 12-3 - Web Development
+
+const Action_Factory_Start_12_3_WebDevelopment = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0> => {
+    //#region 1. INPUTS
+
+    //#region DEFINE control variables
+
+    //#endregion
+
+    //#region DEFINE input variables
+
+
+    //#endregion
+
+    //#region DEFINE process variables
+
+
+    //#endregion
+
+    //#region DEFINE output variables
+
+    let storedOutputResponseData: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
+
+    //#endregion
+
+    ///////////////////////////////////////////////////////////
+
+    //#region MEMORIZE control variables
+
+    //#region MEMORIZE control xxx xxx
+
+    //#endregion
+
+    //#endregion
+
+    //#region MEMORIZE input variables
+
+    //#region MEMORIZE input xxx xxxx
+
+
+    //#endregion
+
+    //#endregion
+
+    //#region MEMORIZE process variables
+
+    //#region MEMORIZE process test variables
+
+
+    //0. CONTROLLERS
+
+    //1. INPUTS
+    parameterInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
+    parameterInputs.Parameters.setValue("parameterInputRequestName", parameterInputs.Parameters.getValue("parameterInputRequestName"));
+    parameterInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey"));
+
+    //2. PROCESS
+    parameterInputs.Parameters.setValue("parameterProcessRequestExtraData", parameterInputs.Parameters.getValue("parameterProcessRequestExtraData"));
+
+    //3. OUTPUTS
+
+    //#endregion
+
+    //#endregion
+
+    //#region MEMORIZE output variables
+
+    //#region MEMORIZE output xxx xxxx
+
+    //#endregion
+
+    //#endregion
+
+    //#endregion
+
+    //#region 2. PROCESS
+
+    //#region HANDLE application defaults
+
+    //#region IDEAL CASE - USE baseDI converter
+
+    storedOutputResponseData = parameterInputs;
+
+    //#endregion
+
+    //#endregion
+
+    //#endregion
+
+    //#region 3. OUTPUT
+
+    //#region HANDLE execution response
+
+    //#region IDEAL CASE - USE baseDI data
+
+    return storedOutputResponseData;
+
+    //#endregion
+
+    //#endregion    
+
+    //#endregion
+}
+
+//#endregion
+
+
+//#endregion
+
+//#endregion
+
+//#region 3. EXECUTE store test variable process
+const Action_Factory_End = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0> => {
     //#region 1. INPUTS
 
     //#region DEFINE control variables
@@ -333,113 +485,6 @@ const ExecuteInputRequest_End_12_2_Programming = async (parameterInputs: SingleP
 
     //#endregion
 }
-
-//#endregion
-
-//#region 12-3 - Web Development
-
-const ExecuteInputRequest_Factory_12_3_Web_Development = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0> => {
-    //#region 1. INPUTS
-
-    //#region DEFINE control variables
-
-    //#endregion
-
-    //#region DEFINE input variables
-
-
-    //#endregion
-
-    //#region DEFINE process variables
-
-
-    //#endregion
-
-    //#region DEFINE output variables
-
-    let storedOutputResponseData: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = null;
-
-    //#endregion
-
-    ///////////////////////////////////////////////////////////
-
-    //#region MEMORIZE control variables
-
-    //#region MEMORIZE control xxx xxx
-
-    //#endregion
-
-    //#endregion
-
-    //#region MEMORIZE input variables
-
-    //#region MEMORIZE input xxx xxxx
-
-
-    //#endregion
-
-    //#endregion
-
-    //#region MEMORIZE process variables
-
-    //#region MEMORIZE process test variables
-
-
-    //0. CONTROLLERS
-
-    //1. INPUTS
-    parameterInputs.Parameters.setValue("parameterInputRequestActionName", Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0);
-    parameterInputs.Parameters.setValue("parameterInputRequestName", parameterInputs.Parameters.getValue("parameterInputRequestName"));
-    parameterInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey"));
-
-    //2. PROCESS
-    parameterInputs.Parameters.setValue("parameterProcessRequestExtraData", parameterInputs.Parameters.getValue("parameterProcessRequestExtraData"));
-
-    //3. OUTPUTS
-
-    //#endregion
-
-    //#endregion
-
-    //#region MEMORIZE output variables
-
-    //#region MEMORIZE output xxx xxxx
-
-    //#endregion
-
-    //#endregion
-
-    //#endregion
-
-    //#region 2. PROCESS
-
-    //#region HANDLE application defaults
-
-    //#region IDEAL CASE - USE baseDI converter
-
-    storedOutputResponseData = parameterInputs;
-
-    //#endregion
-
-    //#endregion
-
-    //#endregion
-
-    //#region 3. OUTPUT
-
-    //#region HANDLE execution response
-
-    //#region IDEAL CASE - USE baseDI data
-
-    return storedOutputResponseData;
-
-    //#endregion
-
-    //#endregion    
-
-    //#endregion
-}
-
 //#endregion
 
 //#endregion

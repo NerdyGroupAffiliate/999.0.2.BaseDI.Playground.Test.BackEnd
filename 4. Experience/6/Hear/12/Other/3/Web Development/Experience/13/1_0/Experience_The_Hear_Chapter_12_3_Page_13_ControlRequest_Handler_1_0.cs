@@ -2207,7 +2207,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                         storedInputs = new SingleParmPoco_12_2_1_0();
                         storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
                         storedInputs.Parameters.Add("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
-                        storedInputs.Parameters.Add("parameterProcessRequestMasterStorer", _storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
                         storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", _storedProcessRequestDataStorylineDetails);
 
                         _storedProcessRequestServerInstance = Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.Step_X_X_Framework_Control_ServerHandleDefaults_1_0(storedInputs);
