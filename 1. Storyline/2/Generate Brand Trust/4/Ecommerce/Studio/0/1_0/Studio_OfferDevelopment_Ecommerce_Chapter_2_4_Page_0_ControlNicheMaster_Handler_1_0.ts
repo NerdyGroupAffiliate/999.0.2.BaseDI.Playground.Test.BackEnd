@@ -126,7 +126,7 @@ export namespace BaseDI.Professional.Story.Friendship_0 {
 
             //#region MEMORIZE process extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") != null ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") != null ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
             //#endregion
 
@@ -577,21 +577,21 @@ export namespace BaseDI.Professional.Story.Friendship_0 {
 
             //#region MEMORIZE process request tracker
 
-            this._storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
             //#region MEMORIZE process request settings
 
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker.getValue("storedProcessRequestSettings");
 
             //#endregion
 
             //#region MEMORIZE process centralized handlers
 
-            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
 
             //#endregion
 

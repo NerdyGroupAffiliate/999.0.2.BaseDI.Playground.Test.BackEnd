@@ -135,7 +135,7 @@ namespace BaseDI.Professional.Story.Blogging_0
 
             #region MEMORIZE process extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] != null ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] != null ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : new ExtraData_12_2_1_0();
 
             #endregion
 

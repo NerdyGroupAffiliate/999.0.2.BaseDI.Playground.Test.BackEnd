@@ -137,7 +137,7 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region MEMORIZE process extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") != null ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") != null ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0();
 
             //#endregion
 
@@ -590,21 +590,21 @@ export namespace BaseDI.Professional.Story.Programming_0 {
 
             //#region MEMORIZE process request tracker
 
-            this._storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
             //#region MEMORIZE process request settings
 
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker.getValue("storedProcessRequestSettings");
 
             //#endregion
 
             //#region MEMORIZE process centralized handlers
 
-            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
 
             //#endregion
 
@@ -722,9 +722,16 @@ export namespace BaseDI.Professional.Story.Programming_0 {
                 if (storedProcessRequestDeveloperMode) {
                     this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED configurating request handler");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
