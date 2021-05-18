@@ -104,14 +104,14 @@ export namespace BaseDI.Professional.State.Web_Development_3 {
 
             //#region MEMORIZE input action name
 
-            this._storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+            this._storedInputRequestActionName = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
 
             //#endregion
 
             //#region MEMORIZE input request details
 
-            this._storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+            this._storedInputRequestName = parameterInputs.Parameters.getValue("parameterInputRequestName");
+            this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             this._storedInputs = parameterInputs;
 
@@ -123,7 +123,7 @@ export namespace BaseDI.Professional.State.Web_Development_3 {
 
             //#region MEMORIZE process request tracker
 
-            this._storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+            this._storedProcessRequestTracker = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
@@ -135,15 +135,15 @@ export namespace BaseDI.Professional.State.Web_Development_3 {
 
             //#region MEMORIZE process centralized handlers
 
-            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            this._storedProcessRequestCentralizedDisturber = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
+            this._storedProcessRequestCentralizedSensor = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
+            this._storedProcessRequestCentralizedStorer = parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
 
             //#endregion
 
             //#region MEMORIZE process data repository
 
-            this._storedProcessRequestDataRepository = parameterInputs.Parameters["parameterProcessRequestDataRepository"];
+            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
 
             //#endregion
 
@@ -155,24 +155,24 @@ export namespace BaseDI.Professional.State.Web_Development_3 {
 
             //#region MEMORIZE process request storyline details
 
-            this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
-            this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
+            this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
+            this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters");
 
             //#endregion
 
             //#region MEMORIZE process request extra data
 
-            this._storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
+            this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") : null;
 
             //#endregion
 
             //#region MEMORIZE process request details
 
-            this._storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
+            this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
+            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 

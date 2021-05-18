@@ -726,11 +726,11 @@ export namespace BaseDI.Professional.State.Programming_2 {
 
                 try {
                     switch (storedInputRequestName.toUpperCase()) {
-                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_SENSORREQUEST_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = state_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0;
 
                             switch (storedInputRequestNameDataCacheKey.toUpperCase()) {
-                                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0-P1_0":
+                                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_SENSORREQUEST_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = state_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0_P1_0;
                                     break;
                             }

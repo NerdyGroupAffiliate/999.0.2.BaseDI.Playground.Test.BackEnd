@@ -872,12 +872,12 @@ namespace BaseDI.Professional.State.Programming_2
                 {
                     switch (_storedInputRequestName.ToUpper())
                     {
-                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_SENSORREQUEST_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = stored_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0;
 
                             switch (_storedInputRequestNameDataCacheKey.ToUpper())
                             {
-                                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0-P1_0":
+                                case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_SENSORREQUEST_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = stored_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0_P1_0;
                                     break;
                             }

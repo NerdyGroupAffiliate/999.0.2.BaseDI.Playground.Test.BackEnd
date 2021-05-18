@@ -707,31 +707,31 @@ namespace BaseDI.Professional.Story.Programming_0
                 switch (storedInputRequestName.ToUpper())
                 {
                     //CONTROLLER
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_REQUEST_CONTROLLER_1_0":
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_CONTROLREQUEST_HANDLER_1_0":
                         storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //CONVERSION
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_REQUEST_CONVERSION_1_0":
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_CONVERSIONREQUEST_HANDLER_1_0":
                         storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //STORAGE
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_REQUEST_STORAGE_1_0":
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_STORAGEREQUEST_HANDLER_1_0":
                         storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //DISTURBANCES
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_REQUEST_DISTURBANCES_1_0":
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_DISTURBANCEREQUEST_HANDLER_1_0":
                         storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
 
                         break;
 
                     //SENSOR
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_REQUEST_SENSOR_1_0":
+                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_SENSORREQUEST_HANDLER_1_0":
                         storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
 
                         break;
