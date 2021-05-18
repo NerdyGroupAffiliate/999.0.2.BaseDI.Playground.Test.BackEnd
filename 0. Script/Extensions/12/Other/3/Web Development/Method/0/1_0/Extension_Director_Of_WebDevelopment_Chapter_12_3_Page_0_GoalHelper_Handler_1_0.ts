@@ -4919,7 +4919,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#endregion
         }
 
-        public static async Step_X_X_Framework_Convert_StorylineDetailsToString_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
+        public static async Step_X_X_Framework_Convert_StorylineDetailsObservationToString_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters
@@ -5088,7 +5088,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                         //#region EDGE CASE - USE exception handler
 
-                        throw new Error("PARSING parameter values failed/n/n" + storedOutputResponseMessage);
+                        throw new Error("PARSING parameter values failed");
 
                         //#endregion
                     }
@@ -5117,7 +5117,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                     //#region EDGE CASE - USE exception handler
 
-                    throw new Error("PARSING parameter values failed/n/n" + storedOutputResponseMessage);
+                    throw new Error("PARSING parameter values failed");
 
                     //#endregion
                 }
@@ -5218,7 +5218,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_StorylineDetailsToString_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_StorylineDetailsObservationToString_1_0");
 
             //OPTIONAL
             //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
