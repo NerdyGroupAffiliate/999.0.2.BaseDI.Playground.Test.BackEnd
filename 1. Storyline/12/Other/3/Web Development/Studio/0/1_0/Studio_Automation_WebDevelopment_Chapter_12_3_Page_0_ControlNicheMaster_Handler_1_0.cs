@@ -276,7 +276,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
         #endregion
 
-        public override async Task<object> Action(SingleParmPoco_12_2_1_0 parameterInputs)
+        public override object Action(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS
 
@@ -569,7 +569,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
             };
 
             //BEGIN valdation process
-            await ValidateInputs(parameterInputs);
+            ValidateInputs(parameterInputs);
 
             #endregion
 
@@ -799,7 +799,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                     storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
                 }
                 #endregion
 

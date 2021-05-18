@@ -162,11 +162,6 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedStorer")) {
-                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
                     if (!parameterInputs.Parameters.containsKey("parameterOutputResponseMessageType")) {
                         storedOutputResponseMessage += "***parameterOutputResponseMessageType*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;

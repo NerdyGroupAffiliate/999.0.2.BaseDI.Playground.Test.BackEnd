@@ -130,7 +130,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_5 {
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
-            this._storedProcessRequestRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
+            this._storedProcessRequestRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             this._storedInputs = parameterInputs;
 

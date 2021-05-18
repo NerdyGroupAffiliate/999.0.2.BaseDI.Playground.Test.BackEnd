@@ -367,6 +367,12 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
 
             //#endregion
 
+            //#region MEMORIZE process handler details
+
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataRepository", this.Repository);
+
+            //#endregion
+
             //#endregion
 
             //#region 2. PROCESS
@@ -745,7 +751,7 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
 
             this._storedProcessRequestProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
-            this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
+            this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
             this._storedInputs = parameterInputs;
 

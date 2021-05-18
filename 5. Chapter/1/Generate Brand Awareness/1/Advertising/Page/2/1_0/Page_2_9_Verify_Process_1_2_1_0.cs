@@ -151,7 +151,7 @@ namespace BaseDI.Professional.Chapter.Page.Advertising_2
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
-            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             _storedInputs = parameterInputs;
 

@@ -378,11 +378,6 @@ export namespace BaseDI.Professional.Director.Programming_2 {
                     }
 
                     //2. PROCESS
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -579,6 +574,13 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#endregion
 
+            //#region MEMORIZE process handler details
+
+            this._storedInputs.Parameters.setValue("parameterProcessRequestHandler", this.DirectorOrExperienceRequestHandler);
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataRepository", this.Repository);
+            
+            //#endregion
+
             //#endregion
 
             //#region MEMORIZE output variables
@@ -607,9 +609,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
                 this.MasterSensor = this.DirectorOrExperienceRequestHandler.MasterSensor;
                 this.MasterStorer = this.DirectorOrExperienceRequestHandler.MasterStorer;
                 this.MasterTransporter = this.DirectorOrExperienceRequestHandler.MasterTransporter;
-                this.ExtraData = this.DirectorOrExperienceRequestHandler.ExtraData;
-
-                this._storedInputs.Parameters.setValue("parameterBusinessDirectorOrExperienceRequestHandler", this.DirectorOrExperienceRequestHandler);
+                this.ExtraData = this.DirectorOrExperienceRequestHandler.ExtraData;                
             }
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns

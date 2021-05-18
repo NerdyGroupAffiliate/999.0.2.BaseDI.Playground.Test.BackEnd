@@ -39,7 +39,7 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         //#endregion
 
         //#region 4. Action
-        public abstract Action(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<StoryRequest>;
+        public abstract Action(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): StoryRequest;
         //#endregion
     }
 }

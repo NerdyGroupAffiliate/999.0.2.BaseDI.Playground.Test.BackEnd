@@ -613,6 +613,12 @@ namespace BaseDI.Professional.Director.Programming_2
 
             #endregion
 
+            #region MEMORIZE process handler details
+
+            _storedInputs.Parameters.TryAdd("parameterProcessRequestDataRepository", Repository);
+
+            #endregion
+
             #endregion
 
             #region MEMORIZE output variables
@@ -660,7 +666,7 @@ namespace BaseDI.Professional.Director.Programming_2
                     MasterTransporter = DirectorOrExperienceRequestHandler.MasterTransporter;
                     ExtraData = DirectorOrExperienceRequestHandler.ExtraData;
 
-                    _storedInputs.Parameters.Add("parameterBusinessDirectorOrExperienceRequestHandler", DirectorOrExperienceRequestHandler);
+                    _storedInputs.Parameters.Add("parameterProcessRequestHandler", DirectorOrExperienceRequestHandler);
                 }
 
                 //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns

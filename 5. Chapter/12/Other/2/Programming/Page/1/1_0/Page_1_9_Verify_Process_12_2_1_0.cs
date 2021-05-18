@@ -151,7 +151,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
-            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             _storedInputs = parameterInputs;
 

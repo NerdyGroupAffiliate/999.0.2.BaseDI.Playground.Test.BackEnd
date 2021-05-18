@@ -578,6 +578,12 @@ export namespace BaseDI.Professional.Director.Security_1  {
 
             //#endregion
 
+            //#region MEMORIZE process handler details
+
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataRepository", this.Repository);
+
+            //#endregion
+
             //#endregion
 
             //#region MEMORIZE output variables

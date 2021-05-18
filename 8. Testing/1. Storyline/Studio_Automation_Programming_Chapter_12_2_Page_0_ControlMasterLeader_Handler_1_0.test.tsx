@@ -223,6 +223,7 @@ const ExecuteTransportRequest = async (parameterInputs: SingleParmPoco_12_2_1_0.
         storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs))
             .SetupStoryline(parameterInputs)
             .Action();
+            
         //#endregion
     }
 
@@ -349,16 +350,20 @@ describe('Request Handler Test', () => {
         //#region IDEAL CASE - USE baseDI data
 
         try {
-            if (_storedProcessRequestTracker != null && _storedProcessRequestTracker != undefined) {
-                switch (_storedProcessRequestTracker["storedProcessRequestHandlerName"].toUpperCase()) {
-                    case storedInputs.Parameters.getValue("parameterInputRequestName").toUpperCase():
-                        console.log("SUCCESSFULLY found request handler " + storedInputs.Parameters.getValue("parameterInputRequestName"));
-
-                        return true;
-                    default:
-                        return false;
-                }
-            }
+            if (storedOutputResponseData) {
+                storedOutputResponseData.then(storedOutResponse => {
+                    if (_storedProcessRequestTracker != null && _storedProcessRequestTracker != undefined) {
+                        switch (_storedProcessRequestTracker["storedProcessRequestHandlerName"].toUpperCase()) {
+                            case storedInputs.Parameters.getValue("parameterInputRequestName").toUpperCase():
+                                console.log("SUCCESSFULLY found request handler " + storedInputs.Parameters.getValue("parameterInputRequestName"));
+        
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }     
+                });
+            }          
 
         }
         catch (storedProcessRequestMistake) {

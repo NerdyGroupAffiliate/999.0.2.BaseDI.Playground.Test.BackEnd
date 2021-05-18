@@ -614,6 +614,12 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #endregion
 
+            #region MEMORIZE process handler details
+
+            _storedInputs.Parameters.TryAdd("parameterProcessRequestDataRepository", Repository);
+
+            #endregion
+
             #endregion
 
             #region MEMORIZE output variables

@@ -397,7 +397,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             try
             {
-                if (this.StorylineDetails == null)
+                if (this.StorylineDetails == null || Object.keys(this.StorylineDetails).length == 0)
                 {
                     //#region IDEAL CASE - USE data retriever
 
@@ -412,11 +412,11 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         //1. INPUTS
 
-                        //2. PROCESS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                        //2. PROCESS                        
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
                         //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
