@@ -217,9 +217,61 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
         public HandleDefaults(): void {
             //#region 1. INPUTS
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE control variables
 
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 
@@ -227,10 +279,6 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region 2. PROCESS
 
-            //#region EXECUTE process defaults
-
-
-            //#endregion
 
             //#endregion
 
@@ -335,8 +383,6 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 //#region IDEAL CASE - USE data repository
 
-                //#region 2. OUTPUT data response
-
                 storedOutputResponseDataCached = await Promise.all([this.Repository.Action_8_Process_CRUD()]);
 
                 this.StorylineDetails = storedOutputResponseDataCached[0].StorylineDetails;
@@ -345,13 +391,6 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                 this.Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0(storedOutputResponseDataCached[0].StorylineDetailsFiltered);
                 this.Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
    
-                //#endregion
-
-                //#region 1. INPUT data request
-
-
-                //#endregion
-
                 //#endregion
             }
             catch (storedProcessRequestMistake)

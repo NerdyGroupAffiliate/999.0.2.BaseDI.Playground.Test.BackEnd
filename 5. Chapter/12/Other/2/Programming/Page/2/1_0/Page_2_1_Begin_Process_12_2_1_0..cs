@@ -92,70 +92,124 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
         {
             #region 1. INPUTS
 
-            #region MEMORIZE control client server
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            _storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion
+
+            #region MEMORIZE input request details
+
+            _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
+            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
+
+            _storedInputs = parameterInputs;
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request tracker
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE action name
-
-            _storedInputRequestActionName = (string)_storedInputs.Parameters["parameterInputRequestActionName"];
-
-            #endregion
-
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE centralized processes handlers
+            #region MEMORIZE process centralized handlers
 
             _storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
             _storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
             _storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
+            Repository.MasterStorer = _storedProcessRequestCentralizedStorer;
+
             #endregion
 
-            #region MEMORIZE data repository
+            #region MEMORIZE process data repository
 
             _storedProcessRequestDataRepository = parameterInputs.Parameters["parameterProcessRequestDataRepository"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
             #endregion
 
-            #region MEMORIZE storyline details
+            #region MEMORIZE process request storyline details
 
             _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
             #endregion
 
-            #region MEMORIZE extra data
+            #region MEMORIZE process request extra data
 
             _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
+            Repository.ExtraData = _storedProcessRequestExtraData;
+
             #endregion
 
-            #region MEMORIZE request details
+            #region MEMORIZE process request details
 
-            _storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
-            _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
             _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
-            _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
+            #endregion
 
-            _storedInputs = parameterInputs;
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
 
             #endregion
 
@@ -184,13 +238,66 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
         #region 3. Set
 
+        //A. Default state
         public override void HandleDefaults()
         {
             #region 1. INPUTS
 
-            #region MEMORIZE developer mode
+            #region DEFINE control variables
 
-            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
 
             #endregion
 
@@ -200,6 +307,10 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             #region EXECUTE process defaults
 
+            #region IDEAL CASE - defaults handler
+
+
+            #endregion
 
             #endregion
 
@@ -219,58 +330,97 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
         {
             #region 1. INPUTS
 
-            #region DEFINE data response
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
 
             JObject storedOutputResponseData = null;
 
-            #endregion
-
-            #region MEMORIZE action name
-
-            string storedInputRequestActionName = ClientOrServerInstance["storedInputRequestActionName"] as string;
+            Func<SingleParmPoco_12_2_1_0, Task<JObject>> ExecuteOutputResponse = null;
 
             #endregion
 
-            #region MEMORIZE app settings
+            ///////////////////////////////////////////////////////////
 
-            _storedProcessRequestSettings = (IConfiguration)ClientOrServerInstance["storedProcessRequestSettings"];
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
+            if (_storedProcessRequestTracker["storedProcessRequestStepNumber"] == null)
+                _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedProcessRequestExtraData?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] != null ? _storedProcessRequestExtraData?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] as SingleParmPoco_12_2_1_0 : null);
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedInputs.Parameters["parameterInputRequestActionName"]);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN handling request");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0 -> Page_2_1_Begin_Process_12_2_1_0..cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
+
+            //3. OUTPUTS
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+
             #endregion
 
-            #region MEMORIZE control client server
+            #region MEMORIZE process request details
 
-            _storedProcessRequestTracker = ClientOrServerInstance;
-
-            #endregion
-
-            #region MEMORIZE repository clientOrServer instance
-
-            Repository.ClientOrServerInstance = ClientOrServerInstance;
+            _storedInputs.Parameters["parameterProcessRequestName"] = null;
 
             #endregion
 
-            #region MEMORIZE repository extra data
-
-            Repository.ExtraData = ExtraData;
-
             #endregion
 
-            #region MEMORIZE repository centralized processes
+            #region MEMORIZE output variables
 
-            Repository.MasterStorer = MasterStorer;
+            #region MEMORIZE output xxx xxx
+
 
             #endregion
-
-            #region MEMORIZE request details
-
-            string storedInputRequestName = ExtraData.KeyValuePairs["RequestToProcess"].ToString();
-            string storedInputRequestNameDataCacheKey = ExtraData.KeyValuePairs["RequestToProcessParameters"].ToString();
 
             #endregion
 
@@ -284,28 +434,15 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 #region IDEAL CASE - USE data repository
 
-                #region 2. OUTPUT data response
+                storedOutputResponseData = Repository.Action_8_Process_CRUD().Result;
 
-                Func<Task<JObject>> GetDataSet = async () =>
-                {
-                    storedOutputResponseData = Repository.Action_8_Process_CRUD().Result;
+                StorylineDetails = JObject.FromObject(storedOutputResponseData["StorylineDetails"]);
+                StorylineDetails_Parameters = JObject.FromObject(storedOutputResponseData["StorylineDetails_Parameters"]);
 
-                    StorylineDetails = JObject.FromObject(storedOutputResponseData["StorylineDetails"]);
-                    StorylineDetails_Parameters = JObject.FromObject(storedOutputResponseData["StorylineDetails_Parameters"]);
+                Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0((JObject)StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]"));
+                Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
 
-                    Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0((JObject)StorylineDetails.SelectToken("resources[*].baseDIProfiles[*]"));
-                    Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
-
-                    return await Task.FromResult<JObject>(null).ConfigureAwait(true);
-                };
-
-                #endregion
-
-                #region 1. INPUT data request
-
-                await GetDataSet();
-
-                #endregion
+                return await Task.FromResult<JObject>(null).ConfigureAwait(true);
 
                 #endregion
             }
@@ -315,9 +452,9 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
 
                 if (storedProcessRequestDeveloperMode)
                 {
-                    ClientOrServerInstance["storedProcessRequestStepNumber"] = (int)ClientOrServerInstance["storedProcessRequestStepNumber"] + 1;
+                    _storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)_storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                    Console.WriteLine("STEP " + ClientOrServerInstance["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + storedInputRequestActionName + " -> " + storedInputRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
+                    Console.WriteLine("STEP " + _storedProcessRequestTracker["storedProcessRequestStepNumber"] + ": ***LEAKY PIPE*** GETTING a dataset for request " + _storedInputRequestActionName + " -> " + _storedInputRequestName + " could not be completed successfully. Please check ***AppSettings.json*** for APP_SETTING_CONVERSION_MODE_XXX value.");
                 }
 
                 #endregion
