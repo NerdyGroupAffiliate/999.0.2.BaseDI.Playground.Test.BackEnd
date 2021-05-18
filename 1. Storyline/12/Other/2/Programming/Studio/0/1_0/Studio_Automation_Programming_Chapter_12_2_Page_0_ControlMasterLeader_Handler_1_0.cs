@@ -579,7 +579,7 @@ namespace BaseDI.Professional.Story.Programming_0
             string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
             string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
-            string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"] ? parameterInputs.Parameters["parameterProcessRequestByName"] : "";
+            string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"] ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
 
             #endregion
 
@@ -796,7 +796,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
         #region 2. Ready
 
-        internal Use_DesignPattern_Builder_Chapter_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs) //Dictionary<string, object> parameterProcessRequestTracker, JObject parameterProcessRequestDataStorylineDetails, JObject parameterProcessRequestDataStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterProcessRequestHandler, ExtraData_12_2_1_0 parameterProcessRequestExtraData = null, string parameterProcessRequestByName = "", string parameterInputRequestName = "", string parameterInputRequestNameDataCacheKey = ""
+        internal Use_DesignPattern_Builder_Chapter_12_2_1_0(SingleParmPoco_12_2_1_0 parameterInputs) //Dictionary<string, object> parameterProcessRequestTracker, JObject parameterProcessRequestDataStorylineDetails, JObject parameterProcessRequestDataStorylineDetails_Parameters, aClass_Programming_ScriptRoutable_12_2_1_0 parameterProcessRequestHandler, ExtraData_12_2_1_0 parameterProcessRequestExtraData = null, string parameterProcessRequestName = "", string parameterInputRequestName = "", string parameterInputRequestNameDataCacheKey = ""
         {
             #region 1. INPUTS   
 
@@ -842,7 +842,7 @@ namespace BaseDI.Professional.Story.Programming_0
             string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
             string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
-            string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"] ? parameterInputs.Parameters["parameterProcessRequestByName"] : "";
+            string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"] ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
 
             _storedInputs = parameterInputs;
 
@@ -888,7 +888,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 
@@ -1144,7 +1144,6 @@ namespace BaseDI.Professional.Story.Programming_0
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
         private string _storedProcessRequestName = "";
-        private string _storedProcessRequestByName;
 
         #endregion
 
@@ -1232,7 +1231,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 
@@ -1419,13 +1418,9 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region IDEAL CASE - USE request by object
 
-            if (string.IsNullOrEmpty(_storedProcessRequestByName))
+            if (string.IsNullOrEmpty(_storedProcessRequestName))
             {
                 _storedProcessRequestName = _storedProcessRequestHandler != null ? _storedProcessRequestHandler.GetType().Name : _storedInputRequestName;
-            }
-            else
-            {
-                _storedProcessRequestName = _storedProcessRequestByName;
             }
 
             #endregion
@@ -1759,7 +1754,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 
@@ -2592,7 +2587,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 
@@ -3088,7 +3083,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 
@@ -3251,7 +3246,7 @@ namespace BaseDI.Professional.Story.Programming_0
             _storedInputs.Parameters["parameterInputRequestName"] = _storedInputRequestName;
             _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameDataCacheKey;
 
-            _storedInputs.Parameters["parameterProcessRequestByName"] = "";
+            _storedInputs.Parameters["parameterProcessRequestName"] = "";
 
             #endregion
 
@@ -3496,7 +3491,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 
@@ -3659,7 +3654,7 @@ namespace BaseDI.Professional.Story.Programming_0
             _storedInputs.Parameters["parameterInputRequestName"] = _storedInputRequestName;
             _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameDataCacheKey;
 
-            _storedInputs.Parameters["parameterProcessRequestByName"] = "";
+            _storedInputs.Parameters["parameterProcessRequestName"] = "";
 
             #endregion
 
@@ -3904,7 +3899,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 
@@ -4067,7 +4062,7 @@ namespace BaseDI.Professional.Story.Programming_0
             _storedInputs.Parameters["parameterInputRequestName"] = _storedInputRequestName;
             _storedInputs.Parameters["parameterInputRequestNameDataCacheKey"] = _storedInputRequestNameDataCacheKey;
 
-            _storedInputs.Parameters["parameterProcessRequestByName"] = "";
+            _storedInputs.Parameters["parameterProcessRequestName"] = "";
 
             #endregion
 

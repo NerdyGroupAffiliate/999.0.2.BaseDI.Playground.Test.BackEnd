@@ -506,9 +506,9 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
             this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
             this._storedInputRequestDataCustom = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
-            this._storedProcessRequestProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             this._storedInputs = parameterInputs;
 
@@ -741,9 +741,9 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
             this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
             this._storedInputRequestDataCustom = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
-            this._storedProcessRequestProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterBusinessDirectorOrExperienceRequestHandler");
 

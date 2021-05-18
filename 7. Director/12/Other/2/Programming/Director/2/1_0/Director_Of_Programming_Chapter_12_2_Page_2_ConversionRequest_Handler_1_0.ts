@@ -781,9 +781,9 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 
@@ -1171,9 +1171,9 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 

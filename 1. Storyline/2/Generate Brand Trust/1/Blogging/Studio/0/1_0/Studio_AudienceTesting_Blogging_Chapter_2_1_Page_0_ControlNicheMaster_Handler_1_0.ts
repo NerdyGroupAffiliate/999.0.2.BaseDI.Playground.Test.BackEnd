@@ -584,7 +584,7 @@ export namespace BaseDI.Professional.Story.Blogging_0 {
 
             //#region MEMORIZE process request settings
 
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker.getValue("storedProcessRequestSettings");
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
@@ -609,7 +609,7 @@ export namespace BaseDI.Professional.Story.Blogging_0 {
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputs.Parameters.getValue("parameterInputRequestActionName"));
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "ASSIGNING request handler");
@@ -627,7 +627,7 @@ export namespace BaseDI.Professional.Story.Blogging_0 {
 
             //#region MEMORIZE process request details
 
-            let storedProcessRequestProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
+            let storedProcessRequestProcessRequestName: string = parameterInputs.Parameters.getValue("parameterProcessRequestName") ? parameterInputs.Parameters.getValue("parameterProcessRequestName") : "";
 
             this._storedProcessRequestName = storedInputRequestName;
 
@@ -669,7 +669,7 @@ export namespace BaseDI.Professional.Story.Blogging_0 {
             try {
                 //#region IDEAL CASE - USE director or experience
 
-                switch (storedInputRequestName.toUpperCase()) {
+                switch (storedProcessRequestProcessRequestName.toUpperCase()) {
                     //case "DIRECTOR_OF_BLOGGING_CHAPTER_2_1_PAGE_1_XXXXXX_HANDLER_1_0":
                     //    storedProcessRequestHandler = this.Create_Director_Of_Blogging_Chapter_2_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
@@ -782,7 +782,7 @@ export namespace BaseDI.Professional.Story.Blogging_0 {
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputs.Parameters.getValue("parameterInputRequestActionName"));
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");

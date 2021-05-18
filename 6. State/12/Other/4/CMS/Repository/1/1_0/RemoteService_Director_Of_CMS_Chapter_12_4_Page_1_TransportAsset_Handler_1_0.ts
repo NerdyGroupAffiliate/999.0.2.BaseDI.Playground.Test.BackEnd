@@ -170,9 +170,9 @@ export namespace BaseDI.Professional.State.CMS_1 {
 
             this._storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            this._storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            this._storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
 
-            this._storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            this._storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             //#endregion
 

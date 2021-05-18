@@ -605,7 +605,7 @@ export namespace BaseDI.Professional.Story.Advertising_0 {
 
             //#region MEMORIZE process request settings
 
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker.getValue("storedProcessRequestSettings");
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
@@ -648,7 +648,7 @@ export namespace BaseDI.Professional.Story.Advertising_0 {
 
             //#region MEMORIZE process request details
 
-            let storedProcessRequestProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
+            let storedProcessRequestProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestName") ? parameterInputs.Parameters.getValue("parameterProcessRequestName") : "";
 
             this._storedProcessRequestName = storedInputRequestName;
 

@@ -146,9 +146,9 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_10
             _storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 

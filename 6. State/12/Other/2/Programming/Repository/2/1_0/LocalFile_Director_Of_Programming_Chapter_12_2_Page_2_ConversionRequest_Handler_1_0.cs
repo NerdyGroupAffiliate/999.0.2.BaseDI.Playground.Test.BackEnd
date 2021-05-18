@@ -286,9 +286,9 @@ namespace BaseDI.Professional.State.Programming_2
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
 
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             _storedProcessRequestRequestHandler = parameterInputs.Parameters["parameterBusinessDirectorOrExperienceRequestHandler"];
 
@@ -780,9 +780,9 @@ namespace BaseDI.Professional.State.Programming_2
 
             _storedProcessRequestHandler = _storedInputs.Parameters["parameterProcessRequestHandler"];
 
-            _storedProcessRequestName = _storedInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestName = _storedInputs.Parameters["parameterProcessRequestName"];
 
-            _storedProcessRequestByName = _storedInputs.Parameters["parameterProcessRequestByName"];
+            _storedProcessRequestByName = _storedInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 

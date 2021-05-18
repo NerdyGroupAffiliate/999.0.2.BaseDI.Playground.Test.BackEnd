@@ -653,7 +653,7 @@ namespace BaseDI.Professional.Story.Careers_Employment_0
 
             #region MEMORIZE process request details
 
-            string storedProcessRequestProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestByName"] ? parameterInputs.Parameters["parameterProcessRequestByName"] : "";
+            string storedProcessRequestProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"] ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
 
             _storedProcessRequestName = storedInputRequestName;
 

@@ -546,7 +546,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             let storedProcessRequestExperienceOrDirectorHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0
 
-            let storedProcessRequestResolvedHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterInputs); //parameterProcessRequestTracker, parameterProcessRequestDataStorylineDetails, parameterProcessRequestDataStorylineDetails_Parameters, this._storedProcessRequestHandler, this._storedProcessRequestExtraData, parameterProcessRequestByName, parameterInputRequestName, parameterInputRequestNameDataCacheKey
+            let storedProcessRequestResolvedHandler = new Use_DesignPattern_Builder_Chapter_12_2_1_0(parameterInputs); //parameterProcessRequestTracker, parameterProcessRequestDataStorylineDetails, parameterProcessRequestDataStorylineDetails_Parameters, this._storedProcessRequestHandler, this._storedProcessRequestExtraData, parameterProcessRequestName, parameterInputRequestName, parameterInputRequestNameDataCacheKey
 
             //#endregion
 
@@ -592,7 +592,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             parameterInputs.Parameters.setValue("parameterProcessRequestHandler", this._storedProcessRequestHandler);
 
-            let storedProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
+            let storedProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestName") ? parameterInputs.Parameters.getValue("parameterProcessRequestName") : "";
 
             //#endregion
 
@@ -808,7 +808,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
         //#region 2. Ready
 
-        //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestByName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
+        //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
         constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0)
         {
             //#region 1. INPUTS   
@@ -855,7 +855,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             let storedInputRequestName: string = parameterInputs.Parameters.getValue("parameterInputRequestName");
             let storedInputRequestNameDataCacheKey: string = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
-            let storedProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
+            let storedProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestName") ? parameterInputs.Parameters.getValue("parameterProcessRequestName") : "";
 
             this._storedInputs = parameterInputs;
 
@@ -901,7 +901,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 
@@ -1158,13 +1158,11 @@ export namespace BaseDI.Professional.Story.Programming_0
 
         private _storedProcessRequestName: string = "";
 
-        private _storedProcessRequestByName: string;
-
         //#endregion
 
         //#region 2. Ready
         
-        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestByName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
         {
             super();
 
@@ -1248,7 +1246,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 
@@ -1435,13 +1433,13 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region IDEAL CASE - USE request by object
 
-            if (this._storedProcessRequestByName == "" || this._storedProcessRequestByName == null || this._storedProcessRequestByName == undefined)
+            if (this._storedProcessRequestName == "" || this._storedProcessRequestName == null || this._storedProcessRequestName == undefined)
             {
                 this._storedProcessRequestName = this._storedProcessRequestHandler != null ? this._storedProcessRequestHandler.constructor.name : this._storedInputRequestName;
             }
             else
             {
-                this._storedProcessRequestName = this._storedProcessRequestByName;
+                this._storedProcessRequestName = this._storedProcessRequestName;
             }
             //#endregion
 
@@ -1666,7 +1664,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
         //#region 2. Ready
         
-        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestByName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
         {
             super()
 
@@ -2507,7 +2505,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
         //#region 2. Ready
 
-        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestByName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
          {
              super()
 
@@ -3034,7 +3032,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
         //#region 2. Ready
 
-        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestByName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
+        constructor(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) //parameterProcessRequestTracker: any, parameterProcessRequestDataStorylineDetails: Object, parameterProcessRequestDataStorylineDetails_Parameters: Object, parameterProcessRequestHandler: aClass_Programming_ScriptRoutable_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptRoutable_12_2_1_0, parameterProcessRequestExtraData: ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0 = null, parameterProcessRequestName: string = "", parameterInputRequestName: string = "", parameterInputRequestNameDataCacheKey: string = ""
         {
             super();
 
@@ -3118,7 +3116,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 
@@ -3289,7 +3287,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             this._storedInputs.Parameters.setValue("parameterInputRequestName", this._storedInputRequestName);
             this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameDataCacheKey);
 
-            this._storedInputs.Parameters.setValue("parameterProcessRequestByName", "");
+            this._storedInputs.Parameters.setValue("parameterProcessRequestName", "");
 
             //#endregion
 
@@ -3536,7 +3534,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 
@@ -3707,7 +3705,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             this._storedInputs.Parameters.setValue("parameterInputRequestName", this._storedInputRequestName);
             this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameDataCacheKey);
 
-            this._storedInputs.Parameters.setValue("parameterProcessRequestByName", "");
+            this._storedInputs.Parameters.setValue("parameterProcessRequestName", "");
 
             //#endregion
 
@@ -3954,7 +3952,7 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             this._storedProcessRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandler");
 
-            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestByName");
+            this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             //#endregion
 
@@ -4125,7 +4123,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             this._storedInputs.Parameters.setValue("parameterInputRequestName", this._storedInputRequestName);
             this._storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", this._storedInputRequestNameDataCacheKey);
 
-            this._storedInputs.Parameters.setValue("parameterProcessRequestByName", "");
+            this._storedInputs.Parameters.setValue("parameterProcessRequestName", "");
 
             //#endregion
 

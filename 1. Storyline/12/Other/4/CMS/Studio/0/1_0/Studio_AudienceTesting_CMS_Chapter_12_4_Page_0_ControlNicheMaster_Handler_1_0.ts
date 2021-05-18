@@ -586,7 +586,7 @@ export namespace BaseDI.Professional.Story.CMS_0 {
 
             //#region MEMORIZE process request settings
 
-            this._storedProcessRequestSettings = this._storedProcessRequestTracker.getValue("storedProcessRequestSettings");
+            this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
@@ -611,7 +611,7 @@ export namespace BaseDI.Professional.Story.CMS_0 {
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputs.Parameters.getValue("parameterInputRequestActionName"));
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "ASSIGNING request handler");
@@ -629,7 +629,7 @@ export namespace BaseDI.Professional.Story.CMS_0 {
 
             //#region MEMORIZE process request details
 
-            let storedProcessRequestProcessRequestByName: string = parameterInputs.Parameters.getValue("parameterProcessRequestByName") ? parameterInputs.Parameters.getValue("parameterProcessRequestByName") : "";
+            let storedProcessRequestProcessRequestName: string = parameterInputs.Parameters.getValue("parameterProcessRequestName") ? parameterInputs.Parameters.getValue("parameterProcessRequestName") : "";
 
             this._storedProcessRequestName = storedInputRequestName;
 
@@ -672,7 +672,7 @@ export namespace BaseDI.Professional.Story.CMS_0 {
             {
                 //#region IDEAL CASE - USE director or experience
 
-                switch (storedInputRequestName.toUpperCase()) {
+                switch (storedProcessRequestProcessRequestName.toUpperCase()) {
                     //case "DIRECTOR_OF_CMS_CHAPTER_12_4_PAGE_1_XXXXXX_HANDLER_1_0":
                     //    storedProcessRequestHandler = this.Create_Director_Of_CMS_Chapter_12_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
@@ -785,7 +785,7 @@ export namespace BaseDI.Professional.Story.CMS_0 {
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputs.Parameters.getValue("parameterInputRequestActionName"));
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
