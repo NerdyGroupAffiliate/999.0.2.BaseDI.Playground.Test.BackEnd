@@ -911,12 +911,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -1063,12 +1063,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -1215,12 +1215,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -1367,12 +1367,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -1519,12 +1519,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -1672,12 +1672,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -1824,12 +1824,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -1976,12 +1976,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -2128,12 +2128,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -2280,12 +2280,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -2432,12 +2432,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }
@@ -2584,12 +2584,12 @@ export namespace BaseDI.Professional.Story.Web_Development_0 {
             switch (storedProcessRequestRepositoryType.toUpperCase()) {
                 case "LOCAL_FILE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
                 case "REMOTE_SERVICE":
                     storedProcessRequestHandlerDirector.Repository = null; //new 
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
+                    //storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
 
                     break;
             }

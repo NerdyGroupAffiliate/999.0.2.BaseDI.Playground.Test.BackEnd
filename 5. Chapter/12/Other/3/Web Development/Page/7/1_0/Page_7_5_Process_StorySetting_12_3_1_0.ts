@@ -83,7 +83,7 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_7 {
 
             //#region MEMORIZE action name
 
-            this._storedInputRequestActionName = this._storedInputs.Parameters.getValue("parameterInputRequestActionName");
+            this._storedInputRequestActionName = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
 
             //#endregion
 

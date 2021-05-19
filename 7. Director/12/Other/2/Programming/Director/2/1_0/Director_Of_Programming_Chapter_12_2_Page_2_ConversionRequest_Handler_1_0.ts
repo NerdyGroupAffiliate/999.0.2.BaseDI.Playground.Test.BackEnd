@@ -578,7 +578,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             this._storedInputs.Parameters.setValue("parameterProcessRequestHandler", this.DirectorOrExperienceRequestHandler);
             this._storedInputs.Parameters.setValue("parameterProcessRequestDataRepository", this.Repository);
-            
+
             //#endregion
 
             //#endregion
@@ -1384,7 +1384,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
             //#region 2. PROCESS
 
             try {
-                storedOutputResponseData = await this.Factory_Action_1_Begin_Process();
+                storedOutputResponseData = this.Factory_Action_1_Begin_Process();
             }
             catch (storedProcessRequestMistake) {
                 throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
@@ -1488,7 +1488,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
                 //    storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_OutputApiToken();
                 //}
 
-                storedOutputResponseData = await this.Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
+                storedOutputResponseData = this.Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
 
                 //#endregion
             }
@@ -1601,7 +1601,7 @@ export namespace BaseDI.Professional.Director.Programming_2 {
 
             //#region IDEAL CASE - USE process handler
 
-            if (this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler == null) {
+            if (this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler == undefined || this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler.RequestID == undefined) {
                 var page = new ChapterPage_Page_2_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_2.Page_2_1_Begin_Process_12_2_1_0(this._storedInputs);
 
                 page.ClientOrServerInstance = this._storedProcessRequestTracker;

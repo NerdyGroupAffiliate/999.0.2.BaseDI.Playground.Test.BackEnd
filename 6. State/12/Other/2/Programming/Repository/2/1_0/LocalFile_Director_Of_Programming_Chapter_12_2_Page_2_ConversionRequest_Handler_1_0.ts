@@ -439,7 +439,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
             //#region 2. PROCESS
 
             try {
-                storedOutputResponseData = await this.Factory_Action_8_Process_CRUD();
+                storedOutputResponseData = this.Factory_Action_8_Process_CRUD();
             }
             catch(storedProcessRequestMistake)
             {
@@ -543,7 +543,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 //    storedOutputResponseData = await Execute_Factory_Action_8_Process_CRUD_OutputApiToken();
                 //}
 
-                storedOutputResponseData = await this.Execute_Factory_Action_8_Process_CRUD_StoreDataInCache();
+                storedOutputResponseData = this.Execute_Factory_Action_8_Process_CRUD_StoreDataInCache();
 
                 //#endregion
             }
@@ -1005,7 +1005,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 //3. OUTPUTS
                 storedInputs.Parameters.setValue("parameterOutputResponseAsArray",true);
 
-                storedProcessRequestDataStorylineDetailsFiltered = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+                storedProcessRequestDataStorylineDetailsFiltered = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
             }
             else 
             {

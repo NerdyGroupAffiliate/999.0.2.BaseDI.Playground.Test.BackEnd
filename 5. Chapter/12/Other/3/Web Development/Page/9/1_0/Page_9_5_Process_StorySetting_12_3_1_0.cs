@@ -105,7 +105,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
 
             #region MEMORIZE action name
 
-            _storedInputRequestActionName = (string)_storedInputs.Parameters["parameterInputRequestActionName"];
+            _storedInputRequestActionName = (string)parameterInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion
 

@@ -12,6 +12,7 @@ import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_
 import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/ExtraData Poco/1/1_0/ExtraData_12_2_1_0";
 
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+import { isRegExp } from "util";
 
 //#endregion
 
@@ -145,7 +146,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region MEMORIZE process data repository
 
-            this._storedProcessRequestDataRepository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
+            this.Repository = parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository");
 
             //#endregion
 
@@ -306,7 +307,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region DEFINE process variables
 
-            let storedOutputResponseData: any = null;
+            let storedOutputResponseData: any = {};
+
             let storedOutputResponseDataCached: any = null;
 
             //#endregion
@@ -362,6 +364,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#endregion
 
+            //#region MEMORIZE process handler details
+
+            if(this.Repository == undefined || this.Repository == null)
+                this.Repository = this._storedInputs.Parameters.getValue("parameterProcessRequestDataRepository");
+
+            //#endregion
+
             //#endregion
 
             //#region MEMORIZE output variables
@@ -383,14 +392,19 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 //#region IDEAL CASE - USE data repository
 
-                storedOutputResponseDataCached = await Promise.all([this.Repository.Action_8_Process_CRUD()]);
+                storedOutputResponseData = await Promise.resolve(this.Repository.Action_8_Process_CRUD());
 
-                this.StorylineDetails = storedOutputResponseDataCached[0].StorylineDetails;
-                this.StorylineDetails_Parameters = storedOutputResponseDataCached[0].StorylineDetails_Parameters;
+                this.StorylineDetails = storedOutputResponseData.StorylineDetails;
+                this.StorylineDetails_Parameters = storedOutputResponseData.StorylineDetails_Parameters;
 
-                this.Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0(storedOutputResponseDataCached[0].StorylineDetailsFiltered);
-                this.Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();
-   
+                this.Step_1_0_Framework_Store_JSONStringPlaceHolder_1_0(storedOutputResponseData.StorylineDetailsFiltered);
+                this.Step_2_0_Framework_Convert_JSONStringPlaceHolderIntoAppSettings_1_0();       
+
+                return {
+                    StorylineDetails: this.StorylineDetails,
+                    StorylineDetails_Parameters: this.StorylineDetails_Parameters
+                }; 
+
                 //#endregion
             }
             catch (storedProcessRequestMistake)
@@ -432,10 +446,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return {
-                StorylineDetails: this.StorylineDetails,
-                StorylineDetails_Parameters: this.StorylineDetails_Parameters
-            };
+            return storedOutputResponseData; 
 
             //#endregion
 

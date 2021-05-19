@@ -425,11 +425,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                     ExecuteOutputResponse = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
                     {
-                        return new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(this._storedInputs))
+                       return await Promise.resolve(new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.Director.Programming_2.Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(this._storedInputs))
                             .SetupStoryline(parameterInputs)
-                            .Action().then(storedOutputResponse => {
-                                return storedOutputResponse;
-                            });
+                            .Action());
                     }
 
                     //#endregion
@@ -481,7 +479,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            this.StorylineDetails = (storedOutputResponseData != null && storedOutputResponseData != undefined) ? storedOutputResponseData.StorylineDetails : this.StorylineDetails;
+            this.StorylineDetails = (storedOutputResponseData != null && storedOutputResponseData != undefined) ? storedOutputResponseData : this.StorylineDetails;
 
             return this.StorylineDetails;
 

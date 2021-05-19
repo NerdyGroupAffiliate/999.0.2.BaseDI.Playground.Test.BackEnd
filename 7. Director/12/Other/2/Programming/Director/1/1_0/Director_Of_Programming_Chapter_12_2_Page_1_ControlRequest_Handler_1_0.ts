@@ -625,6 +625,10 @@ export namespace BaseDI.Professional.Director.Programming_1
                 //#region IDEAL CASE - USE design pattern
 
                 //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
+                if(this.DirectorOrExperienceRequestHandler != null){
+                    this._storedInputs.Parameters.setValue("parameterProcessRequestHandlerDirectorOrExperience", this.DirectorOrExperienceRequestHandler)
+                }
+                
                 storedProcessRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(this._storedInputs);
 
                 this.StorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action();
@@ -1018,20 +1022,35 @@ export namespace BaseDI.Professional.Director.Programming_1
 
             storedProcessRequestHandler_UsingBuilderPattern = new Implement_DesignPattern_Builder_Chapter_12_2_Page_1_1_0(this._storedInputs);
 
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_1_Begin_Process();
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_1_Begin_Process();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
 
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_2_Validate_Process();
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_2_Validate_Process();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
 
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_3_Process_StoryAuthor();
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_4_Process_StoryCharacters();
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_5_Process_StorySetting();
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_6_Process_StoryExperiences();
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_7_Process_StoryResources();
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_8_Process_CRUD();
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_3_Process_StoryAuthor();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
 
-            await storedProcessRequestHandler_UsingBuilderPattern.Action_9_Verify_Process();
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_4_Process_StoryCharacters()
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
 
-            storedOutputResponseData = await storedProcessRequestHandler_UsingBuilderPattern.Action_10_End_Process();
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_5_Process_StorySetting();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
+
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_6_Process_StoryExperiences();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
+
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_7_Process_StoryResources();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
+
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_8_Process_CRUD();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
+
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_9_Verify_Process();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
+
+            this._storedProcessRequestDataStorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action_10_End_Process();
+            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", this._storedProcessRequestDataStorylineDetails);
 
             //#endregion
 
@@ -1159,7 +1178,7 @@ export namespace BaseDI.Professional.Director.Programming_1
             this._storedInputRequestNameDataCacheKey = parameterInputs.Parameters.getValue("parameterInputRequestNameDataCacheKey");
 
             this._storedInputs = parameterInputs;
-
+ 
             //#endregion
 
             //#endregion
@@ -1218,7 +1237,8 @@ export namespace BaseDI.Professional.Director.Programming_1
             this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
-
+            this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandlerDirectorOrExperience");
+            
             //#endregion
 
             //#endregion
@@ -1427,13 +1447,13 @@ export namespace BaseDI.Professional.Director.Programming_1
 
             //#region 2. PROCESS
 
-            try {
+            try 
+            {
                 storedOutputResponseData = await this.Factory_Action_1_Begin_Process();
             }
             catch (storedProcessRequestMistake) {
                 throw storedProcessRequestMistake; //Let "Startup.ts" handle the exception.
             }
-
 
             //#endregion
 
@@ -1531,6 +1551,7 @@ export namespace BaseDI.Professional.Director.Programming_1
             //#region 2. PROCESS
 
             try {
+
                 storedOutputResponseData = await this.Factory_Action_10_End_Process();
             }
             catch (storedProcessRequestMistake) {
@@ -1850,7 +1871,7 @@ export namespace BaseDI.Professional.Director.Programming_1
 
             //#region IDEAL CASE - USE process handler
 
-            if (this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler == null) {
+            if (this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler == undefined || this._storedProcessRequestBusinessDirectorOrExperienceRequestHandler.RequestID == undefined) {
                 var page = new ChapterPage_Page_1_1_Begin_Process_12_2_1_0.BaseDI.Professional.Chapter.Page.Programming_1.Page_1_1_Begin_Process_12_2_1_0(this._storedInputs);
 
                 page.ClientOrServerInstance = this._storedProcessRequestTracker;

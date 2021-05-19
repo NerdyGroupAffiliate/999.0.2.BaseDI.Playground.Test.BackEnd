@@ -177,7 +177,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
             this._storedProcessRequestName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
 
             this._storedProcessRequestByName = parameterInputs.Parameters.getValue("parameterProcessRequestName");
-
+            this.DirectorOrExperienceRequestHandler = parameterInputs.Parameters.getValue("parameterProcessRequestHandlerDirectorOrExperience");
+            
             //#endregion
 
             //#endregion
@@ -484,8 +485,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         return storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedInputs))
                             .SetupStoryline(this._storedInputs)
-                            .Action().then(storedDataSet => {
-                                return storedDataSet;
+                            .Action().then(storedOutputResponse => {
+                                return storedOutputResponse;
                             });
 
                         //#endregion

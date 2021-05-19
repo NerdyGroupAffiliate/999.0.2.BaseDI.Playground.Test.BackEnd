@@ -376,11 +376,6 @@ export namespace BaseDI.Professional.Director.Web_Development_1  {
                     }
 
                     //2. PROCESS
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
