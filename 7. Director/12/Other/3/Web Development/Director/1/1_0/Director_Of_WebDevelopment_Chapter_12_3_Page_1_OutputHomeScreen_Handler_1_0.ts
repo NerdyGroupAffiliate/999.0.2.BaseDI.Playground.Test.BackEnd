@@ -559,7 +559,7 @@ export namespace BaseDI.Professional.Director.Web_Development_1  {
             //1. INPUTS
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "HANDLING web development request");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0.ts");
@@ -608,6 +608,22 @@ export namespace BaseDI.Professional.Director.Web_Development_1  {
                 this.MasterTransporter = this.DirectorOrExperienceRequestHandler.MasterTransporter;
                 this.ExtraData = this.DirectorOrExperienceRequestHandler.ExtraData;
             }
+
+            if (storedProcessRequestDeveloperMode && this._storedProcessRequestTracker["storedProcessRequestStepNumber"] == 0) {
+                this._storedProcessRequestTracker["storedProcessRequestStepNumber"] += 1;
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+
+                //2. PROCESS                    
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                //3. OUTPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+
+                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+            }            
 
             //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
             const designPattern = new Use_DesignPattern_Builder_Chapter_12_3_Page_1(this._storedInputs);

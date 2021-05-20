@@ -406,11 +406,18 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                         if (storedProcessRequestDeveloperMode) {
                             this._storedProcessRequestTracker["storedProcessRequestStepNumber"] = this._storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                            
                             parameterInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING request handler");
-                            parameterInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
                             parameterInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(parameterInputs);
+                            //3. OUTPUTS
+                            parameterInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(parameterInputs);
                         }
 
                         //#endregion
@@ -419,9 +426,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         this._storedProcessRequestTracker["storedProcessRequestHandlerName"] = this._storedInputRequestName;
 
-                        return this.DirectorOrExperienceRequestHandler.Action().then(storedDataSet => {
-                            return storedDataSet;
-                        })
+                        storedOutputResponseData = await Promise.resolve(this.DirectorOrExperienceRequestHandler.Action());
+
+                        return storedOutputResponseData;
 
                         //#endregion
                     }
@@ -443,7 +450,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                             //3. OUTPUTS
                             parameterInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(parameterInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(parameterInputs);
                         }
 
                         //#endregion
@@ -476,18 +483,18 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                             //3. OUTPUTS
                             parameterInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
 
-                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(parameterInputs);
+                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(parameterInputs);
                         }
 
                         //#endregion
 
                         //#region IDEAL CASE - USE request resolver
 
-                        return storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedInputs))
+                        storedOutputResponseData = await Promise.resolve(new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Story.Programming_0.Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.BaseDI.Professional.Director.Programming_1.Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(this._storedInputs))
                             .SetupStoryline(this._storedInputs)
-                            .Action().then(storedOutputResponse => {
-                                return storedOutputResponse;
-                            });
+                            .Action());
+
+                        return storedOutputResponseData;
 
                         //#endregion
                     }

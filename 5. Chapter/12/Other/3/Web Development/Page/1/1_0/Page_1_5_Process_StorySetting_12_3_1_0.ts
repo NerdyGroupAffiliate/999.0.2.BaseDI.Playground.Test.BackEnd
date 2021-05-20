@@ -270,6 +270,12 @@ export namespace BaseDI.Professional.Chapter.Page.Web_Development_1 {
 
             //#endregion
 
+            //#region MEMORIZE process request details
+
+            this._storedInputs.Parameters.setValue("parameterProcessRequestRequestHandlerFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0")
+
+            //#endregion
+
             //#endregion
 
             //#region MEMORIZE output variables

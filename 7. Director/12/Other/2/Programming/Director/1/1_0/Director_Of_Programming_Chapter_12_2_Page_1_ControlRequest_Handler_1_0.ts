@@ -602,26 +602,6 @@ export namespace BaseDI.Professional.Director.Programming_1
             //#region EXECUTE request handler
 
             try {
-                //#region EDGE CASE - USE developer logger
-
-                if (storedProcessRequestDeveloperMode && this._storedProcessRequestTracker["storedProcessRequestStepNumber"] == 0) {
-                    this._storedProcessRequestTracker["storedProcessRequestStepNumber"] += 1;
-
-                    //0. CONTROLLERS
-
-                    //1. INPUTS
-
-                    //2. PROCESS                    
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", this._storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-
-                    //3. OUTPUTS
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
-
-                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                }
-
-                //#endregion
-
                 //#region IDEAL CASE - USE design pattern
 
                 //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
@@ -1064,7 +1044,7 @@ export namespace BaseDI.Professional.Director.Programming_1
 
             //#region IDEAL CASE - USE baseDI dataset
 
-            return storedOutputResponseData;
+            return this._storedProcessRequestDataStorylineDetails;
 
             //#endregion
 

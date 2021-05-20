@@ -1005,7 +1005,7 @@ export namespace BaseDI.Professional.State.Programming_2 {
                 //3. OUTPUTS
                 storedInputs.Parameters.setValue("parameterOutputResponseAsArray",true);
 
-                storedProcessRequestDataStorylineDetailsFiltered = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+                storedProcessRequestDataStorylineDetailsFiltered = await Promise.resolve(Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs));
             }
             else 
             {
