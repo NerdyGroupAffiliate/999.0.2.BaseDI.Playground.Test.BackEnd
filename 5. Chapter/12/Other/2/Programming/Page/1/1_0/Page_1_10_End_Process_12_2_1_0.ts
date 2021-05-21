@@ -673,17 +673,22 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
 
                         storedOutputResponseData = await Promise.resolve(this.DirectorOrExperienceRequestHandler.Action());
 
-                        if (this._storedProcessRequestTracker["storedProcessRequestHandlerName"] == null || this._storedProcessRequestTracker["storedProcessRequestHandlerName"] == undefined)
+                        if (this._storedProcessRequestTracker["storedProcessRequestHandlerName"] == null ||
+                            this._storedProcessRequestTracker["storedProcessRequestHandlerName"] == undefined)
                             this._storedProcessRequestTracker["storedProcessRequestHandlerName"] = this._storedInputRequestName;
                       
                         //#endregion
 
                         //#region EDGE CASE - USE niche finalizer
 
-                        this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedOutputResponseData);
+                        if (this.DirectorOrExperienceRequestHandler.NicheMaster != null &&
+                            this.DirectorOrExperienceRequestHandler.NicheMaster != undefined)
+                        {
+                            this._storedInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", storedOutputResponseData);
 
-                        this.DirectorOrExperienceRequestHandler.NicheMaster.Finalize = true;
-                        this.DirectorOrExperienceRequestHandler.NicheMaster.Action(this._storedInputs);
+                            this.DirectorOrExperienceRequestHandler.NicheMaster.Finalize = true;
+                            storedOutputResponseData = this.DirectorOrExperienceRequestHandler.NicheMaster.Action(this._storedInputs);
+                        }
 
                         //#endregion
 
