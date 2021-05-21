@@ -756,9 +756,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1 {
                             .SetupStoryline(this._storedInputs)
                             .Action());
 
-                        return storedOutputResponseData;
-
                         //#endregion
+
+                        return storedOutputResponseData;
                     }
                     catch (storedProcessRequestMistake)
                     {

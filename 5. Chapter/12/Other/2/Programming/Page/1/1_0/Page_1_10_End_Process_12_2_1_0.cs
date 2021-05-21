@@ -419,7 +419,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
             #region EXECUTE request handler
 
-            Func<Task<JObject>> ResolveOrExecuteRequest = async () =>
+            Func<SingleParmPoco_12_2_1_0, Task<JObject>> ResolveOrExecuteRequest = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
             {
                 if (DirectorOrExperienceRequestHandler != null && !DirectorOrExperienceRequestHandler.RequestID.ToUpper().Contains("REQUEST_CONTROLLER_"))
                 {
@@ -438,9 +438,27 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         #region EDGE CASE - USE request executor
 
-                        return await DirectorOrExperienceRequestHandler.Action();
+                        storedOutputResponseData = DirectorOrExperienceRequestHandler.Action().Result;
+
+                        if (_storedProcessRequestTracker["storedProcessRequestHandlerName"] == null)
+                            _storedProcessRequestTracker["storedProcessRequestHandlerName"] = _storedInputRequestName;
 
                         #endregion
+
+                        #region EDGE CASE - USE niche finalizer
+
+                        if (DirectorOrExperienceRequestHandler.NicheMaster != null)
+                        {
+                            _storedInputs.Parameters["parameterProcessRequestDataStorylineDetails"] = storedOutputResponseData;
+
+                            DirectorOrExperienceRequestHandler.NicheMaster.Finalize = true;
+                            
+                            storedOutputResponseData = DirectorOrExperienceRequestHandler.NicheMaster.Action(_storedInputs) as JObject;
+                        }
+
+                        #endregion
+
+                        return await Task.FromResult<dynamic>(storedOutputResponseData).ConfigureAwait(true);
                     }
                     catch (Exception storedProcessRequestMistake)
                     {
@@ -479,11 +497,13 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         #region IDEAL CASE - USE request resolver
 
-                        return storedOutputResponseData = await new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedInputs))
+                        storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedInputs))
                             .SetupStoryline(_storedInputs)
-                            .Action();
+                            .Action().Result;
 
                         #endregion
+
+                        return await Task.FromResult<dynamic>(storedOutputResponseData).ConfigureAwait(true);
                     }
                     catch (Exception storedProcessRequestMistake)
                     {
@@ -507,7 +527,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
                 }
             };
 
-            storedOutputResponseData = await ResolveOrExecuteRequest();
+            storedOutputResponseData = await ResolveOrExecuteRequest(storedProcessRequestDeveloperLoggingInputs);
 
             #endregion
 
