@@ -690,15 +690,21 @@ export namespace BaseDI.Professional.Story.Advertising_0 {
             try {
                 //#region IDEAL CASE - USE director or experience
 
-                switch (storedInputRequestName.toUpperCase()) {
-                    case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_1_CREATEADVERTISEMENTFORALL_HANDLER_1_0":
-                        storedProcessRequestHandler = this.Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(parameterInputs);
+                if (!this.Finalize) {
+                    switch (storedInputRequestName.toUpperCase()) {
+                        case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_1_CREATEADVERTISEMENTFORALL_HANDLER_1_0":
+                            storedProcessRequestHandler = this.Create_Director_Of_Advertising_Chapter_1_1_Page_1_CreateAdvertisement_1_0(parameterInputs);
 
-                        break;
-                    case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0":
-                        storedProcessRequestHandler = this.Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
+                            break;
+                        case "DIRECTOR_OF_ADVERTISING_CHAPTER_1_1_PAGE_2_CREATEWHEREAPERSONBECAMEAWAREOFTOPIC_HANDLER_1_0":
+                            storedProcessRequestHandler = this.Create_Director_Of_Advertising_Chapter_1_1_Page_2_CreateWhereAPersonBecameAwareOfTopic_1_0(parameterInputs);
 
-                        break;
+                            break;
+                    }
+                }
+                else
+                {
+                    return this._storedProcessRequestDataStorylineDetails;
                 }
 
                 //#endregion
@@ -842,6 +848,8 @@ export namespace BaseDI.Professional.Story.Advertising_0 {
             storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
@@ -994,6 +1002,8 @@ export namespace BaseDI.Professional.Story.Advertising_0 {
             storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
 
+            storedProcessRequestHandlerDirector.NicheMaster = this;
+
             storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
 
@@ -1144,6 +1154,8 @@ export namespace BaseDI.Professional.Story.Advertising_0 {
             storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;

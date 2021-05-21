@@ -672,16 +672,21 @@ export namespace BaseDI.Professional.Story.Risk_Management_0 {
             try {
                 //#region IDEAL CASE - USE director or experience
 
-                //switch (storedInputRequestName.toUpperCase()) {
-                //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
-                //        storedProcessRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                if (!this.Finalize) {
+                    //switch (storedInputRequestName.toUpperCase()) {
+                        //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
+                        //        storedProcessRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                //        break;
-                //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
-                //        storedProcessRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                        //        break;
+                        //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
+                        //        storedProcessRequestHandler = this.Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                //        break;
-                //}
+                        //        break;
+                    //}
+                }
+                else {
+                    return this._storedProcessRequestDataStorylineDetails;
+                }
 
                 //#endregion
             }

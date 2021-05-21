@@ -694,17 +694,24 @@ namespace BaseDI.Professional.Story.Risk_Management_0
             {
                 #region IDEAL CASE - USE director or experience
 
-                //switch (storedInputRequestName.ToUpper())
-                //{
-                //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
-                //        storedProcessRequestHandler = Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs);
+                if (!Finalize)
+                {
+                    //switch (storedInputRequestName.ToUpper())
+                    //{
+                    //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_3_STORAGE_HANDLER_1_0":
+                    //        storedProcessRequestHandler = Create_Director_Of_RiskManagement_Chapter_11_1_Page_3_Storage_Handler_1_0(parameterInputs);
 
-                //        break;
-                //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
-                //        storedProcessRequestHandler = Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
+                    //        break;
+                    //    case "DIRECTOR_OF_RISKMANAGEMENT_CHAPTER_11_1_PAGE_4_DISTURBANCES_HANDLER_1_0":
+                    //        storedProcessRequestHandler = Create_Director_Of_RiskManagement_Chapter_11_1_Page_4_Disturb_Handler_1_0(parameterInputs);
 
-                //        break;
-                //}
+                    //        break;
+                    //}
+                }
+                else
+                {
+                    return _storedProcessRequestDataStorylineDetails;
+                }
 
                 #endregion
             }

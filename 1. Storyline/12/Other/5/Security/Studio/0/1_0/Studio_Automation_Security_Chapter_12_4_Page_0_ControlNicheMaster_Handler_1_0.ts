@@ -662,11 +662,17 @@ export namespace BaseDI.Professional.Story.Security_0 {
             try {
                 //#region IDEAL CASE - USE director or experience
 
-                switch (storedProcessRequestProcessRequestName.toUpperCase()) {
-                     case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
-                        storedProcessRequestHandler = this.Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
 
-                        break;
+                if (!this.Finalize) {
+                    switch (storedProcessRequestProcessRequestName.toUpperCase()) {
+                        case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
+                            storedProcessRequestHandler = this.Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
+
+                            break;
+                    }
+                }
+                else {
+                    return this._storedProcessRequestDataStorylineDetails;
                 }
 
                 //#endregion
@@ -800,6 +806,8 @@ export namespace BaseDI.Professional.Story.Security_0 {
             storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;

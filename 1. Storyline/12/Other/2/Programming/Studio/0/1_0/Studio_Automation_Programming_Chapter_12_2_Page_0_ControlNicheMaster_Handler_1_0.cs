@@ -704,37 +704,44 @@ namespace BaseDI.Professional.Story.Programming_0
             {
                 #region IDEAL CASE - USE director or experience
 
-                switch (storedInputRequestName.ToUpper())
+                if (!Finalize)
                 {
-                    //CONTROLLER
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_CONTROLREQUEST_HANDLER_1_0":
-                        storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
+                    switch (storedInputRequestName.ToUpper())
+                    {
+                        //CONTROLLER
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_1_CONTROLREQUEST_HANDLER_1_0":
+                            storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs);
 
-                        break;
+                            break;
 
-                    //CONVERSION
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_CONVERSIONREQUEST_HANDLER_1_0":
-                        storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
+                        //CONVERSION
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_2_CONVERSIONREQUEST_HANDLER_1_0":
+                            storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0(parameterInputs);
 
-                        break;
+                            break;
 
-                    //STORAGE
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_STORAGEREQUEST_HANDLER_1_0":
-                        storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
+                        //STORAGE
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_3_STORAGEREQUEST_HANDLER_1_0":
+                            storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0(parameterInputs);
 
-                        break;
+                            break;
 
-                    //DISTURBANCES
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_DISTURBANCEREQUEST_HANDLER_1_0":
-                        storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
+                        //DISTURBANCES
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_4_DISTURBANCEREQUEST_HANDLER_1_0":
+                            storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_4_DisturbanceRequest_Handler_1_0(parameterInputs);
 
-                        break;
+                            break;
 
-                    //SENSOR
-                    case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_SENSORREQUEST_HANDLER_1_0":
-                        storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
+                        //SENSOR
+                        case "DIRECTOR_OF_PROGRAMMING_CHAPTER_12_2_PAGE_5_SENSORREQUEST_HANDLER_1_0":
+                            storedProcessRequestHandler = Create_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0(parameterInputs);
 
-                        break;
+                            break;
+                    }
+                }
+                else
+                {
+                    return _storedProcessRequestDataStorylineDetails;
                 }
 
                 #endregion
@@ -873,6 +880,8 @@ namespace BaseDI.Professional.Story.Programming_0
             storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
@@ -1025,6 +1034,8 @@ namespace BaseDI.Professional.Story.Programming_0
             storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
@@ -1179,6 +1190,8 @@ namespace BaseDI.Professional.Story.Programming_0
             storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
+            storedProcessRequestHandlerDirector.NicheMaster = this;
+
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
@@ -1332,6 +1345,8 @@ namespace BaseDI.Professional.Story.Programming_0
             storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
 
+            storedProcessRequestHandlerDirector.NicheMaster = this;
+
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
 
@@ -1484,6 +1499,8 @@ namespace BaseDI.Professional.Story.Programming_0
             storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;

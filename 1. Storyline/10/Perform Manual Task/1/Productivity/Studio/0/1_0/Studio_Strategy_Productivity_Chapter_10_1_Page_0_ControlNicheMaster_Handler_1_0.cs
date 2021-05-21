@@ -696,12 +696,19 @@ namespace BaseDI.Professional.Story.Productivity_0
             {
                 #region IDEAL CASE - USE director or experience
 
-                switch (storedInputRequestName.ToUpper())
-                {
-                    //case "DIRECTOR_OF_PRODUCTIVITY_CHAPTER_10_1_PAGE_1_XXXXXX_HANDLER_1_0":
-                    //    storedProcessRequestHandler = Create_Director_Of_Productivity_Chapter_10_1_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                if (!Finalize)
+                { 
+                    switch (storedInputRequestName.ToUpper())
+                    {
+                        //case "DIRECTOR_OF_PRODUCTIVITY_CHAPTER_10_1_PAGE_1_XXXXXX_HANDLER_1_0":
+                        //    storedProcessRequestHandler = Create_Director_Of_Productivity_Chapter_10_1_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                    //    break;
+                        //    break;
+                    }                
+                }
+                else
+                {
+                    return _storedProcessRequestDataStorylineDetails;
                 }
 
                 #endregion
@@ -840,6 +847,8 @@ namespace BaseDI.Professional.Story.Productivity_0
             storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;

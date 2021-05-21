@@ -665,11 +665,17 @@ export namespace BaseDI.Professional.Story.Productivity_0 {
             {
                 //#region IDEAL CASE - USE director or experience
 
-                switch (storedInputRequestName.toUpperCase()) {
-                    //case "DIRECTOR_OF_PRODUCTIVITY_CHAPTER_10_1_PAGE_1_XXXXXX_HANDLER_1_0":
-                    //    storedProcessRequestHandler = this.Create_Director_Of_Productivity_Chapter_10_1_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                if (!this.Finalize) {
+                    switch (storedInputRequestName.toUpperCase()) {
+                        //case "DIRECTOR_OF_PRODUCTIVITY_CHAPTER_10_1_PAGE_1_XXXXXX_HANDLER_1_0":
+                        //    storedProcessRequestHandler = this.Create_Director_Of_Productivity_Chapter_10_1_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                    //    break;
+                        //    break;
+                    }
+                }
+                else
+                {
+                    return this._storedProcessRequestDataStorylineDetails;
                 }
 
                 //#endregion
@@ -804,6 +810,8 @@ export namespace BaseDI.Professional.Story.Productivity_0 {
             storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;

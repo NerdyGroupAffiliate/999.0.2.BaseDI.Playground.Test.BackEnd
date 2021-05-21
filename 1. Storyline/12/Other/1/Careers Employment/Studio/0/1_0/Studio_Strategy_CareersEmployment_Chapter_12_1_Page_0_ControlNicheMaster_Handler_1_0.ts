@@ -664,11 +664,17 @@ export namespace BaseDI.Professional.Story.Careers_Employment_0 {
             try {
                 //#region IDEAL CASE - USE director or experience
 
-                switch (storedProcessRequestProcessRequestName.toUpperCase()) {
-                    //case "DIRECTOR_OF_CAREERSEMPLOYMENT_CHAPTER_12_1_PAGE_1_XXXXXX_HANDLER_1_0":
-                    //    storedProcessRequestHandler = this.Create_Director_Of_CareersEmployment_Chapter_12_1_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+                if (!this.Finalize) {
+                    //switch (storedInputRequestName.toUpperCase()) 
+                    //{
+                        //case "DIRECTOR_OF_CAREERSEMPLOYMENT_CHAPTER_12_1_PAGE_1_XXXXXX_HANDLER_1_0":
+                        //    storedProcessRequestHandler = this.Create_Director_Of_CareersEmployment_Chapter_12_1_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                    //    break;
+                        //    break;
+                    //}
+                }
+                else {
+                    return this._storedProcessRequestDataStorylineDetails;
                 }
 
                 //#endregion
@@ -719,93 +725,6 @@ export namespace BaseDI.Professional.Story.Careers_Employment_0 {
 
             //#endregion
         }
-
-        //#region Page 1
-        private Create_Director_Of_CareersEmployment_Chapter_12_1_Page_1_XXXXXX_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): object {
-            //#region 1. INPUTS
-
-            //#region MEMORIZE data repository
-
-            let storedProcessRequestRepositoryType: string = process.env.APP_SETTING_CONVERSION_MODE_12_1_CAREERSEMPLOYMENT_NICHE_MASTER ? process.env.APP_SETTING_CONVERSION_MODE_12_1_CAREERSEMPLOYMENT_NICHE_MASTER : "LOCAL_FILE";
-
-            //#endregion
-
-            //#region MEMORIZE developer mode
-
-            let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
-
-            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
-
-            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
-            //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Studio_Strategy_CareersEmployment_Chapter_12_1_Page_0_ControlNicheMaster_Handler.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Create_Director_Of_CareersEmployment_Chapter_12_1_Page_1_XXXXXX_1_0");
-
-            //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALBeginOfProcess", true);
-
-            //#endregion
-
-            //#endregion
-
-            //#region 2. PROCESS
-
-            //#region CONFIGURE request handler
-
-            //#region IDEAL CASE - USE director
-
-            let storedProcessRequestHandlerDirector = null; //new Director_Of_CareersEmployment_Chapter_12_1_Page_1_XXXXXX_1_0.BaseDI.Professional.Director.Advertising_1.Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-
-            storedProcessRequestHandlerDirector.ClientOrServerInstance = this._storedProcessRequestTracker;
-
-            storedProcessRequestHandlerDirector.ExtraData = this._storedProcessRequestExtraData;
-
-            storedProcessRequestHandlerDirector.MasterStorer = this._storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandlerDirector.MasterDisturber = this._storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandlerDirector.MasterSensor = this._storedProcessRequestCentralizedSensor;
-
-            storedProcessRequestHandlerDirector.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = this._storedProcessRequestDataStorylineDetails_Parameters;
-
-            switch (storedProcessRequestRepositoryType.toUpperCase()) {
-                case "LOCAL_FILE":
-                    storedProcessRequestHandlerDirector.Repository = null; //new LocalFile_Director_Of_CareersEmployment_Chapter_12_1_Page_1_XXXXXX_1_0.BaseDI.Professional.State.Advertising_1.LocalFile_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
-
-                    break;
-                case "REMOTE_SERVICE":
-                    storedProcessRequestHandlerDirector.Repository = null; //new RemoteService_Director_Of_CareersEmployment_Chapter_12_1_Page_1_XXXXXX_1_0.BaseDI.Professional.State.Advertising_1.RemoteService_Director_Of_Advertising_Chapter_1_1_Page_1_InputAdvertisement_Handler_1_0(parameterInputs);
-                    storedProcessRequestHandlerDirector.Repository.RequestName = this._storedProcessRequestName;
-
-                    break;
-            }
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-
-            //#region 3. OUTPUT
-
-            //#region RETURN request handler
-
-            //#region IDEAL CASE - USE experienece or director
-
-            return storedProcessRequestHandlerDirector;
-
-            //#endregion
-
-            //#endregion
-
-            //#endregion
-        }
-        //#endregion 
 
         //#endregion 
     }

@@ -696,12 +696,20 @@ namespace BaseDI.Professional.Story.Careers_Employment_0
             {
                 #region IDEAL CASE - USE director or experience
 
-                switch (storedInputRequestName.ToUpper())
-                {
-                    //case "DIRECTOR_OF_CAREERSEMPLOYMENT_CHAPTER_12_1_PAGE_1_XXXXXX_HANDLER_1_0":
-                    //    storedProcessRequestHandler = Create_Director_Of_CareersEmployment_Chapter_12_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
 
-                    //    break;
+                if (!Finalize)
+                {
+                    //switch (storedInputRequestName.toUpperCase()) 
+                    //{
+                        //case "DIRECTOR_OF_CAREERSEMPLOYMENT_CHAPTER_12_1_PAGE_1_XXXXXX_HANDLER_1_0":
+                        //    storedProcessRequestHandler = Create_Director_Of_CareersEmployment_Chapter_12_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
+
+                        //    break;
+                    //}
+                }
+                else
+                {
+                    return _storedProcessRequestDataStorylineDetails;
                 }
 
                 #endregion
@@ -748,97 +756,6 @@ namespace BaseDI.Professional.Story.Careers_Employment_0
 
             #endregion
         }
-
-        #region Page 1
-
-        private object Create_Director_Of_CareersEmployment_Chapter_12_Page_1_XXXXXX_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
-        {
-            #region 1. INPUTS
-
-            #region MEMORIZE data repository
-
-            string storedProcessRequestRepositoryType = !string.IsNullOrEmpty(_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_1_CAREERSEMPLOYMENT_NICHE_MASTER")) ? _storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_CONVERSION_MODE_12_1_CAREERSEMPLOYMENT_NICHE_MASTER") : "LOCAL_FILE";
-
-            #endregion
-
-            #region MEMORIZE developer mode
-
-            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
-
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
-
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Strategy_Productivity_Chapter_10_1_Page_0_ControlNicheMaster_Handler.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_CareersEmployment_Chapter_12_Page_1_XXXXXX_1_0");
-
-            //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #region CONFIGURE request handler
-
-            #region IDEAL CASE - USE director
-
-            aClass_Programming_ScriptDirector_BuilderPattern_12_2_1_0 storedProcessRequestHandlerDirector = null;//new Director_Of_CareersEmployment_Chapter_12_Page_1_XXXXXX_1_0(parameterInputs);
-
-            storedProcessRequestHandlerDirector.ClientOrServerInstance = _storedProcessRequestTracker;
-
-            storedProcessRequestHandlerDirector.ExtraData = _storedProcessRequestExtraData;
-
-            storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
-            storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
-            storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
-
-            storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
-            storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
-
-            switch (storedProcessRequestRepositoryType.ToUpper())
-            {
-                case "LOCAL_FILE":
-                    storedProcessRequestHandlerDirector.Repository = null; //new LocalFile_Director_Of_CareersEmployment_Chapter_12_Page_1_XXXXXX_1_0(parameterInputs);
-                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
-
-                    break;
-                case "REMOTE_SERVICE":
-                    storedProcessRequestHandlerDirector.Repository = null; //new RemoteService_Director_Of_CareersEmployment_Chapter_12_Page_1_XXXXXX_1_0(parameterInputs);
-                    storedProcessRequestHandlerDirector.Repository.RequestName = _storedProcessRequestName;
-
-                    break;
-            }
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #region RETURN request handler
-
-            #region IDEAL CASE - USE experienece or director
-
-            return storedProcessRequestHandlerDirector;
-
-            #endregion
-
-            #endregion
-
-            #endregion
-        }
-
-        #endregion
 
         #endregion
     }

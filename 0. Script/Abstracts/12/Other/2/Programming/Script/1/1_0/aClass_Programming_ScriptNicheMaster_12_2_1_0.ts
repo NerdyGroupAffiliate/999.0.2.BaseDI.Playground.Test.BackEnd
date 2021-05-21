@@ -19,6 +19,9 @@ export namespace BaseDI.Professional.Programming.Abstract_1
         public APILocationRemote: string = "";
 
         public CallBack: (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => any = null;
+
+        public Finalize: boolean = false;
+
         //#endregion
 
         //#region 2. Ready

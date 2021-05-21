@@ -694,12 +694,19 @@ namespace BaseDI.Professional.Story.Security_0
             {
                 #region IDEAL CASE - USE director or experience
 
-                switch (storedInputRequestName.ToUpper())
+                if (!Finalize)
                 {
-                    case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
-                        storedProcessRequestHandler = Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
+                    switch (storedInputRequestName.ToUpper())
+                    {
+                        case "DIRECTOR_OF_SECURITY_CHAPTER_12_5_PAGE_1_READAUTHENTICATIONFORALL_HANDLER_1_0":
+                            storedProcessRequestHandler = Create_Director_Of_Security_Chapter_12_5_Page_1_StoreAuthentication_Handler_1_0(parameterInputs);
 
-                        break;
+                            break;
+                    }
+                }
+                else
+                {
+                    return _storedProcessRequestDataStorylineDetails;
                 }
 
                 #endregion
@@ -838,6 +845,8 @@ namespace BaseDI.Professional.Story.Security_0
             storedProcessRequestHandlerDirector.MasterStorer = _storedProcessRequestCentralizedStorer;
             storedProcessRequestHandlerDirector.MasterDisturber = _storedProcessRequestCentralizedDisturber;
             storedProcessRequestHandlerDirector.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            storedProcessRequestHandlerDirector.NicheMaster = this;
 
             storedProcessRequestHandlerDirector.StorylineDetails = _storedProcessRequestDataStorylineDetails;
             storedProcessRequestHandlerDirector.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
