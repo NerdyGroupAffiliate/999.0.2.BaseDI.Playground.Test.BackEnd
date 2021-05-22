@@ -3488,7 +3488,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                                 }
                             }
                             else {
-                                console.log("Something wrong in Json file!")
+                                //console.log("Something wrong in Json file!")
                             }
                         });
                     });
