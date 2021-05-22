@@ -41,6 +41,7 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
         //CLIENT/SERVER
         private _storedProcessRequestTracker: any;
 
+        private _storedInputRequestActionName: string
         private _storedInputRequestName: string;
         private _storedInputRequestNameDataCacheKey: string;
 
@@ -72,29 +73,82 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
 
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            this._storedProcessRequestTracker = null;
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            this._storedInputRequestActionName = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+            //#endregion
+
+
             //#region MEMORIZE input parameters
 
             this._storedInputs = parameterInputs;
 
             //#endregion
 
-            //#region MEMORIZE control client server
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
 
             this._storedProcessRequestTracker = this._storedInputs.Parameters.getValue("parameterProcessRequestTracker");
 
             //#endregion
 
-            //#region MEMORIZE app settings
+            //#region MEMORIZE process request settings
 
             this._storedProcessRequestSettings = this._storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
-            //#region MEMORIZE centralized processes handlers
+            //#region MEMORIZE process centralized handlers
 
             this._storedProcessRequestCentralizedDisturber = this._storedInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber");
             this._storedProcessRequestCentralizedSensor = this._storedInputs.Parameters.getValue("parameterProcessRequestCentralizedSensor");
             this._storedProcessRequestCentralizedStorer = this._storedInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer");
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+            //#endregion
 
             //#endregion
 
@@ -127,6 +181,63 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
         public HandleDefaults(): void {
             //#region 1. INPUTS
 
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process xxx xxx
+
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -159,49 +270,94 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
             const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<boolean> => {
                 //#region 1. INPUTS
 
-                //#region DEFINE parameter inputs
+                //#region DEFINE control variables
+
+                //#endregion
+
+                //#region DEFINE input variables
 
                 let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
                 //#endregion
 
-                //#region DEFINE process checkpoint
+                //#region DEFINE process variables
 
                 let storedProcessRequestMistakeMade: boolean = false;
 
                 //#endregion
 
-                //#region DEFINE stored message
+                //#region DEFINE output variables
 
                 let storedOutputResponseMessage: string = "";
 
                 //#endregion
 
-                //#region MEMORIZE control client server
+                ///////////////////////////////
+
+                //#region MEMORIZE control variables
+
+                //#region MEMORIZE control xxx xxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE input variables
+
+                //#region MEMORIZE input xxx xxxx
+
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE process variables
+
+                //#region MEMORIZE process request tracker
 
                 let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
 
                 //#endregion
 
-                //#region MEMORIZE app settings
+                //#region MEMORIZE process request settings
 
                 let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 //#endregion
 
-                //#region MEMORIZE developer mode
+                //#region MEMORIZE process developer mode
 
                 let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
 
                 let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0.ts");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                //#endregion
+
+                //#endregion
+
+                //#region MEMORIZE output variables
+
+                //#region MEMORIZE output xxx xxx
+
+
+                //#endregion
 
                 //#endregion
 
@@ -214,6 +370,20 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
                 //#region IDEAL CASE - USE valid information
 
                 if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestName")) {
+                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestNameDataCacheKey")) {
+                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //2. PROCESS
                     if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
                         storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -235,15 +405,6 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestName")) {
-                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestNameDataCacheKey")) {
-                        storedOutputResponseMessage += "***parameterInputRequestNameDataCacheKey*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
 
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedDisturber")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedDisturber*** cannot be blank or empty.\n"
@@ -276,9 +437,16 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -298,9 +466,16 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUT
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -340,13 +515,48 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
 
             //#endregion
 
-            //#region DEFINE request handler
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+
+            //#endregion
+
+            //#region DEFINE process variables
 
             let storedProcessRequestHandler_UsingBuilderPattern: Use_DesignPattern_Builder_Chapter_12_3_Page_11 = null;
 
-            //#endregion  
+            //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region DEFINE output variables
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input xxx xxxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process developer mode
 
             let storedProcessRequestDeveloperMode: boolean = this._storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
 
@@ -355,12 +565,20 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
+
+            //0. CONTROLLERS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputRequestActionName);
+
+            //1. INPUTS
+
+            //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputs.Parameters.getValue("parameterInputRequestActionName"));
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", this._storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", this._storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Director_Of_WebDevelopment_Chapter_12_3_Page_11_OutputOtherScreen_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+
+            //3. OUTPUTS  
 
             //OPTIONAL
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
@@ -370,6 +588,17 @@ export namespace BaseDI.Professional.Director.Web_Development_11 {
             //#region MEMORIZE process handler details
 
             this._storedInputs.Parameters.setValue("parameterProcessRequestDataRepository", this.Repository);
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
 
             //#endregion
 

@@ -162,11 +162,6 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseMessageType")) {
-                        storedOutputResponseMessage += "***parameterOutputResponseMessageType*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
-
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestMethodName")) {
                         storedOutputResponseMessage += "***parameterProcessRequestMethodName*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -178,7 +173,11 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                     }
 
                     //3. OUTPUTS
-
+                    if (!parameterInputs.Parameters.containsKey("parameterOutputResponseMessageType")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseMessageType*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 

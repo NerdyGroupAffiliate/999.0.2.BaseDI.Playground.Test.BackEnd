@@ -41,6 +41,7 @@ export namespace BaseDI.Professional.Director.Web_Development_9 {
         //CLIENT/SERVER
         private _storedProcessRequestTracker: any;
 
+        private _storedInputRequestActionName: string;
         private _storedInputRequestName: string;
         private _storedInputRequestNameDataCacheKey: string;
 
@@ -103,6 +104,12 @@ export namespace BaseDI.Professional.Director.Web_Development_9 {
             //#endregion
 
             //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            this._storedInputRequestActionName = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+            //#endregion
 
             //#region MEMORIZE input parameters
 
@@ -559,7 +566,7 @@ export namespace BaseDI.Professional.Director.Web_Development_9 {
             //REQUIRED
 
             //0. CONTROLLERS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputs.Parameters.getValue("parameterInputRequestActionName"));
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", this._storedInputRequestActionName);
 
             //1. INPUTS
 

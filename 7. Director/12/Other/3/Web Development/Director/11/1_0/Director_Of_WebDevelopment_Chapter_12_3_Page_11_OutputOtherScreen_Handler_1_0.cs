@@ -47,6 +47,7 @@ namespace BaseDI.Professional.Director.Web_Development_11
         //CLIENT/SERVER
         private Dictionary<string, object> _storedProcessRequestTracker;
 
+        private string _storedInputRequestActionName;
         private string _storedInputRequestName;
         private string _storedInputRequestNameDataCacheKey;
 
@@ -108,6 +109,12 @@ namespace BaseDI.Professional.Director.Web_Development_11
             #endregion
 
             #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            _storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion
 
             #region MEMORIZE input parameters
 
@@ -597,7 +604,7 @@ namespace BaseDI.Professional.Director.Web_Development_11
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedInputRequestActionName);
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "EXECUTING request handler");
