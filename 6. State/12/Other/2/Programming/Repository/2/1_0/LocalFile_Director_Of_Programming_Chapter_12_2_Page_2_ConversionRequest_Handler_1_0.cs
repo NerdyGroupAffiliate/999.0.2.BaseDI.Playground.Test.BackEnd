@@ -1095,12 +1095,12 @@ namespace BaseDI.Professional.State.Programming_2
 
                             break;
 
-                        case "EXPERIENCE_THE_HEAD_CHAPTER_12_3_PAGE_13_CONTROLREQUEST_HANDLER_1_0":
+                        case "EXPERIENCE_THE_HEAR_CHAPTER_12_3_PAGE_13_CONTROLREQUEST_HANDLER_1_0":
                             storedProcessRequestDataStorylineDetails = stored_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0;
 
                             switch (_storedInputRequestNameDataCacheKey.ToUpper())
                             {
-                                case "EXPERIENCE_THE_HEAD_CHAPTER_12_3_PAGE_13_CONTROLREQUEST_HANDLER_1_0-P1_0":
+                                case "EXPERIENCE_THE_HEAR_CHAPTER_12_3_PAGE_13_CONTROLREQUEST_HANDLER_1_0-P1_0":
                                     storedProcessRequestDataStorylineDetails_Parameters = stored_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0_P1_0;
                                     break;
                             }

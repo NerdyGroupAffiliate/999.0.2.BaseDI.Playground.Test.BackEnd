@@ -72,11 +72,12 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
         private ExtraData_12_2_1_0 _storedProcessRequestExtraData;
 
         //PLUMBING
+        private SingleParmPoco_12_2_1_0 _storedInputs;
+        private string _storedInputRequestActionName;
+
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedDisturber;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedSensor;
         private aClass_Programming_ScriptAction_12_2_1_0<JObject> _storedProcessRequestCentralizedStorer;
-
-        private SingleParmPoco_12_2_1_0 _storedInputs;
 
         private string _storedProcessRequestName = "";
         private string _storedProcessRequestByName = "";
@@ -609,7 +610,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedInputRequestActionName);
 
             //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "EXECUTING request handler");

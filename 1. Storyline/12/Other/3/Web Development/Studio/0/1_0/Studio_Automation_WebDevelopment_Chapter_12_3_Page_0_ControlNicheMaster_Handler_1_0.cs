@@ -782,7 +782,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
                             break;
 
-                        case "EXPERIENCE_THE_HEAD_CHAPTER_12_3_PAGE_13_CONTROLREQUEST_HANDLER_1_0":
+                        case "EXPERIENCE_THE_HEAR_CHAPTER_12_3_PAGE_13_CONTROLREQUEST_HANDLER_1_0":
                             storedProcessRequestHandler = Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0(parameterInputs);
 
                             break;
