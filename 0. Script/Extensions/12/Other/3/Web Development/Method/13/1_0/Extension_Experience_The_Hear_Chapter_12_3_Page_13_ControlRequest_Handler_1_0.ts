@@ -282,8 +282,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region DEFINE process variables
 
-            let storedProcessRequestFiloMetaDataList: Array<string> = [];
-            let storedProcessRequestFiloList: Array<string> = [];
+            let storedProcessRequestFileMetaDataList: Array<string> = [];
+            let storedProcessRequestFileList: Array<string> = [];
 
             //#endregion
 
@@ -740,13 +740,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region DEFINE process variables
             
-            let storedProcessRequestFiloMetaDataItemOfContent: string = "";
-            let storedProcessRequestFiloMetaDataItemOfContentHtml: object = null;
-            let storedProcessRequestFiloMetaDataItemOfContentStyles: object = null;
-            let storedProcessRequestFiloMetaDataList: Array<string> = [];
-            let storedProcessRequestFiloMetaDataListOfContent: any = [];
+            let storedProcessRequestFileMetaDataItemOfContent: string = "";
+            let storedProcessRequestFileMetaDataItemOfContentHtml: object = null;
+            let storedProcessRequestFileMetaDataItemOfContentStyles: Array<object> = null;
+            let storedProcessRequestFileMetaDataList: Array<string> = [];
+            let storedProcessRequestFileMetaDataListOfContent: any = [];
 
-            let storedProcessRequestFiloList: Array<string> = [];
+            let storedProcessRequestFileList: Array<string> = [];
 
             //#endregion
 
@@ -829,7 +829,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region MEMORIZE process file details
 
-            let storedProcessRequestFileRootPath: string = parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPath");
+            let storedProcessRequestFileRootPath: string = (parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPath") != "") ? parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPath") : "C://Programming//999.0.2.BaseDI.Playground.Test.BackEnd";
 
             //#endregion
             
@@ -890,7 +890,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                                 storedOutputResponse.forEach(storedProcessRequestFileInfoItem => {
                                     if(storedProcessRequestFileInfoItem != null && storedProcessRequestFileInfoItem != undefined && storedProcessRequestFileInfoItem != "") {
                                         //TODO: VALIDATE if string is actually a valid path.
-                                        storedProcessRequestFiloMetaDataList.push(storedProcessRequestFileInfoItem.MetaDataLocalPath);
+                                        storedProcessRequestFileMetaDataList.push(storedProcessRequestFileInfoItem.MetaDataLocalPath);
                                     }                                    
                                 })    
                             }
@@ -904,12 +904,12 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                             throw new Error("converting file metadata");
                         }
 
-                        return storedProcessRequestFiloMetaDataList;
+                        return storedProcessRequestFileMetaDataList;
                     }
 
-                    storedProcessRequestFiloMetaDataList = await Promise.resolve(ExcuteConversionRequest());
+                    storedProcessRequestFileMetaDataList = await Promise.resolve(ExcuteConversionRequest());
 
-                    if(storedProcessRequestFiloMetaDataList.length == 0)
+                    if(storedProcessRequestFileMetaDataList.length == 0)
                         return storedProcessRequestDataStorylineDetails;
                 }
                 catch (storedProcessRequestMistake) {
@@ -937,16 +937,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     //                          "{ "StyleFile": [ { "StyleFileUseProperties": [{ "properties": { "properyValues": [ "url({RootPath}/3.%20Client/Web/4.%20Experience/5/Sight/3/Generate%20Optin/1/List%20Building/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-ButtonOptin_Touch-AJC_611X37_Desktop-CMS-3_1_1_0.png"] } }] }] "}"
                     
                     const ExecuteStorageRequest = async() : Promise<any> => {
-                        storedProcessRequestFiloMetaDataList.map(storedProcessRequestFiloMetaDataItem => {
-                            storedProcessRequestFiloMetaDataItemOfContent = importedNodeJSFileManager.readFileSync(storedProcessRequestFiloMetaDataItem);
+                        storedProcessRequestFileMetaDataList.map(storedProcessRequestFileMetaDataItem => {
+                            storedProcessRequestFileMetaDataItemOfContent = importedNodeJSFileManager.readFileSync(storedProcessRequestFileMetaDataItem);
     
-                            storedProcessRequestFiloMetaDataListOfContent.push(JSON.parse(storedProcessRequestFiloMetaDataItemOfContent))
+                            storedProcessRequestFileMetaDataListOfContent.push(JSON.parse(storedProcessRequestFileMetaDataItemOfContent))
                         })
     
-                        return storedProcessRequestFiloMetaDataListOfContent;
+                        return storedProcessRequestFileMetaDataListOfContent;
                     }   
                     
-                    storedProcessRequestFiloMetaDataListOfContent = await Promise.resolve(ExecuteStorageRequest());
+                    storedProcessRequestFileMetaDataListOfContent = await Promise.resolve(ExecuteStorageRequest());
                 } 
                 catch (storedProcessRequestMistake) {
                     if(!storedProcessRequestMistake.message)
@@ -965,16 +965,25 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     //OUPUT EXAMPLE: Array[0] = "{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg"
                     //               Array[1] = "{RootPath}/3.%20Client/Web/4.%20Experience/7/Awareness/1/Generate%20Brand%20Awarness/1/Advertising/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Owner_Aware-AJC_463X125_Desktop-CMS-1_1_1_0.png"
                     //               Array[2] = "{RootPath}/3.%20Client/Web/4.%20Experience/5/Sight/3/Generate%20Optin/1/List%20Building/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-ButtonOptin_Touch-AJC_611X37_Desktop-CMS-3_1_1_0.png"
-                    storedProcessRequestFiloMetaDataListOfContent.map(storedProcessRequestFiloMetaDataItemOfContent => 
+                    storedProcessRequestFileMetaDataListOfContent.map(storedProcessRequestFileMetaDataItemOfContent => 
                     {
                         //#region 1. PARSE file paths from css files (images, videos, etc)
 
                         try 
                         {
-                            storedProcessRequestFiloMetaDataItemOfContentStyles = storedProcessRequestFiloMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value.baseDIInstructions.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0]?.StyleFiles;
+                            storedProcessRequestFileMetaDataItemOfContentStyles = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value.baseDIInstructions.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0]?.StyleFiles;
 
-                            if(storedProcessRequestFiloMetaDataItemOfContentStyles != null && storedProcessRequestFiloMetaDataItemOfContentStyles != undefined){
+                            if(storedProcessRequestFileMetaDataItemOfContentStyles != null && storedProcessRequestFileMetaDataItemOfContentStyles != undefined){
+                                //OUTPUT EXAMPLE: "StyleFiles": [{}]
+                                storedProcessRequestFileMetaDataItemOfContentStyles.map(storedProcessRequestFileMetaDataItemOfContentStyle => {
+                                    //OUTPUT EXAMPLE: "StyleFiles": [{"StyleFileUseProperties":[]]}]
+                                    (storedProcessRequestFileMetaDataItemOfContentStyle as any)?.StyleFileUseProperties.map(storedProcessRequestStyleFilePropertyList => {
+                                        //OUTPUT EXAMPLE: "StyleFiles": [{"StyleFileUseProperties":[{"properties":[]}]]}]
+                                        (storedProcessRequestStyleFilePropertyList as any)?.properties.map(storedProcessRequestStyleFilePropertyItem => {
 
+                                        })
+                                    })
+                                });
                             }
                             else
                             {
@@ -991,9 +1000,9 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                         try 
                         {
-                            storedProcessRequestFiloMetaDataItemOfContentHtml= storedProcessRequestFiloMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value?.baseDIInstructions?.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_3_clientInformationHTMLContentDetails?.value[0];
+                            storedProcessRequestFileMetaDataItemOfContentHtml= storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value?.baseDIInstructions?.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_3_clientInformationHTMLContentDetails?.value[0];
 
-                            if(storedProcessRequestFiloMetaDataItemOfContentHtml != null && storedProcessRequestFiloMetaDataItemOfContentHtml != undefined){
+                            if(storedProcessRequestFileMetaDataItemOfContentHtml != null && storedProcessRequestFileMetaDataItemOfContentHtml != undefined){
 
                             }
                             else
