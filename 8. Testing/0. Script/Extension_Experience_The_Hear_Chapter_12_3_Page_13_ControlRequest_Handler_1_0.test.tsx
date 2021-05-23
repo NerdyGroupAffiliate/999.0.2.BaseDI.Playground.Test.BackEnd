@@ -318,7 +318,8 @@ describe('Web Server Setup Test', () => {
         storedInputs = await TestVariables.Action(storedInputs);
 
         //2. PROCESS
-
+        storedInputs.Parameters.setValue("parameterProcessRequestFileRootPath", "");
+        
         //3. OUTPUTS
 
         //#endregion

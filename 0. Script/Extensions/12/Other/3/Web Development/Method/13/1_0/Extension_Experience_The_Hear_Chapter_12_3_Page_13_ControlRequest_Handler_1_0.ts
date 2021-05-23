@@ -13,7 +13,7 @@ var PassportFacebookStrategy = null;
 //LIST
 import * as Collections from 'typescript-collections';
 
-var fs = require('fs');
+var importedNodeJSFileManager = require('fs');
 var path = require('path');
 
 if (process.env.APP_ENV == "SERVER") {
@@ -112,11 +112,19 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                 let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+                
+                //2. PROCESS              
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.ts");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
 
                 //#endregion
 
@@ -128,12 +136,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                 //#region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
-                    if (process.env.APP_ENV == null || process.env.APP_ENV == undefined) {
-                        storedOutputResponseMessage += "***process.env.APP_ENV*** cannot be blank or empty.\n"
-                        storedProcessRequestMistakeMade = true;
-                    }
+                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) 
+                {
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
+
+                    //2. PROCESS
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -170,15 +179,23 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //OUTPUTS
                     if (storedProcessRequestMistakeMade) {
                         //#region EDGE CASE - USE developer logger
 
                         if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                            
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -196,12 +213,20 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                 {
                     //#region EDGE CASE - USE developer logger
 
+
                     if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                            
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
                         storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -241,61 +266,118 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#region DEFINE data response
+            //#region DEFINE control variables
 
+            //#endregion
+
+            //#region DEFINE input variables
+
+            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            let storedInputRequestApiEndPointAddress: string = parameterInputs.Parameters.getValue("parameterApiRequestEndPointAddress");
+            let storedInputRequestApiData: any = parameterInputs.Parameters.getValue("parameterApiRequestData");
+            let storedInputRequestApiVerb: string = parameterInputs.Parameters.getValue("parameterApiRequestVerb");
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedProcessRequestFiloMetaDataList: Array<string> = [];
+            let storedProcessRequestFiloList: Array<string> = [];
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            let storedOutputResponse: any = null;
             let storedOutputResponseData: any = null;
-            let storedDataResponseFailed: boolean = false;
 
             //#endregion
 
-            //#region DEFINE parameter inputs
+            ///////////////////////////////
 
-            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control api details
+
+            let storedControlRequestApiControllerUsingCurl = _3rdParty_Curling_ApiController.connect();
+
+            let storedControlRequestApiCallBack: any = parameterInputs.Parameters.getValue("parameterApiRequestCallBack");
 
             //#endregion
 
-            //#region MEMORIZE control client server
+            //#endregion
 
-            let storedProcessRequestTracker: Object = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
 
             //#endregion
 
-            //#region MEMORIZE app settings
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
+
+            let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+
+            //#endregion
+
+            //#region MEMORIZE process request settings
 
             let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
 
             //#endregion
 
-            //#region MEMORIZE developer mode
+            //#region MEMORIZE process developer mode
 
-            let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
+            let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "CONVERTING json to html container");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+
+            //0. CONTROLLERS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //1. INPUTS
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING file copy process");
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Transport_ApiRequestToServer_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+
+            //3. OUTPUTS  
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
             //#endregion
 
-            //#region MEMORIZE api inputs
+            //#region MEMORIZE process storyline details
 
-            let storedApiControllerUsingCurl = _3rdParty_Curling_ApiController.connect();
-
-            let storedApiRequestCallBack: any = parameterInputs.Parameters.getValue("parameterApiRequestCallBack");
-            let storedApiRequestEndPointAddress: string = parameterInputs.Parameters.getValue("parameterApiRequestEndPointAddress");
-            let storedApiRequestData: any = parameterInputs.Parameters.getValue("parameterApiRequestData");
-            let storedApiRequestVerb: string = parameterInputs.Parameters.getValue("parameterApiRequestVerb");
+            let storedProcessRequestDataStorylineDetails: any = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
 
             //#endregion
 
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
 
             //#endregion
 
@@ -311,7 +393,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     const ExecuteTransportRequest = async (parameterApiRequestCallBack: any, parameterApiRequestEndPointAddress: string, parameterApiRequestData: any, parameterApiRequestVerb: string) => {
                         switch (parameterApiRequestVerb.toUpperCase()) {
                             case "DELETE":
-                                storedApiControllerUsingCurl.delete(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
+                                storedControlRequestApiControllerUsingCurl.delete(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
                                     if (!storedError) {
                                         parameterApiRequestCallBack(storedResponse);
                                     }
@@ -323,7 +405,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                                 break;
 
                             case "GET":
-                                storedApiControllerUsingCurl.get(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
+                                storedControlRequestApiControllerUsingCurl.get(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
                                     if (!storedError) {
                                         parameterApiRequestCallBack(storedResponse);
                                     }
@@ -335,7 +417,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                                 break;
 
                             case "HEAD":
-                                storedApiControllerUsingCurl.head(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
+                                storedControlRequestApiControllerUsingCurl.head(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
                                     if (!storedError) {
                                         parameterApiRequestCallBack(storedResponse);
                                     }
@@ -347,7 +429,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                                 break;
 
                             case "POST":
-                                storedApiControllerUsingCurl.post(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
+                                storedControlRequestApiControllerUsingCurl.post(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
                                     if (!storedError) {
                                         parameterApiRequestCallBack(storedResponse);
                                     }
@@ -359,7 +441,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                                 break;
 
                             case "PUT":
-                                storedApiControllerUsingCurl.put(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
+                                storedControlRequestApiControllerUsingCurl.put(parameterApiRequestEndPointAddress, parameterApiRequestData, function (storedError, storedResponse) {
                                     if (!storedError) {
                                         parameterApiRequestCallBack(storedResponse);
                                     }
@@ -372,7 +454,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         }
                     };
 
-                    await ExecuteTransportRequest(storedApiRequestCallBack, storedApiRequestEndPointAddress, storedApiRequestData, storedApiRequestVerb);
+                    await ExecuteTransportRequest(storedControlRequestApiCallBack, storedInputRequestApiEndPointAddress, storedInputRequestApiData, storedInputRequestApiVerb);
 
                 }
                 catch (storedProcessRequestMistake)
@@ -408,8 +490,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                 //#endregion
             }
 
-
-
             //#endregion
 
             //#endregion
@@ -422,7 +502,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
         //#endregion
 
         //#region FILE MANAGEMENT
-        //storylineDetails: object
+
         public static async Step_X_X_Framework_Store_FilesToServer_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> {
             //#region 1. INPUTS
 
@@ -557,6 +637,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestFileRootPath")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestFileRootPath*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }                    
+
                     //3. OUTPUT
 
                     if (storedProcessRequestMistakeMade) {
@@ -650,14 +735,25 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             //#region DEFINE input variables
 
             let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
-
+            
             //#endregion
 
             //#region DEFINE process variables
+            
+            let storedProcessRequestFiloMetaDataItemOfContent: string = "";
+            let storedProcessRequestFiloMetaDataItemOfContentHtml: object = null;
+            let storedProcessRequestFiloMetaDataItemOfContentStyles: object = null;
+            let storedProcessRequestFiloMetaDataList: Array<string> = [];
+            let storedProcessRequestFiloMetaDataListOfContent: any = [];
+
+            let storedProcessRequestFiloList: Array<string> = [];
 
             //#endregion
 
             //#region DEFINE output variables
+
+            let storedOutputResponse: any = null;
+            let storedOutputResponseData: any = null;
 
             //#endregion
 
@@ -731,6 +827,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#endregion
 
+            //#region MEMORIZE process file details
+
+            let storedProcessRequestFileRootPath: string = parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPath");
+
+            //#endregion
+            
+
             //#endregion
 
             //#region MEMORIZE output variables
@@ -746,141 +849,219 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region 2. PROCESS
 
+            //#region EXECUTE copying static files
+
+            //#region IDEAL CASE - USE json metadata
+
+            try 
+            {
+                //#region A. CONVERT to file metadata
+
+                try 
+                {                        
+                    //OUPUT EXAMPLE: Array[0] = "C:\{SomePath}\State_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0-P1_0.json"
+                    //               Array[1] = "C:\{SomePath}\State_Director_Of_WebDevelopment_Chapter_12_3_Page_2_OutputPresalesScreen_Handler_1_0-P1_0.json"
+                    //               Array[2] = "C:\{SomePath}\State_Director_Of_WebDevelopment_Chapter_12_3_Page_3_OutputOptinScreen_Handler_1_0-P1_0.json"
+                    const ExcuteConversionRequest = async() : Promise<Array<any>> => 
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+                
+                        //1. INPUTS
+        
+                        //2. PROCESS
+                        storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+        
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
+        
+                        //3. OUTPUTS
+                        storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
+        
+                        storedOutputResponse = await Promise.resolve(Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs));
+        
+                        if(storedOutputResponse != null && storedOutputResponse != undefined) {
+                            storedOutputResponse = storedOutputResponse?.value?.SetupItemEnvironmentServer?.SetupItemEnvironmentServerMetaDataPaths;
+
+                            if(storedOutputResponse != null && storedOutputResponse != undefined && storedOutputResponse.length > 0) {
+                                storedOutputResponse.forEach(storedProcessRequestFileInfoItem => {
+                                    if(storedProcessRequestFileInfoItem != null && storedProcessRequestFileInfoItem != undefined && storedProcessRequestFileInfoItem != "") {
+                                        //TODO: VALIDATE if string is actually a valid path.
+                                        storedProcessRequestFiloMetaDataList.push(storedProcessRequestFileInfoItem.MetaDataLocalPath);
+                                    }                                    
+                                })    
+                            }
+                            else
+                            {
+                                throw new Error("converting file metadata");
+                            }
+                        }
+                        else
+                        {                            
+                            throw new Error("converting file metadata");
+                        }
+
+                        return storedProcessRequestFiloMetaDataList;
+                    }
+
+                    storedProcessRequestFiloMetaDataList = await Promise.resolve(ExcuteConversionRequest());
+
+                    if(storedProcessRequestFiloMetaDataList.length == 0)
+                        return storedProcessRequestDataStorylineDetails;
+                }
+                catch (storedProcessRequestMistake) {
+                    if(!storedProcessRequestMistake.message)
+                    {
+                        throw new Error("converting file information");
+                    }
+                    
+                    throw storedProcessRequestMistake;
+                }                
+
+                //#endregion
+            
+                //#region B. STORE file metadata content
+
+                try 
+                {
+                    //OUPUT EXAMPLE: Array[0] = "{ "Attributes":[ { "src": "{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg" } ]"
+                    //                          "{ "StyleFile": [ { "StyleFileUseProperties": [{ "properties": { "properyValues": [ "url({RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg)"] } }] }] "}"
+                    
+                    //               Array[1] = "{ "Attributes":[ { "src": "{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg" } ]"
+                    //                          "{ "StyleFile": [ { "StyleFileUseProperties": [{ "properties": { "properyValues": [ "url({RootPath}/3.%20Client/Web/4.%20Experience/7/Awareness/1/Generate%20Brand%20Awarness/1/Advertising/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Owner_Aware-AJC_463X125_Desktop-CMS-1_1_1_0.png)"] } }] }] "}"
+                    
+                    //               Array[2] = "{ "Attributes":[ { "src": "{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg" } ]"
+                    //                          "{ "StyleFile": [ { "StyleFileUseProperties": [{ "properties": { "properyValues": [ "url({RootPath}/3.%20Client/Web/4.%20Experience/5/Sight/3/Generate%20Optin/1/List%20Building/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-ButtonOptin_Touch-AJC_611X37_Desktop-CMS-3_1_1_0.png"] } }] }] "}"
+                    
+                    const ExecuteStorageRequest = async() : Promise<any> => {
+                        storedProcessRequestFiloMetaDataList.map(storedProcessRequestFiloMetaDataItem => {
+                            storedProcessRequestFiloMetaDataItemOfContent = importedNodeJSFileManager.readFileSync(storedProcessRequestFiloMetaDataItem);
+    
+                            storedProcessRequestFiloMetaDataListOfContent.push(JSON.parse(storedProcessRequestFiloMetaDataItemOfContent))
+                        })
+    
+                        return storedProcessRequestFiloMetaDataListOfContent;
+                    }   
+                    
+                    storedProcessRequestFiloMetaDataListOfContent = await Promise.resolve(ExecuteStorageRequest());
+                } 
+                catch (storedProcessRequestMistake) {
+                    if(!storedProcessRequestMistake.message)
+                    {
+                        throw new Error("storing file meta data");
+                    }
+                    
+                    throw storedProcessRequestMistake;
+                }  
+
+                //#endregion
+
+                //#region C. CONVERT to file list
+                try 
+                {
+                    //OUPUT EXAMPLE: Array[0] = "{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg"
+                    //               Array[1] = "{RootPath}/3.%20Client/Web/4.%20Experience/7/Awareness/1/Generate%20Brand%20Awarness/1/Advertising/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Owner_Aware-AJC_463X125_Desktop-CMS-1_1_1_0.png"
+                    //               Array[2] = "{RootPath}/3.%20Client/Web/4.%20Experience/5/Sight/3/Generate%20Optin/1/List%20Building/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-ButtonOptin_Touch-AJC_611X37_Desktop-CMS-3_1_1_0.png"
+                    storedProcessRequestFiloMetaDataListOfContent.map(storedProcessRequestFiloMetaDataItemOfContent => 
+                    {
+                        //#region 1. PARSE file paths from css files (images, videos, etc)
+
+                        try 
+                        {
+                            storedProcessRequestFiloMetaDataItemOfContentStyles = storedProcessRequestFiloMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value.baseDIInstructions.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0]?.StyleFiles;
+
+                            if(storedProcessRequestFiloMetaDataItemOfContentStyles != null && storedProcessRequestFiloMetaDataItemOfContentStyles != undefined){
+
+                            }
+                            else
+                            {
+                                throw new Error("converting file list from css files");
+                            }
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting file list from css files")
+                        }
+
+                        //#endregion
+
+                        //#region 2. PARSE file paths from html files (images, videos, etc)
+
+                        try 
+                        {
+                            storedProcessRequestFiloMetaDataItemOfContentHtml= storedProcessRequestFiloMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value?.baseDIInstructions?.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_3_clientInformationHTMLContentDetails?.value[0];
+
+                            if(storedProcessRequestFiloMetaDataItemOfContentHtml != null && storedProcessRequestFiloMetaDataItemOfContentHtml != undefined){
+
+                            }
+                            else
+                            {
+                                throw new Error("converting file list from html files");
+                            }
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting file list from html files")
+                        }                  
+
+                        //#endregion                        
+                    })                   
+                } 
+                catch (storedProcessRequestMistake) {
+                    if(!storedProcessRequestMistake.message)
+                    {
+                        throw new Error("converting file list");
+                    }
+                    
+                    throw storedProcessRequestMistake;
+                }
+
+                //#endregion
+            } 
+            catch (storedProcessRequestMistake)
+            {
+                //#region EDGE CASE - USE developer logger
+
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED copying static files to server");                  
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw new Error("CONVERSION request failed " + storedProcessRequestMistake.message);
+
+                //#endregion
+            }
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
             //#endregion
 
             //#region 3. OUTPUT
 
             //#endregion
-
-
-            //#region VARIABLES
-
-            //#endregion
-
-            //#region VALUES
-
-
-            //#endregion
-
-            //#region INPUTS
-
-            try
-            {
-                storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-
-                //0. CONTROLLERS
-          
-                //1. INPUTS
-
-                //2. PROCESS
-                storedInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestSettings);
-                storedInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
-
-                storedInputs.Parameters.setValue("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
-                storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterKey", "searchkey");
-                storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironment");
-
-                //3. OUTPUTS
-                storedInputs.Parameters.setValue("parameterOutputResponseAsArray", false);
-
-                let fileMetaData: any = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
-
-                if (fileMetaData == undefined || fileMetaData == null) {
-                    storedInputs.Parameters.remove("parameterProcessRequestDataToFilterValue");
-                    storedInputs.Parameters.setValue("parameterProcessRequestDataToFilterValue", "Default_SetupItem_SetBuyer_ProductLaunching_Software_SenseEnvironmentt");
-
-                    fileMetaData = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.BaseDI.Professional.Programming.Extensions_0.Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
-                }
-
-                var HandleDefaultsItemEnvironmentServerMetaDataPaths = fileMetaData.value.SetupItemEnvironmentServer.SetupItemEnvironmentServerMetaDataPaths;
-
-                HandleDefaultsItemEnvironmentServerMetaDataPaths.forEach(metaDataPaths => {
-                    let rawdata = fs.readFileSync(metaDataPaths.MetaDataLocalPath);
-                    let obj = JSON.parse(rawdata);
-                    let contentItems = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
-
-                    let stylingItemFiles = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
-
-                    stylingItemFiles.forEach(file => {
-                        file.StyleFileUseProperties.forEach(property => {
-                            property.properties.forEach(prop => {
-                                prop.properyValues.forEach(element => {
-                                    if (element.includes('url')) {
-                                        var url = element.replace(/(^.*\(|\).*$)/g, '');
-                                        let filepath = path.resolve(decodeURI(url))
-                                        if (fs.existsSync(filepath)) {
-                                            var fileDirName = path.dirname(filepath)
-                                            var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\`, '')
-                                            let dest = `wwwroot/Client/Images/${shortDirName}`
-
-                                            fs.mkdir(dest, { recursive: true }, (err) => {
-                                                if (err) throw err;
-                                                else {
-                                                    fs.copyFile(filepath, `${dest}/${path.basename(filepath)}`, (err) => {
-                                                        if (err) throw err;
-                                                    });
-                                                }
-                                            });
-
-                                        } else {
-                                            console.log('File Not Found: ' + filepath)
-                                        }
-                                    }
-                                });
-                            });
-                        });
-                    });
-
-                    Object.keys(contentItems).forEach(function (key) {
-                        var val = contentItems[key];
-                        let HTMLContentItems = val.value.HTMLContentItems;
-                        HTMLContentItems.forEach(item => {
-                            var attributes = item.Attributes;
-                            attributes.forEach(att => {
-                                if (att.src != undefined) {
-                                    let filepath = path.resolve(decodeURI(att.src))
-                                    // console.log(att.src)
-                                    if (fs.existsSync(filepath)) {
-                                        var fileDirName = path.dirname(filepath)
-                                        var shortDirName = fileDirName.replace(`C:\\Programming\\999.0.3.BaseDI.Professional.QuickStart.Templates\\`, '')
-                                        let dest = `wwwroot/Client/Images/${shortDirName}`
-
-                                        fs.mkdir(dest, { recursive: true }, (err) => {
-                                            if (err) {
-                                                let a = "";
-                                            }
-                                            else {
-                                                fs.copyFile(filepath, `${dest}/${path.basename(filepath)}`, (err) => {
-                                                    if (err) {
-                                                        let a = "";
-                                                    }
-                                                });
-                                            }
-                                        });
-
-                                    } else {
-                                        console.log('File Not Found: ' + filepath)
-                                    }
-                                }
-                            });
-                        });
-                    });
-                    // contentItems.forEach(contentItem => {
-                    //     console.log(contentItem)
-                    // });
-                });
-            }
-            catch (e) {
-                console.log(e);
-            }
-
-
-            //#endregion
-
-            //#region OUTPUT
-
-            //#endregion
-
 
         }
 

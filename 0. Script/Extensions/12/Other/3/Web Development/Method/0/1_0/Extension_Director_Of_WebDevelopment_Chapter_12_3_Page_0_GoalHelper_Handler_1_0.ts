@@ -453,7 +453,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             try {
                 //#region IDEAL CASE - USE baseDI converter
 
-                //#region 1. CONVERT html container
+                //#region A. CONVERT html container
 
                 try {
                     const ExecuteConversionRequest = async (): Promise<string> => {
@@ -504,7 +504,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 }
                 //#endregion
 
-                //#region 2. CONVERT html rows
+                //#region B. CONVERT html rows
 
                 try {
                     const ExecuteConversionRequest = async (): Promise<string> => {
@@ -558,7 +558,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#endregion
 
-                //#region 3. CONVERT html columns
+                //#region C. CONVERT html columns
 
                 try {
                     const ExecuteConversionRequest = async (): Promise<string> => {
@@ -611,7 +611,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#endregion
 
-                //#region 4. CONVERT html content
+                //#region D. CONVERT html content
 
                 try {
                     const ExecuteConversionRequest = async (): Promise<string> => {
@@ -665,7 +665,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#endregion
 
-                //#region 5. CONVERT html inline styles
+                //#region E. CONVERT html inline styles
 
                 try {
                     const ExecuteConversionRequest = async (): Promise<string> => {
@@ -714,7 +714,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#endregion
 
-                //#region 6. CONVERT html inline scripts
+                //#region F. CONVERT html inline scripts
 
                 //TODO
                 try {
@@ -728,7 +728,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#endregion
 
-                //#region 7. CONVERT html inline metadata
+                //#region G. CONVERT html inline metadata
 
                 //TODO
                 try {
@@ -742,7 +742,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#endregion
 
-                //#region 8. OUTPUT html string
+                //#region H. OUTPUT html string
 
                 try {
                     const ExecuteOutputResponse = async (): Promise<string> => {
@@ -776,7 +776,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#endregion
 
-                //#region 9. STORE html string
+                //#region I. STORE html string
 
                 try {
                     const ExecuteStorageRequest = async () => {
