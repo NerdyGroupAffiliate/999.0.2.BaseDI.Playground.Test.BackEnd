@@ -319,6 +319,8 @@ describe('Web Server Setup Test', () => {
 
         //2. PROCESS
         storedInputs.Parameters.setValue("parameterProcessRequestFileRootPath", "");
+        storedInputs.Parameters.setValue("parameterProcessRequestFileRootPathCopyTo", "");
+        
         
         //3. OUTPUTS
 

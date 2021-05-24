@@ -14,7 +14,7 @@ var PassportFacebookStrategy = null;
 import * as Collections from 'typescript-collections';
 
 var importedNodeJSFileManager = require('fs');
-var path = require('path');
+var importedNodeJSFilePath = require('path');
 
 if (process.env.APP_ENV == "SERVER") {
 
@@ -640,7 +640,12 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestFileRootPath")) {
                         storedOutputResponseMessage += "***parameterProcessRequestFileRootPath*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
-                    }                    
+                    }   
+                    
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestFileRootPathCopyTo")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestFileRootPathCopyTo*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }                       
 
                     //3. OUTPUT
 
@@ -741,12 +746,17 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             //#region DEFINE process variables
             
             let storedProcessRequestFileMetaDataItemOfContent: string = "";
-            let storedProcessRequestFileMetaDataItemOfContentHtml: object = null;
+            let storedProcessRequestFileMetaDataItemOfContentHtml: any = null;
             let storedProcessRequestFileMetaDataItemOfContentStyles: Array<object> = null;
             let storedProcessRequestFileMetaDataList: Array<string> = [];
             let storedProcessRequestFileMetaDataListOfContent: any = [];
+            let storedProcessRequestFileMetaDataListOfContentHtml: any = null;
+            let storedProcessRequestFileMetaDataListOfContentStyles: any = null;
 
-            let storedProcessRequestFileList: Array<string> = [];
+            let storedProcessRequestFileCopyFrom: string = "";
+            let storedProcessRequestFileCopyTo: string = "";
+
+            let storedProcessRequestFileMediaList: Array<string> = [];
 
             //#endregion
 
@@ -829,8 +839,9 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#region MEMORIZE process file details
 
-            let storedProcessRequestFileRootPath: string = (parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPath") != "") ? parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPath") : "C://Programming//999.0.2.BaseDI.Playground.Test.BackEnd";
-
+            let storedProcessRequestFileRootPath: string = (parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPath") != "") ? parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPath") : "C://Programming//999.0.3.BaseDI.QuickStart.Templates";
+            let storedProcessRequestFileRootPathCopyTo: string = (parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPathCopyTo") != "") ? parameterInputs.Parameters.getValue("parameterProcessRequestFileRootPathCopyTo") : "C://Programming//999.0.2.BaseDI.Playground.Test.BackEnd";
+            
             //#endregion
             
 
@@ -855,7 +866,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             try 
             {
-                //#region A. CONVERT to file metadata
+                //#region A. CONVERT json to array of json metadata files 
 
                 try 
                 {                        
@@ -888,20 +899,20 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                             if(storedOutputResponse != null && storedOutputResponse != undefined && storedOutputResponse.length > 0) {
                                 storedOutputResponse.forEach(storedProcessRequestFileInfoItem => {
-                                    if(storedProcessRequestFileInfoItem != null && storedProcessRequestFileInfoItem != undefined && storedProcessRequestFileInfoItem != "") {
-                                        //TODO: VALIDATE if string is actually a valid path.
+                                    if(storedProcessRequestFileInfoItem != null && storedProcessRequestFileInfoItem != undefined && storedProcessRequestFileInfoItem != "") 
+                                    {
                                         storedProcessRequestFileMetaDataList.push(storedProcessRequestFileInfoItem.MetaDataLocalPath);
                                     }                                    
                                 })    
                             }
                             else
                             {
-                                throw new Error("converting file metadata");
+                                throw new Error("converting json to array of metadata files");
                             }
                         }
                         else
                         {                            
-                            throw new Error("converting file metadata");
+                            throw new Error("converting json to array of metadata files");
                         }
 
                         return storedProcessRequestFileMetaDataList;
@@ -915,7 +926,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                 catch (storedProcessRequestMistake) {
                     if(!storedProcessRequestMistake.message)
                     {
-                        throw new Error("converting file information");
+                        throw new Error("converting json to array of metadata files");
                     }
                     
                     throw storedProcessRequestMistake;
@@ -923,7 +934,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                 //#endregion
             
-                //#region B. STORE file metadata content
+                //#region B. STORE json metadata file content to array
 
                 try 
                 {
@@ -936,7 +947,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                     //               Array[2] = "{ "Attributes":[ { "src": "{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg" } ]"
                     //                          "{ "StyleFile": [ { "StyleFileUseProperties": [{ "properties": { "properyValues": [ "url({RootPath}/3.%20Client/Web/4.%20Experience/5/Sight/3/Generate%20Optin/1/List%20Building/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-ButtonOptin_Touch-AJC_611X37_Desktop-CMS-3_1_1_0.png"] } }] }] "}"
                     
-                    const ExecuteStorageRequest = async() : Promise<any> => {
+                    const ExcuteStorageRequest = async() : Promise<any> => {
                         storedProcessRequestFileMetaDataList.map(storedProcessRequestFileMetaDataItem => {
                             storedProcessRequestFileMetaDataItemOfContent = importedNodeJSFileManager.readFileSync(storedProcessRequestFileMetaDataItem);
     
@@ -946,12 +957,12 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                         return storedProcessRequestFileMetaDataListOfContent;
                     }   
                     
-                    storedProcessRequestFileMetaDataListOfContent = await Promise.resolve(ExecuteStorageRequest());
+                    storedProcessRequestFileMetaDataListOfContent = await Promise.resolve(ExcuteStorageRequest());
                 } 
                 catch (storedProcessRequestMistake) {
                     if(!storedProcessRequestMistake.message)
                     {
-                        throw new Error("storing file meta data");
+                        throw new Error("storing array of file meta data");
                     }
                     
                     throw storedProcessRequestMistake;
@@ -959,73 +970,178 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                 //#endregion
 
-                //#region C. CONVERT to file list
+                //#region C. CONVERT json metadata content to array of media files (audio, documents, images, videos, etc)
                 try 
                 {
-                    //OUPUT EXAMPLE: Array[0] = "{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg"
-                    //               Array[1] = "{RootPath}/3.%20Client/Web/4.%20Experience/7/Awareness/1/Generate%20Brand%20Awarness/1/Advertising/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Owner_Aware-AJC_463X125_Desktop-CMS-1_1_1_0.png"
-                    //               Array[2] = "{RootPath}/3.%20Client/Web/4.%20Experience/5/Sight/3/Generate%20Optin/1/List%20Building/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-ButtonOptin_Touch-AJC_611X37_Desktop-CMS-3_1_1_0.png"
-                    storedProcessRequestFileMetaDataListOfContent.map(storedProcessRequestFileMetaDataItemOfContent => 
+                    const ExecuteConversionRequest = async() : Promise<any> => 
                     {
-                        //#region 1. PARSE file paths from css files (images, videos, etc)
-
-                        try 
+                        //OUPUT EXAMPLE: Array[0] = "{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg"
+                        //               Array[1] = "{RootPath}/3.%20Client/Web/4.%20Experience/7/Awareness/1/Generate%20Brand%20Awarness/1/Advertising/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Owner_Aware-AJC_463X125_Desktop-CMS-1_1_1_0.png"
+                        //               Array[2] = "{RootPath}/3.%20Client/Web/4.%20Experience/5/Sight/3/Generate%20Optin/1/List%20Building/Assets/1/1_0/Experience_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-ButtonOptin_Touch-AJC_611X37_Desktop-CMS-3_1_1_0.png"
+                        storedProcessRequestFileMetaDataListOfContent.map(storedProcessRequestFileMetaDataItemOfContent => 
                         {
-                            storedProcessRequestFileMetaDataItemOfContentStyles = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value.baseDIInstructions.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0]?.StyleFiles;
-
-                            if(storedProcessRequestFileMetaDataItemOfContentStyles != null && storedProcessRequestFileMetaDataItemOfContentStyles != undefined){
-                                //OUTPUT EXAMPLE: "StyleFiles": [{}]
-                                storedProcessRequestFileMetaDataItemOfContentStyles.map(storedProcessRequestFileMetaDataItemOfContentStyle => {
-                                    //OUTPUT EXAMPLE: "StyleFiles": [{"StyleFileUseProperties":[]]}]
-                                    (storedProcessRequestFileMetaDataItemOfContentStyle as any)?.StyleFileUseProperties.map(storedProcessRequestStyleFilePropertyList => {
-                                        //OUTPUT EXAMPLE: "StyleFiles": [{"StyleFileUseProperties":[{"properties":[]}]]}]
-                                        (storedProcessRequestStyleFilePropertyList as any)?.properties.map(storedProcessRequestStyleFilePropertyItem => {
-
+                            //#region 1. PARSE file paths from css files (images, videos, etc)
+    
+                            try 
+                            {
+                                storedProcessRequestFileMetaDataListOfContentStyles = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value.baseDIInstructions.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0]?.StyleFiles;
+    
+                                if(storedProcessRequestFileMetaDataListOfContentStyles != null && storedProcessRequestFileMetaDataListOfContentStyles != undefined){
+                                    //OUTPUT EXAMPLE: "StyleFiles": [{}]
+                                    storedProcessRequestFileMetaDataListOfContentStyles.map(storedProcessRequestFileMetaDataItemOfContentStyle => {
+                                        //OUTPUT EXAMPLE: "StyleFiles": [{"StyleFileUseProperties":[]]}]
+                                        (storedProcessRequestFileMetaDataItemOfContentStyle as any)?.StyleFileUseProperties.map(storedProcessRequestStyleFilePropertyList => {
+                                            //OUTPUT EXAMPLE: "StyleFiles": [{"StyleFileUseProperties":[{"properties":[]}]]}]
+                                            (storedProcessRequestStyleFilePropertyList as any)?.properties.map(storedProcessRequestStyleFilePropertyItem => {
+                                                //OUTPUT EXAMPLE: "StyleFiles": [{"StyleFileUseProperties":[{"properties":[{"properyValues":[]}]}]]}]
+                                                (storedProcessRequestStyleFilePropertyItem as any)?.properyValues.map(storedProcessRequestStyleFilePropertyItemValue => {
+                                                    //OUTPUT EXAMPLE: "StyleFiles": [{"StyleFileUseProperties":[{"properties":[{"properyValues":["url({RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg)"]}]}]]}]
+                                                    if(storedProcessRequestStyleFilePropertyItemValue?.includes("url")) //CSS url property
+                                                    {
+                                                        //OUTPUT EXAMPLE: {RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
+                                                        storedProcessRequestStyleFilePropertyItemValue = storedProcessRequestStyleFilePropertyItemValue.replace(/(^.*\(|\).*$)/g, '');
+    
+                                                        //OUTPUT EXAMPLE: C:/Programming/999.0.3.BaseDI.QuickStart.Templates/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
+                                                        storedProcessRequestStyleFilePropertyItemValue = storedProcessRequestStyleFilePropertyItemValue.replace("{RootPath}", storedProcessRequestFileRootPath);
+                                                        
+                                                        //OUTPUT EXAMPLE: C:\Programming\999.0.3.BaseDI.QuickStart.Templates\3. Client\Web\4. Experience\5\Sight\1\Generate Brand Awareness\1\Advertising\Assets\1\1_0\Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
+                                                        //storedProcessRequestStyleFilePropertyItemValue = importedNodeJSFilePath.resolve(decodeURI(storedProcessRequestStyleFilePropertyItemValue));
+    
+                                                        storedProcessRequestFileMediaList.push(storedProcessRequestStyleFilePropertyItemValue);
+                                                    }
+                                                })
+                                            })
+                                        })
+                                    });
+                                }
+                                else
+                                {
+                                    throw new Error("converting file list from css files");
+                                }
+                            } 
+                            catch (storedProcessRequestMistake) {
+                                throw new Error("converting file list from css files")
+                            }
+    
+                            //#endregion
+    
+                            //#region 2. PARSE file paths from html files (images, videos, etc)
+    
+                            try 
+                            {
+                                storedProcessRequestFileMetaDataListOfContentHtml = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value?.baseDIInstructions?.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_3_clientInformationHTMLContentDetails?.value[0];
+    
+                                if(storedProcessRequestFileMetaDataListOfContentHtml != null && storedProcessRequestFileMetaDataListOfContentHtml != undefined){
+                                    Object.keys(storedProcessRequestFileMetaDataListOfContentHtml).map(storedProcessRequestJSONkey => {
+                                        //OUTPUT EXAMPLE: "HTMLContentItems": [{}]
+                                        storedProcessRequestFileMetaDataItemOfContentHtml = storedProcessRequestFileMetaDataListOfContentHtml[storedProcessRequestJSONkey]?.value?.HTMLContentItems;
+    
+                                        storedProcessRequestFileMetaDataItemOfContentHtml.map(storedProcessRequestFileMetaDataItemOfContentHtmlAttributes => {
+                                            //OUTPUT EXAMPLE: "HTMLContentItems": [{"Attributes":[{}]}]
+                                            storedProcessRequestFileMetaDataItemOfContentHtmlAttributes?.Attributes.map(storedProcessRequestFileMetaDataItemOfContentHtmlAttribute => {
+                                                //OUTPUT EXAMPLE: "HTMLContentItems": [{"Attributes":[{ "src":"{RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg"}]}]
+                                                if(storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src != null && storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src != undefined){
+                                                    
+                                                   //OUTPUT EXAMPLE: {RootPath}/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
+                                                   storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src = storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src.replace(/(^.*\(|\).*$)/g, '');
+    
+                                                   //OUTPUT EXAMPLE: C:/Programming/999.0.3.BaseDI.QuickStart.Templates/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
+                                                   storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src = storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src.replace("{RootPath}", storedProcessRequestFileRootPath);
+                                                   
+                                                   //OUTPUT EXAMPLE: C:\Programming\999.0.3.BaseDI.QuickStart.Templates\3. Client\Web\4. Experience\5\Sight\1\Generate Brand Awareness\1\Advertising\Assets\1\1_0\Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
+                                                   //storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src = importedNodeJSFilePath.resolve(decodeURI(storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src));
+                                                    
+                                                   storedProcessRequestFileMediaList.push(storedProcessRequestFileMetaDataItemOfContentHtmlAttribute.src);
+                                                }
+                                            })
                                         })
                                     })
-                                });
-                            }
-                            else
-                            {
-                                throw new Error("converting file list from css files");
-                            }
-                        } 
-                        catch (storedProcessRequestMistake) {
-                            throw new Error("converting file list from css files")
-                        }
+                                }
+                                else
+                                {
+                                    throw new Error("converting file list from html files");
+                                }
+                            } 
+                            catch (storedProcessRequestMistake) {
+                                throw new Error("converting file list from html files")
+                            }                  
+    
+                            //#endregion                        
+                        });
+                        
+                        return storedProcessRequestFileMediaList;
+                    }
 
-                        //#endregion
-
-                        //#region 2. PARSE file paths from html files (images, videos, etc)
-
-                        try 
-                        {
-                            storedProcessRequestFileMetaDataItemOfContentHtml= storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value?.baseDIInstructions?.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_3_clientInformationHTMLContentDetails?.value[0];
-
-                            if(storedProcessRequestFileMetaDataItemOfContentHtml != null && storedProcessRequestFileMetaDataItemOfContentHtml != undefined){
-
-                            }
-                            else
-                            {
-                                throw new Error("converting file list from html files");
-                            }
-                        } 
-                        catch (storedProcessRequestMistake) {
-                            throw new Error("converting file list from html files")
-                        }                  
-
-                        //#endregion                        
-                    })                   
+                    storedProcessRequestFileMediaList = await Promise.resolve(ExecuteConversionRequest());                 
                 } 
                 catch (storedProcessRequestMistake) {
                     if(!storedProcessRequestMistake.message)
                     {
-                        throw new Error("converting file list");
+                        throw new Error("converting json to array of files");
                     }
                     
                     throw storedProcessRequestMistake;
                 }
 
+                //#endregion
+            
+                //#region D. TRANSPORT media files to specified directory
+                try
+                {
+                    const ExecuteTransportRequest = async() : Promise<any> => {
+                        //OUTPUT EXAMPLE: C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\
+                        //storedProcessRequestFileRootPath = storedProcessRequestFileRootPath.replace("//", "\\");
+                        //storedProcessRequestFileRootPath = storedProcessRequestFileRootPath.replace("//", "\\");
+
+                        //OUTPUT EXAMPLE: C:\\Programming\\999.0.2.BaseDI.Playground.Test.BackEnd\
+                        //storedProcessRequestFileRootPathCopyTo = storedProcessRequestFileRootPathCopyTo.replace("//", "\\");
+                        //storedProcessRequestFileRootPathCopyTo = storedProcessRequestFileRootPathCopyTo.replace("//", "\\");
+                      
+                        storedProcessRequestFileMediaList.map(storedProcessRequestFileMediaItem => 
+                        {
+                            //OUTPUT EXAMPLE: C:/Programming/999.0.3.BaseDI.QuickStart.Templates/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
+                            storedProcessRequestFileCopyFrom = storedProcessRequestFileMediaItem;
+
+                            //OUTPUT EXAMPLE: C:/Programming/999.0.2.BaseDI.Playground.Test.BackEnd/wwwroot/client/images/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
+                            storedProcessRequestFileCopyTo = storedProcessRequestFileMediaItem.replace(storedProcessRequestFileRootPath, storedProcessRequestFileRootPathCopyTo + "//wwwroot//Client//Images//");
+                            
+                            if(importedNodeJSFileManager.existsSync(importedNodeJSFilePath.resolve(decodeURI(storedProcessRequestFileCopyFrom)))) 
+                            {
+                                if(!importedNodeJSFileManager.existsSync(importedNodeJSFilePath.dirname(storedProcessRequestFileCopyTo)))
+                                {
+                                    try 
+                                    {
+                                        importedNodeJSFileManager.mkdirSync(importedNodeJSFilePath.dirname(decodeURI(storedProcessRequestFileCopyTo)), { recursive: true }); 
+                                    } 
+                                    catch (storedProcessRequestMistake) {
+                                        throw new Error("canoot create directory " + importedNodeJSFilePath.dirname(storedProcessRequestFileCopyTo));
+                                    }
+                                }
+                                
+                                try 
+                                {
+                                    storedProcessRequestFileCopyFrom = importedNodeJSFilePath.resolve(decodeURI(storedProcessRequestFileCopyFrom));
+                                    storedProcessRequestFileCopyTo= importedNodeJSFilePath.resolve(decodeURI(storedProcessRequestFileCopyTo));
+
+                                    importedNodeJSFileManager.copyFile(storedProcessRequestFileCopyFrom, storedProcessRequestFileCopyTo, (storedProcessRequestMistake) => {throw storedProcessRequestMistake});
+                                } 
+                                catch (storedProcessRequestMistake) {
+                                    throw new Error("canoot copy file " + storedProcessRequestFileCopyFrom);
+                                }                             
+                            }                            
+                        })
+                    }
+
+                    await Promise.resolve(ExecuteTransportRequest());
+                } 
+                catch (storedProcessRequestMistake) {
+                    if(!storedProcessRequestMistake.message)
+                    {
+                        throw new Error("transporting media files");
+                    }
+                    
+                    throw storedProcessRequestMistake;
+                }
                 //#endregion
             } 
             catch (storedProcessRequestMistake)
@@ -1069,6 +1185,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
             //#endregion
 
             //#region 3. OUTPUT
+
+            storedProcessRequestFileMediaList = storedProcessRequestFileMediaList;
 
             //#endregion
 

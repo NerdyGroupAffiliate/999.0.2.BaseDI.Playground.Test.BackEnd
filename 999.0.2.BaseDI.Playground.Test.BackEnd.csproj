@@ -11,6 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Client\**" />
+    <Content Remove="wwwroot\Client\**" />
+    <EmbeddedResource Remove="wwwroot\Client\**" />
+    <None Remove="wwwroot\Client\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="9. Organizing\MRichardson001\App.razor" />
     <Content Remove="9. Organizing\MRichardson001\Pages\Counter.razor" />
     <Content Remove="9. Organizing\MRichardson001\Pages\Error.razor" />
