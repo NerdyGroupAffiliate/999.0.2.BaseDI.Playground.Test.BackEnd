@@ -1088,15 +1088,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                 //#region D. TRANSPORT media files to specified directory
                 try
                 {
-                    const ExecuteTransportRequest = async() : Promise<any> => {
-                        //OUTPUT EXAMPLE: C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\
-                        //storedProcessRequestFileRootPath = storedProcessRequestFileRootPath.replace("//", "\\");
-                        //storedProcessRequestFileRootPath = storedProcessRequestFileRootPath.replace("//", "\\");
-
-                        //OUTPUT EXAMPLE: C:\\Programming\\999.0.2.BaseDI.Playground.Test.BackEnd\
-                        //storedProcessRequestFileRootPathCopyTo = storedProcessRequestFileRootPathCopyTo.replace("//", "\\");
-                        //storedProcessRequestFileRootPathCopyTo = storedProcessRequestFileRootPathCopyTo.replace("//", "\\");
-                      
+                    const ExecuteTransportRequest = async() : Promise<any> => {                     
                         storedProcessRequestFileMediaList.map(storedProcessRequestFileMediaItem => 
                         {
                             //OUTPUT EXAMPLE: C:/Programming/999.0.3.BaseDI.QuickStart.Templates/3.%20Client/Web/3.%20Setting/5/Ecommerce/2/Generate%20Brand%20Trust/1/Friendship/Assets/1/1_0/Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC_1920X1080_Desktop-CMS-2_1_1_0.jpg
