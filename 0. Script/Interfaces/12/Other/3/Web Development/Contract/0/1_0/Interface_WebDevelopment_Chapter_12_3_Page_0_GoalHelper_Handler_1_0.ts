@@ -1,78 +1,61 @@
-﻿declare module namespace {
+﻿module Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0 {
 
     //#region JSON to HTML Interfaces
 
-    export interface Attribute {
-        id: string;
+    export interface HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML {
+        searchkey: string;
+        type: string;
+        value: HtmlSections[];
     }
 
-    export interface FunctionParameter {
-        parameterName: string;
-        parameterTypeScriptDataType: string;
-        parameterDefaultValue: string;
+    export interface HtmlSections {
+        _2_2_2_3_1_clientInformationHTMLContentItem: HtmlSection; //Container
+        _2_2_2_3_2_clientInformationHTMLContentItem: HtmlSection; //Rows
+        _2_2_2_3_3_clientInformationHTMLContentItem: HtmlSection; //Columns
+        _2_2_2_3_4_clientInformationHTMLContentItem: HtmlSection; //Content
     }
 
-    export interface Event {
-        functionsEnabled: string;
-        functionEvent: string;
-        functionName: string;
-        functionParameters: FunctionParameter[];
+    export interface HtmlSection {
+        searchkey: string;
+        type: string;
+        value: HtmlSectionDetails;
     }
 
-    export interface HTMLContentItem {
+    export interface HtmlSectionDetails {
+        HTMLContentItemRowID: string;
+        HTMLContentItems: HtmlSectionDetail[];
+    }
+
+    export interface HtmlSectionDetail {
         Notes: string;
         Tag: string;
-        Attributes: Attribute[];
+        Attributes: HtmlAttribute[];
         Value: string;
-        Events: Event[];
+        Events: HtmlFunctionEvents[];
         ParentHTMLContentItemAttributeID: string;
         ChildHTMLContentDetails: any[];
         ChildHTMLContentFlowDirection: string;
     }
 
-    export interface Value {
-        HTMLContentItemRowID: string;
-        HTMLContentItems: HTMLContentItem[];
+    export interface HtmlAttribute {
+
     }
 
-    export interface _2_2_2_3_1_clientInformationHTMLContentItem {
-        searchkey: string;
-        type: string;
-        value: Value;
+    export interface HtmlFunctionParameter {
+        parameterName: string;
+        parameterTypeScriptDataType: string;
+        parameterDefaultValue: string;
     }
 
-    export interface _2_2_2_3_2_clientInformationHTMLContentItem {
-        searchkey: string;
-        type: string;
-        value: Value;
+    export interface HtmlFunctionEvents {
+        functionsEnabled?: string;
+        functionEvent?: string;
+        functionName?: string;
+        functionParameters?: HtmlFunctionParameter[];
     }
-
-    export interface _2_2_2_3_3_clientInformationHTMLContentItem {
-        searchkey: string;
-        type: string;
-        value: Value;
-    }
-
-    export interface _2_2_2_3_4_clientInformationHTMLContentItem {
-        searchkey: string;
-        type: string;
-        value: Value;
-    }
-
-    export interface Value2 {
-        _2_2_2_3_1_clientInformationHTMLContentItem: _2_2_2_3_1_clientInformationHTMLContentItem;
-        _2_2_2_3_2_clientInformationHTMLContentItem: _2_2_2_3_2_clientInformationHTMLContentItem;
-        _2_2_2_3_3_clientInformationHTMLContentItem: _2_2_2_3_3_clientInformationHTMLContentItem;
-        _2_2_2_3_4_clientInformationHTMLContentItem: _2_2_2_3_4_clientInformationHTMLContentItem;
-    }
-
-    export interface _2_2_2_3_clientInformationHTMLContentDetails {
-        searchkey: string;
-        type: string;
-        value: Value2[];
-    }
-
 
     //#endregion
 }
+
+export { Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0 as IWebDevelopment_12_3 }
 

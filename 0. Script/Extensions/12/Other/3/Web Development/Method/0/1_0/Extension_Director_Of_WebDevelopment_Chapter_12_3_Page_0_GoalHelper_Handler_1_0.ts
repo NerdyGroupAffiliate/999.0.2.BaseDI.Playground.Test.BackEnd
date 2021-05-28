@@ -6,13 +6,14 @@
 
 //#region BaseDI
 
-import { release } from "process";
-import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 
+import * as aClass_Programming_ScriptAction_12_2_1_0 from "../../../../../../../../../0. Script/Abstracts/12/Other/2/Programming/Script/1/1_0/aClass_Programming_ScriptAction_12_2_1_0";
 
 import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/3/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0";
 import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
 import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
+
+import * as Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../../0. Script/Interfaces/12/Other/3/Web Development/Contract/0/1_0/Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0"
 
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
@@ -287,10 +288,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            let storedInputRequestHtmlContainerJSON: any = "";
-            let storedInputRequestHtmlRowsJSON: any = "";
-            let storedInputRequestHtmlColumnsJSON: any = "";
-            let storedInputRequestHtmlContentJSON: any = "";
+            let storedInputRequestHtmlContainerJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection;
+            let storedInputRequestHtmlRowsJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection;
+            let storedInputRequestHtmlColumnsJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection;
+            let storedInputRequestHtmlContentJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection;
 
             let storedInputRequestHtmlStylesFiltered: any = "";
             let storedInputRequestHtmlStylesJSON: any = "";
@@ -455,7 +456,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region A. CONVERT html container
 
-                try {
+                try
+                 {
                     const ExecuteConversionRequest = async (): Promise<string> => {
                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 

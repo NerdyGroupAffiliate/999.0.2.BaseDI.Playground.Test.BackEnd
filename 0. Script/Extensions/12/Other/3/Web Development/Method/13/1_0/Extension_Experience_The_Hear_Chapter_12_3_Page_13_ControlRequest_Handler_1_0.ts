@@ -1032,6 +1032,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
                                 storedProcessRequestFileMetaDataListOfContentHtml = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value?.baseDIInstructions?.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_3_clientInformationHTMLContentDetails?.value[0];
     
                                 if(storedProcessRequestFileMetaDataListOfContentHtml != null && storedProcessRequestFileMetaDataListOfContentHtml != undefined){
+                                    //OUTPUT EXAMPLE: storedProcessRequestJSONkey = "_2_2_2_3_1_clientInformationHTMLContentItem"
+                                    //                storedProcessRequestJSONkey =_2_2_2_3_2_clientInformationHTMLContentItem
+                                    //                storedProcessRequestJSONkey =_2_2_2_3_3_clientInformationHTMLContentItem
+                                    //                storedProcessRequestJSONkey =_2_2_2_3_4_clientInformationHTMLContentItem
                                     Object.keys(storedProcessRequestFileMetaDataListOfContentHtml).map(storedProcessRequestJSONkey => {
                                         //OUTPUT EXAMPLE: "HTMLContentItems": [{}]
                                         storedProcessRequestFileMetaDataItemOfContentHtml = storedProcessRequestFileMetaDataListOfContentHtml[storedProcessRequestJSONkey]?.value?.HTMLContentItems;
