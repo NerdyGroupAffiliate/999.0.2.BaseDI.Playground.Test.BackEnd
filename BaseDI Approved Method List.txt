@@ -6,11 +6,11 @@ const ExecuteInputRequest = async () => {}
 
 //2. PROCESS 
 const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {}
-const ExecuteConversionRequest = async () => {}
-const ExecuteTransportRequest = async () => {}
-const ExecuteStorageRequest = async () => {}
-const ExecuteDisturbanceRequest = async () => {}
-const ExecuteSensorRequest = async () => {}
+const ExecuteConversionRequest = async () => {} //PARSE, FILTER, SORT, SEARCH, FIND
+const ExecuteTransportRequest = async () => {} //COPY, TRANSFER
+const ExecuteStorageRequest = async () => {} //CREATE, READ, UPDATE, DELETE
+const ExecuteDisturbanceRequest = async () => {}/ ERRORS
+const ExecuteSensorRequest = async () => {} //EVENTS
 
 //3. OUTPUT
 const ExecuteOutputResponse = async () => {}

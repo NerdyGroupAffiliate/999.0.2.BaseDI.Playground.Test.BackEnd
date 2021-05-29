@@ -451,7 +451,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region EXECUTE json to html conversion
 
-            try {
+            try
+            {
                 //#region IDEAL CASE - USE baseDI converter
 
                 //#region A. CONVERT html container
@@ -1561,7 +1562,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
 
-            let storedInputRequestHtmlContainerJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContainerJSON");
+            let storedInputRequestHtmlContainerJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContainerJSON");
 
             //#endregion
 
@@ -1984,7 +1985,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
 
-            let storedInputRequestHtmlRowsJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlRowsJSON");
+            let storedInputRequestHtmlRowsJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlRowsJSON");
 
             //#endregion
 
@@ -2406,7 +2407,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
 
-            let storedInputRequestHtmlColumnsJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlColumnsJSON");
+            let storedInputRequestHtmlColumnsJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlColumnsJSON");
 
             //#endregion
 
@@ -2837,8 +2838,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#endregion            
 
             //#region MEMORIZE input request html
-
-            let storedInputRequestHtmlContentJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContentJSON");            
+            
+            let storedInputRequestHtmlContentJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContentJSON");
 
             //#endregion
 
@@ -3013,7 +3014,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             //#endregion                                                            
         }
 
-        public static async Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<string> {
+        public static async Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<string>
+        {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters
@@ -3270,6 +3272,17 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestHtmlMediaQueryFeatures = [];
             let storedProcessRequestHtmlPropertyArray = [];
 
+            let storedProcessRequestCssGlobalStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssContainerStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssRowStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssColumnStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssContentStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
+
+            let storedProcessRequestCssOutputContentContainer: string = "";
+            let storedProcessRequestCssOutputContentBody: string = "";
+            let storedProcessRequestCssOutputContentList: Array<string> = [];
+            let storedProcessRequestCssOutputContentValid: boolean = false;
+            
             //#endregion
 
             //#region DEFINE output variables
@@ -3300,8 +3313,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
 
-            let storedInputRequestHtmlStylesJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON");          
-
+            let storedInputRequestHtmlStylesJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON");          
+            
             //#endregion
 
             //#endregion
@@ -3346,13 +3359,27 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#endregion
 
-            //#region MEMORIZE process html details
+            //#region MEMORIZE process css details
+            
+            let storedProcessRequestCssStyleFilesArray: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFile[] = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
 
-            let storedProcessRequestHtmlStyleFilePathLocal: string = storedInputRequestHtmlStylesJSON?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal;
-            let storedProcessRequestHtmlFilesArray: any = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
+            let storedProcessRequestCssStyleContainerPattern1: string = "#{styleID} {\n  {stylePropertiesKeyValues}\n}";
+            let storedProcessRequestCssStyleContainerPattern2: string = "#{styleID}:{styleSelector} {\n  {stylePropertiesKeyValues}\n}";
+            let storedProcessRequestCssStyleContainerPattern3: string = "#{styleID}:{styleSelector}(n) {\n  {stylePropertiesKeyValues}\n}";
+            let storedProcessRequestCssStyleContainerPattern4: string = "#{styleID}::{styleSelector} {\n  {stylePropertiesKeyValues}\n}";
 
-          
-            //#endregion                
+            let storedProcessRequestCssStyleCommentPattern1: string = "/* GENERAL LAYOUT */";
+            let storedProcessRequestCssStyleCommentPattern2: string = "/* CONTAINER */";
+            let storedProcessRequestCssStyleCommentPattern3: string = "/* ROWS */";
+            let storedProcessRequestCssStyleCommentPattern4: string = "/* COLUMNS */";
+            let storedProcessRequestCssStyleCommentPattern5: string = "/* CONTENT */";
+
+            let storedProcessRequestCssStyleContainerPattern5: string = "@media {styleMediaQueryNotOnly} {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}";
+            let storedProcessRequestCssStyleContainerPattern6: string = "@media {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}";
+
+            let storedProcessRequestCssStyleBodyPattern1: string = "  {stylePropertyKey}:{stylePropertyValue};\n";
+
+            //#endregion
 
             //#region MEMORIZE process storyline details
 
@@ -3379,7 +3406,181 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region EXECUTE json to html conversion
 
-            //#region IDEAL CASE - USE json metadata
+            try
+            {
+                //#region IDEAL CASE - USE json metadata
+
+                //#region A. CONVERT css sections
+                
+                try
+                {               
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        //OUTPUT EXAMPLE: storedProcessRequestHtmlFile = {
+                        //   "StyleFileName": "Style_Alignments_Setting_XXX",
+                        //   "StyleFileSupportedProperties": ["position", "top", "bottom", xxx],
+                        //   "StyleFileUseProperties": [
+                        //                               { 
+                        //                                   "attributeID": "#column_D-1-1 button", 
+                        //                                   "properties": [
+                        //                                                       {
+                        //                                                             "propertyName":"background",
+                        //                                                             "properyValues":[ "darkblue" ],
+                        //                                                       }
+                        //                                                 ],
+                        //                                   "IsMediaQuery": "true",
+                        //                                   "IsHtmlTag": "false",
+                        //                                   "MediaQueryResolutions": [
+                        //                                                               {
+                        //                                                                   "resolutions":["1600px"],
+                        //                                                                   "propertyName":"top",
+                        //                                                                   "properyValues":[ "330px" ]
+                        //                                                               }
+                        //                                                            ]
+                        //                               }
+                        //                             ]
+                        //}
+                        storedProcessRequestCssStyleFilesArray.map(storedProcessRequestHtmlFile => {
+                            storedProcessRequestHtmlFile.StyleFileUseProperties.map(storedProcessRequestStyleFileUseProperty => {
+                                //#region 1. CONVERT json to list of GLOBAL styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID == undefined ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID == null ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID == "")
+                                {
+                                    storedProcessRequestCssGlobalStyleList.push(storedProcessRequestStyleFileUseProperty);
+                                }
+                                //#endregion
+
+                                //#region 2. CONVERT json to list of CONTAINER styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID != null ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("CONTAINER_")) {
+                                    storedProcessRequestCssContainerStyleList.push(storedProcessRequestStyleFileUseProperty);
+                                }
+
+                                //#endregion
+
+                                //#region 3. CONVERT json to list of ROW styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID != null ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("ROW_")) {
+                                    storedProcessRequestCssRowStyleList.push(storedProcessRequestStyleFileUseProperty);
+                                }
+
+                                //#endregion
+
+                                //#region 4. CONVERT json to list of COLUMN styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID != null ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("COLUMN_")) {
+                                    storedProcessRequestCssColumnStyleList.push(storedProcessRequestStyleFileUseProperty);
+                                }
+
+                                //#endregion
+
+                                //#region 5. CONVERT json to list of CONTENT styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID != null ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("CONTENT_")) {
+                                    storedProcessRequestCssContentStyleList.push(storedProcessRequestStyleFileUseProperty);
+                                }
+
+                                //#endregion
+                            })
+                        })
+                    }
+
+                    await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting json to list of sections");
+                }
+
+                //#endregion
+
+                //#region B. CONVERT css section global
+
+                try
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        storedProcessRequestCssGlobalStyleList.map(storedProcessRequestCssGlobalStyleItem => {
+                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = body {\n  {stylePropertiesKeyValues}\n}
+                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern1.replace("#{styleID}", "body");
+                                                        
+                            storedProcessRequestCssGlobalStyleItem.properties.map(storedProcessRequestCssGlobalStyleItemProperty =>
+                            {
+                                if (storedProcessRequestCssGlobalStyleItemProperty.propertyName != undefined &&
+                                    storedProcessRequestCssGlobalStyleItemProperty.propertyName != null &&
+                                    storedProcessRequestCssGlobalStyleItemProperty.propertyName != "")
+                                {
+                                    storedProcessRequestCssGlobalStyleItemProperty.properyValues.map(storedProcessRequestCssGlobalStyleItemPropertyValue => {
+
+                                        if (!storedProcessRequestCssOutputContentValid) {
+                                            storedProcessRequestCssOutputContentValid = true;
+                                        }
+
+                                        storedProcessRequestCssOutputContentBody += storedProcessRequestCssStyleBodyPattern1.replace("{stylePropertyKey}:{stylePropertyValue}", storedProcessRequestCssGlobalStyleItemPropertyValue);
+                                    })
+                                }         
+                            })
+
+                            if (storedProcessRequestCssOutputContentValid = true)
+                            {
+                                storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+
+                                //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body {\n  overflow-y;hidden\nposition: absolute\n}
+                                storedProcessRequestCssOutputContentList.push(storedProcessRequestCssOutputContentContainer);
+
+                                storedProcessRequestCssOutputContentBody = "";
+                                storedProcessRequestCssOutputContentContainer = "";
+                                storedProcessRequestCssOutputContentValid = false;
+                            }
+                        })
+                    }
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting css section global");
+                }
+
+                //#endregion
+
+                //#endregion
+            }
+            catch (storedProcessRequestMistake) {
+                //#region EDGE CASE - USE developer logger
+
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to css");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw new Error("CONVERSION request failed " + storedProcessRequestMistake.message);
+
+                //#endregion
+            }
+
 
             const ExecuteConversionRequest = async (): Promise<string> => {
                 try {
@@ -3568,7 +3769,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             storedOutputResponseData = await ExecuteConversionRequest();
 
-            //#endregion
 
             //#endregion
 

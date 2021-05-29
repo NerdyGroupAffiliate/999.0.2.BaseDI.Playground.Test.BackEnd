@@ -33,7 +33,7 @@
         Value: string;
         Events: HtmlFunctionEvents[];
         ParentHTMLContentItemAttributeID: string;
-        ChildHTMLContentDetails: any[];
+        ChildHTMLContentDetails: HtmlSectionDetail[];
         ChildHTMLContentFlowDirection: string;
     }
 
@@ -52,6 +52,62 @@
         functionEvent?: string;
         functionName?: string;
         functionParameters?: HtmlFunctionParameter[];
+    }
+
+    //#endregion
+
+    //#region JSON to CSS Interfaces
+
+    export interface HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS {
+        searchkey: string;
+        type: string;
+        value: CSSSections[];
+    }
+
+    export interface CSSSections {
+        _2_2_2_4_1_clientInformationHTMLContentStylingItem: CSSSection;
+    }
+
+    export interface CSSSection {
+        searchkey: string;
+        type: string;
+        value: CssSectionDetails;
+    }
+
+    export interface CssSectionDetails {
+        HTMLContentStylingItemRowID: string;
+        HTMLContentStylingItemFiles: CssSectionDetail[];
+    }
+
+    export interface CssSectionDetail {
+        StyleFilePathLocal: string;
+        StyleFilePathRemote: string;
+        StyleFiles: CssStyleFile[];
+    }
+
+    export interface CssStyleFile {
+        StyleFileName: string;
+        StyleFileSupportedProperties: string[];
+        StyleFileUseProperties: CssStyleFileUseProperty[];
+    }
+
+    export interface CssStyleFileUseProperty {
+        attributeID: string;
+        properties: CssProperty[];
+        IsMediaQuery: string;
+        IsHtmlTag: string;
+        MediaQueryResolutions: CssMediaQueryResolution[];
+    }
+
+    export interface CssProperty {
+        propertyName: string;
+        properyValues: string[];
+    }
+
+    export interface CssMediaQueryResolution {
+        resolutions: string[];
+        propertyName: string;
+        properyValues: string[];
     }
 
     //#endregion
