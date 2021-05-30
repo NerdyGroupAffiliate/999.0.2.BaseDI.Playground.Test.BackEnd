@@ -11,6 +11,7 @@ const ExecuteTransportRequest = async () => {} //COPY, TRANSFER
 const ExecuteStorageRequest = async () => {} //CREATE, READ, UPDATE, DELETE
 const ExecuteDisturbanceRequest = async () => {}/ ERRORS
 const ExecuteSensorRequest = async () => {} //EVENTS
+const ExecuteProcessHelper = async () => {} 
 
 //3. OUTPUT
 const ExecuteOutputResponse = async () => {}

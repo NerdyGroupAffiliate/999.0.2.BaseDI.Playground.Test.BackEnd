@@ -3534,7 +3534,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region B. CONVERT css section global
 
-                const ExecuteControlRequest = async(parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : Promise<Object> => {
+                const ExecuteProcessHelper = async(parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : Promise<Object> => {
                     storedProcessRequestCssStyleList = parameterInputs.Parameters.getValue("parameterProcessRequestCssStyleList"); 
                     storedProcessRequestCssOutputContentList = parameterInputs.Parameters.getValue("parameterProcessRequestCssOutputContentList");
                     storedProcessRequestCssOutputContentListMediaQueries = parameterInputs.Parameters.getValue("parameterProcessRequestCssOutputContentListMediaQueries");
@@ -3722,7 +3722,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListGlobal);
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListGlobalMediaQueries);
 
-                        await ExecuteControlRequest(storedInputs);
+                        await ExecuteProcessHelper(storedInputs);
                     }
 
                     storedOutputResponseData = await ExecuteConversionRequest();
@@ -3744,7 +3744,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListContainers);
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListContainersMediaQueries);
 
-                        await ExecuteControlRequest(storedInputs);
+                        await ExecuteProcessHelper(storedInputs);
                     }
 
                     storedOutputResponseData = await ExecuteConversionRequest();
@@ -3766,7 +3766,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListRows);
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListRowsMediaQueries);
 
-                        await ExecuteControlRequest(storedInputs);
+                        await ExecuteProcessHelper(storedInputs);
                     }
 
                     storedOutputResponseData = await ExecuteConversionRequest();
@@ -3788,7 +3788,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListColumns);
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListColumnsMediaQueries);
 
-                        await ExecuteControlRequest(storedInputs);
+                        await ExecuteProcessHelper(storedInputs);
                     }
 
                     storedOutputResponseData = await ExecuteConversionRequest();
@@ -3810,7 +3810,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListContent);
                         storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListContentMediaQueries);
 
-                        await ExecuteControlRequest(storedInputs);
+                        await ExecuteProcessHelper(storedInputs);
                     }
 
                     storedOutputResponseData = await ExecuteConversionRequest();
