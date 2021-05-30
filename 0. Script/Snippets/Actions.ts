@@ -9,7 +9,7 @@ var importedNodeJSFilePath = require('path');
 
 //#region BaseDI
 
-import * as Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0 from "../Interfaces/12/Other/3/Web Development/Contract/0/1_0/Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0";
+import Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0 from "../../3. Setting/9/Software/12/Other/3/Web Development/Location/0/1_0/Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0";
 
 //#endregion
 
@@ -170,7 +170,7 @@ export namespace BaseDI.Professional.Snippets {
 
             //#region MEMORIZE input example json
 
-            let storedInputRequestExampleJSON: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.HtmlSection =
+            let storedInputRequestExampleJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection =
             {
                 searchkey: "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent",
                 type: "object",

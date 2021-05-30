@@ -1,5 +1,4 @@
-﻿module Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0 {
-
+﻿module Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0 {
     //#region JSON to HTML Interfaces
 
     export interface HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML {
@@ -41,6 +40,7 @@
         id?: string;
         src?: string;
         href?: string;
+        alt?: string;
     }
 
     export interface HtmlFunctionParameter {
@@ -120,5 +120,5 @@
     //#endregion
 }
 
-export { Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0 as IWebDevelopment_12_3 }
+export default Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0;
 

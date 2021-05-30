@@ -55,6 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="0. Script\Interfaces\12\Other\3\Web Development\Contract\0\1_0\" />
     <Folder Include="0. Script\Pocos\" />
     <Folder Include="4. Experience\2\Movement\12\Other\2\Programming\Experience\3\1_0\" />
     <Folder Include="4. Experience\2\Movement\2\Generate Brand Trust\3\Social Media\Experience\1\1_0\" />
@@ -90,7 +91,7 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\2\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
-    <TypeScriptCompile Include="0. Script\Interfaces\12\Other\3\Web Development\Contract\0\1_0\Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts" />
+    <TypeScriptCompile Include="3. Setting\9\Software\12\Other\3\Web Development\Location\0\1_0\Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Snippets\Actions.ts" />
     <TypeScriptCompile Include="8. Testing\0. Script\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.test.tsx" />
     <TypeScriptCompile Include="8. Testing\1. Storyline\Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.test.tsx" />

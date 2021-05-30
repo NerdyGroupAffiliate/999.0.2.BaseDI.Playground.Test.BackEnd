@@ -30,7 +30,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <TypeScriptCompile Update="0. Script\Interfaces\12\Other\3\Web Development\Contract\0\1_0\Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts">
+    <TypeScriptCompile Update="3. Setting\9\Software\12\Other\3\Web Development\Location\0\1_0\Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
