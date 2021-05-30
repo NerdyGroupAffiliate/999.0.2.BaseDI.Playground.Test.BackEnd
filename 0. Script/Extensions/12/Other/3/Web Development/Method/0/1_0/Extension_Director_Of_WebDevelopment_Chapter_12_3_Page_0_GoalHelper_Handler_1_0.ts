@@ -3258,6 +3258,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region DEFINE control variables
 
+            let storedControlRequestExecutionConversionRequest:Function = null;
+
             //#endregion
 
             //#region DEFINE input variables
@@ -3272,6 +3274,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestHtmlMediaQueryFeatures = [];
             let storedProcessRequestHtmlPropertyArray = [];
 
+            let storedProcessRequestCssStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
             let storedProcessRequestCssGlobalStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
             let storedProcessRequestCssContainerStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
             let storedProcessRequestCssRowStyleList: Array<Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFileUseProperty> = [];
@@ -3280,7 +3283,20 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedProcessRequestCssOutputContentContainer: string = "";
             let storedProcessRequestCssOutputContentBody: string = "";
+            let storedProcessRequestCssOutputContentBodyList: Array<string> = [];
             let storedProcessRequestCssOutputContentList: Array<string> = [];
+            let storedProcessRequestCssOutputContentListMediaQueries: Array<string> = [];
+            let storedProcessRequestCssOutputContentListGlobal: Array<string> = [];
+            let storedProcessRequestCssOutputContentListGlobalMediaQueries: Array<string> = [];
+            let storedProcessRequestCssOutputContentListContainers: Array<string> = [];
+            let storedProcessRequestCssOutputContentListContainersMediaQueries: Array<string> = [];
+            let storedProcessRequestCssOutputContentListRows: Array<string> = [];
+            let storedProcessRequestCssOutputContentListRowsMediaQueries: Array<string> = [];
+            let storedProcessRequestCssOutputContentListColumns: Array<string> = [];
+            let storedProcessRequestCssOutputContentListColumnsMediaQueries: Array<string> = [];
+            let storedProcessRequestCssOutputContentListContent: Array<string> = [];
+            let storedProcessRequestCssOutputContentListContentMediaQueries: Array<string> = [];
+            let storedProcessRequestCssOutputContentProperty: string = "";
             let storedProcessRequestCssOutputContentValid: boolean = false;
             
             //#endregion
@@ -3363,10 +3379,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             
             let storedProcessRequestCssStyleFilesArray: Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.IWebDevelopment_12_3.CssStyleFile[] = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
 
-            let storedProcessRequestCssStyleContainerPattern1: string = "#{styleID} {\n  {stylePropertiesKeyValues}\n}";
-            let storedProcessRequestCssStyleContainerPattern2: string = "#{styleID}:{styleSelector} {\n  {stylePropertiesKeyValues}\n}";
-            let storedProcessRequestCssStyleContainerPattern3: string = "#{styleID}:{styleSelector}(n) {\n  {stylePropertiesKeyValues}\n}";
-            let storedProcessRequestCssStyleContainerPattern4: string = "#{styleID}::{styleSelector} {\n  {stylePropertiesKeyValues}\n}";
+            let storedProcessRequestCssStyleContainerPattern1: string = "{styleID} {\n  {stylePropertiesKeyValues}\n}";
+            let storedProcessRequestCssStyleContainerPattern2: string = "{styleID}:{styleSelector} {\n  {stylePropertiesKeyValues}\n}";
+            let storedProcessRequestCssStyleContainerPattern3: string = "{styleID}:{styleSelector}(n) {\n  {stylePropertiesKeyValues}\n}";
+            let storedProcessRequestCssStyleContainerPattern4: string = "{styleID}::{styleSelector} {\n  {stylePropertiesKeyValues}\n}";
 
             let storedProcessRequestCssStyleCommentPattern1: string = "/* GENERAL LAYOUT */";
             let storedProcessRequestCssStyleCommentPattern2: string = "/* CONTAINER */";
@@ -3377,7 +3393,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestCssStyleContainerPattern5: string = "@media {styleMediaQueryNotOnly} {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}";
             let storedProcessRequestCssStyleContainerPattern6: string = "@media {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}";
 
-            let storedProcessRequestCssStyleBodyPattern1: string = "  {stylePropertyKey}:{stylePropertyValue};\n";
+            let storedProcessRequestCssStyleBodyPattern1: string = "  {stylePropertyKey}: {stylePropertyValue};";
 
             //#endregion
 
@@ -3445,48 +3461,62 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                                 if (storedProcessRequestStyleFileUseProperty.attributeID == undefined ||
                                     storedProcessRequestStyleFileUseProperty.attributeID == null ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID == "")
+                                    storedProcessRequestStyleFileUseProperty.attributeID == "body")
                                 {
                                     storedProcessRequestCssGlobalStyleList.push(storedProcessRequestStyleFileUseProperty);
+
+                                    return;
                                 }
                                 //#endregion
 
                                 //#region 2. CONVERT json to list of CONTAINER styles
 
-                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID != null ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("CONTAINER_")) {
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID != null &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("CONTAINER_")) 
+                                {
                                     storedProcessRequestCssContainerStyleList.push(storedProcessRequestStyleFileUseProperty);
+
+                                    return;
                                 }
 
                                 //#endregion
 
                                 //#region 3. CONVERT json to list of ROW styles
 
-                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID != null ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("ROW_")) {
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID != null &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("ROW_")) 
+                                {
                                     storedProcessRequestCssRowStyleList.push(storedProcessRequestStyleFileUseProperty);
+
+                                    return;
                                 }
 
                                 //#endregion
 
                                 //#region 4. CONVERT json to list of COLUMN styles
 
-                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID != null ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("COLUMN_")) {
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID != null &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("COLUMN_")) 
+                                {
                                     storedProcessRequestCssColumnStyleList.push(storedProcessRequestStyleFileUseProperty);
+
+                                    return;
                                 }
 
                                 //#endregion
 
                                 //#region 5. CONVERT json to list of CONTENT styles
 
-                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID != null ||
-                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("CONTENT_")) {
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != undefined &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID != null &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID.toLocaleUpperCase().includes("CONTENT_")) 
+                                {
                                     storedProcessRequestCssContentStyleList.push(storedProcessRequestStyleFileUseProperty);
+
+                                    return;
                                 }
 
                                 //#endregion
@@ -3504,49 +3534,292 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#region B. CONVERT css section global
 
-                try
-                {
-                    const ExecuteConversionRequest = async (): Promise<any> => {
-                        storedProcessRequestCssGlobalStyleList.map(storedProcessRequestCssGlobalStyleItem => {
+                const ExecuteControlRequest = async(parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : Promise<Object> => {
+                    storedProcessRequestCssStyleList = parameterInputs.Parameters.getValue("parameterProcessRequestCssStyleList"); 
+                    storedProcessRequestCssOutputContentList = parameterInputs.Parameters.getValue("parameterProcessRequestCssOutputContentList");
+                    storedProcessRequestCssOutputContentListMediaQueries = parameterInputs.Parameters.getValue("parameterProcessRequestCssOutputContentListMediaQueries");
+
+                    storedProcessRequestCssStyleList.map(storedProcessRequestCssStyleItem => {
+                        if (storedProcessRequestCssStyleItem.attributeID)
+                        {
                             //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = body {\n  {stylePropertiesKeyValues}\n}
-                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern1.replace("#{styleID}", "body");
-                                                        
-                            storedProcessRequestCssGlobalStyleItem.properties.map(storedProcessRequestCssGlobalStyleItemProperty =>
-                            {
-                                if (storedProcessRequestCssGlobalStyleItemProperty.propertyName != undefined &&
-                                    storedProcessRequestCssGlobalStyleItemProperty.propertyName != null &&
-                                    storedProcessRequestCssGlobalStyleItemProperty.propertyName != "")
+                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern1.replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
+
+                            //#region CONVERT from css properties from json to array list
+                            storedProcessRequestCssStyleItem.properties.map(storedProcessRequestCssGlobalStyleItemProperty => {
+                                if (storedProcessRequestCssGlobalStyleItemProperty.propertyName)
                                 {
+                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border:
+                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssStyleBodyPattern1.replace("{stylePropertyKey}", storedProcessRequestCssGlobalStyleItemProperty.propertyName);
+
                                     storedProcessRequestCssGlobalStyleItemProperty.properyValues.map(storedProcessRequestCssGlobalStyleItemPropertyValue => {
 
                                         if (!storedProcessRequestCssOutputContentValid) {
                                             storedProcessRequestCssOutputContentValid = true;
                                         }
 
-                                        storedProcessRequestCssOutputContentBody += storedProcessRequestCssStyleBodyPattern1.replace("{stylePropertyKey}:{stylePropertyValue}", storedProcessRequestCssGlobalStyleItemPropertyValue);
+                                        if (storedProcessRequestCssOutputContentProperty == "") {
+                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px
+                                            storedProcessRequestCssOutputContentProperty = storedProcessRequestCssGlobalStyleItemPropertyValue;
+                                        }
+                                        else
+                                        {
+                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px solid
+                                            storedProcessRequestCssOutputContentProperty = storedProcessRequestCssOutputContentProperty + " " + storedProcessRequestCssGlobalStyleItemPropertyValue;
+                                        }
                                     })
-                                }         
+
+                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
+                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentBody.replace("{stylePropertyValue}", storedProcessRequestCssOutputContentProperty);
+
+                                    storedProcessRequestCssOutputContentBodyList.push(storedProcessRequestCssOutputContentBody);
+
+                                    storedProcessRequestCssOutputContentProperty = "";
+                                }
                             })
 
-                            if (storedProcessRequestCssOutputContentValid = true)
-                            {
+                            storedProcessRequestCssOutputContentBody = "";
+
+                            if (storedProcessRequestCssOutputContentValid = true) {
+                                storedProcessRequestCssOutputContentBodyList.map(storedProcessRequestCssOutputContentItem => {
+                                    if(storedProcessRequestCssOutputContentBody == ""){
+                                        storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentItem;
+                                    }
+                                    else
+                                    {
+                                        storedProcessRequestCssOutputContentBody += "\n  " + storedProcessRequestCssOutputContentItem;
+                                    }
+                                });
+
                                 storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
 
-                                //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body {\n  overflow-y;hidden\nposition: absolute\n}
+                                //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
                                 storedProcessRequestCssOutputContentList.push(storedProcessRequestCssOutputContentContainer);
 
                                 storedProcessRequestCssOutputContentBody = "";
+                                storedProcessRequestCssOutputContentBodyList = [];
+
                                 storedProcessRequestCssOutputContentContainer = "";
+
+                                storedProcessRequestCssOutputContentProperty = "";
+
                                 storedProcessRequestCssOutputContentValid = false;
                             }
-                        })
+                            //#endregion
+
+                            //#region CONVERT from css media queries from json to array list
+                            if(storedProcessRequestCssStyleItem.IsMediaQuery.toLocaleUpperCase() == "TRUE" && storedProcessRequestCssStyleItem.MediaQueryResolutions.length > 0){
+                                storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern5.replace("{styleMediaQueryNotOnly}", "only");
+                                storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryType}", "screen");
+
+                                storedProcessRequestCssStyleItem.MediaQueryResolutions.map(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem => 
+                                {
+                                    if(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions && 
+                                        storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature1) {
+                                        
+                                        if(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature1)
+                                        {
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryFeature1}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature1);
+                                        }
+
+                                        if(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryAndOrNot)
+                                        {
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryNotOrNot}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryAndOrNot);
+                                        }
+
+                                        if(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature2)
+                                        {
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryFeature2}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature2);
+                                        }
+
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryNotOrNot}", "");
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryFeature2}", "");            
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("  )", ")");            
+
+                                        if(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties && storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.length > 0)
+                                        {             
+                                            storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.map(storedProcessRequestCssGlobalStyleMediaResolutionItemProperty => {
+                                                if (storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.propertyName)
+                                                {
+                                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border:
+                                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssStyleBodyPattern1.replace("{stylePropertyKey}", storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.propertyName);
+            
+                                                    storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.properyValues.map(storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue => {
+            
+                                                        if (!storedProcessRequestCssOutputContentValid) {
+                                                            storedProcessRequestCssOutputContentValid = true;
+                                                        }
+            
+                                                        if (storedProcessRequestCssOutputContentProperty == "") {
+                                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px
+                                                            storedProcessRequestCssOutputContentProperty = storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue;
+                                                        }
+                                                        else
+                                                        {
+                                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px solid
+                                                            storedProcessRequestCssOutputContentProperty = storedProcessRequestCssOutputContentProperty + " " + storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue;
+                                                        }
+                                                    })
+            
+                                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
+                                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentBody.replace("{stylePropertyValue}", storedProcessRequestCssOutputContentProperty);
+            
+                                                    storedProcessRequestCssOutputContentBodyList.push(storedProcessRequestCssOutputContentBody);
+            
+                                                    storedProcessRequestCssOutputContentProperty = "";
+                                                }
+
+                                            })
+                                        }
+                                    }                                        
+                                })
+
+                                storedProcessRequestCssOutputContentBody = "";
+
+                                if (storedProcessRequestCssOutputContentValid = true) {
+                                    storedProcessRequestCssOutputContentBodyList.map(storedProcessRequestCssOutputContentItem => {
+                                        if(storedProcessRequestCssOutputContentBody == ""){
+                                            storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentItem;
+                                        }
+                                        else
+                                        {
+                                            storedProcessRequestCssOutputContentBody += "\n  " + storedProcessRequestCssOutputContentItem;
+                                        }
+                                    });
+
+                                    storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+
+                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
+                                    storedProcessRequestCssOutputContentListMediaQueries.push(storedProcessRequestCssOutputContentContainer);
+
+                                    storedProcessRequestCssOutputContentBody = "";
+                                    storedProcessRequestCssOutputContentBodyList = [];
+
+                                    storedProcessRequestCssOutputContentContainer = "";
+
+                                    storedProcessRequestCssOutputContentProperty = "";
+
+                                    storedProcessRequestCssOutputContentValid = false;
+                                }
+                            }
+                            //#endregion
+                        }
+                    }) 
+                    
+                    return {
+                        CssStyleList: storedProcessRequestCssStyleList,
+                        CssOutputContentList: storedProcessRequestCssOutputContentList,
+                        CssOutputContentListMediaQueries: storedProcessRequestCssOutputContentListMediaQueries
                     }
+                }
+
+                try
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssStyleList", storedProcessRequestCssGlobalStyleList);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListGlobal);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListGlobalMediaQueries);
+
+                        await ExecuteControlRequest(storedInputs);
+                    }
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
                 }
                 catch (storedProcessRequestMistake) {
                     throw new Error("converting css section global");
                 }
 
                 //#endregion
+
+                //#region C. CONVERT css section containers
+
+                try
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssStyleList", storedProcessRequestCssContainerStyleList);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListContainers);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListContainersMediaQueries);
+
+                        await ExecuteControlRequest(storedInputs);
+                    }
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting css section containers");
+                }
+
+                //#endregion
+                
+                //#region C. CONVERT css section rows
+
+                try
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssStyleList", storedProcessRequestCssRowStyleList);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListRows);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListRowsMediaQueries);
+
+                        await ExecuteControlRequest(storedInputs);
+                    }
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting css section containers");
+                }
+
+                //#endregion
+                
+                //#region D. CONVERT css section columns
+
+                try
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssStyleList", storedProcessRequestCssColumnStyleList);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListColumns);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListColumnsMediaQueries);
+
+                        await ExecuteControlRequest(storedInputs);
+                    }
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting css section containers");
+                }
+
+                //#endregion
+                
+                //#region E. CONVERT css section content
+
+                try
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                        
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssStyleList", storedProcessRequestCssContentStyleList);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListContent);
+                        storedInputs.Parameters.setValue("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListContentMediaQueries);
+
+                        await ExecuteControlRequest(storedInputs);
+                    }
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting css section containers");
+                }
+
+                //#endregion             
 
                 //#endregion
             }
@@ -3580,195 +3853,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                 //#endregion
             }
-
-
-            const ExecuteConversionRequest = async (): Promise<string> => {
-                try {
-                    storedProcessRequestHtmlFilesArray.forEach(storedHtmlFile => {
-                        storedHtmlFile.StyleFileUseProperties.forEach(storedStyleFile => {
-                            if (storedStyleFile.IsHtmlTag == "true" && storedStyleFile.properties.length > 0) {
-                                if (storedStyleFile.IsMediaQuery == "true") {
-
-                                    if (storedStyleFile.MediaQuery.type != "") {
-                                        storedProcessRequestHtmlMediaQueryFeatures.push(`only ${storedStyleFile.MediaQuery.type}`)
-                                    }
-                                    storedStyleFile.MediaQuery.features.forEach(feature => {
-                                        Object.keys(feature).forEach((featureA, index) => {
-                                            if (Object.keys(feature)[index] == "operator") {
-                                                storedProcessRequestHtmlMediaQueryFeatures.push(Object.values(feature)[index])
-                                            } else {
-                                                storedProcessRequestHtmlMediaQueryFeatures.push(`(${featureA}: ${Object.values(feature)[index]})`)
-                                            }
-                                        });
-                                    });
-                                    storedStyleFile.properties.forEach(prop => {
-                                        if (prop.propertyName != "") {
-                                            let values = [];
-                                            if (storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`] === undefined) {
-                                                storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`] = []
-                                                prop.properyValues.forEach(value => {
-                                                    values.push(`${value};`)
-                                                });
-                                                storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`].push({ propName: `${prop.propertyName}`, values: values })
-                                            } else {
-                                                prop.properyValues.forEach(value => {
-                                                    values.push(`${value};`)
-                                                });
-                                                storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`].push({ propName: `${prop.propertyName}`, values: values })
-                                            }
-                                        }
-                                    });
-
-                                } else {
-                                    storedStyleFile.properties.forEach(prop => {
-                                        if (prop.propertyName != "") {
-                                            if (storedProcessRequestHtmlPropertyArray[`${prop.propertyName}`] === undefined) {
-                                                storedProcessRequestHtmlPropertyArray[`${prop.propertyName}`] = [];
-                                                prop.properyValues.forEach(value => {
-                                                    storedProcessRequestHtmlPropertyArray[`${prop.propertyName}`].push(value + ";")
-                                                });
-                                            } else {
-                                                prop.properyValues.forEach(value => {
-                                                    storedProcessRequestHtmlPropertyArray[`${prop.propertyName}`].push(value + ";")
-                                                });
-                                            }
-                                        }
-                                    });
-
-                                }
-                            }
-                            else if (storedStyleFile.IsHtmlTag == "false" && storedStyleFile.properties.length > 0) {
-                                let values = [];
-                                if (storedStyleFile.IsMediaQuery == "true") {
-
-                                    let storedProcessRequestHtmlMediaQueryFeatures = [];
-
-                                    if (storedStyleFile.MediaQuery.type != "") {
-                                        storedProcessRequestHtmlMediaQueryFeatures.push(`only ${storedStyleFile.MediaQuery.type}`)
-                                    }
-                                    storedStyleFile.MediaQuery.features.forEach(feature => {
-                                        Object.keys(feature).forEach((featureA, index) => {
-                                            if (Object.keys(feature)[index] == "operator") {
-                                                storedProcessRequestHtmlMediaQueryFeatures.push(Object.values(feature)[index])
-                                            } else {
-                                                storedProcessRequestHtmlMediaQueryFeatures.push(`(${featureA}: ${Object.values(feature)[index]})`)
-                                            }
-                                        });
-                                    });
-
-                                    storedStyleFile.properties.forEach(prop => {
-                                        if (prop.propertyName != "") {
-                                            values.push(`${prop.propertyName} : ${prop.properyValues[0]};`)
-                                        }
-                                    });
-
-                                    if (storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`] === undefined) {
-                                        storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`] = []
-                                        storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`].push({ attributeID: storedStyleFile.attributeID, values: values })
-                                    } else {
-                                        let updatedItem = storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`].find((item) => { return item.attributeID === storedStyleFile.attributeID })
-                                        if (updatedItem != undefined) {
-                                            updatedItem.values.push(...values)
-                                        } else {
-                                            storedProcessRequestHtmlMediaQueryArray[`@media ${storedProcessRequestHtmlMediaQueryFeatures.join(" ")}`].push({ attributeID: storedStyleFile.attributeID, values: values })
-                                        }
-                                    }
-                                }
-                                else {
-                                    storedStyleFile.properties.forEach(prop => {
-                                        if (prop.propertyName != "") {
-                                            values.push(`${prop.propertyName} : ${prop.properyValues[0]};`)
-                                        }
-                                    });
-
-                                    if (storedProcessRequestHtmlPropertyArray[`${storedStyleFile.attributeID}`] === undefined) {
-                                        storedProcessRequestHtmlPropertyArray[`${storedStyleFile.attributeID}`] = [];
-                                        storedProcessRequestHtmlPropertyArray[`${storedStyleFile.attributeID}`].push({ attributeID: storedStyleFile.attributeID, values: values })
-                                    } else {
-                                        // storedProcessRequestHtmlPropertyArray[`${element.attributeID}`].push({ attributeID: element.attributeID, values: values })
-                                        storedProcessRequestHtmlPropertyArray[`${storedStyleFile.attributeID}`][0].values.push(...values)
-                                    }
-                                }
-                            }
-                            else {
-                                //console.log("Something wrong in Json file!")
-                            }
-                        });
-                    });
-
-                    Object.keys(storedProcessRequestHtmlPropertyArray).forEach((key, index) => {
-                        let obj = Object.values(storedProcessRequestHtmlPropertyArray)[index];
-                        if (obj[0].attributeID === undefined) {
-                            storedOutputResponseHtmlCssString += `${key} { \n ${obj.join("\n")} \n}\n`;
-                        } else {
-
-                            if (obj[0].attributeID.includes("#")) {
-                                storedOutputResponseHtmlCssString += `${obj[0].attributeID} { \n ${obj[0].values.join("\n")} \n}\n`;
-                            } else {
-                                storedOutputResponseHtmlCssString += `#${obj[0].attributeID} { \n ${obj[0].values.join("\n")} \n}\n`;
-                            }
-                        }
-                    });
-
-                    Object.keys(storedProcessRequestHtmlMediaQueryArray).forEach((key, index) => {
-                        let obj = Object.values(storedProcessRequestHtmlMediaQueryArray)[index];
-                        let innerCss = "";
-
-                        obj.forEach(element => {
-                            if (element.attributeID === undefined) {
-                                innerCss += `${element.propName} \n { \n ${element.values.join("\n")} \n}\n`;
-                            } else {
-                                if (element.attributeID.includes("#")) {
-                                    innerCss += `${element.attributeID} \n { \n ${element.values.join("\n")} \n}\n`;
-                                } else {
-                                    innerCss += `#${element.attributeID} \n { \n ${element.values.join("\n")} \n}\n`;
-                                }
-                            }
-                        });
-                        storedOutputResponseHtmlCssString += `${key} {\n ${innerCss} \n}`;
-                    });
-
-                    storedOutputResponseHtmlInlineCSSString = `<style>${storedOutputResponseHtmlCssString}</style>`;
-
-                    if (process.env.APP_ENV == "SERVER") {
-                        storedOutputResponseHtmlInlineCSSString = storedOutputResponseHtmlInlineCSSString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images'); storedOutputResponseHtmlInlineCSSString = storedOutputResponseHtmlInlineCSSString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
-                    }
-
-                    return storedOutputResponseHtmlInlineCSSString;
-                }
-                catch (storedProcessRequestMistake) {
-                    //#region EDGE CASE - USE developer logger
-
-                    if (storedProcessRequestDeveloperMode) {
-                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
-
-                        //0. CONTROLLERS
-
-                        //1. INPUTS
-
-                        //2. PROCESS                        
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
-
-                        //3. OUTPUTS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                    }
-
-                    //#endregion
-
-                    //#region EDGE CASE - USE exception handler
-
-                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
-
-                    //#endregion
-                }
-            }
-
-            storedOutputResponseData = await ExecuteConversionRequest();
-
 
             //#endregion
 

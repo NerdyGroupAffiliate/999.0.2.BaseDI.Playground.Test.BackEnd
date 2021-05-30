@@ -38,7 +38,9 @@
     }
 
     export interface HtmlAttribute {
-
+        id?: string;
+        src?: string;
+        href?: string;
     }
 
     export interface HtmlFunctionParameter {
@@ -96,7 +98,7 @@
         properties: CssProperty[];
         IsMediaQuery: string;
         IsHtmlTag: string;
-        MediaQueryResolutions: CssMediaQueryResolution[];
+        MediaQueryResolutions: CssMediaQuery[];
     }
 
     export interface CssProperty {
@@ -104,10 +106,15 @@
         properyValues: string[];
     }
 
+    export interface CssMediaQuery {
+        resolutions: CssMediaQueryResolution;
+        properties: CssProperty[];
+    }
+
     export interface CssMediaQueryResolution {
-        resolutions: string[];
-        propertyName: string;
-        properyValues: string[];
+        mediaQueryFeature1: string;
+        mediaQueryAndOrNot: string;
+        mediaQueryFeature2: string;
     }
 
     //#endregion
