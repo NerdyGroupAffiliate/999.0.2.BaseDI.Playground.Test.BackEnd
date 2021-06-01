@@ -309,9 +309,10 @@ describe('Conversion Test', () => {
         storedInputs.Parameters.setValue("parameterInputRequestName", "Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0");
         storedInputs.Parameters.setValue("parameterInputRequestNameDataCacheKey", "Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0-P1_0");
 
+        storedInputs.Parameters.setValue("parameterInputRequestFileRootPath", "C://Programming//999.0.3.BaseDI.QuickStart.Templates//3. Client//Web//3. Setting//5//Ecommerce//2//Generate Brand Trust//1//Friendship//");
         storedInputs.Parameters.setValue("parameterInputRequestFileName", "C://Programming//999.0.3.BaseDI.QuickStart.Templates//3. Client//Web//3. Setting//5//Ecommerce//2//Generate Brand Trust//1//Friendship//HTML//1//1_0//Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-12-ASSET-Home-AJC-CMS-2_1_1_0.html");
         storedInputs.Parameters.setValue("parameterInputRequestFileType", "HTML");
-
+        
         //2. PROCESS
         storedInputs.Parameters.setValue("parameterProcessRequestRequestHandlerFileName", "Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0");
 

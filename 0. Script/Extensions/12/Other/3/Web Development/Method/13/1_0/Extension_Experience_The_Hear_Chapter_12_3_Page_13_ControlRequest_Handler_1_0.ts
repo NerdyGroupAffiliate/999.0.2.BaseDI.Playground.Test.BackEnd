@@ -61,7 +61,17 @@ import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/P
 export namespace BaseDI.Professional.Web_Development.Extensions_13 {
     export class Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0 {
         constructor() {
+            //#region 1. INPUTS
 
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#endregion
         }
 
         //#region API MANAGEMENT
@@ -866,7 +876,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             try 
             {
-                //#region A. CONVERT json to array of json metadata files 
+                //#region A. CONVERT json to array of metadata file strings
 
                 try 
                 {                        
@@ -934,7 +944,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                 //#endregion
             
-                //#region B. STORE json metadata file content to array
+                //#region B. STORE each metadata file contents to array of strings
 
                 try 
                 {
@@ -970,7 +980,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
                 //#endregion
 
-                //#region C. CONVERT json metadata content to array of media files (audio, documents, images, videos, etc)
+                //#region C. CONVERT metadata content to array of media file strings (audio, documents, images, videos, etc)
                 try 
                 {
                     const ExecuteConversionRequest = async() : Promise<any> => 
@@ -1178,15 +1188,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
 
             //#endregion
 
-            //#endregion
-
             //#region 3. OUTPUT
 
-            storedProcessRequestFileMediaList = storedProcessRequestFileMediaList;
+            //#region IDEAL CASE - USE json metadata
+
+            return storedProcessRequestFileMediaList;
 
             //#endregion
 
-        }
+            //#endregion
+         }
 
 
         //#endregion

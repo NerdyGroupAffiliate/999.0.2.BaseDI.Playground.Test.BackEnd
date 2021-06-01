@@ -209,6 +209,7 @@
     "history": "4.10.1",
     "html-webpack-externals-plugin": "3.8.0",
     "html-webpack-plugin": "5.3.1",
+    "html2json": "^1.0.2",
     "https-proxy-agent": "5.0.0",
     "instagram-private-api": "github:dilame/instagram-private-api",
     "instagram-web-api": "2.2.0",

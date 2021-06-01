@@ -2,10 +2,7 @@
 
 //#region 3rd Party
 
-import importedNodeJSFileManager from 'fs';
-import importedNodeJSFilePathManager from 'path';
 
-const importedXmlToJs = require('xml2js');
 
 //#endregion
 
@@ -21,6 +18,8 @@ import * as ExtraData_12_2_1_0 from "../../../../../../../../0. Script/Parameter
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
 import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
+import * as Extension_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/2/1_0/Extension_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0";
+
 import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
 
 //#endregion
@@ -340,6 +339,11 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestFileRootPath")) {
+                        storedOutputResponseMessage += "***parameterInputRequestFileRootPath*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
                     if (!parameterInputs.Parameters.containsKey("parameterInputRequestFileName")) {
                         storedOutputResponseMessage += "***parameterInputRequestFileName*** cannot be blank or empty.\n"
                         storedProcessRequestMistakeMade = true;
@@ -647,8 +651,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
             //#region EXECUTE get dataset
 
-            try {
-                //#region IDEAL CASE - USE data repository
+            try 
+            {
+                //#region IDEAL CASE - USE baseDI converter
 
                 if (storedInputRequestActionName.toUpperCase() == Action_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HtmlToJsonConversion_Request_1_0.toUpperCase()) {
                     storedOutputResponseData = await this.Step_X_X_Framework_Convert_HtmlToJson_1_0();
@@ -718,6 +723,15 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
             //#region DEFINE process variables
 
+            let storedProcessRequestHtmlBodyBucket: any = null;
+            let storedProcessRequestHtmlBodyCssFileListBucket: Array<string> = [];
+
+            let storedProcessRequestHtmlHeadBucket: any = null;
+            let storedProcessRequestHtmlHeadCssFileListBucket: Array<string> = [];
+
+            let storedProcessRequestHtmlNode: any = null;
+            let storedProcessRequestHtmlNodeList: any = null;
+
             let storedProcessRequestResponseData: any = null;
 
             //#endregion
@@ -751,6 +765,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
             //#region MEMORIZE input file details
 
+            let storedInputRequestFileRootPath: string = this._storedInputs.Parameters.getValue("parameterInputRequestFileRootPath");
             let storedInputRequestFileName: string = this._storedInputs.Parameters.getValue("parameterInputRequestFileName");
             let storedInputRequestFileType: string = this._storedInputs.Parameters.getValue("parameterInputRequestFileType");
 
@@ -805,42 +820,74 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             {
                 //#region IDEAL CASE - USE baseDI converter
 
-                //#region A. STORE html contents
+                //#region A. CONVERT html to json object
 
-                try
+                try 
                 {
-                    const ExecuteStorageRequest = async (): Promise<any> => {
-                        storedInputRequestFileName = importedNodeJSFilePathManager.resolve(storedInputRequestFileName);
-                        return importedNodeJSFileManager.readFileSync(storedInputRequestFileName, 'utf8');
-                    }
+                    const ExecuteConversionRequest = async() => {
+                        storedProcessRequestResponseData = await Promise.resolve(Extension_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.Programming.Extensions_2.Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Convert_HtmlToJson_1_0(this._storedInputs));
 
-                    storedProcessRequestResponseData = await ExecuteStorageRequest();
-                }
-                catch (storedProcessRequestMistake) {
-                    throw new Error("storing file contents to memory");
-                }
-         
-                //#endregion
-
-                //#region B. CONVERT html to xml object
-
-                try
-                {
-                    const ExecuteConversionRequest = async (): Promise<any> => {
-                        importedXmlToJs.parseString(storedProcessRequestResponseData, function (storedOutputResponseXmlError, storedOutputResponseXmlResult) {
-                            storedProcessRequestResponseData =  storedOutputResponseXmlResult;
-                        });
-                    }
+                        return storedProcessRequestResponseData;
+                    }   
 
                     storedProcessRequestResponseData = await ExecuteConversionRequest();
-                }
+                } 
                 catch (storedProcessRequestMistake) {
-                    throw new Error("converting html to xml");
+                    throw new Error("converting html to json");
                 }
-         
-                //#endregion                
 
-                storedProcessRequestResponseData = this._storedProcessRequestResponseData;
+                //#endregion
+
+                //#region B. STORE html head and body json in buckets
+
+                try 
+                {
+                    const ExecuteStorageRequest = async() => {
+                        storedProcessRequestHtmlHeadBucket = storedProcessRequestResponseData?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.node.toUpperCase() == "ELEMENT")[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.tag.toUpperCase()  == "HEAD")?.filter(node => node.node.toUpperCase() == "ELEMENT");
+                        storedProcessRequestHtmlBodyBucket = storedProcessRequestResponseData?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.node.toUpperCase() == "ELEMENT")[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.tag.toUpperCase()  == "BODY")?.filter(node => node.node.toUpperCase() == "ELEMENT");
+                    }
+                    
+                    await ExecuteStorageRequest();
+
+                    storedProcessRequestHtmlHeadBucket = storedProcessRequestHtmlHeadBucket;
+                } 
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting json");
+                }
+
+                //#endregion
+
+                //#region C. CONVERT html head json bucket to a list bucket of css file strings
+
+                try 
+                {
+                    storedProcessRequestHtmlNodeList = storedProcessRequestHtmlHeadBucket[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT" && node.tag.toUpperCase() == "LINK")
+
+                    storedProcessRequestHtmlNodeList.map(storedProcessRequestHtmlNodeItem => 
+                    {
+                        //OUTPUT EXAMPLE: ../../../CSS/1/1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
+                        if(storedProcessRequestHtmlNodeItem?.attr?.rel != undefined && storedProcessRequestHtmlNodeItem?.attr?.rel.toUpperCase() == "STYLESHEET" && storedProcessRequestHtmlNodeItem?.attr?.href != undefined)
+                        {
+                            //OUTPUT EXAMPLE: C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\3. Client\\Web\\3. Setting\\5\\Ecommerce\\2\\Generate Brand Trust\\1\\Friendship\\
+                            storedInputRequestFileRootPath = storedInputRequestFileRootPath.split("//").join("\\");
+                            
+                            //OUTPUT EXAMPLE: CSS/1/1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
+                            storedProcessRequestResponseData = (storedProcessRequestHtmlNodeItem?.attr?.href as String).split("../").join("");
+
+                            //OUTPUT EXAMPLE: CSS\\1\\1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
+                            storedProcessRequestResponseData = storedProcessRequestResponseData.split("/").join("\\");
+
+                            //OUTPUT EXAMPLE: C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\3. Client\\Web\\3. Setting\\5\\Ecommerce\\2\\Generate Brand Trust\\1\\Friendship\\CSS\\1\\1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
+                            storedProcessRequestResponseData = storedInputRequestFileRootPath + storedProcessRequestResponseData;                              
+                            storedProcessRequestHtmlHeadCssFileListBucket.push(storedProcessRequestResponseData); 
+                        } 
+                    })    
+                } 
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html head json bucket to list of file strings");
+                }
+
+                //#endregion                
 
                 //#endregion
             }
