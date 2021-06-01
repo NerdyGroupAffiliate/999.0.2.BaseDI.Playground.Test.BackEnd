@@ -336,15 +336,13 @@ namespace BaseDI.Professional.Chapter.Page.NICHE_X
 
             #region DEFINE process variables
 
-
+            dynamic storedProcessRequestResponseData = null;
 
             #endregion
 
             #region DEFINE output variables
 
             JObject storedOutputResponseData = null;
-
-            Func<SingleParmPoco_12_2_1_0, JObject> ExecuteOutputResponse = null;
 
             #endregion
 

@@ -5699,51 +5699,63 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region IDEAL CASE - USE storyline details
 
-            storedProcessRequestDataStorylineDetails?.outputs[1].baseDIObservations.map(storedProcessRequestObservation => {
-                if (Object.keys(storedProcessRequestObservation).length > 0 &&
-                    (Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyJSON.toUpperCase() ||
-                    Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyHTML.toUpperCase() ||
-                    Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyXML.toUpperCase()))
+            try
+            {
+                const ExecuteConversionRequest = async (): Promise<any> =>
                 {
-                    switch (storedOutputResponseType.toUpperCase()) {
-                        case "HTML":
-                            storedOutputResponseData = unescape(storedProcessRequestObservation[storedProcessRequestStorageKeyHTML].observation.metadata[3].item.presentation[0].htmlResult);
+                    storedProcessRequestDataStorylineDetails?.outputs[1].baseDIObservations.map(storedProcessRequestObservation => {
+                        if (Object.keys(storedProcessRequestObservation).length > 0 &&
+                            (Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyJSON.toUpperCase() ||
+                                Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyHTML.toUpperCase() ||
+                                Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyXML.toUpperCase()))
+                        {
+                            switch (storedOutputResponseType.toUpperCase())
+                            {
+                                case "HTML":
+                                    storedOutputResponseData = unescape(storedProcessRequestObservation[storedProcessRequestStorageKeyHTML].observation.metadata[3].item.presentation[0].htmlResult);
 
-                            break;
-                        case "JSON":
-                            storedOutputResponseData = storedProcessRequestObservation[storedProcessRequestStorageKeyJSON].observation.metadata[3].item.presentation[0].jsonResult;
+                                    break;
+                                case "JSON":
+                                    storedOutputResponseData = storedProcessRequestObservation[storedProcessRequestStorageKeyJSON].observation.metadata[3].item.presentation[0].jsonResult;
 
-                            break;
-                        case "XML":
-                            storedOutputResponseData = storedProcessRequestObservation[storedProcessRequestStorageKeyXML].observation.metadata[3].item.presentation[0].xmlResult;
+                                    break;
+                                case "XML":
+                                    storedOutputResponseData = storedProcessRequestObservation[storedProcessRequestStorageKeyXML].observation.metadata[3].item.presentation[0].xmlResult;
 
-                            break;
-                    }                    
+                                    break;
+                            }
 
-                    //#region EDGE CASE - USE developer logger
+                            //#region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode) {
-                        //0. CONTROLLERS
+                            if (storedProcessRequestDeveloperMode) {
+                                //0. CONTROLLERS
 
-                        //1. INPUTS
+                                //1. INPUTS
 
-                        //2. PROCESS
-                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+                                //2. PROCESS
+                                storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY converted StorylineDetails");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestCentralizedStorer", parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer"));
-                        
-                        //3. OUTPUTS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALEndOfProcess", true);
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "SUCCESSFULLY converted StorylineDetails");
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestCentralizedStorer", parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer"));
 
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                    }
+                                //3. OUTPUTS
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALEndOfProcess", true);
 
-                    //#endregion
+                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            }
+
+                            //#endregion
+                        }
+                    });
                 }
-            });
+
+                storedOutputResponseData = await ExecuteConversionRequest();
+            }
+            catch (storedProcessRequestMistake) {
+                throw new Error("converting json to html string");
+            }
 
             //#endregion
 

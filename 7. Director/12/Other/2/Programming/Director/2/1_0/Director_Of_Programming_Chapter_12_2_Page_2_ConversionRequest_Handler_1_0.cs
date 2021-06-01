@@ -1498,6 +1498,112 @@ namespace BaseDI.Professional.Director.Programming_2
             #endregion
         }
 
+        //Page 1-5
+        public override async Task<JObject> Action_5_Process_StorySetting()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process developer mode
+
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            ////storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            try
+            {
+                storedOutputResponseData = await Factory_Action_5_Process_StorySetting();
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+
         #endregion
 
         #region B. Action Factories
@@ -1595,6 +1701,123 @@ namespace BaseDI.Professional.Director.Programming_2
                 storedOutputResponseData = await Execute_Factory_Action_1_Begin_Process_StoreDataInCache();
 
                 #endregion
+            }
+            catch
+            {
+                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN http response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        //Page 1-5
+        private async Task<JObject> Factory_Action_5_Process_StorySetting()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process developer mode
+
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            ////storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process factory
+
+            try
+            {
+                #region IDEAL CASE - USE factory method
+
+                if (_storedInputRequestActionName.ToUpper() == Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Process_HtmlToJsonConversion_Request_1_0.ToUpper())
+                {
+                    storedOutputResponseData = await Execute_Action_5_Process_StorySetting_ProcessHtmlToJsonConversionRequest();
+                }
+
+                #endregion
+
             }
             catch
             {
@@ -1742,6 +1965,126 @@ namespace BaseDI.Professional.Director.Programming_2
 
             #endregion
         }
+
+        //Page 1-5
+        private async Task<JObject> Execute_Action_5_Process_StorySetting_ProcessHtmlToJsonConversionRequest()
+        {
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            JObject storedOutputResponseData = null;
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process developer mode
+
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
+            ////storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE process handler
+
+            #region IDEAL CASE - USE process handler 
+
+            var page = new ChapterPage.Page_2_5_Process_StorySetting_12_2_1_0(_storedInputs);
+
+            page.ClientOrServerInstance = _storedProcessRequestTracker;
+
+            page.DirectorOrExperienceRequestHandler = _storedProcessRequestBusinessDirectorOrExperienceRequestHandler;
+            page.ExtraData = _storedProcessRequestExtraData;
+
+            page.MasterStorer = _storedProcessRequestCentralizedStorer;
+            page.MasterDisturber = _storedProcessRequestCentralizedDisturber;
+            page.MasterSensor = _storedProcessRequestCentralizedSensor;
+
+            page.StorylineDetails_Parameters = _storedProcessRequestDataStorylineDetails_Parameters;
+
+            _storedProcessRequestDataStorylineDetails_Altered = await page.Action().ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return await Task.FromResult<JObject>(_storedProcessRequestDataStorylineDetails_Altered).ConfigureAwait(true);
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
 
         #endregion
 
@@ -2028,111 +2371,6 @@ namespace BaseDI.Professional.Director.Programming_2
             #region 3. OUTPUT
 
             #region RETURN process response
-
-            #region IDEAL CASE - USE baseDI dataset
-
-            return await Task.FromResult<JObject>(StorylineDetails).ConfigureAwait(true);
-
-            #endregion
-
-            #endregion
-
-            #endregion
-        }
-
-        //Page 1-5
-        public override async Task<JObject> Action_5_Process_StorySetting()
-        {
-            #region 1. INPUTS
-
-            #region DEFINE control variables
-
-            #endregion
-
-            #region DEFINE input variables
-
-
-            #endregion
-
-            #region DEFINE process variables
-
-
-
-            #endregion
-
-            #region DEFINE output variables
-
-            JObject storedOutputResponseData = null;
-
-            #endregion
-
-            ///////////////////////////////////////////////////////////
-
-            #region MEMORIZE control variables
-
-            #region MEMORIZE control xxx xxx
-
-
-            #endregion
-
-            #endregion
-
-            #region MEMORIZE input variables
-
-            #region MEMORIZE input xxx xxxx
-
-
-            #endregion
-
-            #endregion
-
-            #region MEMORIZE process variables
-
-            #region MEMORIZE process developer mode
-
-            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
-
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            ////storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
-
-            #endregion
-
-            #endregion
-
-            #region MEMORIZE output variables
-
-            #region MEMORIZE output xxx xxxx
-
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            try
-            {
-                storedOutputResponseData = await Factory_Action_5_Process_StorySetting();
-            }
-            catch
-            {
-                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
-            }
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #region RETURN http response
 
             #region IDEAL CASE - USE baseDI dataset
 
@@ -2934,123 +3172,6 @@ namespace BaseDI.Professional.Director.Programming_2
                 //}
 
                 #endregion
-            }
-            catch
-            {
-                throw; //Let "Startup.cs -> Startup_Controller" handle the exception.
-            }
-
-            #endregion
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #region RETURN http response
-
-            #region IDEAL CASE - USE baseDI dataset
-
-            return await Task.FromResult<JObject>(storedOutputResponseData).ConfigureAwait(true);
-
-            #endregion
-
-            #endregion
-
-            #endregion
-        }
-
-        //Page 1-5
-        private async Task<JObject> Factory_Action_5_Process_StorySetting()
-        {
-            #region 1. INPUTS
-
-            #region DEFINE control variables
-
-            #endregion
-
-            #region DEFINE input variables
-
-
-            #endregion
-
-            #region DEFINE process variables
-
-
-
-            #endregion
-
-            #region DEFINE output variables
-
-            JObject storedOutputResponseData = null;
-
-            #endregion
-
-            ///////////////////////////////////////////////////////////
-
-            #region MEMORIZE control variables
-
-            #region MEMORIZE control xxx xxx
-
-
-            #endregion
-
-            #endregion
-
-            #region MEMORIZE input variables
-
-            #region MEMORIZE input xxx xxxx
-
-
-            #endregion
-
-            #endregion
-
-            #region MEMORIZE process variables
-
-            #region MEMORIZE process developer mode
-
-            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
-
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web routes");
-            ////storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.cs");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> Action_5_Process_StorySetting");
-
-            #endregion
-
-            #endregion
-
-            #region MEMORIZE output variables
-
-            #region MEMORIZE output xxx xxxx
-
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #region EXECUTE process factory
-
-            try
-            {
-                #region IDEAL CASE - USE factory method
-
-                if (_storedInputRequestActionName.ToUpper().Contains("PROCESSHTTPREQUEST_1_0"))
-                {
-                    //storedOutputResponseData = await Execute_Action_5_Process_StorySetting_ProcessHttpRequest();
-                }
-
-                #endregion
-
             }
             catch
             {

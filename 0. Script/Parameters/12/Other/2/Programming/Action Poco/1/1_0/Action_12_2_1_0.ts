@@ -73,6 +73,8 @@ export namespace BaseDI.Professional.Script.Programming.Poco_1
 
         public static _12_3_WEB_DEVELOPMENT_Server_Process_HTTP_Request_1_0: string = "Action_Server_ProcessHttpRequest_1_0";
 
+        public static _12_3_WEB_DEVELOPMENT_Server_Process_HtmlToJsonConversion_Request_1_0: string = "Action_Server_ProcessHtmlToJsonConversionRequest_1_0";
+
         public static _12_3_WEB_DEVELOPMENT_Server_Process_ROUTE_HTTP_Request_1_0: string = "Action_Server_Process_Route_HttpRequest_1_0";
 
         public static _12_3_WEB_DEVELOPMENT_Server_OnLoad_1_0: string = "Action_Server_OnLoad_1_0";

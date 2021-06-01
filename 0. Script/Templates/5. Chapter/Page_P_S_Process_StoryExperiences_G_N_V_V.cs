@@ -335,7 +335,7 @@ namespace BaseDI.Professional.Chapter.Page.NICHE_X
 
             #region DEFINE process variables
 
-
+            dynamic storedProcessRequestResponseData = null;
 
             #endregion
 

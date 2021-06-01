@@ -552,15 +552,13 @@ export namespace BaseDI.Professional.Chapter.Page.NICHE_X {
 
             //#region DEFINE process variables
 
-
+            let storedProcessRequestResponseData: any = null;
 
             //#endregion
 
             //#region DEFINE output variables
 
             let storedOutputResponseData: any = null;
-
-            let ExecuteOutputResponse = null;
 
             //#endregion
 
