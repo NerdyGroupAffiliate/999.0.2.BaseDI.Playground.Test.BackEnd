@@ -5,6 +5,7 @@
 import importedNodeJSFileManager from 'fs';
 import importedNodeJSFilePathManager from 'path';
 
+var importedCssToJson = require("cssparser").Parser();
 const importedHtmlToJson = require('html2json');
 
 //#endregion
@@ -370,7 +371,7 @@ export namespace BaseDI.Professional.Programming.Extensions_2 {
          
                 //#endregion
 
-                //#region B. CONVERT html to xml object
+                //#region B. CONVERT html to json object
 
                 try
                 {
@@ -387,6 +388,413 @@ export namespace BaseDI.Professional.Programming.Extensions_2 {
                 }
          
                 //#endregion                
+            }
+            catch (storedProcessRequestMistake) {
+                //#region EDGE CASE - USE developer logger
+
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED cache retrieval");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw storedProcessRequestMistake;
+
+                //#endregion
+            }
+    
+            //#endregion
+        
+
+            //#endregion
+
+            //#endregion
+
+            //#region 3. OUTPUT
+
+            //#region RETURN process response
+
+            //#region IDEAL CASE - USE xml dataset
+            
+            return storedOutputResponseData;
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+        }  
+        
+        public static async Step_X_X_Framework_Convert_CssToJson_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : Promise<any>
+        {
+            //#region 1. INPUTS
+
+            //#region VALIDATE input parameters
+
+            const ValidateInputs = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {
+                //#region 1. INPUTS
+
+                //#region DEFINE parameter inputs
+
+                let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+                //#endregion
+
+                //#region DEFINE process checkpoint
+
+                let storedProcessRequestMistakeMade: boolean = false;
+
+                //#endregion
+
+                //#region DEFINE stored message
+
+                let storedOutputResponseMessage: string = "";
+
+                //#endregion
+
+                //#region MEMORIZE control client server
+
+                let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+
+                //#endregion
+
+                //#region MEMORIZE app settings
+
+                let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
+
+                //#endregion
+
+                //#region MEMORIZE developer mode
+
+                let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE ? storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE : false;
+
+                let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+                
+                //2. PROCESS              
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_CssToJson_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                //#endregion
+
+                //#endregion
+
+                //#region 2. PROCESS
+
+                //#region EXECUTE validation process
+
+                //#region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs != undefined || parameterInputs.Parameters != null && parameterInputs.Parameters != undefined) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestName")) {
+                        storedOutputResponseMessage += "***parameterInputRequestName*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestActionName")) {
+                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterInputRequestFileNameList")) {
+                        storedOutputResponseMessage += "***parameterInputRequestFileNameList*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //2. PROCESS
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == null || parameterInputs.Parameters.getValue("parameterProcessRequestTracker")["storedProcessRequestSettings"] == undefined) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessRequestMistakeMade = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"
+                        storedProcessRequestMistakeMade = true;
+                    }
+                   
+
+                    if (storedProcessRequestMistakeMade) {
+                        //#region EDGE CASE - USE developer logger
+
+                        if (storedProcessRequestDeveloperMode) {
+                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        }
+
+                        //#endregion
+
+                        //#region EDGE CASE - USE exception handler
+
+                        throw new Error("PARSING parameter values failed");
+
+                        //#endregion
+                    }
+                }
+                else {
+                    //#region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode) {
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUT
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    }
+
+                    //#endregion
+
+                    //#region EDGE CASE - USE exception handler
+
+                    throw new Error("PARSING parameter values failed");
+
+                    //#endregion
+                }
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+
+                //#region 3. OUTPUT
+
+                //#region RETURN validation passed
+
+                //#region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                //#endregion
+
+                //#endregion
+
+                //#endregion
+            }
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            //#endregion
+
+            //#region DEFINE control variables
+
+            //#endregion
+
+            //#region DEFINE input variables
+
+            let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+
+            //#endregion
+
+            //#region DEFINE process variables
+
+            let storedProcessRequestFileName: string = "";
+            let storedProcessRequestResponseData: any = null;
+
+            const storedProcessRequestCssToJsonParser = new importedCssToJson.Parser();
+
+            //#endregion
+
+            //#region DEFINE output variables
+
+            let storedOutputResponse: any = null;
+            let storedOutputResponseData: any = null;
+
+            //#endregion
+
+            ///////////////////////////////
+
+            //#region MEMORIZE control variables
+
+            //#region MEMORIZE control xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#region MEMORIZE input variables
+
+            //#region MEMORIZE input action name
+
+            let storedInputRequestActionName: string = parameterInputs.Parameters.getValue("parameterInputRequestActionName");
+
+            //#endregion
+
+            //#region MEMORIZE input file details
+
+            let storedInputRequestFileNameList: Array<string> = parameterInputs.Parameters.getValue("parameterInputRequestFileNameList");
+
+            //#endregion            
+
+            //#endregion
+
+            //#region MEMORIZE process variables
+
+            //#region MEMORIZE process request tracker
+
+            let storedProcessRequestTracker: any = parameterInputs.Parameters.getValue("parameterProcessRequestTracker");
+
+            //#endregion
+
+            //#region MEMORIZE process request settings
+
+            let storedProcessRequestSettings: any = storedProcessRequestTracker["storedProcessRequestSettings"];
+
+            //#endregion
+
+            //#region MEMORIZE process developer mode
+
+            let storedProcessRequestDeveloperMode: boolean = storedProcessRequestSettings.APP_SETTING_DEVELOPER_MODE;
+
+            let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
+            
+            let storedProcessRequestFileNameList: Array<string> = [];
+            let storedProcessRequestOutputResponseFileList: Array<Object> = [];
+
+            //REQUIRED
+
+            //0. CONTROLLERS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //1. INPUTS
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "EXECUTING html to xml conversion");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_HtmlToXml_1_0");
+
+            //3. OUTPUTS  
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+            //#endregion
+
+
+            //#endregion
+
+            //#region MEMORIZE output variables
+
+            //#region MEMORIZE output xxx xxx
+
+
+            //#endregion
+
+            //#endregion
+
+            //#endregion
+
+            //#region 2. PROCESS
+
+            //#region EXECUTE convert html to json
+
+            //#region IDEAL CASE - USE baseDI converter
+
+            try
+            {
+                //#region A. STORE css contents
+
+                try
+                {
+                    const ExecuteStorageRequest = async (): Promise<any> => {
+                        storedInputRequestFileNameList.map(storedInputRequestFileNameItem => {
+                            storedProcessRequestFileName = importedNodeJSFilePathManager.resolve(storedInputRequestFileNameItem);
+                            storedProcessRequestResponseData = importedNodeJSFileManager.readFileSync(storedProcessRequestFileName, 'utf8');
+
+                            storedProcessRequestFileNameList.push(storedProcessRequestResponseData);
+                        })   
+                        
+                        return storedProcessRequestFileNameList;
+                    }
+
+                    storedProcessRequestFileNameList = await ExecuteStorageRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("storing file contents to memory");
+                }
+         
+                //#endregion
+
+                //#region B. CONVERT each css content item to a json object
+
+                try
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        storedProcessRequestFileNameList.map(storedProcessRequestFileNameItem => {
+                            storedProcessRequestResponseData = storedProcessRequestCssToJsonParser.parse(storedProcessRequestFileNameItem);
+                            storedProcessRequestResponseData = storedProcessRequestResponseData.toJSON("simple");
+
+                            storedProcessRequestOutputResponseFileList.push(storedProcessRequestResponseData);
+
+                            return storedProcessRequestOutputResponseFileList;
+                        })
+                    }
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html to xml");
+                }
+         
+                //#endregion 
             }
             catch (storedProcessRequestMistake) {
                 //#region EDGE CASE - USE developer logger
