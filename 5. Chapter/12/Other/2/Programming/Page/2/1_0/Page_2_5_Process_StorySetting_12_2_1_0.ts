@@ -723,6 +723,22 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
             //#region DEFINE process variables
 
+            let storedProcessRequestCssJsonItemKey: string = null;
+
+            let storedProcessRequestCssAlignments_1: Object = {}
+            let storedProcessRequestCssBackgrounds_2: Object = {}
+            let storedProcessRequestCssBorders_3: Object = {}
+            let storedProcessRequestCssColors_4: Object = {}
+            let storedProcessRequestCssEffects_5: Object = {}
+            let storedProcessRequestCssFlow_6: Object = {}
+            let storedProcessRequestCssLists_7: Object = {}
+            let storedProcessRequestCssMargins_8: Object = {}
+            let storedProcessRequestCssMisc_9: Object = {}
+            let storedProcessRequestCssPadding_10: Object = {}
+            let storedProcessRequestCssSizes_11: Object = {}
+            let storedProcessRequestCssTables_12: Object = {}
+            let storedProcessRequestCssText_13: Object = {}
+
             let storedProcessRequestHtmlBodyBucket: any = null;
             let storedProcessRequestHtmlBodyCssFileListBucket: Array<string> = [];
 
@@ -860,27 +876,34 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 try 
                 {
-                    storedProcessRequestHtmlNodeList = storedProcessRequestHtmlHeadBucket[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT" && node.tag.toUpperCase() == "LINK")
+                    const ExecuteConversionRequest = async() : Promise<any> => {
+                        storedProcessRequestHtmlNodeList = storedProcessRequestHtmlHeadBucket[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT" && node.tag.toUpperCase() == "LINK")
 
-                    storedProcessRequestHtmlNodeList.map(storedProcessRequestHtmlNodeItem => 
-                    {
-                        //OUTPUT EXAMPLE: ../../../CSS/1/1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
-                        if(storedProcessRequestHtmlNodeItem?.attr?.rel != undefined && storedProcessRequestHtmlNodeItem?.attr?.rel.toUpperCase() == "STYLESHEET" && storedProcessRequestHtmlNodeItem?.attr?.href != undefined)
+                        storedProcessRequestHtmlNodeList.map(storedProcessRequestHtmlNodeItem => 
                         {
-                            //OUTPUT EXAMPLE: C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\3. Client\\Web\\3. Setting\\5\\Ecommerce\\2\\Generate Brand Trust\\1\\Friendship\\
-                            storedInputRequestFileRootPath = storedInputRequestFileRootPath.split("//").join("\\");
-                            
-                            //OUTPUT EXAMPLE: CSS/1/1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
-                            storedProcessRequestResponseData = (storedProcessRequestHtmlNodeItem?.attr?.href as String).split("../").join("");
+                            //OUTPUT EXAMPLE: ../../../CSS/1/1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
+                            if(storedProcessRequestHtmlNodeItem?.attr?.rel != undefined && storedProcessRequestHtmlNodeItem?.attr?.rel.toUpperCase() == "STYLESHEET" && storedProcessRequestHtmlNodeItem?.attr?.href != undefined)
+                            {
+                                //OUTPUT EXAMPLE: C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\3. Client\\Web\\3. Setting\\5\\Ecommerce\\2\\Generate Brand Trust\\1\\Friendship\\
+                                storedInputRequestFileRootPath = storedInputRequestFileRootPath.split("//").join("\\");
+                                
+                                //OUTPUT EXAMPLE: CSS/1/1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
+                                storedProcessRequestResponseData = (storedProcessRequestHtmlNodeItem?.attr?.href as String).split("../").join("");
+    
+                                //OUTPUT EXAMPLE: CSS\\1\\1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
+                                storedProcessRequestResponseData = storedProcessRequestResponseData.split("/").join("\\");
+    
+                                //OUTPUT EXAMPLE: C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\3. Client\\Web\\3. Setting\\5\\Ecommerce\\2\\Generate Brand Trust\\1\\Friendship\\CSS\\1\\1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
+                                storedProcessRequestResponseData = storedInputRequestFileRootPath + storedProcessRequestResponseData;                              
+                                storedProcessRequestHtmlHeadCssFileListBucket.push(storedProcessRequestResponseData); 
+                            } 
+                        }) 
 
-                            //OUTPUT EXAMPLE: CSS\\1\\1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
-                            storedProcessRequestResponseData = storedProcessRequestResponseData.split("/").join("\\");
+                        return storedProcessRequestHtmlHeadCssFileListBucket;
+                    }
 
-                            //OUTPUT EXAMPLE: C:\\Programming\\999.0.3.BaseDI.QuickStart.Templates\\3. Client\\Web\\3. Setting\\5\\Ecommerce\\2\\Generate Brand Trust\\1\\Friendship\\CSS\\1\\1_0/Style_Alignments_Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_1_0.css
-                            storedProcessRequestResponseData = storedInputRequestFileRootPath + storedProcessRequestResponseData;                              
-                            storedProcessRequestHtmlHeadCssFileListBucket.push(storedProcessRequestResponseData); 
-                        } 
-                    })    
+                    storedProcessRequestHtmlHeadCssFileListBucket = await ExecuteConversionRequest();
+     
                 } 
                 catch (storedProcessRequestMistake) {
                     throw new Error("converting html head json bucket to list of file strings");
@@ -888,21 +911,111 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion                
 
-                //#region D. CONVERT html css content to list of json objects
+                //#region D. CONVERT html head css content to list of json objects
 
                 try 
                 {
-                    this._storedInputs.Parameters.setValue("parameterInputRequestFileNameList", storedProcessRequestHtmlHeadCssFileListBucket);
+                    const ExecuteConversionRequest = async() : Promise<any> => {
+                        this._storedInputs.Parameters.setValue("parameterInputRequestFileNameList", storedProcessRequestHtmlHeadCssFileListBucket);
 
-                    storedProcessRequestResponseData = await Promise.resolve(Extension_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.Programming.Extensions_2.Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Convert_CssToJson_1_0(this._storedInputs));
+                        storedProcessRequestResponseData = await Promise.resolve(Extension_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0.BaseDI.Professional.Programming.Extensions_2.Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Convert_CssToJson_1_0(this._storedInputs));
+    
+                        return storedProcessRequestResponseData;                            
+                    }                    
 
-                    return storedProcessRequestResponseData;    
+                    storedProcessRequestResponseData = await ExecuteConversionRequest();
                 } 
                 catch (storedProcessRequestMistake) {
                     throw new Error("converting html head json bucket to list of file strings");
                 }
 
                 //#endregion   
+
+                //#region E. STORE html head css json objects in 13 css buckets
+
+                try 
+                {
+                    const ExecuteStorageRequest = async() : Promise<any> => {
+                        storedProcessRequestResponseData.map(storedProcessRequestCssJsonItem => 
+                        {
+                            storedProcessRequestCssJsonItemKey = Object.keys(storedProcessRequestCssJsonItem)[0];
+
+                            //1. STYLE alignments
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_ALIGNMENTS")){
+                                storedProcessRequestCssAlignments_1 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }
+
+                            //2. STYLE backgrounds
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_BACKGROUNDS")){
+                                storedProcessRequestCssBackgrounds_2 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            } 
+                            
+                            //3. STYLE borders
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_BORDERS")){
+                                storedProcessRequestCssBorders_3 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }   
+
+                            //4. STYLE colors
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_COLORS")){
+                                storedProcessRequestCssColors_4 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }                               
+                            
+                            //5. STYLE effects
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_EFFECTS")) {
+                                storedProcessRequestCssEffects_5 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }
+
+                            //6. STYLE flow
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_FLOW")) {
+                                storedProcessRequestCssFlow_6 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }
+
+                            //7. STYLE list
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_LISTS")) {
+                                storedProcessRequestCssLists_7 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];                            
+                            }                             
+
+                            //8. STYLE margins
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_MARGINS")) {
+                                storedProcessRequestCssMargins_8 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }  
+                            
+                            //9. STYLE misc
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_MISC")) {
+                                storedProcessRequestCssMisc_9 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }       
+                            
+                            //10. STYLE padding
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_PADDING")) {
+                                storedProcessRequestCssPadding_10 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }     
+                            
+                            //11. STYLE sizes
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_SIZES")) {
+                                storedProcessRequestCssSizes_11 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            } 
+                            
+                            //12. STYLE tables
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_TABLES")) {
+                                storedProcessRequestCssTables_12 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }   
+                            
+                            //13. STYLE text
+                            if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_TEXT")) {
+                                storedProcessRequestCssText_13 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
+                            }                               
+                        })                        
+                    }     
+                    
+                    await ExecuteStorageRequest();
+                } 
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html head json bucket to list of file strings");
+                }
+
+                storedOutputResponseData = storedOutputResponseData;
+
+                //#endregion                  
 
                 //#endregion
             }

@@ -5,7 +5,7 @@
 import importedNodeJSFileManager from 'fs';
 import importedNodeJSFilePathManager from 'path';
 
-var importedCssToJson = require("cssparser").Parser();
+import * as importedCssToJson from 'cssjson';
 const importedHtmlToJson = require('html2json');
 
 //#endregion
@@ -645,8 +645,6 @@ export namespace BaseDI.Professional.Programming.Extensions_2 {
             let storedProcessRequestFileName: string = "";
             let storedProcessRequestResponseData: any = null;
 
-            const storedProcessRequestCssToJsonParser = new importedCssToJson.Parser();
-
             //#endregion
 
             //#region DEFINE output variables
@@ -704,7 +702,11 @@ export namespace BaseDI.Professional.Programming.Extensions_2 {
             let storedProcessRequestDeveloperLoggingStartUpProcessInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters.getValue("parameterProcessRequestExtraData")?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
             let storedProcessRequestDeveloperLoggingInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0 = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
             
-            let storedProcessRequestFileNameList: Array<string> = [];
+            let storedProcessRequestFileNameItem: Object = {};
+            let storedProcessRequestFileNameItemKey: string = "";
+            let storedProcessRequestFileNameList: Array<Object> = [];
+
+            let storedProcessRequestOutputResponseFileItem: Object = {};
             let storedProcessRequestOutputResponseFileList: Array<Object> = [];
 
             //REQUIRED
@@ -758,8 +760,11 @@ export namespace BaseDI.Professional.Programming.Extensions_2 {
                         storedInputRequestFileNameList.map(storedInputRequestFileNameItem => {
                             storedProcessRequestFileName = importedNodeJSFilePathManager.resolve(storedInputRequestFileNameItem);
                             storedProcessRequestResponseData = importedNodeJSFileManager.readFileSync(storedProcessRequestFileName, 'utf8');
+                            
+                            storedProcessRequestFileNameItem = new Object();
+                            storedProcessRequestFileNameItem[importedNodeJSFilePathManager.basename(storedInputRequestFileNameItem)] = storedProcessRequestResponseData;
 
-                            storedProcessRequestFileNameList.push(storedProcessRequestResponseData);
+                            storedProcessRequestFileNameList.push(storedProcessRequestFileNameItem);
                         })   
                         
                         return storedProcessRequestFileNameList;
@@ -779,13 +784,17 @@ export namespace BaseDI.Professional.Programming.Extensions_2 {
                 {
                     const ExecuteConversionRequest = async (): Promise<any> => {
                         storedProcessRequestFileNameList.map(storedProcessRequestFileNameItem => {
-                            storedProcessRequestResponseData = storedProcessRequestCssToJsonParser.parse(storedProcessRequestFileNameItem);
-                            storedProcessRequestResponseData = storedProcessRequestResponseData.toJSON("simple");
+                            storedProcessRequestFileNameItemKey = Object.keys(storedProcessRequestFileNameItem)[0];
 
-                            storedProcessRequestOutputResponseFileList.push(storedProcessRequestResponseData);
+                            storedProcessRequestResponseData = importedCssToJson.toJSON(storedProcessRequestFileNameItem[storedProcessRequestFileNameItemKey]);
 
-                            return storedProcessRequestOutputResponseFileList;
+                            storedProcessRequestOutputResponseFileItem = new Object();
+                            storedProcessRequestOutputResponseFileItem[storedProcessRequestFileNameItemKey] = storedProcessRequestResponseData;
+
+                            storedProcessRequestOutputResponseFileList.push(storedProcessRequestOutputResponseFileItem);
                         })
+                        
+                        return storedProcessRequestOutputResponseFileList;
                     }
 
                     storedOutputResponseData = await ExecuteConversionRequest();
