@@ -104,9 +104,9 @@
     export interface CssStyleFileUseProperty {
         attributeID: string;
         properties: CssProperty[];
-        IsMediaQuery: string;
-        IsHtmlTag: string;
-        MediaQueryResolutions: CssMediaQuery[];
+        IsMediaQuery?: string;
+        IsHtmlTag?: string;
+        MediaQueryResolutions?: CssMediaQuery[];
     }
 
     export interface CssProperty {
@@ -117,12 +117,11 @@
     export interface CssMediaQuery {
         resolutions: CssMediaQueryResolution;
         properties: CssProperty[];
+        ChildrenResolutions?: CssMediaQuery[]
     }
 
     export interface CssMediaQueryResolution {
-        mediaQueryFeature1: string;
-        mediaQueryAndOrNot: string;
-        mediaQueryFeature2: string;
+        mediaQuery: string;
     }
 
     //#endregion

@@ -3502,36 +3502,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                             //#region CONVERT from css media queries from json to array list
                             if (storedProcessRequestCssStyleItem.IsMediaQuery.toLocaleUpperCase() == "TRUE" && storedProcessRequestCssStyleItem.MediaQueryResolutions.length > 0) {
-                                //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = @media only {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
-                                storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern5.replace("{styleMediaQueryNotOnly}", "only");
-
-                                //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = @media only screen and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
-                                storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryType}", "screen");
 
                                 storedProcessRequestCssStyleItem.MediaQueryResolutions.map(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem => {
                                     if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions &&
-                                        storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature1) {
+                                        storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery) {
 
-                                        if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature1) {
-                                             //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = @media only screen and (max-width: 1600px {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
-                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryFeature1}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature1);
-                                        }
-
-                                        if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryAndOrNot) {
-                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = @media only screen and (max-width: 1600px Or {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
-                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryNotOrNot}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryAndOrNot);
-                                        }
-
-                                        if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature2) {
-                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = @media only screen and (min-width: 800px Or max-width: 1600px) {\n  {stylePropertiesKeyValues}\n}
-                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryFeature2}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQueryFeature2);
-                                        }
-
-                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryNotOrNot}", "");
-                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryFeature2}", "");
-
-                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = @media only screen and (min-width: 800px) {\n  {stylePropertiesKeyValues}\n}
-                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("  )", ")");
+                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = @media only {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery;
 
                                         if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties && storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.length > 0) {
                                             storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.map(storedProcessRequestCssGlobalStyleMediaResolutionItemProperty => {
