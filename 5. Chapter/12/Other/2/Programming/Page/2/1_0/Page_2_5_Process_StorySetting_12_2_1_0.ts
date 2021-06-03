@@ -22,6 +22,9 @@ import * as Extension_Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequ
 
 import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
 
+import * as StrongTyped_StorylineDetails from "../../../../../../../../1. Storyline/12/Other/2/Programming/Studio/0/1_0/Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0"
+import * as StrongTyped_Website from "../../../../../../../../3. Setting/9/Software/12/Other/3/Web Development/Location/0/1_0/Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0";
+
 //#endregion
 
 //#endregion
@@ -739,6 +742,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssTables_12: Object = {}
             let storedProcessRequestCssText_13: Object = {}
 
+            let storedProcessRequestDataStorylineDetails: StrongTyped_StorylineDetails.BaseDI.Professional.Story.Programming_0.StorylineDetails_Instructions;
+            let storedProcessRequestCssStylingDetails: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.SearchKey_HTMLSEODetails_SetImplementer_ProductCreation_SEO_SearchEngine;
             let storedProcessRequestHtmlBodyBucket: any = null;
             let storedProcessRequestHtmlBodyCssFileListBucket: Array<string> = [];
 
@@ -836,7 +841,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             {
                 //#region IDEAL CASE - USE baseDI converter
 
-                //#region A. CONVERT html to json object
+                //#region A. CONVERT html file content to json object
 
                 try 
                 {
@@ -854,16 +859,16 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion
 
-                //#region B. STORE html head and body json in buckets
+                //#region B. CONVERT json object to html head and body buckets
 
                 try 
                 {
-                    const ExecuteStorageRequest = async() => {
+                    const ExecuteConversionRequest = async() => {
                         storedProcessRequestHtmlHeadBucket = storedProcessRequestResponseData?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.node.toUpperCase() == "ELEMENT")[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.tag.toUpperCase()  == "HEAD")?.filter(node => node.node.toUpperCase() == "ELEMENT");
                         storedProcessRequestHtmlBodyBucket = storedProcessRequestResponseData?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.node.toUpperCase() == "ELEMENT")[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.tag.toUpperCase()  == "BODY")?.filter(node => node.node.toUpperCase() == "ELEMENT");
                     }
                     
-                    await ExecuteStorageRequest();
+                    await ExecuteConversionRequest();
 
                 } 
                 catch (storedProcessRequestMistake) {
@@ -872,7 +877,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion
 
-                //#region C. CONVERT html head json bucket to a list bucket of css file strings
+                //#region C. CONVERT html head bucket to list css files
 
                 try 
                 {
@@ -911,7 +916,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion                
 
-                //#region D. CONVERT html head css content to list of json objects
+                //#region D. CONVERT list of css files to json objects
 
                 try 
                 {
@@ -931,11 +936,11 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion   
 
-                //#region E. STORE html head css json objects in 13 css buckets
+                //#region E. CONVERT json objects to 13 css buckets
 
                 try 
                 {
-                    const ExecuteStorageRequest = async() : Promise<any> => {
+                    const ExecuteConversionRequest = async() : Promise<any> => {
                         storedProcessRequestResponseData.map(storedProcessRequestCssJsonItem => 
                         {
                             storedProcessRequestCssJsonItemKey = Object.keys(storedProcessRequestCssJsonItem)[0];
@@ -1003,11 +1008,11 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                             //13. STYLE text
                             if(storedProcessRequestCssJsonItemKey.toUpperCase().includes("STYLE_TEXT")) {
                                 storedProcessRequestCssText_13 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
-                            }                               
+                            }
                         })                        
                     }     
                     
-                    await ExecuteStorageRequest();
+                    await ExecuteConversionRequest();
                 } 
                 catch (storedProcessRequestMistake) {
                     throw new Error("converting html head json bucket to list of file strings");
@@ -1016,6 +1021,96 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                 storedOutputResponseData = storedOutputResponseData;
 
                 //#endregion                  
+
+                //#region F. CONVERT 13 css buckets to storyline details object
+                try
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> =>
+                    {
+                        const ExecuteProcessHelper = async (): Promise<any> => {
+
+                        }
+
+                        //#region 1. SETUP default storyline details object
+                        storedProcessRequestDataStorylineDetails = {
+                            baseDIInstructions: {
+                                presentation: [{
+                                    key_1: "Clients",
+                                    values_2: [{
+                                        key_2_1: "Clients_1_0",
+                                        values_2_2: [{
+                                            key_2_2_1: "GeneratedPage",
+                                            values_2_2_2: []
+                                        }]
+                                    }],
+                                    type: "object",
+                                    buzzWords: "***OPTIONAL***, Wireframes, HTML, XAML",
+                                    extraKeyValuePairs: []
+                                }]
+                            }
+                        };
+                        //#endregion
+
+                        //#region 2. STORE style alignments
+
+                        //#endregion
+
+                        //#region 3. STORE style backgrounds
+
+                        //#endregion
+
+                        //#region 4. STORE style borders
+
+                        //#endregion
+
+                        //#region 5. STORE style colors
+
+                        //#endregion
+
+                        //#region 6. STORE style effects
+
+                        //#endregion
+
+                        //#region 7. STORE style flow
+
+                        //#endregion
+
+                        //#region 8. STORE style lists
+
+                        //#endregion
+
+                        //#region 9. STORE style margins
+
+                        //#endregion
+
+                        //#region 10. STORE style misc
+
+                        //#endregion
+
+                        //#region 11. STORE style padding
+
+                        //#endregion
+
+                        //#region 12. STORE style sizes
+
+                        //#endregion
+
+                        //#region 13. STORE style tables
+
+                        //#endregion
+
+                        //#region 14. STORE style text
+
+                        //#endregion
+                    }
+
+                    storedProcessRequestResponseData = await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html head json bucket to list of file strings");
+                }
+
+                //#endregion
 
                 //#endregion
             }

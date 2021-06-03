@@ -699,8 +699,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_13
                 {
                     dynamic obj = JObject.Parse(await File.ReadAllTextAsync(storedHandleDefaultsItemEnvironmentServerMetaDataPaths.SelectToken("MetaDataLocalPath")?.ToString()));
 
-                    var contentItems = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
-                    var stylingItemFiles = obj.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
+                    var contentItems = obj.baseDI_NerdyGroupAffiliates_DataSet_JSON.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_3_clientInformationHTMLContentDetails.value[0];
+                    var stylingItemFiles = obj.baseDI_NerdyGroupAffiliates_DataSet_JSON.value.baseDIInstructions.presentation[0].values_2[0].values_2_2[0].values_2_2_2[0]._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
                     var currentDir = Environment.CurrentDirectory;
 
                     foreach (var file in stylingItemFiles)

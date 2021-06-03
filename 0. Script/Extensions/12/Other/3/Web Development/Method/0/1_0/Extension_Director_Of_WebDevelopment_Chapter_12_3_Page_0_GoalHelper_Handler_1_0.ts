@@ -13,7 +13,7 @@ import * as Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest
 import * as Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/11/Automate Manual Task/1/Risk Management/Method/0/1_0/Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0";
 import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 from "../../../../../../../../../0. Script/Extensions/12/Other/2/Programming/Method/0/1_0/Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0";
 
-import Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0 from "../../../../../../../../../3. Setting/9/Software/12/Other/3/Web Development/Location/0/1_0/Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0";
+import * as StrongTyped_Website from "../../../../../../../../../3. Setting/9/Software/12/Other/3/Web Development/Location/0/1_0/Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0";
 
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
 
@@ -287,10 +287,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             let storedInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-            let storedInputRequestHtmlContainerJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection;
-            let storedInputRequestHtmlRowsJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection;
-            let storedInputRequestHtmlColumnsJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection;
-            let storedInputRequestHtmlContentJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection;
+            let storedInputRequestHtmlContainerJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSection
+            let storedInputRequestHtmlRowsJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSection;
+            let storedInputRequestHtmlColumnsJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSection;
+            let storedInputRequestHtmlContentJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSection;
 
             let storedInputRequestHtmlStylesFiltered: any = "";
             let storedInputRequestHtmlStylesJSON: any = "";
@@ -1561,7 +1561,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
 
-            let storedInputRequestHtmlContainerJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContainerJSON");
+            let storedInputRequestHtmlContainerJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContainerJSON");
 
             //#endregion
 
@@ -1984,7 +1984,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
 
-            let storedInputRequestHtmlRowsJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlRowsJSON");
+            let storedInputRequestHtmlRowsJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlRowsJSON");
 
             //#endregion
 
@@ -2406,7 +2406,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
 
-            let storedInputRequestHtmlColumnsJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlColumnsJSON");
+            let storedInputRequestHtmlColumnsJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlColumnsJSON");
 
             //#endregion
 
@@ -2838,7 +2838,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
             
-            let storedInputRequestHtmlContentJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContentJSON");
+            let storedInputRequestHtmlContentJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSection = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContentJSON");
 
             //#endregion
 
@@ -3269,12 +3269,12 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region DEFINE process variables
 
-            let storedProcessRequestCssStyleList: Array<Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.CssStyleFileUseProperty> = [];
-            let storedProcessRequestCssGlobalStyleList: Array<Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.CssStyleFileUseProperty> = [];
-            let storedProcessRequestCssContainerStyleList: Array<Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.CssStyleFileUseProperty> = [];
-            let storedProcessRequestCssRowStyleList: Array<Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.CssStyleFileUseProperty> = [];
-            let storedProcessRequestCssColumnStyleList: Array<Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.CssStyleFileUseProperty> = [];
-            let storedProcessRequestCssContentStyleList: Array<Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssGlobalStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssContainerStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssRowStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssColumnStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssContentStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
 
             let storedProcessRequestCssOutputContentContainer: string = "";
             let storedProcessRequestCssOutputContentContainer2: string = "";
@@ -3325,7 +3325,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE input request html
 
-            let storedInputRequestHtmlStylesJSON: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON");          
+            let storedInputRequestHtmlStylesJSON: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON");
             
             //#endregion
 
@@ -3373,7 +3373,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE process css details
             
-            let storedProcessRequestCssStyleFilesArray: Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.CssStyleFile[] = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
+            let storedProcessRequestCssStyleFilesArray: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFile[] = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
 
             let storedProcessRequestCssStyleContainerPattern1: string = "{styleID} {\n  {stylePropertiesKeyValues}\n}\n\n";
             let storedProcessRequestCssStyleContainerPattern2: string = "{styleID}:{styleSelector} {\n  {stylePropertiesKeyValues}\n}\n\n";

@@ -1,5 +1,9 @@
-﻿module Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0 {
+﻿export module BaseDI.Professional.BackEnd.Setting.Location.Web_Development {
     //#region JSON to HTML Interfaces
+
+    export interface SearchKey_HTMLSEODetails_SetImplementer_ProductCreation_SEO_SearchEngine {
+        _2_2_2_4_clientInformationHTMLContentStylingDetails: HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS;
+    }
 
     export interface HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML {
         searchkey: string;
@@ -60,6 +64,10 @@
 
     //#region JSON to CSS Interfaces
 
+    export interface SearchKey_HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS {
+        _2_2_2_4_clientInformationHTMLContentStylingDetails: HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS;
+    }
+
     export interface HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS {
         searchkey: string;
         type: string;
@@ -118,7 +126,46 @@
     }
 
     //#endregion
+
+    //#region JSON to SEO Interfaces
+
+    export interface SearchKey_HTMLSEODetails_SetImplementer_ProductCreation_SEO_SearchEngine {
+        _2_2_2_2_clientInformationHTMLSEODetails: StorylineDetails_Instructions_Details_SEO_Details;
+    }
+
+    export interface StorylineDetails_Instructions_Details_SEO_Details {
+        searchkey: string;
+        type: string;
+        value: StorylineDetails_Instructions_Details_SEO_Items[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_SEO_Items {
+        _2_2_2_2_1_clientInformationHTMLSEOItem: StorylineDetails_Instructions_Details_SEO_Item;
+    }
+
+    export interface StorylineDetails_Instructions_Details_SEO_Item {
+        searchkey: string;
+        type: string;
+        value: StorylineDetails_Instructions_Details_SEO_Value;
+    }
+
+    export interface StorylineDetails_Instructions_Details_SEO_Value {
+        HTMLSEOItemRowID: string;
+        HTMLSEOItemMetaTitleAndSlug: string;
+        HTMLSEOItemMetaKeyWords: string[];
+        HTMLSEOItemMetaDescription: string;
+        HTMLSEOItemSearchCode: string;
+    }
+
+
+
+
+
+   
+
+
+
+
+
+    //#endregion
 }
-
-export default Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0;
-

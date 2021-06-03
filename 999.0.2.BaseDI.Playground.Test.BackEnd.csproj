@@ -31,6 +31,8 @@
     <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts" />
     <None Remove="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_TransportAssets_Handler_1_0.ts" />
     <None Remove="0. Script\Interfaces\12\Other\3\Web Development\Contract\0\1_0\Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts" />
+    <None Remove="2. Character\1\The Buyer\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheBuyer_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
+    <None Remove="2. Character\2\The Seller\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheSeller_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
     <None Remove="8. Testing\0. Script\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.test.tsx" />
     <None Remove="8. Testing\1. Storyline\Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.test.tsx" />
     <None Remove="8. Testing\Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlTestingVariables_Handler_1_0.test.ts" />
@@ -90,6 +92,10 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\2\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
+    <TypeScriptCompile Include="2. Character\1\The Buyer\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheBuyer_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="2. Character\2\The Seller\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheSeller_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
     <TypeScriptCompile Include="3. Setting\9\Software\12\Other\3\Web Development\Location\0\1_0\Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.ts" />
     <TypeScriptCompile Include="0. Script\Snippets\Actions.ts" />
     <TypeScriptCompile Include="8. Testing\0. Script\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.test.tsx" />

@@ -28,7 +28,11 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Update="2. Character\2\The Seller\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheSeller_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Update="3. Setting\9\Software\12\Other\3\Web Development\Location\0\1_0\Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.ts">
       <SubType>Code</SubType>

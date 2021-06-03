@@ -72,6 +72,95 @@ import { type } from "os";
 
 //#endregion
 
+//#region DataTypes
+
+export module BaseDI.Professional.Story.Programming_0 {
+
+    //#region GLOBAL data concepts
+
+    export interface StorylineDetails_Parameter {
+        $schema: string;
+        contentVersion: string;
+        baseDI_NerdyGroupAffiliates_DataSet_JSON: StorylineDetails_Value;
+    }
+
+    export interface StorylineDetails_Value {
+        value: StorylineDetails_Instructions;
+    }
+
+    export interface StorylineDetails_Instructions {
+        baseDIInstructions: StorylineDetails_Instructions_Details;
+    }
+
+    export interface StorylineDetails_Instructions_Details {
+        configuration?: StorylineDetails_Instructions_Details_Configuration[];
+        presentation?: StorylineDetails_Instructions_Details_Presentation[];
+        business?: StorylineDetails_Instructions_Details_Business[];
+        data?: StorylineDetails_Instructions_Details_Data[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_Configuration {
+        key_1: string;
+        values_2: StorylineDetails_Instructions_Details_Values_2_X[];
+        type_3: string;
+        buzzWords_4: string;
+        extraKeyValuePairs_5: StorylineDetails_Instructions_Details_ExtraValues[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_Presentation {
+        key_1: string;
+        values_2: StorylineDetails_Instructions_Details_Values_2_X[];
+        type: string;
+        buzzWords: string;
+        extraKeyValuePairs: any[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_Business {
+        key_1: string;
+        values_2: StorylineDetails_Instructions_Details_Values_2_X[];
+        type_3: string;
+        buzzWords_4: string;
+        extraKeyValuePairs_5: any[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_Data {
+        key_1: string;
+        values_2: StorylineDetails_Instructions_Details_Values_2_X[];
+        type_3: string;
+        buzzWords_4: string;
+        extraKeyValuePairs_5: any[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_Values_2_X {
+        key_2_1: string;
+        values_2_2: StorylineDetails_Instructions_Details_Values_2_X_X[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_Values_2_X_X {
+        key_2_2_1: string;
+        values_2_2_2: any[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_Search_1 {
+        searchkey: string;
+        type: string;
+        value: any[];
+    }
+
+    export interface StorylineDetails_Instructions_Details_Search_2 {
+        searchkey: string;
+        type: string;
+        value: any;
+    }
+
+    export interface StorylineDetails_Instructions_Details_ExtraValues {
+    }
+
+    //#endregion
+}
+
+//#endregion
+
 export namespace BaseDI.Professional.Story.Programming_0
 {
     export class Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0 extends aClass_Programming_ScriptMasterLeader_12_2_1_0.BaseDI.Professional.Programming.Abstract_1.aClass_Programming_ScriptMasterLeader_12_2_1_0
@@ -4255,3 +4344,4 @@ export namespace BaseDI.Professional.Story.Programming_0
 
     //#endregion
 }
+

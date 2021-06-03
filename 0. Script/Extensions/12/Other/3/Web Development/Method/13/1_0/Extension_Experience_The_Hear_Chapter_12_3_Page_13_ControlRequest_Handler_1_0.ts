@@ -994,7 +994,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
     
                             try 
                             {
-                                storedProcessRequestFileMetaDataListOfContentStyles = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value.baseDIInstructions.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0]?.StyleFiles;
+                                storedProcessRequestFileMetaDataListOfContentStyles = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DataSet_JSON?.value.baseDIInstructions.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_4_clientInformationHTMLContentStylingDetails.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0]?.StyleFiles;
     
                                 if(storedProcessRequestFileMetaDataListOfContentStyles != null && storedProcessRequestFileMetaDataListOfContentStyles != undefined){
                                     //OUTPUT EXAMPLE: "StyleFiles": [{}]
@@ -1039,7 +1039,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_13 {
     
                             try 
                             {
-                                storedProcessRequestFileMetaDataListOfContentHtml = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile?.value?.baseDIInstructions?.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_3_clientInformationHTMLContentDetails?.value[0];
+                                storedProcessRequestFileMetaDataListOfContentHtml = storedProcessRequestFileMetaDataItemOfContent?.baseDI_NerdyGroupAffiliates_DataSet_JSON?.value?.baseDIInstructions?.presentation[0]?.values_2[0]?.values_2_2[0]?.values_2_2_2[0]?._2_2_2_3_clientInformationHTMLContentDetails?.value[0];
     
                                 if(storedProcessRequestFileMetaDataListOfContentHtml != null && storedProcessRequestFileMetaDataListOfContentHtml != undefined){
                                     //OUTPUT EXAMPLE: storedProcessRequestJSONkey = "_2_2_2_3_1_clientInformationHTMLContentItem"

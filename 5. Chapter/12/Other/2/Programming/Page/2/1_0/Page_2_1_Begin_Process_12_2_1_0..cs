@@ -581,7 +581,7 @@ namespace BaseDI.Professional.Chapter.Page.Programming_2
             {
                 foreach(var profile in _storedJSONKeyPlaceHolderName)
                 {
-                    StorylineDetails.SelectToken(profile.Path).Replace(StorylineDetails_Parameters.SelectToken("baseDI_NerdyGroupAffiliates_DynamicWebsite_MainProfile.value"));
+                    StorylineDetails.SelectToken(profile.Path).Replace(StorylineDetails_Parameters.SelectToken("baseDI_NerdyGroupAffiliates_DataSet_JSON.value"));
                 }
             }
         }
