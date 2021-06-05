@@ -1287,7 +1287,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                                                         storedProcessRequestCssCounter += 1;
                                                     }
-
+ 
                                                     if(((storedProcessRequestCssItemChild as any)[1].children != undefined && storedProcessRequestCssCounter == (Object.keys((storedProcessRequestCssItemChild as any)[1].children).length)) || ((storedProcessRequestCssItemChild as any)[1].attributes != undefined && Object.keys((storedProcessRequestCssItemChild as any)[1].attributes).length > 0)){
                                                         storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                                                         storedInputs.Parameters.setValue("parameterProcessRequestCssItem", storedProcessRequestCssItemChild);
