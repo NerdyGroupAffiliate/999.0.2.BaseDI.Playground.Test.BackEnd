@@ -750,9 +750,11 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssItemUsedPropertyMediaQueryChildrenList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
             let storedProcessRequestCssItemUsedPropertyMediaQueryListChildren: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty[];
             let storedProcessRequestCssItemUsedPropertyMediaQueryList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty[] = [];
+            let storedProcessRequestCssItemUsedPropertyMediaQueryModel: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery
+            let storedProcessRequestCssItemUsedPropertyMediaQueryModelChild: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery
             let storedProcessRequestCssItemUsedPropertyMediaQueryResolutionList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
             let storedProcessRequestCssItemUsedPropertyList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty[] = [];
-
+            
             let storedProcessRequestCssMediaQueryAttributeParentKeyItem: string = "";
 
             let storedProcessRequestCssItemMediaQueryItem: any = "";
@@ -1031,8 +1033,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                         return storedProcessRequestHtmlHeadCssFileListBucket;
                     }
 
-                    storedProcessRequestHtmlHeadCssFileListBucket = await ExecuteConversionRequest();
-     
+                    storedProcessRequestHtmlHeadCssFileListBucket = await ExecuteConversionRequest();     
                 } 
                 catch (storedProcessRequestMistake) {
                     throw new Error("converting html head json bucket to list of file strings");
@@ -1307,8 +1308,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                                                     //OUTPUT EXAMPLE: storedProcessRequestCssMediaQueryAttributeKey = @media (min-width: 20em), not all and (min-height: 40em)   
                                                     storedProcessRequestCssItemMediaQuery = storedProcessRequestCssItem_0.children[storedProcessRequestCssMediaQueryAttributeKey];
-
-                                                    //#region CONVERT media queries into parent/child buckets
+                                                    //#region A. CONVERT media queries into parent/child buckets
                                                     try 
                                                     {
                                                         const ExecuteConversionRequest = () : any => {
@@ -1329,9 +1329,101 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                                         ExecuteConversionRequest();  
                                                     } 
                                                     catch (storedProcessRequestMistake) {
+                                                        throw new Error("converting media queries into buckets");
+                                                    }
+                                                    //#endregion 
+
+                                                    try 
+                                                    {
+                                                        const ExecuteConversionRequest = (parameterProcessRequestCssItemMediaQueryItem:any = null) : any => {
+                                                            let storedProcessRequestCounter:number = 0;
+
+                                                            storedProcessRequestCssItemMediaQueryItem = parameterProcessRequestCssItemMediaQueryItem;
+
+                                                            if(storedProcessRequestCssItemMediaQueryItem.children != undefined && Object.keys(storedProcessRequestCssItemMediaQueryItem.children).length > 0)
+                                                            {
+                                                                Object.keys(storedProcessRequestCssItemMediaQueryItem.children).map(storedProcessRequestCssItemMediaQueryItemKey =>
+                                                                {
+                                                                    storedProcessRequestCssItemMediaQueryItem = ExecuteConversionRequest(storedProcessRequestCssItemMediaQueryItem.children);
+
+                                                                    storedProcessRequestCounter += 1;
+                                                                })
+                                                            }
+
+                                                            if(storedProcessRequestCssItemMediaQueryItem.children = undefined || Object.keys(storedProcessRequestCssItemMediaQueryItem.children).length == storedProcessRequestCounter){
+                                                                storedProcessRequestCssItemMediaQueryItem = storedProcessRequestCssItemMediaQueryItem;
+                                                            }
+                                                        }
+    
+                                                        ExecuteConversionRequest(storedProcessRequestCssItemMediaQuery);                                                        
+                                                    } 
+                                                    catch (storedProcessRequestMistake) {
+                                                        throw new Error("converting media queries into buckets");
+                                                    }                                                    
+                                                    
+                                                    //#region B. CONVERT media queries parent/child buckets into media query
+                                                    try 
+                                                    {
+                                                        const ExecuteConversionRequest = () : any => {
+                                                            storedProcessRequestCssItemUsedPropertyMediaQueryModel = {
+                                                                resolutions: {
+                                                                    mediaQuery: ""
+                                                                },
+                                                                properties: [],
+                                                                ChildrenResolutions: []
+                                                             }    
+                                                             
+                                                             //#region CONVERT parent buckets
+                                                             storedProcessRequestCssItemMediaQueryParentBucketList.map(storedProcessRequestCssItemMediaQueryParentBucketItem => {
+                                                                 if(storedProcessRequestCssItemMediaQueryParentBucketItem[0].toUpperCase() == storedProcessRequestCssItemNoneMediaQueryKey.toUpperCase()) {
+                                                                    storedProcessRequestCssItemUsedPropertyMediaQueryModel.resolutions.mediaQuery = storedProcessRequestCssItemNoneMediaQueryKey;
+
+                                                                    Object.entries(storedProcessRequestCssItemMediaQueryParentBucketItem[1].attributes).map(storedProcessRequestCssItemMediaQueryParentBucketItemAttribute => {
+                                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel.properties.push({
+                                                                            propertyName: storedProcessRequestCssItemMediaQueryParentBucketItemAttribute[0],
+                                                                            properyValues: (storedProcessRequestCssItemMediaQueryParentBucketItemAttribute[1] as string).split(" ")
+                                                                        })
+                                                                    })
+                                                                 }
+                                                             })
+                                                             //#endregion
+
+                                                             //#region CONVERT child buckets
+                                                             storedProcessRequestCssItemMediaQueryChildBucketList.map(storedProcessRequestCssItemMediaQueryChildBucketItem => {
+                                                                storedProcessRequestCssItemUsedPropertyMediaQueryModelChild = {
+                                                                    resolutions: {
+                                                                        mediaQuery: ""
+                                                                    },
+                                                                    properties: [],
+                                                                    ChildrenResolutions: []
+                                                                 }   
+
+                                                                 Object.entries(storedProcessRequestCssItemMediaQueryChildBucketItem[1].children).map(storedProcessRequestCssItemMediaQueryChildItem => {
+                                                                    if(storedProcessRequestCssItemMediaQueryChildItem[0].toUpperCase() == storedProcessRequestCssItemNoneMediaQueryKey.toUpperCase()) {
+                                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.resolutions.mediaQuery = storedProcessRequestCssItemMediaQueryChildBucketItem[0]
+
+                                                                        Object.entries((storedProcessRequestCssItemMediaQueryChildItem[1] as any).attributes).map(storedProcessRequestCssItemMediaQueryParentChildItemAttribute => {
+                                                                            storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.properties.push({
+                                                                                propertyName: storedProcessRequestCssItemMediaQueryParentChildItemAttribute[0],
+                                                                                properyValues: (storedProcessRequestCssItemMediaQueryParentChildItemAttribute[1] as string).split(" ")
+                                                                            })
+                                                                        })                                                                        
+                                                                    }
+                                                                 })
+                                                                 
+                                                                 if(storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.resolutions.mediaQuery && storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.properties.length > 0){
+                                                                    storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.ChildrenResolutions.push(storedProcessRequestCssItemUsedPropertyMediaQueryModelChild);
+                                                                 }
+                                                             })
+                                                             //#endregion
+                                                        }  
+
+                                                        ExecuteConversionRequest();  
+                                                    } 
+                                                    catch (storedProcessRequestMistake) {
                                                         throw new Error("converting parent media query css");
                                                     }
-                                                    //#endregion                                            
+                                                    //#endregion                                                     
                                                     
                                                 })
                                             }                                         
