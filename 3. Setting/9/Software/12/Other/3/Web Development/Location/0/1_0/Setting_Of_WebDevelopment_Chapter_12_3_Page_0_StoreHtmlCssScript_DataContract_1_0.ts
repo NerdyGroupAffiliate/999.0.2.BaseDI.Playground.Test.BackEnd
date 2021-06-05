@@ -115,8 +115,8 @@
     }
 
     export interface CssMediaQuery {
-        resolutions: CssMediaQueryResolution;
-        properties: CssProperty[];
+        resolutions?: CssMediaQueryResolution;
+        properties?: CssProperty[];
         ChildrenResolutions?: CssMediaQuery[]
     }
 

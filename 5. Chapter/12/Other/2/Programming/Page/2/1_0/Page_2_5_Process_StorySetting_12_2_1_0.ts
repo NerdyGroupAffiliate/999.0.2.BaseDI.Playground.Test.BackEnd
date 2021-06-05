@@ -731,143 +731,122 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
             let storedProcessRequestCssJsonItemKey: string = null;
 
-            let storedProcessRequestCssDetails: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.SearchKey_HTMLSEODetails_SetImplementer_ProductCreation_SEO_SearchEngine;
-           
+            let storedProcessRequestCssCounter: number = 0;
+            let storedProcessRequestCssCounter2: number = 0;
+            let storedProcessRequestCssItemValid: boolean = false;
+
             let storedProcessRequestCssItem: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFile;
+            let storedProcessRequestCssItemChild: any = "";
+            let storedProcessRequestCssItemChildList: any[] = [];
+            let storedProcessRequestCssItemChildResult: any;
             let storedProcessRequestCssItemFileName: string = "";
             let storedProcessRequestCssItemSupportedProperties: string[] = [];
-            
-
-            let storedProcessRequestCssItemUsedPropertyMediaQueryChildrenKey: string = "";
-            let storedProcessRequestCssItemUsedPropertyItemList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty[] = [];
-            
-            let storedProcessRequestCssItemUsedPropertyKey: string = "";
-            let storedProcessRequestCssItemUsedPropertyValue: any = "";
-            let storedProcessRequestCssItemUsedPropertyValueItem: any = "";
-            let storedProcessRequestCssItemUsedProperty: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty = null;
-            let storedProcessRequestCssItemUsedPropertyMediaQuery: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery = null;
-            let storedProcessRequestCssItemUsedPropertyMediaQueryChildren: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery = null;
-            let storedProcessRequestCssItemUsedPropertyMediaQueryChildrenList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
-            let storedProcessRequestCssItemUsedPropertyMediaQueryListChildren: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty[];
-            let storedProcessRequestCssItemUsedPropertyMediaQueryList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty[] = [];
-            let storedProcessRequestCssItemUsedPropertyMediaQueryModel: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery
-            let storedProcessRequestCssItemUsedPropertyMediaQueryModelChild: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery
-            let storedProcessRequestCssItemUsedPropertyMediaQueryResolutionList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
+            let storedProcessRequestCssItemList: any[] = [];            
+   
+            let storedProcessRequestCssItemUsedPropertyMediaQueryModel: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery;
+            let storedProcessRequestCssItemUsedPropertyMediaQueryModelList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
+            let storedProcessRequestCssItemUsedPropertyMediaQueryList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
             let storedProcessRequestCssItemUsedPropertyList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty[] = [];
             
-            let storedProcessRequestCssMediaQueryAttributeParentKeyItem: string = "";
-
-            let storedProcessRequestCssItemMediaQueryItem: any = "";
-            let storedProcessRequestCssItemMediaQueryAttributes: any = "";
-            let storedProcessRequestCssItemMediaQueryChildren: any = "";
-            let storedProcessRequestCssItemMediaQueryValid: boolean = false;
-            let storedProcessRequestCssItemNoneMediaQueryKey: string = "";
-            let storedProcessRequestCssItemMediaQuery: any = null;
-            let storedProcessRequestCssItemIsMediaQuery: boolean = false;
-            let storedProcessRequestCssItemMediaQueryParentBucketList: any[] = [];
-            let storedProcessRequestCssItemMediaQueryParentBucketItem: Object = {};
-            let storedProcessRequestCssItemMediaQueryChildBucketList: any[] = [];
-            let storedProcessRequestCssItemMediaQueryChildBucketItem: Object = {};
-
             let storedProcessRequestCssItem_0: any = {};
             
             let storedProcessRequestCssItem_0_MediaQuery: any = {};
-            let storedProcessRequestCssItem_0_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssItem_0_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssItem_0_NoneMediaQuery: any = {};
-            let storedProcessRequestCssItem_0_NoneMediaQuriesKeys: any = {};            
+            let storedProcessRequestCssItem_0_NoneMediaQuriesEntries: any = {};            
 
             let storedProcessRequestCssAlignments_1: any = {};
             
             let storedProcessRequestCssAlignments_1_MediaQuery: any = {};
-            let storedProcessRequestCssAlignments_1_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssAlignments_1_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssAlignments_1_NoneMediaQuery: any = {};
-            let storedProcessRequestCssAlignments_1_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssAlignments_1_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssBackgrounds_2: any = {};
             let storedProcessRequestCssBackgrounds_2_MediaQuery: any = {};
-            let storedProcessRequestCssBackgrounds_2_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssBackgrounds_2_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssBackgrounds_2_NoneMediaQuery: any = {};
-            let storedProcessRequestCssBackgrounds_2_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssBackgrounds_2_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssBorders_3: any = {};
             let storedProcessRequestCssBorders_3_MediaQuery: any = {};
-            let storedProcessRequestCssBorders_3_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssBorders_3_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssBorders_3_NoneMediaQuery: any = {};
-            let storedProcessRequestCssBorders_3_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssBorders_3_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssColors_4: any = {};
             let storedProcessRequestCssColors_4_MediaQuery: any = {};
-            let storedProcessRequestCssColors_4_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssColors_4_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssColors_4_NoneMediaQuery: any = {};
-            let storedProcessRequestCssColors_4_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssColors_4_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssEffects_5: any = {};
             let storedProcessRequestCssEffects_5_MediaQuery: any = {};
-            let storedProcessRequestCssEffects_5_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssEffects_5_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssEffects_5_NoneMediaQuery: any = {};
-            let storedProcessRequestCssEffects_5_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssEffects_5_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssFlow_6: any = {};
             let storedProcessRequestCssFlow_6_MediaQuery: any = {};
-            let storedProcessRequestCssFlow_6_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssFlow_6_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssFlow_6_NoneMediaQuery: any = {};
-            let storedProcessRequestCssFlow_6_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssFlow_6_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssLists_7: any = {};
             let storedProcessRequestCssLists_7_MediaQuery: any = {};
-            let storedProcessRequestCssLists_7_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssLists_7_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssLists_7_NoneMediaQuery: any = {};
-            let storedProcessRequestCssLists_7_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssLists_7_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssMargins_8: any = {};
             let storedProcessRequestCssMargins_8_MediaQuery: any = {};
-            let storedProcessRequestCssMargins_8_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssMargins_8_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssMargins_8_NoneMediaQuery: any = {};
-            let storedProcessRequestCssMargins_8_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssMargins_8_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssMisc_9: any = {};
             let storedProcessRequestCssMisc_9_MediaQuery: any = {};
-            let storedProcessRequestCssMisc_9_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssMisc_9_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssMisc_9_NoneMediaQuery: any = {};
-            let storedProcessRequestCssMisc_9_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssMisc_9_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssPadding_10: any = {};
             let storedProcessRequestCssPadding_10_MediaQuery: any = {};
-            let storedProcessRequestCssPadding_10_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssPadding_10_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssPadding_10_NoneMediaQuery: any = {};
-            let storedProcessRequestCssPadding_10_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssPadding_10_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssSizes_11: any = {};
             let storedProcessRequestCssSizes_11_MediaQuery: any = {};
-            let storedProcessRequestCssSizes_11_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssSizes_11_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssSizes_11_NoneMediaQuery: any = {};
-            let storedProcessRequestCssSizes_11_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssSizes_11_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssTables_12: any = {};
             let storedProcessRequestCssTables_12_MediaQuery: any = {};
-            let storedProcessRequestCssTables_12_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssTables_12_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssTables_12_NoneMediaQuery: any = {};
-            let storedProcessRequestCssTables_12_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssTables_12_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssText_13: any = {};
             let storedProcessRequestCssText_13_MediaQuery: any = {};
-            let storedProcessRequestCssText_13_MediaQuriesKeys: any = {};
+            let storedProcessRequestCssText_13_MediaQuriesEntries: any = {};
 
             let storedProcessRequestCssText_13_NoneMediaQuery: any = {};
-            let storedProcessRequestCssText_13_NoneMediaQuriesKeys: any = {};
+            let storedProcessRequestCssText_13_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestDataStorylineDetails: StrongTyped_StorylineDetails.BaseDI.Professional.Story.Programming_0.StorylineDetails_Instructions;            
             let storedProcessRequestHtmlBodyBucket: any = null;
@@ -1075,8 +1054,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssAlignments_1 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssAlignments_1.children){
-                                    storedProcessRequestCssAlignments_1_MediaQuriesKeys = Object.keys(storedProcessRequestCssAlignments_1.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssAlignments_1_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssAlignments_1.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssAlignments_1_MediaQuriesEntries = Object.entries(storedProcessRequestCssAlignments_1.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssAlignments_1_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssAlignments_1.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }
                             }
 
@@ -1085,8 +1064,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssBackgrounds_2 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssBackgrounds_2.children){
-                                    storedProcessRequestCssBackgrounds_2_MediaQuriesKeys = Object.keys(storedProcessRequestCssBackgrounds_2.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssBackgrounds_2_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssBackgrounds_2.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssBackgrounds_2_MediaQuriesEntries = Object.entries(storedProcessRequestCssBackgrounds_2.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssBackgrounds_2_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssBackgrounds_2.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                
                             } 
                             
@@ -1095,8 +1074,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssBorders_3 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssBorders_3.children){
-                                    storedProcessRequestCssBorders_3_MediaQuriesKeys = Object.keys(storedProcessRequestCssBorders_3.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssBorders_3_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssBorders_3.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssBorders_3_MediaQuriesEntries = Object.entries(storedProcessRequestCssBorders_3.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssBorders_3_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssBorders_3.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                    
                             }   
 
@@ -1105,8 +1084,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssColors_4 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssColors_4.children){
-                                    storedProcessRequestCssColors_4_MediaQuriesKeys = Object.keys(storedProcessRequestCssColors_4.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssColors_4_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssColors_4.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssColors_4_MediaQuriesEntries = Object.entries(storedProcessRequestCssColors_4.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssColors_4_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssColors_4.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                 
                             }                               
                             
@@ -1115,8 +1094,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssEffects_5 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssEffects_5.children){
-                                    storedProcessRequestCssEffects_5_MediaQuriesKeys = Object.keys(storedProcessRequestCssEffects_5.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssEffects_5_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssEffects_5.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssEffects_5_MediaQuriesEntries = Object.entries(storedProcessRequestCssEffects_5.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssEffects_5_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssEffects_5.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
                             }
 
@@ -1125,8 +1104,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssFlow_6 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssFlow_6.children){
-                                    storedProcessRequestCssFlow_6_MediaQuriesKeys = Object.keys(storedProcessRequestCssFlow_6.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssFlow_6_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssFlow_6.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssFlow_6_MediaQuriesEntries = Object.entries(storedProcessRequestCssFlow_6.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssFlow_6_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssFlow_6.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
                             }
 
@@ -1135,8 +1114,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssLists_7 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
                                 
                                 if(storedProcessRequestCssLists_7.children){
-                                    storedProcessRequestCssLists_7_MediaQuriesKeys = Object.keys(storedProcessRequestCssLists_7.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssLists_7_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssLists_7.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssLists_7_MediaQuriesEntries = Object.entries(storedProcessRequestCssLists_7.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssLists_7_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssLists_7.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
                             }                             
 
@@ -1145,8 +1124,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssMargins_8 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssMargins_8.children){
-                                    storedProcessRequestCssMargins_8_MediaQuriesKeys = Object.keys(storedProcessRequestCssMargins_8.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssMargins_8_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssMargins_8.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssMargins_8_MediaQuriesEntries = Object.entries(storedProcessRequestCssMargins_8.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssMargins_8_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssMargins_8.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
                             }  
                             
@@ -1155,8 +1134,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssMisc_9 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssMisc_9.children){
-                                    storedProcessRequestCssMisc_9_MediaQuriesKeys = Object.keys(storedProcessRequestCssMisc_9.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssMisc_9_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssMisc_9.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssMisc_9_MediaQuriesEntries = Object.entries(storedProcessRequestCssMisc_9.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssMisc_9_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssMisc_9.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                   
                             }       
                             
@@ -1165,8 +1144,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssPadding_10 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssMisc_9.children){
-                                    storedProcessRequestCssPadding_10_MediaQuriesKeys = Object.keys(storedProcessRequestCssPadding_10.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssPadding_10_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssPadding_10.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssPadding_10_MediaQuriesEntries = Object.entries(storedProcessRequestCssPadding_10.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssPadding_10_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssPadding_10.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                   
                             }     
                             
@@ -1175,8 +1154,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssSizes_11 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssSizes_11.children){
-                                    storedProcessRequestCssSizes_11_MediaQuriesKeys = Object.keys(storedProcessRequestCssSizes_11.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssSizes_11_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssSizes_11.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssSizes_11_MediaQuriesEntries = Object.entries(storedProcessRequestCssSizes_11.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssSizes_11_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssSizes_11.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                     
                             } 
                             
@@ -1185,8 +1164,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssTables_12 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssTables_12.children){
-                                    storedProcessRequestCssTables_12_MediaQuriesKeys = Object.keys(storedProcessRequestCssTables_12.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssTables_12_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssTables_12.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssTables_12_MediaQuriesEntries = Object.entries(storedProcessRequestCssTables_12.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssTables_12_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssTables_12.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                 
                             }   
                             
@@ -1195,8 +1174,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssText_13 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssText_13.children){
-                                    storedProcessRequestCssText_13_MediaQuriesKeys = Object.keys(storedProcessRequestCssText_13.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
-                                    storedProcessRequestCssText_13_NoneMediaQuriesKeys = Object.keys(storedProcessRequestCssText_13.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey.toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssText_13_MediaQuriesEntries = Object.entries(storedProcessRequestCssText_13.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
+                                    storedProcessRequestCssText_13_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssText_13.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
                             }
                         })                        
@@ -1222,257 +1201,143 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                             //#region 1: STORE process inputs
                             
                             storedProcessRequestCssItem_0 = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem_0");
-                            storedProcessRequestCssItem_0_MediaQuriesKeys = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem_0_MediaQuriesKeys");
-                            storedProcessRequestCssItem_0_NoneMediaQuriesKeys = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem_0_NoneMediaQuriesKeys");
+                            storedProcessRequestCssItem_0_MediaQuriesEntries = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem_0_MediaQuriesEntries");
+                            storedProcessRequestCssItem_0_NoneMediaQuriesEntries = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries");
                             
                             storedProcessRequestCssItemFileName = "";
                             storedProcessRequestCssItemSupportedProperties = parameterInputs.Parameters.getValue("parameterProcessRequestCssStylingItemSupportedProperties");
                             
                             //#endregion
 
-                            if(storedProcessRequestCssItem_0_NoneMediaQuriesKeys) 
-                            {                               
-                              storedProcessRequestCssItem_0_NoneMediaQuriesKeys.map(storedProcessRequestCssItemNoneMediaQueryKeyItem => 
-                              {                                  
-                                 storedProcessRequestCssItemNoneMediaQueryKey = storedProcessRequestCssItemNoneMediaQueryKeyItem;
-                                 storedProcessRequestCssItem_0_NoneMediaQuery = storedProcessRequestCssItem_0.children[storedProcessRequestCssItemNoneMediaQueryKeyItem];
-
-                                 if(storedProcessRequestCssItem_0_NoneMediaQuery.attributes)
-                                 {
-                                    //#region 2. CONVERT none media queries
-
-                                    try 
+                            //#region 3: CONVERT media queries css style
+                            try 
+                            {
+                                const ExecuteConversionRequest = (parameterProcessRequestCssItemList) : any => 
+                                {                     
+                                    //#region CONVERT html media queries to json standard
+                                    
+                                    const ExecuteConversionRequest_3 = (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : any => 
                                     {
-                                        const ExecuteConversionRequest = (): any => { 
-                                            storedProcessRequestCssItemUsedPropertyItemList = [];
-                                            
-                                            Object.keys(storedProcessRequestCssItem_0_NoneMediaQuery.attributes).map(storedProcessRequestNoneMediaQueryAttributeKey => {
-                                                storedProcessRequestCssItemUsedPropertyKey = storedProcessRequestNoneMediaQueryAttributeKey;
-                                                storedProcessRequestCssItemUsedPropertyValue = storedProcessRequestCssItem_0_NoneMediaQuery.attributes[storedProcessRequestCssItemUsedPropertyKey].split(" ");
-        
-                                                //OUTPUT EXAMPLE:
-                                                //   top: 2px;
-                                                //   bottom: 2px 2px;                                        
-                                                storedProcessRequestCssItemUsedPropertyItemList.push({
-                                                    propertyName: storedProcessRequestCssItemUsedPropertyKey,
-                                                    properyValues: [ storedProcessRequestCssItemUsedPropertyValue ]
-                                                })
-                                            })     
-                                            
-                                            return storedProcessRequestCssItemUsedPropertyItemList;
-                                        }       
-
-                                        storedProcessRequestCssItemUsedPropertyItemList = ExecuteConversionRequest();                                
-                                    } 
-                                    catch (storedProcessRequestMistake) {
-                                        throw new Error("converting none media query css");
-                                    }                                    
-
-                                    //#endregion
-
-                                    //#region 3. CONVERT media queries
-
-                                    try 
-                                    {
-                                        const ExecuteConversionRequest = (): any => 
-                                        {
-                                            //OUTPUT EXAMPLE 1:
-                                            //                @media (min-width: 20em), not all and (min-height: 40em)
-                                            //                {
-                                            //                      @media not all and (pointer: none) 
-                                            //                      {
-                                            //                          .body 
-                                            //                          {
-                                            //                              top: 2px;
-                                            //                              bottom: 2px 2px;
-                                            //                          }
-                                            //                      }
-                                            //                }     
-                                            
-                                            //OUTPUT EXAMPLE 2:
-                                            //                @media not all and (pointer: none) 
-                                            //                {
-                                            //                      .body 
-                                            //                       {
-                                            //                           top: 2px;
-                                            //                           bottom: 2px 2px;
-                                            //                       }
-                                            //                 }                                     
-                                            if(storedProcessRequestCssItem_0_MediaQuriesKeys)
-                                            { 
-                                                storedProcessRequestCssItemIsMediaQuery = true;
-                                                
-                                                storedProcessRequestCssItem_0_MediaQuriesKeys.map(storedProcessRequestCssMediaQueryAttributeKey => 
-                                                {
-                                                    storedProcessRequestCssMediaQueryAttributeParentKeyItem = storedProcessRequestCssMediaQueryAttributeKey;
-
-                                                    //OUTPUT EXAMPLE: storedProcessRequestCssMediaQueryAttributeKey = @media (min-width: 20em), not all and (min-height: 40em)   
-                                                    storedProcessRequestCssItemMediaQuery = storedProcessRequestCssItem_0.children[storedProcessRequestCssMediaQueryAttributeKey];
-                                                    //#region A. CONVERT media queries into parent/child buckets
-                                                    try 
-                                                    {
-                                                        const ExecuteConversionRequest = () : any => {
-                                                            Object.entries(storedProcessRequestCssItemMediaQuery.children).map(storedProcessRequestCssItemMediaQueryEntry => 
-                                                            {   
-                                                                //OUTPUT EXAMPLE: storedProcessRequestCssItemUsedPropertyMediaQueryChildrenKey = body) 
-                                                                if(storedProcessRequestCssItemMediaQueryEntry[0].toUpperCase().includes("@MEDIA") == false) 
-                                                                {
-                                                                    storedProcessRequestCssItemMediaQueryParentBucketList.push(storedProcessRequestCssItemMediaQueryEntry);
-                                                                }
-                                                                else
-                                                                {
-                                                                    storedProcessRequestCssItemMediaQueryChildBucketList.push(storedProcessRequestCssItemMediaQueryEntry);
-                                                                }                                                                
-                                                            })                                                            
-                                                        }  
-
-                                                        ExecuteConversionRequest();  
-                                                    } 
-                                                    catch (storedProcessRequestMistake) {
-                                                        throw new Error("converting media queries into buckets");
-                                                    }
-                                                    //#endregion 
-
-                                                    try 
-                                                    {
-                                                        const ExecuteConversionRequest = (parameterProcessRequestCssItemMediaQueryItem:any = null) : any => {
-                                                            let storedProcessRequestCounter:number = 0;
-
-                                                            storedProcessRequestCssItemMediaQueryItem = parameterProcessRequestCssItemMediaQueryItem;
-
-                                                            if(storedProcessRequestCssItemMediaQueryItem.children != undefined && Object.keys(storedProcessRequestCssItemMediaQueryItem.children).length > 0)
-                                                            {
-                                                                Object.keys(storedProcessRequestCssItemMediaQueryItem.children).map(storedProcessRequestCssItemMediaQueryItemKey =>
-                                                                {
-                                                                    storedProcessRequestCssItemMediaQueryItem = ExecuteConversionRequest(storedProcessRequestCssItemMediaQueryItem.children);
-
-                                                                    storedProcessRequestCounter += 1;
-                                                                })
-                                                            }
-
-                                                            if(storedProcessRequestCssItemMediaQueryItem.children = undefined || Object.keys(storedProcessRequestCssItemMediaQueryItem.children).length == storedProcessRequestCounter){
-                                                                storedProcessRequestCssItemMediaQueryItem = storedProcessRequestCssItemMediaQueryItem;
-                                                            }
-                                                        }
-    
-                                                        ExecuteConversionRequest(storedProcessRequestCssItemMediaQuery);                                                        
-                                                    } 
-                                                    catch (storedProcessRequestMistake) {
-                                                        throw new Error("converting media queries into buckets");
-                                                    }                                                    
-                                                    
-                                                    //#region B. CONVERT media queries parent/child buckets into media query
-                                                    try 
-                                                    {
-                                                        const ExecuteConversionRequest = () : any => {
-                                                            storedProcessRequestCssItemUsedPropertyMediaQueryModel = {
-                                                                resolutions: {
-                                                                    mediaQuery: ""
-                                                                },
-                                                                properties: [],
-                                                                ChildrenResolutions: []
-                                                             }    
-                                                             
-                                                             //#region CONVERT parent buckets
-                                                             storedProcessRequestCssItemMediaQueryParentBucketList.map(storedProcessRequestCssItemMediaQueryParentBucketItem => {
-                                                                 if(storedProcessRequestCssItemMediaQueryParentBucketItem[0].toUpperCase() == storedProcessRequestCssItemNoneMediaQueryKey.toUpperCase()) {
-                                                                    storedProcessRequestCssItemUsedPropertyMediaQueryModel.resolutions.mediaQuery = storedProcessRequestCssItemNoneMediaQueryKey;
-
-                                                                    Object.entries(storedProcessRequestCssItemMediaQueryParentBucketItem[1].attributes).map(storedProcessRequestCssItemMediaQueryParentBucketItemAttribute => {
-                                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel.properties.push({
-                                                                            propertyName: storedProcessRequestCssItemMediaQueryParentBucketItemAttribute[0],
-                                                                            properyValues: (storedProcessRequestCssItemMediaQueryParentBucketItemAttribute[1] as string).split(" ")
-                                                                        })
-                                                                    })
-                                                                 }
-                                                             })
-                                                             //#endregion
-
-                                                             //#region CONVERT child buckets
-                                                             storedProcessRequestCssItemMediaQueryChildBucketList.map(storedProcessRequestCssItemMediaQueryChildBucketItem => {
-                                                                storedProcessRequestCssItemUsedPropertyMediaQueryModelChild = {
-                                                                    resolutions: {
-                                                                        mediaQuery: ""
-                                                                    },
-                                                                    properties: [],
-                                                                    ChildrenResolutions: []
-                                                                 }   
-
-                                                                 Object.entries(storedProcessRequestCssItemMediaQueryChildBucketItem[1].children).map(storedProcessRequestCssItemMediaQueryChildItem => {
-                                                                    if(storedProcessRequestCssItemMediaQueryChildItem[0].toUpperCase() == storedProcessRequestCssItemNoneMediaQueryKey.toUpperCase()) {
-                                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.resolutions.mediaQuery = storedProcessRequestCssItemMediaQueryChildBucketItem[0]
-
-                                                                        Object.entries((storedProcessRequestCssItemMediaQueryChildItem[1] as any).attributes).map(storedProcessRequestCssItemMediaQueryParentChildItemAttribute => {
-                                                                            storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.properties.push({
-                                                                                propertyName: storedProcessRequestCssItemMediaQueryParentChildItemAttribute[0],
-                                                                                properyValues: (storedProcessRequestCssItemMediaQueryParentChildItemAttribute[1] as string).split(" ")
-                                                                            })
-                                                                        })                                                                        
-                                                                    }
-                                                                 })
-                                                                 
-                                                                 if(storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.resolutions.mediaQuery && storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.properties.length > 0){
-                                                                    storedProcessRequestCssItemUsedPropertyMediaQueryModelChild.ChildrenResolutions.push(storedProcessRequestCssItemUsedPropertyMediaQueryModelChild);
-                                                                 }
-                                                             })
-                                                             //#endregion
-                                                        }  
-
-                                                        ExecuteConversionRequest();  
-                                                    } 
-                                                    catch (storedProcessRequestMistake) {
-                                                        throw new Error("converting parent media query css");
-                                                    }
-                                                    //#endregion                                                     
-                                                    
-                                                })
-                                            }                                         
-                                        }
-
-                                        ExecuteConversionRequest();
-                                    } 
-                                    catch (storedProcessRequestMistake) {
-                                        if(storedProcessRequestMistake.message){
-                                            throw storedProcessRequestMistake;
-                                        }
+                                        storedProcessRequestCssItem = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem");
+                                        storedProcessRequestCssItemChildList = parameterInputs.Parameters.getValue("parameterProcessRequestCssItemChildList") != undefined ? parameterInputs.Parameters.getValue("parameterProcessRequestCssItemChildList") : [];
+                                
+                                        storedProcessRequestCssItemValid = false;
                                         
-                                        throw new Error("converting media query css");
-                                    }  
+                                        storedProcessRequestCssItemChild = (storedInputs.Parameters.getValue("parameterProcessRequestCssItemChild") == true) ? storedProcessRequestCssItem[0][0] : storedProcessRequestCssItem[0];
 
-                                    //#endregion                                    
+                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = 
+                                        {
+                                            resolutions: {
+                                                mediaQuery: storedProcessRequestCssItemChild
+                                            },
+                                            properties: [],
+                                            ChildrenResolutions: []
+                                        }                  
 
-                                    //#region 4: STORE css item
+                                        storedProcessRequestCssItemChild = (storedInputs.Parameters.getValue("parameterProcessRequestCssItemChild") == true) ? storedProcessRequestCssItem[0][1] : storedProcessRequestCssItem[1];
 
-                                    try 
-                                    {
-                                        const ExecuteStoragenRequest = (): any => {
-                                            if(storedProcessRequestCssItemUsedPropertyItemList.length > 0){
-                                                storedProcessRequestCssItemUsedProperty = {
-                                                    attributeID: storedProcessRequestCssItemNoneMediaQueryKey,
-                                                    properties: storedProcessRequestCssItemUsedPropertyItemList,
-                                                    IsMediaQuery: (storedProcessRequestCssItemIsMediaQuery) ? "True" : "False",
-                                                    IsHtmlTag: (storedProcessRequestCssItemIsMediaQuery) ? "False" : "True",
-                                                    MediaQueryResolutions: (storedProcessRequestCssItemUsedPropertyMediaQueryResolutionList.length > 0) ? storedProcessRequestCssItemUsedPropertyMediaQueryResolutionList : null
-                                                }
-            
-                                                storedProcessRequestCssItemUsedPropertyList.push(storedProcessRequestCssItemUsedProperty)
+                                        if(((storedProcessRequestCssItemChild as any).children == undefined) || (Object.keys((storedProcessRequestCssItemChild as any).children).length == 0 && Object.keys((storedProcessRequestCssItemChild as any).attributes).length > 0))
+                                        {
+                                            Object.entries((storedProcessRequestCssItemChild as any).attributes).map(storedProcessRequestCssItemAttribute => {
+                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel.properties.push({
+                                                    propertyName: storedProcessRequestCssItemAttribute[0],
+                                                    properyValues: (storedProcessRequestCssItemAttribute[1] as string).split(" ")
+                                                })
+                                            }) 
+
+                                            storedProcessRequestCssItemUsedPropertyMediaQueryModel.ChildrenResolutions = (storedProcessRequestCssItemChildList.length > 0) ? storedProcessRequestCssItemChildList : [];
+                                            
+                                            storedProcessRequestCssItemValid = true;
+
+                                            return storedProcessRequestCssItemUsedPropertyMediaQueryModel;
+                                        }
+                                        else
+                                        {
+                                            if(storedProcessRequestCssItemChildList.length > 0){
+                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel.ChildrenResolutions = (storedProcessRequestCssItemChildList.length > 0) ? storedProcessRequestCssItemChildList : [];
+
+                                                storedProcessRequestCssItemValid = true;
+
+                                                return storedProcessRequestCssItemUsedPropertyMediaQueryModel;
                                             }
-
-                                            storedProcessRequestCssItemUsedPropertyItemList = [];
-                                            storedProcessRequestCssItemUsedPropertyMediaQuery = null;
-                                            storedProcessRequestCssItemUsedPropertyMediaQueryListChildren = [];
                                         }
 
-                                        ExecuteStoragenRequest();
-                                    } 
-                                    catch (storedProcessRequestMistake) {
-                                        throw new Error("storing css");
-                                    }  
+                                        return null;
+                                    }
+
+                                    const ExecuteConversionRequest_2 = (parameterProcessRequestCssItemList) : any =>
+                                    {                                        
+                                        storedProcessRequestCssItemList = parameterProcessRequestCssItemList;
+
+                                        storedProcessRequestCssItemList.map(storedProcessRequestCssItem => 
+                                        {                                            
+                                            if(storedProcessRequestCssItem[1].children != undefined && Object.entries(storedProcessRequestCssItem[1].children).length > 0){
+                                                Object.entries(storedProcessRequestCssItem[1].children).map(storedProcessRequestCssItemChild => {
+                                                    if(((storedProcessRequestCssItemChild[1]) as any).children != undefined && (Object.keys((storedProcessRequestCssItemChild[1] as any).children).length > 0)) 
+                                                    {
+                                                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItem", Object.entries(((storedProcessRequestCssItemChild[1]) as any).children));
+                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", true);
+
+                                                        storedProcessRequestCssItemChildResult = ExecuteConversionRequest_3(storedInputs) as any;
+    
+                                                        if(storedProcessRequestCssItemChildResult != null){
+                                                            storedProcessRequestCssItemChildList.push(storedProcessRequestCssItemChildResult);
+                                                        }
+
+                                                        storedProcessRequestCssCounter += 1;
+                                                    }
+
+                                                    if(((storedProcessRequestCssItemChild as any)[1].children != undefined && storedProcessRequestCssCounter == (Object.keys((storedProcessRequestCssItemChild as any)[1].children).length)) || ((storedProcessRequestCssItemChild as any)[1].attributes != undefined && Object.keys((storedProcessRequestCssItemChild as any)[1].attributes).length > 0)){
+                                                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItem", storedProcessRequestCssItemChild);
+                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemChildList", storedProcessRequestCssItemChildList);
+                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", false);
+
+                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_3(storedInputs) as any;
+    
+                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModelList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
+
+                                                        storedProcessRequestCssCounter = 0;
+                                                    } 
+                                                    
+                                                    storedProcessRequestCssCounter2 += 1;
+                                                })     
+                                            }   
+                                            
+                                            if(storedProcessRequestCssItem[1].children != undefined && storedProcessRequestCssCounter2 == (Object.keys(storedProcessRequestCssItem[1].children).length)){
+                                                storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItem", storedProcessRequestCssItem);
+                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItemChildList", storedProcessRequestCssItemUsedPropertyMediaQueryModelList);
+                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", false);
+
+                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_3(storedInputs) as any;
+
+                                                storedProcessRequestCssItemUsedPropertyMediaQueryList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
+
+                                                storedProcessRequestCssItemUsedPropertyMediaQueryModelList = [];
+                                                storedProcessRequestCssCounter = 0;
+                                                storedProcessRequestCssCounter2 = 0;
+                                            }                                             
+                                        })                                        
+                                   
+                                        return storedProcessRequestCssItemUsedPropertyMediaQueryList;
+                                    }
+
+                                    storedProcessRequestCssItemUsedPropertyMediaQueryList = ExecuteConversionRequest_2(parameterProcessRequestCssItemList);
 
                                     //#endregion
-                                 }                                 
-                              })
-                            }
+
+                                    return storedProcessRequestCssItemUsedPropertyMediaQueryList;
+                                }
+
+                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest(storedProcessRequestCssItem_0_MediaQuriesEntries);
+                            } 
+                            catch (storedProcessRequestMistake) {
+                                throw new Error("converting none media query css");
+                            }   
+                            //#endregion
+                          
 
                             //#region 5. OUTPUT css item
                             storedProcessRequestCssItem = {
@@ -1511,8 +1376,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                         {
                             storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                             storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssAlignments_1);
-                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesKeys", storedProcessRequestCssAlignments_1_MediaQuriesKeys);
-                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesKeys", storedProcessRequestCssAlignments_1_NoneMediaQuriesKeys);                                                       
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssAlignments_1_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssAlignments_1_NoneMediaQuriesEntries);                                                       
 
                             storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
                                 "position",
