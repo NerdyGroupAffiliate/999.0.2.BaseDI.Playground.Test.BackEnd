@@ -312,11 +312,12 @@ describe('Conversion Test', () => {
         storedInputs.Parameters.setValue("parameterInputRequestFileRootPath", "C://Programming//999.0.3.BaseDI.QuickStart.Templates//3. Client//Web//3. Setting//5//Ecommerce//2//Generate Brand Trust//1//Friendship//");
         storedInputs.Parameters.setValue("parameterInputRequestFileName", "C://Programming//999.0.3.BaseDI.QuickStart.Templates//3. Client//Web//3. Setting//5//Ecommerce//2//Generate Brand Trust//1//Friendship//HTML//1//2_0//Setting_Sketchy-2-2-F-SKC-7-Launch-1-1-Goal-2-ASSET-Home-AJC-CMS-2_1_2_0.html");
         storedInputs.Parameters.setValue("parameterInputRequestFileType", "HTML");
-
-        storedInputs.Parameters.setValue("parameterInputRequestFileOutputName", "State_Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0-P2_0.json");
         
         //2. PROCESS
-        storedInputs.Parameters.setValue("parameterProcessRequestRequestHandlerFileName", "Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterProcessRequestInputRequestName", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0");
+        storedInputs.Parameters.setValue("parameterProcessRequestInputRequestNameDataCacheKey", "Director_Of_WebDevelopment_Chapter_12_3_Page_1_OutputHomeScreen_Handler_1_0-P2_0");
+
+        storedInputs.Parameters.setValue("parameterProcessRequestHandlerFileName", "Director_Of_Programming_Chapter_12_2_Page_2_ConversionRequest_Handler_1_0");
 
         //3. OUTPUTS
 

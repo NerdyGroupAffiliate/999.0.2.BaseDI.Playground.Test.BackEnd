@@ -736,13 +736,16 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssItemValid: boolean = false;
 
             let storedProcessRequestCssItem: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFile;
+            let storedProcessRequestCssItemConvertedList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFile[] = []; 
             let storedProcessRequestCssItemChild: any = "";
             let storedProcessRequestCssItemChildList: any[] = [];
             let storedProcessRequestCssItemChildResult: any;
             let storedProcessRequestCssItemFileName: string = "";
             let storedProcessRequestCssItemSupportedProperties: string[] = [];
-            let storedProcessRequestCssItemList: any[] = [];            
+            let storedProcessRequestCssItemList: any[] = []; 
+                    
    
+            let storedProcessRequestCssItemStyleFileName: string = "";
             let storedProcessRequestCssItemUsedPropertyMediaQueryModel: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery;
             let storedProcessRequestCssItemUsedPropertyMediaQueryModelList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
             let storedProcessRequestCssItemUsedPropertyMediaQueryList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
@@ -758,6 +761,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
             let storedProcessRequestCssAlignments_1: any = {};
             
+            let storedProcessRequestCssAlignments_1_FileName: string = "";
             let storedProcessRequestCssAlignments_1_MediaQuery: any = {};
             let storedProcessRequestCssAlignments_1_MediaQuriesEntries: any = {};
 
@@ -765,6 +769,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssAlignments_1_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssBackgrounds_2: any = {};
+
+            let storedProcessRequestCssBackgrounds_2_FileName: string = "";
             let storedProcessRequestCssBackgrounds_2_MediaQuery: any = {};
             let storedProcessRequestCssBackgrounds_2_MediaQuriesEntries: any = {};
 
@@ -772,6 +778,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssBackgrounds_2_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssBorders_3: any = {};
+
+            let storedProcessRequestCssBorders_3_FileName: string = "";
             let storedProcessRequestCssBorders_3_MediaQuery: any = {};
             let storedProcessRequestCssBorders_3_MediaQuriesEntries: any = {};
 
@@ -779,6 +787,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssBorders_3_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssColors_4: any = {};
+
+            let storedProcessRequestCssColors_4_FileName: string = "";
             let storedProcessRequestCssColors_4_MediaQuery: any = {};
             let storedProcessRequestCssColors_4_MediaQuriesEntries: any = {};
 
@@ -786,6 +796,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssColors_4_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssEffects_5: any = {};
+
+            let storedProcessRequestCssEffects_5_FileName: string = "";
             let storedProcessRequestCssEffects_5_MediaQuery: any = {};
             let storedProcessRequestCssEffects_5_MediaQuriesEntries: any = {};
 
@@ -793,6 +805,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssEffects_5_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssFlow_6: any = {};
+
+            let storedProcessRequestCssFlow_6_FileName: string = "";
             let storedProcessRequestCssFlow_6_MediaQuery: any = {};
             let storedProcessRequestCssFlow_6_MediaQuriesEntries: any = {};
 
@@ -800,6 +814,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssFlow_6_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssLists_7: any = {};
+
+            let storedProcessRequestCssLists_7_FileName: string = "";
             let storedProcessRequestCssLists_7_MediaQuery: any = {};
             let storedProcessRequestCssLists_7_MediaQuriesEntries: any = {};
 
@@ -807,6 +823,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssLists_7_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssMargins_8: any = {};
+
+            let storedProcessRequestCssMargins_8_FileName: string = "";
             let storedProcessRequestCssMargins_8_MediaQuery: any = {};
             let storedProcessRequestCssMargins_8_MediaQuriesEntries: any = {};
 
@@ -814,6 +832,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssMargins_8_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssMisc_9: any = {};
+
+            let storedProcessRequestCssMisc_9_FileName: string = "";
             let storedProcessRequestCssMisc_9_MediaQuery: any = {};
             let storedProcessRequestCssMisc_9_MediaQuriesEntries: any = {};
 
@@ -821,6 +841,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssMisc_9_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssPadding_10: any = {};
+
+            let storedProcessRequestCssPadding_10_FileName: string = "";
             let storedProcessRequestCssPadding_10_MediaQuery: any = {};
             let storedProcessRequestCssPadding_10_MediaQuriesEntries: any = {};
 
@@ -828,6 +850,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssPadding_10_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssSizes_11: any = {};
+
+            let storedProcessRequestCssSizes_11_FileName: string = "";
             let storedProcessRequestCssSizes_11_MediaQuery: any = {};
             let storedProcessRequestCssSizes_11_MediaQuriesEntries: any = {};
 
@@ -835,6 +859,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssSizes_11_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssTables_12: any = {};
+
+            let storedProcessRequestCssTables_12_FileName: string = "";
             let storedProcessRequestCssTables_12_MediaQuery: any = {};
             let storedProcessRequestCssTables_12_MediaQuriesEntries: any = {};
 
@@ -842,6 +868,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssTables_12_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestCssText_13: any = {};
+
+            let storedProcessRequestCssText_13_FileName: string = "";
             let storedProcessRequestCssText_13_MediaQuery: any = {};
             let storedProcessRequestCssText_13_MediaQuriesEntries: any = {};
 
@@ -849,6 +877,10 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssText_13_NoneMediaQuriesEntries: any = {};
 
             let storedProcessRequestDataStorylineDetails: StrongTyped_StorylineDetails.BaseDI.Professional.Story.Programming_0.StorylineDetails_Instructions;            
+            
+            let storedProcessRequestFileItem: string = ""; 
+            let storedProcessRequestFileList: string[] = []; 
+
             let storedProcessRequestHtmlBodyBucket: any = null;
             let storedProcessRequestHtmlBodyCssFileListBucket: Array<string> = [];
 
@@ -1054,6 +1086,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssAlignments_1 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssAlignments_1.children){
+                                    storedProcessRequestCssAlignments_1_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssAlignments_1_MediaQuriesEntries = Object.entries(storedProcessRequestCssAlignments_1.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssAlignments_1_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssAlignments_1.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }
@@ -1064,6 +1097,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssBackgrounds_2 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssBackgrounds_2.children){
+                                    storedProcessRequestCssBackgrounds_2_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssBackgrounds_2_MediaQuriesEntries = Object.entries(storedProcessRequestCssBackgrounds_2.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssBackgrounds_2_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssBackgrounds_2.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                
@@ -1074,6 +1108,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssBorders_3 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssBorders_3.children){
+                                    storedProcessRequestCssBorders_3_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssBorders_3_MediaQuriesEntries = Object.entries(storedProcessRequestCssBorders_3.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssBorders_3_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssBorders_3.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                    
@@ -1084,6 +1119,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssColors_4 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssColors_4.children){
+                                    storedProcessRequestCssColors_4_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssColors_4_MediaQuriesEntries = Object.entries(storedProcessRequestCssColors_4.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssColors_4_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssColors_4.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                 
@@ -1094,6 +1130,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssEffects_5 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssEffects_5.children){
+                                    storedProcessRequestCssEffects_5_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssEffects_5_MediaQuriesEntries = Object.entries(storedProcessRequestCssEffects_5.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssEffects_5_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssEffects_5.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
@@ -1104,6 +1141,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssFlow_6 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssFlow_6.children){
+                                    storedProcessRequestCssFlow_6_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssFlow_6_MediaQuriesEntries = Object.entries(storedProcessRequestCssFlow_6.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssFlow_6_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssFlow_6.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
@@ -1114,6 +1152,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssLists_7 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
                                 
                                 if(storedProcessRequestCssLists_7.children){
+                                    storedProcessRequestCssLists_7_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssLists_7_MediaQuriesEntries = Object.entries(storedProcessRequestCssLists_7.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssLists_7_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssLists_7.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
@@ -1124,6 +1163,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssMargins_8 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssMargins_8.children){
+                                    storedProcessRequestCssMargins_8_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssMargins_8_MediaQuriesEntries = Object.entries(storedProcessRequestCssMargins_8.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssMargins_8_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssMargins_8.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
@@ -1134,6 +1174,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssMisc_9 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssMisc_9.children){
+                                    storedProcessRequestCssMisc_9_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssMisc_9_MediaQuriesEntries = Object.entries(storedProcessRequestCssMisc_9.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssMisc_9_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssMisc_9.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                   
@@ -1144,6 +1185,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssPadding_10 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssMisc_9.children){
+                                    storedProcessRequestCssPadding_10_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssPadding_10_MediaQuriesEntries = Object.entries(storedProcessRequestCssPadding_10.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssPadding_10_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssPadding_10.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                   
@@ -1154,6 +1196,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssSizes_11 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssSizes_11.children){
+                                    storedProcessRequestCssSizes_11_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssSizes_11_MediaQuriesEntries = Object.entries(storedProcessRequestCssSizes_11.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssSizes_11_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssSizes_11.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                     
@@ -1164,6 +1207,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssTables_12 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssTables_12.children){
+                                    storedProcessRequestCssTables_12_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssTables_12_MediaQuriesEntries = Object.entries(storedProcessRequestCssTables_12.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssTables_12_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssTables_12.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                 
@@ -1174,6 +1218,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 storedProcessRequestCssText_13 = storedProcessRequestCssJsonItem[storedProcessRequestCssJsonItemKey];
 
                                 if(storedProcessRequestCssText_13.children){
+                                    storedProcessRequestCssText_13_FileName = storedProcessRequestCssJsonItemKey;
                                     storedProcessRequestCssText_13_MediaQuriesEntries = Object.entries(storedProcessRequestCssText_13.children).filter(storedProcessRequestJSONKey => storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                     storedProcessRequestCssText_13_NoneMediaQuriesEntries = Object.entries(storedProcessRequestCssText_13.children).filter(storedProcessRequestJSONKey => !storedProcessRequestJSONKey[0].toUpperCase().includes("@MEDIA"));
                                 }                                  
@@ -1204,19 +1249,19 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                             storedProcessRequestCssItem_0_MediaQuriesEntries = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem_0_MediaQuriesEntries");
                             storedProcessRequestCssItem_0_NoneMediaQuriesEntries = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries");
                             
-                            storedProcessRequestCssItemFileName = "";
+                            storedProcessRequestCssItemStyleFileName = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem_0_FileName");
                             storedProcessRequestCssItemSupportedProperties = parameterInputs.Parameters.getValue("parameterProcessRequestCssStylingItemSupportedProperties");
                             
                             //#endregion
 
-                            //#region 3: CONVERT media queries css style
+                            //#region 2: CONVERT media queries css style
                             try 
                             {
-                                const ExecuteConversionRequest = (parameterProcessRequestCssItemList) : any => 
+                                const ExecuteConversionRequest_1_0 = (parameterProcessRequestCssItemList) : any => 
                                 {                     
                                     //#region CONVERT html media queries to json standard
                                     
-                                    const ExecuteConversionRequest_3 = (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : any => 
+                                    const ExecuteConversionRequest_1_2 = (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : any => 
                                     {
                                         storedProcessRequestCssItem = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem");
                                         storedProcessRequestCssItemChildList = parameterInputs.Parameters.getValue("parameterProcessRequestCssItemChildList") != undefined ? parameterInputs.Parameters.getValue("parameterProcessRequestCssItemChildList") : [];
@@ -1239,6 +1284,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                         if(((storedProcessRequestCssItemChild as any).children == undefined) || (Object.keys((storedProcessRequestCssItemChild as any).children).length == 0 && Object.keys((storedProcessRequestCssItemChild as any).attributes).length > 0))
                                         {
                                             Object.entries((storedProcessRequestCssItemChild as any).attributes).map(storedProcessRequestCssItemAttribute => {
+                                                if((storedProcessRequestCssItemAttribute[1] as string).toLocaleUpperCase().includes("URL(")) 
+                                                {
+                                                    storedProcessRequestFileItem = (storedProcessRequestCssItemAttribute[1] as string).replace(/(^.*\(|\).*$)/g, '');
+                                                    storedProcessRequestFileItem  = storedProcessRequestFileItem.split("../").join("");
+                                                    storedProcessRequestFileList.push(storedProcessRequestFileItem);
+                                                }
+                                                
                                                 storedProcessRequestCssItemUsedPropertyMediaQueryModel.properties.push({
                                                     propertyName: storedProcessRequestCssItemAttribute[0],
                                                     properyValues: (storedProcessRequestCssItemAttribute[1] as string).split(" ")
@@ -1265,7 +1317,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                         return null;
                                     }
 
-                                    const ExecuteConversionRequest_2 = (parameterProcessRequestCssItemList) : any =>
+                                    const ExecuteConversionRequest_1_1 = (parameterProcessRequestCssItemList) : any =>
                                     {                                        
                                         storedProcessRequestCssItemList = parameterProcessRequestCssItemList;
 
@@ -1279,7 +1331,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                                         storedInputs.Parameters.setValue("parameterProcessRequestCssItem", Object.entries(((storedProcessRequestCssItemChild[1]) as any).children));
                                                         storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", true);
 
-                                                        storedProcessRequestCssItemChildResult = ExecuteConversionRequest_3(storedInputs) as any;
+                                                        storedProcessRequestCssItemChildResult = ExecuteConversionRequest_1_2(storedInputs) as any;
     
                                                         if(storedProcessRequestCssItemChildResult != null){
                                                             storedProcessRequestCssItemChildList.push(storedProcessRequestCssItemChildResult);
@@ -1294,7 +1346,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                                         storedInputs.Parameters.setValue("parameterProcessRequestCssItemChildList", storedProcessRequestCssItemChildList);
                                                         storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", false);
 
-                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_3(storedInputs) as any;
+                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_1_2(storedInputs) as any;
     
                                                         storedProcessRequestCssItemUsedPropertyMediaQueryModelList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
 
@@ -1311,7 +1363,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                                 storedInputs.Parameters.setValue("parameterProcessRequestCssItemChildList", storedProcessRequestCssItemUsedPropertyMediaQueryModelList);
                                                 storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", false);
 
-                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_3(storedInputs) as any;
+                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_1_2(storedInputs) as any;
 
                                                 storedProcessRequestCssItemUsedPropertyMediaQueryList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
 
@@ -1324,24 +1376,23 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                         return storedProcessRequestCssItemUsedPropertyMediaQueryList;
                                     }
 
-                                    storedProcessRequestCssItemUsedPropertyMediaQueryList = ExecuteConversionRequest_2(parameterProcessRequestCssItemList);
+                                    storedProcessRequestCssItemUsedPropertyMediaQueryList = ExecuteConversionRequest_1_1(parameterProcessRequestCssItemList);
 
                                     //#endregion
 
                                     return storedProcessRequestCssItemUsedPropertyMediaQueryList;
                                 }
 
-                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest(storedProcessRequestCssItem_0_MediaQuriesEntries);
+                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_1_0(storedProcessRequestCssItem_0_MediaQuriesEntries);
                             } 
                             catch (storedProcessRequestMistake) {
                                 throw new Error("converting none media query css");
                             }   
-                            //#endregion
-                          
+                            //#endregion                          
 
                             //#region 5. OUTPUT css item
                             storedProcessRequestCssItem = {
-                                StyleFileName: storedProcessRequestCssItemFileName,
+                                StyleFileName: storedProcessRequestCssItemStyleFileName,
                                 StyleFileSupportedProperties: storedProcessRequestCssItemSupportedProperties,
                                 StyleFileUseProperties: storedProcessRequestCssItemUsedPropertyList
                             }
@@ -1370,12 +1421,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                         };
                         //#endregion
 
-                        //#region 2. STORE style alignments
+                        //#region 2. CONVERT style alignments
 
                         try 
                         {
                             storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
                             storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssAlignments_1);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssAlignments_1_FileName);
                             storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssAlignments_1_MediaQuriesEntries);
                             storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssAlignments_1_NoneMediaQuriesEntries);                                                       
 
@@ -1393,58 +1445,389 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                               ]);                                                       
                             
                               storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
                         } 
                         catch (storedProcessRequestMistake) {
-                            throw new Error("storing style alignments");
+                            throw new Error("converting style alignments");
                         }
 
                         //#endregion
 
-                        //#region 3. STORE style backgrounds
+                        //#region 3. CONVERT style backgrounds
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssBackgrounds_2);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssBackgrounds_2_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssBackgrounds_2_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssBackgrounds_2_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "background-color",
+                                "background",
+                                "background-image",
+                                "background-repeat",
+                                "background-position",
+                                "background-attachment",
+                                "background-clip",
+                                "background-orgin",
+                                "background-size"
+                              ]);                                                       
+                            
+                              storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style backgrounds");
+                        }                        
 
                         //#endregion
 
-                        //#region 4. STORE style borders
+                        //#region 4. CONVERT style borders
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssBorders_3);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssBorders_3_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssBorders_3_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssBorders_3_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "border-radius",
+                                "border-top-left-radius",
+                                "border-top-right-radius",
+                                "border-bottom-right-radius",
+                                "border-image",
+                                "border-image-source",
+                                "border-image-slice",
+                                "border-image-width",
+                                "border-image-outset",
+                                "border-image-repeat",
+                                "border",
+                                "border-right",
+                                "border-left",
+                                "border-top",
+                                "border-bottom",
+                                "border-width",
+                                "border-top-width",
+                                "border-bottom-width",
+                                "border-left-width",
+                                "border-right-width",
+                                "border-style",
+                                "border-top-style",
+                                "border-bottom-style",
+                                "border-left-style",
+                                "border-right-style",
+                                "border-color",
+                                "border-top-color",
+                                "border-bottom-color",
+                                "border-left-color",
+                                "border-right-color",
+                                "border-collapse",
+                                "border-spacing"
+                              ]);                                                       
+                            
+                              storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style borders");
+                        }                          
 
                         //#endregion
 
-                        //#region 5. STORE style colors
+                        //#region 5. CONVERT style colors
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssColors_4);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssColors_4_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssColors_4_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssColors_4_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "color",
+                                "opacity"
+                              ]);                                                       
+                            
+                              storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style colors");
+                        }                         
 
                         //#endregion
 
-                        //#region 6. STORE style effects
+                        //#region 6. CONVERT style effects
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssEffects_5);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssEffects_5_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssEffects_5_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssEffects_5_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "box-shadow",
+                                "transform",
+                                "transform-origin",
+                                "transition",
+                                "transition-property",
+                                "transition-duration",
+                                "transition-timing-function",
+                                "transition-delay"
+                              ]);                                                       
+                            
+                              storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style effects");
+                        }                            
 
                         //#endregion
 
-                        //#region 7. STORE style flow
+                        //#region 7. CONVERT style flow
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssFlow_6);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssFlow_6_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssFlow_6_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssFlow_6_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "display",
+                                "visibility"
+                              ]);                                                       
+                            
+                              storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style flow");
+                        } 
 
                         //#endregion
 
-                        //#region 8. STORE style lists
+                        //#region 8. CONVERT style lists
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssLists_7);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssLists_7_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssLists_7_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssLists_7_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "content",
+                                "quotes",
+                                "counter-increment",
+                                "counter-reset",
+                                "list-style",
+                                "list-style-type",
+                                "list-style-image",
+                                "list-style-position"
+                              ]);                                                       
+                            
+                              storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style list");
+                        } 
 
                         //#endregion
 
-                        //#region 9. STORE style margins
+                        //#region 9. CONVERT style margins
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssMargins_8);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssMargins_8_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssMargins_8_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssMargins_8_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "margin",
+                                "margin-top",
+                                "margin-right",
+                                "margin-left",
+                                "margin-bottom"
+                              ]);                                                       
+                            
+                              storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style margins");
+                        } 
 
                         //#endregion
 
-                        //#region 10. STORE style misc
+                        //#region 10. CONVERT style misc
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssMisc_9);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssMisc_9_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssMisc_9_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssMisc_9_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "cursor",
+                                "outline",
+                                "outline-style",
+                                "outline-color",
+                                "outline-width",
+                                "direction",
+                                "unicode-bidi",
+                                "all",
+                                "page-break-before",
+                                "page-break-after",
+                                "page-break-inside",
+                                "orphans",
+                                "widows"
+                              ]);                                                       
+                            
+                              storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                              storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style misc");
+                        } 
 
                         //#endregion
 
-                        //#region 11. STORE style padding
+                        //#region 11. CONVERT style padding
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssPadding_10);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssPadding_10_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssPadding_10_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssPadding_10_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "padding",
+                                "padding-top",
+                                "padding-bottom",
+                                "padding-left",
+                                "padding-right"
+                              ]);                                                       
+                            
+                            storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                            storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style padding");
+                        } 
 
                         //#endregion
 
-                        //#region 12. STORE style sizes
+                        //#region 12. CONVERT style sizes
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssSizes_11);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssSizes_11_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssSizes_11_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssSizes_11_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "width",
+                                "height",
+                                "min-width",
+                                "max-width",
+                                "min-height",
+                                "max-height"
+                              ]);                                                       
+                            
+                            storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                            storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style sizes");
+                        } 
 
                         //#endregion
 
-                        //#region 13. STORE style tables
+                        //#region 13. CONVERT style tables
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssTables_12);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssTables_12_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssTables_12_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssTables_12_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "table-layout",
+                                "empty-cells",
+                                "caption-side"
+                              ]);                                                       
+                            
+                            storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                            storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style tables");
+                        } 
 
                         //#endregion
 
-                        //#region 14. STORE style text
+                        //#region 14. CONVERT style text
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0", storedProcessRequestCssText_13);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_FileName", storedProcessRequestCssText_13_FileName);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_MediaQuriesEntries", storedProcessRequestCssText_13_MediaQuriesEntries);
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssItem_0_NoneMediaQuriesEntries", storedProcessRequestCssText_13_NoneMediaQuriesEntries);                                                       
+
+                            storedInputs.Parameters.setValue("parameterProcessRequestCssStylingItemSupportedProperties", [
+                                "font",
+                                "font-family",
+                                "font-style",
+                                "font-variant",
+                                "font-weight",
+                                "font-size",
+                                "font-stretch",
+                                "font-size-adjust",
+                                "font-synthesis",
+                                "line-height",
+                                "letter-spacing",
+                                "word-spacing",
+                                "text-align",
+                                "text-decoration",
+                                "text-decoration-line",
+                                "text-decoration-style",
+                                "text-decoration-color",
+                                "text-indent",
+                                "text-transform",
+                                "vertical-align",
+                                "white-space"
+                              ]);                                                       
+                            
+                            storedProcessRequestCssItem = await ExecuteProcessHelper(storedInputs);
+                            storedProcessRequestCssItemConvertedList.push(storedProcessRequestCssItem);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting style text");
+                        } 
 
                         //#endregion
                     }
