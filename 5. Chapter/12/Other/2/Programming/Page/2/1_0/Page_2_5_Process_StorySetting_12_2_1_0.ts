@@ -978,7 +978,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             {
                 //#region IDEAL CASE - USE baseDI converter
 
-                //#region A. CONVERT html file content to json object
+                //#region A. CONVERT html to json
 
                 try 
                 {
@@ -996,7 +996,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion
 
-                //#region B. CONVERT json object to html head and body buckets
+                //#region B. CONVERT json to html buckets
 
                 try 
                 {
@@ -1014,7 +1014,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion
 
-                //#region C. CONVERT html head bucket to list css files
+                //#region C. CONVERT html bucket to css
 
                 try 
                 {
@@ -1052,7 +1052,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion                
 
-                //#region D. CONVERT list of css files to json objects
+                //#region D. CONVERT css to json
 
                 try 
                 {
@@ -1072,7 +1072,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion   
 
-                //#region E. CONVERT json objects to 13 css buckets
+                //#region E. CONVERT json to css buckets
 
                 try 
                 {
@@ -1236,11 +1236,13 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion                  
 
-                //#region F. CONVERT 13 css buckets to storyline details object
+                //#region F. CONVERT css buckets to baseDI model
                 try
                 {
                     const ExecuteConversionRequest = async (): Promise<any> =>
                     {
+                        //#region 0. SETUP css process helper
+
                         const ExecuteProcessHelper = async (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> => 
                         {
                             //#region 1: STORE process inputs
@@ -1401,7 +1403,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                             //#endregion
                         }
 
-                        //#region 1. SETUP default storyline details object
+                        //#endregion
+
+                        //#region 1. SETUP css baseDI model
                         storedProcessRequestDataStorylineDetails = {
                             baseDIInstructions: {
                                 presentation: [{
@@ -1421,7 +1425,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                         };
                         //#endregion
 
-                        //#region 2. CONVERT style alignments
+                        //#region 2. CONVERT css alignments to model
 
                         try 
                         {
@@ -1453,7 +1457,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 3. CONVERT style backgrounds
+                        //#region 3. CONVERT css backgrounds to model
 
                         try 
                         {
@@ -1484,7 +1488,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 4. CONVERT style borders
+                        //#region 4. CONVERT css borders to model
 
                         try 
                         {
@@ -1538,7 +1542,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 5. CONVERT style colors
+                        //#region 5. CONVERT css colors to model
 
                         try 
                         {
@@ -1562,7 +1566,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 6. CONVERT style effects
+                        //#region 6. CONVERT css effects to model
 
                         try 
                         {
@@ -1592,7 +1596,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 7. CONVERT style flow
+                        //#region 7. CONVERT css flow to model
 
                         try 
                         {
@@ -1616,7 +1620,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 8. CONVERT style lists
+                        //#region 8. CONVERT css lists to model
 
                         try 
                         {
@@ -1646,7 +1650,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 9. CONVERT style margins
+                        //#region 9. CONVERT css margins to model
 
                         try 
                         {
@@ -1673,7 +1677,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 10. CONVERT style misc
+                        //#region 10. CONVERT css misc to model
 
                         try 
                         {
@@ -1708,7 +1712,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 11. CONVERT style padding
+                        //#region 11. CONVERT css padding to model
 
                         try 
                         {
@@ -1735,7 +1739,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 12. CONVERT style sizes
+                        //#region 12. CONVERT css sizes to model
 
                         try 
                         {
@@ -1763,7 +1767,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 13. CONVERT style tables
+                        //#region 13. CONVERT css tables to model
 
                         try 
                         {
@@ -1788,7 +1792,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 14. CONVERT style text
+                        //#region 14. CONVERT css text to model
 
                         try 
                         {
