@@ -1,106 +1,114 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_999._0._2.BaseDI.Professional.BackEnd</RootNamespace>
-    <UserSecretsId>69357c9e-c71d-4207-b5ac-8941c0b55e0e</UserSecretsId>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
-    <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
-    <TypeScriptToolsVersion>4.2</TypeScriptToolsVersion>
-    <TypeScriptBuildMode>true</TypeScriptBuildMode>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace>_999._0._2.BaseDI.Professional.BackEnd</RootNamespace>
+		<UserSecretsId>69357c9e-c71d-4207-b5ac-8941c0b55e0e</UserSecretsId>
+		<DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+		<TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+		<TypeScriptToolsVersion>4.2</TypeScriptToolsVersion>
+		<TypeScriptBuildMode>true</TypeScriptBuildMode>
+		<GenerateProgramFile>false</GenerateProgramFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="wwwroot\Client\**" />
-    <Content Remove="wwwroot\Client\**" />
-    <EmbeddedResource Remove="wwwroot\Client\**" />
-    <None Remove="wwwroot\Client\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="wwwroot\Client\**" />
+		<Content Remove="wwwroot\Client\**" />
+		<EmbeddedResource Remove="wwwroot\Client\**" />
+		<None Remove="wwwroot\Client\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Remove="9. Organizing\MRichardson001\App.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\Counter.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\Error.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\FetchData.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\Index.razor" />
-    <Content Remove="9. Organizing\MRichardson001\Pages\_Host.cshtml" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Remove="9. Organizing\MRichardson001\App.razor" />
+		<Content Remove="9. Organizing\MRichardson001\Pages\Counter.razor" />
+		<Content Remove="9. Organizing\MRichardson001\Pages\Error.razor" />
+		<Content Remove="9. Organizing\MRichardson001\Pages\FetchData.razor" />
+		<Content Remove="9. Organizing\MRichardson001\Pages\Index.razor" />
+		<Content Remove="9. Organizing\MRichardson001\Pages\_Host.cshtml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Remove="0. Script\Extensions\11\Automate Manual Task\1\Risk Management\Method\0\1_0\Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelperGoalHelper_Handler_1_0.ts" />
-    <None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts" />
-    <None Remove="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_TransportAssets_Handler_1_0.ts" />
-    <None Remove="0. Script\Interfaces\12\Other\3\Web Development\Contract\0\1_0\Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts" />
-    <None Remove="2. Character\1\The Buyer\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheBuyer_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
-    <None Remove="2. Character\2\The Seller\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheSeller_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
-    <None Remove="8. Testing\0. Script\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.test.tsx" />
-    <None Remove="8. Testing\1. Storyline\Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.test.tsx" />
-    <None Remove="8. Testing\Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlTestingVariables_Handler_1_0.test.ts" />
-    <None Remove="Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0_Test.tsx" />
-    <None Remove="Snippet_TypeScript_Regions.ts" />
-    <None Remove="Startup_Client_ImportExports_1_0.tsx" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="0. Script\Extensions\11\Automate Manual Task\1\Risk Management\Method\0\1_0\Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelperGoalHelper_Handler_1_0.ts" />
+		<None Remove="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts" />
+		<None Remove="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_TransportAssets_Handler_1_0.ts" />
+		<None Remove="0. Script\Interfaces\12\Other\3\Web Development\Contract\0\1_0\Interface_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts" />
+		<None Remove="2. Character\1\The Buyer\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheBuyer_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
+		<None Remove="2. Character\2\The Seller\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheSeller_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
+		<None Remove="8. Testing\0. Script\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.test.tsx" />
+		<None Remove="8. Testing\1. Storyline\Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.test.tsx" />
+		<None Remove="8. Testing\Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlTestingVariables_Handler_1_0.test.ts" />
+		<None Remove="Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0_Test.tsx" />
+		<None Remove="Snippet_TypeScript_Regions.ts" />
+		<None Remove="Startup_Client_ImportExports_1_0.tsx" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include=".vscode\launch.json" />
-    <Content Include=".vscode\tasks.json" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include=".vscode\launch.json" />
+		<Content Include=".vscode\tasks.json" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Box.V2.Core" Version="3.23.0" />
-    <PackageReference Include="curl" Version="7.30.0.2" />
-    <PackageReference Include="CurlThin" Version="0.0.7" />
-    <PackageReference Include="LocalStorage" Version="2.1.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="NUnit" Version="3.12.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Box.V2.Core" Version="3.23.0" />
+		<PackageReference Include="curl" Version="7.30.0.2" />
+		<PackageReference Include="CurlThin" Version="0.0.7" />
+		<PackageReference Include="LocalStorage" Version="2.1.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="NUnit" Version="3.12.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="0. Script\Interfaces\12\Other\3\Web Development\Contract\0\1_0\" />
-    <Folder Include="4. Experience\2\Movement\12\Other\2\Programming\Experience\3\1_0\" />
-    <Folder Include="4. Experience\2\Movement\2\Generate Brand Trust\3\Social Media\Experience\1\1_0\" />
-    <Folder Include="4. Experience\2\Movement\2\Generate Brand Trust\3\Social Media\Experience\2\1_0\" />
-    <Folder Include="5. Chapter\11\Automate Manual Task\1\Risk Management\Page\" />
-    <Folder Include="5. Chapter\12\Other\3\Web Development\Page\2\1_0\" />
-    <Folder Include="6. State\11\Automate Manual Task\1\Risk Management\Repository\" />
-    <Folder Include="6. State\2\Generate Brand Trust\3\Social Media\Repository\1\1_0\" />
-    <Folder Include="7. Director\11\Automate Manual Task\1\Risk Management\Director\3\1_0\" />
-    <Folder Include="7. Director\12\Other\2\Programming\Director\0\1_0\" />
-    <Folder Include="8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" />
-    <Folder Include="9. Organizing\MRichardson001\Pages\" />
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="0. Script\Interfaces\12\Other\3\Web Development\Contract\0\1_0\" />
+		<Folder Include="4. Experience\2\Movement\12\Other\2\Programming\Experience\3\1_0\" />
+		<Folder Include="4. Experience\2\Movement\2\Generate Brand Trust\3\Social Media\Experience\1\1_0\" />
+		<Folder Include="4. Experience\2\Movement\2\Generate Brand Trust\3\Social Media\Experience\2\1_0\" />
+		<Folder Include="5. Chapter\11\Automate Manual Task\1\Risk Management\Page\" />
+		<Folder Include="5. Chapter\12\Other\3\Web Development\Page\2\1_0\" />
+		<Folder Include="6. State\11\Automate Manual Task\1\Risk Management\Repository\" />
+		<Folder Include="6. State\2\Generate Brand Trust\3\Social Media\Repository\1\1_0\" />
+		<Folder Include="7. Director\11\Automate Manual Task\1\Risk Management\Director\3\1_0\" />
+		<Folder Include="7. Director\12\Other\2\Programming\Director\0\1_0\" />
+		<Folder Include="8. Testing\8. Testing\0. Script\Results\Extensions\12\3\Web Development\Report\0\1_0\" />
+		<Folder Include="9. Organizing\MRichardson001\Pages\" />
+		<Folder Include="wwwroot\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include=".vscode\launch.json copy.dotnet" />
-    <None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
-    <None Include="Snippet_CSharp_Regions.cs" />
-    <None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
-    <None Include="9. Organizing\MRichardson001\Shared\MainLayout.razor" />
-    <None Include="9. Organizing\MRichardson001\Shared\NavMenu.razor" />
-    <None Include="9. Organizing\MRichardson001\_Imports.razor" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include=".vscode\launch.json copy.dotnet" />
+		<None Include="9. Organizing\MRichardson001\.config\webpack.server.js" />
+		<None Include="Snippet_CSharp_Regions.cs" />
+		<None Include="9. Organizing\MRichardson001\frontend\.config\webpack.server.js" />
+		<None Include="9. Organizing\MRichardson001\Shared\MainLayout.razor" />
+		<None Include="9. Organizing\MRichardson001\Shared\NavMenu.razor" />
+		<None Include="9. Organizing\MRichardson001\_Imports.razor" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\5\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.ts" />
-    <TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\6\1_0\Extension_Experience_The_Movement_Chapter_12_2_Page_6_TransportAssets_Handler_1_0.ts" />
-    <TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_TransportAssets_Handler_1_0.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\2\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
-    <TypeScriptCompile Include="2. Character\1\The Buyer\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheBuyer_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="2. Character\2\The Seller\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheSeller_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
-    <TypeScriptCompile Include="3. Setting\9\Software\12\Other\3\Web Development\Location\0\1_0\Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.ts" />
-    <TypeScriptCompile Include="0. Script\Snippets\Actions.ts" />
-    <TypeScriptCompile Include="8. Testing\0. Script\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.test.tsx" />
-    <TypeScriptCompile Include="8. Testing\1. Storyline\Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.test.tsx" />
-    <TypeScriptCompile Include="Snippet_TypeScript_Regions.ts" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+		<PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
+		<PackageReference Include="coverlet.collector" Version="1.3.0" />
+	</ItemGroup>	
+
+	<ItemGroup>
+		<TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\5\1_0\Extension_Director_Of_Programming_Chapter_12_2_Page_5_SensorRequest_Handler_1_0.ts" />
+		<TypeScriptCompile Include="0. Script\Extensions\12\Other\2\Programming\Method\6\1_0\Extension_Experience_The_Movement_Chapter_12_2_Page_6_TransportAssets_Handler_1_0.ts" />
+		<TypeScriptCompile Include="0. Script\Extensions\12\Other\3\Web Development\Method\13\1_0\Extension_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0.ts">
+			<SubType>Code</SubType>
+		</TypeScriptCompile>
+		<TypeScriptCompile Include="0. Script\Extensions\12\Other\4\CMS\Method\1\1_0\Extension_Director_Of_CMS_Chapter_12_4_Page_1_TransportAssets_Handler_1_0.ts">
+			<SubType>Code</SubType>
+		</TypeScriptCompile>
+		<TypeScriptCompile Include="0. Script\Extensions\1\Generate Brand Awareness\1\Advertising\Method\2\1_0\Extension_Director_Of_Advertising_Chapter_1_1_Page_2_InputWhereAPersonBecameAwareOfTopic_Handler_1_0.ts" />
+		<TypeScriptCompile Include="2. Character\1\The Buyer\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheBuyer_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts">
+			<SubType>Code</SubType>
+		</TypeScriptCompile>
+		<TypeScriptCompile Include="2. Character\2\The Seller\9\Improve Customer Service\1\Customer Service\Role\1\1_0\TheSeller_Of_CustomerService_Chapter_9_1_Page_1_StoreSellerAccountDetails_DataContract_1_0.ts" />
+		<TypeScriptCompile Include="3. Setting\9\Software\12\Other\3\Web Development\Location\0\1_0\Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0.ts" />
+		<TypeScriptCompile Include="0. Script\Snippets\Actions.ts" />
+		<TypeScriptCompile Include="8. Testing\0. Script\Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.test.tsx" />
+		<TypeScriptCompile Include="8. Testing\1. Storyline\Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.test.tsx" />
+		<TypeScriptCompile Include="Snippet_TypeScript_Regions.ts" />
+	</ItemGroup>
 
 </Project>
