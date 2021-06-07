@@ -1425,7 +1425,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                         };
                         //#endregion
 
-                        //#region 2. CONVERT css alignments to model
+                        //#region 2. CONVERT css alignments to baseDI model
 
                         try 
                         {
@@ -1457,7 +1457,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 3. CONVERT css backgrounds to model
+                        //#region 3. CONVERT css backgrounds to baseDI model
 
                         try 
                         {
@@ -1488,7 +1488,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 4. CONVERT css borders to model
+                        //#region 4. CONVERT css borders to baseDI model
 
                         try 
                         {
@@ -1542,7 +1542,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 5. CONVERT css colors to model
+                        //#region 5. CONVERT css colors to baseDI model
 
                         try 
                         {
@@ -1566,7 +1566,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 6. CONVERT css effects to model
+                        //#region 6. CONVERT css effects to baseDI model
 
                         try 
                         {
@@ -1596,7 +1596,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 7. CONVERT css flow to model
+                        //#region 7. CONVERT css flow to baseDI model
 
                         try 
                         {
@@ -1620,7 +1620,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 8. CONVERT css lists to model
+                        //#region 8. CONVERT css lists to baseDI model
 
                         try 
                         {
@@ -1650,7 +1650,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 9. CONVERT css margins to model
+                        //#region 9. CONVERT css margins to baseDI model
 
                         try 
                         {
@@ -1677,7 +1677,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 10. CONVERT css misc to model
+                        //#region 10. CONVERT css misc to baseDI model
 
                         try 
                         {
@@ -1712,7 +1712,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 11. CONVERT css padding to model
+                        //#region 11. CONVERT css padding to baseDI model
 
                         try 
                         {
@@ -1739,7 +1739,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 12. CONVERT css sizes to model
+                        //#region 12. CONVERT css sizes to baseDI model
 
                         try 
                         {
@@ -1767,7 +1767,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 13. CONVERT css tables to model
+                        //#region 13. CONVERT css tables to baseDI model
 
                         try 
                         {
@@ -1792,7 +1792,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 14. CONVERT css text to model
+                        //#region 14. CONVERT css text to baseDI model
 
                         try 
                         {
