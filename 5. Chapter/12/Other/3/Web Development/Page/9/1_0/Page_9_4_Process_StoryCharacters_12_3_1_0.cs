@@ -136,7 +136,7 @@ namespace BaseDI.Professional.Chapter.Page.Web_Development_9
 
             #region MEMORIZE extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters.ContainsKey("parameterProcessRequestExtraData") ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 

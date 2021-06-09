@@ -56,43 +56,100 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             {
                 #region 1. INPUTS
 
-                #region DEFINE process checkpoint
+                #region DEFINE control variables
+
+                #endregion
+
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
-            #endregion
+                #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input xxx xxxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE process variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion                
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
-                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["parameterProcessRequestSettings"];
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0 -> ValidateInputs");
-                //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterInputRequestActionName"] = storedInputRequestActionName;
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequest3WordDescription"] = "VALIDATING request inputs";
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestSettings"] = storedProcessRequestTracker["storedProcessRequestSettings"];
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestTracker"] = storedProcessRequestTracker;
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestFileName"] = "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs";
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestMethodName"] = "Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0 -> ValidateInputs";
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables
+
+                #region MEMORIZE output xxx xxx
+
+
+                #endregion
 
                 #endregion
 
@@ -104,49 +161,55 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs.Parameters.Count() > 0)
+                if (parameterInputs.Parameters.Count > 0)
                 {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
                     else
                     {
                         if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilter"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilter*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilter*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterKey"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterKey*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterKey*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterValue"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterValue*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterValue*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //3. OUTPUTS
                     if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseAsArray"))
                     {
-                        storedOutputResponseMessage += "***parameterOutputResponseAsArray*** cannot be blank or empty.\n"; ;
+                        storedOutputResponseMessage += "***parameterOutputResponseAsArray*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -154,16 +217,20 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
-                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                        }
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequest3WordDescription"] = "PARSING parameter values failed";
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestStepNumberReplace"] = storedProcessRequestTracker["storedProcessRequestStepNumber"];
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterOutputResponseMessageType"] = "Mistake"; //Values = Logging or Mistake
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
 
                         #endregion
 
@@ -178,9 +245,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                 {
                     #region EDGE CASE - USE blank return
 
-                    return await Task.FromResult<bool>(false).ConfigureAwait(true);
+                    return false;
 
-                    #endregion                    
+                    #endregion
                 }
 
                 #endregion
@@ -195,14 +262,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return await Task.FromResult<bool>(true).ConfigureAwait(true);
+                return true;
 
                 #endregion
 
                 #endregion
 
                 #endregion
-
             };
 
             ///BEGIN valdation process
@@ -210,60 +276,105 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+            #endregion
+
+            #region DEFINE output variables
 
             List<JToken> storedOutputResponseData = new List<JToken>();
 
             #endregion
 
-            #region DEFINE event handlers
+            ///////////////////////////////
 
-            Func<JToken, Dictionary<string, string>, string, bool> ExecuteConversionRequest = null;
+            #region MEMORIZE control variables
 
-            #endregion
-
-            #region DEFINE parameter inputs
+            #region MEMORIZE control xxx xxx
 
 
             #endregion
 
-            #region MEMORIZE control client server
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request tracker
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //2. PROCESS
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedInputs.Parameters.getValue("parameterInputRequestActionName"));
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0");
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
+            //3. OUTPUTS
+
             #endregion
 
-            #region MEMORIZE filter metadata
 
-            JObject storedData = parameterInputs.Parameters["parameterProcessRequestDataToFilter"];
+            #region MEMORIZE process filter data
 
-            string storedKeyValuePairKey = parameterInputs.Parameters["parameterProcessRequestDataToFilterKey"];
-            string storedKeyValuePairValue = parameterInputs.Parameters["parameterProcessRequestDataToFilterValue"];
+            JObject storedProcessRequestDataToFilter = parameterInputs.Parameters["parameterProcessRequestDataToFilter"];
 
-            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterOutputResponseAsArray"];
+            string storedProcessRequestDataToFilterKey = parameterInputs.Parameters["parameterProcessRequestDataToFilterKey"];
+            string storedProcessRequestDataToFilterValue = parameterInputs.Parameters["parameterProcessRequestDataToFilterValue"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response options
+
+            bool storedOutputResponseAsArray = parameterInputs.Parameters["parameterOutputResponseAsArray"];
+
+            #endregion
 
             #endregion
 
@@ -275,7 +386,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region IDEAL CASE - USE recursive filter
 
-            if (storedData != null)
+            Func<JToken, Dictionary<string, string>, string, bool> ExecuteConversionRequest = null;
+
+            if (storedProcessRequestDataToFilter != null)
             {
                 ExecuteConversionRequest = (JToken parameterToken, Dictionary<string, string> parameterNodes, string parameterParentLocation) =>
                 {
@@ -304,7 +417,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                     else
                     {
                         // leaf of the tree
-                        if (parameterToken.ToString().ToUpper(CultureInfo.CurrentCulture) == storedKeyValuePairValue.ToUpper(CultureInfo.CurrentCulture))
+                        if (parameterToken.ToString().ToUpper(CultureInfo.CurrentCulture) == storedProcessRequestDataToFilterValue.ToUpper(CultureInfo.CurrentCulture))
                         {
                             if (!storedOutputResponseData.Contains(parameterToken))
                             {
@@ -318,7 +431,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                     return true;
                 };
 
-                ExecuteConversionRequest(storedData, null, "");
+                ExecuteConversionRequest(storedProcessRequestDataToFilter, null, "");
             }
 
             #endregion
@@ -352,48 +465,100 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input xxx xxxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE process variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion                
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PREPARING logging request");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> ValidateInputs");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterInputRequestActionName"] = storedInputRequestActionName;
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequest3WordDescription"] = "VALIDATING request inputs";
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestSettings"] = storedProcessRequestTracker["storedProcessRequestSettings"];
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestTracker"] = storedProcessRequestTracker;
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestFileName"] = "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs";
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestMethodName"] = "Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0 -> ValidateInputs";
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables
+
+                #region MEMORIZE output xxx xxx
+
+
+                #endregion
 
                 #endregion
 
@@ -405,310 +570,13 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs.Parameters.Count() > 0)
+                if (parameterInputs.Parameters.Count > 0)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n"; ;
-                        storedProcessRequestMistakeMade = true;
-                    }
+                    //0. CONTROLLERS
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n"; ;
-                        storedProcessRequestMistakeMade = true;
-                    }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessRequestMistakeMade = true;
-                        }
-                    }
+                    //1. INPUTS
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilter"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilter*** cannot be blank or empty.\n"; ;
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterKey"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterKey*** cannot be blank or empty.\n"; ;
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterValue"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterValue*** cannot be blank or empty.\n"; ;
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseAsArray"))
-                    {
-                        storedOutputResponseMessage += "***parameterOutputResponseAsArray*** cannot be blank or empty.\n"; ;
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (storedProcessRequestMistakeMade)
-                    {
-                        #region EDGE CASE - USE developer logger
-
-                        if (storedProcessRequestDeveloperMode)
-                        {
-                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
-
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                        }
-
-                        #endregion
-
-                        #region EDGE CASE - USE exception handler
-
-                        throw new Exception("PARSING parameter values failed");
-
-                        #endregion
-                    }
-                }
-                else
-                {
-                    #region EDGE CASE - USE blank return
-
-                    return await Task.FromResult<bool>(false).ConfigureAwait(true);
-
-                    #endregion                    
-                }
-
-                #endregion
-
-                #endregion
-
-                #endregion
-
-                #region 3. OUTPUT
-
-                #region RETURN validation passed
-
-                #region IDEAL CASE - USE passed indicator
-
-                return await Task.FromResult<bool>(true).ConfigureAwait(true);
-
-                #endregion
-
-                #endregion
-
-                #endregion
-
-            };
-
-            #endregion
-
-            ///BEGIN valdation process
-            await ValidateInputs(parameterInputs);
-
-            #region DEFINE data response
-
-            List<JToken> storedOutputResponseData = new List<JToken>();
-
-            #endregion
-
-            #region DEFINE event handlers
-
-            Func<JToken, Action<JObject>, JToken> ExecuteConversionRequest = null;
-
-            #endregion
-
-            #region DEFINE parameter inputs
-
-
-            #endregion
-
-            #region MEMORIZE control client server
-
-            _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
-
-            #endregion
-
-            #region MEMORIZE app settings
-
-            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
-
-            #endregion
-
-            #region MEMORIZE developer mode
-
-            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
-
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-            //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
-
-            #endregion
-
-            #region MEMORIZE filter metadata
-
-            JObject storedData = parameterInputs.Parameters["parameterProcessRequestDataToFilter"];
-
-            string storedKeyValuePairKey = parameterInputs.Parameters["parameterProcessRequestDataToFilterKey"];
-            string storedKeyValuePairValue = parameterInputs.Parameters["parameterProcessRequestDataToFilterValue"];
-
-            bool storedReturnValueAsArray = parameterInputs.Parameters["parameterOutputResponseAsArray"];
-
-            #endregion
-
-            #endregion
-
-            #region 2. PROCESS
-
-            #region EXECUTE conversion request
-
-            if (storedData != null)
-            {
-                ExecuteConversionRequest = (JToken parameterNode, Action<JObject> parameterAction) =>
-                {
-                    if (parameterNode.Type == JTokenType.Object)
-                    {
-                        parameterAction((JObject)parameterNode);
-
-                        foreach (JProperty child in parameterNode.Children<JProperty>())
-                        {
-                            ExecuteConversionRequest(child.Value, parameterAction);
-                        }
-                    }
-                    else if (parameterNode.Type == JTokenType.Array)
-                    {
-                        foreach (JToken child in parameterNode.Children())
-                        {
-                            ExecuteConversionRequest(child, parameterAction);
-                        }
-                    }
-
-                    return null;
-                };
-
-                ExecuteConversionRequest(storedData, n =>
-                {
-                    JToken token = n[storedKeyValuePairKey];
-
-                    if (token != null && token.Type == JTokenType.String)
-                    {
-                        if (storedKeyValuePairValue == token.Value<string>())
-                        {
-                            storedOutputResponseData.Add(token);
-                        }
-                    }
-                });
-            }
-
-            #endregion
-
-            #endregion
-
-            #region 3. OUTPUT
-
-            #region RETURN converted data
-
-            #region IDEAL CASE - USE json dataset
-
-            return storedOutputResponseData;
-
-            #endregion
-
-            #endregion
-
-            #endregion
-        }
-
-        public static async Task<string> Step_X_X_Framework_Output_JsonMistakeNode_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
-        {
-            #region 1. INPUTS
-
-            #region VALIDATE input parameters
-
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
-                #region 1. INPUTS
-
-                #region DEFINE parameter inputs
-
-
-                #endregion
-
-                #region DEFINE process checkpoint
-
-                bool storedProcessRequestMistakeMade = false;
-
-                #endregion
-
-                #region DEFINE stored message
-
-                string storedOutputResponseMessage = "";
-
-                #endregion
-
-                #region MEMORIZE control client server
-
-                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
-
-                #endregion
-
-                #region MEMORIZE app settings
-
-                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
-
-                #endregion
-
-                #region MEMORIZE developer mode
-
-                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
-
-                SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
-
-                //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PREPARING logging request");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> ValidateInputs");
-
-                #endregion
-
-                #endregion
-
-                #region 2. PROCESS
-
-                #region EXECUTE validation process
-
-                #region IDEAL CASE - USE valid information
-
-                if (parameterInputs != null || parameterInputs.Parameters != null)
-                {
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequest3WordDescription"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequest3WordDescription*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestActionName"))
-                    {
-                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-
+                    //2. PROCESS
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
@@ -724,26 +592,33 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                     {
                         if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                                                storedProcessRequestMistakeMade = true;
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestFileName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilter"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestFileName*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilter*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMethodName"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterKey"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestMethodName*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterKey*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMistakeTemplate"))
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataToFilterValue"))
                     {
-                        storedOutputResponseMessage += "***parameterProcessRequestMistakeTemplate*** cannot be blank or empty.\n";
+                        storedOutputResponseMessage += "***parameterProcessRequestDataToFilterValue*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //3. OUTPUTS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseAsArray"))
+                    {
+                        storedOutputResponseMessage += "***parameterOutputResponseAsArray*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
@@ -751,16 +626,20 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
-                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                        }
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequest3WordDescription"] = "PARSING parameter values failed";
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestStepNumberReplace"] = storedProcessRequestTracker["storedProcessRequestStepNumber"];
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterOutputResponseMessageType"] = "Mistake"; //Values = Logging or Mistake
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
 
                         #endregion
 
@@ -775,9 +654,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                 {
                     #region EDGE CASE - USE blank return
 
-                    return await Task.FromResult<bool>(true).ConfigureAwait(true);
+                    return false;
 
-                    #endregion                    
+                    #endregion
                 }
 
                 #endregion
@@ -801,75 +680,110 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                 #endregion
             };
 
-            //BEGIN valdation process
+            ///BEGIN valdation process
             await ValidateInputs(parameterInputs);
 
             #endregion
 
-            #region DEFINE developer mode
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
 
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE process variables
 
-            string storedOutputResponseData = null;
 
             #endregion
 
-            #region MEMORIZE action name
+            #region DEFINE output variables
+
+            List<JToken> storedOutputResponseData = new List<JToken>();
+
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
 
             string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion
 
-            #region MEMORIZE control client server
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request tracker
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
-            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING data into mistake");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_JsonMistakeNode_1_0");
-
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
-
-            //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, HandleDefaults, Storage, Uptime
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0");
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALEndOfProcess", true);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALRunSilentMode", true);
+
+            //3. OUTPUTS
 
             #endregion
 
-            #region MEMORIZE mistake details
 
-            string storedMistakeDescription = parameterInputs.Parameters["parameterProcessRequest3WordDescription"];
-            string storedMistakeFileName = parameterInputs.Parameters["parameterProcessRequestFileName"];
-            string storedMistakeMethodName = parameterInputs.Parameters["parameterProcessRequestMethodName"];
+            #region MEMORIZE process filter data
 
-            string storedMistakeTemplate = parameterInputs.Parameters["parameterProcessRequestMistakeTemplate"];
+            JObject storedProcessRequestDataToFilter = parameterInputs.Parameters["parameterProcessRequestDataToFilter"];
 
-            string storedMistakeBody = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}} }] }}]}";
-            string storedMistakeItem = "'details': [{details}]";
+            string storedProcessRequestDataToFilterKey = parameterInputs.Parameters["parameterProcessRequestDataToFilterKey"];
+            string storedProcessRequestDataToFilterValue = parameterInputs.Parameters["parameterProcessRequestDataToFilterValue"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response options
+
+            bool storedOutputResponseAsArray = parameterInputs.Parameters["parameterOutputResponseAsArray"];
+
+            #endregion
 
             #endregion
 
@@ -877,24 +791,49 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region 2. PROCESS
 
-            #region EXECUTE mistake creation
+            #region EXECUTE conversion request
 
-            #region IDEAL CASE - USE baseDi template
+            #region IDEAL CASE - USE recursive filter
 
-            Func<string, string, dynamic, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterProcessRequestMistakeTemplate, string parameterMistakeBody, dynamic parameterMistakeItem, string parameterMistakeFileName, string parameterMistakeMethodName, string parameterProcessRequest3WordDescription) =>
+            if (storedProcessRequestDataToFilter != null)
             {
-                parameterMistakeBody = parameterMistakeBody.Replace("{item}", parameterMistakeItem);
+                Func<JToken, Action<JObject>, bool> ExecuteConversionRequest = null;
 
-                parameterMistakeBody = parameterMistakeBody.Replace("{calledByEntryPointName}", parameterMistakeFileName);
-                parameterMistakeBody = parameterMistakeBody.Replace("{calledByMethodName}", parameterMistakeMethodName);
-                parameterMistakeBody = parameterMistakeBody.Replace("{calledByMethodReason}", parameterProcessRequest3WordDescription);
+                ExecuteConversionRequest = (JToken parameterNode, Action<JObject> parameterAction) =>
+                {
+                    if (parameterNode.Type == JTokenType.Object)
+                    {
+                        parameterAction((JObject)parameterNode);
 
-                parameterMistakeBody = parameterMistakeBody.Replace("{details}", parameterProcessRequestMistakeTemplate);
+                        foreach (JProperty child in parameterNode.Children<JProperty>())
+                        {
+                            ExecuteConversionRequest(child.Value, parameterAction);
+                        }
+                    }
+                    else if (parameterNode.Type == JTokenType.Array)
+                    {
+                        foreach (JToken child in parameterNode.Children())
+                        {
+                            ExecuteConversionRequest(child, parameterAction);
+                        }
+                    }
 
-                return parameterMistakeBody;
-            };
+                    return true;
+                };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedMistakeTemplate, storedMistakeBody, storedMistakeItem, storedMistakeFileName, storedMistakeMethodName, storedMistakeDescription);
+                ExecuteConversionRequest(storedProcessRequestDataToFilter, n =>
+                {
+                    JToken token = n[storedProcessRequestDataToFilterKey];
+
+                    if (token != null && token.Type == JTokenType.String)
+                    {
+                        if (storedProcessRequestDataToFilterValue == token.Value<string>())
+                        {
+                            storedOutputResponseData.Add(token);
+                        }
+                    }
+                });
+            }
 
             #endregion
 
@@ -914,60 +853,113 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #endregion
 
-            #endregion
+            #endregion           
         }
 
-        public static async Task<string> Step_X_X_Framework_Output_JsonObservationNode_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_X_X_Framework_Output_JsonMistakeNode_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
-            #region 1. INPUTS
+            #region 1. INPUTS    
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) => {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
+            {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input xxx xxxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE process variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion                
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PREPARING logging request");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action -> ValidateInputs");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterInputRequestActionName"] = storedInputRequestActionName;
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequest3WordDescription"] = "VALIDATING request inputs";
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestSettings"] = storedProcessRequestTracker["storedProcessRequestSettings"];
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestTracker"] = storedProcessRequestTracker;
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestFileName"] = "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs";
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestMethodName"] = "Step_X_X_Framework_Output_JsonMistakeNode_1_0 -> ValidateInputs";
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables
+
+                #region MEMORIZE output xxx xxx
+
+
+                #endregion
 
                 #endregion
 
@@ -979,20 +971,18 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
+                if (parameterInputs.Parameters.Count > 0)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequest3WordDescription"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequest3WordDescription*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
+                    //0. CONTROLLERS
 
+                    //1. INPUTS
                     if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestActionName"))
                     {
                         storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
+                    //2. PROCESS
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
                     {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
@@ -1008,10 +998,12 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                     {
                         if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
                         {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.Add(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
                         }
                     }
 
+                    //3. OUTPUTS
                     if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationFileName"))
                     {
                         storedOutputResponseMessage += "***parameterOutputResponseObservationFileName*** cannot be blank or empty.\n";
@@ -1058,16 +1050,20 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                     {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
-                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                        }
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequest3WordDescription"] = "PARSING parameter values failed";
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestStepNumberReplace"] = storedProcessRequestTracker["storedProcessRequestStepNumber"];
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterOutputResponseMessageType"] = "Mistake"; //Values = Logging or Mistake
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
 
                         #endregion
 
@@ -1082,9 +1078,9 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
                 {
                     #region EDGE CASE - USE blank return
 
-                    return await Task.FromResult<bool>(false).ConfigureAwait(true);
+                    return false;
 
-                    #endregion                    
+                    #endregion
                 }
 
                 #endregion
@@ -1113,80 +1109,99 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #endregion
 
-            #region DEFINE developer mode
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
 
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE process variables
 
-            string storedOutputResponseData = null;
 
             #endregion
 
-            #region MEMORIZE action name
+            #region DEFINE output variables
+
+            string storedOutputResponseData = "";
+
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
 
             string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion
 
-            #region MEMORIZE control client server
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request tracker
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
-            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING data into observation");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_JsonObservationNode_1_0");
-
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
-
-            //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALAccountingCostType", "Storage"); //Values = Bandwidth, CPU, Memory, HandleDefaults, Storage, Uptime
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_JsonMistakeNode_1_0");
             //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALEndOfProcess", true);
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALRunSilentMode", true);
+
+            //3. OUTPUTS
 
             #endregion
 
-            #region MEMORIZE observation details
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output observation details
 
             string storedOutputResponseObservationDescription = parameterInputs.Parameters["parameterProcessRequest3WordDescription"];
-            string storedOutputResponseObservationFileName = parameterInputs.Parameters["parameterOutputResponseObservationFileName"];
-            string storedOutputResponseObservationMethodName = parameterInputs.Parameters["parameterOutputResponseObservationMethodName"];
-            
-            string storedOutputResponseObservationTemplate = parameterInputs.Parameters["parameterObservationTemplate"];
-            
-            string storedOutputResponseObservationBody = @"{'baseDIObservations': [{
-                                                'observation':
-                                                {
-                                                    'metadata': [{'calledByEntryPointName':'{calledByEntryPointName}'},{'calledByMethodName':'{calledByMethodName}'},{'calledByMethodReason':'{calledByMethodReason}'},{'item':{{item}}}]
-                                                }
-                                            }]
-                                         }";
-            string storedOutputResponseObservationItem = @"'presentation': [{presentation}],
-                                             'business': [{business}],
-                                             'service': [{service}],
-                                             'security': [{security}],
-                                             'data': [{data}]";
+            string storedOutputResponseObservationFileName = parameterInputs.Parameters["parameterProcessRequestFileName"];
+            string storedOutputResponseObservationMethodName = parameterInputs.Parameters["parameterProcessRequestMethodName"];
+
+            string storedOutputResponseObservationBody = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}} }] }}]}";
+            string storedOutputResponseObservationItem = "'details': [{details}]";
 
             string storedOutputResponseObservationPresentationTemplate = parameterInputs.Parameters["parameterOutputResponseObservationPresentationTemplate"];
             string storedOutputResponseObservationBusinessTemplate = parameterInputs.Parameters["parameterOutputResponseObservationBusinessTemplate"];
@@ -1198,30 +1213,33 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #endregion
 
+            #endregion
+
             #region 2. PROCESS
 
-            #region EXECUTE obversation creation
+            #region EXECUTE mistake creation
 
             #region IDEAL CASE - USE baseDi template
 
-            Func<string, string, dynamic, string, string, string, string, string, string, string, string, Task<string>> ExecuteConversionRequest = async(string parameterObservationTemplate, string parameterObservationBody, dynamic parameterObservationItem, string parameterOutputResponseObservationFileName, string parameterOutputResponseObservationMethodName, string parameterProcessRequest3WordDescription, string parameterOutputResponseObservationPresentationTemplate, string parameterOutputResponseObservationBusinessTemplate, string parameterOutputResponseObservationServiceTemplate, string parameterOutputResponseObservationSecurityTemplate, string parameterOutputResponseObservationDataTemplate) => {
-                parameterObservationBody = parameterObservationBody.Replace("{item}", parameterObservationItem);
+            Func<string> ExecuteConversionRequest = () =>
+            {
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{item}", storedOutputResponseObservationItem);
 
-                parameterObservationBody = parameterObservationBody.Replace("{calledByEntryPointName}", parameterOutputResponseObservationFileName);
-                parameterObservationBody = parameterObservationBody.Replace("{calledByMethodName}", parameterOutputResponseObservationMethodName);
-                parameterObservationBody = parameterObservationBody.Replace("{calledByMethodReason}", parameterProcessRequest3WordDescription);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{calledByEntryPointName}", storedOutputResponseObservationFileName);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{calledByMethodName}", storedOutputResponseObservationMethodName);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{calledByMethodReason}", storedOutputResponseObservationDescription);
 
-                parameterObservationBody = parameterObservationBody.Replace("{presentation}", parameterOutputResponseObservationPresentationTemplate);
-                parameterObservationBody = parameterObservationBody.Replace("{business}", parameterOutputResponseObservationBusinessTemplate);
-                parameterObservationBody = parameterObservationBody.Replace("{service}", parameterOutputResponseObservationServiceTemplate);
-                parameterObservationBody = parameterObservationBody.Replace("{security}", parameterOutputResponseObservationSecurityTemplate);
-                parameterObservationBody = parameterObservationBody.Replace("{data}", parameterOutputResponseObservationDataTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{presentation}", storedOutputResponseObservationPresentationTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{business}", storedOutputResponseObservationBusinessTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{service}", storedOutputResponseObservationServiceTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{security}", storedOutputResponseObservationSecurityTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{data}", storedOutputResponseObservationDataTemplate);
 
-                return parameterObservationBody;
+                return storedOutputResponseObservationBody;
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedOutputResponseObservationTemplate, storedOutputResponseObservationBody, storedOutputResponseObservationItem, storedOutputResponseObservationFileName, storedOutputResponseObservationMethodName, storedOutputResponseObservationDescription, storedOutputResponseObservationPresentationTemplate, storedOutputResponseObservationBusinessTemplate, storedOutputResponseObservationServiceTemplate, storedOutputResponseObservationSecurityTemplate, storedOutputResponseObservationDataTemplate);
-            
+            storedOutputResponseData = ExecuteConversionRequest();
+
             #endregion
 
             #endregion
@@ -1240,7 +1258,412 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #endregion
 
+            #endregion           
+        }
+
+        public static async Task<string> Step_X_X_Framework_Output_JsonObservationNode_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        {
+            #region 1. INPUTS    
+
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
+            {
+                #region 1. INPUTS
+
+                #region DEFINE control variables
+
+                #endregion
+
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs;
+
+                #endregion
+
+                #region DEFINE process variables
+
+                bool storedProcessRequestMistakeMade = false;
+
+                #endregion
+
+                #region DEFINE output variables
+
+                string storedOutputResponseMessage = "";
+
+                #endregion
+
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input xxx xxxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE process variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion                
+
+                #region MEMORIZE process request tracker
+
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+
+                #endregion
+
+                #region MEMORIZE process request settings
+
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
+
+                #endregion
+
+                #region MEMORIZE process developer mode
+
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterInputRequestActionName"] = storedInputRequestActionName;
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequest3WordDescription"] = "VALIDATING request inputs";
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestSettings"] = storedProcessRequestTracker["storedProcessRequestSettings"];
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestTracker"] = storedProcessRequestTracker;
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestFileName"] = "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs";
+                storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestMethodName"] = "Step_X_X_Framework_Output_JsonObservationNode_1_0 -> ValidateInputs";
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables
+
+                #region MEMORIZE output xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs.Parameters.Count > 0)
+                {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestActionName"))
+                    {
+                        storedOutputResponseMessage += "***parameterInputRequestActionName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //2. PROCESS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
+                    {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
+                    {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    else
+                    {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
+                        {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                            storedProcessRequestMistakeMade = true;
+                        }
+                    }
+
+                    //3. OUTPUTS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationFileName"))
+                    {
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationFileName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationMethodName"))
+                    {
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationMethodName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationPresentationTemplate"))
+                    {
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationPresentationTemplate*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationBusinessTemplate"))
+                    {
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationBusinessTemplate*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationServiceTemplate"))
+                    {
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationServiceTemplate*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationSecurityTemplate"))
+                    {
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationSecurityTemplate*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseObservationDataTemplate"))
+                    {
+                        storedOutputResponseMessage += "***parameterOutputResponseObservationDataTemplate*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (storedProcessRequestMistakeMade)
+                    {
+                        #region EDGE CASE - USE developer logger
+
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequest3WordDescription"] = "PARSING parameter values failed";
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestStepNumberReplace"] = storedProcessRequestTracker["storedProcessRequestStepNumber"];
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters["parameterOutputResponseMessageType"] = "Mistake"; //Values = Logging or Mistake
+
+                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
+                    }
+                }
+                else
+                {
+                    #region EDGE CASE - USE blank return
+
+                    return false;
+
+                    #endregion
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return true;
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
             #endregion
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            string storedOutputResponseData = "";
+
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request tracker
+
+            _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+
+            #endregion
+
+            #region MEMORIZE process request settings
+
+            _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
+
+            #endregion
+
+            #region MEMORIZE process developer mode
+
+            bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_JsonObservationNode_1_0");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+            //3. OUTPUTS
+
+            #endregion
+
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output observation details
+
+            string storedOutputResponseObservationDescription = parameterInputs.Parameters["parameterProcessRequest3WordDescription"];
+            string storedOutputResponseObservationFileName = parameterInputs.Parameters["parameterProcessRequestFileName"];
+            string storedOutputResponseObservationMethodName = parameterInputs.Parameters["parameterProcessRequestMethodName"];
+
+            string storedOutputResponseObservationBody = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}} }] }}]}";
+            string storedOutputResponseObservationItem = "'details': [{details}]";
+
+            string storedOutputResponseObservationPresentationTemplate = parameterInputs.Parameters["parameterOutputResponseObservationPresentationTemplate"];
+            string storedOutputResponseObservationBusinessTemplate = parameterInputs.Parameters["parameterOutputResponseObservationBusinessTemplate"];
+            string storedOutputResponseObservationServiceTemplate = parameterInputs.Parameters["parameterOutputResponseObservationServiceTemplate"];
+            string storedOutputResponseObservationSecurityTemplate = parameterInputs.Parameters["parameterOutputResponseObservationSecurityTemplate"];
+            string storedOutputResponseObservationDataTemplate = parameterInputs.Parameters["parameterOutputResponseObservationDataTemplate"];
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE mistake creation
+
+            #region IDEAL CASE - USE baseDi template
+
+            Func<string> ExecuteConversionRequest = () =>
+            {
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{item}", storedOutputResponseObservationItem);
+
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{calledByEntryPointName}", storedOutputResponseObservationFileName);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{calledByMethodName}", storedOutputResponseObservationMethodName);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{calledByMethodReason}", storedOutputResponseObservationDescription);
+
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{presentation}", storedOutputResponseObservationPresentationTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{business}", storedOutputResponseObservationBusinessTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{service}", storedOutputResponseObservationServiceTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{security}", storedOutputResponseObservationSecurityTemplate);
+                storedOutputResponseObservationBody = storedOutputResponseObservationBody.Replace("{data}", storedOutputResponseObservationDataTemplate);
+
+                return storedOutputResponseObservationBody;
+            };
+
+            storedOutputResponseData = ExecuteConversionRequest();
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN converted data
+
+            #region IDEAL CASE - USE json dataset
+
+            return storedOutputResponseData;
+
+            #endregion
+
+            #endregion
+
+            #endregion           
         }
 
         #endregion

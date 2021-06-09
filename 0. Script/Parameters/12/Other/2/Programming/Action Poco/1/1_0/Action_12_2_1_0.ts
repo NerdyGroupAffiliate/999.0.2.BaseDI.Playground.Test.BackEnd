@@ -8,7 +8,13 @@ export namespace BaseDI.Professional.Script.Programming.Poco_1
       
         }
 
-        //#region Web Development
+        //#region 12-3 - Programming
+
+        public static _12_2_PROGRAMMING_ClientOrServer_Process_ImageToFilteredImageConversion_Request_1_0: string = "Action_ClientOrServer_ProcessImageToFilteredImageConversion_1_0";
+
+        //#endregion
+
+        //#region 12-3 - Web Development
 
         /// <summary>
         /// VISIT https://www.w3schools.com/tags/ref_eventattributes.asp for all website events.

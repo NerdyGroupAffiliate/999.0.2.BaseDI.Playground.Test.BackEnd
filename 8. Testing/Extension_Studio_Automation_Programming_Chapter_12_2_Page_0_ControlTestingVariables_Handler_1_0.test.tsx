@@ -102,8 +102,7 @@ export const Action = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Pro
     //#region MEMORIZE process request settings
 
     let storedProcessRequestTracker: Object = new Object();
-
-    storedProcessRequestTracker["storedProcessRequestIgnoreDeveloperConsoleLog"] = false;
+    
     storedProcessRequestTracker["storedProcessRequestSettings"] = {
         NODE_ENV: "development",
         PORT: 0,
@@ -136,14 +135,11 @@ export const Action = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Pro
         APP_SETTING_DEVELOPER_MODE_SILENT: false
     }
 
-    storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
-
     //#endregion
 
     //#region MEMORIZE process test variables
 
     //0. CONTROLLERS
-
     if (!parameterInputs.Parameters.containsKey("parameterControlRequestClientOrServer") || parameterInputs.Parameters.getValue("parameterControlRequestClientOrServer") == undefined) {
         parameterInputs.Parameters.setValue("parameterControlRequestClientOrServer", new Object());
     }
@@ -151,12 +147,31 @@ export const Action = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Pro
     //1. INPUTS
 
     //2. PROCESS
+    storedProcessRequestTracker["storedProcessRequestIgnoreDeveloperConsoleLog"] = false;
+    storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
+
     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack") || parameterInputs.Parameters.getValue("parameterProcessRequestCallBack") == undefined) {
         parameterInputs.Parameters.setValue("parameterProcessRequestCallBack", new Object());
     }
 
     parameterInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
     parameterInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestExtraData")) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestExtraData", new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0());
+    }
+
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestHandler")) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestHandler", null);
+    }
+
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestName")) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestName", "");
+    }
+
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails") || parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters") == undefined) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails", null);
+    }
 
     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataStorylineDetails_Parameters") || parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters") == undefined) {
         parameterInputs.Parameters.setValue("parameterProcessRequestDataStorylineDetails_Parameters", null);
@@ -168,6 +183,10 @@ export const Action = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Pro
 
     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCallBack") || parameterInputs.Parameters.getValue("parameterProcessRequestCallBack") == undefined) {
         parameterInputs.Parameters.setValue("parameterProcessRequestCallBack", null);
+    }
+
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestDataRepository") || parameterInputs.Parameters.getValue("parameterProcessRequestDataRepository") == undefined) {
+        parameterInputs.Parameters.setValue("parameterProcessRequestDataRepository", null);
     }
 
     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestCentralizedDisturber") || parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedDisturber") == undefined) {

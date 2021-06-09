@@ -338,7 +338,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
                 #region MEMORIZE process developer mode
 
-                bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
                 _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
@@ -354,9 +354,9 @@ namespace BaseDI.Professional.Story.Programming_0
                 //2. PROCESS
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN processing request");
 
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs");
                 storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "SetupStoryline -> ValidateInputs");
 
                 //3. OUTPUTS
@@ -515,7 +515,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return await Task.FromResult<bool>(true).ConfigureAwait(true);
+                return true;
 
                 #endregion
 
@@ -570,7 +570,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = parameterInputs.Parameters["parameterProcessRequestTracker"]["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -579,7 +579,7 @@ namespace BaseDI.Professional.Story.Programming_0
             string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
             string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
-            string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"] ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
+            string storedProcessRequestByName = parameterInputs.Parameters.ContainsKey("parameterProcessRequestName") ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
 
             #endregion
 
@@ -591,7 +591,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
-            parameterInputs.Parameters.Add("parameterProcessRequestHandler", _storedProcessRequestHandler);
+            parameterInputs.Parameters.TryAdd("parameterProcessRequestHandler", _storedProcessRequestHandler);
 
             #endregion
 
@@ -608,7 +608,7 @@ namespace BaseDI.Professional.Story.Programming_0
             if (_storedProcessRequestTracker["storedProcessRequestStepNumber"] == null)
                 _storedProcessRequestTracker["storedProcessRequestStepNumber"] = 0;
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedProcessRequestExtraData?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] != null ? _storedProcessRequestExtraData?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] as SingleParmPoco_12_2_1_0 : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedProcessRequestExtraData?.KeyValuePairs?.ContainsKey("storedProcessRequestDeveloperLoggingInputs") == true ? _storedProcessRequestExtraData?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] as SingleParmPoco_12_2_1_0 : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -623,7 +623,7 @@ namespace BaseDI.Professional.Story.Programming_0
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN processing request");          
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs");
             storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "SetupStoryline");
 
             //3. OUTPUTS
@@ -833,7 +833,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = parameterInputs.Parameters["parameterProcessRequestTracker"]["storedInputRequestActionName"] as string;
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -842,7 +842,7 @@ namespace BaseDI.Professional.Story.Programming_0
             string storedInputRequestName = parameterInputs.Parameters["parameterInputRequestName"];
             string storedInputRequestNameDataCacheKey = parameterInputs.Parameters["parameterInputRequestNameDataCacheKey"];
 
-            string storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"] ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
+            string storedProcessRequestByName = parameterInputs.Parameters.ContainsKey("parameterProcessRequestName") ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
 
             _storedInputs = parameterInputs;
 
@@ -1186,7 +1186,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 

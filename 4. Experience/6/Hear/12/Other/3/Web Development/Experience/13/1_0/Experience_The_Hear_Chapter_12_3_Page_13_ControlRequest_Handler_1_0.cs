@@ -865,7 +865,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region MEMORIZE process request extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters.ContainsKey("parameterProcessRequestExtraData") ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 
@@ -1266,7 +1266,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             #region MEMORIZE process request extra data
 
-            _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
+            _storedProcessRequestExtraData = parameterInputs.Parameters.ContainsKey("parameterProcessRequestExtraData") ? parameterInputs.Parameters["parameterProcessRequestExtraData"] : null;
 
             #endregion
 

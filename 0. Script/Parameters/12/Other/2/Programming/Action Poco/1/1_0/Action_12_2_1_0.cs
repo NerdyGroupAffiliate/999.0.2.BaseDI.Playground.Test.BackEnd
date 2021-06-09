@@ -6,6 +6,16 @@ namespace BaseDI.Professional.Script.Programming.Poco_1
 {
     public static class Action_12_2_1_0
     {
+        #region 12-3 - Programming
+
+        #region Image Processing
+        
+        public static string _12_2_PROGRAMMING_ClientOrServer_Process_ImageToFilteredImageConversion_Request_1_0 = "Action_ClientOrServer_ProcessImageToFilteredImageConversion_1_0";
+       
+        #endregion
+
+        #endregion
+
         #region Web Development
 
         /// <summary>
