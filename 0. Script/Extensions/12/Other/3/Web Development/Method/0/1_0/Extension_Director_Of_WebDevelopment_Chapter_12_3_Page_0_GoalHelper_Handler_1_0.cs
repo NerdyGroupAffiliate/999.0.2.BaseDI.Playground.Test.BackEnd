@@ -14,6 +14,7 @@ using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 using Microsoft.AspNetCore.Html;
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,11 +27,15 @@ using System.Threading.Tasks;
 
 #region 3rd Party Core
 
+using Microsoft.Extensions.Configuration;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Microsoft.Extensions.Configuration;
+
 using BaseDI.Professional.Script.Programming.Extensions_3;
-using System.Collections;
+
+using BaseDI.Professional.Script.Programming.Extensions_0;
+using BaseDI.Professional.Setting.Software.Web_Development_0;
 
 #endregion
 
@@ -42,58 +47,102 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
     {
         #region HTML MANAGEMENT
 
-        private static async Task<dynamic> Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
-        {
+        public static async Task<dynamic> Step_0_0_Framework_Convert_HtmlToJSON_1_0(SingleParmPoco_12_2_1_0 parameterInputs) {
             #region 1. INPUTS
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html attributes");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_0_0_Framework_Convert_HtmlToJSON_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
 
                 #endregion
 
@@ -105,59 +154,72 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
-                {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+
+                    //2. PROCESS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestHtmlAttributes"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestHtmlAttributes*** cannot be blank or empty.\n";
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedDisturber")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedDisturber*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedSensor")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedSensor*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestRequestHandlerFileName")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestRequestHandlerFileName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -169,19 +231,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUT
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -205,7 +272,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
@@ -214,77 +281,966 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 #endregion
             };
 
-            ///BEGIN valdation process
+            //BEGIN valdation process
             await ValidateInputs(parameterInputs);
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE control variables
+            
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            HtmlSection storedInputRequestHtmlContainerJSON = null;
+            HtmlSection storedInputRequestHtmlRowsJSON = null;
+            HtmlSection storedInputRequestHtmlColumnsJSON = null;
+            HtmlSection storedInputRequestHtmlContentJSON = null;
+
+            dynamic storedInputRequestHtmlStylesFiltered = null;
+            dynamic storedInputRequestHtmlStylesJSON = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+            #endregion
+
+            #region DEFINE output variables
 
             dynamic storedOutputResponseData = null;
 
-            #endregion
+            string storedOutputResponseHtmlResultInlineStylesString = "";
+            string storedOutputResponseHtmlResultString = "";
 
-            #region DEFINE html inputs
-
-
-            #endregion
-
-            #region DEFINE parameter inputs
-
+            dynamic storedOutputResponseObservationItem;
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            ///////////////////////////////
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
             #endregion
 
-            #region MEMORIZE control client server
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
-            #endregion
+            #endregion  
+            
+            #region MEMORIZE process developer mode
 
-            #region MEMORIZE developer mode
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSetting:APP_SETTING_DEVELOPER_MODE");
 
-            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html attributes");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0");
+
+            //0. CONTROLLERS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //1. INPUTS
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to html");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_0_0_Framework_Convert_HtmlToJSON_1_0");
+
+            //3. OUTPUTS  
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
             #endregion
 
-            #region MEMORIZE html inputs
+            #region MEMORIZE process storyline details
+
+            dynamic storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+
+            #endregion
+
+            #region MEMORIZE process centralized handlers
+
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE process storage details
+
+            string storedProcessRequestStorageKeyUniqueness = parameterInputs.Parameters["parameterProcessRequestRequestHandlerFileName"]; 
+            int storedProcessRequestStorageCounter = 0;
+
+            JObject storedProcessRequestStorageDictionary = new JObject();
+            string storedProcessRequestStorageKey = "StorageKey_" + storedProcessRequestStorageKeyUniqueness + "-" + "Read-BaseDI_PresentationHTML_Content";
+
+            bool storedProcessRequestStorageUpdateMode = false;
+
+            #endregion            
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output observation details
+
+            storedInputs = new SingleParmPoco_12_2_1_0();
+
+            string storedOutputResponseObservationPresentationTemplateItem = "{ \"htmlResult\": \"{htmlResult}\" }";
+            string storedOutputResponseObservationBusinessTemplateItem = "{}";
+            string storedOutputResponseObservationServiceTemplateItem = "{}";
+            string storedOutputResponseObservationSecurityTemplateItem = "{}";
+            string storedOutputResponseObservationDataTemplateItem = "{}";
+
+            string storedOutputResponseObservationDataTemplateBuilder = "";
+
+            //0. CONTROLLERS
+
+            //1. INPUTS
+            storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //2. PROCESS
+            storedInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "RENDER web page");
+            storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+            storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+
+            //3. OUTPUTS
+            storedInputs.Parameters.TryAdd("parameterOutputResponseObservationFileName", "Page_1_5_Process_StorySetting_12_3_1_0.cs");
+            storedInputs.Parameters.TryAdd("parameterOutputResponseObservationMethodName", "Action");
+            storedInputs.Parameters.TryAdd("parameterOutputResponseObservationPresentationTemplate", storedOutputResponseObservationPresentationTemplateItem);
+            storedInputs.Parameters.TryAdd("parameterOutputResponseObservationBusinessTemplate", storedOutputResponseObservationBusinessTemplateItem);
+            storedInputs.Parameters.TryAdd("parameterOutputResponseObservationServiceTemplate", storedOutputResponseObservationServiceTemplateItem);
+            storedInputs.Parameters.TryAdd("parameterOutputResponseObservationSecurityTemplate", storedOutputResponseObservationSecurityTemplateItem);
+            storedInputs.Parameters.TryAdd("parameterOutputResponseObservationDataTemplate", storedOutputResponseObservationDataTemplateItem);
+
+            storedOutputResponseObservationItem = await Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Output_JsonObservationNode_1_0(storedInputs);
+
+            #endregion
+
+            #endregion
+            
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE json to html conversion
+
+            try
+            {
+                #region IDEAL CASE - USE baseDI converter
+
+                #region A. CONVERT html container
+
+                try
+                 {
+                    Func<string> ExecuteConversionRequest = () => 
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                        
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer");
+
+                        //3. OUTPUTS
+                        storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
+
+                        //storedInputRequestHtmlContainerJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result;
+
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS                       
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlContainerJSON", storedInputRequestHtmlContainerJSON);
+
+                        //2. PROCESS
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        //3. OUTPUTS
+
+                        storedOutputResponseHtmlResultString = Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(storedInputs).Result;
+
+                        return storedOutputResponseHtmlResultString;
+                    };
+
+                    storedOutputResponseHtmlResultString = ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting html container", storedProcessRequestMistake);
+                }
+                #endregion
+
+                #region B. CONVERT html rows
+
+                try {
+                    Func<string> ExecuteConversionRequest = () => {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                             
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows");
+
+                        //3. OUTPUTS
+                        storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
+
+                        //storedInputRequestHtmlRowsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS                        
+;
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlRowsJSON", storedInputRequestHtmlRowsJSON);
+                        
+                        //2. PROCESS
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        //3. OUTPUTS
+                        storedInputs.Parameters.TryAdd("parameterOutputResponseHtmlContainerString", storedOutputResponseHtmlResultString);
+
+                        storedOutputResponseHtmlResultString = Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(storedInputs).Result;
+
+                        return storedOutputResponseHtmlResultString;
+                    };
+
+                    storedOutputResponseHtmlResultString = ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting html rows", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region C. CONVERT html columns
+
+                try {
+                    Func<string> ExecuteConversionRequest = () => {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS    
+
+                        //2. PROCESS
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns");
+
+                        storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
+
+                        //storedInputRequestHtmlColumnsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS                            
+
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlColumnsJSON", storedInputRequestHtmlColumnsJSON);
+                        
+                        //2. PROCESS
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        //3. OUTPUTS
+                        storedInputs.Parameters.TryAdd("parameterOutputResponseHtmlRowString", storedOutputResponseHtmlResultString);
+
+                        storedOutputResponseHtmlResultString = Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(storedInputs).Result;
+
+                        return storedOutputResponseHtmlResultString;
+                    };
+
+                    storedOutputResponseHtmlResultString = ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting html rows", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region D. CONVERT html content
+
+                try 
+                {
+                    Func<string> ExecuteConversionRequest = () => {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS    
+
+                        //2. PROCESS                        
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterValue", "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent");
+
+                        //3. OUTPUTS
+                        storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
+
+                        //storedInputRequestHtmlContentJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS                          
+
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlContentJSON", storedInputRequestHtmlContentJSON);
+
+                        //2. PROCESS  
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        //3. OUTPUTS
+                        storedInputs.Parameters.TryAdd("parameterOutputResponseHtmlColumnString", storedOutputResponseHtmlResultString);
+
+                        storedOutputResponseHtmlResultString = Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(storedInputs).Result;
+
+                        return storedOutputResponseHtmlResultString;
+                    };
+
+                    storedOutputResponseHtmlResultString = ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting html content", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region E. CONVERT html inline styles
+
+                try 
+                {
+                    Func<string> ExecuteConversionRequest = () => {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS    
+
+                        //2. PROCESS                                
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilter", storedProcessRequestDataStorylineDetails);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterKey", "searchkey");
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataToFilterValue", "HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS");
+
+                        //3. OUTPUTS
+                        storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
+
+                        //storedInputRequestHtmlStylesJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+
+                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                        storedInputs = new SingleParmPoco_12_2_1_0();   
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS                                          
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlStylesJSON", storedInputRequestHtmlStylesJSON);
+
+                        //2. PROCESS 
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        //3. OUTPUTS
+                        return Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(storedInputs).Result;
+                    };
+
+                    storedOutputResponseHtmlResultInlineStylesString = ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting html inline styles", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region F. CONVERT html inline scripts
+
+                //TODO
+                try 
+                {
+                    //Func<string> ExecuteConversionRequest = () =>
+                    //{
+
+                    //};
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting html inline scripts", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region G. CONVERT html inline metadata
+
+                //TODO
+                try 
+                {
+                    //Func<string> ExecuteConversionRequest = () => {
+
+                    //}
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting html inline metadata", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region H. OUTPUT html string
+
+                try 
+                {
+                    Func<string> ExecuteOutputResponse = () => 
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS                            
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlMetaData", "");
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlTitle", "");
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlScripts", "");
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlStyles", storedOutputResponseHtmlResultInlineStylesString);
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlAdditionalHeadData", "");
+                        storedInputs.Parameters.TryAdd("parameterInputRequestHtmlBody", storedOutputResponseHtmlResultString);
+
+                        //2. PROCESS
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
+
+                        //3. OUTPUTS
+                        return Step_8_0_Framework_Convert_HtmlStructureToString_1_0(storedInputs).Result;
+                    };
+
+                    storedOutputResponseHtmlResultString = ExecuteOutputResponse();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting html content", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region I. STORE html string
+
+                try 
+                {
+                    Func<string> ExecuteStorageRequest = () => 
+                    {
+                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace("'", "\"");
+                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.replace("{htmlResult}", storedOutputResponseHtmlResultString);
+
+                        storedProcessRequestStorageDictionary[storedProcessRequestStorageKey] = storedOutputResponseObservationItem.toString();
+
+                        #region USE existing output observation item
+
+                        foreach (var storedOutputResponseObservation in storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations)
+                        {
+                            //if (Object.keys(storedOutputResponseObservation).length > 0 && Object.keys(storedOutputResponseObservation)[0].toUpperCase() == storedProcessRequestStorageKey.toUpperCase()) {
+                            //    storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations[storedProcessRequestStorageCounter][storedProcessRequestStorageKey] = JSON.parse(storedOutputResponseHtmlResultString.toString());
+
+                            //    storedOutputResponseData = storedProcessRequestDataStorylineDetails;
+
+                            //    storedProcessRequestStorageUpdateMode = true;
+
+                            //    return;
+                            //}
+
+                            //storedProcessRequestStorageCounter += 1;
+                        }          
+
+                        #endregion
+
+                        #region USE new output observation item
+
+                        if (!storedProcessRequestStorageUpdateMode) {
+                            //storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.Add(storedProcessRequestStorageDictionary);
+                        }
+                        #endregion
+
+                        return storedProcessRequestDataStorylineDetails;
+                    };
+
+                    storedOutputResponseData = ExecuteStorageRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("storing html string output observation", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #endregion
+            }
+            catch (Exception storedProcessRequestMistake) 
+            {
+                #region EDGE CASE - USE developer logger
+
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting json to html");                  
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Action");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw new Exception("CONVERSION request failed " + storedProcessRequestMistake);
+
+                #endregion
+            }
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN process response
+
+            #region IDEAL CASE - USE baseDI dataset
+
+            return storedOutputResponseData;
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
+
+        private static string Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(SingleParmPoco_12_2_1_0 parameterInputs)  {
+            #region 1. INPUTS
+
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
+                #region 1. INPUTS
+
+                #region DEFINE control variables
+
+                #endregion
+
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
+
+                bool storedProcessRequestMistakeMade = false;
+
+                #endregion
+
+                #region DEFINE output variables
+
+                string storedOutputResponseMessage = "";
+
+                #endregion
+
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
+
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+
+                #endregion
+
+                #region MEMORIZE process request settings
+
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
+
+                #endregion
+
+                #region MEMORIZE process developer mode
+
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null)
+                {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                    
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessRequestMistakeMade = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestHtmlAttributes")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestHtmlAttributes*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //3. OUTPUTS  
+                    if (storedProcessRequestMistakeMade) {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedProcessRequestDeveloperMode) {
+                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS     
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS 
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
+                    }
+                }
+                else {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode) {
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                         
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("PARSING parameter values failed");
+
+                    #endregion
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return Task.FromResult<bool>(true);
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            };
+
+            //BEGIN valdation process
+            ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+             #endregion
+
+            #region DEFINE process variables
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            List<string> storedOutputResponseData;
+            List<string> storedOutputResponseHtmlAttributesOutput = new List<string>();
+
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request html
 
             dynamic storedProcessRequestHtmlAttributes = parameterInputs.Parameters["parameterProcessRequestHtmlAttributes"];
 
             #endregion
-           
-            #region MEMORIZE storyline details
 
-            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
-            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
+            #region MEMORIZE process request tracker
+
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
+
+            #region MEMORIZE process request settings
+
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
+
+            #endregion  
+
+            #region MEMORIZE process developer mode
+
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSetting:APP_SETTING_DEVELOPER_MODE");
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs["storedProcessRequestDeveloperLoggingInputs"] : null);
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+
+            //0. CONTROLLERS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //1. INPUTS
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to html attributes");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0");
+
+            //3. OUTPUTS  
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+
+            #endregion
+
+            #region MEMORIZE process storyline details
+
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+
+            #endregion
+
+            #region MEMORIZE process centralized handlers
+
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxx
+
+
+            #endregion
+
+            #endregion
+
 
             #endregion
 
@@ -294,46 +1250,53 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<dynamic, ArrayList, Task<ArrayList>> ExecuteConversionRequest = async (dynamic parameterProcessRequestHtmlAttributes, ArrayList parameterProcessRequestHtmlAttributesOutput) => {
+            Func<List<string>> ExecuteConversionRequest = () =>
+            {
                 try
                 {
-                    foreach (var parameterHtmlAttribute in parameterProcessRequestHtmlAttributes)
-                    {              
-                        foreach (var attributeKeyValue in parameterHtmlAttribute.ToObject<Dictionary<string, string>>())
+                    foreach (var storedProcessRequestHtmlAttribute in storedProcessRequestHtmlAttributes)
+                    {
+                        foreach (var storedProcessRequestHtmlAttributeKeyValue in storedProcessRequestHtmlAttribute.ToObject<Dictionary<string, string>>())
                         {
-                            parameterProcessRequestHtmlAttributesOutput.Add($"{attributeKeyValue.Key}='{attributeKeyValue.Value}'");
+                            storedOutputResponseHtmlAttributesOutput.Add($"{storedProcessRequestHtmlAttributeKeyValue.Key}='{storedProcessRequestHtmlAttributeKeyValue.Value}'");
                         }
                     }
-         
-                    return await Task.FromResult<ArrayList>(parameterProcessRequestHtmlAttributesOutput).ConfigureAwait(true);
+
+                    return storedOutputResponseHtmlAttributesOutput;
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html attributes");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting json to html attributes");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ExecuteConversionRequest");
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("CONVERSION request failed " +  storedProcessRequestMistake.ToString());
+                    throw new Exception("CONVERSION request failed " + storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedProcessRequestHtmlAttributes, storedOutputResponseData);
+            storedOutputResponseData = ExecuteConversionRequest();
 
             #endregion
 
@@ -353,7 +1316,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #endregion                                        
+            #endregion                   
         }
 
         public static async Task<string> Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
@@ -362,52 +1325,97 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html container");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
 
                 #endregion
 
@@ -419,59 +1427,63 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
-                {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                     
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlContainerJSON"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlContainerJSON")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlContainerJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    //3. OUTPUTS
+
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS                             
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS  
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -483,19 +1495,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                          
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS  
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -519,7 +1536,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
@@ -533,70 +1550,117 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
 
             dynamic storedOutputResponseData = null;
 
             #endregion
 
-            #region DEFINE html inputs
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
 
 
             #endregion
 
-            #region DEFINE parameter inputs
+            #endregion
 
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            #region MEMORIZE input request html
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+            HtmlSection storedInputRequestHtmlContainerJSON = parameterInputs.Parameters["parameterInputRequestHtmlContainerJSON"];
+
             #endregion
 
-            #region MEMORIZE control client server
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
+
+            aClass_Programming_ScriptAction_12_2_1_0<object> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html container");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0");
+
+            //0. CONTROLLERS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            //1. INPUTS                        
+
+            //2. PROCESS
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to html container");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0");
+
+            //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE html inputs
-
-            dynamic storedHtmlContainerJSON = parameterInputs.Parameters["parameterInputRequestHtmlContainerJSON"];
-
-            #endregion
-
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
+
+            #endregion            
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxx
+
+
+            #endregion
 
             #endregion
 
@@ -608,24 +1672,34 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<dynamic, Task<string>> ExecuteConversionRequest = async (dynamic parameterInputRequestHtmlContainerJSON) =>
-            {
+            Func<Task<dynamic>> ExecuteConversionRequest = async () => {
                 try
                 {
-                    return await Task.FromResult<string>($@"<{parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Attributes)}>{{HTMLRows_Replace}}</{parameterInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag}>").ConfigureAwait(true);
+                    parameterInputs.Parameters.Remove("parameterProcessRequestHtmlAttributes");
+                    parameterInputs.Parameters.TryAdd("parameterProcessRequestHtmlAttributes", storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Attributes);
+
+                    storedOutputResponseData = Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+
+                    //OUTPUT: <div                                                                  id="container_xxx">         {HTMLRows_Replace}</div>
+                    return await Task.FromResult<string>($@"<{storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs)}>{{HTMLRows_Replace}}</{storedInputRequestHtmlContainerJSON.value.HTMLContentItems[0].Tag}>").ConfigureAwait(true);
                 }
-                catch (Exception storedProcessRequestMistake)
-                {
+                catch (Exception storedProcessRequestMistake) {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting to html container");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ExecuteConversionRequest");
+                        //0. CONTROLLERS
+
+                        //1. INPUTS
+
+                        //2. PROCESS                        
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting to html container");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_1_0_Framework_Convert_HtmlContainerJsonToHtml_1_0.ExecuteConversionRequest");
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -634,13 +1708,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
+                    throw new Exception("STORAGE request failed " + storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlContainerJSON);
+            storedOutputResponseData = await ExecuteConversionRequest();
 
             #endregion
 
@@ -663,58 +1737,103 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #endregion                              
         }
 
-        public static async Task<string> Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
             #region 1. INPUTS
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html row");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_0_0_Framework_Store_HtmlAttributesToArray_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
 
                 #endregion
 
@@ -728,63 +1847,66 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 if (parameterInputs != null || parameterInputs.Parameters != null)
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                     
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlContainerString"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlContainerString")) {
                         storedOutputResponseMessage += "***parameterOutputResponseHtmlContainerString*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlRowsJSON"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlRowsJSON")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlRowsJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    //3. OUTPUTS
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS                             
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS 
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -796,19 +1918,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                         
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS 
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -832,7 +1959,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
@@ -846,72 +1973,112 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
 
             dynamic storedOutputResponseData = null;
-            ArrayList storedDataResponseList = new ArrayList();
+            List<string> storedOutputResponseDataList = new List<string>();
 
             #endregion
 
-            #region DEFINE html inputs
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
 
 
             #endregion
 
-            #region DEFINE parameter inputs
+            #endregion
 
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion            
+
+            #region MEMORIZE input request html
+
+            HtmlSection storedInputRequestHtmlRowsJSON = parameterInputs.Parameters["parameterInputRequestHtmlRowsJSON"];
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+                
             #endregion
 
-            #region MEMORIZE control client server
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html row");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to html row");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE html inputs
-
-            dynamic storedHtmlContainerString = parameterInputs.Parameters["parameterOutputResponseHtmlContainerString"];
-            dynamic storedHtmlRowsJSON = parameterInputs.Parameters["parameterInputRequestHtmlRowsJSON"];
-
-            #endregion
-
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
+
+            #endregion            
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response html
+
+            string storedOutputResponseHtmlContainerString = parameterInputs.Parameters["parameterOutputResponseHtmlContainerString"];
+
+            #endregion
 
             #endregion
 
@@ -923,44 +2090,56 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, ArrayList, Task<string>> ExecuteConversionRequest = async (string parameterOutputResponseHtmlContainerString, dynamic parameterInputRequestHtmlRowsJSON, ArrayList parameterFilterDataResponseList) =>
+            Func<Task<string>> ExecuteConversionRequest = async () =>
             {
                 try
                 {
-                    foreach (var storedHtmlRow in parameterInputRequestHtmlRowsJSON.value.HTMLContentItems)
+                    foreach (var storedProcessRequestHtmlRow in storedInputRequestHtmlRowsJSON.value.HTMLContentItems)
                     {
-                        parameterFilterDataResponseList.Add($@"<{ storedHtmlRow.Tag } {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlRow.Attributes)}>{{{ storedHtmlRow.Attributes[0].id }_Replace}}</{storedHtmlRow.Tag}>");
+                        parameterInputs.Parameters.Remove("parameterProcessRequestHtmlAttributes");
+                        parameterInputs.Parameters.TryAdd("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlRow.Attributes);
+
+                        storedOutputResponseData = Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+
+                        //OUTPUT:                          <div                                id="row-_A_1_xxx">          {row_A-1_xxx_Replace}                                    </div>
+                        storedOutputResponseDataList.Add($@"<{ storedProcessRequestHtmlRow.Tag } {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs)}>{{{ storedProcessRequestHtmlRow.Attributes[0].id }_Replace}}</{storedProcessRequestHtmlRow.Tag}>");
                     }
 
-                    return await Task.FromResult<string>(parameterOutputResponseHtmlContainerString.Replace("{HTMLRows_Replace}", string.Join("\n", parameterFilterDataResponseList))).ConfigureAwait(true);
+                    return await Task.FromResult<string>(storedOutputResponseHtmlContainerString.Replace("{HTMLRows_Replace}", string.Join("\n", storedOutputResponseDataList))).ConfigureAwait(true);
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html row");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0.ExecuteConversionRequest");
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                        
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting json to html row");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_2_0_Framework_Convert_HtmlRowsJsonToHtml_1_0.ExecuteConversionRequest");
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
+                    throw new Exception("CONVERSION request failed " + storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlContainerString, storedHtmlRowsJSON, storedDataResponseList);
+            storedOutputResponseData = await ExecuteConversionRequest();
 
             #endregion
 
@@ -983,58 +2162,103 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #endregion                              
         }
 
-        public static async Task<string> Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
             #region 1. INPUTS
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html column");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
 
                 #endregion
 
@@ -1046,65 +2270,69 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
+                if (parameterInputs != null || parameterInputs.Parameters != null) 
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                       
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlRowString"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlRowString")) {
                         storedOutputResponseMessage += "***parameterOutputResponseHtmlRowString*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlColumnsJSON"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlColumnsJSON")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlColumnsJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    //3. OUTPUTS
+
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS                               
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS  
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -1116,19 +2344,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                         
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS  
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1152,89 +2385,128 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
                 #endregion
 
                 #endregion
-            };
+            }
 
             ///BEGIN valdation process
             await ValidateInputs(parameterInputs);
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE control variables
 
-            string storedColumnItem = "";
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+            string storedProcessRequestHtmlColumnString = "";
+
+            #endregion
+
+            #region DEFINE output variables
 
             dynamic storedOutputResponseData = null;
+            List<string> storedOutputResponseDataList = new List<string>();
 
             #endregion
 
-            #region DEFINE html inputs
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
 
 
             #endregion
 
-            #region DEFINE parameter inputs
+            #endregion
 
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion            
+
+            #region MEMORIZE input request html
+
+            HtmlSection storedInputRequestHtmlColumnsJSON = parameterInputs.Parameters["parameterInputRequestHtmlColumnsJSON"];
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+                
             #endregion
 
-            #region MEMORIZE control client server
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PREPARING caching request");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to html row");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE html inputs
-
-            string storedHtmlRowString = parameterInputs.Parameters["parameterOutputResponseHtmlRowString"];
-            dynamic storedHtmlColumnsJSON = parameterInputs.Parameters["parameterInputRequestHtmlColumnsJSON"];
-
-            #endregion
-
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
 
+            #endregion            
+
             #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response html
+
+            string storedOutputResponseHtmlRowString = parameterInputs.Parameters["parameterOutputResponseHtmlRowString"];
+
+            #endregion
+
+            #endregion            
 
             #endregion
 
@@ -1244,45 +2516,65 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, string, Task<string>> ExecuteConversionRequest = async (string parameterOutputResponseHtmlRowString, dynamic parameterInputRequestHtmlColumnsJSON, string parameterColumnItem) =>
+            Func<string> ExecuteConversionRequest = () =>
             {
                 try
                 {
-                    foreach (var storedHtmlColumn in parameterInputRequestHtmlColumnsJSON.value.HTMLContentItems)
+                    foreach (var storedProcessRequestHtmlColumn in storedInputRequestHtmlColumnsJSON.value.HTMLContentItems)
                     {
-                        parameterColumnItem = $@"<{storedHtmlColumn.Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedHtmlColumn.Attributes)}>{{{storedHtmlColumn.Attributes[0].id}_Replace}}</{storedHtmlColumn.Tag}>\n";
-                        parameterOutputResponseHtmlRowString = parameterOutputResponseHtmlRowString.Replace($@"{{{storedHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}}", parameterColumnItem);
-                    }
+                        //OUTPUT 1: 
+                        storedOutputResponseHtmlRowString = "<div id=\"row-_A_1_xxx\">{row_A-1_xxx_Replace}</div>";
 
-                    return parameterOutputResponseHtmlRowString;
+                        parameterInputs.Parameters.Remove("parameterProcessRequestHtmlAttributes");
+                        parameterInputs.Parameters.TryAdd("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlColumn.Attributes);
+
+                        storedOutputResponseData = Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+
+                        //OUTPUT 2:                              <div                                    id="column_A_1_1_xxx">     {column_A_1_1_xxx_Replace}                                   </div>
+                        //storedProcessRequestHtmlColumnString = $@"<${storedProcessRequestHtmlColumn.Tag} ${storedOutputResponseData}>{storedProcessRequestHtmlColumn.Attributes[0].id}_Replace}</{storedProcessRequestHtmlColumn.Tag}>\n";
+
+                        //OUTPUT 3:                                                                     "row_A-1_xxx_Replace                                                          ***SEE OUTPUT 2 ABOVE***
+                        //storedOutputResponseHtmlRowString = storedOutputResponseHtmlRowString.Replace($@"{storedProcessRequestHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}", storedProcessRequestHtmlColumnString);
+
+                        //OUTPUT 4: 
+                        storedOutputResponseHtmlRowString = "<div id=\"row-_A_1_xxx\"><div id=\"column_A_1_1_xxx\">{column_A_1_1_xxx_Replace}</div></div>";
+                    };
+
+                    return storedOutputResponseHtmlRowString;
                 }
                 catch (Exception storedProcessRequestMistake)
                 {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html column");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ExecuteConversionRequest");
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting json to html column");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_3_0_Framework_Convert_HtmlColumnsJsonToHtml_1_0.ExecuteConversionRequest");
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
+                    throw new Exception("CONVERSION request failed " + storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
             };
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlRowString, storedHtmlColumnsJSON, storedColumnItem);
+            storedOutputResponseData = ExecuteConversionRequest();
 
             #endregion
 
@@ -1302,65 +2594,110 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #endregion                              
+            #endregion                                      
         }
 
-        public static async Task<string> Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
             #region 1. INPUTS
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html content");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
 
                 #endregion
 
                 #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
+
+                #endregion
+
+                #endregion    
 
                 #region 2. PROCESS
 
@@ -1368,65 +2705,68 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
-                {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                    
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlColumnString"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseHtmlColumnString")) {
                         storedOutputResponseMessage += "***parameterOutputResponseHtmlColumnString*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlContentJSON"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlContentJSON")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlContentJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    //3. OUTPUTS
+
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS                            
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -1438,19 +2778,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                          
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS  
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1474,7 +2819,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
@@ -1488,76 +2833,115 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE control variables
 
-            string storedContent = "";
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+            string storedProcesseRequestContent = "";
+
+            #endregion
+
+            #region DEFINE output variables
 
             dynamic storedOutputResponseData = null;
-            Dictionary<string, List<string>> storedDataResponseIdsAndContent = new Dictionary<string, List<string>>();
+            Dictionary<string, object> storedOutputResponseDataIdsAndContent = new Dictionary<string, object>();
+            dynamic storedOutputResponseHtmlAttributeKeyValuePairs = null;
 
             #endregion
 
-            #region DEFINE html inputs
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
 
 
             #endregion
 
-            #region DEFINE parameter inputs
+            #endregion
 
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            #region MEMORIZE input request html
+
+            HtmlSection storedInputRequestHtmlContentJSON = parameterInputs.Parameters["parameterInputRequestHtmlContentJSON"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+                
             #endregion
 
-            #region MEMORIZE control client server
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html content");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to html content");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE html inputs
-
-            string storedHtmlColumnString = parameterInputs.Parameters["parameterOutputResponseHtmlColumnString"];
-            dynamic storedHtmlContentJSON = parameterInputs.Parameters["parameterInputRequestHtmlContentJSON"];
-
-            #endregion
-
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
 
+            #endregion            
+
             #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response html
+
+            string storedOutputResponseHtmlColumnString = parameterInputs.Parameters["parameterOutputResponseHtmlColumnString"];
+
+            #endregion
+
+            #endregion       
 
             #endregion
 
@@ -1567,68 +2951,90 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<string, dynamic, Dictionary<string, List<string>>, dynamic, IConfiguration, Task<string>> ExecuteConversionRequest = async (string parameterOutputResponseHtmlColumnString, dynamic parameterInputRequestHtmlContentJSON, Dictionary<string, List<string>> parameterFilterDataResponseIdsAndContent, dynamic parameterContent, IConfiguration parameterProcessRequestSettings) =>
+            Func<string> ExecuteConversionRequest = () => 
             {
-                try
+                try 
                 {
-                    foreach (var storedContentItem in parameterInputRequestHtmlContentJSON.value.HTMLContentItems)
-                    {
-                        if (!parameterFilterDataResponseIdsAndContent.ContainsKey(storedContentItem.ParentHTMLContentItemAttributeID))
-                        {
-                            parameterFilterDataResponseIdsAndContent.Add(storedContentItem.ParentHTMLContentItemAttributeID, new List<string>());
+                    //foreach(storedProcessRequestHtmlContent in storedInputRequestHtmlContentJSON.value.HTMLContentItems) 
+                    //{
+                    //    //OUTPUT 1: 
+                    //    //storedOutputResponseHtmlColumnString =  <div id="row-_A_1_xxx">
+                    //    //                                              <div id="column_A_1_1_xxx">{column_A_1_1_xxx_Replace}</div>   
+                    //    //                                       </div>     
 
-                            parameterFilterDataResponseIdsAndContent[storedContentItem.ParentHTMLContentItemAttributeID].Add(
-                             $@"<{storedContentItem.Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedContentItem.Attributes)}>{
-                                     storedContentItem.Value
-                                 }</{storedContentItem.Tag}>\n");
-                        }
-                        else
-                        {
-                            parameterFilterDataResponseIdsAndContent[storedContentItem.ParentHTMLContentItemAttributeID].Add(
-                                $@"<{storedContentItem.Tag} {Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedContentItem.Attributes)}>{storedContentItem.Value}</{storedContentItem.Tag}>\n");
-                        }
-                    }
+                    //    if (storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID] == null)
+                    //    {
+                    //        storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID] = new List<string>();
 
-                    foreach (var storedIdAndContentItem in parameterFilterDataResponseIdsAndContent.Keys)
-                    {
-                        parameterOutputResponseHtmlColumnString = parameterOutputResponseHtmlColumnString.Replace($"{{{storedIdAndContentItem}_Replace}}", string.Join("\n", parameterFilterDataResponseIdsAndContent[storedIdAndContentItem]));
-                    }
+                    //        parameterInputs.Parameters.Remove("parameterProcessRequestHtmlAttributes");
+                    //        parameterInputs.Parameters.TryAdd("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContent.Attributes);
 
-                    if (parameterProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
-                    {
-                        parameterOutputResponseHtmlColumnString = parameterOutputResponseHtmlColumnString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
-                    }                    
+                    //        storedOutputResponseHtmlAttributeKeyValuePairs = Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
 
-                    return await Task.FromResult<string>(parameterOutputResponseHtmlColumnString).ConfigureAwait(true);
+                    //        //OUTPUT 2:                          //column_A_1_1_xxx                                                       <div                                    id="content_A-1-1-1_xxx"                          <img id="content_A-1-1-1_xxx">          </img>
+                    //        storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID].Add(`<${storedProcessRequestHtmlContent.Tag} ${storedOutputResponseHtmlAttributeKeyValuePairs}>${storedProcessRequestHtmlContent.Value}</${storedProcessRequestHtmlContent.Tag}>\n`);
+                    //    }
+                    //    else 
+                    //    {
+                    //        parameterInputs.Parameters.Remove("parameterProcessRequestHtmlAttributes");
+                    //        parameterInputs.Parameters.TryAdd("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContent.Attributes);
 
+                    //        storedOutputResponseHtmlAttributeKeyValuePairs = Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
+
+                    //        //OUTPUT 3:                          //column_A_1_1_xxx                                                       <div                                    id="content_A-1-1-1_xxx"                          <img id="content_A-1-1-1_xxx">          </img>
+                    //        storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID].Add(`<${storedProcessRequestHtmlContent.Tag} ${storedOutputResponseHtmlAttributeKeyValuePairs}>${storedProcessRequestHtmlContent.Value}</${storedProcessRequestHtmlContent.Tag}>\n`);
+                    //    }
+                    //}
+
+                    //Object.keys(storedOutputResponseDataIdsAndContent).forEach(storedProcessRequestIdAndContentItem => {
+                    //    //OUTPUT 4: 
+                    //    //storedProcesseRequestContent = <img id="content_A-1-1-1_xxx" alt="xxx" src=""></img>
+                    //    //                               <img id="content_A-1-1-2_xxx" alt="xxx" src=""></img>
+                    //    //                               <img id="content_A-1-1-3_xxx" alt="xxx" src=""></img>
+                    //    storedProcesseRequestContent = storedOutputResponseDataIdsAndContent[storedProcessRequestIdAndContentItem].join('\n');
+                    //                                                                                         //***SEE OUTPUT 1 ABOVE***              
+                    //    storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace(`{${storedProcessRequestIdAndContentItem}_Replace}`, storedProcesseRequestContent);
+                    //});
+
+                    //if (process.env.APP_ENV == "SERVER") {
+                    //    //OUTPUT 5:                            <img id="content_A-1-1-3_xxx" alt="xxx" src="/...999.0.3.BaseDI.Professional.QuickStart.Templates/image.jpg"> CONVERT TO <img id="content_A-1-1-3_xxx" alt="xxx" src="/Images/image.jpg">
+                    //    storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
+                    //}
+
+                    return storedOutputResponseHtmlColumnString;
                 }
-                catch (Exception storedProcessRequestMistake)
-                {
+                catch (Exception storedProcessRequestMistake) {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html content");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ExecuteConversionRequest");
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                        
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting json to html content");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ExecuteConversionRequest");
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
+                    throw new Exception("CONVERSION request failed " + storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
-            };
+            }
 
-            storedOutputResponseData = await ExecuteConversionRequest(storedHtmlColumnString, storedHtmlContentJSON, storedDataResponseIdsAndContent, storedContent, storedProcessRequestSettings);
+            storedOutputResponseData = ExecuteConversionRequest();
 
             #endregion
 
@@ -1648,7 +3054,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #endregion                              
+            #endregion                                                            
         }
 
         public static async Task<string> Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
@@ -1657,56 +3063,101 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
 
                 #endregion
 
                 #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
+
+                #endregion
+
+                #endregion     
 
                 #region 2. PROCESS
 
@@ -1714,73 +3165,74 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
-                {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                     
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlStylesJSON"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlStylesJSON")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (!parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"].value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal)
-                        {
-                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [StyleFilePathLocal] cannot be blank or empty.\n";
-                            storedProcessRequestMistakeMade = true;
-                        }
+                    else {
+                        //if (!parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"]?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFilePathLocal) {
+                        //    storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [StyleFilePathLocal] cannot be blank or empty.\n";
+                        //    storedProcessRequestMistakeMade = true;
+                        //}
 
-                        if (!parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"].value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles)
-                        {
-                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [StyleFiles] cannot be blank or empty.\n";
-                            storedProcessRequestMistakeMade = true;
-                        }
+                        //if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlStylesJSON")?.value[0]?._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles) {
+                        //    storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [StyleFiles] cannot be blank or empty.\n";
+                        //    storedProcessRequestMistakeMade = true;
+                        //}
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    //3. OUTPUTS
+
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS                            
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS   
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -1792,19 +3244,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                           
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS   
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -1828,7 +3285,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
@@ -1842,79 +3299,170 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #region DEFINE data response
+            #region DEFINE control variables
+
+            Func<string> storedControlRequestExecutionConversionRequest = null;
+
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+            List<CssStyleFileUseProperty> storedProcessRequestCssStyleList = new List<CssStyleFileUseProperty>();
+            List<CssStyleFileUseProperty> storedProcessRequestCssGlobalStyleList = new List<CssStyleFileUseProperty>();
+            List<CssStyleFileUseProperty> storedProcessRequestCssContainerStyleList = new List<CssStyleFileUseProperty>();
+            List<CssStyleFileUseProperty> storedProcessRequestCssRowStyleList = new List<CssStyleFileUseProperty>();
+            List<CssStyleFileUseProperty> storedProcessRequestCssColumnStyleList = new List<CssStyleFileUseProperty>();
+            List<CssStyleFileUseProperty> storedProcessRequestCssContentStyleList = new List<CssStyleFileUseProperty>();
+
+            string storedProcessRequestCssOutputContentContainer = "";
+            string storedProcessRequestCssOutputContentContainer2 = "";
+            string storedProcessRequestCssOutputContentBody = "";
+            List<string> storedProcessRequestCssOutputContentBodyList = new List<string>();
+            List<string> storedProcessRequestCssOutputContentList = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListMediaQueries = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListGlobal = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListGlobalMediaQueries = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListContainers = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListContainersMediaQueries = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListRows = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListRowsMediaQueries = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListColumns = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListColumnsMediaQueries = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListContent = new List<string>();
+            List<string> storedProcessRequestCssOutputContentListContentMediaQueries = new List<string>();
+            string storedProcessRequestCssOutputContentProperty = "";
+            bool storedProcessRequestCssOutputContentValid = false;
+            
+            #endregion
+
+            #region DEFINE output variables
 
             dynamic storedOutputResponseData = null;
-
-            string storedHtmlCssString = "";
-            Dictionary<string, List<dynamic>> storedHtmlMediaQueryArray = new Dictionary<string, List<dynamic>>();
-            ArrayList storedHtmlMediaQueryFeatures = new ArrayList();
-            Dictionary<string, List<dynamic>> storedHtmlPropertyArray = new Dictionary<string, List<dynamic>>();
+            string storedOutputResponseHtmlCssString = "";
 
             #endregion
 
-            #region DEFINE html inputs
+            ///////////////////////////////
 
+            #region MEMORIZE control variables
 
-            #endregion
-
-            #region DEFINE parameter inputs
+            #region MEMORIZE control xxx xxx
 
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion            
+
+            #region MEMORIZE input request html
+
+            HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS storedInputRequestHtmlStylesJSON = parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"];
+            
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+                
             #endregion
 
-            #region MEMORIZE control client server
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to css inline styles");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE html inputs
+            #region MEMORIZE process css details
+            
+            List<CssStyleFile> storedProcessRequestCssStyleFilesArray = storedInputRequestHtmlStylesJSON?.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem?.value?.HTMLContentStylingItemFiles[0]?.StyleFiles;
 
-            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"];
-            string storedHtmlStyleFilePathLocal = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal;
-            dynamic storedHtmlFilesArray = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
+            string storedProcessRequestCssStyleContainerPattern1 = "{styleID} {\n  {stylePropertiesKeyValues}\n}\n\n";
+            string storedProcessRequestCssStyleContainerPattern2 = "{styleID}:{styleSelector} {\n  {stylePropertiesKeyValues}\n}\n\n";
+            string storedProcessRequestCssStyleContainerPattern3 = "{styleID}:{styleSelector}(n) {\n  {stylePropertiesKeyValues}\n}\n\n";
+            string storedProcessRequestCssStyleContainerPattern4 = "{styleID}::{styleSelector} {\n  {stylePropertiesKeyValues}\n}\n\n";
+            string storedProcessRequestCssStyleContainerPattern5 = "@media {styleMediaQueryNotOnly} {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
+            string storedProcessRequestCssStyleContainerPattern6 = "@media {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
+            string storedProcessRequestCssStyleContainerPattern7 = "{styleID} {\n  {stylePropertiesKeyValues}\n  }";
+
+            string storedProcessRequestCssStyleCommentPattern0 = "/* *************************************************** */\n";
+            storedProcessRequestCssStyleCommentPattern0            += "/*                   ALL SCREENS                       */\n";                                                       
+            storedProcessRequestCssStyleCommentPattern0            += "/* *************************************************** */\n\n";
+
+            string storedProcessRequestCssStyleCommentPattern1 = "/* GENERAL LAYOUT */\n\n";
+            string storedProcessRequestCssStyleCommentPattern2 = "/* CONTAINER */\n\n";
+            string storedProcessRequestCssStyleCommentPattern3 = "/* ROWS */\n\n";
+            string storedProcessRequestCssStyleCommentPattern4 = "/* COLUMNS */\n\n";
+            string storedProcessRequestCssStyleCommentPattern5 = "/* CONTENT */\n\n";
+
+            string storedProcessRequestCssStyleCommentPattern6 = "/* *************************************************** */\n";
+            storedProcessRequestCssStyleCommentPattern6            += "/*                   MOBILE SCREENS                    */\n";                                                       
+            storedProcessRequestCssStyleCommentPattern6            += "/* *************************************************** */\n\n";
+
+            string storedProcessRequestCssStyleBodyPattern1 = "  {stylePropertyKey}: {stylePropertyValue};";
 
             #endregion
 
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
 
+            #endregion            
+
             #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxx
+
+
+
+            #endregion
+
+            #endregion       
 
             #endregion
 
@@ -1922,293 +3470,585 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region EXECUTE json to html conversion
 
-            #region IDEAL CASE - USE json metadata
-
-            Func<Task<string>> ExecuteConversionRequest = async () =>
+            try
             {
-                try
+                #region IDEAL CASE - USE json metadata
+
+                Func<SingleParmPoco_12_2_1_0, Task<dynamic>> ExecuteProcessHelper = (SingleParmPoco_12_2_1_0 parameterInputs) =>
                 {
-                    foreach (var file in storedHtmlFilesArray)
+                    storedProcessRequestCssStyleList = parameterInputs.Parameters["parameterProcessRequestCssStyleList"];
+                    storedProcessRequestCssOutputContentList = parameterInputs.Parameters["parameterProcessRequestCssOutputContentList"];
+                    storedProcessRequestCssOutputContentListMediaQueries = parameterInputs.Parameters["parameterProcessRequestCssOutputContentListMediaQueries"];
+
+                    foreach (var storedProcessRequestCssStyleItem in storedProcessRequestCssStyleList)
                     {
-                        foreach (var element in file.StyleFileUseProperties)
+                        if (!string.IsNullOrEmpty(storedProcessRequestCssStyleItem.attributeID))
                         {
-                            if ((string)element.IsHtmlTag == "true" && element.properties.Count > 0)
+                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = body {\n  {stylePropertiesKeyValues}\n}
+                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern1.Replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
+
+                            #region CONVERT from css properties from json to array list
+                            foreach (var storedProcessRequestCssGlobalStyleItemProperty in storedProcessRequestCssStyleItem.properties)
                             {
-                                if (element.IsMediaQuery == "true")
+                                if (!string.IsNullOrEmpty(storedProcessRequestCssGlobalStyleItemProperty.propertyName))
                                 {
-                                    var MediaQueryFeatures = new List<string>();
+                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border:
+                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssStyleBodyPattern1.Replace("{stylePropertyKey}", storedProcessRequestCssGlobalStyleItemProperty.propertyName);
 
-                                    if (element.MediaQuery.type != "")
+                                    foreach (var storedProcessRequestCssGlobalStyleItemPropertyValue in storedProcessRequestCssGlobalStyleItemProperty.properyValues)
                                     {
-                                        MediaQueryFeatures.Add($"only {element.MediaQuery.type}");
-                                    }
-
-                                    foreach (var feature in element.MediaQuery.features)
-                                    {
-                                        foreach (var kv in JsonConvert.DeserializeObject<Dictionary<string, string>>(feature.ToString()))
-                                        {
-                                            MediaQueryFeatures.Add(kv.Key == "operator"
-                                                ? (string)kv.Value
-                                                : $"({kv.Key}: {kv.Value})");
+                                        if (!storedProcessRequestCssOutputContentValid) {
+                                            storedProcessRequestCssOutputContentValid = true;
                                         }
+
+                                        if (storedProcessRequestCssOutputContentProperty == "") {
+                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px
+                                            storedProcessRequestCssOutputContentProperty = storedProcessRequestCssGlobalStyleItemPropertyValue;
+                                        }
+                                        else {
+                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px solid
+                                            storedProcessRequestCssOutputContentProperty = storedProcessRequestCssOutputContentProperty + " " + storedProcessRequestCssGlobalStyleItemPropertyValue;
+                                        }
+                                    };
+
+                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
+                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentBody.Replace("{stylePropertyValue}", storedProcessRequestCssOutputContentProperty);
+
+                                    storedProcessRequestCssOutputContentBodyList.Add(storedProcessRequestCssOutputContentBody);
+
+                                    storedProcessRequestCssOutputContentProperty = "";
+                                }
+                            }
+
+                            storedProcessRequestCssOutputContentBody = "";
+
+                            if (storedProcessRequestCssOutputContentValid == true)
+                            {
+                                foreach (var storedProcessRequestCssOutputContentItem in storedProcessRequestCssOutputContentBodyList)
+                                {
+                                    if (storedProcessRequestCssOutputContentBody == "") {
+                                        storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentItem;
                                     }
+                                    else {
+                                        storedProcessRequestCssOutputContentBody += "\n  " + storedProcessRequestCssOutputContentItem;
+                                    }
+                                };
 
-                                    foreach (var prop in element.properties)
-                                    {
-                                        if (prop.propertyName != "")
+                                storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+
+                                //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
+                                storedProcessRequestCssOutputContentList.Add(storedProcessRequestCssOutputContentContainer);
+
+                                storedProcessRequestCssOutputContentBody = "";
+                                storedProcessRequestCssOutputContentBodyList = new List<string>();
+
+                                storedProcessRequestCssOutputContentContainer = "";
+
+                                storedProcessRequestCssOutputContentProperty = "";
+
+                                storedProcessRequestCssOutputContentValid = false;
+                            }
+                            #endregion
+
+                            #region CONVERT from css media queries from json to array list
+                            if (storedProcessRequestCssStyleItem.IsMediaQuery.ToUpper() == "TRUE" && storedProcessRequestCssStyleItem.MediaQueryResolutions.Count > 0) {
+
+                                foreach (var storedProcessRequestCssGlobalStyleMediaQueryResolutionItem in storedProcessRequestCssStyleItem.MediaQueryResolutions)
+                                {
+                                    if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions != null &&
+                                        !string.IsNullOrEmpty(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery)) {
+
+                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = @media only {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery;
+
+                                        if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties != null &&
+                                            storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.Count > 0)
                                         {
-                                            var values = new JArray();
-                                            if (!storedHtmlMediaQueryArray.ContainsKey($"@media {string.Join(" ", MediaQueryFeatures)}"))
-                                            {
-                                                storedHtmlMediaQueryArray.Add($"@media {string.Join(" ", MediaQueryFeatures)}", new List<dynamic>());
-                                                foreach (var value in prop.properyValues)
+                                            foreach (var storedProcessRequestCssGlobalStyleMediaResolutionItemProperty in storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties) {
+                                                if (!string.IsNullOrEmpty(storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.propertyName))
                                                 {
-                                                    values.Add($"{value};");
-                                                }
+                                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border:
+                                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssStyleBodyPattern1.Replace("{stylePropertyKey}", storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.propertyName);
 
-                                                storedHtmlMediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"].Add(new JObject
-                                        {
-                                            {"propName", $"{prop.propertyName}"},
-                                            {"values", values}
-                                        });
-                                            }
-                                            else
-                                            {
-                                                foreach (var value in prop.properyValues)
-                                                {
-                                                    values.Add($"{value};");
-                                                }
-
-                                                storedHtmlMediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"]
-                                                    .Add(new JObject
+                                                    foreach (var storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue in storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.properyValues)
                                                     {
-                                                {"propName", prop.propertyName},
-                                                {"values", values}
-                                                    });
-                                            }
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    foreach (var prop in element.properties)
-                                    {
-                                        if (prop.propertyName != "")
-                                        {
-                                            if (!storedHtmlPropertyArray.ContainsKey($"{prop.propertyName}"))
-                                            {
-                                                storedHtmlPropertyArray.Add($"{prop.propertyName}", new List<dynamic>());
-                                                foreach (var value in prop.properyValues)
-                                                {
-                                                    storedHtmlPropertyArray[$"{prop.propertyName}"].Add($"{value};");
-                                                }
-                                            }
-                                            else
-                                            {
-                                                foreach (var value in prop.properyValues)
-                                                {
-                                                    storedHtmlPropertyArray[$"{prop.propertyName}"].Add($"{value};");
+                                                        if (!storedProcessRequestCssOutputContentValid) {
+                                                            storedProcessRequestCssOutputContentValid = true;
+                                                        }
+
+                                                        if (storedProcessRequestCssOutputContentProperty == "")
+                                                        {
+                                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px
+                                                            storedProcessRequestCssOutputContentProperty = storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue;
+                                                        }
+                                                        else
+                                                        {
+                                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px solid
+                                                            storedProcessRequestCssOutputContentProperty = storedProcessRequestCssOutputContentProperty + " " + storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue;
+                                                        }
+                                                    }
+
+                                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
+                                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentBody.Replace("{stylePropertyValue}", storedProcessRequestCssOutputContentProperty);
+                                                    storedProcessRequestCssOutputContentBodyList.Add(storedProcessRequestCssOutputContentBody);
+
+                                                    storedProcessRequestCssOutputContentProperty = "";
                                                 }
                                             }
                                         }
                                     }
+                                }
 
+                                storedProcessRequestCssOutputContentBody = "";
+
+                                if (storedProcessRequestCssOutputContentValid == true)
+                                {
+                                    foreach (var storedProcessRequestCssOutputContentItem in storedProcessRequestCssOutputContentBodyList)
+                                    {
+                                        if (storedProcessRequestCssOutputContentBody == "")
+                                        {
+                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
+                                            storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentItem;
+                                        }
+                                        else
+                                        {
+                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = 
+                                            //                                                           border: 1px solid;
+                                            //                                                           color: red;
+                                            storedProcessRequestCssOutputContentBody += "\n  " + storedProcessRequestCssOutputContentItem;
+                                        }
+                                    }
+
+                                    storedProcessRequestCssOutputContentContainer2 = storedProcessRequestCssStyleContainerPattern7.Replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
+                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentContainer2.Replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+                                    storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+
+                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
+                                    storedProcessRequestCssOutputContentListMediaQueries.Add(storedProcessRequestCssOutputContentContainer);
+
+                                    storedProcessRequestCssOutputContentBody = "";
+                                    storedProcessRequestCssOutputContentBodyList = new List<string>();
+
+                                    storedProcessRequestCssOutputContentContainer = "";
+
+                                    storedProcessRequestCssOutputContentProperty = "";
+
+                                    storedProcessRequestCssOutputContentValid = false;
                                 }
                             }
-                            else if (element.IsHtmlTag == "false" && element.properties.Count > 0)
-                            {
-                                var values = new JArray();
-                                if (element.IsMediaQuery == "true")
-                                {
-                                    var MediaQueryFeatures = new List<string>();
-
-                                    if (element.MediaQuery.type != "")
-                                    {
-                                        MediaQueryFeatures.Add($"only {element.MediaQuery.type}");
-                                    }
-
-                                    foreach (var feature in element.MediaQuery.features)
-                                    {
-
-                                        foreach (var kv in JsonConvert.DeserializeObject<Dictionary<string, string>>(feature.ToString()))
-                                        {
-                                            MediaQueryFeatures.Add(kv.Key == "operator"
-                                                ? (string)kv.Value
-                                                : $"({kv.Key}: {kv.Value})");
-
-                                        }
-                                    }
-
-                                    foreach (var prop in element.properties)
-                                    {
-                                        if (prop.propertyName != "")
-                                        {
-                                            values.Add($"{prop.propertyName} : {prop.properyValues[0]};");
-                                        }
-                                    }
-
-                                    if (!storedHtmlMediaQueryArray.ContainsKey($"@media {string.Join(" ", MediaQueryFeatures)}"))
-                                    {
-                                        storedHtmlMediaQueryArray.Add($"@media {string.Join(" ", MediaQueryFeatures)}",
-                                            new List<dynamic>());
-
-                                        storedHtmlMediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"]
-                                            .Add(new JObject
-                                            {
-                                        {"attributeID", element.attributeID},
-                                        {"values", values}
-                                            });
-                                    }
-                                    else
-                                    {
-                                        storedHtmlMediaQueryArray[$"@media {string.Join(" ", MediaQueryFeatures)}"].Add(new JObject
-                                    {
-                                        {"attributeID", element.attributeID },
-                                        {"values", values}
-                                    });
-
-
-                                    }
-                                }
-                                else
-                                {
-                                    foreach (var prop in element.properties)
-                                    {
-                                        if (prop.propertyName != "")
-                                        {
-                                            values.Add($"{prop.propertyName} : {prop.properyValues[0]};");
-                                        }
-                                    }
-
-                                    if (!storedHtmlPropertyArray.ContainsKey($"{element.attributeID}"))
-                                    {
-                                        storedHtmlPropertyArray.Add($"{element.attributeID}", new List<dynamic>());
-                                        storedHtmlPropertyArray[$"{element.attributeID}"].Add(new JObject
-                                {
-                                    {"attributeID", element.attributeID },
-                                    {"values", values}
-                                });
-                                    }
-                                    else
-                                    {
-                                        foreach (var value in values)
-                                        {
-                                            storedHtmlPropertyArray[$"{element.attributeID}"].FirstOrDefault().values.Add(value);
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("element.IsHtmlTag Missing!");
-                            }
+                            #endregion
                         }
                     }
+                };
 
-                    foreach (var key in storedHtmlPropertyArray.Keys)
-                    {
-                        var obj = storedHtmlPropertyArray[key];
-
-                        if (obj.FirstOrDefault() is string)
-                        {
-                            storedHtmlCssString += $@"{ key }
-                    {{ \n { string.Join(" ", obj.ToArray())} \n}}\n";
-                        }
-                        else
-                        {
-
-                            if (obj.Any())
-                            {
-                                string attributeID = obj.FirstOrDefault().attributeID;
-
-
-                                if (attributeID.Contains("#"))
-                                {
-                                    storedHtmlCssString += @$"{ obj[0].attributeID}
-                                {{ \n { string.Join("", obj.FirstOrDefault().values)} \n}}\n";
-                                }
-                                else
-                                {
-                                    storedHtmlCssString += $"#{obj.FirstOrDefault().attributeID} {{ \n {string.Join("", obj.FirstOrDefault().values)} \n}}\n";
-                                }
-                            }
-
-                        }
-                    }
-
-                    foreach (var key in storedHtmlMediaQueryArray.Keys)
-                    {
-                        var obj = storedHtmlMediaQueryArray[key];
-                        var innerCss = "";
-
-                        if (obj != null)
-                        {
-                            foreach (var element in obj)
-                            {
-                                string attributeID = element.attributeID;
-                                if (attributeID == null)
-                                {
-                                    innerCss += $"{element.propName} \n {{ \n {string.Join(" ", element.values)} \n}}\n";
-                                }
-                                else
-                                {
-                                    if (attributeID.Contains("#"))
-                                    {
-                                        innerCss += $"{ element.attributeID} \n {{ \n {string.Join(" ", element.values)} \n}}\n";
-                                    }
-                                    else
-                                    {
-                                        innerCss += $"#{element.attributeID} \n {{ \n {string.Join(" ", element.values)} \n}}\n";
-                                    }
-                                }
-                                //Console.WriteLine(element.values);
-                            }
-                        }
-
-                        storedHtmlCssString += $@"{ key}
-                {{\n { innerCss} \n}}";
-                    }
-
-                    storedHtmlCssString = $"<style>{ storedHtmlCssString }</style>";
-
-                    storedHtmlCssString = storedHtmlCssString.Replace("../999.0.3.BaseDI.Professional.QuickStart.Templates", "/StaticFiles");
-                    storedHtmlCssString = Regex.Unescape(storedHtmlCssString);
-                    
-                    return await Task.FromResult<string>(storedHtmlCssString).ConfigureAwait(true);
-                }
-                catch (Exception storedProcessRequestMistake)
+                #region A. CONVERT css sections
+                
+                try
                 {
-                    #region EDGE CASE - USE developer logger
-
-                    if (storedProcessRequestDeveloperMode)
+                    Func<Task<dynamic>> ExecuteConversionRequest = () =>
                     {
-                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+                        //OUTPUT EXAMPLE: storedProcessRequestHtmlFile = {
+                        //   "StyleFileName": "Style_Alignments_Setting_XXX",
+                        //   "StyleFileSupportedProperties": ["position", "top", "bottom", xxx],
+                        //   "StyleFileUseProperties": [
+                        //                               { 
+                        //                                   "attributeID": "#column_D-1-1 button", 
+                        //                                   "properties": [
+                        //                                                       {
+                        //                                                             "propertyName":"background",
+                        //                                                             "properyValues":[ "darkblue" ],
+                        //                                                       }
+                        //                                                 ],
+                        //                                   "IsMediaQuery": "true",
+                        //                                   "IsHtmlTag": "false",
+                        //                                   "MediaQueryResolutions": [
+                        //                                                               {
+                        //                                                                   "resolutions":["1600px"],
+                        //                                                                   "propertyName":"top",
+                        //                                                                   "properyValues":[ "330px" ]
+                        //                                                               }
+                        //                                                            ]
+                        //                               }
+                        //                             ]
+                        //}
+                        foreach (var storedProcessRequestHtmlFile in storedProcessRequestCssStyleFilesArray)
+                        {
+                            foreach (var storedProcessRequestStyleFileUseProperty in storedProcessRequestHtmlFile.StyleFileUseProperties)
+                            {
+                                #region 1. CONVERT json to list of GLOBAL styles
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
+                                if(storedProcessRequestStyleFileUseProperty.attributeID == null ||
+                                    storedProcessRequestStyleFileUseProperty.attributeID == "body")
+                                {
+                                    storedProcessRequestCssGlobalStyleList.Add(storedProcessRequestStyleFileUseProperty);
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                                    continue;
+                                }
+
+                                #endregion
+
+                                #region 2. CONVERT json to list of CONTAINER styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != null &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID.ToUpper().Contains("CONTAINER_"))
+                                {
+                                    storedProcessRequestCssContainerStyleList.Add(storedProcessRequestStyleFileUseProperty);
+
+                                    continue;
+                                }
+
+                                #endregion
+
+                                #region 3. CONVERT json to list of ROW styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != null &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID.ToUpper().Contains("ROW_"))
+                                {
+                                    storedProcessRequestCssRowStyleList.Add(storedProcessRequestStyleFileUseProperty);
+
+                                    continue;
+                                }
+
+                                #endregion
+
+                                #region 4. CONVERT json to list of COLUMN styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != null &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID.ToUpper().Contains("COLUMN_"))
+                                {
+                                    storedProcessRequestCssColumnStyleList.Add(storedProcessRequestStyleFileUseProperty);
+
+                                    continue;
+                                }
+
+                                #endregion
+
+                                #region 5. CONVERT json to list of CONTENT styles
+
+                                if (storedProcessRequestStyleFileUseProperty.attributeID != null &&
+                                    storedProcessRequestStyleFileUseProperty.attributeID.ToUpper().Contains("CONTENT_"))
+                                {
+                                    storedProcessRequestCssContentStyleList.Add(storedProcessRequestStyleFileUseProperty);
+
+                                    continue;
+                                }
+
+                                #endregion
+                            }
+                        }
+                    };
+
+                    await ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting json to list of sections", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region B. CONVERT css section global
+
+                try
+                {
+                    Func<Task<dynamic>> ExecuteConversionRequest = async () =>
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssStyleList", storedProcessRequestCssGlobalStyleList);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListGlobal);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListGlobalMediaQueries);
+
+                        return await ExecuteProcessHelper(storedInputs);
+                    };
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting css section global", storedProcessRequestMistake);
+                }
+
+                #endregion
+
+                #region C. CONVERT css section containers
+
+                try
+                {
+                    Func<Task<dynamic>> ExecuteConversionRequest = async () =>
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssStyleList", storedProcessRequestCssContainerStyleList);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListContainers);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListContainersMediaQueries);
+
+                        return await ExecuteProcessHelper(storedInputs);
+                    };
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting css section containers", storedProcessRequestMistake);
+                }
+
+                #endregion
+                
+                #region D. CONVERT css section rows
+
+                try
+                {
+                    Func<Task<dynamic>> ExecuteConversionRequest = async () =>
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssStyleList", storedProcessRequestCssRowStyleList);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListRows);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListRowsMediaQueries);
+
+                        return await ExecuteProcessHelper(storedInputs);
+                    };
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting css section containers", storedProcessRequestMistake);
+                }
+
+                #endregion
+                
+                #region E. CONVERT css section columns
+
+                try
+                {
+                    Func<Task<dynamic>> ExecuteConversionRequest = async () =>
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssStyleList", storedProcessRequestCssColumnStyleList);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListColumns);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListColumnsMediaQueries);
+
+                        return await ExecuteProcessHelper(storedInputs);
+                    };
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting css section containers", storedProcessRequestMistake);
+                }
+
+                #endregion
+                
+                #region F. CONVERT css section content
+
+                try
+                {
+                    Func<Task<dynamic>> ExecuteConversionRequest = async () =>
+                    {
+                        storedInputs = new SingleParmPoco_12_2_1_0();
+
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssStyleList", storedProcessRequestCssContentStyleList);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentList", storedProcessRequestCssOutputContentListContent);
+                        storedInputs.Parameters.TryAdd("parameterProcessRequestCssOutputContentListMediaQueries", storedProcessRequestCssOutputContentListContentMediaQueries);
+
+                        return await ExecuteProcessHelper(storedInputs);
+                    };
+
+                    storedOutputResponseData = await ExecuteConversionRequest();
+                }
+                catch (Exception storedProcessRequestMistake) {
+                    throw new Exception("converting css section containers", storedProcessRequestMistake);
+                }
+
+                #endregion             
+
+                #region G. OUTPUT css inline code
+
+                Func<Task<string>> ExcuteOutputResponse = async () =>
+                {
+
+                    //OUTPUT EXAMPLE: /* *******************ALL SCREENS******************* */
+                    storedOutputResponseHtmlCssString = storedProcessRequestCssStyleCommentPattern0;
+
+                    //OUTPUT EXAMPLE: /* GENERAL LAYOUT */
+                    storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern1;
+
+                    foreach (var storedProcessRequestCssOutputContentItemGlobal in storedProcessRequestCssOutputContentListGlobal)
+                    {
+                        //OUTPUT EXAMPLE: body {
+                        //                  "color:blue";
+                        //                }
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemGlobal;
                     }
 
-                    #endregion
+                    //OUTPUT EXAMPLE: /* CONTAINER */
+                    storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern2;
 
-                    #region EDGE CASE - USE exception handler
+                    foreach (var storedProcessRequestCssOutputContentItemContainer in storedProcessRequestCssOutputContentListContainers)
+                    {
+                        //OUTPUT EXAMPLE: #container_xxx {
+                        //                  "height:125px";
+                        //                }
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemContainer;
+                    }
 
-                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
+                    //OUTPUT EXAMPLE: /* ROWS */
+                    storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern3;
 
-                    #endregion
+                    foreach (var storedProcessRequestCssOutputContentItemRow in storedProcessRequestCssOutputContentListContainers)
+                    {
+                        //OUTPUT EXAMPLE: #row_xxx {
+                        //                  "height:250px";
+                        //                  "width:1020px";
+                        //                }
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemRow;
+                    }
+
+                    //OUTPUT EXAMPLE: /* COLUMNS */
+                    storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern4;
+
+                    foreach (var storedProcessRequestCssOutputContentItemColumn in storedProcessRequestCssOutputContentListColumns)
+                    {
+                        //OUTPUT EXAMPLE: #column_xxx {
+                        //                  "height:250px";
+                        //                  "width:120px";
+                        //                }
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemColumn;
+                    }
+
+                    //OUTPUT EXAMPLE: /* CONTENT */
+                    storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern5;
+
+                    foreach (var storedProcessRequestCssOutputContentItemContent in storedProcessRequestCssOutputContentListContainers)
+                    {
+                        //OUTPUT EXAMPLE: #content_xxx {
+                        //                  "height:250px";
+                        //                  "width:120px";
+                        //                }
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemContent;
+                    }
+
+                    if (storedProcessRequestCssOutputContentListGlobalMediaQueries.Count > 0 ||
+                        storedProcessRequestCssOutputContentListContainersMediaQueries.Count > 0 ||
+                        storedProcessRequestCssOutputContentListRowsMediaQueries.Count > 0 ||
+                        storedProcessRequestCssOutputContentListColumnsMediaQueries.Count > 0 ||
+                        storedProcessRequestCssOutputContentListContentMediaQueries.Count > 0)
+                    {
+
+                        //OUTPUT EXAMPLE: /* *******************MOBILE SCREENS******************* */
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern6;
+
+                        //OUTPUT EXAMPLE: /* GENERAL LAYOUT */
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern1;
+
+                        foreach (var storedProcessRequestCssOutputContentItemGlobalMediaQuery in storedProcessRequestCssOutputContentListGlobalMediaQueries)
+                        {
+                            //OUTPUT EXAMPLE: @media only screen (max-width: 1600px) {
+                            //                   body {
+                            //                      "color:blue";
+                            //                   }
+                            //                }
+                            storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemGlobalMediaQuery;
+                        }
+
+                        //OUTPUT EXAMPLE: /* CONTAINER */
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern2;
+
+                        foreach (var storedProcessRequestCssOutputContentItemContainerMediaQuery in storedProcessRequestCssOutputContentListContainersMediaQueries)
+                        {
+                            //OUTPUT EXAMPLE: @media only screen (max-width: 1600px) {
+                            //                   #container_xxx {
+                            //                      "height:125px";
+                            //                   }
+                            //                }
+                            storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemContainerMediaQuery;
+                        }
+
+                        //OUTPUT EXAMPLE: /* ROWS */
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern3;
+
+                        foreach (var storedProcessRequestCssOutputContentItemRowMediaQuery in storedProcessRequestCssOutputContentListRowsMediaQueries)
+                        {
+                            //OUTPUT EXAMPLE: @media only screen (max-width: 1600px) {
+                            //                   #row_xxx {
+                            //                      "height:250px";
+                            //                      "width:1020px";
+                            //                   }
+                            //                }
+                            storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemRowMediaQuery;
+                        }
+
+                        //OUTPUT EXAMPLE: /* COLUMNS */
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern4;
+
+                        foreach (var storedProcessRequestCssOutputContentItemColumnMediaQuery in storedProcessRequestCssOutputContentListColumnsMediaQueries)
+                        {
+                            //OUTPUT EXAMPLE: @media only screen (max-width: 1600px) {
+                            //                   #column_xxx {
+                            //                      "height:250px";
+                            //                      "width:1020px";
+                            //                   }
+                            //                }
+                            storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemColumnMediaQuery;
+                        }
+
+                        //OUTPUT EXAMPLE: /* CONTENT */
+                        storedOutputResponseHtmlCssString += storedProcessRequestCssStyleCommentPattern5;
+
+                        foreach (var storedProcessRequestCssOutputContentItemContentMediaQuery in storedProcessRequestCssOutputContentListContentMediaQueries)
+                        {
+                            //OUTPUT EXAMPLE: @media only screen (max-width: 1600px) {
+                            //                   #content_xxx {
+                            //                      "height:250px";
+                            //                      "width:1020px";
+                            //                   }
+                            //                }
+                            storedOutputResponseHtmlCssString += storedProcessRequestCssOutputContentItemContentMediaQuery;
+                        }
+                    }
+
+                    return await Task.FromResult<string>("<style>" + Environment.NewLine + storedOutputResponseHtmlCssString + Environment.NewLine + "</style>").ConfigureAwait(true);
+                };
+
+                storedOutputResponseData = await ExcuteOutputResponse();
+
+                #endregion
+
+                #endregion
+            }
+            catch (Exception storedProcessRequestMistake) {
+                #region EDGE CASE - USE developer logger
+
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting json to css");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Action");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
-            };
 
-            storedOutputResponseData = await ExecuteConversionRequest();
+                #endregion
+
+                #region EDGE CASE - USE exception handler
+
+                throw new Exception("CONVERSION request failed " + storedProcessRequestMistake.message);
+
+                #endregion
+            }
 
             #endregion
 
-            #endregion
-
-            #endregion
+            #endregion          
 
             #region 3. OUTPUT
 
@@ -2222,61 +4062,106 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #endregion                              
+            #endregion                                                            
         }
 
-        public static async Task<string> Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
+        public static async Task<string> Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
         {
             #region 1. INPUTS
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
 
                 #endregion
 
@@ -2288,73 +4173,74 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
+                if (parameterInputs != null || parameterInputs.Parameters != null) 
                 {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                    
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlScriptsJSON"))
-                    {
-                        storedOutputResponseMessage += "***parameterInputRequestHtmlScriptsJSON*** cannot be blank or empty.\n";
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlScriptsJSON")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (!parameterInputs.Parameters["parameterInputRequestHtmlScriptsJSON"].value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFilePathLocal)
-                        {
-                            storedOutputResponseMessage += "***parameterInputRequestHtmlScriptsJSON*** [ScriptFilePathLocal] cannot be blank or empty.\n";
+                    else {
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlScriptsJSON")?.value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFilePathLocal) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [ScriptsFilePathLocal] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (!parameterInputs.Parameters["parameterInputRequestHtmlScriptsJSON"].value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFiles)
-                        {
-                            storedOutputResponseMessage += "***parameterInputRequestHtmlScriptsJSON*** [ScriptFiles] cannot be blank or empty.\n";
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlScriptsJSON")?.value[0]?._2_2_2_5_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.ScriptFiles) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlStylesJSON*** [ScriptsFiles] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    //3. OUTPUTS
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS                              
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS 
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -2366,19 +4252,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                        
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -2402,91 +4293,128 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
                 #endregion
 
                 #endregion
-            };
+            }
 
             ///BEGIN valdation process
             await ValidateInputs(parameterInputs);
 
             #endregion
 
-            #region DEFINE data response
-
-            dynamic storedOutputResponseData = null;
-            Dictionary<string, List<dynamic>> storedHtmlMediaQueryArray = new Dictionary<string, List<dynamic>>();
-            ArrayList storedHtmlMediaQueryFeatures = new ArrayList();
-            Dictionary<string, List<dynamic>> storedHtmlPropertyArray = new Dictionary<string, List<dynamic>>();
+            #region DEFINE control variables
 
             #endregion
 
-            #region DEFINE html inputs
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+            string storedProcesseRequestContent = "";
+
+            #endregion
+
+            #region DEFINE output variables
+
+            let storedOutputResponseData: any = null;
+            let storedOutputResponseDataIdsAndContent: Array<any> = [];
+
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
 
 
             #endregion
 
-            #region DEFINE parameter inputs
+            #endregion
 
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion            
+
+            #region MEMORIZE input request html
+
+            let storedInputRequestHtmlContentJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContentJSON");            
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+                
             #endregion
 
-            #region MEMORIZE control client server
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to html content");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE html inputs
-
-            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"];
-            string storedHtmlStyleFilePathLocal = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal;
-            dynamic storedHtmlFilesArray = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
-
-            #endregion
-
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
 
+            #endregion            
+
             #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response html
+
+            let storedOutputResponseHtmlColumnString: any = parameterInputs.Parameters.getValue("parameterOutputResponseHtmlColumnString");
+
+            #endregion
+
+            #endregion     
 
             #endregion
 
@@ -2496,45 +4424,49 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<Task<string>> ExecuteConversionRequest = async () =>
-            {
-                try
-                {
-                    return await Task.FromResult<string>("").ConfigureAwait(true);
-                }
-                catch (Exception storedProcessRequestMistake)
-                {
-                    #region EDGE CASE - USE developer logger
+            //Func<Task<string>> ExecuteConversionRequest = () => {
+            //    try {
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
-                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+            //        return "";
+            //    }
+            //    catch (Exception storedProcessRequestMistake) {
+            //        #region EDGE CASE - USE developer logger
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
+            //        if (storedProcessRequestDeveloperMode) {
+            //            storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                    }
+            //            //0. CONTROLLERS
 
-                    #endregion
+            //            //1. INPUTS
 
-                    #region EDGE CASE - USE exception handler
+            //            //2. PROCESS
+            //            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting json to inline scripts");
+            //            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+            //            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlScriptsJSONToInlineScripts_1_0.ExecuteConversionRequest");
 
-                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
+            //            //3. OUTPUTS
+            //            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
-                    #endregion
-                }
-            };
+            //            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+            //        }
 
-            storedOutputResponseData = await ExecuteConversionRequest();
+            //        #endregion
+
+            //        #region EDGE CASE - USE exception handler
+
+            //        throw new Exception("CONVERSION request failed " + storedProcessRequestMistake.ToString());
+
+            //        #endregion
+            //    }
+            //}
+
+            //storedOutputResponseData = await ExecuteConversionRequest();
 
             #endregion
 
             #endregion
 
-            #endregion
+            #endregion          
 
             #region 3. OUTPUT
 
@@ -2548,65 +4480,109 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #endregion                              
+            #endregion                                                            
         }
 
-        public static async Task<string> Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
-        {
+        public static async Task<string> Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0(SingleParmPoco_12_2_1_0 parameterInputs) {
             #region 1. INPUTS
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
                 #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
 
                 #endregion
 
                 #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
+
+                #endregion
+
+                #endregion                
 
                 #region 2. PROCESS
 
@@ -2614,73 +4590,74 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
-                {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS                    
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
                         storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
                         storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlMetaDataJSON"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlMetaDataJSON")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
-                    else
-                    {
-                        if (!parameterInputs.Parameters["parameterInputRequestHtmlMetaDataJSON"].value[0]?._2_2_2_6_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.MetaDataFilePathLocal)
-                        {
-                            storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** [MetaDataFilePathLocal] cannot be blank or empty.\n";
+                    else {
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlMetaDataJSON")?.value[0]?._2_2_2_6_1_clientInformationHTMLContentMetaDataItem?.value?.HTMLContentMetaDataItemFiles[0]?.MetaDataFilePathLocal) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** [ScriptsFilePathLocal] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (!parameterInputs.Parameters["parameterInputRequestHtmlScriptsJSON"].value[0]?._2_2_2_6_1_clientInformationHTMLContentScriptItem?.value?.HTMLContentScriptItemFiles[0]?.MetaDataFiles)
-                        {
-                            storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** [MetaDataFiles] cannot be blank or empty.\n";
+                        if (!parameterInputs.Parameters.getValue("parameterInputRequestHtmlMetaDataJSON")?.value[0]?._2_2_2_6_1_clientInformationHTMLContentMetaDataItem?.value?.HTMLContentMetaDataItemFiles[0]?.MetaDataFiles) {
+                            storedOutputResponseMessage += "***parameterInputRequestHtmlMetaDataJSON*** [ScriptsFiles] cannot be blank or empty.\n";
                             storedProcessRequestMistakeMade = true;
                         }
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    //3. OUTPUTS
+
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS                              
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -2692,19 +4669,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                          
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -2728,91 +4710,128 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
                 #endregion
 
                 #endregion
-            };
+            }
 
             ///BEGIN valdation process
             await ValidateInputs(parameterInputs);
 
             #endregion
 
-            #region DEFINE data response
-
-            dynamic storedOutputResponseData = null;
-            Dictionary<string, List<dynamic>> storedHtmlMediaQueryArray = new Dictionary<string, List<dynamic>>();
-            ArrayList storedHtmlMediaQueryFeatures = new ArrayList();
-            Dictionary<string, List<dynamic>> storedHtmlPropertyArray = new Dictionary<string, List<dynamic>>();
+             #region DEFINE control variables
 
             #endregion
 
-            #region DEFINE html inputs
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+            let storedProcesseRequestContent:string = "";
+
+            #endregion
+
+            #region DEFINE output variables
+
+            let storedOutputResponseData: any = null;
+            let storedOutputResponseDataIdsAndContent: Array<any> = [];
+
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
 
 
             #endregion
 
-            #region DEFINE parameter inputs
+            #endregion
 
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion            
+
+            #region MEMORIZE input request html
+
+            let storedInputRequestHtmlContentJSON: any = parameterInputs.Parameters.getValue("parameterInputRequestHtmlContentJSON");            
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+                
             #endregion
 
-            #region MEMORIZE control client server
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html styles");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to inline meta data");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_7_0_Framework_Convert_HtmlMetaDataJSONToInlineMetaData_1_0");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE html inputs
-
-            dynamic storedHtmlStylesJSON = parameterInputs.Parameters["parameterInputRequestHtmlStylesJSON"];
-            string storedHtmlStyleFilePathLocal = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFilePathLocal;
-            dynamic storedHtmlFilesArray = storedHtmlStylesJSON.value[0]._2_2_2_4_1_clientInformationHTMLContentStylingItem.value.HTMLContentStylingItemFiles[0].StyleFiles;
-
-            #endregion
-
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
 
+            #endregion            
+
             #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response html
+
+            let storedOutputResponseHtmlColumnString: any = parameterInputs.Parameters.getValue("parameterOutputResponseHtmlColumnString");
+
+            #endregion
+
+            #endregion    
 
             #endregion
 
@@ -2822,37 +4841,41 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE json metadata
 
-            Func<Task<string>> ExecuteConversionRequest = async () =>
-            {
-                try
-                {
-                    return await Task.FromResult<string>("").ConfigureAwait(true);
+            Func<Task<string>> ExecuteConversionRequest = () => {
+                try {
+
+                    return "";
                 }
-                catch (Exception storedProcessRequestMistake)
-                {
+                catch (Exception storedProcessRequestMistake) {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                        
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED converting json to html styles");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_5_0_Framework_Convert_HtmlCssJSONToInlineStyles_1_0.ExecuteConversionRequest");
+
+                        //3. OUTPUTS      
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
+                    throw new Exception("CONVERSION request failed " + storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
-            };
+            }
 
             storedOutputResponseData = await ExecuteConversionRequest();
 
@@ -2860,7 +4883,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #endregion
+            #endregion          
 
             #region 3. OUTPUT
 
@@ -2874,64 +4897,109 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #endregion
 
-            #endregion                              
+            #endregion                                                            
         }
 
-        public static async Task<string> Step_8_0_Framework_Convert_HtmlStructureToString_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
-        {
+        public static async Task<string> Step_8_0_Framework_Convert_HtmlStructureToString_1_0(SingleParmPoco_12_2_1_0 parameterInputs) {
             #region 1. INPUTS
 
             #region VALIDATE input parameters
 
-            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = async (SingleParmPoco_12_2_1_0 parameterInputs) =>
-            {
-                #region 1. INPUTS
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
+               #region 1. INPUTS
 
-                #region DEFINE parameter inputs
-
+                #region DEFINE control variables
 
                 #endregion
 
-                #region DEFINE process checkpoint
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
 
                 bool storedProcessRequestMistakeMade = false;
 
                 #endregion
 
-                #region DEFINE stored message
+                #region DEFINE output variables
 
                 string storedOutputResponseMessage = "";
 
                 #endregion
 
-                #region MEMORIZE control client server
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
 
                 Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
                 #endregion
 
-                #region MEMORIZE app settings
+                #region MEMORIZE process request settings
 
                 IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
                 #endregion
 
-                #region MEMORIZE developer mode
+                #region MEMORIZE process developer mode
 
                 bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
                 SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
                 //REQUIRED
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0.ValidateInputs()");
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_8_0_Framework_Convert_HtmlStructureToString_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
 
                 #endregion
 
                 #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
+
+                #endregion
+
+                #endregion     
 
                 #region 2. PROCESS
 
@@ -2939,89 +5007,87 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE valid information
 
-                if (parameterInputs != null || parameterInputs.Parameters != null)
-                {
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-                    else
-                    {
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.setValue(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})";
-                            storedProcessRequestMistakeMade = true;
-                        }
-                    }
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+                    //0. CONTROLLERS
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlMetaData"))
-                    {
-                        storedOutputResponseMessage += "***parameterInputRequestHtmlMetaData*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlTitle"))
-                    {
+                    //1. INPUTS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlTitle")) {
                         storedOutputResponseMessage += "***parameterTitle*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlAdditionalHeadData"))
-                    {
-                        storedOutputResponseMessage += "***parameterInputRequestHtmlAdditionalHeadData*** cannot be blank or empty.\n";
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlAdditionalHeadData")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlAdditionalHeadData*** cannot be blank or empty.\n";;
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlScripts"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlScripts")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlScripts*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlStyles"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlStyles")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlStyles*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlBody"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlBody")) {
                         storedOutputResponseMessage += "***parameterInputRequestHtmlBody*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterInputRequestHtmlMetaData")) {
+                        storedOutputResponseMessage += "***parameterInputRequestHtmlMetaData*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //2. PROCESS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessRequestMistakeMade = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }        
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer")) {
                         storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails"))
-                    {
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
                         storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (storedProcessRequestMistakeMade)
-                    {
+                    //3. OUTPUTS
+
+                    if (storedProcessRequestMistakeMade) {
                         #region EDGE CASE - USE developer logger
 
-                        if (storedProcessRequestDeveloperMode)
-                        {
+                        if (storedProcessRequestDeveloperMode) {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            //0. CONTROLLERS
 
-                            await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            //1. INPUTS
+
+                            //2. PROCESS                            
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
 
                         #endregion
@@ -3033,19 +5099,24 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #endregion
                     }
                 }
-                else
-                {
+                else {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS                        
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
@@ -3069,107 +5140,147 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 #region IDEAL CASE - USE passed indicator
 
-                return true;
+                return Task.FromResult<bool>(true);
 
                 #endregion
 
                 #endregion
 
                 #endregion
-            };
+            }
 
             ///BEGIN valdation process
             await ValidateInputs(parameterInputs);
 
             #endregion
 
-            #region DEFINE data response
-
-            dynamic storedOutputResponseData = null;
+             #region DEFINE control variables
 
             #endregion
 
-            #region DEFINE html inputs
+            #region DEFINE input variables
 
-            string storedHtmlBaseDIScriptName = "";
-
-            #endregion
-
-            #region DEFINE parameter inputs
-
-            SingleParmPoco_12_2_1_0 storedInputs;
+            SingleParmPoco_12_2_1_0 storedInputs = null;
 
             #endregion
 
-            #region MEMORIZE centralized processes
+            #region DEFINE process variables
+
+            let storedProcessRequestHtmlBaseDIScriptName: string = "";
+
+            #endregion
+
+            #region DEFINE output variables
+
+            let storedOutputResponseData: any = null;
+            let storedOutputResponseDataCached: any = null;
+
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion            
+
+
+            #region MEMORIZE input request html
+
+            let storedInputRequestHtmlPageTemplate = `<!DOCTYPE html>
+                <html lang="en">
+                    <head>
+                        {metaDataReplace}
+                        <title>{titleReplace}</title>  
+                        {scriptsReplace}
+                        {stylesReplace}
+                    </head>
+                    <body>
+                        {bodyReplace}
+                    </body>
+                </html>`;
+
+            let storedInputRequestHtmlMetaData: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlMetaData");
+            let storedInputRequestHtmlTitle: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlTitle");
+            let storedInputRequestHtmlScripts: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlScripts");
+            let storedInputRequestHtmlAdditionalHeadData: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlAdditionalHeadData");
+            let storedInputRequestHtmlStyles: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlStyles");
+            let storedInputRequestHtmlBody: string = parameterInputs.Parameters.getValue("parameterInputRequestHtmlBody");
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
 
             aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
-            //this._storedProcessRequestCentralizedSensor = parameterProcessRequestCentralizedSensor;
-            //this._storedProcessRequestCentralizedStorer = parameterProcessRequestCentralizedStorer;
+                
             #endregion
 
-            #region MEMORIZE control client server
+            #region MEMORIZE process request tracker
 
             Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
             #endregion
 
-            #region MEMORIZE app settings
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "STORING html template");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to inline meta data");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_8_0_Framework_Convert_HtmlStructureToString_1_0");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE html inputs
-
-            string storedHtmlPageTemplate = @"<!DOCTYPE html>
-                <html lang='en'>
-                <head>
-                    {metaDataReplace}
-                    <title>{titleReplace}</title>
-                    {scriptsReplace}
-                    {stylesReplace}
-                    {additionalHeadData}
-                </head>
-                <body>
-                    {bodyReplace}
-                </body>
-                </ html>";
-
-            string storedHtmlMetaData = parameterInputs.Parameters["parameterInputRequestHtmlMetaData"];
-            string storedHtmlTitle = parameterInputs.Parameters["parameterInputRequestHtmlTitle"];
-            string storedHtmlScripts = parameterInputs.Parameters["parameterInputRequestHtmlScripts"];
-            string storedHtmlAdditionalHeadData = parameterInputs.Parameters["parameterInputRequestHtmlAdditionalHeadData"];
-            string storedHtmlStyles = parameterInputs.Parameters["parameterInputRequestHtmlStyles"];
-            string storedHtmlBody = parameterInputs.Parameters["parameterInputRequestHtmlBody"];
-            
-            #endregion
-
-            #region MEMORIZE storyline details
+            #region MEMORIZE process storyline details
 
             JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
 
+            #endregion            
+
             #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response html
+
+            let storedOutputResponseHtmlColumnString: any = parameterInputs.Parameters.getValue("parameterOutputResponseHtmlColumnString");
+
+            #endregion
+
+            #endregion    
 
             #endregion
 
@@ -3181,82 +5292,89 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region 1. READ cached baseDI script path
 
-            Func<string, string, aClass_Programming_ScriptAction_12_2_1_0<JObject>, Dictionary<string, object>, JObject, dynamic, Task<string>> ExecuteStorageRequest = async (string parameterHtmlBaseDIScriptName, string parameterInputRequestHtmlScripts, aClass_Programming_ScriptAction_12_2_1_0<JObject> parameterProcessRequestCentralizedStorer, Dictionary<string, object> parameterProcessRequestTracker, JObject parameterProcessRequestDataStorylineDetails, dynamic parameterFilterDataResponse) => {
-                try
-                {
-                    storedInputs = new SingleParmPoco_12_2_1_0();
+            const ExecuteStorageRequest = async () => {
+                try {
+                    storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0;
 
-                    storedInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                    storedInputs.Parameters.Add("parameterProcessRequestCRUDVerb", "Read");
-                    storedInputs.Parameters.Add("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
-                    storedInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", storedProcessRequestCentralizedStorer);
-                    storedInputs.Parameters.Add("parameterProcessRequestStorageValue", storedProcessRequestDataStorylineDetails);
-                    storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", storedProcessRequestDataStorylineDetails);
-                    storedInputs.Parameters.Add("parameterProcessRequestPageName", "");
-                    storedInputs.Parameters.Add("parameterProcessRequestStorageDescription", "READING client side BaseDI script SOURCE PATH");
-                    storedInputs.Parameters.Add("parameterProcessRequestStorageUniqueKey", "BaseDI_PresentationScript_SrcLocation");
+                    //0. CONTROLLERS
 
-                    parameterFilterDataResponse = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedInputs);
-                    //parameterFilterDataResponse = (parameterFilterDataResponse && parameterFilterDataResponse.outputs.length > 0) ? parameterFilterDataResponse.outputs[1].baseDIObservations[parameterFilterDataResponse.outputs[1].baseDIObservations.length - 1] : null;
+                    //1. INPUTS
 
-                    //if (parameterFilterDataResponse)
-                    //{
-                    //    parameterHtmlBaseDIScriptName = parameterFilterDataResponse[Object.keys(parameterFilterDataResponse)[0]].observation.metadata[3].item.data[0].dataResult
+                    //2. PROCESS                      
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", Object.assign(storedProcessRequestTracker, Object));
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestCRUDVerb", "Read");
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestHandler", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0")
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestCentralizedStorer", Object.assign(storedProcessRequestCentralizedStorer, Object));
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestStorageValue", Object.assign(storedProcessRequestDataStorylineDetails, Object));
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails", Object.assign(storedProcessRequestDataStorylineDetails, Object));
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestPageName", "");
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestStorageDescription", "READING client side BaseDI script SOURCE PATH");
+                    storedInputs.Parameters.TryAdd("parameterProcessRequestStorageUniqueKey", "BaseDI_PresentationScript_SrcLocation");
 
-                    //    parameterInputRequestHtmlScripts += @"<script src = ""/scripts/${parameterHtmlBaseDIScriptName}"" type = ""text/javascript""></script>`";
-                    //}
+                    //4. OUTPUTS
+                    storedOutputResponseDataCached = await Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.BaseDI.Professional.Programming.Extensions_3.Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0(storedInputs);
+                    storedOutputResponseDataCached = (storedOutputResponseDataCached && storedOutputResponseDataCached.outputs.length > 0) ? storedOutputResponseDataCached.outputs[1].baseDIObservations[storedOutputResponseDataCached.outputs[1].baseDIObservations.length - 1] : null;
 
-                    return ""; // parameterInputRequestHtmlScripts;
+                    if (storedOutputResponseDataCached) {
+                        storedProcessRequestHtmlBaseDIScriptName = storedOutputResponseDataCached[Object.keys(storedOutputResponseDataCached)[0]].observation.metadata[3].item.data[0].dataResult
+
+                        storedInputRequestHtmlScripts += `<script src="/scripts/${storedProcessRequestHtmlBaseDIScriptName}" type="text/javascript"></script>`;
+                    }
+
+                    return storedInputRequestHtmlScripts;
 
                 }
-                catch (Exception storedProcessRequestMistake)
-                {
+                catch (Exception storedProcessRequestMistake) {
                     #region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode)
-                    {
+                    if (storedProcessRequestDeveloperMode) {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED reading cache");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0.ExecuteStorageRequest");
+                        //0. CONTROLLERS
 
-                        await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        //1. INPUTS
+
+                        //2. PROCESS                          
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED reading cache");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_6_0_Framework_Convert_HtmlStructureToString_1_0.ExecuteStorageRequest");
+
+                        //4. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
 
                     #endregion
 
                     #region EDGE CASE - USE exception handler
 
-                    throw new Exception("STORAGE request failed " +  storedProcessRequestMistake.ToString());
+                    throw new Exception("STORAGE request failed " + storedProcessRequestMistake.ToString());
 
                     #endregion
                 }
-            };
+            }
 
-            if (storedProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER")
-            {
-                storedHtmlScripts = await ExecuteStorageRequest(storedHtmlBaseDIScriptName, storedHtmlScripts, storedProcessRequestCentralizedStorer, storedProcessRequestTracker, storedProcessRequestDataStorylineDetails, storedOutputResponseData);
+            if (process.env.APP_ENV == "SERVER") {
+                storedInputRequestHtmlScripts = await ExecuteStorageRequest();
             }
 
             #endregion
 
             #region 2. CONVERT inputs to html template
 
-            Func<string, string, string, string, string, string, string, Task<string>> ExecuteConversionRequest = async (string parameterHtmlPageTemplate, string parameterInputRequestHtmlMetaData, string parameterInputRequestHtmlTitle, string parameterInputRequestHtmlScripts, string parameterInputRequestHtmlStyles, string parameterInputRequestHtmlBody, string parameterInputRequestHtmlAdditionalHeadData) => {
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{metaDataReplace}", parameterInputRequestHtmlMetaData);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{titleReplace}", parameterInputRequestHtmlTitle);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{additionalHeadData}", parameterInputRequestHtmlAdditionalHeadData);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{scriptsReplace}", parameterInputRequestHtmlScripts);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{stylesReplace}", parameterInputRequestHtmlStyles);
-                parameterHtmlPageTemplate = parameterHtmlPageTemplate.Replace("{bodyReplace}", parameterInputRequestHtmlBody);
+            const ExecuteConversionRequest = async () => {
+                storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{metaDataReplace}", storedInputRequestHtmlMetaData);
+                storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{titleReplace}", storedInputRequestHtmlTitle);
+                storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{additionalHeadData}", storedInputRequestHtmlAdditionalHeadData);
+                storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{scriptsReplace}", storedInputRequestHtmlScripts);
+                storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{stylesReplace}", storedInputRequestHtmlStyles);
+                storedInputRequestHtmlPageTemplate = storedInputRequestHtmlPageTemplate.replace("{bodyReplace}", storedInputRequestHtmlBody);
 
-                return await Task.FromResult<string>(parameterHtmlPageTemplate).ConfigureAwait(true);
-            };
+                return storedInputRequestHtmlPageTemplate;
+            }
 
-            storedHtmlPageTemplate = await ExecuteConversionRequest(storedHtmlPageTemplate, storedHtmlMetaData, storedHtmlTitle, storedHtmlScripts, storedHtmlStyles, storedHtmlBody, storedHtmlAdditionalHeadData);
-
+            storedInputRequestHtmlPageTemplate = await ExecuteConversionRequest();
             #endregion
 
             #endregion
@@ -3271,15 +5389,440 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region IDEAL CASE - USE html string
 
-            return storedHtmlPageTemplate;
+            return storedInputRequestHtmlPageTemplate;
 
             #endregion
 
             #endregion
 
-            #endregion          
+            #endregion
         }
 
+        public static async Task<string> Step_X_X_Framework_Convert_StorylineDetailsObservationToString_1_0(SingleParmPoco_12_2_1_0 parameterInputs) {
+            #region 1. INPUTS
+
+            #region VALIDATE input parameters
+
+            Func<SingleParmPoco_12_2_1_0, Task<bool>> ValidateInputs = (SingleParmPoco_12_2_1_0 parameterInputs) => {
+                #region 1. INPUTS
+
+                #region DEFINE control variables
+
+                #endregion
+
+                #region DEFINE input variables
+
+                SingleParmPoco_12_2_1_0 storedInputs = null;
+
+                #endregion
+
+                #region DEFINE process variables
+
+                bool storedProcessRequestMistakeMade = false;
+
+                #endregion
+
+                #region DEFINE output variables
+
+                string storedOutputResponseMessage = "";
+
+                #endregion
+
+                ///////////////////////////////
+
+                #region MEMORIZE control variables
+
+                #region MEMORIZE control xxx xxx
+
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE input variables
+
+                #region MEMORIZE input action name
+
+                string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+                #endregion 
+
+                #endregion
+
+                #region MEMORIZE process variables   
+
+                #region MEMORIZE process request tracker
+
+                Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+
+                #endregion
+
+                #region MEMORIZE process request settings
+
+                IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
+
+                #endregion
+
+                #region MEMORIZE process developer mode
+
+                bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+                SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+                //REQUIRED
+
+                //0. CONTROLLERS
+
+                //1. INPUTS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+                //2. PROCESS
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "VALIDATING request inputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_8_0_Framework_Convert_HtmlStructureToString_1_0 -> ValidateInputs");
+
+                //3. OUTPUTS
+
+                #endregion
+
+                #endregion
+
+                #region MEMORIZE output variables  
+
+                #region MEMORIZE output xxx xxx  
+
+                #endregion
+
+                #endregion
+
+                #endregion     
+
+                #region 2. PROCESS
+
+                #region EXECUTE validation process
+
+                #region IDEAL CASE - USE valid information
+
+                if (parameterInputs != null || parameterInputs.Parameters != null) {
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+                  
+                    //2. PROCESS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestTracker")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestTracker*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    else {
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestSettings"] == null) {
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.\n\n Please verify you are doing something like parameterInputs.Parameters.TryAdd(process.env).\n Please also make sure you added this value in the ***webpack.config.server.js*** file under new webpack.DefinePlugin(process.env{'process.env':'xxxxx'})"
+                            storedProcessRequestMistakeMade = true;
+                        }
+                    }
+
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestSettings*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+                    
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestRequestHandlerFileName")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestRequestHandlerFileName*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+           
+                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestDataStorylineDetails")) {
+                        storedOutputResponseMessage += "***parameterProcessRequestDataStorylineDetails*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    //3. OUTPUTS
+                    if (!parameterInputs.Parameters.ContainsKey("parameterOutputResponseType")) {
+                        storedOutputResponseMessage += "***parameterOutputResponseType*** cannot be blank or empty.\n";
+                        storedProcessRequestMistakeMade = true;
+                    }
+
+                    if (storedProcessRequestMistakeMade) {
+                        #region EDGE CASE - USE developer logger
+
+                        if (storedProcessRequestDeveloperMode) {
+                            storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                            //0. CONTROLLERS
+
+                            //1. INPUTS
+
+                            //2. PROCESS                            
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                            //3. OUTPUTS
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                            Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                        }
+
+                        #endregion
+
+                        #region EDGE CASE - USE exception handler
+
+                        throw new Exception("PARSING parameter values failed");
+
+                        #endregion
+                    }
+                }
+                else {
+                    #region EDGE CASE - USE developer logger
+
+                    if (storedProcessRequestDeveloperMode) {
+                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                        //0. CONTROLLERS
+
+                        //1. INPUTS                        
+
+                        //2. PROCESS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+
+                        //3. OUTPUTS
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                    }
+
+                    #endregion
+
+                    #region EDGE CASE - USE exception handler
+
+                    throw new Exception("PARSING parameter values failed");
+
+                    #endregion
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
+                #region 3. OUTPUT
+
+                #region RETURN validation passed
+
+                #region IDEAL CASE - USE passed indicator
+
+                return Task.FromResult<bool>(true);
+
+                #endregion
+
+                #endregion
+
+                #endregion
+            }
+
+            ///BEGIN valdation process
+            await ValidateInputs(parameterInputs);
+
+            #endregion
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            let storedOutputResponseData: any = null;
+ 
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxx
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion            
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request tracker
+
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+
+            #endregion
+
+            #region MEMORIZE process request settings
+
+            IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
+
+            #endregion
+
+            #region MEMORIZE process developer mode
+
+            bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
+
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
+
+            //REQUIRED
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to inline meta data");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_WebDevelopment_Chapter_12_3_Page_0_GoalHelper_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_StorylineDetailsObservationToString_1_0");
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
+
+            #endregion
+
+            #region MEMORIZE process storage details
+
+            let storedProcessRequestStorageKeyUniqueness: string = parameterInputs.Parameters.getValue("parameterProcessRequestRequestHandlerFileName");
+            let storedProcessRequestStorageCounter: number = 0;
+
+            let storedProcessRequestStorageDictionary: Object = {};
+            let storedProcessRequestStorageKeyJSON: string = "StorageKey_" + storedProcessRequestStorageKeyUniqueness + "-" + "Read-BaseDI_PresentationJSON_Content";
+            let storedProcessRequestStorageKeyHTML: string = "StorageKey_" + storedProcessRequestStorageKeyUniqueness + "-" + "Read-BaseDI_PresentationHTML_Content";
+            let storedProcessRequestStorageKeyXML: string = "StorageKey_" + storedProcessRequestStorageKeyUniqueness + "-" + "Read-BaseDI_PresentationXML_Content";
+
+            let storedProcessRequestStorageUpdateMode: boolean = false;
+
+            #endregion     
+
+            #region MEMORIZE process storyline details
+
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
+
+            #endregion            
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response type
+
+            let storedOutputResponseType: string = parameterInputs.Parameters.getValue("parameterOutputResponseType");
+    
+            #endregion
+
+            #endregion    
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE json to html conversion
+
+            #region IDEAL CASE - USE storyline details
+
+            try
+            {
+                Func<Task<dynamic>> ExecuteConversionRequest = () =>
+                {
+                    storedProcessRequestDataStorylineDetails?.outputs[1].baseDIObservations.map(storedProcessRequestObservation => {
+                        if (Object.keys(storedProcessRequestObservation).length > 0 &&
+                            (Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyJSON.toUpperCase() ||
+                                Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyHTML.toUpperCase() ||
+                                Object.keys(storedProcessRequestObservation)[0].toUpperCase() == storedProcessRequestStorageKeyXML.toUpperCase()))
+                        {
+                            switch (storedOutputResponseType.toUpperCase())
+                            {
+                                case "HTML":
+                                    storedOutputResponseData = unescape(storedProcessRequestObservation[storedProcessRequestStorageKeyHTML].observation.metadata[3].item.presentation[0].htmlResult);
+
+                                    break;
+                                case "JSON":
+                                    storedOutputResponseData = storedProcessRequestObservation[storedProcessRequestStorageKeyJSON].observation.metadata[3].item.presentation[0].jsonResult;
+
+                                    break;
+                                case "XML":
+                                    storedOutputResponseData = storedProcessRequestObservation[storedProcessRequestStorageKeyXML].observation.metadata[3].item.presentation[0].xmlResult;
+
+                                    break;
+                            }
+
+                            #region EDGE CASE - USE developer logger
+
+                            if (storedProcessRequestDeveloperMode) {
+                                //0. CONTROLLERS
+
+                                //1. INPUTS
+
+                                //2. PROCESS
+                                storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "SUCCESSFULLY converted StorylineDetails");
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestCentralizedStorer", parameterInputs.Parameters.getValue("parameterProcessRequestCentralizedStorer"));
+
+                                //3. OUTPUTS
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Logging"); //Values = Logging or Mistake
+                                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALEndOfProcess", true);
+
+                                Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                            }
+
+                            #endregion
+                        }
+                    });
+                }
+
+                storedOutputResponseData = await ExecuteConversionRequest();
+            }
+            catch (Exception storedProcessRequestMistake) {
+                throw new Exception("converting json to html string");
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN converted data
+
+            #region IDEAL CASE - USE string value
+
+            return storedOutputResponseData;
+
+            #endregion
+
+            #endregion
+
+            #endregion
+        }
 
         #endregion
     }

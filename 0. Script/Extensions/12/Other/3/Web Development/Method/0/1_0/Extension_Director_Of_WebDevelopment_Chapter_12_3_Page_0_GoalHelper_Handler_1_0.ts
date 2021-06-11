@@ -40,7 +40,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
         //#region HTML MANAGEMENT
 
-        public static async Step_0_0_Framework_Convert_HtmlToJSON_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) {
+        public static async Step_0_0_Framework_Convert_HtmlToJSON_1_0(parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : any {
             //#region 1. INPUTS
 
             //#region VALIDATE input parameters

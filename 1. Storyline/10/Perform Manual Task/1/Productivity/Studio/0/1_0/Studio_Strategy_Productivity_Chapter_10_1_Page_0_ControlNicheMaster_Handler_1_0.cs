@@ -593,8 +593,8 @@ namespace BaseDI.Professional.Story.Productivity_0
 
             #region MEMORIZE input extra data
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestName", storedInputRequestName);
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
+            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedInputRequestName", storedInputRequestName);
+            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
 
             #endregion
 
@@ -626,7 +626,7 @@ namespace BaseDI.Professional.Story.Productivity_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -653,7 +653,7 @@ namespace BaseDI.Professional.Story.Productivity_0
 
             #region MEMORIZE process request details
 
-            string storedProcessRequestProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"] ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
+            string storedProcessRequestProcessRequestName = parameterInputs.Parameters.ContainsKey("parameterProcessRequestName") ? parameterInputs.Parameters["parameterProcessRequestName"] : "";
 
             _storedProcessRequestName = storedInputRequestName;
 
@@ -661,10 +661,10 @@ namespace BaseDI.Professional.Story.Productivity_0
 
             #region MEMORIZE process extra data
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedProcessRequestAPILocationLocalNodeJS", APILocationLocalNodeJS);
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedProcessRequestAPILocationLocalDotNetCore", APILocationLocalDotNetCore);
+            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedProcessRequestAPILocationLocalNodeJS", APILocationLocalNodeJS);
+            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedProcessRequestAPILocationLocalDotNetCore", APILocationLocalDotNetCore);
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedProcessRequestAPILocationRemote", APILocationRemote);
+            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedProcessRequestAPILocationRemote", APILocationRemote);
 
             #endregion
 
@@ -698,7 +698,7 @@ namespace BaseDI.Professional.Story.Productivity_0
 
                 if (!Finalize)
                 { 
-                    switch (storedInputRequestName.ToUpper())
+                    switch (storedProcessRequestProcessRequestName.ToUpper())
                     {
                         //case "DIRECTOR_OF_PRODUCTIVITY_CHAPTER_10_1_PAGE_1_XXXXXX_HANDLER_1_0":
                         //    storedProcessRequestHandler = Create_Director_Of_Productivity_Chapter_10_1_Page_1_XXXXXX_1_0(storylineDetails, storylineDetails_Parameters, this._extraData);
@@ -813,7 +813,7 @@ namespace BaseDI.Professional.Story.Productivity_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 

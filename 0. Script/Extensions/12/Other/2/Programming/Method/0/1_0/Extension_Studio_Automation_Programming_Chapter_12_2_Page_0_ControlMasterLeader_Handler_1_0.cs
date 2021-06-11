@@ -1197,8 +1197,8 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             #region MEMORIZE output observation details
 
             string storedOutputResponseObservationDescription = parameterInputs.Parameters["parameterProcessRequest3WordDescription"];
-            string storedOutputResponseObservationFileName = parameterInputs.Parameters["parameterProcessRequestFileName"];
-            string storedOutputResponseObservationMethodName = parameterInputs.Parameters["parameterProcessRequestMethodName"];
+            string storedOutputResponseObservationFileName = parameterInputs.Parameters["parameterOutputResponseObservationFileName"];
+            string storedOutputResponseObservationMethodName = parameterInputs.Parameters["parameterOutputResponseObservationMethodName"];
 
             string storedOutputResponseObservationBody = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}} }] }}]}";
             string storedOutputResponseObservationItem = "'details': [{details}]";
@@ -1602,8 +1602,8 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             #region MEMORIZE output observation details
 
             string storedOutputResponseObservationDescription = parameterInputs.Parameters["parameterProcessRequest3WordDescription"];
-            string storedOutputResponseObservationFileName = parameterInputs.Parameters["parameterProcessRequestFileName"];
-            string storedOutputResponseObservationMethodName = parameterInputs.Parameters["parameterProcessRequestMethodName"];
+            string storedOutputResponseObservationFileName = parameterInputs.Parameters["parameterOutputResponseObservationFileName"];
+            string storedOutputResponseObservationMethodName = parameterInputs.Parameters["parameterOutputResponseObservationMethodName"];
 
             string storedOutputResponseObservationBody = "{'baseDIMistakes': [{ 'mistake': { 'metadata': [{ 'calledByEntryPointName': '{calledByEntryPointName}' }, { 'calledByMethodName': '{calledByMethodName}' }, { 'calledByMethodReason': '{calledByMethodReason}' }, { 'item': {{item}} }] }}]}";
             string storedOutputResponseObservationItem = "'details': [{details}]";

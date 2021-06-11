@@ -11,7 +11,7 @@ using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Story.Programming_0;
 
 //5. CHAPTER
-using ChapterPage = BaseDI.Professional.Chapter.Page.Programming_2;
+//using ChapterPage = BaseDI.Professional.Chapter.Page.Programming_2;
 
 //6. STATE
 using BaseDI.Professional.State.Programming_2;
@@ -43,7 +43,7 @@ using Moq;
 
 namespace BaseDI.Professional.Testing
 {
-    public class Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0_Test
+    public class FILENAME_Test
     {
         #region 1. Assign
 
@@ -63,7 +63,7 @@ namespace BaseDI.Professional.Testing
 
         #region 2. Ready
 
-        public Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0_Test()
+        public FILENAME_Test()
         {
 
         }
@@ -75,6 +75,307 @@ namespace BaseDI.Professional.Testing
         #endregion
 
         #region 4. Action
+
+        public static Func<SingleParmPoco_12_2_1_0, dynamic> ExecuteProcessHelper = (SingleParmPoco_12_2_1_0 parameterInputs) =>
+        {
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            dynamic storedOutputResponseData = null;
+            dynamic storedOutputResponseDataRepository = null;
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request settings
+
+
+            #endregion
+
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region HANDLE application defaults
+
+            #region IDEAL CASE - USE xxx xxx
+
+            try
+            {
+
+            }
+            catch (Exception storedProcessRequestMistake)
+            {
+                Console.WriteLine(storedProcessRequestMistake);
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region HANDLE execution response
+
+            #region IDEAL CASE - USE baseDI data
+
+            return storedOutputResponseData;
+
+            #endregion
+
+            #endregion    
+
+            #endregion
+        };
+
+        public static Func<SingleParmPoco_12_2_1_0, dynamic> ExecuteConversionRequest = (SingleParmPoco_12_2_1_0 parameterInputs) =>
+        {
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            dynamic storedOutputResponseData = null;
+            dynamic storedOutputResponseDataRepository = null;
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request settings
+
+
+            #endregion
+
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region HANDLE application defaults
+
+            #region IDEAL CASE - USE xxx xxx
+
+            try
+            {
+
+            }
+            catch (Exception storedProcessRequestMistake)
+            {
+                Console.WriteLine(storedProcessRequestMistake);
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region HANDLE execution response
+
+            #region IDEAL CASE - USE baseDI data
+
+            return storedOutputResponseData;
+
+            #endregion
+
+            #endregion    
+
+            #endregion
+        };
+
+        public static Func<SingleParmPoco_12_2_1_0, dynamic> ExecuteStorageRequest = (SingleParmPoco_12_2_1_0 parameterInputs) =>
+        {
+            #region 1. INPUTS
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+
+            #endregion
+
+            #region DEFINE output variables
+
+            dynamic storedOutputResponseData = null;
+            dynamic storedOutputResponseDataRepository = null;
+
+            #endregion
+
+            ///////////////////////////////////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input xxx xxxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process request settings
+
+
+            #endregion
+
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output xxx xxxx
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region HANDLE application defaults
+
+            #region IDEAL CASE - USE xxx xxx
+
+            try
+            {
+
+            }
+            catch (Exception storedProcessRequestMistake)
+            {
+                Console.WriteLine(storedProcessRequestMistake);
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region HANDLE execution response
+
+            #region IDEAL CASE - USE baseDI data
+
+            return storedOutputResponseData;
+
+            #endregion
+
+            #endregion    
+
+            #endregion
+        };
+
 
         public static Func<SingleParmPoco_12_2_1_0, dynamic> ExecuteTransportRequest = (SingleParmPoco_12_2_1_0 parameterInputs) =>
         {
@@ -91,7 +392,7 @@ namespace BaseDI.Professional.Testing
 
             #region DEFINE process variables
 
-            ChapterPage.Page_2_1_Begin_Process_12_2_1_0 storedProcessRequestDataRepository;
+     
 
             #endregion
 
@@ -186,8 +487,9 @@ namespace BaseDI.Professional.Testing
             #endregion
         };
 
+
         [Fact]
-        public static async Task<bool> _12_3_Web_Development_Transport_Test_Transport_Request_To_Web_Development_Handler_1_0()
+        public static async Task<bool> _GOALNUMBER_NICHNUMBER_NICHENAME_SystemAction_Test_Handler_1_0()
         {
             #region 1. INPUTS
 
@@ -202,7 +504,7 @@ namespace BaseDI.Professional.Testing
 
             #region DEFINE process variables
 
-            ChapterPage.Page_2_1_Begin_Process_12_2_1_0 storedProcessRequestDataRepository;
+            //ChapterPage.Page_2_1_Begin_Process_12_2_1_0 storedProcessRequestDataRepository;
 
             #endregion
 
@@ -250,7 +552,7 @@ namespace BaseDI.Professional.Testing
             storedInputs = TestVariables.Action(storedInputs).Result;
             
             //2. PROCESS
-            (storedInputs.Parameters["parameterProcessRequestTracker"] as Dictionary<string, Object>).TryAdd("storedProcessRequestHttpRequest", storedProcessRequestHttpRequestMock.Object);
+            (storedInputs.Parameters["parameterProcessRequestTracker"] as Dictionary<string, Object>).TryAdd("parameterProcessRequestHttpRequest", storedProcessRequestHttpRequestMock.Object);
 
             //3. OUTPUTS
 
@@ -273,7 +575,7 @@ namespace BaseDI.Professional.Testing
 
             #region EXECUTE process defaults
 
-            #region IDEAL CASE - USE baseDI extension
+            #region IDEAL CASE - USE xxx xxx
 
             try
             {

@@ -409,16 +409,16 @@ namespace BaseDI.Professional.Director.Web_Development_9
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedHttpRequest"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestHttpRequest"] == null)
                         {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedHttpRequest***.";
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestHttpRequest***.";
                             storedProcessRequestMistakeMade = true;
                         }
                         else
                         {
-                            if (!parameterInputs.Parameters["parameterProcessRequestTracker"]["storedHttpRequest"] is HttpRequest)
+                            if (!parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestHttpRequest"] is HttpRequest)
                             {
-                                storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedHttpRequest*** which must be a type of ***HttpRequest*** .";
+                                storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestHttpRequest*** which must be a type of ***HttpRequest*** .";
                                 storedProcessRequestMistakeMade = true;
                             }
                         }
@@ -595,7 +595,7 @@ namespace BaseDI.Professional.Director.Web_Development_9
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 

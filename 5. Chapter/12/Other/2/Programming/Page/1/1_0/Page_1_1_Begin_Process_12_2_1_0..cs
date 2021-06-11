@@ -179,6 +179,8 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
             _storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
             _storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails_Parameters"];
 
+            StorylineDetails = _storedProcessRequestDataStorylineDetails;
+
             #endregion
 
             #region MEMORIZE process request extra data

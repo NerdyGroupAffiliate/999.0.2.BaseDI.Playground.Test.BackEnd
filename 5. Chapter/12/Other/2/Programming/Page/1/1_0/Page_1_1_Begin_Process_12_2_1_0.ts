@@ -164,6 +164,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_1
             this._storedProcessRequestDataStorylineDetails = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails");
             this._storedProcessRequestDataStorylineDetails_Parameters = parameterInputs.Parameters.getValue("parameterProcessRequestDataStorylineDetails_Parameters");
 
+            this.StorylineDetails = this._storedProcessRequestDataStorylineDetails;
+
             //#endregion
 
             //#region MEMORIZE process extra data

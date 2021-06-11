@@ -591,7 +591,14 @@ namespace BaseDI.Professional.Story.Programming_0
 
             _storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
 
-            parameterInputs.Parameters.TryAdd("parameterProcessRequestHandler", _storedProcessRequestHandler);
+            if (parameterInputs.Parameters.ContainsKey("parameterProcessRequestHandler"))
+            {
+                parameterInputs.Parameters["parameterProcessRequestHandler"] = _storedProcessRequestHandler;
+            }
+            else
+            {
+                parameterInputs.Parameters.Add("parameterProcessRequestHandler", _storedProcessRequestHandler);
+            }
 
             #endregion
 
@@ -646,7 +653,15 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE process extra data
 
             if (parameterInputs.Parameters["parameterProcessRequestExtraData"] != null)
+            {
                 _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"];
+            }
+            else 
+            {
+                parameterInputs.Parameters.TryAdd("parameterProcessRequestExtraData", new ExtraData_12_2_1_0());
+
+                _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"];
+            }
 
             #endregion
 
@@ -679,18 +694,32 @@ namespace BaseDI.Professional.Story.Programming_0
                 #region EDGE CASE - USE developer logger
 
                 if (storedProcessRequestDeveloperMode && (int)_storedProcessRequestTracker["storedProcessRequestStepNumber"] == 0)
-                    Console.WriteLine("STEP " + _storedProcessRequestTracker["storedProcessRequestStepNumber"] + ": BEGIN processing request -> " + storedInputRequestActionName);
+                {
+                    _storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)_storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS                    
+                    storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestStepNumberReplace"] = _storedProcessRequestTracker["storedProcessRequestStepNumber"];
+                    storedProcessRequestDeveloperLoggingInputs.Parameters["parameterProcessRequestCentralizedStorer"] = new Implement_DesignPattern_Factory_Storer_12_2_1_0(parameterInputs);
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters["parameterOutputResponseMessageType"] = "Logging"; //Values = Logging or Mistake
+
+                    //3. OUTPUTS
+                    Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
 
                 #endregion
 
                 #region IDEAL CASE - USE an experience OR a director request handler
 
                 //NOTE: 1. The Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0 is called "TWICE" per request.
-                   //A: The first time is to "MERGE" the data objects of "StorylineDetails" and "StorylineDetails_Parameters" into ONE SINGLE data object.
-                   //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
+                //A: The first time is to "MERGE" the data objects of "StorylineDetails" and "StorylineDetails_Parameters" into ONE SINGLE data object.
+                //B: The second time is to call the "ACTION" method off the "ENTRYPOINT" property from inside the "IF" statement below.
                 storedProcessRequestHandler = storedProcessRequestResolvedHandler.Action();
 
-                if (storedProcessRequestByName != "")
+                if (storedProcessRequestByName != null && storedProcessRequestByName != "")
                 {
                     storedProcessRequestExperienceOrDirectorHandler = (aClass_Programming_ScriptRoutable_12_2_1_0)storedProcessRequestHandler;
 
@@ -1459,6 +1488,16 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region DEFINE process variables
 
+            if (_storedInputs.Parameters.ContainsKey("parameterProcessRequestName"))
+            {
+                _storedInputs.Parameters["parameterProcessRequestName"] = _storedProcessRequestName;
+            }
+            else
+            {
+                _storedInputs.Parameters.Add("parameterProcessRequestName", _storedProcessRequestName);
+            }
+
+
             Implement_DesignPattern_Factory_Experience_12_2_1_0 storedProcessRequestExperienceHandler = new Implement_DesignPattern_Factory_Experience_12_2_1_0(_storedInputs);
             Implement_DesignPattern_Factory_Director_12_2_1_0 storedProcessRequestDirectorHandler = new Implement_DesignPattern_Factory_Director_12_2_1_0(_storedInputs);
 
@@ -1684,7 +1723,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -1719,21 +1758,42 @@ namespace BaseDI.Professional.Story.Programming_0
             {
                 _storedProcessRequestCentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(_storedInputs);
 
-                parameterInputs.Parameters.Add("parameterProcessRequestCentralizedDisturber", _storedProcessRequestCentralizedDisturber);
+                if (parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedDisturber"))
+                {
+                    parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"] = _storedProcessRequestCentralizedDisturber;
+                }
+                else
+                {
+                    parameterInputs.Parameters.Add("parameterProcessRequestCentralizedDisturber", _storedProcessRequestCentralizedDisturber);
+                }
             }
 
             if (_storedProcessRequestCentralizedSensor == null)
             {
                 _storedProcessRequestCentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(_storedInputs);
 
-                parameterInputs.Parameters.Add("parameterProcessRequestCentralizedSensor", _storedProcessRequestCentralizedSensor);
+                if (parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedSensor"))
+                {
+                    parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"] = _storedProcessRequestCentralizedSensor;
+                }
+                else
+                {
+                    parameterInputs.Parameters.Add("parameterProcessRequestCentralizedSensor", _storedProcessRequestCentralizedSensor);
+                }
             }
 
             if (_storedProcessRequestCentralizedStorer == null)
             {
                 _storedProcessRequestCentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(_storedInputs);
 
-                parameterInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
+                if (parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
+                {
+                    parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"] = _storedProcessRequestCentralizedStorer;
+                }
+                else
+                {
+                    parameterInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
+                }
             }
 
             #endregion
@@ -1753,8 +1813,8 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE process request details
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
-
-            _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
+ 
+            _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
 
@@ -2517,7 +2577,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region MEMORIZE input action name
 
-            string storedInputRequestActionName = _storedInputs.Parameters["parameterInputRequestActionName"] as string;
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"] as string;
 
             #endregion
 
@@ -2552,21 +2612,42 @@ namespace BaseDI.Professional.Story.Programming_0
             {
                 _storedProcessRequestCentralizedDisturber = new Implement_DesignPattern_Factory_Disturber_12_2_1_0(_storedInputs);
 
-                parameterInputs.Parameters.Add("parameterProcessRequestCentralizedDisturber", _storedProcessRequestCentralizedDisturber);
+                if (parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedDisturber"))
+                {
+                    parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"] = _storedProcessRequestCentralizedDisturber;
+                }
+                else
+                {
+                    parameterInputs.Parameters.Add("parameterProcessRequestCentralizedDisturber", _storedProcessRequestCentralizedDisturber);
+                }                
             }
 
             if (_storedProcessRequestCentralizedSensor == null)
             {
                 _storedProcessRequestCentralizedSensor = new Implement_DesignPattern_Factory_Sensor_12_2_1_0(_storedInputs);
 
-                parameterInputs.Parameters.Add("parameterProcessRequestCentralizedSensor", _storedProcessRequestCentralizedSensor);
+                if (parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedSensor"))
+                {
+                    parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"] = _storedProcessRequestCentralizedSensor;
+                }
+                else
+                {
+                    parameterInputs.Parameters.Add("parameterProcessRequestCentralizedSensor", _storedProcessRequestCentralizedSensor);
+                }
             }
 
             if (_storedProcessRequestCentralizedStorer == null)
             {
                 _storedProcessRequestCentralizedStorer = new Implement_DesignPattern_Factory_Storer_12_2_1_0(_storedInputs);
 
-                parameterInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
+                if (parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
+                {
+                    parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"] = _storedProcessRequestCentralizedStorer;
+                }
+                else
+                {
+                    parameterInputs.Parameters.Add("parameterProcessRequestCentralizedStorer", _storedProcessRequestCentralizedStorer);
+                }
             }
 
             #endregion

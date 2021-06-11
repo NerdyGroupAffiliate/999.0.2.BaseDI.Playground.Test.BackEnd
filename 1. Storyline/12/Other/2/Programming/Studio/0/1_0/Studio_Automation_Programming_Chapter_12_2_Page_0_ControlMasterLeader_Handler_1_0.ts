@@ -734,8 +734,14 @@ export namespace BaseDI.Professional.Story.Programming_0
 
             //#region MEMORIZE process extra data
 
-            if (parameterInputs.Parameters["parameterProcessRequestExtraData"] != null)
+            if (parameterInputs.Parameters["parameterProcessRequestExtraData"] != null && parameterInputs.Parameters["parameterProcessRequestExtraData"] != undefined) {
                 this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData");
+            }
+            else
+            {
+                parameterInputs.Parameters.setValue("parameterProcessRequestExtraData", new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0());
+                this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData");
+            }
 
             //#endregion
 
@@ -1527,10 +1533,7 @@ export namespace BaseDI.Professional.Story.Programming_0
             {
                 this._storedProcessRequestName = this._storedProcessRequestHandler != null ? this._storedProcessRequestHandler.constructor.name : this._storedInputRequestName;
             }
-            else
-            {
-                this._storedProcessRequestName = this._storedProcessRequestName;
-            }
+
             //#endregion
 
             //#endregion

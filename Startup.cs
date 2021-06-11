@@ -292,7 +292,7 @@ namespace BaseDI.Professional
 
             #region MEMORIZE process extra data
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IServiceCollection", parameterControlRequestServices);
+            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedControlRequest_IServiceCollection", parameterControlRequestServices);
 
             #endregion
 
@@ -446,8 +446,8 @@ namespace BaseDI.Professional
 
             #region MEMORIZE process extra data
 
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IApplicationBuilder", storedControlRequest_IApplicationBuilder);
-            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControlRequest_IWebHostEnvironment", storedControlRequest_IWebHostEnvironment);
+            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedControlRequest_IApplicationBuilder", storedControlRequest_IApplicationBuilder);
+            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedControlRequest_IWebHostEnvironment", storedControlRequest_IWebHostEnvironment);
 
             _storedProcessRequestTracker.Add("storedProcessRequestExtraData", _storedProcessRequestExtraData);
 

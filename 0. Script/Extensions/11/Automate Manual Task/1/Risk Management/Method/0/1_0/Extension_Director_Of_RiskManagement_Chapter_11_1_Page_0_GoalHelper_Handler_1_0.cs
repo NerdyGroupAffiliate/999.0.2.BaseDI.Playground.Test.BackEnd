@@ -240,12 +240,6 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                         storedProcessRequestMistakeMade = true;
                     }
 
-                    if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestCentralizedStorer"))
-                    {
-                        storedOutputResponseMessage += "***parameterProcessRequestCentralizedStorer*** cannot be blank or empty.\n";
-                        storedProcessRequestMistakeMade = true;
-                    }
-
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestMethodName"))
                     {
                         storedOutputResponseMessage += "***parameterProcessRequestMethodName*** cannot be blank or empty.\n";
@@ -362,27 +356,26 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
             string storedOutputResponseMessageType = (parameterInputs.Parameters["parameterOutputResponseMessageType"] != null ? parameterInputs.Parameters["parameterOutputResponseMessageType"] : "LOGGING");
 
-            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALAccountingCostType"] != null)
+            if (parameterInputs.Parameters.ContainsKey("parameterOutputResponseOPTIONALAccountingCostType") && parameterInputs.Parameters["parameterOutputResponseOPTIONALAccountingCostType"] != null)
                 storedOutputResponseOPTIONALAccountingCostType = parameterInputs.Parameters["parameterOutputResponseOPTIONALAccountingCostType"];
 
-            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALBeginOfProcess"] != null)
+            if (parameterInputs.Parameters.ContainsKey("parameterOutputResponseOPTIONALBeginOfProcess") && parameterInputs.Parameters["parameterOutputResponseOPTIONALBeginOfProcess"] != null)
                 storedOutputResponseOPTIONALBeginOfProcess = parameterInputs.Parameters["parameterOutputResponseOPTIONALBeginOfProcess"];
 
-            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALMiddleOfProcess"] != null)
+            if (parameterInputs.Parameters.ContainsKey("parameterOutputResponseOPTIONALMiddleOfProcess") && parameterInputs.Parameters["parameterOutputResponseOPTIONALMiddleOfProcess"] != null)
                 storedOutputResponseOPTIONALMiddleOfProcess = parameterInputs.Parameters["parameterOutputResponseOPTIONALMiddleOfProcess"];
 
-            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALEndOfProcess"] != null)
+            if (parameterInputs.Parameters.ContainsKey("parameterOutputResponseOPTIONALEndOfProcess") && parameterInputs.Parameters["parameterOutputResponseOPTIONALEndOfProcess"] != null)
                 storedOutputResponseOPTIONALEndOfProcess = parameterInputs.Parameters["parameterOutputResponseOPTIONALEndOfProcess"];
 
-            if (parameterInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"] != null)
+            if (parameterInputs.Parameters.ContainsKey("parameterOutputResponseOPTIONALMasterLeaderIsSecondStep") && parameterInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"] != null)
                 storedOutputResponseOPTIONALMasterLeaderIsSecondStep = parameterInputs.Parameters["parameterOutputResponseOPTIONALMasterLeaderIsSecondStep"];
-
-            
+                        
             #endregion
             
             #region MEMORIZE master storer
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestMasterStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            //aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestMasterStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -446,7 +439,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
                     {
                         #region 3A. OUPUT client message
 
-                        if (_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "CLIENT")
+                        if (_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV").ToUpper() == "CLIENT")
                         {
                             if (storedOutputResponseMistake)
                             {
@@ -497,7 +490,7 @@ namespace BaseDI.Professional.Script.Risk_Management.Extensions_0
 
                         #region 3B. OUPUT server message
 
-                        if (_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_SETTING_DEVELOPER_MODE").ToUpper() == "SERVER")
+                        if (_storedProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV").ToUpper() == "SERVER")
                         {
                             if (storedOutputResponseMistake)
                             {

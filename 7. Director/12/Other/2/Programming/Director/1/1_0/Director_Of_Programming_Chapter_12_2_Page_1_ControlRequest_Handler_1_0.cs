@@ -402,20 +402,6 @@ namespace BaseDI.Professional.Director.Programming_1
                             storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestSettings***.";
                             storedProcessRequestMistakeMade = true;
                         }
-
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedHttpRequest"] == null)
-                        {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedHttpRequest***.";
-                            storedProcessRequestMistakeMade = true;
-                        }
-                        else
-                        {
-                            if (!parameterInputs.Parameters["parameterProcessRequestTracker"]["storedHttpRequest"] is HttpRequest)
-                            {
-                                storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedHttpRequest*** which must be a type of ***HttpRequest*** .";
-                                storedProcessRequestMistakeMade = true;
-                            }
-                        }
                     }
 
                     if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestSettings"))
@@ -589,7 +575,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -662,20 +648,19 @@ namespace BaseDI.Professional.Director.Programming_1
 
                 #region IDEAL CASE - USE design pattern
 
-                if (DirectorOrExperienceRequestHandler != null && DirectorOrExperienceRequestHandler.ClientOrServerInstance != null)
+                //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
+                if (DirectorOrExperienceRequestHandler != null)
                 {
-                    ClientOrServerInstance = DirectorOrExperienceRequestHandler.ClientOrServerInstance;
-                    MasterLeader = DirectorOrExperienceRequestHandler.MasterLeader;
-                    MasterController = DirectorOrExperienceRequestHandler.MasterController;
-                    MasterConverter = DirectorOrExperienceRequestHandler.MasterConverter;
-                    MasterDisturber = DirectorOrExperienceRequestHandler.MasterDisturber;
-                    MasterSensor = DirectorOrExperienceRequestHandler.MasterSensor;
-                    MasterStorer = DirectorOrExperienceRequestHandler.MasterStorer;
-                    MasterTransporter = DirectorOrExperienceRequestHandler.MasterTransporter;
-                    ExtraData = DirectorOrExperienceRequestHandler.ExtraData;
+                    if (_storedInputs.Parameters.ContainsKey("parameterProcessRequestHandlerDirectorOrExperience"))
+                    {
+                        _storedInputs.Parameters["parameterProcessRequestHandlerDirectorOrExperience"] = DirectorOrExperienceRequestHandler;
+                    }
+                    else
+                    {
+                        _storedInputs.Parameters.TryAdd("parameterProcessRequestHandlerDirectorOrExperience", DirectorOrExperienceRequestHandler);
+                    }                    
                 }
 
-                //REQUIRED: Implement one of the design patterns at https://www.dofactory.com/net/design-patterns
                 storedProcessRequestHandler_UsingBuilderPattern = new Use_DesignPattern_Builder_Chapter_12_2_Page_1(_storedInputs);
 
                 StorylineDetails = await storedProcessRequestHandler_UsingBuilderPattern.Action().ConfigureAwait(true);
@@ -1166,6 +1151,8 @@ namespace BaseDI.Professional.Director.Programming_1
 
         private SingleParmPoco_12_2_1_0 _storedInputs;
 
+        private aClass_Programming_ScriptRoutable_12_2_1_0 _storedProcessRequestBusinessDirectorOrExperienceRequestHandler = null;
+
         private string _storedProcessRequestFileName = "Experience_The_Movement_ToFacebookPage_DataTransfer_12_2_1_0";
         private string _storedProcessRequestName = "";
         private IContract_Programming_Repository_12_2_1_0 _storedProcessRequestDataRepository;
@@ -1287,6 +1274,7 @@ namespace BaseDI.Professional.Director.Programming_1
             _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             _storedProcessRequestByName = parameterInputs.Parameters["parameterProcessRequestName"];
+            _storedProcessRequestBusinessDirectorOrExperienceRequestHandler = parameterInputs.Parameters.ContainsKey("parameterProcessRequestHandlerDirectorOrExperience") ? parameterInputs.Parameters["parameterProcessRequestHandlerDirectorOrExperience"] : null;
 
             #endregion
 
@@ -1955,13 +1943,13 @@ namespace BaseDI.Professional.Director.Programming_1
 
             #region IDEAL CASE - USE process handler 
 
-            if (_storedProcessRequestHandler == null)
-            {
+            if (_storedProcessRequestBusinessDirectorOrExperienceRequestHandler == null || _storedProcessRequestBusinessDirectorOrExperienceRequestHandler.RequestID == null || _storedProcessRequestBusinessDirectorOrExperienceRequestHandler.RequestID == "")
+            {                
                 var page = new ChapterPage.Page_1_1_Begin_Process_12_2_1_0(_storedInputs);
 
                 page.ClientOrServerInstance = _storedProcessRequestTracker;
 
-                page.DirectorOrExperienceRequestHandler = _storedProcessRequestHandler;
+                page.DirectorOrExperienceRequestHandler = _storedProcessRequestBusinessDirectorOrExperienceRequestHandler;
                 page.ExtraData = _storedProcessRequestExtraData;
 
                 page.MasterStorer = _storedProcessRequestCentralizedStorer;
@@ -2081,7 +2069,7 @@ namespace BaseDI.Professional.Director.Programming_1
 
             page.ClientOrServerInstance = _storedProcessRequestTracker;
 
-            page.DirectorOrExperienceRequestHandler = _storedProcessRequestHandler;
+            page.DirectorOrExperienceRequestHandler = _storedProcessRequestBusinessDirectorOrExperienceRequestHandler;
             page.ExtraData = _storedProcessRequestExtraData;
 
             page.MasterStorer = _storedProcessRequestCentralizedStorer;

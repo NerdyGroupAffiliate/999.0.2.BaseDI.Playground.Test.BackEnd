@@ -415,16 +415,16 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedHttpRequest"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestHttpRequest"] == null)
                         {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedHttpRequest***.";
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestHttpRequest***.";
                             storedProcessRequestMistakeMade = true;
                         }
                         else
                         {
-                            if (!parameterInputs.Parameters["parameterProcessRequestTracker"]["storedHttpRequest"] is HttpRequest)
+                            if (!parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestHttpRequest"] is HttpRequest)
                             {
-                                storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedHttpRequest*** which must be a type of ***HttpRequest*** .";
+                                storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestHttpRequest*** which must be a type of ***HttpRequest*** .";
                                 storedProcessRequestMistakeMade = true;
                             }
                         }
@@ -601,7 +601,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1989,7 +1989,7 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
 
-                        _storedProcessRequestExtraData.KeyValuePairs.Add("storedProcessRequestDeveloperLoggingInputs", storedProcessRequestDeveloperLoggingInputs);
+                        _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedProcessRequestDeveloperLoggingInputs", storedProcessRequestDeveloperLoggingInputs);
                     }
                     #endregion
 
@@ -2117,9 +2117,9 @@ namespace BaseDI.Professional.Experience.Hear.Web_Development_13
                                         {
                                             #region B. STORE route details
 
-                                            _storedProcessRequestExtraData.KeyValuePairs.Add("storedInputRequestControllerModelDataRemote", storedInputRequestControllerModelDataRemote);
-                                            _storedProcessRequestExtraData.KeyValuePairs.Add("storedControllerRoute", storedInputRequestRoute);
-                                            _storedProcessRequestExtraData.KeyValuePairs.Add("storedProcessRequestServerHTTPRequestInstance", _storedProcessRequestServerHTTPRequestInstance);
+                                            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedInputRequestControllerModelDataRemote", storedInputRequestControllerModelDataRemote);
+                                            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedControllerRoute", storedInputRequestRoute);
+                                            _storedProcessRequestExtraData.KeyValuePairs.TryAdd("storedProcessRequestServerHTTPRequestInstance", _storedProcessRequestServerHTTPRequestInstance);
 
                                             storedInputs = new SingleParmPoco_12_2_1_0();
 

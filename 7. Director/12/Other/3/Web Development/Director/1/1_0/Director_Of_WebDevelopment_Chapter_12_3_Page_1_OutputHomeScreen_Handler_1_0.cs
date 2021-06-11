@@ -30,6 +30,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Moq;
 
 #endregion
 
@@ -409,16 +410,16 @@ namespace BaseDI.Professional.Director.Web_Development_1
                             storedProcessRequestMistakeMade = true;
                         }
 
-                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedHttpRequest"] == null)
+                        if (parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestHttpRequest"] == null)
                         {
-                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedHttpRequest***.";
+                            storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestHttpRequest***.";
                             storedProcessRequestMistakeMade = true;
                         }
                         else
                         {
-                            if (!parameterInputs.Parameters["parameterProcessRequestTracker"]["storedHttpRequest"] is HttpRequest)
+                            if (!(parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestHttpRequest"] is HttpRequest || parameterInputs.Parameters["parameterProcessRequestTracker"]["storedProcessRequestHttpRequest"] is Mock<HttpRequest>))
                             {
-                                storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedHttpRequest*** which must be a type of ***HttpRequest*** .";
+                                storedOutputResponseMessage += "***parameterProcessRequestTracker*** must contain a key of ***storedProcessRequestHttpRequest*** which must be a type of ***HttpRequest*** .";
                                 storedProcessRequestMistakeMade = true;
                             }
                         }
@@ -595,7 +596,7 @@ namespace BaseDI.Professional.Director.Web_Development_1
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (_storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? _storedInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1463,7 +1464,7 @@ namespace BaseDI.Professional.Director.Web_Development_1
 
             try
             {
-                storedOutputResponseData = await Factory_Action_5_Process_StorySetting();
+                storedOutputResponseData = Factory_Action_5_Process_StorySetting().Result;
             }
             catch
             {
@@ -1581,7 +1582,7 @@ namespace BaseDI.Professional.Director.Web_Development_1
                 //    storedOutputResponseData = await Execute_Factory_Action_5_Process_StorySetting_OutputHtml();
                 //}
 
-                storedOutputResponseData = await Execute_Factory_Action_5_Process_StorySetting_OutputHtml();
+                storedOutputResponseData = Execute_Factory_Action_5_Process_StorySetting_OutputHtml().Result;
 
                 #endregion
             }

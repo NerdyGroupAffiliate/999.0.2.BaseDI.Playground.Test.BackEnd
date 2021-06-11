@@ -452,8 +452,8 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                 }
 
-                storedProcessRequestCentralizedStorer.ExtraData.KeyValuePairs.Add("parametersInputs", parameterInputs);
-                storedProcessRequestCentralizedStorer.ExtraData.KeyValuePairs.Add("storedProcessRequestDeveloperLoggingInputs", storedProcessRequestDeveloperLoggingInputs);
+                storedProcessRequestCentralizedStorer.ExtraData.KeyValuePairs.TryAdd("parametersInputs", parameterInputs);
+                storedProcessRequestCentralizedStorer.ExtraData.KeyValuePairs.TryAdd("storedProcessRequestDeveloperLoggingInputs", storedProcessRequestDeveloperLoggingInputs);
 
                 storedProcessRequestDataStorylineDetails = await storedProcessRequestCentralizedStorer?.Action_1_Begin_Process();
                 //storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations = (storedProcessRequestDataStorylineDetails && storedProcessRequestDataStorylineDetails.ouputs) ? storedProcessRequestDataStorylineDetails?.outputs[1]?.baseDIObservations?.filter((value: { }) => Object.keys(value).length !== 0) : storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations;
