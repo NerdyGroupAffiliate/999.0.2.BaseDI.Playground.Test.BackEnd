@@ -383,19 +383,19 @@ namespace BaseDI.Professional.Chapter.Page.NICHE_X
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _storedInputs.Parameters["parameterInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _storedInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "BEGIN handling request");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "{DirectorOrExperienceName} -> Page_P_S_Verify_Process_G_N_V_V.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "BEGIN handling request");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "{DirectorOrExperienceName} -> Page_P_S_Verify_Process_G_N_V_V.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Action");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 

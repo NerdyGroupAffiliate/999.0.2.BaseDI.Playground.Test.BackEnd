@@ -615,7 +615,7 @@ export namespace BaseDI.Professional.Chapter.Page.NICHE_X
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             //#endregion
 

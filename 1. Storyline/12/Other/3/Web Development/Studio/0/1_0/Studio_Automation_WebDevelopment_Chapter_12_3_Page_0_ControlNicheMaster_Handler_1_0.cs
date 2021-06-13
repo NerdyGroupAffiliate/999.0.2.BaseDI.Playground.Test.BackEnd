@@ -352,17 +352,17 @@ namespace BaseDI.Professional.Story.Web_Development_0
                 //REQUIRED
 
                 //0. CONTROLLERS
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
 
                 //1. INPUTS
 
                 //2. PROCESS
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
 
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "SetupStoryline -> ValidateInputs");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "SetupStoryline -> ValidateInputs");
 
                 //3. OUTPUTS
 
@@ -498,11 +498,11 @@ namespace BaseDI.Professional.Story.Web_Development_0
                             //1. INPUTS
 
                             //2. PROCESS
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
                             //3. OUTPUTS
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -529,11 +529,11 @@ namespace BaseDI.Professional.Story.Web_Development_0
                         //1. INPUTS
 
                         //2. PROCESS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
                         //3. OUTPUTS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -656,17 +656,17 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "ASSIGNING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "ASSIGNING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Action");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             //3. OUTPUTS
 
@@ -802,9 +802,9 @@ namespace BaseDI.Professional.Story.Web_Development_0
                 {
                     _storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)_storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED configurating request handler");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED configurating request handler");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
                 }
@@ -893,7 +893,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -902,19 +902,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -1049,7 +1049,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1058,19 +1058,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -1205,7 +1205,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1214,19 +1214,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -1361,7 +1361,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1370,19 +1370,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -1517,7 +1517,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1526,19 +1526,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -1673,7 +1673,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1682,19 +1682,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -1828,7 +1828,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1837,19 +1837,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -1984,7 +1984,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -1993,19 +1993,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -2140,7 +2140,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -2149,19 +2149,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -2295,7 +2295,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -2304,19 +2304,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -2451,7 +2451,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -2460,19 +2460,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_1_CreateHomeScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -2607,7 +2607,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -2616,19 +2616,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Director_Of_WebDevelopment_Chapter_12_3_Page_12_OutputAdvancedScreen_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 
@@ -2763,7 +2763,7 @@ namespace BaseDI.Professional.Story.Web_Development_0
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:.APP_SETTING_DEVELOPER_MODE");
 
-            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?.getValue("storedProcessRequestDeveloperLoggingInputs") : null);
+            SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingStartUpProcessInputs = (parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs.ContainsKey("storedProcessRequestDeveloperLoggingInputs") ? parameterInputs.Parameters["parameterProcessRequestExtraData"]?.KeyValuePairs?["storedProcessRequestDeveloperLoggingInputs"] : null);
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
@@ -2772,19 +2772,19 @@ namespace BaseDI.Professional.Story.Web_Development_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters["parameterInputRequestActionName"]);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURATING request handler");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_WebDevelopment_Chapter_12_3_Page_0_ControlNicheMaster_Handler_1_0.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Create_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
 
             //3. OUTPUTS
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALBeginOfProcess", true);
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALBeginOfProcess", true);
 
             #endregion
 

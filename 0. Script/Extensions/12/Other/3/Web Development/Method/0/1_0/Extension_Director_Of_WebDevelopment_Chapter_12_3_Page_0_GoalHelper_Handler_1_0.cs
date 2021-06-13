@@ -7,6 +7,11 @@ using BaseDI.Professional.Script.Programming.Extensions_1;
 using BaseDI.Professional.Script.Programming.Poco_1;
 using BaseDI.Professional.Script.Risk_Management.Extensions_0;
 
+using BaseDI.Professional.Script.Programming.Extensions_3;
+
+using BaseDI.Professional.Script.Programming.Extensions_0;
+using BaseDI.Professional.Setting.Software.Web_Development_0;
+
 #endregion
 
 #region .Net Core
@@ -32,11 +37,6 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-using BaseDI.Professional.Script.Programming.Extensions_3;
-
-using BaseDI.Professional.Script.Programming.Extensions_0;
-using BaseDI.Professional.Setting.Software.Web_Development_0;
-
 #endregion
 
 #endregion
@@ -47,7 +47,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
     {
         #region HTML MANAGEMENT
 
-        public static async Task<dynamic> Step_0_0_Framework_Convert_HtmlToJSON_1_0(SingleParmPoco_12_2_1_0 parameterInputs) {
+        public static async Task<dynamic> Step_0_0_Framework_Convert_HtmlToJSON_1_0(SingleParmPoco_12_2_1_0 parameterInputs) 
+        {
             #region 1. INPUTS
 
             #region VALIDATE input parameters
@@ -472,6 +473,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //0. CONTROLLERS
 
                         //1. INPUTS
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
                         //2. PROCESS                        
                         storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
@@ -483,7 +485,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //3. OUTPUTS
                         storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
 
-                        //storedInputRequestHtmlContainerJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs).Result;
+                        storedInputRequestHtmlContainerJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0<HtmlSection>(storedInputs).Result;
 
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -491,7 +493,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                         //0. CONTROLLERS
 
-                        //1. INPUTS                       
+                        //1. INPUTS
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
                         storedInputs.Parameters.TryAdd("parameterInputRequestHtmlContainerJSON", storedInputRequestHtmlContainerJSON);
 
                         //2. PROCESS
@@ -523,6 +526,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //0. CONTROLLERS
 
                         //1. INPUTS
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
                         //2. PROCESS                             
                         storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
@@ -534,7 +538,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //3. OUTPUTS
                         storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
 
-                        //storedInputRequestHtmlRowsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+                        storedInputRequestHtmlRowsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0<HtmlSection>(storedInputs).Result;
 
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         
@@ -543,7 +547,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //0. CONTROLLERS
 
                         //1. INPUTS                        
-;
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
                         storedInputs.Parameters.TryAdd("parameterInputRequestHtmlRowsJSON", storedInputRequestHtmlRowsJSON);
                         
                         //2. PROCESS
@@ -577,6 +581,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //0. CONTROLLERS
 
                         //1. INPUTS    
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
                         //2. PROCESS
                         storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
@@ -587,16 +592,16 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                         storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
 
-                        //storedInputRequestHtmlColumnsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+                        storedInputRequestHtmlColumnsJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0<HtmlSection>(storedInputs).Result;
 
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        
+
                         storedInputs = new SingleParmPoco_12_2_1_0();
 
                         //0. CONTROLLERS
 
                         //1. INPUTS                            
-
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
                         storedInputs.Parameters.TryAdd("parameterInputRequestHtmlColumnsJSON", storedInputRequestHtmlColumnsJSON);
                         
                         //2. PROCESS
@@ -631,6 +636,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //0. CONTROLLERS
 
                         //1. INPUTS    
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
                         //2. PROCESS                        
                         storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
@@ -642,7 +648,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //3. OUTPUTS
                         storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
 
-                        //storedInputRequestHtmlContentJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+                        storedInputRequestHtmlContentJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0<HtmlSection>(storedInputs).Result;
 
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -651,7 +657,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //0. CONTROLLERS
 
                         //1. INPUTS                          
-
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
                         storedInputs.Parameters.TryAdd("parameterInputRequestHtmlContentJSON", storedInputRequestHtmlContentJSON);
 
                         //2. PROCESS  
@@ -686,6 +692,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //0. CONTROLLERS
 
                         //1. INPUTS    
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
                         //2. PROCESS                                
                         storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
@@ -697,15 +704,16 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         //3. OUTPUTS
                         storedInputs.Parameters.TryAdd("parameterOutputResponseAsArray", false);
 
-                        //storedInputRequestHtmlStylesJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(storedInputs);
+                        storedInputRequestHtmlStylesJSON = Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0<HtmlSection>(storedInputs).Result;
 
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                        storedInputs = new SingleParmPoco_12_2_1_0();   
+                        storedInputs = new SingleParmPoco_12_2_1_0();
 
                         //0. CONTROLLERS
 
-                        //1. INPUTS                                          
+                        //1. INPUTS
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
                         storedInputs.Parameters.TryAdd("parameterInputRequestHtmlStylesJSON", storedInputRequestHtmlStylesJSON);
 
                         //2. PROCESS 
@@ -767,7 +775,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                         //0. CONTROLLERS
 
-                        //1. INPUTS                            
+                        //1. INPUTS
+                        storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
                         storedInputs.Parameters.TryAdd("parameterInputRequestHtmlMetaData", "");
                         storedInputs.Parameters.TryAdd("parameterInputRequestHtmlTitle", "");
                         storedInputs.Parameters.TryAdd("parameterInputRequestHtmlScripts", "");
@@ -1171,7 +1180,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE process request html
 
-            dynamic storedProcessRequestHtmlAttributes = parameterInputs.Parameters["parameterProcessRequestHtmlAttributes"];
+            List<HtmlAttribute> storedProcessRequestHtmlAttributes = parameterInputs.Parameters["parameterProcessRequestHtmlAttributes"];
 
             #endregion
 
@@ -1224,9 +1233,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE process centralized handlers
 
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
-            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            //aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedDisturber = parameterInputs.Parameters["parameterProcessRequestCentralizedDisturber"];
+            //aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedSensor = parameterInputs.Parameters["parameterProcessRequestCentralizedSensor"];
+            //aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 
@@ -1256,10 +1265,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 {
                     foreach (var storedProcessRequestHtmlAttribute in storedProcessRequestHtmlAttributes)
                     {
-                        foreach (var storedProcessRequestHtmlAttributeKeyValue in storedProcessRequestHtmlAttribute.ToObject<Dictionary<string, string>>())
-                        {
-                            storedOutputResponseHtmlAttributesOutput.Add($"{storedProcessRequestHtmlAttributeKeyValue.Key}='{storedProcessRequestHtmlAttributeKeyValue.Value}'");
-                        }
+                        dynamic a = Type.GetType("BaseDI.Professional.Setting.Software.Web_Development_0.HtmlSection").GetProperties();
+
+                        a = a;
+
+                        //storedOutputResponseHtmlAttributesOutput.Add($"{storedProcessRequestHtmlAttributeKeyValue.Key}='{storedProcessRequestHtmlAttributeKeyValue.Value}'");
                     }
 
                     return storedOutputResponseHtmlAttributesOutput;
@@ -1603,7 +1613,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE process centralized processes
 
-            aClass_Programming_ScriptAction_12_2_1_0<object> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+            //aClass_Programming_ScriptAction_12_2_1_0<object> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
 
             #endregion
 

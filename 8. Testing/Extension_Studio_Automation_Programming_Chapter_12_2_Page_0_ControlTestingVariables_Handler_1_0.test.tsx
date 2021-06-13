@@ -157,8 +157,10 @@ export const Action = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Pro
     parameterInputs.Parameters.setValue("parameterProcessRequestTracker", storedProcessRequestTracker);
     parameterInputs.Parameters.setValue("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
 
-    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestExtraData")) {
+    if (!parameterInputs.Parameters.containsKey("parameterProcessRequestExtraData"))
+    {
         parameterInputs.Parameters.setValue("parameterProcessRequestExtraData", new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0());
+        (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") as ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0).KeyValuePairs.setValue("storedProcessRequestDeveloperLoggingInputs", new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0());
     }
 
     if (!parameterInputs.Parameters.containsKey("parameterProcessRequestHandler")) {

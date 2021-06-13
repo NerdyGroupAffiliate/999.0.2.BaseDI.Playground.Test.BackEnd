@@ -160,7 +160,8 @@ namespace BaseDI.Professional.Testing
                         
             if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestExtraData"))
             {
-                parameterInputs.Parameters["parameterProcessRequestExtraData"] = new ExtraData_12_2_1_0();
+                parameterInputs.Parameters.TryAdd("parameterProcessRequestExtraData", new ExtraData_12_2_1_0());
+                (parameterInputs.Parameters["parameterProcessRequestExtraData"] as ExtraData_12_2_1_0).KeyValuePairs.TryAdd("storedProcessRequestDeveloperLoggingInputs", new SingleParmPoco_12_2_1_0());
             }
 
             if (!parameterInputs.Parameters.ContainsKey("parameterProcessRequestHandler"))

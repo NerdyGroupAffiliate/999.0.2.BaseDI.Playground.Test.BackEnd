@@ -372,19 +372,19 @@ namespace BaseDI.Professional
             storedInputs1 = new SingleParmPoco_12_2_1_0();
 
             //1. CONTROLLERS
-            storedInputs1.Parameters.Add("parameterControlRequestClientOrServer", this);
+            storedInputs1.Parameters.TryAdd("parameterControlRequestClientOrServer", this);
 
             //2. INPUTS
-            storedInputs1.Parameters.Add("parameterInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0);
-            storedInputs1.Parameters.Add("parameterInputRequestName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
-            storedInputs1.Parameters.Add("parameterInputRequestNameDataCacheKey", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-P1_0");
+            storedInputs1.Parameters.TryAdd("parameterInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0);
+            storedInputs1.Parameters.TryAdd("parameterInputRequestName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
+            storedInputs1.Parameters.TryAdd("parameterInputRequestNameDataCacheKey", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-P1_0");
 
             //3. PROCESS
-            storedInputs1.Parameters.Add("parameterProcessRequestCallBack", null);
-            storedInputs1.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
+            storedInputs1.Parameters.TryAdd("parameterProcessRequestCallBack", null);
+            storedInputs1.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestSettings);
 
             //4. OUTPUTS
-            storedInputs1.Parameters.Add("parameterOutputResponseControlID", "");
+            storedInputs1.Parameters.TryAdd("parameterOutputResponseControlID", "");
 
             #endregion
 
@@ -393,19 +393,19 @@ namespace BaseDI.Professional
             storedInputs2 = new SingleParmPoco_12_2_1_0();
 
             //1. CONTROLLERS
-            storedInputs2.Parameters.Add("parameterControlRequestClientOrServer", this);
+            storedInputs2.Parameters.TryAdd("parameterControlRequestClientOrServer", this);
 
             //2. INPUTS
-            storedInputs2.Parameters.Add("parameterInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0);
-            storedInputs2.Parameters.Add("parameterInputRequestName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
-            storedInputs2.Parameters.Add("parameterInputRequestNameDataCacheKey", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-P1_0");
+            storedInputs2.Parameters.TryAdd("parameterInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0);
+            storedInputs2.Parameters.TryAdd("parameterInputRequestName", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0");
+            storedInputs2.Parameters.TryAdd("parameterInputRequestNameDataCacheKey", "Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-P1_0");
 
             //3. PROCESS
-            storedInputs2.Parameters.Add("parameterProcessRequestCallBack", null);
-            storedInputs2.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
+            storedInputs2.Parameters.TryAdd("parameterProcessRequestCallBack", null);
+            storedInputs2.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestSettings);
 
             //4. OUTPUTS
-            storedInputs2.Parameters.Add("parameterOutputResponseControlID", "");
+            storedInputs2.Parameters.TryAdd("parameterOutputResponseControlID", "");
 
             #endregion
 
@@ -433,14 +433,14 @@ namespace BaseDI.Professional
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING json to html");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Startup.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to html");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Startup.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Configure");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
@@ -481,7 +481,7 @@ namespace BaseDI.Professional
                 _storedProcessRequestTracker.Add("storedInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Copy_Static_Files_1_0);
                 _storedProcessRequestTracker.Add("storedProcessRequestStepNumber", 0);
 
-                storedInputs1.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+                storedInputs1.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
 
                 #endregion
 
@@ -499,14 +499,14 @@ namespace BaseDI.Professional
                 {
                     _storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)_storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                    //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+                    //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED copying static files");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake",  storedProcessRequestMistake);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED copying static files");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Configure");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMistake",  storedProcessRequestMistake);
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
                 }
@@ -538,8 +538,8 @@ namespace BaseDI.Professional
                 _storedProcessRequestTracker.Add("storedInputRequestActionName", Action_12_2_1_0._12_3_WEB_DEVELOPMENT_Server_Map_Static_Files_1_0);
                 _storedProcessRequestTracker.Add("storedProcessRequestStepNumber", 0);
 
-                storedInputs2.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-                storedInputs2.Parameters.Add("parameterProcessRequestCallBack", ExecuteControlRequest);
+                storedInputs2.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+                storedInputs2.Parameters.TryAdd("parameterProcessRequestCallBack", ExecuteControlRequest);
 
                 #endregion
 
@@ -559,14 +559,14 @@ namespace BaseDI.Professional
                 {
                     _storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)_storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                    //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+                    //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED mapping static files");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake",  storedProcessRequestMistake);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED mapping static files");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", _storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Configure");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMistake",  storedProcessRequestMistake);
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                     Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
                 }
@@ -691,16 +691,16 @@ namespace BaseDI.Professional
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
 
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONFIGURING web server");            
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", storedProcessRequestSettings);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Startup.cs");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONFIGURING web server");            
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Startup.cs");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Configure");
 
             //OPTIONAL
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters["parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
@@ -736,14 +736,14 @@ namespace BaseDI.Professional
                 {
                     storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "FAILED configurating server");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Configure");
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMistake",  storedProcessRequestMistake);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "FAILED configurating server");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Configure");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMistake",  storedProcessRequestMistake);
 
-                    storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                     await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs).ConfigureAwait(true);
                 }
@@ -1003,14 +1003,14 @@ namespace BaseDI.Professional
                 //0. CONTROLLERS
 
                 //1. INPUTS
-                //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+                //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
                 //2. PROCESS
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "STARING system request");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Start.ts");
-                storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "STARING system request");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Start.ts");
+                storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Action");
 
                 //3. OUTPUTS
 
@@ -1096,10 +1096,10 @@ namespace BaseDI.Professional
                         {
                             storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
-                            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
 
                             await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                         }
@@ -1121,9 +1121,9 @@ namespace BaseDI.Professional
                     {
                         storedProcessRequestTracker["storedProcessRequestStepNumber"] = (int)storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
 
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "PARSING parameter values failed");
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+                        storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
 
                         await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
                     }
@@ -1255,14 +1255,14 @@ namespace BaseDI.Professional
             //0. CONTROLLERS
 
             //1. INPUTS
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "STARING web request");                      
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Start.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Action");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "STARING web request");                      
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Start.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Action");
 
             //3. OUTPUTS
 
@@ -1296,24 +1296,24 @@ namespace BaseDI.Professional
                 storedInputs = new SingleParmPoco_12_2_1_0();
 
                 //0. CONTROLLERS
-                storedInputs.Parameters.Add("parameterControlRequestClientOrServer", this);
+                storedInputs.Parameters.TryAdd("parameterControlRequestClientOrServer", this);
 
                 //1. INPUTS
-                storedInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
-                storedInputs.Parameters.Add("parameterInputRequestName", storedInputRequestName);
-                storedInputs.Parameters.Add("parameterInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
+                storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+                storedInputs.Parameters.TryAdd("parameterInputRequestName", storedInputRequestName);
+                storedInputs.Parameters.TryAdd("parameterInputRequestNameDataCacheKey", storedInputRequestNameDataCacheKey);
 
                 //2. PROCESS            
-                storedInputs.Parameters.Add("parameterProcessRequestCallBack", storedProcessRequestCallBack);
-                storedInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestSettings);
-                storedInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
+                storedInputs.Parameters.TryAdd("parameterProcessRequestCallBack", storedProcessRequestCallBack);
+                storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestSettings);
+                storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
                 
-                storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails", null);
-                storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails_Parameters", null);
-                storedInputs.Parameters.Add("parameterProcessRequestDataStorylineDetails_CallBack", null);
+                storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails", null);
+                storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails_Parameters", null);
+                storedInputs.Parameters.TryAdd("parameterProcessRequestDataStorylineDetails_CallBack", null);
 
                 //3. OUTPUTS
-                storedInputs.Parameters.Add("parameterOutputResponseControlID", storedOutputResponseControlID);
+                storedInputs.Parameters.TryAdd("parameterOutputResponseControlID", storedOutputResponseControlID);
 
                 #endregion
 

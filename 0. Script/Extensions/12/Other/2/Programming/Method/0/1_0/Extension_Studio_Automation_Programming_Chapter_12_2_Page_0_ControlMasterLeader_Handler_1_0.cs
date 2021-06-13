@@ -23,6 +23,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json.Linq;
 using BaseDI.Professional.Script.Risk_Management.Extensions_0;
+using BaseDI.Professional.Setting.Software.Web_Development_0;
 
 #endregion
 
@@ -46,6 +47,114 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
         #region JSON MANAGEMENT
 
+        public static async Task<T> Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0<T>(SingleParmPoco_12_2_1_0 parameterInputs) where T : new()
+        {
+            #region 1. INPUTS   
+
+            #region DEFINE control variables
+
+            #endregion
+
+            #region DEFINE input variables
+
+
+            #endregion
+
+            #region DEFINE process variables
+
+             
+            #endregion
+
+            #region DEFINE output variables
+
+            T storedOutputResponseData = new T();
+
+            #endregion
+
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process xxx xxx
+
+
+            #endregion
+
+            #region MEMORIZE process filter data
+            
+            List<JToken> storedProcessRequestDataResult = null;
+
+            #endregion
+
+
+            #endregion
+
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response options
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 2. PROCESS
+
+            #region EXECUTE conversion request
+
+            #region IDEAL CASE - USE recursive filter
+
+            try
+            {
+                storedProcessRequestDataResult = await Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(parameterInputs);
+
+                storedOutputResponseData = ((JToken)storedProcessRequestDataResult[0]).Parent.Parent.ToObject<T>();
+            }
+            catch(Exception storedProcessRequestMistk)
+            {
+                throw storedProcessRequestMistk;
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region 3. OUTPUT
+
+            #region RETURN converted data
+
+            #region IDEAL CASE - USE json dataset
+
+            return storedOutputResponseData;
+
+            #endregion
+
+            #endregion
+
+            #endregion           
+        }
         public static async Task<List<JToken>> Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0(SingleParmPoco_12_2_1_0 parameterInputs)
         {
             #region 1. INPUTS    
@@ -342,20 +451,19 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_1_0");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
             //3. OUTPUTS
 
             #endregion
-
 
             #region MEMORIZE process filter data
 
@@ -386,52 +494,52 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
 
             #region IDEAL CASE - USE recursive filter
 
-            Func<JToken, Dictionary<string, string>, string, bool> ExecuteConversionRequest = null;
-
-            if (storedProcessRequestDataToFilter != null)
+            try
             {
-                ExecuteConversionRequest = (JToken parameterToken, Dictionary<string, string> parameterNodes, string parameterParentLocation) =>
+                if (storedProcessRequestDataToFilter != null)
                 {
-                    if (parameterToken.HasValues)
-                    {
-                        foreach (JToken parameterTokenChild in parameterToken.Children())
-                        {
-                            if (parameterToken.Type == JTokenType.Property)
-                            {
-                                if (parameterParentLocation == "")
-                                {
-                                    parameterParentLocation = ((JProperty)parameterToken).Name;
-                                }
-                                else
-                                {
-                                    parameterParentLocation += "." + ((JProperty)parameterToken).Name;
-                                }
-                            }
+                    Func<JToken, Action<JObject>, bool> ExecuteConversionRequest = null;
 
-                            ExecuteConversionRequest(parameterTokenChild, parameterNodes, parameterParentLocation);
+                    ExecuteConversionRequest = (JToken parameterNode, Action<JObject> parameterAction) =>
+                    {
+                        if (parameterNode.Type == JTokenType.Object)
+                        {
+                            parameterAction((JObject)parameterNode);
+
+                            foreach (JProperty child in parameterNode.Children<JProperty>())
+                            {
+                                ExecuteConversionRequest(child.Value, parameterAction);
+                            }
+                        }
+                        else if (parameterNode.Type == JTokenType.Array)
+                        {
+                            foreach (JToken child in parameterNode.Children())
+                            {
+                                ExecuteConversionRequest(child, parameterAction);
+                            }
                         }
 
-                        // we are done parsing and this is a parent node
                         return true;
-                    }
-                    else
-                    {
-                        // leaf of the tree
-                        if (parameterToken.ToString().ToUpper(CultureInfo.CurrentCulture) == storedProcessRequestDataToFilterValue.ToUpper(CultureInfo.CurrentCulture))
-                        {
-                            if (!storedOutputResponseData.Contains(parameterToken))
-                            {
-                                storedOutputResponseData.Add(parameterToken);
-                            }
-
-                            return false;
-                        }
                     };
 
-                    return true;
-                };
+                    ExecuteConversionRequest(storedProcessRequestDataToFilter, n =>
+                    {
+                        JToken token = n[storedProcessRequestDataToFilterKey];
 
-                ExecuteConversionRequest(storedProcessRequestDataToFilter, null, "");
+                        if (token != null && token.Type == JTokenType.String)
+                        {
+                            if (storedProcessRequestDataToFilterValue == token.Value<string>())
+                            {
+                                storedOutputResponseData.Add(token);
+                            }
+                        }
+                    });
+                }
+
+            }
+            catch
+            {
+                throw;
             }
 
             #endregion
@@ -751,15 +859,15 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_X_X_Framework_Convert_JsonDataSetToNodes_2_0");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
             //3. OUTPUTS
 
@@ -1175,15 +1283,15 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_JsonMistakeNode_1_0");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_JsonMistakeNode_1_0");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
             //3. OUTPUTS
 
@@ -1580,15 +1688,15 @@ namespace BaseDI.Professional.Script.Programming.Extensions_0
             //0. CONTROLLERS
 
             //1. INPUTS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterInputRequestActionName", storedInputRequestActionName);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestTracker", _storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_JsonObservationNode_1_0");
-            //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING filtered dataset");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_JsonObservationNode_1_0");
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALMiddleOfProcess", true);
 
             //3. OUTPUTS
 

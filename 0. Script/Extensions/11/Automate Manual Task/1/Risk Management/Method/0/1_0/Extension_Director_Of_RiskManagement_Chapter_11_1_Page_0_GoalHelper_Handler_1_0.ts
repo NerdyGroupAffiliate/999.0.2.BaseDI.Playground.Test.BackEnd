@@ -114,7 +114,7 @@ export namespace BaseDI.Professional.Script.Risk_Management.Extensions_0 {
                 storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_X_X_Framework_Output_DeveloperMessage_1_0 -> ValidateInputs");
                
                 //3. OUTPUTS
-                //storedProcessRequestDeveloperLoggingInputs.Parameters.Add("parameterOutputResponseOPTIONALMiddleOfProcess", true);
+                //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOutputResponseOPTIONALMiddleOfProcess", true);
                 
                 //#endregion
 

@@ -740,6 +740,8 @@ export namespace BaseDI.Professional.Story.Programming_0
             else
             {
                 parameterInputs.Parameters.setValue("parameterProcessRequestExtraData", new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0());
+
+                (parameterInputs.Parameters.getValue("parameterProcessRequestExtraData") as ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0).KeyValuePairs.setValue("storedProcessRequestDeveloperLoggingInputs", new ExtraData_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.ExtraData_12_2_1_0());
                 this._storedProcessRequestExtraData = parameterInputs.Parameters.getValue("parameterProcessRequestExtraData");
             }
 
