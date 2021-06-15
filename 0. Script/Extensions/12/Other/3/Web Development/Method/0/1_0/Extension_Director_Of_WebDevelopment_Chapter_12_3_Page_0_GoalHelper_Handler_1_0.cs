@@ -308,12 +308,13 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region DEFINE process variables
 
+            StorylineDetails storedProcessRequestDataStorylineDetailsStrongTyped;
 
             #endregion
 
             #region DEFINE output variables
 
-            dynamic storedOutputResponseData = null;
+            JObject storedOutputResponseData = null;
 
             string storedOutputResponseHtmlResultInlineStylesString = "";
             string storedOutputResponseHtmlResultString = "";
@@ -388,7 +389,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE process storyline details
 
-            dynamic storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
 
             #endregion
 
@@ -818,16 +819,18 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                 try 
                 {
-                    Func<string> ExecuteStorageRequest = () => 
+                    Func<JObject> ExecuteStorageRequest = () => 
                     {
-                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("'", "\"");
-                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("{htmlResult}", storedOutputResponseHtmlResultString);
+                        storedProcessRequestDataStorylineDetailsStrongTyped = storedProcessRequestDataStorylineDetails.ToObject<StorylineDetails>();
 
-                        storedProcessRequestStorageDictionary[storedProcessRequestStorageKey] = storedOutputResponseObservationItem.toString();
+                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("'", "\"");
+                        storedOutputResponseObservationItem = storedOutputResponseObservationItem.Replace("{details}", Regex.Escape(storedOutputResponseHtmlResultString));
+
+                        storedProcessRequestStorageDictionary[storedProcessRequestStorageKey] = storedOutputResponseObservationItem.ToString();
 
                         #region USE existing output observation item
 
-                        foreach (var storedOutputResponseObservation in storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations)
+                        foreach (var storedOutputResponseObservation in storedProcessRequestDataStorylineDetailsStrongTyped.outputs[1].baseDIObservations)
                         {
                             //if (Object.keys(storedOutputResponseObservation).length > 0 && Object.keys(storedOutputResponseObservation)[0].toUpperCase() == storedProcessRequestStorageKey.toUpperCase()) {
                             //    storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations[storedProcessRequestStorageCounter][storedProcessRequestStorageKey] = JSON.parse(storedOutputResponseHtmlResultString.toString());
@@ -847,9 +850,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                         #region USE new output observation item
 
                         if (!storedProcessRequestStorageUpdateMode) {
-                            //storedProcessRequestDataStorylineDetails.outputs[1].baseDIObservations.Add(storedProcessRequestStorageDictionary);
+                            storedProcessRequestDataStorylineDetailsStrongTyped.outputs[1].baseDIObservations.Add(storedProcessRequestStorageDictionary);
                         }
                         #endregion
+
+                        storedProcessRequestDataStorylineDetails = JObject.FromObject(storedProcessRequestDataStorylineDetailsStrongTyped);
 
                         return storedProcessRequestDataStorylineDetails;
                     };
@@ -5596,9 +5601,9 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                 }
             };
             
-            if (storedProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER") {
-                storedInputRequestHtmlScripts = await ExecuteStorageRequest();
-            }
+            //if (storedProcessRequestSettings.GetValue<string>("AppSettings:APP_ENV") == "SERVER") {
+            //    storedInputRequestHtmlScripts = await ExecuteStorageRequest();
+            //}
 
             #endregion
 

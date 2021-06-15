@@ -475,12 +475,17 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                 storedInputs = new SingleParmPoco_12_2_1_0();
 
+                //0. CONTROLLERS
+
+                //1. INPUTS
                 storedInputs.Parameters.TryAdd("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
-                
+
+                //2. PROCESS
                 storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
                 storedInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestSettings);
                 storedInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CREATING storage output item");
-                
+
+                //3. OUTPUTS
                 storedInputs.Parameters.TryAdd("parameterOutputResponseObservationFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0");
                 storedInputs.Parameters.TryAdd("parameterOutputResponseObservationMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_0");
                 storedInputs.Parameters.TryAdd("parameterOutputResponseObservationPresentationTemplate", storedOutputResponseObservationPresentationTemplateItem);
@@ -512,7 +517,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                 storedProcessRequestFilteredStorageKey = storedProcessRequestFilteredStorageKey.ToString().Replace("-Read", "");
                 storedProcessRequestFilteredStorageKey = storedProcessRequestFilteredStorageKey.ToString().Replace("-Update", "");
                 storedProcessRequestFilteredStorageKey = storedProcessRequestFilteredStorageKey.ToString().Replace("-Delete", "");
-
+                                
                 foreach (var storedOutputResponseObservation in storedProcessRequestDataStorylineDetailsStrongTyped.outputs[1].baseDIObservations)
                 {
 
@@ -846,68 +851,137 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
             #endregion
 
-            #region DEFINE data response
-
-            dynamic storedOutputResponseData = null;
+            #region DEFINE control variables
 
             #endregion
 
-            #region DEFINE storyline details outputs
+            #region DEFINE input variables
+
+            SingleParmPoco_12_2_1_0 storedInputs = null;
+
+            #endregion
+
+            #region DEFINE process variables
+
+            Dictionary<string, dynamic> storedProcessRequestStorageDictionary = new Dictionary<string, dynamic>();
+
+            #endregion
+
+            #region DEFINE output variables
 
             dynamic storedOutputResponseObservation = "";
             dynamic storedOutputResponseObservationFiltered = null;
             string storedOutputResponseObservationKey = "";
 
-            #endregion
-
-            #region MEMORIZE control client server
-
-            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"] as Dictionary<string, object>;
+            dynamic storedOutputResponseData = null;
 
             #endregion
 
-            #region MEMORIZE app settings
+            ///////////////////////////////
+
+            #region MEMORIZE control variables
+
+            #region MEMORIZE control xxx xxx
+
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE input variables
+
+            #region MEMORIZE input action name
+
+            string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
+
+            #endregion           
+
+            #region MEMORIZE input request html
+
+            #endregion
+
+            #endregion
+
+            #region MEMORIZE process variables
+
+            #region MEMORIZE process centralized processes
+
+            aClass_Programming_ScriptAction_12_2_1_0<JObject> storedProcessRequestCentralizedStorer = parameterInputs.Parameters["parameterProcessRequestCentralizedStorer"];
+
+            #endregion
+
+            #region MEMORIZE process request tracker
+
+            Dictionary<string, object> storedProcessRequestTracker = parameterInputs.Parameters["parameterProcessRequestTracker"];
+
+            #endregion
+
+            #region MEMORIZE process request settings
 
             IConfiguration storedProcessRequestSettings = (IConfiguration)storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
 
-            #region MEMORIZE developer mode
+            #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") ? storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE") : false;
 
             SingleParmPoco_12_2_1_0 storedProcessRequestDeveloperLoggingInputs = new SingleParmPoco_12_2_1_0();
 
             //REQUIRED
-            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "RESOLVING request handler");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", parameterInputs.Parameters["parameterInputRequestActionName"]);
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
+
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "CONVERTING json to inline meta data");
             storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);
-            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0.Page_1_10_End_Process_12_2_1_0.ts");
-            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Action");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Extension_Director_Of_Programming_Chapter_12_2_Page_3_StorageRequest_Handler_1_0.ts");
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestMethodName", "Step_X_X_Framework_Store_CacheDataToPersistentStorage_1_1");
+
+            //OPTIONAL
+            //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterOPTIONALIgnoreDeveloperConsoleLog", parameterInputs.Parameters.getValue("parameterOPTIONALIgnoreDeveloperConsoleLog"));
 
             #endregion
 
-            #region MEMORIZE storage details
+            #region MEMORIZE process storyline details
 
-            string storedStorageAction = parameterInputs.Parameters["parameterProcessRequestStorageAction"];
-            bool storedStorageCRUDActionRead = false;
+            JObject storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
+            StorylineDetails storedProcessRequestDataStorylineDetailsStrongTyped = storedProcessRequestDataStorylineDetails.ToObject<StorylineDetails>();
+            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
+
+            #endregion
+
+            #region MEMORIZE process CRUD verb
+
+            string storedProcessRequestCRUDVerb = parameterInputs.Parameters["parameterProcessRequestCRUDVerb"];
+
+            #endregion
+
+            #region MEMORIZE process request details
+
+            string storedProcessRequestDirectorOrExperienceName = parameterInputs.Parameters["parameterProcessRequestHandler"];
+            string storedProcessRequestPageName = parameterInputs.Parameters["parameterProcessRequestPageName"];
+
+            #endregion
+
+            #region MEMORIZE process storage details
+
+            string storedProcessRequestStorageAction = parameterInputs.Parameters["parameterProcessRequestStorageAction"];
+            bool storedProcessRequestStorageCRUDActionRead = false;
             string storedProcessRequestStorageKey = parameterInputs.Parameters["parameterOutputResponseObservationKey"];
             dynamic storedProcessRequestStorageValue = parameterInputs.Parameters["parameterProcessRequestStorageValue"];
 
             #endregion
 
-            #region MEMORIZE storyline details
+            #endregion
 
-            dynamic storedProcessRequestDataStorylineDetails = parameterInputs.Parameters["parameterProcessRequestDataStorylineDetails"];
-            //storedProcessRequestDataStorylineDetails_Parameters = parameterProcessRequestDataStorylineDetails_Parameters;
+            #region MEMORIZE output variables
+
+            #region MEMORIZE output response observations
+
 
             #endregion
 
-            #region MEMORIZE storyline details outputs
-
-
-            #endregion
+            #endregion    
 
             #endregion
 
@@ -928,7 +1002,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                         if (storedOutputResponseObservationKey.ToString().ToUpper().Contains("-READ"))
                         {
-                            storedStorageCRUDActionRead = true;
+                            storedProcessRequestStorageCRUDActionRead = true;
                         }
 
                         storedOutputResponseObservationKey = storedOutputResponseObservationKey.ToString().Replace("-Create", "");
@@ -937,7 +1011,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
                         storedOutputResponseObservationKey = storedOutputResponseObservationKey.ToString().Replace("-Delete", "");
                         //EXAMPLE OUTPUT: storedOutputResponseObservationKey = "StorageKey_Experience_The_Hear_Chapter_12_3_Page_13_ControlRequest_Handler_1_0-BaseDI_DataConverter_Mode"
 
-                        if (!storedStorageCRUDActionRead)
+                        if (!storedProcessRequestStorageCRUDActionRead)
                         {
                             storedOutputResponseObservation = JObject.Parse(storedProcessRequestStorageValue[((JObject)storedProcessRequestStorageValue).Properties().Select(p => p.Name).FirstOrDefault()]);
 
@@ -977,7 +1051,7 @@ namespace BaseDI.Professional.Script.Programming.Extensions_3
 
                         if (_3rdParty_DotNetLocalStorage_LocalStorage != null)
                         {
-                            switch (storedStorageAction.ToUpper())
+                            switch (storedProcessRequestStorageAction.ToUpper())
                             {
                                 case "CREATE":
                                 case "UPDATE":

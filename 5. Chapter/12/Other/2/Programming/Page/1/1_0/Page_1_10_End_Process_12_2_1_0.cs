@@ -451,8 +451,14 @@ namespace BaseDI.Professional.Chapter.Page.Programming_1
 
                         storedOutputResponseData = DirectorOrExperienceRequestHandler.Action().Result;
 
-                        if (_storedProcessRequestTracker["storedProcessRequestHandlerName"] == null)
+                        if (_storedProcessRequestTracker.ContainsKey("storedProcessRequestHandlerName"))
+                        {
                             _storedProcessRequestTracker["storedProcessRequestHandlerName"] = _storedInputRequestName;
+                        }
+                        else
+                        {
+                            _storedProcessRequestTracker.TryAdd("storedProcessRequestHandlerName", _storedInputRequestName);
+                        }                           
 
                         #endregion
 

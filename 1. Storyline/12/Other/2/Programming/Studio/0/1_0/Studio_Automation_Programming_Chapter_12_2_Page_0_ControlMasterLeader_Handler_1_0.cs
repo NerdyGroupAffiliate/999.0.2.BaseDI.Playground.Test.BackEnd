@@ -427,7 +427,7 @@ public class Output
 
 public class BaseDIProfile
 {
-    public string baseDI_NerdyGroupAffiliates_DataSet_JSON;
+    public StorylineDetails_Instructions baseDI_NerdyGroupAffiliates_DataSet_JSON;
     public BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationProfile[] baseDI_NerdyGroupAffiliates_DynamicWebsite_DocumentationProfile;
 }
 

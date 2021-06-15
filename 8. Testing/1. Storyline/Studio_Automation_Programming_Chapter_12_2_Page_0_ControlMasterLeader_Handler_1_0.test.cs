@@ -151,11 +151,9 @@ namespace BaseDI.Professional.Testing
             {
                 Func<SingleParmPoco_12_2_1_0, JObject> Action = (SingleParmPoco_12_2_1_0 parameterInputs) =>
                 {
-                    storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs))
+                    return storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(parameterInputs))
                         .SetupStoryline(parameterInputs)
                         .Action().Result;
-
-                    return storedOutputResponseData;
                 };
 
                 Action(parameterInputs);
@@ -297,7 +295,7 @@ namespace BaseDI.Professional.Testing
 
             try
             {
-                if (storedOutputResponseData)
+                if (storedOutputResponseData != null)
                 {
                     if (storedInputs.Parameters["parameterProcessRequestTracker"] != null)
                     {
