@@ -72,6 +72,453 @@ using System.Threading.Tasks;
 #region 3rd Party Core
 
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+
+#endregion
+
+#endregion
+
+#region DataTypes
+
+#region GLOBAL data concepts
+
+
+public class StorylineDetails
+{
+    [JsonProperty("$schema")]
+    public string schema;
+    public string contentVersion;
+    public Parameters parameters;
+    public Variable[] variables;
+    public Resource[] resources;
+    public Output[] outputs;
+}
+
+public class StorylineDetails_Parameter
+{
+    [JsonProperty("$schema")]
+    public string schema;
+    public string contentVersion;
+    public StorylineDetails_Value baseDI_NerdyGroupAffiliates_DataSet_JSON;
+}
+
+public class SetupItemEnvironmentClient
+{
+}
+
+public class SetupItemEnvironmentServerMetaDataPath
+{
+    public string MetaDataLocalPath;
+}
+
+public class SetupItemEnvironmentServer
+{
+    public SetupItemEnvironmentServerMetaDataPath[] SetupItemEnvironmentServerMetaDataPaths;
+}
+
+public class Value2
+{
+    public string SetupItemRowID;
+    public SetupItemEnvironmentClient SetupItemEnvironmentClient;
+    public SetupItemEnvironmentServer SetupItemEnvironmentServer;
+}
+
+[JsonObject("22211ServerInformationSetupItem")]
+public class ServerInformationSetupItem
+{
+    public string searchkey;
+    public string type;
+    public Value2 value;
+}
+
+public class Value
+{
+    public ServerInformationSetupItem _2_2_2_1_1_serverInformationSetupItem;
+}
+
+[JsonObject("2221ServerInformationSetupDetails")]
+public class ServerInformationSetupDetails
+{
+    public string searchkey;
+    public string type;
+    public Value[] value;
+}
+
+public class Values222
+{
+    public ServerInformationSetupDetails _2_2_2_1_serverInformationSetupDetails;
+}
+
+public class Values22
+{
+    public string key_2_2_1;
+    public Values222[] values_2_2_2;
+}
+
+public class Values2
+{
+    public string key_2_1;
+    public Values22[] values_2_2;
+}
+
+public class ExtraKeyValuePairs5
+{
+}
+
+public class Configuration
+{
+    public string key_1;
+    public Values2[] values_2;
+    public string type_3;
+    public string buzzWords_4;
+    public ExtraKeyValuePairs5[] extraKeyValuePairs_5;
+}
+
+public class Presentation
+{
+}
+
+public class FunctionParameter
+{
+    public string parameterName;
+    public string parameterTypeScriptDataType;
+    public string parameterDefaultValue;
+}
+
+public class Event
+{
+    public string functionsEnabled;
+    public string functionEvent;
+    public string functionName;
+    public FunctionParameter[] functionParameters;
+}
+
+public class EventCallStackItem
+{
+    public string Notes;
+    public Event[] Events;
+}
+
+public class Value4
+{
+    public string EventCallStackItemRowID;
+    public EventCallStackItem[] EventCallStackItems;
+}
+
+[JsonObject("22211FunctionInformationEventCallStackItem")]
+public class FunctionInformationEventCallStackItem
+{
+    public string searchkey;
+    public string type;
+    public Value4 value;
+}
+
+public class Value3
+{
+    public FunctionInformationEventCallStackItem _2_2_2_1_1_functionInformationEventCallStackItem;
+}
+
+public class FunctionInformationEventCallStackDetails
+{
+    public string searchkey;
+    public string type;
+    public Value3[] value;
+}
+
+public class Values2222
+{
+    public FunctionInformationEventCallStackDetails _2_2_2_1_functionInformationEventCallStackDetails;
+}
+
+public class Values223
+{
+    public string key_2_2_1;
+    public Values2222[] values_2_2_2;
+}
+
+public class Values23
+{
+    public string key_2_1;
+    public Values223[] values_2_2;
+}
+
+public class Business
+{
+    public string key_1;
+    public Values23[] values_2;
+    public string type_3;
+    public string buzzWords_4;
+    public dynamic[] extraKeyValuePairs_5;
+}
+
+public class RepositoryInformationDataItem
+{
+    public string searchkey;
+    public string type;
+    public RepositoryInformationDataItemValue value;
+}
+
+public class RepositoryInformationDataDetailsValue
+{
+    public string DataItemRowID;
+    public string DataItemLocation;
+}
+public class RepositoryInformationDataItemValue
+{
+    public RepositoryInformationDataItem _2_2_2_1_1_repositoryInformationDataItem;
+    public RepositoryInformationDataItem _2_2_2_1_2_repositoryInformationDataItem;
+    public RepositoryInformationDataItem _2_2_2_1_3_repositoryInformationDataItem;
+}
+
+public class RepositoryInformationDataDetails
+{
+    public string searchkey;
+    public string type;
+    public RepositoryInformationDataDetailsValue[] value;
+}
+
+public class Values2223
+{
+    public RepositoryInformationDataDetails _2_2_2_1_repositoryInformationDataDetails;
+}
+
+public class Values224
+{
+    public string key_2_2_1;
+    public Values2223[] values_2_2_2;
+}
+
+public class Values24
+{
+    public string key_2_1;
+    public Values224[] values_2_2;
+}
+
+public class ExtraKeyValuePairs
+{
+}
+
+public class Datum
+{
+    public string key_1;
+    public Values24[] values_2;
+    public string type_3;
+    public string buzzWords_4;
+    public ExtraKeyValuePairs[] extraKeyValuePairs_5;
+}
+public class BaseDINerdyGroupAffiliatesDataSetJSON
+{
+    public string type;
+    public DefaultValue defaultValue;
+    public Metadata metadata;
+}
+public class Metadata
+{
+    public string description;
+}
+
+public class BaseDIInstructions
+{
+    public Configuration[] configuration;
+    public Presentation[] presentation;
+    public Business[] business;
+    public Datum[] data;
+}
+
+public class DefaultValue
+{
+    public BaseDIInstructions baseDIInstructions;
+}
+public class Parameters
+{
+    public BaseDINerdyGroupAffiliatesDataSetJSON baseDI_NerdyGroupAffiliates_DataSet_JSON;
+}
+public class Variable
+{
+}
+
+public class Mistake
+{
+    //MistakeRoutePOST[] mistake_route_POST;
+}
+public class BaseDINerdyGroupAffiliatesDynamicWebsiteValidationRule
+{
+    public Mistake[] mistakes;
+}
+
+public class BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentation
+{
+    public BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationParameter[] baseDINerdyGroupAffiliatesDynamicWebsiteDocumentationParameters;
+    public BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationField[] baseDINerdyGroupAffiliatesDynamicWebsiteDocumentationFields;
+    public BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationRoute[] baseDINerdyGroupAffiliatesDynamicWebsiteDocumentationRoutes;
+    public BaseDINerdyGroupAffiliatesDynamicWebsiteValidationRule[] baseDINerdyGroupAffiliatesDynamicWebsiteValidationRules;
+}
+
+public class BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationRoute
+{
+    public Endpoint[] endpoints;
+    public Route[] routes;
+}
+public class Endpoint
+{
+    public string endpoint_Live;
+    public string endpoint_Local_DotNetCore;
+    public string endpoint_Local_NodeJS;
+}
+
+public class RouteGET
+{
+    public string desciption;
+    public AvailableMethod[] availableMethods;
+}
+
+public class RoutePOST
+{
+    public string desciption;
+    public AvailableMethod[] availableMethods;
+}
+
+public class RoutePUT
+{
+    public string desciption;
+    public AvailableMethod[] availableMethods;
+}
+
+public class RouteDELETE
+{
+    public string desciption;
+    public AvailableMethod[] availableMethods;
+}
+
+public class Route
+{
+    public RoutePOST[] route_POST;
+    public RouteGET[] route_GET;
+    public RoutePUT[] route_PUT;
+    public RouteDELETE[] route_Delete;
+}
+
+public class AvailableMethod
+{
+    public string description;
+    public string methodName;
+}
+
+public class BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationParameter
+{
+}
+
+public class BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationField
+{
+}
+
+public class BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationProfile
+{
+    public string baseDI_NerdyGroupAffiliates_DynamicWebsitePurpose;
+    public string baseDI_NerdyGroupAffiliates_DynamicWebsite;
+    public BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentation baseDI_NerdyGroupAffiliates_DynamicWebsiteDocumentation;
+}
+
+public class Output
+{
+    public List<dynamic> baseDIMistakes = new List<dynamic>();
+    public List<dynamic> baseDIObservations = new List<dynamic>();
+}
+
+public class BaseDIProfile
+{
+    public string baseDI_NerdyGroupAffiliates_DataSet_JSON;
+    public BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationProfile[] baseDI_NerdyGroupAffiliates_DynamicWebsite_DocumentationProfile;
+}
+
+public class Resource
+{
+    public BaseDIProfile[] baseDIProfiles;
+}
+
+public class StorylineDetails_Value
+{
+    public StorylineDetails_Instructions value;
+}
+
+public class StorylineDetails_Instructions
+{
+    public StorylineDetails_Instructions_Details baseDIInstructions;
+}
+
+public class StorylineDetails_Instructions_Details
+{
+    public StorylineDetails_Instructions_Details_Configuration[] configuration;
+    public StorylineDetails_Instructions_Details_Presentation[] presentation;
+    public StorylineDetails_Instructions_Details_Business[] business;
+    public StorylineDetails_Instructions_Details_Data[] data;
+}
+
+public class StorylineDetails_Instructions_Details_Configuration
+{
+    public string key_1;
+    public StorylineDetails_Instructions_Details_Values_2_X[] values_2;
+    public string type_3;
+    public string buzzWords_4;
+    public dynamic[] extraKeyValuePairs_5;
+}
+
+public class StorylineDetails_Instructions_Details_Presentation
+{
+    public string key_1;
+    public StorylineDetails_Instructions_Details_Values_2_X[] values_2;
+    public string type_3;
+    public string buzzWords_4;
+    public dynamic[] extraKeyValuePairs_5;
+}
+
+public class StorylineDetails_Instructions_Details_Business
+{
+    public string key_1;
+    public StorylineDetails_Instructions_Details_Values_2_X[] values_2;
+    public string type_3;
+    public string buzzWords_4;
+    public dynamic[] extraKeyValuePairs_5;
+}
+
+public class StorylineDetails_Instructions_Details_Data
+{
+    public string key_1;
+    public StorylineDetails_Instructions_Details_Values_2_X[] values_2;
+    public string type_3;
+    public string buzzWords_4;
+    public dynamic[] extraKeyValuePairs_5;
+}
+
+public class StorylineDetails_Instructions_Details_Values_2_X
+{
+    public string key_2_1;
+    public StorylineDetails_Instructions_Details_Values_2_X_X[] values_2_2;
+}
+
+public class StorylineDetails_Instructions_Details_Values_2_X_X
+{
+    public string key_2_2_1;
+    public dynamic[] values_2_2_2;
+}
+
+public class StorylineDetails_Instructions_Details_Search_1
+{
+    public string searchkey;
+    public string type;
+    public dynamic[] value;
+}
+
+public class StorylineDetails_Instructions_Details_Search_2
+{
+    public string searchkey;
+    public string type;
+    public dynamic value;
+}
+
+public class StorylineDetails_Instructions_Details_ExtraValues
+{
+}
 
 #endregion
 
@@ -96,7 +543,7 @@ namespace BaseDI.Professional.Story.Programming_0
         private ExtraData_12_2_1_0 _storedProcessRequestExtraData = null;
 
         //PLUMBING
- 
+
         #endregion
 
         #region 2. Ready
@@ -627,7 +1074,7 @@ namespace BaseDI.Professional.Story.Programming_0
             //storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterInputRequestActionName", _parameterInputs.Parameters.getValue("parameterInputRequestActionName"));
 
             //2. PROCESS
-            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "BEGIN processing request");          
+            storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequest3WordDescription", "BEGIN processing request");
             storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestSettings", _storedProcessRequestTracker["storedProcessRequestSettings"]);
             storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestTracker", _storedProcessRequestTracker);
             storedProcessRequestDeveloperLoggingInputs.Parameters.TryAdd("parameterProcessRequestFileName", "Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0.cs");
@@ -656,7 +1103,7 @@ namespace BaseDI.Professional.Story.Programming_0
             {
                 _storedProcessRequestExtraData = parameterInputs.Parameters["parameterProcessRequestExtraData"];
             }
-            else 
+            else
             {
                 parameterInputs.Parameters.TryAdd("parameterProcessRequestExtraData", new ExtraData_12_2_1_0());
                 (parameterInputs.Parameters["parameterProcessRequestExtraData"] as ExtraData_12_2_1_0).KeyValuePairs.TryAdd("storedProcessRequestDeveloperLoggingInputs", new SingleParmPoco_12_2_1_0());
@@ -769,7 +1216,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
                 #endregion
             }
-            
+
             #endregion
 
             #region 3. OUTPUT
@@ -841,7 +1288,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
             #region DEFINE process variables
 
-      
+
             #endregion
 
             #region DEFINE output variables
@@ -897,7 +1344,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
-            
+
             #endregion
 
             #region MEMORIZE process extra data
@@ -970,7 +1417,7 @@ namespace BaseDI.Professional.Story.Programming_0
 
         #region DEFINE process variables
 
-  
+
 
         #endregion
 
@@ -1814,7 +2261,7 @@ namespace BaseDI.Professional.Story.Programming_0
             #region MEMORIZE process request details
 
             _storedProcessRequestHandler = parameterInputs.Parameters["parameterProcessRequestHandler"];
- 
+
             _storedProcessRequestName = parameterInputs.Parameters["parameterProcessRequestName"];
 
             #endregion
@@ -2036,7 +2483,7 @@ namespace BaseDI.Professional.Story.Programming_0
             _storedProcessRequestSettings = (IConfiguration)_storedProcessRequestTracker["storedProcessRequestSettings"];
 
             #endregion
-            
+
             #region MEMORIZE process developer mode
 
             bool storedProcessRequestDeveloperMode = _storedProcessRequestSettings.GetValue<bool>("AppSettings:APP_SETTING_DEVELOPER_MODE");
@@ -2069,7 +2516,7 @@ namespace BaseDI.Professional.Story.Programming_0
                     #region 12. Other
 
                     _12_2_stored_Director_Of_Programming_RequestHandler = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlNicheMaster_Handler_1_0(_storedInputs);
-                    
+
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6912/storyline/basedi/io/programming";
                     _12_2_stored_Director_Of_Programming_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7912/storyline/basedi/io/programming";
 
@@ -2109,7 +2556,7 @@ namespace BaseDI.Professional.Story.Programming_0
                     if (_storedProcessRequestName.ToUpper(CultureInfo.CurrentCulture).Contains("DIRECTOR_OF_BLOGGING"))
                     {
                         _2_1_stored_Director_Of_Blogging_RequestHandler = new Studio_AudienceTesting_Blogging_Chapter_2_1_Page_0_ControlNicheMaster_Handler_1_0(_storedInputs);
-                        
+
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore = "https://localhost:6992/storyline/basedi/io/blogging";
                         _2_1_stored_Director_Of_Blogging_RequestHandler.APILocationLocalDotNetCore_SSL = "https://localhost:7992/storyline/basedi/io/blogging";
 
@@ -2620,7 +3067,7 @@ namespace BaseDI.Professional.Story.Programming_0
                 else
                 {
                     parameterInputs.Parameters.TryAdd("parameterProcessRequestCentralizedDisturber", _storedProcessRequestCentralizedDisturber);
-                }                
+                }
             }
 
             if (_storedProcessRequestCentralizedSensor == null)
@@ -3362,7 +3809,7 @@ namespace BaseDI.Professional.Story.Programming_0
                 #region EXECUTE storage request
 
                 #region IDEAL CASE - USE storage handler
-   
+
                 storedOutputResponseData = new Studio_Automation_Programming_Chapter_12_2_Page_0_ControlMasterLeader_Handler_1_0(new Director_Of_Programming_Chapter_12_2_Page_1_ControlRequest_Handler_1_0(_storedInputs))
                   .SetupStoryline(_storedInputs)
                   .Action().Result;

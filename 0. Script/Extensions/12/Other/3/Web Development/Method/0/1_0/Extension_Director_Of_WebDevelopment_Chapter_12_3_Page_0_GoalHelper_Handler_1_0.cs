@@ -5305,7 +5305,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                     }
 
                     //3. OUTPUTS
-
                     if (storedProcessRequestMistakeMade)
                     {
                         #region EDGE CASE - USE developer logger
@@ -5516,7 +5515,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             #region MEMORIZE output response html
 
-            string storedOutputResponseHtmlColumnString = parameterInputs.Parameters["parameterOutputResponseHtmlColumnString"];
 
             #endregion
 
@@ -5541,6 +5539,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                     //0. CONTROLLERS
 
                     //1. INPUTS
+                    storedInputs.Parameters.TryAdd("parameterInputRequestActionName", storedInputRequestActionName);
 
                     //2. PROCESS                      
                     storedInputs.Parameters.TryAdd("parameterProcessRequestTracker", storedProcessRequestTracker);

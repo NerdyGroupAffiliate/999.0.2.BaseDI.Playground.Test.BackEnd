@@ -78,10 +78,342 @@ export module BaseDI.Professional.Story.Programming_0 {
 
     //#region GLOBAL data concepts
 
+    export interface StorylineDetails {
+        $schema: string;
+        contentVersion: string;
+        parameters: Parameters;
+        variables: Variable[];
+        resources: Resource[];
+        outputs: Output[];
+    }
+
     export interface StorylineDetails_Parameter {
         $schema: string;
         contentVersion: string;
         baseDI_NerdyGroupAffiliates_DataSet_JSON: StorylineDetails_Value;
+    }
+
+    export interface SetupItemEnvironmentClient {
+    }
+
+    export interface SetupItemEnvironmentServerMetaDataPath {
+        MetaDataLocalPath: string;
+    }
+
+    export interface SetupItemEnvironmentServer {
+        SetupItemEnvironmentServerMetaDataPaths: SetupItemEnvironmentServerMetaDataPath[];
+    }
+
+    export interface Value2 {
+        SetupItemRowID: string;
+        SetupItemEnvironmentClient: SetupItemEnvironmentClient;
+        SetupItemEnvironmentServer: SetupItemEnvironmentServer;
+    }
+
+    export interface _2_2_2_1_1_ServerInformationSetupItem {
+        searchkey: string;
+        type: string;
+        value: Value2;
+    }
+
+    export interface Value {
+        _2_2_2_1_1_serverInformationSetupItem: _2_2_2_1_1_ServerInformationSetupItem;
+    }
+
+    export interface _2_2_2_1_ServerInformationSetupDetails {
+        searchkey: string;
+        type: string;
+        value: Value[];
+    }
+
+    export interface Values222 {
+        _2_2_2_1_serverInformationSetupDetails: _2_2_2_1_ServerInformationSetupDetails;
+    }
+
+    export interface Values22 {
+        key_2_2_1: string;
+        values_2_2_2: Values222[];
+    }
+
+    export interface Values2 {
+        key_2_1: string;
+        values_2_2: Values22[];
+    }
+
+    export interface ExtraKeyValuePairs5 {
+    }
+
+    export interface Configuration {
+        key_1: string;
+        values_2: Values2[];
+        type_3: string;
+        buzzWords_4: string;
+        extraKeyValuePairs_5: ExtraKeyValuePairs5[];
+    }
+
+    export interface Presentation {
+    }
+
+    export interface FunctionParameter {
+        parameterName: string;
+        parameterTypeScriptDataType: string;
+        parameterDefaultValue: string;
+    }
+
+    export interface Event {
+        functionsEnabled: string;
+        functionEvent: string;
+        functionName: string;
+        functionParameters: FunctionParameter[];
+    }
+
+    export interface EventCallStackItem {
+        Notes: string;
+        Events: Event[];
+    }
+
+    export interface Value4 {
+        EventCallStackItemRowID: string;
+        EventCallStackItems: EventCallStackItem[];
+    }
+
+    export interface _2_2_2_1_1_FunctionInformationEventCallStackItem {
+        searchkey: string;
+        type: string;
+        value: Value4;
+    }
+
+    export interface Value3 {
+        _2_2_2_1_1_functionInformationEventCallStackItem: _2_2_2_1_1_FunctionInformationEventCallStackItem;
+    }
+
+    export interface _2_2_2_1_FunctionInformationEventCallStackDetails {
+        searchkey: string;
+        type: string;
+        value: Value3[];
+    }
+
+    export interface Values2222 {
+        _2_2_2_1_functionInformationEventCallStackDetails: _2_2_2_1_FunctionInformationEventCallStackDetails;
+    }
+
+    export interface Values223 {
+        key_2_2_1: string;
+        values_2_2_2: Values2222[];
+    }
+
+    export interface Values23 {
+        key_2_1: string;
+        values_2_2: Values223[];
+    }
+
+    export interface Business {
+        key_1: string;
+        values_2: Values23[];
+        type_3: string;
+        buzzWords_4: string;
+        extraKeyValuePairs_5: any[];
+    }
+
+    export interface Value6 {
+        DataItemRowID: string;
+        DataItemLocation: string;
+    }
+
+    export interface _2_2_2_1_1_RepositoryInformationDataItem {
+        searchkey: string;
+        type: string;
+        value: Value6;
+    }
+
+    export interface Value7 {
+        DataItemRowID: string;
+        DataItemLocation: string;
+    }
+
+    export interface _2_2_2_1_2_RepositoryInformationDataItem {
+        searchkey: string;
+        type: string;
+        value: Value7;
+    }
+
+    export interface Value8 {
+        DataItemRowID: string;
+        DataItemLocation: string;
+    }
+
+    export interface _2_2_2_1_3_RepositoryInformationDataItem {
+        searchkey: string;
+        type: string;
+        value: Value8;
+    }
+
+    export interface Value5 {
+        _2_2_2_1_1_repositoryInformationDataItem: _2_2_2_1_1_RepositoryInformationDataItem;
+        _2_2_2_1_2_repositoryInformationDataItem: _2_2_2_1_2_RepositoryInformationDataItem;
+        _2_2_2_1_3_repositoryInformationDataItem: _2_2_2_1_3_RepositoryInformationDataItem;
+    }
+
+    export interface _2_2_2_1_RepositoryInformationDataDetails {
+        searchkey: string;
+        type: string;
+        value: Value5[];
+    }
+
+    export interface Values2223 {
+        _2_2_2_1_repositoryInformationDataDetails: _2_2_2_1_RepositoryInformationDataDetails;
+    }
+
+    export interface Values224 {
+        key_2_2_1: string;
+        values_2_2_2: Values2223[];
+    }
+
+    export interface Values24 {
+        key_2_1: string;
+        values_2_2: Values224[];
+    }
+
+    export interface ExtraKeyValuePairs52 {
+    }
+
+    export interface Datum {
+        key_1: string;
+        values_2: Values24[];
+        type_3: string;
+        buzzWords_4: string;
+        extraKeyValuePairs_5: ExtraKeyValuePairs52[];
+    }
+
+    export interface BaseDIInstructions {
+        configuration: Configuration[];
+        presentation: Presentation[];
+        business: Business[];
+        data: Datum[];
+    }
+
+    export interface DefaultValue {
+        baseDIInstructions: BaseDIInstructions;
+    }
+
+    export interface Metadata {
+        description: string;
+    }
+
+    export interface BaseDINerdyGroupAffiliatesDataSetJSON {
+        type: string;
+        defaultValue: DefaultValue;
+        metadata: Metadata;
+    }
+
+    export interface Parameters {
+        baseDI_NerdyGroupAffiliates_DataSet_JSON: BaseDINerdyGroupAffiliatesDataSetJSON;
+    }
+
+    export interface Variable {
+    }
+
+    export interface BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationParameter {
+    }
+
+    export interface BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationField {
+    }
+
+    export interface Endpoint {
+        endpoint_Live: string;
+        endpoint_Local_DotNetCore: string;
+        endpoint_Local_NodeJS: string;
+    }
+
+    export interface AvailableMethod {
+        description: string;
+        methodName: string;
+    }
+
+    export interface RoutePOST {
+        desciption: string;
+        availableMethods: AvailableMethod[];
+    }
+
+    export interface AvailableMethod2 {
+        description: string;
+        methodName: string;
+    }
+
+    export interface RouteGET {
+        desciption: string;
+        availableMethods: AvailableMethod2[];
+    }
+
+    export interface AvailableMethod3 {
+        description: string;
+        methodName: string;
+    }
+
+    export interface RoutePUT {
+        desciption: string;
+        availableMethods: AvailableMethod3[];
+    }
+
+    export interface AvailableMethod4 {
+        description: string;
+        methodName: string;
+    }
+
+    export interface RouteDelete {
+        desciption: string;
+        availableMethods: AvailableMethod4[];
+    }
+
+    export interface Route {
+        route_POST: RoutePOST[];
+        route_GET: RouteGET[];
+        route_PUT: RoutePUT[];
+        route_Delete: RouteDelete[];
+    }
+
+    export interface BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationRoute {
+        endpoints: Endpoint[];
+        routes: Route[];
+    }
+
+    export interface MistakeRoutePOST {
+        error_100: string;
+    }
+
+    export interface Mistake {
+        mistake_route_POST: MistakeRoutePOST[];
+    }
+
+    export interface BaseDINerdyGroupAffiliatesDynamicWebsiteValidationRule {
+        mistakes: Mistake[];
+    }
+
+    export interface BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentation {
+        baseDINerdyGroupAffiliatesDynamicWebsiteDocumentationParameters: BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationParameter[];
+        baseDINerdyGroupAffiliatesDynamicWebsiteDocumentationFields: BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationField[];
+        baseDINerdyGroupAffiliatesDynamicWebsiteDocumentationRoutes: BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationRoute[];
+        baseDINerdyGroupAffiliatesDynamicWebsiteValidationRules: BaseDINerdyGroupAffiliatesDynamicWebsiteValidationRule[];
+    }
+
+    export interface BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationProfile {
+        baseDI_NerdyGroupAffiliates_DynamicWebsitePurpose: string;
+        baseDI_NerdyGroupAffiliates_DynamicWebsite: string;
+        baseDI_NerdyGroupAffiliates_DynamicWebsiteDocumentation: BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentation;
+    }
+
+    export interface BaseDIProfile {
+        baseDI_NerdyGroupAffiliates_DataSet_JSON: string;
+        baseDI_NerdyGroupAffiliates_DynamicWebsite_DocumentationProfile: BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationProfile[];
+    }
+
+    export interface Resource {
+        baseDIProfiles: BaseDIProfile[];
+    }
+
+    export interface Output {
+        baseDIMistakes: any[];
+        baseDIObservations: any[];
     }
 
     export interface StorylineDetails_Value {
