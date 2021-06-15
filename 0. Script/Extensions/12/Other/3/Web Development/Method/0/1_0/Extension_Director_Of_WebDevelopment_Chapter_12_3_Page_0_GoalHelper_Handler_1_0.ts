@@ -2479,8 +2479,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region IDEAL CASE - USE json metadata
 
-            const ExecuteConversionRequest = async (): Promise<string> => {
-                try {
+            const ExecuteConversionRequest = async (): Promise<string> =>
+            {
+                try
+                {
                     storedInputRequestHtmlColumnsJSON.value.HTMLContentItems.forEach(storedProcessRequestHtmlColumn => {
                         //OUTPUT 1: 
                         //storedOutputResponseHtmlRowString = <div id="row-_A_1_xxx">{row_A-1_xxx_Replace}</div>
@@ -2491,7 +2493,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedOutputResponseData = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
 
                         //OUTPUT 2:                              <div                                    id="column_A_1_1_xxx">     {column_A_1_1_xxx_Replace}                                   </div>
-                        storedProcessRequestHtmlColumnString = `<${storedProcessRequestHtmlColumn.Tag} ${storedOutputResponseData}>{${storedProcessRequestHtmlColumn.Attributes[0].id}_Replace}</${storedProcessRequestHtmlColumn.Tag}>\n`;
+                        storedProcessRequestHtmlColumnString = `<${storedProcessRequestHtmlColumn.Tag} ${storedOutputResponseData}>{${storedProcessRequestHtmlColumn.Attributes[0].id.split('_')[1].substring(0, 5)}_Replace}</${storedProcessRequestHtmlColumn.Tag}>`;
 
                         //OUTPUT 3:                                                                     "row_A-1_xxx_Replace                                                          ***SEE OUTPUT 2 ABOVE***
                         storedOutputResponseHtmlRowString = storedOutputResponseHtmlRowString.replace(`{${storedProcessRequestHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}`, storedProcessRequestHtmlColumnString);
@@ -2805,7 +2807,16 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region DEFINE process variables
 
-            let storedProcesseRequestContent:string = "";
+            let storedProcessRequestResponseHtmlChildTag: string = "";
+            let storedProcessRequestResponseHtmlContentChild: string = "";
+            let storedProcessRequestResponseHtmlContentParent: string = "";
+            let storedProcessRequestResponseHtmlParentTag: string = "";
+            let storedProcessRequestHtmlContentToColumnMapper: any[] = [];
+
+            let storedProcessRequestHtmlContentItemChildren: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail> = [];
+            let ExecuteProcessHelper = null;
+            let storedProcessRequestHtmlContentItemCounter: number = 0;
+            let storedProcessRequestHtmlContentToColumnRelationships: any = null;
 
             //#endregion
 
@@ -2897,7 +2908,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region MEMORIZE output response html
 
-            let storedOutputResponseHtmlColumnString: any = parameterInputs.Parameters.getValue("parameterOutputResponseHtmlColumnString");
+            let storedOutputResponseHtmlColumnString: string = parameterInputs.Parameters.getValue("parameterOutputResponseHtmlColumnString");
 
             //#endregion
 
@@ -2911,86 +2922,167 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region IDEAL CASE - USE json metadata
 
-            const ExecuteConversionRequest = async (): Promise<string> => {
+            try
+            {
+                //#region A.CONVERT json to html string buckets
+
+                try
+                {
+                    const ExecuteConversionRequest = (): boolean =>
+                    {
+                        ExecuteProcessHelper = (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
+                        {
+                            storedProcessRequestHtmlContentItemChildren = parameterInputs.Parameters["parameterProcessRequestHtmlContentItemChildren"];
+                            storedProcessRequestHtmlContentItemCounter = 0;
+
+                            storedProcessRequestHtmlContentItemChildren.map(storedProcessRequestHtmlContentItem =>
+                            {
+                                if (storedProcessRequestHtmlContentItem.ChildHTMLContentDetails.length > 0)
+                                {
+                                    storedInputs = parameterInputs;
+                                    storedInputs.Parameters.remove("parameterProcessRequestHtmlContentItemChildren");
+                                    storedInputs.Parameters.setValue("parameterProcessRequestHtmlContentItemChildren", storedProcessRequestHtmlContentItem.ChildHTMLContentDetails);
+
+                                    storedProcessRequestResponseHtmlChildTag += ExecuteProcessHelper(storedInputs);
+
+                                    storedProcessRequestHtmlContentItemCounter += 1;
+                                }
+
+                                if (storedProcessRequestHtmlContentItemCounter == storedProcessRequestHtmlContentItem.ChildHTMLContentDetails.length) {
+                                    storedInputs = parameterInputs;
+                                    storedInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
+                                    storedInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContentItem.Attributes);
+
+                                    if (storedProcessRequestHtmlContentItem.Tag.toUpperCase() == "BR" ||
+                                        storedProcessRequestHtmlContentItem.Tag.toUpperCase() == "IMG") {
+                                        if (storedProcessRequestResponseHtmlChildTag)
+                                        {
+                                            storedProcessRequestResponseHtmlContentChild += `<${storedProcessRequestHtmlContentItem.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputs)}/>${storedProcessRequestResponseHtmlChildTag}`;
+                                        }
+                                        else
+                                        {
+                                            storedProcessRequestResponseHtmlContentChild += `<${storedProcessRequestHtmlContentItem.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputs)}/>${storedProcessRequestHtmlContentItem.Value}`;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (storedProcessRequestResponseHtmlChildTag)
+                                        {
+                                            storedProcessRequestResponseHtmlContentChild += `<${storedProcessRequestHtmlContentItem.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputs)}>${storedProcessRequestResponseHtmlChildTag}</${storedProcessRequestHtmlContentItem.Tag}>`;
+                                        }
+                                        else
+                                        {
+                                            storedProcessRequestResponseHtmlContentChild += `<${storedProcessRequestHtmlContentItem.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputs)}>${storedProcessRequestHtmlContentItem.Value}</${storedProcessRequestHtmlContentItem.Tag}>`;
+                                        }
+                                    }
+                                }
+                            })
+
+                            return storedProcessRequestResponseHtmlContentChild;
+                        };
+
+                        storedInputRequestHtmlContentJSON.value.HTMLContentItems.map(storedProcessRequestHtmlContentItem => {
+                            storedInputs = parameterInputs;
+                            storedInputs.Parameters.remove("parameterProcessRequestHtmlContentItemChildren");
+                            storedInputs.Parameters.setValue("parameterProcessRequestHtmlContentItemChildren", storedProcessRequestHtmlContentItem.ChildHTMLContentDetails);
+
+                            storedProcessRequestResponseHtmlParentTag = ExecuteProcessHelper(storedInputs);
+
+                            storedInputs = parameterInputs;
+                            storedInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
+                            storedInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContentItem.Attributes);
+
+                            storedInputs.Parameters.remove("parameterProcessRequestHtmlContentItem");
+                            storedInputs.Parameters.setValue("parameterProcessRequestHtmlContentItem", storedProcessRequestHtmlContentItem);
+
+                            storedInputs.Parameters.remove("parameterProcessRequestHtmlContentToColumnMapper");
+                            storedInputs.Parameters.setValue("parameterProcessRequestHtmlContentToColumnMapper", new Object());
+
+                            if (storedProcessRequestResponseHtmlParentTag) {
+                                storedProcessRequestResponseHtmlContentParent = `<${storedProcessRequestHtmlContentItem.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputs)}>${storedProcessRequestResponseHtmlParentTag}</${storedProcessRequestHtmlContentItem.Tag}>`;
+                            }
+                            else {
+                                storedProcessRequestResponseHtmlContentParent = `<${storedProcessRequestHtmlContentItem.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputs)}>${storedProcessRequestHtmlContentItem.Value}</${storedProcessRequestHtmlContentItem.Tag}>`;
+                            }
+
+                            if (storedInputs.Parameters["parameterProcessRequestHtmlContentToColumnMapper"] > 0) {
+                                storedProcessRequestHtmlContentToColumnRelationships.Add(storedProcessRequestResponseHtmlContentParent, storedInputs.Parameters["parameterProcessRequestHtmlContentToColumnMapper"]);
+                            }
+
+                            storedInputs.Parameters.remove("parameterProcessRequestHtmlContentToColumnMapper");
+
+                            storedProcessRequestResponseHtmlChildTag = "";
+                            storedProcessRequestResponseHtmlContentChild = "";
+                            storedProcessRequestResponseHtmlContentParent = "";
+                            storedProcessRequestHtmlContentItemCounter = 0;
+                        });
+
+                        return true;
+                    };
+
+                    ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake)
+                {
+                    throw new Error("converting json to html buckets");
+                }
+
+                //#endregion
+
+                //#region B.CONVERT html string buckets to final output
+
                 try {
-                    storedInputRequestHtmlContentJSON.value.HTMLContentItems.forEach(storedProcessRequestHtmlContent => {
-                        //OUTPUT 1: 
-                        //storedOutputResponseHtmlColumnString =  <div id="row-_A_1_xxx">
-                        //                                              <div id="column_A_1_1_xxx">{column_A_1_1_xxx_Replace}</div>   
-                        //                                       </div>     
+                    const ExecuteConversionRequest = (): string =>
+                    {
+                        storedProcessRequestHtmlContentToColumnRelationships.map(storedProcessRequestHtmlContentToColumnRelationship =>
+                        {
+                            storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace("{" + storedProcessRequestHtmlContentToColumnRelationship.Value.FirstOrDefault().Key + "_Replace}", storedProcessRequestHtmlContentToColumnRelationship.Key);
+                        });
 
-                        if (storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID] == undefined) {
-                            storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID] = new Array();
+                        return storedOutputResponseHtmlColumnString;
+                    };
 
-                            parameterInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
-                            parameterInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContent.Attributes);
-
-                            storedOutputResponseHtmlAttributeKeyValuePairs = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
-
-                            //OUTPUT 2:                          //column_A_1_1_xxx                                                       <div                                    id="content_A-1-1-1_xxx"                          <img id="content_A-1-1-1_xxx">          </img>
-                            storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID].push(`<${storedProcessRequestHtmlContent.Tag} ${storedOutputResponseHtmlAttributeKeyValuePairs}>${storedProcessRequestHtmlContent.Value}</${storedProcessRequestHtmlContent.Tag}>\n`);
-                        }
-                        else {
-
-                            parameterInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
-                            parameterInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContent.Attributes);
-
-                            storedOutputResponseHtmlAttributeKeyValuePairs = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
-
-                            //OUTPUT 3:                          //column_A_1_1_xxx                                                       <div                                    id="content_A-1-1-1_xxx"                          <img id="content_A-1-1-1_xxx">          </img>
-                            storedOutputResponseDataIdsAndContent[storedProcessRequestHtmlContent.ParentHTMLContentItemAttributeID].push(`<${storedProcessRequestHtmlContent.Tag} ${storedOutputResponseHtmlAttributeKeyValuePairs}>${storedProcessRequestHtmlContent.Value}</${storedProcessRequestHtmlContent.Tag}>\n`);
-                        }
-                    });
-
-                    Object.keys(storedOutputResponseDataIdsAndContent).forEach(storedProcessRequestIdAndContentItem => {
-                        //OUTPUT 4: 
-                        //storedProcesseRequestContent = <img id="content_A-1-1-1_xxx" alt="xxx" src=""></img>
-                        //                               <img id="content_A-1-1-2_xxx" alt="xxx" src=""></img>
-                        //                               <img id="content_A-1-1-3_xxx" alt="xxx" src=""></img>
-                        storedProcesseRequestContent = storedOutputResponseDataIdsAndContent[storedProcessRequestIdAndContentItem].join('\n');
-                                                                                                             //***SEE OUTPUT 1 ABOVE***              
-                        storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace(`{${storedProcessRequestIdAndContentItem}_Replace}`, storedProcesseRequestContent);
-                    });
-
-                    if (process.env.APP_ENV == "SERVER") {
-                        //OUTPUT 5:                            <img id="content_A-1-1-3_xxx" alt="xxx" src="/...999.0.3.BaseDI.Professional.QuickStart.Templates/image.jpg"> CONVERT TO <img id="content_A-1-1-3_xxx" alt="xxx" src="/Images/image.jpg">
-                        storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace(/...999.0.3.BaseDI.Professional.QuickStart.Templates/g, '/Images');
-                    }
-
-                    return storedOutputResponseHtmlColumnString;
+                    storedOutputResponseData = ExecuteConversionRequest();
                 }
-                catch (storedProcessRequestMistake) {
-                    //#region EDGE CASE - USE developer logger
 
-                    if (storedProcessRequestDeveloperMode) {
-                        storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
-
-                        //0. CONTROLLERS
-
-                        //1. INPUTS
-
-                        //2. PROCESS                        
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to html content");
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Step_4_0_Framework_Convert_HtmlContentJsonToHtml_1_0.ExecuteConversionRequest");
-
-                        //3. OUTPUTS
-                        storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
-
-                        Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
-                    }
-
-                    //#endregion
-
-                    //#region EDGE CASE - USE exception handler
-
-                    throw new Error("CONVERSION request failed " + storedProcessRequestMistake.toString());
-
-                    //#endregion
+                catch (storedProcessRequestMistake)
+                {
+                    throw new Error("converting json to html buckets");
                 }
+
+                //#endregion
             }
+            catch (storedProcessRequestMistake)
+            {
+                //#region EDGE CASE - USE developer logger
 
-            storedOutputResponseData = await ExecuteConversionRequest();
+                if (storedProcessRequestDeveloperMode) {
+                    storedProcessRequestTracker["storedProcessRequestStepNumber"] = storedProcessRequestTracker["storedProcessRequestStepNumber"] + 1;
+
+                    //0. CONTROLLERS
+
+                    //1. INPUTS
+
+                    //2. PROCESS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequest3WordDescription", "FAILED converting json to css");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestStepNumberReplace", storedProcessRequestTracker["storedProcessRequestStepNumber"]);
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMethodName", "Action");
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterProcessRequestMistake", storedProcessRequestMistake);
+
+                    //3. OUTPUTS
+                    storedProcessRequestDeveloperLoggingInputs.Parameters.setValue("parameterOutputResponseMessageType", "Mistake"); //Values = Logging or Mistake
+
+                    await Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.BaseDI.Professional.Script.Risk_Management.Extensions_0.Extension_Director_Of_RiskManagement_Chapter_11_1_Page_0_GoalHelper_Handler_1_0.Step_X_X_Framework_Output_DeveloperMessage_1_0(storedProcessRequestDeveloperLoggingInputs);
+                }
+
+                //#endregion
+
+                //#region EDGE CASE - USE exception handler
+
+                throw new Error("CONVERSION request failed");
+
+                //#endregion
+            }
 
             //#endregion
 
@@ -3382,6 +3474,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestCssStyleContainerPattern5: string = "@media {styleMediaQueryNotOnly} {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
             let storedProcessRequestCssStyleContainerPattern6: string = "@media {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
             let storedProcessRequestCssStyleContainerPattern7: string = "{styleID} {\n  {stylePropertiesKeyValues}\n  }";
+            let storedProcessRequestCssStyleContainerPattern8: string = "{styleMediaQuery} {\n  {styleID}\n  {\n    {stylePropertiesKeyValues}\n  }\n}\n\n";
 
             let storedProcessRequestCssStyleCommentPattern0: string = "/* *************************************************** */\n";
             storedProcessRequestCssStyleCommentPattern0            += "/*                   ALL SCREENS                       */\n";                                                       
@@ -3431,25 +3524,30 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             {
                 //#region IDEAL CASE - USE json metadata
 
-                const ExecuteProcessHelper = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<Object> => {
+                const ExecuteProcessHelper = async (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<Object> =>
+                {
                     storedProcessRequestCssStyleList = parameterInputs.Parameters.getValue("parameterProcessRequestCssStyleList");
                     storedProcessRequestCssOutputContentList = parameterInputs.Parameters.getValue("parameterProcessRequestCssOutputContentList");
                     storedProcessRequestCssOutputContentListMediaQueries = parameterInputs.Parameters.getValue("parameterProcessRequestCssOutputContentListMediaQueries");
 
-                    storedProcessRequestCssStyleList.map(storedProcessRequestCssStyleItem => {
-                        if (storedProcessRequestCssStyleItem.attributeID) {
+                    storedProcessRequestCssStyleList.map(storedProcessRequestCssStyleItem =>
+                    {
+                        if (storedProcessRequestCssStyleItem.attributeID)
+                        {
                             //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = body {\n  {stylePropertiesKeyValues}\n}
                             storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern1.replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
 
                             //#region CONVERT from css properties from json to array list
                             storedProcessRequestCssStyleItem.properties.map(storedProcessRequestCssGlobalStyleItemProperty => {
-                                if (storedProcessRequestCssGlobalStyleItemProperty.propertyName) {
+                                if (storedProcessRequestCssGlobalStyleItemProperty.propertyName)
+                                {
                                     //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border:
                                     storedProcessRequestCssOutputContentBody = storedProcessRequestCssStyleBodyPattern1.replace("{stylePropertyKey}", storedProcessRequestCssGlobalStyleItemProperty.propertyName);
 
                                     storedProcessRequestCssGlobalStyleItemProperty.properyValues.map(storedProcessRequestCssGlobalStyleItemPropertyValue => {
 
-                                        if (!storedProcessRequestCssOutputContentValid) {
+                                        if (!storedProcessRequestCssOutputContentValid)
+                                        {
                                             storedProcessRequestCssOutputContentValid = true;
                                         }
 
@@ -3508,7 +3606,8 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                                         storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery) {
 
                                         //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = @media only {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
-                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery;
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern8.replace("{styleMediaQuery}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery);
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
 
                                         if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties && storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.length > 0) {
                                             storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.map(storedProcessRequestCssGlobalStyleMediaResolutionItemProperty => {
@@ -3562,8 +3661,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                                         }
                                     });
 
-                                    storedProcessRequestCssOutputContentContainer2 = storedProcessRequestCssStyleContainerPattern7.replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
-                                    storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentContainer2.replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
                                     storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
 
                                     //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
