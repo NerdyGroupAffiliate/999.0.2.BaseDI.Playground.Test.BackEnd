@@ -24,9 +24,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text;
 
 #endregion 
 
@@ -36,7 +38,6 @@ using Microsoft.Extensions.Configuration;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Reflection;
 
 #endregion
 
@@ -3507,6 +3508,7 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             List<CssStyleFileUseProperty> storedProcessRequestCssRowStyleList = new List<CssStyleFileUseProperty>();
             List<CssStyleFileUseProperty> storedProcessRequestCssColumnStyleList = new List<CssStyleFileUseProperty>();
             List<CssStyleFileUseProperty> storedProcessRequestCssContentStyleList = new List<CssStyleFileUseProperty>();
+            List<CssMediaQuery> storedProcessRequestCssMediaQueryResolutionItemChildrenResolutions;
 
             string storedProcessRequestCssOutputContentContainer = "";
             string storedProcessRequestCssOutputContentContainer2 = "";
@@ -3526,7 +3528,19 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             List<string> storedProcessRequestCssOutputContentListContentMediaQueries = new List<string>();
             string storedProcessRequestCssOutputContentProperty = "";
             bool storedProcessRequestCssOutputContentValid = false;
-            
+
+            StringBuilder storedProcessRequestCssStyleMediaQueryBuilder = null;
+            int storedProcessRequestCssStyleMediaQueryBuilderCounter = 0;
+            int storedProcessRequestCssStyleHorzontialSpaceCounter = 0;
+            bool storedProcessRequestCssStyleHorzontialSpaceCounterAdded = false;
+            string storedProcessRequestCssStyleMediaQueryBuilderItem = "";
+
+            CssMediaQuery storedProcessRequestCssMediaQueryResolutionItemResolution = null;
+            string storedProcessRequestCssMediaQueryResolutionItemResolutionChildrenString = "";
+
+            Func<SingleParmPoco_12_2_1_0, string> ExecuteConversionRequest_1_0 = null;
+            Func<SingleParmPoco_12_2_1_0, string> ExecuteConversionRequest_1_1 = null;
+
             #endregion
 
             #region DEFINE output variables
@@ -3614,7 +3628,18 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             string storedProcessRequestCssStyleContainerPattern5 = "@media {styleMediaQueryNotOnly} {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
             string storedProcessRequestCssStyleContainerPattern6 = "@media {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
             string storedProcessRequestCssStyleContainerPattern7 = "{styleID} {\n  {stylePropertiesKeyValues}\n  }";
-            string storedProcessRequestCssStyleContainerPattern8 = "{styleMediaQuery} {\n  {styleID}\n  {\n    {stylePropertiesKeyValues}\n  }\n}\n\n";
+            string storedProcessRequestCssStyleContainerPattern8 = "{styleMediaQuerySpace1}{styleMediaQuery} {\n" +
+                "{styleMediaQuerySpace2}{styleID} {\n" +
+                    "{styleMediaQuerySpace3}{stylePropertiesKeyValues}\n" +
+                "{styleMediaQuerySpace4}}\n" +
+            "{styleMediaQuerySpace5}}\n";
+
+            string storedProcessRequestCssStyleContainerPattern9 = "{styleMediaQuerySpace1}{styleMediaQuery} {\n" +
+                "{styleMediaQuerySpace2}{styleID} {\n" +
+                    "{styleMediaQuerySpace3}{stylePropertiesKeyValues}\n" +
+                "{styleMediaQuerySpace4}}\n" +
+                "{styleMediaQueryChildren}\n" +
+            "{styleMediaQuerySpace5}}\n";
 
             string storedProcessRequestCssStyleCommentPattern0 = "/* *************************************************** */\n";
             storedProcessRequestCssStyleCommentPattern0            += "/*                   ALL SCREENS                       */\n";                                                       
@@ -3629,8 +3654,10 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             string storedProcessRequestCssStyleCommentPattern6 = "/* *************************************************** */\n";
             storedProcessRequestCssStyleCommentPattern6            += "/*                   MOBILE SCREENS                    */\n";                                                       
             storedProcessRequestCssStyleCommentPattern6            += "/* *************************************************** */\n\n";
-
             string storedProcessRequestCssStyleBodyPattern1 = "  {stylePropertyKey}: {stylePropertyValue};";
+
+            string storedProcessRequestCssStyleHorzontialSpace = "  ";
+            string storedProcessRequestCssStyleHorzontialSpaceIndented = "  ";
 
             #endregion
 
@@ -3741,21 +3768,45 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                             #region CONVERT from css media queries from json to array list
 
-                            if (storedProcessRequestCssStyleItem.IsMediaQuery.ToUpper() == "TRUE" && storedProcessRequestCssStyleItem.MediaQueryResolutions.Count > 0) {
-
-                                foreach (var storedProcessRequestCssGlobalStyleMediaQueryResolutionItem in storedProcessRequestCssStyleItem.MediaQueryResolutions)
+                            if (storedProcessRequestCssStyleItem.IsMediaQuery.ToUpper() == "TRUE" && storedProcessRequestCssStyleItem.MediaQueryResolutions.Count > 0) 
+                            {
+                                #region CONVERT to media query string helper 2
+                                
+                                ExecuteConversionRequest_1_1 = (SingleParmPoco_12_2_1_0 parameterInputs) =>
                                 {
-                                    if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions != null &&
-                                        !string.IsNullOrEmpty(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery)) {
+                                    storedProcessRequestCssMediaQueryResolutionItemResolution = parameterInputs.Parameters["parameterProcessRequestCssMediaQueryResolutionItemResolution"];
+                                    storedProcessRequestCssMediaQueryResolutionItemResolutionChildrenString = parameterInputs.Parameters["parameterProcessRequestCssMediaQueryResolutionItemResolutionChildrenString"];
+                                    storedProcessRequestCssStyleHorzontialSpace = parameterInputs.Parameters["parameterProcessRequestCssStyleHorzontialSpace"];
+                                    storedProcessRequestCssOutputContentBodyList = new List<string>();
 
-                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = @media only {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
-                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern8.Replace("{styleMediaQuery}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery);
-                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
-
-                                        if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties != null &&
-                                            storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.Count > 0)
+                                    if (storedProcessRequestCssMediaQueryResolutionItemResolution.resolutions != null && !string.IsNullOrEmpty(storedProcessRequestCssMediaQueryResolutionItemResolution.resolutions.mediaQuery))
+                                    {
+                                        //OUTPUT EXAMPLE: storedProcessRequestCssStyleContainerPattern8 = "{styleMediaQuery} {\n  {styleID}\n  {\n    {stylePropertiesKeyValues}\n  }\n}\n\n";
+                                        if (!string.IsNullOrEmpty(storedProcessRequestCssMediaQueryResolutionItemResolutionChildrenString))
                                         {
-                                            foreach (var storedProcessRequestCssGlobalStyleMediaResolutionItemProperty in storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties) {
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern9.Replace("{styleMediaQuery}", storedProcessRequestCssMediaQueryResolutionItemResolution.resolutions.mediaQuery);
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleMediaQueryChildren}", storedProcessRequestCssMediaQueryResolutionItemResolutionChildrenString);
+                                        }
+                                        else
+                                        {
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern8.Replace("{styleMediaQuery}", storedProcessRequestCssMediaQueryResolutionItemResolution.resolutions.mediaQuery);
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
+                                        }
+
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleMediaQuerySpace1}", storedProcessRequestCssStyleHorzontialSpace);
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleMediaQuerySpace2}", (storedProcessRequestCssStyleHorzontialSpace + storedProcessRequestCssStyleHorzontialSpaceIndented));
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleMediaQuerySpace3}", (storedProcessRequestCssStyleHorzontialSpace + storedProcessRequestCssStyleHorzontialSpaceIndented + storedProcessRequestCssStyleHorzontialSpaceIndented));
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleMediaQuerySpace4}", (storedProcessRequestCssStyleHorzontialSpace + storedProcessRequestCssStyleHorzontialSpaceIndented));
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{styleMediaQuerySpace5}", (storedProcessRequestCssStyleHorzontialSpace));
+
+                                        #region CONVERT css media query properties
+
+                                        if (storedProcessRequestCssMediaQueryResolutionItemResolution.properties != null &&
+                                            storedProcessRequestCssMediaQueryResolutionItemResolution.properties.Count > 0)
+                                        {
+                                            foreach (var storedProcessRequestCssGlobalStyleMediaResolutionItemProperty in storedProcessRequestCssMediaQueryResolutionItemResolution.properties)
+                                            {
                                                 if (!string.IsNullOrEmpty(storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.propertyName))
                                                 {
                                                     //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border:
@@ -3763,7 +3814,8 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
                                                     foreach (var storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue in storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.properyValues)
                                                     {
-                                                        if (!storedProcessRequestCssOutputContentValid) {
+                                                        if (!storedProcessRequestCssOutputContentValid)
+                                                        {
                                                             storedProcessRequestCssOutputContentValid = true;
                                                         }
 
@@ -3786,43 +3838,140 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
                                                     storedProcessRequestCssOutputContentProperty = "";
                                                 }
                                             }
+
+                                            storedProcessRequestCssOutputContentBody = "";
+
+                                            if (storedProcessRequestCssOutputContentValid == true)
+                                            {
+                                                foreach (var storedProcessRequestCssOutputContentItem in storedProcessRequestCssOutputContentBodyList)
+                                                {
+                                                    if (storedProcessRequestCssOutputContentBody == "")
+                                                    {
+                                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
+                                                        storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentItem;
+                                                    }
+                                                    else
+                                                    {
+                                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = 
+                                                        //                                                           border: 1px solid;
+                                                        //                                                           color: red;
+                                                        storedProcessRequestCssOutputContentBody += "\n" + (storedProcessRequestCssStyleHorzontialSpace + storedProcessRequestCssStyleHorzontialSpaceIndented + storedProcessRequestCssStyleHorzontialSpaceIndented) + storedProcessRequestCssOutputContentItem;
+                                                    }
+                                                }
+
+                                                storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+
+                                                //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
+                                                //storedProcessRequestCssOutputContentListMediaQueries.Add(storedProcessRequestCssOutputContentContainer);
+
+                                                //storedProcessRequestCssOutputContentBody = "";
+                                                //storedProcessRequestCssOutputContentBodyList = new List<string>();
+
+                                                //storedProcessRequestCssOutputContentContainer = "";
+
+                                                //storedProcessRequestCssOutputContentProperty = "";
+
+                                                storedProcessRequestCssOutputContentValid = false;
+                                            }
                                         }
+
+                                        #endregion
                                     }
-                                }
+                                    return storedProcessRequestCssOutputContentContainer;
+                                };
 
-                                storedProcessRequestCssOutputContentBody = "";
+                                #endregion
 
-                                if (storedProcessRequestCssOutputContentValid == true)
+                                #region CONVERT to media query string helper 1
+
+                                ExecuteConversionRequest_1_0 = (SingleParmPoco_12_2_1_0 parameterInputs) =>
                                 {
-                                    foreach (var storedProcessRequestCssOutputContentItem in storedProcessRequestCssOutputContentBodyList)
+                                    storedProcessRequestCssMediaQueryResolutionItemChildrenResolutions = parameterInputs.Parameters["parameterProcessRequestCssMediaQueryResolutionItemChildrenResolutions"];
+                                    storedProcessRequestCssStyleMediaQueryBuilder = new StringBuilder();
+                                    storedProcessRequestCssStyleMediaQueryBuilderCounter = 0;
+                                    storedProcessRequestCssStyleHorzontialSpace = "  ";
+                                    storedProcessRequestCssStyleHorzontialSpaceCounter = parameterInputs.Parameters["parameterProcessRequestCssStyleHorzontialSpaceCounter"];
+                                    storedProcessRequestCssStyleHorzontialSpaceCounterAdded = false;
+
+                                    foreach (var storedProcessRequestCssMediaQueryResolutionItemChildrenResolution in storedProcessRequestCssMediaQueryResolutionItemChildrenResolutions)
                                     {
-                                        if (storedProcessRequestCssOutputContentBody == "")
-                                        {
-                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
-                                            storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentItem;
+                                        if(storedProcessRequestCssMediaQueryResolutionItemChildrenResolution.ChildrenResolutions.Count > 0)
+                                        {                                   
+                                            storedInputs = new SingleParmPoco_12_2_1_0();
+                                            storedInputs.Parameters.Add("parameterProcessRequestCssMediaQueryResolutionItemChildrenResolutions", storedProcessRequestCssMediaQueryResolutionItemChildrenResolution.ChildrenResolutions);
+                                            storedInputs.Parameters.Add("parameterProcessRequestCssStyleHorzontialSpace", storedProcessRequestCssStyleHorzontialSpace);
+                                            storedInputs.Parameters.Add("parameterProcessRequestCssStyleHorzontialSpaceCounter", (storedProcessRequestCssStyleHorzontialSpaceCounter+1));
+
+                                            storedProcessRequestCssStyleMediaQueryBuilderItem = ExecuteConversionRequest_1_0(storedInputs);
+
+                                            storedProcessRequestCssStyleMediaQueryBuilderCounter += 1;
                                         }
-                                        else
+                                       
+                                        if(storedProcessRequestCssStyleMediaQueryBuilderCounter == storedProcessRequestCssMediaQueryResolutionItemChildrenResolution.ChildrenResolutions.Count)
                                         {
-                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = 
-                                            //                                                           border: 1px solid;
-                                            //                                                           color: red;
-                                            storedProcessRequestCssOutputContentBody += "\n  " + storedProcessRequestCssOutputContentItem;
+                                            storedProcessRequestCssStyleHorzontialSpace = "  ";
+
+                                            if (!storedProcessRequestCssStyleHorzontialSpaceCounterAdded)
+                                            {
+                                                storedProcessRequestCssStyleHorzontialSpaceCounter += 1;
+                                                storedProcessRequestCssStyleHorzontialSpaceCounterAdded = true;
+                                            }      
+                                            else
+                                            {
+                                                storedProcessRequestCssStyleHorzontialSpaceCounter -= 1;
+                                            }
+
+                                            storedInputs = new SingleParmPoco_12_2_1_0();
+                                            storedInputs.Parameters.Add("parameterProcessRequestCssMediaQueryResolutionItemResolution", storedProcessRequestCssMediaQueryResolutionItemChildrenResolution);
+
+                                            if(!string.IsNullOrEmpty(storedProcessRequestCssStyleMediaQueryBuilderItem))
+                                            {
+                                                storedInputs.Parameters.Add("parameterProcessRequestCssMediaQueryResolutionItemResolutionChildrenString", storedProcessRequestCssStyleMediaQueryBuilderItem);
+                                            }
+                                            else
+                                            {
+                                                storedInputs.Parameters.Add("parameterProcessRequestCssMediaQueryResolutionItemResolutionChildrenString", null);
+                                            }
+
+                                            if(storedProcessRequestCssStyleHorzontialSpaceCounter > 1)
+                                            {
+                                                for (int storedProcessRequestCssStyleHorzontialSpaceCounterIndex = 0; storedProcessRequestCssStyleHorzontialSpaceCounterIndex < (storedProcessRequestCssStyleHorzontialSpaceCounter - 1); storedProcessRequestCssStyleHorzontialSpaceCounterIndex++)
+                                                {
+                                                    storedProcessRequestCssStyleHorzontialSpace += storedProcessRequestCssStyleHorzontialSpace;
+                                                }
+                                            }  
+
+                                            storedInputs.Parameters.Add("parameterProcessRequestCssStyleHorzontialSpace", storedProcessRequestCssStyleHorzontialSpace);
+
+                                            storedProcessRequestCssStyleMediaQueryBuilderItem = ExecuteConversionRequest_1_1(storedInputs);
                                         }
                                     }
 
-                                    storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.Replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+                                    return storedProcessRequestCssStyleMediaQueryBuilderItem;
+                                };
+                                
+                                #endregion
 
-                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
-                                    storedProcessRequestCssOutputContentListMediaQueries.Add(storedProcessRequestCssOutputContentContainer);
+                                foreach (var storedProcessRequestCssGlobalStyleMediaQueryResolutionItem in storedProcessRequestCssStyleItem.MediaQueryResolutions)
+                                {
+                                    storedProcessRequestCssStyleHorzontialSpace = "  ";
 
-                                    storedProcessRequestCssOutputContentBody = "";
-                                    storedProcessRequestCssOutputContentBodyList = new List<string>();
+                                    storedInputs = new SingleParmPoco_12_2_1_0();
+                                    storedInputs.Parameters.Add("parameterProcessRequestCssMediaQueryResolutionItemChildrenResolutions", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.ChildrenResolutions);
+                                    storedInputs.Parameters.Add("parameterProcessRequestCssStyleHorzontialSpace", storedProcessRequestCssStyleHorzontialSpace);
+                                    storedInputs.Parameters.Add("parameterProcessRequestCssStyleHorzontialSpaceCounter", 1);
+                                    
+                                    storedProcessRequestCssStyleMediaQueryBuilderItem = ExecuteConversionRequest_1_0(storedInputs);
 
-                                    storedProcessRequestCssOutputContentContainer = "";
+                                    storedInputs = new SingleParmPoco_12_2_1_0();
+                                    storedInputs.Parameters.Add("parameterProcessRequestCssMediaQueryResolutionItemResolution", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem);
+                                    storedInputs.Parameters.Add("parameterProcessRequestCssMediaQueryResolutionItemResolutionChildrenString", storedProcessRequestCssStyleMediaQueryBuilderItem);
+                                    storedInputs.Parameters.Add("parameterProcessRequestCssStyleHorzontialSpace", storedProcessRequestCssStyleHorzontialSpace);
+                                    storedInputs.Parameters.Add("parameterProcessRequestCssStyleHorzontialSpaceCounter", 1);
 
-                                    storedProcessRequestCssOutputContentProperty = "";
+                                    storedProcessRequestCssStyleMediaQueryBuilderItem = ExecuteConversionRequest_1_1(storedInputs);
 
-                                    storedProcessRequestCssOutputContentValid = false;
+                                    storedProcessRequestCssOutputContentListMediaQueries.Add(storedProcessRequestCssStyleMediaQueryBuilderItem);
                                 }
                             }
                             
@@ -5439,7 +5588,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             string storedInputRequestActionName = parameterInputs.Parameters["parameterInputRequestActionName"];
 
             #endregion            
-
 
             #region MEMORIZE input request html
 

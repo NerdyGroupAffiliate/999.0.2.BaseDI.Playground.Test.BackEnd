@@ -3425,6 +3425,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestCssRowStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
             let storedProcessRequestCssColumnStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
             let storedProcessRequestCssContentStyleList: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty> = [];
+            let storedProcessRequestCssMediaQueryResolutionItemChildrenResolutions: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery> = [];
 
             let storedProcessRequestCssOutputContentContainer: string = "";
             let storedProcessRequestCssOutputContentContainer2: string = "";
@@ -3444,7 +3445,19 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestCssOutputContentListContentMediaQueries: Array<string> = [];
             let storedProcessRequestCssOutputContentProperty: string = "";
             let storedProcessRequestCssOutputContentValid: boolean = false;
-            
+
+            let storedProcessRequestCssStyleMediaQueryBuilder: string = null;
+            let storedProcessRequestCssStyleMediaQueryBuilderCounter: number = 0;
+            let storedProcessRequestCssStyleHorzontialSpaceCounter: number = 0;
+            let storedProcessRequestCssStyleHorzontialSpaceCounterAdded:boolean = false;
+            let storedProcessRequestCssStyleMediaQueryBuilderItem: string = "";
+      
+            let storedProcessRequestCssMediaQueryResolutionItemResolution: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery = null;
+            let storedProcessRequestCssMediaQueryResolutionItemResolutionChildrenString: string = "";
+
+            let ExecuteConversionRequest_1_0: Function = () => { };
+            let ExecuteConversionRequest_1_1: Function = () => { };
+
             //#endregion
 
             //#region DEFINE output variables
@@ -3533,6 +3546,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestCssStyleContainerPattern6: string = "@media {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
             let storedProcessRequestCssStyleContainerPattern7: string = "{styleID} {\n  {stylePropertiesKeyValues}\n  }";
             let storedProcessRequestCssStyleContainerPattern8: string = "{styleMediaQuery} {\n  {styleID}\n  {\n    {stylePropertiesKeyValues}\n  }\n}\n\n";
+            let storedProcessRequestCssStyleContainerPattern9: string = "{styleMediaQuerySpace1}{styleMediaQuery} {\n{styleMediaQuerySpace2}{styleID}\n{styleMediaQuerySpace3}{\n{styleMediaQuerySpace4}{stylePropertiesKeyValues}\n\n{styleMediaQueryChildren}\n{styleMediaQuerySpace5}}\n}\n\n";
 
             let storedProcessRequestCssStyleCommentPattern0: string = "/* *************************************************** */\n";
             storedProcessRequestCssStyleCommentPattern0            += "/*                   ALL SCREENS                       */\n";                                                       
@@ -3548,9 +3562,10 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             storedProcessRequestCssStyleCommentPattern6            += "/*                   MOBILE SCREENS                    */\n";                                                       
             storedProcessRequestCssStyleCommentPattern6            += "/* *************************************************** */\n\n";
 
-
             let storedProcessRequestCssStyleBodyPattern1: string = "  {stylePropertyKey}: {stylePropertyValue};";
 
+            let storedProcessRequestCssStyleHorzontialSpace:string = "  ";
+            let storedProcessRequestCssStyleHorzontialSpaceIndented: string = "  ";
             //#endregion
 
             //#region MEMORIZE process storyline details
