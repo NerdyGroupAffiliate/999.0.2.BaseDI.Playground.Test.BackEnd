@@ -771,7 +771,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2
                         storedJSONKey = storedJSONValue[0];
 
                         //FIND value that contains string "_MAINPROFILE"
-                        if (storedJSONKey.toUpperCase().includes("_MAINPROFILE")) {
+                        if (storedJSONKey.toUpperCase().includes("_DATASET_JSON")) {
                             //KEEP track of FULL keyname.
                             this._storedJSONKeyPlaceHolderName.push(storedJSONKey);
 

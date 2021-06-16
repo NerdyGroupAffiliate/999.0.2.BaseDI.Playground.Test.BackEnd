@@ -2,6 +2,8 @@
 
 //#region 3rd Party
 
+import * as Collections from 'typescript-collections';
+
 //#endregion
 
 //#region BaseDI
@@ -16,6 +18,8 @@ import * as Extension_Studio_Automation_Programming_Chapter_12_2_Page_0_ControlM
 import * as StrongTyped_Website from "../../../../../../../../../3. Setting/9/Software/12/Other/3/Web Development/Location/0/1_0/Setting_Of_WebDevelopment_Chapter_12_3_Page_0_StoreHtmlCssScript_DataContract_1_0";
 
 import * as SingleParmPoco_12_2_1_0 from "../../../../../../../../../0. Script/Parameters/12/Other/2/Programming/SingleParm Poco/1/1_0/SingleParmPoco_12_2_1_0";
+import { stringify } from 'querystring';
+import { forEach } from 'typescript-collections/dist/lib/arrays';
 
 //#endregion
 
@@ -1111,8 +1115,11 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region DEFINE process variables
 
+            let storedProcessRequestHtmlContentToColumnMapper: Collections.Dictionary<string, Collections.LinkedList<string>> = null;
+            let storedProcessRequestHtmlContentToColumnMapperItem: any = null;
+            let storedProcessRequestHtmlContentToColumnMapperList: Collections.LinkedList<string> = null;
 
-            //#endregion
+            //#endregion    
 
             //#region DEFINE output variables
 
@@ -1225,15 +1232,60 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
             //#region IDEAL CASE - USE json metadata
 
-            const ExecuteConversionRequest = () : Array<string> => {
-                try {
-                    for (var storedProcessRequestHtmlAttribute in storedProcessRequestHtmlAttributes) {
-                        storedOutputResponseHtmlAttributesOutput.push(`${Object.keys(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0]}="${Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0]}"`)
-                    }
+            const ExecuteConversionRequest = () : any => 
+            {
+                try 
+                {
+                    for (var storedProcessRequestHtmlAttribute in storedProcessRequestHtmlAttributes) 
+                    {
+
+                        //#region STORE html content to column relationships
+
+                        if (parameterInputs.Parameters.containsKey("parameterProcessRequestHtmlContentToColumnMapper") && Object.keys(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0].toUpperCase() == "ID")
+                        {
+                            storedProcessRequestHtmlContentToColumnMapper = parameterInputs.Parameters.getValue("parameterProcessRequestHtmlContentToColumnMapper");
+
+                            storedProcessRequestHtmlContentToColumnMapperItem = Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0] as string;
+                            storedProcessRequestHtmlContentToColumnMapperItem = (storedProcessRequestHtmlContentToColumnMapperItem as string).split('_');
+                            storedProcessRequestHtmlContentToColumnMapperItem = storedProcessRequestHtmlContentToColumnMapperItem[1];
+                            storedProcessRequestHtmlContentToColumnMapperItem = (storedProcessRequestHtmlContentToColumnMapperItem as string).substring(0, 5);
+                                                                
+                            if (!storedProcessRequestHtmlContentToColumnMapper.containsKey("column_" + storedProcessRequestHtmlContentToColumnMapperItem))
+                            {
+                                storedProcessRequestHtmlContentToColumnMapperList = new Collections.LinkedList<string>();
+                                storedProcessRequestHtmlContentToColumnMapperList.add((Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0] as string));
+
+                                storedProcessRequestHtmlContentToColumnMapper.setValue("column_" + storedProcessRequestHtmlContentToColumnMapperItem, storedProcessRequestHtmlContentToColumnMapperList);
+                            }
+                            else
+                            {
+                                storedProcessRequestHtmlContentToColumnMapperList = storedProcessRequestHtmlContentToColumnMapper.getValue(storedProcessRequestHtmlContentToColumnMapperItem);
+
+                                if (!storedProcessRequestHtmlContentToColumnMapperList.contains((Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0] as string)))
+                                {
+                                    storedProcessRequestHtmlContentToColumnMapperList.add((Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0] as string));
+                                }
+                                else
+                                {
+                                    storedProcessRequestHtmlContentToColumnMapperList.remove((Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0] as string));
+                                    storedProcessRequestHtmlContentToColumnMapperList.add((Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0] as string));
+                                }
+
+                                storedProcessRequestHtmlContentToColumnMapper["column_" + storedProcessRequestHtmlContentToColumnMapperItem] = storedProcessRequestHtmlContentToColumnMapperList;
+                            }
+
+                            parameterInputs.Parameters.setValue("parameterProcessRequestHtmlContentToColumnMapper", storedProcessRequestHtmlContentToColumnMapper);
+                        }
+
+                        //#endregion
+
+                        storedOutputResponseHtmlAttributesOutput.push(`${Object.keys(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0]}="${Object.values(storedProcessRequestHtmlAttributes[storedProcessRequestHtmlAttribute])[0]}"`);
+                    };
 
                     return storedOutputResponseHtmlAttributesOutput;
                 }
-                catch (storedProcessRequestMistake) {
+                catch (storedProcessRequestMistake) 
+                {
                     //#region EDGE CASE - USE developer logger
 
                     if (storedProcessRequestDeveloperMode) {
@@ -2493,7 +2545,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                         storedOutputResponseData = this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(parameterInputs);
 
                         //OUTPUT 2:                              <div                                    id="column_A_1_1_xxx">     {column_A_1_1_xxx_Replace}                                   </div>
-                        storedProcessRequestHtmlColumnString = `<${storedProcessRequestHtmlColumn.Tag} ${storedOutputResponseData}>{${storedProcessRequestHtmlColumn.Attributes[0].id.split('_')[1].substring(0, 5)}_Replace}</${storedProcessRequestHtmlColumn.Tag}>`;
+                        storedProcessRequestHtmlColumnString = `<${storedProcessRequestHtmlColumn.Tag} ${storedOutputResponseData}>{column_${storedProcessRequestHtmlColumn.Attributes[0].id.split('_')[1].substring(0, 5)}_Replace}</${storedProcessRequestHtmlColumn.Tag}>`;
 
                         //OUTPUT 3:                                                                     "row_A-1_xxx_Replace                                                          ***SEE OUTPUT 2 ABOVE***
                         storedOutputResponseHtmlRowString = storedOutputResponseHtmlRowString.replace(`{${storedProcessRequestHtmlColumn.ParentHTMLContentItemAttributeID}_Replace}`, storedProcessRequestHtmlColumnString);
@@ -2816,7 +2868,9 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestHtmlContentItemChildren: Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail> = [];
             let ExecuteProcessHelper = null;
             let storedProcessRequestHtmlContentItemCounter: number = 0;
-            let storedProcessRequestHtmlContentToColumnRelationships: any = null;
+            let storedProcessRequestHtmlContentToColumnRelationships:Collections.Dictionary<string, Collections.LinkedList<string>> = new Collections.Dictionary<string, Collections.LinkedList<string>>();
+            let storedProcessRequestHtmlColumnReplaceKeyString: string = "";
+            let storedProcessRequestHtmlColumnReplaceValueString: string = "";
 
             //#endregion
 
@@ -2932,7 +2986,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                     {
                         ExecuteProcessHelper = (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
                         {
-                            storedProcessRequestHtmlContentItemChildren = parameterInputs.Parameters["parameterProcessRequestHtmlContentItemChildren"];
+                            storedProcessRequestHtmlContentItemChildren = parameterInputs.Parameters.getValue("parameterProcessRequestHtmlContentItemChildren");
                             storedProcessRequestHtmlContentItemCounter = 0;
 
                             storedProcessRequestHtmlContentItemChildren.map(storedProcessRequestHtmlContentItem =>
@@ -2981,6 +3035,7 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                             return storedProcessRequestResponseHtmlContentChild;
                         };
 
+
                         storedInputRequestHtmlContentJSON.value.HTMLContentItems.map(storedProcessRequestHtmlContentItem => {
                             storedInputs = parameterInputs;
                             storedInputs.Parameters.remove("parameterProcessRequestHtmlContentItemChildren");
@@ -2988,7 +3043,6 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                             storedProcessRequestResponseHtmlParentTag = ExecuteProcessHelper(storedInputs);
 
-                            storedInputs = parameterInputs;
                             storedInputs.Parameters.remove("parameterProcessRequestHtmlAttributes");
                             storedInputs.Parameters.setValue("parameterProcessRequestHtmlAttributes", storedProcessRequestHtmlContentItem.Attributes);
 
@@ -2996,17 +3050,18 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                             storedInputs.Parameters.setValue("parameterProcessRequestHtmlContentItem", storedProcessRequestHtmlContentItem);
 
                             storedInputs.Parameters.remove("parameterProcessRequestHtmlContentToColumnMapper");
-                            storedInputs.Parameters.setValue("parameterProcessRequestHtmlContentToColumnMapper", new Object());
-
+                            storedInputs.Parameters.setValue("parameterProcessRequestHtmlContentToColumnMapper", new Collections.Dictionary<string, Collections.LinkedList<string>>());
+        
                             if (storedProcessRequestResponseHtmlParentTag) {
                                 storedProcessRequestResponseHtmlContentParent = `<${storedProcessRequestHtmlContentItem.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputs)}>${storedProcessRequestResponseHtmlParentTag}</${storedProcessRequestHtmlContentItem.Tag}>`;
                             }
-                            else {
+                            else
+                            {
                                 storedProcessRequestResponseHtmlContentParent = `<${storedProcessRequestHtmlContentItem.Tag} ${this.Step_0_0_Framework_Store_HtmlAttributesToArray_1_0(storedInputs)}>${storedProcessRequestHtmlContentItem.Value}</${storedProcessRequestHtmlContentItem.Tag}>`;
                             }
 
-                            if (storedInputs.Parameters["parameterProcessRequestHtmlContentToColumnMapper"] > 0) {
-                                storedProcessRequestHtmlContentToColumnRelationships.Add(storedProcessRequestResponseHtmlContentParent, storedInputs.Parameters["parameterProcessRequestHtmlContentToColumnMapper"]);
+                            if ((storedInputs.Parameters.getValue("parameterProcessRequestHtmlContentToColumnMapper").size()) > 0) {
+                                storedProcessRequestHtmlContentToColumnRelationships.setValue(storedProcessRequestResponseHtmlContentParent, storedInputs.Parameters.getValue("parameterProcessRequestHtmlContentToColumnMapper"));
                             }
 
                             storedInputs.Parameters.remove("parameterProcessRequestHtmlContentToColumnMapper");
@@ -3034,10 +3089,13 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                 try {
                     const ExecuteConversionRequest = (): string =>
                     {
-                        storedProcessRequestHtmlContentToColumnRelationships.map(storedProcessRequestHtmlContentToColumnRelationship =>
+                        Object.keys((storedProcessRequestHtmlContentToColumnRelationships as any).table).map(storedProcessRequestHtmlContentToColumnRelationship =>
                         {
-                            storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace("{" + storedProcessRequestHtmlContentToColumnRelationship.Value.FirstOrDefault().Key + "_Replace}", storedProcessRequestHtmlContentToColumnRelationship.Key);
-                        });
+                            storedProcessRequestHtmlColumnReplaceKeyString = Object.keys((storedProcessRequestHtmlContentToColumnRelationships as any).table[storedProcessRequestHtmlContentToColumnRelationship].value.table)[0].replace("$$s", "");
+                            storedProcessRequestHtmlColumnReplaceValueString = (storedProcessRequestHtmlContentToColumnRelationships as any).table[storedProcessRequestHtmlContentToColumnRelationship].key;
+
+                            storedOutputResponseHtmlColumnString = storedOutputResponseHtmlColumnString.replace("{" + storedProcessRequestHtmlColumnReplaceKeyString + "_Replace}", storedProcessRequestHtmlColumnReplaceValueString);
+                        })
 
                         return storedOutputResponseHtmlColumnString;
                     };

@@ -1164,6 +1164,11 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
 
             Dictionary<string, List<string>> storedProcessRequestHtmlContentToColumnMapper = null;
 
+            HtmlAttribute storedProcessRequestHtmlAttribute = new HtmlAttribute();
+            
+            dynamic storedProcessRequestHtmlContentToColumnMapperItem = null;
+            List<string> storedProcessRequestHtmlContentToColumnMapperList = null;
+
             #endregion
 
             #region DEFINE output variables
@@ -1199,11 +1204,6 @@ namespace BaseDI.Professional.Script.Web_Development.Extensions_0
             #region MEMORIZE process request html
 
             List<HtmlAttribute> storedProcessRequestHtmlAttributes = (parameterInputs.Parameters.ContainsKey("parameterProcessRequestHtmlAttributes")) ? parameterInputs.Parameters["parameterProcessRequestHtmlAttributes"] : null;
-
-            HtmlAttribute storedProcessRequestHtmlAttribute = new HtmlAttribute();
-            
-            dynamic storedProcessRequestHtmlContentToColumnMapperItem = null;
-            List<string> storedProcessRequestHtmlContentToColumnMapperList = null;
 
             #endregion
 
