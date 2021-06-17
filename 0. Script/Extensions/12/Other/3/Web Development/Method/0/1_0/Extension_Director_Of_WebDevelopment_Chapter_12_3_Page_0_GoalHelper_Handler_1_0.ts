@@ -3672,34 +3672,65 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
                             //#endregion
 
                             //#region CONVERT from css media queries from json to array list
-                            if (storedProcessRequestCssStyleItem.IsMediaQuery.toLocaleUpperCase() == "TRUE" && storedProcessRequestCssStyleItem.MediaQueryResolutions.length > 0) {
 
-                                storedProcessRequestCssStyleItem.MediaQueryResolutions.map(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem => {
-                                    if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions &&
-                                        storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery) {
+                            if (storedProcessRequestCssStyleItem.IsMediaQuery.toUpperCase() == "TRUE" && storedProcessRequestCssStyleItem.MediaQueryResolutions.length > 0) 
+                            {
+                                //#region CONVERT to media query string helper 2
+                                
+                                ExecuteConversionRequest_1_1 = (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
+                                {
+                                    storedProcessRequestCssMediaQueryResolutionItemResolution = parameterInputs.Parameters.getValue("parameterProcessRequestCssMediaQueryResolutionItemResolution");
+                                    storedProcessRequestCssMediaQueryResolutionItemResolutionChildrenString = parameterInputs.Parameters.getValue("parameterProcessRequestCssMediaQueryResolutionItemResolutionChildrenString");
+                                    storedProcessRequestCssStyleHorzontialSpace = parameterInputs.Parameters.getValue("parameterProcessRequestCssStyleHorzontialSpace");
+                                    storedProcessRequestCssOutputContentBodyList = new Array<string>();
 
-                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputRowContent = @media only {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}
-                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern8.replace("{styleMediaQuery}", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.resolutions.mediaQuery);
-                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
+                                    if (storedProcessRequestCssMediaQueryResolutionItemResolution.resolutions != null && storedProcessRequestCssMediaQueryResolutionItemResolution.resolutions.mediaQuery)
+                                    {
+                                        //OUTPUT EXAMPLE: storedProcessRequestCssStyleContainerPattern8 = "{styleMediaQuery} {\n  {styleID}\n  {\n    {stylePropertiesKeyValues}\n  }\n}\n\n";
+                                        if (storedProcessRequestCssMediaQueryResolutionItemResolutionChildrenString)
+                                        {
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern9.replace("{styleMediaQuery}", storedProcessRequestCssMediaQueryResolutionItemResolution.resolutions.mediaQuery);
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQueryChildren}", storedProcessRequestCssMediaQueryResolutionItemResolutionChildrenString);
+                                        }
+                                        else
+                                        {
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssStyleContainerPattern8.replace("{styleMediaQuery}", storedProcessRequestCssMediaQueryResolutionItemResolution.resolutions.mediaQuery);
+                                            storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleID}", storedProcessRequestCssStyleItem.attributeID);
+                                        }
 
-                                        if (storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties && storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.length > 0) {
-                                            storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.properties.map(storedProcessRequestCssGlobalStyleMediaResolutionItemProperty => {
-                                                if (storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.propertyName) 
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQuerySpace1}", storedProcessRequestCssStyleHorzontialSpace);
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQuerySpace2}", (storedProcessRequestCssStyleHorzontialSpace + storedProcessRequestCssStyleHorzontialSpaceIndented));
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQuerySpace3}", (storedProcessRequestCssStyleHorzontialSpace + storedProcessRequestCssStyleHorzontialSpaceIndented + storedProcessRequestCssStyleHorzontialSpaceIndented));
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQuerySpace4}", (storedProcessRequestCssStyleHorzontialSpace + storedProcessRequestCssStyleHorzontialSpaceIndented));
+                                        storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{styleMediaQuerySpace5}", (storedProcessRequestCssStyleHorzontialSpace));
+
+                                        //#region CONVERT css media query properties
+
+                                        if (storedProcessRequestCssMediaQueryResolutionItemResolution.properties != null &&
+                                            storedProcessRequestCssMediaQueryResolutionItemResolution.properties.length > 0)
+                                        {
+                                            storedProcessRequestCssMediaQueryResolutionItemResolution.properties.map(storedProcessRequestCssGlobalStyleMediaResolutionItemProperty =>
+                                            {
+                                                if (storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.propertyName)
                                                 {
                                                     //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border:
                                                     storedProcessRequestCssOutputContentBody = storedProcessRequestCssStyleBodyPattern1.replace("{stylePropertyKey}", storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.propertyName);
 
-                                                    storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.properyValues.map(storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue => {
-
-                                                        if (!storedProcessRequestCssOutputContentValid) {
+                                                    storedProcessRequestCssGlobalStyleMediaResolutionItemProperty.properyValues.map(storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue =>
+                                                    {
+                                                        if (!storedProcessRequestCssOutputContentValid)
+                                                        {
                                                             storedProcessRequestCssOutputContentValid = true;
                                                         }
 
-                                                        if (storedProcessRequestCssOutputContentProperty == "") {
+                                                        if (storedProcessRequestCssOutputContentProperty == "")
+                                                        {
                                                             //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px
                                                             storedProcessRequestCssOutputContentProperty = storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue;
                                                         }
-                                                        else {
+                                                        else
+                                                        {
                                                             //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentProperty = 1px solid
                                                             storedProcessRequestCssOutputContentProperty = storedProcessRequestCssOutputContentProperty + " " + storedProcessRequestCssGlobalStyleMediaResolutionItemPropertyValue;
                                                         }
@@ -3711,44 +3742,143 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
 
                                                     storedProcessRequestCssOutputContentProperty = "";
                                                 }
-
                                             })
+
+                                            storedProcessRequestCssOutputContentBody = "";
+
+                                            if (storedProcessRequestCssOutputContentValid == true)
+                                            {
+                                                storedProcessRequestCssOutputContentBodyList.map(storedProcessRequestCssOutputContentItem =>
+                                                {
+                                                    if (storedProcessRequestCssOutputContentBody == "")
+                                                    {
+                                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
+                                                        storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentItem;
+                                                    }
+                                                    else
+                                                    {
+                                                        //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = 
+                                                        //                                                           border: 1px solid;
+                                                        //                                                           color: red;
+                                                        storedProcessRequestCssOutputContentBody += "\n" + (storedProcessRequestCssStyleHorzontialSpace + storedProcessRequestCssStyleHorzontialSpaceIndented + storedProcessRequestCssStyleHorzontialSpaceIndented) + storedProcessRequestCssOutputContentItem;
+                                                    }
+                                                })
+
+                                                storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+
+                                                //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
+                                                //storedProcessRequestCssOutputContentListMediaQueries.Add(storedProcessRequestCssOutputContentContainer);
+
+                                                //storedProcessRequestCssOutputContentBody = "";
+                                                //storedProcessRequestCssOutputContentBodyList = new List<string>();
+
+                                                //storedProcessRequestCssOutputContentContainer = "";
+
+                                                //storedProcessRequestCssOutputContentProperty = "";
+
+                                                storedProcessRequestCssOutputContentValid = false;
+                                            }
                                         }
+
+                                        //#endregion
                                     }
-                                })
+                                    return storedProcessRequestCssOutputContentContainer;
+                                };
 
-                                storedProcessRequestCssOutputContentBody = "";
+                                //#endregion
 
-                                if (storedProcessRequestCssOutputContentValid = true) {
-                                    storedProcessRequestCssOutputContentBodyList.map(storedProcessRequestCssOutputContentItem => {
-                                        if (storedProcessRequestCssOutputContentBody == "") {
-                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = border: 1px solid
-                                            storedProcessRequestCssOutputContentBody = storedProcessRequestCssOutputContentItem;
+                                //#region CONVERT to media query string helper 1
+
+                                ExecuteConversionRequest_1_0 = (parameterInputs: SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) =>
+                                {
+                                    storedProcessRequestCssMediaQueryResolutionItemChildrenResolutions = parameterInputs.Parameters.getValue("parameterProcessRequestCssMediaQueryResolutionItemChildrenResolutions");
+                                    storedProcessRequestCssStyleMediaQueryBuilderCounter = 0;
+                                    storedProcessRequestCssStyleHorzontialSpace = "  ";
+                                    storedProcessRequestCssStyleHorzontialSpaceCounter = parameterInputs.Parameters.getValue("parameterProcessRequestCssStyleHorzontialSpaceCounter");
+                                    storedProcessRequestCssStyleHorzontialSpaceCounterAdded = false;
+
+                                    storedProcessRequestCssMediaQueryResolutionItemChildrenResolutions.map(storedProcessRequestCssMediaQueryResolutionItemChildrenResolution =>
+                                    {
+                                        if(storedProcessRequestCssMediaQueryResolutionItemChildrenResolution.ChildrenResolutions.length > 0)
+                                        {                                   
+                                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                            storedInputs.Parameters.setValue("parameterProcessRequestCssMediaQueryResolutionItemChildrenResolutions", storedProcessRequestCssMediaQueryResolutionItemChildrenResolution.ChildrenResolutions);
+                                            storedInputs.Parameters.setValue("parameterProcessRequestCssStyleHorzontialSpace", storedProcessRequestCssStyleHorzontialSpace);
+                                            storedInputs.Parameters.setValue("parameterProcessRequestCssStyleHorzontialSpaceCounter", (storedProcessRequestCssStyleHorzontialSpaceCounter+1));
+
+                                            storedProcessRequestCssStyleMediaQueryBuilderItem = ExecuteConversionRequest_1_0(storedInputs);
+
+                                            storedProcessRequestCssStyleMediaQueryBuilderCounter += 1;
                                         }
-                                        else 
+                                       
+                                        if(storedProcessRequestCssStyleMediaQueryBuilderCounter == storedProcessRequestCssMediaQueryResolutionItemChildrenResolution.ChildrenResolutions.length)
                                         {
-                                            //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentBody = 
-                                            //                                                           border: 1px solid;
-                                            //                                                           color: red;
-                                            storedProcessRequestCssOutputContentBody += "\n  " + storedProcessRequestCssOutputContentItem;
+                                            storedProcessRequestCssStyleHorzontialSpace = "  ";
+
+                                            if (!storedProcessRequestCssStyleHorzontialSpaceCounterAdded)
+                                            {
+                                                storedProcessRequestCssStyleHorzontialSpaceCounter += 1;
+                                                storedProcessRequestCssStyleHorzontialSpaceCounterAdded = true;
+                                            }      
+                                            else
+                                            {
+                                                storedProcessRequestCssStyleHorzontialSpaceCounter -= 1;
+                                            }
+
+                                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                            storedInputs.Parameters.setValue("parameterProcessRequestCssMediaQueryResolutionItemResolution", storedProcessRequestCssMediaQueryResolutionItemChildrenResolution);
+
+                                            if(storedProcessRequestCssStyleMediaQueryBuilderItem)
+                                            {
+                                                storedInputs.Parameters.setValue("parameterProcessRequestCssMediaQueryResolutionItemResolutionChildrenString", storedProcessRequestCssStyleMediaQueryBuilderItem);
+                                            }
+                                            else
+                                            {
+                                                storedInputs.Parameters.setValue("parameterProcessRequestCssMediaQueryResolutionItemResolutionChildrenString", null);
+                                            }
+
+                                            if(storedProcessRequestCssStyleHorzontialSpaceCounter > 1)
+                                            {
+                                                for (var storedProcessRequestCssStyleHorzontialSpaceCounterIndex = 0; storedProcessRequestCssStyleHorzontialSpaceCounterIndex < (storedProcessRequestCssStyleHorzontialSpaceCounter - 1); storedProcessRequestCssStyleHorzontialSpaceCounterIndex++)
+                                                {
+                                                    storedProcessRequestCssStyleHorzontialSpace += storedProcessRequestCssStyleHorzontialSpace;
+                                                }
+                                            }  
+
+                                            storedInputs.Parameters.setValue("parameterProcessRequestCssStyleHorzontialSpace", storedProcessRequestCssStyleHorzontialSpace);
+
+                                            storedProcessRequestCssStyleMediaQueryBuilderItem = ExecuteConversionRequest_1_1(storedInputs);
                                         }
-                                    });
+                                    })
 
-                                    storedProcessRequestCssOutputContentContainer = storedProcessRequestCssOutputContentContainer.replace("{stylePropertiesKeyValues}", storedProcessRequestCssOutputContentBody);
+                                    return storedProcessRequestCssStyleMediaQueryBuilderItem;
+                                };
+                                
+                                //#endregion
 
-                                    //OUTPUT EXAMPLE: storedProcessRequestCssOutputContentContainer = body { border: 1px solid }
-                                    storedProcessRequestCssOutputContentListMediaQueries.push(storedProcessRequestCssOutputContentContainer);
+                                storedProcessRequestCssStyleItem.MediaQueryResolutions.map(storedProcessRequestCssGlobalStyleMediaQueryResolutionItem =>
+                                {
+                                    storedProcessRequestCssStyleHorzontialSpace = "  ";
 
-                                    storedProcessRequestCssOutputContentBody = "";
-                                    storedProcessRequestCssOutputContentBodyList = [];
+                                    storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                    storedInputs.Parameters.setValue("parameterProcessRequestCssMediaQueryResolutionItemChildrenResolutions", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem.ChildrenResolutions);
+                                    storedInputs.Parameters.setValue("parameterProcessRequestCssStyleHorzontialSpace", storedProcessRequestCssStyleHorzontialSpace);
+                                    storedInputs.Parameters.setValue("parameterProcessRequestCssStyleHorzontialSpaceCounter", 1);
+                                    
+                                    storedProcessRequestCssStyleMediaQueryBuilderItem = ExecuteConversionRequest_1_0(storedInputs);
 
-                                    storedProcessRequestCssOutputContentContainer = "";
+                                    storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                    storedInputs.Parameters.setValue("parameterProcessRequestCssMediaQueryResolutionItemResolution", storedProcessRequestCssGlobalStyleMediaQueryResolutionItem);
+                                    storedInputs.Parameters.setValue("parameterProcessRequestCssMediaQueryResolutionItemResolutionChildrenString", storedProcessRequestCssStyleMediaQueryBuilderItem);
+                                    storedInputs.Parameters.setValue("parameterProcessRequestCssStyleHorzontialSpace", storedProcessRequestCssStyleHorzontialSpace);
+                                    storedInputs.Parameters.setValue("parameterProcessRequestCssStyleHorzontialSpaceCounter", 1);
 
-                                    storedProcessRequestCssOutputContentProperty = "";
+                                    storedProcessRequestCssStyleMediaQueryBuilderItem = ExecuteConversionRequest_1_1(storedInputs);
 
-                                    storedProcessRequestCssOutputContentValid = false;
-                                }
+                                    storedProcessRequestCssOutputContentListMediaQueries.push(storedProcessRequestCssStyleMediaQueryBuilderItem);
+                                })
                             }
+                            
                             //#endregion
                         }
                     })
