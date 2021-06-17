@@ -3545,8 +3545,18 @@ export namespace BaseDI.Professional.Web_Development.Extensions_0 {
             let storedProcessRequestCssStyleContainerPattern5: string = "@media {styleMediaQueryNotOnly} {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
             let storedProcessRequestCssStyleContainerPattern6: string = "@media {styleMediaQueryType} and ({styleMediaQueryFeature1} {styleMediaQueryNotOrNot} {styleMediaQueryFeature2}) {\n  {stylePropertiesKeyValues}\n}\n\n";
             let storedProcessRequestCssStyleContainerPattern7: string = "{styleID} {\n  {stylePropertiesKeyValues}\n  }";
-            let storedProcessRequestCssStyleContainerPattern8: string = "{styleMediaQuery} {\n  {styleID}\n  {\n    {stylePropertiesKeyValues}\n  }\n}\n\n";
-            let storedProcessRequestCssStyleContainerPattern9: string = "{styleMediaQuerySpace1}{styleMediaQuery} {\n{styleMediaQuerySpace2}{styleID}\n{styleMediaQuerySpace3}{\n{styleMediaQuerySpace4}{stylePropertiesKeyValues}\n\n{styleMediaQueryChildren}\n{styleMediaQuerySpace5}}\n}\n\n";
+            let storedProcessRequestCssStyleContainerPattern8: string = "{styleMediaQuerySpace1}{styleMediaQuery} {\n" +
+                "{styleMediaQuerySpace2}{styleID} {\n" +
+                "{styleMediaQuerySpace3}{stylePropertiesKeyValues}\n" +
+                "{styleMediaQuerySpace4}}\n" +
+                "{styleMediaQuerySpace5}}\n";
+
+            let storedProcessRequestCssStyleContainerPattern9: string = "{styleMediaQuerySpace1}{styleMediaQuery} {\n" +
+                "{styleMediaQuerySpace2}{styleID} {\n" +
+                "{styleMediaQuerySpace3}{stylePropertiesKeyValues}\n" +
+                "{styleMediaQuerySpace4}}\n" +
+                "{styleMediaQueryChildren}\n" +
+                "{styleMediaQuerySpace5}}\n";
 
             let storedProcessRequestCssStyleCommentPattern0: string = "/* *************************************************** */\n";
             storedProcessRequestCssStyleCommentPattern0            += "/*                   ALL SCREENS                       */\n";                                                       
