@@ -742,11 +742,14 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssItemChildResult: any;
             let storedProcessRequestCssItemFileName: string = "";
             let storedProcessRequestCssItemSupportedProperties: string[] = [];
-            let storedProcessRequestCssItemList: any[] = []; 
+            let storedProcessRequestCssItemList: Object[] = []; 
+            let storedProcessRequestCssPropertyItem: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty; 
+            let storedProcessRequestCssPropertyItemList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty[] = []; 
                     
    
             let storedProcessRequestCssItemStyleFileName: string = "";
             let storedProcessRequestCssItemUsedPropertyMediaQueryModel: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery;
+            let storedProcessRequestCssItemUsedPropertyMediaQueryChildModel: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery;
             let storedProcessRequestCssItemUsedPropertyMediaQueryModelList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
             let storedProcessRequestCssItemUsedPropertyMediaQueryList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery[] = [];
             let storedProcessRequestCssItemUsedPropertyList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty[] = [];
@@ -876,7 +879,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssText_13_NoneMediaQuery: any = {};
             let storedProcessRequestCssText_13_NoneMediaQuriesEntries: any = {};
 
-            let storedProcessRequestDataStorylineDetails: StrongTyped_StorylineDetails.BaseDI.Professional.Story.Programming_0.StorylineDetails_Instructions;            
+            let storedProcessRequestModelStorylineDetails: StrongTyped_StorylineDetails.BaseDI.Professional.Story.Programming_0.StorylineDetails_Instructions;            
             
             let storedProcessRequestFileItem: string = ""; 
             let storedProcessRequestFileList: string[] = []; 
@@ -891,6 +894,10 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestHtmlNodeList: any = null;
 
             let storedProcessRequestResponseData: any = null;
+
+            let storedProcessRequestModelHTMLContentStylingDetails: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development._2_2_2_4_clientInformationHTMLContentStylingDetails;
+            let storedProcessRequestModelHTMLContentStylingItem: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HTMLContentStylingItem_SetImplementer_ProductCreation_WebDevelopment_CSS;
+            let storedProcessRequestModelHTMLContentStylingUsedPropertyItem: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty;
 
             //#endregion
 
@@ -996,7 +1003,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion
 
-                //#region B. CONVERT json to html buckets
+                //#region B. CONVERT json to html head & body buckets
 
                 try 
                 {
@@ -1014,7 +1021,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion
 
-                //#region C. CONVERT html bucket to css
+                //#region C. CONVERT html head bucket to css file list
 
                 try 
                 {
@@ -1052,7 +1059,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion                
 
-                //#region D. CONVERT css to json
+                //#region D. CONVERT html head css file list to json objects
 
                 try 
                 {
@@ -1072,7 +1079,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion   
 
-                //#region E. CONVERT json to css buckets
+                //#region E. CONVERT html head css json objects to css buckets
 
                 try 
                 {
@@ -1236,7 +1243,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                 //#endregion                  
 
-                //#region F. CONVERT css buckets to baseDI model
+                //#region F. CONVERT html head css buckets to strong types objects
                 try
                 {
                     const ExecuteConversionRequest = async (): Promise<any> =>
@@ -1259,133 +1266,98 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                             //#region 2: CONVERT media queries css style
                             try 
                             {
-                                const ExecuteConversionRequest_1_0 = (parameterProcessRequestCssItemList) : any => 
-                                {                     
-                                    //#region CONVERT html media queries to json standard
-                                    
-                                    const ExecuteConversionRequest_1_2 = (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) : any => 
+                                storedProcessRequestCssItem_0_NoneMediaQuriesEntries.map(storedProcessRequestCssItem_0_NoneMediaQuriesEntry => {
+                                    //DEFINE our model
+                                    storedProcessRequestModelHTMLContentStylingUsedPropertyItem = {
+                                        attributeID: storedProcessRequestCssItem_0_NoneMediaQuriesEntry[0],
+                                        properties: storedProcessRequestCssPropertyItemList,
+                                        IsMediaQuery: "false",
+                                        IsHtmlTag: "true",
+                                        MediaQueryResolutions: []
+                                    }
+
+                                    //#region A. CONVERT to css properties
+                                    try 
                                     {
-                                        storedProcessRequestCssItem = parameterInputs.Parameters.getValue("parameterProcessRequestCssItem");
-                                        storedProcessRequestCssItemChildList = parameterInputs.Parameters.getValue("parameterProcessRequestCssItemChildList") != undefined ? parameterInputs.Parameters.getValue("parameterProcessRequestCssItemChildList") : [];
-                                
-                                        storedProcessRequestCssItemValid = false;
                                         
-                                        storedProcessRequestCssItemChild = (storedInputs.Parameters.getValue("parameterProcessRequestCssItemChild") == true) ? storedProcessRequestCssItem[0][0] : storedProcessRequestCssItem[0];
-
-                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = 
-                                        {
-                                            resolutions: {
-                                                mediaQuery: storedProcessRequestCssItemChild
-                                            },
-                                            properties: [],
-                                            ChildrenResolutions: []
-                                        }                  
-
-                                        storedProcessRequestCssItemChild = (storedInputs.Parameters.getValue("parameterProcessRequestCssItemChild") == true) ? storedProcessRequestCssItem[0][1] : storedProcessRequestCssItem[1];
-
-                                        if(((storedProcessRequestCssItemChild as any).children == undefined) || (Object.keys((storedProcessRequestCssItemChild as any).children).length == 0 && Object.keys((storedProcessRequestCssItemChild as any).attributes).length > 0))
-                                        {
-                                            Object.entries((storedProcessRequestCssItemChild as any).attributes).map(storedProcessRequestCssItemAttribute => {
-                                                if((storedProcessRequestCssItemAttribute[1] as string).toLocaleUpperCase().includes("URL(")) 
-                                                {
-                                                    storedProcessRequestFileItem = (storedProcessRequestCssItemAttribute[1] as string).replace(/(^.*\(|\).*$)/g, '');
-                                                    storedProcessRequestFileItem  = storedProcessRequestFileItem.split("../").join("");
-                                                    storedProcessRequestFileList.push(storedProcessRequestFileItem);
+                                        const ExecuteConversionRequest = () => {
+                                            Object.keys(storedProcessRequestCssItem_0_NoneMediaQuriesEntry[1].attributes).map(storedProcessRequestCssItemAttribute => {
+                                                storedProcessRequestCssPropertyItem = {
+                                                    propertyName: storedProcessRequestCssItemAttribute,
+                                                    properyValues: storedProcessRequestCssItem_0_NoneMediaQuriesEntry[1].attributes[storedProcessRequestCssItemAttribute].split(" ")
                                                 }
                                                 
-                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel.properties.push({
-                                                    propertyName: storedProcessRequestCssItemAttribute[0],
-                                                    properyValues: (storedProcessRequestCssItemAttribute[1] as string).split(" ")
-                                                })
-                                            }) 
-
-                                            storedProcessRequestCssItemUsedPropertyMediaQueryModel.ChildrenResolutions = (storedProcessRequestCssItemChildList.length > 0) ? storedProcessRequestCssItemChildList : [];
-                                            
-                                            storedProcessRequestCssItemValid = true;
-
-                                            return storedProcessRequestCssItemUsedPropertyMediaQueryModel;
-                                        }
-                                        else
-                                        {
-                                            if(storedProcessRequestCssItemChildList.length > 0){
-                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel.ChildrenResolutions = (storedProcessRequestCssItemChildList.length > 0) ? storedProcessRequestCssItemChildList : [];
-
-                                                storedProcessRequestCssItemValid = true;
-
-                                                return storedProcessRequestCssItemUsedPropertyMediaQueryModel;
-                                            }
-                                        }
-
-                                        return null;
+                                                storedProcessRequestCssPropertyItemList.push(storedProcessRequestCssPropertyItem);
+                                            })
+                                        }        
+                                        
+                                        ExecuteConversionRequest();
+                                    } 
+                                    catch (storedProcessRequestMistake) {
+                                        throw storedProcessRequestMistake;
                                     }
+                                    //#endregion
 
-                                    const ExecuteConversionRequest_1_1 = (parameterProcessRequestCssItemList) : any =>
-                                    {                                        
-                                        storedProcessRequestCssItemList = parameterProcessRequestCssItemList;
+                                    //#region B. CONVERT to css media queries
 
-                                        storedProcessRequestCssItemList.map(storedProcessRequestCssItem => 
-                                        {                                            
-                                            if(storedProcessRequestCssItem[1].children != undefined && Object.entries(storedProcessRequestCssItem[1].children).length > 0){
-                                                Object.entries(storedProcessRequestCssItem[1].children).map(storedProcessRequestCssItemChild => {
-                                                    if(((storedProcessRequestCssItemChild[1]) as any).children != undefined && (Object.keys((storedProcessRequestCssItemChild[1] as any).children).length > 0)) 
-                                                    {
-                                                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItem", Object.entries(((storedProcessRequestCssItemChild[1]) as any).children));
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", true);
+                                    try 
+                                    {
+                                        const ExecuteProcessHelper = (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {
 
-                                                        storedProcessRequestCssItemChildResult = ExecuteConversionRequest_1_2(storedInputs) as any;
-    
-                                                        if(storedProcessRequestCssItemChildResult != null){
-                                                            storedProcessRequestCssItemChildList.push(storedProcessRequestCssItemChildResult);
+                                        }
+
+                                        const ExecuteConversionRequest = () => {
+                                            storedProcessRequestCssItem_0_MediaQuriesEntries.map(storedProcessRequestCssItem_0_MediaQuriesEntry => {
+                                                Object.keys(storedProcessRequestCssItem_0_MediaQuriesEntry[1].children).map(storedProcessRequestCssItem_0_MediaQuriesEntryChildKey =>  {
+                                                    storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+
+                                                    if(storedProcessRequestCssItem_0_MediaQuriesEntryChildKey.toUpperCase() == storedProcessRequestCssItem_0_NoneMediaQuriesEntry[0].toUpperCase()){
+                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = {
+                                                            resolutions : {
+                                                                mediaQuery: storedProcessRequestCssItem_0_MediaQuriesEntry[0],
+                                                            },
+                                                            properties: [],
+                                                            ChildrenResolutions: []
+                                                        }                                                        
+                                                                                                                
+                                                        storedProcessRequestCssItemUsedPropertyMediaQueryChildModel = {
+                                                            resolutions: {
+                                                                mediaQuery: storedProcessRequestCssItem_0_MediaQuriesEntryChildKey
+                                                            },
+                                                            properties: [],
+                                                            ChildrenResolutions: []
                                                         }
+                                                        
+                                                        Object.keys(storedProcessRequestCssItem_0_MediaQuriesEntry[1].children[storedProcessRequestCssItem_0_MediaQuriesEntryChildKey].attributes).map(storedProcessRequestCssItemAttribute => {
+                                                            storedProcessRequestCssItemUsedPropertyMediaQueryChildModel.properties.push({
+                                                                propertyName: storedProcessRequestCssItemAttribute,
+                                                                properyValues: storedProcessRequestCssItem_0_MediaQuriesEntry[1].children[storedProcessRequestCssItem_0_MediaQuriesEntryChildKey].attributes[storedProcessRequestCssItemAttribute].split(" ")
+                                                            })
+                                                        })
 
-                                                        storedProcessRequestCssCounter += 1;
+                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel.ChildrenResolutions.push(storedProcessRequestCssItemUsedPropertyMediaQueryChildModel);
+                                      
+                                                        storedProcessRequestModelHTMLContentStylingUsedPropertyItem.IsMediaQuery = "true";
+                                                        storedProcessRequestModelHTMLContentStylingUsedPropertyItem.MediaQueryResolutions.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
+                                                        
+                                                        //storedProcessRequestCssPropertyItemList.push(storedProcessRequestCssPropertyItem);
                                                     }
- 
-                                                    if(((storedProcessRequestCssItemChild as any)[1].children != undefined && storedProcessRequestCssCounter == (Object.keys((storedProcessRequestCssItemChild as any)[1].children).length)) || ((storedProcessRequestCssItemChild as any)[1].attributes != undefined && Object.keys((storedProcessRequestCssItemChild as any)[1].attributes).length > 0)){
-                                                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItem", storedProcessRequestCssItemChild);
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemChildList", storedProcessRequestCssItemChildList);
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", false);
 
-                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_1_2(storedInputs) as any;
-    
-                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModelList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
+                                                    ExecuteProcessHelper(storedInputs);
+                                                })
+                                            })                                                 
+                                        }
 
-                                                        storedProcessRequestCssCounter = 0;
-                                                    } 
-                                                    
-                                                    storedProcessRequestCssCounter2 += 1;
-                                                })     
-                                            }   
-                                            
-                                            if(storedProcessRequestCssItem[1].children != undefined && storedProcessRequestCssCounter2 == (Object.keys(storedProcessRequestCssItem[1].children).length)){
-                                                storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItem", storedProcessRequestCssItem);
-                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItemChildList", storedProcessRequestCssItemUsedPropertyMediaQueryModelList);
-                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItemChild", false);
-
-                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_1_2(storedInputs) as any;
-
-                                                storedProcessRequestCssItemUsedPropertyMediaQueryList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
-
-                                                storedProcessRequestCssItemUsedPropertyMediaQueryModelList = [];
-                                                storedProcessRequestCssCounter = 0;
-                                                storedProcessRequestCssCounter2 = 0;
-                                            }                                             
-                                        })                                        
-                                   
-                                        return storedProcessRequestCssItemUsedPropertyMediaQueryList;
+                                        ExecuteConversionRequest();
+                                    } 
+                                    catch (storedProcessRequestMistake) {
+                                        throw storedProcessRequestMistake;
                                     }
-
-                                    storedProcessRequestCssItemUsedPropertyMediaQueryList = ExecuteConversionRequest_1_1(parameterProcessRequestCssItemList);
 
                                     //#endregion
 
-                                    return storedProcessRequestCssItemUsedPropertyMediaQueryList;
-                                }
-
-                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = ExecuteConversionRequest_1_0(storedProcessRequestCssItem_0_MediaQuriesEntries);
+                                    storedProcessRequestCssItemUsedPropertyList.push(storedProcessRequestModelHTMLContentStylingUsedPropertyItem);
+                                });
                             } 
                             catch (storedProcessRequestMistake) {
                                 throw new Error("converting none media query css");
@@ -1405,8 +1377,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                         //#endregion
 
-                        //#region 1. SETUP css baseDI model
-                        storedProcessRequestDataStorylineDetails = {
+                        //#region 1. SETUP css baseDI models
+                        storedProcessRequestModelStorylineDetails = {
                             baseDIInstructions: {
                                 presentation: [{
                                     key_1: "Clients",
@@ -1414,7 +1386,9 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                         key_2_1: "Clients_1_0",
                                         values_2_2: [{
                                             key_2_2_1: "GeneratedPage",
-                                            values_2_2_2: []
+                                            values_2_2_2: [
+                                                storedProcessRequestModelHTMLContentStylingDetails
+                                            ]
                                         }]
                                     }],
                                     type: "object",
@@ -1423,6 +1397,28 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                 }]
                             }
                         };
+
+                        storedProcessRequestModelHTMLContentStylingDetails = {
+                            _2_2_2_4_clientInformationHTMLContentStylingDetails: {
+                                searchkey:"HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS",
+                                type:"array",
+                                value: [{
+                                    _2_2_2_4_1_clientInformationHTMLContentStylingItem:{
+                                        searchkey: "HTMLContentStylingItem_SetImplementer_ProductCreation_WebDevelopment_CSS",
+                                        type: "array",
+                                        value: {
+                                            HTMLContentStylingItemRowID: "1",
+                                            HTMLContentStylingItemFiles: [{
+                                                StyleFilePathLocal: "",
+                                                StyleFilePathRemote: "",
+                                                StyleFiles: storedProcessRequestCssItemConvertedList
+                                            }]
+                                        }
+                                    }
+                                }]                                
+                            }
+                        };
+                        
                         //#endregion
 
                         //#region 2. CONVERT css alignments to baseDI model

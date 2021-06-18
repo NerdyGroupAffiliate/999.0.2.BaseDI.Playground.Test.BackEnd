@@ -64,18 +64,18 @@
 
     //#region JSON to CSS Interfaces
 
-    export interface SearchKey_HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS {
+    export interface _2_2_2_4_clientInformationHTMLContentStylingDetails {
         _2_2_2_4_clientInformationHTMLContentStylingDetails: HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS;
     }
 
     export interface HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS {
-        searchkey: string;
-        type: string;
-        value: CSSSections[];
+        searchkey?: string;
+        type?: string;
+        value?: HTMLContentStylingItem_SetImplementer_ProductCreation_WebDevelopment_CSS[];
     }
 
-    export interface CSSSections {
-        _2_2_2_4_1_clientInformationHTMLContentStylingItem: CSSSection;
+    export interface HTMLContentStylingItem_SetImplementer_ProductCreation_WebDevelopment_CSS {
+        _2_2_2_4_1_clientInformationHTMLContentStylingItem?: CSSSection;
     }
 
     export interface CSSSection {
@@ -110,8 +110,8 @@
     }
 
     export interface CssProperty {
-        propertyName: string;
-        properyValues: string[];
+        propertyName?: string;
+        properyValues?: string[];
     }
 
     export interface CssMediaQuery {
