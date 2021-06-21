@@ -117,11 +117,12 @@
     export interface CssMediaQuery {
         resolutions?: CssMediaQueryResolution;
         properties?: CssProperty[];
-        ChildrenResolutions?: CssMediaQuery[]
+        ChildrenResolutions?: CssMediaQuery[];
     }
 
     export interface CssMediaQueryResolution {
-        mediaQuery: string;
+        mediaQuery?: string;
+        mediaQueryAttributeIDOverride?: string;
     }
 
     //#endregion

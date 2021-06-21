@@ -148,6 +148,7 @@ namespace BaseDI.Professional.Setting.Software.Web_Development_0
     public class CssMediaQueryResolution
     {
         public string mediaQuery;
+        public string mediaQueryAttributeIDOverride;        
     }
 
     #endregion

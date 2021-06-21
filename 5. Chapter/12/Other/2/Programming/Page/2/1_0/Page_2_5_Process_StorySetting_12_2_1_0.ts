@@ -748,9 +748,10 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssPropertyItem: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty; 
             let storedProcessRequestCssPropertyItemList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssProperty[] = []; 
                     
-            let storedProcessRequestMediaQueryAttributesAndChildrenKey: any = null;
-            let storedProcessRequestMediaQueryAttributesAndChildrenItem: any = null;
-            let storedProcessRequestMediaQueryAttributesAndChildrenItem2: any = null;
+            let storedProcessRequestMediaQuery: string = "";
+            let storedProcessRequestMediaQueryKey: any = null;
+            let storedProcessRequestMediaQueryChildren: any = null;
+            let storedProcessRequestMediaQueryChildren2: any = null;
    
             let storedProcessRequestCssItemStyleFileName: string = "";
             let storedProcessRequestCssItemUsedPropertyMediaQueryModel: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssMediaQuery;
@@ -1317,104 +1318,87 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                                     try 
                                     {
+                                        //#region 2 of 2. CONVERT media query to strong type
                                         ExecuteProcessHelper_1_1 = (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0) => {
                                             storedProcessRequestCssItemUsedPropertyMediaQueryAttributeID = parameterInputs.Parameters.getValue("parameterProcessRequestCssItemUsedPropertyMediaQueryAttributeID");
                                             
                                             storedProcessRequestCssItemUsedPropertyMediaQueryModel = parameterInputs.Parameters.getValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModel");
                                             storedProcessRequestCssItemUsedPropertyMediaQueryModelList = parameterInputs.Parameters.getValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModelList");
 
-                                            storedProcessRequestMediaQueryAttributesAndChildrenKey = parameterInputs.Parameters.getValue("parameterProcessRequestMediaQueryAttributesAndChildrenKey");
-                                            storedProcessRequestMediaQueryAttributesAndChildrenItem = parameterInputs.Parameters.getValue("parameterProcessRequestMediaQueryAttributesAndChildrenItem");
+                                            storedProcessRequestMediaQuery = parameterInputs.Parameters.getValue("parameterProcessRequestMediaQuery");
+                                            storedProcessRequestMediaQueryKey = parameterInputs.Parameters.getValue("parameterProcessRequestMediaQueryKey");
+                                            storedProcessRequestMediaQueryChildren = parameterInputs.Parameters.getValue("parameterProcessRequestMediaQueryChildren");
 
-                                            //OUTPUTE EXAMPLE: storedProcessRequestMediaQueryAttributesAndChildrenItemKey = "body"
-                                            Object.keys(storedProcessRequestMediaQueryAttributesAndChildrenItem.children).map(storedProcessRequestMediaQueryAttributesAndChildrenItemKey => 
+                                            storedProcessRequestCssCounter = 0;
+
+                                            //OUTPUTE EXAMPLE: storedProcessRequestMediaQueryChildrenKey = "body"
+                                            Object.keys(storedProcessRequestMediaQueryChildren.children).map(storedProcessRequestMediaQueryChildrenKey => 
                                             {
-                                                storedProcessRequestMediaQueryAttributesAndChildrenItem2 = storedProcessRequestMediaQueryAttributesAndChildrenItem.children[storedProcessRequestMediaQueryAttributesAndChildrenItemKey]
+                                                storedProcessRequestMediaQueryChildren2 = storedProcessRequestMediaQueryChildren.children[storedProcessRequestMediaQueryChildrenKey]
                                                 
-                                                if(Object.keys(storedProcessRequestMediaQueryAttributesAndChildrenItem2.children).length > 0){
-                                                    storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
-                                                    storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModelList", storedProcessRequestCssItemUsedPropertyMediaQueryModelList);         
+                                                storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                                    
+                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryAttributeID", storedProcessRequestCssItemUsedPropertyMediaQueryAttributeID);         
+                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModel", storedProcessRequestCssItemUsedPropertyMediaQueryModel);         
 
-                                                    storedInputs.Parameters.setValue("parameterProcessRequestMediaQueryAttributesAndChildrenKey", storedProcessRequestMediaQueryAttributesAndChildrenItemKey);
-                                                    storedInputs.Parameters.setValue("parameterProcessRequestMediaQueryAttributesAndChildrenItem", storedProcessRequestMediaQueryAttributesAndChildrenItem2.children[storedProcessRequestMediaQueryAttributesAndChildrenItemKey]);
+                                                storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModelList", storedProcessRequestCssItemUsedPropertyMediaQueryModelList);         
 
-                                                    ExecuteProcessHelper_1_1(storedInputs);
+                                                storedInputs.Parameters.setValue("parameterProcessRequestMediaQuery", storedProcessRequestMediaQuery);
+                                                storedInputs.Parameters.setValue("parameterProcessRequestMediaQueryKey", storedProcessRequestMediaQueryChildrenKey);
+                                                storedInputs.Parameters.setValue("parameterProcessRequestMediaQueryChildren", storedProcessRequestMediaQueryChildren.children[storedProcessRequestMediaQueryChildrenKey]);
 
-                                                    storedProcessRequestCssCounter += 1;
-                                                }
+                                                ExecuteProcessHelper_1_1(storedInputs);
 
-                                                if(Object.keys(storedProcessRequestMediaQueryAttributesAndChildrenItem2.attributes).length > 0 && storedProcessRequestCssCounter == Object.keys(storedProcessRequestMediaQueryAttributesAndChildrenItem2.children).length && storedProcessRequestCssItemUsedPropertyMediaQueryAttributeID.toUpperCase() == storedProcessRequestMediaQueryAttributesAndChildrenItemKey.toUpperCase()){
-                                                    storedProcessRequestCssItemUsedPropertyMediaQueryModel = {
-                                                        resolutions: {
-                                                            mediaQuery: storedProcessRequestMediaQueryAttributesAndChildrenKey
-                                                        },
-                                                        properties: [],
-                                                        ChildrenResolutions: []
-                                                    }
-
-                                                    Object.keys(storedProcessRequestMediaQueryAttributesAndChildrenItem2.attributes).map(storedProcessRequestCssItemAttribute => {
-                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel.properties.push({
-                                                            propertyName: storedProcessRequestCssItemAttribute,
-                                                            properyValues: storedProcessRequestMediaQueryAttributesAndChildrenItem2.attributes[storedProcessRequestCssItemAttribute].split(" ")
-                                                        })
-                                                    })
-
-                                                    storedProcessRequestCssItemUsedPropertyMediaQueryModelList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
-                                                }
+                                                storedProcessRequestCssCounter += 1;
                                             })
+
+                                            if(storedProcessRequestCssCounter == Object.keys(storedProcessRequestMediaQueryChildren.children).length && storedProcessRequestMediaQueryKey.toUpperCase().includes(storedProcessRequestCssItemUsedPropertyMediaQueryAttributeID.toUpperCase())){
+                                                storedProcessRequestCssItemUsedPropertyMediaQueryModel = {
+                                                    resolutions: {
+                                                        mediaQuery: storedProcessRequestMediaQuery,
+                                                        mediaQueryAttributeIDOverride: (storedProcessRequestCssItemUsedPropertyMediaQueryAttributeID.toUpperCase() != storedProcessRequestMediaQueryKey.toUpperCase()) ? storedProcessRequestMediaQueryKey : ""
+                                                    },
+                                                    properties: [],
+                                                    ChildrenResolutions: []
+                                                }
+
+                                                Object.keys(storedProcessRequestMediaQueryChildren.attributes).map(storedProcessRequestCssItemAttribute => {
+                                                    storedProcessRequestCssItemUsedPropertyMediaQueryModel.properties.push({
+                                                        propertyName: storedProcessRequestCssItemAttribute,
+                                                        properyValues: storedProcessRequestMediaQueryChildren.attributes[storedProcessRequestCssItemAttribute].split(" ")
+                                                    })
+                                                })
+
+                                                storedProcessRequestCssItemUsedPropertyMediaQueryModelList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
+                                            }                                            
                                         }
+                                        //#endregion
+
+                                        //#region 1 of 2. CONVERT media query to strong type
 
                                         const ExecuteConversionRequest = () => {
                                             storedProcessRequestCssItem_0_MediaQuriesEntries.map(storedProcessRequestCssItem_0_MediaQuriesEntry => {
                                                 Object.keys(storedProcessRequestCssItem_0_MediaQuriesEntry[1].children).map(storedProcessRequestCssItem_0_MediaQuriesEntryChildKey =>  {
                                                     storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
 
-                                                    if(storedProcessRequestCssItem_0_MediaQuriesEntryChildKey.toUpperCase().includes(storedProcessRequestCssItem_0_NoneMediaQuriesEntry[0].toUpperCase()))
-                                                    {
-                                                        //#region 1. CONVERT parent media query
-
-                                                        //OUTPUT EXAMPLE: @media (min-width: 20em), not all and (min-height: 40em)
-                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = {
-                                                            resolutions : {
-                                                                mediaQuery: storedProcessRequestCssItem_0_MediaQuriesEntry[0],
-                                                            },
-                                                            properties: [],
-                                                            ChildrenResolutions: []
-                                                        }     
-                                                        
-                                                                                        
-                                                        Object.keys(storedProcessRequestCssItem_0_MediaQuriesEntry[1].children[storedProcessRequestCssItem_0_MediaQuriesEntryChildKey].attributes).map(storedProcessRequestCssItemAttribute => {
-                                                            storedProcessRequestCssItemUsedPropertyMediaQueryModel.properties.push({
-                                                                propertyName: storedProcessRequestCssItemAttribute,
-                                                                properyValues: storedProcessRequestCssItem_0_MediaQuriesEntry[1].children[storedProcessRequestCssItem_0_MediaQuriesEntryChildKey].attributes[storedProcessRequestCssItemAttribute].split(" ")
-                                                            })
-                                                        })
-
-                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModelList.push(storedProcessRequestCssItemUsedPropertyMediaQueryModel);
-                                                        
-                                                        //#endregion
-                                                       
+                                                    storedProcessRequestCssItemUsedPropertyMediaQueryModel = {
+                                                        resolutions: {
+                                                            mediaQuery: ""
+                                                        },
+                                                        properties: [],
+                                                        ChildrenResolutions: []
                                                     }
-                                                    else
-                                                    {
-                                                        storedProcessRequestCssItemUsedPropertyMediaQueryModel = {
-                                                            resolutions: {
-                                                                mediaQuery: ""
-                                                            },
-                                                            properties: [],
-                                                            ChildrenResolutions: []
-                                                        }
 
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryAttributeID", storedProcessRequestCssItem_0_NoneMediaQuriesEntry[0]);         
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModel", storedProcessRequestCssItemUsedPropertyMediaQueryModel[0]);         
+                                                    storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryAttributeID", storedProcessRequestCssItem_0_NoneMediaQuriesEntry[0]);         
+                                                    storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModel", storedProcessRequestCssItemUsedPropertyMediaQueryModel);         
 
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModelList", storedProcessRequestCssItemUsedPropertyMediaQueryModelList);         
-
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestMediaQueryAttributesAndChildrenKey", storedProcessRequestCssItem_0_MediaQuriesEntryChildKey);
-                                                        storedInputs.Parameters.setValue("parameterProcessRequestMediaQueryAttributesAndChildrenItem", storedProcessRequestCssItem_0_MediaQuriesEntry[1].children[storedProcessRequestCssItem_0_MediaQuriesEntryChildKey]);
-                                                                                                                
-                                                        ExecuteProcessHelper_1_1(storedInputs);    
-                                                    }
+                                                    storedInputs.Parameters.setValue("parameterProcessRequestCssItemUsedPropertyMediaQueryModelList", storedProcessRequestCssItemUsedPropertyMediaQueryModelList);         
+                                                    
+                                                    storedInputs.Parameters.setValue("parameterProcessRequestMediaQuery", storedProcessRequestCssItem_0_MediaQuriesEntry[0]);
+                                                    storedInputs.Parameters.setValue("parameterProcessRequestMediaQueryKey", storedProcessRequestCssItem_0_MediaQuriesEntryChildKey);
+                                                    storedInputs.Parameters.setValue("parameterProcessRequestMediaQueryChildren", storedProcessRequestCssItem_0_MediaQuriesEntry[1].children[storedProcessRequestCssItem_0_MediaQuriesEntryChildKey]);
+                                                                                                            
+                                                    ExecuteProcessHelper_1_1(storedInputs);  
 
                                                     if(storedProcessRequestCssItemUsedPropertyMediaQueryModelList.length > 0){
                                                         storedProcessRequestModelHTMLContentStylingUsedPropertyItem.IsMediaQuery = "true";
@@ -1424,6 +1408,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                                         }
 
                                         ExecuteConversionRequest();
+
+                                        //#endregion
                                     } 
                                     catch (storedProcessRequestMistake) {
                                         throw storedProcessRequestMistake;
