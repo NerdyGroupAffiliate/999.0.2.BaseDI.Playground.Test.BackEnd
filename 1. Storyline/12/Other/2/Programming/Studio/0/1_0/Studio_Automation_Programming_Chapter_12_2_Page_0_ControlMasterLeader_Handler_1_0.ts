@@ -79,12 +79,12 @@ export module BaseDI.Professional.Story.Programming_0 {
     //#region GLOBAL data concepts
 
     export interface StorylineDetails {
-        $schema: string;
-        contentVersion: string;
-        parameters: Parameters;
-        variables: Variable[];
-        resources: Resource[];
-        outputs: Output[];
+        $schema?: string;
+        contentVersion?: string;
+        parameters?: Parameters;
+        variables?: Variable[];
+        resources?: Resource[];
+        outputs?: Output[];
     }
 
     export interface StorylineDetails_Parameter {
@@ -403,8 +403,8 @@ export module BaseDI.Professional.Story.Programming_0 {
     }
 
     export interface BaseDIProfile {
-        baseDI_NerdyGroupAffiliates_DataSet_JSON: string;
-        baseDI_NerdyGroupAffiliates_DynamicWebsite_DocumentationProfile: BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationProfile[];
+        baseDI_NerdyGroupAffiliates_DataSet_JSON?: any;
+        baseDI_NerdyGroupAffiliates_DynamicWebsite_DocumentationProfile?: BaseDINerdyGroupAffiliatesDynamicWebsiteDocumentationProfile[];
     }
 
     export interface Resource {

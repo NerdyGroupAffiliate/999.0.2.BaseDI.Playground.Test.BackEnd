@@ -12,6 +12,10 @@ namespace BaseDI.Professional.Setting.Software.Web_Development_0
     //    public HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML _2_2_2_3_clientInformationHTMLContentDetails;
     //}
 
+    public class _2_2_2_3_clientInformationHTMLContentDetails {
+       public HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML  _2_2_2_3_clientInformationHTMLContentDetails;
+    }
+
     public class HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML
     {
         public string searchkey;
@@ -79,7 +83,7 @@ namespace BaseDI.Professional.Setting.Software.Web_Development_0
 
     #region JSON to CSS Interfaces
 
-    public class SearchKey_HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS
+    public class _2_2_2_4_clientInformationHTMLContentStylingDetails
     {
         public HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS _2_2_2_4_clientInformationHTMLContentStylingDetails;
     }

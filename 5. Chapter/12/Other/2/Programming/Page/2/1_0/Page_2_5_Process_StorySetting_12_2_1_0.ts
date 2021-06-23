@@ -885,7 +885,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
             let storedProcessRequestCssText_13_NoneMediaQuery: any = {};
             let storedProcessRequestCssText_13_NoneMediaQuriesEntries: any = {};
 
-            let storedProcessRequestModelStorylineDetails: StrongTyped_StorylineDetails.BaseDI.Professional.Story.Programming_0.StorylineDetails_Instructions;            
+            let storedProcessRequestModelStorylineDetails: StrongTyped_StorylineDetails.BaseDI.Professional.Story.Programming_0.StorylineDetails;            
             
             let storedProcessRequestFileItem: string = ""; 
             let storedProcessRequestFileList: string[] = []; 
@@ -901,11 +901,33 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
             let storedProcessRequestResponseData: any = null;
 
+            let storedProcessRequestCssItemUsedPropertyMediaQueryAttributeID: string = "";
+
+            let storedProcessRequestModelHTMLContentDetails: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development._2_2_2_3_clientInformationHTMLContentDetails;
             let storedProcessRequestModelHTMLContentStylingDetails: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development._2_2_2_4_clientInformationHTMLContentStylingDetails;
             let storedProcessRequestModelHTMLContentStylingItem: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HTMLContentStylingItem_SetImplementer_ProductCreation_WebDevelopment_CSS;
             let storedProcessRequestModelHTMLContentStylingUsedPropertyItem: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.CssStyleFileUseProperty;
+            
+            let storedProcessRequestModelHTML: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail = {};            
+            let storedProcessRequestModelHTMLChild: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail = {};            
+            
+            let storedProcessRequestModelHTMLContainers: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail[] = [];            
+            let storedProcessRequestModelHTMLRows: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail[] = [];
+            let storedProcessRequestModelHTMLColumns: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail[] = [];
+            let storedProcessRequestModelHTMLContent: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail[] = [];
+            
+            let storedProcessRequestModelHTMLList: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail[] = [];            
 
-            let storedProcessRequestCssItemUsedPropertyMediaQueryAttributeID: string = "";
+            let storedProcessRequestJSONHTML: Array<any> = [];
+            let storedProcessRequestJSONHTMLItem: any = null;
+            let storedProcessRequestJSONHTMLItemObject: Object = null;
+            //let storedProcessRequestJSONHTMLItemCounter: number = 0;
+            //let storedProcessRequestJSONHTMLItemChildCount: number = 0;
+            let storedProcessRequestJSONHTMLContainers: Array<any> = [];
+            let storedProcessRequestJSONHTMLRows: Array<any> = [];
+            let storedProcessRequestJSONHTMLColumns: Array<any> = [];
+            let storedProcessRequestJSONHTMLContent: Array<any> = [];
+            let storedProcessRequestModelHTMLNotes: string = "";
 
             //#endregion
 
@@ -1017,14 +1039,14 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                 {
                     const ExecuteConversionRequest = async() => {
                         storedProcessRequestHtmlHeadBucket = storedProcessRequestResponseData?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.node.toUpperCase() == "ELEMENT")[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.tag.toUpperCase()  == "HEAD")?.filter(node => node.node.toUpperCase() == "ELEMENT");
-                        storedProcessRequestHtmlBodyBucket = storedProcessRequestResponseData?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.node.toUpperCase() == "ELEMENT")[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.tag.toUpperCase()  == "BODY")?.filter(node => node.node.toUpperCase() == "ELEMENT");
+                        storedProcessRequestHtmlBodyBucket = storedProcessRequestResponseData?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.node.toUpperCase() == "ELEMENT")[0]?.child?.filter(node => node.node.toUpperCase() == "ELEMENT")?.filter(node => node.tag.toUpperCase()  == "BODY")?.filter(node => node.node.toUpperCase() == "ELEMENT")[0].child.filter(node => node.node.toUpperCase() == "ELEMENT");
                     }
                     
                     await ExecuteConversionRequest();
 
                 } 
                 catch (storedProcessRequestMistake) {
-                    throw new Error("converting json");
+                    throw new Error("converting json to html head & body buckets");
                 }
 
                 //#endregion
@@ -1244,7 +1266,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                     await ExecuteConversionRequest();
                 } 
                 catch (storedProcessRequestMistake) {
-                    throw new Error("converting html head json bucket to list of file strings");
+                    throw new Error("converting html head css json objects to css buckets");
                 }
 
                 storedOutputResponseData = storedOutputResponseData;
@@ -1256,7 +1278,32 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                 {
                     const ExecuteConversionRequest = async (): Promise<any> =>
                     {
-                        //#region 0. SETUP css process helper
+                        //#region 0. SETUP converter baseDI css models
+                        
+                        storedProcessRequestModelHTMLContentStylingDetails = {
+                            _2_2_2_4_clientInformationHTMLContentStylingDetails: {
+                                searchkey:"HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS",
+                                type:"array",
+                                value: [{
+                                    _2_2_2_4_1_clientInformationHTMLContentStylingItem:{
+                                        searchkey: "HTMLContentStylingItem_SetImplementer_ProductCreation_WebDevelopment_CSS",
+                                        type: "array",
+                                        value: {
+                                            HTMLContentStylingItemRowID: "1",
+                                            HTMLContentStylingItemFiles: [{
+                                                StyleFilePathLocal: "",
+                                                StyleFilePathRemote: "",
+                                                StyleFiles: storedProcessRequestCssItemConvertedList
+                                            }]
+                                        }
+                                    }
+                                }]                                
+                            }
+                        };
+                        
+                        //#endregion
+
+                        //#region 1. SETUP converter process helper
 
                         const ExecuteProcessHelper_1_0 = async (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<any> => 
                         {
@@ -1276,7 +1323,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                             //#endregion
 
-                            //#region 2: CONVERT media queries css style
+                            //#region 2: CONVERT to strong type objects
                             try 
                             {
                                 storedProcessRequestCssItem_0_NoneMediaQuriesEntries.map(storedProcessRequestCssItem_0_NoneMediaQuriesEntry => {
@@ -1294,8 +1341,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
 
                                     //#region A. CONVERT to css properties
                                     try 
-                                    {
-                                        
+                                    {                                        
                                         const ExecuteConversionRequest = () => {
                                             Object.keys(storedProcessRequestCssItem_0_NoneMediaQuriesEntry[1].attributes).map(storedProcessRequestCssItemAttribute => {
                                                 storedProcessRequestCssPropertyItem = {
@@ -1427,7 +1473,7 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                             }   
                             //#endregion                          
 
-                            //#region 5. OUTPUT css item
+                            //#region 3. OUTPUT css item
                             storedProcessRequestCssItem = {
                                 StyleFileName: storedProcessRequestCssItemStyleFileName,
                                 StyleFileSupportedProperties: storedProcessRequestCssItemSupportedProperties,
@@ -1438,50 +1484,6 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                             //#endregion
                         }
 
-                        //#endregion
-
-                        //#region 1. SETUP css baseDI models
-                        storedProcessRequestModelStorylineDetails = {
-                            baseDIInstructions: {
-                                presentation: [{
-                                    key_1: "Clients",
-                                    values_2: [{
-                                        key_2_1: "Clients_1_0",
-                                        values_2_2: [{
-                                            key_2_2_1: "GeneratedPage",
-                                            values_2_2_2: [
-                                                storedProcessRequestModelHTMLContentStylingDetails
-                                            ]
-                                        }]
-                                    }],
-                                    type: "object",
-                                    buzzWords: "***OPTIONAL***, Wireframes, HTML, XAML",
-                                    extraKeyValuePairs: []
-                                }]
-                            }
-                        };
-
-                        storedProcessRequestModelHTMLContentStylingDetails = {
-                            _2_2_2_4_clientInformationHTMLContentStylingDetails: {
-                                searchkey:"HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS",
-                                type:"array",
-                                value: [{
-                                    _2_2_2_4_1_clientInformationHTMLContentStylingItem:{
-                                        searchkey: "HTMLContentStylingItem_SetImplementer_ProductCreation_WebDevelopment_CSS",
-                                        type: "array",
-                                        value: {
-                                            HTMLContentStylingItemRowID: "1",
-                                            HTMLContentStylingItemFiles: [{
-                                                StyleFilePathLocal: "",
-                                                StyleFilePathRemote: "",
-                                                StyleFiles: storedProcessRequestCssItemConvertedList
-                                            }]
-                                        }
-                                    }
-                                }]                                
-                            }
-                        };
-                        
                         //#endregion
 
                         //#region 2. CONVERT css alignments to baseDI model
@@ -1893,6 +1895,8 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                         } 
 
                         //#endregion
+                    
+                        return storedProcessRequestCssItemConvertedList;
                     }
 
                     storedProcessRequestResponseData = await ExecuteConversionRequest();
@@ -1902,8 +1906,331 @@ export namespace BaseDI.Professional.Chapter.Page.Programming_2 {
                         throw storedProcessRequestMistake;
                     }
 
-                    throw new Error("converting html head json bucket to list of file strings");
+                    throw new Error("converting html head json bucket to list of strong type models");
                 }
+
+                //#endregion
+
+                //#region G. CONVERT html body json objects to html buckets
+
+                try 
+                {
+                    const ExecuteConversionRequest = async() : Promise<any> => 
+                    {
+                        //1. HTML containers 
+                        storedProcessRequestJSONHTMLContainers.push({
+                            attr: storedProcessRequestHtmlBodyBucket[0].attr,
+                            node: storedProcessRequestHtmlBodyBucket[0].node,
+                            tag: storedProcessRequestHtmlBodyBucket[0].tag
+                        });
+
+                        storedProcessRequestJSONHTML = storedProcessRequestHtmlBodyBucket[0].child.filter(node => node.node.toUpperCase() == "ELEMENT").filter(node => node.attr.id.toUpperCase().includes("ROW_"));
+                        
+                        //2. HTML rows 
+                        storedProcessRequestJSONHTML.map(storedProcessRequestJSONHTMLItemRow => {
+                            storedProcessRequestJSONHTMLRows.push({
+                                attr: storedProcessRequestJSONHTMLItemRow.attr,
+                                node: storedProcessRequestJSONHTMLItemRow.node,
+                                tag: storedProcessRequestJSONHTMLItemRow.tag
+                            });   
+                            
+                            storedProcessRequestJSONHTMLItemRow = storedProcessRequestJSONHTMLItemRow.child.filter(node => node.node.toUpperCase() == "ELEMENT").filter(node => node.attr.id.toUpperCase().includes("COLUMN_"));
+
+                            //3. HTML columns 
+                            storedProcessRequestJSONHTMLItemRow.map(storedProcessRequestJSONHTMLItemColumn => {
+                                storedProcessRequestJSONHTMLColumns.push({
+                                    attr: storedProcessRequestJSONHTMLItemColumn.attr,
+                                    node: storedProcessRequestJSONHTMLItemColumn.node,
+                                    tag: storedProcessRequestJSONHTMLItemColumn.tag
+                                });   
+                                   
+                                //4. HTML content
+                                storedProcessRequestJSONHTMLItemColumn = storedProcessRequestJSONHTMLItemColumn.child.filter(node => node.node.toUpperCase() == "ELEMENT").filter(node => node.attr.id.toUpperCase().includes("CONTENT_"));
+
+                                storedProcessRequestJSONHTMLContent.push(storedProcessRequestJSONHTMLItemColumn);
+                            })
+                        })
+                    }
+
+                    await ExecuteConversionRequest();
+                }
+                catch (storedProcessRequestMistake) {
+                    throw new Error("converting html body json objects to html buckets");
+                }
+
+                //#endregion
+
+                //#region H. CONVERT html body buckets to strong types objects
+
+                try 
+                {
+                    const ExecuteConversionRequest = async (): Promise<any> => {
+                        //#region 0. SETUP converter baseDI html models
+
+                        storedProcessRequestModelHTMLContentDetails = {
+                            _2_2_2_3_clientInformationHTMLContentDetails: {
+                                 searchkey:"HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML",
+                                 type:"array",   
+                                 value: [{
+                                     _2_2_2_3_1_clientInformationHTMLContentItem: {
+                                         searchkey: "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContainer",
+                                         type: "object",
+                                         value: {
+                                             HTMLContentItemRowID: "1",
+                                             HTMLContentItems: storedProcessRequestModelHTMLContainers
+                                         }
+                                     },
+                                     _2_2_2_3_2_clientInformationHTMLContentItem: {
+                                         searchkey: "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLRows",
+                                         type: "object",
+                                         value: {
+                                             HTMLContentItemRowID: "2",
+                                             HTMLContentItems: storedProcessRequestModelHTMLRows
+                                         }
+                                     },
+                                     _2_2_2_3_3_clientInformationHTMLContentItem: {
+                                         searchkey: "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLColumns",
+                                         type: "object",
+                                         value: {
+                                             HTMLContentItemRowID: "3",
+                                             HTMLContentItems: storedProcessRequestModelHTMLColumns
+                                         }
+                                     },
+                                     _2_2_2_3_4_clientInformationHTMLContentItem: {
+                                         searchkey: "HTMLContentItem_SetImplementer_ProductCreation_WebDevelopment_HTMLContent",
+                                         type: "object",
+                                         value: {
+                                             HTMLContentItemRowID: "4",
+                                             HTMLContentItems: storedProcessRequestModelHTMLContent
+                                         }
+                                     }                                   
+                                 }]                            
+                            }
+                         };    
+                         
+                        //#endregion   
+                        
+                        //#region 1. SETUP converter process helper
+
+                        const ExecuteProcessHelper_1_0 = async (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): Promise<Array<StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail>> => 
+                        {
+                            storedProcessRequestJSONHTML = parameterInputs.Parameters.getValue("parameterProcessRequestJSONHTML");
+                            storedProcessRequestJSONHTMLItem = parameterInputs.Parameters.getValue("parmaeterProcessRequestJSONHTMLItem");
+
+                            storedProcessRequestModelHTMLNotes = parameterInputs.Parameters.getValue("parameterProcessRequestModelHTMLNotes");
+                            storedProcessRequestModelHTMLList = parameterInputs.Parameters.getValue("parameterProcessRequestModelHTMLList");
+
+                            //#region 2 of 2. CONVERT html section to strong type
+                            ExecuteProcessHelper_1_1 = (parameterInputs:SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0): StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail => {                                                         
+                                storedProcessRequestJSONHTML = parameterInputs.Parameters.getValue("parameterProcessRequestJSONHTML");
+                                storedProcessRequestJSONHTMLItem = parameterInputs.Parameters.getValue("parmaeterProcessRequestJSONHTMLItem");
+                                storedProcessRequestModelHTMLNotes = parameterInputs.Parameters.getValue("parameterProcessRequestModelHTMLNotes");
+        
+                                let storedProcessRequestJSONHTMLItemCounter = 0;
+                                let storedProcessRequestJSONHTMLItemChildCount = 0;
+                                let storedProcessRequestModelHTMLChildren: StrongTyped_Website.BaseDI.Professional.BackEnd.Setting.Location.Web_Development.HtmlSectionDetail[] = []; 
+
+                                parameterInputs.Parameters.setValue("parmaeterProcessRequestJSONHTMLItemParent", storedProcessRequestJSONHTMLItem);
+
+                                if(storedProcessRequestJSONHTMLItem[0] != undefined && storedProcessRequestJSONHTMLItem[0].child != undefined && storedProcessRequestJSONHTMLItem[0].child.filter(node => node.node.toUpperCase() == "ELEMENT").length > 0)
+                                {
+                                    storedProcessRequestJSONHTMLItemChildCount = storedProcessRequestJSONHTMLItem[0].child.filter(node => node.node.toUpperCase() == "ELEMENT").length;
+
+                                    storedProcessRequestJSONHTMLItem[0].child.filter(node => node.node.toUpperCase() == "ELEMENT").map(storedProcessRequestJSONHTMLItemChild => 
+                                    {
+                                        storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                        storedInputs.Parameters.setValue("parameterProcessRequestJSONHTML", storedProcessRequestJSONHTML);                                                      
+
+                                        storedInputs.Parameters.setValue("parmaeterProcessRequestJSONHTMLItem", storedProcessRequestJSONHTMLItemChild);  
+                                        storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLNotes", storedProcessRequestModelHTMLNotes);  
+
+                                        storedProcessRequestModelHTMLChild = ExecuteProcessHelper_1_1(storedInputs);     
+                                        
+                                        if(storedProcessRequestModelHTMLChild){
+                                            storedProcessRequestModelHTMLChildren.push(storedProcessRequestModelHTMLChild)
+                                        }  
+                                        
+                                        storedProcessRequestJSONHTMLItemCounter += 1;
+                                    })
+
+                                    storedProcessRequestJSONHTMLItem = parameterInputs.Parameters.getValue("parmaeterProcessRequestJSONHTMLItemParent");
+                                }                                
+                        
+                                if(storedProcessRequestJSONHTMLItemCounter == ((storedProcessRequestJSONHTMLItem[0] == undefined || storedProcessRequestJSONHTMLItem[0].child == undefined) ? ((storedProcessRequestJSONHTMLItem.child == undefined || (storedProcessRequestJSONHTMLItem.child[0] != undefined && storedProcessRequestJSONHTMLItem.child[0].text != undefined && storedProcessRequestJSONHTMLItem.child[0].text != "")) ? 0 : storedProcessRequestJSONHTMLItem.child.length) : storedProcessRequestJSONHTMLItem[0].child.filter(node => node.node.toUpperCase() == "ELEMENT").length) && (storedProcessRequestJSONHTMLItem.attr != undefined ? Object.keys(storedProcessRequestJSONHTMLItem.attr).length : (storedProcessRequestJSONHTMLItem[0].attr != undefined ? Object.keys(storedProcessRequestJSONHTMLItem[0].attr).length : 0)) > 0)
+                                {                                    
+                                    storedProcessRequestJSONHTMLItem = (storedProcessRequestJSONHTMLItem[0] != undefined ? storedProcessRequestJSONHTMLItem[0] : storedProcessRequestJSONHTMLItem)
+
+                                    storedProcessRequestModelHTML = {
+                                        Notes: storedProcessRequestModelHTMLNotes,
+                                        Tag: storedProcessRequestJSONHTMLItem.tag,
+                                        Attributes: [],
+                                        Value: (storedProcessRequestJSONHTMLItem.child != undefined && storedProcessRequestJSONHTMLItem.child[0] != undefined && storedProcessRequestJSONHTMLItem.child[0].text != undefined ? storedProcessRequestJSONHTMLItem.child[0].text : ""),
+                                        Events: [],
+                                        ParentHTMLContentItemAttributeID: "",
+                                        ChildHTMLContentDetails: storedProcessRequestModelHTMLChildren,
+                                        ChildHTMLContentFlowDirection: ""
+                                     }    
+
+                                     Object.keys(storedProcessRequestJSONHTMLItem.attr).map(storedProcessRequestHtmlItemAttribute => {
+                                        storedProcessRequestJSONHTMLItemObject = new Object();
+                                        storedProcessRequestJSONHTMLItemObject[storedProcessRequestHtmlItemAttribute] = storedProcessRequestJSONHTMLItem.attr[storedProcessRequestHtmlItemAttribute];
+
+                                        storedProcessRequestModelHTML.Attributes.push(storedProcessRequestJSONHTMLItemObject);
+                                    }) ;                                    
+                                    
+                                    return storedProcessRequestModelHTML;
+                                } 
+
+                                return null;
+                            }
+                            //#endregion
+
+                            //#region 1 of 2. CONVERT html section to strong type
+                            const ExecuteConversionRequest = async () => {
+                                storedProcessRequestJSONHTML.map(storedProcessRequestJSONHTMLItem => {
+                                    storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                                    storedInputs.Parameters.setValue("parameterProcessRequestJSONHTML", storedProcessRequestJSONHTML);                                                      
+                                    storedInputs.Parameters.setValue("parmaeterProcessRequestJSONHTMLItem", storedProcessRequestJSONHTMLItem);  
+                                    storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLNotes", storedProcessRequestModelHTMLNotes);  
+
+                                    storedProcessRequestModelHTML = ExecuteProcessHelper_1_1(storedInputs);
+
+                                    if(storedProcessRequestModelHTML)
+                                    {
+                                        storedProcessRequestModelHTMLList.push(storedProcessRequestModelHTML);                                          
+                                    }        
+                                })
+                            }
+
+                            await ExecuteConversionRequest();
+
+                            //#endregion
+
+                            return storedProcessRequestModelHTMLList;
+                        };
+
+                        //#endregion                         
+
+                        //#region 2. CONVERT html containers to baseDI model
+
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestJSONHTML", storedProcessRequestJSONHTMLContainers);                                                      
+                            storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLList", storedProcessRequestModelHTMLContainers);  
+                            storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLNotes", "CONTAINER SECTION");  
+
+                            storedProcessRequestModelHTMLContainers = await ExecuteProcessHelper_1_0(storedInputs);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting html containers");
+                        } 
+
+                         //#endregion  
+
+                         //#region 3. CONVERT html rows to baseDI model
+                         
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestJSONHTML", storedProcessRequestJSONHTMLRows);  
+                            storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLList", storedProcessRequestModelHTMLRows);  
+                            storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLNotes", "ROW SECTION");  
+
+                            storedProcessRequestModelHTMLRows = await ExecuteProcessHelper_1_0(storedInputs);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting html rows");
+                        } 
+
+                         //#endregion       
+                         
+                         //#region 4. CONVERT html columns to baseDI model
+                         
+                        try 
+                        {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestJSONHTML", storedProcessRequestJSONHTMLColumns);  
+                            storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLList", storedProcessRequestModelHTMLColumns);  
+                            storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLNotes", "COLUMN SECTION");  
+
+                            storedProcessRequestModelHTMLColumns = await ExecuteProcessHelper_1_0(storedInputs);
+                        } 
+                        catch (storedProcessRequestMistake) {
+                            throw new Error("converting html columns");
+                        } 
+
+                         //#endregion 
+                         
+                         //#region 5. CONVERT html content to baseDI model
+
+                         try 
+                         {
+                            storedInputs = new SingleParmPoco_12_2_1_0.BaseDI.Professional.Script.Programming.Poco_1.SingleParmPoco_12_2_1_0();
+                            storedInputs.Parameters.setValue("parameterProcessRequestJSONHTML", storedProcessRequestJSONHTMLContent);  
+                            storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLList", storedProcessRequestModelHTMLContent);  
+                            storedInputs.Parameters.setValue("parameterProcessRequestModelHTMLNotes", "CONTENT ITEM");  
+
+                            storedProcessRequestModelHTMLContent = await ExecuteProcessHelper_1_0(storedInputs);
+                         } 
+                         catch (storedProcessRequestMistake) {
+                             throw new Error("converting html content");
+                         }                          
+
+                         //#endregion                           
+                    }
+
+                    storedProcessRequestResponseData = await ExecuteConversionRequest();
+                } 
+                catch (storedProcessRequestMistake) 
+                {
+                    if(storedProcessRequestMistake.message){
+                        throw storedProcessRequestMistake;
+                    }
+
+                    throw new Error("converting html body json bucket to list of strong type models");
+                }
+                
+                //#endregion
+
+                //#region I. CONVERT html strong types objects to storyline details object
+                
+                storedProcessRequestModelStorylineDetails = {
+                    $schema: "https://schema.management.basedi.io/schemas/2019-10-05/deploymentTemplate.json#",
+                    contentVersion: "1.0.0.0",
+                    parameters: null,
+                    variables: [],
+                    resources: [{
+                        baseDIProfiles: [{
+                            baseDI_NerdyGroupAffiliates_DataSet_JSON: {
+                                baseDIInstructions: {
+                                    presentation: [{
+                                        key_1: "Clients",
+                                        values_2: [{
+                                            key_2_1: "Clients_1_0",
+                                            values_2_2: [{
+                                                key_2_2_1: "GeneratedPage",
+                                                values_2_2_2: [
+                                                    storedProcessRequestModelHTMLContentDetails,
+                                                    storedProcessRequestModelHTMLContentStylingDetails
+                                                ]
+                                            }]
+                                        }],
+                                        type: "object",
+                                        buzzWords: "***OPTIONAL***, Wireframes, HTML, XAML",
+                                        extraKeyValuePairs: []
+                                    }]
+                                }                                
+                            }
+                        }]                    
+                    }],
+                    outputs: [{
+                        baseDIMistakes: [],
+                        baseDIObservations: []
+                    }]
+                };
+
+                storedOutputResponseData = storedProcessRequestModelStorylineDetails;
 
                 //#endregion
 

@@ -1,8 +1,8 @@
 ﻿export module BaseDI.Professional.BackEnd.Setting.Location.Web_Development {
     //#region JSON to HTML Interfaces
 
-    export interface SearchKey_HTMLSEODetails_SetImplementer_ProductCreation_SEO_SearchEngine {
-        _2_2_2_4_clientInformationHTMLContentStylingDetails: HTMLContentStylingDetails_SetImplementer_ProductCreation_WebDevelopment_CSS;
+    export interface _2_2_2_3_clientInformationHTMLContentDetails {
+        _2_2_2_3_clientInformationHTMLContentDetails: HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML;
     }
 
     export interface HTMLContentDetails_SetImplementer_ProductCreation_WebDevelopment_HTML {
@@ -19,25 +19,25 @@
     }
 
     export interface HtmlSection {
-        searchkey: string;
-        type: string;
-        value: HtmlSectionDetails;
+        searchkey?: string;
+        type?: string;
+        value?: HtmlSectionDetails;
     }
 
     export interface HtmlSectionDetails {
-        HTMLContentItemRowID: string;
-        HTMLContentItems: HtmlSectionDetail[];
+        HTMLContentItemRowID?: string;
+        HTMLContentItems?: HtmlSectionDetail[];
     }
 
     export interface HtmlSectionDetail {
-        Notes: string;
-        Tag: string;
-        Attributes: HtmlAttribute[];
-        Value: string;
-        Events: HtmlFunctionEvents[];
-        ParentHTMLContentItemAttributeID: string;
-        ChildHTMLContentDetails: HtmlSectionDetail[];
-        ChildHTMLContentFlowDirection: string;
+        Notes?: string;
+        Tag?: string;
+        Attributes?: HtmlAttribute[];
+        Value?: string;
+        Events?: HtmlFunctionEvents[];
+        ParentHTMLContentItemAttributeID?: string;
+        ChildHTMLContentDetails?: HtmlSectionDetail[];
+        ChildHTMLContentFlowDirection?: string;
     }
 
     export interface HtmlAttribute {
